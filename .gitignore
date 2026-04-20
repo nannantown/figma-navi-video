@@ -1,0 +1,7 @@
+node_modules/
+output/
+.DS_Store
+*.aiff
+public/audio/
+youtube-refresh-token.txt
+.claude/
