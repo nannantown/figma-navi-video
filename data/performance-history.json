@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "videos": [
+    {
+      "videoId": "LQnVJUeKRBM",
+      "videoUrl": "https://youtube.com/shorts/LQnVJUeKRBM",
+      "date": "2026-04-22",
+      "title": "【デザインニュース】Claude Design 参戦、Figma 株 7% 下落の衝撃｜2026/04/22 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 46,
+      "discovery": {
+        "method": "social-en",
+        "description": "Hacker News と Reddit r/ClaudeAI のスレッドから、4/17 発表の Claude Design に対するデザイナー実感を抽出",
+        "sources": [
+          "https://news.ycombinator.com/item?id=47806725",
+          "https://news.ycombinator.com/item?id=47818700",
+          "https://news.ycombinator.com/item?id=47832366",
+          "https://www.theneurondaily.com/p/anthropic-s-claude-design-launched-and-reddit-has-thoughts",
+          "https://venturebeat.com/technology/anthropic-just-launched-claude-design-an-ai-tool-that-turns-prompts-into-prototypes-and-challenges-figma",
+          "https://gizmodo.com/anthropic-launches-claude-design-figma-stock-immediately-nosedives-2000748071"
+        ],
+        "query": "Claude Design Hacker News Reddit designer reaction",
+        "freshness_hours": 120
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      }
+    }
+  ],
+  "optimizationLog": []
+}
