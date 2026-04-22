@@ -1,0 +1,41 @@
+{
+  "date": "2026-04-22",
+  "discovery": {
+    "method": "news-en",
+    "description": "英語のテック・デザイン業界メディアを横断し、直近1週間の AI×デザイン分野で最大のニュースを抽出",
+    "sources": [
+      "https://www.canva.com/newsroom/news/canva-create-2026-ai/",
+      "https://fortune.com/2026/04/16/canva-ai-agentic-design-suite-coo-cliff-obrecht/",
+      "https://siliconangle.com/2026/04/16/canva-unveils-canva-ai-2-0-recasting-platform-agentic-system-work/",
+      "https://www.androidheadlines.com/2026/04/canva-ai-2-update-conversational-design-agents.html",
+      "https://www.bworldonline.com/technology/2026/04/17/743632/canva-ai-2-0-brings-agentic-automation-features-to-power-end-to-end-design-process/"
+    ],
+    "query": "Canva AI 2.0 launch April 2026 conversational design agent",
+    "freshness_hours": 144
+  },
+  "articles": [
+    {
+      "rank": 1,
+      "title": "Canva AI 2.0 が始動、会話で完成デザイン生成へ",
+      "description": "Canva がテンプレ選択から会話ベースの編集可能デザイン生成へ大転換",
+      "detail": "4月16日にロサンゼルスのCanva Createで発表。Canva設計専用の基盤モデルを核に、プロンプトから階層構造つきの編集可能デザインを生成。SlackやNotionとも連携し、まずは100万人に研究プレビューとして提供。",
+      "narration": "Canvaの常識が変わりました。先週、Canva AI 2.0 が発表され、テンプレを選ばず、会話だけで編集可能なデザインが生まれる時代に突入。",
+      "tags": ["AI×デザイン", "Canva", "業界ニュース"],
+      "narration_sections": {
+        "hook": "Canvaの常識が変わりました。先週、Canva AI 2.0 が発表され、テンプレを選ばず、会話だけで編集可能なデザインが生まれる時代に突入。",
+        "origin": "4月16日にロサンゼルスで発表されたこのアップデートは、Canva設計専用の基盤モデルが核。プロンプトから階層構造つきの編集可能デザインを生成し、SlackやNotionとも連携。まずは100万人に研究プレビューとして提供されます。",
+        "recommend": "AIツールは会話起点に大変化中。デザイナー志望なら触っておくと吉。Figma側のAI生成は補助輪としてFigmaナビが使えます。"
+      },
+      "section_titles": {
+        "hook": "Canva AI 2.0",
+        "origin": "会話で生まれる設計",
+        "recommend": "AI時代の準備運動"
+      },
+      "section_descriptions": {
+        "hook": "Canvaが会話で完成編集可能デザイン生成へ進化",
+        "origin": "設計専用基盤モデル+SlackやNotion連携",
+        "recommend": "デザイナー志望者も触って未来に備えておきましょう"
+      }
+    }
+  ]
+}
