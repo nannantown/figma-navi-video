@@ -1,41 +1,40 @@
 {
-  "date": "2026-04-22",
+  "date": "2026-04-23",
   "discovery": {
-    "method": "social-en",
-    "description": "Hacker News と Reddit r/ClaudeAI のスレッドから、4/17 発表の Claude Design に対するデザイナー実感を抽出",
+    "method": "official-src",
+    "description": "Figma 公式 release notes / Figma Learn ヘルプから 4/22 リリースの Make モバイル対応を一次取得",
     "sources": [
-      "https://news.ycombinator.com/item?id=47806725",
-      "https://news.ycombinator.com/item?id=47818700",
-      "https://news.ycombinator.com/item?id=47832366",
-      "https://www.theneurondaily.com/p/anthropic-s-claude-design-launched-and-reddit-has-thoughts",
-      "https://venturebeat.com/technology/anthropic-just-launched-claude-design-an-ai-tool-that-turns-prompts-into-prototypes-and-challenges-figma",
-      "https://gizmodo.com/anthropic-launches-claude-design-figma-stock-immediately-nosedives-2000748071"
+      "https://www.figma.com/release-notes/",
+      "https://releasebot.io/updates/figma",
+      "https://help.figma.com/hc/en-us/articles/1500007537281-Guide-to-the-Figma-mobile-app",
+      "https://www.figma.com/blog/product-updates/",
+      "https://www.figma.com/newsroom/"
     ],
-    "query": "Claude Design Hacker News Reddit designer reaction",
-    "freshness_hours": 120
+    "query": "Figma release notes April 2026 Make mobile app",
+    "freshness_hours": 24
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Claude Design 参戦、Figma 株 7% 下落の衝撃",
-      "description": "Anthropic 発 Claude Design がデザインツール勢力図を揺らす",
-      "detail": "4月17日に Anthropic Labs が Claude Design をリサーチプレビュー公開。Claude Opus 4.7 搭載、プロンプトから試作・スライド・UI を数秒生成し、Canva/PDF/PowerPoint/HTML 出力と Claude Code への直接ハンドオフに対応。発表直後 Figma 株は一時約 7% 下落。HN と Reddit では早くも『見た目が均一化しがち』との指摘が広がっている。",
-      "narration": "先週、AnthropicがClaude Designを発表。Figmaの株価は7%下落し、AI×デザインの勢力図が一気に動きました。",
-      "tags": ["AI×デザイン", "Claude", "Figma"],
+      "title": "Figma Make、スマホアプリでプレビュー対応に",
+      "description": "Make のプロトタイプを iOS/Android で直接触れるように",
+      "detail": "2026 年 4 月 22 日、Figma が公式 release notes で Make のモバイル対応を発表。iOS / Android の Figma アプリから Make で生成したプロトタイプを直接プレビューでき、実機のジェスチャーや物理的な制約のもとでスクロール・余白・タップの挙動を検証可能。共有リンクで共同作業者にレビューや承認も依頼できる。最新版アプリで順次ロールアウト(約 1 週間)。",
+      "narration": "昨日、Figmaが発表。Makeでつくったプロトタイプが、スマホアプリで直接プレビューできるようになりました。iOSもAndroidもOKです。",
+      "tags": ["Figma", "Figma Make", "モバイル"],
       "narration_sections": {
-        "hook": "先週、AnthropicがClaude Designを発表。Figmaの株価は7%下落し、AI×デザインの勢力図が一気に動きました。",
-        "origin": "4月17日にローンチされたClaude Designは、会話から試作やスライドを数秒で生成。ただRedditやHNでは早くも「見た目が揃いすぎる」という声が。自前のデザイン原則や参考画像を渡さないと量産型になりがちだそうです。",
-        "recommend": "AIに丸投げせず、自分のデザインルールを渡すのが鍵。Figmaナビはチームの設計システムを読ませて補助輪として使える点が強みです。"
+        "hook": "昨日、Figmaが発表。Makeでつくったプロトタイプが、スマホアプリで直接プレビューできるようになりました。iOSもAndroidもOKです。",
+        "origin": "実機のジェスチャーや制約で、スクロール、余白、タップの挙動まで現物感で確認できます。共同作業者にリンクで共有してレビュー・承認ももらえます。デスクトップだけだと気づけない細かいUXの粗が、手元で一気に見えるのが大きな変化です。",
+        "recommend": "作り始めの段階からスマホで触る癖をつけると、実装に近いUIを設計できます。Figmaナビで生成したパーツも、早めに実機で確認が吉です。"
       },
       "section_titles": {
-        "hook": "Anthropicが参戦",
-        "origin": "見た目が揃う問題",
-        "recommend": "AIは補助輪として"
+        "hook": "Makeがスマホ対応",
+        "origin": "実機で触って検証",
+        "recommend": "早めに実機で触る"
       },
       "section_descriptions": {
-        "hook": "Claude Design発表でFigma株が一時7%下落",
-        "origin": "RedditやHNでは出力の均一化が早くも話題に",
-        "recommend": "自分のデザインルールを渡してAIを補助輪化"
+        "hook": "iOS/AndroidでMakeの直接プレビューが可能に",
+        "origin": "ジェスチャーやスクロールを実機で確認できる",
+        "recommend": "序盤から実機で触る癖で設計の精度が上がる"
       }
     }
   ]
