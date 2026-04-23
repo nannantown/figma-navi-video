@@ -1,40 +1,41 @@
 {
-  "date": "2026-04-23",
+  "date": "2026-04-24",
   "discovery": {
-    "method": "official-src",
-    "description": "Figma 公式 release notes / Figma Learn ヘルプから 4/22 リリースの Make モバイル対応を一次取得",
+    "method": "news-en",
+    "description": "英語テック/デザインメディア(the-decoder, The Next Web)と Figma 公式 release notes を突き合わせ、ChatGPT Images 2.0 の Figma 統合という AI×デザインの大ネタを抽出",
     "sources": [
+      "https://the-decoder.com/openais-chatgpt-images-2-0-thinks-before-it-generates-adding-reasoning-and-web-search-to-image-creation/",
+      "https://thenextweb.com/news/openai-chatgpt-images-2-0-reasoning-image-generation",
       "https://www.figma.com/release-notes/",
       "https://releasebot.io/updates/figma",
-      "https://help.figma.com/hc/en-us/articles/1500007537281-Guide-to-the-Figma-mobile-app",
-      "https://www.figma.com/blog/product-updates/",
-      "https://www.figma.com/newsroom/"
+      "https://developers.openai.com/api/docs/models/gpt-image-2",
+      "https://help.figma.com/hc/en-us/articles/35326636109975-Use-ChatGPT-with-Figma"
     ],
-    "query": "Figma release notes April 2026 Make mobile app",
-    "freshness_hours": 24
+    "query": "ChatGPT Images 2.0 Figma Make Image Edit Image release April 2026",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma Make、スマホアプリでプレビュー対応に",
-      "description": "Make のプロトタイプを iOS/Android で直接触れるように",
-      "detail": "2026 年 4 月 22 日、Figma が公式 release notes で Make のモバイル対応を発表。iOS / Android の Figma アプリから Make で生成したプロトタイプを直接プレビューでき、実機のジェスチャーや物理的な制約のもとでスクロール・余白・タップの挙動を検証可能。共有リンクで共同作業者にレビューや承認も依頼できる。最新版アプリで順次ロールアウト(約 1 週間)。",
-      "narration": "昨日、Figmaが発表。Makeでつくったプロトタイプが、スマホアプリで直接プレビューできるようになりました。iOSもAndroidもOKです。",
-      "tags": ["Figma", "Figma Make", "モバイル"],
+      "title": "ChatGPT Images 2.0、Figmaで直接使えるように",
+      "description": "OpenAIの最新画像モデルがFigma Make Image / Edit Imageに統合、日本語テキストも約99%精度",
+      "detail": "OpenAI が 2026 年 4 月に発表した新画像モデル ChatGPT Images 2.0 が、Figma Design / Draw / Slides / Buzz / FigJam / Figma Weave の Make Image・Edit Image で直接使えるようになった。最大の特徴は「考えてから描く」推論型である点と、日本語・韓国語・中国語などを含むテキスト描画の精度が約 99% に達すること。UI の小さな文字、アイコン、密な構図、微妙なスタイル指定など従来モデルが苦手だった領域を大きく改善。公開 12 時間で Image Arena ランキング 1 位、2 位の Google Nano Banana 2 に +242 点差という過去最大のリードを記録。",
+      "narration": "FigmaでAI画像生成が進化。OpenAIのChatGPT Images 2.0が、Make Image・Edit Imageで使えるようになりました。",
+      "tags": ["Figma", "OpenAI", "AIデザイン"],
       "narration_sections": {
-        "hook": "昨日、Figmaが発表。Makeでつくったプロトタイプが、スマホアプリで直接プレビューできるようになりました。iOSもAndroidもOKです。",
-        "origin": "実機のジェスチャーや制約で、スクロール、余白、タップの挙動まで現物感で確認できます。共同作業者にリンクで共有してレビュー・承認ももらえます。デスクトップだけだと気づけない細かいUXの粗が、手元で一気に見えるのが大きな変化です。",
-        "recommend": "作り始めの段階からスマホで触る癖をつけると、実装に近いUIを設計できます。Figmaナビで生成したパーツも、早めに実機で確認が吉です。"
+        "hook": "FigmaでAI画像生成が進化。OpenAIのChatGPT Images 2.0が、Make Image・Edit Imageで使えるようになりました。",
+        "origin": "OpenAIが発表した新画像モデルで、日本語テキストを約99%の精度で描画。UIの小さな文字やアイコン、密な構図も破綻しにくいのが特徴。公開12時間でAI画像ランキング1位、2位のGoogleに242点差を付ける圧倒的な性能です。",
+        "recommend": "ポートフォリオやLPの素材を、Figmaから直接生成できます。Figmaナビで組むパーツと組み合わせれば、下書きが一気に仕上がります。"
       },
       "section_titles": {
-        "hook": "Makeがスマホ対応",
-        "origin": "実機で触って検証",
-        "recommend": "早めに実機で触る"
+        "hook": "Figma画像AIが進化",
+        "origin": "日本語テキスト99%",
+        "recommend": "Figmaナビで加速"
       },
       "section_descriptions": {
-        "hook": "iOS/AndroidでMakeの直接プレビューが可能に",
-        "origin": "ジェスチャーやスクロールを実機で確認できる",
-        "recommend": "序盤から実機で触る癖で設計の精度が上がる"
+        "hook": "OpenAIの新画像モデルがFigma内で使用可能に",
+        "origin": "日本語テキスト描画が約99%精度の新モデル",
+        "recommend": "Figmaナビと組み合わせて作例を高速化"
       }
     }
   ]
