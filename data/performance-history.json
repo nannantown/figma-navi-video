@@ -40,6 +40,50 @@
         "freshness_hours": 120
       },
       "stats": {
+        "views": 132,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-04-23T00:02:25.863Z"
+      }
+    },
+    {
+      "videoId": "aFIX-W4ph9E",
+      "videoUrl": "https://youtube.com/shorts/aFIX-W4ph9E",
+      "date": "2026-04-23",
+      "title": "【デザインニュース】Figma Make、スマホアプリでプレビュー対応に｜2026/04/23 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 48,
+      "discovery": {
+        "method": "official-src",
+        "description": "Figma 公式 release notes / Figma Learn ヘルプから 4/22 リリースの Make モバイル対応を一次取得",
+        "sources": [
+          "https://www.figma.com/release-notes/",
+          "https://releasebot.io/updates/figma",
+          "https://help.figma.com/hc/en-us/articles/1500007537281-Guide-to-the-Figma-mobile-app",
+          "https://www.figma.com/blog/product-updates/",
+          "https://www.figma.com/newsroom/"
+        ],
+        "query": "Figma release notes April 2026 Make mobile app",
+        "freshness_hours": 24
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -47,5 +91,13 @@
       }
     }
   ],
-  "optimizationLog": []
+  "optimizationLog": [
+    {
+      "date": "2026-04-23",
+      "changes": [
+        "Day performance: Wed=132"
+      ],
+      "recommendedTemplate": "standard"
+    }
+  ]
 }
