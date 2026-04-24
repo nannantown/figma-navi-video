@@ -40,10 +40,10 @@
         "freshness_hours": 120
       },
       "stats": {
-        "views": 132,
+        "views": 139,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-23T00:02:25.863Z"
+        "updatedAt": "2026-04-24T00:03:24.120Z"
       }
     },
     {
@@ -84,6 +84,51 @@
         "freshness_hours": 24
       },
       "stats": {
+        "views": 171,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-04-24T00:03:24.120Z"
+      }
+    },
+    {
+      "videoId": "jesQOPFtC_A",
+      "videoUrl": "https://youtube.com/shorts/jesQOPFtC_A",
+      "date": "2026-04-24",
+      "title": "【デザインニュース】ChatGPT Images 2.0、Figmaで直接使えるように｜2026/04/24 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 48,
+      "discovery": {
+        "method": "news-en",
+        "description": "英語テック/デザインメディア(the-decoder, The Next Web)と Figma 公式 release notes を突き合わせ、ChatGPT Images 2.0 の Figma 統合という AI×デザインの大ネタを抽出",
+        "sources": [
+          "https://the-decoder.com/openais-chatgpt-images-2-0-thinks-before-it-generates-adding-reasoning-and-web-search-to-image-creation/",
+          "https://thenextweb.com/news/openai-chatgpt-images-2-0-reasoning-image-generation",
+          "https://www.figma.com/release-notes/",
+          "https://releasebot.io/updates/figma",
+          "https://developers.openai.com/api/docs/models/gpt-image-2",
+          "https://help.figma.com/hc/en-us/articles/35326636109975-Use-ChatGPT-with-Figma"
+        ],
+        "query": "ChatGPT Images 2.0 Figma Make Image Edit Image release April 2026",
+        "freshness_hours": 72
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -96,6 +141,13 @@
       "date": "2026-04-23",
       "changes": [
         "Day performance: Wed=132"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-04-24",
+      "changes": [
+        "Day performance: Thu=171, Wed=139"
       ],
       "recommendedTemplate": "standard"
     }
