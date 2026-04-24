@@ -1,41 +1,41 @@
 {
-  "date": "2026-04-24",
+  "date": "2026-04-25",
   "discovery": {
-    "method": "news-en",
-    "description": "英語テック/デザインメディア(the-decoder, The Next Web)と Figma 公式 release notes を突き合わせ、ChatGPT Images 2.0 の Figma 統合という AI×デザインの大ネタを抽出",
+    "method": "expert-blog",
+    "description": "金曜のニュース(ChatGPT Images 2.0 × Figma)の週末深掘り。デザイナー向け prompt 解説ブログ(Promptolis / PixVerse / OpenAI Cookbook)から、日本語テキスト・ロゴ合成・Figma 後処理の具体 Tip を抽出",
     "sources": [
-      "https://the-decoder.com/openais-chatgpt-images-2-0-thinks-before-it-generates-adding-reasoning-and-web-search-to-image-creation/",
-      "https://thenextweb.com/news/openai-chatgpt-images-2-0-reasoning-image-generation",
-      "https://www.figma.com/release-notes/",
-      "https://releasebot.io/updates/figma",
-      "https://developers.openai.com/api/docs/models/gpt-image-2",
-      "https://help.figma.com/hc/en-us/articles/35326636109975-Use-ChatGPT-with-Figma"
+      "https://promptolis.com/blog/chatgpt-images-2-0-honest-guide-25-prompts/",
+      "https://pixverse.ai/en/blog/gpt-image-2-review-and-prompt-guide",
+      "https://developers.openai.com/cookbook/examples/multimodal/image-gen-models-prompting-guide",
+      "https://medium.com/no-time/chatgpt-images-2-0-just-dropped-and-its-seriously-good-38f31becd626",
+      "https://venturebeat.com/technology/openais-chatgpt-images-2-0-is-here-and-it-does-multilingual-text-full-infographics-slides-maps-even-manga-seemingly-flawlessly",
+      "https://techcrunch.com/2026/04/21/chatgpts-new-images-2-0-model-is-surprisingly-good-at-generating-text/"
     ],
-    "query": "ChatGPT Images 2.0 Figma Make Image Edit Image release April 2026",
-    "freshness_hours": 72
+    "query": "gpt-image-2 Japanese text literal prompt designer Figma workflow tips",
+    "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "ChatGPT Images 2.0、Figmaで直接使えるように",
-      "description": "OpenAIの最新画像モデルがFigma Make Image / Edit Imageに統合、日本語テキストも約99%精度",
-      "detail": "OpenAI が 2026 年 4 月に発表した新画像モデル ChatGPT Images 2.0 が、Figma Design / Draw / Slides / Buzz / FigJam / Figma Weave の Make Image・Edit Image で直接使えるようになった。最大の特徴は「考えてから描く」推論型である点と、日本語・韓国語・中国語などを含むテキスト描画の精度が約 99% に達すること。UI の小さな文字、アイコン、密な構図、微妙なスタイル指定など従来モデルが苦手だった領域を大きく改善。公開 12 時間で Image Arena ランキング 1 位、2 位の Google Nano Banana 2 に +242 点差という過去最大のリードを記録。",
-      "narration": "FigmaでAI画像生成が進化。OpenAIのChatGPT Images 2.0が、Make Image・Edit Imageで使えるようになりました。",
-      "tags": ["Figma", "OpenAI", "AIデザイン"],
+      "title": "Figma×AI画像、日本語LPで失敗しない3コツ",
+      "description": "ChatGPT Images 2.0 を Figma で使う時、日本語LPの文字崩れを避ける実践 Tip",
+      "detail": "金曜に取り上げた ChatGPT Images 2.0 × Figma の週末深掘り。デザイナー向け prompt 解説ブログを横断すると、日本語 LP で失敗しないコツが 3 つに集約される。①日本語テキストは『翻訳して』ではなく、表示したい文字を literal でそのままプロンプトに貼る(描画精度 95% 超)。②ロゴは画像生成時に頼まず、余白だけ確保して Figma で本物の SVG を後合成。③レイアウト全体を AI に任せず、Make Image は素材生成に絞り、構図は Figma 側で組む。これで初心者でも崩れにくい LP の FV ドラフトが 5 秒で出る。",
+      "narration": "昨日のFigma×ChatGPT Images 2.0、早速日本語LPのFVを作ってみたら、そのまま使うと文字が崩れる罠がありました。",
+      "tags": ["Figma", "AI画像", "Tips"],
       "narration_sections": {
-        "hook": "FigmaでAI画像生成が進化。OpenAIのChatGPT Images 2.0が、Make Image・Edit Imageで使えるようになりました。",
-        "origin": "OpenAIが発表した新画像モデルで、日本語テキストを約99%の精度で描画。UIの小さな文字やアイコン、密な構図も破綻しにくいのが特徴。公開12時間でAI画像ランキング1位、2位のGoogleに242点差を付ける圧倒的な性能です。",
-        "recommend": "ポートフォリオやLPの素材を、Figmaから直接生成できます。Figmaナビで組むパーツと組み合わせれば、下書きが一気に仕上がります。"
+        "hook": "昨日のFigma×ChatGPT Images 2.0、早速日本語LPのFVを作ってみたら、そのまま使うと文字が崩れる罠がありました。",
+        "origin": "コツは3つ。日本語は『翻訳して』と頼まず、表示したい文字をそのままプロンプトに貼る。これで描画精度が95%超に上がります。ロゴは余白だけ空けて、Figmaで本物のSVGを後合成。レイアウトもFigma側で組むのが安全です。",
+        "recommend": "AIは下書きの補助輪です。文字はリテラル指定、レイアウトはFigmaで詰める。Figmaナビと組み合わせれば作例づくりが一気に進みます。"
       },
       "section_titles": {
-        "hook": "Figma画像AIが進化",
-        "origin": "日本語テキスト99%",
-        "recommend": "Figmaナビで加速"
+        "hook": "AI画像の落とし穴",
+        "origin": "失敗しない3コツ",
+        "recommend": "Figmaで仕上げる"
       },
       "section_descriptions": {
-        "hook": "OpenAIの新画像モデルがFigma内で使用可能に",
-        "origin": "日本語テキスト描画が約99%精度の新モデル",
-        "recommend": "Figmaナビと組み合わせて作例を高速化"
+        "hook": "日本語LPでAI画像、そのまま使うと崩れる",
+        "origin": "日本語リテラル指定とロゴ後合成で精度95%",
+        "recommend": "AIは下書き、文字とレイアウトはFigmaで"
       }
     }
   ]
