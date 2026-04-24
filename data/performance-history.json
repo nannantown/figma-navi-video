@@ -43,7 +43,7 @@
         "views": 139,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-24T00:03:24.120Z"
+        "updatedAt": "2026-04-24T23:56:09.070Z"
       }
     },
     {
@@ -84,10 +84,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 171,
+        "views": 173,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-24T00:03:24.120Z"
+        "updatedAt": "2026-04-24T23:56:09.070Z"
       }
     },
     {
@@ -129,6 +129,51 @@
         "freshness_hours": 72
       },
       "stats": {
+        "views": 30,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-04-24T23:56:09.070Z"
+      }
+    },
+    {
+      "videoId": "BvNB1JwbxBo",
+      "videoUrl": "https://youtube.com/shorts/BvNB1JwbxBo",
+      "date": "2026-04-25",
+      "title": "【デザインニュース】Figma×AI画像、日本語LPで失敗しない3コツ｜2026/04/25 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 49,
+      "discovery": {
+        "method": "expert-blog",
+        "description": "金曜のニュース(ChatGPT Images 2.0 × Figma)の週末深掘り。デザイナー向け prompt 解説ブログ(Promptolis / PixVerse / OpenAI Cookbook)から、日本語テキスト・ロゴ合成・Figma 後処理の具体 Tip を抽出",
+        "sources": [
+          "https://promptolis.com/blog/chatgpt-images-2-0-honest-guide-25-prompts/",
+          "https://pixverse.ai/en/blog/gpt-image-2-review-and-prompt-guide",
+          "https://developers.openai.com/cookbook/examples/multimodal/image-gen-models-prompting-guide",
+          "https://medium.com/no-time/chatgpt-images-2-0-just-dropped-and-its-seriously-good-38f31becd626",
+          "https://venturebeat.com/technology/openais-chatgpt-images-2-0-is-here-and-it-does-multilingual-text-full-infographics-slides-maps-even-manga-seemingly-flawlessly",
+          "https://techcrunch.com/2026/04/21/chatgpts-new-images-2-0-model-is-surprisingly-good-at-generating-text/"
+        ],
+        "query": "gpt-image-2 Japanese text literal prompt designer Figma workflow tips",
+        "freshness_hours": 96
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -148,6 +193,13 @@
       "date": "2026-04-24",
       "changes": [
         "Day performance: Thu=171, Wed=139"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-04-24",
+      "changes": [
+        "Day performance: Thu=173, Wed=139, Fri=30"
       ],
       "recommendedTemplate": "standard"
     }
