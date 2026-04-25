@@ -1,41 +1,41 @@
 {
-  "date": "2026-04-25",
+  "date": "2026-04-26",
   "discovery": {
-    "method": "expert-blog",
-    "description": "金曜のニュース(ChatGPT Images 2.0 × Figma)の週末深掘り。デザイナー向け prompt 解説ブログ(Promptolis / PixVerse / OpenAI Cookbook)から、日本語テキスト・ロゴ合成・Figma 後処理の具体 Tip を抽出",
+    "method": "product-launches",
+    "description": "Awwwards Site of the Day (2026/04/25 受賞) Ashley Brooke を中心に、Awwwards SOTD リストとデザイナー Ethan Suero の Webflow / CSS Design Awards 関連ページを横断し、2色設計・Webflow+GSAP 構成・余白で作品を主役にする 3 つの学びを抽出。日曜の UI 批評 / Tips 枠 (柱⑥+④) として運用",
     "sources": [
-      "https://promptolis.com/blog/chatgpt-images-2-0-honest-guide-25-prompts/",
-      "https://pixverse.ai/en/blog/gpt-image-2-review-and-prompt-guide",
-      "https://developers.openai.com/cookbook/examples/multimodal/image-gen-models-prompting-guide",
-      "https://medium.com/no-time/chatgpt-images-2-0-just-dropped-and-its-seriously-good-38f31becd626",
-      "https://venturebeat.com/technology/openais-chatgpt-images-2-0-is-here-and-it-does-multilingual-text-full-infographics-slides-maps-even-manga-seemingly-flawlessly",
-      "https://techcrunch.com/2026/04/21/chatgpts-new-images-2-0-model-is-surprisingly-good-at-generating-text/"
+      "https://www.awwwards.com/sites/ashley-brooke",
+      "https://www.awwwards.com/websites/sites_of_the_day/",
+      "https://webflow.com/@ethan-suero",
+      "https://www.ethansuero.com/",
+      "https://www.cssdesignawards.com/sites/ethan-suero-portfolio/42271/",
+      "https://www.awwwards.com/awwwards_collections/collections/black-and-white-websites/"
     ],
-    "query": "gpt-image-2 Japanese text literal prompt designer Figma workflow tips",
-    "freshness_hours": 96
+    "query": "Awwwards Site of the Day April 2026 Ashley Brooke Ethan Suero portfolio design",
+    "freshness_hours": 30
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma×AI画像、日本語LPで失敗しない3コツ",
-      "description": "ChatGPT Images 2.0 を Figma で使う時、日本語LPの文字崩れを避ける実践 Tip",
-      "detail": "金曜に取り上げた ChatGPT Images 2.0 × Figma の週末深掘り。デザイナー向け prompt 解説ブログを横断すると、日本語 LP で失敗しないコツが 3 つに集約される。①日本語テキストは『翻訳して』ではなく、表示したい文字を literal でそのままプロンプトに貼る(描画精度 95% 超)。②ロゴは画像生成時に頼まず、余白だけ確保して Figma で本物の SVG を後合成。③レイアウト全体を AI に任せず、Make Image は素材生成に絞り、構図は Figma 側で組む。これで初心者でも崩れにくい LP の FV ドラフトが 5 秒で出る。",
-      "narration": "昨日のFigma×ChatGPT Images 2.0、早速日本語LPのFVを作ってみたら、そのまま使うと文字が崩れる罠がありました。",
-      "tags": ["Figma", "AI画像", "Tips"],
+      "title": "黒×白だけで戦うAwwwards受賞ポートフォリオ",
+      "description": "今週AwwwardsでSOTDになったAshley Brookeから、初心者でも真似できるポートフォリオ設計の3つの工夫を分解",
+      "detail": "今週 Awwwards で Site of the Day になった Ashley Brooke (デザイナー: Ethan Suero / Hishaam Fataar、Webflow + GSAP、score 7.37/10) は、配色が黒 (#131410) と白の 2 色だけ。学べる工夫は 3 つ。①色は黒白の 2 色だけに絞り、装飾より情報設計とタイポで魅せる。②余白を多く取り、作品自体を主役にする。③Webflow と GSAP の組み合わせで、コードを書かずにマイクロインタラクションを成立させている。週末の Tip として、自分の作品 1 枚を黒白だけでリメイクしてみると、色に頼らない構成力の弱点が一発で見える。",
+      "narration": "今週Awwwardsで Site of the Day になった Ashley Brooke、配色が黒と白の2色だけなのに、めちゃくちゃ刺さる理由を分解します。",
+      "tags": ["Awwwards", "ポートフォリオ", "UI批評"],
       "narration_sections": {
-        "hook": "昨日のFigma×ChatGPT Images 2.0、早速日本語LPのFVを作ってみたら、そのまま使うと文字が崩れる罠がありました。",
-        "origin": "コツは3つ。日本語は『翻訳して』と頼まず、表示したい文字をそのままプロンプトに貼る。これで描画精度が95%超に上がります。ロゴは余白だけ空けて、Figmaで本物のSVGを後合成。レイアウトもFigma側で組むのが安全です。",
-        "recommend": "AIは下書きの補助輪です。文字はリテラル指定、レイアウトはFigmaで詰める。Figmaナビと組み合わせれば作例づくりが一気に進みます。"
+        "hook": "今週Awwwardsで Site of the Day になった Ashley Brooke、配色が黒と白の2色だけなのに、めちゃくちゃ刺さる理由を分解します。",
+        "origin": "学べるポイントは3つ。1つ目、色は黒と白の2色だけ。色を足さず情報設計とタイポで魅せる構成です。2つ目、装飾より余白を取り、作品を主役にする。3つ目、WebflowとGSAPの組み合わせで、コードを書かずに動きで差別化できる。",
+        "recommend": "色を絞るのは初心者ほど効きます。Figmaなら2色のスタイル定義で再現可能。まずは作品1枚を黒白でリメイクしてみてください。"
       },
       "section_titles": {
-        "hook": "AI画像の落とし穴",
-        "origin": "失敗しない3コツ",
-        "recommend": "Figmaで仕上げる"
+        "hook": "今週のAwwwards",
+        "origin": "学べる3つの工夫",
+        "recommend": "Figmaで真似する"
       },
       "section_descriptions": {
-        "hook": "日本語LPでAI画像、そのまま使うと崩れる",
-        "origin": "日本語リテラル指定とロゴ後合成で精度95%",
-        "recommend": "AIは下書き、文字とレイアウトはFigmaで"
+        "hook": "黒と白だけのポートフォリオが受賞、その理由",
+        "origin": "色・余白・WebflowとGSAPの3つの設計",
+        "recommend": "Figmaで2色の作品を1枚リメイクしてみる"
       }
     }
   ]
