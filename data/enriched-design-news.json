@@ -1,41 +1,41 @@
 {
-  "date": "2026-04-26",
+  "date": "2026-04-27",
   "discovery": {
-    "method": "product-launches",
-    "description": "Awwwards Site of the Day (2026/04/25 受賞) Ashley Brooke を中心に、Awwwards SOTD リストとデザイナー Ethan Suero の Webflow / CSS Design Awards 関連ページを横断し、2色設計・Webflow+GSAP 構成・余白で作品を主役にする 3 つの学びを抽出。日曜の UI 批評 / Tips 枠 (柱⑥+④) として運用",
+    "method": "official-src",
+    "description": "Figma 公式 release notes と product updates blog を一次取得。4/23-24 公開のパフォーマンス改善 (ベクター編集10倍、Makeフレーム4倍、メモリ警告92%減、読み込み高速化) を、AI画像系3日連続で疲労してきた視聴者向けに「学習者の日々の体感に効く地味デカ更新」として柱①Figma公式ニュース枠で抽出",
     "sources": [
-      "https://www.awwwards.com/sites/ashley-brooke",
-      "https://www.awwwards.com/websites/sites_of_the_day/",
-      "https://webflow.com/@ethan-suero",
-      "https://www.ethansuero.com/",
-      "https://www.cssdesignawards.com/sites/ethan-suero-portfolio/42271/",
-      "https://www.awwwards.com/awwwards_collections/collections/black-and-white-websites/"
+      "https://www.figma.com/release-notes/",
+      "https://releasebot.io/updates/figma",
+      "https://www.figma.com/blog/product-updates/",
+      "https://www.figma.com/blog/state-of-the-designer-2026/",
+      "https://blog.logrocket.com/ux-design/figma-ai-2026-quick-overview/",
+      "https://www.figma.com/blog/keeping-figma-fast/"
     ],
-    "query": "Awwwards Site of the Day April 2026 Ashley Brooke Ethan Suero portfolio design",
-    "freshness_hours": 30
+    "query": "Figma release notes April 2026 vector editing 10x performance Make frame rate memory",
+    "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "黒×白だけで戦うAwwwards受賞ポートフォリオ",
-      "description": "今週AwwwardsでSOTDになったAshley Brookeから、初心者でも真似できるポートフォリオ設計の3つの工夫を分解",
-      "detail": "今週 Awwwards で Site of the Day になった Ashley Brooke (デザイナー: Ethan Suero / Hishaam Fataar、Webflow + GSAP、score 7.37/10) は、配色が黒 (#131410) と白の 2 色だけ。学べる工夫は 3 つ。①色は黒白の 2 色だけに絞り、装飾より情報設計とタイポで魅せる。②余白を多く取り、作品自体を主役にする。③Webflow と GSAP の組み合わせで、コードを書かずにマイクロインタラクションを成立させている。週末の Tip として、自分の作品 1 枚を黒白だけでリメイクしてみると、色に頼らない構成力の弱点が一発で見える。",
-      "narration": "今週Awwwardsで Site of the Day になった Ashley Brooke、配色が黒と白の2色だけなのに、めちゃくちゃ刺さる理由を分解します。",
-      "tags": ["Awwwards", "ポートフォリオ", "UI批評"],
+      "title": "Figmaが大幅高速化、ベクター10倍&メモリ警告92%減",
+      "description": "Figmaの4月公式リリースで、毎日触ってる人ほど体感が変わる地味デカ更新が来ました",
+      "detail": "Figma が 2026 年 4 月の公式 release notes で全体パフォーマンス改善を発表。ベクター編集の応答速度が最大 10 倍、Make のフレームレートが 4 倍滑らかに、ファイルの読み込み時間も短縮、メモリ警告は 92% 減少。重いプロトタイプや大きなデザインファイルで固まりがちだった人ほど効きが大きい更新。AI 系の派手な新機能ではなく「Figma そのものが速く軽くなる」ベース改善で、毎日触っている学習者ほど体感差が出る。今日は最新版に更新して、過去に重さで諦めた作品を開き直すだけで生産性が変わる可能性が高い。",
+      "narration": "Figma、また地味にデカい更新が来てます。ベクター編集が最大10倍、メモリ警告が92%減って、毎日触ってる人ほど体感が変わります。",
+      "tags": ["Figma", "公式リリース", "高速化"],
       "narration_sections": {
-        "hook": "今週Awwwardsで Site of the Day になった Ashley Brooke、配色が黒と白の2色だけなのに、めちゃくちゃ刺さる理由を分解します。",
-        "origin": "学べるポイントは3つ。1つ目、色は黒と白の2色だけ。色を足さず情報設計とタイポで魅せる構成です。2つ目、装飾より余白を取り、作品を主役にする。3つ目、WebflowとGSAPの組み合わせで、コードを書かずに動きで差別化できる。",
-        "recommend": "色を絞るのは初心者ほど効きます。Figmaなら2色のスタイル定義で再現可能。まずは作品1枚を黒白でリメイクしてみてください。"
+        "hook": "Figma、また地味にデカい更新が来てます。ベクター編集が最大10倍、メモリ警告が92%減って、毎日触ってる人ほど体感が変わります。",
+        "origin": "4月の公式リリースでFigma全体が大幅高速化。ベクター編集の応答速度が最大10倍、Makeのフレームレートが4倍滑らかに、ファイルの読み込みも速くなり、メモリ警告は92%減少と発表。重いプロトで固まりがちだった人ほど、効きが大きい更新です。",
+        "recommend": "重さを理由に諦めてた作品を、もう一度開いてみてください。学習中は速度ストレスが集中を奪うので、まずは最新版に更新を。"
       },
       "section_titles": {
-        "hook": "今週のAwwwards",
-        "origin": "学べる3つの工夫",
-        "recommend": "Figmaで真似する"
+        "hook": "Figma大幅高速化",
+        "origin": "数字で見る改善幅",
+        "recommend": "学習者の効きどころ"
       },
       "section_descriptions": {
-        "hook": "黒と白だけのポートフォリオが受賞、その理由",
-        "origin": "色・余白・WebflowとGSAPの3つの設計",
-        "recommend": "Figmaで2色の作品を1枚リメイクしてみる"
+        "hook": "ベクター10倍、メモリ警告92%減の地味デカ更新",
+        "origin": "Figmaの4月リリースの数字を学習者目線で整理",
+        "recommend": "重いファイルを諦めてた人ほど、まず最新版に更新"
       }
     }
   ]
