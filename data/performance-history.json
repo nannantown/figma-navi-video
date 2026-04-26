@@ -40,10 +40,10 @@
         "freshness_hours": 120
       },
       "stats": {
-        "views": 142,
+        "views": 144,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-04-25T23:55:46.505Z"
+        "updatedAt": "2026-04-26T23:57:02.050Z"
       }
     },
     {
@@ -87,7 +87,7 @@
         "views": 174,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-25T23:55:46.505Z"
+        "updatedAt": "2026-04-26T23:57:02.050Z"
       }
     },
     {
@@ -129,10 +129,10 @@
         "freshness_hours": 72
       },
       "stats": {
-        "views": 48,
+        "views": 69,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-25T23:55:46.505Z"
+        "updatedAt": "2026-04-26T23:57:02.050Z"
       }
     },
     {
@@ -177,7 +177,7 @@
         "views": 114,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-25T23:55:46.505Z"
+        "updatedAt": "2026-04-26T23:57:02.050Z"
       }
     },
     {
@@ -219,6 +219,51 @@
         "freshness_hours": 30
       },
       "stats": {
+        "views": 248,
+        "likes": 1,
+        "comments": 0,
+        "updatedAt": "2026-04-26T23:57:02.050Z"
+      }
+    },
+    {
+      "videoId": "2e54HyTWO1Y",
+      "videoUrl": "https://youtube.com/shorts/2e54HyTWO1Y",
+      "date": "2026-04-27",
+      "title": "【デザインニュース】Figmaが大幅高速化、ベクター10倍&メモリ警告92%減｜2026/04/27 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 50,
+      "discovery": {
+        "method": "official-src",
+        "description": "Figma 公式 release notes と product updates blog を一次取得。4/23-24 公開のパフォーマンス改善 (ベクター編集10倍、Makeフレーム4倍、メモリ警告92%減、読み込み高速化) を、AI画像系3日連続で疲労してきた視聴者向けに「学習者の日々の体感に効く地味デカ更新」として柱①Figma公式ニュース枠で抽出",
+        "sources": [
+          "https://www.figma.com/release-notes/",
+          "https://releasebot.io/updates/figma",
+          "https://www.figma.com/blog/product-updates/",
+          "https://www.figma.com/blog/state-of-the-designer-2026/",
+          "https://blog.logrocket.com/ux-design/figma-ai-2026-quick-overview/",
+          "https://www.figma.com/blog/keeping-figma-fast/"
+        ],
+        "query": "Figma release notes April 2026 vector editing 10x performance Make frame rate memory",
+        "freshness_hours": 96
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -252,6 +297,13 @@
       "date": "2026-04-25",
       "changes": [
         "Day performance: Thu=174, Wed=142, Sat=114, Fri=48"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-04-26",
+      "changes": [
+        "Day performance: Sun=248, Thu=174, Wed=144, Sat=114, Fri=69"
       ],
       "recommendedTemplate": "standard"
     }
