@@ -1,41 +1,41 @@
 {
-  "date": "2026-04-27",
+  "date": "2026-04-28",
   "discovery": {
-    "method": "official-src",
-    "description": "Figma 公式 release notes と product updates blog を一次取得。4/23-24 公開のパフォーマンス改善 (ベクター編集10倍、Makeフレーム4倍、メモリ警告92%減、読み込み高速化) を、AI画像系3日連続で疲労してきた視聴者向けに「学習者の日々の体感に効く地味デカ更新」として柱①Figma公式ニュース枠で抽出",
+    "method": "news-en",
+    "description": "Android Authority (4/27 公開) と Android Headlines を中心に、Gemini Android アプリの UX 2.0 リーク (グラデアニメ・サイドバー全画面化・処理中演出の刷新) を一次的に拾い、英語テック報道ソースを束ねて柱③業界デザインニュース枠で抽出。前 PDCA で WORST だった news-en を、AI画像系を外した別ネタで再挑戦する Explore 枠",
     "sources": [
-      "https://www.figma.com/release-notes/",
-      "https://releasebot.io/updates/figma",
-      "https://www.figma.com/blog/product-updates/",
-      "https://www.figma.com/blog/state-of-the-designer-2026/",
-      "https://blog.logrocket.com/ux-design/figma-ai-2026-quick-overview/",
-      "https://www.figma.com/blog/keeping-figma-fast/"
+      "https://www.androidauthority.com/google-gemini-animated-gradient-backgrounds-redesign-3661003/",
+      "https://www.androidheadlines.com/2026/04/google-gemini-redesign-ux-animated-backgrounds.html",
+      "https://www.androidauthority.com/gemini-android-colorful-upgrade-3659835/",
+      "https://www.androidpolice.com/google-gemini-animated-backgrounds-queries/",
+      "https://www.techlusive.in/news/google-gemini-app-leaks-highlight-new-sidebar-icons-and-live-interface-changes-1659025/",
+      "https://www.androidauthority.com/gemini-overlay-and-live-ui-changes-3655577/"
     ],
-    "query": "Figma release notes April 2026 vector editing 10x performance Make frame rate memory",
-    "freshness_hours": 96
+    "query": "Google Gemini UX 2.0 leak APK teardown gradient animation sidebar April 2026",
+    "freshness_hours": 24
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figmaが大幅高速化、ベクター10倍&メモリ警告92%減",
-      "description": "Figmaの4月公式リリースで、毎日触ってる人ほど体感が変わる地味デカ更新が来ました",
-      "detail": "Figma が 2026 年 4 月の公式 release notes で全体パフォーマンス改善を発表。ベクター編集の応答速度が最大 10 倍、Make のフレームレートが 4 倍滑らかに、ファイルの読み込み時間も短縮、メモリ警告は 92% 減少。重いプロトタイプや大きなデザインファイルで固まりがちだった人ほど効きが大きい更新。AI 系の派手な新機能ではなく「Figma そのものが速く軽くなる」ベース改善で、毎日触っている学習者ほど体感差が出る。今日は最新版に更新して、過去に重さで諦めた作品を開き直すだけで生産性が変わる可能性が高い。",
-      "narration": "Figma、また地味にデカい更新が来てます。ベクター編集が最大10倍、メモリ警告が92%減って、毎日触ってる人ほど体感が変わります。",
-      "tags": ["Figma", "公式リリース", "高速化"],
+      "title": "Gemini UX 2.0 リーク、AI処理中の演出が大刷新",
+      "description": "Gemini の AI が考えてる時間の見せ方が変わるリークが昨日入りました",
+      "detail": "Android Authority と Android Headlines が 4/27 に報じた APK 解析リークによると、Google の Gemini Android アプリは UX 2.0 リニューアルで、ユーザーが問い合わせを送信中も AI が処理中もカラフルなグラデーションが背景で動くアニメーションに刷新される。サイドバーは現状の画面 80% から全画面表示に拡張、新規チャットや共有ボタンも再配置、ライト/ダークの背景バリエーションも追加。5月の Google I/O での正式発表が見込まれている。AI ツールの UX 競争は『静止画面』から『状態を可視化する動的フィードバック』へ移行しており、学習者にとっては待ち時間の体験設計を学ぶ良い教材。",
+      "narration": "Gemini、AIが考えてる時間の見せ方が大きく変わりそうです。昨日出たAPK解析で、UX 2.0 リニューアルの中身がリークしました。",
+      "tags": ["Gemini", "Google", "UXデザイン"],
       "narration_sections": {
-        "hook": "Figma、また地味にデカい更新が来てます。ベクター編集が最大10倍、メモリ警告が92%減って、毎日触ってる人ほど体感が変わります。",
-        "origin": "4月の公式リリースでFigma全体が大幅高速化。ベクター編集の応答速度が最大10倍、Makeのフレームレートが4倍滑らかに、ファイルの読み込みも速くなり、メモリ警告は92%減少と発表。重いプロトで固まりがちだった人ほど、効きが大きい更新です。",
-        "recommend": "重さを理由に諦めてた作品を、もう一度開いてみてください。学習中は速度ストレスが集中を奪うので、まずは最新版に更新を。"
+        "hook": "Gemini、AIが考えてる時間の見せ方が大きく変わりそうです。昨日出たAPK解析で、UX 2.0 リニューアルの中身がリークしました。",
+        "origin": "Android Authority によると、Gemini は問い合わせ中も処理中もカラフルなグラデーションが背景で動くアニメーションに刷新。サイドバーは画面全体に広がり、新規チャットや共有ボタンも再配置。5月のGoogle I/Oで正式発表される見込みです。",
+        "recommend": "学習者が真似できるのは『待ち時間の体験設計』。AI処理中の見える化は、Figmaのプロトでも今すぐ仕込めます。"
       },
       "section_titles": {
-        "hook": "Figma大幅高速化",
-        "origin": "数字で見る改善幅",
-        "recommend": "学習者の効きどころ"
+        "hook": "Gemini大刷新リーク",
+        "origin": "処理中演出が変わる",
+        "recommend": "待ち時間UIを学ぶ"
       },
       "section_descriptions": {
-        "hook": "ベクター10倍、メモリ警告92%減の地味デカ更新",
-        "origin": "Figmaの4月リリースの数字を学習者目線で整理",
-        "recommend": "重いファイルを諦めてた人ほど、まず最新版に更新"
+        "hook": "AI処理中の演出を一新するUX 2.0 リーク速報",
+        "origin": "Android Authority が昨日報じた中身を整理",
+        "recommend": "AIの待ち時間設計をFigmaで真似する視点"
       }
     }
   ]
