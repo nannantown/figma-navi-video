@@ -40,10 +40,10 @@
         "freshness_hours": 120
       },
       "stats": {
-        "views": 144,
+        "views": 143,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-04-26T23:57:02.050Z"
+        "updatedAt": "2026-04-28T00:06:59.203Z"
       }
     },
     {
@@ -84,10 +84,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 174,
+        "views": 175,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-26T23:57:02.050Z"
+        "updatedAt": "2026-04-28T00:06:59.203Z"
       }
     },
     {
@@ -132,7 +132,7 @@
         "views": 69,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-26T23:57:02.050Z"
+        "updatedAt": "2026-04-28T00:06:59.203Z"
       }
     },
     {
@@ -177,7 +177,7 @@
         "views": 114,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-26T23:57:02.050Z"
+        "updatedAt": "2026-04-28T00:06:59.203Z"
       }
     },
     {
@@ -219,10 +219,10 @@
         "freshness_hours": 30
       },
       "stats": {
-        "views": 248,
+        "views": 249,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-04-26T23:57:02.050Z"
+        "updatedAt": "2026-04-28T00:06:59.203Z"
       }
     },
     {
@@ -262,6 +262,51 @@
         ],
         "query": "Figma release notes April 2026 vector editing 10x performance Make frame rate memory",
         "freshness_hours": 96
+      },
+      "stats": {
+        "views": 95,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-04-28T00:06:59.203Z"
+      }
+    },
+    {
+      "videoId": "JLtCuaFLFcg",
+      "videoUrl": "https://youtube.com/shorts/JLtCuaFLFcg",
+      "date": "2026-04-28",
+      "title": "【デザインニュース】Gemini UX 2.0 リーク、AI処理中の演出が大刷新｜2026/04/28 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 45,
+      "discovery": {
+        "method": "news-en",
+        "description": "Android Authority (4/27 公開) と Android Headlines を中心に、Gemini Android アプリの UX 2.0 リーク (グラデアニメ・サイドバー全画面化・処理中演出の刷新) を一次的に拾い、英語テック報道ソースを束ねて柱③業界デザインニュース枠で抽出。前 PDCA で WORST だった news-en を、AI画像系を外した別ネタで再挑戦する Explore 枠",
+        "sources": [
+          "https://www.androidauthority.com/google-gemini-animated-gradient-backgrounds-redesign-3661003/",
+          "https://www.androidheadlines.com/2026/04/google-gemini-redesign-ux-animated-backgrounds.html",
+          "https://www.androidauthority.com/gemini-android-colorful-upgrade-3659835/",
+          "https://www.androidpolice.com/google-gemini-animated-backgrounds-queries/",
+          "https://www.techlusive.in/news/google-gemini-app-leaks-highlight-new-sidebar-icons-and-live-interface-changes-1659025/",
+          "https://www.androidauthority.com/gemini-overlay-and-live-ui-changes-3655577/"
+        ],
+        "query": "Google Gemini UX 2.0 leak APK teardown gradient animation sidebar April 2026",
+        "freshness_hours": 24
       },
       "stats": {
         "views": 0,
@@ -304,6 +349,13 @@
       "date": "2026-04-26",
       "changes": [
         "Day performance: Sun=248, Thu=174, Wed=144, Sat=114, Fri=69"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-04-28",
+      "changes": [
+        "Day performance: Sun=249, Thu=175, Wed=143, Sat=114, Mon=95, Fri=69"
       ],
       "recommendedTemplate": "standard"
     }
