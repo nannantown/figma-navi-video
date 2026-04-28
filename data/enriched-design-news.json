@@ -1,41 +1,41 @@
 {
-  "date": "2026-04-28",
+  "date": "2026-04-29",
   "discovery": {
-    "method": "news-en",
-    "description": "Android Authority (4/27 公開) と Android Headlines を中心に、Gemini Android アプリの UX 2.0 リーク (グラデアニメ・サイドバー全画面化・処理中演出の刷新) を一次的に拾い、英語テック報道ソースを束ねて柱③業界デザインニュース枠で抽出。前 PDCA で WORST だった news-en を、AI画像系を外した別ネタで再挑戦する Explore 枠",
+    "method": "product-launches",
+    "description": "Magic Patterns 公式ブログと Product Hunt / UIComet の launch ページを横断、4/23 に発表された Agent 2.0 の効率指標(クレジット-15%/TTFT+10%/エラー率-8%)・1,500社導入(Granola/Vanta/Freedom Mortgage)・Figma 直接連携の3点を一次取得。柱② プラグイン/エコシステム枠を、TOP1 method (4/26 product-launches=249views) で Exploit 再投入。直近2日(4/28 news-en, 4/27 official-src) と method 重複なし、AI画像系から topic 軸も切り替え",
     "sources": [
-      "https://www.androidauthority.com/google-gemini-animated-gradient-backgrounds-redesign-3661003/",
-      "https://www.androidheadlines.com/2026/04/google-gemini-redesign-ux-animated-backgrounds.html",
-      "https://www.androidauthority.com/gemini-android-colorful-upgrade-3659835/",
-      "https://www.androidpolice.com/google-gemini-animated-backgrounds-queries/",
-      "https://www.techlusive.in/news/google-gemini-app-leaks-highlight-new-sidebar-icons-and-live-interface-changes-1659025/",
-      "https://www.androidauthority.com/gemini-overlay-and-live-ui-changes-3655577/"
+      "https://www.magicpatterns.com/blog/magic-patterns-agent-2-0",
+      "https://launches.uicomet.com/products/magic-patterns-agent-20-YTzle",
+      "https://www.producthunt.com/products/magicpatterns/launches",
+      "https://www.magicpatterns.com/",
+      "https://www.figma.com/community/plugin/1304255855834420274/magic-patterns",
+      "https://www.magicpatterns.com/blog/figma-make-alternatives"
     ],
-    "query": "Google Gemini UX 2.0 leak APK teardown gradient animation sidebar April 2026",
-    "freshness_hours": 24
+    "query": "Magic Patterns Agent 2.0 launch April 23 2026 metrics 1500 teams Figma integration",
+    "freshness_hours": 144
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Gemini UX 2.0 リーク、AI処理中の演出が大刷新",
-      "description": "Gemini の AI が考えてる時間の見せ方が変わるリークが昨日入りました",
-      "detail": "Android Authority と Android Headlines が 4/27 に報じた APK 解析リークによると、Google の Gemini Android アプリは UX 2.0 リニューアルで、ユーザーが問い合わせを送信中も AI が処理中もカラフルなグラデーションが背景で動くアニメーションに刷新される。サイドバーは現状の画面 80% から全画面表示に拡張、新規チャットや共有ボタンも再配置、ライト/ダークの背景バリエーションも追加。5月の Google I/O での正式発表が見込まれている。AI ツールの UX 競争は『静止画面』から『状態を可視化する動的フィードバック』へ移行しており、学習者にとっては待ち時間の体験設計を学ぶ良い教材。",
-      "narration": "Gemini、AIが考えてる時間の見せ方が大きく変わりそうです。昨日出たAPK解析で、UX 2.0 リニューアルの中身がリークしました。",
-      "tags": ["Gemini", "Google", "UXデザイン"],
+      "title": "Magic Patterns Agent 2.0、AIデザインツールが効率の数字で競争へ",
+      "description": "AI デザインツールが効率の数字で競い始めた、その最新の代表例が4/23 公開の Magic Patterns Agent 2.0",
+      "detail": "Magic Patterns は Figma と双方向にインポート/エクスポートできる AI デザインエージェント。4/23 に公開した Agent 2.0 は、応答開始までの時間が前バージョン比で 10% 短縮、消費クレジットは 15% 削減、エラー率は 8% 改善。Granola・Vanta・Freedom Mortgage を含む 1,500 社以上が業務で利用しており、3 年分の顧客ワークフロー観察を反映したモデルだと公式ブログは説明する。Claude Design・Figma Make・Canva AI 2.0 と続いた4月の AI デザイン競争は『誰が作れるか』から『どれくらい速く・安く・正確に作れるか』へフェーズが移行した。",
+      "narration": "AIデザインツールが効率の数字で競い始めたのをご存知ですか。先週23日、Magic PatternsがAgent 2.0を発表しました。",
+      "tags": ["Magic Patterns", "AIデザイン", "ツール選び"],
       "narration_sections": {
-        "hook": "Gemini、AIが考えてる時間の見せ方が大きく変わりそうです。昨日出たAPK解析で、UX 2.0 リニューアルの中身がリークしました。",
-        "origin": "Android Authority によると、Gemini は問い合わせ中も処理中もカラフルなグラデーションが背景で動くアニメーションに刷新。サイドバーは画面全体に広がり、新規チャットや共有ボタンも再配置。5月のGoogle I/Oで正式発表される見込みです。",
-        "recommend": "学習者が真似できるのは『待ち時間の体験設計』。AI処理中の見える化は、Figmaのプロトでも今すぐ仕込めます。"
+        "hook": "AIデザインツールが効率の数字で競い始めたのをご存知ですか。先週23日、Magic PatternsがAgent 2.0を発表しました。",
+        "origin": "Magic PatternsはFigmaと直接連携できるAIデザインエージェント。新版は応答開始が10%速く、消費クレジットは15%少なく、エラー率も8%下がっています。GranolaやVantaを含む1,500社以上が業務で活用中です。",
+        "recommend": "AIデザインツールは増える一方。学習者は無料枠で軽く触り、自分の作業に必要な機能だけ見極める姿勢が今後の差になります。"
       },
       "section_titles": {
-        "hook": "Gemini大刷新リーク",
-        "origin": "処理中演出が変わる",
-        "recommend": "待ち時間UIを学ぶ"
+        "hook": "AIツール効率競争",
+        "origin": "新版が示した数字",
+        "recommend": "無料枠で見極める"
       },
       "section_descriptions": {
-        "hook": "AI処理中の演出を一新するUX 2.0 リーク速報",
-        "origin": "Android Authority が昨日報じた中身を整理",
-        "recommend": "AIの待ち時間設計をFigmaで真似する視点"
+        "hook": "効率指標で競うAIデザインツール最前線",
+        "origin": "応答10%速く、クレジット15%減、Figma連携も",
+        "recommend": "学習者は無料枠で触り選ぶ姿勢が差を作る"
       }
     }
   ]
