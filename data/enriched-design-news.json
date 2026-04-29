@@ -1,41 +1,44 @@
 {
-  "date": "2026-04-29",
+  "date": "2026-04-30",
   "discovery": {
-    "method": "product-launches",
-    "description": "Magic Patterns 公式ブログと Product Hunt / UIComet の launch ページを横断、4/23 に発表された Agent 2.0 の効率指標(クレジット-15%/TTFT+10%/エラー率-8%)・1,500社導入(Granola/Vanta/Freedom Mortgage)・Figma 直接連携の3点を一次取得。柱② プラグイン/エコシステム枠を、TOP1 method (4/26 product-launches=249views) で Exploit 再投入。直近2日(4/28 news-en, 4/27 official-src) と method 重複なし、AI画像系から topic 軸も切り替え",
+    "method": "official-src",
+    "description": "Figma 公式 release notes / Newsroom / Help Center を直接当たり、4/29 公開の Make Image / Edit Image『Add reference』機能を一次取得。official-src は過去14日 avg views=136 (n=2) で TOP3 method、直近利用4/27で2日空きあり、直近2日(4/29 product-launches, 4/28 news-en)とも重複なし。柱① Figma 公式ニュース。Primary 層のポートフォリオ作成シーンに直接効く UX 改善で、AI を補助輪として位置づけやすい題材",
     "sources": [
-      "https://www.magicpatterns.com/blog/magic-patterns-agent-2-0",
-      "https://launches.uicomet.com/products/magic-patterns-agent-20-YTzle",
-      "https://www.producthunt.com/products/magicpatterns/launches",
-      "https://www.magicpatterns.com/",
-      "https://www.figma.com/community/plugin/1304255855834420274/magic-patterns",
-      "https://www.magicpatterns.com/blog/figma-make-alternatives"
+      "https://www.figma.com/release-notes/",
+      "https://www.figma.com/newsroom/",
+      "https://help.figma.com/hc/en-us/articles/31304529835671-Attach-designs-and-images-to-a-prompt",
+      "https://releasebot.io/updates/figma",
+      "https://www.figma.com/blog/figjam-your-coding-agents-whiteboard/"
     ],
-    "query": "Magic Patterns Agent 2.0 launch April 23 2026 metrics 1500 teams Figma integration",
-    "freshness_hours": 144
+    "query": "Figma release notes April 29 2026 Add reference Make Image Edit Image canvas drag drop",
+    "freshness_hours": 20
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Magic Patterns Agent 2.0、AIデザインツールが効率の数字で競争へ",
-      "description": "AI デザインツールが効率の数字で競い始めた、その最新の代表例が4/23 公開の Magic Patterns Agent 2.0",
-      "detail": "Magic Patterns は Figma と双方向にインポート/エクスポートできる AI デザインエージェント。4/23 に公開した Agent 2.0 は、応答開始までの時間が前バージョン比で 10% 短縮、消費クレジットは 15% 削減、エラー率は 8% 改善。Granola・Vanta・Freedom Mortgage を含む 1,500 社以上が業務で利用しており、3 年分の顧客ワークフロー観察を反映したモデルだと公式ブログは説明する。Claude Design・Figma Make・Canva AI 2.0 と続いた4月の AI デザイン競争は『誰が作れるか』から『どれくらい速く・安く・正確に作れるか』へフェーズが移行した。",
-      "narration": "AIデザインツールが効率の数字で競い始めたのをご存知ですか。先週23日、Magic PatternsがAgent 2.0を発表しました。",
-      "tags": ["Magic Patterns", "AIデザイン", "ツール選び"],
+      "title": "Figma画像AI、キャンバスから直接ドラッグで参照可能に",
+      "description": "Figma 公式が 4/29 に発表した Make Image / Edit Image の参照画像 UX 大改善",
+      "detail": "Figma 公式が 4/29 に Make Image / Edit Image の参照画像追加 UX を刷新。これまでは別ファイルをアップロードする必要があったが、新版ではキャンバス上の画像・ベクター・フレーム・コンポーネントに表示される『Add reference』ボタンを押すか、プロンプト欄へのコピー&ペースト、または直接ドラッグ&ドロップで参照を渡せるようになった。Figma Design・Draw・Buzz・Slides・FigJam の AI 画像機能すべてで利用可能。すでにキャンバスに置いてある作例から色味・構図・タイポを引き継いでバリエーションを生成しやすくなり、ポートフォリオや LP のビジュアル制作で『同じトーンで複数枚を量産する』ワークフローが大幅に時短される。",
+      "narration": "知ってました?Figmaの画像AI、昨日からキャンバスの絵をそのままドラッグして参照に使える便利アップデートが来たんです。",
+      "tags": [
+        "Figma",
+        "AI画像生成",
+        "Make Image"
+      ],
       "narration_sections": {
-        "hook": "AIデザインツールが効率の数字で競い始めたのをご存知ですか。先週23日、Magic PatternsがAgent 2.0を発表しました。",
-        "origin": "Magic PatternsはFigmaと直接連携できるAIデザインエージェント。新版は応答開始が10%速く、消費クレジットは15%少なく、エラー率も8%下がっています。GranolaやVantaを含む1,500社以上が業務で活用中です。",
-        "recommend": "AIデザインツールは増える一方。学習者は無料枠で軽く触り、自分の作業に必要な機能だけ見極める姿勢が今後の差になります。"
+        "hook": "知ってました?Figmaの画像AI、昨日からキャンバスの絵をそのままドラッグして参照に使える便利アップデートが来たんです。",
+        "origin": "Figma公式が4/29に発表。Make ImageとEdit Imageで、画像・フレーム・コンポーネントに出るAdd referenceボタンか、ドラッグ&ドロップで参照を追加可能。Design・Draw・Buzz・Slides・FigJamで動きます。",
+        "recommend": "ポートフォリオの色味やトーンを揃えたい人に最高。AIは作風の補助輪、参照を渡すほど自分らしさが残ります。"
       },
       "section_titles": {
-        "hook": "AIツール効率競争",
-        "origin": "新版が示した数字",
-        "recommend": "無料枠で見極める"
+        "hook": "Figma画像AI更新",
+        "origin": "4/29公式発表",
+        "recommend": "ポートフォリオ活用"
       },
       "section_descriptions": {
-        "hook": "効率指標で競うAIデザインツール最前線",
-        "origin": "応答10%速く、クレジット15%減、Figma連携も",
-        "recommend": "学習者は無料枠で触り選ぶ姿勢が差を作る"
+        "hook": "キャンバスから直接ドラッグで参照画像が渡せる",
+        "origin": "Add referenceボタンとドラッグ&ドロップに対応",
+        "recommend": "色味とトーンを揃えたい学習者に超実用"
       }
     }
   ]
