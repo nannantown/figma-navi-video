@@ -43,7 +43,7 @@
         "views": 143,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-04-28T00:06:59.203Z"
+        "updatedAt": "2026-04-29T00:07:34.166Z"
       }
     },
     {
@@ -87,7 +87,7 @@
         "views": 175,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-28T00:06:59.203Z"
+        "updatedAt": "2026-04-29T00:07:34.166Z"
       }
     },
     {
@@ -132,7 +132,7 @@
         "views": 69,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-28T00:06:59.203Z"
+        "updatedAt": "2026-04-29T00:07:34.166Z"
       }
     },
     {
@@ -177,7 +177,7 @@
         "views": 114,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-28T00:06:59.203Z"
+        "updatedAt": "2026-04-29T00:07:34.166Z"
       }
     },
     {
@@ -222,7 +222,7 @@
         "views": 249,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-04-28T00:06:59.203Z"
+        "updatedAt": "2026-04-29T00:07:34.166Z"
       }
     },
     {
@@ -264,10 +264,10 @@
         "freshness_hours": 96
       },
       "stats": {
-        "views": 95,
+        "views": 97,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-28T00:06:59.203Z"
+        "updatedAt": "2026-04-29T00:07:34.166Z"
       }
     },
     {
@@ -307,6 +307,51 @@
         ],
         "query": "Google Gemini UX 2.0 leak APK teardown gradient animation sidebar April 2026",
         "freshness_hours": 24
+      },
+      "stats": {
+        "views": 56,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-04-29T00:07:34.166Z"
+      }
+    },
+    {
+      "videoId": "fX-rdF_wWkk",
+      "videoUrl": "https://youtube.com/shorts/fX-rdF_wWkk",
+      "date": "2026-04-29",
+      "title": "【デザインニュース】Magic Patterns Agent 2.0、AIデザインツールが効率の数字で競争へ｜2026/04/29 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 47,
+      "discovery": {
+        "method": "product-launches",
+        "description": "Magic Patterns 公式ブログと Product Hunt / UIComet の launch ページを横断、4/23 に発表された Agent 2.0 の効率指標(クレジット-15%/TTFT+10%/エラー率-8%)・1,500社導入(Granola/Vanta/Freedom Mortgage)・Figma 直接連携の3点を一次取得。柱② プラグイン/エコシステム枠を、TOP1 method (4/26 product-launches=249views) で Exploit 再投入。直近2日(4/28 news-en, 4/27 official-src) と method 重複なし、AI画像系から topic 軸も切り替え",
+        "sources": [
+          "https://www.magicpatterns.com/blog/magic-patterns-agent-2-0",
+          "https://launches.uicomet.com/products/magic-patterns-agent-20-YTzle",
+          "https://www.producthunt.com/products/magicpatterns/launches",
+          "https://www.magicpatterns.com/",
+          "https://www.figma.com/community/plugin/1304255855834420274/magic-patterns",
+          "https://www.magicpatterns.com/blog/figma-make-alternatives"
+        ],
+        "query": "Magic Patterns Agent 2.0 launch April 23 2026 metrics 1500 teams Figma integration",
+        "freshness_hours": 144
       },
       "stats": {
         "views": 0,
@@ -356,6 +401,13 @@
       "date": "2026-04-28",
       "changes": [
         "Day performance: Sun=249, Thu=175, Wed=143, Sat=114, Mon=95, Fri=69"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-04-29",
+      "changes": [
+        "Day performance: Sun=249, Thu=175, Wed=143, Sat=114, Mon=97, Fri=69, Tue=56"
       ],
       "recommendedTemplate": "standard"
     }
