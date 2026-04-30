@@ -1,44 +1,45 @@
 {
-  "date": "2026-04-30",
+  "date": "2026-05-01",
   "discovery": {
-    "method": "official-src",
-    "description": "Figma 公式 release notes / Newsroom / Help Center を直接当たり、4/29 公開の Make Image / Edit Image『Add reference』機能を一次取得。official-src は過去14日 avg views=136 (n=2) で TOP3 method、直近利用4/27で2日空きあり、直近2日(4/29 product-launches, 4/28 news-en)とも重複なし。柱① Figma 公式ニュース。Primary 層のポートフォリオ作成シーンに直接効く UX 改善で、AI を補助輪として位置づけやすい題材",
+    "method": "social-en",
+    "description": "Pablo Stanley の X 投稿(Text on Path を『underrated new figma feature』と紹介)と、Figma Forum の長年スレッド『make text follow a path or a circle』『Figma Type on Path』のコミュニティ要望を起点に、4/29 公開の Figma Draw 大型アップデートで Text on Path がネイティブ実装された事実を発見。プラグイン依存・Illustrator 戻りという駆け出し層の壁が消えるニュース。official-src の release-notes と Figma Blog で裏取り。直近 2 日(4/30 official-src, 4/29 product-launches)と method 重複なし。social-en は 4/22 以来 9 日空きの TOP3 method(過去14日 avg 143)。柱① Figma 公式ニュースを Primary 学習者の課題(ロゴ・円形バナー作成)起点で噛み砕く",
     "sources": [
+      "https://x.com/pablostanley/status/1920215348743475689",
+      "https://forum.figma.com/suggest-a-feature-11/make-text-follow-a-path-or-a-circle-34880",
+      "https://forum.figma.com/report-a-problem-6/figma-type-on-path-41240",
       "https://www.figma.com/release-notes/",
-      "https://www.figma.com/newsroom/",
-      "https://help.figma.com/hc/en-us/articles/31304529835671-Attach-designs-and-images-to-a-prompt",
       "https://releasebot.io/updates/figma",
-      "https://www.figma.com/blog/figjam-your-coding-agents-whiteboard/"
+      "https://www.figma.com/community/file/1505397383440534720/text-on-path"
     ],
-    "query": "Figma release notes April 29 2026 Add reference Make Image Edit Image canvas drag drop",
-    "freshness_hours": 20
+    "query": "Figma Draw text on path designer reaction X Twitter Forum April 29 2026",
+    "freshness_hours": 36
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma画像AI、キャンバスから直接ドラッグで参照可能に",
-      "description": "Figma 公式が 4/29 に発表した Make Image / Edit Image の参照画像 UX 大改善",
-      "detail": "Figma 公式が 4/29 に Make Image / Edit Image の参照画像追加 UX を刷新。これまでは別ファイルをアップロードする必要があったが、新版ではキャンバス上の画像・ベクター・フレーム・コンポーネントに表示される『Add reference』ボタンを押すか、プロンプト欄へのコピー&ペースト、または直接ドラッグ&ドロップで参照を渡せるようになった。Figma Design・Draw・Buzz・Slides・FigJam の AI 画像機能すべてで利用可能。すでにキャンバスに置いてある作例から色味・構図・タイポを引き継いでバリエーションを生成しやすくなり、ポートフォリオや LP のビジュアル制作で『同じトーンで複数枚を量産する』ワークフローが大幅に時短される。",
-      "narration": "知ってました?Figmaの画像AI、昨日からキャンバスの絵をそのままドラッグして参照に使える便利アップデートが来たんです。",
+      "title": "Figma Draw、円に沿うテキストが公式機能に",
+      "description": "Figmaが4/29にDraw大型アップデートを公開、長年プラグイン頼みだったText on Pathが正式機能化",
+      "detail": "Figma 公式が 4/29 に Figma Draw の大型アップデートを公開。デザイナーコミュニティが Forum で何年も要望してきた『パスや円に沿ってテキストを流す』Text on Path ツールがついにネイティブ実装され、プラグインや Illustrator との往復が不要に。あわせて Draw モードのまま Auto Layout を適用、レイヤーパネルでコンポーネント・インスタンス・テキスト種別をインライン表示、ブラシのテクスチャ調整、cmd+クリックでストローク色・太さ・スタイル抽出など、日々使うツールが Draw 内に集約された。ロゴ・バッジ・円形バナー・サークルロゴなど、ポートフォリオで作りたくなる定番表現がすべてネイティブで完結する形に。",
+      "narration": "Figmaで『円に沿って文字を回す』、ずっとプラグイン頼みでしたよね。それが4/29、ついに公式機能として標準搭載されたんです。",
       "tags": [
         "Figma",
-        "AI画像生成",
-        "Make Image"
+        "Figma Draw",
+        "Text on Path"
       ],
       "narration_sections": {
-        "hook": "知ってました?Figmaの画像AI、昨日からキャンバスの絵をそのままドラッグして参照に使える便利アップデートが来たんです。",
-        "origin": "Figma公式が4/29に発表。Make ImageとEdit Imageで、画像・フレーム・コンポーネントに出るAdd referenceボタンか、ドラッグ&ドロップで参照を追加可能。Design・Draw・Buzz・Slides・FigJamで動きます。",
-        "recommend": "ポートフォリオの色味やトーンを揃えたい人に最高。AIは作風の補助輪、参照を渡すほど自分らしさが残ります。"
+        "hook": "Figmaで『円に沿って文字を回す』、ずっとプラグイン頼みでしたよね。それが4/29、ついに公式機能として標準搭載されたんです。",
+        "origin": "4/29、Figma Drawの大型アップデートで、Text on Pathツールが正式リリース。任意のパスや円に直接テキストが書け、Draw内でAuto Layoutが使えたり、ブラシのテクスチャ調整・カラー抽出も追加されました。",
+        "recommend": "プラグイン依存だったロゴや円形バナー作りが、Draw内で完結。AIに任せきらず、自分の手で作風を仕上げたい学習者にも優しい更新です。"
       },
       "section_titles": {
-        "hook": "Figma画像AI更新",
-        "origin": "4/29公式発表",
-        "recommend": "ポートフォリオ活用"
+        "hook": "Draw大型アップデート",
+        "origin": "4/29公式リリース",
+        "recommend": "ロゴ制作が時短に"
       },
       "section_descriptions": {
-        "hook": "キャンバスから直接ドラッグで参照画像が渡せる",
-        "origin": "Add referenceボタンとドラッグ&ドロップに対応",
-        "recommend": "色味とトーンを揃えたい学習者に超実用"
+        "hook": "プラグイン頼みのText on Pathが公式機能に",
+        "origin": "Draw内でテキスト・Auto Layout・ブラシも進化",
+        "recommend": "ロゴや円形バナー作りがDraw内で完結する更新"
       }
     }
   ]
