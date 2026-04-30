@@ -43,7 +43,7 @@
         "views": 143,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-04-29T00:07:34.166Z"
+        "updatedAt": "2026-04-30T00:08:29.564Z"
       }
     },
     {
@@ -87,7 +87,7 @@
         "views": 175,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-29T00:07:34.166Z"
+        "updatedAt": "2026-04-30T00:08:29.564Z"
       }
     },
     {
@@ -129,10 +129,10 @@
         "freshness_hours": 72
       },
       "stats": {
-        "views": 69,
+        "views": 70,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-29T00:07:34.166Z"
+        "updatedAt": "2026-04-30T00:08:29.564Z"
       }
     },
     {
@@ -177,7 +177,7 @@
         "views": 114,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-29T00:07:34.166Z"
+        "updatedAt": "2026-04-30T00:08:29.564Z"
       }
     },
     {
@@ -222,7 +222,7 @@
         "views": 249,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-04-29T00:07:34.166Z"
+        "updatedAt": "2026-04-30T00:08:29.564Z"
       }
     },
     {
@@ -264,10 +264,10 @@
         "freshness_hours": 96
       },
       "stats": {
-        "views": 97,
+        "views": 101,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-29T00:07:34.166Z"
+        "updatedAt": "2026-04-30T00:08:29.564Z"
       }
     },
     {
@@ -309,10 +309,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 56,
+        "views": 86,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-29T00:07:34.166Z"
+        "updatedAt": "2026-04-30T00:08:29.564Z"
       }
     },
     {
@@ -352,6 +352,50 @@
         ],
         "query": "Magic Patterns Agent 2.0 launch April 23 2026 metrics 1500 teams Figma integration",
         "freshness_hours": 144
+      },
+      "stats": {
+        "views": 486,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-04-30T00:08:29.564Z"
+      }
+    },
+    {
+      "videoId": "-oJqyqxBSUg",
+      "videoUrl": "https://youtube.com/shorts/-oJqyqxBSUg",
+      "date": "2026-04-30",
+      "title": "【デザインニュース】Figma画像AI、キャンバスから直接ドラッグで参照可能に｜2026/04/30 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 42,
+      "discovery": {
+        "method": "official-src",
+        "description": "Figma 公式 release notes / Newsroom / Help Center を直接当たり、4/29 公開の Make Image / Edit Image『Add reference』機能を一次取得。official-src は過去14日 avg views=136 (n=2) で TOP3 method、直近利用4/27で2日空きあり、直近2日(4/29 product-launches, 4/28 news-en)とも重複なし。柱① Figma 公式ニュース。Primary 層のポートフォリオ作成シーンに直接効く UX 改善で、AI を補助輪として位置づけやすい題材",
+        "sources": [
+          "https://www.figma.com/release-notes/",
+          "https://www.figma.com/newsroom/",
+          "https://help.figma.com/hc/en-us/articles/31304529835671-Attach-designs-and-images-to-a-prompt",
+          "https://releasebot.io/updates/figma",
+          "https://www.figma.com/blog/figjam-your-coding-agents-whiteboard/"
+        ],
+        "query": "Figma release notes April 29 2026 Add reference Make Image Edit Image canvas drag drop",
+        "freshness_hours": 20
       },
       "stats": {
         "views": 0,
@@ -408,6 +452,13 @@
       "date": "2026-04-29",
       "changes": [
         "Day performance: Sun=249, Thu=175, Wed=143, Sat=114, Mon=97, Fri=69, Tue=56"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-04-30",
+      "changes": [
+        "Day performance: Wed=315, Sun=249, Thu=175, Sat=114, Mon=101, Tue=86, Fri=70"
       ],
       "recommendedTemplate": "standard"
     }
