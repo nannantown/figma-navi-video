@@ -40,10 +40,10 @@
         "freshness_hours": 120
       },
       "stats": {
-        "views": 143,
+        "views": 144,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-04-30T00:08:29.564Z"
+        "updatedAt": "2026-05-01T00:06:07.704Z"
       }
     },
     {
@@ -87,7 +87,7 @@
         "views": 175,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-30T00:08:29.564Z"
+        "updatedAt": "2026-05-01T00:06:07.704Z"
       }
     },
     {
@@ -129,10 +129,10 @@
         "freshness_hours": 72
       },
       "stats": {
-        "views": 70,
+        "views": 73,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-30T00:08:29.564Z"
+        "updatedAt": "2026-05-01T00:06:07.704Z"
       }
     },
     {
@@ -174,10 +174,10 @@
         "freshness_hours": 96
       },
       "stats": {
-        "views": 114,
+        "views": 115,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-30T00:08:29.564Z"
+        "updatedAt": "2026-05-01T00:06:07.704Z"
       }
     },
     {
@@ -222,7 +222,7 @@
         "views": 249,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-04-30T00:08:29.564Z"
+        "updatedAt": "2026-05-01T00:06:07.704Z"
       }
     },
     {
@@ -267,7 +267,7 @@
         "views": 101,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-30T00:08:29.564Z"
+        "updatedAt": "2026-05-01T00:06:07.704Z"
       }
     },
     {
@@ -309,10 +309,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 86,
+        "views": 111,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-30T00:08:29.564Z"
+        "updatedAt": "2026-05-01T00:06:07.704Z"
       }
     },
     {
@@ -357,7 +357,7 @@
         "views": 486,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-30T00:08:29.564Z"
+        "updatedAt": "2026-05-01T00:06:07.704Z"
       }
     },
     {
@@ -396,6 +396,51 @@
         ],
         "query": "Figma release notes April 29 2026 Add reference Make Image Edit Image canvas drag drop",
         "freshness_hours": 20
+      },
+      "stats": {
+        "views": 80,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-05-01T00:06:07.704Z"
+      }
+    },
+    {
+      "videoId": "v2zuxeC6joE",
+      "videoUrl": "https://youtube.com/shorts/v2zuxeC6joE",
+      "date": "2026-05-01",
+      "title": "【デザインニュース】Figma Draw、円に沿うテキストが公式機能に｜2026/05/01 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 45,
+      "discovery": {
+        "method": "social-en",
+        "description": "Pablo Stanley の X 投稿(Text on Path を『underrated new figma feature』と紹介)と、Figma Forum の長年スレッド『make text follow a path or a circle』『Figma Type on Path』のコミュニティ要望を起点に、4/29 公開の Figma Draw 大型アップデートで Text on Path がネイティブ実装された事実を発見。プラグイン依存・Illustrator 戻りという駆け出し層の壁が消えるニュース。official-src の release-notes と Figma Blog で裏取り。直近 2 日(4/30 official-src, 4/29 product-launches)と method 重複なし。social-en は 4/22 以来 9 日空きの TOP3 method(過去14日 avg 143)。柱① Figma 公式ニュースを Primary 学習者の課題(ロゴ・円形バナー作成)起点で噛み砕く",
+        "sources": [
+          "https://x.com/pablostanley/status/1920215348743475689",
+          "https://forum.figma.com/suggest-a-feature-11/make-text-follow-a-path-or-a-circle-34880",
+          "https://forum.figma.com/report-a-problem-6/figma-type-on-path-41240",
+          "https://www.figma.com/release-notes/",
+          "https://releasebot.io/updates/figma",
+          "https://www.figma.com/community/file/1505397383440534720/text-on-path"
+        ],
+        "query": "Figma Draw text on path designer reaction X Twitter Forum April 29 2026",
+        "freshness_hours": 36
       },
       "stats": {
         "views": 0,
@@ -459,6 +504,13 @@
       "date": "2026-04-30",
       "changes": [
         "Day performance: Wed=315, Sun=249, Thu=175, Sat=114, Mon=101, Tue=86, Fri=70"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-01",
+      "changes": [
+        "Day performance: Wed=315, Sun=249, Thu=128, Sat=115, Tue=111, Mon=101, Fri=73"
       ],
       "recommendedTemplate": "standard"
     }
