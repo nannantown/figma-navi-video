@@ -1,45 +1,45 @@
 {
-  "date": "2026-05-01",
+  "date": "2026-05-02",
   "discovery": {
-    "method": "social-en",
-    "description": "Pablo Stanley の X 投稿(Text on Path を『underrated new figma feature』と紹介)と、Figma Forum の長年スレッド『make text follow a path or a circle』『Figma Type on Path』のコミュニティ要望を起点に、4/29 公開の Figma Draw 大型アップデートで Text on Path がネイティブ実装された事実を発見。プラグイン依存・Illustrator 戻りという駆け出し層の壁が消えるニュース。official-src の release-notes と Figma Blog で裏取り。直近 2 日(4/30 official-src, 4/29 product-launches)と method 重複なし。social-en は 4/22 以来 9 日空きの TOP3 method(過去14日 avg 143)。柱① Figma 公式ニュースを Primary 学習者の課題(ロゴ・円形バナー作成)起点で噛み砕く",
+    "method": "product-launches",
+    "description": "Awwwards Site of the Day (2026/05/01 受賞) Studio375 を起点に、SOTD ページ・Awwwards 2026 web design trends 記事・GSAP showcase を横断。たった2色 (#cc0597 マゼンタ + #11baff シアン)・Next.js+GSAP+WebGL のミニマル構成で Creativity 7.57/10 を獲った最新作を一次取得。土曜 evergreen で柱⑤ポートフォリオ事例 + ⑥UI批評を Primary 学習者(駆け出しデザイナー・ポートフォリオ作成中)向けに噛み砕く。Method TOP1 (n=2 avg 367.5views: 4/26 黒×白249, 4/29 Magic Patterns 486) を Exploit、直近2日(5/1 social-en, 4/30 official-src)と method 重複なし、4/29 product-launches から 3 日空きで多様性も担保",
     "sources": [
-      "https://x.com/pablostanley/status/1920215348743475689",
-      "https://forum.figma.com/suggest-a-feature-11/make-text-follow-a-path-or-a-circle-34880",
-      "https://forum.figma.com/report-a-problem-6/figma-type-on-path-41240",
-      "https://www.figma.com/release-notes/",
-      "https://releasebot.io/updates/figma",
-      "https://www.figma.com/community/file/1505397383440534720/text-on-path"
+      "https://www.awwwards.com/sites/studio375-2",
+      "https://www.awwwards.com/Studio375/",
+      "https://www.awwwards.com/websites/sites_of_the_day/",
+      "https://www.awwwards.com/inspiration/text-animation-studio375",
+      "https://gsap.com/showcase/",
+      "https://reallygooddesigns.com/web-design-trends-2026/"
     ],
-    "query": "Figma Draw text on path designer reaction X Twitter Forum April 29 2026",
-    "freshness_hours": 36
+    "query": "Awwwards Site of the Day May 2026 Studio375 portfolio 2-color GSAP Next.js kinetic typography",
+    "freshness_hours": 18
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma Draw、円に沿うテキストが公式機能に",
-      "description": "Figmaが4/29にDraw大型アップデートを公開、長年プラグイン頼みだったText on Pathが正式機能化",
-      "detail": "Figma 公式が 4/29 に Figma Draw の大型アップデートを公開。デザイナーコミュニティが Forum で何年も要望してきた『パスや円に沿ってテキストを流す』Text on Path ツールがついにネイティブ実装され、プラグインや Illustrator との往復が不要に。あわせて Draw モードのまま Auto Layout を適用、レイヤーパネルでコンポーネント・インスタンス・テキスト種別をインライン表示、ブラシのテクスチャ調整、cmd+クリックでストローク色・太さ・スタイル抽出など、日々使うツールが Draw 内に集約された。ロゴ・バッジ・円形バナー・サークルロゴなど、ポートフォリオで作りたくなる定番表現がすべてネイティブで完結する形に。",
-      "narration": "Figmaで『円に沿って文字を回す』、ずっとプラグイン頼みでしたよね。それが4/29、ついに公式機能として標準搭載されたんです。",
+      "title": "2色だけで世界1位、Awwwards受賞ポートフォリオStudio375",
+      "description": "昨日のAwwwards Site of the Day、Studio375。マゼンタ#cc0597とシアン#11baffの2色のみで、Creativity 7.57点(10点満点)を獲得した最新ポートフォリオ。",
+      "detail": "色はマゼンタとシアンの2色のみ。技術はNext.js+GSAP+WebGLの王道スタックで、画面いっぱいに踊るキネティックタイポとスクロール連動の演出だけで、デザイン7.19/操作性7.30/創造性7.57/内容7.44の4軸全て7点台を獲得。色数を絞り動きで個性を作る2026年の典型例。",
+      "narration": "昨日のAwwwards SOTDに、たった2色のポートフォリオStudio375が選ばれました。Creativity 7.57点を叩き出した秘密はどこに?",
       "tags": [
-        "Figma",
-        "Figma Draw",
-        "Text on Path"
+        "ポートフォリオ",
+        "Awwwards",
+        "配色"
       ],
       "narration_sections": {
-        "hook": "Figmaで『円に沿って文字を回す』、ずっとプラグイン頼みでしたよね。それが4/29、ついに公式機能として標準搭載されたんです。",
-        "origin": "4/29、Figma Drawの大型アップデートで、Text on Pathツールが正式リリース。任意のパスや円に直接テキストが書け、Draw内でAuto Layoutが使えたり、ブラシのテクスチャ調整・カラー抽出も追加されました。",
-        "recommend": "プラグイン依存だったロゴや円形バナー作りが、Draw内で完結。AIに任せきらず、自分の手で作風を仕上げたい学習者にも優しい更新です。"
+        "hook": "昨日のAwwwards SOTDに、たった2色のポートフォリオStudio375が選ばれました。Creativity 7.57点を叩き出した秘密はどこに?",
+        "origin": "色はマゼンタとシアンの2色のみ。技術はNext.jsとGSAPとWebGLの王道スタック。文字が画面いっぱいに踊るキネティックタイポと、スクロール連動の演出だけで、デザイン・操作性・創造性・内容の4軸すべて7点台を獲得しました。",
+        "recommend": "ポートフォリオで迷ったら色を2色まで絞ってFigmaのVariablesに登録し、文字サイズの差で動きを作るだけでも一気に化けます。"
       },
       "section_titles": {
-        "hook": "Draw大型アップデート",
-        "origin": "4/29公式リリース",
-        "recommend": "ロゴ制作が時短に"
+        "hook": "2色だけのSOTD",
+        "origin": "キネティックの設計",
+        "recommend": "2色から始めよう"
       },
       "section_descriptions": {
-        "hook": "プラグイン頼みのText on Pathが公式機能に",
-        "origin": "Draw内でテキスト・Auto Layout・ブラシも進化",
-        "recommend": "ロゴや円形バナー作りがDraw内で完結する更新"
+        "hook": "昨日Awwwardsで世界1位を獲った2色のポートフォリオ",
+        "origin": "色を絞り動きで魅せる、王道スタックの中身",
+        "recommend": "Figmaで今日から真似できる2色設計の手順"
       }
     }
   ]
