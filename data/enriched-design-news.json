@@ -1,45 +1,45 @@
 {
-  "date": "2026-05-02",
+  "date": "2026-05-03",
   "discovery": {
-    "method": "product-launches",
-    "description": "Awwwards Site of the Day (2026/05/01 受賞) Studio375 を起点に、SOTD ページ・Awwwards 2026 web design trends 記事・GSAP showcase を横断。たった2色 (#cc0597 マゼンタ + #11baff シアン)・Next.js+GSAP+WebGL のミニマル構成で Creativity 7.57/10 を獲った最新作を一次取得。土曜 evergreen で柱⑤ポートフォリオ事例 + ⑥UI批評を Primary 学習者(駆け出しデザイナー・ポートフォリオ作成中)向けに噛み砕く。Method TOP1 (n=2 avg 367.5views: 4/26 黒×白249, 4/29 Magic Patterns 486) を Exploit、直近2日(5/1 social-en, 4/30 official-src)と method 重複なし、4/29 product-launches から 3 日空きで多様性も担保",
+    "method": "figma-community",
+    "description": "Figma Community のアクセシビリティ系トレンドプラグインを横断調査。28,000 社・40,000 デザイナーが日常使いする Stark を起点に、WCAG 自動チェック・色覚シミュレーション・AI alt text 提案の3機能を、Primary 駆け出しデザイナーが面接で語れるアクセシビリティ実装力に落とし込む日曜 evergreen Tips。method タグ figma-community は Explore (n=0、過去14日未試行) として PDCA 提案通り初投入。直近2日(5/2 product-launches, 5/1 social-en)と method 重複なし、product-launches 7日3連投ガード(PDCA戦略提案)を尊重して TOP1 method の連投を回避。柱④ Tips・Figma実践 + 柱⑥ UI批評 (アクセシビリティ視点) のクロス枠。Sunday evergreen のため freshness_hours は 168 (NG パターン回避の上限値) を採用",
     "sources": [
-      "https://www.awwwards.com/sites/studio375-2",
-      "https://www.awwwards.com/Studio375/",
-      "https://www.awwwards.com/websites/sites_of_the_day/",
-      "https://www.awwwards.com/inspiration/text-animation-studio375",
-      "https://gsap.com/showcase/",
-      "https://reallygooddesigns.com/web-design-trends-2026/"
+      "https://www.figma.com/community/plugin/732603254453395948/stark-contrast-accessibility-checker",
+      "https://www.getstark.co/figma/",
+      "https://www.g2.com/products/stark-stark/reviews",
+      "https://www.browserstack.com/guide/best-figma-plugins-for-accessibility",
+      "https://sparkbox.com/foundry/stark_for_figma_accessibility_testing_tool_design_website_accessibility_and_accessible_design_review_tool",
+      "https://www.figma.com/blog/state-of-the-designer-2026/"
     ],
-    "query": "Awwwards Site of the Day May 2026 Studio375 portfolio 2-color GSAP Next.js kinetic typography",
-    "freshness_hours": 18
+    "query": "Stark Figma Community plugin AI accessibility WCAG contrast color blindness alt text designer 2026",
+    "freshness_hours": 168
   },
   "articles": [
     {
       "rank": 1,
-      "title": "2色だけで世界1位、Awwwards受賞ポートフォリオStudio375",
-      "description": "昨日のAwwwards Site of the Day、Studio375。マゼンタ#cc0597とシアン#11baffの2色のみで、Creativity 7.57点(10点満点)を獲得した最新ポートフォリオ。",
-      "detail": "色はマゼンタとシアンの2色のみ。技術はNext.js+GSAP+WebGLの王道スタックで、画面いっぱいに踊るキネティックタイポとスクロール連動の演出だけで、デザイン7.19/操作性7.30/創造性7.57/内容7.44の4軸全て7点台を獲得。色数を絞り動きで個性を作る2026年の典型例。",
-      "narration": "昨日のAwwwards SOTDに、たった2色のポートフォリオStudio375が選ばれました。Creativity 7.57点を叩き出した秘密はどこに?",
+      "title": "Figma Communityで4万人が使うアクセシビリティ神プラグインStark",
+      "description": "ポートフォリオが面接で刺さらない原因は色のコントラスト不足かもしれません。Figma Communityで40,000人のデザイナーが日常使いするStarkで、WCAG準拠を自動チェック。",
+      "detail": "Stark は Figma 画面上で色のコントラスト比を WCAG AA/AAA 基準で自動判定し、4種類の色覚多様性(色弱・色盲・コントラスト低下など)をワンクリックでシミュレート。さらに AI が画像の alt text を提案するため、駆け出しでもアクセシビリティ配慮を作品に乗せられる。28,000 社のデザインチームが日常的に走らせている定番プラグイン",
+      "narration": "知ってますか?ポートフォリオが面接で刺さらない原因、色のコントラスト不足かも。Figma Communityで4万人が使う神プラグインを今日は紹介します。",
       "tags": [
-        "ポートフォリオ",
-        "Awwwards",
-        "配色"
+        "Figma Community",
+        "アクセシビリティ",
+        "ポートフォリオ"
       ],
       "narration_sections": {
-        "hook": "昨日のAwwwards SOTDに、たった2色のポートフォリオStudio375が選ばれました。Creativity 7.57点を叩き出した秘密はどこに?",
-        "origin": "色はマゼンタとシアンの2色のみ。技術はNext.jsとGSAPとWebGLの王道スタック。文字が画面いっぱいに踊るキネティックタイポと、スクロール連動の演出だけで、デザイン・操作性・創造性・内容の4軸すべて7点台を獲得しました。",
-        "recommend": "ポートフォリオで迷ったら色を2色まで絞ってFigmaのVariablesに登録し、文字サイズの差で動きを作るだけでも一気に化けます。"
+        "hook": "知ってますか?ポートフォリオが面接で刺さらない原因、色のコントラスト不足かも。Figma Communityで4万人が使う神プラグインを今日は紹介します。",
+        "origin": "プラグイン名はStark。Figmaの画面で色のコントラスト比をWCAG基準で自動チェックし、4種類の色覚多様性をシミュレートでき、AIが画像のalt textも提案。28,000社のデザインチームが日常的に走らせています。",
+        "recommend": "自分の作品を1つ走らせるだけで、面接でアクセシビリティを語れる素材になります。下書きはFigmaナビ、最終チェックはStarkが鉄板です。"
       },
       "section_titles": {
-        "hook": "2色だけのSOTD",
-        "origin": "キネティックの設計",
-        "recommend": "2色から始めよう"
+        "hook": "面接で響かない理由",
+        "origin": "Starkで自動チェック",
+        "recommend": "1つ走らせて面接武器に"
       },
       "section_descriptions": {
-        "hook": "昨日Awwwardsで世界1位を獲った2色のポートフォリオ",
-        "origin": "色を絞り動きで魅せる、王道スタックの中身",
-        "recommend": "Figmaで今日から真似できる2色設計の手順"
+        "hook": "Figma Communityで4万人が使う神プラグイン",
+        "origin": "WCAG準拠を自動チェック、色覚も同時に検証",
+        "recommend": "Figmaナビで作って、Starkで仕上げる週末の流れ"
       }
     }
   ]
