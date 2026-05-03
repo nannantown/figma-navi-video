@@ -43,7 +43,7 @@
         "views": 144,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-01T00:06:07.704Z"
+        "updatedAt": "2026-05-03T00:01:41.336Z"
       }
     },
     {
@@ -87,7 +87,7 @@
         "views": 175,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-01T00:06:07.704Z"
+        "updatedAt": "2026-05-03T00:01:41.336Z"
       }
     },
     {
@@ -132,7 +132,7 @@
         "views": 73,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-01T00:06:07.704Z"
+        "updatedAt": "2026-05-03T00:01:41.336Z"
       }
     },
     {
@@ -177,7 +177,7 @@
         "views": 115,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-01T00:06:07.704Z"
+        "updatedAt": "2026-05-03T00:01:41.336Z"
       }
     },
     {
@@ -222,7 +222,7 @@
         "views": 249,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-01T00:06:07.704Z"
+        "updatedAt": "2026-05-03T00:01:41.336Z"
       }
     },
     {
@@ -267,7 +267,7 @@
         "views": 101,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-01T00:06:07.704Z"
+        "updatedAt": "2026-05-03T00:01:41.336Z"
       }
     },
     {
@@ -312,7 +312,7 @@
         "views": 111,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-01T00:06:07.704Z"
+        "updatedAt": "2026-05-03T00:01:41.336Z"
       }
     },
     {
@@ -354,10 +354,10 @@
         "freshness_hours": 144
       },
       "stats": {
-        "views": 486,
+        "views": 485,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-01T00:06:07.704Z"
+        "updatedAt": "2026-05-03T00:01:41.336Z"
       }
     },
     {
@@ -398,10 +398,10 @@
         "freshness_hours": 20
       },
       "stats": {
-        "views": 80,
+        "views": 88,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-01T00:06:07.704Z"
+        "updatedAt": "2026-05-03T00:01:41.336Z"
       }
     },
     {
@@ -441,6 +441,51 @@
         ],
         "query": "Figma Draw text on path designer reaction X Twitter Forum April 29 2026",
         "freshness_hours": 36
+      },
+      "stats": {
+        "views": 112,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-05-03T00:01:41.337Z"
+      }
+    },
+    {
+      "videoId": "_V4GcnQuW24",
+      "videoUrl": "https://youtube.com/shorts/_V4GcnQuW24",
+      "date": "2026-05-03",
+      "title": "【デザインニュース】Figma Communityで4万人が使うアクセシビリティ神プラグインStark｜2026/05/03 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 46,
+      "discovery": {
+        "method": "figma-community",
+        "description": "Figma Community のアクセシビリティ系トレンドプラグインを横断調査。28,000 社・40,000 デザイナーが日常使いする Stark を起点に、WCAG 自動チェック・色覚シミュレーション・AI alt text 提案の3機能を、Primary 駆け出しデザイナーが面接で語れるアクセシビリティ実装力に落とし込む日曜 evergreen Tips。method タグ figma-community は Explore (n=0、過去14日未試行) として PDCA 提案通り初投入。直近2日(5/2 product-launches, 5/1 social-en)と method 重複なし、product-launches 7日3連投ガード(PDCA戦略提案)を尊重して TOP1 method の連投を回避。柱④ Tips・Figma実践 + 柱⑥ UI批評 (アクセシビリティ視点) のクロス枠。Sunday evergreen のため freshness_hours は 168 (NG パターン回避の上限値) を採用",
+        "sources": [
+          "https://www.figma.com/community/plugin/732603254453395948/stark-contrast-accessibility-checker",
+          "https://www.getstark.co/figma/",
+          "https://www.g2.com/products/stark-stark/reviews",
+          "https://www.browserstack.com/guide/best-figma-plugins-for-accessibility",
+          "https://sparkbox.com/foundry/stark_for_figma_accessibility_testing_tool_design_website_accessibility_and_accessible_design_review_tool",
+          "https://www.figma.com/blog/state-of-the-designer-2026/"
+        ],
+        "query": "Stark Figma Community plugin AI accessibility WCAG contrast color blindness alt text designer 2026",
+        "freshness_hours": 168
       },
       "stats": {
         "views": 0,
@@ -511,6 +556,14 @@
       "date": "2026-05-01",
       "changes": [
         "Day performance: Wed=315, Sun=249, Thu=128, Sat=115, Tue=111, Mon=101, Fri=73"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-03",
+      "changes": [
+        "standard: 165 avg views (10 videos)",
+        "Day performance: Wed=315, Sun=249, Thu=132, Sat=115, Tue=111, Mon=101, Fri=93"
       ],
       "recommendedTemplate": "standard"
     }
