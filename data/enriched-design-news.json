@@ -1,45 +1,45 @@
 {
-  "date": "2026-05-03",
+  "date": "2026-05-04",
   "discovery": {
-    "method": "figma-community",
-    "description": "Figma Community のアクセシビリティ系トレンドプラグインを横断調査。28,000 社・40,000 デザイナーが日常使いする Stark を起点に、WCAG 自動チェック・色覚シミュレーション・AI alt text 提案の3機能を、Primary 駆け出しデザイナーが面接で語れるアクセシビリティ実装力に落とし込む日曜 evergreen Tips。method タグ figma-community は Explore (n=0、過去14日未試行) として PDCA 提案通り初投入。直近2日(5/2 product-launches, 5/1 social-en)と method 重複なし、product-launches 7日3連投ガード(PDCA戦略提案)を尊重して TOP1 method の連投を回避。柱④ Tips・Figma実践 + 柱⑥ UI批評 (アクセシビリティ視点) のクロス枠。Sunday evergreen のため freshness_hours は 168 (NG パターン回避の上限値) を採用",
+    "method": "social-en",
+    "description": "Figma Forum 2026年2月の長年要望スレッド『Add voice to text prompting to Figma Make』を起点に、4/30 公式リリースされた Figma Make 大型アップデート(voice-to-text・Zapier コネクター・version history・clear context・question cards の5機能同梱)を、Willow Voice の voice-dictation 比較ブログ、Figma 公式リリースノート、UX Collective の Make プロンプト解説、Figma 公式 X アカウントの告知で裏取り。直近2日(5/3 figma-community, 5/2 product-launches) と method 重複なし、5/1 social-en (Text on Path Pablo Stanley) から3日空き。official-src は 4/27+4/30 で 7日内2回到達、product-launches は 4/29+5/2 で同様に到達、news-en は 2週連続 WORST 凍結ライン、figma-community は 5/3 直前 — 結果として social-en が 2-day rule・7-day-2-time rule・WORST 凍結 全部クリアで最適。柱① Figma 公式ニュース。Primary 駆け出しデザイナーの『プロンプトを打つのが面倒・タイピングが追いつかない』という具体課題を、フォーラム長年要望→Willow など 3rd-party が先回りで埋めていた市場→ついに公式実装、という community-driven story arc で噛み砕く。NG パターン回避: AI=補助輪に位置づけ、『声と手の両輪』として学習者の手を止めない使い方を提示",
     "sources": [
-      "https://www.figma.com/community/plugin/732603254453395948/stark-contrast-accessibility-checker",
-      "https://www.getstark.co/figma/",
-      "https://www.g2.com/products/stark-stark/reviews",
-      "https://www.browserstack.com/guide/best-figma-plugins-for-accessibility",
-      "https://sparkbox.com/foundry/stark_for_figma_accessibility_testing_tool_design_website_accessibility_and_accessible_design_review_tool",
-      "https://www.figma.com/blog/state-of-the-designer-2026/"
+      "https://forum.figma.com/suggest-a-feature-11/add-voice-to-text-prompting-to-figma-make-prompt-in-adding-to-typing-a-prompt-50900",
+      "https://willowvoice.com/blog/how-to-use-ai-voice-dictation-in-figma",
+      "https://www.figma.com/release-notes/",
+      "https://uxdesign.cc/how-to-prompt-figma-makes-ai-better-for-product-design-627daf3f4036",
+      "https://help.figma.com/hc/en-us/articles/35108701485591-Automate-design-workflows-with-Zapier-and-Figma",
+      "https://x.com/figma"
     ],
-    "query": "Stark Figma Community plugin AI accessibility WCAG contrast color blindness alt text designer 2026",
-    "freshness_hours": 168
+    "query": "Figma Make voice-to-text Zapier connector April 30 2026 community forum demand voice dictation",
+    "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma Communityで4万人が使うアクセシビリティ神プラグインStark",
-      "description": "ポートフォリオが面接で刺さらない原因は色のコントラスト不足かもしれません。Figma Communityで40,000人のデザイナーが日常使いするStarkで、WCAG準拠を自動チェック。",
-      "detail": "Stark は Figma 画面上で色のコントラスト比を WCAG AA/AAA 基準で自動判定し、4種類の色覚多様性(色弱・色盲・コントラスト低下など)をワンクリックでシミュレート。さらに AI が画像の alt text を提案するため、駆け出しでもアクセシビリティ配慮を作品に乗せられる。28,000 社のデザインチームが日常的に走らせている定番プラグイン",
-      "narration": "知ってますか?ポートフォリオが面接で刺さらない原因、色のコントラスト不足かも。Figma Communityで4万人が使う神プラグインを今日は紹介します。",
+      "title": "Figma Make、声でプロンプト入力が公式対応",
+      "description": "4月30日のアップデートでFigma Makeに voice-to-text が来ました。フォーラムで2月から続いた要望が遂に公式対応、Zapier・版数履歴・コンテキスト整理も同梱です。",
+      "detail": "Figma Make の 4/30 大型アップデートで、声でプロンプトを入力できる voice-to-text が公式対応。同時に 9,000 超のアプリと繋がる Zapier コネクター、版数履歴(全バージョンの即時復元)、コンテキストリセット、構造化選択肢を返す question cards の合計5機能が同梱された。フォーラムでは 2026 年 2 月から voice prompt の追加要望が継続して挙がっており、Willow・Ottex・ClickUp Brain などのサードパーティーが先回りで対応していた領域に、ようやく公式が追いついた形",
+      "narration": "知ってますか?Figma Make、声でプロンプトを話せるようになりました。4月30日の公式アップデートで、フォーラム長年の要望が遂に通った形です。",
       "tags": [
-        "Figma Community",
-        "アクセシビリティ",
-        "ポートフォリオ"
+        "Figma Make",
+        "voice-to-text",
+        "AIワークフロー"
       ],
       "narration_sections": {
-        "hook": "知ってますか?ポートフォリオが面接で刺さらない原因、色のコントラスト不足かも。Figma Communityで4万人が使う神プラグインを今日は紹介します。",
-        "origin": "プラグイン名はStark。Figmaの画面で色のコントラスト比をWCAG基準で自動チェックし、4種類の色覚多様性をシミュレートでき、AIが画像のalt textも提案。28,000社のデザインチームが日常的に走らせています。",
-        "recommend": "自分の作品を1つ走らせるだけで、面接でアクセシビリティを語れる素材になります。下書きはFigmaナビ、最終チェックはStarkが鉄板です。"
+        "hook": "知ってますか?Figma Make、声でプロンプトを話せるようになりました。4月30日の公式アップデートで、フォーラム長年の要望が遂に通った形です。",
+        "origin": "voice-to-textの他に、Zapierコネクターで9,000超のアプリと連携、版数履歴で一発巻き戻し、コンテキストリセットも同時投入。タイピングが追いつかない駆け出しでも、思いついた指示をその場で口に出して試せる仕様です。",
+        "recommend": "作業しながら手を動かしたまま声でAIに指示できる時代に。Figmaナビと声入力で下書きを倍速化、声と手の両輪が新常識です。"
       },
       "section_titles": {
-        "hook": "面接で響かない理由",
-        "origin": "Starkで自動チェック",
-        "recommend": "1つ走らせて面接武器に"
+        "hook": "声でプロンプト入力",
+        "origin": "5機能まとめて投入",
+        "recommend": "声と手で2倍速化"
       },
       "section_descriptions": {
-        "hook": "Figma Communityで4万人が使う神プラグイン",
-        "origin": "WCAG準拠を自動チェック、色覚も同時に検証",
-        "recommend": "Figmaナビで作って、Starkで仕上げる週末の流れ"
+        "hook": "4/30 Figma Make大型アプデ、長年要望に応答",
+        "origin": "声入力・Zapier連携・版数履歴・コンテキスト整理",
+        "recommend": "Figmaナビと声入力で下書き倍速、手は止めず進む"
       }
     }
   ]
