@@ -1,45 +1,47 @@
 {
-  "date": "2026-05-04",
+  "date": "2026-05-05",
   "discovery": {
-    "method": "social-en",
-    "description": "Figma Forum 2026年2月の長年要望スレッド『Add voice to text prompting to Figma Make』を起点に、4/30 公式リリースされた Figma Make 大型アップデート(voice-to-text・Zapier コネクター・version history・clear context・question cards の5機能同梱)を、Willow Voice の voice-dictation 比較ブログ、Figma 公式リリースノート、UX Collective の Make プロンプト解説、Figma 公式 X アカウントの告知で裏取り。直近2日(5/3 figma-community, 5/2 product-launches) と method 重複なし、5/1 social-en (Text on Path Pablo Stanley) から3日空き。official-src は 4/27+4/30 で 7日内2回到達、product-launches は 4/29+5/2 で同様に到達、news-en は 2週連続 WORST 凍結ライン、figma-community は 5/3 直前 — 結果として social-en が 2-day rule・7-day-2-time rule・WORST 凍結 全部クリアで最適。柱① Figma 公式ニュース。Primary 駆け出しデザイナーの『プロンプトを打つのが面倒・タイピングが追いつかない』という具体課題を、フォーラム長年要望→Willow など 3rd-party が先回りで埋めていた市場→ついに公式実装、という community-driven story arc で噛み砕く。NG パターン回避: AI=補助輪に位置づけ、『声と手の両輪』として学習者の手を止めない使い方を提示",
+    "method": "official-src",
+    "description": "Figma 公式 events-and-webinars / Figma Blog / Help Center / GitHub の figma/mcp-server-guide を直接当たり、本日 (5/5) PT9:00 (= JST 5/6 1:00) 開催の Figma ライブストリーム『AI agent と co-design』を一次取得。先月公開された Figma MCP server beta (use_figma tool / Skills as markdown / Claude Code・Codex・Cursor 連携) が今日のライブで実演デモされる構図を、Primary 駆け出しデザイナー視点で『AIにデザインシステムを守らせて生成させる時代の入口』として柱① Figma 公式ニュース枠で噛み砕く。method 選定: 直近14日 method 別 avg views で official-src=121 (n=3, TOP3) を Exploit。TOP1 product-launches (avg 367) は 4/29+5/2 で 7日2回到達のため連投回避、TOP2 social-en も 5/1+5/4 で同様。official-src は 4/30 以来 5 日空きで 2-day rule・7-day-2-time rule とも余裕。直近2日 (5/3 figma-community, 5/4 social-en) と method 重複なし。NG パターン回避: 『AIが描く時代でも、ルールを設計するのは人間』と学習者の役割を逆強調し、AI=補助輪のフレームを徹底",
     "sources": [
-      "https://forum.figma.com/suggest-a-feature-11/add-voice-to-text-prompting-to-figma-make-prompt-in-adding-to-typing-a-prompt-50900",
-      "https://willowvoice.com/blog/how-to-use-ai-voice-dictation-in-figma",
+      "https://www.figma.com/events-and-webinars/",
+      "https://www.figma.com/blog/the-figma-canvas-is-now-open-to-agents/",
+      "https://help.figma.com/hc/en-us/articles/39216419318551-Get-started-with-the-Figma-MCP-server",
+      "https://help.figma.com/hc/en-us/articles/39166810751895-Figma-skills-for-MCP",
+      "https://github.com/figma/mcp-server-guide",
+      "https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/",
       "https://www.figma.com/release-notes/",
-      "https://uxdesign.cc/how-to-prompt-figma-makes-ai-better-for-product-design-627daf3f4036",
-      "https://help.figma.com/hc/en-us/articles/35108701485591-Automate-design-workflows-with-Zapier-and-Figma",
       "https://x.com/figma"
     ],
-    "query": "Figma Make voice-to-text Zapier connector April 30 2026 community forum demand voice dictation",
-    "freshness_hours": 96
+    "query": "Figma livestream May 5 2026 AI agents co-design use_figma MCP Skills Claude Cursor",
+    "freshness_hours": 0
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma Make、声でプロンプト入力が公式対応",
-      "description": "4月30日のアップデートでFigma Makeに voice-to-text が来ました。フォーラムで2月から続いた要望が遂に公式対応、Zapier・版数履歴・コンテキスト整理も同梱です。",
-      "detail": "Figma Make の 4/30 大型アップデートで、声でプロンプトを入力できる voice-to-text が公式対応。同時に 9,000 超のアプリと繋がる Zapier コネクター、版数履歴(全バージョンの即時復元)、コンテキストリセット、構造化選択肢を返す question cards の合計5機能が同梱された。フォーラムでは 2026 年 2 月から voice prompt の追加要望が継続して挙がっており、Willow・Ottex・ClickUp Brain などのサードパーティーが先回りで対応していた領域に、ようやく公式が追いついた形",
-      "narration": "知ってますか?Figma Make、声でプロンプトを話せるようになりました。4月30日の公式アップデートで、フォーラム長年の要望が遂に通った形です。",
+      "title": "Figma本日大型ライブ、AIがキャンバスに直接デザインを描く時代へ",
+      "description": "ClaudeやCursorなどのAIがFigmaキャンバスを直接編集する新機能、本日デモ公開",
+      "detail": "Figma MCP serverのbeta経由で、ClaudeやCursorなどのAIがuse_figmaツールから直接Figmaファイルを編集可能に。コンポーネントやvariables、auto layoutを守ったまま生成するのが新しい点で、生成結果がデザインシステムからズレない。Skillsはmarkdownファイルでチームのルールを記述するだけで agent の振る舞いを定義でき、プラグイン開発不要。ライブでは製品チームの実演デモが公開予定",
+      "narration": "今日、Figmaが大型ライブを配信。ClaudeやCursorといったAIが、Figmaキャンバスに直接デザインを描く新機能のデモが公開されます。",
       "tags": [
-        "Figma Make",
-        "voice-to-text",
-        "AIワークフロー"
+        "Figma",
+        "AIエージェント",
+        "MCP"
       ],
       "narration_sections": {
-        "hook": "知ってますか?Figma Make、声でプロンプトを話せるようになりました。4月30日の公式アップデートで、フォーラム長年の要望が遂に通った形です。",
-        "origin": "voice-to-textの他に、Zapierコネクターで9,000超のアプリと連携、版数履歴で一発巻き戻し、コンテキストリセットも同時投入。タイピングが追いつかない駆け出しでも、思いついた指示をその場で口に出して試せる仕様です。",
-        "recommend": "作業しながら手を動かしたまま声でAIに指示できる時代に。Figmaナビと声入力で下書きを倍速化、声と手の両輪が新常識です。"
+        "hook": "今日、Figmaが大型ライブを配信。ClaudeやCursorといったAIが、Figmaキャンバスに直接デザインを描く新機能のデモが公開されます。",
+        "origin": "Figma MCP serverのbeta経由で、AIがuse_figmaツールからファイルを直接編集可能に。あなたのコンポーネントやvariables、auto layoutを守ったまま生成するので、デザインシステムがブレません。",
+        "recommend": "AIが描く時代でも、ルールを設計するのは人間です。学習で身につけた基本が、AIを動かす土台になります。"
       },
       "section_titles": {
-        "hook": "声でプロンプト入力",
-        "origin": "5機能まとめて投入",
-        "recommend": "声と手で2倍速化"
+        "hook": "AIが描くFigma時代",
+        "origin": "use_figmaの中身",
+        "recommend": "ルール設計は人間"
       },
       "section_descriptions": {
-        "hook": "4/30 Figma Make大型アプデ、長年要望に応答",
-        "origin": "声入力・Zapier連携・版数履歴・コンテキスト整理",
-        "recommend": "Figmaナビと声入力で下書き倍速、手は止めず進む"
+        "hook": "本日Figmaが大型ライブを配信、AI agentデモ公開",
+        "origin": "MCPサーバー経由でAIがFigmaを直接編集",
+        "recommend": "AIに任せる時代でも、ルールを作るのは人間"
       }
     }
   ]
