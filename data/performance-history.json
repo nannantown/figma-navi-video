@@ -43,7 +43,7 @@
         "views": 144,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-03T00:01:41.336Z"
+        "updatedAt": "2026-05-04T00:03:52.537Z"
       }
     },
     {
@@ -87,7 +87,7 @@
         "views": 175,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-03T00:01:41.336Z"
+        "updatedAt": "2026-05-04T00:03:52.537Z"
       }
     },
     {
@@ -132,7 +132,7 @@
         "views": 73,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-03T00:01:41.336Z"
+        "updatedAt": "2026-05-04T00:03:52.537Z"
       }
     },
     {
@@ -177,7 +177,7 @@
         "views": 115,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-03T00:01:41.336Z"
+        "updatedAt": "2026-05-04T00:03:52.537Z"
       }
     },
     {
@@ -222,7 +222,7 @@
         "views": 249,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-03T00:01:41.336Z"
+        "updatedAt": "2026-05-04T00:03:52.537Z"
       }
     },
     {
@@ -267,7 +267,7 @@
         "views": 101,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-03T00:01:41.336Z"
+        "updatedAt": "2026-05-04T00:03:52.537Z"
       }
     },
     {
@@ -309,10 +309,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 111,
+        "views": 112,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-03T00:01:41.336Z"
+        "updatedAt": "2026-05-04T00:03:52.537Z"
       }
     },
     {
@@ -357,7 +357,7 @@
         "views": 485,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-03T00:01:41.336Z"
+        "updatedAt": "2026-05-04T00:03:52.537Z"
       }
     },
     {
@@ -398,10 +398,10 @@
         "freshness_hours": 20
       },
       "stats": {
-        "views": 88,
+        "views": 87,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-03T00:01:41.336Z"
+        "updatedAt": "2026-05-04T00:03:52.537Z"
       }
     },
     {
@@ -446,7 +446,7 @@
         "views": 112,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-03T00:01:41.337Z"
+        "updatedAt": "2026-05-04T00:03:52.537Z"
       }
     },
     {
@@ -486,6 +486,51 @@
         ],
         "query": "Stark Figma Community plugin AI accessibility WCAG contrast color blindness alt text designer 2026",
         "freshness_hours": 168
+      },
+      "stats": {
+        "views": 88,
+        "likes": 1,
+        "comments": 0,
+        "updatedAt": "2026-05-04T00:03:52.537Z"
+      }
+    },
+    {
+      "videoId": "zHXzRcE0aD4",
+      "videoUrl": "https://youtube.com/shorts/zHXzRcE0aD4",
+      "date": "2026-05-04",
+      "title": "【デザインニュース】Figma Make、声でプロンプト入力が公式対応｜2026/05/04 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 45,
+      "discovery": {
+        "method": "social-en",
+        "description": "Figma Forum 2026年2月の長年要望スレッド『Add voice to text prompting to Figma Make』を起点に、4/30 公式リリースされた Figma Make 大型アップデート(voice-to-text・Zapier コネクター・version history・clear context・question cards の5機能同梱)を、Willow Voice の voice-dictation 比較ブログ、Figma 公式リリースノート、UX Collective の Make プロンプト解説、Figma 公式 X アカウントの告知で裏取り。直近2日(5/3 figma-community, 5/2 product-launches) と method 重複なし、5/1 social-en (Text on Path Pablo Stanley) から3日空き。official-src は 4/27+4/30 で 7日内2回到達、product-launches は 4/29+5/2 で同様に到達、news-en は 2週連続 WORST 凍結ライン、figma-community は 5/3 直前 — 結果として social-en が 2-day rule・7-day-2-time rule・WORST 凍結 全部クリアで最適。柱① Figma 公式ニュース。Primary 駆け出しデザイナーの『プロンプトを打つのが面倒・タイピングが追いつかない』という具体課題を、フォーラム長年要望→Willow など 3rd-party が先回りで埋めていた市場→ついに公式実装、という community-driven story arc で噛み砕く。NG パターン回避: AI=補助輪に位置づけ、『声と手の両輪』として学習者の手を止めない使い方を提示",
+        "sources": [
+          "https://forum.figma.com/suggest-a-feature-11/add-voice-to-text-prompting-to-figma-make-prompt-in-adding-to-typing-a-prompt-50900",
+          "https://willowvoice.com/blog/how-to-use-ai-voice-dictation-in-figma",
+          "https://www.figma.com/release-notes/",
+          "https://uxdesign.cc/how-to-prompt-figma-makes-ai-better-for-product-design-627daf3f4036",
+          "https://help.figma.com/hc/en-us/articles/35108701485591-Automate-design-workflows-with-Zapier-and-Figma",
+          "https://x.com/figma"
+        ],
+        "query": "Figma Make voice-to-text Zapier connector April 30 2026 community forum demand voice dictation",
+        "freshness_hours": 96
       },
       "stats": {
         "views": 0,
@@ -564,6 +609,14 @@
       "changes": [
         "standard: 165 avg views (10 videos)",
         "Day performance: Wed=315, Sun=249, Thu=132, Sat=115, Tue=111, Mon=101, Fri=93"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-04",
+      "changes": [
+        "standard: 158 avg views (11 videos)",
+        "Day performance: Wed=315, Sun=169, Thu=131, Sat=115, Tue=112, Mon=101, Fri=93"
       ],
       "recommendedTemplate": "standard"
     }
