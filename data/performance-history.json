@@ -43,7 +43,7 @@
         "views": 144,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-04T00:03:52.537Z"
+        "updatedAt": "2026-05-05T00:08:26.872Z"
       }
     },
     {
@@ -87,7 +87,7 @@
         "views": 175,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-04T00:03:52.537Z"
+        "updatedAt": "2026-05-05T00:08:26.872Z"
       }
     },
     {
@@ -129,10 +129,10 @@
         "freshness_hours": 72
       },
       "stats": {
-        "views": 73,
+        "views": 74,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-04T00:03:52.537Z"
+        "updatedAt": "2026-05-05T00:08:26.872Z"
       }
     },
     {
@@ -177,7 +177,7 @@
         "views": 115,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-04T00:03:52.537Z"
+        "updatedAt": "2026-05-05T00:08:26.872Z"
       }
     },
     {
@@ -222,7 +222,7 @@
         "views": 249,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-04T00:03:52.537Z"
+        "updatedAt": "2026-05-05T00:08:26.872Z"
       }
     },
     {
@@ -267,7 +267,7 @@
         "views": 101,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-04T00:03:52.537Z"
+        "updatedAt": "2026-05-05T00:08:26.872Z"
       }
     },
     {
@@ -309,10 +309,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 112,
+        "views": 113,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-04T00:03:52.537Z"
+        "updatedAt": "2026-05-05T00:08:26.872Z"
       }
     },
     {
@@ -357,7 +357,7 @@
         "views": 485,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-04T00:03:52.537Z"
+        "updatedAt": "2026-05-05T00:08:26.872Z"
       }
     },
     {
@@ -401,7 +401,7 @@
         "views": 87,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-04T00:03:52.537Z"
+        "updatedAt": "2026-05-05T00:08:26.872Z"
       }
     },
     {
@@ -446,7 +446,7 @@
         "views": 112,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-04T00:03:52.537Z"
+        "updatedAt": "2026-05-05T00:08:26.872Z"
       }
     },
     {
@@ -488,10 +488,10 @@
         "freshness_hours": 168
       },
       "stats": {
-        "views": 88,
+        "views": 93,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-04T00:03:52.537Z"
+        "updatedAt": "2026-05-05T00:08:26.872Z"
       }
     },
     {
@@ -531,6 +531,53 @@
         ],
         "query": "Figma Make voice-to-text Zapier connector April 30 2026 community forum demand voice dictation",
         "freshness_hours": 96
+      },
+      "stats": {
+        "views": 85,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-05-05T00:08:26.872Z"
+      }
+    },
+    {
+      "videoId": "dLHxYsHFm1E",
+      "videoUrl": "https://youtube.com/shorts/dLHxYsHFm1E",
+      "date": "2026-05-05",
+      "title": "【デザインニュース】Figma本日大型ライブ、AIがキャンバスに直接デザインを描く時代へ｜2026/05/05 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 42,
+      "discovery": {
+        "method": "official-src",
+        "description": "Figma 公式 events-and-webinars / Figma Blog / Help Center / GitHub の figma/mcp-server-guide を直接当たり、本日 (5/5) PT9:00 (= JST 5/6 1:00) 開催の Figma ライブストリーム『AI agent と co-design』を一次取得。先月公開された Figma MCP server beta (use_figma tool / Skills as markdown / Claude Code・Codex・Cursor 連携) が今日のライブで実演デモされる構図を、Primary 駆け出しデザイナー視点で『AIにデザインシステムを守らせて生成させる時代の入口』として柱① Figma 公式ニュース枠で噛み砕く。method 選定: 直近14日 method 別 avg views で official-src=121 (n=3, TOP3) を Exploit。TOP1 product-launches (avg 367) は 4/29+5/2 で 7日2回到達のため連投回避、TOP2 social-en も 5/1+5/4 で同様。official-src は 4/30 以来 5 日空きで 2-day rule・7-day-2-time rule とも余裕。直近2日 (5/3 figma-community, 5/4 social-en) と method 重複なし。NG パターン回避: 『AIが描く時代でも、ルールを設計するのは人間』と学習者の役割を逆強調し、AI=補助輪のフレームを徹底",
+        "sources": [
+          "https://www.figma.com/events-and-webinars/",
+          "https://www.figma.com/blog/the-figma-canvas-is-now-open-to-agents/",
+          "https://help.figma.com/hc/en-us/articles/39216419318551-Get-started-with-the-Figma-MCP-server",
+          "https://help.figma.com/hc/en-us/articles/39166810751895-Figma-skills-for-MCP",
+          "https://github.com/figma/mcp-server-guide",
+          "https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/",
+          "https://www.figma.com/release-notes/",
+          "https://x.com/figma"
+        ],
+        "query": "Figma livestream May 5 2026 AI agents co-design use_figma MCP Skills Claude Cursor",
+        "freshness_hours": 0
       },
       "stats": {
         "views": 0,
@@ -617,6 +664,14 @@
       "changes": [
         "standard: 158 avg views (11 videos)",
         "Day performance: Wed=315, Sun=169, Thu=131, Sat=115, Tue=112, Mon=101, Fri=93"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-05",
+      "changes": [
+        "standard: 153 avg views (12 videos)",
+        "Day performance: Wed=315, Sun=171, Thu=131, Sat=115, Tue=113, Fri=93, Mon=93"
       ],
       "recommendedTemplate": "standard"
     }
