@@ -1,46 +1,42 @@
 {
-  "date": "2026-05-07",
+  "date": "2026-05-08",
   "discovery": {
-    "method": "expert-blog",
-    "description": "5月公開の Medium 記事『UX Design 2026+: From producing to deciding, from craft to operation』(UX.raspberry, 約5日前公開)を起点に、John Maeda の Design in Tech Report 2026『From UX to AX』(3月公開) と everydayux『What a UX design portfolio looks like in 2026』、Smashing Magazine の AI×UX 論考、David Robinson『AI in Product Design: Where we are now in 2026』、Orbix Studio の AI×Design 解説まで横断し、英語圏の業界有識者が今月共通して指摘する『AIは作れるが決められない、デザイナーの価値は production から decision へ』というメッセージを抽出。具体ツール例として Cursor / v0 / Lovable / Figma Make / Claude Code が記事内で繰り返し登場するため、Primary 駆け出し層に『学んでいる思考法こそ AI 時代の武器』と接続しやすい。method 選定: 直近14日 method 別 avg views で expert-blog=115 (n=1, TOP3) を Exploit、最後の利用 4/25 から 12 日空き (連投ガード余裕)、直近2日 (5/6 product-launches, 5/5 official-src) と method 重複なし、product-launches は 5/6+5/2 で 7日2回到達、official-src は 5/5+4/30 で同様、social-en は連続失速 (5/4=85, 5/1=112)、news-en は WORST 凍結中、figma-community は 5/3 から4日 — expert-blog が 2-day rule・7-day-2-time rule・WORST 凍結 全部クリアで最適。柱③ 業界・デザインニュース + 柱④ Tips/学習者向け のクロス。NG パターン回避: 『AI がデザイナーの仕事を奪う』を真逆にひっくり返し、『AI 時代こそ駆け出しが磨いている "なぜを言葉にする力" が最強の武器』と Primary 学習者の役割を逆強調。AI=補助輪フレームを徹底",
+    "method": "official-src",
+    "description": "Figma 公式 release notes / fig-events.figma.com の May Release Notes / Figma Help Center / Figma Blog / Releasebot を一次取得。4/30 公式リリースで実装され、5/5 公式ライブストリームで再強調された Figma Make の 4 機能 (Question Cards / version history / clear context / Zapier connector) のうち、5/4 social-en で扱った voice-to-text 以外の 3 機能を、主軸 Question Cards に束ねて『AI 失敗を恐れず生成前に分岐選択できる UX』として柱① Figma 公式ニュース枠で抽出。method 選定: 直近14日 method 別 avg views で official-src=121 (n=3, TOP3) を Exploit、5/5 last used = 3 days back で直近2日 (5/7 expert-blog, 5/6 product-launches) と method 重複なし、4/30 + 5/5 で 7日内 2 回到達済 → 今日 5/8 で 4/30 が 7日窓を抜けるため 5/5+5/8 = 2 回 (連投ガードぎりぎりクリア)、WORST 凍結対象外。直近の Figma 製品連投 (5/1〜5/6 で 6/7 日が Figma 製品) は 5/7 expert-blog で 1 日リセット済。Primary 駆け出し層に『AI が勝手に決めるのではなく、生成前に分岐質問してくる UX』を、5/7 で打ち出した『AI 時代の決める力 = なぜを言葉にする力』というテーマと連続性を持たせて噛み砕く。NG パターン回避: 『AI に任せれば考えなくていい』を真逆にひっくり返し、『AI と対話して詰める言語化力こそ駆け出しが磨いている武器』と Primary 学習者の役割を逆強調。AI=補助輪フレームを Question Cards という具体的 UX で証明",
     "sources": [
-      "https://medium.com/@uxraspberry/ux-design-2026-from-producing-to-deciding-from-craft-to-operation-e9c7ea6b1803",
-      "https://johnmaeda.medium.com/design-in-tech-report-2026-from-ux-to-ax-f9d83164f4d2",
-      "https://www.everydayux.net/ux-portfolios-2026/",
-      "https://www.smashingmagazine.com/2026/04/production-ready-becomes-design-deliverable-ux/",
-      "https://davidrdesign.medium.com/ai-in-product-design-where-we-are-now-in-2026-a71bceada2d8",
-      "https://www.orbix.studio/blogs/ai-is-changing-design",
-      "https://medium.com/zalando-design/the-2026-shortlist-9-design-trends-that-are-about-to-go-mainstream-d7fdba4b739c"
+      "https://www.figma.com/release-notes/",
+      "https://fig-events.figma.com/may-rn-2026/",
+      "https://help.figma.com/hc/en-us/articles/40219873508247-Release-notes-roundup-May-2026",
+      "https://releasebot.io/updates/figma",
+      "https://www.figma.com/blog/the-figma-canvas-is-now-open-to-agents/",
+      "https://www.figma.com/make/",
+      "https://help.figma.com/hc/en-us/articles/35108701485591-Automate-design-workflows-with-Zapier-and-Figma"
     ],
-    "query": "UX design 2026 producing to deciding designer judgment AI essay May 2026 expert blog",
-    "freshness_hours": 144
+    "query": "Figma Make question cards version history clear context May 2026 release",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "AIが作れる時代、駆け出しデザイナーが磨くべきは『決める力』",
-      "description": "5月の海外デザイン業界が出した1つの結論。AI時代に伸ばすべきスキルは production ではなく decision",
-      "detail": "今月Medium公開の『UX Design 2026+: From producing to deciding』とJohn Maedaの2026年デザインレポート『From UX to AX』が共通して指摘するのは、AIはCursorやFigma Makeで何でも生成できる時代になったが、どの選択肢が信頼感を生み、どれが不安を煽るかを判断するのは依然として人間の役割という点。デザイナーの価値は『何を作れるか』から『何を選ぶか』へ移り、駆け出しが学んでいる『なぜこの色か・なぜこの余白か』を言語化する訓練こそ、AI時代の最大の武器になる",
-      "narration": "AI時代、駆け出しデザイナーが磨くべきスキルは何か?今月、海外の有名デザイナーやJohn Maedaの2026年レポートが、共通する答えを出しています。",
-      "tags": [
-        "AIデザイン",
-        "デザイナーキャリア",
-        "学習者向け"
-      ],
+      "title": "Figma Make、AIが逆質問する時代へ — Question Cards公式実装",
+      "description": "AIに頼んで作ったらズレてた経験、ありませんか?Figma Makeが、AI側から質問してくれる新UXへ舵を切りました。",
+      "detail": "5月5日のFigma公式ライブで強調されたのが、Question Cards。プロンプト送信後にMakeが分岐質問を返し、選択肢ごとにトレードオフ説明が付きます。バージョン履歴やコンテキスト消去も同時実装で、AIが勝手に決めない方向へ進化。",
+      "narration": "AIに頼んで作ったらズレてた経験、ありませんか?Figma Makeが、AI側から質問してくれる新UXへ舵を切りました。",
+      "tags": ["Figma Make", "Question Cards", "AIデザイン"],
       "narration_sections": {
-        "hook": "AI時代、駆け出しデザイナーが磨くべきスキルは何か?今月、海外の有名デザイナーやJohn Maedaの2026年レポートが、共通する答えを出しています。",
-        "origin": "キーワードは『作る』から『決める』への転換。AIはCursorやFigma Makeで何でも生成できますが、どのレイアウトが信頼感を生み、どのコピーが不安を煽るか、を判断するのは人間の役割。経験と理由付けこそが、これからの価値だと言われています。",
-        "recommend": "だから今、あなたが学んでる『なぜこの色?なぜこの余白?』を言葉にする力こそ、AI時代に最も伸ばしたい武器です。"
+        "hook": "AIに頼んで作ったらズレてた経験、ありませんか?Figma Makeが、AI側から質問してくれる新UXへ舵を切りました。",
+        "origin": "5月5日のFigma公式ライブで強調されたのが、Question Cards。プロンプト送信後にMakeが分岐質問を返し、選択肢ごとにトレードオフ説明が付きます。バージョン履歴やコンテキスト消去も同時実装で、AIが勝手に決めない方向へ進化。",
+        "recommend": "駆け出しに必要なのは完璧プロンプトより、AIと対話して詰める言語化力。あなたが学ぶ『なぜを言葉にする力』こそ、AI時代の最強の武器です。"
       },
       "section_titles": {
-        "hook": "決める力が武器に",
-        "origin": "作るから決めるへ",
-        "recommend": "なぜを言葉にする力"
+        "hook": "Makeが逆質問",
+        "origin": "5月5日ライブの目玉",
+        "recommend": "対話する力が武器"
       },
       "section_descriptions": {
-        "hook": "5月の海外デザイン業界が出した1つの結論",
-        "origin": "AIは作れる、でも『判断』はあなたの仕事",
-        "recommend": "『なぜこの色?』を説明できる力が伸びます"
+        "hook": "AIに勝手にズレられて困った駆け出し向け",
+        "origin": "Question Cardsで生成前に分岐質問が出る新UX",
+        "recommend": "完璧プロンプトより対話する言語化力が武器"
       }
     }
   ]
