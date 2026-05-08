@@ -1,42 +1,40 @@
 {
-  "date": "2026-05-08",
+  "date": "2026-05-09",
   "discovery": {
-    "method": "official-src",
-    "description": "Figma 公式 release notes / fig-events.figma.com の May Release Notes / Figma Help Center / Figma Blog / Releasebot を一次取得。4/30 公式リリースで実装され、5/5 公式ライブストリームで再強調された Figma Make の 4 機能 (Question Cards / version history / clear context / Zapier connector) のうち、5/4 social-en で扱った voice-to-text 以外の 3 機能を、主軸 Question Cards に束ねて『AI 失敗を恐れず生成前に分岐選択できる UX』として柱① Figma 公式ニュース枠で抽出。method 選定: 直近14日 method 別 avg views で official-src=121 (n=3, TOP3) を Exploit、5/5 last used = 3 days back で直近2日 (5/7 expert-blog, 5/6 product-launches) と method 重複なし、4/30 + 5/5 で 7日内 2 回到達済 → 今日 5/8 で 4/30 が 7日窓を抜けるため 5/5+5/8 = 2 回 (連投ガードぎりぎりクリア)、WORST 凍結対象外。直近の Figma 製品連投 (5/1〜5/6 で 6/7 日が Figma 製品) は 5/7 expert-blog で 1 日リセット済。Primary 駆け出し層に『AI が勝手に決めるのではなく、生成前に分岐質問してくる UX』を、5/7 で打ち出した『AI 時代の決める力 = なぜを言葉にする力』というテーマと連続性を持たせて噛み砕く。NG パターン回避: 『AI に任せれば考えなくていい』を真逆にひっくり返し、『AI と対話して詰める言語化力こそ駆け出しが磨いている武器』と Primary 学習者の役割を逆強調。AI=補助輪フレームを Question Cards という具体的 UX で証明",
+    "method": "product-launches",
+    "description": "Awwwards Site of the Day の直近 6 日 (5/3〜5/8) の受賞リストを巡回し、5/3 TREY HOLLINGER, 5/4 Victor Furuya '26, 5/6 Aterlab, 5/8 Paul Dunbar Selected Work と 4 本連続でデザイナー個人ポートフォリオが SOTD を獲っているトレンドを特定。最新の 5/8 受賞 Paul Dunbar Selected Work (studiodunbar.xyz) を主軸に、ブランド/広告畑 → 2018 年 SaaS プロダクト転向という経歴を『領域でバラ売りせず 1 本の軸で整理』した構成が評価された点を抽出。method 選定: 直近14日 method 別 avg views で product-launches=367 (n=2, TOP1) を Exploit、5/2 Studio375 が今日 5/9 で 7 日窓を抜けるため 5/6 + 5/9 = 2 回でぎりぎりクリア (連投ガード OK)、直近 2 日 (5/8 official-src, 5/7 expert-blog) と method 重複なし、WORST 凍結 (news-en) 対象外。土曜 → 戦略の運用フォーマット上 Tips/Before-After/ポートフォリオ事例 OK 帯。柱⑤ Before/After/ポートフォリオ事例 が直近14日 0/15 = 0% (target 10%) で最大の運用ギャップだったため、これを埋める意図で柱⑤ にあてる。ペルソナ Primary 駆け出し層の最大の詰まり (= 何を載せ・どう魅せるかでポートフォリオが進まない) に直接刺す角度。NG パターン回避: プロ向け高度議論ではなく『軸で見せる』という具体行動指針、AI=補助輪として『AI で量を出す前に自分の言葉で芯を決める』と再強化、5/7 expert-blog の決める力テーマと連続性確保",
     "sources": [
-      "https://www.figma.com/release-notes/",
-      "https://fig-events.figma.com/may-rn-2026/",
-      "https://help.figma.com/hc/en-us/articles/40219873508247-Release-notes-roundup-May-2026",
-      "https://releasebot.io/updates/figma",
-      "https://www.figma.com/blog/the-figma-canvas-is-now-open-to-agents/",
-      "https://www.figma.com/make/",
-      "https://help.figma.com/hc/en-us/articles/35108701485591-Automate-design-workflows-with-Zapier-and-Figma"
+      "https://www.awwwards.com/websites/sites_of_the_day/",
+      "https://www.awwwards.com/websites/winner_category_portfolio/",
+      "https://www.awwwards.com/websites/portfolio/",
+      "https://studiodunbar.xyz/",
+      "https://dribbble.com/Dunbar_IV"
     ],
-    "query": "Figma Make question cards version history clear context May 2026 release",
-    "freshness_hours": 72
+    "query": "Awwwards Site of the Day May 2026 portfolio winner Paul Dunbar Selected Work",
+    "freshness_hours": 24
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma Make、AIが逆質問する時代へ — Question Cards公式実装",
-      "description": "AIに頼んで作ったらズレてた経験、ありませんか?Figma Makeが、AI側から質問してくれる新UXへ舵を切りました。",
-      "detail": "5月5日のFigma公式ライブで強調されたのが、Question Cards。プロンプト送信後にMakeが分岐質問を返し、選択肢ごとにトレードオフ説明が付きます。バージョン履歴やコンテキスト消去も同時実装で、AIが勝手に決めない方向へ進化。",
-      "narration": "AIに頼んで作ったらズレてた経験、ありませんか?Figma Makeが、AI側から質問してくれる新UXへ舵を切りました。",
-      "tags": ["Figma Make", "Question Cards", "AIデザイン"],
+      "title": "Awwwards SOTD連続4本がポートフォリオ、駆け出しが学ぶ『軸で見せる』編集力",
+      "description": "ポートフォリオで止まってる駆け出しに朗報。Awwwards Site of the Day、直近6日で4本連続がデザイナー個人ポートフォリオでした。",
+      "detail": "最新は5月8日のPaul Dunbar Selected Work。元ブランドデザイナーで2018年にSaaSのプロダクトへ転向した経歴を、領域別ではなく1本の軸で整理。共通点は華美な演出でなく、何ができる人かを最短で伝える編集力でした。",
+      "narration": "ポートフォリオで止まってる駆け出しに朗報。Awwwards Site of the Day、直近6日で4本連続がデザイナー個人ポートフォリオでした。",
+      "tags": ["Awwwards", "ポートフォリオ", "駆け出しデザイナー"],
       "narration_sections": {
-        "hook": "AIに頼んで作ったらズレてた経験、ありませんか?Figma Makeが、AI側から質問してくれる新UXへ舵を切りました。",
-        "origin": "5月5日のFigma公式ライブで強調されたのが、Question Cards。プロンプト送信後にMakeが分岐質問を返し、選択肢ごとにトレードオフ説明が付きます。バージョン履歴やコンテキスト消去も同時実装で、AIが勝手に決めない方向へ進化。",
-        "recommend": "駆け出しに必要なのは完璧プロンプトより、AIと対話して詰める言語化力。あなたが学ぶ『なぜを言葉にする力』こそ、AI時代の最強の武器です。"
+        "hook": "ポートフォリオで止まってる駆け出しに朗報。Awwwards Site of the Day、直近6日で4本連続がデザイナー個人ポートフォリオでした。",
+        "origin": "最新は5月8日のPaul Dunbar Selected Work。元ブランドデザイナーで2018年にSaaSのプロダクトへ転向した経歴を、領域別ではなく1本の軸で整理。共通点は華美な演出でなく、何ができる人かを最短で伝える編集力でした。",
+        "recommend": "足りないのは作例の数より、何を見せたい人かの軸。AIで量を作る前に、自分の言葉で芯を決めるのが先です。"
       },
       "section_titles": {
-        "hook": "Makeが逆質問",
-        "origin": "5月5日ライブの目玉",
-        "recommend": "対話する力が武器"
+        "hook": "ポートフォリオが連勝",
+        "origin": "Dunbar氏の戦略",
+        "recommend": "作例の数より軸の力"
       },
       "section_descriptions": {
-        "hook": "AIに勝手にズレられて困った駆け出し向け",
-        "origin": "Question Cardsで生成前に分岐質問が出る新UX",
-        "recommend": "完璧プロンプトより対話する言語化力が武器"
+        "hook": "Awwwards 1位を独占する連続パターン",
+        "origin": "ブランド出身からSaaSへ転向、軸で経歴整理",
+        "recommend": "見せたい人物像を言葉にする力こそ準備の核"
       }
     }
   ]
