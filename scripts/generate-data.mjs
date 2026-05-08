@@ -22,13 +22,67 @@ function todayJST() {
   return `${jst.getUTCFullYear()}-${String(jst.getUTCMonth() + 1).padStart(2, "0")}-${String(jst.getUTCDate()).padStart(2, "0")}`;
 }
 
+function repairJson(text) {
+  let result = "";
+  let inString = false;
+  let i = 0;
+  while (i < text.length) {
+    const ch = text[i];
+    if (ch === "\\" && inString) {
+      result += ch + (text[i + 1] || "");
+      i += 2;
+      continue;
+    }
+    if (ch === '"') {
+      if (!inString) {
+        inString = true;
+        result += ch;
+      } else {
+        const after = text.substring(i + 1).replace(/^\s+/, "");
+        if (
+          after[0] === "," || after[0] === ":" ||
+          after[0] === "}" || after[0] === "]" ||
+          after.length === 0
+        ) {
+          inString = false;
+          result += ch;
+        } else {
+          result += '\\"';
+        }
+      }
+    } else {
+      result += ch;
+    }
+    i++;
+  }
+  return result;
+}
+
 function loadEnrichedData() {
   if (!existsSync(enrichedPath)) {
     throw new Error(
       `enriched-design-news.json not found at ${enrichedPath}. Claude Routine must produce this file before the pipeline runs.`
     );
   }
-  const enriched = JSON.parse(readFileSync(enrichedPath, "utf-8"));
+  const raw = readFileSync(enrichedPath, "utf-8");
+  let enriched;
+  try {
+    enriched = JSON.parse(raw);
+  } catch (firstErr) {
+    console.warn(`  JSON parse failed: ${firstErr.message}`);
+    console.warn(`  Attempting auto-repair (unescaped quotes)...`);
+    try {
+      enriched = JSON.parse(repairJson(raw));
+      console.log("  JSON repair succeeded");
+    } catch (secondErr) {
+      throw new Error(
+        `enriched-design-news.json contains invalid JSON that could not be auto-repaired.\n` +
+        `  Original: ${firstErr.message}\n` +
+        `  After repair: ${secondErr.message}\n` +
+        `  The Claude Routine likely committed malformed JSON.`
+      );
+    }
+  }
   const today = todayJST();
   if (enriched.date !== today) {
     throw new Error(
