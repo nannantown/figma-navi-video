@@ -177,7 +177,7 @@
         "views": 115,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-05T00:08:26.872Z"
+        "updatedAt": "2026-05-09T00:10:44.447Z"
       }
     },
     {
@@ -222,7 +222,7 @@
         "views": 249,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-05T00:08:26.872Z"
+        "updatedAt": "2026-05-09T00:10:44.447Z"
       }
     },
     {
@@ -267,7 +267,7 @@
         "views": 101,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-05T00:08:26.872Z"
+        "updatedAt": "2026-05-09T00:10:44.447Z"
       }
     },
     {
@@ -312,7 +312,7 @@
         "views": 113,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-05T00:08:26.872Z"
+        "updatedAt": "2026-05-09T00:10:44.447Z"
       }
     },
     {
@@ -357,7 +357,7 @@
         "views": 485,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-05T00:08:26.872Z"
+        "updatedAt": "2026-05-09T00:10:44.447Z"
       }
     },
     {
@@ -401,7 +401,7 @@
         "views": 87,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-05T00:08:26.872Z"
+        "updatedAt": "2026-05-09T00:10:44.447Z"
       }
     },
     {
@@ -443,10 +443,10 @@
         "freshness_hours": 36
       },
       "stats": {
-        "views": 112,
+        "views": 115,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-05T00:08:26.872Z"
+        "updatedAt": "2026-05-09T00:10:44.447Z"
       }
     },
     {
@@ -488,10 +488,10 @@
         "freshness_hours": 168
       },
       "stats": {
-        "views": 93,
+        "views": 103,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-05T00:08:26.872Z"
+        "updatedAt": "2026-05-09T00:10:44.447Z"
       }
     },
     {
@@ -533,10 +533,10 @@
         "freshness_hours": 96
       },
       "stats": {
-        "views": 85,
+        "views": 86,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-05T00:08:26.872Z"
+        "updatedAt": "2026-05-09T00:10:44.447Z"
       }
     },
     {
@@ -578,6 +578,50 @@
         ],
         "query": "Figma livestream May 5 2026 AI agents co-design use_figma MCP Skills Claude Cursor",
         "freshness_hours": 0
+      },
+      "stats": {
+        "views": 117,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-05-09T00:10:44.447Z"
+      }
+    },
+    {
+      "videoId": "1Z2V-F5G36M",
+      "videoUrl": "https://youtube.com/shorts/1Z2V-F5G36M",
+      "date": "2026-05-09",
+      "title": "【デザインニュース】Awwwards SOTD連続4本がポートフォリオ、駆け出しが学ぶ『軸で見せる』編集力｜2026/05/09 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 44,
+      "discovery": {
+        "method": "product-launches",
+        "description": "Awwwards Site of the Day の直近 6 日 (5/3〜5/8) の受賞リストを巡回し、5/3 TREY HOLLINGER, 5/4 Victor Furuya '26, 5/6 Aterlab, 5/8 Paul Dunbar Selected Work と 4 本連続でデザイナー個人ポートフォリオが SOTD を獲っているトレンドを特定。最新の 5/8 受賞 Paul Dunbar Selected Work (studiodunbar.xyz) を主軸に、ブランド/広告畑 → 2018 年 SaaS プロダクト転向という経歴を『領域でバラ売りせず 1 本の軸で整理』した構成が評価された点を抽出。method 選定: 直近14日 method 別 avg views で product-launches=367 (n=2, TOP1) を Exploit、5/2 Studio375 が今日 5/9 で 7 日窓を抜けるため 5/6 + 5/9 = 2 回でぎりぎりクリア (連投ガード OK)、直近 2 日 (5/8 official-src, 5/7 expert-blog) と method 重複なし、WORST 凍結 (news-en) 対象外。土曜 → 戦略の運用フォーマット上 Tips/Before-After/ポートフォリオ事例 OK 帯。柱⑤ Before/After/ポートフォリオ事例 が直近14日 0/15 = 0% (target 10%) で最大の運用ギャップだったため、これを埋める意図で柱⑤ にあてる。ペルソナ Primary 駆け出し層の最大の詰まり (= 何を載せ・どう魅せるかでポートフォリオが進まない) に直接刺す角度。NG パターン回避: プロ向け高度議論ではなく『軸で見せる』という具体行動指針、AI=補助輪として『AI で量を出す前に自分の言葉で芯を決める』と再強化、5/7 expert-blog の決める力テーマと連続性確保",
+        "sources": [
+          "https://www.awwwards.com/websites/sites_of_the_day/",
+          "https://www.awwwards.com/websites/winner_category_portfolio/",
+          "https://www.awwwards.com/websites/portfolio/",
+          "https://studiodunbar.xyz/",
+          "https://dribbble.com/Dunbar_IV"
+        ],
+        "query": "Awwwards Site of the Day May 2026 portfolio winner Paul Dunbar Selected Work",
+        "freshness_hours": 24
       },
       "stats": {
         "views": 0,
@@ -672,6 +716,14 @@
       "changes": [
         "standard: 153 avg views (12 videos)",
         "Day performance: Wed=315, Sun=171, Thu=131, Sat=115, Tue=113, Fri=93, Mon=93"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-09",
+      "changes": [
+        "standard: 151 avg views (13 videos)",
+        "Day performance: Wed=315, Sun=176, Thu=131, Sat=115, Tue=115, Fri=95, Mon=94"
       ],
       "recommendedTemplate": "standard"
     }
