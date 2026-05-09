@@ -1,40 +1,40 @@
 {
-  "date": "2026-05-09",
+  "date": "2026-05-10",
   "discovery": {
-    "method": "product-launches",
-    "description": "Awwwards Site of the Day の直近 6 日 (5/3〜5/8) の受賞リストを巡回し、5/3 TREY HOLLINGER, 5/4 Victor Furuya '26, 5/6 Aterlab, 5/8 Paul Dunbar Selected Work と 4 本連続でデザイナー個人ポートフォリオが SOTD を獲っているトレンドを特定。最新の 5/8 受賞 Paul Dunbar Selected Work (studiodunbar.xyz) を主軸に、ブランド/広告畑 → 2018 年 SaaS プロダクト転向という経歴を『領域でバラ売りせず 1 本の軸で整理』した構成が評価された点を抽出。method 選定: 直近14日 method 別 avg views で product-launches=367 (n=2, TOP1) を Exploit、5/2 Studio375 が今日 5/9 で 7 日窓を抜けるため 5/6 + 5/9 = 2 回でぎりぎりクリア (連投ガード OK)、直近 2 日 (5/8 official-src, 5/7 expert-blog) と method 重複なし、WORST 凍結 (news-en) 対象外。土曜 → 戦略の運用フォーマット上 Tips/Before-After/ポートフォリオ事例 OK 帯。柱⑤ Before/After/ポートフォリオ事例 が直近14日 0/15 = 0% (target 10%) で最大の運用ギャップだったため、これを埋める意図で柱⑤ にあてる。ペルソナ Primary 駆け出し層の最大の詰まり (= 何を載せ・どう魅せるかでポートフォリオが進まない) に直接刺す角度。NG パターン回避: プロ向け高度議論ではなく『軸で見せる』という具体行動指針、AI=補助輪として『AI で量を出す前に自分の言葉で芯を決める』と再強化、5/7 expert-blog の決める力テーマと連続性確保",
+    "method": "expert-blog",
+    "description": "Smashing Magazine 5/5 公開の Kyrylo Levashov / MacPaw 寄稿『Rethinking The Experience Of System Tools』を一次取得し、CleanMyMac の感情設計3原則(色・奥行き・動き・3Dイラストで、問題の診断ではなく『何を空けたか・何を守ったか』をユーザーに返す)を駆け出しが学べる『機能=体験』フレームに翻訳。method 選定: expert-blog は直近14日 avg 115 (n=1) で TOP3 method、5/7 以来 3 日空きで直近2日(5/9 product-launches, 5/8 official-src)・7日2回到達ガード・WORST 凍結 すべてクリア。土曜 5/9 で柱⑤ ポートフォリオを埋めたので、日曜の今日は柱⑥ UI 批評 (直近14日 0/15 = 0%、target 10% で最大の運用ギャップ) + 柱④ Tips (3 原則 framework) のクロスで埋める。Sunday evergreen 帯のため Tips/UI 批評 が運用フォーマット上 OK。NG パターン回避: AI に丸投げではなく『何を返したいかを言葉にしてから AI に書かせる』と AI=補助輪を再強化。5/7 (decision power) → 5/8 (Question Cards UX) → 5/9 (軸の言語化) → 5/10 (機能を体験へ翻訳する責任) と 4 日連続の縦糸を完成、Primary 駆け出し層への『あなたの判断と編集力こそが価値』というメタメッセージを厚塗り",
     "sources": [
-      "https://www.awwwards.com/websites/sites_of_the_day/",
-      "https://www.awwwards.com/websites/winner_category_portfolio/",
-      "https://www.awwwards.com/websites/portfolio/",
-      "https://studiodunbar.xyz/",
-      "https://dribbble.com/Dunbar_IV"
+      "https://www.smashingmagazine.com/2026/05/rethinking-experience-system-tools/",
+      "https://www.smashingmagazine.com/category/ux/",
+      "https://www.smashingmagazine.com/category/emotional-design/page/2/",
+      "https://macpaw.com/cleanmymac",
+      "https://www.smashingmagazine.com/"
     ],
-    "query": "Awwwards Site of the Day May 2026 portfolio winner Paul Dunbar Selected Work",
-    "freshness_hours": 24
+    "query": "Smashing Magazine MacPaw CleanMyMac emotional design system tools rethinking May 2026 Kyrylo Levashov",
+    "freshness_hours": 120
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Awwwards SOTD連続4本がポートフォリオ、駆け出しが学ぶ『軸で見せる』編集力",
-      "description": "ポートフォリオで止まってる駆け出しに朗報。Awwwards Site of the Day、直近6日で4本連続がデザイナー個人ポートフォリオでした。",
-      "detail": "最新は5月8日のPaul Dunbar Selected Work。元ブランドデザイナーで2018年にSaaSのプロダクトへ転向した経歴を、領域別ではなく1本の軸で整理。共通点は華美な演出でなく、何ができる人かを最短で伝える編集力でした。",
-      "narration": "ポートフォリオで止まってる駆け出しに朗報。Awwwards Site of the Day、直近6日で4本連続がデザイナー個人ポートフォリオでした。",
-      "tags": ["Awwwards", "ポートフォリオ", "駆け出しデザイナー"],
+      "title": "Smashing最新論考、CleanMyMacに学ぶ機能=体験の3原則",
+      "description": "機能を作っただけでは仕事は終わらないです。Smashing Magazineの今週の論考が、機能と体験の境界を引き直す3原則を出していました。",
+      "detail": "主役はMacの掃除アプリCleanMyMac。色、奥行き、動き、3Dイラストを駆使し、問題の診断ではなく、何を空けたか・何を守ったかをユーザーに返す設計です。機能が完全には隠せない領域では、その見え方こそが体験になる、という発想ですね。",
+      "narration": "機能を作っただけでは仕事は終わらないです。Smashing Magazineの今週の論考が、機能と体験の境界を引き直す3原則を出していました。",
+      "tags": ["UI批評", "感情設計", "駆け出しデザイナー"],
       "narration_sections": {
-        "hook": "ポートフォリオで止まってる駆け出しに朗報。Awwwards Site of the Day、直近6日で4本連続がデザイナー個人ポートフォリオでした。",
-        "origin": "最新は5月8日のPaul Dunbar Selected Work。元ブランドデザイナーで2018年にSaaSのプロダクトへ転向した経歴を、領域別ではなく1本の軸で整理。共通点は華美な演出でなく、何ができる人かを最短で伝える編集力でした。",
-        "recommend": "足りないのは作例の数より、何を見せたい人かの軸。AIで量を作る前に、自分の言葉で芯を決めるのが先です。"
+        "hook": "機能を作っただけでは仕事は終わらないです。Smashing Magazineの今週の論考が、機能と体験の境界を引き直す3原則を出していました。",
+        "origin": "主役はMacの掃除アプリCleanMyMac。色、奥行き、動き、3Dイラストを駆使し、問題の診断ではなく、何を空けたか・何を守ったかをユーザーに返す設計です。機能が完全には隠せない領域では、その見え方こそが体験になる、という発想ですね。",
+        "recommend": "ボタンの色や進捗の出し方を、駆け出しのうちから体験として設計する癖、つけたいですね。AIに任せる前に、何を返すかを決めておきましょう。"
       },
       "section_titles": {
-        "hook": "ポートフォリオが連勝",
-        "origin": "Dunbar氏の戦略",
-        "recommend": "作例の数より軸の力"
+        "hook": "機能=体験の3原則",
+        "origin": "CleanMyMac論",
+        "recommend": "機能=体験の習慣"
       },
       "section_descriptions": {
-        "hook": "Awwwards 1位を独占する連続パターン",
-        "origin": "ブランド出身からSaaSへ転向、軸で経歴整理",
-        "recommend": "見せたい人物像を言葉にする力こそ準備の核"
+        "hook": "Smashing最新論考、機能と体験の境界を引き直す3原則",
+        "origin": "色・動き・3Dイラストで何を返すか、機能の表れ方を体験に翻訳",
+        "recommend": "機能を作って終わりにせず、見せ方まで設計する習慣を"
       }
     }
   ]
