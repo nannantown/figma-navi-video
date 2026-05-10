@@ -1,40 +1,42 @@
 {
-  "date": "2026-05-10",
+  "date": "2026-05-11",
   "discovery": {
-    "method": "expert-blog",
-    "description": "Smashing Magazine 5/5 公開の Kyrylo Levashov / MacPaw 寄稿『Rethinking The Experience Of System Tools』を一次取得し、CleanMyMac の感情設計3原則(色・奥行き・動き・3Dイラストで、問題の診断ではなく『何を空けたか・何を守ったか』をユーザーに返す)を駆け出しが学べる『機能=体験』フレームに翻訳。method 選定: expert-blog は直近14日 avg 115 (n=1) で TOP3 method、5/7 以来 3 日空きで直近2日(5/9 product-launches, 5/8 official-src)・7日2回到達ガード・WORST 凍結 すべてクリア。土曜 5/9 で柱⑤ ポートフォリオを埋めたので、日曜の今日は柱⑥ UI 批評 (直近14日 0/15 = 0%、target 10% で最大の運用ギャップ) + 柱④ Tips (3 原則 framework) のクロスで埋める。Sunday evergreen 帯のため Tips/UI 批評 が運用フォーマット上 OK。NG パターン回避: AI に丸投げではなく『何を返したいかを言葉にしてから AI に書かせる』と AI=補助輪を再強化。5/7 (decision power) → 5/8 (Question Cards UX) → 5/9 (軸の言語化) → 5/10 (機能を体験へ翻訳する責任) と 4 日連続の縦糸を完成、Primary 駆け出し層への『あなたの判断と編集力こそが価値』というメタメッセージを厚塗り",
+    "method": "figma-community",
+    "description": "Figma Community のトレンドプラグイン横断調査で、元 Apple Siri チーム出身者 (onBeacon) が公開した『AI Design Reviewer: UI/UX, Accessibility, Design System Linter + Prototypes』を発見。複数の Figma プラグインまとめ媒体 (Muzli / UXPilot / Mockuuups Studio) が直近 1 週間以内に同プラグインを『Apple Siri 出身チーム発の AI デザインレビュアー』として一斉ピックアップしており、GPT-5 と Claude Sonnet/Opus のデュアル LLM、Nielsen Norman ヒューリスティック + WCAG AA/AAA、120+ の行動科学原則というスペック面の独自性が確認できた。method 選定 (Monday weekday news 帯): TOP3 候補のうち product-launches (5/9 利用、2日ルール抵触) / expert-blog (5/10 利用、2日ルール+7日2回到達ガード抵触) は今日不可、official-src (5/8 利用、5/5+5/8 で7日2回到達済) も同様にガード抵触、news-en は 2 週連続 WORST 凍結 (5/19まで)。残る Exploit 候補は figma-community (5/3 = 8 日空き、avg 103 で TOP4、weekday news-preferred set 4 タグ中の最後の生存タグ) と Explore 候補 social-en (5/4 = 7 日空き、avg 100.5、weekday news-preferred set 外) の 2 つ。**今日は figma-community をぴったりの空き日に Exploit 採用**。Sunday 4 日連続の縦糸 (5/7 expert-blog → 5/8 official-src → 5/9 product-launches → 5/10 expert-blog の人側論考軸) を月曜で Figma 製品ニュース系の横糸に切り替える節目として、Primary 駆け出しデザイナーの『誰にレビューもらうか分からない・ポートフォリオを出してから止まる』という最も生々しい痛点を直撃。柱② プラグイン/エコシステム (target 20%) は直近14日で 1/15 = 6.7% と未達、ここを埋める意図でも整合。NG パターン回避: AI=補助輪フレームを維持し『AI が先輩レビューを代替する』ではなく『AI で自己レビューを習慣化、判断は人がする』として位置づけ、5/10 の『機能を体験へ翻訳する責任』縦糸の余韻を切らさず Figmaナビ 本体 (AI 生成プラグイン) と同じカテゴリの隣接サービス紹介で自社ポジショニングも自然に補強",
     "sources": [
-      "https://www.smashingmagazine.com/2026/05/rethinking-experience-system-tools/",
-      "https://www.smashingmagazine.com/category/ux/",
-      "https://www.smashingmagazine.com/category/emotional-design/page/2/",
-      "https://macpaw.com/cleanmymac",
-      "https://www.smashingmagazine.com/"
+      "https://www.figma.com/community/plugin/1339202278007297015/ai-design-reviewer-ui-ux-accessibility-design-system-linter-prototypes",
+      "https://onbeacon.ai/",
+      "https://landing.onbeacon.ai/designers",
+      "https://onbeacon.ai/figma-plugin-auth",
+      "https://muz.li/blog/best-figma-plugins-for-designers-in-2026/",
+      "https://uxpilot.ai/blogs/best-figma-ai-plugins",
+      "https://mockuuups.studio/blog/post/figma-ai-plugins/"
     ],
-    "query": "Smashing Magazine MacPaw CleanMyMac emotional design system tools rethinking May 2026 Kyrylo Levashov",
-    "freshness_hours": 120
+    "query": "Figma Community AI Design Reviewer onBeacon Apple Siri team plugin GPT-5 Claude Sonnet accessibility WCAG behavioral science May 2026",
+    "freshness_hours": 144
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Smashing最新論考、CleanMyMacに学ぶ機能=体験の3原則",
-      "description": "機能を作っただけでは仕事は終わらないです。Smashing Magazineの今週の論考が、機能と体験の境界を引き直す3原則を出していました。",
-      "detail": "主役はMacの掃除アプリCleanMyMac。色、奥行き、動き、3Dイラストを駆使し、問題の診断ではなく、何を空けたか・何を守ったかをユーザーに返す設計です。機能が完全には隠せない領域では、その見え方こそが体験になる、という発想ですね。",
-      "narration": "機能を作っただけでは仕事は終わらないです。Smashing Magazineの今週の論考が、機能と体験の境界を引き直す3原則を出していました。",
-      "tags": ["UI批評", "感情設計", "駆け出しデザイナー"],
+      "title": "Figma Communityで話題、元Siri出身チームのAI Design Reviewer",
+      "description": "デザインレビューしてくれる先輩、毎回いますか?ポートフォリオを出してから何が悪いか分からず止まる、駆け出し最大の壁ですよね。",
+      "detail": "Figma Communityで話題のAI Design Reviewer、元AppleのSiri出身チーム発。GPT-5とClaude Sonnetが、開いた数十秒でUI/UX、アクセシビリティ、デザインシステム逸脱、コピーまでWCAG AA基準で全部指摘。",
+      "narration": "デザインレビューしてくれる先輩、毎回いますか?ポートフォリオを出してから何が悪いか分からず止まる、駆け出し最大の壁ですよね。",
+      "tags": ["Figma Community", "AIレビュー", "駆け出しデザイナー"],
       "narration_sections": {
-        "hook": "機能を作っただけでは仕事は終わらないです。Smashing Magazineの今週の論考が、機能と体験の境界を引き直す3原則を出していました。",
-        "origin": "主役はMacの掃除アプリCleanMyMac。色、奥行き、動き、3Dイラストを駆使し、問題の診断ではなく、何を空けたか・何を守ったかをユーザーに返す設計です。機能が完全には隠せない領域では、その見え方こそが体験になる、という発想ですね。",
-        "recommend": "ボタンの色や進捗の出し方を、駆け出しのうちから体験として設計する癖、つけたいですね。AIに任せる前に、何を返すかを決めておきましょう。"
+        "hook": "デザインレビューしてくれる先輩、毎回いますか?ポートフォリオを出してから何が悪いか分からず止まる、駆け出し最大の壁ですよね。",
+        "origin": "Figma Communityで話題のAI Design Reviewer、元AppleのSiri出身チーム発。GPT-5とClaude Sonnetが、開いた数十秒でUI/UX、アクセシビリティ、デザインシステム逸脱、コピーまでWCAG AA基準で全部指摘。",
+        "recommend": "駆け出しでも先輩レビューの代わりを毎回もらえる、AIは判断の補助輪。提出前に自己レビュー、習慣化したいですね。"
       },
       "section_titles": {
-        "hook": "機能=体験の3原則",
-        "origin": "CleanMyMac論",
-        "recommend": "機能=体験の習慣"
+        "hook": "デザインレビューの壁",
+        "origin": "話題のAIレビュー",
+        "recommend": "AIは判断の補助輪"
       },
       "section_descriptions": {
-        "hook": "Smashing最新論考、機能と体験の境界を引き直す3原則",
-        "origin": "色・動き・3Dイラストで何を返すか、機能の表れ方を体験に翻訳",
-        "recommend": "機能を作って終わりにせず、見せ方まで設計する習慣を"
+        "hook": "誰にレビューもらうか、駆け出し最大の悩みを直撃",
+        "origin": "Apple Siri出身チームのFigmaプラグインを解剖",
+        "recommend": "提出前の自己レビューを毎回習慣化するヒント"
       }
     }
   ]
