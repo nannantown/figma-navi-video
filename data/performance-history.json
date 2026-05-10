@@ -222,7 +222,7 @@
         "views": 249,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-09T00:10:44.447Z"
+        "updatedAt": "2026-05-10T00:04:37.727Z"
       }
     },
     {
@@ -267,7 +267,7 @@
         "views": 101,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-09T00:10:44.447Z"
+        "updatedAt": "2026-05-10T00:04:37.727Z"
       }
     },
     {
@@ -312,7 +312,7 @@
         "views": 113,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-09T00:10:44.447Z"
+        "updatedAt": "2026-05-10T00:04:37.727Z"
       }
     },
     {
@@ -357,7 +357,7 @@
         "views": 485,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-09T00:10:44.447Z"
+        "updatedAt": "2026-05-10T00:04:37.727Z"
       }
     },
     {
@@ -401,7 +401,7 @@
         "views": 87,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-09T00:10:44.447Z"
+        "updatedAt": "2026-05-10T00:04:37.727Z"
       }
     },
     {
@@ -446,7 +446,7 @@
         "views": 115,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-09T00:10:44.447Z"
+        "updatedAt": "2026-05-10T00:04:37.727Z"
       }
     },
     {
@@ -491,7 +491,7 @@
         "views": 103,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-09T00:10:44.447Z"
+        "updatedAt": "2026-05-10T00:04:37.727Z"
       }
     },
     {
@@ -536,7 +536,7 @@
         "views": 86,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-09T00:10:44.447Z"
+        "updatedAt": "2026-05-10T00:04:37.727Z"
       }
     },
     {
@@ -583,7 +583,7 @@
         "views": 117,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-09T00:10:44.447Z"
+        "updatedAt": "2026-05-10T00:04:37.727Z"
       }
     },
     {
@@ -622,6 +622,50 @@
         ],
         "query": "Awwwards Site of the Day May 2026 portfolio winner Paul Dunbar Selected Work",
         "freshness_hours": 24
+      },
+      "stats": {
+        "views": 71,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-05-10T00:04:37.727Z"
+      }
+    },
+    {
+      "videoId": "YctJDp1gOfA",
+      "videoUrl": "https://youtube.com/shorts/YctJDp1gOfA",
+      "date": "2026-05-10",
+      "title": "【デザインニュース】Smashing最新論考、CleanMyMacに学ぶ機能=体験の3原則｜2026/05/10 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 49,
+      "discovery": {
+        "method": "expert-blog",
+        "description": "Smashing Magazine 5/5 公開の Kyrylo Levashov / MacPaw 寄稿『Rethinking The Experience Of System Tools』を一次取得し、CleanMyMac の感情設計3原則(色・奥行き・動き・3Dイラストで、問題の診断ではなく『何を空けたか・何を守ったか』をユーザーに返す)を駆け出しが学べる『機能=体験』フレームに翻訳。method 選定: expert-blog は直近14日 avg 115 (n=1) で TOP3 method、5/7 以来 3 日空きで直近2日(5/9 product-launches, 5/8 official-src)・7日2回到達ガード・WORST 凍結 すべてクリア。土曜 5/9 で柱⑤ ポートフォリオを埋めたので、日曜の今日は柱⑥ UI 批評 (直近14日 0/15 = 0%、target 10% で最大の運用ギャップ) + 柱④ Tips (3 原則 framework) のクロスで埋める。Sunday evergreen 帯のため Tips/UI 批評 が運用フォーマット上 OK。NG パターン回避: AI に丸投げではなく『何を返したいかを言葉にしてから AI に書かせる』と AI=補助輪を再強化。5/7 (decision power) → 5/8 (Question Cards UX) → 5/9 (軸の言語化) → 5/10 (機能を体験へ翻訳する責任) と 4 日連続の縦糸を完成、Primary 駆け出し層への『あなたの判断と編集力こそが価値』というメタメッセージを厚塗り",
+        "sources": [
+          "https://www.smashingmagazine.com/2026/05/rethinking-experience-system-tools/",
+          "https://www.smashingmagazine.com/category/ux/",
+          "https://www.smashingmagazine.com/category/emotional-design/page/2/",
+          "https://macpaw.com/cleanmymac",
+          "https://www.smashingmagazine.com/"
+        ],
+        "query": "Smashing Magazine MacPaw CleanMyMac emotional design system tools rethinking May 2026 Kyrylo Levashov",
+        "freshness_hours": 120
       },
       "stats": {
         "views": 0,
@@ -724,6 +768,14 @@
       "changes": [
         "standard: 151 avg views (13 videos)",
         "Day performance: Wed=315, Sun=176, Thu=131, Sat=115, Tue=115, Fri=95, Mon=94"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-10",
+      "changes": [
+        "standard: 145 avg views (14 videos)",
+        "Day performance: Wed=315, Sun=176, Thu=131, Tue=115, Fri=95, Mon=94, Sat=93"
       ],
       "recommendedTemplate": "standard"
     }
