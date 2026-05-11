@@ -267,7 +267,7 @@
         "views": 101,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-10T00:04:37.727Z"
+        "updatedAt": "2026-05-11T00:09:31.264Z"
       }
     },
     {
@@ -309,10 +309,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 113,
+        "views": 114,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-10T00:04:37.727Z"
+        "updatedAt": "2026-05-11T00:09:31.264Z"
       }
     },
     {
@@ -357,7 +357,7 @@
         "views": 485,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-10T00:04:37.727Z"
+        "updatedAt": "2026-05-11T00:09:31.264Z"
       }
     },
     {
@@ -401,7 +401,7 @@
         "views": 87,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-10T00:04:37.727Z"
+        "updatedAt": "2026-05-11T00:09:31.264Z"
       }
     },
     {
@@ -446,7 +446,7 @@
         "views": 115,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-10T00:04:37.727Z"
+        "updatedAt": "2026-05-11T00:09:31.264Z"
       }
     },
     {
@@ -491,7 +491,7 @@
         "views": 103,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-10T00:04:37.727Z"
+        "updatedAt": "2026-05-11T00:09:31.264Z"
       }
     },
     {
@@ -536,7 +536,7 @@
         "views": 86,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-10T00:04:37.727Z"
+        "updatedAt": "2026-05-11T00:09:31.264Z"
       }
     },
     {
@@ -583,7 +583,7 @@
         "views": 117,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-10T00:04:37.727Z"
+        "updatedAt": "2026-05-11T00:09:31.264Z"
       }
     },
     {
@@ -624,10 +624,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 71,
+        "views": 72,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-10T00:04:37.727Z"
+        "updatedAt": "2026-05-11T00:09:31.264Z"
       }
     },
     {
@@ -666,6 +666,52 @@
         ],
         "query": "Smashing Magazine MacPaw CleanMyMac emotional design system tools rethinking May 2026 Kyrylo Levashov",
         "freshness_hours": 120
+      },
+      "stats": {
+        "views": 61,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-05-11T00:09:31.264Z"
+      }
+    },
+    {
+      "videoId": "ptpjdWqKs-0",
+      "videoUrl": "https://youtube.com/shorts/ptpjdWqKs-0",
+      "date": "2026-05-11",
+      "title": "【デザインニュース】Figma Communityで話題、元Siri出身チームのAI Design Reviewer｜2026/05/11 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 43,
+      "discovery": {
+        "method": "figma-community",
+        "description": "Figma Community のトレンドプラグイン横断調査で、元 Apple Siri チーム出身者 (onBeacon) が公開した『AI Design Reviewer: UI/UX, Accessibility, Design System Linter + Prototypes』を発見。複数の Figma プラグインまとめ媒体 (Muzli / UXPilot / Mockuuups Studio) が直近 1 週間以内に同プラグインを『Apple Siri 出身チーム発の AI デザインレビュアー』として一斉ピックアップしており、GPT-5 と Claude Sonnet/Opus のデュアル LLM、Nielsen Norman ヒューリスティック + WCAG AA/AAA、120+ の行動科学原則というスペック面の独自性が確認できた。method 選定 (Monday weekday news 帯): TOP3 候補のうち product-launches (5/9 利用、2日ルール抵触) / expert-blog (5/10 利用、2日ルール+7日2回到達ガード抵触) は今日不可、official-src (5/8 利用、5/5+5/8 で7日2回到達済) も同様にガード抵触、news-en は 2 週連続 WORST 凍結 (5/19まで)。残る Exploit 候補は figma-community (5/3 = 8 日空き、avg 103 で TOP4、weekday news-preferred set 4 タグ中の最後の生存タグ) と Explore 候補 social-en (5/4 = 7 日空き、avg 100.5、weekday news-preferred set 外) の 2 つ。**今日は figma-community をぴったりの空き日に Exploit 採用**。Sunday 4 日連続の縦糸 (5/7 expert-blog → 5/8 official-src → 5/9 product-launches → 5/10 expert-blog の人側論考軸) を月曜で Figma 製品ニュース系の横糸に切り替える節目として、Primary 駆け出しデザイナーの『誰にレビューもらうか分からない・ポートフォリオを出してから止まる』という最も生々しい痛点を直撃。柱② プラグイン/エコシステム (target 20%) は直近14日で 1/15 = 6.7% と未達、ここを埋める意図でも整合。NG パターン回避: AI=補助輪フレームを維持し『AI が先輩レビューを代替する』ではなく『AI で自己レビューを習慣化、判断は人がする』として位置づけ、5/10 の『機能を体験へ翻訳する責任』縦糸の余韻を切らさず Figmaナビ 本体 (AI 生成プラグイン) と同じカテゴリの隣接サービス紹介で自社ポジショニングも自然に補強",
+        "sources": [
+          "https://www.figma.com/community/plugin/1339202278007297015/ai-design-reviewer-ui-ux-accessibility-design-system-linter-prototypes",
+          "https://onbeacon.ai/",
+          "https://landing.onbeacon.ai/designers",
+          "https://onbeacon.ai/figma-plugin-auth",
+          "https://muz.li/blog/best-figma-plugins-for-designers-in-2026/",
+          "https://uxpilot.ai/blogs/best-figma-ai-plugins",
+          "https://mockuuups.studio/blog/post/figma-ai-plugins/"
+        ],
+        "query": "Figma Community AI Design Reviewer onBeacon Apple Siri team plugin GPT-5 Claude Sonnet accessibility WCAG behavioral science May 2026",
+        "freshness_hours": 144
       },
       "stats": {
         "views": 0,
@@ -776,6 +822,14 @@
       "changes": [
         "standard: 145 avg views (14 videos)",
         "Day performance: Wed=315, Sun=176, Thu=131, Tue=115, Fri=95, Mon=94, Sat=93"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-11",
+      "changes": [
+        "standard: 140 avg views (15 videos)",
+        "Day performance: Wed=315, Sun=138, Thu=131, Tue=116, Fri=95, Sat=94, Mon=94"
       ],
       "recommendedTemplate": "standard"
     }
