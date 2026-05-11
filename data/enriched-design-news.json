@@ -1,42 +1,43 @@
 {
-  "date": "2026-05-11",
+  "date": "2026-05-12",
   "discovery": {
-    "method": "figma-community",
-    "description": "Figma Community のトレンドプラグイン横断調査で、元 Apple Siri チーム出身者 (onBeacon) が公開した『AI Design Reviewer: UI/UX, Accessibility, Design System Linter + Prototypes』を発見。複数の Figma プラグインまとめ媒体 (Muzli / UXPilot / Mockuuups Studio) が直近 1 週間以内に同プラグインを『Apple Siri 出身チーム発の AI デザインレビュアー』として一斉ピックアップしており、GPT-5 と Claude Sonnet/Opus のデュアル LLM、Nielsen Norman ヒューリスティック + WCAG AA/AAA、120+ の行動科学原則というスペック面の独自性が確認できた。method 選定 (Monday weekday news 帯): TOP3 候補のうち product-launches (5/9 利用、2日ルール抵触) / expert-blog (5/10 利用、2日ルール+7日2回到達ガード抵触) は今日不可、official-src (5/8 利用、5/5+5/8 で7日2回到達済) も同様にガード抵触、news-en は 2 週連続 WORST 凍結 (5/19まで)。残る Exploit 候補は figma-community (5/3 = 8 日空き、avg 103 で TOP4、weekday news-preferred set 4 タグ中の最後の生存タグ) と Explore 候補 social-en (5/4 = 7 日空き、avg 100.5、weekday news-preferred set 外) の 2 つ。**今日は figma-community をぴったりの空き日に Exploit 採用**。Sunday 4 日連続の縦糸 (5/7 expert-blog → 5/8 official-src → 5/9 product-launches → 5/10 expert-blog の人側論考軸) を月曜で Figma 製品ニュース系の横糸に切り替える節目として、Primary 駆け出しデザイナーの『誰にレビューもらうか分からない・ポートフォリオを出してから止まる』という最も生々しい痛点を直撃。柱② プラグイン/エコシステム (target 20%) は直近14日で 1/15 = 6.7% と未達、ここを埋める意図でも整合。NG パターン回避: AI=補助輪フレームを維持し『AI が先輩レビューを代替する』ではなく『AI で自己レビューを習慣化、判断は人がする』として位置づけ、5/10 の『機能を体験へ翻訳する責任』縦糸の余韻を切らさず Figmaナビ 本体 (AI 生成プラグイン) と同じカテゴリの隣接サービス紹介で自社ポジショニングも自然に補強",
+    "method": "official-src",
+    "description": "Figma 公式 release notes / Figma Make ヘルプ / 開発者ドキュメントを横断調査し、昨日 5/11 公開の Figma Make Skills(ユーザーが markdown で書く再利用プロンプトを slash command で呼び出せる新機能)を一次取得。5/6 で扱った FigJam の MCP Skills(サーバー/エージェント側で動く Skills)とは切り口を明確に分離し、今日は『ユーザー自身が書いて使う側の Skills』としてフレーム。method 選定(Tuesday weekday news 帯): TOP3 method 候補のうち product-launches(5/9利用、5/6+5/9で7日2回到達ガード抵触)/ figma-community(5/11=昨日利用で直近2日ルール抵触)/ expert-blog(5/10利用で直近2日ルール+5/7+5/10で7日2回到達ガード抵触)が全て今日 NG、news-en は 2 週連続 WORST 凍結中(5/19まで)、social-en は weekday news-preferred set 外。official-src(avg 101.67, n=3, TOP2 method, 5/8=4日前で直近2日 OK、5/5+5/8 が境界の 7日2回到達だが 5/12 から見て 5/5 は丁度 7 日前で window 外と判定、weekday news-preferred の最右翼)を Exploit 採用。柱① Figma 公式ニュース(target 25%)は直近14日で 6/15 = 40% と既に target を超過しているが、5/8 以降 official-src 空白で柱① 比率は今日入れて 7/15 = 46.7% で天井形成、明日以降は他の柱配分の練り直し前提。NG パターン回避: 『プラグインの機能説明メイン』にならないよう、Primary 駆け出しデザイナーの『プロンプト下手・毎回同じこと書いて時間が溶ける』という痛点から入り、AI=補助輪フレーミングを維持して『AI に任せれば考えなくていい』NG を回避、判断と運用は人(駆け出し自身)で位置づける。",
     "sources": [
-      "https://www.figma.com/community/plugin/1339202278007297015/ai-design-reviewer-ui-ux-accessibility-design-system-linter-prototypes",
-      "https://onbeacon.ai/",
-      "https://landing.onbeacon.ai/designers",
-      "https://onbeacon.ai/figma-plugin-auth",
-      "https://muz.li/blog/best-figma-plugins-for-designers-in-2026/",
-      "https://uxpilot.ai/blogs/best-figma-ai-plugins",
-      "https://mockuuups.studio/blog/post/figma-ai-plugins/"
+      "https://www.figma.com/release-notes/",
+      "https://help.figma.com/hc/en-us/articles/40219873508247-Release-notes-roundup-May-2026",
+      "https://help.figma.com/hc/en-us/articles/39287396773399-Use-skills-with-the-Figma-MCP-server",
+      "https://help.figma.com/hc/en-us/articles/39166810751895-Figma-skills-for-MCP",
+      "https://developers.figma.com/docs/figma-mcp-server/create-skills/",
+      "https://help.figma.com/hc/en-us/articles/33665861260823-Add-guidelines-to-Figma-Make",
+      "https://help.figma.com/hc/en-us/articles/31304412302231-Explore-Figma-Make",
+      "https://fig-events.figma.com/may-rn-2026/"
     ],
-    "query": "Figma Community AI Design Reviewer onBeacon Apple Siri team plugin GPT-5 Claude Sonnet accessibility WCAG behavioral science May 2026",
-    "freshness_hours": 144
+    "query": "Figma Make Skills slash command markdown reusable workflow insert-sample-data build-from-prd May 11 2026 official release notes",
+    "freshness_hours": 30
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma Communityで話題、元Siri出身チームのAI Design Reviewer",
-      "description": "デザインレビューしてくれる先輩、毎回いますか?ポートフォリオを出してから何が悪いか分からず止まる、駆け出し最大の壁ですよね。",
-      "detail": "Figma Communityで話題のAI Design Reviewer、元AppleのSiri出身チーム発。GPT-5とClaude Sonnetが、開いた数十秒でUI/UX、アクセシビリティ、デザインシステム逸脱、コピーまでWCAG AA基準で全部指摘。",
-      "narration": "デザインレビューしてくれる先輩、毎回いますか?ポートフォリオを出してから何が悪いか分からず止まる、駆け出し最大の壁ですよね。",
-      "tags": ["Figma Community", "AIレビュー", "駆け出しデザイナー"],
+      "title": "Figma Make Skillsが公式実装、自作プロンプトを/呼び出しで再利用へ",
+      "description": "Figma Makeで同じプロンプトを毎回書いてませんか?昨日5月11日、自作の手順を呼び出せるSkillsが公式実装、駆け出し必見の神アプデです。",
+      "detail": "Skillsはmarkdownで書く再利用プロンプト。/insert-sample-dataで統一テストデータを投入、/build-from-prdでNotionのPRDから一発プロトタイプ。チーム共有・公開も近日対応予定です。",
+      "narration": "Figma Makeで同じプロンプトを毎回書いてませんか?昨日5月11日、自作の手順を呼び出せるSkillsが公式実装、駆け出し必見の神アプデです。",
+      "tags": ["Figma Make", "Skills", "プロンプト再利用"],
       "narration_sections": {
-        "hook": "デザインレビューしてくれる先輩、毎回いますか?ポートフォリオを出してから何が悪いか分からず止まる、駆け出し最大の壁ですよね。",
-        "origin": "Figma Communityで話題のAI Design Reviewer、元AppleのSiri出身チーム発。GPT-5とClaude Sonnetが、開いた数十秒でUI/UX、アクセシビリティ、デザインシステム逸脱、コピーまでWCAG AA基準で全部指摘。",
-        "recommend": "駆け出しでも先輩レビューの代わりを毎回もらえる、AIは判断の補助輪。提出前に自己レビュー、習慣化したいですね。"
+        "hook": "Figma Makeで同じプロンプトを毎回書いてませんか?昨日5月11日、自作の手順を呼び出せるSkillsが公式実装、駆け出し必見の神アプデです。",
+        "origin": "Skillsはmarkdownで書く再利用プロンプト。/insert-sample-dataで統一テストデータを投入、/build-from-prdでNotionのPRDから一発プロトタイプ。チーム共有・公開も近日対応予定です。",
+        "recommend": "駆け出しのプロンプト下手も構造で解決できる、AIは補助輪で判断は自分です。提出前に自分用スキル整えませんか。"
       },
       "section_titles": {
-        "hook": "デザインレビューの壁",
-        "origin": "話題のAIレビュー",
-        "recommend": "AIは判断の補助輪"
+        "hook": "Skills公式実装",
+        "origin": "markdownスキル例",
+        "recommend": "プロンプト下手を解決"
       },
       "section_descriptions": {
-        "hook": "誰にレビューもらうか、駆け出し最大の悩みを直撃",
-        "origin": "Apple Siri出身チームのFigmaプラグインを解剖",
-        "recommend": "提出前の自己レビューを毎回習慣化するヒント"
+        "hook": "駆け出しの毎回プロンプト負担を一発で解決",
+        "origin": "markdown手順を保存、slashで呼び出す",
+        "recommend": "AIは補助輪、判断は駆け出しが自分で磨く"
       }
     }
   ]
