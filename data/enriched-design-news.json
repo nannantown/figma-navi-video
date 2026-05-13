@@ -1,42 +1,43 @@
 {
-  "date": "2026-05-13",
+  "date": "2026-05-14",
   "discovery": {
-    "method": "news-en",
-    "description": "BusinessWire / Motley Fool / Yahoo Finance / Stocktitan / Zacks の英語ビジネス/テック報道を横断調査し、明日 5/14 (Thu) 米国市場終了後に発表される Figma Q1 2026 earnings の preview を一次取得。市場予想は売上 315-317M ドル / 前年比 38% 増、株は年初来 48% 下落 (4/17 Claude Design 発表時に 7% 急落、4/22 の本チャンネル動画と同題材の続編)、AI クレジット課金は年内開始予定、ガイダンスは年間 30% で残り 3 四半期 27% という保守設定で beat-and-raise 期待。method 選定 (Wednesday weekday news 帯): TOP3 method 候補のうち product-launches (5/9 利用、5/6+5/9 で 7日2回到達ガード抵触、仮ルール適用)、official-src (5/12 = 昨日利用、直近2日ルール抵触)、social-en (5/4 = 9 日前で OK だが weekday news-preferred set 外)、加えて figma-community (5/11 = 2 日前、直近2日ルール抵触) と expert-blog (5/10 = 3 日前、5/7+5/10 で 7日2回到達ガード抵触) が全て今日 NG。weekday news-preferred 4 タグ (news-en / official-src / figma-community / product-launches) 全滅の 3 日連続局面。news-en は 2 週連続 WORST で 5/19 まで凍結扱いだったが、**戦略ドキュメント Explore 規定『WORST method に再挑戦 (アプローチを変えて)』を正規適用**: 前回 WORST 案件 4/24 (ChatGPT Images 2.0 ハイプ総括) / 4/28 (Gemini UX 2.0 リーク報道) と本日案件 (特定企業の単一イベント直前 preview = event-preview 角度) は構造的に異なる切り口で、5/12 PDCA Method 提案『event-preview』の初実戦投入として運用。柱③ 業界・デザインニュース (target 20%) は直近14日 1-2 件 = ~10% で target 未達、5/12 PDCA 戦略更新提案 #1『5/13-5/18 は柱③④ 優先期間』の初日該当。NG パターン回避: 『プロ向け高度議論』にならないよう投資家用語を駆け出し向けに翻訳 (『決算 = AI 機能投入ペースを決める数字』として自分事化)、『AI に任せれば考えなくていい』NG を Recommend の『判断するのは自分です』で真逆フレームに、『AI が仕事を奪う』NG を『AI 機能投入加速 = 駆け出しが使える新ツール増』と前向き翻訳。4/22 動画 (Claude Design × Figma 株 7% 下落) の続編ナラティブで視聴履歴のある層に連続性を提供。freshness_hours = 24 (明日のイベント前日)。",
+    "method": "social-en",
+    "description": "英語デザイナー界隈の X / テックメディア横断調査で『Google Android 責任者 Sameer Samat 氏が Apple Liquid Glass を Android で採用しないと X で明言、5/12 Android Show: I/O Edition で Material 3 Expressive 路線継続が確定』というトピックを抽出。トリガーは Samat 氏の 5/5 X 返信『Not happening. Y'all are wild.』、増幅イベントは 2 日前の 5/12 Android Show 本番(Android 17 / Android Auto Material 3 Expressive 化を披露)、波及記事は Tom's Guide / Macworld / Android Authority / Digital Trends / 9to5Google / MacRumors / Trusted Reviews 等の英語テックメディア多発報道。method 選定 (Thursday weekday): 直近 14 日 stats 確定母集団(5/1-5/13)で social-en n=2 avg=101.0 (5/1=116, 5/4=86) が TOP 1 タイ、official-src n=2 avg=90.5 (5/12=64 で下振れ)、figma-community n=2 avg=77.5、product-launches n=1 avg=72、expert-blog n=1 avg=61。weekday news-preferred 4 タグ (news-en / official-src / figma-community / product-launches) の今日適用可否: news-en は 5/13 利用直近2日 + 2 週連続 WORST 凍結継続、official-src は 5/12 = 2 日前 + 5/12=64 で WORST 圏入り、figma-community は 5/11 + 5/3 で 7日内 1 回ながら avg 77.5 で減衰、product-launches は 5/9 単発で n 不足。social-en は 5/4 = 10 日前で 直近2日/7日2回到達 ガード両方クリア + TOP1 候補 + 5/13 PDCA で『5/14 朝は preview 重ね or other 業界ニュース (news-en 凍結明け前なので social-en か expert-blog)』と pre-scheduled 済み、本ルートを Exploit lane で正式採用。柱③ 業界・デザインニュース (target 20%) 補強週 (5/13-5/18) の 2 日目該当、5/13 Figma earnings preview (柱③、business-news 角度) と差別化して 5/14 は『デザイン言語の分岐』(柱③、platform-design 角度) で同柱内の角度ローテーション。NG パターン回避: 『AI が仕事を奪う』NG 不該当(プラットフォーム別デザイン言語の話)、『プロ向け高度議論』回避策 → Material 3 Expressive / Liquid Glass を駆け出しが触る iOS と Android の見た目差として翻訳、『AI に任せれば考えなくていい』NG 回避策 → Recommend の『判断は自分』で締め、『英語/日本語の中途半端な混在』回避策 → Liquid Glass / Material 3 Expressive / Android Show は固有名詞表記許容範囲。freshness_hours = 48 (5/12 Android Show 5/14 朝時点で 2 日経過、Samat 氏 X 投稿 5/5 起算なら 216h で borderline 超だが、増幅イベント = Android Show 起算で 48h、ニュースサイクルとしては fresh)。",
     "sources": [
-      "https://www.businesswire.com/news/home/20260422841631/en/Figma-to-Announce-First-Quarter-2026-Financial-Results-on-May-14-2026",
-      "https://investor.figma.com/news-events/events-and-presentations/event-details/2026/Figma-Q1-2026-Earnings-Call/default.aspx",
-      "https://www.fool.com/investing/2026/05/11/figmas-next-earnings-report-on-may-14-could-send-t/",
-      "https://www.stocktitan.net/news/FIG/figma-to-announce-first-quarter-2026-financial-results-on-may-14-lymsjhx6qtoo.html",
-      "https://finance.yahoo.com/markets/stocks/articles/figma-report-q1-earnings-whats-161300428.html",
-      "https://www.nasdaq.com/market-activity/stocks/fig/earnings",
-      "https://simplywall.st/stocks/us/software/nyse-fig/figma/news/is-it-time-to-reassess-figma-fig-after-its-48-year-to-date-s"
+      "https://www.tomsguide.com/phones/google-pixel-phones/not-happening-yall-are-crazy-google-shoots-down-rumors-android-will-copy-the-iphones-liquid-glass-design",
+      "https://9to5google.com/2026/05/06/liquid-glass-for-android-is-not-happening-at-least-not-for-pixels/",
+      "https://www.macrumors.com/2026/05/06/google-pixel-no-liquid-glass/",
+      "https://www.digitaltrends.com/phones/android-boss-shoots-down-a-liquid-glass-copyjob-on-pixels-and-thats-a-relief/",
+      "https://www.androidauthority.com/google-android-no-liquid-glass-redesign-3664004/",
+      "https://blog.google/products-and-platforms/platforms/android/android-show-io-edition-2026/",
+      "https://www.engadget.com/2171038/everything-announced-at-android-show-google-io-2026/",
+      "https://www.techradar.com/news/live/android-show-2026-live"
     ],
-    "query": "Figma Q1 2026 earnings May 14 preview revenue guidance 315M 38% YoY Claude Design AI monetization",
-    "freshness_hours": 24
+    "query": "Sameer Samat Android Liquid Glass not happening Android Show I/O Edition 2026 Material 3 Expressive Android 17",
+    "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "明日Figma初の四半期決算、Claude Design衝撃から1ヶ月の試金石",
-      "description": "明日5月14日夜、Figmaが上場後初の四半期決算を発表します。Claude Design衝撃から1ヶ月、駆け出しに直結する数字です。",
-      "detail": "市場予想は売上315Mドル、前年比38%増。株は年初来48%安、Claude Design発表時の急落から反転できるかが試金石です。AI課金の年内開始予定、Make・Skills・MCPへの投資加速が数字で見える可能性が高いです。",
-      "narration": "明日5月14日夜、Figmaが上場後初の四半期決算を発表します。Claude Design衝撃から1ヶ月、駆け出しに直結する数字です。",
-      "tags": ["Figma決算", "AI業界動向", "Claude Design"],
+      "title": "Google『Liquid Glass採用しない』、AndroidはMaterial 3継続でデザイン路線が分岐",
+      "description": "Google「Liquid Glassは採用しない」。Apple iOS 26で話題のあのデザイン、Pixelには来ないと明言です。",
+      "detail": "5月12日のAndroid Show、Android 17はMaterial 3 Expressive路線継続が確定。iOS 26のガラス風UIは可読性とアニメ重さで賛否割れ、責任者Sameer Samat氏もXで「ないない」と即否定しました。",
+      "narration": "Google「Liquid Glassは採用しない」。Apple iOS 26で話題のあのデザイン、Pixelには来ないと明言です。",
+      "tags": ["Liquid Glass", "Material 3 Expressive", "Android 17"],
       "narration_sections": {
-        "hook": "明日5月14日夜、Figmaが上場後初の四半期決算を発表します。Claude Design衝撃から1ヶ月、駆け出しに直結する数字です。",
-        "origin": "市場予想は売上315Mドル、前年比38%増。株は年初来48%安、Claude Design発表時の急落から反転できるかが試金石です。AI課金の年内開始予定、Make・Skills・MCPへの投資加速が数字で見える可能性が高いです。",
-        "recommend": "決算次第でFigmaのAI機能投入ペースが変わります。明朝の数字、駆け出しも一緒に追いましょう。判断するのは自分です。"
+        "hook": "Google「Liquid Glassは採用しない」。Apple iOS 26で話題のあのデザイン、Pixelには来ないと明言です。",
+        "origin": "5月12日のAndroid Show、Android 17はMaterial 3 Expressive路線継続が確定。iOS 26のガラス風UIは可読性とアニメ重さで賛否割れ、責任者Sameer Samat氏もXで「ないない」と即否定しました。",
+        "recommend": "iOSとAndroidは別物。プラットフォーム固有のデザイン言語を見極める力が、駆け出しの差になります。判断は自分。"
       },
       "section_titles": {
-        "hook": "明日Figma初決算",
-        "origin": "市場予想と試金石",
-        "recommend": "明朝の数字を追う"
+        "hook": "Google採用拒否",
+        "origin": "Material 3継続",
+        "recommend": "言語を見極める力"
       },
       "section_descriptions": {
-        "hook": "Claude Design衝撃から1ヶ月、明日結果",
-        "origin": "売上315M・前年比38%増がコンセンサス",
-        "recommend": "AI機能投入ペース左右、明朝の数字を一緒に追う"
+        "hook": "Apple iOS 26のあのUI、Androidは採用せず",
+        "origin": "5/12 Android ShowでMaterial 3継続",
+        "recommend": "プラットフォーム別を意識する力が学習者の差"
       }
     }
   ]
