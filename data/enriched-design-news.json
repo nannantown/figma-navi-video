@@ -1,43 +1,43 @@
 {
-  "date": "2026-05-14",
+  "date": "2026-05-15",
   "discovery": {
-    "method": "social-en",
-    "description": "英語デザイナー界隈の X / テックメディア横断調査で『Google Android 責任者 Sameer Samat 氏が Apple Liquid Glass を Android で採用しないと X で明言、5/12 Android Show: I/O Edition で Material 3 Expressive 路線継続が確定』というトピックを抽出。トリガーは Samat 氏の 5/5 X 返信『Not happening. Y'all are wild.』、増幅イベントは 2 日前の 5/12 Android Show 本番(Android 17 / Android Auto Material 3 Expressive 化を披露)、波及記事は Tom's Guide / Macworld / Android Authority / Digital Trends / 9to5Google / MacRumors / Trusted Reviews 等の英語テックメディア多発報道。method 選定 (Thursday weekday): 直近 14 日 stats 確定母集団(5/1-5/13)で social-en n=2 avg=101.0 (5/1=116, 5/4=86) が TOP 1 タイ、official-src n=2 avg=90.5 (5/12=64 で下振れ)、figma-community n=2 avg=77.5、product-launches n=1 avg=72、expert-blog n=1 avg=61。weekday news-preferred 4 タグ (news-en / official-src / figma-community / product-launches) の今日適用可否: news-en は 5/13 利用直近2日 + 2 週連続 WORST 凍結継続、official-src は 5/12 = 2 日前 + 5/12=64 で WORST 圏入り、figma-community は 5/11 + 5/3 で 7日内 1 回ながら avg 77.5 で減衰、product-launches は 5/9 単発で n 不足。social-en は 5/4 = 10 日前で 直近2日/7日2回到達 ガード両方クリア + TOP1 候補 + 5/13 PDCA で『5/14 朝は preview 重ね or other 業界ニュース (news-en 凍結明け前なので social-en か expert-blog)』と pre-scheduled 済み、本ルートを Exploit lane で正式採用。柱③ 業界・デザインニュース (target 20%) 補強週 (5/13-5/18) の 2 日目該当、5/13 Figma earnings preview (柱③、business-news 角度) と差別化して 5/14 は『デザイン言語の分岐』(柱③、platform-design 角度) で同柱内の角度ローテーション。NG パターン回避: 『AI が仕事を奪う』NG 不該当(プラットフォーム別デザイン言語の話)、『プロ向け高度議論』回避策 → Material 3 Expressive / Liquid Glass を駆け出しが触る iOS と Android の見た目差として翻訳、『AI に任せれば考えなくていい』NG 回避策 → Recommend の『判断は自分』で締め、『英語/日本語の中途半端な混在』回避策 → Liquid Glass / Material 3 Expressive / Android Show は固有名詞表記許容範囲。freshness_hours = 48 (5/12 Android Show 5/14 朝時点で 2 日経過、Samat 氏 X 投稿 5/5 起算なら 216h で borderline 超だが、増幅イベント = Android Show 起算で 48h、ニュースサイクルとしては fresh)。",
+    "method": "official-src",
+    "description": "Figma 投資家情報 (IR) と 5/14 米国時間引け後発表の Q1 2026 決算プレスリリースを一次取得し、複数英語テックメディア (Benzinga / Seeking Alpha / Yahoo Finance / Investing.com 等) で裏取り。5/13 PDCA で予約された 3 段運用 (5/13 earnings preview → 5/14 platform-design pivot → 5/15 earnings recap) のクライマックスとして、official-src + event-recap 角度を 5/14 PDCA pre-schedule どおり実行。method 選定 (Friday weekday): 直近 14 日 確定 stats で official-src n=2 avg=90.5 (5/5=117 TOP1 級, 5/12=64 で WORST 圏入りも) で TOP 2、social-en (5/14 利用、直近2日ガード抵触) と figma-community (avg 77.5 で WORST 圏寄り) は本日不可。official-src 前回利用 5/12 = 3 日前で直近2日ガード OK、weekday news-preferred 4 タグ内で唯一クリーン。柱③ 業界・デザインニュース (target 20%) 補強週 (5/13-5/18) の 3 日目、business-news 角度で 5/13 earnings preview を recap として回収。Primary 駆け出し痛点への翻訳 = 『AI×Figma を学ぶ価値が数字で証明された』として、NG パターン『プロ向け高度議論』回避策に Q1 決算の数字を学習者市場価値に直接接続。freshness_hours = 3 (5/14 US 引け後 = 5/15 朝 JST 5-6 時に発表、ルーチン実行 7:30 JST 時点で 2-3 時間経過)。",
     "sources": [
-      "https://www.tomsguide.com/phones/google-pixel-phones/not-happening-yall-are-crazy-google-shoots-down-rumors-android-will-copy-the-iphones-liquid-glass-design",
-      "https://9to5google.com/2026/05/06/liquid-glass-for-android-is-not-happening-at-least-not-for-pixels/",
-      "https://www.macrumors.com/2026/05/06/google-pixel-no-liquid-glass/",
-      "https://www.digitaltrends.com/phones/android-boss-shoots-down-a-liquid-glass-copyjob-on-pixels-and-thats-a-relief/",
-      "https://www.androidauthority.com/google-android-no-liquid-glass-redesign-3664004/",
-      "https://blog.google/products-and-platforms/platforms/android/android-show-io-edition-2026/",
-      "https://www.engadget.com/2171038/everything-announced-at-android-show-google-io-2026/",
-      "https://www.techradar.com/news/live/android-show-2026-live"
+      "https://investor.figma.com/news-events/news/news-details/2026/Figma-to-Announce-First-Quarter-2026-Financial-Results-on-May-14-2026/default.aspx",
+      "https://www.businesswire.com/news/home/20260514730702/en/Figma-Announces-First-Quarter-2026-Financial-Results",
+      "https://www.stocktitan.net/news/FIG/figma-announces-first-quarter-2026-financial-iya4neqkozgm.html",
+      "https://seekingalpha.com/news/4593241-figma-climbs-as-q1-features-46-revenue-surge-driven-by-significant-seat-expansion",
+      "https://www.benzinga.com/markets/earnings/26/05/52582384/figma-stock-jumps-on-q1-earnings-beat-as-customers-go-bigger-and-broader",
+      "https://www.investing.com/news/transcripts/earnings-call-transcript-figmas-q1-2026-beats-expectations-with-strong-eps-and-revenue-93CH-4690815",
+      "https://finance.yahoo.com/markets/stocks/articles/figma-report-q1-earnings-whats-161300428.html",
+      "https://www.morningstar.com/news/business-wire/20260514730702/figma-announces-first-quarter-2026-financial-results"
     ],
-    "query": "Sameer Samat Android Liquid Glass not happening Android Show I/O Edition 2026 Material 3 Expressive Android 17",
-    "freshness_hours": 48
+    "query": "Figma Q1 2026 earnings results revenue 333M 46% AI Figma Make MCP Weave guidance NDR 139%",
+    "freshness_hours": 3
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Google『Liquid Glass採用しない』、AndroidはMaterial 3継続でデザイン路線が分岐",
-      "description": "Google「Liquid Glassは採用しない」。Apple iOS 26で話題のあのデザイン、Pixelには来ないと明言です。",
-      "detail": "5月12日のAndroid Show、Android 17はMaterial 3 Expressive路線継続が確定。iOS 26のガラス風UIは可読性とアニメ重さで賛否割れ、責任者Sameer Samat氏もXで「ないない」と即否定しました。",
-      "narration": "Google「Liquid Glassは採用しない」。Apple iOS 26で話題のあのデザイン、Pixelには来ないと明言です。",
-      "tags": ["Liquid Glass", "Material 3 Expressive", "Android 17"],
+      "title": "Figma Q1決算、売上46%増の過去最高ペース、AI製品が成長を牽引",
+      "description": "Figmaが昨日Q1決算発表、売上333Mドルで前年比46%増、過去最高ペースです。",
+      "detail": "成長エンジンはFigma Make、MCP、Weaveの3つのAI機能。新規Proチーム転換が前年比150%増、ネット継続率139%は2年ぶり高水準、3月開始のAI課金も寄与し、年間ガイダンスを55Mドル上方修正しました。",
+      "narration": "Figmaが昨日Q1決算発表、売上333Mドルで前年比46%増、過去最高ペース。AI製品が成長を牽引し、株価は時間外で約7%上昇しました。",
+      "tags": ["Figma Q1決算", "AI製品", "市場価値"],
       "narration_sections": {
-        "hook": "Google「Liquid Glassは採用しない」。Apple iOS 26で話題のあのデザイン、Pixelには来ないと明言です。",
-        "origin": "5月12日のAndroid Show、Android 17はMaterial 3 Expressive路線継続が確定。iOS 26のガラス風UIは可読性とアニメ重さで賛否割れ、責任者Sameer Samat氏もXで「ないない」と即否定しました。",
-        "recommend": "iOSとAndroidは別物。プラットフォーム固有のデザイン言語を見極める力が、駆け出しの差になります。判断は自分。"
+        "hook": "Figmaが昨日Q1決算発表、売上333Mドルで前年比46%増、過去最高ペース。AI製品が成長を牽引し、株価は時間外で約7%上昇しました。",
+        "origin": "成長エンジンはFigma Make、MCP、Weaveの3つのAI機能。新規Proチーム転換が前年比150%増、ネット継続率139%は2年ぶり高水準、3月開始のAI課金も寄与し、年間ガイダンスを55Mドル上方修正しました。",
+        "recommend": "AIを使えるデザイナーの市場価値は本当に上がっています。学習に投資する価値が今いちばん大きい1年、Figmaナビで一緒に手を増やしましょう。"
       },
       "section_titles": {
-        "hook": "Google採用拒否",
-        "origin": "Material 3継続",
-        "recommend": "言語を見極める力"
+        "hook": "Figma 46%増益",
+        "origin": "AI製品が成長牽引",
+        "recommend": "学習者の市場価値"
       },
       "section_descriptions": {
-        "hook": "Apple iOS 26のあのUI、Androidは採用せず",
-        "origin": "5/12 Android ShowでMaterial 3継続",
-        "recommend": "プラットフォーム別を意識する力が学習者の差"
+        "hook": "Figma Q1決算、売上46%増の過去最高ペース",
+        "origin": "Figma Make/MCP/WeaveのAIが成長を牽引",
+        "recommend": "AIを使えるデザイナーの市場価値が急上昇中"
       }
     }
   ]
