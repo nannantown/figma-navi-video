@@ -401,7 +401,7 @@
         "views": 87,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-13T00:16:15.353Z"
+        "updatedAt": "2026-05-14T00:15:03.338Z"
       }
     },
     {
@@ -446,7 +446,7 @@
         "views": 116,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-13T00:16:15.353Z"
+        "updatedAt": "2026-05-14T00:15:03.338Z"
       }
     },
     {
@@ -491,7 +491,7 @@
         "views": 103,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-13T00:16:15.353Z"
+        "updatedAt": "2026-05-14T00:15:03.338Z"
       }
     },
     {
@@ -536,7 +536,7 @@
         "views": 86,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-13T00:16:15.353Z"
+        "updatedAt": "2026-05-14T00:15:03.338Z"
       }
     },
     {
@@ -583,7 +583,7 @@
         "views": 117,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-13T00:16:15.353Z"
+        "updatedAt": "2026-05-14T00:15:03.338Z"
       }
     },
     {
@@ -627,7 +627,7 @@
         "views": 72,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-13T00:16:15.353Z"
+        "updatedAt": "2026-05-14T00:15:03.338Z"
       }
     },
     {
@@ -668,10 +668,10 @@
         "freshness_hours": 120
       },
       "stats": {
-        "views": 61,
+        "views": 62,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-13T00:16:15.353Z"
+        "updatedAt": "2026-05-14T00:15:03.338Z"
       }
     },
     {
@@ -714,10 +714,10 @@
         "freshness_hours": 144
       },
       "stats": {
-        "views": 52,
+        "views": 53,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-13T00:16:15.353Z"
+        "updatedAt": "2026-05-14T00:15:03.338Z"
       }
     },
     {
@@ -764,7 +764,7 @@
         "views": 64,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-13T00:16:15.353Z"
+        "updatedAt": "2026-05-14T00:15:03.338Z"
       }
     },
     {
@@ -805,6 +805,53 @@
         ],
         "query": "Figma Q1 2026 earnings May 14 preview revenue guidance 315M 38% YoY Claude Design AI monetization",
         "freshness_hours": 24
+      },
+      "stats": {
+        "views": 2,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-05-14T00:15:03.338Z"
+      }
+    },
+    {
+      "videoId": "P8Z-WKd98jY",
+      "videoUrl": "https://youtube.com/shorts/P8Z-WKd98jY",
+      "date": "2026-05-14",
+      "title": "【デザインニュース】Google『Liquid Glass採用しない』、AndroidはMaterial 3継続でデザイン路線が分岐｜2026/05/14 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 44,
+      "discovery": {
+        "method": "social-en",
+        "description": "英語デザイナー界隈の X / テックメディア横断調査で『Google Android 責任者 Sameer Samat 氏が Apple Liquid Glass を Android で採用しないと X で明言、5/12 Android Show: I/O Edition で Material 3 Expressive 路線継続が確定』というトピックを抽出。トリガーは Samat 氏の 5/5 X 返信『Not happening. Y'all are wild.』、増幅イベントは 2 日前の 5/12 Android Show 本番(Android 17 / Android Auto Material 3 Expressive 化を披露)、波及記事は Tom's Guide / Macworld / Android Authority / Digital Trends / 9to5Google / MacRumors / Trusted Reviews 等の英語テックメディア多発報道。method 選定 (Thursday weekday): 直近 14 日 stats 確定母集団(5/1-5/13)で social-en n=2 avg=101.0 (5/1=116, 5/4=86) が TOP 1 タイ、official-src n=2 avg=90.5 (5/12=64 で下振れ)、figma-community n=2 avg=77.5、product-launches n=1 avg=72、expert-blog n=1 avg=61。weekday news-preferred 4 タグ (news-en / official-src / figma-community / product-launches) の今日適用可否: news-en は 5/13 利用直近2日 + 2 週連続 WORST 凍結継続、official-src は 5/12 = 2 日前 + 5/12=64 で WORST 圏入り、figma-community は 5/11 + 5/3 で 7日内 1 回ながら avg 77.5 で減衰、product-launches は 5/9 単発で n 不足。social-en は 5/4 = 10 日前で 直近2日/7日2回到達 ガード両方クリア + TOP1 候補 + 5/13 PDCA で『5/14 朝は preview 重ね or other 業界ニュース (news-en 凍結明け前なので social-en か expert-blog)』と pre-scheduled 済み、本ルートを Exploit lane で正式採用。柱③ 業界・デザインニュース (target 20%) 補強週 (5/13-5/18) の 2 日目該当、5/13 Figma earnings preview (柱③、business-news 角度) と差別化して 5/14 は『デザイン言語の分岐』(柱③、platform-design 角度) で同柱内の角度ローテーション。NG パターン回避: 『AI が仕事を奪う』NG 不該当(プラットフォーム別デザイン言語の話)、『プロ向け高度議論』回避策 → Material 3 Expressive / Liquid Glass を駆け出しが触る iOS と Android の見た目差として翻訳、『AI に任せれば考えなくていい』NG 回避策 → Recommend の『判断は自分』で締め、『英語/日本語の中途半端な混在』回避策 → Liquid Glass / Material 3 Expressive / Android Show は固有名詞表記許容範囲。freshness_hours = 48 (5/12 Android Show 5/14 朝時点で 2 日経過、Samat 氏 X 投稿 5/5 起算なら 216h で borderline 超だが、増幅イベント = Android Show 起算で 48h、ニュースサイクルとしては fresh)。",
+        "sources": [
+          "https://www.tomsguide.com/phones/google-pixel-phones/not-happening-yall-are-crazy-google-shoots-down-rumors-android-will-copy-the-iphones-liquid-glass-design",
+          "https://9to5google.com/2026/05/06/liquid-glass-for-android-is-not-happening-at-least-not-for-pixels/",
+          "https://www.macrumors.com/2026/05/06/google-pixel-no-liquid-glass/",
+          "https://www.digitaltrends.com/phones/android-boss-shoots-down-a-liquid-glass-copyjob-on-pixels-and-thats-a-relief/",
+          "https://www.androidauthority.com/google-android-no-liquid-glass-redesign-3664004/",
+          "https://blog.google/products-and-platforms/platforms/android/android-show-io-edition-2026/",
+          "https://www.engadget.com/2171038/everything-announced-at-android-show-google-io-2026/",
+          "https://www.techradar.com/news/live/android-show-2026-live"
+        ],
+        "query": "Sameer Samat Android Liquid Glass not happening Android Show I/O Edition 2026 Material 3 Expressive Android 17",
+        "freshness_hours": 48
       },
       "stats": {
         "views": 0,
@@ -939,6 +986,14 @@
       "changes": [
         "standard: 130 avg views (17 videos)",
         "Day performance: Wed=315, Sun=138, Thu=131, Tue=98, Fri=95, Sat=94, Mon=80"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-14",
+      "changes": [
+        "standard: 123 avg views (18 videos)",
+        "Day performance: Wed=210, Sun=138, Thu=131, Tue=98, Fri=95, Sat=94, Mon=80"
       ],
       "recommendedTemplate": "standard"
     }
