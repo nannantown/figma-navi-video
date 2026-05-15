@@ -1,43 +1,41 @@
 {
-  "date": "2026-05-15",
+  "date": "2026-05-16",
   "discovery": {
-    "method": "official-src",
-    "description": "Figma 投資家情報 (IR) と 5/14 米国時間引け後発表の Q1 2026 決算プレスリリースを一次取得し、複数英語テックメディア (Benzinga / Seeking Alpha / Yahoo Finance / Investing.com 等) で裏取り。5/13 PDCA で予約された 3 段運用 (5/13 earnings preview → 5/14 platform-design pivot → 5/15 earnings recap) のクライマックスとして、official-src + event-recap 角度を 5/14 PDCA pre-schedule どおり実行。method 選定 (Friday weekday): 直近 14 日 確定 stats で official-src n=2 avg=90.5 (5/5=117 TOP1 級, 5/12=64 で WORST 圏入りも) で TOP 2、social-en (5/14 利用、直近2日ガード抵触) と figma-community (avg 77.5 で WORST 圏寄り) は本日不可。official-src 前回利用 5/12 = 3 日前で直近2日ガード OK、weekday news-preferred 4 タグ内で唯一クリーン。柱③ 業界・デザインニュース (target 20%) 補強週 (5/13-5/18) の 3 日目、business-news 角度で 5/13 earnings preview を recap として回収。Primary 駆け出し痛点への翻訳 = 『AI×Figma を学ぶ価値が数字で証明された』として、NG パターン『プロ向け高度議論』回避策に Q1 決算の数字を学習者市場価値に直接接続。freshness_hours = 3 (5/14 US 引け後 = 5/15 朝 JST 5-6 時に発表、ルーチン実行 7:30 JST 時点で 2-3 時間経過)。",
+    "method": "figma-community",
+    "description": "Saturday evergreen 帯。5/15 PDCA Action #3 で予約された figma-community Exploit を実行。Figma Community の Auto Layout デモファイル / Figma Help (Use absolute position) / Figma 公式 blog (Auto Layout craft) の 3 軸を横断し、駆け出しが Auto Layout を組んだ直後に必ず詰まる『絶対位置 (Absolute Position)』をテーマに、通知バッジ・カードのリボン装飾・フローティングボタン (FAB) の 3 つの普遍ユースケースへ翻訳。method 選定 (Sat evergreen): TOP3 method 候補のうち official-src (5/15=昨日利用で直近2日ガード抵触+5/12+5/15で7日2回到達=過剰集中) と social-en (5/14利用、news 系性格で土曜 evergreen トピックとフレーム不一致リスク) は本日不可、expert-blog は 5/10=62 で WORST 圏かつ avg 最低でしばらく回避方針、news-en は 5/13=2 で 2 週連続 WORST 凍結確定 (本 PDCA で 6/2 まで延長正式化)、product-launches は 5/9=72 で n=1 代表性不足。残った figma-community (5/11=5日前、avg 78、n=2、直近2日 OK + 7日2回到達 OK + WORST 凍結対象外) が pre-schedule 通り唯一クリーン。柱④ Tips / Figma 実践 (target 15%) は直近14日 0/15 = 0% で最大運用ギャップの一つ、5/13-5/15 の柱③ 3 日連続消化からの evergreen 帯切替の節目として最適。NG パターン回避: 『プラグイン機能説明メイン』ではなく Figma 本体機能 (Auto Layout 絶対位置) を駆け出し痛点起点で解説、『プロ向け高度議論』回避策に専門用語『絶対位置』『親フレーム』を『右パネルのチェック』『X,Y 座標で固定』に翻訳、『AI に任せれば考えなくていい』NG 回避策に AI 生成後の手仕事として絶対位置を位置づけ、AI=補助輪フレームを維持。freshness_hours = 168 (Saturday evergreen で許容上限、Figma Help 文書は 2024 以降の継続更新、Community テンプレートも長期生存、トピック自体は時間軸非依存)。",
     "sources": [
-      "https://investor.figma.com/news-events/news/news-details/2026/Figma-to-Announce-First-Quarter-2026-Financial-Results-on-May-14-2026/default.aspx",
-      "https://www.businesswire.com/news/home/20260514730702/en/Figma-Announces-First-Quarter-2026-Financial-Results",
-      "https://www.stocktitan.net/news/FIG/figma-announces-first-quarter-2026-financial-iya4neqkozgm.html",
-      "https://seekingalpha.com/news/4593241-figma-climbs-as-q1-features-46-revenue-surge-driven-by-significant-seat-expansion",
-      "https://www.benzinga.com/markets/earnings/26/05/52582384/figma-stock-jumps-on-q1-earnings-beat-as-customers-go-bigger-and-broader",
-      "https://www.investing.com/news/transcripts/earnings-call-transcript-figmas-q1-2026-beats-expectations-with-strong-eps-and-revenue-93CH-4690815",
-      "https://finance.yahoo.com/markets/stocks/articles/figma-report-q1-earnings-whats-161300428.html",
-      "https://www.morningstar.com/news/business-wire/20260514730702/figma-announces-first-quarter-2026-financial-results"
+      "https://help.figma.com/hc/en-us/articles/5731482952599-Use-absolute-position",
+      "https://help.figma.com/hc/en-us/articles/360040451373-Explore-auto-layout-properties",
+      "https://www.figma.com/blog/inside-figma-our-craft-of-the-auto-layout/",
+      "https://www.figma.com/community/file/890345722581503056/auto-layout-playground",
+      "https://www.figma.com/community/file/1240466834308253845/auto-layout-3-0-playground",
+      "https://www.figma.com/community/tag/auto-layout/files"
     ],
-    "query": "Figma Q1 2026 earnings results revenue 333M 46% AI Figma Make MCP Weave guidance NDR 139%",
-    "freshness_hours": 3
+    "query": "Figma absolute position Auto Layout overlay badge ribbon floating action button beginner tutorial",
+    "freshness_hours": 168
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma Q1決算、売上46%増の過去最高ペース、AI製品が成長を牽引",
-      "description": "Figmaが昨日Q1決算発表、売上333Mドルで前年比46%増、過去最高ペースです。",
-      "detail": "成長エンジンはFigma Make、MCP、Weaveの3つのAI機能。新規Proチーム転換が前年比150%増、ネット継続率139%は2年ぶり高水準、3月開始のAI課金も寄与し、年間ガイダンスを55Mドル上方修正しました。",
-      "narration": "Figmaが昨日Q1決算発表、売上333Mドルで前年比46%増、過去最高ペース。AI製品が成長を牽引し、株価は時間外で約7%上昇しました。",
-      "tags": ["Figma Q1決算", "AI製品", "市場価値"],
+      "title": "Auto Layout絶対位置、上に重ねたいズレを一発解決",
+      "description": "Auto Layoutを組んだ後に要素を上に重ねたいのにズレる悩み、絶対位置ボタンで解決します。",
+      "detail": "使い所は通知バッジ、カードのリボン、フローティングボタンの3つ。要素を選んで右パネルの『絶対位置』にチェックを入れれば、Auto Layoutの流れから外れて自由配置にできます。X、Y座標で固定でき、後からのレイアウト崩れもありません。",
+      "narration": "Auto Layoutを組んだ後に、要素を上に重ねたいのにズレる経験、ありませんか?実はFigmaの『絶対位置』ボタンで一発解決できます。",
+      "tags": ["Auto Layout", "Figma Tips", "絶対位置"],
       "narration_sections": {
-        "hook": "Figmaが昨日Q1決算発表、売上333Mドルで前年比46%増、過去最高ペース。AI製品が成長を牽引し、株価は時間外で約7%上昇しました。",
-        "origin": "成長エンジンはFigma Make、MCP、Weaveの3つのAI機能。新規Proチーム転換が前年比150%増、ネット継続率139%は2年ぶり高水準、3月開始のAI課金も寄与し、年間ガイダンスを55Mドル上方修正しました。",
-        "recommend": "AIを使えるデザイナーの市場価値は本当に上がっています。学習に投資する価値が今いちばん大きい1年、Figmaナビで一緒に手を増やしましょう。"
+        "hook": "Auto Layoutを組んだ後に、要素を上に重ねたいのにズレる経験、ありませんか?実はFigmaの『絶対位置』ボタンで一発解決できます。",
+        "origin": "使い所は3つ。通知バッジ、カードのリボン、フローティングボタンです。重ねたい要素を選んで右パネルの『絶対位置』にチェックを入れれば、Auto Layoutの流れから外れて自由配置。X、Y座標で固定でき、レイアウト崩れもありません。",
+        "recommend": "AI生成の仕上げでも頻出します。Figmaナビの下書きに絶対位置でバッジや装飾を足すと、グッとプロっぽくなります。"
       },
       "section_titles": {
-        "hook": "Figma 46%増益",
-        "origin": "AI製品が成長牽引",
-        "recommend": "学習者の市場価値"
+        "hook": "絶対位置で重ねる",
+        "origin": "使い所は3パターン",
+        "recommend": "AIの仕上げに効く"
       },
       "section_descriptions": {
-        "hook": "Figma Q1決算、売上46%増の過去最高ペース",
-        "origin": "Figma Make/MCP/WeaveのAIが成長を牽引",
-        "recommend": "AIを使えるデザイナーの市場価値が急上昇中"
+        "hook": "Auto Layoutの上に要素を重ねたい時の解決策",
+        "origin": "通知バッジ・リボン・FABの3つで絶対位置が活躍",
+        "recommend": "AI生成の仕上げにも頻出、プロっぽさを足す技"
       }
     }
   ]
