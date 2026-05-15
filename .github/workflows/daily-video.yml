@@ -5,6 +5,9 @@ on:
     # 23:15 UTC = 08:15 JST (between AI Trend Daily 08:00 and Coffee 08:30)
     - cron: "15 23 * * *"
   workflow_dispatch:
+  push:
+    paths:
+      - '.recovery-trigger'
 
 permissions:
   contents: write
