@@ -446,7 +446,7 @@
         "views": 116,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-14T00:15:03.338Z"
+        "updatedAt": "2026-05-15T01:33:59.100Z"
       }
     },
     {
@@ -491,7 +491,7 @@
         "views": 103,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-14T00:15:03.338Z"
+        "updatedAt": "2026-05-15T01:33:59.100Z"
       }
     },
     {
@@ -536,7 +536,7 @@
         "views": 86,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-14T00:15:03.338Z"
+        "updatedAt": "2026-05-15T01:33:59.100Z"
       }
     },
     {
@@ -583,7 +583,7 @@
         "views": 117,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-14T00:15:03.338Z"
+        "updatedAt": "2026-05-15T01:33:59.100Z"
       }
     },
     {
@@ -627,7 +627,7 @@
         "views": 72,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-14T00:15:03.338Z"
+        "updatedAt": "2026-05-15T01:33:59.100Z"
       }
     },
     {
@@ -671,7 +671,7 @@
         "views": 62,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-14T00:15:03.338Z"
+        "updatedAt": "2026-05-15T01:33:59.100Z"
       }
     },
     {
@@ -717,7 +717,7 @@
         "views": 53,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-14T00:15:03.338Z"
+        "updatedAt": "2026-05-15T01:33:59.100Z"
       }
     },
     {
@@ -764,7 +764,7 @@
         "views": 64,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-14T00:15:03.338Z"
+        "updatedAt": "2026-05-15T01:33:59.100Z"
       }
     },
     {
@@ -807,10 +807,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 2,
+        "views": 40,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-14T00:15:03.338Z"
+        "updatedAt": "2026-05-15T01:33:59.100Z"
       }
     },
     {
@@ -852,6 +852,53 @@
         ],
         "query": "Sameer Samat Android Liquid Glass not happening Android Show I/O Edition 2026 Material 3 Expressive Android 17",
         "freshness_hours": 48
+      },
+      "stats": {
+        "views": 98,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-05-15T01:33:59.100Z"
+      }
+    },
+    {
+      "videoId": "EKB-actvX6Y",
+      "videoUrl": "https://youtube.com/shorts/EKB-actvX6Y",
+      "date": "2026-05-15",
+      "title": "【デザインニュース】Figma Q1決算、売上46%増の過去最高ペース、AI製品が成長を牽引｜2026/05/15 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 53,
+      "discovery": {
+        "method": "official-src",
+        "description": "Figma 投資家情報 (IR) と 5/14 米国時間引け後発表の Q1 2026 決算プレスリリースを一次取得し、複数英語テックメディア (Benzinga / Seeking Alpha / Yahoo Finance / Investing.com 等) で裏取り。5/13 PDCA で予約された 3 段運用 (5/13 earnings preview → 5/14 platform-design pivot → 5/15 earnings recap) のクライマックスとして、official-src + event-recap 角度を 5/14 PDCA pre-schedule どおり実行。method 選定 (Friday weekday): 直近 14 日 確定 stats で official-src n=2 avg=90.5 (5/5=117 TOP1 級, 5/12=64 で WORST 圏入りも) で TOP 2、social-en (5/14 利用、直近2日ガード抵触) と figma-community (avg 77.5 で WORST 圏寄り) は本日不可。official-src 前回利用 5/12 = 3 日前で直近2日ガード OK、weekday news-preferred 4 タグ内で唯一クリーン。柱③ 業界・デザインニュース (target 20%) 補強週 (5/13-5/18) の 3 日目、business-news 角度で 5/13 earnings preview を recap として回収。Primary 駆け出し痛点への翻訳 = 『AI×Figma を学ぶ価値が数字で証明された』として、NG パターン『プロ向け高度議論』回避策に Q1 決算の数字を学習者市場価値に直接接続。freshness_hours = 3 (5/14 US 引け後 = 5/15 朝 JST 5-6 時に発表、ルーチン実行 7:30 JST 時点で 2-3 時間経過)。",
+        "sources": [
+          "https://investor.figma.com/news-events/news/news-details/2026/Figma-to-Announce-First-Quarter-2026-Financial-Results-on-May-14-2026/default.aspx",
+          "https://www.businesswire.com/news/home/20260514730702/en/Figma-Announces-First-Quarter-2026-Financial-Results",
+          "https://www.stocktitan.net/news/FIG/figma-announces-first-quarter-2026-financial-iya4neqkozgm.html",
+          "https://seekingalpha.com/news/4593241-figma-climbs-as-q1-features-46-revenue-surge-driven-by-significant-seat-expansion",
+          "https://www.benzinga.com/markets/earnings/26/05/52582384/figma-stock-jumps-on-q1-earnings-beat-as-customers-go-bigger-and-broader",
+          "https://www.investing.com/news/transcripts/earnings-call-transcript-figmas-q1-2026-beats-expectations-with-strong-eps-and-revenue-93CH-4690815",
+          "https://finance.yahoo.com/markets/stocks/articles/figma-report-q1-earnings-whats-161300428.html",
+          "https://www.morningstar.com/news/business-wire/20260514730702/figma-announces-first-quarter-2026-financial-results"
+        ],
+        "query": "Figma Q1 2026 earnings results revenue 333M 46% AI Figma Make MCP Weave guidance NDR 139%",
+        "freshness_hours": 3
       },
       "stats": {
         "views": 0,
@@ -994,6 +1041,14 @@
       "changes": [
         "standard: 123 avg views (18 videos)",
         "Day performance: Wed=210, Sun=138, Thu=131, Tue=98, Fri=95, Sat=94, Mon=80"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-15",
+      "changes": [
+        "standard: 124 avg views (19 videos)",
+        "Day performance: Wed=223, Sun=138, Thu=120, Tue=98, Fri=95, Sat=94, Mon=80"
       ],
       "recommendedTemplate": "standard"
     }
