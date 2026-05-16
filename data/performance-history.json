@@ -491,7 +491,7 @@
         "views": 103,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-15T01:33:59.100Z"
+        "updatedAt": "2026-05-16T00:06:38.261Z"
       }
     },
     {
@@ -536,7 +536,7 @@
         "views": 86,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-15T01:33:59.100Z"
+        "updatedAt": "2026-05-16T00:06:38.261Z"
       }
     },
     {
@@ -583,7 +583,7 @@
         "views": 117,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-15T01:33:59.100Z"
+        "updatedAt": "2026-05-16T00:06:38.261Z"
       }
     },
     {
@@ -627,7 +627,7 @@
         "views": 72,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-15T01:33:59.100Z"
+        "updatedAt": "2026-05-16T00:06:38.261Z"
       }
     },
     {
@@ -671,7 +671,7 @@
         "views": 62,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-15T01:33:59.100Z"
+        "updatedAt": "2026-05-16T00:06:38.261Z"
       }
     },
     {
@@ -717,7 +717,7 @@
         "views": 53,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-15T01:33:59.100Z"
+        "updatedAt": "2026-05-16T00:06:38.261Z"
       }
     },
     {
@@ -764,7 +764,7 @@
         "views": 64,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-15T01:33:59.100Z"
+        "updatedAt": "2026-05-16T00:06:38.261Z"
       }
     },
     {
@@ -810,7 +810,7 @@
         "views": 40,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-15T01:33:59.100Z"
+        "updatedAt": "2026-05-16T00:06:38.261Z"
       }
     },
     {
@@ -857,7 +857,7 @@
         "views": 98,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-15T01:33:59.100Z"
+        "updatedAt": "2026-05-16T00:06:38.261Z"
       }
     },
     {
@@ -899,6 +899,51 @@
         ],
         "query": "Figma Q1 2026 earnings results revenue 333M 46% AI Figma Make MCP Weave guidance NDR 139%",
         "freshness_hours": 3
+      },
+      "stats": {
+        "views": 119,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-05-16T00:06:38.261Z"
+      }
+    },
+    {
+      "videoId": "VU3Qjv1MUzM",
+      "videoUrl": "https://youtube.com/shorts/VU3Qjv1MUzM",
+      "date": "2026-05-16",
+      "title": "【デザインニュース】Auto Layout絶対位置、上に重ねたいズレを一発解決｜2026/05/16 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 45,
+      "discovery": {
+        "method": "figma-community",
+        "description": "Saturday evergreen 帯。5/15 PDCA Action #3 で予約された figma-community Exploit を実行。Figma Community の Auto Layout デモファイル / Figma Help (Use absolute position) / Figma 公式 blog (Auto Layout craft) の 3 軸を横断し、駆け出しが Auto Layout を組んだ直後に必ず詰まる『絶対位置 (Absolute Position)』をテーマに、通知バッジ・カードのリボン装飾・フローティングボタン (FAB) の 3 つの普遍ユースケースへ翻訳。method 選定 (Sat evergreen): TOP3 method 候補のうち official-src (5/15=昨日利用で直近2日ガード抵触+5/12+5/15で7日2回到達=過剰集中) と social-en (5/14利用、news 系性格で土曜 evergreen トピックとフレーム不一致リスク) は本日不可、expert-blog は 5/10=62 で WORST 圏かつ avg 最低でしばらく回避方針、news-en は 5/13=2 で 2 週連続 WORST 凍結確定 (本 PDCA で 6/2 まで延長正式化)、product-launches は 5/9=72 で n=1 代表性不足。残った figma-community (5/11=5日前、avg 78、n=2、直近2日 OK + 7日2回到達 OK + WORST 凍結対象外) が pre-schedule 通り唯一クリーン。柱④ Tips / Figma 実践 (target 15%) は直近14日 0/15 = 0% で最大運用ギャップの一つ、5/13-5/15 の柱③ 3 日連続消化からの evergreen 帯切替の節目として最適。NG パターン回避: 『プラグイン機能説明メイン』ではなく Figma 本体機能 (Auto Layout 絶対位置) を駆け出し痛点起点で解説、『プロ向け高度議論』回避策に専門用語『絶対位置』『親フレーム』を『右パネルのチェック』『X,Y 座標で固定』に翻訳、『AI に任せれば考えなくていい』NG 回避策に AI 生成後の手仕事として絶対位置を位置づけ、AI=補助輪フレームを維持。freshness_hours = 168 (Saturday evergreen で許容上限、Figma Help 文書は 2024 以降の継続更新、Community テンプレートも長期生存、トピック自体は時間軸非依存)。",
+        "sources": [
+          "https://help.figma.com/hc/en-us/articles/5731482952599-Use-absolute-position",
+          "https://help.figma.com/hc/en-us/articles/360040451373-Explore-auto-layout-properties",
+          "https://www.figma.com/blog/inside-figma-our-craft-of-the-auto-layout/",
+          "https://www.figma.com/community/file/890345722581503056/auto-layout-playground",
+          "https://www.figma.com/community/file/1240466834308253845/auto-layout-3-0-playground",
+          "https://www.figma.com/community/tag/auto-layout/files"
+        ],
+        "query": "Figma absolute position Auto Layout overlay badge ribbon floating action button beginner tutorial",
+        "freshness_hours": 168
       },
       "stats": {
         "views": 0,
@@ -1049,6 +1094,14 @@
       "changes": [
         "standard: 124 avg views (19 videos)",
         "Day performance: Wed=223, Sun=138, Thu=120, Tue=98, Fri=95, Sat=94, Mon=80"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-16",
+      "changes": [
+        "standard: 124 avg views (20 videos)",
+        "Day performance: Wed=223, Sun=138, Thu=120, Fri=103, Tue=98, Sat=94, Mon=80"
       ],
       "recommendedTemplate": "standard"
     }
