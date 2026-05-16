@@ -1,41 +1,39 @@
 {
-  "date": "2026-05-16",
+  "date": "2026-05-17",
   "discovery": {
-    "method": "figma-community",
-    "description": "Saturday evergreen 帯。5/15 PDCA Action #3 で予約された figma-community Exploit を実行。Figma Community の Auto Layout デモファイル / Figma Help (Use absolute position) / Figma 公式 blog (Auto Layout craft) の 3 軸を横断し、駆け出しが Auto Layout を組んだ直後に必ず詰まる『絶対位置 (Absolute Position)』をテーマに、通知バッジ・カードのリボン装飾・フローティングボタン (FAB) の 3 つの普遍ユースケースへ翻訳。method 選定 (Sat evergreen): TOP3 method 候補のうち official-src (5/15=昨日利用で直近2日ガード抵触+5/12+5/15で7日2回到達=過剰集中) と social-en (5/14利用、news 系性格で土曜 evergreen トピックとフレーム不一致リスク) は本日不可、expert-blog は 5/10=62 で WORST 圏かつ avg 最低でしばらく回避方針、news-en は 5/13=2 で 2 週連続 WORST 凍結確定 (本 PDCA で 6/2 まで延長正式化)、product-launches は 5/9=72 で n=1 代表性不足。残った figma-community (5/11=5日前、avg 78、n=2、直近2日 OK + 7日2回到達 OK + WORST 凍結対象外) が pre-schedule 通り唯一クリーン。柱④ Tips / Figma 実践 (target 15%) は直近14日 0/15 = 0% で最大運用ギャップの一つ、5/13-5/15 の柱③ 3 日連続消化からの evergreen 帯切替の節目として最適。NG パターン回避: 『プラグイン機能説明メイン』ではなく Figma 本体機能 (Auto Layout 絶対位置) を駆け出し痛点起点で解説、『プロ向け高度議論』回避策に専門用語『絶対位置』『親フレーム』を『右パネルのチェック』『X,Y 座標で固定』に翻訳、『AI に任せれば考えなくていい』NG 回避策に AI 生成後の手仕事として絶対位置を位置づけ、AI=補助輪フレームを維持。freshness_hours = 168 (Saturday evergreen で許容上限、Figma Help 文書は 2024 以降の継続更新、Community テンプレートも長期生存、トピック自体は時間軸非依存)。",
+    "method": "expert-blog",
+    "description": "Sunday evergreen 帯。5/16 PDCA Action #3 で予約された Sunday 候補 (product-launches or expert-blog) のうち expert-blog を Explore 寄りで採用。Smashing Magazine 5/13 publish の Victor Yocco (ServiceNow UX Researcher, 著書『Design for the Mind』) 最新論考『Practical Interface Patterns For AI Transparency (Part 2)』を一次資料に、柱⑥ UI 批評 (target 10%、直近14日 0% で最大運用ギャップの一つ) と AI×デザイン (柱③/⑥ 横断テーマ) の二重命中。method 選定: TOP3 method の official-src (5/15=2日前で直近2日抵触+7日2回到達済) と figma-community (5/16=昨日で直近2日抵触) は本日不可、social-en (5/14=3日前) は唯一クリーンな TOP 帯だが news 系性格で Sunday evergreen トピックとフレーム不一致、product-launches (5/9=8日前) は同じ Awwwards SOTD ソース連続使用で角度差別化負荷大かつ Awwwards WebFetch が 403 で一次資料 depth 確保リスクあり。結果 expert-blog (5/10=7日前、avg 62 WORST 圏だが n=1 で代表性低) を Explore で採用、ui-critique-ai 新 method の試行を兼ねる。NG パターン回避: 『プロ向け高度議論』回避策に専門用語 (agentic AI, status stream, latency) を『AIが考える時間』『状態テキスト』に翻訳、『AIが仕事を奪う』NG 回避策に AI 機能を作る駆け出しデザイナーの実務 Tips として位置づけ。freshness_hours = 96 (5/13 publish, 4日新着で当週 fresh)、出典 URL 4 件記録。",
     "sources": [
-      "https://help.figma.com/hc/en-us/articles/5731482952599-Use-absolute-position",
-      "https://help.figma.com/hc/en-us/articles/360040451373-Explore-auto-layout-properties",
-      "https://www.figma.com/blog/inside-figma-our-craft-of-the-auto-layout/",
-      "https://www.figma.com/community/file/890345722581503056/auto-layout-playground",
-      "https://www.figma.com/community/file/1240466834308253845/auto-layout-3-0-playground",
-      "https://www.figma.com/community/tag/auto-layout/files"
+      "https://www.smashingmagazine.com/2026/05/practical-interface-patterns-ai-transparency/",
+      "https://www.smashingmagazine.com/2026/04/identifying-necessary-transparency-moments-agentic-ai-part1/",
+      "https://www.smashingmagazine.com/2026/02/designing-agentic-ai-practical-ux-patterns/",
+      "https://www.smashingmagazine.com/category/ux/"
     ],
-    "query": "Figma absolute position Auto Layout overlay badge ribbon floating action button beginner tutorial",
-    "freshness_hours": 168
+    "query": "Smashing Magazine Practical Interface Patterns AI Transparency Victor Yocco spinner status stream agentic",
+    "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Auto Layout絶対位置、上に重ねたいズレを一発解決",
-      "description": "Auto Layoutを組んだ後に要素を上に重ねたいのにズレる悩み、絶対位置ボタンで解決します。",
-      "detail": "使い所は通知バッジ、カードのリボン、フローティングボタンの3つ。要素を選んで右パネルの『絶対位置』にチェックを入れれば、Auto Layoutの流れから外れて自由配置にできます。X、Y座標で固定でき、後からのレイアウト崩れもありません。",
-      "narration": "Auto Layoutを組んだ後に、要素を上に重ねたいのにズレる経験、ありませんか?実はFigmaの『絶対位置』ボタンで一発解決できます。",
-      "tags": ["Auto Layout", "Figma Tips", "絶対位置"],
+      "title": "30年使ったスピナー、AI時代に通用しない理由",
+      "description": "30年定番のスピナー、AIアプリで急に通用しなくなったという話です。",
+      "detail": "米Smashing Magazineの最新論考によると、AIは20秒『考えて』返す時間があるため、回るだけのスピナーでは『止まった?壊れた?』と不安になり離脱を招きます。解決策は『今やってる動詞、何を処理中、どんな制約』の3点を状態ストリームとして文字で示すこと。決定履歴を残せば信頼性がさらに増します。",
+      "narration": "30年定番のスピナー、AIアプリで急に通用しなくなってるって、知ってました?米Smashingが新しい型を提案しています。",
+      "tags": ["UI批評", "AIデザイン", "Smashing"],
       "narration_sections": {
-        "hook": "Auto Layoutを組んだ後に、要素を上に重ねたいのにズレる経験、ありませんか?実はFigmaの『絶対位置』ボタンで一発解決できます。",
-        "origin": "使い所は3つ。通知バッジ、カードのリボン、フローティングボタンです。重ねたい要素を選んで右パネルの『絶対位置』にチェックを入れれば、Auto Layoutの流れから外れて自由配置。X、Y座標で固定でき、レイアウト崩れもありません。",
-        "recommend": "AI生成の仕上げでも頻出します。Figmaナビの下書きに絶対位置でバッジや装飾を足すと、グッとプロっぽくなります。"
+        "hook": "30年定番のスピナー、AIアプリで急に通用しなくなってるって、知ってました?米Smashingが新しい型を提案しています。",
+        "origin": "AIは答えを返すまで20秒『考える』時間がある。普通のスピナーだと『止まった?』と不安になり離脱の原因に。解決は『今やってる動詞、何を処理中、どんな制約』の3点を文字で見せる状態ストリーム。決定履歴を残せばさらに信頼度が上がります。",
+        "recommend": "あなたがAI機能をデザインする時、スピナーを状態テキストに替えるだけで一段プロ感が出ます。Figmaナビの下書きにも同じ発想を。"
       },
       "section_titles": {
-        "hook": "絶対位置で重ねる",
-        "origin": "使い所は3パターン",
-        "recommend": "AIの仕上げに効く"
+        "hook": "スピナーが壊れた",
+        "origin": "状態を3点で見せる",
+        "recommend": "ポートフォリオで差を"
       },
       "section_descriptions": {
-        "hook": "Auto Layoutの上に要素を重ねたい時の解決策",
-        "origin": "通知バッジ・リボン・FABの3つで絶対位置が活躍",
-        "recommend": "AI生成の仕上げにも頻出、プロっぽさを足す技"
+        "hook": "30年定番のスピナーがAI時代に急に壊れた話",
+        "origin": "動詞・処理中・制約の3点で状態を見せる新型",
+        "recommend": "AI機能の表示を1段変える駆け出し向け視点"
       }
     }
   ]
