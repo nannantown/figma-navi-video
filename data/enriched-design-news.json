@@ -1,39 +1,39 @@
 {
-  "date": "2026-05-17",
+  "date": "2026-05-18",
   "discovery": {
-    "method": "expert-blog",
-    "description": "Sunday evergreen 帯。5/16 PDCA Action #3 で予約された Sunday 候補 (product-launches or expert-blog) のうち expert-blog を Explore 寄りで採用。Smashing Magazine 5/13 publish の Victor Yocco (ServiceNow UX Researcher, 著書『Design for the Mind』) 最新論考『Practical Interface Patterns For AI Transparency (Part 2)』を一次資料に、柱⑥ UI 批評 (target 10%、直近14日 0% で最大運用ギャップの一つ) と AI×デザイン (柱③/⑥ 横断テーマ) の二重命中。method 選定: TOP3 method の official-src (5/15=2日前で直近2日抵触+7日2回到達済) と figma-community (5/16=昨日で直近2日抵触) は本日不可、social-en (5/14=3日前) は唯一クリーンな TOP 帯だが news 系性格で Sunday evergreen トピックとフレーム不一致、product-launches (5/9=8日前) は同じ Awwwards SOTD ソース連続使用で角度差別化負荷大かつ Awwwards WebFetch が 403 で一次資料 depth 確保リスクあり。結果 expert-blog (5/10=7日前、avg 62 WORST 圏だが n=1 で代表性低) を Explore で採用、ui-critique-ai 新 method の試行を兼ねる。NG パターン回避: 『プロ向け高度議論』回避策に専門用語 (agentic AI, status stream, latency) を『AIが考える時間』『状態テキスト』に翻訳、『AIが仕事を奪う』NG 回避策に AI 機能を作る駆け出しデザイナーの実務 Tips として位置づけ。freshness_hours = 96 (5/13 publish, 4日新着で当週 fresh)、出典 URL 4 件記録。",
+    "method": "social-en",
+    "description": "英語デザイナー界隈の週末話題から Smashing Magazine 5/15 publish の Carrie Webster『Ten Data-Backed Truths of User Experience ROI』の主要数値を抽出、Figma Q1 決算 (5/14) の 75% AI 枠超過後継続課金と接続して『AI が浸透した今こそ数字で語れる UX 力が差になる』フレームへ翻訳。method 選定: TOP3 method の figma-community (5/16=2日前で直近2日抵触) と official-src (5/12+5/15 で 7日2回到達済、本日採用すれば 7日3回到達で過剰集中) は本日不可、expert-blog (5/17=昨日で直近2日抵触) も不可、news-en は 6/2 まで凍結、product-launches (5/9=9日前で全クリア) は 5/24 Awwwards 再投入を pre-schedule 済で差別化負荷あり。結果 social-en (5/14=4日前で全ガードクリア+月曜news-preferred制約適合) が唯一クリーンな TOP 3 method として正式採用。Exploit 寄り運用で ux-roi-narrative 新角度の試行を兼ねる。NG パターン回避: 『AIがデザイナーの仕事を奪う系』と『AIに任せれば考えなくていい系』を回避するため、5 数値スタック (9,900% ROI / 47% 2秒期待 / 20% 1秒遅延 / 50ミリ秒第一印象 / 93% gen-AI 浸透 + Figma 75% AI継続課金) を『AI が浸透した今こそ数字で語れる UX 力が差になる』Primary 層 (駆け出し) を励ます方向へ翻訳、Recommend で能動アクション (ポートフォリオに『何ミリ秒短縮で何%上がる』と書く) へ接続、Figmaナビは『下書きを時短し検証に時間を回すための補助輪』として軽 CTA。freshness_hours = 72 (Smashing 5/15 publish, 3日新着で当週 fresh + Figma 決算 5/14 = 4日新着で当週 fresh)、出典 URL 4 件記録。",
     "sources": [
-      "https://www.smashingmagazine.com/2026/05/practical-interface-patterns-ai-transparency/",
-      "https://www.smashingmagazine.com/2026/04/identifying-necessary-transparency-moments-agentic-ai-part1/",
-      "https://www.smashingmagazine.com/2026/02/designing-agentic-ai-practical-ux-patterns/",
-      "https://www.smashingmagazine.com/category/ux/"
+      "https://www.smashingmagazine.com/2026/05/data-backed-truths-user-experience-roi/",
+      "https://rollingout.com/2026/05/15/figma-stock-hits-7-week-high-3-reasons/",
+      "https://thenextweb.com/news/figma-q1-earnings-ai-monetization-stock-rebound",
+      "https://seekingalpha.com/news/4593727-figmas-ai-credit-monetization-strategy-shows-stickiness-analysts"
     ],
-    "query": "Smashing Magazine Practical Interface Patterns AI Transparency Victor Yocco spinner status stream agentic",
-    "freshness_hours": 96
+    "query": "Smashing Magazine UX ROI data-backed truths Carrie Webster May 2026 + Figma Q1 2026 75% AI credit retention designer twitter reaction",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "30年使ったスピナー、AI時代に通用しない理由",
-      "description": "30年定番のスピナー、AIアプリで急に通用しなくなったという話です。",
-      "detail": "米Smashing Magazineの最新論考によると、AIは20秒『考えて』返す時間があるため、回るだけのスピナーでは『止まった?壊れた?』と不安になり離脱を招きます。解決策は『今やってる動詞、何を処理中、どんな制約』の3点を状態ストリームとして文字で示すこと。決定履歴を残せば信頼性がさらに増します。",
-      "narration": "30年定番のスピナー、AIアプリで急に通用しなくなってるって、知ってました?米Smashingが新しい型を提案しています。",
-      "tags": ["UI批評", "AIデザイン", "Smashing"],
+      "title": "UXのROIは9,900%、Smashing最新10数値が英語デザイナー界隈で話題",
+      "description": "UX投資のROIは9,900%。先週金曜Smashing Magazineが出した10個の数字が英語デザイナー界隈で話題です。",
+      "detail": "ページロードは47%が2秒以内を期待。1秒遅れるとコンバージョン20%減、第一印象はわずか50ミリ秒です。Figma決算でも75%が無料のAI枠超過後も課金継続。AIが93%に浸透した今、数字で語れるUX力が差になります。",
+      "narration": "UX投資のROIは9,900%って知ってました? 先週金曜Smashing Magazineが出した10個の数字が、英語デザイナー界隈で週末ずっと回ってます。",
+      "tags": ["UX", "デザイナーキャリア", "Figma"],
       "narration_sections": {
-        "hook": "30年定番のスピナー、AIアプリで急に通用しなくなってるって、知ってました?米Smashingが新しい型を提案しています。",
-        "origin": "AIは答えを返すまで20秒『考える』時間がある。普通のスピナーだと『止まった?』と不安になり離脱の原因に。解決は『今やってる動詞、何を処理中、どんな制約』の3点を文字で見せる状態ストリーム。決定履歴を残せばさらに信頼度が上がります。",
-        "recommend": "あなたがAI機能をデザインする時、スピナーを状態テキストに替えるだけで一段プロ感が出ます。Figmaナビの下書きにも同じ発想を。"
+        "hook": "UX投資のROIは9,900%って知ってました? 先週金曜Smashing Magazineが出した10個の数字が、英語デザイナー界隈で週末ずっと回ってます。",
+        "origin": "ページロードは47%が2秒以内を期待。1秒遅れるとコンバージョン20%減、第一印象はわずか50ミリ秒です。Figma決算でも75%が無料のAI枠超過後も課金継続。AIが93%に浸透した今、数字で語れるUX力が差になります。",
+        "recommend": "ポートフォリオに『何ミリ秒短縮で何%上がる』と書ける駆け出しは強い。Figmaナビで下書きを時短し、検証に時間を回しましょう。"
       },
       "section_titles": {
-        "hook": "スピナーが壊れた",
-        "origin": "状態を3点で見せる",
-        "recommend": "ポートフォリオで差を"
+        "hook": "UXのROIは9900%",
+        "origin": "Smashing最新5値",
+        "recommend": "数字で語る駆け出し"
       },
       "section_descriptions": {
-        "hook": "30年定番のスピナーがAI時代に急に壊れた話",
-        "origin": "動詞・処理中・制約の3点で状態を見せる新型",
-        "recommend": "AI機能の表示を1段変える駆け出し向け視点"
+        "hook": "Smashing先週金曜、英語デザイナー界隈の話題",
+        "origin": "1秒遅延=20%減、第一印象50ミリ秒、Figma75%継続",
+        "recommend": "ポートフォリオに数字を載せる人が次に伸びる"
       }
     }
   ]
