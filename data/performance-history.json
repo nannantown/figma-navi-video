@@ -491,7 +491,7 @@
         "views": 103,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-16T00:06:38.261Z"
+        "updatedAt": "2026-05-17T00:08:54.678Z"
       }
     },
     {
@@ -536,7 +536,7 @@
         "views": 86,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-16T00:06:38.261Z"
+        "updatedAt": "2026-05-17T00:08:54.678Z"
       }
     },
     {
@@ -583,7 +583,7 @@
         "views": 117,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-16T00:06:38.261Z"
+        "updatedAt": "2026-05-17T00:08:54.678Z"
       }
     },
     {
@@ -627,7 +627,7 @@
         "views": 72,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-16T00:06:38.261Z"
+        "updatedAt": "2026-05-17T00:08:54.678Z"
       }
     },
     {
@@ -671,7 +671,7 @@
         "views": 62,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-16T00:06:38.261Z"
+        "updatedAt": "2026-05-17T00:08:54.678Z"
       }
     },
     {
@@ -717,7 +717,7 @@
         "views": 53,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-16T00:06:38.261Z"
+        "updatedAt": "2026-05-17T00:08:54.678Z"
       }
     },
     {
@@ -764,7 +764,7 @@
         "views": 64,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-16T00:06:38.261Z"
+        "updatedAt": "2026-05-17T00:08:54.678Z"
       }
     },
     {
@@ -810,7 +810,7 @@
         "views": 40,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-16T00:06:38.261Z"
+        "updatedAt": "2026-05-17T00:08:54.678Z"
       }
     },
     {
@@ -857,7 +857,7 @@
         "views": 98,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-16T00:06:38.261Z"
+        "updatedAt": "2026-05-17T00:08:54.678Z"
       }
     },
     {
@@ -901,10 +901,10 @@
         "freshness_hours": 3
       },
       "stats": {
-        "views": 119,
+        "views": 122,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-16T00:06:38.261Z"
+        "updatedAt": "2026-05-17T00:08:54.678Z"
       }
     },
     {
@@ -944,6 +944,49 @@
         ],
         "query": "Figma absolute position Auto Layout overlay badge ribbon floating action button beginner tutorial",
         "freshness_hours": 168
+      },
+      "stats": {
+        "views": 401,
+        "likes": 1,
+        "comments": 0,
+        "updatedAt": "2026-05-17T00:08:54.678Z"
+      }
+    },
+    {
+      "videoId": "qYW0HfXQB0A",
+      "videoUrl": "https://youtube.com/shorts/qYW0HfXQB0A",
+      "date": "2026-05-17",
+      "title": "【デザインニュース】30年使ったスピナー、AI時代に通用しない理由｜2026/05/17 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 48,
+      "discovery": {
+        "method": "expert-blog",
+        "description": "Sunday evergreen 帯。5/16 PDCA Action #3 で予約された Sunday 候補 (product-launches or expert-blog) のうち expert-blog を Explore 寄りで採用。Smashing Magazine 5/13 publish の Victor Yocco (ServiceNow UX Researcher, 著書『Design for the Mind』) 最新論考『Practical Interface Patterns For AI Transparency (Part 2)』を一次資料に、柱⑥ UI 批評 (target 10%、直近14日 0% で最大運用ギャップの一つ) と AI×デザイン (柱③/⑥ 横断テーマ) の二重命中。method 選定: TOP3 method の official-src (5/15=2日前で直近2日抵触+7日2回到達済) と figma-community (5/16=昨日で直近2日抵触) は本日不可、social-en (5/14=3日前) は唯一クリーンな TOP 帯だが news 系性格で Sunday evergreen トピックとフレーム不一致、product-launches (5/9=8日前) は同じ Awwwards SOTD ソース連続使用で角度差別化負荷大かつ Awwwards WebFetch が 403 で一次資料 depth 確保リスクあり。結果 expert-blog (5/10=7日前、avg 62 WORST 圏だが n=1 で代表性低) を Explore で採用、ui-critique-ai 新 method の試行を兼ねる。NG パターン回避: 『プロ向け高度議論』回避策に専門用語 (agentic AI, status stream, latency) を『AIが考える時間』『状態テキスト』に翻訳、『AIが仕事を奪う』NG 回避策に AI 機能を作る駆け出しデザイナーの実務 Tips として位置づけ。freshness_hours = 96 (5/13 publish, 4日新着で当週 fresh)、出典 URL 4 件記録。",
+        "sources": [
+          "https://www.smashingmagazine.com/2026/05/practical-interface-patterns-ai-transparency/",
+          "https://www.smashingmagazine.com/2026/04/identifying-necessary-transparency-moments-agentic-ai-part1/",
+          "https://www.smashingmagazine.com/2026/02/designing-agentic-ai-practical-ux-patterns/",
+          "https://www.smashingmagazine.com/category/ux/"
+        ],
+        "query": "Smashing Magazine Practical Interface Patterns AI Transparency Victor Yocco spinner status stream agentic",
+        "freshness_hours": 96
       },
       "stats": {
         "views": 0,
@@ -1102,6 +1145,14 @@
       "changes": [
         "standard: 124 avg views (20 videos)",
         "Day performance: Wed=223, Sun=138, Thu=120, Fri=103, Tue=98, Sat=94, Mon=80"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-17",
+      "changes": [
+        "standard: 137 avg views (21 videos)",
+        "Day performance: Wed=223, Sat=196, Sun=138, Thu=120, Fri=104, Tue=98, Mon=80"
       ],
       "recommendedTemplate": "standard"
     }
