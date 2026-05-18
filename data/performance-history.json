@@ -536,7 +536,7 @@
         "views": 86,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-17T00:08:54.678Z"
+        "updatedAt": "2026-05-18T00:11:22.612Z"
       }
     },
     {
@@ -583,7 +583,7 @@
         "views": 117,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-17T00:08:54.678Z"
+        "updatedAt": "2026-05-18T00:11:22.612Z"
       }
     },
     {
@@ -627,7 +627,7 @@
         "views": 72,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-17T00:08:54.678Z"
+        "updatedAt": "2026-05-18T00:11:22.612Z"
       }
     },
     {
@@ -671,7 +671,7 @@
         "views": 62,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-17T00:08:54.678Z"
+        "updatedAt": "2026-05-18T00:11:22.612Z"
       }
     },
     {
@@ -717,7 +717,7 @@
         "views": 53,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-17T00:08:54.678Z"
+        "updatedAt": "2026-05-18T00:11:22.612Z"
       }
     },
     {
@@ -764,7 +764,7 @@
         "views": 64,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-17T00:08:54.678Z"
+        "updatedAt": "2026-05-18T00:11:22.612Z"
       }
     },
     {
@@ -810,7 +810,7 @@
         "views": 40,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-17T00:08:54.678Z"
+        "updatedAt": "2026-05-18T00:11:22.612Z"
       }
     },
     {
@@ -857,7 +857,7 @@
         "views": 98,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-17T00:08:54.678Z"
+        "updatedAt": "2026-05-18T00:11:22.612Z"
       }
     },
     {
@@ -901,10 +901,10 @@
         "freshness_hours": 3
       },
       "stats": {
-        "views": 122,
+        "views": 127,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-17T00:08:54.678Z"
+        "updatedAt": "2026-05-18T00:11:22.612Z"
       }
     },
     {
@@ -949,7 +949,7 @@
         "views": 401,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-17T00:08:54.678Z"
+        "updatedAt": "2026-05-18T00:11:22.612Z"
       }
     },
     {
@@ -987,6 +987,49 @@
         ],
         "query": "Smashing Magazine Practical Interface Patterns AI Transparency Victor Yocco spinner status stream agentic",
         "freshness_hours": 96
+      },
+      "stats": {
+        "views": 107,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-05-18T00:11:22.612Z"
+      }
+    },
+    {
+      "videoId": "9y4paRQvL24",
+      "videoUrl": "https://youtube.com/shorts/9y4paRQvL24",
+      "date": "2026-05-18",
+      "title": "【デザインニュース】UXのROIは9,900%、Smashing最新10数値が英語デザイナー界隈で話題｜2026/05/18 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 53,
+      "discovery": {
+        "method": "social-en",
+        "description": "英語デザイナー界隈の週末話題から Smashing Magazine 5/15 publish の Carrie Webster『Ten Data-Backed Truths of User Experience ROI』の主要数値を抽出、Figma Q1 決算 (5/14) の 75% AI 枠超過後継続課金と接続して『AI が浸透した今こそ数字で語れる UX 力が差になる』フレームへ翻訳。method 選定: TOP3 method の figma-community (5/16=2日前で直近2日抵触) と official-src (5/12+5/15 で 7日2回到達済、本日採用すれば 7日3回到達で過剰集中) は本日不可、expert-blog (5/17=昨日で直近2日抵触) も不可、news-en は 6/2 まで凍結、product-launches (5/9=9日前で全クリア) は 5/24 Awwwards 再投入を pre-schedule 済で差別化負荷あり。結果 social-en (5/14=4日前で全ガードクリア+月曜news-preferred制約適合) が唯一クリーンな TOP 3 method として正式採用。Exploit 寄り運用で ux-roi-narrative 新角度の試行を兼ねる。NG パターン回避: 『AIがデザイナーの仕事を奪う系』と『AIに任せれば考えなくていい系』を回避するため、5 数値スタック (9,900% ROI / 47% 2秒期待 / 20% 1秒遅延 / 50ミリ秒第一印象 / 93% gen-AI 浸透 + Figma 75% AI継続課金) を『AI が浸透した今こそ数字で語れる UX 力が差になる』Primary 層 (駆け出し) を励ます方向へ翻訳、Recommend で能動アクション (ポートフォリオに『何ミリ秒短縮で何%上がる』と書く) へ接続、Figmaナビは『下書きを時短し検証に時間を回すための補助輪』として軽 CTA。freshness_hours = 72 (Smashing 5/15 publish, 3日新着で当週 fresh + Figma 決算 5/14 = 4日新着で当週 fresh)、出典 URL 4 件記録。",
+        "sources": [
+          "https://www.smashingmagazine.com/2026/05/data-backed-truths-user-experience-roi/",
+          "https://rollingout.com/2026/05/15/figma-stock-hits-7-week-high-3-reasons/",
+          "https://thenextweb.com/news/figma-q1-earnings-ai-monetization-stock-rebound",
+          "https://seekingalpha.com/news/4593727-figmas-ai-credit-monetization-strategy-shows-stickiness-analysts"
+        ],
+        "query": "Smashing Magazine UX ROI data-backed truths Carrie Webster May 2026 + Figma Q1 2026 75% AI credit retention designer twitter reaction",
+        "freshness_hours": 72
       },
       "stats": {
         "views": 0,
@@ -1153,6 +1196,14 @@
       "changes": [
         "standard: 137 avg views (21 videos)",
         "Day performance: Wed=223, Sat=196, Sun=138, Thu=120, Fri=104, Tue=98, Mon=80"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-18",
+      "changes": [
+        "standard: 136 avg views (22 videos)",
+        "Day performance: Wed=223, Sat=196, Sun=130, Thu=120, Fri=106, Tue=98, Mon=80"
       ],
       "recommendedTemplate": "standard"
     }
