@@ -1,39 +1,39 @@
 {
-  "date": "2026-05-18",
+  "date": "2026-05-19",
   "discovery": {
-    "method": "social-en",
-    "description": "英語デザイナー界隈の週末話題から Smashing Magazine 5/15 publish の Carrie Webster『Ten Data-Backed Truths of User Experience ROI』の主要数値を抽出、Figma Q1 決算 (5/14) の 75% AI 枠超過後継続課金と接続して『AI が浸透した今こそ数字で語れる UX 力が差になる』フレームへ翻訳。method 選定: TOP3 method の figma-community (5/16=2日前で直近2日抵触) と official-src (5/12+5/15 で 7日2回到達済、本日採用すれば 7日3回到達で過剰集中) は本日不可、expert-blog (5/17=昨日で直近2日抵触) も不可、news-en は 6/2 まで凍結、product-launches (5/9=9日前で全クリア) は 5/24 Awwwards 再投入を pre-schedule 済で差別化負荷あり。結果 social-en (5/14=4日前で全ガードクリア+月曜news-preferred制約適合) が唯一クリーンな TOP 3 method として正式採用。Exploit 寄り運用で ux-roi-narrative 新角度の試行を兼ねる。NG パターン回避: 『AIがデザイナーの仕事を奪う系』と『AIに任せれば考えなくていい系』を回避するため、5 数値スタック (9,900% ROI / 47% 2秒期待 / 20% 1秒遅延 / 50ミリ秒第一印象 / 93% gen-AI 浸透 + Figma 75% AI継続課金) を『AI が浸透した今こそ数字で語れる UX 力が差になる』Primary 層 (駆け出し) を励ます方向へ翻訳、Recommend で能動アクション (ポートフォリオに『何ミリ秒短縮で何%上がる』と書く) へ接続、Figmaナビは『下書きを時短し検証に時間を回すための補助輪』として軽 CTA。freshness_hours = 72 (Smashing 5/15 publish, 3日新着で当週 fresh + Figma 決算 5/14 = 4日新着で当週 fresh)、出典 URL 4 件記録。",
+    "method": "figma-community",
+    "description": "Figma Forum と公式 Help Center で頻出する Boolean Property × Variant 設計の躓きを起点に、駆け出し向け Component Tips を community-tips-bundle 角度で抽出。method 選定: 5/18 PDCA の pre-schedule 第一候補通り、figma-community (5/16=3日前で直近2日 OK + 1回/7日で集中度クリア + avg 227 で TOP method) を採用、Tips-bundle 角度は 5/16 Auto Layout 絶対位置 (401 views) と異なる Components プロパティ角度で差別化。official-src は 5/12+5/15 で 7日2回到達済、本日採用すれば 7日3回到達で過剰集中ゆえ温存。expert-blog (5/17=2日前) と social-en (5/18=昨日) は直近2日抵触で不可、news-en は 6/2 まで凍結。NG パターン回避: プラグイン機能説明メインではなく、Figma 本体の Component Properties 機能の駆け出しが詰まる落とし穴を起点に、Boolean Property 切替で半減する具体数値を提示、Figmaナビは『整理されたコンポを AI に渡す』補助輪として軽 CTA、強い購買誘導は回避。freshness_hours = 24 (community-tips-bundle 角度は evergreen Tip だが Forum で議論継続中のため当日 discovery として記録)、出典 URL 4 件記録 (Figma 公式 Help Center / Figma Forum / Design Systems Collective 2025-2026 playbook / LogRocket guide)。",
     "sources": [
-      "https://www.smashingmagazine.com/2026/05/data-backed-truths-user-experience-roi/",
-      "https://rollingout.com/2026/05/15/figma-stock-hits-7-week-high-3-reasons/",
-      "https://thenextweb.com/news/figma-q1-earnings-ai-monetization-stock-rebound",
-      "https://seekingalpha.com/news/4593727-figmas-ai-credit-monetization-strategy-shows-stickiness-analysts"
+      "https://help.figma.com/hc/en-us/articles/5579474826519-Explore-component-properties",
+      "https://forum.figma.com/ask-the-community-7/how-to-apply-boolean-property-of-a-component-into-its-variants-19238",
+      "https://www.designsystemscollective.com/design-system-mastery-with-figma-variables-the-2025-2026-best-practice-playbook-da0500ca0e66",
+      "https://blog.logrocket.com/ux-design/using-component-properties-figma/"
     ],
-    "query": "Smashing Magazine UX ROI data-backed truths Carrie Webster May 2026 + Figma Q1 2026 75% AI credit retention designer twitter reaction",
-    "freshness_hours": 72
+    "query": "Figma Boolean Property component variant explosion mistake 2026",
+    "freshness_hours": 24
   },
   "articles": [
     {
       "rank": 1,
-      "title": "UXのROIは9,900%、Smashing最新10数値が英語デザイナー界隈で話題",
-      "description": "UX投資のROIは9,900%。先週金曜Smashing Magazineが出した10個の数字が英語デザイナー界隈で話題です。",
-      "detail": "ページロードは47%が2秒以内を期待。1秒遅れるとコンバージョン20%減、第一印象はわずか50ミリ秒です。Figma決算でも75%が無料のAI枠超過後も課金継続。AIが93%に浸透した今、数字で語れるUX力が差になります。",
-      "narration": "UX投資のROIは9,900%って知ってました? 先週金曜Smashing Magazineが出した10個の数字が、英語デザイナー界隈で週末ずっと回ってます。",
-      "tags": ["UX", "デザイナーキャリア", "Figma"],
+      "title": "Componentが30個に膨れる原因、Boolean Propertyで半減",
+      "description": "Variantが20個30個に膨れる原因は、知らずに作ってる落とし穴にあります",
+      "detail": "アイコンの表示/非表示をVariantで作ると、4サイズ×アイコン有無で計8個必要になります。Boolean Propertyに変えれば4個で済み、命名も自由。Figma公式もBooleanはレイヤー表示切替用と明記しています。",
+      "narration": "作ったFigmaコンポーネント、Variantが20個30個に膨れてませんか?原因は知らずに作ってる落とし穴、5秒で見抜けるサインがあります",
+      "tags": ["Figma", "Component", "Variant", "Boolean Property", "Tips"],
       "narration_sections": {
-        "hook": "UX投資のROIは9,900%って知ってました? 先週金曜Smashing Magazineが出した10個の数字が、英語デザイナー界隈で週末ずっと回ってます。",
-        "origin": "ページロードは47%が2秒以内を期待。1秒遅れるとコンバージョン20%減、第一印象はわずか50ミリ秒です。Figma決算でも75%が無料のAI枠超過後も課金継続。AIが93%に浸透した今、数字で語れるUX力が差になります。",
-        "recommend": "ポートフォリオに『何ミリ秒短縮で何%上がる』と書ける駆け出しは強い。Figmaナビで下書きを時短し、検証に時間を回しましょう。"
+        "hook": "作ったFigmaコンポーネント、Variantが20個30個に膨れてませんか?原因は知らずに作ってる落とし穴、5秒で見抜けるサインがあります",
+        "origin": "原因はアイコンの表示/非表示をVariantで作ること。例えば4サイズ×アイコン有無で計8個必要。Boolean Propertyに変えれば4個で済み、命名も自由。Figma公式もBooleanはレイヤー表示切替用と明記しています",
+        "recommend": "Variant一覧に『Icon』があれば置き換えサイン。整理コンポはAIに渡しても精度上がり、Figmaナビでも有利です"
       },
       "section_titles": {
-        "hook": "UXのROIは9900%",
-        "origin": "Smashing最新5値",
-        "recommend": "数字で語る駆け出し"
+        "hook": "Variant爆発の罠",
+        "origin": "Booleanで半減",
+        "recommend": "整理コンポの効果"
       },
       "section_descriptions": {
-        "hook": "Smashing先週金曜、英語デザイナー界隈の話題",
-        "origin": "1秒遅延=20%減、第一印象50ミリ秒、Figma75%継続",
-        "recommend": "ポートフォリオに数字を載せる人が次に伸びる"
+        "hook": "気づかず作ると20-30個に増えるVariant",
+        "origin": "アイコン表示はBoolean Propertyで作る",
+        "recommend": "整理コンポはAI生成にも有利で精度が上がる"
       }
     }
   ]
