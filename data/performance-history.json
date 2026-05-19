@@ -583,7 +583,7 @@
         "views": 117,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-18T00:11:22.612Z"
+        "updatedAt": "2026-05-19T00:18:29.856Z"
       }
     },
     {
@@ -627,7 +627,7 @@
         "views": 72,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-18T00:11:22.612Z"
+        "updatedAt": "2026-05-19T00:18:29.856Z"
       }
     },
     {
@@ -671,7 +671,7 @@
         "views": 62,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-18T00:11:22.612Z"
+        "updatedAt": "2026-05-19T00:18:29.856Z"
       }
     },
     {
@@ -717,7 +717,7 @@
         "views": 53,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-18T00:11:22.612Z"
+        "updatedAt": "2026-05-19T00:18:29.856Z"
       }
     },
     {
@@ -764,7 +764,7 @@
         "views": 64,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-18T00:11:22.612Z"
+        "updatedAt": "2026-05-19T00:18:29.856Z"
       }
     },
     {
@@ -810,7 +810,7 @@
         "views": 40,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-18T00:11:22.612Z"
+        "updatedAt": "2026-05-19T00:18:29.856Z"
       }
     },
     {
@@ -854,10 +854,10 @@
         "freshness_hours": 48
       },
       "stats": {
-        "views": 98,
+        "views": 99,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-18T00:11:22.612Z"
+        "updatedAt": "2026-05-19T00:18:29.856Z"
       }
     },
     {
@@ -901,10 +901,10 @@
         "freshness_hours": 3
       },
       "stats": {
-        "views": 127,
+        "views": 126,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-18T00:11:22.612Z"
+        "updatedAt": "2026-05-19T00:18:29.856Z"
       }
     },
     {
@@ -949,7 +949,7 @@
         "views": 401,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-18T00:11:22.612Z"
+        "updatedAt": "2026-05-19T00:18:29.856Z"
       }
     },
     {
@@ -989,10 +989,10 @@
         "freshness_hours": 96
       },
       "stats": {
-        "views": 107,
+        "views": 108,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-18T00:11:22.612Z"
+        "updatedAt": "2026-05-19T00:18:29.856Z"
       }
     },
     {
@@ -1030,6 +1030,49 @@
         ],
         "query": "Smashing Magazine UX ROI data-backed truths Carrie Webster May 2026 + Figma Q1 2026 75% AI credit retention designer twitter reaction",
         "freshness_hours": 72
+      },
+      "stats": {
+        "views": 13,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-05-19T00:18:29.856Z"
+      }
+    },
+    {
+      "videoId": "YU31xHwS3_c",
+      "videoUrl": "https://youtube.com/shorts/YU31xHwS3_c",
+      "date": "2026-05-19",
+      "title": "【デザインニュース】Componentが30個に膨れる原因、Boolean Propertyで半減｜2026/05/19 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 44,
+      "discovery": {
+        "method": "figma-community",
+        "description": "Figma Forum と公式 Help Center で頻出する Boolean Property × Variant 設計の躓きを起点に、駆け出し向け Component Tips を community-tips-bundle 角度で抽出。method 選定: 5/18 PDCA の pre-schedule 第一候補通り、figma-community (5/16=3日前で直近2日 OK + 1回/7日で集中度クリア + avg 227 で TOP method) を採用、Tips-bundle 角度は 5/16 Auto Layout 絶対位置 (401 views) と異なる Components プロパティ角度で差別化。official-src は 5/12+5/15 で 7日2回到達済、本日採用すれば 7日3回到達で過剰集中ゆえ温存。expert-blog (5/17=2日前) と social-en (5/18=昨日) は直近2日抵触で不可、news-en は 6/2 まで凍結。NG パターン回避: プラグイン機能説明メインではなく、Figma 本体の Component Properties 機能の駆け出しが詰まる落とし穴を起点に、Boolean Property 切替で半減する具体数値を提示、Figmaナビは『整理されたコンポを AI に渡す』補助輪として軽 CTA、強い購買誘導は回避。freshness_hours = 24 (community-tips-bundle 角度は evergreen Tip だが Forum で議論継続中のため当日 discovery として記録)、出典 URL 4 件記録 (Figma 公式 Help Center / Figma Forum / Design Systems Collective 2025-2026 playbook / LogRocket guide)。",
+        "sources": [
+          "https://help.figma.com/hc/en-us/articles/5579474826519-Explore-component-properties",
+          "https://forum.figma.com/ask-the-community-7/how-to-apply-boolean-property-of-a-component-into-its-variants-19238",
+          "https://www.designsystemscollective.com/design-system-mastery-with-figma-variables-the-2025-2026-best-practice-playbook-da0500ca0e66",
+          "https://blog.logrocket.com/ux-design/using-component-properties-figma/"
+        ],
+        "query": "Figma Boolean Property component variant explosion mistake 2026",
+        "freshness_hours": 24
       },
       "stats": {
         "views": 0,
@@ -1204,6 +1247,14 @@
       "changes": [
         "standard: 136 avg views (22 videos)",
         "Day performance: Wed=223, Sat=196, Sun=130, Thu=120, Fri=106, Tue=98, Mon=80"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-19",
+      "changes": [
+        "standard: 131 avg views (23 videos)",
+        "Day performance: Wed=223, Sat=196, Sun=131, Thu=120, Fri=105, Tue=98, Mon=63"
       ],
       "recommendedTemplate": "standard"
     }
