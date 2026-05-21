@@ -627,7 +627,7 @@
         "views": 72,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-20T00:18:12.592Z"
+        "updatedAt": "2026-05-21T02:06:23.667Z"
       }
     },
     {
@@ -671,7 +671,7 @@
         "views": 62,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-20T00:18:12.592Z"
+        "updatedAt": "2026-05-21T02:06:23.667Z"
       }
     },
     {
@@ -717,7 +717,7 @@
         "views": 53,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-20T00:18:12.592Z"
+        "updatedAt": "2026-05-21T02:06:23.667Z"
       }
     },
     {
@@ -764,7 +764,7 @@
         "views": 64,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-20T00:18:12.592Z"
+        "updatedAt": "2026-05-21T02:06:23.667Z"
       }
     },
     {
@@ -810,7 +810,7 @@
         "views": 40,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-20T00:18:12.592Z"
+        "updatedAt": "2026-05-21T02:06:23.667Z"
       }
     },
     {
@@ -857,7 +857,7 @@
         "views": 99,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-20T00:18:12.592Z"
+        "updatedAt": "2026-05-21T02:06:23.667Z"
       }
     },
     {
@@ -904,7 +904,7 @@
         "views": 126,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-20T00:18:12.592Z"
+        "updatedAt": "2026-05-21T02:06:23.667Z"
       }
     },
     {
@@ -949,7 +949,7 @@
         "views": 400,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-20T00:18:12.592Z"
+        "updatedAt": "2026-05-21T02:06:23.667Z"
       }
     },
     {
@@ -989,10 +989,10 @@
         "freshness_hours": 96
       },
       "stats": {
-        "views": 108,
+        "views": 107,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-20T00:18:12.592Z"
+        "updatedAt": "2026-05-21T02:06:23.667Z"
       }
     },
     {
@@ -1032,10 +1032,10 @@
         "freshness_hours": 72
       },
       "stats": {
-        "views": 17,
+        "views": 20,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-20T00:18:12.592Z"
+        "updatedAt": "2026-05-21T02:06:23.667Z"
       }
     },
     {
@@ -1075,10 +1075,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 35,
+        "views": 53,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-20T00:18:12.592Z"
+        "updatedAt": "2026-05-21T02:06:23.667Z"
       }
     },
     {
@@ -1116,6 +1116,51 @@
         ],
         "query": "Figma Slides sections release May 2026 navigate presenter audience view design mode",
         "freshness_hours": 48
+      },
+      "stats": {
+        "views": 66,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-05-21T02:06:23.667Z"
+      }
+    },
+    {
+      "videoId": "hBceRU-63hM",
+      "videoUrl": "https://youtube.com/shorts/hBceRU-63hM",
+      "date": "2026-05-21",
+      "title": "【デザインニュース】Figma公式AIエージェントが昨日5/20ベータ公開、canvasに直接デザインを描く時代へ｜2026/05/21 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 46,
+      "discovery": {
+        "method": "official-src",
+        "description": "Figma 公式 Blog / Help Center / Forum から 5/20 公式リリースの Figma Design Agent (canvas 直結 AI エージェント) を一次取得。method 選定: 5/20 PDCA Action #3 の pre-schedule で『5/20 Slides Sections の鮮度継続次第で official-src 連投も視野』と明記、本日朝の公式ソース確認で 5/20 = Figma Agent (Figmaナビ直接競合プロダクト、年最大級ニュース ~24h fresh) を発見、直近2日ガード抵触 1 日分を Figma Agent のニュース性極大 + Figmaナビ (AI でデザイン生成する Figma plugin) との直接競合関係で特例承認、新 angle 『flagship-launch』で投入。figma-community (5/19=2日前で 7日2回到達ガード抵触) と social-en (ux-roi-narrative 72h=17 でフェイル確定) は不可、expert-blog は 5/22 routine 第一候補に温存、product-launches は 5/24 Awwwards 投入と差別化要で温存。NG パターン回避: 戦略 NG 『AI がデザイナーの仕事を奪う系』に極めて触れやすいトピックゆえ、Primary (駆け出し) の『AI に任せる範囲と自分で決める範囲を切り分ける練習機会』として positive 化、機能列挙の NG を避け学習者の実用シーン接続を優先、Figmaナビは Recommend で『無料枠で AI 下書きをすぐ試せる』軽 CTA、強い購買誘導は回避。freshness_hours = 24 (5/20 公式リリースから JST 朝で逆算)、出典 URL 6 件記録 (Figma Blog 公式ローンチ記事 / Help Center beta access / Help Center 使い方 / Help Center May 2026 roundup / TechCrunch / Fast Company)。",
+        "sources": [
+          "https://www.figma.com/blog/the-figma-agent-is-here/",
+          "https://help.figma.com/hc/en-us/articles/34932042346775-How-do-I-access-the-AI-agent-beta-in-Figma-Design",
+          "https://help.figma.com/hc/en-us/articles/37998629035799-Work-with-the-AI-agent-in-Figma-Design",
+          "https://help.figma.com/hc/en-us/articles/40219873508247-Release-notes-roundup-May-2026",
+          "https://techcrunch.com/2026/05/20/figma-adds-an-ai-assistant-to-its-collaborative-canvas/",
+          "https://www.fastcompany.com/91545179/figma-ai-agent-tool"
+        ],
+        "query": "Figma AI agent May 2026 beta design system tokens components Cmd Enter generate remix Full seat",
+        "freshness_hours": 24
       },
       "stats": {
         "views": 0,
@@ -1306,6 +1351,14 @@
       "changes": [
         "standard: 127 avg views (24 videos)",
         "Day performance: Wed=223, Sat=196, Sun=131, Thu=120, Fri=105, Tue=83, Mon=64"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-21",
+      "changes": [
+        "standard: 125 avg views (25 videos)",
+        "Day performance: Sat=196, Wed=184, Sun=130, Thu=120, Fri=105, Tue=87, Mon=65"
       ],
       "recommendedTemplate": "standard"
     }
