@@ -1,41 +1,41 @@
 {
-  "date": "2026-05-21",
+  "date": "2026-05-22",
   "discovery": {
-    "method": "official-src",
-    "description": "Figma 公式 Blog / Help Center / Forum から 5/20 公式リリースの Figma Design Agent (canvas 直結 AI エージェント) を一次取得。method 選定: 5/20 PDCA Action #3 の pre-schedule で『5/20 Slides Sections の鮮度継続次第で official-src 連投も視野』と明記、本日朝の公式ソース確認で 5/20 = Figma Agent (Figmaナビ直接競合プロダクト、年最大級ニュース ~24h fresh) を発見、直近2日ガード抵触 1 日分を Figma Agent のニュース性極大 + Figmaナビ (AI でデザイン生成する Figma plugin) との直接競合関係で特例承認、新 angle 『flagship-launch』で投入。figma-community (5/19=2日前で 7日2回到達ガード抵触) と social-en (ux-roi-narrative 72h=17 でフェイル確定) は不可、expert-blog は 5/22 routine 第一候補に温存、product-launches は 5/24 Awwwards 投入と差別化要で温存。NG パターン回避: 戦略 NG 『AI がデザイナーの仕事を奪う系』に極めて触れやすいトピックゆえ、Primary (駆け出し) の『AI に任せる範囲と自分で決める範囲を切り分ける練習機会』として positive 化、機能列挙の NG を避け学習者の実用シーン接続を優先、Figmaナビは Recommend で『無料枠で AI 下書きをすぐ試せる』軽 CTA、強い購買誘導は回避。freshness_hours = 24 (5/20 公式リリースから JST 朝で逆算)、出典 URL 6 件記録 (Figma Blog 公式ローンチ記事 / Help Center beta access / Help Center 使い方 / Help Center May 2026 roundup / TechCrunch / Fast Company)。",
+    "method": "social-en",
+    "description": "平日(金)の news 帯。戦略の weekday 推奨 news 系 4 method を順に検討: news-en は 2 週連続 WORST で 6/2 まで凍結中ゆえ不可、official-src は 5/20+5/21 の連投で直近2日連続ガード抵触ゆえ不可、figma-community は 5/16+5/19 で 7日2回到達済ゆえ過剰集中回避で温存、product-launches は 5/24(日) の Awwwards 投入に pre-schedule 済で温存。残る選択として social-en を採用。social-en は 5/18 が4日前で直近2日クリア・7日2回未到達・method 自体は非凍結(凍結方向は ux-roi-narrative 角度のみ)。角度は social-en の唯一の健全 TOP 角度 platform-design-rivalry(5/14 Google Liquid Glass=99 views)を Exploit。topic は Google I/O 2026(5/20)で発表された Google Stitch のリアルタイム AI エージェント。英語デザイナー界隈(HN/Reddit/X、Figma 講師や 20 年級デザイナーの個人発信)で『Figma キラー』論争として拡散しており social-en チャネルで一次把握。NG 回避: 戦略 NG『AI がデザイナーの仕事を奪う系』に触れやすい題材ゆえ、現場の経験者コンセンサス『Stitch で下書き・Figma で仕上げ、両方併用、基礎はより重要』を payoff に据え、AI=補助輪・学習者の味方として positive 化。Figmaナビは Recommend で『無料で試せる』軽 CTA のみ、強い購買誘導は回避。freshness_hours=46(5/20 発表から JST 朝で逆算)、出典 6 件記録。5/21 routine の pre-schedule(expert-blog を 5/22 第一候補)は、expert-blog が weekday news 系外 method かつ過去2回とも週末利用ゆえ金曜 news 帯に不適と判断し override、~46h fresh の Google Stitch news + 実績ある platform-design-rivalry 角度を優先、expert-blog は 5/23-25 週末枠に再温存。",
     "sources": [
-      "https://www.figma.com/blog/the-figma-agent-is-here/",
-      "https://help.figma.com/hc/en-us/articles/34932042346775-How-do-I-access-the-AI-agent-beta-in-Figma-Design",
-      "https://help.figma.com/hc/en-us/articles/37998629035799-Work-with-the-AI-agent-in-Figma-Design",
-      "https://help.figma.com/hc/en-us/articles/40219873508247-Release-notes-roundup-May-2026",
-      "https://techcrunch.com/2026/05/20/figma-adds-an-ai-assistant-to-its-collaborative-canvas/",
-      "https://www.fastcompany.com/91545179/figma-ai-agent-tool"
+      "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-updates/",
+      "https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-collection/",
+      "https://www.techtimes.com/articles/316903/20260520/google-stitch-launches-real-time-ai-agent-multiplayer-editing-figma-charges-15-seat.htm",
+      "https://aiweekly.co/alerts/google-stitch-adds-streaming-design-agent-free-multiplayer",
+      "https://www.nxcode.io/resources/news/google-stitch-vs-figma-ai-design-comparison-2026",
+      "https://smoothmojo.com/blog/google-stitch-vs-figma/"
     ],
-    "query": "Figma AI agent May 2026 beta design system tokens components Cmd Enter generate remix Full seat",
-    "freshness_hours": 24
+    "query": "Google Stitch I/O 2026 real-time agent vs Figma designers reaction Hacker News Reddit",
+    "freshness_hours": 46
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma公式AIエージェントが昨日5/20ベータ公開、canvasに直接デザインを描く時代へ",
-      "description": "Figma公式がAIエージェントのベータを公開、canvasに直接デザインを生成できる時代が来ました",
-      "detail": "デザインシステムのcomponentsやvariablesを@で指定して、レイアウト案の生成、配色やダークモード化、リアルな文言の一括投入まで対応。対象はProfessional以上のFull seatで、ベータ中はAIクレジット消費ゼロで試せます。",
-      "narration": "昨日5/20、FigmaがAIエージェントのベータを公開、選んだレイヤーにCmd+Enterで指示するだけでデザインを生成、業界が一気に動きました",
-      "tags": ["Figma", "Figma Agent", "AI", "公式リリース", "デザインシステム"],
+      "title": "Google Stitch大進化で『Figmaキラー』論争、現場のデザイナーの答えは『両方使う』",
+      "description": "おととい5/20のGoogle I/Oで、無料のAIデザインツールStitchが大進化、海外デザイナー界隈がざわついています",
+      "detail": "I/Oで発表されたのは、声で指示すると画面がその場で描かれるリアルタイムAIと、複数人の同時編集。すべて無料で、Figmaの有料プランとの価格差が注目され、発表直後にはFigmaの株価が一時9%下落。ただ現場の経験者の反応は冷静で、『Stitchで素早く下書き、Figmaで仕上げる』と両方を併用する声が中心です。",
+      "narration": "『無料のFigmaキラー?』おととい5/20のGoogle I/Oで、AIデザインツールStitchが大進化。海外デザイナー界隈がざわついています",
+      "tags": ["Google Stitch", "Figma", "AIデザインツール", "Google I/O"],
       "narration_sections": {
-        "hook": "昨日5/20、FigmaがAIエージェントのベータを公開、選んだレイヤーにCmd+Enterで指示するだけでデザインを生成、業界が一気に動きました",
-        "origin": "デザインシステムのcomponentsやvariablesを@で指定でき、レイアウト案の生成、配色やダークモード化、リアルな文言の一括投入まで対応。対象はProfessional以上のFull seat、ベータ期間中はAIクレジット消費ゼロで試せます",
-        "recommend": "AIに任せる範囲と自分で決める範囲を切り分ける練習の好機。Figmaナビなら無料枠でAI下書きをすぐ試せます"
+        "hook": "『無料のFigmaキラー?』おととい5/20のGoogle I/Oで、AIデザインツールStitchが大進化。海外デザイナー界隈がざわついています",
+        "origin": "I/Oで発表されたのは、声で指示すると画面がその場で描かれるリアルタイムAIと、複数人の同時編集。しかも全部無料です。発表直後にはFigmaの株価が一時9%下落するほどの注目度。ただ現場のデザイナーの反応は、少し違っていました",
+        "recommend": "経験者の答えは『両方使う』。Stitchで素早く下書き、Figmaで仕上げる。AIは補助輪、基礎はより大事に。Figmaナビも無料で試せます"
       },
       "section_titles": {
-        "hook": "Figma公式AI公開",
-        "origin": "デザインシステム連携",
-        "recommend": "学習者の練習の好機"
+        "hook": "Stitch大進化",
+        "origin": "リアルタイムAIと無料化",
+        "recommend": "答えは『両方使う』"
       },
       "section_descriptions": {
-        "hook": "5/20公開、選択レイヤーにCmd+Enterで指示",
-        "origin": "@で部品や変数を指定、ベータ中はクレジット消費ゼロ",
-        "recommend": "AIに任せる範囲と自分で決める範囲を切り分け"
+        "hook": "おととい5/20のGoogle I/Oで発表された新機能",
+        "origin": "声の指示で画面がその場で描かれる無料AI",
+        "recommend": "経験者は両方を併用、基礎の力はより大事に"
       }
     }
   ]
