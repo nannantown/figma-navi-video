@@ -1,41 +1,42 @@
 {
-  "date": "2026-05-22",
+  "date": "2026-05-23",
   "discovery": {
-    "method": "social-en",
-    "description": "平日(金)の news 帯。戦略の weekday 推奨 news 系 4 method を順に検討: news-en は 2 週連続 WORST で 6/2 まで凍結中ゆえ不可、official-src は 5/20+5/21 の連投で直近2日連続ガード抵触ゆえ不可、figma-community は 5/16+5/19 で 7日2回到達済ゆえ過剰集中回避で温存、product-launches は 5/24(日) の Awwwards 投入に pre-schedule 済で温存。残る選択として social-en を採用。social-en は 5/18 が4日前で直近2日クリア・7日2回未到達・method 自体は非凍結(凍結方向は ux-roi-narrative 角度のみ)。角度は social-en の唯一の健全 TOP 角度 platform-design-rivalry(5/14 Google Liquid Glass=99 views)を Exploit。topic は Google I/O 2026(5/20)で発表された Google Stitch のリアルタイム AI エージェント。英語デザイナー界隈(HN/Reddit/X、Figma 講師や 20 年級デザイナーの個人発信)で『Figma キラー』論争として拡散しており social-en チャネルで一次把握。NG 回避: 戦略 NG『AI がデザイナーの仕事を奪う系』に触れやすい題材ゆえ、現場の経験者コンセンサス『Stitch で下書き・Figma で仕上げ、両方併用、基礎はより重要』を payoff に据え、AI=補助輪・学習者の味方として positive 化。Figmaナビは Recommend で『無料で試せる』軽 CTA のみ、強い購買誘導は回避。freshness_hours=46(5/20 発表から JST 朝で逆算)、出典 6 件記録。5/21 routine の pre-schedule(expert-blog を 5/22 第一候補)は、expert-blog が weekday news 系外 method かつ過去2回とも週末利用ゆえ金曜 news 帯に不適と判断し override、~46h fresh の Google Stitch news + 実績ある platform-design-rivalry 角度を優先、expert-blog は 5/23-25 週末枠に再温存。",
+    "method": "expert-blog",
+    "description": "土曜 weekend evergreen 帯。5/22 PDCA Action #3 で予約された土曜第一候補 expert-blog × ui-critique-ai 角度継続を実行。method 選定: TOP3 候補のうち figma-community(5/19=4日前で直近2日 OK だが 5/16+5/19 で 7日2回到達済、5/23 で 5/16 がちょうど window 端で実質 2 回継続のため過剰集中回避で温存)、official-src(5/20+5/21 連投の直近2日ガード、5/21 が今日から見て 2 日前で抵触+5/12+5/15+5/20+5/21 の集中履歴で温存)、product-launches(5/24 日曜の Awwwards SOTD pre-schedule 済で温存)、social-en(5/22=昨日で直近2日ガード抵触、ux-roi-narrative 凍結確定で角度資源減)、news-en(6/2 まで凍結)。残った expert-blog (5/17=6日前で全ガードクリア、weekday news 系外ゆえ土日 evergreen 帯に最適、過去2回 5/10+5/17 とも週末利用の運用パターンに合致)が唯一クリーンで pre-schedule 通り採用。トピックは Smashing Magazine 5/19 publish の Alan Dalton『Nine accessibility personas you can use throughout every design project』を一次ターゲット、名作 Sarah Horton & Whitney Quesenbery『A Web for Everyone』の 8 人ペルソナ(Trevor / Emily / Jacob / Lea / Vishnu / Steven / Maria / Carol)に複合障害ペルソナ 1 人を加えた 9 人を、リサーチ → ワイヤー → レビュー の全工程で『この人は使えるか?』とチェックする実務型を Primary 駆け出し層に翻訳。GOV.UK GDS の accessibility-personas(Claudia / Ashleigh 等)も同種の系譜として補強参照。Smashing は WebFetch 403 でフルテキスト取れず複数の検索スニペットと公式 newsletter 言及で内容確認、出典 URL は category/accessibility と公式 newsletter の milled アーカイブを verifiable パスとして記録。柱選定: ⑥ UI 批評(target 10%、直近14日で 5/17 のみ = 1/14 ≒ 7% で target ぎりぎり未達、本日投入で 2/14 = 14% に押し上げ)と ④ Tips / Figma 実践(target 15%、直近14日 5/16 + 5/19 で 2/14 = 14% で同様にぎりぎり)のクロス、駆け出しが面接でアクセシビリティ実装力として語れる level の具体性を狙う。角度: ui-critique-ai を accessibility-personas-critique サブ角度として継続、5/17 spinner 系(views 107)からの n=2 試行で expert-blog 内 TOP 角度の安定性を検証。NG パターン回避: 『プロ向け高度議論』回避策に WCAG / ARIA / ATAG など専門用語を意図的に伏せ、9 人ペルソナを『この人が使えるか?』という日常言葉で翻訳、『AI が仕事を奪う系』回避策に AI 生成案へのアクセシビリティ自己レビューを駆け出しの差別化武器として positive 化、『AI に任せれば考えなくていい』回避策に Recommend で『AI は仕上げの相棒に』と AI=補助輪フレーム維持、『プラグイン機能説明メイン』回避策に Figmaナビは Recommend 末尾 1 行の軽 CTA のみで強い購買誘導は回避、『出典不明』回避策に Smashing 検索スニペット複数 + 公式 newsletter + 基書(Rosenfeld Media)+ UX Magazine 書籍抜粋 + GDS 同系統リソース計 7 件で多面確認。freshness_hours = 100 (5/19 publish から 5/23 JST 朝で約 4 日 + 4 時間、weekend evergreen 帯の許容範囲内かつ 168 上限を大きく下回り当週 fresh)。",
     "sources": [
-      "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-updates/",
-      "https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-collection/",
-      "https://www.techtimes.com/articles/316903/20260520/google-stitch-launches-real-time-ai-agent-multiplayer-editing-figma-charges-15-seat.htm",
-      "https://aiweekly.co/alerts/google-stitch-adds-streaming-design-agent-free-multiplayer",
-      "https://www.nxcode.io/resources/news/google-stitch-vs-figma-ai-design-comparison-2026",
-      "https://smoothmojo.com/blog/google-stitch-vs-figma/"
+      "https://www.smashingmagazine.com/category/accessibility/",
+      "https://www.smashingmagazine.com/",
+      "https://www.smashingmagazine.com/the-smashing-newsletter/smashing-newsletter-issue-474/",
+      "https://milled.com/smashing-magazine/503-eaa-and-accessibility-personas-I494gLy4C57JICkS",
+      "https://rosenfeldmedia.com/books/a-web-for-everyone/",
+      "https://uxmag.com/articles/book-excerpt-a-web-for-everyone",
+      "https://alphagov.github.io/accessibility-personas/"
     ],
-    "query": "Google Stitch I/O 2026 real-time agent vs Figma designers reaction Hacker News Reddit",
-    "freshness_hours": 46
+    "query": "Smashing Magazine Alan Dalton nine accessibility personas May 19 2026 design process Horton Quesenbery A Web for Everyone",
+    "freshness_hours": 100
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Google Stitch大進化で『Figmaキラー』論争、現場のデザイナーの答えは『両方使う』",
-      "description": "おととい5/20のGoogle I/Oで、無料のAIデザインツールStitchが大進化、海外デザイナー界隈がざわついています",
-      "detail": "I/Oで発表されたのは、声で指示すると画面がその場で描かれるリアルタイムAIと、複数人の同時編集。すべて無料で、Figmaの有料プランとの価格差が注目され、発表直後にはFigmaの株価が一時9%下落。ただ現場の経験者の反応は冷静で、『Stitchで素早く下書き、Figmaで仕上げる』と両方を併用する声が中心です。",
-      "narration": "『無料のFigmaキラー?』おととい5/20のGoogle I/Oで、AIデザインツールStitchが大進化。海外デザイナー界隈がざわついています",
-      "tags": ["Google Stitch", "Figma", "AIデザインツール", "Google I/O"],
+      "title": "Smashing最新、9つのアクセシビリティペルソナで駆け出しの面接が変わる",
+      "description": "今週Smashingが、駆け出しデザイナーが面接で語れる『9つのアクセシビリティペルソナ』を公開しました",
+      "detail": "著者はアクセシビリティ専門家のAlan Dalton氏。名作『A Web for Everyone』の8人ペルソナに、複合障害を持つ1人を加えた9人を、リサーチ・ワイヤー・レビューの全工程で『この人は使えるか?』とチェックする実務型です。視覚障害だけでなく、片手で抱っこ中・屋外日光下といった状況的障害も含みます。",
+      "narration": "アクセシビリティ対応、後回しにしてませんか?今週Smashingが、駆け出しの面接でも語れる9つのペルソナを公開しました",
+      "tags": ["アクセシビリティ", "ペルソナ", "Smashing", "デザイン勉強"],
       "narration_sections": {
-        "hook": "『無料のFigmaキラー?』おととい5/20のGoogle I/Oで、AIデザインツールStitchが大進化。海外デザイナー界隈がざわついています",
-        "origin": "I/Oで発表されたのは、声で指示すると画面がその場で描かれるリアルタイムAIと、複数人の同時編集。しかも全部無料です。発表直後にはFigmaの株価が一時9%下落するほどの注目度。ただ現場のデザイナーの反応は、少し違っていました",
-        "recommend": "経験者の答えは『両方使う』。Stitchで素早く下書き、Figmaで仕上げる。AIは補助輪、基礎はより大事に。Figmaナビも無料で試せます"
+        "hook": "アクセシビリティ対応、後回しにしてませんか?今週Smashingが、駆け出しの面接でも語れる9つのペルソナを公開しました",
+        "origin": "著者はAlan Dalton氏。名作『A Web for Everyone』の8人ペルソナに、複合障害を持つ1人を加えた9人を、リサーチ・ワイヤー・レビューの全工程で『この人は使えるか?』と問う型です。状況的障害、片手抱っこや日光下も含みます",
+        "recommend": "1人だけでもポートフォリオに『このペルソナで検証済み』と書ければ、AIで量産する駆け出しの中で差がつきます。AIは仕上げの相棒に"
       },
       "section_titles": {
-        "hook": "Stitch大進化",
-        "origin": "リアルタイムAIと無料化",
-        "recommend": "答えは『両方使う』"
+        "hook": "9つのアクセシビリティ",
+        "origin": "全工程でチェック",
+        "recommend": "面接で差をつける"
       },
       "section_descriptions": {
-        "hook": "おととい5/20のGoogle I/Oで発表された新機能",
-        "origin": "声の指示で画面がその場で描かれる無料AI",
-        "recommend": "経験者は両方を併用、基礎の力はより大事に"
+        "hook": "Smashing先週特集、駆け出しが面接で語れる武器",
+        "origin": "視覚・運動・複合障害の9人で全工程を点検",
+        "recommend": "ポートフォリオの一行が面接の通過率を変える"
       }
     }
   ]
