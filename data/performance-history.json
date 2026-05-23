@@ -627,7 +627,7 @@
         "views": 72,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-22T00:16:16.959Z"
+        "updatedAt": "2026-05-23T00:16:11.962Z"
       }
     },
     {
@@ -671,7 +671,7 @@
         "views": 62,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-22T00:16:16.959Z"
+        "updatedAt": "2026-05-23T00:16:11.962Z"
       }
     },
     {
@@ -717,7 +717,7 @@
         "views": 53,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-22T00:16:16.959Z"
+        "updatedAt": "2026-05-23T00:16:11.962Z"
       }
     },
     {
@@ -764,7 +764,7 @@
         "views": 64,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-22T00:16:16.959Z"
+        "updatedAt": "2026-05-23T00:16:11.962Z"
       }
     },
     {
@@ -810,7 +810,7 @@
         "views": 40,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-22T00:16:16.959Z"
+        "updatedAt": "2026-05-23T00:16:11.962Z"
       }
     },
     {
@@ -857,7 +857,7 @@
         "views": 99,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-22T00:16:16.959Z"
+        "updatedAt": "2026-05-23T00:16:11.962Z"
       }
     },
     {
@@ -904,7 +904,7 @@
         "views": 128,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-22T00:16:16.959Z"
+        "updatedAt": "2026-05-23T00:16:11.962Z"
       }
     },
     {
@@ -949,7 +949,7 @@
         "views": 400,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-22T00:16:16.959Z"
+        "updatedAt": "2026-05-23T00:16:11.962Z"
       }
     },
     {
@@ -992,7 +992,7 @@
         "views": 107,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-22T00:16:16.959Z"
+        "updatedAt": "2026-05-23T00:16:11.962Z"
       }
     },
     {
@@ -1032,10 +1032,10 @@
         "freshness_hours": 72
       },
       "stats": {
-        "views": 20,
+        "views": 19,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-22T00:16:16.959Z"
+        "updatedAt": "2026-05-23T00:16:11.962Z"
       }
     },
     {
@@ -1078,7 +1078,7 @@
         "views": 64,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-22T00:16:16.959Z"
+        "updatedAt": "2026-05-23T00:16:11.962Z"
       }
     },
     {
@@ -1121,7 +1121,7 @@
         "views": 85,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-22T00:16:16.959Z"
+        "updatedAt": "2026-05-23T00:16:11.962Z"
       }
     },
     {
@@ -1163,10 +1163,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 16,
+        "views": 18,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-22T00:16:16.959Z"
+        "updatedAt": "2026-05-23T00:16:11.962Z"
       }
     },
     {
@@ -1206,6 +1206,52 @@
         ],
         "query": "Google Stitch I/O 2026 real-time agent vs Figma designers reaction Hacker News Reddit",
         "freshness_hours": 46
+      },
+      "stats": {
+        "views": 16,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-05-23T00:16:11.962Z"
+      }
+    },
+    {
+      "videoId": "O-GLBp1e3BY",
+      "videoUrl": "https://youtube.com/shorts/O-GLBp1e3BY",
+      "date": "2026-05-23",
+      "title": "【デザインニュース】Smashing最新、9つのアクセシビリティペルソナで駆け出しの面接が変わる｜2026/05/23 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 46,
+      "discovery": {
+        "method": "expert-blog",
+        "description": "土曜 weekend evergreen 帯。5/22 PDCA Action #3 で予約された土曜第一候補 expert-blog × ui-critique-ai 角度継続を実行。method 選定: TOP3 候補のうち figma-community(5/19=4日前で直近2日 OK だが 5/16+5/19 で 7日2回到達済、5/23 で 5/16 がちょうど window 端で実質 2 回継続のため過剰集中回避で温存)、official-src(5/20+5/21 連投の直近2日ガード、5/21 が今日から見て 2 日前で抵触+5/12+5/15+5/20+5/21 の集中履歴で温存)、product-launches(5/24 日曜の Awwwards SOTD pre-schedule 済で温存)、social-en(5/22=昨日で直近2日ガード抵触、ux-roi-narrative 凍結確定で角度資源減)、news-en(6/2 まで凍結)。残った expert-blog (5/17=6日前で全ガードクリア、weekday news 系外ゆえ土日 evergreen 帯に最適、過去2回 5/10+5/17 とも週末利用の運用パターンに合致)が唯一クリーンで pre-schedule 通り採用。トピックは Smashing Magazine 5/19 publish の Alan Dalton『Nine accessibility personas you can use throughout every design project』を一次ターゲット、名作 Sarah Horton & Whitney Quesenbery『A Web for Everyone』の 8 人ペルソナ(Trevor / Emily / Jacob / Lea / Vishnu / Steven / Maria / Carol)に複合障害ペルソナ 1 人を加えた 9 人を、リサーチ → ワイヤー → レビュー の全工程で『この人は使えるか?』とチェックする実務型を Primary 駆け出し層に翻訳。GOV.UK GDS の accessibility-personas(Claudia / Ashleigh 等)も同種の系譜として補強参照。Smashing は WebFetch 403 でフルテキスト取れず複数の検索スニペットと公式 newsletter 言及で内容確認、出典 URL は category/accessibility と公式 newsletter の milled アーカイブを verifiable パスとして記録。柱選定: ⑥ UI 批評(target 10%、直近14日で 5/17 のみ = 1/14 ≒ 7% で target ぎりぎり未達、本日投入で 2/14 = 14% に押し上げ)と ④ Tips / Figma 実践(target 15%、直近14日 5/16 + 5/19 で 2/14 = 14% で同様にぎりぎり)のクロス、駆け出しが面接でアクセシビリティ実装力として語れる level の具体性を狙う。角度: ui-critique-ai を accessibility-personas-critique サブ角度として継続、5/17 spinner 系(views 107)からの n=2 試行で expert-blog 内 TOP 角度の安定性を検証。NG パターン回避: 『プロ向け高度議論』回避策に WCAG / ARIA / ATAG など専門用語を意図的に伏せ、9 人ペルソナを『この人が使えるか?』という日常言葉で翻訳、『AI が仕事を奪う系』回避策に AI 生成案へのアクセシビリティ自己レビューを駆け出しの差別化武器として positive 化、『AI に任せれば考えなくていい』回避策に Recommend で『AI は仕上げの相棒に』と AI=補助輪フレーム維持、『プラグイン機能説明メイン』回避策に Figmaナビは Recommend 末尾 1 行の軽 CTA のみで強い購買誘導は回避、『出典不明』回避策に Smashing 検索スニペット複数 + 公式 newsletter + 基書(Rosenfeld Media)+ UX Magazine 書籍抜粋 + GDS 同系統リソース計 7 件で多面確認。freshness_hours = 100 (5/19 publish から 5/23 JST 朝で約 4 日 + 4 時間、weekend evergreen 帯の許容範囲内かつ 168 上限を大きく下回り当週 fresh)。",
+        "sources": [
+          "https://www.smashingmagazine.com/category/accessibility/",
+          "https://www.smashingmagazine.com/",
+          "https://www.smashingmagazine.com/the-smashing-newsletter/smashing-newsletter-issue-474/",
+          "https://milled.com/smashing-magazine/503-eaa-and-accessibility-personas-I494gLy4C57JICkS",
+          "https://rosenfeldmedia.com/books/a-web-for-everyone/",
+          "https://uxmag.com/articles/book-excerpt-a-web-for-everyone",
+          "https://alphagov.github.io/accessibility-personas/"
+        ],
+        "query": "Smashing Magazine Alan Dalton nine accessibility personas May 19 2026 design process Horton Quesenbery A Web for Everyone",
+        "freshness_hours": 100
       },
       "stats": {
         "views": 0,
@@ -1412,6 +1458,14 @@
       "changes": [
         "standard: 122 avg views (26 videos)",
         "Day performance: Sat=196, Wed=189, Sun=130, Fri=106, Thu=94, Tue=90, Mon=65"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-23",
+      "changes": [
+        "standard: 118 avg views (27 videos)",
+        "Day performance: Sat=196, Wed=189, Sun=130, Thu=95, Tue=90, Fri=84, Mon=65"
       ],
       "recommendedTemplate": "standard"
     }
