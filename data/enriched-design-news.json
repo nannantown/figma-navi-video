@@ -1,42 +1,42 @@
 {
-  "date": "2026-05-23",
+  "date": "2026-05-24",
   "discovery": {
-    "method": "expert-blog",
-    "description": "土曜 weekend evergreen 帯。5/22 PDCA Action #3 で予約された土曜第一候補 expert-blog × ui-critique-ai 角度継続を実行。method 選定: TOP3 候補のうち figma-community(5/19=4日前で直近2日 OK だが 5/16+5/19 で 7日2回到達済、5/23 で 5/16 がちょうど window 端で実質 2 回継続のため過剰集中回避で温存)、official-src(5/20+5/21 連投の直近2日ガード、5/21 が今日から見て 2 日前で抵触+5/12+5/15+5/20+5/21 の集中履歴で温存)、product-launches(5/24 日曜の Awwwards SOTD pre-schedule 済で温存)、social-en(5/22=昨日で直近2日ガード抵触、ux-roi-narrative 凍結確定で角度資源減)、news-en(6/2 まで凍結)。残った expert-blog (5/17=6日前で全ガードクリア、weekday news 系外ゆえ土日 evergreen 帯に最適、過去2回 5/10+5/17 とも週末利用の運用パターンに合致)が唯一クリーンで pre-schedule 通り採用。トピックは Smashing Magazine 5/19 publish の Alan Dalton『Nine accessibility personas you can use throughout every design project』を一次ターゲット、名作 Sarah Horton & Whitney Quesenbery『A Web for Everyone』の 8 人ペルソナ(Trevor / Emily / Jacob / Lea / Vishnu / Steven / Maria / Carol)に複合障害ペルソナ 1 人を加えた 9 人を、リサーチ → ワイヤー → レビュー の全工程で『この人は使えるか?』とチェックする実務型を Primary 駆け出し層に翻訳。GOV.UK GDS の accessibility-personas(Claudia / Ashleigh 等)も同種の系譜として補強参照。Smashing は WebFetch 403 でフルテキスト取れず複数の検索スニペットと公式 newsletter 言及で内容確認、出典 URL は category/accessibility と公式 newsletter の milled アーカイブを verifiable パスとして記録。柱選定: ⑥ UI 批評(target 10%、直近14日で 5/17 のみ = 1/14 ≒ 7% で target ぎりぎり未達、本日投入で 2/14 = 14% に押し上げ)と ④ Tips / Figma 実践(target 15%、直近14日 5/16 + 5/19 で 2/14 = 14% で同様にぎりぎり)のクロス、駆け出しが面接でアクセシビリティ実装力として語れる level の具体性を狙う。角度: ui-critique-ai を accessibility-personas-critique サブ角度として継続、5/17 spinner 系(views 107)からの n=2 試行で expert-blog 内 TOP 角度の安定性を検証。NG パターン回避: 『プロ向け高度議論』回避策に WCAG / ARIA / ATAG など専門用語を意図的に伏せ、9 人ペルソナを『この人が使えるか?』という日常言葉で翻訳、『AI が仕事を奪う系』回避策に AI 生成案へのアクセシビリティ自己レビューを駆け出しの差別化武器として positive 化、『AI に任せれば考えなくていい』回避策に Recommend で『AI は仕上げの相棒に』と AI=補助輪フレーム維持、『プラグイン機能説明メイン』回避策に Figmaナビは Recommend 末尾 1 行の軽 CTA のみで強い購買誘導は回避、『出典不明』回避策に Smashing 検索スニペット複数 + 公式 newsletter + 基書(Rosenfeld Media)+ UX Magazine 書籍抜粋 + GDS 同系統リソース計 7 件で多面確認。freshness_hours = 100 (5/19 publish から 5/23 JST 朝で約 4 日 + 4 時間、weekend evergreen 帯の許容範囲内かつ 168 上限を大きく下回り当週 fresh)。",
+    "method": "product-launches",
+    "description": "日曜週末 evergreen 帯。5/23 PDCA Action #3 で予約された 5/24 第一候補 product-launches × Awwwards SOTD を pre-schedule 通り実行。method 選定: TOP3 候補のうち figma-community(5/19=5日前で全ガードクリア・TOP1 method だが 5/25 月曜の news 軸復帰候補に温存)、expert-blog(5/23=昨日で直近2日ガード抵触+5/17+5/23 で 7日2回ガード抵触で本日不可)、official-src(5/15+5/20+5/21 で 7日2回ガード 3 回到達で本日不可)、social-en(5/18+5/22 で 7日2回ガード抵触+ux-roi-narrative 凍結確定+platform-design-rivalry も 5/14=99+5/22=16 で n=2 avg 57.5 に下振れ凍結検討中で角度資源枯渇)、news-en(6/2 まで凍結)。残った product-launches は前回 5/9 から 15 日空きで全ガード明確クリア、pre-schedule 通り採用。日曜週末 evergreen 帯では柱⑤ Before/After ポートフォリオ事例(target 10%、直近14日で 5/9 のみ=7% で未達)補強に最適、本日投入で 2/14=14% に押し上げ。角度は portfolio-inspiration-trends(Awwwards SOTD 5/17-5/23 の 7 本連続から 2026 web design trends を抽出、駆け出しのポートフォリオに移植可能な視覚要素 3 つに翻訳)を新規投入、5/9 の portfolio-collection-bundle 角度(受賞作品をそのまま並べる集合論、views=72)からサブ角度を分岐させ意味のある角度差を入れて n=2 化試行、method 内 explore 要素 + exploit 要素のハイブリッド設計。トピックは今週の Awwwards SOTD 7 本(5/17 Enerblock / 5/18 KVS Studio / 5/19 Capitolium / 5/20 Thorgal / 5/21 La Revoltosa / 5/22 Sidewave / 5/23 受賞作)に共通する 2026 web design trends 3 要素 — (1)明確なグリッド構造 / (2)スクロール連動の細かいモーション / (3)見出しの大胆タイポ — を駆け出しのポートフォリオに移植可能な日常言葉に翻訳。Awwwards.com SOTD 一覧は WebFetch 403 でフルテキスト取れず、2 つの search 結果 + 個別 awwwards.com/sites/[name] URL 3 件(Sidewave / La Revoltosa / Capitolium)+ 別解説記事の計 5 ソースで multi-source confirm 実施、SOTD 7 本の名前と日付を交差確認。柱選定: ⑤ Before/After ポートフォリオ事例(target 10%、直近14日 5/9 のみ=7% で未達)と ⑥ UI 批評(target 10%、直近14日 5/17+5/23 で 2/14=14% で達成済だが本日も補強)のクロス、駆け出しが面接やポートフォリオで語れる level の具体性を狙う。角度: portfolio-inspiration-trends を新規投入、5/9 portfolio-collection-bundle(72)からの分岐角度として 5/26 朝 48h 評価で勝者角度確定判定。NG パターン回避: 『プロ向け高度議論』回避策に WebGL / Unity / 3D 技術自体は意図的に伏せ、『配置のリズムと余白の使い方』という日常言葉に翻訳、『AI が仕事を奪う系』完全回避策に WORST 3(5/18+5/21+5/22)で確認された AI 競合系トピックから完全離脱し純粋な視覚インスピレーション軸に方向転換、『AI に任せれば考えなくていい』回避策に Recommend で『AI で下書きを量産しつつ、磨きは受賞作の観察で差をつける』と AI=補助輪フレーム維持、『プラグイン機能説明メイン』回避策に Figmaナビは Recommend 内『AI 下書き量産』の文脈に自然に位置づけ強い CTA は回避、『出典不明』回避策に Awwwards SOTD 公式 URL + 個別作品 URL 3 件 + 解説記事 2 件 + Sidewave 公式 URL 計 7 件で多面確認。freshness_hours = 50(5/22 Sidewave SOTD 公開から 5/24 JST 朝で約 50 時間、週末 evergreen 帯の許容範囲内かつ 168 上限を大きく下回り当週 fresh)。",
     "sources": [
-      "https://www.smashingmagazine.com/category/accessibility/",
-      "https://www.smashingmagazine.com/",
-      "https://www.smashingmagazine.com/the-smashing-newsletter/smashing-newsletter-issue-474/",
-      "https://milled.com/smashing-magazine/503-eaa-and-accessibility-personas-I494gLy4C57JICkS",
-      "https://rosenfeldmedia.com/books/a-web-for-everyone/",
-      "https://uxmag.com/articles/book-excerpt-a-web-for-everyone",
-      "https://alphagov.github.io/accessibility-personas/"
+      "https://www.awwwards.com/websites/sites_of_the_day/",
+      "https://www.awwwards.com/sites/sidewave",
+      "https://www.awwwards.com/sites/la-revoltosa",
+      "https://www.awwwards.com/sites/capitolium",
+      "https://sidewave.it/",
+      "https://reallygooddesigns.com/web-design-trends-2026/",
+      "https://www.harleyoliver.com/blog/7-inspiring-websites-of-the-day-to-explore-in-2026"
     ],
-    "query": "Smashing Magazine Alan Dalton nine accessibility personas May 19 2026 design process Horton Quesenbery A Web for Everyone",
-    "freshness_hours": 100
+    "query": "Awwwards Site of the Day May 2026 winners Sidewave Capitolium Thorgal La Revoltosa design trends portfolio inspiration",
+    "freshness_hours": 50
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Smashing最新、9つのアクセシビリティペルソナで駆け出しの面接が変わる",
-      "description": "今週Smashingが、駆け出しデザイナーが面接で語れる『9つのアクセシビリティペルソナ』を公開しました",
-      "detail": "著者はアクセシビリティ専門家のAlan Dalton氏。名作『A Web for Everyone』の8人ペルソナに、複合障害を持つ1人を加えた9人を、リサーチ・ワイヤー・レビューの全工程で『この人は使えるか?』とチェックする実務型です。視覚障害だけでなく、片手で抱っこ中・屋外日光下といった状況的障害も含みます。",
-      "narration": "アクセシビリティ対応、後回しにしてませんか?今週Smashingが、駆け出しの面接でも語れる9つのペルソナを公開しました",
-      "tags": ["アクセシビリティ", "ペルソナ", "Smashing", "デザイン勉強"],
+      "title": "今週Awwwards 7本連続SOTDに共通する駆け出しが真似できる3つの型",
+      "description": "今週のAwwwards受賞7本に、駆け出しが今すぐポートフォリオに移植できる3つの共通点が見つかりました",
+      "detail": "5月17日のEnerblockから5月22日のSidewaveまで7本連続のSOTDに共通するのが、明確なグリッド構造、スクロール連動の細かいモーション、見出しの大胆タイポの3点。WebGLや3D技術自体ではなく、配置のリズムと余白の使い方で評価されています。駆け出しのポートフォリオに移植可能な要素です。",
+      "narration": "自分のポートフォリオ、なんか時代遅れに見えませんか?今週のAwwwards受賞7本に、駆け出しが今すぐ真似できる共通点が3つありました",
+      "tags": ["Awwwards", "ポートフォリオ", "デザイントレンド", "駆け出しデザイナー"],
       "narration_sections": {
-        "hook": "アクセシビリティ対応、後回しにしてませんか?今週Smashingが、駆け出しの面接でも語れる9つのペルソナを公開しました",
-        "origin": "著者はAlan Dalton氏。名作『A Web for Everyone』の8人ペルソナに、複合障害を持つ1人を加えた9人を、リサーチ・ワイヤー・レビューの全工程で『この人は使えるか?』と問う型です。状況的障害、片手抱っこや日光下も含みます",
-        "recommend": "1人だけでもポートフォリオに『このペルソナで検証済み』と書ければ、AIで量産する駆け出しの中で差がつきます。AIは仕上げの相棒に"
+        "hook": "自分のポートフォリオ、なんか時代遅れに見えませんか?今週のAwwwards受賞7本に、駆け出しが今すぐ真似できる共通点が3つありました",
+        "origin": "今週のSOTD 7本、SidewaveやCapitolium、Thorgalまで全てに共通するのが、明確なグリッド構造、スクロール連動の細かいモーション、見出しの大胆タイポの3点。3D技術じゃなく、配置のリズムと余白の使い方が評価されています",
+        "recommend": "まず受賞作を1本選んで、Figmaで構造とタイポだけ真似してみてください。AIで下書きを量産しつつ、磨きは受賞作の観察で差をつけられます"
       },
       "section_titles": {
-        "hook": "9つのアクセシビリティ",
-        "origin": "全工程でチェック",
-        "recommend": "面接で差をつける"
+        "hook": "今週のSOTD7本",
+        "origin": "共通する3つの型",
+        "recommend": "1本真似して差別化"
       },
       "section_descriptions": {
-        "hook": "Smashing先週特集、駆け出しが面接で語れる武器",
-        "origin": "視覚・運動・複合障害の9人で全工程を点検",
-        "recommend": "ポートフォリオの一行が面接の通過率を変える"
+        "hook": "Awwwards受賞作に駆け出しの真似ポイント",
+        "origin": "グリッド・モーション・タイポの3共通点を解説",
+        "recommend": "下書きはAIで磨きは受賞作の観察から差別化"
       }
     }
   ]
