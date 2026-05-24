@@ -1,42 +1,41 @@
 {
-  "date": "2026-05-24",
+  "date": "2026-05-25",
   "discovery": {
-    "method": "product-launches",
-    "description": "日曜週末 evergreen 帯。5/23 PDCA Action #3 で予約された 5/24 第一候補 product-launches × Awwwards SOTD を pre-schedule 通り実行。method 選定: TOP3 候補のうち figma-community(5/19=5日前で全ガードクリア・TOP1 method だが 5/25 月曜の news 軸復帰候補に温存)、expert-blog(5/23=昨日で直近2日ガード抵触+5/17+5/23 で 7日2回ガード抵触で本日不可)、official-src(5/15+5/20+5/21 で 7日2回ガード 3 回到達で本日不可)、social-en(5/18+5/22 で 7日2回ガード抵触+ux-roi-narrative 凍結確定+platform-design-rivalry も 5/14=99+5/22=16 で n=2 avg 57.5 に下振れ凍結検討中で角度資源枯渇)、news-en(6/2 まで凍結)。残った product-launches は前回 5/9 から 15 日空きで全ガード明確クリア、pre-schedule 通り採用。日曜週末 evergreen 帯では柱⑤ Before/After ポートフォリオ事例(target 10%、直近14日で 5/9 のみ=7% で未達)補強に最適、本日投入で 2/14=14% に押し上げ。角度は portfolio-inspiration-trends(Awwwards SOTD 5/17-5/23 の 7 本連続から 2026 web design trends を抽出、駆け出しのポートフォリオに移植可能な視覚要素 3 つに翻訳)を新規投入、5/9 の portfolio-collection-bundle 角度(受賞作品をそのまま並べる集合論、views=72)からサブ角度を分岐させ意味のある角度差を入れて n=2 化試行、method 内 explore 要素 + exploit 要素のハイブリッド設計。トピックは今週の Awwwards SOTD 7 本(5/17 Enerblock / 5/18 KVS Studio / 5/19 Capitolium / 5/20 Thorgal / 5/21 La Revoltosa / 5/22 Sidewave / 5/23 受賞作)に共通する 2026 web design trends 3 要素 — (1)明確なグリッド構造 / (2)スクロール連動の細かいモーション / (3)見出しの大胆タイポ — を駆け出しのポートフォリオに移植可能な日常言葉に翻訳。Awwwards.com SOTD 一覧は WebFetch 403 でフルテキスト取れず、2 つの search 結果 + 個別 awwwards.com/sites/[name] URL 3 件(Sidewave / La Revoltosa / Capitolium)+ 別解説記事の計 5 ソースで multi-source confirm 実施、SOTD 7 本の名前と日付を交差確認。柱選定: ⑤ Before/After ポートフォリオ事例(target 10%、直近14日 5/9 のみ=7% で未達)と ⑥ UI 批評(target 10%、直近14日 5/17+5/23 で 2/14=14% で達成済だが本日も補強)のクロス、駆け出しが面接やポートフォリオで語れる level の具体性を狙う。角度: portfolio-inspiration-trends を新規投入、5/9 portfolio-collection-bundle(72)からの分岐角度として 5/26 朝 48h 評価で勝者角度確定判定。NG パターン回避: 『プロ向け高度議論』回避策に WebGL / Unity / 3D 技術自体は意図的に伏せ、『配置のリズムと余白の使い方』という日常言葉に翻訳、『AI が仕事を奪う系』完全回避策に WORST 3(5/18+5/21+5/22)で確認された AI 競合系トピックから完全離脱し純粋な視覚インスピレーション軸に方向転換、『AI に任せれば考えなくていい』回避策に Recommend で『AI で下書きを量産しつつ、磨きは受賞作の観察で差をつける』と AI=補助輪フレーム維持、『プラグイン機能説明メイン』回避策に Figmaナビは Recommend 内『AI 下書き量産』の文脈に自然に位置づけ強い CTA は回避、『出典不明』回避策に Awwwards SOTD 公式 URL + 個別作品 URL 3 件 + 解説記事 2 件 + Sidewave 公式 URL 計 7 件で多面確認。freshness_hours = 50(5/22 Sidewave SOTD 公開から 5/24 JST 朝で約 50 時間、週末 evergreen 帯の許容範囲内かつ 168 上限を大きく下回り当週 fresh)。",
+    "method": "official-src",
+    "description": "月曜のニュース軸復帰枠。5/24 PDCA Action #3 で pre-schedule 第一候補に位置づけた official-src を本日採用。method 選定: TOP3 候補のうち figma-community(5/19=6日前で全ガードクリア・TOP1 method、5/24 PDCA で 5/26 or 5/27 候補に温存と pre-schedule 済)、expert-blog(5/23=2日前で直近2日ガード抵触、本日不可)、official-src(5/15 が 7 日 window 外に出て 5/20+5/21 の 2 回に減、7日2回ガードぎりぎり解放、5/24 PDCA pre-schedule 通り採用)、product-launches(5/24=昨日で直近2日ガード抵触、本日不可)、social-en(5/22=3日前で guard クリアだが TOP 角度 platform-design-rivalry 5/14=99+5/22=16 で n=2 avg 57.5 の角度資源枯渇懸念、本日見送り)、news-en(6/2 まで凍結)。残ったクリーン候補は official-src と figma-community の 2 つ、月曜のニュース軸復帰枠では official-src × feature-launch が柱① Figma 公式ニュース(target 25%、直近14日で 5/12+5/15+5/20+5/21=4/14=29% 達成済だが 5/21 flagship-launch=18 で質的下振れ)の質的補強に最適、5/24 PDCA pre-schedule 通り採用。角度: feature-launch(Figma Grid GA、5/22 リリース)。5/20 Slides Sections(feature-launch=85)+ 本日 Grid GA で n=2 化試行、5/27 朝 48h stats で feature-launch 角度の安定性正式判定。5/21 flagship-launch(=18)とは AI 機能 vs Auto Layout 族のコア機能改善で角度差を明確化、5/16 viral hit(Auto Layout 絶対位置 Tips=400)と同じ Auto Layout 領域の話題で Primary 駆け出し層の関心軸が確認済の領域に投入、9 日空きで鮮度疲労なし、5/16 viewers の関連トピック追加視聴を期待する『時系列ボトムアップ戦略』。トピックは Figma Grid が 5/22 に GA(generally available)化、Auto Layout の 2 次元版で 3 つの主要更新点 — (1) 列・行をドラッグで並び替え、(2) 要素を消すと自動で残ったセルが詰まる、(3) 要素を追加すると行が自動で増減 — を駆け出し層の日常作業(ポートフォリオのギャラリー / バナーのベントグリッド / ダッシュボードのカード並び)に翻訳。柱選定: ① Figma 公式ニュース(target 25%、本日投入で 5/14 window が 5/12 を外し 5/15+5/20+5/21+5/25=4/14=29% 維持、質的に 5/21 flagship-launch の WORST を上書き)と ④ Tips Figma 実践(target 15%、直近14日で 5/16+5/19=2/14=14% で target 接近、本日 Auto Layout 領域で軽くクロス)のハイブリッド。AI 機能ではなく Figma コア機能のリリースという点で WORST 3(5/18+5/21+5/22)の AI 競合系トピックから完全離脱、5/24 portfolio-inspiration-trends と合わせて 2 日連続で AI 競合軸冷却テスト。NG パターン回避: 『プロ向け高度議論』回避策に CSS Grid 仕様や技術詳細は伏せ、『列をドラッグで並び替え』『要素を消すと自動で詰まる』など日常言葉に翻訳、『AI が仕事を奪う系』完全回避策に純粋な Figma コア機能リリースで AI 競合軸から離脱、『AI に任せれば考えなくていい』回避策に Recommend で『AI 補助輪で下書きしたあと、整え工程が一段速くなる』と AI=補助輪フレーム維持、『プラグイン機能説明メイン』回避策に Figmaナビは Recommend 内『AI で下書き量産 → Grid で整える』ワークフロー文脈に自然位置づけ、強い CTA は回避、『出典不明』回避策に Figma 公式 release notes + Help Center 月次まとめ + UX Collective Christine Vallaure 解説 + Bootcamp Medium 解説 + Nearform 解説の計 5 ソースで multi-source confirm、Grid GA 日付(5/22)と機能 3 点を交差確認。freshness_hours = 72(5/22 GA リリースから 5/25 朝 JST で約 72 時間、週末を挟んで日本語圏でまだ十分消化されていない範囲、英語優先原則による速報性アドバンテージ窓内、168 上限を大きく下回り当週 fresh)。",
     "sources": [
-      "https://www.awwwards.com/websites/sites_of_the_day/",
-      "https://www.awwwards.com/sites/sidewave",
-      "https://www.awwwards.com/sites/la-revoltosa",
-      "https://www.awwwards.com/sites/capitolium",
-      "https://sidewave.it/",
-      "https://reallygooddesigns.com/web-design-trends-2026/",
-      "https://www.harleyoliver.com/blog/7-inspiring-websites-of-the-day-to-explore-in-2026"
+      "https://www.figma.com/release-notes/",
+      "https://help.figma.com/hc/en-us/articles/40219873508247-Release-notes-roundup-May-2026",
+      "https://help.figma.com/hc/en-us/articles/31289469907863-Use-the-grid-auto-layout-flow",
+      "https://uxdesign.cc/figmas-new-grid-you-must-understand-css-grid-as-a-designer-fbb00416e1cc",
+      "https://medium.com/design-bootcamp/figmas-new-layout-grid-2d-auto-layout-unleashed-cd0ebc44b5a3",
+      "https://nearform.com/digital-community/figmas-new-grid-auto-layout-what-it-does-and-doesnt-yet-do/"
     ],
-    "query": "Awwwards Site of the Day May 2026 winners Sidewave Capitolium Thorgal La Revoltosa design trends portfolio inspiration",
-    "freshness_hours": 50
+    "query": "Figma Grid generally available May 22 2026 auto layout 2D drag reorder",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "今週Awwwards 7本連続SOTDに共通する駆け出しが真似できる3つの型",
-      "description": "今週のAwwwards受賞7本に、駆け出しが今すぐポートフォリオに移植できる3つの共通点が見つかりました",
-      "detail": "5月17日のEnerblockから5月22日のSidewaveまで7本連続のSOTDに共通するのが、明確なグリッド構造、スクロール連動の細かいモーション、見出しの大胆タイポの3点。WebGLや3D技術自体ではなく、配置のリズムと余白の使い方で評価されています。駆け出しのポートフォリオに移植可能な要素です。",
-      "narration": "自分のポートフォリオ、なんか時代遅れに見えませんか?今週のAwwwards受賞7本に、駆け出しが今すぐ真似できる共通点が3つありました",
-      "tags": ["Awwwards", "ポートフォリオ", "デザイントレンド", "駆け出しデザイナー"],
+      "title": "Figma Grid が GA、Auto Layout の2次元版で列行ドラッグ・自動セル詰め対応",
+      "description": "Figma の Grid 機能が3日前についに正式版に。Auto Layout の2次元版でポートフォリオ作りが激変。",
+      "detail": "Grid は5月22日に GA、全ユーザー向けに正式公開。列や行をドラッグで並び替え、要素を消すと自動でセルが詰まり、追加すれば行が勝手に増えます。ベントグリッドやギャラリーなど、2次元のWebレイアウトが手作業ゼロで組めます。",
+      "narration": "Figma の Grid、3日前についに正式版に。Auto Layout の2次元版で、ポートフォリオ作りが激変します。",
+      "tags": ["Figma", "Grid", "Auto Layout", "GA", "公式アップデート"],
       "narration_sections": {
-        "hook": "自分のポートフォリオ、なんか時代遅れに見えませんか?今週のAwwwards受賞7本に、駆け出しが今すぐ真似できる共通点が3つありました",
-        "origin": "今週のSOTD 7本、SidewaveやCapitolium、Thorgalまで全てに共通するのが、明確なグリッド構造、スクロール連動の細かいモーション、見出しの大胆タイポの3点。3D技術じゃなく、配置のリズムと余白の使い方が評価されています",
-        "recommend": "まず受賞作を1本選んで、Figmaで構造とタイポだけ真似してみてください。AIで下書きを量産しつつ、磨きは受賞作の観察で差をつけられます"
+        "hook": "Figma の Grid、3日前についに正式版に。Auto Layout の2次元版で、ポートフォリオ作りが激変します。",
+        "origin": "Grid は5月22日に GA、全ユーザー向けに正式公開。列や行をドラッグで並び替え、要素を消すと自動でセルが詰まり、追加すれば行が勝手に増えます。ベントグリッドやギャラリーなど、2次元のWebレイアウトが手作業ゼロで組めます。",
+        "recommend": "Figma を開いたら、Auto Layout の Grid タブをまず触ってみて。AI で下書きしたあとの整え工程がぐっと速くなります。"
       },
       "section_titles": {
-        "hook": "今週のSOTD7本",
-        "origin": "共通する3つの型",
-        "recommend": "1本真似して差別化"
+        "hook": "Grid が正式版に",
+        "origin": "3つの神アップデート",
+        "recommend": "今日まず触る場所"
       },
       "section_descriptions": {
-        "hook": "Awwwards受賞作に駆け出しの真似ポイント",
-        "origin": "グリッド・モーション・タイポの3共通点を解説",
-        "recommend": "下書きはAIで磨きは受賞作の観察から差別化"
+        "hook": "Auto Layout の2次元版が3日前に GA",
+        "origin": "列・行ドラッグ、セル自動詰め、行が勝手に増える",
+        "recommend": "学習者がまず開くべき Auto Layout パネル"
       }
     }
   ]
