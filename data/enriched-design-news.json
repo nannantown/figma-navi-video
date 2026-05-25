@@ -1,41 +1,40 @@
 {
-  "date": "2026-05-25",
+  "date": "2026-05-26",
   "discovery": {
-    "method": "official-src",
-    "description": "月曜のニュース軸復帰枠。5/24 PDCA Action #3 で pre-schedule 第一候補に位置づけた official-src を本日採用。method 選定: TOP3 候補のうち figma-community(5/19=6日前で全ガードクリア・TOP1 method、5/24 PDCA で 5/26 or 5/27 候補に温存と pre-schedule 済)、expert-blog(5/23=2日前で直近2日ガード抵触、本日不可)、official-src(5/15 が 7 日 window 外に出て 5/20+5/21 の 2 回に減、7日2回ガードぎりぎり解放、5/24 PDCA pre-schedule 通り採用)、product-launches(5/24=昨日で直近2日ガード抵触、本日不可)、social-en(5/22=3日前で guard クリアだが TOP 角度 platform-design-rivalry 5/14=99+5/22=16 で n=2 avg 57.5 の角度資源枯渇懸念、本日見送り)、news-en(6/2 まで凍結)。残ったクリーン候補は official-src と figma-community の 2 つ、月曜のニュース軸復帰枠では official-src × feature-launch が柱① Figma 公式ニュース(target 25%、直近14日で 5/12+5/15+5/20+5/21=4/14=29% 達成済だが 5/21 flagship-launch=18 で質的下振れ)の質的補強に最適、5/24 PDCA pre-schedule 通り採用。角度: feature-launch(Figma Grid GA、5/22 リリース)。5/20 Slides Sections(feature-launch=85)+ 本日 Grid GA で n=2 化試行、5/27 朝 48h stats で feature-launch 角度の安定性正式判定。5/21 flagship-launch(=18)とは AI 機能 vs Auto Layout 族のコア機能改善で角度差を明確化、5/16 viral hit(Auto Layout 絶対位置 Tips=400)と同じ Auto Layout 領域の話題で Primary 駆け出し層の関心軸が確認済の領域に投入、9 日空きで鮮度疲労なし、5/16 viewers の関連トピック追加視聴を期待する『時系列ボトムアップ戦略』。トピックは Figma Grid が 5/22 に GA(generally available)化、Auto Layout の 2 次元版で 3 つの主要更新点 — (1) 列・行をドラッグで並び替え、(2) 要素を消すと自動で残ったセルが詰まる、(3) 要素を追加すると行が自動で増減 — を駆け出し層の日常作業(ポートフォリオのギャラリー / バナーのベントグリッド / ダッシュボードのカード並び)に翻訳。柱選定: ① Figma 公式ニュース(target 25%、本日投入で 5/14 window が 5/12 を外し 5/15+5/20+5/21+5/25=4/14=29% 維持、質的に 5/21 flagship-launch の WORST を上書き)と ④ Tips Figma 実践(target 15%、直近14日で 5/16+5/19=2/14=14% で target 接近、本日 Auto Layout 領域で軽くクロス)のハイブリッド。AI 機能ではなく Figma コア機能のリリースという点で WORST 3(5/18+5/21+5/22)の AI 競合系トピックから完全離脱、5/24 portfolio-inspiration-trends と合わせて 2 日連続で AI 競合軸冷却テスト。NG パターン回避: 『プロ向け高度議論』回避策に CSS Grid 仕様や技術詳細は伏せ、『列をドラッグで並び替え』『要素を消すと自動で詰まる』など日常言葉に翻訳、『AI が仕事を奪う系』完全回避策に純粋な Figma コア機能リリースで AI 競合軸から離脱、『AI に任せれば考えなくていい』回避策に Recommend で『AI 補助輪で下書きしたあと、整え工程が一段速くなる』と AI=補助輪フレーム維持、『プラグイン機能説明メイン』回避策に Figmaナビは Recommend 内『AI で下書き量産 → Grid で整える』ワークフロー文脈に自然位置づけ、強い CTA は回避、『出典不明』回避策に Figma 公式 release notes + Help Center 月次まとめ + UX Collective Christine Vallaure 解説 + Bootcamp Medium 解説 + Nearform 解説の計 5 ソースで multi-source confirm、Grid GA 日付(5/22)と機能 3 点を交差確認。freshness_hours = 72(5/22 GA リリースから 5/25 朝 JST で約 72 時間、週末を挟んで日本語圏でまだ十分消化されていない範囲、英語優先原則による速報性アドバンテージ窓内、168 上限を大きく下回り当週 fresh)。",
+    "method": "expert-blog",
+    "description": "5/25 PDCA Action #3 pre-schedule(5/26=expert-blog 候補ライン)通り採用。method 選定: TOP3 候補のうち figma-community(232.0, n=2、TOP1 method、全ガードクリアだが本日の英語ソース研究で fresh community plugin viral source 不在、community-tips-bundle 角度 5/16=400 から 10 日後の即時再投入は angle 疲労リスク、5/27+ に温存)、expert-blog(107.0, n=1、全ガードクリア、5/23 投入の accessibility-personas-critique が 72h 経過しても stats=0 のまま pending 扱い、本日 ui-critique-ai と別の新角度 customer-understanding-framework を投入し expert-blog 内 angle 多様化を試行)、official-src(73.75, n=4、7日2回ガード抵触で 5/20+5/21+5/25=3 回上限超過で本日不可、5/27 に 5/20 が window 外に出て解放見込み)、social-en(44.7, n=3、guard クリアだが platform-design-rivalry + ux-roi-narrative 両角度資源枯渇)、product-launches(5/24=pending で評価不能)、news-en(6/2 まで凍結)。クリーン候補は expert-blog の実質一択、火曜のニュース軸として『Smashing が今週公開した新しい UX リサーチフレーム』は news 性を十分満たす(柱③ 業界デザインニュース、柱⑥ UI 批評/学習要素 ハイブリッド)。角度: customer-understanding-framework (Smashing Magazine が 5/22 公開、Vitaly Friedman 執筆、Hannah Shamji=セラピスト出身の消費者心理リサーチャーが提案する 4 段階フレーム)。5/17 ui-critique-ai=107 と 5/23 ui-critique-ai=0(pending)の 2 連続 ui-critique-ai 試行直後に別角度に切り替え、5/27 朝 48h stats で expert-blog 内 TOP 角度ポートフォリオを 3 角度で評価する設計。トピックは Hannah Shamji の 4 段階 — Level 1『言うこと』は意見で当てにならない、Level 2『感じる・思う』は記憶に歪む、Level 3『すること』は分析で見える行動、Level 4『なぜするか』が本当の動機 — を駆け出しデザイナーが面接で『なぜこのデザインに?』と聞かれた時の答え方に直翻訳、Primary persona に直接効く即時実用接続。柱選定: ⑥ UI 批評/学習要素(target 10%、直近14日で 5/17=1/14=7%、本日投入で 2/14=14% で target 接近)と ③ 業界デザインニュース(target 20%、直近14日で 5/13+5/14+5/18+5/22=4/14=28% で target 超過、本日は ⑥ 優先扱いだが Smashing 発信源で ③ も軽く触る)のハイブリッド。NG パターン回避: 『プロ向け高度議論』回避策に Level 1〜4 の階層は『言うこと/思うこと/すること/なぜするか』と平易日本語に翻訳、『AI が仕事を奪う系』完全回避策に Hannah Shamji のフレームは AI 非依存の純粋リサーチ手法でテーマから完全離脱、『AI に任せれば考えなくていい』回避策に Recommend で『AI 下書きの後こそ、動機に戻して整えましょう』と AI=補助輪フレーム維持、『プラグイン機能説明メイン』回避策に Figmaナビ言及なし、Recommend で『AI 下書きの後の整え工程』として暗黙的にワークフロー文脈、強い CTA は回避、『出典不明』回避策に Smashing Magazine 本記事 + Smart Interface Design Patterns + Hannah Shamji 公式 + Vitaly Friedman LinkedIn + Maven workshop の計 5 ソースで multi-source confirm、4 段階フレームの content と Hannah Shamji authorship を交差確認。freshness_hours = 96(5/22 公開から 5/26 朝 JST で約 96 時間、英語圏は既に Vitaly Friedman LinkedIn / smart-interface-design-patterns / blogspot 等で展開済、日本語圏では Hannah Shamji + Smashing 文脈で噛み砕いた記事ゼロ、英語優先原則による速報性アドバンテージ窓内、168 上限を大きく下回る当週 fresh news)。",
     "sources": [
-      "https://www.figma.com/release-notes/",
-      "https://help.figma.com/hc/en-us/articles/40219873508247-Release-notes-roundup-May-2026",
-      "https://help.figma.com/hc/en-us/articles/31289469907863-Use-the-grid-auto-layout-flow",
-      "https://uxdesign.cc/figmas-new-grid-you-must-understand-css-grid-as-a-designer-fbb00416e1cc",
-      "https://medium.com/design-bootcamp/figmas-new-layout-grid-2d-auto-layout-unleashed-cd0ebc44b5a3",
-      "https://nearform.com/digital-community/figmas-new-grid-auto-layout-what-it-does-and-doesnt-yet-do/"
+      "https://www.smashingmagazine.com/2026/05/four-levels-customer-understanding/",
+      "https://smart-interface-design-patterns.com/articles/four-levels-of-customer-understanding/",
+      "https://hannahshamji.com/",
+      "https://www.linkedin.com/pulse/four-levels-customer-understanding-vitaly-friedman-0twef",
+      "https://maven.com/hannah-shamji/know-your-customers"
     ],
-    "query": "Figma Grid generally available May 22 2026 auto layout 2D drag reorder",
-    "freshness_hours": 72
+    "query": "Hannah Shamji four levels customer understanding Smashing Magazine May 22 2026 Vitaly Friedman",
+    "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma Grid が GA、Auto Layout の2次元版で列行ドラッグ・自動セル詰め対応",
-      "description": "Figma の Grid 機能が3日前についに正式版に。Auto Layout の2次元版でポートフォリオ作りが激変。",
-      "detail": "Grid は5月22日に GA、全ユーザー向けに正式公開。列や行をドラッグで並び替え、要素を消すと自動でセルが詰まり、追加すれば行が勝手に増えます。ベントグリッドやギャラリーなど、2次元のWebレイアウトが手作業ゼロで組めます。",
-      "narration": "Figma の Grid、3日前についに正式版に。Auto Layout の2次元版で、ポートフォリオ作りが激変します。",
-      "tags": ["Figma", "Grid", "Auto Layout", "GA", "公式アップデート"],
+      "title": "Smashing最新、顧客理解の4段階フレームで駆け出しが面接で『なぜそうした?』に答えられる",
+      "description": "ユーザーが言うことと本当にすることは別物。Smashing最新の4段階フレームで本音に迫ります。",
+      "detail": "セラピスト出身のHannah Shamjiの4段階。Level 1の発言は意見で当てにならず、Level 2の感情は記憶に歪み、Level 3の行動が分析で見える、Level 4の動機が本当の理由。下ほど本音に近づきます。",
+      "narration": "ユーザーが言うことと、本当にすることは別物。Smashingが今週公開した『顧客理解の4段階』が、面接対策にも効くと話題です。",
+      "tags": ["Smashing", "UXリサーチ", "Hannah Shamji", "顧客理解", "expert-blog"],
       "narration_sections": {
-        "hook": "Figma の Grid、3日前についに正式版に。Auto Layout の2次元版で、ポートフォリオ作りが激変します。",
-        "origin": "Grid は5月22日に GA、全ユーザー向けに正式公開。列や行をドラッグで並び替え、要素を消すと自動でセルが詰まり、追加すれば行が勝手に増えます。ベントグリッドやギャラリーなど、2次元のWebレイアウトが手作業ゼロで組めます。",
-        "recommend": "Figma を開いたら、Auto Layout の Grid タブをまず触ってみて。AI で下書きしたあとの整え工程がぐっと速くなります。"
+        "hook": "ユーザーが言うことと、本当にすることは別物。Smashingが今週公開した『顧客理解の4段階』が、面接対策にも効くと話題です。",
+        "origin": "セラピスト出身のHannah Shamjiが提案。Level 1『言うこと』は意見で当てにならず、Level 2『感じる・思う』は記憶に歪む、Level 3『すること』は分析で見える行動、Level 4『なぜするか』が本当の動機。下ほど本音に近づきます。",
+        "recommend": "面接で『なぜこのデザインに?』にLevel 4の動機まで掘って答えると評価が変わる。AI下書きの後こそ、動機に戻して整えましょう。"
       },
       "section_titles": {
-        "hook": "Grid が正式版に",
-        "origin": "3つの神アップデート",
-        "recommend": "今日まず触る場所"
+        "hook": "顧客理解の4段階",
+        "origin": "4階層フレームの全体像",
+        "recommend": "面接で武器になる"
       },
       "section_descriptions": {
-        "hook": "Auto Layout の2次元版が3日前に GA",
-        "origin": "列・行ドラッグ、セル自動詰め、行が勝手に増える",
-        "recommend": "学習者がまず開くべき Auto Layout パネル"
+        "hook": "Smashingが今週出した最新フレーム",
+        "origin": "Hannah Shamjiの本音にたどり着く4階層",
+        "recommend": "『なぜそうした?』に深く答える駆け出しの武器"
       }
     }
   ]
