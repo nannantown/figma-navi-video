@@ -1,40 +1,41 @@
 {
-  "date": "2026-05-26",
+  "date": "2026-05-27",
   "discovery": {
-    "method": "expert-blog",
-    "description": "5/25 PDCA Action #3 pre-schedule(5/26=expert-blog 候補ライン)通り採用。method 選定: TOP3 候補のうち figma-community(232.0, n=2、TOP1 method、全ガードクリアだが本日の英語ソース研究で fresh community plugin viral source 不在、community-tips-bundle 角度 5/16=400 から 10 日後の即時再投入は angle 疲労リスク、5/27+ に温存)、expert-blog(107.0, n=1、全ガードクリア、5/23 投入の accessibility-personas-critique が 72h 経過しても stats=0 のまま pending 扱い、本日 ui-critique-ai と別の新角度 customer-understanding-framework を投入し expert-blog 内 angle 多様化を試行)、official-src(73.75, n=4、7日2回ガード抵触で 5/20+5/21+5/25=3 回上限超過で本日不可、5/27 に 5/20 が window 外に出て解放見込み)、social-en(44.7, n=3、guard クリアだが platform-design-rivalry + ux-roi-narrative 両角度資源枯渇)、product-launches(5/24=pending で評価不能)、news-en(6/2 まで凍結)。クリーン候補は expert-blog の実質一択、火曜のニュース軸として『Smashing が今週公開した新しい UX リサーチフレーム』は news 性を十分満たす(柱③ 業界デザインニュース、柱⑥ UI 批評/学習要素 ハイブリッド)。角度: customer-understanding-framework (Smashing Magazine が 5/22 公開、Vitaly Friedman 執筆、Hannah Shamji=セラピスト出身の消費者心理リサーチャーが提案する 4 段階フレーム)。5/17 ui-critique-ai=107 と 5/23 ui-critique-ai=0(pending)の 2 連続 ui-critique-ai 試行直後に別角度に切り替え、5/27 朝 48h stats で expert-blog 内 TOP 角度ポートフォリオを 3 角度で評価する設計。トピックは Hannah Shamji の 4 段階 — Level 1『言うこと』は意見で当てにならない、Level 2『感じる・思う』は記憶に歪む、Level 3『すること』は分析で見える行動、Level 4『なぜするか』が本当の動機 — を駆け出しデザイナーが面接で『なぜこのデザインに?』と聞かれた時の答え方に直翻訳、Primary persona に直接効く即時実用接続。柱選定: ⑥ UI 批評/学習要素(target 10%、直近14日で 5/17=1/14=7%、本日投入で 2/14=14% で target 接近)と ③ 業界デザインニュース(target 20%、直近14日で 5/13+5/14+5/18+5/22=4/14=28% で target 超過、本日は ⑥ 優先扱いだが Smashing 発信源で ③ も軽く触る)のハイブリッド。NG パターン回避: 『プロ向け高度議論』回避策に Level 1〜4 の階層は『言うこと/思うこと/すること/なぜするか』と平易日本語に翻訳、『AI が仕事を奪う系』完全回避策に Hannah Shamji のフレームは AI 非依存の純粋リサーチ手法でテーマから完全離脱、『AI に任せれば考えなくていい』回避策に Recommend で『AI 下書きの後こそ、動機に戻して整えましょう』と AI=補助輪フレーム維持、『プラグイン機能説明メイン』回避策に Figmaナビ言及なし、Recommend で『AI 下書きの後の整え工程』として暗黙的にワークフロー文脈、強い CTA は回避、『出典不明』回避策に Smashing Magazine 本記事 + Smart Interface Design Patterns + Hannah Shamji 公式 + Vitaly Friedman LinkedIn + Maven workshop の計 5 ソースで multi-source confirm、4 段階フレームの content と Hannah Shamji authorship を交差確認。freshness_hours = 96(5/22 公開から 5/26 朝 JST で約 96 時間、英語圏は既に Vitaly Friedman LinkedIn / smart-interface-design-patterns / blogspot 等で展開済、日本語圏では Hannah Shamji + Smashing 文脈で噛み砕いた記事ゼロ、英語優先原則による速報性アドバンテージ窓内、168 上限を大きく下回る当週 fresh news)。",
+    "method": "figma-community",
+    "description": "5/26 PDCA Action #3 pre-schedule 第一候補通り採用。method 選定: TOP3 候補のうち figma-community(232.0, n=2、TOP1 method、全ガードクリア、5/19 から 8 日空きで疲労リスクなし)、expert-blog(107.0, n=1、直近2日ガード抵触=5/26 昨日 + 7日2回ガード抵触=5/23+5/26 で 2 回上限、本日採用すれば 3 回超過で不可)、official-src(77.0, n=3、7日2回ガード大幅抵触=5/20+5/21+5/25=3 回、本日採用すれば 4 回超過で不可)、social-en(44.7, n=3、guard クリアだが platform-design-rivalry + ux-roi-narrative 両 TOP 角度資源枯渇)、product-launches(5/24=pending で評価軸不在)、news-en(6/2 まで凍結)。クリーン候補は figma-community と product-launches、pre-schedule 第一候補の figma-community を採用。fresh community plugin viral source 発掘必須条件 → 本日朝の英語ソース調査で Stark Figma プラグインの GAAD 2026 大型アップデート(5/21 Global Accessibility Awareness Day 当日に 15 機能を一気投入、AI 自動アノテーション・alt テキスト自動生成・Figma テキスト変数対応・デザインシステム色制限の 4 つが目玉)を発見、出典 URL 多面確認済(getstark.co/blog/gaad-2026、getstark.co/figma、Figma Community プラグインページ、Tom Green UX Collective 解説、Sparkbox Foundry 実務レビュー、Stark 公式 release-notes 等)、~144h fresh(168h NG 上限を約 1 日下回る当週 fresh news)、5/16 viral hit (400) と同じ community-tips-bundle 角度で再現性検証。角度: community-tips-bundle 継続(5/16=400, 5/19=64, n=2 avg=232 で TOP 角度)。本日 n=3 化試行、3 回目で安定性正式判定、5/29 朝 48h stats で 80 views 超なら angle 健全性確定、200 views 超で『5/16 viral hit の再現性高』+『figma-community が安定 TOP1 method』両仮説確定。トピック: 5/21 GAAD で Stark が 15 機能を一気に投入、AI でアクセシビリティチェックが一段速くなった - AI 自動アノテーション(フォーカス順番・ランドマーク・iOS/Android/ARIA ラベル/値/ヒント/トレイト/役割を画面構成から自動提案)、alt テキスト Sidekick で AI 自動生成 + クリックで編集、テキスト変数を Figma プラグイン内で解決(デザインシステムの typography 整合性を保ったままチェック)、コントラスト修正をデザインシステムの色だけに制限可能(Governance 設定)、重要度・カテゴリでフィルタリング(Browser/Reports/CI/CD 横断)、HTML レポート全面リデザイン(アコーディオン全展開で PDF 保存対応)、Browser Snapshots(認証必須 URL もスキャン可能)。Primary persona 直接接続フレーム: 駆け出しデザイナーが面接で『アクセシビリティどう確認してますか?』と聞かれた時に Stark の新機能で答えると話が広がる、5/26 PDCA 戦略更新提案 #3『駆け出し面接接続フレーム』を本日 3 回目試行(5/16 + 5/26 + 5/27)。柱選定: ② プラグイン・エコシステム(target 20%、直近14日で 5/3+5/11=2/14=14% で target 未達、本日投入で 3/14=21% で target 達成)+ ⑥ UI 批評/学習要素(アクセシビリティ視点、target 10%、5/17+5/23=2/14=14% で target 接近済)のクロス命中。NG パターン回避: 『プロ向け高度議論』回避策に WCAG / ARIA / TalkBack / VoiceOver など専門用語を意図的に伏せ、『AI 自動アノテーション』『alt テキスト』『コントラスト修正』『デザインシステムの色』など平易日本語に翻訳。『AI が仕事を奪う系』完全回避策に AI は『アクセシビリティチェックを一段速くする補助輪』として positive 化、判断と仕上げは人(駆け出し自身)。『AI に任せれば考えなくていい』回避策に Recommend で『AI は補助輪、判断は自分でしましょう』と AI=補助輪フレーム維持、『プラグイン機能説明メイン』回避策に冒頭から『面接で使える武器』Primary persona 課題起点で構成、Figmaナビは言及せず Stark をニュートラルに紹介、強い CTA は完全回避。『英語/日本語の中途半端な混在』回避策に GAAD・Stark・Figma・alt テキスト・Sidekick は固有名詞表記許容範囲。『1 週間以上前のニュースを新着扱い』回避策に freshness_hours=144 で 168h NG 上限内、5/21 イベント実施から計算。『出典不明』回避策に Stark 公式ブログ + Figma Community ページ + Figma Help Center + 各種まとめ記事計 6 ソースで multi-source confirm、15 機能のうち主要 4 機能の content を交差確認。",
     "sources": [
-      "https://www.smashingmagazine.com/2026/05/four-levels-customer-understanding/",
-      "https://smart-interface-design-patterns.com/articles/four-levels-of-customer-understanding/",
-      "https://hannahshamji.com/",
-      "https://www.linkedin.com/pulse/four-levels-customer-understanding-vitaly-friedman-0twef",
-      "https://maven.com/hannah-shamji/know-your-customers"
+      "https://www.getstark.co/blog/gaad-2026/",
+      "https://www.getstark.co/figma/",
+      "https://www.figma.com/community/plugin/732603254453395948/stark-contrast-accessibility-ai-checker",
+      "https://www.getstark.co/release-notes/",
+      "https://uxdesign.cc/supercharge-accessibility-with-sidekick-from-stark-dd0f66153d32",
+      "https://sparkbox.com/foundry/stark_for_figma_accessibility_testing_tool_design_website_accessibility_and_accessible_design_review_tool"
     ],
-    "query": "Hannah Shamji four levels customer understanding Smashing Magazine May 22 2026 Vitaly Friedman",
-    "freshness_hours": 96
+    "query": "Stark Figma plugin GAAD 2026 May 21 15 features auto annotation focus order alt text AI text variables design system color",
+    "freshness_hours": 144
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Smashing最新、顧客理解の4段階フレームで駆け出しが面接で『なぜそうした?』に答えられる",
-      "description": "ユーザーが言うことと本当にすることは別物。Smashing最新の4段階フレームで本音に迫ります。",
-      "detail": "セラピスト出身のHannah Shamjiの4段階。Level 1の発言は意見で当てにならず、Level 2の感情は記憶に歪み、Level 3の行動が分析で見える、Level 4の動機が本当の理由。下ほど本音に近づきます。",
-      "narration": "ユーザーが言うことと、本当にすることは別物。Smashingが今週公開した『顧客理解の4段階』が、面接対策にも効くと話題です。",
-      "tags": ["Smashing", "UXリサーチ", "Hannah Shamji", "顧客理解", "expert-blog"],
+      "title": "Stark プラグインが GAAD 2026 で 15 機能を一気投入、AI でアクセシビリティが一段速く",
+      "description": "Figma 定番のアクセシビリティ・プラグイン Stark が、先週の GAAD 2026 で 15 機能を投入。AI が一段強くなりました。",
+      "detail": "目玉は AI 自動アノテーション。フォーカス順番もランドマークも画面構成から自動提案、alt テキストも Sidekick が AI 生成、テキスト変数も Figma 内で解決。コントラスト修正は自分のデザインシステムの色だけで候補が出ます。",
+      "narration": "先週の GAAD で、Figma の定番プラグイン Stark が 15 機能を一気に投入。AI でアクセシビリティチェックが一段速くなりました。",
+      "tags": ["Stark", "アクセシビリティ", "GAAD2026", "Figmaプラグイン", "figma-community"],
       "narration_sections": {
-        "hook": "ユーザーが言うことと、本当にすることは別物。Smashingが今週公開した『顧客理解の4段階』が、面接対策にも効くと話題です。",
-        "origin": "セラピスト出身のHannah Shamjiが提案。Level 1『言うこと』は意見で当てにならず、Level 2『感じる・思う』は記憶に歪む、Level 3『すること』は分析で見える行動、Level 4『なぜするか』が本当の動機。下ほど本音に近づきます。",
-        "recommend": "面接で『なぜこのデザインに?』にLevel 4の動機まで掘って答えると評価が変わる。AI下書きの後こそ、動機に戻して整えましょう。"
+        "hook": "先週のGAADで、Figmaの定番プラグインStarkが15機能を一気に投入。AIでアクセシビリティチェックが一段速くなりました。",
+        "origin": "目玉はAI自動アノテーション。フォーカス順番もランドマークも画面構成から自動提案、altテキストもSidekickがAI生成、テキスト変数もFigma内で解決。さらにコントラスト修正は自分のデザインシステムの色だけで候補が出ます。",
+        "recommend": "面接で『アクセシビリティどう確認してますか?』にStarkの新機能で答えると話が広がる。AIは補助輪、判断は自分でしましょう。"
       },
       "section_titles": {
-        "hook": "顧客理解の4段階",
-        "origin": "4階層フレームの全体像",
+        "hook": "Stark15機能を投入",
+        "origin": "AI自動アノテーション",
         "recommend": "面接で武器になる"
       },
       "section_descriptions": {
-        "hook": "Smashingが今週出した最新フレーム",
-        "origin": "Hannah Shamjiの本音にたどり着く4階層",
-        "recommend": "『なぜそうした?』に深く答える駆け出しの武器"
+        "hook": "先週のGAADで15機能、AIが一気に強化",
+        "origin": "フォーカス順番もaltテキストも自動で提案",
+        "recommend": "アクセシビリティを面接で語れる駆け出しに"
       }
     }
   ]
