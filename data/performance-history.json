@@ -810,7 +810,7 @@
         "views": 40,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-23T00:16:11.962Z"
+        "updatedAt": "2026-05-27T00:18:00.367Z"
       }
     },
     {
@@ -857,7 +857,7 @@
         "views": 99,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-23T00:16:11.962Z"
+        "updatedAt": "2026-05-27T00:18:00.367Z"
       }
     },
     {
@@ -901,10 +901,10 @@
         "freshness_hours": 3
       },
       "stats": {
-        "views": 128,
+        "views": 130,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-23T00:16:11.962Z"
+        "updatedAt": "2026-05-27T00:18:00.367Z"
       }
     },
     {
@@ -949,7 +949,7 @@
         "views": 400,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-23T00:16:11.962Z"
+        "updatedAt": "2026-05-27T00:18:00.367Z"
       }
     },
     {
@@ -992,7 +992,7 @@
         "views": 107,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-23T00:16:11.962Z"
+        "updatedAt": "2026-05-27T00:18:00.367Z"
       }
     },
     {
@@ -1035,7 +1035,7 @@
         "views": 19,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-23T00:16:11.962Z"
+        "updatedAt": "2026-05-27T00:18:00.367Z"
       }
     },
     {
@@ -1078,7 +1078,7 @@
         "views": 64,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-23T00:16:11.962Z"
+        "updatedAt": "2026-05-27T00:18:00.367Z"
       }
     },
     {
@@ -1118,10 +1118,10 @@
         "freshness_hours": 48
       },
       "stats": {
-        "views": 85,
+        "views": 86,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-23T00:16:11.962Z"
+        "updatedAt": "2026-05-27T00:18:00.367Z"
       }
     },
     {
@@ -1163,10 +1163,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 18,
+        "views": 20,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-23T00:16:11.962Z"
+        "updatedAt": "2026-05-27T00:18:00.367Z"
       }
     },
     {
@@ -1208,10 +1208,10 @@
         "freshness_hours": 46
       },
       "stats": {
-        "views": 16,
+        "views": 18,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-23T00:16:11.962Z"
+        "updatedAt": "2026-05-27T00:18:00.367Z"
       }
     },
     {
@@ -1252,6 +1252,51 @@
         ],
         "query": "Smashing Magazine Alan Dalton nine accessibility personas May 19 2026 design process Horton Quesenbery A Web for Everyone",
         "freshness_hours": 100
+      },
+      "stats": {
+        "views": 3,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-05-27T00:18:00.367Z"
+      }
+    },
+    {
+      "videoId": "wfcGVNAJuBw",
+      "videoUrl": "https://youtube.com/shorts/wfcGVNAJuBw",
+      "date": "2026-05-27",
+      "title": "【デザインニュース】Stark プラグインが GAAD 2026 で 15 機能を一気投入、AI でアクセシビリティが一段速く｜2026/05/27 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 46,
+      "discovery": {
+        "method": "figma-community",
+        "description": "5/26 PDCA Action #3 pre-schedule 第一候補通り採用。method 選定: TOP3 候補のうち figma-community(232.0, n=2、TOP1 method、全ガードクリア、5/19 から 8 日空きで疲労リスクなし)、expert-blog(107.0, n=1、直近2日ガード抵触=5/26 昨日 + 7日2回ガード抵触=5/23+5/26 で 2 回上限、本日採用すれば 3 回超過で不可)、official-src(77.0, n=3、7日2回ガード大幅抵触=5/20+5/21+5/25=3 回、本日採用すれば 4 回超過で不可)、social-en(44.7, n=3、guard クリアだが platform-design-rivalry + ux-roi-narrative 両 TOP 角度資源枯渇)、product-launches(5/24=pending で評価軸不在)、news-en(6/2 まで凍結)。クリーン候補は figma-community と product-launches、pre-schedule 第一候補の figma-community を採用。fresh community plugin viral source 発掘必須条件 → 本日朝の英語ソース調査で Stark Figma プラグインの GAAD 2026 大型アップデート(5/21 Global Accessibility Awareness Day 当日に 15 機能を一気投入、AI 自動アノテーション・alt テキスト自動生成・Figma テキスト変数対応・デザインシステム色制限の 4 つが目玉)を発見、出典 URL 多面確認済(getstark.co/blog/gaad-2026、getstark.co/figma、Figma Community プラグインページ、Tom Green UX Collective 解説、Sparkbox Foundry 実務レビュー、Stark 公式 release-notes 等)、~144h fresh(168h NG 上限を約 1 日下回る当週 fresh news)、5/16 viral hit (400) と同じ community-tips-bundle 角度で再現性検証。角度: community-tips-bundle 継続(5/16=400, 5/19=64, n=2 avg=232 で TOP 角度)。本日 n=3 化試行、3 回目で安定性正式判定、5/29 朝 48h stats で 80 views 超なら angle 健全性確定、200 views 超で『5/16 viral hit の再現性高』+『figma-community が安定 TOP1 method』両仮説確定。トピック: 5/21 GAAD で Stark が 15 機能を一気に投入、AI でアクセシビリティチェックが一段速くなった - AI 自動アノテーション(フォーカス順番・ランドマーク・iOS/Android/ARIA ラベル/値/ヒント/トレイト/役割を画面構成から自動提案)、alt テキスト Sidekick で AI 自動生成 + クリックで編集、テキスト変数を Figma プラグイン内で解決(デザインシステムの typography 整合性を保ったままチェック)、コントラスト修正をデザインシステムの色だけに制限可能(Governance 設定)、重要度・カテゴリでフィルタリング(Browser/Reports/CI/CD 横断)、HTML レポート全面リデザイン(アコーディオン全展開で PDF 保存対応)、Browser Snapshots(認証必須 URL もスキャン可能)。Primary persona 直接接続フレーム: 駆け出しデザイナーが面接で『アクセシビリティどう確認してますか?』と聞かれた時に Stark の新機能で答えると話が広がる、5/26 PDCA 戦略更新提案 #3『駆け出し面接接続フレーム』を本日 3 回目試行(5/16 + 5/26 + 5/27)。柱選定: ② プラグイン・エコシステム(target 20%、直近14日で 5/3+5/11=2/14=14% で target 未達、本日投入で 3/14=21% で target 達成)+ ⑥ UI 批評/学習要素(アクセシビリティ視点、target 10%、5/17+5/23=2/14=14% で target 接近済)のクロス命中。NG パターン回避: 『プロ向け高度議論』回避策に WCAG / ARIA / TalkBack / VoiceOver など専門用語を意図的に伏せ、『AI 自動アノテーション』『alt テキスト』『コントラスト修正』『デザインシステムの色』など平易日本語に翻訳。『AI が仕事を奪う系』完全回避策に AI は『アクセシビリティチェックを一段速くする補助輪』として positive 化、判断と仕上げは人(駆け出し自身)。『AI に任せれば考えなくていい』回避策に Recommend で『AI は補助輪、判断は自分でしましょう』と AI=補助輪フレーム維持、『プラグイン機能説明メイン』回避策に冒頭から『面接で使える武器』Primary persona 課題起点で構成、Figmaナビは言及せず Stark をニュートラルに紹介、強い CTA は完全回避。『英語/日本語の中途半端な混在』回避策に GAAD・Stark・Figma・alt テキスト・Sidekick は固有名詞表記許容範囲。『1 週間以上前のニュースを新着扱い』回避策に freshness_hours=144 で 168h NG 上限内、5/21 イベント実施から計算。『出典不明』回避策に Stark 公式ブログ + Figma Community ページ + Figma Help Center + 各種まとめ記事計 6 ソースで multi-source confirm、15 機能のうち主要 4 機能の content を交差確認。",
+        "sources": [
+          "https://www.getstark.co/blog/gaad-2026/",
+          "https://www.getstark.co/figma/",
+          "https://www.figma.com/community/plugin/732603254453395948/stark-contrast-accessibility-ai-checker",
+          "https://www.getstark.co/release-notes/",
+          "https://uxdesign.cc/supercharge-accessibility-with-sidekick-from-stark-dd0f66153d32",
+          "https://sparkbox.com/foundry/stark_for_figma_accessibility_testing_tool_design_website_accessibility_and_accessible_design_review_tool"
+        ],
+        "query": "Stark Figma plugin GAAD 2026 May 21 15 features auto annotation focus order alt text AI text variables design system color",
+        "freshness_hours": 144
       },
       "stats": {
         "views": 0,
@@ -1466,6 +1511,14 @@
       "changes": [
         "standard: 118 avg views (27 videos)",
         "Day performance: Sat=196, Wed=189, Sun=130, Thu=95, Tue=90, Fri=84, Mon=65"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-27",
+      "changes": [
+        "standard: 114 avg views (28 videos)",
+        "Day performance: Wed=189, Sat=148, Sun=130, Thu=95, Tue=90, Fri=85, Mon=65"
       ],
       "recommendedTemplate": "standard"
     }
