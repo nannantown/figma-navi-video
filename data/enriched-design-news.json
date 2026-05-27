@@ -1,41 +1,41 @@
 {
-  "date": "2026-05-27",
+  "date": "2026-05-28",
   "discovery": {
-    "method": "figma-community",
-    "description": "5/26 PDCA Action #3 pre-schedule 第一候補通り採用。method 選定: TOP3 候補のうち figma-community(232.0, n=2、TOP1 method、全ガードクリア、5/19 から 8 日空きで疲労リスクなし)、expert-blog(107.0, n=1、直近2日ガード抵触=5/26 昨日 + 7日2回ガード抵触=5/23+5/26 で 2 回上限、本日採用すれば 3 回超過で不可)、official-src(77.0, n=3、7日2回ガード大幅抵触=5/20+5/21+5/25=3 回、本日採用すれば 4 回超過で不可)、social-en(44.7, n=3、guard クリアだが platform-design-rivalry + ux-roi-narrative 両 TOP 角度資源枯渇)、product-launches(5/24=pending で評価軸不在)、news-en(6/2 まで凍結)。クリーン候補は figma-community と product-launches、pre-schedule 第一候補の figma-community を採用。fresh community plugin viral source 発掘必須条件 → 本日朝の英語ソース調査で Stark Figma プラグインの GAAD 2026 大型アップデート(5/21 Global Accessibility Awareness Day 当日に 15 機能を一気投入、AI 自動アノテーション・alt テキスト自動生成・Figma テキスト変数対応・デザインシステム色制限の 4 つが目玉)を発見、出典 URL 多面確認済(getstark.co/blog/gaad-2026、getstark.co/figma、Figma Community プラグインページ、Tom Green UX Collective 解説、Sparkbox Foundry 実務レビュー、Stark 公式 release-notes 等)、~144h fresh(168h NG 上限を約 1 日下回る当週 fresh news)、5/16 viral hit (400) と同じ community-tips-bundle 角度で再現性検証。角度: community-tips-bundle 継続(5/16=400, 5/19=64, n=2 avg=232 で TOP 角度)。本日 n=3 化試行、3 回目で安定性正式判定、5/29 朝 48h stats で 80 views 超なら angle 健全性確定、200 views 超で『5/16 viral hit の再現性高』+『figma-community が安定 TOP1 method』両仮説確定。トピック: 5/21 GAAD で Stark が 15 機能を一気に投入、AI でアクセシビリティチェックが一段速くなった - AI 自動アノテーション(フォーカス順番・ランドマーク・iOS/Android/ARIA ラベル/値/ヒント/トレイト/役割を画面構成から自動提案)、alt テキスト Sidekick で AI 自動生成 + クリックで編集、テキスト変数を Figma プラグイン内で解決(デザインシステムの typography 整合性を保ったままチェック)、コントラスト修正をデザインシステムの色だけに制限可能(Governance 設定)、重要度・カテゴリでフィルタリング(Browser/Reports/CI/CD 横断)、HTML レポート全面リデザイン(アコーディオン全展開で PDF 保存対応)、Browser Snapshots(認証必須 URL もスキャン可能)。Primary persona 直接接続フレーム: 駆け出しデザイナーが面接で『アクセシビリティどう確認してますか?』と聞かれた時に Stark の新機能で答えると話が広がる、5/26 PDCA 戦略更新提案 #3『駆け出し面接接続フレーム』を本日 3 回目試行(5/16 + 5/26 + 5/27)。柱選定: ② プラグイン・エコシステム(target 20%、直近14日で 5/3+5/11=2/14=14% で target 未達、本日投入で 3/14=21% で target 達成)+ ⑥ UI 批評/学習要素(アクセシビリティ視点、target 10%、5/17+5/23=2/14=14% で target 接近済)のクロス命中。NG パターン回避: 『プロ向け高度議論』回避策に WCAG / ARIA / TalkBack / VoiceOver など専門用語を意図的に伏せ、『AI 自動アノテーション』『alt テキスト』『コントラスト修正』『デザインシステムの色』など平易日本語に翻訳。『AI が仕事を奪う系』完全回避策に AI は『アクセシビリティチェックを一段速くする補助輪』として positive 化、判断と仕上げは人(駆け出し自身)。『AI に任せれば考えなくていい』回避策に Recommend で『AI は補助輪、判断は自分でしましょう』と AI=補助輪フレーム維持、『プラグイン機能説明メイン』回避策に冒頭から『面接で使える武器』Primary persona 課題起点で構成、Figmaナビは言及せず Stark をニュートラルに紹介、強い CTA は完全回避。『英語/日本語の中途半端な混在』回避策に GAAD・Stark・Figma・alt テキスト・Sidekick は固有名詞表記許容範囲。『1 週間以上前のニュースを新着扱い』回避策に freshness_hours=144 で 168h NG 上限内、5/21 イベント実施から計算。『出典不明』回避策に Stark 公式ブログ + Figma Community ページ + Figma Help Center + 各種まとめ記事計 6 ソースで multi-source confirm、15 機能のうち主要 4 機能の content を交差確認。",
+    "method": "official-src",
+    "description": "5/27 PDCA Action #3 pre-schedule の 5/28 第一候補通り official-src 採用。method 選定: TOP3 候補のうち figma-community(232.0, n=2、TOP1 method、直近2日ガード抵触=5/27 昨日で本日不可)、expert-blog(107.0, n=1、7日2回ガード抵触=5/23+5/26 で 2 回上限、本日採用すれば 3 回超過で不可)、official-src(77.0, n=3、7日2回ガード解放=5/20+5/21 が window 外に脱落して 5/25 のみ 1 回、全ガードクリア)、social-en(44.7, n=3、guard クリアだが platform-design-rivalry + ux-roi-narrative 両 TOP 角度資源枯渇)、product-launches(5/24=pending で評価軸不在)、news-en(6/2 まで凍結)。クリーン候補は official-src と product-launches、pre-schedule 第一候補の official-src を採用。fresh event-preview source 発掘 = 本日朝の英語ソース調査で Figma Config 2026 が約 1 ヶ月後の 6/23-25 に San Francisco Moscone Center で開催、現地チケットは既に完売、しかしオンライン視聴は完全無料 + 日本語ライブ字幕付き と判明、出典 URL 多面確認済(config.figma.com 公式 / virtual / agenda / FAQ / register、Figma Blog Config 2026 Speakers on AI Opportunities)、~72h fresh(『現地完売 + 1 ヶ月前カウントダウン + 日本語字幕』組合せは過去 1 週間の英語圏 X/Facebook/Email Inspire 発信文脈、168h NG 上限内)。角度: event-preview 新試行(event-recap=avg 122.5 派生 sub-angle)。event-recap は『事後 recap』として強い角度だが、event-preview は『開催前カウントダウン + 参加方法ガイド』として fresh + FOMO + Primary persona 直接接続(無料視聴ガイド)が同時に成立する可能性。本日 n=1 で初試行、5/30 朝 48h stats で 80 views 超なら新角度として正式昇格判定、120 views 超で event-cycle angle pair として明文化提案。トピック: Figma Config 2026 が約 1 ヶ月後に開催、現地は完売だがオンラインは完全無料 + 日本語ライブ字幕付き。6/23-25 San Francisco Moscone Center、3 日間で 75 人超の登壇者 + 50 超のセッション、毎年 10,000 人以上参加、オンライン視聴は完全無料で登録だけで世界中から、日本語含む 14 言語のライブ字幕(英語/スペイン語/フランス語/イタリア語/ドイツ語/日本語/韓国語/ポルトガル語/ポーランド語/オランダ語/インドネシア語/タイ語/ヒンディー語等)、キーノートは当日 YouTube 公開、全ブレイクアウトも後日アーカイブ。今年のテーマは AI ワークフロー + AI 対応デザインシステム。Primary persona 直接接続フレーム: 駆け出しデザイナーが『世界最先端の AI×デザイン議論を、英語が苦手でも、無料で、最速で見られる』という具体的恩恵で接続、『Config で学んだ』をポートフォリオや面接の話題に出来る武器化、5/27 PDCA 戦略更新提案 #3『駆け出し面接接続フレーム』を本日 4 回目試行(5/16+5/26+5/27+5/28)。柱選定: ① Figma 公式ニュース(target 25%、直近 14 日 4/14=28% 達成済、本日投入で 5/14=35% 量的補強 + event-preview 新角度で質的補強)。NG パターン回避: 『プロ向け高度議論』回避策に技術仕様には触れず『無料で見られる』『日本語字幕付き』など Primary persona 利得に集中、『AI が仕事を奪う系』完全回避策に AI は『最先端で学ぶ対象』として positive 化、『AI に任せれば考えなくていい』回避策に『議論を聞いて自分の頭で考える機会』フレーム維持(『無料登録だけ済ませておきましょう』 = 学習行動の促し)、『プラグイン機能説明メイン』非該当(Figma 公式イベント)、『英語/日本語の中途半端な混在』回避策に Figma・Config・YouTube は固有名詞表記許容範囲、『1 週間以上前のニュースを新着扱い』回避策に freshness_hours=72 で 168h NG 上限内、『出典不明』回避策に config.figma.com 公式 4 ページ + Figma Blog + 関連 forum/email inspire の計 6 ソースで multi-source confirm。",
     "sources": [
-      "https://www.getstark.co/blog/gaad-2026/",
-      "https://www.getstark.co/figma/",
-      "https://www.figma.com/community/plugin/732603254453395948/stark-contrast-accessibility-ai-checker",
-      "https://www.getstark.co/release-notes/",
-      "https://uxdesign.cc/supercharge-accessibility-with-sidekick-from-stark-dd0f66153d32",
-      "https://sparkbox.com/foundry/stark_for_figma_accessibility_testing_tool_design_website_accessibility_and_accessible_design_review_tool"
+      "https://config.figma.com/",
+      "https://config.figma.com/san-francisco/virtual/",
+      "https://config.figma.com/san-francisco/agenda/",
+      "https://config.figma.com/san-francisco/faq/",
+      "https://config.figma.com/san-francisco/register/",
+      "https://www.figma.com/blog/config-speakers-looking-ahead-2026/"
     ],
-    "query": "Stark Figma plugin GAAD 2026 May 21 15 features auto annotation focus order alt text AI text variables design system color",
-    "freshness_hours": 144
+    "query": "Figma Config 2026 June 23-25 San Francisco virtual free Japanese live captioning sold out 75 speakers 50 sessions agenda AI workflow",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Stark プラグインが GAAD 2026 で 15 機能を一気投入、AI でアクセシビリティが一段速く",
-      "description": "Figma 定番のアクセシビリティ・プラグイン Stark が、先週の GAAD 2026 で 15 機能を投入。AI が一段強くなりました。",
-      "detail": "目玉は AI 自動アノテーション。フォーカス順番もランドマークも画面構成から自動提案、alt テキストも Sidekick が AI 生成、テキスト変数も Figma 内で解決。コントラスト修正は自分のデザインシステムの色だけで候補が出ます。",
-      "narration": "先週の GAAD で、Figma の定番プラグイン Stark が 15 機能を一気に投入。AI でアクセシビリティチェックが一段速くなりました。",
-      "tags": ["Stark", "アクセシビリティ", "GAAD2026", "Figmaプラグイン", "figma-community"],
+      "title": "Figma Config 2026 が約1ヶ月後、現地完売でも諦めるな、オンラインは無料で日本語字幕付き",
+      "description": "Figma 最大のデザイン祭典 Config 2026 が約1ヶ月後の 6/23 から開催。現地チケットは完売の大人気ですが、オンライン視聴は完全無料、しかも日本語ライブ字幕付き。",
+      "detail": "6/23-25 にサンフランシスコの Moscone Center で 3 日間開催、75 人超の登壇者と 50 を超えるセッション。今年のテーマは AI ワークフローと AI に対応したデザインシステム。オンラインは完全無料、日本語を含む 14 言語のライブ字幕付きで、キーノートは当日に YouTube で公開、全ブレイクアウトセッションも後日アーカイブで視聴できます。",
+      "narration": "Figma 最大のデザイン祭典 Config 2026 があと 1 ヶ月で開催、現地チケットは完売の大人気で諦めムード? でもまだ早いです。",
+      "tags": ["FigmaConfig2026", "Figma公式", "デザインカンファレンス", "AIデザイン", "official-src"],
       "narration_sections": {
-        "hook": "先週のGAADで、Figmaの定番プラグインStarkが15機能を一気に投入。AIでアクセシビリティチェックが一段速くなりました。",
-        "origin": "目玉はAI自動アノテーション。フォーカス順番もランドマークも画面構成から自動提案、altテキストもSidekickがAI生成、テキスト変数もFigma内で解決。さらにコントラスト修正は自分のデザインシステムの色だけで候補が出ます。",
-        "recommend": "面接で『アクセシビリティどう確認してますか?』にStarkの新機能で答えると話が広がる。AIは補助輪、判断は自分でしましょう。"
+        "hook": "Figma最大のデザイン祭典Config 2026があと1ヶ月で開催、現地チケットは完売の大人気で諦めムード?でもまだ早いです。",
+        "origin": "6月23から25日にサンフランシスコで3日間開催、75人超の登壇者と50超のセッション。実はオンライン視聴は完全無料、しかも日本語のライブ字幕付き。キーノートは当日にYouTubeで公開、全セッションも後日アーカイブで見られます。",
+        "recommend": "世界トップ層の最先端AIデザイン議論を日本語字幕付きで無料視聴できる絶好の機会。今のうちに無料登録だけは済ませておきましょう。"
       },
       "section_titles": {
-        "hook": "Stark15機能を投入",
-        "origin": "AI自動アノテーション",
-        "recommend": "面接で武器になる"
+        "hook": "Config2026開催",
+        "origin": "オンラインで無料視聴",
+        "recommend": "日本語字幕で視聴"
       },
       "section_descriptions": {
-        "hook": "先週のGAADで15機能、AIが一気に強化",
-        "origin": "フォーカス順番もaltテキストも自動で提案",
-        "recommend": "アクセシビリティを面接で語れる駆け出しに"
+        "hook": "Figma最大のデザイン祭典が1ヶ月後に開催",
+        "origin": "登壇者75人超、3日間で50超のセッション",
+        "recommend": "日本語字幕付きで無料視聴できる絶好の機会"
       }
     }
   ]
