@@ -1,41 +1,40 @@
 {
-  "date": "2026-05-28",
+  "date": "2026-05-29",
   "discovery": {
-    "method": "official-src",
-    "description": "5/27 PDCA Action #3 pre-schedule の 5/28 第一候補通り official-src 採用。method 選定: TOP3 候補のうち figma-community(232.0, n=2、TOP1 method、直近2日ガード抵触=5/27 昨日で本日不可)、expert-blog(107.0, n=1、7日2回ガード抵触=5/23+5/26 で 2 回上限、本日採用すれば 3 回超過で不可)、official-src(77.0, n=3、7日2回ガード解放=5/20+5/21 が window 外に脱落して 5/25 のみ 1 回、全ガードクリア)、social-en(44.7, n=3、guard クリアだが platform-design-rivalry + ux-roi-narrative 両 TOP 角度資源枯渇)、product-launches(5/24=pending で評価軸不在)、news-en(6/2 まで凍結)。クリーン候補は official-src と product-launches、pre-schedule 第一候補の official-src を採用。fresh event-preview source 発掘 = 本日朝の英語ソース調査で Figma Config 2026 が約 1 ヶ月後の 6/23-25 に San Francisco Moscone Center で開催、現地チケットは既に完売、しかしオンライン視聴は完全無料 + 日本語ライブ字幕付き と判明、出典 URL 多面確認済(config.figma.com 公式 / virtual / agenda / FAQ / register、Figma Blog Config 2026 Speakers on AI Opportunities)、~72h fresh(『現地完売 + 1 ヶ月前カウントダウン + 日本語字幕』組合せは過去 1 週間の英語圏 X/Facebook/Email Inspire 発信文脈、168h NG 上限内)。角度: event-preview 新試行(event-recap=avg 122.5 派生 sub-angle)。event-recap は『事後 recap』として強い角度だが、event-preview は『開催前カウントダウン + 参加方法ガイド』として fresh + FOMO + Primary persona 直接接続(無料視聴ガイド)が同時に成立する可能性。本日 n=1 で初試行、5/30 朝 48h stats で 80 views 超なら新角度として正式昇格判定、120 views 超で event-cycle angle pair として明文化提案。トピック: Figma Config 2026 が約 1 ヶ月後に開催、現地は完売だがオンラインは完全無料 + 日本語ライブ字幕付き。6/23-25 San Francisco Moscone Center、3 日間で 75 人超の登壇者 + 50 超のセッション、毎年 10,000 人以上参加、オンライン視聴は完全無料で登録だけで世界中から、日本語含む 14 言語のライブ字幕(英語/スペイン語/フランス語/イタリア語/ドイツ語/日本語/韓国語/ポルトガル語/ポーランド語/オランダ語/インドネシア語/タイ語/ヒンディー語等)、キーノートは当日 YouTube 公開、全ブレイクアウトも後日アーカイブ。今年のテーマは AI ワークフロー + AI 対応デザインシステム。Primary persona 直接接続フレーム: 駆け出しデザイナーが『世界最先端の AI×デザイン議論を、英語が苦手でも、無料で、最速で見られる』という具体的恩恵で接続、『Config で学んだ』をポートフォリオや面接の話題に出来る武器化、5/27 PDCA 戦略更新提案 #3『駆け出し面接接続フレーム』を本日 4 回目試行(5/16+5/26+5/27+5/28)。柱選定: ① Figma 公式ニュース(target 25%、直近 14 日 4/14=28% 達成済、本日投入で 5/14=35% 量的補強 + event-preview 新角度で質的補強)。NG パターン回避: 『プロ向け高度議論』回避策に技術仕様には触れず『無料で見られる』『日本語字幕付き』など Primary persona 利得に集中、『AI が仕事を奪う系』完全回避策に AI は『最先端で学ぶ対象』として positive 化、『AI に任せれば考えなくていい』回避策に『議論を聞いて自分の頭で考える機会』フレーム維持(『無料登録だけ済ませておきましょう』 = 学習行動の促し)、『プラグイン機能説明メイン』非該当(Figma 公式イベント)、『英語/日本語の中途半端な混在』回避策に Figma・Config・YouTube は固有名詞表記許容範囲、『1 週間以上前のニュースを新着扱い』回避策に freshness_hours=72 で 168h NG 上限内、『出典不明』回避策に config.figma.com 公式 4 ページ + Figma Blog + 関連 forum/email inspire の計 6 ソースで multi-source confirm。",
+    "method": "social-en",
+    "description": "Figma 公式 X 発表 + VentureBeat 業界分析を 24h fresh news cycle で捕捉、social-en の新角度 design-to-code-driverseat を Explore 試行。official-src は直近2日 + 7日2回ガード両抵触、news-en は 6/2 まで凍結のため、X + 業界メディア起点の social-en で扱う。",
     "sources": [
-      "https://config.figma.com/",
-      "https://config.figma.com/san-francisco/virtual/",
-      "https://config.figma.com/san-francisco/agenda/",
-      "https://config.figma.com/san-francisco/faq/",
-      "https://config.figma.com/san-francisco/register/",
-      "https://www.figma.com/blog/config-speakers-looking-ahead-2026/"
+      "https://x.com/figma/status/2059987170065093001",
+      "https://www.figma.com/blog/figma-make-now-on-your-local-code/",
+      "https://venturebeat.com/technology/are-designers-the-new-swes-figma-makes-new-two-way-github-integration-turns-designs-into-live-production-code-with-built-in-governance",
+      "https://help.figma.com/hc/en-us/articles/35463818346647-Push-from-Figma-Make-to-GitHub",
+      "https://www.figma.com/release-notes/"
     ],
-    "query": "Figma Config 2026 June 23-25 San Francisco virtual free Japanese live captioning sold out 75 speakers 50 sessions agenda AI workflow",
-    "freshness_hours": 72
+    "query": "Figma Make local code GitHub PR branch beta May 28 2026 designer 45% terminal-less codebase integration MCP",
+    "freshness_hours": 24
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma Config 2026 が約1ヶ月後、現地完売でも諦めるな、オンラインは無料で日本語字幕付き",
-      "description": "Figma 最大のデザイン祭典 Config 2026 が約1ヶ月後の 6/23 から開催。現地チケットは完売の大人気ですが、オンライン視聴は完全無料、しかも日本語ライブ字幕付き。",
-      "detail": "6/23-25 にサンフランシスコの Moscone Center で 3 日間開催、75 人超の登壇者と 50 を超えるセッション。今年のテーマは AI ワークフローと AI に対応したデザインシステム。オンラインは完全無料、日本語を含む 14 言語のライブ字幕付きで、キーノートは当日に YouTube で公開、全ブレイクアウトセッションも後日アーカイブで視聴できます。",
-      "narration": "Figma 最大のデザイン祭典 Config 2026 があと 1 ヶ月で開催、現地チケットは完売の大人気で諦めムード? でもまだ早いです。",
-      "tags": ["FigmaConfig2026", "Figma公式", "デザインカンファレンス", "AIデザイン", "official-src"],
+      "title": "Figma Make が本番コードに直結、ターミナル要らずでデザイナーが GitHub に PR を出せる時代へ",
+      "description": "昨日 5/28 発表、Figma Make にローカルの Git リポジトリを接続できるベータが公開。画面上の修正がそのままコード編集になり、Figma の中だけで PR まで完結します。",
+      "detail": "Figma Make にローカルリポジトリを接続、画面で要素を選んで色やレイアウトを変えると AI エージェントが該当コードを見つけて編集。修正はローカルコミットで溜まり、Figma から直接ブランチを切って GitHub PR を発行できます。Mac の Beta Desktop で先行公開、ベータ中はクレジット消費なしで無料。VentureBeat 分析では既に 45% のデザイナー / 59% の PM がコードに触れていると指摘。",
+      "narration": "ターミナルを開かなくても、デザイナーが GitHub に PR を出せる時代が来ました。昨日 5 月 28 日、Figma Make が本番コードに直接つながります。",
+      "tags": ["FigmaMake", "Figma公式", "AIデザイン", "デザインエンジニアリング", "social-en"],
       "narration_sections": {
-        "hook": "Figma最大のデザイン祭典Config 2026があと1ヶ月で開催、現地チケットは完売の大人気で諦めムード?でもまだ早いです。",
-        "origin": "6月23から25日にサンフランシスコで3日間開催、75人超の登壇者と50超のセッション。実はオンライン視聴は完全無料、しかも日本語のライブ字幕付き。キーノートは当日にYouTubeで公開、全セッションも後日アーカイブで見られます。",
-        "recommend": "世界トップ層の最先端AIデザイン議論を日本語字幕付きで無料視聴できる絶好の機会。今のうちに無料登録だけは済ませておきましょう。"
+        "hook": "ターミナルを開かなくても、デザイナーがGitHubにPRを出せる時代が来ました。昨日5月28日、Figma Makeが本番コードに直接つながります。",
+        "origin": "Figma Makeにローカルリポジトリを接続、画面でボタンの色やレイアウトを変えると、AIエージェントが該当コードを見つけて編集します。修正はローカルコミットで溜まり、確認後にFigmaから直接ブランチを切ってPRを出せます。",
+        "recommend": "45%のデザイナーは既にコードを書く時代、ターミナル知らずでも追いつけます。Macのベータ版、今のうちに名前だけ押さえておきましょう。"
       },
       "section_titles": {
-        "hook": "Config2026開催",
-        "origin": "オンラインで無料視聴",
-        "recommend": "日本語字幕で視聴"
+        "hook": "Make本番コード直結",
+        "origin": "AIが自動でコード編集",
+        "recommend": "Macベータで先取り"
       },
       "section_descriptions": {
-        "hook": "Figma最大のデザイン祭典が1ヶ月後に開催",
-        "origin": "登壇者75人超、3日間で50超のセッション",
-        "recommend": "日本語字幕付きで無料視聴できる絶好の機会"
+        "hook": "Figma Makeが本番コードに直接コミット可能に",
+        "origin": "ローカルRepoを接続、画面の修正が自動でPRに",
+        "recommend": "ターミナル知らずでもコード貢献に追いつける"
       }
     }
   ]
