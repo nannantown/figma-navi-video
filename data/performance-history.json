@@ -904,7 +904,7 @@
         "views": 130,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-28T00:14:26.225Z"
+        "updatedAt": "2026-05-29T00:20:30.211Z"
       }
     },
     {
@@ -949,7 +949,7 @@
         "views": 400,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-28T00:14:26.225Z"
+        "updatedAt": "2026-05-29T00:20:30.211Z"
       }
     },
     {
@@ -992,7 +992,7 @@
         "views": 107,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-28T00:14:26.225Z"
+        "updatedAt": "2026-05-29T00:20:30.211Z"
       }
     },
     {
@@ -1035,7 +1035,7 @@
         "views": 19,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-28T00:14:26.225Z"
+        "updatedAt": "2026-05-29T00:20:30.211Z"
       }
     },
     {
@@ -1078,7 +1078,7 @@
         "views": 64,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-28T00:14:26.225Z"
+        "updatedAt": "2026-05-29T00:20:30.211Z"
       }
     },
     {
@@ -1121,7 +1121,7 @@
         "views": 86,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-28T00:14:26.225Z"
+        "updatedAt": "2026-05-29T00:20:30.211Z"
       }
     },
     {
@@ -1163,10 +1163,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 20,
+        "views": 23,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-28T00:14:26.225Z"
+        "updatedAt": "2026-05-29T00:20:30.211Z"
       }
     },
     {
@@ -1208,10 +1208,10 @@
         "freshness_hours": 46
       },
       "stats": {
-        "views": 18,
+        "views": 19,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-28T00:14:26.225Z"
+        "updatedAt": "2026-05-29T00:20:30.211Z"
       }
     },
     {
@@ -1257,7 +1257,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-28T00:14:26.225Z"
+        "updatedAt": "2026-05-29T00:20:30.211Z"
       }
     },
     {
@@ -1302,7 +1302,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-28T00:14:26.225Z"
+        "updatedAt": "2026-05-29T00:20:30.211Z"
       }
     },
     {
@@ -1342,6 +1342,50 @@
         ],
         "query": "Figma Config 2026 June 23-25 San Francisco virtual free Japanese live captioning sold out 75 speakers 50 sessions agenda AI workflow",
         "freshness_hours": 72
+      },
+      "stats": {
+        "views": 4,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-05-29T00:20:30.211Z"
+      }
+    },
+    {
+      "videoId": "AFYkY-L2Vpw",
+      "videoUrl": "https://youtube.com/shorts/AFYkY-L2Vpw",
+      "date": "2026-05-29",
+      "title": "【デザインニュース】Figma Make が本番コードに直結、ターミナル要らずでデザイナーが GitHub に PR を出せる時代へ｜2026/05/29 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 45,
+      "discovery": {
+        "method": "social-en",
+        "description": "Figma 公式 X 発表 + VentureBeat 業界分析を 24h fresh news cycle で捕捉、social-en の新角度 design-to-code-driverseat を Explore 試行。official-src は直近2日 + 7日2回ガード両抵触、news-en は 6/2 まで凍結のため、X + 業界メディア起点の social-en で扱う。",
+        "sources": [
+          "https://x.com/figma/status/2059987170065093001",
+          "https://www.figma.com/blog/figma-make-now-on-your-local-code/",
+          "https://venturebeat.com/technology/are-designers-the-new-swes-figma-makes-new-two-way-github-integration-turns-designs-into-live-production-code-with-built-in-governance",
+          "https://help.figma.com/hc/en-us/articles/35463818346647-Push-from-Figma-Make-to-GitHub",
+          "https://www.figma.com/release-notes/"
+        ],
+        "query": "Figma Make local code GitHub PR branch beta May 28 2026 designer 45% terminal-less codebase integration MCP",
+        "freshness_hours": 24
       },
       "stats": {
         "views": 0,
@@ -1572,6 +1616,14 @@
       "changes": [
         "standard: 110 avg views (29 videos)",
         "Day performance: Wed=151, Sat=148, Sun=130, Thu=95, Tue=90, Fri=85, Mon=65"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-29",
+      "changes": [
+        "standard: 107 avg views (30 videos)",
+        "Day performance: Wed=151, Sat=148, Sun=130, Tue=90, Fri=85, Thu=78, Mon=65"
       ],
       "recommendedTemplate": "standard"
     }
