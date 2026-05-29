@@ -1,40 +1,40 @@
 {
-  "date": "2026-05-29",
+  "date": "2026-05-30",
   "discovery": {
-    "method": "social-en",
-    "description": "Figma 公式 X 発表 + VentureBeat 業界分析を 24h fresh news cycle で捕捉、social-en の新角度 design-to-code-driverseat を Explore 試行。official-src は直近2日 + 7日2回ガード両抵触、news-en は 6/2 まで凍結のため、X + 業界メディア起点の social-en で扱う。",
+    "method": "figma-community",
+    "description": "Figma 公式 Help Center の Variables / Modes 解説と community で広く実践されている『Frame に Mode を当てる Light/Dark 1 操作切替』Tips を、community-tips-bundle 角度 (5/16 Auto Layout 絶対位置=400, 5/19 Component Boolean Property=64) と同じ『Primary persona が知らずにハマっている 1 操作 fix』フレームで再投入。週末 evergreen 枠で freshness 制約は緩い、Figma 公式機能の正攻法 Tips として扱う。",
     "sources": [
-      "https://x.com/figma/status/2059987170065093001",
-      "https://www.figma.com/blog/figma-make-now-on-your-local-code/",
-      "https://venturebeat.com/technology/are-designers-the-new-swes-figma-makes-new-two-way-github-integration-turns-designs-into-live-production-code-with-built-in-governance",
-      "https://help.figma.com/hc/en-us/articles/35463818346647-Push-from-Figma-Make-to-GitHub",
-      "https://www.figma.com/release-notes/"
+      "https://help.figma.com/hc/en-us/articles/15343816063383-Modes-for-variables",
+      "https://help.figma.com/hc/en-us/articles/15343107263511-Apply-variables-to-designs",
+      "https://help.figma.com/hc/en-us/articles/14506821864087-Overview-of-variables-collections-and-modes",
+      "https://spin.atomicobject.com/light-dark-themes-figma/",
+      "https://www.digidop.com/blog/how-to-create-dark-light-mode-variables-figma"
     ],
-    "query": "Figma Make local code GitHub PR branch beta May 28 2026 designer 45% terminal-less codebase integration MCP",
-    "freshness_hours": 24
+    "query": "Figma Variables modes apply to frame light dark switching dropdown 2026 tutorial designer time-save beginner",
+    "freshness_hours": 168
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma Make が本番コードに直結、ターミナル要らずでデザイナーが GitHub に PR を出せる時代へ",
-      "description": "昨日 5/28 発表、Figma Make にローカルの Git リポジトリを接続できるベータが公開。画面上の修正がそのままコード編集になり、Figma の中だけで PR まで完結します。",
-      "detail": "Figma Make にローカルリポジトリを接続、画面で要素を選んで色やレイアウトを変えると AI エージェントが該当コードを見つけて編集。修正はローカルコミットで溜まり、Figma から直接ブランチを切って GitHub PR を発行できます。Mac の Beta Desktop で先行公開、ベータ中はクレジット消費なしで無料。VentureBeat 分析では既に 45% のデザイナー / 59% の PM がコードに触れていると指摘。",
-      "narration": "ターミナルを開かなくても、デザイナーが GitHub に PR を出せる時代が来ました。昨日 5 月 28 日、Figma Make が本番コードに直接つながります。",
-      "tags": ["FigmaMake", "Figma公式", "AIデザイン", "デザインエンジニアリング", "social-en"],
+      "title": "Variables の Mode、Frame に当てるだけで Light/Dark 切替。画面 2 枚作らないで済む",
+      "description": "Light と Dark の画面を 2 枚並べて作って、片方の修正をもう片方に反映するのを忘れる、よくあるハマりです。Figma Variables の Mode を Frame に当てると 1 操作で切り替わります。",
+      "detail": "Variables Collection に Light と Dark の Mode を 2 つ作って色変数を入れます。Frame を選んで右パネル Appearance の Apply variable mode から Dark Mode を選ぶと、その Frame 配下の配色が一気に入れ替わります。Layers パネルに Mode タグが付き、いつでもワンクリックで切替可能。1 画面の修正で両テーマに即反映、Dark mode 対応ポートフォリオが面接で『デザインシステム触れます』の証拠になります。",
+      "narration": "Light と Dark の画面を 2 枚並べて作ってませんか?Figma Variables の Mode、Frame に当てるだけで切り替わります。",
+      "tags": ["Figma", "Variables", "Tips", "デザインシステム", "DarkMode"],
       "narration_sections": {
-        "hook": "ターミナルを開かなくても、デザイナーがGitHubにPRを出せる時代が来ました。昨日5月28日、Figma Makeが本番コードに直接つながります。",
-        "origin": "Figma Makeにローカルリポジトリを接続、画面でボタンの色やレイアウトを変えると、AIエージェントが該当コードを見つけて編集します。修正はローカルコミットで溜まり、確認後にFigmaから直接ブランチを切ってPRを出せます。",
-        "recommend": "45%のデザイナーは既にコードを書く時代、ターミナル知らずでも追いつけます。Macのベータ版、今のうちに名前だけ押さえておきましょう。"
+        "hook": "Light と Dark の画面を 2 枚並べて作ってませんか?Figma Variables の Mode、Frame に当てるだけで切り替わります。",
+        "origin": "Variables Collection に Light と Dark の Mode を 2 つ作って色を入れ、Frame を選んで右の Apply variable mode から切り替えるだけ。1 画面の修正で両テーマに即反映できます。",
+        "recommend": "ポートフォリオに Dark mode 対応を 1 枚で見せられて、面接でデザインシステム経験を語れます。"
       },
       "section_titles": {
-        "hook": "Make本番コード直結",
-        "origin": "AIが自動でコード編集",
-        "recommend": "Macベータで先取り"
+        "hook": "画面 2 枚作らない",
+        "origin": "Mode で 1 画面化",
+        "recommend": "面接で語れる武器"
       },
       "section_descriptions": {
-        "hook": "Figma Makeが本番コードに直接コミット可能に",
-        "origin": "ローカルRepoを接続、画面の修正が自動でPRに",
-        "recommend": "ターミナル知らずでもコード貢献に追いつける"
+        "hook": "画面 1 枚で Light/Dark を即切替",
+        "origin": "Frame に Mode を当てるだけで配色が一気に切替",
+        "recommend": "デザインシステム経験は学習者の面接で効く"
       }
     }
   ]
