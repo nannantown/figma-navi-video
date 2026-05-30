@@ -949,7 +949,7 @@
         "views": 400,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-29T00:20:30.211Z"
+        "updatedAt": "2026-05-30T00:19:02.532Z"
       }
     },
     {
@@ -992,7 +992,7 @@
         "views": 107,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-29T00:20:30.211Z"
+        "updatedAt": "2026-05-30T00:19:02.532Z"
       }
     },
     {
@@ -1035,7 +1035,7 @@
         "views": 19,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-29T00:20:30.211Z"
+        "updatedAt": "2026-05-30T00:19:02.532Z"
       }
     },
     {
@@ -1078,7 +1078,7 @@
         "views": 64,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-29T00:20:30.211Z"
+        "updatedAt": "2026-05-30T00:19:02.532Z"
       }
     },
     {
@@ -1121,7 +1121,7 @@
         "views": 86,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-29T00:20:30.211Z"
+        "updatedAt": "2026-05-30T00:19:02.532Z"
       }
     },
     {
@@ -1163,10 +1163,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 23,
+        "views": 24,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-29T00:20:30.211Z"
+        "updatedAt": "2026-05-30T00:19:02.532Z"
       }
     },
     {
@@ -1211,7 +1211,7 @@
         "views": 19,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-29T00:20:30.211Z"
+        "updatedAt": "2026-05-30T00:19:02.532Z"
       }
     },
     {
@@ -1257,7 +1257,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-29T00:20:30.211Z"
+        "updatedAt": "2026-05-30T00:19:02.532Z"
       }
     },
     {
@@ -1302,7 +1302,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-29T00:20:30.211Z"
+        "updatedAt": "2026-05-30T00:19:02.532Z"
       }
     },
     {
@@ -1344,10 +1344,10 @@
         "freshness_hours": 72
       },
       "stats": {
-        "views": 4,
+        "views": 6,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-29T00:20:30.211Z"
+        "updatedAt": "2026-05-30T00:19:02.532Z"
       }
     },
     {
@@ -1388,6 +1388,50 @@
         "freshness_hours": 24
       },
       "stats": {
+        "views": 2,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-05-30T00:19:02.532Z"
+      }
+    },
+    {
+      "videoId": "wWCu5LOzlWE",
+      "videoUrl": "https://youtube.com/shorts/wWCu5LOzlWE",
+      "date": "2026-05-30",
+      "title": "【デザインニュース】Variables の Mode、Frame に当てるだけで Light/Dark 切替。画面 2 枚作らないで済む｜2026/05/30 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 34,
+      "discovery": {
+        "method": "figma-community",
+        "description": "Figma 公式 Help Center の Variables / Modes 解説と community で広く実践されている『Frame に Mode を当てる Light/Dark 1 操作切替』Tips を、community-tips-bundle 角度 (5/16 Auto Layout 絶対位置=400, 5/19 Component Boolean Property=64) と同じ『Primary persona が知らずにハマっている 1 操作 fix』フレームで再投入。週末 evergreen 枠で freshness 制約は緩い、Figma 公式機能の正攻法 Tips として扱う。",
+        "sources": [
+          "https://help.figma.com/hc/en-us/articles/15343816063383-Modes-for-variables",
+          "https://help.figma.com/hc/en-us/articles/15343107263511-Apply-variables-to-designs",
+          "https://help.figma.com/hc/en-us/articles/14506821864087-Overview-of-variables-collections-and-modes",
+          "https://spin.atomicobject.com/light-dark-themes-figma/",
+          "https://www.digidop.com/blog/how-to-create-dark-light-mode-variables-figma"
+        ],
+        "query": "Figma Variables modes apply to frame light dark switching dropdown 2026 tutorial designer time-save beginner",
+        "freshness_hours": 168
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -1396,13 +1440,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-04-23",
-      "changes": [
-        "Day performance: Wed=132"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-04-24",
       "changes": [
@@ -1624,6 +1661,14 @@
       "changes": [
         "standard: 107 avg views (30 videos)",
         "Day performance: Wed=151, Sat=148, Sun=130, Tue=90, Fri=85, Thu=78, Mon=65"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-30",
+      "changes": [
+        "standard: 104 avg views (31 videos)",
+        "Day performance: Wed=151, Sat=148, Sun=130, Tue=90, Thu=78, Fri=68, Mon=65"
       ],
       "recommendedTemplate": "standard"
     }
