@@ -1,42 +1,42 @@
 {
-  "date": "2026-05-31",
+  "date": "2026-06-01",
   "discovery": {
-    "method": "expert-blog",
-    "description": "UX Collective (Sharang Sharma『Where should AI sit in your UI?』, Katya Korovkina『Are we doing UX for AI the right way?』) と Ascedia『What Good AI UX Actually Looks Like in 2026』, Mantlr『Designing for AI Agents: 10 UX Patterns 2026』を横断調査、英語デザイン論考が並行で『チャットボット中央配置=AI fatigue 失敗』『AI は sidebar / inline / collapsible に置く』に収束する潮流を確認。Microsoft が 5/24 公開の Windows 11 Insider Build で Copilot をフローティング窓→幅 280〜500 ピクセルの docked サイドバーに復活させた具体ニュースを軸に、Notion AI / Linear / GitHub Copilot / Figma AI / Gmail Gemini の同方向収束を裏取り。method 選定 (Sunday weekend evergreen 帯): 直近2日 (5/30 figma-community, 5/29 social-en) 抵触なし、7日2回ガード (5/25-5/31) で official-src (5/25+5/28=2回) と figma-community (5/27+5/30=2回) は抵触、残る Exploit 候補 = expert-blog (5/26、5 日前で全ガードクリア) と product-launches (5/24、7 日前)。expert-blog の 5/17 ui-critique-ai 角度 (=107 view、14日 window 外に脱落) の TOP1 角度復活が最大狙い、5/23 accessibility-personas-critique (3) と 5/26 customer-understanding-framework (pending) の framework 系2連敗からの軌道修正として『5/17型 = 具体的な named UI artifact の批評』に回帰。柱⑥ UI 批評 (target 10%、直近14日 5/23+5/26 で 2/13 = 15% 超過気味だが Sunday evergreen 枠の本命) クロス柱④ Tips (target 15% 達成済)。Primary persona 駆け出し層の『面接で AI 設計眼を語れる』武器化を直接狙い、AI = 補助輪フレームを literal『サイドバー = 端の補助』比喩で完全合致。NG パターン回避: プロ向け高度議論ではなく『真ん中チャット窓 vs 端のサイドバー』の二択で誰でも判断可、『AI が仕事を奪う』完全非該当 (むしろ駆け出しの AI 設計力武装)、『AI に任せれば考えなくていい』真逆 (AI を端に置くのは人の判断を中央に残すため)、『プラグイン機能説明メイン』完全非該当、freshness_hours=168 (5/24 Microsoft ニュース起点で 7 日 = 境界値、Sunday evergreen 例外で許容)",
+    "method": "official-src",
+    "description": "Figma 公式ブログ 5/30 公開『Turning Prompts into Five Scalable Workflows with Figma Weave』と Figma Community Weave hub、weave.figma.com 公式ランディングを一次取得。iTWire 5/29 報道『Reintroducing Figma Weave with 20+ new workflows for AI-native design』、Gadgetbond『Five Figma Weave workflows that supercharge AI-powered design』、MarketScreener 経済報道、Figmalion 業界ニュースで multi-source confirm。Weave Community に 20+ ワークフローテンプレが配備、その代表 5 本として『画像→動画』『3Dモデル化（Rodin 3D V2 経由）』『8 つの distortion フィルター並列』『アスペクト比一括展開』『2 枚の参照からスタイルガイド合成』が公式ブログで解説された。method 選定 (Monday weekday news 帯): TOP3 method 候補のうち expert-blog (5/26+5/31 で 7日2回ガード抵触+5/31 で 直近2日抵触)・figma-community (5/27+5/30 で 7日2回ガード抵触+5/30 で 直近2日抵触) が本日不可、news-en は 6/2 まで凍結 (本日凍結最終日)、social-en は健全だが design-to-code-driverseat 凍結方向で角度資源減。official-src (avg 30.8, n=4, TOP1 method、5/28=4日前で全ガードクリア、5/25 が window 外脱落で 7日2回ガード解放、weekday news-preferred の本命) を Exploit 採用。5/31 PDCA Action #3 で pre-schedule された『6/1 候補 = social-en or expert-blog』は両 method の制約発生で override、Weave Community workflows という公式新機能 + 視覚的に面白い + 駆け出し直結の triple ヒット素材を優先。角度 = feature-launch 再投入 (5/20 Figma Slides Sections=86 の同型フレーム、official-src 内 TOP 角度の n=3 化試行)、新 sub-angle workflow-showcase を組み合わせ初試行。柱選定: ② プラグイン・エコシステム (target 20%、直近 14 日 5/27 のみ = 1/14 = 7% で大幅未達、本日投入で 2/14 = 14% に補正、Weave Community は『Figma 公式エコシステム』として柱②直撃) クロス ① Figma 公式ニュース (既に 36% で target 超過だが Weave は明確に新領域=video/3D/AI で①重複コストは限定的)。Primary persona 直接接続: 駆け出しが『AI 画像/動画ツールを単発で使うレベルから一段上に行きたい』時、Weave Community テンプレで節点接続を学べば面接で『AI チェーンを設計できます』が言える武装メッセージ。NG パターン回避: 『プロ向け高度議論』回避 = ノード/DAG/pipeline 等を『節点で繋ぐ』『チェーン式』に翻訳、『AI が仕事を奪う系』完全反転 = AI チェーン設計者になる positive 化、『AI に任せれば考えなくていい』完全真逆 = チェーン設計 = 人の判断 / AI = 実行係、『プラグイン機能説明メイン』回避 = Primary persona 武装メッセージ起点、『英語/日本語混在』Figma/Weave/Community/Sora/Veo/Flux/Ideogram は固有名詞許容範囲、『1 週間以上前のニュースを新着扱い』完全クリア = 約 30h fresh、『出典不明』Figma 公式 blog + Figma Community Weave hub + weave.figma.com + iTWire + Gadgetbond + MarketScreener + Figmalion 計 7 ソース multi-source confirm",
     "sources": [
-      "https://www.windowslatest.com/2026/05/24/microsofts-new-copilot-turns-into-a-windows-11-sidebar-that-pushes-your-apps-aside-to-make-room/",
-      "https://windowsnews.ai/article/windows-11-copilot-docked-sidebar-optional-ai-that-reserves-screen-space.420328",
-      "https://windowsforum.com/threads/windows-11-copilot-docking-sidebar-returns-as-ai-clutter-sparks-trust-debate.419660/",
-      "https://uxdesign.cc/where-should-ai-sit-in-your-ui-1710a258390e",
-      "https://uxdesign.cc/are-we-doing-ux-for-ai-the-right-way-aea01e14138e",
-      "https://www.ascedia.com/insights/what-good-ai-ux-actually-looks-like-in-2026",
-      "https://mantlr.com/blog/designing-for-ai-agents-ux-patterns-2026"
+      "https://www.figma.com/blog/five-figma-weave-workflows/",
+      "https://www.figma.com/community/weave",
+      "https://weave.figma.com/",
+      "https://itwire.com/guest-articles/company-news/reintroducing-figma-weave-with-20-new-workflows-for-ai-native-design.html",
+      "https://gadgetbond.com/figma-weave-ai-workflows/",
+      "https://www.marketscreener.com/news/figma-turning-prompts-into-five-scalable-workflows-with-figma-weave-ce7e50d8d980f521",
+      "https://figmalion.com/topics/figma-weave"
     ],
-    "query": "AI UI sidebar pattern 2026 Microsoft Copilot docked Windows 11 Notion Linear Gmail Gemini chatbot critique UX Collective fatigue",
-    "freshness_hours": 168
+    "query": "Figma Weave Community workflows 20 templates May 30 2026 node based AI chain image video 3D Rodin Sora Veo Flux Ideogram",
+    "freshness_hours": 30
   },
   "articles": [
     {
       "rank": 1,
-      "title": "MicrosoftがCopilot真ん中→サイドバーに復活、2026『AIは画面の端へ』が新常識",
-      "description": "Microsoftがフローティング窓をやめ、Copilotをサイドバーに戻した話。2026年のAI UX正解は、画面の端です。",
-      "detail": "Microsoftが5月24日のWindows 11 Insider Buildで、Copilotを幅280〜500ピクセルのdockedサイドバーに復活させました。フローティングの単独窓は失敗例として扱われ、Notion、Linear、Gmail Gemini、Figma AIも画面の端にAIを置く設計に揃いつつあります。UX Collectiveが指摘する『チャットボット中央配置はAI疲労を生む』論考とも一致。駆け出しデザイナーはポートフォリオでAI機能を載せる時、真ん中の大きなチャット窓ではなく端のサイドバーやインライン提案に寄せるだけで、面接で『AI設計のトレンド分かってます』と一段プロっぽく語れます。",
-      "narration": "MicrosoftがCopilotを画面真ん中からサイドバーに戻したの、知ってますか? 2026年はAIを端に置くのが正解です。",
-      "tags": ["AI UX", "Copilot", "サイドバー設計", "UI批評", "ポートフォリオ"],
+      "title": "Figmaが5/30にWeave Community本格化、20以上のAIワークフローが節点繋ぎで使える時代に",
+      "description": "Figmaがおとといブログで5本のAIワークフローを公開。節点で繋ぐ次世代の作り方が、駆け出しでもCommunityから試せます。",
+      "detail": "Figmaが5/30の公式ブログで、Figma Weave Communityに置かれた20以上のワークフローテンプレを解説しました。代表5本は、画像から動画生成、Rodin 3D V2経由の3Dモデル化、8つのフィルター並列実行、アスペクト比一括展開、2枚の参照からスタイル合成。Weaveは、Seedance、Sora、Veo、Flux、Ideogramなど複数のAIモデルを節点で繋ぐ視覚的キャンバスで、Communityのテンプレをワンクリックで読み込み、入力素材を差し替えて再利用できます。AIに丸投げする側から、節点を組み立てて工程を設計する側に駆け出しが回れることで、面接で『AIチェーンを組めます』と一段プロっぽく語れる武器になります。",
+      "narration": "Figmaがおとといブログで5つのAIワークフローを一気に公開。節点で繋ぐ新しい作り方が、駆け出しでもCommunityから試せます。",
+      "tags": ["Figma Weave", "AIワークフロー", "Community", "節点設計", "駆け出し"],
       "narration_sections": {
-        "hook": "MicrosoftがCopilotを画面真ん中からサイドバーに戻したの、知ってますか? 2026年はAIを端に置くのが正解です。",
-        "origin": "5月24日のWindows 11 Insider版で、Copilotが幅280〜500ピクセルのdockedサイドバーに復活。Notion、Linear、Gmail Gemini、Figmaも画面の端にAIを寄せる設計で揃ってきました。",
-        "recommend": "ポートフォリオでAI機能を載せる時、真ん中の大きなチャット窓ではなく端のサイドバーに寄せるだけで、面接で一段プロっぽく語れます。"
+        "hook": "Figmaがおとといブログで5つのAIワークフローを一気に公開。節点で繋ぐ新しい作り方が、駆け出しでもCommunityから試せます。",
+        "origin": "公開されたのは、画像から動画、3Dモデル化、8フィルター並列、アスペクト比一括展開、スタイル合成の5本。WeaveはAIモデルを節点で繋ぐ視覚キャンバスで、Communityに20以上のテンプレが置かれワンクリックで読み込めます。",
+        "recommend": "AIに丸投げではなく、節点を繋いで工程を設計する側になれる駆け出しが強い。下書きはAI、判断は自分の手で残しましょう。"
       },
       "section_titles": {
-        "hook": "AIは画面の端へ",
-        "origin": "Copilot側に復活",
-        "recommend": "面接で語れるAI設計"
+        "hook": "Weave 5本公開",
+        "origin": "節点でAIを繋ぐ",
+        "recommend": "設計する側になる"
       },
       "section_descriptions": {
-        "hook": "AIを真ん中のチャット窓に置く時代は終わり",
-        "origin": "5月24日Windows 11 Insiderで実装",
-        "recommend": "駆け出しのポートフォリオで一段プロっぽく見せる"
+        "hook": "Figmaが5/30に公開した5本のAIワークフロー",
+        "origin": "画像から動画3D、20以上のテンプレが配布中",
+        "recommend": "AI下書きで時短、判断は自分で残す姿勢が強い"
       }
     }
   ]
