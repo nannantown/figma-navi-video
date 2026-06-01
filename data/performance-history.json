@@ -1035,7 +1035,7 @@
         "views": 19,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-31T00:14:21.201Z"
+        "updatedAt": "2026-06-01T00:15:45.412Z"
       }
     },
     {
@@ -1078,7 +1078,7 @@
         "views": 64,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-31T00:14:21.201Z"
+        "updatedAt": "2026-06-01T00:15:45.412Z"
       }
     },
     {
@@ -1121,7 +1121,7 @@
         "views": 86,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-31T00:14:21.201Z"
+        "updatedAt": "2026-06-01T00:15:45.412Z"
       }
     },
     {
@@ -1163,10 +1163,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 24,
+        "views": 25,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-31T00:14:21.201Z"
+        "updatedAt": "2026-06-01T00:15:45.412Z"
       }
     },
     {
@@ -1211,7 +1211,7 @@
         "views": 19,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-31T00:14:21.201Z"
+        "updatedAt": "2026-06-01T00:15:45.412Z"
       }
     },
     {
@@ -1257,7 +1257,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-31T00:14:21.201Z"
+        "updatedAt": "2026-06-01T00:15:45.412Z"
       }
     },
     {
@@ -1302,7 +1302,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-31T00:14:21.201Z"
+        "updatedAt": "2026-06-01T00:15:45.412Z"
       }
     },
     {
@@ -1347,7 +1347,7 @@
         "views": 7,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-31T00:14:21.201Z"
+        "updatedAt": "2026-06-01T00:15:45.412Z"
       }
     },
     {
@@ -1388,10 +1388,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 3,
+        "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-31T00:14:21.201Z"
+        "updatedAt": "2026-06-01T00:15:45.412Z"
       }
     },
     {
@@ -1435,7 +1435,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-31T00:14:21.202Z"
+        "updatedAt": "2026-06-01T00:15:45.412Z"
       }
     },
     {
@@ -1478,6 +1478,52 @@
         "freshness_hours": 168
       },
       "stats": {
+        "views": 4,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-06-01T00:15:45.412Z"
+      }
+    },
+    {
+      "videoId": "MQZ5WHHV7UY",
+      "videoUrl": "https://youtube.com/shorts/MQZ5WHHV7UY",
+      "date": "2026-06-01",
+      "title": "【デザインニュース】Figmaが5/30にWeave Community本格化、20以上のAIワークフローが節点繋ぎで使える時代に｜2026/06/01 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 45,
+      "discovery": {
+        "method": "official-src",
+        "description": "Figma 公式ブログ 5/30 公開『Turning Prompts into Five Scalable Workflows with Figma Weave』と Figma Community Weave hub、weave.figma.com 公式ランディングを一次取得。iTWire 5/29 報道『Reintroducing Figma Weave with 20+ new workflows for AI-native design』、Gadgetbond『Five Figma Weave workflows that supercharge AI-powered design』、MarketScreener 経済報道、Figmalion 業界ニュースで multi-source confirm。Weave Community に 20+ ワークフローテンプレが配備、その代表 5 本として『画像→動画』『3Dモデル化（Rodin 3D V2 経由）』『8 つの distortion フィルター並列』『アスペクト比一括展開』『2 枚の参照からスタイルガイド合成』が公式ブログで解説された。method 選定 (Monday weekday news 帯): TOP3 method 候補のうち expert-blog (5/26+5/31 で 7日2回ガード抵触+5/31 で 直近2日抵触)・figma-community (5/27+5/30 で 7日2回ガード抵触+5/30 で 直近2日抵触) が本日不可、news-en は 6/2 まで凍結 (本日凍結最終日)、social-en は健全だが design-to-code-driverseat 凍結方向で角度資源減。official-src (avg 30.8, n=4, TOP1 method、5/28=4日前で全ガードクリア、5/25 が window 外脱落で 7日2回ガード解放、weekday news-preferred の本命) を Exploit 採用。5/31 PDCA Action #3 で pre-schedule された『6/1 候補 = social-en or expert-blog』は両 method の制約発生で override、Weave Community workflows という公式新機能 + 視覚的に面白い + 駆け出し直結の triple ヒット素材を優先。角度 = feature-launch 再投入 (5/20 Figma Slides Sections=86 の同型フレーム、official-src 内 TOP 角度の n=3 化試行)、新 sub-angle workflow-showcase を組み合わせ初試行。柱選定: ② プラグイン・エコシステム (target 20%、直近 14 日 5/27 のみ = 1/14 = 7% で大幅未達、本日投入で 2/14 = 14% に補正、Weave Community は『Figma 公式エコシステム』として柱②直撃) クロス ① Figma 公式ニュース (既に 36% で target 超過だが Weave は明確に新領域=video/3D/AI で①重複コストは限定的)。Primary persona 直接接続: 駆け出しが『AI 画像/動画ツールを単発で使うレベルから一段上に行きたい』時、Weave Community テンプレで節点接続を学べば面接で『AI チェーンを設計できます』が言える武装メッセージ。NG パターン回避: 『プロ向け高度議論』回避 = ノード/DAG/pipeline 等を『節点で繋ぐ』『チェーン式』に翻訳、『AI が仕事を奪う系』完全反転 = AI チェーン設計者になる positive 化、『AI に任せれば考えなくていい』完全真逆 = チェーン設計 = 人の判断 / AI = 実行係、『プラグイン機能説明メイン』回避 = Primary persona 武装メッセージ起点、『英語/日本語混在』Figma/Weave/Community/Sora/Veo/Flux/Ideogram は固有名詞許容範囲、『1 週間以上前のニュースを新着扱い』完全クリア = 約 30h fresh、『出典不明』Figma 公式 blog + Figma Community Weave hub + weave.figma.com + iTWire + Gadgetbond + MarketScreener + Figmalion 計 7 ソース multi-source confirm",
+        "sources": [
+          "https://www.figma.com/blog/five-figma-weave-workflows/",
+          "https://www.figma.com/community/weave",
+          "https://weave.figma.com/",
+          "https://itwire.com/guest-articles/company-news/reintroducing-figma-weave-with-20-new-workflows-for-ai-native-design.html",
+          "https://gadgetbond.com/figma-weave-ai-workflows/",
+          "https://www.marketscreener.com/news/figma-turning-prompts-into-five-scalable-workflows-with-figma-weave-ce7e50d8d980f521",
+          "https://figmalion.com/topics/figma-weave"
+        ],
+        "query": "Figma Weave Community workflows 20 templates May 30 2026 node based AI chain image video 3D Rodin Sora Veo Flux Ideogram",
+        "freshness_hours": 30
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -1486,13 +1532,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-04-24",
-      "changes": [
-        "Day performance: Thu=173, Wed=139, Fri=30"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-04-25",
       "changes": [
@@ -1716,6 +1755,14 @@
       "changes": [
         "standard: 101 avg views (32 videos)",
         "Day performance: Wed=151, Sun=130, Sat=118, Tue=90, Thu=78, Fri=68, Mon=65"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-01",
+      "changes": [
+        "standard: 98 avg views (33 videos)",
+        "Day performance: Wed=151, Sat=118, Sun=105, Tue=90, Thu=79, Fri=69, Mon=65"
       ],
       "recommendedTemplate": "standard"
     }
