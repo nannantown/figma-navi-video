@@ -1078,7 +1078,7 @@
         "views": 64,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-01T00:15:45.412Z"
+        "updatedAt": "2026-06-02T01:36:46.323Z"
       }
     },
     {
@@ -1121,7 +1121,7 @@
         "views": 86,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-01T00:15:45.412Z"
+        "updatedAt": "2026-06-02T01:36:46.323Z"
       }
     },
     {
@@ -1166,7 +1166,7 @@
         "views": 25,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-01T00:15:45.412Z"
+        "updatedAt": "2026-06-02T01:36:46.323Z"
       }
     },
     {
@@ -1211,7 +1211,7 @@
         "views": 19,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-01T00:15:45.412Z"
+        "updatedAt": "2026-06-02T01:36:46.323Z"
       }
     },
     {
@@ -1257,7 +1257,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-01T00:15:45.412Z"
+        "updatedAt": "2026-06-02T01:36:46.323Z"
       }
     },
     {
@@ -1302,7 +1302,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-01T00:15:45.412Z"
+        "updatedAt": "2026-06-02T01:36:46.323Z"
       }
     },
     {
@@ -1347,7 +1347,7 @@
         "views": 7,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-01T00:15:45.412Z"
+        "updatedAt": "2026-06-02T01:36:46.323Z"
       }
     },
     {
@@ -1391,7 +1391,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-01T00:15:45.412Z"
+        "updatedAt": "2026-06-02T01:36:46.323Z"
       }
     },
     {
@@ -1435,7 +1435,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-01T00:15:45.412Z"
+        "updatedAt": "2026-06-02T01:36:46.323Z"
       }
     },
     {
@@ -1481,7 +1481,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-01T00:15:45.412Z"
+        "updatedAt": "2026-06-02T01:36:46.323Z"
       }
     },
     {
@@ -1527,18 +1527,57 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-06-02T01:36:46.323Z"
+      }
+    },
+    {
+      "videoId": "96zplbO3NDg",
+      "videoUrl": "https://youtube.com/shorts/96zplbO3NDg",
+      "date": "2026-06-02",
+      "title": "【デザインニュース】Apple『All Systems Glow』で WWDC 2026 予告、来週 6/8 から Liquid Glass が全 OS 統一へ｜2026/06/02 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 46,
+      "discovery": {
+        "method": "news-en",
+        "description": "英語デザイン/Apple系メディアから、Apple が 6/1 公開した WWDC 2026『All Systems Glow』予告 + Liquid Glass の全 OS 統一前夜という業界最大級ニュースを抽出。news-en は 5/13 以来 20 日空き、本日 6/2 で 7日窓・直近2日ガードともに完全クリアの凍結解放日投入",
+        "sources": [
+          "https://9to5mac.com/2026/06/01/apple-teases-all-systems-glow-for-wwdc-as-livestream-link-debuts-on-youtube/",
+          "https://appleinsider.com/articles/26/06/01/wwdc-t-minus-one-week-all-systems-glow-with-new-wallpaper-playlist",
+          "https://www.cultofmac.com/news/wwdc26-all-systems-glow",
+          "https://www.macobserver.com/news/apple-shares-new-wwdc-2026-wallpaper-playlist-and-get-ready-video/",
+          "https://wi-fiplanet.com/all-systems-glow-apple-ramps-up-wwdc-2026-hype/",
+          "https://developer.apple.com/wwdc26/",
+          "https://www.apple.com/newsroom/2026/05/apple-kicks-off-worldwide-developers-conference-on-june-8/"
+        ],
+        "query": "Apple WWDC 2026 All Systems Glow tease Liquid Glass June 1",
+        "freshness_hours": 30
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-04-25",
-      "changes": [
-        "Day performance: Thu=174, Wed=142, Sat=114, Fri=48"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-04-26",
       "changes": [
@@ -1763,6 +1802,14 @@
       "changes": [
         "standard: 98 avg views (33 videos)",
         "Day performance: Wed=151, Sat=118, Sun=105, Tue=90, Thu=79, Fri=69, Mon=65"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-02",
+      "changes": [
+        "standard: 95 avg views (34 videos)",
+        "Day performance: Wed=151, Sat=118, Sun=105, Tue=90, Thu=79, Fri=69, Mon=52"
       ],
       "recommendedTemplate": "standard"
     }
