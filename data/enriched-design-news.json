@@ -1,42 +1,42 @@
 {
-  "date": "2026-06-02",
+  "date": "2026-06-03",
   "discovery": {
-    "method": "news-en",
-    "description": "英語デザイン/Apple系メディアから、Apple が 6/1 公開した WWDC 2026『All Systems Glow』予告 + Liquid Glass の全 OS 統一前夜という業界最大級ニュースを抽出。news-en は 5/13 以来 20 日空き、本日 6/2 で 7日窓・直近2日ガードともに完全クリアの凍結解放日投入",
+    "method": "figma-community",
+    "description": "Figma Community 主要プラグインの直近更新を横断し、6/1 公式 Slots GA (open beta 2026-03-05 以来 88 日) と『守りの設定』4 種追加 (min/max layers / preferred instances 限定 / empty slot 表示 / fill default) に合わせて Tokens Studio v217 (5/25 リリース) が『slot support for theme propagation』を先回り対応済み、Community 主要プラグイン群が今日から本番運用に入る波を抽出。figma-community は 5/30 以来 4 日空きで 5/27 が 7日窓外脱落し 7日2回ガード解放、6/1 PDCA 戦略更新提案 #3『柱② 補強週 (6/1-6/7)』+ 6/2 PDCA Action #3『6/3 候補 = figma-community』pre-schedule 該当の exploit gate-recovery 投入。新 sub-angle slots-ga-plugin-ready で community-tips-bundle / plugin-major-update の WORST 角度と完全別系統",
     "sources": [
-      "https://9to5mac.com/2026/06/01/apple-teases-all-systems-glow-for-wwdc-as-livestream-link-debuts-on-youtube/",
-      "https://appleinsider.com/articles/26/06/01/wwdc-t-minus-one-week-all-systems-glow-with-new-wallpaper-playlist",
-      "https://www.cultofmac.com/news/wwdc26-all-systems-glow",
-      "https://www.macobserver.com/news/apple-shares-new-wwdc-2026-wallpaper-playlist-and-get-ready-video/",
-      "https://wi-fiplanet.com/all-systems-glow-apple-ramps-up-wwdc-2026-hype/",
-      "https://developer.apple.com/wwdc26/",
-      "https://www.apple.com/newsroom/2026/05/apple-kicks-off-worldwide-developers-conference-on-june-8/"
+      "https://www.figma.com/release-notes/",
+      "https://www.figma.com/blog/supercharge-your-design-system-with-slots/",
+      "https://forum.figma.com/share-your-feedback-26/slots-51602",
+      "https://forum.figma.com/ask-the-community-7/release-of-slots-50615",
+      "https://feedback.tokens.studio/changelog",
+      "https://www.figma.com/community/plugin/843461159747178978/tokens-studio-for-figma",
+      "https://help.figma.com/hc/en-us/articles/38741465279895-The-difference-between-slots-instance-swaps-and-variants"
     ],
-    "query": "Apple WWDC 2026 All Systems Glow tease Liquid Glass June 1",
-    "freshness_hours": 30
+    "query": "Figma Slots GA June 1 2026 guardrails preferred instances Tokens Studio community plugin slot support theme propagation",
+    "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Apple『All Systems Glow』で WWDC 2026 予告、来週 6/8 から Liquid Glass が全 OS 統一へ",
-      "description": "来週月曜、Apple が WWDC 2026 を予告。テーマは『All Systems Glow』、デザイン言語が一段刷新の前夜です。",
-      "detail": "6/1 公開の予告動画と壁紙は、暗背景に発光するアップルロゴ。NASA の『all systems go』をもじり、新 Siri の暗 + 光る UI を示唆。iOS 27、macOS 27、watchOS 27 まで Liquid Glass が一斉統一です。",
-      "narration": "来週月曜、AppleがWWDC 2026を予告。テーマは『All Systems Glow』、デザイン言語が一段刷新の前夜です。",
-      "tags": ["Apple", "WWDC", "Liquid Glass", "iOS 27", "デザインニュース"],
+      "title": "Figma Slots が 6/1 に正式版へ、Community プラグインも一斉対応で駆け出しが『壊れない設計』を組める時代に",
+      "description": "今週月曜、Figma の Slots が正式版に。コンポーネントが分解されないデザインシステムが、駆け出しでも組める時代です。",
+      "detail": "6/1 GA で『守りの設定』4 種を追加。スロットに入るレイヤー数の上限、許可インスタンスの限定、空表示、自動フィル。Tokens Studio などはすでに Slot 対応済みで、Community 全体が今日から本番運用です。",
+      "narration": "今週月曜、Figma の Slots が正式版に。コンポーネントが分解されないデザインシステムが、駆け出しでも組める時代です。",
+      "tags": ["Figma", "Slots", "デザインシステム", "Community", "デザインニュース"],
       "narration_sections": {
-        "hook": "来週月曜、AppleがWWDC 2026を予告。テーマは『All Systems Glow』、デザイン言語が一段刷新の前夜です。",
-        "origin": "6/1公開の予告動画と壁紙は、暗背景に発光するアップルロゴ。NASAの『all systems go』をもじり、新Siriの暗＋光るUIを示唆。iOS 27、macOS 27、watchOS 27までLiquid Glassが一斉統一です。",
-        "recommend": "来週の発表前にLiquid GlassのFigma kitを触っておくと、面接で『次世代iOSどう作る』に語れる武装になります。"
+        "hook": "今週月曜、Figma の Slots が正式版に。コンポーネントが分解されないデザインシステムが、駆け出しでも組める時代です。",
+        "origin": "6/1 GA で『守りの設定』4 種を追加。スロットに入るレイヤー数の上限、許可インスタンスの限定、空表示、自動フィル。Tokens Studio などはすでに Slot 対応済みで、Community 全体が今日から本番運用です。",
+        "recommend": "分解せずに作れる癖を今週つけておけば、面接で『壊れにくいデザインシステムが作れます』と一段プロっぽく語れます。"
       },
       "section_titles": {
-        "hook": "Apple WWDC予告",
-        "origin": "OS全部Liquid化",
-        "recommend": "Figma kitで予習"
+        "hook": "SlotsがついにGA",
+        "origin": "守りの設定が 4 種",
+        "recommend": "壊れない設計術へ"
       },
       "section_descriptions": {
-        "hook": "来週6/8、AppleのWWDC 2026が始まります",
-        "origin": "予告動画と壁紙が示すLiquid Glassの全画面化",
-        "recommend": "来週本番までに先回りでFigma kitを触る"
+        "hook": "今週月曜、Figma の Slots が正式版に昇格",
+        "origin": "GA で 4 つの『守り』と Community 全体の対応",
+        "recommend": "Community 連動で駆け出しも今すぐ試せる"
       }
     }
   ]
