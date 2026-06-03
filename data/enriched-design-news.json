@@ -1,42 +1,44 @@
 {
-  "date": "2026-06-03",
+  "date": "2026-06-04",
   "discovery": {
-    "method": "figma-community",
-    "description": "Figma Community 主要プラグインの直近更新を横断し、6/1 公式 Slots GA (open beta 2026-03-05 以来 88 日) と『守りの設定』4 種追加 (min/max layers / preferred instances 限定 / empty slot 表示 / fill default) に合わせて Tokens Studio v217 (5/25 リリース) が『slot support for theme propagation』を先回り対応済み、Community 主要プラグイン群が今日から本番運用に入る波を抽出。figma-community は 5/30 以来 4 日空きで 5/27 が 7日窓外脱落し 7日2回ガード解放、6/1 PDCA 戦略更新提案 #3『柱② 補強週 (6/1-6/7)』+ 6/2 PDCA Action #3『6/3 候補 = figma-community』pre-schedule 該当の exploit gate-recovery 投入。新 sub-angle slots-ga-plugin-ready で community-tips-bundle / plugin-major-update の WORST 角度と完全別系統",
+    "method": "social-en",
+    "description": "英語デザイナー X 界隈と Product Hunt で 6 月急増する『DESIGN.md』議論を抽出。Google Stitch 発の AI 用デザインシステム標準フォーマットが Claude Code / Cursor / Lovable / Windsurf に横展開、公式ライブラリ designmd.app が 454 デザインシステム公開、VoltAgent の awesome-design-md GitHub リポも活発。social-en は 5/29 以来 6 日空き、7 日 2 回ガード (5/22 + 6/4) ぎりぎりクリアで TOP 3 残り枠。5/22 (Google Stitch『Figmaキラー』論争) は別ツール対立軸、5/29 (Figma Make Local Code) は IDE 連携軸で sub-angle 完全別系統。新 sub-angle『AI 用デザインシステム標準』で 6/3 (Slots = in-Figma 守りの設定) と 6/2 (Apple WWDC = OS UI) と完全別レイヤー。NG パターン非該当 (AI を補助輪に位置づけ、デザイナーが書いた知識を AI が読む構造で『学習者の知識が希少資源化』フレーム)。柱③業界 × 柱②エコシステムのクロス補強",
     "sources": [
-      "https://www.figma.com/release-notes/",
-      "https://www.figma.com/blog/supercharge-your-design-system-with-slots/",
-      "https://forum.figma.com/share-your-feedback-26/slots-51602",
-      "https://forum.figma.com/ask-the-community-7/release-of-slots-50615",
-      "https://feedback.tokens.studio/changelog",
-      "https://www.figma.com/community/plugin/843461159747178978/tokens-studio-for-figma",
-      "https://help.figma.com/hc/en-us/articles/38741465279895-The-difference-between-slots-instance-swaps-and-variants"
+      "https://designmd.app/",
+      "https://designmd.app/library",
+      "https://www.producthunt.com/products/figma-for-ai-agents",
+      "https://github.com/VoltAgent/awesome-design-md",
+      "https://blog.mean.ceo/design-md-news-june-2026/",
+      "https://www.mindstudio.ai/blog/google-stitch-design-md-claude-code-consistent-ui",
+      "https://www.designsystemscollective.com/the-design-md-workflow-how-google-stitch-claude-code-quietly-changed-the-design-to-code-handoff-c4213f97ed8f",
+      "https://departmentofproduct.substack.com/p/designmd-explained-the-format-reshaping",
+      "https://pasqualepillitteri.it/en/news/1737/design-md-library-ai-design-interfaces-2026"
     ],
-    "query": "Figma Slots GA June 1 2026 guardrails preferred instances Tokens Studio community plugin slot support theme propagation",
-    "freshness_hours": 48
+    "query": "DESIGN.md AI design agents Cursor Claude Lovable June 2026 standard library 454 Google Stitch",
+    "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma Slots が 6/1 に正式版へ、Community プラグインも一斉対応で駆け出しが『壊れない設計』を組める時代に",
-      "description": "今週月曜、Figma の Slots が正式版に。コンポーネントが分解されないデザインシステムが、駆け出しでも組める時代です。",
-      "detail": "6/1 GA で『守りの設定』4 種を追加。スロットに入るレイヤー数の上限、許可インスタンスの限定、空表示、自動フィル。Tokens Studio などはすでに Slot 対応済みで、Community 全体が今日から本番運用です。",
-      "narration": "今週月曜、Figma の Slots が正式版に。コンポーネントが分解されないデザインシステムが、駆け出しでも組める時代です。",
-      "tags": ["Figma", "Slots", "デザインシステム", "Community", "デザインニュース"],
+      "title": "DESIGN.md が AI デザインの新標準に、Google Stitch 発の形式が Claude/Cursor/Lovable で本格対応、公式ライブラリは 454 デザインシステム到達",
+      "description": "AI にデザインを頼むたびに違う絵が返ってくる問題、今月ついに業界標準 DESIGN.md が定着。Google Stitch 発、Claude/Cursor/Lovable が読み込みます。",
+      "detail": "元は Google Stitch 発の形式で、色・余白・文字・コンポーネントを 1 枚のマークダウンにまとめます。Claude Code や Cursor、Lovable が読み込み毎回同じ表現で生成。公式ライブラリは 454 社収録です。",
+      "narration": "AI にデザインを頼むたびに違う絵が返ってくる問題、ありますよね。今月、業界標準 DESIGN.md が一気に定着し、各社が一斉に乗りはじめています。",
+      "tags": ["DESIGN.md", "AIデザイン", "デザインシステム", "デザインニュース", "Figma"],
       "narration_sections": {
-        "hook": "今週月曜、Figma の Slots が正式版に。コンポーネントが分解されないデザインシステムが、駆け出しでも組める時代です。",
-        "origin": "6/1 GA で『守りの設定』4 種を追加。スロットに入るレイヤー数の上限、許可インスタンスの限定、空表示、自動フィル。Tokens Studio などはすでに Slot 対応済みで、Community 全体が今日から本番運用です。",
-        "recommend": "分解せずに作れる癖を今週つけておけば、面接で『壊れにくいデザインシステムが作れます』と一段プロっぽく語れます。"
+        "hook": "AI にデザインを頼むたびに違う絵が返ってくる問題、ありますよね。今月、業界標準 DESIGN.md が一気に定着し、各社が一斉に乗りはじめています。",
+        "origin": "元は Google Stitch 発の形式で、色・余白・文字・コンポーネントを 1 枚のマークダウンにまとめます。Claude Code や Cursor、Lovable が読み込み毎回同じ表現で生成。公式ライブラリは 454 社収録です。",
+        "recommend": "皆さんが学んだデザインシステムの知識が、AI 時代の翻訳機になります。今のうちに 1 本『書ける』状態を作っておきましょう。"
       },
       "section_titles": {
-        "hook": "SlotsがついにGA",
-        "origin": "守りの設定が 4 種",
-        "recommend": "壊れない設計術へ"
+        "hook": "AI用デザイン規格",
+        "origin": "Google発の新形式",
+        "recommend": "学びがAI翻訳機"
       },
       "section_descriptions": {
-        "hook": "今週月曜、Figma の Slots が正式版に昇格",
-        "origin": "GA で 4 つの『守り』と Community 全体の対応",
-        "recommend": "Community 連動で駆け出しも今すぐ試せる"
+        "hook": "AI が毎回違う絵を出す問題、今月ついに解決へ",
+        "origin": "Google Stitch 発、Claude にも対応",
+        "recommend": "学んだ知識が AI 時代の翻訳機になります"
       }
     }
   ]
