@@ -1121,7 +1121,7 @@
         "views": 86,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-02T01:36:46.323Z"
+        "updatedAt": "2026-06-03T01:47:08.509Z"
       }
     },
     {
@@ -1166,7 +1166,7 @@
         "views": 25,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-02T01:36:46.323Z"
+        "updatedAt": "2026-06-03T01:47:08.509Z"
       }
     },
     {
@@ -1211,7 +1211,7 @@
         "views": 19,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-02T01:36:46.323Z"
+        "updatedAt": "2026-06-03T01:47:08.509Z"
       }
     },
     {
@@ -1257,7 +1257,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-02T01:36:46.323Z"
+        "updatedAt": "2026-06-03T01:47:08.509Z"
       }
     },
     {
@@ -1302,7 +1302,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-02T01:36:46.323Z"
+        "updatedAt": "2026-06-03T01:47:08.509Z"
       }
     },
     {
@@ -1347,7 +1347,7 @@
         "views": 7,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-02T01:36:46.323Z"
+        "updatedAt": "2026-06-03T01:47:08.509Z"
       }
     },
     {
@@ -1391,7 +1391,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-02T01:36:46.323Z"
+        "updatedAt": "2026-06-03T01:47:08.509Z"
       }
     },
     {
@@ -1435,7 +1435,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-02T01:36:46.323Z"
+        "updatedAt": "2026-06-03T01:47:08.509Z"
       }
     },
     {
@@ -1478,10 +1478,10 @@
         "freshness_hours": 168
       },
       "stats": {
-        "views": 4,
+        "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-02T01:36:46.323Z"
+        "updatedAt": "2026-06-03T01:47:08.509Z"
       }
     },
     {
@@ -1524,10 +1524,10 @@
         "freshness_hours": 30
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-02T01:36:46.323Z"
+        "updatedAt": "2026-06-03T01:47:08.509Z"
       }
     },
     {
@@ -1570,6 +1570,52 @@
         "freshness_hours": 30
       },
       "stats": {
+        "views": 34,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-06-03T01:47:08.509Z"
+      }
+    },
+    {
+      "videoId": "QH1K9X4kunk",
+      "videoUrl": "https://youtube.com/shorts/QH1K9X4kunk",
+      "date": "2026-06-03",
+      "title": "【デザインニュース】Figma Slots が 6/1 に正式版へ、Community プラグインも一斉対応で駆け出しが『壊れない設計』を組める時代に｜2026/06/03 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 43,
+      "discovery": {
+        "method": "figma-community",
+        "description": "Figma Community 主要プラグインの直近更新を横断し、6/1 公式 Slots GA (open beta 2026-03-05 以来 88 日) と『守りの設定』4 種追加 (min/max layers / preferred instances 限定 / empty slot 表示 / fill default) に合わせて Tokens Studio v217 (5/25 リリース) が『slot support for theme propagation』を先回り対応済み、Community 主要プラグイン群が今日から本番運用に入る波を抽出。figma-community は 5/30 以来 4 日空きで 5/27 が 7日窓外脱落し 7日2回ガード解放、6/1 PDCA 戦略更新提案 #3『柱② 補強週 (6/1-6/7)』+ 6/2 PDCA Action #3『6/3 候補 = figma-community』pre-schedule 該当の exploit gate-recovery 投入。新 sub-angle slots-ga-plugin-ready で community-tips-bundle / plugin-major-update の WORST 角度と完全別系統",
+        "sources": [
+          "https://www.figma.com/release-notes/",
+          "https://www.figma.com/blog/supercharge-your-design-system-with-slots/",
+          "https://forum.figma.com/share-your-feedback-26/slots-51602",
+          "https://forum.figma.com/ask-the-community-7/release-of-slots-50615",
+          "https://feedback.tokens.studio/changelog",
+          "https://www.figma.com/community/plugin/843461159747178978/tokens-studio-for-figma",
+          "https://help.figma.com/hc/en-us/articles/38741465279895-The-difference-between-slots-instance-swaps-and-variants"
+        ],
+        "query": "Figma Slots GA June 1 2026 guardrails preferred instances Tokens Studio community plugin slot support theme propagation",
+        "freshness_hours": 48
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -1578,13 +1624,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-04-26",
-      "changes": [
-        "Day performance: Sun=248, Thu=174, Wed=144, Sat=114, Fri=69"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-04-28",
       "changes": [
@@ -1810,6 +1849,14 @@
       "changes": [
         "standard: 95 avg views (34 videos)",
         "Day performance: Wed=151, Sat=118, Sun=105, Tue=90, Thu=79, Fri=69, Mon=52"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-03",
+      "changes": [
+        "standard: 93 avg views (35 videos)",
+        "Day performance: Wed=151, Sat=118, Sun=105, Thu=79, Tue=79, Fri=69, Mon=52"
       ],
       "recommendedTemplate": "standard"
     }
