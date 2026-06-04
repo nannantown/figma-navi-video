@@ -1,44 +1,47 @@
 {
-  "date": "2026-06-04",
+  "date": "2026-06-05",
   "discovery": {
-    "method": "social-en",
-    "description": "英語デザイナー X 界隈と Product Hunt で 6 月急増する『DESIGN.md』議論を抽出。Google Stitch 発の AI 用デザインシステム標準フォーマットが Claude Code / Cursor / Lovable / Windsurf に横展開、公式ライブラリ designmd.app が 454 デザインシステム公開、VoltAgent の awesome-design-md GitHub リポも活発。social-en は 5/29 以来 6 日空き、7 日 2 回ガード (5/22 + 6/4) ぎりぎりクリアで TOP 3 残り枠。5/22 (Google Stitch『Figmaキラー』論争) は別ツール対立軸、5/29 (Figma Make Local Code) は IDE 連携軸で sub-angle 完全別系統。新 sub-angle『AI 用デザインシステム標準』で 6/3 (Slots = in-Figma 守りの設定) と 6/2 (Apple WWDC = OS UI) と完全別レイヤー。NG パターン非該当 (AI を補助輪に位置づけ、デザイナーが書いた知識を AI が読む構造で『学習者の知識が希少資源化』フレーム)。柱③業界 × 柱②エコシステムのクロス補強",
+    "method": "news-en",
+    "description": "英語ニュースメディア (Apple Newsroom + 9to5Mac + MacRumors + Heise + Apple Developer サイト) から 6/2 発表の Apple Design Awards 2026 受賞作 12 本を抽出。6/4 PDCA で news-en は TOP 1 method (avg 34, 6/2 Apple WWDC=34) と特定、6/2 利用で直近 2 日ガード (6/3 figma-community + 6/4 social-en) クリア、7 日 2 回ガードも 6/2 のみで OK。6/2 (Apple WWDC 予告) と sub-angle 別系統 — 6/2=OS UI ロードマップ、本日=app/game の design excellence を Primary persona (デザイナー志望者) の学習教材として提示。柱③ 業界・デザインニュース target 20% で直近 14 日 5/22 Stitch + 6/2 Apple のみで 2/14 = 14% (target 不足)、本日投入で柱③ 補強。NG パターン非該当 (AI 文脈薄、プロ向け高度議論回避で『勉強の教材』フレーム、駆け出しが受賞作を触って 2026 年型の型を盗む positive 設計)",
     "sources": [
-      "https://designmd.app/",
-      "https://designmd.app/library",
-      "https://www.producthunt.com/products/figma-for-ai-agents",
-      "https://github.com/VoltAgent/awesome-design-md",
-      "https://blog.mean.ceo/design-md-news-june-2026/",
-      "https://www.mindstudio.ai/blog/google-stitch-design-md-claude-code-consistent-ui",
-      "https://www.designsystemscollective.com/the-design-md-workflow-how-google-stitch-claude-code-quietly-changed-the-design-to-code-handoff-c4213f97ed8f",
-      "https://departmentofproduct.substack.com/p/designmd-explained-the-format-reshaping",
-      "https://pasqualepillitteri.it/en/news/1737/design-md-library-ai-design-interfaces-2026"
+      "https://www.apple.com/newsroom/2026/06/apple-reveals-winners-of-the-2026-apple-design-awards/",
+      "https://9to5mac.com/2026/06/02/apple-reveals-apple-design-awards-app-and-game-winners-for-2026/",
+      "https://www.macrumors.com/2026/06/02/apple-design-award-winners-2026/",
+      "https://developer.apple.com/design/awards/",
+      "https://www.heise.de/en/news/Apple-Design-Awards-2026-Twelve-apps-and-games-honored-11317588.html",
+      "https://www.phonearena.com/news/the-best-of-app-store-2026-apple-design-award-winners_id180852"
     ],
-    "query": "DESIGN.md AI design agents Cursor Claude Lovable June 2026 standard library 454 Google Stitch",
-    "freshness_hours": 96
+    "query": "Apple Design Awards 2026 winners visuals graphics interaction lessons designer learn",
+    "freshness_hours": 52
   },
   "articles": [
     {
       "rank": 1,
-      "title": "DESIGN.md が AI デザインの新標準に、Google Stitch 発の形式が Claude/Cursor/Lovable で本格対応、公式ライブラリは 454 デザインシステム到達",
-      "description": "AI にデザインを頼むたびに違う絵が返ってくる問題、今月ついに業界標準 DESIGN.md が定着。Google Stitch 発、Claude/Cursor/Lovable が読み込みます。",
-      "detail": "元は Google Stitch 発の形式で、色・余白・文字・コンポーネントを 1 枚のマークダウンにまとめます。Claude Code や Cursor、Lovable が読み込み毎回同じ表現で生成。公式ライブラリは 454 社収録です。",
-      "narration": "AI にデザインを頼むたびに違う絵が返ってくる問題、ありますよね。今月、業界標準 DESIGN.md が一気に定着し、各社が一斉に乗りはじめています。",
-      "tags": ["DESIGN.md", "AIデザイン", "デザインシステム", "デザインニュース", "Figma"],
+      "title": "Apple Design Awards 2026 受賞12本発表、Tide GuideがLiquid Glassの完成度でVisuals賞、ゲーム賞はCyberpunk 2077",
+      "description": "UI上達の教材、どこから探していますか?今週月曜、Apple Design Awards 2026の受賞作12本が一気に公開されました。",
+      "detail": "6カテゴリで12本、特にTide GuideがLiquid Glassを最も綺麗に使い込んだ実装としてVisuals部門で受賞、Interaction部門はMoonlittの月齢トラッカー。ゲーム賞はCyberpunk 2077です。",
+      "narration": "UI上達の教材、どこから探していますか?今週月曜、Apple Design Awards 2026の受賞作12本が一気に公開されました。",
+      "tags": [
+        "AppleDesignAwards",
+        "LiquidGlass",
+        "UIデザイン",
+        "デザインニュース",
+        "WWDC2026"
+      ],
       "narration_sections": {
-        "hook": "AI にデザインを頼むたびに違う絵が返ってくる問題、ありますよね。今月、業界標準 DESIGN.md が一気に定着し、各社が一斉に乗りはじめています。",
-        "origin": "元は Google Stitch 発の形式で、色・余白・文字・コンポーネントを 1 枚のマークダウンにまとめます。Claude Code や Cursor、Lovable が読み込み毎回同じ表現で生成。公式ライブラリは 454 社収録です。",
-        "recommend": "皆さんが学んだデザインシステムの知識が、AI 時代の翻訳機になります。今のうちに 1 本『書ける』状態を作っておきましょう。"
+        "hook": "UI上達の教材、どこから探していますか?今週月曜、Apple Design Awards 2026の受賞作12本が一気に公開されました。",
+        "origin": "6カテゴリで12本、特にTide GuideがLiquid Glassを最も綺麗に使い込んだ実装としてVisuals部門で受賞、Interaction部門はMoonlittの月齢トラッカー。ゲーム賞はCyberpunk 2077です。",
+        "recommend": "WWDC 2026は来週月曜開幕。週末に受賞作12本を触って、2026年型の良UIの型を盗む準備を整えましょう。"
       },
       "section_titles": {
-        "hook": "AI用デザイン規格",
-        "origin": "Google発の新形式",
-        "recommend": "学びがAI翻訳機"
+        "hook": "Apple賞12本発表",
+        "origin": "Visuals賞の好例",
+        "recommend": "週末に触って学ぶ"
       },
       "section_descriptions": {
-        "hook": "AI が毎回違う絵を出す問題、今月ついに解決へ",
-        "origin": "Google Stitch 発、Claude にも対応",
-        "recommend": "学んだ知識が AI 時代の翻訳機になります"
+        "hook": "ADA 2026が今週月曜に受賞作12本を発表",
+        "origin": "Tide Guideが完成度高いLG実装でVisuals賞",
+        "recommend": "WWDC 2026開幕前、週末に触って2026年型を学ぶ"
       }
     }
   ]
