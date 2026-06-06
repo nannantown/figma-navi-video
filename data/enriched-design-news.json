@@ -1,48 +1,48 @@
 {
-  "date": "2026-06-06",
+  "date": "2026-06-07",
   "discovery": {
-    "method": "official-src",
-    "description": "Apple Newsroom (6/2 発表プレスリリース) と Apple Developer の awards page を一次ソースに、ADA 2026 受賞 12 本のうち Apple 公式が受賞理由として明示的に挙げている UI/UX 詳細を抽出し、駆け出しデザイナーが作例に転用できる 3 つの型 (削る・抜く・動かす) に翻訳。6/5 (news-en) で発表ニュースを fact 報告し、本日 (official-src) で発表元一次ソースを使った深掘り教材化、という 2 段組み運用パターンの初実装。method 選定: 直近 14 日 TOP1 news-en (6/5 利用、2 日ガード抵触) / TOP2 social-en (6/4 利用、2 日ガード抵触) が本日不可、TOP3 expert-blog (5/31 利用、6 日空き OK) と TOP4 official-src (6/1 利用、5 日空き OK) が生存候補。Apple 公式の評価コメント = 一次ソースという題材整合性で official-src を採用、avg 4 の母数は『Apple ブランド + 具体的受賞作品名 + 学習教材化』の 6/2 で 34 views 取った 3 点同時押しフレームで底上げを試行。直近 2 日 (6/5 news-en, 6/4 social-en) と method 重複なし、6/1 + 6/6 で 5 日空きの 7 日 2 回到達ガード境界クリア。土曜 evergreen 帯のため柱⑥ UI 批評 (直近 14 日 0% で最大ギャップ) + 柱④ Tips (7% で target 不足) のクロス枠で 2 柱同時補強、6/5 ナレーション末尾の明示 CTA『週末に受賞作12本を触って2026年型の良UIの型を盗む準備を整えましょう』を直接回収する設計。NG パターン回避: AI = 補助輪フレーム維持 (削る・抜く・動かすの判断は人がする側として位置づけ)、プロ向け高度議論回避 (3 動詞化で駆け出し層が今日のうちに作例に当てられる粒度)、freshness_hours = 100 で 168 NG ライン余裕クリア",
+    "method": "expert-blog",
+    "description": "Smashing Magazine 6/3 公開の Vitaly Friedman 寄稿『How To Make Your Design System AI-Ready』を一次取得し、AI 生成 Figma がブレる根本原因 (= デザインシステム上の『書かれてない暗黙ルール』: documented されない判断・古い hard-coded 値・mock-up 解釈依存) を、spec files (markdown で書く色・余白・コンポーネント使用規則の構造化テキスト) で埋めるという処方箋を、駆け出しデザイナーがポートフォリオに spec.md を 1 枚添えるだけで AI 生成精度が上がる粒度に翻訳。method 選定 (Sunday evergreen 帯): 直近 14 日 TOP1 news-en (6/2 = 51 views) は 6/8 WWDC 当日号で再利用予定のため温存、TOP2 official-src (6/6 = 昨日利用) は 2 日ガード抵触で本日不可、TOP3 expert-blog (5/31 利用、7 日空き、avg 7 views) を Exploit 採用。5/31 + 6/7 = ちょうど 7 日で 7 日 2 回到達ガード境界クリア (6/6 PDCA で 5/5 + 5/12 を同基準評価済の前例踏襲)。Apple 軸 3 連投 (6/5 ADA news → 6/6 ADA 深掘り → 6/8 WWDC 当日) の谷間日として 6/6 PDCA Action 3 の明示計画と完全合致。柱⑥ UI 批評 (直近 14 日 1/14 = 7%、target 10% で不足) + 柱④ Tips (target 15% でほぼ達成) + 柱② エコシステム (figma-community 凍結で停滞中) の 3 柱クロス枠で柱⑥ を 2/14 = 14% へ補強。6/4 social-en (DESIGN.md = 1 ファイルで AI に方針を渡す angle) → 6/7 expert-blog (spec files = デザシス全体を構造化 markdown で書く angle) として 3 日空きの縦糸を確保、5/26 + 5/31 + 6/7 の expert-blog 縦糸も同時に完成。Figmaナビ 本体の差別化ポイント『デザインシステム準拠・チームのルール入力対応』(戦略.md L42) と完全一致する一次ソースで自社ポジショニングを宣伝色なしで自然補強。NG パターン回避: AI = 補助輪フレーム維持 (『AI に任せれば考えなくていい』ではなく『AI に正しく考えさせるためのルール作りは人がする』と判断主体を明示)、プロ向け高度議論回避 (YAML front matter / token reference 構文は出さず、spec.md 1 枚という駆け出しが今日から始められる粒度)、freshness_hours = 96 (Smashing 6/3 公開、本日 6/7 で 4 日経過、168 NG ラインの余裕クリア)",
     "sources": [
-      "https://www.apple.com/newsroom/2026/06/apple-reveals-winners-of-the-2026-apple-design-awards/",
-      "https://developer.apple.com/design/awards/",
-      "https://apps.apple.com/us/iphone/story/id1896606452",
-      "https://www.macstories.net/news/2026-apple-design-awards-winners-announced/",
-      "https://www.heise.de/en/news/Apple-Design-Awards-2026-Twelve-apps-and-games-honored-11317588.html",
-      "https://applemagazine.com/apple-design-awards-2026/"
+      "https://www.smashingmagazine.com/2026/06/how-make-design-system-ai-ready/",
+      "https://smashingconf.com/online-workshops/workshops/ai-interfaces-vitaly-friedman/",
+      "https://www.smashingmagazine.com/category/ai/",
+      "https://www.figma.com/solutions/ai-design-systems-generator/",
+      "https://github.com/google-labs-code/design.md",
+      "https://designmd.app/what-is-design-md/"
     ],
-    "query": "Apple Design Awards 2026 Moonlitt grug Tide Guide concrete design detail onboarding hand-drawn palette sky color Liquid Glass",
-    "freshness_hours": 100
+    "query": "Smashing Magazine Vitaly Friedman How To Make Your Design System AI-Ready spec files markdown design tokens June 2026",
+    "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Apple Design Awards 2026 受賞12本から駆け出しが作例に転用できる3つの型、削る・抜く・動かす",
-      "description": "Apple Design Awards受賞12本、見るだけじゃもったいない。受賞作にはあなたの作例に転用できる3つの型が共通して隠れています。",
-      "detail": "1つ目はオンボを1スワイプに削ること、Moonlittが評価された型です。2つ目は手描きで硬さを抜くこと、grugの落書きタッチが体現。3つ目は色を時刻で動かすこと、Tide Guideは空の色に合わせて全画面が変化します。",
-      "narration": "Apple Design Awards受賞12本、見るだけじゃもったいない。受賞作にはあなたの作例に転用できる3つの型が共通して隠れています。",
+      "title": "Smashing最新、AI生成Figmaがブレる本当の理由はデザシス側の暗黙ルール、処方箋はspec files",
+      "description": "Smashing 最新論考、AI 生成 Figma がブレる本当の理由は、デザインシステムに散らばった『書かれてない暗黙ルール』。",
+      "detail": "Vitaly Friedman が 6/3 に出した処方箋は spec files。色・余白・コンポーネントの使い方を markdown で書いて AI に渡す。画像で察させるより安く正確、デザシス更新時は sync routine が更新箇所を自動フラグ。",
+      "narration": "Smashing 最新論考、AI 生成 Figma がブレる本当の理由は、デザインシステムに散らばった『書かれてない暗黙ルール』。",
       "tags": [
-        "AppleDesignAwards",
-        "LiquidGlass",
-        "UIデザイン",
-        "ポートフォリオ",
-        "駆け出しデザイナー",
-        "WWDC2026"
+        "Smashing",
+        "Figma",
+        "デザインシステム",
+        "AIデザイン",
+        "specfiles",
+        "駆け出しデザイナー"
       ],
       "narration_sections": {
-        "hook": "Apple Design Awards受賞12本、見るだけじゃもったいない。受賞作にはあなたの作例に転用できる3つの型が共通して隠れています。",
-        "origin": "1つ目はオンボを1スワイプに削ること、Moonlittが評価された型です。2つ目は手描きで硬さを抜くこと、grugの落書きタッチが体現。3つ目は色を時刻で動かすこと、Tide Guideは空の色に合わせて全画面が変化します。",
-        "recommend": "今日の週末、あなたの作例も削る・抜く・動かすの3つで見直してみると、月曜WWDC開幕前に1段強くなりますよ。"
+        "hook": "Smashing 最新論考、AI 生成 Figma がブレる本当の理由は、デザインシステムに散らばった『書かれてない暗黙ルール』。",
+        "origin": "Vitaly Friedman が 6/3 に出した処方箋は spec files。色・余白・コンポーネントの使い方を markdown で書いて AI に渡す。画像で察させるより安く正確、デザシス更新時は sync routine が更新箇所を自動フラグ。",
+        "recommend": "あなたの駆け出しポートフォリオも、spec.md を 1 枚添えるだけで AI 生成の精度が一段上がりますよ。"
       },
       "section_titles": {
-        "hook": "ADA受賞作の共通型",
-        "origin": "削る・抜く・動かす",
-        "recommend": "週末に作例を磨く"
+        "hook": "AI生成がブレる原因",
+        "origin": "specファイルで渡す",
+        "recommend": "spec.md添付術"
       },
       "section_descriptions": {
-        "hook": "受賞12本に共通する駆け出しが転用できる型を抽出",
-        "origin": "Moonlitt・grug・Tide Guideの3型を解説",
-        "recommend": "週末に作例を削る抜く動かすの3型で磨き直す"
+        "hook": "Smashing最新論考が指摘するデザシスの空白",
+        "origin": "色や余白をmarkdownでAIに渡す処方箋",
+        "recommend": "spec.md 1枚で駆け出しのAI生成が変わる"
       }
     }
   ]
