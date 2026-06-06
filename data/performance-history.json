@@ -1257,7 +1257,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-03T01:47:08.509Z"
+        "updatedAt": "2026-06-06T00:20:17.791Z"
       }
     },
     {
@@ -1302,7 +1302,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-03T01:47:08.509Z"
+        "updatedAt": "2026-06-06T00:20:17.791Z"
       }
     },
     {
@@ -1347,7 +1347,7 @@
         "views": 7,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-03T01:47:08.509Z"
+        "updatedAt": "2026-06-06T00:20:17.791Z"
       }
     },
     {
@@ -1391,7 +1391,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-03T01:47:08.509Z"
+        "updatedAt": "2026-06-06T00:20:17.791Z"
       }
     },
     {
@@ -1435,7 +1435,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-03T01:47:08.509Z"
+        "updatedAt": "2026-06-06T00:20:17.791Z"
       }
     },
     {
@@ -1478,10 +1478,10 @@
         "freshness_hours": 168
       },
       "stats": {
-        "views": 5,
+        "views": 7,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-03T01:47:08.509Z"
+        "updatedAt": "2026-06-06T00:20:17.791Z"
       }
     },
     {
@@ -1527,7 +1527,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-03T01:47:08.509Z"
+        "updatedAt": "2026-06-06T00:20:17.791Z"
       }
     },
     {
@@ -1570,10 +1570,10 @@
         "freshness_hours": 30
       },
       "stats": {
-        "views": 34,
+        "views": 51,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-03T01:47:08.509Z"
+        "updatedAt": "2026-06-06T00:20:17.791Z"
       }
     },
     {
@@ -1616,6 +1616,51 @@
         "freshness_hours": 48
       },
       "stats": {
+        "views": 4,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-06-06T00:20:17.791Z"
+      }
+    },
+    {
+      "videoId": "6XInR43R-tE",
+      "videoUrl": "https://youtube.com/shorts/6XInR43R-tE",
+      "date": "2026-06-06",
+      "title": "【デザインニュース】Apple Design Awards 2026 受賞12本から駆け出しが作例に転用できる3つの型、削る・抜く・動かす｜2026/06/06 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 44,
+      "discovery": {
+        "method": "official-src",
+        "description": "Apple Newsroom (6/2 発表プレスリリース) と Apple Developer の awards page を一次ソースに、ADA 2026 受賞 12 本のうち Apple 公式が受賞理由として明示的に挙げている UI/UX 詳細を抽出し、駆け出しデザイナーが作例に転用できる 3 つの型 (削る・抜く・動かす) に翻訳。6/5 (news-en) で発表ニュースを fact 報告し、本日 (official-src) で発表元一次ソースを使った深掘り教材化、という 2 段組み運用パターンの初実装。method 選定: 直近 14 日 TOP1 news-en (6/5 利用、2 日ガード抵触) / TOP2 social-en (6/4 利用、2 日ガード抵触) が本日不可、TOP3 expert-blog (5/31 利用、6 日空き OK) と TOP4 official-src (6/1 利用、5 日空き OK) が生存候補。Apple 公式の評価コメント = 一次ソースという題材整合性で official-src を採用、avg 4 の母数は『Apple ブランド + 具体的受賞作品名 + 学習教材化』の 6/2 で 34 views 取った 3 点同時押しフレームで底上げを試行。直近 2 日 (6/5 news-en, 6/4 social-en) と method 重複なし、6/1 + 6/6 で 5 日空きの 7 日 2 回到達ガード境界クリア。土曜 evergreen 帯のため柱⑥ UI 批評 (直近 14 日 0% で最大ギャップ) + 柱④ Tips (7% で target 不足) のクロス枠で 2 柱同時補強、6/5 ナレーション末尾の明示 CTA『週末に受賞作12本を触って2026年型の良UIの型を盗む準備を整えましょう』を直接回収する設計。NG パターン回避: AI = 補助輪フレーム維持 (削る・抜く・動かすの判断は人がする側として位置づけ)、プロ向け高度議論回避 (3 動詞化で駆け出し層が今日のうちに作例に当てられる粒度)、freshness_hours = 100 で 168 NG ライン余裕クリア",
+        "sources": [
+          "https://www.apple.com/newsroom/2026/06/apple-reveals-winners-of-the-2026-apple-design-awards/",
+          "https://developer.apple.com/design/awards/",
+          "https://apps.apple.com/us/iphone/story/id1896606452",
+          "https://www.macstories.net/news/2026-apple-design-awards-winners-announced/",
+          "https://www.heise.de/en/news/Apple-Design-Awards-2026-Twelve-apps-and-games-honored-11317588.html",
+          "https://applemagazine.com/apple-design-awards-2026/"
+        ],
+        "query": "Apple Design Awards 2026 Moonlitt grug Tide Guide concrete design detail onboarding hand-drawn palette sky color Liquid Glass",
+        "freshness_hours": 100
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -1624,13 +1669,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-04-28",
-      "changes": [
-        "Day performance: Sun=249, Thu=175, Wed=143, Sat=114, Mon=95, Fri=69"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-04-29",
       "changes": [
@@ -1857,6 +1895,14 @@
       "changes": [
         "standard: 93 avg views (35 videos)",
         "Day performance: Wed=151, Sat=118, Sun=105, Thu=79, Tue=79, Fri=69, Mon=52"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-06",
+      "changes": [
+        "standard: 91 avg views (36 videos)",
+        "Day performance: Wed=127, Sat=118, Sun=106, Tue=82, Thu=79, Fri=69, Mon=52"
       ],
       "recommendedTemplate": "standard"
     }
