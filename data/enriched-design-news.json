@@ -1,48 +1,51 @@
 {
-  "date": "2026-06-07",
+  "date": "2026-06-08",
   "discovery": {
-    "method": "expert-blog",
-    "description": "Smashing Magazine 6/3 公開の Vitaly Friedman 寄稿『How To Make Your Design System AI-Ready』を一次取得し、AI 生成 Figma がブレる根本原因 (= デザインシステム上の『書かれてない暗黙ルール』: documented されない判断・古い hard-coded 値・mock-up 解釈依存) を、spec files (markdown で書く色・余白・コンポーネント使用規則の構造化テキスト) で埋めるという処方箋を、駆け出しデザイナーがポートフォリオに spec.md を 1 枚添えるだけで AI 生成精度が上がる粒度に翻訳。method 選定 (Sunday evergreen 帯): 直近 14 日 TOP1 news-en (6/2 = 51 views) は 6/8 WWDC 当日号で再利用予定のため温存、TOP2 official-src (6/6 = 昨日利用) は 2 日ガード抵触で本日不可、TOP3 expert-blog (5/31 利用、7 日空き、avg 7 views) を Exploit 採用。5/31 + 6/7 = ちょうど 7 日で 7 日 2 回到達ガード境界クリア (6/6 PDCA で 5/5 + 5/12 を同基準評価済の前例踏襲)。Apple 軸 3 連投 (6/5 ADA news → 6/6 ADA 深掘り → 6/8 WWDC 当日) の谷間日として 6/6 PDCA Action 3 の明示計画と完全合致。柱⑥ UI 批評 (直近 14 日 1/14 = 7%、target 10% で不足) + 柱④ Tips (target 15% でほぼ達成) + 柱② エコシステム (figma-community 凍結で停滞中) の 3 柱クロス枠で柱⑥ を 2/14 = 14% へ補強。6/4 social-en (DESIGN.md = 1 ファイルで AI に方針を渡す angle) → 6/7 expert-blog (spec files = デザシス全体を構造化 markdown で書く angle) として 3 日空きの縦糸を確保、5/26 + 5/31 + 6/7 の expert-blog 縦糸も同時に完成。Figmaナビ 本体の差別化ポイント『デザインシステム準拠・チームのルール入力対応』(戦略.md L42) と完全一致する一次ソースで自社ポジショニングを宣伝色なしで自然補強。NG パターン回避: AI = 補助輪フレーム維持 (『AI に任せれば考えなくていい』ではなく『AI に正しく考えさせるためのルール作りは人がする』と判断主体を明示)、プロ向け高度議論回避 (YAML front matter / token reference 構文は出さず、spec.md 1 枚という駆け出しが今日から始められる粒度)、freshness_hours = 96 (Smashing 6/3 公開、本日 6/7 で 4 日経過、168 NG ラインの余裕クリア)",
+    "method": "news-en",
+    "description": "Fast Company / TechRadar / Apple Magazine / MacRumors / Tom's Guide / Geeky Gadgets / Macworld / 9to5Mac の英語テック報道を横断し、6/8 10am PT (= JST 6/9 2:00) 開幕の Apple WWDC 2026 キーノート前夜情報を一次取得。tagline『All Systems Glow』(Apple Developer 公式 wwdc26 page + Apple Newsroom 5/27 リリースで裏取り) のもと、本命は (a) Liquid Glass 廃止せず透明度・コントラスト微調整 + システム全体で glass 効果の強さを調整できる新設定追加、(b) Gemini foundation model 搭載の新 Siri チャットボットアプリ + Dynamic Island 統合、(c) iOS 27 = 機能追加より品質改善の『Snow Leopard』型、の 3 本柱と複数の独立メディアが一致報道。method 選定 (Monday weekday news 帯): 6/7 PDCA Action 3 で明示 pre-schedule の通り news-en (直近 14 日 TOP1, 6/2 = 51 views) を 6/8 WWDC 当日号で再投入。6/2 + 6/8 = 6 日空きで 7 日 2 回到達ガード境界クリア (6/7 PDCA で 5/31 + 6/7 を同基準評価済の前例踏襲)、直近 2 日 (6/7 expert-blog, 6/6 official-src) と method 重複なし、WORST 凍結対象外、weekday news-preferred set 内で完全に最適。柱③ 業界・デザインニュース (target 20%、直近 14 日 1/14 = 7% で大幅未達) を 2/14 = 14% へ補強。Apple 軸縦糸 6/2 (予告) → 6/5 (ADA news) → 6/6 (ADA 深掘り) → 6/8 (WWDC 当日) で 1 週間にわたる物語完成、6/9 recap で 3 連結に拡張予定。Primary 駆け出しデザイナーが面接で語れる『2026 年型 UI 設計の方向性』として翻訳できる三位一体題材。新 sub-angle wwdc-day-one を初投入、年 1 回しか使えないが主要イベント前夜の汎用パターンとして将来 Figma Config / Adobe MAX / Google I/O にも転用可能。NG パターン回避: (a) AI = 補助輪フレーム維持 = 駆け出し視聴者の判断主体性を『今夜の発表後、自分の UI の透明度を見直しましょう』Recommend で逆方向に強調、(b) プロ向け高度議論回避 = iOS API レベル (UIVisualEffectView の materialProperty 等) ではなく『Glass の使いどころと避けどころ』という駆け出しが今日の作例で判断できる行動指針粒度、(c) 『AI が仕事を奪う』NG 回避 = Siri チャットボット化を『新しい UI パターンの教材として武装』として positive 翻訳、(d) 『AI に任せれば考えなくていい』回避 = 判断主体を視聴者側に明示。freshness_hours = 18 (米テックメディアの 6/7 まとめ報道 + Apple Developer / Apple Newsroom の公式更新が 6/1-6/7 で連続、本日 6/8 で 12-24 時間経過、168 NG ラインの余裕クリア)",
     "sources": [
-      "https://www.smashingmagazine.com/2026/06/how-make-design-system-ai-ready/",
-      "https://smashingconf.com/online-workshops/workshops/ai-interfaces-vitaly-friedman/",
-      "https://www.smashingmagazine.com/category/ai/",
-      "https://www.figma.com/solutions/ai-design-systems-generator/",
-      "https://github.com/google-labs-code/design.md",
-      "https://designmd.app/what-is-design-md/"
+      "https://www.fastcompany.com/91551472/apple-wwdc-26-when-what-to-expect-monday-siri-ai-gemini-ios-27-refined-liquid-glass-john-ternus",
+      "https://www.techradar.com/phones/ios/liquid-glass-isnt-going-anywhere-in-ios-27-but-theres-good-news-for-its-readability",
+      "https://www.macrumors.com/guide/wwdc-2026-what-to-expect/",
+      "https://www.tomsguide.com/computing/macos/macos-27-the-5-biggest-wwdc-2026-announcements-we-expect",
+      "https://applemagazine.com/ios-27-refinement-2026/",
+      "https://www.geeky-gadgets.com/wwdc-2026-leaks-siri-ios-27/",
+      "https://www.macworld.com/article/3156067/wwdc-announcements-siri-apple-intelligence-camera-liquid-glass-iphone-fold.html",
+      "https://developer.apple.com/wwdc26/",
+      "https://www.apple.com/newsroom/2026/05/apple-kicks-off-worldwide-developers-conference-on-june-8/"
     ],
-    "query": "Smashing Magazine Vitaly Friedman How To Make Your Design System AI-Ready spec files markdown design tokens June 2026",
-    "freshness_hours": 96
+    "query": "WWDC 2026 keynote June 8 Liquid Glass refinement iOS 27 Snow Leopard Siri chatbot Gemini All Systems Glow",
+    "freshness_hours": 18
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Smashing最新、AI生成Figmaがブレる本当の理由はデザシス側の暗黙ルール、処方箋はspec files",
-      "description": "Smashing 最新論考、AI 生成 Figma がブレる本当の理由は、デザインシステムに散らばった『書かれてない暗黙ルール』。",
-      "detail": "Vitaly Friedman が 6/3 に出した処方箋は spec files。色・余白・コンポーネントの使い方を markdown で書いて AI に渡す。画像で察させるより安く正確、デザシス更新時は sync routine が更新箇所を自動フラグ。",
-      "narration": "Smashing 最新論考、AI 生成 Figma がブレる本当の理由は、デザインシステムに散らばった『書かれてない暗黙ルール』。",
+      "title": "Apple WWDC 2026 今夜開幕、Liquid Glass 調整と Siri 刷新が本命、iOS 27 は Snow Leopard 型",
+      "description": "今夜2時、Apple WWDC 2026 開幕。『All Systems Glow』、本命は Liquid Glass 調整と Siri 刷新です。",
+      "detail": "昨年デビューの Liquid Glass、透明すぎて読みにくいと指摘が相次ぎ、iOS 27 で透明度とコントラストを微調整、見え方を変えるシステム全体設定も追加見込み。新機能より品質を磨く Snow Leopard 型と報じられています。",
+      "narration": "今夜2時、Apple WWDC 2026 開幕。『All Systems Glow』、本命は Liquid Glass 調整と Siri 刷新です。",
       "tags": [
-        "Smashing",
-        "Figma",
-        "デザインシステム",
-        "AIデザイン",
-        "specfiles",
-        "駆け出しデザイナー"
+        "Apple",
+        "WWDC2026",
+        "LiquidGlass",
+        "iOS27",
+        "Siri",
+        "デザインニュース"
       ],
       "narration_sections": {
-        "hook": "Smashing 最新論考、AI 生成 Figma がブレる本当の理由は、デザインシステムに散らばった『書かれてない暗黙ルール』。",
-        "origin": "Vitaly Friedman が 6/3 に出した処方箋は spec files。色・余白・コンポーネントの使い方を markdown で書いて AI に渡す。画像で察させるより安く正確、デザシス更新時は sync routine が更新箇所を自動フラグ。",
-        "recommend": "あなたの駆け出しポートフォリオも、spec.md を 1 枚添えるだけで AI 生成の精度が一段上がりますよ。"
+        "hook": "今夜2時、Apple WWDC 2026 開幕。『All Systems Glow』、本命は Liquid Glass 調整と Siri 刷新です。",
+        "origin": "昨年デビューの Liquid Glass、透明すぎて読みにくいと指摘が相次ぎ、iOS 27 で透明度とコントラストを微調整、見え方を変えるシステム全体設定も追加見込み。新機能より品質を磨く Snow Leopard 型と報じられています。",
+        "recommend": "駆け出しは Glass の使いどころと避けどころを掴むチャンス。今夜の発表後、自分の UI の透明度を見直しましょう。"
       },
       "section_titles": {
-        "hook": "AI生成がブレる原因",
-        "origin": "specファイルで渡す",
-        "recommend": "spec.md添付術"
+        "hook": "WWDC26 今夜開幕",
+        "origin": "Glass 見直しの中身",
+        "recommend": "駆け出しの見どころ"
       },
       "section_descriptions": {
-        "hook": "Smashing最新論考が指摘するデザシスの空白",
-        "origin": "色や余白をmarkdownでAIに渡す処方箋",
-        "recommend": "spec.md 1枚で駆け出しのAI生成が変わる"
+        "hook": "日本時間 2 時、Apple 最大イベント開幕",
+        "origin": "透明度とコントラスト調整、新機能より品質磨き",
+        "recommend": "今日から Glass の使いどころを見極める"
       }
     }
   ]
