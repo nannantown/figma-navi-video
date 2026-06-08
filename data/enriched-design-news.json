@@ -1,51 +1,54 @@
 {
-  "date": "2026-06-08",
+  "date": "2026-06-09",
   "discovery": {
-    "method": "news-en",
-    "description": "Fast Company / TechRadar / Apple Magazine / MacRumors / Tom's Guide / Geeky Gadgets / Macworld / 9to5Mac の英語テック報道を横断し、6/8 10am PT (= JST 6/9 2:00) 開幕の Apple WWDC 2026 キーノート前夜情報を一次取得。tagline『All Systems Glow』(Apple Developer 公式 wwdc26 page + Apple Newsroom 5/27 リリースで裏取り) のもと、本命は (a) Liquid Glass 廃止せず透明度・コントラスト微調整 + システム全体で glass 効果の強さを調整できる新設定追加、(b) Gemini foundation model 搭載の新 Siri チャットボットアプリ + Dynamic Island 統合、(c) iOS 27 = 機能追加より品質改善の『Snow Leopard』型、の 3 本柱と複数の独立メディアが一致報道。method 選定 (Monday weekday news 帯): 6/7 PDCA Action 3 で明示 pre-schedule の通り news-en (直近 14 日 TOP1, 6/2 = 51 views) を 6/8 WWDC 当日号で再投入。6/2 + 6/8 = 6 日空きで 7 日 2 回到達ガード境界クリア (6/7 PDCA で 5/31 + 6/7 を同基準評価済の前例踏襲)、直近 2 日 (6/7 expert-blog, 6/6 official-src) と method 重複なし、WORST 凍結対象外、weekday news-preferred set 内で完全に最適。柱③ 業界・デザインニュース (target 20%、直近 14 日 1/14 = 7% で大幅未達) を 2/14 = 14% へ補強。Apple 軸縦糸 6/2 (予告) → 6/5 (ADA news) → 6/6 (ADA 深掘り) → 6/8 (WWDC 当日) で 1 週間にわたる物語完成、6/9 recap で 3 連結に拡張予定。Primary 駆け出しデザイナーが面接で語れる『2026 年型 UI 設計の方向性』として翻訳できる三位一体題材。新 sub-angle wwdc-day-one を初投入、年 1 回しか使えないが主要イベント前夜の汎用パターンとして将来 Figma Config / Adobe MAX / Google I/O にも転用可能。NG パターン回避: (a) AI = 補助輪フレーム維持 = 駆け出し視聴者の判断主体性を『今夜の発表後、自分の UI の透明度を見直しましょう』Recommend で逆方向に強調、(b) プロ向け高度議論回避 = iOS API レベル (UIVisualEffectView の materialProperty 等) ではなく『Glass の使いどころと避けどころ』という駆け出しが今日の作例で判断できる行動指針粒度、(c) 『AI が仕事を奪う』NG 回避 = Siri チャットボット化を『新しい UI パターンの教材として武装』として positive 翻訳、(d) 『AI に任せれば考えなくていい』回避 = 判断主体を視聴者側に明示。freshness_hours = 18 (米テックメディアの 6/7 まとめ報道 + Apple Developer / Apple Newsroom の公式更新が 6/1-6/7 で連続、本日 6/8 で 12-24 時間経過、168 NG ラインの余裕クリア)",
+    "method": "official-src",
+    "description": "WWDC 2026 keynote (6/8 10am PT = JST 6/9 2:00am) 終了直後の朝、Apple Newsroom 公式リリース + Apple Developer wwdc26 公式ページ + MacRumors/Engadget/TechRadar/Tom's Guide/CNBC/TechTimes/The Apple Post/Neowin の英語メディア複数報道を横断、Liquid Glass 透明度スライダー + アプリアイコン新レイヤー + iOS 27 写真 70%/AirDrop 80% 高速化を確定情報として捕捉。method 選定 (Tuesday weekday news 帯): 6/8 PDCA Action 2 で明示 pre-schedule の通り official-src で実施 (news-en は 6/8 利用 2 日ガード抵触で不可)。6/6 official-src から 3 日空き 2 日ガード OK、新 sub-angle `keynote-day-recap` 初投入で WORST 履歴の組換え。Apple 軸縦糸 5/14 (Google が Liquid Glass 不採用 = 99 views) → 6/2 (WWDC 予告 = 51 views) → 6/5 (ADA news) → 6/6 (ADA 深掘り) → 6/8 (WWDC 当日号) → 6/9 (WWDC 当日 recap) の 6 連結最終回。新運用ルール『縦糸 3 連結 (6/2 予告 + 6/8 当日 + 6/9 recap)』初実装、Reels の同チャンネル連続視聴アルゴリズム評価向上を狙う。柱③ 業界・デザインニュース (target 20%、直近 14 日 2/14 = 14%) を 3/14 = 21% へ補強、ようやく target クリア。Primary 駆け出しデザイナーには『デザイナーの声 (NN/g が指摘した Liquid Glass の accessibility failure = translucent + busy background でコントラスト readable threshold 以下) が Apple を動かしたケース』として翻訳。題材は駆け出しが翻訳できる 3 点に絞る (透明度スライダー / アプリアイコン新レイヤー / iOS 27 性能数値)、Siri AI / macOS Golden Gate / Tim Cook 退任は情報過多防止のため今回外す。NG パターン回避: (a) iOS API レベル詳細 (SwiftUI Material API 等) は避け『透明度スライダーで読みやすさ調整』『icon にレイヤー足す』という Figma 作例化粒度、(b) 『AI が仕事を奪う』NG 回避 = Siri AI 部分は今回触れず Liquid Glass refinement にフォーカスして positive 翻訳、(c) 『美しさ vs 読みやすさ』を判断主体性のフレームで提示、(d) freshness_hours = 5 (keynote 終了から 5 時間)、超鮮度で速報性勝負",
     "sources": [
-      "https://www.fastcompany.com/91551472/apple-wwdc-26-when-what-to-expect-monday-siri-ai-gemini-ios-27-refined-liquid-glass-john-ternus",
-      "https://www.techradar.com/phones/ios/liquid-glass-isnt-going-anywhere-in-ios-27-but-theres-good-news-for-its-readability",
-      "https://www.macrumors.com/guide/wwdc-2026-what-to-expect/",
-      "https://www.tomsguide.com/computing/macos/macos-27-the-5-biggest-wwdc-2026-announcements-we-expect",
-      "https://applemagazine.com/ios-27-refinement-2026/",
-      "https://www.geeky-gadgets.com/wwdc-2026-leaks-siri-ios-27/",
-      "https://www.macworld.com/article/3156067/wwdc-announcements-siri-apple-intelligence-camera-liquid-glass-iphone-fold.html",
       "https://developer.apple.com/wwdc26/",
-      "https://www.apple.com/newsroom/2026/05/apple-kicks-off-worldwide-developers-conference-on-june-8/"
+      "https://www.apple.com/newsroom/2026/05/apple-kicks-off-worldwide-developers-conference-on-june-8/",
+      "https://www.macrumors.com/2026/06/08/apple-announces-liquid-glass-improvements/",
+      "https://www.macrumors.com/2026/06/08/wwdc-2026-live-coverage/",
+      "https://www.engadget.com/2189698/everything-announced-at-apples-wwdc-2026-keynote/",
+      "https://www.tomsguide.com/news/live/wwdc-2026-live-news-updates",
+      "https://www.techradar.com/news/live/apple-wwdc-2026-live",
+      "https://www.cnbc.com/2026/06/08/apple-wwdc-2026-live-updates.html",
+      "https://www.macstories.net/news/wwdc-2026-apple-publishes-keynote-video/",
+      "https://www.techtimes.com/articles/317975/20260608/apple-liquid-glass-ios-27-wwdc-2026-brings-refinements-developers-must-adopt-today.htm",
+      "https://www.theapplepost.com/2026/06/08/70807/ios-27-includes-new-slider-for-controlling-liquid-glass-ui/",
+      "https://www.neowin.net/news/apple-finally-brings-the-slider-for-liquid-glass-and-many-other-changes/"
     ],
-    "query": "WWDC 2026 keynote June 8 Liquid Glass refinement iOS 27 Snow Leopard Siri chatbot Gemini All Systems Glow",
-    "freshness_hours": 18
+    "query": "WWDC 2026 keynote Liquid Glass transparency slider iOS 27 layered icons announcements",
+    "freshness_hours": 5
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Apple WWDC 2026 今夜開幕、Liquid Glass 調整と Siri 刷新が本命、iOS 27 は Snow Leopard 型",
-      "description": "今夜2時、Apple WWDC 2026 開幕。『All Systems Glow』、本命は Liquid Glass 調整と Siri 刷新です。",
-      "detail": "昨年デビューの Liquid Glass、透明すぎて読みにくいと指摘が相次ぎ、iOS 27 で透明度とコントラストを微調整、見え方を変えるシステム全体設定も追加見込み。新機能より品質を磨く Snow Leopard 型と報じられています。",
-      "narration": "今夜2時、Apple WWDC 2026 開幕。『All Systems Glow』、本命は Liquid Glass 調整と Siri 刷新です。",
+      "title": "Apple WWDC 2026 開幕、Liquid Glass に透明度スライダー、読みにくい問題が公式に決着",
+      "description": "今朝開幕した Apple WWDC 2026。Liquid Glass に透明度スライダー、デザイナーの声が公式に通った 1 日です。",
+      "detail": "iOS 27 で Liquid Glass を大刷新。透明度を細かく調整できるスライダー、アプリアイコンは新レイヤーで立体感アップ、写真表示 70% 高速化と AirDrop 80% 速度向上もまとめて発表されました。",
+      "narration": "今朝 Apple WWDC 2026 開幕。Liquid Glass に透明度スライダー登場、読みにくい問題に Apple が機能で応えました。",
       "tags": [
         "Apple",
         "WWDC2026",
         "LiquidGlass",
         "iOS27",
-        "Siri",
-        "デザインニュース"
+        "デザインニュース",
+        "Figma"
       ],
       "narration_sections": {
-        "hook": "今夜2時、Apple WWDC 2026 開幕。『All Systems Glow』、本命は Liquid Glass 調整と Siri 刷新です。",
-        "origin": "昨年デビューの Liquid Glass、透明すぎて読みにくいと指摘が相次ぎ、iOS 27 で透明度とコントラストを微調整、見え方を変えるシステム全体設定も追加見込み。新機能より品質を磨く Snow Leopard 型と報じられています。",
-        "recommend": "駆け出しは Glass の使いどころと避けどころを掴むチャンス。今夜の発表後、自分の UI の透明度を見直しましょう。"
+        "hook": "今朝 Apple WWDC 2026 開幕。Liquid Glass に透明度スライダー登場、読みにくい問題に Apple が機能で応えました。",
+        "origin": "iOS 27 で Liquid Glass を大刷新。透明度を細かく調整できるスライダー、アプリアイコンは新レイヤーで立体感アップ、写真表示 70% 高速化と AirDrop 80% 速度向上もまとめて発表、デザイナーの声が Apple を動かした形です。",
+        "recommend": "美しさと読みやすさの両立は永遠のテーマ、駆け出しは今日から作例のコントラストを 1 段階強めて検証してみましょう。"
       },
       "section_titles": {
-        "hook": "WWDC26 今夜開幕",
-        "origin": "Glass 見直しの中身",
+        "hook": "WWDC26 当日号",
+        "origin": "Glass 刷新の中身",
         "recommend": "駆け出しの見どころ"
       },
       "section_descriptions": {
-        "hook": "日本時間 2 時、Apple 最大イベント開幕",
-        "origin": "透明度とコントラスト調整、新機能より品質磨き",
-        "recommend": "今日から Glass の使いどころを見極める"
+        "hook": "今朝開幕した Apple 最大イベント、デザイナーの声が反映",
+        "origin": "スライダーとレイヤーで読みやすさ向上、写真は 70% 高速化",
+        "recommend": "読みやすさが勝った日、自分の作例で 1 段階検証"
       }
     }
   ]
