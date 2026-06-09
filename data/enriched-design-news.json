@@ -1,54 +1,49 @@
 {
-  "date": "2026-06-09",
+  "date": "2026-06-10",
   "discovery": {
-    "method": "official-src",
-    "description": "WWDC 2026 keynote (6/8 10am PT = JST 6/9 2:00am) 終了直後の朝、Apple Newsroom 公式リリース + Apple Developer wwdc26 公式ページ + MacRumors/Engadget/TechRadar/Tom's Guide/CNBC/TechTimes/The Apple Post/Neowin の英語メディア複数報道を横断、Liquid Glass 透明度スライダー + アプリアイコン新レイヤー + iOS 27 写真 70%/AirDrop 80% 高速化を確定情報として捕捉。method 選定 (Tuesday weekday news 帯): 6/8 PDCA Action 2 で明示 pre-schedule の通り official-src で実施 (news-en は 6/8 利用 2 日ガード抵触で不可)。6/6 official-src から 3 日空き 2 日ガード OK、新 sub-angle `keynote-day-recap` 初投入で WORST 履歴の組換え。Apple 軸縦糸 5/14 (Google が Liquid Glass 不採用 = 99 views) → 6/2 (WWDC 予告 = 51 views) → 6/5 (ADA news) → 6/6 (ADA 深掘り) → 6/8 (WWDC 当日号) → 6/9 (WWDC 当日 recap) の 6 連結最終回。新運用ルール『縦糸 3 連結 (6/2 予告 + 6/8 当日 + 6/9 recap)』初実装、Reels の同チャンネル連続視聴アルゴリズム評価向上を狙う。柱③ 業界・デザインニュース (target 20%、直近 14 日 2/14 = 14%) を 3/14 = 21% へ補強、ようやく target クリア。Primary 駆け出しデザイナーには『デザイナーの声 (NN/g が指摘した Liquid Glass の accessibility failure = translucent + busy background でコントラスト readable threshold 以下) が Apple を動かしたケース』として翻訳。題材は駆け出しが翻訳できる 3 点に絞る (透明度スライダー / アプリアイコン新レイヤー / iOS 27 性能数値)、Siri AI / macOS Golden Gate / Tim Cook 退任は情報過多防止のため今回外す。NG パターン回避: (a) iOS API レベル詳細 (SwiftUI Material API 等) は避け『透明度スライダーで読みやすさ調整』『icon にレイヤー足す』という Figma 作例化粒度、(b) 『AI が仕事を奪う』NG 回避 = Siri AI 部分は今回触れず Liquid Glass refinement にフォーカスして positive 翻訳、(c) 『美しさ vs 読みやすさ』を判断主体性のフレームで提示、(d) freshness_hours = 5 (keynote 終了から 5 時間)、超鮮度で速報性勝負",
+    "method": "product-launches",
+    "description": "Product Hunt / Figma Community のトレンド新着横断と LottieLab 公式・creatorstoolbox.com・designzig.com・ux-news.com・Product Hunt の Magic Animator launch ページを束ねて、昨日 6/9 公開された Magic Animator v15 (LottieLab) を一次取得。Figma Community 上で v14 と v15 が同日 6/9 公開という weekly ship 体制、522+ コメントで Community トレンド入りを確認。method 選定 (Wednesday weekday news 帯): 6/9 PDCA Method 提案 1 位『product-launches 直近 14 日 0 投稿で過剰未使用、6/10-6/12 のいずれかで Explore 投入したい』を即実行、Apple 軸 5 連投 (6/2 + 6/5 + 6/6 + 6/8 + 6/9) からの意図的切替日。news-en は 6/5+6/8 で 7 日窓 2 回到達 + 6/10 で 3 回目連投ガード抵触で不可、official-src は 6/9 利用で 2 日ガード抵触、figma-community は 3 連続 WORST 凍結中 (6/12 まで)、expert-blog は 6/7 利用で 2 日ガード境界 OK だが本日は Explore 優先で温存、social-en は 6/4 利用で 6 日空き採用可だが Figma Community プラグイン題材は product-launches の方が一次ソース整合性高い。柱② プラグイン/エコシステム (target 20% に対し直近 14 日 1/14 = 7% で最大の運用ギャップ) を 2/14 = 14% へ補強。過去 product-launches 実績は 4/29 Magic Patterns Agent 2.0 = 485 views, 4/26 Awwwards Ashley Brooke = 249 views で TOP 帯ストックあり、今日の Magic Animator は『新プロダクト launch + 大手 4 社 (Netflix/Spotify/Google/Omnicom) 採用 + 効率指標 (6h → 30min)』の 4/29 系 3 点同時押しフレームで TOP 角度再現を狙う。新 sub-angle 『plugin-launch-day』初投入。Primary 駆け出しデザイナーの『ポートフォリオに動きをつけたいけど After Effects も Lottie も学習コスト高くて諦めた』最大の壁を直撃する翻訳角度。NG パターン回避: (a) プラグイン機能説明メイン NG → 学習者の痛点起点で入る、(b) 『AI に任せれば考えなくていい』NG → AI=4 案出すだけ、選び抜くのは人の判断、と判断主体性を Recommend で明示、(c) 『AI が仕事を奪う』NG → モーションデザイナー職を脅かさず『駆け出しの 1 つ目の動きデザイン入口』として positive 翻訳、(d) freshness_hours = 24 (release 6/9 → 投稿 6/10 8:15 JST = ちょうど 24 時間後) で 168 NG ラインの 1/7 の超鮮度",
     "sources": [
-      "https://developer.apple.com/wwdc26/",
-      "https://www.apple.com/newsroom/2026/05/apple-kicks-off-worldwide-developers-conference-on-june-8/",
-      "https://www.macrumors.com/2026/06/08/apple-announces-liquid-glass-improvements/",
-      "https://www.macrumors.com/2026/06/08/wwdc-2026-live-coverage/",
-      "https://www.engadget.com/2189698/everything-announced-at-apples-wwdc-2026-keynote/",
-      "https://www.tomsguide.com/news/live/wwdc-2026-live-news-updates",
-      "https://www.techradar.com/news/live/apple-wwdc-2026-live",
-      "https://www.cnbc.com/2026/06/08/apple-wwdc-2026-live-updates.html",
-      "https://www.macstories.net/news/wwdc-2026-apple-publishes-keynote-video/",
-      "https://www.techtimes.com/articles/317975/20260608/apple-liquid-glass-ios-27-wwdc-2026-brings-refinements-developers-must-adopt-today.htm",
-      "https://www.theapplepost.com/2026/06/08/70807/ios-27-includes-new-slider-for-controlling-liquid-glass-ui/",
-      "https://www.neowin.net/news/apple-finally-brings-the-slider-for-liquid-glass-and-many-other-changes/"
+      "https://www.figma.com/community/plugin/1520062874404933233/magic-animator-ai-animation-generator-for-figma",
+      "https://www.creatorstoolbox.com/p/lottielab-releases-magic-animator",
+      "https://www.producthunt.com/posts/magic-animator-beta",
+      "https://designzig.com/magic-animator-by-lottielabs/",
+      "https://ux-news.com/lottielab-introduces-magic-animator-ai-tool-for-animation-in-figma/",
+      "https://huntscreens.com/products/magic-animator-beta",
+      "https://www.productcool.com/product/magic-animator-beta"
     ],
-    "query": "WWDC 2026 keynote Liquid Glass transparency slider iOS 27 layered icons announcements",
-    "freshness_hours": 5
+    "query": "Magic Animator LottieLab Figma plugin v15 AI animation four variants Netflix Spotify Google adoption June 2026 keyframe motion editor",
+    "freshness_hours": 24
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Apple WWDC 2026 開幕、Liquid Glass に透明度スライダー、読みにくい問題が公式に決着",
-      "description": "今朝開幕した Apple WWDC 2026。Liquid Glass に透明度スライダー、デザイナーの声が公式に通った 1 日です。",
-      "detail": "iOS 27 で Liquid Glass を大刷新。透明度を細かく調整できるスライダー、アプリアイコンは新レイヤーで立体感アップ、写真表示 70% 高速化と AirDrop 80% 速度向上もまとめて発表されました。",
-      "narration": "今朝 Apple WWDC 2026 開幕。Liquid Glass に透明度スライダー登場、読みにくい問題に Apple が機能で応えました。",
+      "title": "Magic Animator v15、Figma フレームから AI が 4 つの編集可能アニメを 1 クリック生成、6 時間が 30 分に",
+      "description": "昨日 Magic Animator が大型アップデート。ポートフォリオに動きをつけたいけど面倒、その壁を AI が壊しに来ました。",
+      "detail": "Figma でフレームを選ぶだけで、AI がレイアウトを読み 4 つのアニメ案を 1 クリック生成。各案はキーフレームや動きの曲線まで編集可能で、Netflix や Google など大手が早期導入。手作業 6 時間が 30 分に短縮されます。",
+      "narration": "昨日 Magic Animator が大型アップデート。ポートフォリオに動きをつけたいけど面倒、その壁を AI が壊しに来ました。",
       "tags": [
-        "Apple",
-        "WWDC2026",
-        "LiquidGlass",
-        "iOS27",
-        "デザインニュース",
-        "Figma"
+        "MagicAnimator",
+        "Figmaプラグイン",
+        "アニメーション",
+        "AIデザイン",
+        "LottieLab",
+        "ポートフォリオ"
       ],
       "narration_sections": {
-        "hook": "今朝 Apple WWDC 2026 開幕。Liquid Glass に透明度スライダー登場、読みにくい問題に Apple が機能で応えました。",
-        "origin": "iOS 27 で Liquid Glass を大刷新。透明度を細かく調整できるスライダー、アプリアイコンは新レイヤーで立体感アップ、写真表示 70% 高速化と AirDrop 80% 速度向上もまとめて発表、デザイナーの声が Apple を動かした形です。",
-        "recommend": "美しさと読みやすさの両立は永遠のテーマ、駆け出しは今日から作例のコントラストを 1 段階強めて検証してみましょう。"
+        "hook": "昨日 Magic Animator が大型アップデート。ポートフォリオに動きをつけたいけど面倒、その壁を AI が壊しに来ました。",
+        "origin": "Figma でフレームを選ぶだけで、AI がレイアウトを読み 4 つのアニメ案を 1 クリック生成。各案はキーフレームや動きの曲線まで編集可能で、Netflix や Google など大手が早期導入。手作業 6 時間が 30 分に短縮されます。",
+        "recommend": "駆け出しのポートフォリオに動きを足す最速ルート。ただし AI は 4 案出すだけ、芯を選ぶのはあなたの判断。差別化はそこに生まれます。"
       },
       "section_titles": {
-        "hook": "WWDC26 当日号",
-        "origin": "Glass 刷新の中身",
-        "recommend": "駆け出しの見どころ"
+        "hook": "動きをつけるのは AI",
+        "origin": "6 時間が 30 分に",
+        "recommend": "差別化は判断にあり"
       },
       "section_descriptions": {
-        "hook": "今朝開幕した Apple 最大イベント、デザイナーの声が反映",
-        "origin": "スライダーとレイヤーで読みやすさ向上、写真は 70% 高速化",
-        "recommend": "読みやすさが勝った日、自分の作例で 1 段階検証"
+        "hook": "Magic Animator v15、駆け出しの壁を壊す",
+        "origin": "Figma フレームから 4 案、Netflix も導入",
+        "recommend": "AI が 4 案、選び抜くのが駆け出しの差別化"
       }
     }
   ]
