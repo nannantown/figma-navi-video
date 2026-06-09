@@ -1302,7 +1302,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-07T00:17:14.085Z"
+        "updatedAt": "2026-06-09T00:16:04.332Z"
       }
     },
     {
@@ -1347,7 +1347,7 @@
         "views": 7,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-07T00:17:14.085Z"
+        "updatedAt": "2026-06-09T00:16:04.332Z"
       }
     },
     {
@@ -1391,7 +1391,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-07T00:17:14.085Z"
+        "updatedAt": "2026-06-09T00:16:04.332Z"
       }
     },
     {
@@ -1432,10 +1432,10 @@
         "freshness_hours": 168
       },
       "stats": {
-        "views": 2,
+        "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-07T00:17:14.085Z"
+        "updatedAt": "2026-06-09T00:16:04.332Z"
       }
     },
     {
@@ -1481,7 +1481,7 @@
         "views": 7,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-07T00:17:14.085Z"
+        "updatedAt": "2026-06-09T00:16:04.332Z"
       }
     },
     {
@@ -1527,7 +1527,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-07T00:17:14.085Z"
+        "updatedAt": "2026-06-09T00:16:04.332Z"
       }
     },
     {
@@ -1573,7 +1573,7 @@
         "views": 51,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-07T00:17:14.085Z"
+        "updatedAt": "2026-06-09T00:16:04.332Z"
       }
     },
     {
@@ -1619,7 +1619,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-07T00:17:14.085Z"
+        "updatedAt": "2026-06-09T00:16:04.332Z"
       }
     },
     {
@@ -1661,10 +1661,10 @@
         "freshness_hours": 100
       },
       "stats": {
-        "views": 0,
+        "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-07T00:17:14.085Z"
+        "updatedAt": "2026-06-09T00:16:04.332Z"
       }
     },
     {
@@ -1706,6 +1706,57 @@
         "freshness_hours": 96
       },
       "stats": {
+        "views": 2,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-06-09T00:16:04.332Z"
+      }
+    },
+    {
+      "videoId": "mNIJwETQBqU",
+      "videoUrl": "https://youtube.com/shorts/mNIJwETQBqU",
+      "date": "2026-06-09",
+      "title": "【デザインニュース】Apple WWDC 2026 開幕、Liquid Glass に透明度スライダー、読みにくい問題が公式に決着｜2026/06/09 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 46,
+      "discovery": {
+        "method": "official-src",
+        "description": "WWDC 2026 keynote (6/8 10am PT = JST 6/9 2:00am) 終了直後の朝、Apple Newsroom 公式リリース + Apple Developer wwdc26 公式ページ + MacRumors/Engadget/TechRadar/Tom's Guide/CNBC/TechTimes/The Apple Post/Neowin の英語メディア複数報道を横断、Liquid Glass 透明度スライダー + アプリアイコン新レイヤー + iOS 27 写真 70%/AirDrop 80% 高速化を確定情報として捕捉。method 選定 (Tuesday weekday news 帯): 6/8 PDCA Action 2 で明示 pre-schedule の通り official-src で実施 (news-en は 6/8 利用 2 日ガード抵触で不可)。6/6 official-src から 3 日空き 2 日ガード OK、新 sub-angle `keynote-day-recap` 初投入で WORST 履歴の組換え。Apple 軸縦糸 5/14 (Google が Liquid Glass 不採用 = 99 views) → 6/2 (WWDC 予告 = 51 views) → 6/5 (ADA news) → 6/6 (ADA 深掘り) → 6/8 (WWDC 当日号) → 6/9 (WWDC 当日 recap) の 6 連結最終回。新運用ルール『縦糸 3 連結 (6/2 予告 + 6/8 当日 + 6/9 recap)』初実装、Reels の同チャンネル連続視聴アルゴリズム評価向上を狙う。柱③ 業界・デザインニュース (target 20%、直近 14 日 2/14 = 14%) を 3/14 = 21% へ補強、ようやく target クリア。Primary 駆け出しデザイナーには『デザイナーの声 (NN/g が指摘した Liquid Glass の accessibility failure = translucent + busy background でコントラスト readable threshold 以下) が Apple を動かしたケース』として翻訳。題材は駆け出しが翻訳できる 3 点に絞る (透明度スライダー / アプリアイコン新レイヤー / iOS 27 性能数値)、Siri AI / macOS Golden Gate / Tim Cook 退任は情報過多防止のため今回外す。NG パターン回避: (a) iOS API レベル詳細 (SwiftUI Material API 等) は避け『透明度スライダーで読みやすさ調整』『icon にレイヤー足す』という Figma 作例化粒度、(b) 『AI が仕事を奪う』NG 回避 = Siri AI 部分は今回触れず Liquid Glass refinement にフォーカスして positive 翻訳、(c) 『美しさ vs 読みやすさ』を判断主体性のフレームで提示、(d) freshness_hours = 5 (keynote 終了から 5 時間)、超鮮度で速報性勝負",
+        "sources": [
+          "https://developer.apple.com/wwdc26/",
+          "https://www.apple.com/newsroom/2026/05/apple-kicks-off-worldwide-developers-conference-on-june-8/",
+          "https://www.macrumors.com/2026/06/08/apple-announces-liquid-glass-improvements/",
+          "https://www.macrumors.com/2026/06/08/wwdc-2026-live-coverage/",
+          "https://www.engadget.com/2189698/everything-announced-at-apples-wwdc-2026-keynote/",
+          "https://www.tomsguide.com/news/live/wwdc-2026-live-news-updates",
+          "https://www.techradar.com/news/live/apple-wwdc-2026-live",
+          "https://www.cnbc.com/2026/06/08/apple-wwdc-2026-live-updates.html",
+          "https://www.macstories.net/news/wwdc-2026-apple-publishes-keynote-video/",
+          "https://www.techtimes.com/articles/317975/20260608/apple-liquid-glass-ios-27-wwdc-2026-brings-refinements-developers-must-adopt-today.htm",
+          "https://www.theapplepost.com/2026/06/08/70807/ios-27-includes-new-slider-for-controlling-liquid-glass-ui/",
+          "https://www.neowin.net/news/apple-finally-brings-the-slider-for-liquid-glass-and-many-other-changes/"
+        ],
+        "query": "WWDC 2026 keynote Liquid Glass transparency slider iOS 27 layered icons announcements",
+        "freshness_hours": 5
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -1714,13 +1765,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-04-30",
-      "changes": [
-        "Day performance: Wed=315, Sun=249, Thu=175, Sat=114, Mon=101, Tue=86, Fri=70"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-01",
       "changes": [
@@ -1949,6 +1993,14 @@
       "changes": [
         "standard: 89 avg views (37 videos)",
         "Day performance: Wed=127, Sun=106, Sat=99, Tue=82, Thu=79, Fri=69, Mon=52"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-09",
+      "changes": [
+        "standard: 87 avg views (38 videos)",
+        "Day performance: Wed=127, Sat=99, Sun=88, Tue=82, Thu=79, Fri=69, Mon=52"
       ],
       "recommendedTemplate": "standard"
     }
