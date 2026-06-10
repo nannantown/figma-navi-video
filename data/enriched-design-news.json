@@ -1,49 +1,47 @@
 {
-  "date": "2026-06-10",
+  "date": "2026-06-11",
   "discovery": {
-    "method": "product-launches",
-    "description": "Product Hunt / Figma Community のトレンド新着横断と LottieLab 公式・creatorstoolbox.com・designzig.com・ux-news.com・Product Hunt の Magic Animator launch ページを束ねて、昨日 6/9 公開された Magic Animator v15 (LottieLab) を一次取得。Figma Community 上で v14 と v15 が同日 6/9 公開という weekly ship 体制、522+ コメントで Community トレンド入りを確認。method 選定 (Wednesday weekday news 帯): 6/9 PDCA Method 提案 1 位『product-launches 直近 14 日 0 投稿で過剰未使用、6/10-6/12 のいずれかで Explore 投入したい』を即実行、Apple 軸 5 連投 (6/2 + 6/5 + 6/6 + 6/8 + 6/9) からの意図的切替日。news-en は 6/5+6/8 で 7 日窓 2 回到達 + 6/10 で 3 回目連投ガード抵触で不可、official-src は 6/9 利用で 2 日ガード抵触、figma-community は 3 連続 WORST 凍結中 (6/12 まで)、expert-blog は 6/7 利用で 2 日ガード境界 OK だが本日は Explore 優先で温存、social-en は 6/4 利用で 6 日空き採用可だが Figma Community プラグイン題材は product-launches の方が一次ソース整合性高い。柱② プラグイン/エコシステム (target 20% に対し直近 14 日 1/14 = 7% で最大の運用ギャップ) を 2/14 = 14% へ補強。過去 product-launches 実績は 4/29 Magic Patterns Agent 2.0 = 485 views, 4/26 Awwwards Ashley Brooke = 249 views で TOP 帯ストックあり、今日の Magic Animator は『新プロダクト launch + 大手 4 社 (Netflix/Spotify/Google/Omnicom) 採用 + 効率指標 (6h → 30min)』の 4/29 系 3 点同時押しフレームで TOP 角度再現を狙う。新 sub-angle 『plugin-launch-day』初投入。Primary 駆け出しデザイナーの『ポートフォリオに動きをつけたいけど After Effects も Lottie も学習コスト高くて諦めた』最大の壁を直撃する翻訳角度。NG パターン回避: (a) プラグイン機能説明メイン NG → 学習者の痛点起点で入る、(b) 『AI に任せれば考えなくていい』NG → AI=4 案出すだけ、選び抜くのは人の判断、と判断主体性を Recommend で明示、(c) 『AI が仕事を奪う』NG → モーションデザイナー職を脅かさず『駆け出しの 1 つ目の動きデザイン入口』として positive 翻訳、(d) freshness_hours = 24 (release 6/9 → 投稿 6/10 8:15 JST = ちょうど 24 時間後) で 168 NG ラインの 1/7 の超鮮度",
+    "method": "expert-blog",
+    "description": "NN/g (Nielsen Norman Group) articles ハブと検索で 2026-06-05 公開の Maria Rosala 『The Four Design Jobs AI Created (So Far)』を一次取得、AI 関連記事ハブとも整合確認。method 選定 (Thursday weekday news 帯、Apple 軸 5 連投 reset 続行 2 日目): 6/10 PDCA Action 2『6/11 (Thu) は柱④ Tips or 柱② の連投で「プラグイン週」を組成、候補 method = news-en (6/8 利用 → 6/11 で 3 日空きで 7 日 2 回ガード余裕) / official-src (6/9 利用 → 6/11 で 2 日空きで境界) / social-en (6/4 利用 → 7 日空き)』を再評価、(a) news-en は 7 日窓 (6/5-6/11) に 6/5 + 6/8 で 2 回到達済み、6/11 採用で 3 回目連投ガード抵触のため不可、(b) official-src は 6/9 利用で 2 日連続ガード境界、保守的に不可、(c) figma-community は 6/12 まで凍結、(d) product-launches は 6/10 利用で 2 日ガード抵触で不可、(e) expert-blog は 6/7 利用で 4 日空き、TOP3 同率 (avg 7.0、5/31 Microsoft Copilot = 7 views) で本日採用、(f) social-en (avg 4.0) は採用可だが Primary 翻訳適性で expert-blog 優先。expert-blog 内の出典分散として直近 14 日 Smashing 占有 (5/31 + 6/7) を NN/g に振って初の Smashing 外題材、`nng-translation` 新 sub-angle 初投入。柱③ industry/design news (target 20% → 直近 14 日 5/35 = 36% で Apple 偏重) の内訳分散として UX 研究機関枠を新設、Apple 5 連投の飽和を軽減。Primary 駆け出しデザイナーへの翻訳角度: 『AI で仕事を奪われる』恐怖の直球反転翻訳、NN/g 公式が『AI が新しく生んだ 4 つの仕事』を整理した枠組みを使い、駆け出しは 4 つのうち (1) AI 機能の UI 設計 から入るのが最短ルートと示唆、Figmaナビ 本体 (Figma 上で AI が生成する UI) は (1) のど真ん中だが本日は直接接続せず肩書き戦略の翻訳メインに振る。NG パターン回避: (a) 『AI が仕事を奪う』 NG → 直球反転で『奪われるは古い、AI が新しく作った 4 つ』と提示、(b) 『プロ向け高度議論』 NG → LLM 評価/ファインチューニング等の専門用語は (4) で『AI 自体のふるまい設計』と平易に翻訳、(c) 『AI に任せれば考えなくていい』 NG → Recommend で『どれを極めるか宣言』と判断主体性を明示、(d) 『プラグイン機能説明メイン』 NG → Figmaナビ への直接接続は控えて肩書き戦略翻訳に振り切る、(e) freshness_hours = 144 (公開 6/5 → 投稿 6/11 8:15 JST = 6 日後) で 168 NG ライン内、日本語コミュニティの解説はまだ事実上ゼロで速報性で勝てる。",
     "sources": [
-      "https://www.figma.com/community/plugin/1520062874404933233/magic-animator-ai-animation-generator-for-figma",
-      "https://www.creatorstoolbox.com/p/lottielab-releases-magic-animator",
-      "https://www.producthunt.com/posts/magic-animator-beta",
-      "https://designzig.com/magic-animator-by-lottielabs/",
-      "https://ux-news.com/lottielab-introduces-magic-animator-ai-tool-for-animation-in-figma/",
-      "https://huntscreens.com/products/magic-animator-beta",
-      "https://www.productcool.com/product/magic-animator-beta"
+      "https://www.nngroup.com/articles/design-jobs-ai-created/",
+      "https://www.nngroup.com/articles/",
+      "https://www.nngroup.com/topic/ai/",
+      "https://www.nngroup.com/articles/prepare-for-ai/",
+      "https://www.nngroup.com/articles/ai-work-study-guide/"
     ],
-    "query": "Magic Animator LottieLab Figma plugin v15 AI animation four variants Netflix Spotify Google adoption June 2026 keyframe motion editor",
-    "freshness_hours": 24
+    "query": "Nielsen Norman Group AI design four jobs designer roles 2026 designing with AI designing the AI conversational agent infrastructure LLM behavior",
+    "freshness_hours": 144
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Magic Animator v15、Figma フレームから AI が 4 つの編集可能アニメを 1 クリック生成、6 時間が 30 分に",
-      "description": "昨日 Magic Animator が大型アップデート。ポートフォリオに動きをつけたいけど面倒、その壁を AI が壊しに来ました。",
-      "detail": "Figma でフレームを選ぶだけで、AI がレイアウトを読み 4 つのアニメ案を 1 クリック生成。各案はキーフレームや動きの曲線まで編集可能で、Netflix や Google など大手が早期導入。手作業 6 時間が 30 分に短縮されます。",
-      "narration": "昨日 Magic Animator が大型アップデート。ポートフォリオに動きをつけたいけど面倒、その壁を AI が壊しに来ました。",
+      "title": "NN/g『AI が生んだデザイン仕事は 4 種類』、駆け出しはまず 1 つ目から入ると最短",
+      "description": "「AI で仕事を奪われる」はもう古い話。NN/g が今週、AI が新しく生んだデザイン仕事を 4 つに整理しました。あなたはどの担当ですか?",
+      "detail": "1 つ目は AI 機能の UI 設計、Figma 上で AI が何を出すかの見せ方。2 つ目は会話のデザイン、チャット UI の体験。3 つ目は AI エージェント用のデータ構造化。4 つ目は AI 自体のふるまい設計です。駆け出しはまず 1 つ目から入ると最短です。",
+      "narration": "「AI で仕事を奪われる」はもう古い話。NN/g が今週、AI が新しく生んだデザイン仕事を 4 つに整理しました。あなたはどの担当ですか?",
       "tags": [
-        "MagicAnimator",
-        "Figmaプラグイン",
-        "アニメーション",
+        "NNg",
         "AIデザイン",
-        "LottieLab",
-        "ポートフォリオ"
+        "デザインキャリア",
+        "駆け出しデザイナー",
+        "肩書き戦略",
+        "Figmaナビ"
       ],
       "narration_sections": {
-        "hook": "昨日 Magic Animator が大型アップデート。ポートフォリオに動きをつけたいけど面倒、その壁を AI が壊しに来ました。",
-        "origin": "Figma でフレームを選ぶだけで、AI がレイアウトを読み 4 つのアニメ案を 1 クリック生成。各案はキーフレームや動きの曲線まで編集可能で、Netflix や Google など大手が早期導入。手作業 6 時間が 30 分に短縮されます。",
-        "recommend": "駆け出しのポートフォリオに動きを足す最速ルート。ただし AI は 4 案出すだけ、芯を選ぶのはあなたの判断。差別化はそこに生まれます。"
+        "hook": "「AIで仕事を奪われる」はもう古い話。NN/gが今週、AIが新しく生んだデザイン仕事を4つに整理しました。あなたはどの担当ですか?",
+        "origin": "1つ目はAI機能のUI設計、Figma上でAIが何を出すかの見せ方。2つ目は会話のデザイン、チャットUIの体験。3つ目はAIエージェント用のデータ構造化。4つ目はAI自体のふるまい設計です。駆け出しはまず1つ目から入ると最短です。",
+        "recommend": "肩書きをAIデザイナーで止めず、4つのうちどれを極めるか宣言する。それだけで採用側にも先輩にも、見え方が変わります。"
       },
       "section_titles": {
-        "hook": "動きをつけるのは AI",
-        "origin": "6 時間が 30 分に",
-        "recommend": "差別化は判断にあり"
+        "hook": "AIデザイナーの分裂",
+        "origin": "仕事は4つに分かれた",
+        "recommend": "肩書きで終わらせない"
       },
       "section_descriptions": {
-        "hook": "Magic Animator v15、駆け出しの壁を壊す",
-        "origin": "Figma フレームから 4 案、Netflix も導入",
-        "recommend": "AI が 4 案、選び抜くのが駆け出しの差別化"
+        "hook": "NN/gが整理した、AIが生んだデザイン仕事",
+        "origin": "UI、会話、データ、ふるまいの4担当に分かれた",
+        "recommend": "どの1つを極めるかが、選ばれる理由になる"
       }
     }
   ]
