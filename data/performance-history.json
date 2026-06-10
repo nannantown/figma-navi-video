@@ -1302,7 +1302,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-09T00:16:04.332Z"
+        "updatedAt": "2026-06-10T01:31:08.634Z"
       }
     },
     {
@@ -1347,7 +1347,7 @@
         "views": 7,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-09T00:16:04.332Z"
+        "updatedAt": "2026-06-10T01:31:08.634Z"
       }
     },
     {
@@ -1391,7 +1391,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-09T00:16:04.332Z"
+        "updatedAt": "2026-06-10T01:31:08.634Z"
       }
     },
     {
@@ -1432,10 +1432,10 @@
         "freshness_hours": 168
       },
       "stats": {
-        "views": 4,
+        "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-09T00:16:04.332Z"
+        "updatedAt": "2026-06-10T01:31:08.634Z"
       }
     },
     {
@@ -1481,7 +1481,7 @@
         "views": 7,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-09T00:16:04.332Z"
+        "updatedAt": "2026-06-10T01:31:08.634Z"
       }
     },
     {
@@ -1527,7 +1527,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-09T00:16:04.332Z"
+        "updatedAt": "2026-06-10T01:31:08.634Z"
       }
     },
     {
@@ -1570,10 +1570,10 @@
         "freshness_hours": 30
       },
       "stats": {
-        "views": 51,
+        "views": 53,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-09T00:16:04.332Z"
+        "updatedAt": "2026-06-10T01:31:08.634Z"
       }
     },
     {
@@ -1619,7 +1619,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-09T00:16:04.332Z"
+        "updatedAt": "2026-06-10T01:31:08.634Z"
       }
     },
     {
@@ -1661,10 +1661,10 @@
         "freshness_hours": 100
       },
       "stats": {
-        "views": 2,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-09T00:16:04.332Z"
+        "updatedAt": "2026-06-10T01:31:08.634Z"
       }
     },
     {
@@ -1709,7 +1709,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-09T00:16:04.332Z"
+        "updatedAt": "2026-06-10T01:31:08.634Z"
       }
     },
     {
@@ -1757,6 +1757,52 @@
         "freshness_hours": 5
       },
       "stats": {
+        "views": 19,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-06-10T01:31:08.634Z"
+      }
+    },
+    {
+      "videoId": "-XVT3Q2Ijn0",
+      "videoUrl": "https://youtube.com/shorts/-XVT3Q2Ijn0",
+      "date": "2026-06-10",
+      "title": "【デザインニュース】Magic Animator v15、Figma フレームから AI が 4 つの編集可能アニメを 1 クリック生成、6 時間が 30 分に｜2026/06/10 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 45,
+      "discovery": {
+        "method": "product-launches",
+        "description": "Product Hunt / Figma Community のトレンド新着横断と LottieLab 公式・creatorstoolbox.com・designzig.com・ux-news.com・Product Hunt の Magic Animator launch ページを束ねて、昨日 6/9 公開された Magic Animator v15 (LottieLab) を一次取得。Figma Community 上で v14 と v15 が同日 6/9 公開という weekly ship 体制、522+ コメントで Community トレンド入りを確認。method 選定 (Wednesday weekday news 帯): 6/9 PDCA Method 提案 1 位『product-launches 直近 14 日 0 投稿で過剰未使用、6/10-6/12 のいずれかで Explore 投入したい』を即実行、Apple 軸 5 連投 (6/2 + 6/5 + 6/6 + 6/8 + 6/9) からの意図的切替日。news-en は 6/5+6/8 で 7 日窓 2 回到達 + 6/10 で 3 回目連投ガード抵触で不可、official-src は 6/9 利用で 2 日ガード抵触、figma-community は 3 連続 WORST 凍結中 (6/12 まで)、expert-blog は 6/7 利用で 2 日ガード境界 OK だが本日は Explore 優先で温存、social-en は 6/4 利用で 6 日空き採用可だが Figma Community プラグイン題材は product-launches の方が一次ソース整合性高い。柱② プラグイン/エコシステム (target 20% に対し直近 14 日 1/14 = 7% で最大の運用ギャップ) を 2/14 = 14% へ補強。過去 product-launches 実績は 4/29 Magic Patterns Agent 2.0 = 485 views, 4/26 Awwwards Ashley Brooke = 249 views で TOP 帯ストックあり、今日の Magic Animator は『新プロダクト launch + 大手 4 社 (Netflix/Spotify/Google/Omnicom) 採用 + 効率指標 (6h → 30min)』の 4/29 系 3 点同時押しフレームで TOP 角度再現を狙う。新 sub-angle 『plugin-launch-day』初投入。Primary 駆け出しデザイナーの『ポートフォリオに動きをつけたいけど After Effects も Lottie も学習コスト高くて諦めた』最大の壁を直撃する翻訳角度。NG パターン回避: (a) プラグイン機能説明メイン NG → 学習者の痛点起点で入る、(b) 『AI に任せれば考えなくていい』NG → AI=4 案出すだけ、選び抜くのは人の判断、と判断主体性を Recommend で明示、(c) 『AI が仕事を奪う』NG → モーションデザイナー職を脅かさず『駆け出しの 1 つ目の動きデザイン入口』として positive 翻訳、(d) freshness_hours = 24 (release 6/9 → 投稿 6/10 8:15 JST = ちょうど 24 時間後) で 168 NG ラインの 1/7 の超鮮度",
+        "sources": [
+          "https://www.figma.com/community/plugin/1520062874404933233/magic-animator-ai-animation-generator-for-figma",
+          "https://www.creatorstoolbox.com/p/lottielab-releases-magic-animator",
+          "https://www.producthunt.com/posts/magic-animator-beta",
+          "https://designzig.com/magic-animator-by-lottielabs/",
+          "https://ux-news.com/lottielab-introduces-magic-animator-ai-tool-for-animation-in-figma/",
+          "https://huntscreens.com/products/magic-animator-beta",
+          "https://www.productcool.com/product/magic-animator-beta"
+        ],
+        "query": "Magic Animator LottieLab Figma plugin v15 AI animation four variants Netflix Spotify Google adoption June 2026 keyframe motion editor",
+        "freshness_hours": 24
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -1765,13 +1811,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-01",
-      "changes": [
-        "Day performance: Wed=315, Sun=249, Thu=128, Sat=115, Tue=111, Mon=101, Fri=73"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-03",
       "changes": [
@@ -2001,6 +2040,14 @@
       "changes": [
         "standard: 87 avg views (38 videos)",
         "Day performance: Wed=127, Sat=99, Sun=88, Tue=82, Thu=79, Fri=69, Mon=52"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-10",
+      "changes": [
+        "standard: 85 avg views (39 videos)",
+        "Day performance: Wed=127, Sat=99, Sun=88, Thu=79, Tue=72, Fri=69, Mon=52"
       ],
       "recommendedTemplate": "standard"
     }
