@@ -1,47 +1,42 @@
 {
-  "date": "2026-06-11",
+  "date": "2026-06-12",
   "discovery": {
-    "method": "expert-blog",
-    "description": "NN/g (Nielsen Norman Group) articles ハブと検索で 2026-06-05 公開の Maria Rosala 『The Four Design Jobs AI Created (So Far)』を一次取得、AI 関連記事ハブとも整合確認。method 選定 (Thursday weekday news 帯、Apple 軸 5 連投 reset 続行 2 日目): 6/10 PDCA Action 2『6/11 (Thu) は柱④ Tips or 柱② の連投で「プラグイン週」を組成、候補 method = news-en (6/8 利用 → 6/11 で 3 日空きで 7 日 2 回ガード余裕) / official-src (6/9 利用 → 6/11 で 2 日空きで境界) / social-en (6/4 利用 → 7 日空き)』を再評価、(a) news-en は 7 日窓 (6/5-6/11) に 6/5 + 6/8 で 2 回到達済み、6/11 採用で 3 回目連投ガード抵触のため不可、(b) official-src は 6/9 利用で 2 日連続ガード境界、保守的に不可、(c) figma-community は 6/12 まで凍結、(d) product-launches は 6/10 利用で 2 日ガード抵触で不可、(e) expert-blog は 6/7 利用で 4 日空き、TOP3 同率 (avg 7.0、5/31 Microsoft Copilot = 7 views) で本日採用、(f) social-en (avg 4.0) は採用可だが Primary 翻訳適性で expert-blog 優先。expert-blog 内の出典分散として直近 14 日 Smashing 占有 (5/31 + 6/7) を NN/g に振って初の Smashing 外題材、`nng-translation` 新 sub-angle 初投入。柱③ industry/design news (target 20% → 直近 14 日 5/35 = 36% で Apple 偏重) の内訳分散として UX 研究機関枠を新設、Apple 5 連投の飽和を軽減。Primary 駆け出しデザイナーへの翻訳角度: 『AI で仕事を奪われる』恐怖の直球反転翻訳、NN/g 公式が『AI が新しく生んだ 4 つの仕事』を整理した枠組みを使い、駆け出しは 4 つのうち (1) AI 機能の UI 設計 から入るのが最短ルートと示唆、Figmaナビ 本体 (Figma 上で AI が生成する UI) は (1) のど真ん中だが本日は直接接続せず肩書き戦略の翻訳メインに振る。NG パターン回避: (a) 『AI が仕事を奪う』 NG → 直球反転で『奪われるは古い、AI が新しく作った 4 つ』と提示、(b) 『プロ向け高度議論』 NG → LLM 評価/ファインチューニング等の専門用語は (4) で『AI 自体のふるまい設計』と平易に翻訳、(c) 『AI に任せれば考えなくていい』 NG → Recommend で『どれを極めるか宣言』と判断主体性を明示、(d) 『プラグイン機能説明メイン』 NG → Figmaナビ への直接接続は控えて肩書き戦略翻訳に振り切る、(e) freshness_hours = 144 (公開 6/5 → 投稿 6/11 8:15 JST = 6 日後) で 168 NG ライン内、日本語コミュニティの解説はまだ事実上ゼロで速報性で勝てる。",
+    "method": "figma-community",
+    "description": "Figma Community のトレンド AI agent 系を巡回調査し、Anima 製 Buddy が 2026-06-09 に v59 を公開した事実を Anima Blog / Figma Community プラグインページ / 検索メディアから一次取得。Codex / Claude Opus・Sonnet / GPT / Gemini のマルチ LLM 対応、コンポーネント・Variables・命名規則・余白パターンを学習する design-system-aware の AI エージェントという独自性を確認。Magic Animator v15 (6/9) と同日リリースで AI エージェント・カテゴリ全体の活性化が観測でき、Figma Config 2026 (6/23-25) まで 11 日というカウントダウン anchor と組み合わせて『直前の Community 活性化』として時事性を確保。method 選定: 直近 14 日 figma-community は 3 連続 WORST 凍結が 6/12 で解除、9 日空きで 2-day rule・7-day-2-time ガード余裕、weekday news-preferred 4 タグ中 official-src (6/9 利用で 7 日 2 回到達)・product-launches (6/10 利用 2-day)・expert-blog (6/11 利用 2-day) がガード抵触、news-en は採用可だが 6/13 以降に温存して本日は構造転換の優先度を取る。PDCA 6/11 で予告した『単一プラグイン深掘り → 横断比較 + 時事 anchor』の構造転換を Buddy 主軸 + ai.to.design (Qwen 3.7 Plus 追加 6/4) を脇に配置する形で初実装。柱② プラグイン/エコシステム (target 20%、直近 14 日 2/14 = 14% で未達) の補充を兼ねる。NG パターン回避: Figmaナビ への直接 CTA は控え、AI エージェント・カテゴリの隣接サービス紹介で自社ポジショニングを自然に補強、AI=補助輪フレームを維持して『自分のルールを AI に覚えさせる、判断は人がする』と再強化。",
     "sources": [
-      "https://www.nngroup.com/articles/design-jobs-ai-created/",
-      "https://www.nngroup.com/articles/",
-      "https://www.nngroup.com/topic/ai/",
-      "https://www.nngroup.com/articles/prepare-for-ai/",
-      "https://www.nngroup.com/articles/ai-work-study-guide/"
+      "https://www.figma.com/community/plugin/1616481120325792817/buddy-figma-ai-agent-claude-design-to-figma-codex-html-ux-generator-co-pilot-assistant-for-designers",
+      "https://www.animaapp.com/blog/genai/figma-ai-design-agent/",
+      "https://www.animaapp.com/blog/genai/figma-design-agent-review-features-pros-cons-best-alternative/",
+      "https://www.figma.com/community/plugin/1595802057883629790/ai-to-design-by-divriots-generate-designs-from-ai-gpt-claude-gemini",
+      "https://www.figma.com/release-notes/",
+      "https://config.figma.com/",
+      "https://releasebot.io/updates/figma"
     ],
-    "query": "Nielsen Norman Group AI design four jobs designer roles 2026 designing with AI designing the AI conversational agent infrastructure LLM behavior",
-    "freshness_hours": 144
+    "query": "Figma Community Buddy v59 June 9 2026 AI agent Anima design system aware Claude Opus Sonnet GPT Gemini multi LLM",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "NN/g『AI が生んだデザイン仕事は 4 種類』、駆け出しはまず 1 つ目から入ると最短",
-      "description": "「AI で仕事を奪われる」はもう古い話。NN/g が今週、AI が新しく生んだデザイン仕事を 4 つに整理しました。あなたはどの担当ですか?",
-      "detail": "1 つ目は AI 機能の UI 設計、Figma 上で AI が何を出すかの見せ方。2 つ目は会話のデザイン、チャット UI の体験。3 つ目は AI エージェント用のデータ構造化。4 つ目は AI 自体のふるまい設計です。駆け出しはまず 1 つ目から入ると最短です。",
-      "narration": "「AI で仕事を奪われる」はもう古い話。NN/g が今週、AI が新しく生んだデザイン仕事を 4 つに整理しました。あなたはどの担当ですか?",
-      "tags": [
-        "NNg",
-        "AIデザイン",
-        "デザインキャリア",
-        "駆け出しデザイナー",
-        "肩書き戦略",
-        "Figmaナビ"
-      ],
+      "title": "Buddy v59 が Figma Community 公開、デザシス覚える AI エージェントで Claude/GPT 出力も Figma へ",
+      "description": "Figma Config 2026 まで 11 日、Community で AI エージェントが活発化。Anima 製 Buddy v59 が 6/9 に公開されました。",
+      "detail": "Buddy は Claude や GPT で生成した UI を Figma に取り込んだり、プロンプトから直接デザインを作れる AI エージェント。自分のコンポーネント、命名規則、余白パターンを学習して、出力が手元のファイルに馴染むのが特徴です。",
+      "narration": "Figma Config 2026 まで 11 日、先週 9 日に AI エージェント Buddy v59 が Community で公開されました。",
+      "tags": ["Figma", "AI エージェント", "デザインシステム"],
       "narration_sections": {
-        "hook": "「AIで仕事を奪われる」はもう古い話。NN/gが今週、AIが新しく生んだデザイン仕事を4つに整理しました。あなたはどの担当ですか?",
-        "origin": "1つ目はAI機能のUI設計、Figma上でAIが何を出すかの見せ方。2つ目は会話のデザイン、チャットUIの体験。3つ目はAIエージェント用のデータ構造化。4つ目はAI自体のふるまい設計です。駆け出しはまず1つ目から入ると最短です。",
-        "recommend": "肩書きをAIデザイナーで止めず、4つのうちどれを極めるか宣言する。それだけで採用側にも先輩にも、見え方が変わります。"
+        "hook": "Figma Config 2026 まで 11 日、先週 9 日に AI エージェント Buddy v59 が Community で公開されました。",
+        "origin": "Buddy は Claude や GPT で生成した UI を Figma に取り込んだり、プロンプトから直接デザインを作れる AI エージェントです。自分のコンポーネント、命名規則、余白パターンを学習して、出力が手元のファイルに馴染みます。",
+        "recommend": "先輩の代わりに自分のルールを覚える AI、面接でも語れる差別化になります。今夜手元の無料版で 1 画面試してみてください。"
       },
       "section_titles": {
-        "hook": "AIデザイナーの分裂",
-        "origin": "仕事は4つに分かれた",
-        "recommend": "肩書きで終わらせない"
+        "hook": "Buddy v59 公開",
+        "origin": "デザシス記憶 AI",
+        "recommend": "面接で語れる差別化"
       },
       "section_descriptions": {
-        "hook": "NN/gが整理した、AIが生んだデザイン仕事",
-        "origin": "UI、会話、データ、ふるまいの4担当に分かれた",
-        "recommend": "どの1つを極めるかが、選ばれる理由になる"
+        "hook": "Config まで 11 日、Community が活発化",
+        "origin": "Claude/GPT 取り込み、デザシス学習で馴染む出力に",
+        "recommend": "自分のルールを覚える AI、無料版で今夜試そう"
       }
     }
   ]
