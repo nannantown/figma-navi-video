@@ -1347,7 +1347,7 @@
         "views": 7,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-10T01:31:08.634Z"
+        "updatedAt": "2026-06-11T01:39:51.072Z"
       }
     },
     {
@@ -1391,7 +1391,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-10T01:31:08.634Z"
+        "updatedAt": "2026-06-11T01:39:51.072Z"
       }
     },
     {
@@ -1435,7 +1435,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-10T01:31:08.634Z"
+        "updatedAt": "2026-06-11T01:39:51.072Z"
       }
     },
     {
@@ -1481,7 +1481,7 @@
         "views": 7,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-10T01:31:08.634Z"
+        "updatedAt": "2026-06-11T01:39:51.072Z"
       }
     },
     {
@@ -1527,7 +1527,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-10T01:31:08.634Z"
+        "updatedAt": "2026-06-11T01:39:51.072Z"
       }
     },
     {
@@ -1573,7 +1573,7 @@
         "views": 53,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-10T01:31:08.634Z"
+        "updatedAt": "2026-06-11T01:39:51.072Z"
       }
     },
     {
@@ -1619,7 +1619,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-10T01:31:08.634Z"
+        "updatedAt": "2026-06-11T01:39:51.072Z"
       }
     },
     {
@@ -1661,10 +1661,10 @@
         "freshness_hours": 100
       },
       "stats": {
-        "views": 1,
+        "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-10T01:31:08.634Z"
+        "updatedAt": "2026-06-11T01:39:51.072Z"
       }
     },
     {
@@ -1709,7 +1709,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-10T01:31:08.634Z"
+        "updatedAt": "2026-06-11T01:39:51.072Z"
       }
     },
     {
@@ -1757,10 +1757,10 @@
         "freshness_hours": 5
       },
       "stats": {
-        "views": 19,
+        "views": 21,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-10T01:31:08.634Z"
+        "updatedAt": "2026-06-11T01:39:51.072Z"
       }
     },
     {
@@ -1806,19 +1806,55 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-06-11T01:39:51.072Z"
+      }
+    },
+    {
+      "videoId": "X0j4C7gx4Ug",
+      "videoUrl": "https://youtube.com/shorts/X0j4C7gx4Ug",
+      "date": "2026-06-11",
+      "title": "【デザインニュース】NN/g『AI が生んだデザイン仕事は 4 種類』、駆け出しはまず 1 つ目から入ると最短｜2026/06/11 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 50,
+      "discovery": {
+        "method": "expert-blog",
+        "description": "NN/g (Nielsen Norman Group) articles ハブと検索で 2026-06-05 公開の Maria Rosala 『The Four Design Jobs AI Created (So Far)』を一次取得、AI 関連記事ハブとも整合確認。method 選定 (Thursday weekday news 帯、Apple 軸 5 連投 reset 続行 2 日目): 6/10 PDCA Action 2『6/11 (Thu) は柱④ Tips or 柱② の連投で「プラグイン週」を組成、候補 method = news-en (6/8 利用 → 6/11 で 3 日空きで 7 日 2 回ガード余裕) / official-src (6/9 利用 → 6/11 で 2 日空きで境界) / social-en (6/4 利用 → 7 日空き)』を再評価、(a) news-en は 7 日窓 (6/5-6/11) に 6/5 + 6/8 で 2 回到達済み、6/11 採用で 3 回目連投ガード抵触のため不可、(b) official-src は 6/9 利用で 2 日連続ガード境界、保守的に不可、(c) figma-community は 6/12 まで凍結、(d) product-launches は 6/10 利用で 2 日ガード抵触で不可、(e) expert-blog は 6/7 利用で 4 日空き、TOP3 同率 (avg 7.0、5/31 Microsoft Copilot = 7 views) で本日採用、(f) social-en (avg 4.0) は採用可だが Primary 翻訳適性で expert-blog 優先。expert-blog 内の出典分散として直近 14 日 Smashing 占有 (5/31 + 6/7) を NN/g に振って初の Smashing 外題材、`nng-translation` 新 sub-angle 初投入。柱③ industry/design news (target 20% → 直近 14 日 5/35 = 36% で Apple 偏重) の内訳分散として UX 研究機関枠を新設、Apple 5 連投の飽和を軽減。Primary 駆け出しデザイナーへの翻訳角度: 『AI で仕事を奪われる』恐怖の直球反転翻訳、NN/g 公式が『AI が新しく生んだ 4 つの仕事』を整理した枠組みを使い、駆け出しは 4 つのうち (1) AI 機能の UI 設計 から入るのが最短ルートと示唆、Figmaナビ 本体 (Figma 上で AI が生成する UI) は (1) のど真ん中だが本日は直接接続せず肩書き戦略の翻訳メインに振る。NG パターン回避: (a) 『AI が仕事を奪う』 NG → 直球反転で『奪われるは古い、AI が新しく作った 4 つ』と提示、(b) 『プロ向け高度議論』 NG → LLM 評価/ファインチューニング等の専門用語は (4) で『AI 自体のふるまい設計』と平易に翻訳、(c) 『AI に任せれば考えなくていい』 NG → Recommend で『どれを極めるか宣言』と判断主体性を明示、(d) 『プラグイン機能説明メイン』 NG → Figmaナビ への直接接続は控えて肩書き戦略翻訳に振り切る、(e) freshness_hours = 144 (公開 6/5 → 投稿 6/11 8:15 JST = 6 日後) で 168 NG ライン内、日本語コミュニティの解説はまだ事実上ゼロで速報性で勝てる。",
+        "sources": [
+          "https://www.nngroup.com/articles/design-jobs-ai-created/",
+          "https://www.nngroup.com/articles/",
+          "https://www.nngroup.com/topic/ai/",
+          "https://www.nngroup.com/articles/prepare-for-ai/",
+          "https://www.nngroup.com/articles/ai-work-study-guide/"
+        ],
+        "query": "Nielsen Norman Group AI design four jobs designer roles 2026 designing with AI designing the AI conversational agent infrastructure LLM behavior",
+        "freshness_hours": 144
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-03",
-      "changes": [
-        "standard: 165 avg views (10 videos)",
-        "Day performance: Wed=315, Sun=249, Thu=132, Sat=115, Tue=111, Mon=101, Fri=93"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-04",
       "changes": [
@@ -2048,6 +2084,14 @@
       "changes": [
         "standard: 85 avg views (39 videos)",
         "Day performance: Wed=127, Sat=99, Sun=88, Thu=79, Tue=72, Fri=69, Mon=52"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-11",
+      "changes": [
+        "standard: 83 avg views (40 videos)",
+        "Day performance: Wed=109, Sat=100, Sun=88, Thu=79, Tue=72, Fri=69, Mon=52"
       ],
       "recommendedTemplate": "standard"
     }
