@@ -1,42 +1,42 @@
 {
-  "date": "2026-06-12",
+  "date": "2026-06-13",
   "discovery": {
-    "method": "figma-community",
-    "description": "Figma Community のトレンド AI agent 系を巡回調査し、Anima 製 Buddy が 2026-06-09 に v59 を公開した事実を Anima Blog / Figma Community プラグインページ / 検索メディアから一次取得。Codex / Claude Opus・Sonnet / GPT / Gemini のマルチ LLM 対応、コンポーネント・Variables・命名規則・余白パターンを学習する design-system-aware の AI エージェントという独自性を確認。Magic Animator v15 (6/9) と同日リリースで AI エージェント・カテゴリ全体の活性化が観測でき、Figma Config 2026 (6/23-25) まで 11 日というカウントダウン anchor と組み合わせて『直前の Community 活性化』として時事性を確保。method 選定: 直近 14 日 figma-community は 3 連続 WORST 凍結が 6/12 で解除、9 日空きで 2-day rule・7-day-2-time ガード余裕、weekday news-preferred 4 タグ中 official-src (6/9 利用で 7 日 2 回到達)・product-launches (6/10 利用 2-day)・expert-blog (6/11 利用 2-day) がガード抵触、news-en は採用可だが 6/13 以降に温存して本日は構造転換の優先度を取る。PDCA 6/11 で予告した『単一プラグイン深掘り → 横断比較 + 時事 anchor』の構造転換を Buddy 主軸 + ai.to.design (Qwen 3.7 Plus 追加 6/4) を脇に配置する形で初実装。柱② プラグイン/エコシステム (target 20%、直近 14 日 2/14 = 14% で未達) の補充を兼ねる。NG パターン回避: Figmaナビ への直接 CTA は控え、AI エージェント・カテゴリの隣接サービス紹介で自社ポジショニングを自然に補強、AI=補助輪フレームを維持して『自分のルールを AI に覚えさせる、判断は人がする』と再強化。",
+    "method": "news-ja",
+    "description": "土曜の evergreen 帯で Explore 1 番手として news-ja を初投入。PDCA 6/12 Action 2 の予告通り、note / cocoda の長尺 Tips 記事を駆け出しデザイナー向けに 60 秒翻訳する角度で着地。note 検索で『Figma + 駆け出し + UI』クエリ群の上位継続記事を抽出した結果、smzk0123『デザイナーの読み物』チャンネル『Figma は触れるのに、UI がイマイチな理由』が Primary 痛点 (Figma 操作はできるのに UI が垢抜けない) を直撃する題材として確定。主旨は『Figma の操作スキルと UI 品質は直結しない、原因は判断していないこと、UI デザインは現場で積み上げる判断力が本質』。Figmaナビ本体の『AI は補助輪、判断は自分』フレームと完全整合し、自社ポジショニングを Tips 文脈で自然強化できる。method 選定: 直近 14 日 0 投稿の Explore 1 番手、土曜 evergreen 帯で長尺翻訳の最適枠、平日の英語 news 群 (news-en / official-src / product-launches / expert-blog) は土曜の evergreen 適性で優先度低下、figma-community は 2-day rule 抵触で不可、social-ja は別日温存。柱配分: 柱④ Tips/Figma 実践 (target 15%、直近 14 日 0% で大幅未達) の補充を兼ねる。freshness 運用: 戦略 NG パターン『1 週間以上前のニュースを新着扱い』は土日 evergreen Tips は例外、note 記事は『今話題のスナップショット』として freshness_hours = 96 (4 日相当) で記録、運用先例を作る。NG パターン回避: 『AI に任せれば考えなくていい』を避けて『判断 = 人がやる』を強調、『AI が仕事を奪う』ではなく『面接で語れる強み』の前向き訴求、Figmaナビ への直接 CTA は控えて Tips の延長として AI 時代の判断力訴求に着地。",
     "sources": [
-      "https://www.figma.com/community/plugin/1616481120325792817/buddy-figma-ai-agent-claude-design-to-figma-codex-html-ux-generator-co-pilot-assistant-for-designers",
-      "https://www.animaapp.com/blog/genai/figma-ai-design-agent/",
-      "https://www.animaapp.com/blog/genai/figma-design-agent-review-features-pros-cons-best-alternative/",
-      "https://www.figma.com/community/plugin/1595802057883629790/ai-to-design-by-divriots-generate-designs-from-ai-gpt-claude-gemini",
-      "https://www.figma.com/release-notes/",
-      "https://config.figma.com/",
-      "https://releasebot.io/updates/figma"
+      "https://note.com/smzk0123/n/n5b346211315e",
+      "https://note.com/hiraly/n/na862a7c0944b",
+      "https://note.com/tsukulink/n/ne1ade725a043",
+      "https://note.com/fjkn/n/n9bc5b6ec9fc2",
+      "https://blog.nijibox.jp/article/web-uidesign_trend/",
+      "https://qiita.com/katoriko/items/c8ed058644beb0023b8a",
+      "https://note.com/nokowashiyama/n/n73833fb32343"
     ],
-    "query": "Figma Community Buddy v59 June 9 2026 AI agent Anima design system aware Claude Opus Sonnet GPT Gemini multi LLM",
-    "freshness_hours": 72
+    "query": "note Figma 駆け出し UI デザイナー Tips 2026 / Figmaは触れるのに UI イマイチ 理由 / smzk0123 デザイナーの読み物",
+    "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Buddy v59 が Figma Community 公開、デザシス覚える AI エージェントで Claude/GPT 出力も Figma へ",
-      "description": "Figma Config 2026 まで 11 日、Community で AI エージェントが活発化。Anima 製 Buddy v59 が 6/9 に公開されました。",
-      "detail": "Buddy は Claude や GPT で生成した UI を Figma に取り込んだり、プロンプトから直接デザインを作れる AI エージェント。自分のコンポーネント、命名規則、余白パターンを学習して、出力が手元のファイルに馴染むのが特徴です。",
-      "narration": "Figma Config 2026 まで 11 日、先週 9 日に AI エージェント Buddy v59 が Community で公開されました。",
-      "tags": ["Figma", "AI エージェント", "デザインシステム"],
+      "title": "note 人気記事『Figma は触れるのに UI がイマイチな理由』を駆け出し向け Tips 翻訳、原因は判断していないこと",
+      "description": "Figma 触れるのに UI が垢抜けないのは『判断していない』から。note の人気記事『デザイナーの読み物』が核心を指摘しました。",
+      "detail": "操作スキルと判断は別物。Auto Layout が綺麗でレイヤーも整理されていても、なぜこの色か、なぜこの余白か、説明できる判断の積み重ねが UI 品質を決めます。AI 時代こそ判断が差別化です。",
+      "narration": "「Figma 触れるのに UI が垢抜けない」あなたへ。note の人気記事『デザイナーの読み物』が核心を指摘しました。",
+      "tags": ["Figma Tips", "UI 判断力", "駆け出しデザイナー"],
       "narration_sections": {
-        "hook": "Figma Config 2026 まで 11 日、先週 9 日に AI エージェント Buddy v59 が Community で公開されました。",
-        "origin": "Buddy は Claude や GPT で生成した UI を Figma に取り込んだり、プロンプトから直接デザインを作れる AI エージェントです。自分のコンポーネント、命名規則、余白パターンを学習して、出力が手元のファイルに馴染みます。",
-        "recommend": "先輩の代わりに自分のルールを覚える AI、面接でも語れる差別化になります。今夜手元の無料版で 1 画面試してみてください。"
+        "hook": "「Figma 触れるのに UI が垢抜けない」あなたへ。note の人気記事『デザイナーの読み物』が核心を指摘しました。",
+        "origin": "原因は『判断していない』こと。Auto Layout 綺麗、レイヤー整理、余白も均等、でも UI が良くならないのは操作スキルと判断が別物だから。なぜこの色か、なぜこの余白か、説明できる判断の積み重ねが品質を決めるそうです。",
+        "recommend": "AI で速く作る時代こそ判断が差別化。今夜は手元の 1 画面、配置の理由を 3 つ言語化してみてください。面接で語れる強みになります。"
       },
       "section_titles": {
-        "hook": "Buddy v59 公開",
-        "origin": "デザシス記憶 AI",
-        "recommend": "面接で語れる差別化"
+        "hook": "UI 垢抜けない",
+        "origin": "判断していない罠",
+        "recommend": "面接で語れる強み"
       },
       "section_descriptions": {
-        "hook": "Config まで 11 日、Community が活発化",
-        "origin": "Claude/GPT 取り込み、デザシス学習で馴染む出力に",
-        "recommend": "自分のルールを覚える AI、無料版で今夜試そう"
+        "hook": "Figma の操作はできるのに UI が垢抜けない理由",
+        "origin": "操作スキルと判断は別物、説明できる判断が品質を決める",
+        "recommend": "AI 時代こそ判断、今夜 1 画面で配置理由を 3 つ言語化"
       }
     }
   ]
