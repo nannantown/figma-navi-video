@@ -1,42 +1,43 @@
 {
-  "date": "2026-06-13",
+  "date": "2026-06-14",
   "discovery": {
-    "method": "news-ja",
-    "description": "土曜の evergreen 帯で Explore 1 番手として news-ja を初投入。PDCA 6/12 Action 2 の予告通り、note / cocoda の長尺 Tips 記事を駆け出しデザイナー向けに 60 秒翻訳する角度で着地。note 検索で『Figma + 駆け出し + UI』クエリ群の上位継続記事を抽出した結果、smzk0123『デザイナーの読み物』チャンネル『Figma は触れるのに、UI がイマイチな理由』が Primary 痛点 (Figma 操作はできるのに UI が垢抜けない) を直撃する題材として確定。主旨は『Figma の操作スキルと UI 品質は直結しない、原因は判断していないこと、UI デザインは現場で積み上げる判断力が本質』。Figmaナビ本体の『AI は補助輪、判断は自分』フレームと完全整合し、自社ポジショニングを Tips 文脈で自然強化できる。method 選定: 直近 14 日 0 投稿の Explore 1 番手、土曜 evergreen 帯で長尺翻訳の最適枠、平日の英語 news 群 (news-en / official-src / product-launches / expert-blog) は土曜の evergreen 適性で優先度低下、figma-community は 2-day rule 抵触で不可、social-ja は別日温存。柱配分: 柱④ Tips/Figma 実践 (target 15%、直近 14 日 0% で大幅未達) の補充を兼ねる。freshness 運用: 戦略 NG パターン『1 週間以上前のニュースを新着扱い』は土日 evergreen Tips は例外、note 記事は『今話題のスナップショット』として freshness_hours = 96 (4 日相当) で記録、運用先例を作る。NG パターン回避: 『AI に任せれば考えなくていい』を避けて『判断 = 人がやる』を強調、『AI が仕事を奪う』ではなく『面接で語れる強み』の前向き訴求、Figmaナビ への直接 CTA は控えて Tips の延長として AI 時代の判断力訴求に着地。",
+    "method": "product-launches",
+    "description": "Awwwards Site of the Day の直近 1 週間 (6/7-6/13) 受賞リストを巡回し、6/10 SOTD 受賞 Pacôme Pertant Portfolio (Paris 拠点のモーション + サウンドデザイナー) を主軸題材として確定。同サイトは Developer 賞も W 受賞で、サイトを開いた瞬間に自作 BGM が流れ・3D 造形がリズムで動く構造を持ち、駆け出しの『ポートフォリオが他人と似てしまう』痛点に直接効くポートフォリオ事例。method 選定 (Sun evergreen 帯): TOP3 候補のうち news-ja は 6/13 (昨日) 利用で 2-day rule 抵触、figma-community は 6/12 利用で 2-day rule 境界 + 3 連続 WORST 凍結明け直後で連続採用回避、expert-blog は 6/11 利用で 2-day rule 通過するも 6/7+6/11 で 7 日窓 2 回到達済、official-src は 6/9 利用で 2-day rule OK だが 6/6+6/9 で 7 日 2 回到達済、news-en は 6/8 利用で 6/8 のみで 7 日窓内 1 回だが土曜 6/13 evergreen 路線継続の今日は news 系より evergreen 適性高い method 優先、social-en は 6/4 利用で 2-day rule OK だが weekday news-preferred 順位下。残る product-launches (6/10 利用、4 日空き、7 日窓 6/8-6/14 で 6/10 + 6/14 = 2 回到達 OK、過去実績 4/26 Awwwards = 249 / 4/29 Magic Patterns = 485 / 5/2 Studio375 / 5/9 Awwwards = 72 で TOP method) が今日の最適枠。PDCA 6/13 Action 3 (a) Awwwards 受賞 LP の UI 批評案を完全実装、柱⑤ Before/After・ポートフォリオ事例 (target 10%、直近 14 日 0%) + 柱⑥ UI 批評 (target 10%、直近 14 日 0%) のクロス 2 柱同時補強。Primary 駆け出し層の『ポートフォリオが他人と似て差別化できない』最頻出痛点を起点に、Pacôme の『自分の独自スキル組み合わせ (モーション × サウンド) を体感させる』設計を駆け出しが転用できる『掛け算で見せる』型に翻訳。NG パターン回避: AI = 補助輪フレーム維持 (recommend で『AI 時代こそ二つの軸を重ねた独自軸が面接で語れる強み』として AI を主役にせず駆け出しの判断力を主役化)、プロ向け高度議論回避 (Nuxt / Three.js などの技術詳細は伏せて『掛け算』という小学生レベル抽象化)、『AI が仕事を奪う』回避 (差別化・面接で語れる強みの前向き訴求一辺倒)、freshness 4 日 = 96h で 168h NG ライン余裕、一次ソース Awwwards SOTD 公式ページ + Behance + landing.love で出典明確化。",
     "sources": [
-      "https://note.com/smzk0123/n/n5b346211315e",
-      "https://note.com/hiraly/n/na862a7c0944b",
-      "https://note.com/tsukulink/n/ne1ade725a043",
-      "https://note.com/fjkn/n/n9bc5b6ec9fc2",
-      "https://blog.nijibox.jp/article/web-uidesign_trend/",
-      "https://qiita.com/katoriko/items/c8ed058644beb0023b8a",
-      "https://note.com/nokowashiyama/n/n73833fb32343"
+      "https://www.awwwards.com/sites/pacome-pertant-portfolio",
+      "https://www.awwwards.com/websites/sites_of_the_day/",
+      "https://www.pacomepertant.com/",
+      "https://www.behance.net/pacomepertant",
+      "https://www.landing.love/sites/pacomepertant/",
+      "https://mesh3d.gallery/website/pacome-pertant-portfolio",
+      "https://www.awwwards.com/websites/winner_category_portfolio/",
+      "https://www.awwwards.com/websites/portfolio/"
     ],
-    "query": "note Figma 駆け出し UI デザイナー Tips 2026 / Figmaは触れるのに UI イマイチ 理由 / smzk0123 デザイナーの読み物",
+    "query": "Awwwards Site of the Day June 2026 winners portfolio Pacôme Pertant motion sound designer Developer award",
     "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "note 人気記事『Figma は触れるのに UI がイマイチな理由』を駆け出し向け Tips 翻訳、原因は判断していないこと",
-      "description": "Figma 触れるのに UI が垢抜けないのは『判断していない』から。note の人気記事『デザイナーの読み物』が核心を指摘しました。",
-      "detail": "操作スキルと判断は別物。Auto Layout が綺麗でレイヤーも整理されていても、なぜこの色か、なぜこの余白か、説明できる判断の積み重ねが UI 品質を決めます。AI 時代こそ判断が差別化です。",
-      "narration": "「Figma 触れるのに UI が垢抜けない」あなたへ。note の人気記事『デザイナーの読み物』が核心を指摘しました。",
-      "tags": ["Figma Tips", "UI 判断力", "駆け出しデザイナー"],
+      "title": "Awwwards 6/10 SOTD Pacôme Pertant ポートフォリオ、モーション × サウンド二刀流が駆け出しに示す『掛け算で見せる』型",
+      "description": "ポートフォリオが他人と似てしまうあなたへ。Awwwards SOTD で Paris 発の Pacôme Pertant が『掛け算で見せる』答えを示しました。",
+      "detail": "モーション × サウンドの二刀流。サイトを開いた瞬間に自作 BGM が流れ、3D 造形がリズムで動く。経歴を並べるのではなく、自分の掛け算を体感させる構造で、デザインと Developer 賞の W 受賞。あなたの軸も二つ重ねれば独自になります。",
+      "narration": "「ポートフォリオが他人と似てしまう」あなたへ。今週Awwwards受賞のParis発デザイナーが、答えを示しました。",
+      "tags": ["Awwwards", "ポートフォリオ", "駆け出しデザイナー"],
       "narration_sections": {
-        "hook": "「Figma 触れるのに UI が垢抜けない」あなたへ。note の人気記事『デザイナーの読み物』が核心を指摘しました。",
-        "origin": "原因は『判断していない』こと。Auto Layout 綺麗、レイヤー整理、余白も均等、でも UI が良くならないのは操作スキルと判断が別物だから。なぜこの色か、なぜこの余白か、説明できる判断の積み重ねが品質を決めるそうです。",
-        "recommend": "AI で速く作る時代こそ判断が差別化。今夜は手元の 1 画面、配置の理由を 3 つ言語化してみてください。面接で語れる強みになります。"
+        "hook": "「ポートフォリオが他人と似てしまう」あなたへ。今週Awwwards受賞のParis発デザイナーが、答えを示しました。",
+        "origin": "6月10日SOTD受賞のPacôme Pertantは、モーション×サウンドの二刀流。サイトを開いた瞬間、自作BGMが流れ、3D造形がリズムで動く。経歴ではなく「掛け算」を体験させる構造で、Developer賞も同時受賞。",
+        "recommend": "あなたの掛け算は何ですか。Figma×3D、UI×コピー、設計×音。AI時代こそ二つの軸を重ねた組み合わせが、面接で語れる独自の強みになります。"
       },
       "section_titles": {
-        "hook": "UI 垢抜けない",
-        "origin": "判断していない罠",
-        "recommend": "面接で語れる強み"
+        "hook": "ポートフォリオ二刀流",
+        "origin": "掛け算を体感させる構造",
+        "recommend": "あなたの掛け算は何"
       },
       "section_descriptions": {
-        "hook": "Figma の操作はできるのに UI が垢抜けない理由",
-        "origin": "操作スキルと判断は別物、説明できる判断が品質を決める",
-        "recommend": "AI 時代こそ判断、今夜 1 画面で配置理由を 3 つ言語化"
+        "hook": "他人と似ないポートフォリオへ、SOTD受賞の答え",
+        "origin": "音と動きを掛け算したParis発デザイナーの設計",
+        "recommend": "二つの軸を重ねた独自軸が面接で語れる強みに"
       }
     }
   ]
