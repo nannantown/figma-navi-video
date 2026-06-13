@@ -1435,7 +1435,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-11T01:39:51.072Z"
+        "updatedAt": "2026-06-13T01:34:32.674Z"
       }
     },
     {
@@ -1481,7 +1481,7 @@
         "views": 7,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-11T01:39:51.072Z"
+        "updatedAt": "2026-06-13T01:34:32.674Z"
       }
     },
     {
@@ -1527,7 +1527,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-11T01:39:51.072Z"
+        "updatedAt": "2026-06-13T01:34:32.674Z"
       }
     },
     {
@@ -1573,7 +1573,7 @@
         "views": 53,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-11T01:39:51.072Z"
+        "updatedAt": "2026-06-13T01:34:32.674Z"
       }
     },
     {
@@ -1619,7 +1619,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-11T01:39:51.072Z"
+        "updatedAt": "2026-06-13T01:34:32.674Z"
       }
     },
     {
@@ -1664,7 +1664,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-11T01:39:51.072Z"
+        "updatedAt": "2026-06-13T01:34:32.674Z"
       }
     },
     {
@@ -1709,7 +1709,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-11T01:39:51.072Z"
+        "updatedAt": "2026-06-13T01:34:32.674Z"
       }
     },
     {
@@ -1757,10 +1757,10 @@
         "freshness_hours": 5
       },
       "stats": {
-        "views": 21,
+        "views": 22,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-11T01:39:51.072Z"
+        "updatedAt": "2026-06-13T01:34:32.674Z"
       }
     },
     {
@@ -1803,10 +1803,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-11T01:39:51.072Z"
+        "updatedAt": "2026-06-13T01:34:32.674Z"
       }
     },
     {
@@ -1850,19 +1850,57 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-06-13T01:34:32.674Z"
+      }
+    },
+    {
+      "videoId": "-KJQN587z28",
+      "videoUrl": "https://youtube.com/shorts/-KJQN587z28",
+      "date": "2026-06-13",
+      "title": "【デザインニュース】note 人気記事『Figma は触れるのに UI がイマイチな理由』を駆け出し向け Tips 翻訳、原因は判断していないこと｜2026/06/13 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 45,
+      "discovery": {
+        "method": "news-ja",
+        "description": "土曜の evergreen 帯で Explore 1 番手として news-ja を初投入。PDCA 6/12 Action 2 の予告通り、note / cocoda の長尺 Tips 記事を駆け出しデザイナー向けに 60 秒翻訳する角度で着地。note 検索で『Figma + 駆け出し + UI』クエリ群の上位継続記事を抽出した結果、smzk0123『デザイナーの読み物』チャンネル『Figma は触れるのに、UI がイマイチな理由』が Primary 痛点 (Figma 操作はできるのに UI が垢抜けない) を直撃する題材として確定。主旨は『Figma の操作スキルと UI 品質は直結しない、原因は判断していないこと、UI デザインは現場で積み上げる判断力が本質』。Figmaナビ本体の『AI は補助輪、判断は自分』フレームと完全整合し、自社ポジショニングを Tips 文脈で自然強化できる。method 選定: 直近 14 日 0 投稿の Explore 1 番手、土曜 evergreen 帯で長尺翻訳の最適枠、平日の英語 news 群 (news-en / official-src / product-launches / expert-blog) は土曜の evergreen 適性で優先度低下、figma-community は 2-day rule 抵触で不可、social-ja は別日温存。柱配分: 柱④ Tips/Figma 実践 (target 15%、直近 14 日 0% で大幅未達) の補充を兼ねる。freshness 運用: 戦略 NG パターン『1 週間以上前のニュースを新着扱い』は土日 evergreen Tips は例外、note 記事は『今話題のスナップショット』として freshness_hours = 96 (4 日相当) で記録、運用先例を作る。NG パターン回避: 『AI に任せれば考えなくていい』を避けて『判断 = 人がやる』を強調、『AI が仕事を奪う』ではなく『面接で語れる強み』の前向き訴求、Figmaナビ への直接 CTA は控えて Tips の延長として AI 時代の判断力訴求に着地。",
+        "sources": [
+          "https://note.com/smzk0123/n/n5b346211315e",
+          "https://note.com/hiraly/n/na862a7c0944b",
+          "https://note.com/tsukulink/n/ne1ade725a043",
+          "https://note.com/fjkn/n/n9bc5b6ec9fc2",
+          "https://blog.nijibox.jp/article/web-uidesign_trend/",
+          "https://qiita.com/katoriko/items/c8ed058644beb0023b8a",
+          "https://note.com/nokowashiyama/n/n73833fb32343"
+        ],
+        "query": "note Figma 駆け出し UI デザイナー Tips 2026 / Figmaは触れるのに UI イマイチ 理由 / smzk0123 デザイナーの読み物",
+        "freshness_hours": 96
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-04",
-      "changes": [
-        "standard: 158 avg views (11 videos)",
-        "Day performance: Wed=315, Sun=169, Thu=131, Sat=115, Tue=112, Mon=101, Fri=93"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-05",
       "changes": [
@@ -2092,6 +2130,14 @@
       "changes": [
         "standard: 83 avg views (40 videos)",
         "Day performance: Wed=109, Sat=100, Sun=88, Thu=79, Tue=72, Fri=69, Mon=52"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-13",
+      "changes": [
+        "standard: 81 avg views (41 videos)",
+        "Day performance: Wed=109, Sat=100, Sun=88, Tue=72, Fri=69, Thu=66, Mon=52"
       ],
       "recommendedTemplate": "standard"
     }
