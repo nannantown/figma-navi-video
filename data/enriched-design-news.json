@@ -1,43 +1,41 @@
 {
-  "date": "2026-06-14",
+  "date": "2026-06-15",
   "discovery": {
-    "method": "product-launches",
-    "description": "Awwwards Site of the Day の直近 1 週間 (6/7-6/13) 受賞リストを巡回し、6/10 SOTD 受賞 Pacôme Pertant Portfolio (Paris 拠点のモーション + サウンドデザイナー) を主軸題材として確定。同サイトは Developer 賞も W 受賞で、サイトを開いた瞬間に自作 BGM が流れ・3D 造形がリズムで動く構造を持ち、駆け出しの『ポートフォリオが他人と似てしまう』痛点に直接効くポートフォリオ事例。method 選定 (Sun evergreen 帯): TOP3 候補のうち news-ja は 6/13 (昨日) 利用で 2-day rule 抵触、figma-community は 6/12 利用で 2-day rule 境界 + 3 連続 WORST 凍結明け直後で連続採用回避、expert-blog は 6/11 利用で 2-day rule 通過するも 6/7+6/11 で 7 日窓 2 回到達済、official-src は 6/9 利用で 2-day rule OK だが 6/6+6/9 で 7 日 2 回到達済、news-en は 6/8 利用で 6/8 のみで 7 日窓内 1 回だが土曜 6/13 evergreen 路線継続の今日は news 系より evergreen 適性高い method 優先、social-en は 6/4 利用で 2-day rule OK だが weekday news-preferred 順位下。残る product-launches (6/10 利用、4 日空き、7 日窓 6/8-6/14 で 6/10 + 6/14 = 2 回到達 OK、過去実績 4/26 Awwwards = 249 / 4/29 Magic Patterns = 485 / 5/2 Studio375 / 5/9 Awwwards = 72 で TOP method) が今日の最適枠。PDCA 6/13 Action 3 (a) Awwwards 受賞 LP の UI 批評案を完全実装、柱⑤ Before/After・ポートフォリオ事例 (target 10%、直近 14 日 0%) + 柱⑥ UI 批評 (target 10%、直近 14 日 0%) のクロス 2 柱同時補強。Primary 駆け出し層の『ポートフォリオが他人と似て差別化できない』最頻出痛点を起点に、Pacôme の『自分の独自スキル組み合わせ (モーション × サウンド) を体感させる』設計を駆け出しが転用できる『掛け算で見せる』型に翻訳。NG パターン回避: AI = 補助輪フレーム維持 (recommend で『AI 時代こそ二つの軸を重ねた独自軸が面接で語れる強み』として AI を主役にせず駆け出しの判断力を主役化)、プロ向け高度議論回避 (Nuxt / Three.js などの技術詳細は伏せて『掛け算』という小学生レベル抽象化)、『AI が仕事を奪う』回避 (差別化・面接で語れる強みの前向き訴求一辺倒)、freshness 4 日 = 96h で 168h NG ライン余裕、一次ソース Awwwards SOTD 公式ページ + Behance + landing.love で出典明確化。",
+    "method": "news-en",
+    "description": "英語テック/デザイン媒体 (noqta.tn / theaiinsider など) と Figma 公式 Help Center・Release Notes・Chrome 拡張ダウンロードページを横断調査。6/11 公開の Figma 公式 Chrome 拡張 (Web サイトを編集可能な Figma レイヤーとして取り込む beta 機能、有料プラン限定) を一次取得。直近14日 method 別 TOP1 (news-en, avg 53 views, n=1) を 06-08 以来 7 日空きで Exploit 再投入。直近 2 日 (06-14 product-launches, 06-13 news-ja) と method 重複なし、7日2回到達ガードもクリア。柱① Figma 公式ニュース (target 25%, 直近 21% で未達) を埋め、Primary 駆け出しデザイナーの『他人の LP を模写して練習したいが時間がかかる』痛点を直撃。NG パターン回避: AI=補助輪フレームを維持、プラグイン機能説明メインではなく学習者の課題から入り、『AI/拡張が考えてくれる』ではなく『模写と観察の練習が一段ラクになる』として位置づけ",
     "sources": [
-      "https://www.awwwards.com/sites/pacome-pertant-portfolio",
-      "https://www.awwwards.com/websites/sites_of_the_day/",
-      "https://www.pacomepertant.com/",
-      "https://www.behance.net/pacomepertant",
-      "https://www.landing.love/sites/pacomepertant/",
-      "https://mesh3d.gallery/website/pacome-pertant-portfolio",
-      "https://www.awwwards.com/websites/winner_category_portfolio/",
-      "https://www.awwwards.com/websites/portfolio/"
+      "https://noqta.tn/en/news/figma-chrome-extension-web-to-editable-layers-2026",
+      "https://help.figma.com/hc/en-us/articles/40826832449303-Capture-web-pages-to-layers-with-the-Figma-Chrome-extension",
+      "https://www.figma.com/release-notes/",
+      "https://www.figma.com/downloads/chrome-extension/",
+      "https://chromewebstore.google.com/detail/figma/fkmaohpngenfoccdgceedjkfhkdcohmg",
+      "https://www.figma.com/community/plugin/1638163926915651446/web-to-figma-capture-any-web-page-as-editable-figma-layers"
     ],
-    "query": "Awwwards Site of the Day June 2026 winners portfolio Pacôme Pertant motion sound designer Developer award",
+    "query": "Figma Chrome extension website to editable layers June 11 2026 capture page select element paid plan beta",
     "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Awwwards 6/10 SOTD Pacôme Pertant ポートフォリオ、モーション × サウンド二刀流が駆け出しに示す『掛け算で見せる』型",
-      "description": "ポートフォリオが他人と似てしまうあなたへ。Awwwards SOTD で Paris 発の Pacôme Pertant が『掛け算で見せる』答えを示しました。",
-      "detail": "モーション × サウンドの二刀流。サイトを開いた瞬間に自作 BGM が流れ、3D 造形がリズムで動く。経歴を並べるのではなく、自分の掛け算を体感させる構造で、デザインと Developer 賞の W 受賞。あなたの軸も二つ重ねれば独自になります。",
-      "narration": "「ポートフォリオが他人と似てしまう」あなたへ。今週Awwwards受賞のParis発デザイナーが、答えを示しました。",
-      "tags": ["Awwwards", "ポートフォリオ", "駆け出しデザイナー"],
+      "title": "Figma 公式 Chrome 拡張が 6/11 公開、Web サイトを編集可能な Figma レイヤーで丸ごと取り込みできる新機能",
+      "description": "気になる Web サイトを丸ごと編集可能な Figma レイヤーで貼れる地味に革命的な新機能",
+      "detail": "6/11 公開のこの拡張、ページ全体や要素を選んでコピーすると、フレーム・テキスト・画像が編集可能なレイヤーとして Figma に並びます。スクショと違って色や余白を動かして検証できるので、好きな LP を秒で解剖できます",
+      "narration": "Figma の新しい Chrome 拡張、気になる Web サイトを編集可能な Figma レイヤーで丸ごと貼れます。先週公開、地味に革命的な機能です",
+      "tags": ["Figma", "Chrome拡張", "Web取り込み"],
       "narration_sections": {
-        "hook": "「ポートフォリオが他人と似てしまう」あなたへ。今週Awwwards受賞のParis発デザイナーが、答えを示しました。",
-        "origin": "6月10日SOTD受賞のPacôme Pertantは、モーション×サウンドの二刀流。サイトを開いた瞬間、自作BGMが流れ、3D造形がリズムで動く。経歴ではなく「掛け算」を体験させる構造で、Developer賞も同時受賞。",
-        "recommend": "あなたの掛け算は何ですか。Figma×3D、UI×コピー、設計×音。AI時代こそ二つの軸を重ねた組み合わせが、面接で語れる独自の強みになります。"
+        "hook": "Figma の新しい Chrome 拡張、気になる Web サイトを編集可能な Figma レイヤーで丸ごと貼れます。先週公開、地味に革命的な機能です",
+        "origin": "6/11 公開のこの拡張、ページ全体や要素を選んでコピーすると、フレーム・テキスト・画像が編集可能なレイヤーとして Figma に並びます。スクショと違って色や余白を動かして検証できるので、好きな LP を秒で解剖できます",
+        "recommend": "ベータは有料プラン限定ですが、模写や UI 観察の練習が一段ラクに。今週は気になるサイトを1本、まず解剖してみてください"
       },
       "section_titles": {
-        "hook": "ポートフォリオ二刀流",
-        "origin": "掛け算を体感させる構造",
-        "recommend": "あなたの掛け算は何"
+        "hook": "Figma 公式拡張",
+        "origin": "編集可能なレイヤー化",
+        "recommend": "模写と観察を秒で"
       },
       "section_descriptions": {
-        "hook": "他人と似ないポートフォリオへ、SOTD受賞の答え",
-        "origin": "音と動きを掛け算したParis発デザイナーの設計",
-        "recommend": "二つの軸を重ねた独自軸が面接で語れる強みに"
+        "hook": "先週公開の Figma 公式 Chrome 拡張",
+        "origin": "6/11 公開、有料プラン向けベータで提供中",
+        "recommend": "気になる LP を秒で解剖、模写の練習が捗る"
       }
     }
   ]
