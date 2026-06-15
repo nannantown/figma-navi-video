@@ -1,41 +1,41 @@
 {
-  "date": "2026-06-15",
+  "date": "2026-06-16",
   "discovery": {
-    "method": "news-en",
-    "description": "英語テック/デザイン媒体 (noqta.tn / theaiinsider など) と Figma 公式 Help Center・Release Notes・Chrome 拡張ダウンロードページを横断調査。6/11 公開の Figma 公式 Chrome 拡張 (Web サイトを編集可能な Figma レイヤーとして取り込む beta 機能、有料プラン限定) を一次取得。直近14日 method 別 TOP1 (news-en, avg 53 views, n=1) を 06-08 以来 7 日空きで Exploit 再投入。直近 2 日 (06-14 product-launches, 06-13 news-ja) と method 重複なし、7日2回到達ガードもクリア。柱① Figma 公式ニュース (target 25%, 直近 21% で未達) を埋め、Primary 駆け出しデザイナーの『他人の LP を模写して練習したいが時間がかかる』痛点を直撃。NG パターン回避: AI=補助輪フレームを維持、プラグイン機能説明メインではなく学習者の課題から入り、『AI/拡張が考えてくれる』ではなく『模写と観察の練習が一段ラクになる』として位置づけ",
+    "method": "official-src",
+    "description": "Figma 公式 Release Notes・Newsroom・Community Help Center を一次取得し、6/12 公開の Figma Community プロフィール大型刷新 (ロール・経験・技術スタックの欄追加、ピン留め作品・画像・説明リンク、X/サイトの社会的アカウント接続、FigPal カスタム設定) を確定。Config 2026 (6/23-25 San Francisco / 無料オンライン視聴) 開幕 1 週間前という timing 整合性で、世界が Figma Community に注目する前にプロフィールを整える意義として翻訳。method 選定 (Tuesday weekday news 帯): 直近14日 TOP1 news-en (06-15 利用、2日ガード抵触で本日不可)、TOP1 product-launches (06-14 利用、同様)、TOP3 figma-community (06-12 利用、2日ガード境界・直近2日ルール抵触)、expert-blog は 06-11 利用 + 2 週連続 WORST 接近で本日温存、news-ja は WORST。残る TOP2 official-src (avg 8.7、06-09 = 7日前、7日2回ガード window 06-10〜06-16 内は 0 回、完全クリア) を Exploit 採用。Apple WWDC 系 5 連投の谷間で Figma 公式新機能で official-src 独立母数を稼ぐ意図。柱① Figma 公式ニュース (target 25%) を主軸に、副 ② プラグイン/エコシステム (target 20%) を Community 領域として補強。NG パターン回避: (a) AI=補助輪フレーム維持 (プロフィール整備の判断は人がする側として位置づけ)、(b) プラグイン/機能説明メインではなく Primary 駆け出しデザイナーの『ポートフォリオを 1 枚で見せられる場所がない』痛点起点、(c) 『AIが仕事を奪う』NG 完全非該当、(d) freshness_hours=96 で 168 NG ライン余裕クリア、(e) 出典 6 ソースで multi-source confirm",
     "sources": [
-      "https://noqta.tn/en/news/figma-chrome-extension-web-to-editable-layers-2026",
-      "https://help.figma.com/hc/en-us/articles/40826832449303-Capture-web-pages-to-layers-with-the-Figma-Chrome-extension",
       "https://www.figma.com/release-notes/",
-      "https://www.figma.com/downloads/chrome-extension/",
-      "https://chromewebstore.google.com/detail/figma/fkmaohpngenfoccdgceedjkfhkdcohmg",
-      "https://www.figma.com/community/plugin/1638163926915651446/web-to-figma-capture-any-web-page-as-editable-figma-layers"
+      "https://www.figma.com/newsroom/",
+      "https://www.figma.com/community",
+      "https://help.figma.com/hc/en-us/articles/360038510693-Guide-to-the-Figma-Community",
+      "https://www.figma.com/community/file/1556069421164105393/figpal-kit",
+      "https://config.figma.com/"
     ],
-    "query": "Figma Chrome extension website to editable layers June 11 2026 capture page select element paid plan beta",
+    "query": "Figma Community profile refresh role experience tech stack FigPal pin resources social channels June 12 2026 official",
     "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma 公式 Chrome 拡張が 6/11 公開、Web サイトを編集可能な Figma レイヤーで丸ごと取り込みできる新機能",
-      "description": "気になる Web サイトを丸ごと編集可能な Figma レイヤーで貼れる地味に革命的な新機能",
-      "detail": "6/11 公開のこの拡張、ページ全体や要素を選んでコピーすると、フレーム・テキスト・画像が編集可能なレイヤーとして Figma に並びます。スクショと違って色や余白を動かして検証できるので、好きな LP を秒で解剖できます",
-      "narration": "Figma の新しい Chrome 拡張、気になる Web サイトを編集可能な Figma レイヤーで丸ごと貼れます。先週公開、地味に革命的な機能です",
-      "tags": ["Figma", "Chrome拡張", "Web取り込み"],
+      "title": "Figma Community のプロフィールが 6/12 大型刷新、ロール・経験・技術スタック追加とピン作品でポートフォリオ仕様に進化",
+      "description": "Figma Community のプロフィールが、ポートフォリオ仕様に大進化です",
+      "detail": "6/12 公開、ロールや経験、技術スタックの欄に加え、おすすめ作品のピン留めや FigPal の設定も追加。画像と説明文で自分の仕事を主役にできて、X やサイトも繋げて、Community 1 枚で全部見せられるポートフォリオ仕様になりました",
+      "narration": "先週の Figma 公式更新、見ましたか?Figma Community のプロフィールが、ポートフォリオ仕様に大進化して話題です",
+      "tags": ["Figma", "Community", "ポートフォリオ"],
       "narration_sections": {
-        "hook": "Figma の新しい Chrome 拡張、気になる Web サイトを編集可能な Figma レイヤーで丸ごと貼れます。先週公開、地味に革命的な機能です",
-        "origin": "6/11 公開のこの拡張、ページ全体や要素を選んでコピーすると、フレーム・テキスト・画像が編集可能なレイヤーとして Figma に並びます。スクショと違って色や余白を動かして検証できるので、好きな LP を秒で解剖できます",
-        "recommend": "ベータは有料プラン限定ですが、模写や UI 観察の練習が一段ラクに。今週は気になるサイトを1本、まず解剖してみてください"
+        "hook": "先週の Figma 公式更新、見ましたか?Figma Community のプロフィールが、ポートフォリオ仕様に大進化して話題です",
+        "origin": "6/12 公開、ロールや経験、技術スタックの欄に加え、おすすめ作品のピン留めや FigPal の設定も追加。画像と説明文で自分の仕事を主役にできて、X やサイトも繋げて、Community 1 枚で全部見せられるポートフォリオ仕様になりました",
+        "recommend": "Config 2026 開幕まで1週間、世界の目が Figma に集まる前に、自分のページをまず整えておきましょう"
       },
       "section_titles": {
-        "hook": "Figma 公式拡張",
-        "origin": "編集可能なレイヤー化",
-        "recommend": "模写と観察を秒で"
+        "hook": "Community大進化",
+        "origin": "プロフィール刷新",
+        "recommend": "Config前夜の準備"
       },
       "section_descriptions": {
-        "hook": "先週公開の Figma 公式 Chrome 拡張",
-        "origin": "6/11 公開、有料プラン向けベータで提供中",
-        "recommend": "気になる LP を秒で解剖、模写の練習が捗る"
+        "hook": "Figma Community プロフィール大刷新",
+        "origin": "6/12 公開、役割・スタック・ピン作品の3点が追加",
+        "recommend": "Config 2026 まで残り1週間、世界に見せる準備を"
       }
     }
   ]
