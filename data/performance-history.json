@@ -1527,7 +1527,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-13T01:34:32.674Z"
+        "updatedAt": "2026-06-15T01:41:19.078Z"
       }
     },
     {
@@ -1573,7 +1573,7 @@
         "views": 53,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-13T01:34:32.674Z"
+        "updatedAt": "2026-06-15T01:41:19.078Z"
       }
     },
     {
@@ -1619,7 +1619,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-13T01:34:32.674Z"
+        "updatedAt": "2026-06-15T01:41:19.078Z"
       }
     },
     {
@@ -1664,7 +1664,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-13T01:34:32.674Z"
+        "updatedAt": "2026-06-15T01:41:19.078Z"
       }
     },
     {
@@ -1709,7 +1709,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-13T01:34:32.674Z"
+        "updatedAt": "2026-06-15T01:41:19.078Z"
       }
     },
     {
@@ -1760,7 +1760,7 @@
         "views": 22,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-13T01:34:32.674Z"
+        "updatedAt": "2026-06-15T01:41:19.078Z"
       }
     },
     {
@@ -1806,7 +1806,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-13T01:34:32.674Z"
+        "updatedAt": "2026-06-15T01:41:19.078Z"
       }
     },
     {
@@ -1850,7 +1850,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-13T01:34:32.674Z"
+        "updatedAt": "2026-06-15T01:41:19.078Z"
       }
     },
     {
@@ -1893,6 +1893,51 @@
         "freshness_hours": 96
       },
       "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-06-15T01:41:19.078Z"
+      }
+    },
+    {
+      "videoId": "snJH_8Z2a_M",
+      "videoUrl": "https://youtube.com/shorts/snJH_8Z2a_M",
+      "date": "2026-06-15",
+      "title": "【デザインニュース】Figma 公式 Chrome 拡張が 6/11 公開、Web サイトを編集可能な Figma レイヤーで丸ごと取り込みできる新機能｜2026/06/15 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 46,
+      "discovery": {
+        "method": "news-en",
+        "description": "英語テック/デザイン媒体 (noqta.tn / theaiinsider など) と Figma 公式 Help Center・Release Notes・Chrome 拡張ダウンロードページを横断調査。6/11 公開の Figma 公式 Chrome 拡張 (Web サイトを編集可能な Figma レイヤーとして取り込む beta 機能、有料プラン限定) を一次取得。直近14日 method 別 TOP1 (news-en, avg 53 views, n=1) を 06-08 以来 7 日空きで Exploit 再投入。直近 2 日 (06-14 product-launches, 06-13 news-ja) と method 重複なし、7日2回到達ガードもクリア。柱① Figma 公式ニュース (target 25%, 直近 21% で未達) を埋め、Primary 駆け出しデザイナーの『他人の LP を模写して練習したいが時間がかかる』痛点を直撃。NG パターン回避: AI=補助輪フレームを維持、プラグイン機能説明メインではなく学習者の課題から入り、『AI/拡張が考えてくれる』ではなく『模写と観察の練習が一段ラクになる』として位置づけ",
+        "sources": [
+          "https://noqta.tn/en/news/figma-chrome-extension-web-to-editable-layers-2026",
+          "https://help.figma.com/hc/en-us/articles/40826832449303-Capture-web-pages-to-layers-with-the-Figma-Chrome-extension",
+          "https://www.figma.com/release-notes/",
+          "https://www.figma.com/downloads/chrome-extension/",
+          "https://chromewebstore.google.com/detail/figma/fkmaohpngenfoccdgceedjkfhkdcohmg",
+          "https://www.figma.com/community/plugin/1638163926915651446/web-to-figma-capture-any-web-page-as-editable-figma-layers"
+        ],
+        "query": "Figma Chrome extension website to editable layers June 11 2026 capture page select element paid plan beta",
+        "freshness_hours": 96
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -1901,14 +1946,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-05",
-      "changes": [
-        "standard: 153 avg views (12 videos)",
-        "Day performance: Wed=315, Sun=171, Thu=131, Sat=115, Tue=113, Fri=93, Mon=93"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-09",
       "changes": [
@@ -2138,6 +2175,14 @@
       "changes": [
         "standard: 81 avg views (41 videos)",
         "Day performance: Wed=109, Sat=100, Sun=88, Tue=72, Fri=69, Thu=66, Mon=52"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-15",
+      "changes": [
+        "standard: 79 avg views (42 videos)",
+        "Day performance: Wed=109, Sun=88, Sat=85, Tue=72, Fri=69, Thu=66, Mon=52"
       ],
       "recommendedTemplate": "standard"
     }
