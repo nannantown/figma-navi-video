@@ -1573,7 +1573,7 @@
         "views": 53,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-15T01:41:19.078Z"
+        "updatedAt": "2026-06-16T01:46:42.283Z"
       }
     },
     {
@@ -1619,7 +1619,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-15T01:41:19.078Z"
+        "updatedAt": "2026-06-16T01:46:42.283Z"
       }
     },
     {
@@ -1664,7 +1664,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-15T01:41:19.078Z"
+        "updatedAt": "2026-06-16T01:46:42.283Z"
       }
     },
     {
@@ -1709,7 +1709,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-15T01:41:19.078Z"
+        "updatedAt": "2026-06-16T01:46:42.283Z"
       }
     },
     {
@@ -1757,10 +1757,10 @@
         "freshness_hours": 5
       },
       "stats": {
-        "views": 22,
+        "views": 23,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-15T01:41:19.078Z"
+        "updatedAt": "2026-06-16T01:46:42.283Z"
       }
     },
     {
@@ -1806,7 +1806,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-15T01:41:19.078Z"
+        "updatedAt": "2026-06-16T01:46:42.283Z"
       }
     },
     {
@@ -1850,7 +1850,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-15T01:41:19.078Z"
+        "updatedAt": "2026-06-16T01:46:42.283Z"
       }
     },
     {
@@ -1896,7 +1896,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-15T01:41:19.078Z"
+        "updatedAt": "2026-06-16T01:46:42.283Z"
       }
     },
     {
@@ -1938,6 +1938,51 @@
         "freshness_hours": 96
       },
       "stats": {
+        "views": 3,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-06-16T01:46:42.283Z"
+      }
+    },
+    {
+      "videoId": "e2JygpLBzUk",
+      "videoUrl": "https://youtube.com/shorts/e2JygpLBzUk",
+      "date": "2026-06-16",
+      "title": "【デザインニュース】Figma Community のプロフィールが 6/12 大型刷新、ロール・経験・技術スタック追加とピン作品でポートフォリオ仕様に進化｜2026/06/16 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 42,
+      "discovery": {
+        "method": "official-src",
+        "description": "Figma 公式 Release Notes・Newsroom・Community Help Center を一次取得し、6/12 公開の Figma Community プロフィール大型刷新 (ロール・経験・技術スタックの欄追加、ピン留め作品・画像・説明リンク、X/サイトの社会的アカウント接続、FigPal カスタム設定) を確定。Config 2026 (6/23-25 San Francisco / 無料オンライン視聴) 開幕 1 週間前という timing 整合性で、世界が Figma Community に注目する前にプロフィールを整える意義として翻訳。method 選定 (Tuesday weekday news 帯): 直近14日 TOP1 news-en (06-15 利用、2日ガード抵触で本日不可)、TOP1 product-launches (06-14 利用、同様)、TOP3 figma-community (06-12 利用、2日ガード境界・直近2日ルール抵触)、expert-blog は 06-11 利用 + 2 週連続 WORST 接近で本日温存、news-ja は WORST。残る TOP2 official-src (avg 8.7、06-09 = 7日前、7日2回ガード window 06-10〜06-16 内は 0 回、完全クリア) を Exploit 採用。Apple WWDC 系 5 連投の谷間で Figma 公式新機能で official-src 独立母数を稼ぐ意図。柱① Figma 公式ニュース (target 25%) を主軸に、副 ② プラグイン/エコシステム (target 20%) を Community 領域として補強。NG パターン回避: (a) AI=補助輪フレーム維持 (プロフィール整備の判断は人がする側として位置づけ)、(b) プラグイン/機能説明メインではなく Primary 駆け出しデザイナーの『ポートフォリオを 1 枚で見せられる場所がない』痛点起点、(c) 『AIが仕事を奪う』NG 完全非該当、(d) freshness_hours=96 で 168 NG ライン余裕クリア、(e) 出典 6 ソースで multi-source confirm",
+        "sources": [
+          "https://www.figma.com/release-notes/",
+          "https://www.figma.com/newsroom/",
+          "https://www.figma.com/community",
+          "https://help.figma.com/hc/en-us/articles/360038510693-Guide-to-the-Figma-Community",
+          "https://www.figma.com/community/file/1556069421164105393/figpal-kit",
+          "https://config.figma.com/"
+        ],
+        "query": "Figma Community profile refresh role experience tech stack FigPal pin resources social channels June 12 2026 official",
+        "freshness_hours": 96
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -1946,14 +1991,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-09",
-      "changes": [
-        "standard: 151 avg views (13 videos)",
-        "Day performance: Wed=315, Sun=176, Thu=131, Sat=115, Tue=115, Fri=95, Mon=94"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-10",
       "changes": [
@@ -2183,6 +2220,14 @@
       "changes": [
         "standard: 79 avg views (42 videos)",
         "Day performance: Wed=109, Sun=88, Sat=85, Tue=72, Fri=69, Thu=66, Mon=52"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-16",
+      "changes": [
+        "standard: 77 avg views (43 videos)",
+        "Day performance: Wed=109, Sun=88, Sat=85, Tue=73, Fri=69, Thu=66, Mon=44"
       ],
       "recommendedTemplate": "standard"
     }
