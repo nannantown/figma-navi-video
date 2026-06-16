@@ -1,41 +1,40 @@
 {
-  "date": "2026-06-16",
+  "date": "2026-06-17",
   "discovery": {
-    "method": "official-src",
-    "description": "Figma 公式 Release Notes・Newsroom・Community Help Center を一次取得し、6/12 公開の Figma Community プロフィール大型刷新 (ロール・経験・技術スタックの欄追加、ピン留め作品・画像・説明リンク、X/サイトの社会的アカウント接続、FigPal カスタム設定) を確定。Config 2026 (6/23-25 San Francisco / 無料オンライン視聴) 開幕 1 週間前という timing 整合性で、世界が Figma Community に注目する前にプロフィールを整える意義として翻訳。method 選定 (Tuesday weekday news 帯): 直近14日 TOP1 news-en (06-15 利用、2日ガード抵触で本日不可)、TOP1 product-launches (06-14 利用、同様)、TOP3 figma-community (06-12 利用、2日ガード境界・直近2日ルール抵触)、expert-blog は 06-11 利用 + 2 週連続 WORST 接近で本日温存、news-ja は WORST。残る TOP2 official-src (avg 8.7、06-09 = 7日前、7日2回ガード window 06-10〜06-16 内は 0 回、完全クリア) を Exploit 採用。Apple WWDC 系 5 連投の谷間で Figma 公式新機能で official-src 独立母数を稼ぐ意図。柱① Figma 公式ニュース (target 25%) を主軸に、副 ② プラグイン/エコシステム (target 20%) を Community 領域として補強。NG パターン回避: (a) AI=補助輪フレーム維持 (プロフィール整備の判断は人がする側として位置づけ)、(b) プラグイン/機能説明メインではなく Primary 駆け出しデザイナーの『ポートフォリオを 1 枚で見せられる場所がない』痛点起点、(c) 『AIが仕事を奪う』NG 完全非該当、(d) freshness_hours=96 で 168 NG ライン余裕クリア、(e) 出典 6 ソースで multi-source confirm",
+    "method": "social-en",
+    "description": "X / Reddit / Figma Forum で英語デザイナー界隈の『Tab Groups がついに来た』リアクションを観測。原本の要望スレ (forum.figma.com/group-tabs-7740、2021年5月起票) と先週公開された Product News スレッド (forum.figma.com/desktop-app-tab-updates) の2本を読み解き、4年越し悲願達成の社会的文脈を確認。Figma の release notes と Help Center で仕様も裏取り。method 選定 (Wednesday weekday news 帯): 直近14日 TOP1 official-src (06-16 利用、2日ガード抵触で本日不可)、TOP3 news-en (06-15 利用、同様)、TOP2 figma-community (06-12 利用、5日空きで利用可能だが今週は5連続 Exploit で 80/20 ルールの Explore タイミング)、expert-blog/news-ja/product-launches は WORST。残るExplore枠で `social-en` (直近14日 0 回、抵触なし) を Explore 採用。Apple WWDC 5 連投が終わった谷間で『コミュニティ要望→公式実装』の social 文脈母数を稼ぐ意図。柱① Figma 公式ニュース (target 25%) を主軸に、Figma Forum の community sentiment を絡める社会的文脈で補強。NG パターン回避: (a) AI=補助輪フレーム維持 (Tab Groups は人間のタブ整理術を補助する側として位置づけ)、(b) プラグイン/機能説明メインではなく Primary 駆け出しデザイナーの『複数案件・練習・ポートフォリオのタブが混ざってわからなくなる』痛点起点、(c) 『AIが仕事を奪う』NG 完全非該当、(d) freshness_hours=48 で 168 NG ライン余裕クリア、(e) 出典 4 ソースで multi-source confirm。Config 2026 (6/23-25 San Francisco) 開幕 6 日前という timing 整合で『本番週に入る前に環境を整える』文脈を接続",
     "sources": [
+      "https://forum.figma.com/t/desktop-app-tab-updates/62723",
+      "https://forum.figma.com/suggest-a-feature-11/group-tabs-7740",
       "https://www.figma.com/release-notes/",
-      "https://www.figma.com/newsroom/",
-      "https://www.figma.com/community",
-      "https://help.figma.com/hc/en-us/articles/360038510693-Guide-to-the-Figma-Community",
-      "https://www.figma.com/community/file/1556069421164105393/figpal-kit",
+      "https://help.figma.com/hc/en-us/articles/5601429983767-Guide-to-the-Figma-desktop-app",
       "https://config.figma.com/"
     ],
-    "query": "Figma Community profile refresh role experience tech stack FigPal pin resources social channels June 12 2026 official",
-    "freshness_hours": 96
+    "query": "Figma tab groups desktop app launch 2026 forum community request 4 years social reaction",
+    "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma Community のプロフィールが 6/12 大型刷新、ロール・経験・技術スタック追加とピン作品でポートフォリオ仕様に進化",
-      "description": "Figma Community のプロフィールが、ポートフォリオ仕様に大進化です",
-      "detail": "6/12 公開、ロールや経験、技術スタックの欄に加え、おすすめ作品のピン留めや FigPal の設定も追加。画像と説明文で自分の仕事を主役にできて、X やサイトも繋げて、Community 1 枚で全部見せられるポートフォリオ仕様になりました",
-      "narration": "先週の Figma 公式更新、見ましたか?Figma Community のプロフィールが、ポートフォリオ仕様に大進化して話題です",
-      "tags": ["Figma", "Community", "ポートフォリオ"],
+      "title": "Figma Tab Groups が 6/15 デスクトップ実装、2021 年から 4 年越しのコミュニティ要望がついに叶い、複数案件のタブ整理が一気に楽になる",
+      "description": "Figma で 4 年要望され続けてた機能が、ついに先週デスクトップに実装されました",
+      "detail": "デスクトップアプリでタブをドラッグして 1 つにまとめて、グループ名と色を指定するだけ。練習・案件・用途別と自由に整理できて、折りたたみも可能。2021 年 5 月にフォーラムで要望されてから、4 年越しでの実装、全デスクトップユーザーに無料で開放されました",
+      "narration": "Figma で 2021 年から要望され続けた機能、ついに先週デスクトップに実装。Tab Groups で複数タブを 1 グループに整理できます",
+      "tags": ["Figma", "TabGroups", "デスクトップ"],
       "narration_sections": {
-        "hook": "先週の Figma 公式更新、見ましたか?Figma Community のプロフィールが、ポートフォリオ仕様に大進化して話題です",
-        "origin": "6/12 公開、ロールや経験、技術スタックの欄に加え、おすすめ作品のピン留めや FigPal の設定も追加。画像と説明文で自分の仕事を主役にできて、X やサイトも繋げて、Community 1 枚で全部見せられるポートフォリオ仕様になりました",
-        "recommend": "Config 2026 開幕まで1週間、世界の目が Figma に集まる前に、自分のページをまず整えておきましょう"
+        "hook": "Figma で 2021 年から要望され続けた機能、ついに先週デスクトップに実装。Tab Groups で複数タブを 1 グループに整理できます",
+        "origin": "タブをドラッグして 1 つにまとめて、グループ名と色を指定するだけ。練習・案件・用途別と自由に整理できて、折りたたみも可能。2021 年 5 月にフォーラムで要望されてから、4 年越しでの実装、全デスクトップユーザーに無料で開放されました",
+        "recommend": "練習用、案件用、ポートフォリオ用と色分けして、頭の中も自然に整います。Config 2026 開幕前の環境整備に、ぜひ"
       },
       "section_titles": {
-        "hook": "Community大進化",
-        "origin": "プロフィール刷新",
-        "recommend": "Config前夜の準備"
+        "hook": "Tab Groups実装",
+        "origin": "タブをグループ化",
+        "recommend": "Config 前の整備"
       },
       "section_descriptions": {
-        "hook": "Figma Community プロフィール大刷新",
-        "origin": "6/12 公開、役割・スタック・ピン作品の3点が追加",
-        "recommend": "Config 2026 まで残り1週間、世界に見せる準備を"
+        "hook": "Figmaで4年要望されてたTab Groups登場",
+        "origin": "デスクトップで 6/15、複数タブを色分けして整理可能",
+        "recommend": "Config 2026 開幕 6 日前、環境を先に整える"
       }
     }
   ]
