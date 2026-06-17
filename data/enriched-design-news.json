@@ -1,40 +1,40 @@
 {
-  "date": "2026-06-17",
+  "date": "2026-06-18",
   "discovery": {
-    "method": "social-en",
-    "description": "X / Reddit / Figma Forum で英語デザイナー界隈の『Tab Groups がついに来た』リアクションを観測。原本の要望スレ (forum.figma.com/group-tabs-7740、2021年5月起票) と先週公開された Product News スレッド (forum.figma.com/desktop-app-tab-updates) の2本を読み解き、4年越し悲願達成の社会的文脈を確認。Figma の release notes と Help Center で仕様も裏取り。method 選定 (Wednesday weekday news 帯): 直近14日 TOP1 official-src (06-16 利用、2日ガード抵触で本日不可)、TOP3 news-en (06-15 利用、同様)、TOP2 figma-community (06-12 利用、5日空きで利用可能だが今週は5連続 Exploit で 80/20 ルールの Explore タイミング)、expert-blog/news-ja/product-launches は WORST。残るExplore枠で `social-en` (直近14日 0 回、抵触なし) を Explore 採用。Apple WWDC 5 連投が終わった谷間で『コミュニティ要望→公式実装』の social 文脈母数を稼ぐ意図。柱① Figma 公式ニュース (target 25%) を主軸に、Figma Forum の community sentiment を絡める社会的文脈で補強。NG パターン回避: (a) AI=補助輪フレーム維持 (Tab Groups は人間のタブ整理術を補助する側として位置づけ)、(b) プラグイン/機能説明メインではなく Primary 駆け出しデザイナーの『複数案件・練習・ポートフォリオのタブが混ざってわからなくなる』痛点起点、(c) 『AIが仕事を奪う』NG 完全非該当、(d) freshness_hours=48 で 168 NG ライン余裕クリア、(e) 出典 4 ソースで multi-source confirm。Config 2026 (6/23-25 San Francisco) 開幕 6 日前という timing 整合で『本番週に入る前に環境を整える』文脈を接続",
+    "method": "news-en",
+    "description": "英語の Figma 公式 release notes / Figma Blog / Help Center を横断し、6/16 公開の MCP サーバー大型拡張 (Slides / FigJam / Make / 新 Figma agent への対応、ローカルフォント、download_assets、Xcode 連携) を確認。method 選定 (Thursday weekday news 帯): 直近 14 日 TOP1 official-src は 06-16 利用で 2 日ガード抵触、TOP2 news-en は 06-15 利用で 3 日空き OK、TOP3 expert-blog は 2 週連続 WORST で平日凍結方針継続。直近 2 日 (06-17 social-en / 06-16 official-src) と被らない news-en を Exploit として採用。柱① 直近 44% 偏重を緩和するため、トピックは柱③ (業界・デザインニュース / AI×design) に寄せ、Cursor/Claude/VS Code/Windsurf から Figma の Slides・FigJam・Make を操作できる新しい AI 連携文脈で Primary 駆け出しデザイナーの『資料・付箋整理の時短』痛点に接続。Config 2026 (6/23-25) 開幕 5 日前の助走素材として位置づけ。NG 回避: (a) AI=補助輪フレーム維持 (AI は下書き担当、最終判断は人間)、(b) プラグイン機能説明メインではなく『駆け出しがプレゼン資料・付箋整理に時間取られる』痛点起点、(c) 『AI が仕事を奪う』NG 完全非該当、(d) freshness_hours=48 で 168 NG ライン余裕クリア、(e) 出典 5 ソースで multi-source confirm",
     "sources": [
-      "https://forum.figma.com/t/desktop-app-tab-updates/62723",
-      "https://forum.figma.com/suggest-a-feature-11/group-tabs-7740",
       "https://www.figma.com/release-notes/",
-      "https://help.figma.com/hc/en-us/articles/5601429983767-Guide-to-the-Figma-desktop-app",
-      "https://config.figma.com/"
+      "https://www.figma.com/blog/4-ways-were-using-our-mcp-server-at-figma/",
+      "https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Figma-MCP-server",
+      "https://help.figma.com/hc/en-us/articles/39166810751895-Figma-skills-for-MCP",
+      "https://www.figma.com/mcp-catalog/"
     ],
-    "query": "Figma tab groups desktop app launch 2026 forum community request 4 years social reaction",
+    "query": "Figma MCP server update June 2026 Slides FigJam Make agent Xcode local font download_assets",
     "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma Tab Groups が 6/15 デスクトップ実装、2021 年から 4 年越しのコミュニティ要望がついに叶い、複数案件のタブ整理が一気に楽になる",
-      "description": "Figma で 4 年要望され続けてた機能が、ついに先週デスクトップに実装されました",
-      "detail": "デスクトップアプリでタブをドラッグして 1 つにまとめて、グループ名と色を指定するだけ。練習・案件・用途別と自由に整理できて、折りたたみも可能。2021 年 5 月にフォーラムで要望されてから、4 年越しでの実装、全デスクトップユーザーに無料で開放されました",
-      "narration": "Figma で 2021 年から要望され続けた機能、ついに先週デスクトップに実装。Tab Groups で複数タブを 1 グループに整理できます",
-      "tags": ["Figma", "TabGroups", "デスクトップ"],
+      "title": "Figma MCP サーバーが 6/16 で大型拡張、Slides・FigJam・Make に対応、Cursor や Claude Code からスライドや付箋ボードまで AI 生成可能に",
+      "description": "Figma の AI 連携が 6/16 で大型拡張、Cursor や Claude Code からスライドや付箋ボードまで作れるようになりました",
+      "detail": "これまで Figma Design でしか動かなかった MCP サーバーが、Slides・FigJam・Make・新しい Figma エージェントに対応。ローカルフォントもそのまま再現、JPG や SVG での書き出し、Xcode 連携でモバイル画面の取り込みも実現しました",
+      "narration": "FigmaのAI連携が6/16でSlidesとFigJamにも拡張。Claude CodeやCursorから、スライドや付箋ボードまで生成できるように",
+      "tags": ["Figma", "MCP", "AIデザイン"],
       "narration_sections": {
-        "hook": "Figma で 2021 年から要望され続けた機能、ついに先週デスクトップに実装。Tab Groups で複数タブを 1 グループに整理できます",
-        "origin": "タブをドラッグして 1 つにまとめて、グループ名と色を指定するだけ。練習・案件・用途別と自由に整理できて、折りたたみも可能。2021 年 5 月にフォーラムで要望されてから、4 年越しでの実装、全デスクトップユーザーに無料で開放されました",
-        "recommend": "練習用、案件用、ポートフォリオ用と色分けして、頭の中も自然に整います。Config 2026 開幕前の環境整備に、ぜひ"
+        "hook": "FigmaのAI連携が6/16でSlidesとFigJamにも拡張。Claude CodeやCursorから、スライドや付箋ボードまで生成できるように",
+        "origin": "これまでFigma Designでしか動かなかったMCPサーバーが、Slides・FigJam・Make・新しいFigmaエージェントに対応。ローカルフォントもそのまま再現、JPGやSVGの書き出し、Xcode連携でモバイル画面の取り込みも実現",
+        "recommend": "プレゼン資料も付箋整理もAIに下書きしてもらい、自分は構成と仕上げに集中。Figma公式の補助輪、使い倒す側へ"
       },
       "section_titles": {
-        "hook": "Tab Groups実装",
-        "origin": "タブをグループ化",
-        "recommend": "Config 前の整備"
+        "hook": "MCPがSlidesへ",
+        "origin": "対応範囲が大幅拡大",
+        "recommend": "AIに下書き任せる"
       },
       "section_descriptions": {
-        "hook": "Figmaで4年要望されてたTab Groups登場",
-        "origin": "デスクトップで 6/15、複数タブを色分けして整理可能",
-        "recommend": "Config 2026 開幕 6 日前、環境を先に整える"
+        "hook": "FigmaのAI連携が6/16で大型拡張",
+        "origin": "Slides・FigJam・Make・エージェント対応",
+        "recommend": "プレゼンも付箋もAIに下書きしてもらおう"
       }
     }
   ]
