@@ -1,40 +1,41 @@
 {
-  "date": "2026-06-18",
+  "date": "2026-06-19",
   "discovery": {
-    "method": "news-en",
-    "description": "英語の Figma 公式 release notes / Figma Blog / Help Center を横断し、6/16 公開の MCP サーバー大型拡張 (Slides / FigJam / Make / 新 Figma agent への対応、ローカルフォント、download_assets、Xcode 連携) を確認。method 選定 (Thursday weekday news 帯): 直近 14 日 TOP1 official-src は 06-16 利用で 2 日ガード抵触、TOP2 news-en は 06-15 利用で 3 日空き OK、TOP3 expert-blog は 2 週連続 WORST で平日凍結方針継続。直近 2 日 (06-17 social-en / 06-16 official-src) と被らない news-en を Exploit として採用。柱① 直近 44% 偏重を緩和するため、トピックは柱③ (業界・デザインニュース / AI×design) に寄せ、Cursor/Claude/VS Code/Windsurf から Figma の Slides・FigJam・Make を操作できる新しい AI 連携文脈で Primary 駆け出しデザイナーの『資料・付箋整理の時短』痛点に接続。Config 2026 (6/23-25) 開幕 5 日前の助走素材として位置づけ。NG 回避: (a) AI=補助輪フレーム維持 (AI は下書き担当、最終判断は人間)、(b) プラグイン機能説明メインではなく『駆け出しがプレゼン資料・付箋整理に時間取られる』痛点起点、(c) 『AI が仕事を奪う』NG 完全非該当、(d) freshness_hours=48 で 168 NG ライン余裕クリア、(e) 出典 5 ソースで multi-source confirm",
+    "method": "official-src",
+    "description": "Figma 公式 release notes と Figma Help Center を横断し、6/18 公開の『Figma design agent に Web 検索を追加』を確認。複数の英語メディア (releasebot, blog.mean.ceo) で再現性確認、help.figma.com/hc/en-us/articles/39717296726679 の Manage web search in Figma Make ドキュメント存在も確認。method 選定 (Friday weekday news 帯): 直近 14 日 TOP1 official-src を Exploit 採用、06-16 から 3 日空きでガード抵触なし。同 TOP2 news-en は 06-18 で使用済み、TOP3 タイ expert-blog は 2 週連続 WORST で平日凍結中。直近 2 日 (06-18 news-en / 06-17 social-en) と被らず採用条件クリア。柱① が直近 14 日で 40%+ 偏重しているため、トピックを Figma 公式由来素材としつつ切り口を『AI×design 業界トレンド (Lorem Ipsum 時代の終焉)』に振って柱③ に計上、4 連投を断ち切る。Config 2026 (6/23-25) 開幕 4 日前の助走として、6/18 MCP 拡張 → 6/19 design agent Web 検索の 2 連続 AI×Figma で月曜 Config 直前まとめへ橋渡し。NG 回避: (a) AI=補助輪 (AI に実データ収集を任せ、構成と判断は人間)、(b) 駆け出しの『Lorem Ipsum で埋めて時間溶かす』痛点起点、(c) 仕事を奪う NG 非該当、(d) freshness_hours=24 で 168 NG ライン余裕、(e) 出典 5 ソースで multi-source confirm",
     "sources": [
       "https://www.figma.com/release-notes/",
-      "https://www.figma.com/blog/4-ways-were-using-our-mcp-server-at-figma/",
-      "https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Figma-MCP-server",
-      "https://help.figma.com/hc/en-us/articles/39166810751895-Figma-skills-for-MCP",
-      "https://www.figma.com/mcp-catalog/"
+      "https://help.figma.com/hc/en-us/articles/39717296726679-Manage-web-search-in-Figma-Make",
+      "https://help.figma.com/hc/en-us/articles/37998629035799-Work-with-the-Figma-agent-in-design-files",
+      "https://help.figma.com/hc/en-us/articles/23870272542231-Use-AI-tools-in-Figma-Design",
+      "https://releasebot.io/updates/figma",
+      "https://blog.mean.ceo/figma-news-june-2026/"
     ],
-    "query": "Figma MCP server update June 2026 Slides FigJam Make agent Xcode local font download_assets",
-    "freshness_hours": 48
+    "query": "Figma design agent web search live web context placeholders June 18 2026",
+    "freshness_hours": 24
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma MCP サーバーが 6/16 で大型拡張、Slides・FigJam・Make に対応、Cursor や Claude Code からスライドや付箋ボードまで AI 生成可能に",
-      "description": "Figma の AI 連携が 6/16 で大型拡張、Cursor や Claude Code からスライドや付箋ボードまで作れるようになりました",
-      "detail": "これまで Figma Design でしか動かなかった MCP サーバーが、Slides・FigJam・Make・新しい Figma エージェントに対応。ローカルフォントもそのまま再現、JPG や SVG での書き出し、Xcode 連携でモバイル画面の取り込みも実現しました",
-      "narration": "FigmaのAI連携が6/16でSlidesとFigJamにも拡張。Claude CodeやCursorから、スライドや付箋ボードまで生成できるように",
-      "tags": ["Figma", "MCP", "AIデザイン"],
+      "title": "Figma の AI デザインエージェントが 6/18 で Web 検索解禁、Lorem Ipsum で埋める時代がついに終わる",
+      "description": "Figma の AI エージェントが 6/18 から Web 検索可能に。架空ダミーじゃなく、実在のテキストや最新情報を直接デザインに流し込めるようになりました",
+      "detail": "5 月にβ公開された Figma design agent に、Web 検索コマンドが正式追加。チャットで『search the web』と打つだけで、実在の店名・ニュース見出し・最新トレンドをそのままパーツや本文に投入できます。Lorem Ipsum と架空ロゴでカンプを埋める時代の終わりです",
+      "narration": "FigmaのAIエージェントが6/18大進化、Web検索が解禁。最新の本物データを直接デザインに取り込めるようになりました",
+      "tags": ["Figma", "AIデザイン", "デザインエージェント"],
       "narration_sections": {
-        "hook": "FigmaのAI連携が6/16でSlidesとFigJamにも拡張。Claude CodeやCursorから、スライドや付箋ボードまで生成できるように",
-        "origin": "これまでFigma Designでしか動かなかったMCPサーバーが、Slides・FigJam・Make・新しいFigmaエージェントに対応。ローカルフォントもそのまま再現、JPGやSVGの書き出し、Xcode連携でモバイル画面の取り込みも実現",
-        "recommend": "プレゼン資料も付箋整理もAIに下書きしてもらい、自分は構成と仕上げに集中。Figma公式の補助輪、使い倒す側へ"
+        "hook": "FigmaのAIエージェントが6/18大進化、Web検索が解禁。最新の本物データを直接デザインに取り込めるようになりました",
+        "origin": "これまではAI生成のテキストや画像が架空のダミーになりがちで、駆け出しは結局Lorem Ipsumで埋めていました。今回は『search the web』と打つだけで、実在の店名やニュース、最新トレンドをそのまま画面に流し込めます",
+        "recommend": "AIには本物の素材集めを任せ、駆け出しは構成や判断に集中。Config 2026 開幕直前、Figma×AI連携を一段深く使いこなす号砲です"
       },
       "section_titles": {
-        "hook": "MCPがSlidesへ",
-        "origin": "対応範囲が大幅拡大",
-        "recommend": "AIに下書き任せる"
+        "hook": "AIエージェント進化",
+        "origin": "本物データを取り込む",
+        "recommend": "AIに下書きを任せる"
       },
       "section_descriptions": {
-        "hook": "FigmaのAI連携が6/16で大型拡張",
-        "origin": "Slides・FigJam・Make・エージェント対応",
-        "recommend": "プレゼンも付箋もAIに下書きしてもらおう"
+        "hook": "6/18 Figma 公式から大型アップデート",
+        "origin": "ダミーじゃなく、実在の本物データを流し込む",
+        "recommend": "Config 直前、Figma×AI を使い倒す"
       }
     }
   ]
