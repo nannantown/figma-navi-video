@@ -1664,7 +1664,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-16T01:46:42.283Z"
+        "updatedAt": "2026-06-19T02:05:56.511Z"
       }
     },
     {
@@ -1709,7 +1709,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-16T01:46:42.283Z"
+        "updatedAt": "2026-06-19T02:05:56.511Z"
       }
     },
     {
@@ -1757,10 +1757,10 @@
         "freshness_hours": 5
       },
       "stats": {
-        "views": 23,
+        "views": 25,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-16T01:46:42.283Z"
+        "updatedAt": "2026-06-19T02:05:56.511Z"
       }
     },
     {
@@ -1806,7 +1806,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-16T01:46:42.283Z"
+        "updatedAt": "2026-06-19T02:05:56.511Z"
       }
     },
     {
@@ -1850,7 +1850,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-16T01:46:42.283Z"
+        "updatedAt": "2026-06-19T02:05:56.511Z"
       }
     },
     {
@@ -1896,7 +1896,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-16T01:46:42.283Z"
+        "updatedAt": "2026-06-19T02:05:56.511Z"
       }
     },
     {
@@ -1938,10 +1938,10 @@
         "freshness_hours": 96
       },
       "stats": {
-        "views": 3,
+        "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-16T01:46:42.283Z"
+        "updatedAt": "2026-06-19T02:05:56.511Z"
       }
     },
     {
@@ -1986,19 +1986,56 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-06-19T02:05:56.511Z"
+      }
+    },
+    {
+      "videoId": "hZrW5xkBf4E",
+      "videoUrl": "https://youtube.com/shorts/hZrW5xkBf4E",
+      "date": "2026-06-19",
+      "title": "【デザインニュース】Figma の AI デザインエージェントが 6/18 で Web 検索解禁、Lorem Ipsum で埋める時代がついに終わる｜2026/06/19 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 47,
+      "discovery": {
+        "method": "official-src",
+        "description": "Figma 公式 release notes と Figma Help Center を横断し、6/18 公開の『Figma design agent に Web 検索を追加』を確認。複数の英語メディア (releasebot, blog.mean.ceo) で再現性確認、help.figma.com/hc/en-us/articles/39717296726679 の Manage web search in Figma Make ドキュメント存在も確認。method 選定 (Friday weekday news 帯): 直近 14 日 TOP1 official-src を Exploit 採用、06-16 から 3 日空きでガード抵触なし。同 TOP2 news-en は 06-18 で使用済み、TOP3 タイ expert-blog は 2 週連続 WORST で平日凍結中。直近 2 日 (06-18 news-en / 06-17 social-en) と被らず採用条件クリア。柱① が直近 14 日で 40%+ 偏重しているため、トピックを Figma 公式由来素材としつつ切り口を『AI×design 業界トレンド (Lorem Ipsum 時代の終焉)』に振って柱③ に計上、4 連投を断ち切る。Config 2026 (6/23-25) 開幕 4 日前の助走として、6/18 MCP 拡張 → 6/19 design agent Web 検索の 2 連続 AI×Figma で月曜 Config 直前まとめへ橋渡し。NG 回避: (a) AI=補助輪 (AI に実データ収集を任せ、構成と判断は人間)、(b) 駆け出しの『Lorem Ipsum で埋めて時間溶かす』痛点起点、(c) 仕事を奪う NG 非該当、(d) freshness_hours=24 で 168 NG ライン余裕、(e) 出典 5 ソースで multi-source confirm",
+        "sources": [
+          "https://www.figma.com/release-notes/",
+          "https://help.figma.com/hc/en-us/articles/39717296726679-Manage-web-search-in-Figma-Make",
+          "https://help.figma.com/hc/en-us/articles/37998629035799-Work-with-the-Figma-agent-in-design-files",
+          "https://help.figma.com/hc/en-us/articles/23870272542231-Use-AI-tools-in-Figma-Design",
+          "https://releasebot.io/updates/figma",
+          "https://blog.mean.ceo/figma-news-june-2026/"
+        ],
+        "query": "Figma design agent web search live web context placeholders June 18 2026",
+        "freshness_hours": 24
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-10",
-      "changes": [
-        "standard: 145 avg views (14 videos)",
-        "Day performance: Wed=315, Sun=176, Thu=131, Tue=115, Fri=95, Mon=94, Sat=93"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-11",
       "changes": [
@@ -2228,6 +2265,14 @@
       "changes": [
         "standard: 77 avg views (43 videos)",
         "Day performance: Wed=109, Sun=88, Sat=85, Tue=73, Fri=69, Thu=66, Mon=44"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-19",
+      "changes": [
+        "standard: 76 avg views (44 videos)",
+        "Day performance: Wed=109, Sun=88, Sat=85, Fri=69, Thu=66, Tue=62, Mon=44"
       ],
       "recommendedTemplate": "standard"
     }
