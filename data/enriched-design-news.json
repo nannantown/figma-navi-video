@@ -1,41 +1,45 @@
 {
-  "date": "2026-06-20",
+  "date": "2026-06-21",
   "discovery": {
-    "method": "social-en",
-    "description": "X/Reddit/Hacker News で 6/18 解禁の Figma AI agent Web 検索に対する designer の実プロンプト共有を抽出、Figma 公式 Help Center で機能仕様を裏取りし、駆け出し向けに 3 つの定型 Tips にパッケージ。method 選定: 平日 7 連続 (5/30-6/19 中 6 投) で 柱①Figma 公式が 40%+ に偏り、柱④Tips が 6/13 以来 1 週間欠落しているため、今日は土曜 weekend Tips で柱④を補充。TOP1 news-en (avg 29) と TOP2 official-src (avg 6) は直近 2 日 (6/18,6/19) で使用済みガードに抵触、TOP3 figma-community も先週 2 投 (6/3,6/30) で連続使用感あり。social-en は 6/17 Tab Groups 以来 3 日空きで Explore 帯から再投入。週末 Tips は『今週のニュース実践編』として戦略の循環を実行し、Config 2026 (6/23-25) 開幕 3 日前の助走に位置づける。NG 回避: (a) 仕事を奪う系×、(b) AI=補助輪 (素材集めは AI、構成と判断は人) ×、(c) freshness_hours=48 で 168 NG 余裕、(d) 機能解説単体ではなく『駆け出しが実案件で詰まる場面』起点、(e) 出典 6 ソースで multi-source confirm",
+    "method": "news-en",
+    "description": "英語テック/デザインメディア (silicondales / makebttr / uiuxtrend / yahoo finance) と Figma 公式 Config サイト + Figma Blog の Config 2026 関連ページを横断調査。明後日 6/23 開幕の Config 2026 (San Francisco / Moscone Center / 6/23-25 / 本命 Keynote は 2 日目 6/24 / 配信は無料 / 100 都市超ウォッチパーティ / 50+ セッション / 75+ 登壇者 / Dylan Field 含む / テーマは AI ワークフローと AI 向けに作るデザインシステム / Holly Herndon・Danit Peleg・Vicki Tan・Matthew Ström・Grant Sanderson 等異分野登壇) を確定。method 選定 (Sunday weekend 帯、Config T-2 preview): 直近 14 日 TOP1 news-en (avg 29 views, 6/15 = 6 日空き、2 日ガード OK、7 日 2 回到達ガード OK) を Exploit 採用。Apple WWDC 6/2 (T-6 preview) = 53 views = TOP1 pattern を Config 6/23 開幕 T-2 で再現狙い。直近 2 日 (6/20 social-en, 6/19 official-src) と method 重複なし、WORST 凍結対象外。柱③ 業界・デザインニュース (Config は Figma 自社イベントだが業界全体が注視する pre-event 助走として柱③ 計上)、Apple WWDC 偏重の柱③ 内部分散にも寄与。Sunday の運用方針は本来 evergreen 主軸だが、pre-event preview は鮮度ニュース帯の例外運用として freshness_hours=48 で記録。NG パターン回避: (a) AI=補助輪フレーム維持 (Config の AI ワークフローも『判断は人、AI は実装支援』と再強調)、(b) プロ向け高度議論ではなく駆け出しが無料配信で観るべきポイントに翻訳、(c) AI が仕事を奪う系 NG 非該当、(d) freshness_hours=48 で 168 NG ライン余裕、(e) 出典 6 ソースで multi-source confirm。連動性: 今日 6/21 (Sun) T-2 preview → 月曜 6/22 (Mon) 前夜最終助走 → 火曜 6/23 (Tue) 開幕当日 → 水曜 6/24 (Wed) Keynote recap、4 連結縦糸の起点として配置",
     "sources": [
-      "https://www.figma.com/release-notes/",
-      "https://help.figma.com/hc/en-us/articles/37998629035799-Work-with-the-Figma-agent-in-design-files",
-      "https://help.figma.com/hc/en-us/articles/39717296726679-Manage-web-search-in-Figma-Make",
-      "https://help.figma.com/hc/en-us/articles/23870272542231-Use-AI-tools-in-Figma-Design",
-      "https://uxdesign.cc/figma-make-prompts-with-real-examples-2ece15d0fce6",
-      "https://config.figma.com/san-francisco/agenda/"
+      "https://config.figma.com/",
+      "https://silicondales.com/enterprise/config-2026-figmas-flagship-event-for-product-teams/",
+      "https://www.makebttr.com/insights/figma-config-2026",
+      "https://uiuxtrend.com/event/figma-config-2026/",
+      "https://www.figma.com/blog/config-speakers-looking-ahead-2026/",
+      "https://moscone.com/events/config-2026"
     ],
-    "query": "Figma agent search the web prompt example designer tutorial June 2026",
+    "query": "Config 2026 Figma June 23 25 San Francisco keynote agenda free virtual stream watch party AI workflows design systems",
     "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma AI の Web 検索、駆け出しが土曜のうちに試すべき 3 つの実プロンプト",
-      "description": "6/18 解禁の Figma AI エージェント Web 検索、X や Reddit で広がる実用プロンプトを駆け出し向け 3 つに翻訳。Lorem Ipsum で詰まる時間を消す週末の練習メニュー",
-      "detail": "プラスメニューで Web 検索 ON、または「search the web for ◯◯」とチャットに打つだけ。1) リサーチ用に実在の店名/口コミ取得、2) 競合 UI を要素ごとに構造化、3) コピー初稿の叩き台。3 用途とも Lorem Ipsum を排除し画面の説得力が即上がる",
-      "narration": "今週解禁されたFigma AIエージェントのWeb検索、駆け出しデザイナーこそ週末に必ず触っておくべき。実案件で詰まるダミー素材の時間が消えます",
-      "tags": ["Figma", "AIデザイン", "Tips"],
+      "title": "Config 2026 明後日 6/23 開幕、無料配信で駆け出しも観られる",
+      "description": "Figma 最大の年次カンファレンスが明後日 6/23 開幕、配信は無料",
+      "detail": "本命は 2 日目 6/24 Keynote、CEO Dylan Field 登壇予定。テーマは AI ワークフローと AI 向けに作るデザインシステム。",
+      "narration": "Figma 最大の年次カンファレンス Config 2026 が明後日 6/23 開幕。今年も配信は無料、世界 100 都市超のウォッチパーティで観られます。",
+      "tags": [
+        "Config 2026",
+        "Figma",
+        "AI ワークフロー"
+      ],
       "narration_sections": {
-        "hook": "今週解禁されたFigma AIエージェントのWeb検索、駆け出しデザイナーこそ週末に必ず触っておくべき。実案件で詰まるダミー素材の時間が消えます",
-        "origin": "使い方は3つ。1つ目はリサーチで実在の店名や口コミをチャットで取得し画面に流す。2つ目は競合UIの構成を要素ごと取り込みIA設計の叩き台にする。3つ目はコピー初稿。すべて「search the web for」と打つだけです",
-        "recommend": "AIに素材集めは任せて、駆け出しは構成と判断に集中。Config 2026 開幕直前、週末に手に馴染ませておきましょう"
+        "hook": "Figma 最大の年次カンファレンス Config 2026 が明後日 6/23 開幕。今年も配信は無料、世界 100 都市超のウォッチパーティで観られます。",
+        "origin": "本命は 2 日目 6/24 の Keynote で CEO Dylan Field が登壇予定。テーマは AI ワークフローと、それに合わせて作るデザインシステム。50 以上のセッションで AI エージェントの新機能が一気に発表される見込みです。",
+        "recommend": "無料配信は config.figma.com で登録できます。火曜朝の発表ラッシュに、今夜のうちに備えましょう。"
       },
       "section_titles": {
-        "hook": "Web検索が土曜の練習台",
-        "origin": "実プロンプト3つ",
-        "recommend": "Config直前に試す"
+        "hook": "Config 開幕直前",
+        "origin": "Keynoteは6/24",
+        "recommend": "無料配信で備える"
       },
       "section_descriptions": {
-        "hook": "今週解禁の機能、駆け出しに刺さる週末の練習メニュー",
-        "origin": "リサーチ・競合UI構成・コピー初稿の3つの定型",
-        "recommend": "AIは素材集めの補助輪、構成と判断は自分で"
+        "hook": "Figma 最大の年次イベントが明後日 6/23 開幕",
+        "origin": "2 日目 Keynote で AI 新展開が一気に発表",
+        "recommend": "無料配信に今夜のうちに登録、月曜の理解が変わる"
       }
     }
   ]
