@@ -1709,7 +1709,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-20T00:20:09.621Z"
+        "updatedAt": "2026-06-21T01:39:59.124Z"
       }
     },
     {
@@ -1760,7 +1760,7 @@
         "views": 25,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-20T00:20:09.621Z"
+        "updatedAt": "2026-06-21T01:39:59.124Z"
       }
     },
     {
@@ -1806,7 +1806,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-20T00:20:09.621Z"
+        "updatedAt": "2026-06-21T01:39:59.124Z"
       }
     },
     {
@@ -1850,7 +1850,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-20T00:20:09.621Z"
+        "updatedAt": "2026-06-21T01:39:59.124Z"
       }
     },
     {
@@ -1896,7 +1896,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-20T00:20:09.621Z"
+        "updatedAt": "2026-06-21T01:39:59.124Z"
       }
     },
     {
@@ -1941,7 +1941,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-20T00:20:09.621Z"
+        "updatedAt": "2026-06-21T01:39:59.124Z"
       }
     },
     {
@@ -1986,7 +1986,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-20T00:20:09.621Z"
+        "updatedAt": "2026-06-21T01:39:59.124Z"
       }
     },
     {
@@ -2028,10 +2028,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 3,
+        "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-20T00:20:09.621Z"
+        "updatedAt": "2026-06-21T01:39:59.124Z"
       }
     },
     {
@@ -2073,6 +2073,51 @@
         "freshness_hours": 48
       },
       "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-06-21T01:39:59.124Z"
+      }
+    },
+    {
+      "videoId": "7ZvUZNMp1Xw",
+      "videoUrl": "https://youtube.com/shorts/7ZvUZNMp1Xw",
+      "date": "2026-06-21",
+      "title": "【デザインニュース】Config 2026 明後日 6/23 開幕、無料配信で駆け出しも観られる｜2026/06/21 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 44,
+      "discovery": {
+        "method": "news-en",
+        "description": "英語テック/デザインメディア (silicondales / makebttr / uiuxtrend / yahoo finance) と Figma 公式 Config サイト + Figma Blog の Config 2026 関連ページを横断調査。明後日 6/23 開幕の Config 2026 (San Francisco / Moscone Center / 6/23-25 / 本命 Keynote は 2 日目 6/24 / 配信は無料 / 100 都市超ウォッチパーティ / 50+ セッション / 75+ 登壇者 / Dylan Field 含む / テーマは AI ワークフローと AI 向けに作るデザインシステム / Holly Herndon・Danit Peleg・Vicki Tan・Matthew Ström・Grant Sanderson 等異分野登壇) を確定。method 選定 (Sunday weekend 帯、Config T-2 preview): 直近 14 日 TOP1 news-en (avg 29 views, 6/15 = 6 日空き、2 日ガード OK、7 日 2 回到達ガード OK) を Exploit 採用。Apple WWDC 6/2 (T-6 preview) = 53 views = TOP1 pattern を Config 6/23 開幕 T-2 で再現狙い。直近 2 日 (6/20 social-en, 6/19 official-src) と method 重複なし、WORST 凍結対象外。柱③ 業界・デザインニュース (Config は Figma 自社イベントだが業界全体が注視する pre-event 助走として柱③ 計上)、Apple WWDC 偏重の柱③ 内部分散にも寄与。Sunday の運用方針は本来 evergreen 主軸だが、pre-event preview は鮮度ニュース帯の例外運用として freshness_hours=48 で記録。NG パターン回避: (a) AI=補助輪フレーム維持 (Config の AI ワークフローも『判断は人、AI は実装支援』と再強調)、(b) プロ向け高度議論ではなく駆け出しが無料配信で観るべきポイントに翻訳、(c) AI が仕事を奪う系 NG 非該当、(d) freshness_hours=48 で 168 NG ライン余裕、(e) 出典 6 ソースで multi-source confirm。連動性: 今日 6/21 (Sun) T-2 preview → 月曜 6/22 (Mon) 前夜最終助走 → 火曜 6/23 (Tue) 開幕当日 → 水曜 6/24 (Wed) Keynote recap、4 連結縦糸の起点として配置",
+        "sources": [
+          "https://config.figma.com/",
+          "https://silicondales.com/enterprise/config-2026-figmas-flagship-event-for-product-teams/",
+          "https://www.makebttr.com/insights/figma-config-2026",
+          "https://uiuxtrend.com/event/figma-config-2026/",
+          "https://www.figma.com/blog/config-speakers-looking-ahead-2026/",
+          "https://moscone.com/events/config-2026"
+        ],
+        "query": "Config 2026 Figma June 23 25 San Francisco keynote agenda free virtual stream watch party AI workflows design systems",
+        "freshness_hours": 48
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -2081,14 +2126,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-12",
-      "changes": [
-        "standard: 134 avg views (16 videos)",
-        "Day performance: Wed=315, Sun=138, Thu=131, Tue=116, Fri=95, Sat=94, Mon=79"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-13",
       "changes": [
@@ -2318,6 +2355,14 @@
       "changes": [
         "standard: 74 avg views (45 videos)",
         "Day performance: Wed=109, Sun=88, Sat=85, Thu=66, Tue=62, Fri=58, Mon=44"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-21",
+      "changes": [
+        "standard: 72 avg views (46 videos)",
+        "Day performance: Wed=109, Sun=88, Sat=75, Thu=66, Tue=62, Fri=58, Mon=44"
       ],
       "recommendedTemplate": "standard"
     }
