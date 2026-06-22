@@ -1,45 +1,43 @@
 {
-  "date": "2026-06-22",
+  "date": "2026-06-23",
   "discovery": {
-    "method": "official-src",
-    "description": "Figma 公式 Config 2026 サイト (agenda / faq / トップ) + Figma Blog (登壇者紹介・design agent 紹介) + Figma Investor Relations (Investor & Analyst Session 開催告知) を一次ソースとして横断、加えて Figmalion / silicondales / makebttr で時刻と内容を相互検証。確定情報: (a) 6/23 火曜は受付と Config Commons の community day、(b) コンテンツ Day 1 は 6/24 水曜、Dylan Field の開幕 Keynote 含む、(c) 6/25 木曜は Day 2、(d) 全 Keynote 同日 YouTube アーカイブ公開、(e) virtual 視聴は無料、(f) 125+ 登壇者、50+ セッション、AI エージェント・Figma Make・AI ワークフローが主軸。method 選定: 直近 14 日 TOP2 official-src (avg 6.6 views、Apple WWDC 6/9 当日 25 views の大型イベント当日前例あり)、6/19 以来 3 日空きで 2 日ガード (6/20 social-en, 6/21 news-en) 完全クリア、昨日の news-en と method 分散で柱③ 内部の Discovery 多様性を担保。昨日のトピックとの差別化: 昨日は『Config 開幕日・無料配信・100 都市ウォッチパーティ』の一般 preview、今日は『時差 = Keynote が JST 木曜 6/25 早朝 + 全 Keynote 同日アーカイブ → 駆け出しは無理せずアーカイブで OK』の視聴戦略角度に切替、内容重複ゼロ。NG パターン回避: (a) AI=補助輪フレーム維持 (Keynote 内容そのものは触れず、視聴ガイド役に徹する)、(b) FOMO を煽らず Primary 層の睡眠を守る『学習者の味方』姿勢、(c) freshness_hours=24 で 168 NG ライン余裕、(d) 出典 6 ソースで multi-source confirm、(e) 専門用語 (Keynote, Config Commons) は文脈で補足。連動性: 6/21 (Sun) T-2 preview → 今日 6/22 (Mon) T-1 時差/視聴戦略 → 6/23 (Tue) 開幕当日 → 6/24 (Wed) Keynote 当日 recap → 6/25 (Thu) アーカイブ視聴日、5 日連結の縦糸の中継点として配置",
+    "method": "social-en",
+    "description": "Contra の X 投稿と Config 公式 schedule (Makeathon Winners Showcase event page) を突き合わせ、Figma 公式 $10 万コンテストの優勝発表が SF 現地 6/23 14:00 PDT = JST 6/24 06:00 に行われることを確定。$5 万 grand prize は Figma Make 部門限定、Best Overall / Excellence in Craft / New Interaction の 3 部門。Contra コミュニティと techtimes 報道で内容相互確認。直近 2 日は news-en (6/21) / official-src (6/22) と Config 関連を 2 連投済み、3 日目に同 method 連続は views 落ち込みパターン、かつ news 系上位 2 method はガード対象。social-en は 6/20 以来 3 日空きで連続 NG 回避、WORST 群 (avg 1) からの explore で再評価。Config 全体 5 日連結 (T-2 / T-1 / 開幕日 / Keynote 当日 / Keynote recap) の中継点として、forward-looking 角度を『Keynote 予告』から『今夜の Makeathon 結果発表 = AI で何が作れるかの具体例』に切替、リアルタイム性を強化。NG パターン回避: $10万 / $5万を数字で出し賞金訴求の派手さを生かしつつ、AI は補助輪フレーム維持 (優勝作 = 学習者がプロンプト集として参考にする教材)、freshness_hours=0 (本日イベント)、出典 4 件 multi-source confirm",
     "sources": [
-      "https://config.figma.com/",
-      "https://config.figma.com/san-francisco/agenda/",
-      "https://config.figma.com/san-francisco/faq/",
-      "https://www.figma.com/blog/config-speakers-looking-ahead-2026/",
-      "https://www.figma.com/blog/the-figma-agent-is-here/",
-      "https://investor.figma.com/news-events/news/news-details/2026/Figma-to-Host-Investor-and-Analyst-Session-at-Config-2026/default.aspx"
+      "https://config.figma.com/san-francisco/event/52f50783-e30a-4a98-9039-fab3d9f04fa4/",
+      "https://contra.com/community/topic/configmakeathon",
+      "https://x.com/contra/status/2061546202575798451",
+      "https://www.techtimes.com/articles/318823/20260622/figma-config-2026-kicks-off-today-virtual-attendance-still-free-person-sells-out.htm"
     ],
-    "query": "Figma Config 2026 keynote agenda June 24 Dylan Field same-day YouTube archive JST timing AI agent Make",
-    "freshness_hours": 24
+    "query": "Config 2026 Makeathon Contra winners $100K Figma Make announcement time",
+    "freshness_hours": 0
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Config 2026 本命 Keynote は明後日 6/24、JST 木曜 6/25 早朝 — 駆け出しは同日アーカイブで OK",
-      "description": "Config 開幕前夜。本命 Keynote は明後日、日本だと木曜の早朝です",
-      "detail": "6/23 火曜は受付と Config Commons の日、本番 Keynote は 6/24 水曜 SF 朝 = JST 木曜 6/25 早朝。全 Keynote は同日 YouTube アーカイブ公開。",
-      "narration": "Figma Config 2026 が明日 6/23 開幕。でも本命の Keynote は明後日、日本だと木曜の早朝に始まります。",
+      "title": "Config Makeathon の優勝作が今夜 JST 早朝発表、$10 万コンテストで Figma Make の実例が出揃う",
+      "description": "今夜 JST 早朝、$10 万コンテストの優勝作品が SF で公開されます",
+      "detail": "Config Makeathon は 6/4-18 の 2 週間 Figma×Contra 共催、賞金計 $10 万、最優秀 $5 万は Figma Make 限定、3 部門の優勝者を SF 現地 14 時 = JST 明朝 6 時に発表。",
+      "narration": "明朝 6/24 JST 6 時、Figma 公式の $10 万コンテストの優勝作が発表。AI で作れるデザインの最新実例が見られます。",
       "tags": [
         "Config 2026",
-        "Figma",
-        "Keynote 時差"
+        "Figma Make",
+        "Makeathon"
       ],
       "narration_sections": {
-        "hook": "Figma Config 2026 が明日 6/23 開幕。でも本命の Keynote は明後日、日本だと木曜の早朝に始まります。",
-        "origin": "6/23 火曜は受付とコミュニティ日。本番は 6/24 水曜、CEO Dylan Field の Keynote が SF 朝、日本時間で木曜 6/25 早朝です。AI エージェントと Figma Make が主軸、50 超のセッションが並びます。",
-        "recommend": "全 Keynote は同日 YouTube に上がります。無理して起きず、6/25 朝のアーカイブで観るのが駆け出し向け正解です。"
+        "hook": "明朝 6/24 JST 6 時、Figma 公式の $10 万コンテストの優勝作が発表。AI で作れるデザインの最新実例が見られます。",
+        "origin": "Config Makeathon は 6/4-18 の 2 週間 Figma×Contra 共催のコンテスト。賞金計 $10 万、最優秀 $5 万は Figma Make 限定で、JST 明朝 6 時に 3 部門の優勝者を発表します。",
+        "recommend": "優勝作は後日 Figma 公式 YouTube で誰でも観られます。駆け出しは AI プロンプトの参考集として保存しておきましょう。"
       },
       "section_titles": {
-        "hook": "Config 明日開幕",
-        "origin": "本命は6/24水曜",
-        "recommend": "アーカイブで観る"
+        "hook": "優勝作 明朝発表",
+        "origin": "コンテストの中身",
+        "recommend": "駆け出しの保存術"
       },
       "section_descriptions": {
-        "hook": "Figma 最大の年次イベントが明日 6/23 開幕",
-        "origin": "Keynote は明後日、JST だと木曜早朝",
-        "recommend": "同日 YouTube アーカイブで起きてから視聴"
+        "hook": "Figma 公式 $10 万コンテスト、優勝作の発表時刻",
+        "origin": "Makeathon の賞金枠と発表の流れを整理",
+        "recommend": "アーカイブを AI プロンプト参考集として活用"
       }
     }
   ]
