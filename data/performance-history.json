@@ -1760,7 +1760,7 @@
         "views": 25,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-21T01:39:59.124Z"
+        "updatedAt": "2026-06-22T01:41:29.149Z"
       }
     },
     {
@@ -1806,7 +1806,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-21T01:39:59.124Z"
+        "updatedAt": "2026-06-22T01:41:29.149Z"
       }
     },
     {
@@ -1850,7 +1850,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-21T01:39:59.124Z"
+        "updatedAt": "2026-06-22T01:41:29.149Z"
       }
     },
     {
@@ -1896,7 +1896,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-21T01:39:59.124Z"
+        "updatedAt": "2026-06-22T01:41:29.149Z"
       }
     },
     {
@@ -1941,7 +1941,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-21T01:39:59.124Z"
+        "updatedAt": "2026-06-22T01:41:29.149Z"
       }
     },
     {
@@ -1986,7 +1986,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-21T01:39:59.124Z"
+        "updatedAt": "2026-06-22T01:41:29.149Z"
       }
     },
     {
@@ -2031,7 +2031,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-21T01:39:59.124Z"
+        "updatedAt": "2026-06-22T01:41:29.149Z"
       }
     },
     {
@@ -2076,7 +2076,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-21T01:39:59.124Z"
+        "updatedAt": "2026-06-22T01:41:29.149Z"
       }
     },
     {
@@ -2118,6 +2118,51 @@
         "freshness_hours": 48
       },
       "stats": {
+        "views": 2,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-06-22T01:41:29.149Z"
+      }
+    },
+    {
+      "videoId": "mXXLuM-9oi0",
+      "videoUrl": "https://youtube.com/shorts/mXXLuM-9oi0",
+      "date": "2026-06-22",
+      "title": "【デザインニュース】Config 2026 本命 Keynote は明後日 6/24、JST 木曜 6/25 早朝 — 駆け出しは同日アーカイブで OK｜2026/06/22 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 45,
+      "discovery": {
+        "method": "official-src",
+        "description": "Figma 公式 Config 2026 サイト (agenda / faq / トップ) + Figma Blog (登壇者紹介・design agent 紹介) + Figma Investor Relations (Investor & Analyst Session 開催告知) を一次ソースとして横断、加えて Figmalion / silicondales / makebttr で時刻と内容を相互検証。確定情報: (a) 6/23 火曜は受付と Config Commons の community day、(b) コンテンツ Day 1 は 6/24 水曜、Dylan Field の開幕 Keynote 含む、(c) 6/25 木曜は Day 2、(d) 全 Keynote 同日 YouTube アーカイブ公開、(e) virtual 視聴は無料、(f) 125+ 登壇者、50+ セッション、AI エージェント・Figma Make・AI ワークフローが主軸。method 選定: 直近 14 日 TOP2 official-src (avg 6.6 views、Apple WWDC 6/9 当日 25 views の大型イベント当日前例あり)、6/19 以来 3 日空きで 2 日ガード (6/20 social-en, 6/21 news-en) 完全クリア、昨日の news-en と method 分散で柱③ 内部の Discovery 多様性を担保。昨日のトピックとの差別化: 昨日は『Config 開幕日・無料配信・100 都市ウォッチパーティ』の一般 preview、今日は『時差 = Keynote が JST 木曜 6/25 早朝 + 全 Keynote 同日アーカイブ → 駆け出しは無理せずアーカイブで OK』の視聴戦略角度に切替、内容重複ゼロ。NG パターン回避: (a) AI=補助輪フレーム維持 (Keynote 内容そのものは触れず、視聴ガイド役に徹する)、(b) FOMO を煽らず Primary 層の睡眠を守る『学習者の味方』姿勢、(c) freshness_hours=24 で 168 NG ライン余裕、(d) 出典 6 ソースで multi-source confirm、(e) 専門用語 (Keynote, Config Commons) は文脈で補足。連動性: 6/21 (Sun) T-2 preview → 今日 6/22 (Mon) T-1 時差/視聴戦略 → 6/23 (Tue) 開幕当日 → 6/24 (Wed) Keynote 当日 recap → 6/25 (Thu) アーカイブ視聴日、5 日連結の縦糸の中継点として配置",
+        "sources": [
+          "https://config.figma.com/",
+          "https://config.figma.com/san-francisco/agenda/",
+          "https://config.figma.com/san-francisco/faq/",
+          "https://www.figma.com/blog/config-speakers-looking-ahead-2026/",
+          "https://www.figma.com/blog/the-figma-agent-is-here/",
+          "https://investor.figma.com/news-events/news/news-details/2026/Figma-to-Host-Investor-and-Analyst-Session-at-Config-2026/default.aspx"
+        ],
+        "query": "Figma Config 2026 keynote agenda June 24 Dylan Field same-day YouTube archive JST timing AI agent Make",
+        "freshness_hours": 24
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -2126,14 +2171,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-13",
-      "changes": [
-        "standard: 130 avg views (17 videos)",
-        "Day performance: Wed=315, Sun=138, Thu=131, Tue=98, Fri=95, Sat=94, Mon=80"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-14",
       "changes": [
@@ -2363,6 +2400,14 @@
       "changes": [
         "standard: 72 avg views (46 videos)",
         "Day performance: Wed=109, Sun=88, Sat=75, Thu=66, Tue=62, Fri=58, Mon=44"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-22",
+      "changes": [
+        "standard: 71 avg views (47 videos)",
+        "Day performance: Wed=109, Sun=76, Sat=75, Thu=66, Tue=62, Fri=58, Mon=44"
       ],
       "recommendedTemplate": "standard"
     }
