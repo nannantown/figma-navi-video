@@ -1,45 +1,47 @@
 {
-  "date": "2026-06-22",
+  "date": "2026-06-24",
   "discovery": {
-    "method": "official-src",
-    "description": "Figma 公式 Config 2026 サイト (agenda / faq / トップ) + Figma Blog (登壇者紹介・design agent 紹介) + Figma Investor Relations (Investor & Analyst Session 開催告知) を一次ソースとして横断、加えて Figmalion / silicondales / makebttr で時刻と内容を相互検証。確定情報: (a) 6/23 火曜は受付と Config Commons の community day、(b) コンテンツ Day 1 は 6/24 水曜、Dylan Field の開幕 Keynote 含む、(c) 6/25 木曜は Day 2、(d) 全 Keynote 同日 YouTube アーカイブ公開、(e) virtual 視聴は無料、(f) 125+ 登壇者、50+ セッション、AI エージェント・Figma Make・AI ワークフローが主軸。method 選定: 直近 14 日 TOP2 official-src (avg 6.6 views、Apple WWDC 6/9 当日 25 views の大型イベント当日前例あり)、6/19 以来 3 日空きで 2 日ガード (6/20 social-en, 6/21 news-en) 完全クリア、昨日の news-en と method 分散で柱③ 内部の Discovery 多様性を担保。昨日のトピックとの差別化: 昨日は『Config 開幕日・無料配信・100 都市ウォッチパーティ』の一般 preview、今日は『時差 = Keynote が JST 木曜 6/25 早朝 + 全 Keynote 同日アーカイブ → 駆け出しは無理せずアーカイブで OK』の視聴戦略角度に切替、内容重複ゼロ。NG パターン回避: (a) AI=補助輪フレーム維持 (Keynote 内容そのものは触れず、視聴ガイド役に徹する)、(b) FOMO を煽らず Primary 層の睡眠を守る『学習者の味方』姿勢、(c) freshness_hours=24 で 168 NG ライン余裕、(d) 出典 6 ソースで multi-source confirm、(e) 専門用語 (Keynote, Config Commons) は文脈で補足。連動性: 6/21 (Sun) T-2 preview → 今日 6/22 (Mon) T-1 時差/視聴戦略 → 6/23 (Tue) 開幕当日 → 6/24 (Wed) Keynote 当日 recap → 6/25 (Thu) アーカイブ視聴日、5 日連結の縦糸の中継点として配置",
+    "method": "news-en",
+    "description": "Config 2026 Keynote 当日朝 (JST 6/24 Wed) のタイミングで、英語 tech / design メディア (TechTimes Config 開幕速報、Relve、Figmalion) + 公式 (config.figma.com agenda / virtual / FAQ / speakers + figma.com/blog/the-figma-agent-is-here + figma.com/release-notes) を横断、加えて X / LinkedIn (Dylan Field の Config 2026 投稿) で時刻と内容を相互検証。確定情報: (a) Keynote は SF 6/24 Wed 9:00-10:20 AM PDT = JST 6/25 Thu 1:00 AM 開幕、80 分間、(b) CEO Dylan Field と Jayse Hansen (Fictional UI Design Director at ØFFGRID) 共同登壇、(c) Figma Make の大型アップデートと AI design agent (5/20 から限定ベータ) の正式版 (GA) が本命予想、(d) Make は Q1 2026 で大手 enterprise の 60% が WAU、Figma 最速成長プロダクト、(e) 同日 14:00 PDT (JST 6/25 6:00 AM) に投資家向け Analyst Session も実施、(f) virtual 視聴無料、全 Keynote 同日 YouTube アーカイブ。method 選定: 直近 14 日 TOP1 news-en (avg 20 views、Apple WWDC 予告 6/2 53 views = 当チャンネル史上 TOP)、6/21 以来 3 日空きで 2 日ガード余裕クリア、official-src は昨日 6/22 投下で 2 日ガード抵触 → 除外、Apple WWDC 6/2 (53 views, 予告型) と同じ大型イベント T-day朝 news-en 型を Config Keynote 当日に再適用。昨日 6/22 とのトピック差別化: 昨日は『JST 木曜早朝』までの大まかな時差案内、本日は具体的に『今夜 JST 1:00 AM 開幕、80 分間、Dylan Field + Jayse Hansen、Make が大手 60% WAU』とピン留め新事実 3 つで重複ゼロ。NG パターン回避: (a) AI=補助輪フレーム維持 (発表予想は『何が来るか』止まりで AI が仕事を奪う系には触れない)、(b) FOMO を煽らず Recommend で『アーカイブで OK』姿勢継続 = 学習者の睡眠を守る、(c) freshness_hours=12 で 168 NG ライン余裕、(d) 出典 8 ソースで multi-source confirm、(e) 専門用語 (Keynote, WAU, GA) は文脈で補足。連動性: 6/21 (Sun) T-2 一般 preview → 6/22 (Mon) T-1 視聴戦略 → 6/23 (Tue) [本ルーチン未稼働] → 本日 6/24 (Wed) Keynote 当日朝・直前 3 注目 (時刻 + 主役 + 期待発表) → 6/25 (Thu) Keynote 当日 recap → 6/26 (Fri) 4 日連投の総括、6 日連結縦糸の本日が urgency 山場",
     "sources": [
       "https://config.figma.com/",
       "https://config.figma.com/san-francisco/agenda/",
-      "https://config.figma.com/san-francisco/faq/",
-      "https://www.figma.com/blog/config-speakers-looking-ahead-2026/",
+      "https://config.figma.com/san-francisco/session/829e6ced-3257-4f5c-b675-aa72f4d1f98f/",
+      "https://config.figma.com/san-francisco/virtual/",
+      "https://www.techtimes.com/articles/318823/20260622/figma-config-2026-kicks-off-today-virtual-attendance-still-free-person-sells-out.htm",
+      "https://relvehq.com/events/config",
       "https://www.figma.com/blog/the-figma-agent-is-here/",
       "https://investor.figma.com/news-events/news/news-details/2026/Figma-to-Host-Investor-and-Analyst-Session-at-Config-2026/default.aspx"
     ],
-    "query": "Figma Config 2026 keynote agenda June 24 Dylan Field same-day YouTube archive JST timing AI agent Make",
-    "freshness_hours": 24
+    "query": "Figma Config 2026 June 24 keynote Dylan Field 9am PDT AI agent Figma Make GA virtual archive",
+    "freshness_hours": 12
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Config 2026 本命 Keynote は明後日 6/24、JST 木曜 6/25 早朝 — 駆け出しは同日アーカイブで OK",
-      "description": "Config 開幕前夜。本命 Keynote は明後日、日本だと木曜の早朝です",
-      "detail": "6/23 火曜は受付と Config Commons の日、本番 Keynote は 6/24 水曜 SF 朝 = JST 木曜 6/25 早朝。全 Keynote は同日 YouTube アーカイブ公開。",
-      "narration": "Figma Config 2026 が明日 6/23 開幕。でも本命の Keynote は明後日、日本だと木曜の早朝に始まります。",
+      "title": "Config 2026 Keynote 今夜 JST 1 時開幕、AI エージェントと Figma Make の大型発表予想、Make は大手 6 割が毎週使う最速成長プロダクト",
+      "description": "今夜 1 時、Figma の年に 1 度の大発表が無料で観られます",
+      "detail": "JST 6/25 木曜 1 時 (SF 6/24 9 時 PDT) 開幕、80 分間。Dylan Field と Jayse Hansen が AI エージェントと Figma Make を主軸に発表予想。",
+      "narration": "今夜 1 時、Figma Config 2026 の本命 Keynote が開幕。1 年で最大のデザイン発表が、駆け出しでも無料で観られます。",
       "tags": [
         "Config 2026",
         "Figma",
-        "Keynote 時差"
+        "Keynote 当日"
       ],
       "narration_sections": {
-        "hook": "Figma Config 2026 が明日 6/23 開幕。でも本命の Keynote は明後日、日本だと木曜の早朝に始まります。",
-        "origin": "6/23 火曜は受付とコミュニティ日。本番は 6/24 水曜、CEO Dylan Field の Keynote が SF 朝、日本時間で木曜 6/25 早朝です。AI エージェントと Figma Make が主軸、50 超のセッションが並びます。",
-        "recommend": "全 Keynote は同日 YouTube に上がります。無理して起きず、6/25 朝のアーカイブで観るのが駆け出し向け正解です。"
+        "hook": "今夜 1 時、Figma Config 2026 の本命 Keynote が開幕。1 年で最大のデザイン発表が、駆け出しでも無料で観られます。",
+        "origin": "開幕は日本時間 6/25 木曜の早朝 1 時、80 分間。CEO Dylan Field が AI エージェントと Figma Make の大型発表を出す予定。Make は今、Figma の最速成長プロダクトで、大手企業の 6 割が毎週使っているそうです。",
+        "recommend": "全 Keynote は同日 YouTube にアーカイブされます。無理せず朝起きてから、コーヒー片手に観るのが正解です。"
       },
       "section_titles": {
-        "hook": "Config 明日開幕",
-        "origin": "本命は6/24水曜",
-        "recommend": "アーカイブで観る"
+        "hook": "今夜 1 時開幕",
+        "origin": "AI と Make が本命",
+        "recommend": "アーカイブで OK"
       },
       "section_descriptions": {
-        "hook": "Figma 最大の年次イベントが明日 6/23 開幕",
-        "origin": "Keynote は明後日、JST だと木曜早朝",
-        "recommend": "同日 YouTube アーカイブで起きてから視聴"
+        "hook": "Figma 年次大型イベントが今夜 JST 1 時開幕",
+        "origin": "AI エージェントと Figma Make 大型発表予想",
+        "recommend": "同日 YouTube アーカイブで朝に視聴"
       }
     }
   ]
