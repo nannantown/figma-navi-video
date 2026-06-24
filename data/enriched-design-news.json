@@ -1,47 +1,43 @@
 {
-  "date": "2026-06-24",
+  "date": "2026-06-25",
   "discovery": {
     "method": "news-en",
-    "description": "Config 2026 Keynote 当日朝 (JST 6/24 Wed) のタイミングで、英語 tech / design メディア (TechTimes Config 開幕速報、Relve、Figmalion) + 公式 (config.figma.com agenda / virtual / FAQ / speakers + figma.com/blog/the-figma-agent-is-here + figma.com/release-notes) を横断、加えて X / LinkedIn (Dylan Field の Config 2026 投稿) で時刻と内容を相互検証。確定情報: (a) Keynote は SF 6/24 Wed 9:00-10:20 AM PDT = JST 6/25 Thu 1:00 AM 開幕、80 分間、(b) CEO Dylan Field と Jayse Hansen (Fictional UI Design Director at ØFFGRID) 共同登壇、(c) Figma Make の大型アップデートと AI design agent (5/20 から限定ベータ) の正式版 (GA) が本命予想、(d) Make は Q1 2026 で大手 enterprise の 60% が WAU、Figma 最速成長プロダクト、(e) 同日 14:00 PDT (JST 6/25 6:00 AM) に投資家向け Analyst Session も実施、(f) virtual 視聴無料、全 Keynote 同日 YouTube アーカイブ。method 選定: 直近 14 日 TOP1 news-en (avg 20 views、Apple WWDC 予告 6/2 53 views = 当チャンネル史上 TOP)、6/21 以来 3 日空きで 2 日ガード余裕クリア、official-src は昨日 6/22 投下で 2 日ガード抵触 → 除外、Apple WWDC 6/2 (53 views, 予告型) と同じ大型イベント T-day朝 news-en 型を Config Keynote 当日に再適用。昨日 6/22 とのトピック差別化: 昨日は『JST 木曜早朝』までの大まかな時差案内、本日は具体的に『今夜 JST 1:00 AM 開幕、80 分間、Dylan Field + Jayse Hansen、Make が大手 60% WAU』とピン留め新事実 3 つで重複ゼロ。NG パターン回避: (a) AI=補助輪フレーム維持 (発表予想は『何が来るか』止まりで AI が仕事を奪う系には触れない)、(b) FOMO を煽らず Recommend で『アーカイブで OK』姿勢継続 = 学習者の睡眠を守る、(c) freshness_hours=12 で 168 NG ライン余裕、(d) 出典 8 ソースで multi-source confirm、(e) 専門用語 (Keynote, WAU, GA) は文脈で補足。連動性: 6/21 (Sun) T-2 一般 preview → 6/22 (Mon) T-1 視聴戦略 → 6/23 (Tue) [本ルーチン未稼働] → 本日 6/24 (Wed) Keynote 当日朝・直前 3 注目 (時刻 + 主役 + 期待発表) → 6/25 (Thu) Keynote 当日 recap → 6/26 (Fri) 4 日連投の総括、6 日連結縦糸の本日が urgency 山場",
+    "description": "Config 2026 Keynote 直後 (JST 6/25 1:00 AM 開幕、80 分間終了から約 6 時間後) のタイミングで、英語 tech メディア (TechCrunch / The Next Web / cmswire) を主、Figma 公式 blog (Config 2026 recap / Introducing Figma Motion) と公式 X 投稿を補で横断。確定情報: (a) Keynote 5 大発表は Code Layers (7 月 EA waitlist) / Figma Motion (今日から全プラン open beta) / Agent Skills + Connectors (Notion/Slack/Granola/Hex/GitHub/Atlassian) / Shader fills (AI 生成) / Generative plugins (年内 Weave 統合)、(b) Figma Motion は timeline + keyframes で位置/拡大/回転/透明度の 4 軸独立制御、auto keyframing 対応、書き出し CSS/JSON/React/MP4/WebM/Animated SVG/GIF、(c) Figma agent が文字プロンプトでキーフレームを自動生成 = 公式が『The agent removes the learning curve for designers who haven't animated before』と明言、(d) 追加課金なし全プラン open beta。method 選定: 直近 14 日 TOP1 news-en (avg 3.5)、6/21 以来 4 日空きで 2 日ガード余裕、Apple WWDC 6/9 当日 official-src 25 views 前例と同型の『大型イベント T-day recap』を news-en に乗せ替え (official-src は 6/22 投下で連投回避)。トピック単発フォーカス: 5 発表全列挙ではなく Figma Motion 1 機能に絞った理由は (a) 5 発表中で唯一今日から触れる、(b) Primary 層『アニメ未経験の駆け出し』の壁を AI 補助輪が直接解消する戦略フィット、(c) Code Layers と Agent Skills は 6/26 (Fri) 4 日連投総括で扱う方が文脈密度高い。NG パターン回避: AI 仕事奪う系に触れず『未経験ほど触り得』フレーム、強い購買 CTA なし、Figmaナビ への明示誘導なし、出典 4 ソース multi-source confirm、freshness_hours=6 で 168 NG ライン大余裕。連動性: 6/21 (Sun) T-2 preview → 6/22 (Mon) T-1 視聴戦略 → 6/23 (Tue) [本ルーチン未稼働] → 6/24 (Wed) T-day朝 直前 3 注目 → 本日 6/25 (Thu) Keynote 直後 Motion 単発 → 6/26 (Fri) 4 日 (実質 5 投) 総括、6 日連結縦糸の本日が確定発表 recap 山場",
     "sources": [
-      "https://config.figma.com/",
-      "https://config.figma.com/san-francisco/agenda/",
-      "https://config.figma.com/san-francisco/session/829e6ced-3257-4f5c-b675-aa72f4d1f98f/",
-      "https://config.figma.com/san-francisco/virtual/",
-      "https://www.techtimes.com/articles/318823/20260622/figma-config-2026-kicks-off-today-virtual-attendance-still-free-person-sells-out.htm",
-      "https://relvehq.com/events/config",
-      "https://www.figma.com/blog/the-figma-agent-is-here/",
-      "https://investor.figma.com/news-events/news/news-details/2026/Figma-to-Host-Investor-and-Analyst-Session-at-Config-2026/default.aspx"
+      "https://www.figma.com/blog/config-2026-recap/",
+      "https://www.figma.com/blog/introducing-figma-motion/",
+      "https://techcrunch.com/2026/06/24/figma-adds-code-layers-support-for-animations-more-ai-features-in-new-update/",
+      "https://thenextweb.com/news/figma-config-code-layers-ai-skills-plugins-animations"
     ],
-    "query": "Figma Config 2026 June 24 keynote Dylan Field 9am PDT AI agent Figma Make GA virtual archive",
-    "freshness_hours": 12
+    "query": "Figma Config 2026 keynote recap Figma Motion timeline keyframes open beta AI agent",
+    "freshness_hours": 6
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Config 2026 Keynote 今夜 JST 1 時開幕、AI エージェントと Figma Make の大型発表予想、Make は大手 6 割が毎週使う最速成長プロダクト",
-      "description": "今夜 1 時、Figma の年に 1 度の大発表が無料で観られます",
-      "detail": "JST 6/25 木曜 1 時 (SF 6/24 9 時 PDT) 開幕、80 分間。Dylan Field と Jayse Hansen が AI エージェントと Figma Make を主軸に発表予想。",
-      "narration": "今夜 1 時、Figma Config 2026 の本命 Keynote が開幕。1 年で最大のデザイン発表が、駆け出しでも無料で観られます。",
+      "title": "Figma Config 2026 Keynote 確定、本命 Figma Motion は今日から全プラン open beta、AI agent が文字でキーフレーム自動生成し『アニメ未経験』の壁を解消",
+      "description": "Figma にタイムラインが正式装備、AI が動きを書いてくれます",
+      "detail": "JST 6/25 1 時開幕の Config 2026 Keynote で Figma Motion を発表、即日 open beta。位置/拡大/回転/透明度を独立キーフレーム制御、書き出しは CSS/JSON/React/MP4/GIF。",
+      "narration": "昨夜開幕した Figma Config 2026、本命は『Figma Motion』。Figma にタイムラインが乗りました。",
       "tags": [
         "Config 2026",
-        "Figma",
-        "Keynote 当日"
+        "Figma Motion",
+        "アニメーション"
       ],
       "narration_sections": {
-        "hook": "今夜 1 時、Figma Config 2026 の本命 Keynote が開幕。1 年で最大のデザイン発表が、駆け出しでも無料で観られます。",
-        "origin": "開幕は日本時間 6/25 木曜の早朝 1 時、80 分間。CEO Dylan Field が AI エージェントと Figma Make の大型発表を出す予定。Make は今、Figma の最速成長プロダクトで、大手企業の 6 割が毎週使っているそうです。",
-        "recommend": "全 Keynote は同日 YouTube にアーカイブされます。無理せず朝起きてから、コーヒー片手に観るのが正解です。"
+        "hook": "昨夜開幕した Figma Config 2026、本命は『Figma Motion』。Figma にタイムラインが乗りました。",
+        "origin": "位置・拡大・回転・透明度をキーフレーム制御、プリセット付き。書き出しは CSS/JSON/React や MP4/GIF まで。AI agent が『こう動かして』と言えばキーフレームを自動生成。今日から全プラン open beta、追加課金なし。",
+        "recommend": "アニメ未経験の駆け出しほど触り得です。簡単な hover や fade から、今日のうちに 1 つ試してみてください。"
       },
       "section_titles": {
-        "hook": "今夜 1 時開幕",
-        "origin": "AI と Make が本命",
-        "recommend": "アーカイブで OK"
+        "hook": "今日から Motion",
+        "origin": "キーフレーム標準装備",
+        "recommend": "今日触ってみよう"
       },
       "section_descriptions": {
-        "hook": "Figma 年次大型イベントが今夜 JST 1 時開幕",
-        "origin": "AI エージェントと Figma Make 大型発表予想",
-        "recommend": "同日 YouTube アーカイブで朝に視聴"
+        "hook": "Config 2026 で Figma Motion 発表",
+        "origin": "AI agent が 4 軸キーフレームを自動生成",
+        "recommend": "全プラン open beta で今日から無料"
       }
     }
   ]
