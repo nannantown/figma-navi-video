@@ -1,43 +1,43 @@
 {
-  "date": "2026-06-25",
+  "date": "2026-06-26",
   "discovery": {
-    "method": "news-en",
-    "description": "Config 2026 Keynote 直後 (JST 6/25 1:00 AM 開幕、80 分間終了から約 6 時間後) のタイミングで、英語 tech メディア (TechCrunch / The Next Web / cmswire) を主、Figma 公式 blog (Config 2026 recap / Introducing Figma Motion) と公式 X 投稿を補で横断。確定情報: (a) Keynote 5 大発表は Code Layers (7 月 EA waitlist) / Figma Motion (今日から全プラン open beta) / Agent Skills + Connectors (Notion/Slack/Granola/Hex/GitHub/Atlassian) / Shader fills (AI 生成) / Generative plugins (年内 Weave 統合)、(b) Figma Motion は timeline + keyframes で位置/拡大/回転/透明度の 4 軸独立制御、auto keyframing 対応、書き出し CSS/JSON/React/MP4/WebM/Animated SVG/GIF、(c) Figma agent が文字プロンプトでキーフレームを自動生成 = 公式が『The agent removes the learning curve for designers who haven't animated before』と明言、(d) 追加課金なし全プラン open beta。method 選定: 直近 14 日 TOP1 news-en (avg 3.5)、6/21 以来 4 日空きで 2 日ガード余裕、Apple WWDC 6/9 当日 official-src 25 views 前例と同型の『大型イベント T-day recap』を news-en に乗せ替え (official-src は 6/22 投下で連投回避)。トピック単発フォーカス: 5 発表全列挙ではなく Figma Motion 1 機能に絞った理由は (a) 5 発表中で唯一今日から触れる、(b) Primary 層『アニメ未経験の駆け出し』の壁を AI 補助輪が直接解消する戦略フィット、(c) Code Layers と Agent Skills は 6/26 (Fri) 4 日連投総括で扱う方が文脈密度高い。NG パターン回避: AI 仕事奪う系に触れず『未経験ほど触り得』フレーム、強い購買 CTA なし、Figmaナビ への明示誘導なし、出典 4 ソース multi-source confirm、freshness_hours=6 で 168 NG ライン大余裕。連動性: 6/21 (Sun) T-2 preview → 6/22 (Mon) T-1 視聴戦略 → 6/23 (Tue) [本ルーチン未稼働] → 6/24 (Wed) T-day朝 直前 3 注目 → 本日 6/25 (Thu) Keynote 直後 Motion 単発 → 6/26 (Fri) 4 日 (実質 5 投) 総括、6 日連結縦糸の本日が確定発表 recap 山場",
+    "method": "social-en",
+    "description": "Config 2026 閉幕翌日、Medium / Mercari Design Blog / 個人デザイナー振り返り記事を主に英語コミュニティ総括",
     "sources": [
       "https://www.figma.com/blog/config-2026-recap/",
-      "https://www.figma.com/blog/introducing-figma-motion/",
-      "https://techcrunch.com/2026/06/24/figma-adds-code-layers-support-for-animations-more-ai-features-in-new-update/",
-      "https://thenextweb.com/news/figma-config-code-layers-ai-skills-plugins-animations"
+      "https://help.figma.com/hc/en-us/articles/39582753756695-What-s-new-from-Config-2026",
+      "https://medium.com/@ankitgajera1111/figma-config-2026-changed-everything-da9b89777827",
+      "https://medium.com/@rushita.k.designs/figma-config-2026-the-new-skill-most-designers-will-need-after-these-updates-f61cb47f12bc",
+      "https://note.com/mercari_design/n/ne884ea9b917f",
+      "https://www.techtimes.com/articles/319041/20260625/figma-config-2026-code-layers-challenge-cursor-gpu-shaders-hit-paid-plans.htm",
+      "https://www.cmswire.com/digital-experience/figma-launches-code-layers-motion-at-config-2026/",
+      "https://www.abdulazizahwan.com/2026/06/figma-config-2026-recap-code-layers-native-motion-and-ai-shaders-redefines-the-canvas.html"
     ],
-    "query": "Figma Config 2026 keynote recap Figma Motion timeline keyframes open beta AI agent",
-    "freshness_hours": 6
+    "query": "Config 2026 recap designers reaction Code Layers Motion Shader Agent Skills",
+    "freshness_hours": 12
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma Config 2026 Keynote 確定、本命 Figma Motion は今日から全プラン open beta、AI agent が文字でキーフレーム自動生成し『アニメ未経験』の壁を解消",
-      "description": "Figma にタイムラインが正式装備、AI が動きを書いてくれます",
-      "detail": "JST 6/25 1 時開幕の Config 2026 Keynote で Figma Motion を発表、即日 open beta。位置/拡大/回転/透明度を独立キーフレーム制御、書き出しは CSS/JSON/React/MP4/GIF。",
-      "narration": "昨夜開幕した Figma Config 2026、本命は『Figma Motion』。Figma にタイムラインが乗りました。",
-      "tags": [
-        "Config 2026",
-        "Figma Motion",
-        "アニメーション"
-      ],
+      "title": "Config 2026閉幕、6発表を駆け出し優先順位マップで整理",
+      "description": "発表は6つ、駆け出しが今日触れるものとそうでないものはハッキリ分かれている",
+      "detail": "今日から全プランで触れるのはFigma Motionだけ。Code Layersは7月のearly access待ち、Shader fillsは有料プラン限定、Agent SkillsやConnectorも順次公開。",
+      "narration": "Config 2026が閉幕しました。発表は6つあって、駆け出しが今日触れるものとそうでないものが、意外とハッキリ分かれてます。",
+      "tags": ["Figma", "Config2026", "デザインニュース"],
       "narration_sections": {
-        "hook": "昨夜開幕した Figma Config 2026、本命は『Figma Motion』。Figma にタイムラインが乗りました。",
-        "origin": "位置・拡大・回転・透明度をキーフレーム制御、プリセット付き。書き出しは CSS/JSON/React や MP4/GIF まで。AI agent が『こう動かして』と言えばキーフレームを自動生成。今日から全プラン open beta、追加課金なし。",
-        "recommend": "アニメ未経験の駆け出しほど触り得です。簡単な hover や fade から、今日のうちに 1 つ試してみてください。"
+        "hook": "Config 2026が閉幕しました。発表は6つあって、駆け出しが今日触れるものとそうでないものが、意外とハッキリ分かれてます。",
+        "origin": "今日から全プランで触れるのはFigma Motionだけ。Code Layersは7月のearly access待ち、Shader fillsは有料プラン限定で、Agent SkillsやConnectorも順次公開です。",
+        "recommend": "まずはMotionでhoverやfadeを1つ作って、Code Layersはwaitlist登録だけ済ませる。今週末の最短ルートです。"
       },
       "section_titles": {
-        "hook": "今日から Motion",
-        "origin": "キーフレーム標準装備",
-        "recommend": "今日触ってみよう"
+        "hook": "Config2026閉幕",
+        "origin": "今日試せる発表だけ",
+        "recommend": "駆け出しの最短ルート"
       },
       "section_descriptions": {
-        "hook": "Config 2026 で Figma Motion 発表",
-        "origin": "AI agent が 4 軸キーフレームを自動生成",
-        "recommend": "全プラン open beta で今日から無料"
+        "hook": "6つの発表を駆け出し目線で整理しましょう",
+        "origin": "今日触れる/7月待ち/有料の切り分けマップ",
+        "recommend": "週末はMotion試しとwaitlist登録だけ"
       }
     }
   ]
