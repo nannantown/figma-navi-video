@@ -1896,7 +1896,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-22T01:41:29.149Z"
+        "updatedAt": "2026-06-26T01:29:42.793Z"
       }
     },
     {
@@ -1938,10 +1938,10 @@
         "freshness_hours": 96
       },
       "stats": {
-        "views": 5,
+        "views": 6,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-22T01:41:29.149Z"
+        "updatedAt": "2026-06-26T01:29:42.793Z"
       }
     },
     {
@@ -1986,7 +1986,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-22T01:41:29.149Z"
+        "updatedAt": "2026-06-26T01:29:42.793Z"
       }
     },
     {
@@ -2031,7 +2031,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-22T01:41:29.149Z"
+        "updatedAt": "2026-06-26T01:29:42.793Z"
       }
     },
     {
@@ -2076,7 +2076,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-22T01:41:29.149Z"
+        "updatedAt": "2026-06-26T01:29:42.793Z"
       }
     },
     {
@@ -2118,10 +2118,10 @@
         "freshness_hours": 48
       },
       "stats": {
-        "views": 2,
+        "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-22T01:41:29.149Z"
+        "updatedAt": "2026-06-26T01:29:42.793Z"
       }
     },
     {
@@ -2163,6 +2163,53 @@
         "freshness_hours": 24
       },
       "stats": {
+        "views": 5,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-06-26T01:29:42.793Z"
+      }
+    },
+    {
+      "videoId": "qPPndb34CfI",
+      "videoUrl": "https://youtube.com/shorts/qPPndb34CfI",
+      "date": "2026-06-26",
+      "title": "【デザインニュース】Config 2026閉幕、6発表を駆け出し優先順位マップで整理｜2026/06/26 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 39,
+      "discovery": {
+        "method": "social-en",
+        "description": "Config 2026 閉幕翌日、Medium / Mercari Design Blog / 個人デザイナー振り返り記事を主に英語コミュニティ総括",
+        "sources": [
+          "https://www.figma.com/blog/config-2026-recap/",
+          "https://help.figma.com/hc/en-us/articles/39582753756695-What-s-new-from-Config-2026",
+          "https://medium.com/@ankitgajera1111/figma-config-2026-changed-everything-da9b89777827",
+          "https://medium.com/@rushita.k.designs/figma-config-2026-the-new-skill-most-designers-will-need-after-these-updates-f61cb47f12bc",
+          "https://note.com/mercari_design/n/ne884ea9b917f",
+          "https://www.techtimes.com/articles/319041/20260625/figma-config-2026-code-layers-challenge-cursor-gpu-shaders-hit-paid-plans.htm",
+          "https://www.cmswire.com/digital-experience/figma-launches-code-layers-motion-at-config-2026/",
+          "https://www.abdulazizahwan.com/2026/06/figma-config-2026-recap-code-layers-native-motion-and-ai-shaders-redefines-the-canvas.html"
+        ],
+        "query": "Config 2026 recap designers reaction Code Layers Motion Shader Agent Skills",
+        "freshness_hours": 12
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -2171,14 +2218,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-14",
-      "changes": [
-        "standard: 123 avg views (18 videos)",
-        "Day performance: Wed=210, Sun=138, Thu=131, Tue=98, Fri=95, Sat=94, Mon=80"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-15",
       "changes": [
@@ -2408,6 +2447,14 @@
       "changes": [
         "standard: 71 avg views (47 videos)",
         "Day performance: Wed=109, Sun=76, Sat=75, Thu=66, Tue=62, Fri=58, Mon=44"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-26",
+      "changes": [
+        "standard: 70 avg views (48 videos)",
+        "Day performance: Wed=109, Sun=76, Sat=75, Thu=66, Tue=62, Fri=58, Mon=39"
       ],
       "recommendedTemplate": "standard"
     }
