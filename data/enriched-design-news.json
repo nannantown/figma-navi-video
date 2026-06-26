@@ -1,43 +1,43 @@
 {
-  "date": "2026-06-26",
+  "date": "2026-06-27",
   "discovery": {
-    "method": "social-en",
-    "description": "Config 2026 閉幕翌日、Medium / Mercari Design Blog / 個人デザイナー振り返り記事を主に英語コミュニティ総括",
+    "method": "official-src",
+    "description": "Figma Learn 公式 Help Center の Motion 入門 5 本 (Explore / Quickly add preset / Use timeline / Add keyframes / Loading indicator) + Figma Motion 公式ページから、駆け出しが土曜 30 分で hover を 1 個仕上げる最短 3 ステップを抽出",
     "sources": [
-      "https://www.figma.com/blog/config-2026-recap/",
-      "https://help.figma.com/hc/en-us/articles/39582753756695-What-s-new-from-Config-2026",
-      "https://medium.com/@ankitgajera1111/figma-config-2026-changed-everything-da9b89777827",
-      "https://medium.com/@rushita.k.designs/figma-config-2026-the-new-skill-most-designers-will-need-after-these-updates-f61cb47f12bc",
-      "https://note.com/mercari_design/n/ne884ea9b917f",
-      "https://www.techtimes.com/articles/319041/20260625/figma-config-2026-code-layers-challenge-cursor-gpu-shaders-hit-paid-plans.htm",
-      "https://www.cmswire.com/digital-experience/figma-launches-code-layers-motion-at-config-2026/",
-      "https://www.abdulazizahwan.com/2026/06/figma-config-2026-recap-code-layers-native-motion-and-ai-shaders-redefines-the-canvas.html"
+      "https://help.figma.com/hc/en-us/articles/41274629073303-Explore-Figma-Motion",
+      "https://help.figma.com/hc/en-us/articles/41307886266135-Quickly-add-motion-with-preset-animations",
+      "https://help.figma.com/hc/en-us/articles/41405906446999-Use-the-Figma-Motion-timeline",
+      "https://help.figma.com/hc/en-us/articles/41307938657559-Add-select-and-delete-keyframes",
+      "https://help.figma.com/hc/en-us/articles/41295953430807-Motion-design-fundamentals-Create-motion-in-Figma",
+      "https://help.figma.com/hc/en-us/articles/4406787442711-What-Figma-features-are-in-beta",
+      "https://www.figma.com/motion/",
+      "https://www.figma.com/blog/introducing-figma-motion/"
     ],
-    "query": "Config 2026 recap designers reaction Code Layers Motion Shader Agent Skills",
-    "freshness_hours": 12
+    "query": "Figma Motion hover button beginner tutorial preset animations auto-keyframe timeline",
+    "freshness_hours": 50
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Config 2026閉幕、6発表を駆け出し優先順位マップで整理",
-      "description": "発表は6つ、駆け出しが今日触れるものとそうでないものはハッキリ分かれている",
-      "detail": "今日から全プランで触れるのはFigma Motionだけ。Code Layersは7月のearly access待ち、Shader fillsは有料プラン限定、Agent SkillsやConnectorも順次公開。",
-      "narration": "Config 2026が閉幕しました。発表は6つあって、駆け出しが今日触れるものとそうでないものが、意外とハッキリ分かれてます。",
-      "tags": ["Figma", "Config2026", "デザインニュース"],
+      "title": "Figma Motion、駆け出しが土曜30分で hover アニメを作る3ステップ",
+      "description": "Figma Motion が全プラン無料解禁、駆け出しでも3ステップで hover アニメが作れます",
+      "detail": "ボタン選んで Motion モード、タイムラインで auto-keyframe を ON、playhead を動かしてサイズ変更だけ。Motion が間を自動補完、preview で確認できます。",
+      "narration": "Figma Motion、今週から全プラン無料で使えます。駆け出しが最初に作る hover アニメ、実は3ステップで完成しますよ。",
+      "tags": ["Figma", "FigmaMotion", "デザインTips"],
       "narration_sections": {
-        "hook": "Config 2026が閉幕しました。発表は6つあって、駆け出しが今日触れるものとそうでないものが、意外とハッキリ分かれてます。",
-        "origin": "今日から全プランで触れるのはFigma Motionだけ。Code Layersは7月のearly access待ち、Shader fillsは有料プラン限定で、Agent SkillsやConnectorも順次公開です。",
-        "recommend": "まずはMotionでhoverやfadeを1つ作って、Code Layersはwaitlist登録だけ済ませる。今週末の最短ルートです。"
+        "hook": "Figma Motion、今週から全プラン無料で使えます。駆け出しが最初に作る hover アニメ、実は3ステップで完成しますよ。",
+        "origin": "やり方は、ボタンを選んで Motion モードに入る、タイムラインで auto-keyframe を ON、playhead を動かしてサイズを少し大きくする。これで間のフレームが自動補完されて、preview ですぐ動きが見えます。",
+        "recommend": "プリセットの Scale や Fade を選ぶだけでもOKです。今週末30分、Figma を開いて hover を1個仕上げてみましょう。"
       },
       "section_titles": {
-        "hook": "Config2026閉幕",
-        "origin": "今日試せる発表だけ",
-        "recommend": "駆け出しの最短ルート"
+        "hook": "Motion 無料解禁",
+        "origin": "hover 3ステップ",
+        "recommend": "土曜30分の最短ルート"
       },
       "section_descriptions": {
-        "hook": "6つの発表を駆け出し目線で整理しましょう",
-        "origin": "今日触れる/7月待ち/有料の切り分けマップ",
-        "recommend": "週末はMotion試しとwaitlist登録だけ"
+        "hook": "Motion が全プランで無料解禁、3ステップで触れます",
+        "origin": "ボタン選んで auto-keyframe で完成です",
+        "recommend": "プリセット Scale でも 30 分で 1 個仕上がります"
       }
     }
   ]
