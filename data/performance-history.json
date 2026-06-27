@@ -1896,7 +1896,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-26T01:29:42.793Z"
+        "updatedAt": "2026-06-27T00:20:23.632Z"
       }
     },
     {
@@ -1941,7 +1941,7 @@
         "views": 6,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-26T01:29:42.793Z"
+        "updatedAt": "2026-06-27T00:20:23.632Z"
       }
     },
     {
@@ -1986,7 +1986,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-26T01:29:42.793Z"
+        "updatedAt": "2026-06-27T00:20:23.632Z"
       }
     },
     {
@@ -2031,7 +2031,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-26T01:29:42.793Z"
+        "updatedAt": "2026-06-27T00:20:23.632Z"
       }
     },
     {
@@ -2076,7 +2076,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-26T01:29:42.793Z"
+        "updatedAt": "2026-06-27T00:20:23.632Z"
       }
     },
     {
@@ -2121,7 +2121,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-26T01:29:42.793Z"
+        "updatedAt": "2026-06-27T00:20:23.632Z"
       }
     },
     {
@@ -2166,7 +2166,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-26T01:29:42.793Z"
+        "updatedAt": "2026-06-27T00:20:23.632Z"
       }
     },
     {
@@ -2210,6 +2210,53 @@
         "freshness_hours": 12
       },
       "stats": {
+        "views": 2,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-06-27T00:20:23.632Z"
+      }
+    },
+    {
+      "videoId": "I32ePxM0UTo",
+      "videoUrl": "https://youtube.com/shorts/I32ePxM0UTo",
+      "date": "2026-06-27",
+      "title": "【デザインニュース】Figma Motion、駆け出しが土曜30分で hover アニメを作る3ステップ｜2026/06/27 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 40,
+      "discovery": {
+        "method": "official-src",
+        "description": "Figma Learn 公式 Help Center の Motion 入門 5 本 (Explore / Quickly add preset / Use timeline / Add keyframes / Loading indicator) + Figma Motion 公式ページから、駆け出しが土曜 30 分で hover を 1 個仕上げる最短 3 ステップを抽出",
+        "sources": [
+          "https://help.figma.com/hc/en-us/articles/41274629073303-Explore-Figma-Motion",
+          "https://help.figma.com/hc/en-us/articles/41307886266135-Quickly-add-motion-with-preset-animations",
+          "https://help.figma.com/hc/en-us/articles/41405906446999-Use-the-Figma-Motion-timeline",
+          "https://help.figma.com/hc/en-us/articles/41307938657559-Add-select-and-delete-keyframes",
+          "https://help.figma.com/hc/en-us/articles/41295953430807-Motion-design-fundamentals-Create-motion-in-Figma",
+          "https://help.figma.com/hc/en-us/articles/4406787442711-What-Figma-features-are-in-beta",
+          "https://www.figma.com/motion/",
+          "https://www.figma.com/blog/introducing-figma-motion/"
+        ],
+        "query": "Figma Motion hover button beginner tutorial preset animations auto-keyframe timeline",
+        "freshness_hours": 50
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -2218,14 +2265,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-15",
-      "changes": [
-        "standard: 124 avg views (19 videos)",
-        "Day performance: Wed=223, Sun=138, Thu=120, Tue=98, Fri=95, Sat=94, Mon=80"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-16",
       "changes": [
@@ -2455,6 +2494,14 @@
       "changes": [
         "standard: 70 avg views (48 videos)",
         "Day performance: Wed=109, Sun=76, Sat=75, Thu=66, Tue=62, Fri=58, Mon=39"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-27",
+      "changes": [
+        "standard: 68 avg views (49 videos)",
+        "Day performance: Wed=109, Sun=76, Sat=75, Thu=66, Tue=62, Fri=50, Mon=39"
       ],
       "recommendedTemplate": "standard"
     }
