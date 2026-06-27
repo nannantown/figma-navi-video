@@ -1,43 +1,40 @@
 {
-  "date": "2026-06-27",
+  "date": "2026-06-28",
   "discovery": {
-    "method": "official-src",
-    "description": "Figma Learn 公式 Help Center の Motion 入門 5 本 (Explore / Quickly add preset / Use timeline / Add keyframes / Loading indicator) + Figma Motion 公式ページから、駆け出しが土曜 30 分で hover を 1 個仕上げる最短 3 ステップを抽出",
+    "method": "product-launches",
+    "description": "Awwwards Sites of the Day 一覧から最新受賞 6/27 「Ten Years Away」 by Studio375 (Vicenza) を抽出、駆け出しがポートフォリオに盗める構造要素 3 点に分解",
     "sources": [
-      "https://help.figma.com/hc/en-us/articles/41274629073303-Explore-Figma-Motion",
-      "https://help.figma.com/hc/en-us/articles/41307886266135-Quickly-add-motion-with-preset-animations",
-      "https://help.figma.com/hc/en-us/articles/41405906446999-Use-the-Figma-Motion-timeline",
-      "https://help.figma.com/hc/en-us/articles/41307938657559-Add-select-and-delete-keyframes",
-      "https://help.figma.com/hc/en-us/articles/41295953430807-Motion-design-fundamentals-Create-motion-in-Figma",
-      "https://help.figma.com/hc/en-us/articles/4406787442711-What-Figma-features-are-in-beta",
-      "https://www.figma.com/motion/",
-      "https://www.figma.com/blog/introducing-figma-motion/"
+      "https://www.awwwards.com/websites/sites_of_the_day/",
+      "https://www.awwwards.com/sites/ten-years-away",
+      "https://www.awwwards.com/Studio375/",
+      "https://ten.375.studio/en",
+      "https://me.muz.li/danny/ten-years-away"
     ],
-    "query": "Figma Motion hover button beginner tutorial preset animations auto-keyframe timeline",
-    "freshness_hours": 50
+    "query": "Awwwards Site of the Day June 2026 Ten Years Away Studio375 storytelling portfolio",
+    "freshness_hours": 24
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma Motion、駆け出しが土曜30分で hover アニメを作る3ステップ",
-      "description": "Figma Motion が全プラン無料解禁、駆け出しでも3ステップで hover アニメが作れます",
-      "detail": "ボタン選んで Motion モード、タイムラインで auto-keyframe を ON、playhead を動かしてサイズ変更だけ。Motion が間を自動補完、preview で確認できます。",
-      "narration": "Figma Motion、今週から全プラン無料で使えます。駆け出しが最初に作る hover アニメ、実は3ステップで完成しますよ。",
-      "tags": ["Figma", "FigmaMotion", "デザインTips"],
+      "title": "Awwwards SOTD「Ten Years Away」、駆け出しが盗める3つの構造",
+      "description": "昨日 Awwwards SOTD を受賞した『Ten Years Away』、駆け出しがポートフォリオに盗める構造が3つあります",
+      "detail": "Studio375 の 10 年回顧をグラフィックノベル風の章スクロールで見せる作品。鍵は物語化・登場人物・1スクロール1章。Three.js なしでも Figma の章フレーム連結で再現できます。",
+      "narration": "Awwwards Site of the Day、昨日選ばれた『Ten Years Away』。駆け出しがポートフォリオに盗める構造、実は3つあります。",
+      "tags": ["Awwwards", "ポートフォリオ", "デザイン事例"],
       "narration_sections": {
-        "hook": "Figma Motion、今週から全プラン無料で使えます。駆け出しが最初に作る hover アニメ、実は3ステップで完成しますよ。",
-        "origin": "やり方は、ボタンを選んで Motion モードに入る、タイムラインで auto-keyframe を ON、playhead を動かしてサイズを少し大きくする。これで間のフレームが自動補完されて、preview ですぐ動きが見えます。",
-        "recommend": "プリセットの Scale や Fade を選ぶだけでもOKです。今週末30分、Figma を開いて hover を1個仕上げてみましょう。"
+        "hook": "Awwwards Site of the Day、昨日選ばれた『Ten Years Away』。駆け出しがポートフォリオに盗める構造、実は3つあります。",
+        "origin": "Studio375 が自分たちの10年をグラフィックノベル風の章スクロールで見せる作品です。鍵は3つ、プロジェクト羅列じゃなく物語にする、クライアントを登場人物として描く、1スクロール1章でリズムを作る。Awwwards7.32点で昨日受賞。",
+        "recommend": "Three.js は要りません。Figma で章ごとフレーム作って繋ぐだけ。今日30分で自分の歩みを物語化してみましょう。"
       },
       "section_titles": {
-        "hook": "Motion 無料解禁",
-        "origin": "hover 3ステップ",
-        "recommend": "土曜30分の最短ルート"
+        "hook": "物語型ポートフォリオ",
+        "origin": "盗める3つの構造",
+        "recommend": "Figmaで30分実装"
       },
       "section_descriptions": {
-        "hook": "Motion が全プランで無料解禁、3ステップで触れます",
-        "origin": "ボタン選んで auto-keyframe で完成です",
-        "recommend": "プリセット Scale でも 30 分で 1 個仕上がります"
+        "hook": "Awwwards SOTD のグラフィックノベル型回顧",
+        "origin": "物語・登場人物・章スクロールの3要素に分解",
+        "recommend": "Three.jsなしFigmaのフレーム連結で実装"
       }
     }
   ]
