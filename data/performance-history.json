@@ -1941,7 +1941,7 @@
         "views": 6,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-27T00:20:23.632Z"
+        "updatedAt": "2026-06-28T00:14:10.172Z"
       }
     },
     {
@@ -1986,7 +1986,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-27T00:20:23.632Z"
+        "updatedAt": "2026-06-28T00:14:10.172Z"
       }
     },
     {
@@ -2031,7 +2031,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-27T00:20:23.632Z"
+        "updatedAt": "2026-06-28T00:14:10.172Z"
       }
     },
     {
@@ -2076,7 +2076,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-27T00:20:23.632Z"
+        "updatedAt": "2026-06-28T00:14:10.172Z"
       }
     },
     {
@@ -2121,7 +2121,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-27T00:20:23.632Z"
+        "updatedAt": "2026-06-28T00:14:10.172Z"
       }
     },
     {
@@ -2166,7 +2166,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-27T00:20:23.632Z"
+        "updatedAt": "2026-06-28T00:14:10.172Z"
       }
     },
     {
@@ -2210,10 +2210,10 @@
         "freshness_hours": 12
       },
       "stats": {
-        "views": 2,
+        "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-27T00:20:23.632Z"
+        "updatedAt": "2026-06-28T00:14:10.172Z"
       }
     },
     {
@@ -2257,6 +2257,50 @@
         "freshness_hours": 50
       },
       "stats": {
+        "views": 3,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-06-28T00:14:10.172Z"
+      }
+    },
+    {
+      "videoId": "a3Zxo9R0wGE",
+      "videoUrl": "https://youtube.com/shorts/a3Zxo9R0wGE",
+      "date": "2026-06-28",
+      "title": "【デザインニュース】Awwwards SOTD「Ten Years Away」、駆け出しが盗める3つの構造｜2026/06/28 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 46,
+      "discovery": {
+        "method": "product-launches",
+        "description": "Awwwards Sites of the Day 一覧から最新受賞 6/27 「Ten Years Away」 by Studio375 (Vicenza) を抽出、駆け出しがポートフォリオに盗める構造要素 3 点に分解",
+        "sources": [
+          "https://www.awwwards.com/websites/sites_of_the_day/",
+          "https://www.awwwards.com/sites/ten-years-away",
+          "https://www.awwwards.com/Studio375/",
+          "https://ten.375.studio/en",
+          "https://me.muz.li/danny/ten-years-away"
+        ],
+        "query": "Awwwards Site of the Day June 2026 Ten Years Away Studio375 storytelling portfolio",
+        "freshness_hours": 24
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -2265,14 +2309,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-16",
-      "changes": [
-        "standard: 124 avg views (20 videos)",
-        "Day performance: Wed=223, Sun=138, Thu=120, Fri=103, Tue=98, Sat=94, Mon=80"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-17",
       "changes": [
@@ -2502,6 +2538,14 @@
       "changes": [
         "standard: 68 avg views (49 videos)",
         "Day performance: Wed=109, Sun=76, Sat=75, Thu=66, Tue=62, Fri=50, Mon=39"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-28",
+      "changes": [
+        "standard: 67 avg views (50 videos)",
+        "Day performance: Wed=109, Sun=76, Sat=67, Thu=66, Tue=62, Fri=50, Mon=39"
       ],
       "recommendedTemplate": "standard"
     }
