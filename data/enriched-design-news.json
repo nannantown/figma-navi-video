@@ -1,38 +1,41 @@
 {
-  "date": "2026-06-29",
+  "date": "2026-06-30",
   "discovery": {
-    "method": "news-en",
-    "description": "Smashing Magazine 最新記事を週次スキャンし、駆け出しデザイナーに直接刺さる career 系の新着を抽出",
+    "method": "official-src",
+    "description": "Figma Blog の Config 2026 recap と Code on the Figma Canvas、Help Center の What's new from Config 2026 を一次取得し、Code Layers が『明日 7/1 から段階リリース開始』『waitlist は figma.com/config-betas』という 6/30 固有の節目を抽出。直近 14 日で official-src は avg 3.5 (n=4) の TOP1 method、最終使用 6/27 で 3 日空き、直近 2 日 (6/29 news-en, 6/28 product-launches) と method 重複なし、6/22 + 6/27 の 7 日 2 回到達ガードは 6/22 が 8 日前で window 外で OK。Code Layers は Config 主要発表 5 機能の中で唯一『今日のうちに 1 アクション (waitlist 登録) で明日に備える』フックが立つ題材で、6/29 career-news の 0 views (= 自分事化フック弱) の反証としても最適。柱① Figma 公式ニュース、Primary 駆け出し層に『React 書けなくてもクリックで動く UI 試作』というポートフォリオ直結価値で訴求。NG パターン回避: AI=補助輪フレームを維持、『コード書けなくても触れる』を Code Layers の本質として位置づけ、Figmaナビは『今日から触れる選択肢』として並列訴求 (強い CTA は避ける)",
     "sources": [
-      "https://www.smashingmagazine.com/",
-      "https://www.smashingmagazine.com/articles/",
-      "https://www.smashingmagazine.com/category/career/"
+      "https://www.figma.com/blog/config-2026-recap/",
+      "https://www.figma.com/blog/code-on-the-figma-canvas/",
+      "https://help.figma.com/hc/en-us/articles/39582753756695-What-s-new-from-Config-2026",
+      "https://help.figma.com/hc/en-us/articles/4406787442711-What-Figma-features-are-in-beta",
+      "https://techcrunch.com/2026/06/24/figma-adds-code-layers-support-for-animations-more-ai-features-in-new-update/",
+      "https://www.cmswire.com/digital-experience/figma-launches-code-layers-motion-at-config-2026/"
     ],
-    "query": "Smashing Magazine articles published June 22 23 24 25 26 27 2026",
-    "freshness_hours": 72
+    "query": "Figma Code Layers July 2026 rollout waitlist figma.com/config-betas React GitHub repository",
+    "freshness_hours": 24
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Smashing が 6/26 紹介、Gabriela De Luca の駆け出し転職 Notion ハブ",
-      "description": "応募から最終オファーまで Notion 1 つで管理する転職テンプレが Smashing Magazine に登場、駆け出しに直撃",
-      "detail": "Smashing Magazine が 2026-06-26 に紹介した、デザイナー Gabriela De Luca 制作の Notion 転職ハブ。戦略・応募一覧・面接準備・オファー比較が 1 つのワークスペースに集約され、ポートフォリオの見せ方や面接逆質問の例まで含まれる。駆け出しが書類管理で詰む典型課題に処方箋を当てる構造",
-      "narration": "転職活動の応募メモが散らかってませんか。Smashing Magazine が 6/26 紹介した Notion テンプレが、駆け出しに刺さりすぎます。",
-      "tags": ["転職", "Notion", "ポートフォリオ"],
+      "title": "Figma Code Layers明日7/1から段階リリース、駆け出しは今日中にwaitlist登録",
+      "description": "明日7月1日からFigma Code Layersが段階リリース、Configで沸いた機能の入り口は今日中の1アクション",
+      "detail": "Code Layersはキャンバスのレイヤーを1クリックでReactコードに変換、GitHubから直接取り込んで動くUIをデザインと並べて検証できる新機能。早期アクセスはfigma.com/config-betasでwaitlist登録制で、明日7/1から順次開放されます。",
+      "narration": "明日7月1日からFigmaのCode Layersがいよいよ段階リリース。Configで沸いたあの機能、駆け出しが今日中にやるべきことがあります。",
+      "tags": ["Figma", "Code Layers", "Config 2026"],
       "narration_sections": {
-        "hook": "転職活動の応募メモが散らかってませんか。Smashing Magazine が 6/26 紹介した Notion テンプレが、駆け出しに刺さりすぎます。",
-        "origin": "作者は Gabriela De Luca。応募から最終オファーまで Notion 1 つで管理し、戦略・応募一覧・面接準備・オファー比較がテンプレ化。ポートフォリオの見せ方や逆質問例も同居、書類で詰む駆け出し課題を潰します。",
-        "recommend": "作品は Figmaナビ で時短、応募管理は Notion で構造化。AI と仕組みで武装する駆け出し最強セットです。"
+        "hook": "明日7月1日からFigmaのCode Layersがいよいよ段階リリース。Configで沸いたあの機能、駆け出しが今日中にやるべきことがあります。",
+        "origin": "Code Layersはキャンバスのレイヤーを1クリックでReactコードに変換、GitHubから直接取り込んで動くUIをデザインと並べて検証できる新機能。早期アクセスはfigma.com/config-betasでwaitlist登録制。",
+        "recommend": "駆け出しは今日中にwaitlist登録を済ませて、明日からの順次開放に備えましょう。コードが書けなくても触れるのが強みです。"
       },
       "section_titles": {
-        "hook": "応募メモ散らかり問題",
-        "origin": "Notion 1つで管理",
-        "recommend": "AI×仕組みで武装"
+        "hook": "Code Layers",
+        "origin": "Reactと並べて検証",
+        "recommend": "明日に備えて登録"
       },
       "section_descriptions": {
-        "hook": "Smashing 6/26 紹介、駆け出し転職の型",
-        "origin": "Gabriela De Luca 作、応募から内定まで一元化",
-        "recommend": "Figmaナビで時短、Notion で構造化"
+        "hook": "Configの目玉、ついに7月から段階リリース",
+        "origin": "ReactをFigmaに貼って動くUIを作る新機能",
+        "recommend": "コードが書けなくてもまずwaitlist登録"
       }
     }
   ]
