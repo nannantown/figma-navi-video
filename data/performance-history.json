@@ -1986,7 +1986,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-29T00:19:31.481Z"
+        "updatedAt": "2026-06-30T00:19:18.841Z"
       }
     },
     {
@@ -2031,7 +2031,7 @@
         "views": 6,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-29T00:19:31.481Z"
+        "updatedAt": "2026-06-30T00:19:18.841Z"
       }
     },
     {
@@ -2076,7 +2076,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-29T00:19:31.481Z"
+        "updatedAt": "2026-06-30T00:19:18.841Z"
       }
     },
     {
@@ -2121,7 +2121,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-29T00:19:31.481Z"
+        "updatedAt": "2026-06-30T00:19:18.841Z"
       }
     },
     {
@@ -2166,7 +2166,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-29T00:19:31.481Z"
+        "updatedAt": "2026-06-30T00:19:18.841Z"
       }
     },
     {
@@ -2213,7 +2213,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-29T00:19:31.481Z"
+        "updatedAt": "2026-06-30T00:19:18.841Z"
       }
     },
     {
@@ -2260,7 +2260,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-29T00:19:31.481Z"
+        "updatedAt": "2026-06-30T00:19:18.841Z"
       }
     },
     {
@@ -2304,7 +2304,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-29T00:19:31.481Z"
+        "updatedAt": "2026-06-30T00:19:18.841Z"
       }
     },
     {
@@ -2343,6 +2343,51 @@
         "freshness_hours": 72
       },
       "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-06-30T00:19:18.841Z"
+      }
+    },
+    {
+      "videoId": "ny1-rSWt6jY",
+      "videoUrl": "https://youtube.com/shorts/ny1-rSWt6jY",
+      "date": "2026-06-30",
+      "title": "【デザインニュース】Figma Code Layers明日7/1から段階リリース、駆け出しは今日中にwaitlist登録｜2026/06/30 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 43,
+      "discovery": {
+        "method": "official-src",
+        "description": "Figma Blog の Config 2026 recap と Code on the Figma Canvas、Help Center の What's new from Config 2026 を一次取得し、Code Layers が『明日 7/1 から段階リリース開始』『waitlist は figma.com/config-betas』という 6/30 固有の節目を抽出。直近 14 日で official-src は avg 3.5 (n=4) の TOP1 method、最終使用 6/27 で 3 日空き、直近 2 日 (6/29 news-en, 6/28 product-launches) と method 重複なし、6/22 + 6/27 の 7 日 2 回到達ガードは 6/22 が 8 日前で window 外で OK。Code Layers は Config 主要発表 5 機能の中で唯一『今日のうちに 1 アクション (waitlist 登録) で明日に備える』フックが立つ題材で、6/29 career-news の 0 views (= 自分事化フック弱) の反証としても最適。柱① Figma 公式ニュース、Primary 駆け出し層に『React 書けなくてもクリックで動く UI 試作』というポートフォリオ直結価値で訴求。NG パターン回避: AI=補助輪フレームを維持、『コード書けなくても触れる』を Code Layers の本質として位置づけ、Figmaナビは『今日から触れる選択肢』として並列訴求 (強い CTA は避ける)",
+        "sources": [
+          "https://www.figma.com/blog/config-2026-recap/",
+          "https://www.figma.com/blog/code-on-the-figma-canvas/",
+          "https://help.figma.com/hc/en-us/articles/39582753756695-What-s-new-from-Config-2026",
+          "https://help.figma.com/hc/en-us/articles/4406787442711-What-Figma-features-are-in-beta",
+          "https://techcrunch.com/2026/06/24/figma-adds-code-layers-support-for-animations-more-ai-features-in-new-update/",
+          "https://www.cmswire.com/digital-experience/figma-launches-code-layers-motion-at-config-2026/"
+        ],
+        "query": "Figma Code Layers July 2026 rollout waitlist figma.com/config-betas React GitHub repository",
+        "freshness_hours": 24
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -2351,14 +2396,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-18",
-      "changes": [
-        "standard: 136 avg views (22 videos)",
-        "Day performance: Wed=223, Sat=196, Sun=130, Thu=120, Fri=106, Tue=98, Mon=80"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-19",
       "changes": [
@@ -2588,6 +2625,14 @@
       "changes": [
         "standard: 66 avg views (51 videos)",
         "Day performance: Wed=109, Sat=67, Sun=67, Thu=66, Tue=62, Fri=50, Mon=39"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-30",
+      "changes": [
+        "standard: 65 avg views (52 videos)",
+        "Day performance: Wed=109, Sat=67, Sun=67, Thu=66, Tue=62, Fri=50, Mon=34"
       ],
       "recommendedTemplate": "standard"
     }
