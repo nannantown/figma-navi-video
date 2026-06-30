@@ -1,41 +1,39 @@
 {
-  "date": "2026-06-30",
+  "date": "2026-07-01",
   "discovery": {
-    "method": "official-src",
-    "description": "Figma Blog の Config 2026 recap と Code on the Figma Canvas、Help Center の What's new from Config 2026 を一次取得し、Code Layers が『明日 7/1 から段階リリース開始』『waitlist は figma.com/config-betas』という 6/30 固有の節目を抽出。直近 14 日で official-src は avg 3.5 (n=4) の TOP1 method、最終使用 6/27 で 3 日空き、直近 2 日 (6/29 news-en, 6/28 product-launches) と method 重複なし、6/22 + 6/27 の 7 日 2 回到達ガードは 6/22 が 8 日前で window 外で OK。Code Layers は Config 主要発表 5 機能の中で唯一『今日のうちに 1 アクション (waitlist 登録) で明日に備える』フックが立つ題材で、6/29 career-news の 0 views (= 自分事化フック弱) の反証としても最適。柱① Figma 公式ニュース、Primary 駆け出し層に『React 書けなくてもクリックで動く UI 試作』というポートフォリオ直結価値で訴求。NG パターン回避: AI=補助輪フレームを維持、『コード書けなくても触れる』を Code Layers の本質として位置づけ、Figmaナビは『今日から触れる選択肢』として並列訴求 (強い CTA は避ける)",
+    "method": "news-en",
+    "description": "Figma 公式ブログと英語テック媒体から Config 2026 で発表された Custom Skills と MCP コネクターの実用面を抽出。Code Layers / Motion / Recap は既出のため、未深堀りの『スラッシュコマンド化された再利用プロンプト』に絞った",
     "sources": [
-      "https://www.figma.com/blog/config-2026-recap/",
-      "https://www.figma.com/blog/code-on-the-figma-canvas/",
+      "https://www.figma.com/blog/agent-custom-tools-context-skills/",
+      "https://www.figma.com/blog/the-figma-canvas-is-now-open-to-agents/",
       "https://help.figma.com/hc/en-us/articles/39582753756695-What-s-new-from-Config-2026",
-      "https://help.figma.com/hc/en-us/articles/4406787442711-What-Figma-features-are-in-beta",
-      "https://techcrunch.com/2026/06/24/figma-adds-code-layers-support-for-animations-more-ai-features-in-new-update/",
-      "https://www.cmswire.com/digital-experience/figma-launches-code-layers-motion-at-config-2026/"
+      "https://webdeveloper.com/news/figma-config-2026-motion-design-agent/"
     ],
-    "query": "Figma Code Layers July 2026 rollout waitlist figma.com/config-betas React GitHub repository",
-    "freshness_hours": 24
+    "query": "Figma agent custom skills MCP connectors Notion GitHub Atlassian Slack 2026",
+    "freshness_hours": 150
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma Code Layers明日7/1から段階リリース、駆け出しは今日中にwaitlist登録",
-      "description": "明日7月1日からFigma Code Layersが段階リリース、Configで沸いた機能の入り口は今日中の1アクション",
-      "detail": "Code Layersはキャンバスのレイヤーを1クリックでReactコードに変換、GitHubから直接取り込んで動くUIをデザインと並べて検証できる新機能。早期アクセスはfigma.com/config-betasでwaitlist登録制で、明日7/1から順次開放されます。",
-      "narration": "明日7月1日からFigmaのCode Layersがいよいよ段階リリース。Configで沸いたあの機能、駆け出しが今日中にやるべきことがあります。",
-      "tags": ["Figma", "Code Layers", "Config 2026"],
+      "title": "Figma の AI agent が今週、Notion や GitHub と直結。駆け出しの『毎回ペルソナ説明』が再利用可能スラッシュコマンドに",
+      "description": "Figma の AI agent が今週、Notion や GitHub と直結したのは知ってますか?毎回ペルソナ説明する時代の終わりです。",
+      "detail": "Config 2026 発表の Custom Skills と MCP コネクター。よく使うプロンプトをスラッシュコマンドに保存し、Notion や GitHub の情報を Figma agent が直接参照。前提共有の手間が消えます。",
+      "narration": "Figma の AI agent が今週、Notion や GitHub と直結したのは知ってますか?毎回ペルソナ説明する時代の終わりです。",
+      "tags": ["Figma", "AI agent", "Custom Skills", "MCP", "駆け出しデザイナー"],
       "narration_sections": {
-        "hook": "明日7月1日からFigmaのCode Layersがいよいよ段階リリース。Configで沸いたあの機能、駆け出しが今日中にやるべきことがあります。",
-        "origin": "Code Layersはキャンバスのレイヤーを1クリックでReactコードに変換、GitHubから直接取り込んで動くUIをデザインと並べて検証できる新機能。早期アクセスはfigma.com/config-betasでwaitlist登録制。",
-        "recommend": "駆け出しは今日中にwaitlist登録を済ませて、明日からの順次開放に備えましょう。コードが書けなくても触れるのが強みです。"
+        "hook": "Figma の AI agent が今週、Notion や GitHub と直結したのは知ってますか?毎回ペルソナ説明する時代の終わりです。",
+        "origin": "Config 2026 発表の Custom Skills と MCP コネクター。よく使うプロンプトをスラッシュコマンドに保存し、Notion や GitHub の情報を Figma agent が直接参照。前提共有の手間が消えます。",
+        "recommend": "駆け出しは毎回打つ『ブランドカラー説明』を1つ Skill 化してみてください。再現性が一気に上がります。"
       },
       "section_titles": {
-        "hook": "Code Layers",
-        "origin": "Reactと並べて検証",
-        "recommend": "明日に備えて登録"
+        "hook": "AI agent 進化",
+        "origin": "Skills 機能登場",
+        "recommend": "今日試せる第一歩"
       },
       "section_descriptions": {
-        "hook": "Configの目玉、ついに7月から段階リリース",
-        "origin": "ReactをFigmaに貼って動くUIを作る新機能",
-        "recommend": "コードが書けなくてもまずwaitlist登録"
+        "hook": "Figma の AI が他ツールと直結し始めた最新動向",
+        "origin": "Custom Skills で手順を保存、外部ツール連携",
+        "recommend": "毎回打つ説明を1つだけ Skill 化してみる"
       }
     }
   ]
