@@ -1,39 +1,42 @@
 {
-  "date": "2026-07-01",
+  "date": "2026-07-02",
   "discovery": {
-    "method": "news-en",
-    "description": "Figma 公式ブログと英語テック媒体から Config 2026 で発表された Custom Skills と MCP コネクターの実用面を抽出。Code Layers / Motion / Recap は既出のため、未深堀りの『スラッシュコマンド化された再利用プロンプト』に絞った",
+    "method": "figma-community",
+    "description": "Figma Community と Config 2026 発表を横断調査し、6/24 から段階配布中の生成プラグイン (Generative Plugins) を抽出。日本語プロンプトでコードなしに自分専用プラグインを Figma 内で自作でき、駆け出しでも毎日の繰り返し作業を自動化できる。Community 公開はまだ未開放だが今後数ヶ月内予定のため『公開前に自分用として仕込む』というタイミング訴求が成立。method 選定: figma-community は 14 日以上ドライ (最終使用 6/16)、TOP method の official-src (直近14日 4/9 = 44% で過剰使用) の偏り解消を狙う Explore。直近 2 日 (7/1 news-en, 6/30 official-src) と重複なし。柱② プラグイン/エコシステム (target 20%) を埋める意図とも整合。昨日 7/1 の Custom Skills (プロンプト再利用) とは切り口を明確に分離し、今日は『プラグイン本体を自作する側』にフォーカス。NG パターン回避: AI=補助輪フレームを維持し、『毎日の面倒作業を自分の言葉で言語化してから AI に作らせる』として学習者の判断力を主役に置く",
     "sources": [
-      "https://www.figma.com/blog/agent-custom-tools-context-skills/",
-      "https://www.figma.com/blog/the-figma-canvas-is-now-open-to-agents/",
-      "https://help.figma.com/hc/en-us/articles/39582753756695-What-s-new-from-Config-2026",
-      "https://webdeveloper.com/news/figma-config-2026-motion-design-agent/"
+      "https://www.figma.com/blog/config-2026-recap/",
+      "https://help.figma.com/hc/en-us/articles/41147702210071-Quick-start-guide-to-generative-plugins-and-shaders",
+      "https://help.figma.com/hc/en-us/articles/41408937853463",
+      "https://help.figma.com/hc/en-us/articles/4406787442711-What-Figma-features-are-in-beta",
+      "https://www.figma.com/community/file/1649113171902698068/config-2026-unlocking-speed-and-visual-expression-with-generative-plugins-and-shader-effects",
+      "https://www.figma.com/@edwche",
+      "https://thenextweb.com/news/figma-config-code-layers-ai-skills-plugins-animations"
     ],
-    "query": "Figma agent custom skills MCP connectors Notion GitHub Atlassian Slack 2026",
-    "freshness_hours": 150
+    "query": "Figma generative plugins Config 2026 beta rollout HTML dashboard designer Edward Chechique",
+    "freshness_hours": 168
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma の AI agent が今週、Notion や GitHub と直結。駆け出しの『毎回ペルソナ説明』が再利用可能スラッシュコマンドに",
-      "description": "Figma の AI agent が今週、Notion や GitHub と直結したのは知ってますか?毎回ペルソナ説明する時代の終わりです。",
-      "detail": "Config 2026 発表の Custom Skills と MCP コネクター。よく使うプロンプトをスラッシュコマンドに保存し、Notion や GitHub の情報を Figma agent が直接参照。前提共有の手間が消えます。",
-      "narration": "Figma の AI agent が今週、Notion や GitHub と直結したのは知ってますか?毎回ペルソナ説明する時代の終わりです。",
-      "tags": ["Figma", "AI agent", "Custom Skills", "MCP", "駆け出しデザイナー"],
+      "title": "Figma 生成プラグイン、駆け出しがコード無しで自分専用ツールを日本語プロンプトで作れる時代",
+      "description": "Figma で自分専用ツールを、コード書かずに作れる時代が来たの知ってますか?",
+      "detail": "Config 2026 発表の生成プラグイン。日本語で『やりたいこと』を書くだけで AI が Figma 内に動くツールを自動生成します。",
+      "narration": "Figma で自分専用ツールを、コード書かずに作れる時代が来たの知ってますか?先週から生成プラグインが順次公開中です。",
+      "tags": ["Figma", "生成プラグイン", "Config 2026", "AI", "駆け出しデザイナー"],
       "narration_sections": {
-        "hook": "Figma の AI agent が今週、Notion や GitHub と直結したのは知ってますか?毎回ペルソナ説明する時代の終わりです。",
-        "origin": "Config 2026 発表の Custom Skills と MCP コネクター。よく使うプロンプトをスラッシュコマンドに保存し、Notion や GitHub の情報を Figma agent が直接参照。前提共有の手間が消えます。",
-        "recommend": "駆け出しは毎回打つ『ブランドカラー説明』を1つ Skill 化してみてください。再現性が一気に上がります。"
+        "hook": "Figma で自分専用ツールを、コード書かずに作れる時代が来たの知ってますか?先週から生成プラグインが順次公開中です。",
+        "origin": "仕組みは日本語で『やりたいこと』を書くだけ。AI が Figma 内に動くツールを自動生成します。ダッシュボードのレイアウト、カラーパレット、HTML の Figma 取り込みなど、開発知識ゼロで日常の面倒作業を自分の手で自動化できます。",
+        "recommend": "毎日繰り返してる作業を1つメモしておきましょう。Community 公開が始まる前に自分専用ツールとして仕上げておけます。"
       },
       "section_titles": {
-        "hook": "AI agent 進化",
-        "origin": "Skills 機能登場",
-        "recommend": "今日試せる第一歩"
+        "hook": "生成プラグイン登場",
+        "origin": "日本語で自作する仕組み",
+        "recommend": "今日仕込む第一歩"
       },
       "section_descriptions": {
-        "hook": "Figma の AI が他ツールと直結し始めた最新動向",
-        "origin": "Custom Skills で手順を保存、外部ツール連携",
-        "recommend": "毎回打つ説明を1つだけ Skill 化してみる"
+        "hook": "Config 2026 発表、駆け出しでも作れる時代",
+        "origin": "日本語プロンプトで AI がツールを自動生成",
+        "recommend": "Community 公開前に自分の作業を仕込む"
       }
     }
   ]
