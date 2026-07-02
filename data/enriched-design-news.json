@@ -1,42 +1,40 @@
 {
-  "date": "2026-07-02",
+  "date": "2026-07-03",
   "discovery": {
-    "method": "figma-community",
-    "description": "Figma Community と Config 2026 発表を横断調査し、6/24 から段階配布中の生成プラグイン (Generative Plugins) を抽出。日本語プロンプトでコードなしに自分専用プラグインを Figma 内で自作でき、駆け出しでも毎日の繰り返し作業を自動化できる。Community 公開はまだ未開放だが今後数ヶ月内予定のため『公開前に自分用として仕込む』というタイミング訴求が成立。method 選定: figma-community は 14 日以上ドライ (最終使用 6/16)、TOP method の official-src (直近14日 4/9 = 44% で過剰使用) の偏り解消を狙う Explore。直近 2 日 (7/1 news-en, 6/30 official-src) と重複なし。柱② プラグイン/エコシステム (target 20%) を埋める意図とも整合。昨日 7/1 の Custom Skills (プロンプト再利用) とは切り口を明確に分離し、今日は『プラグイン本体を自作する側』にフォーカス。NG パターン回避: AI=補助輪フレームを維持し、『毎日の面倒作業を自分の言葉で言語化してから AI に作らせる』として学習者の判断力を主役に置く",
+    "method": "product-launches",
+    "description": "Awwwards Sites of the Day リストを 6/28-7/2 で横断し、日本の Laugh Mind Co. + Utsubo による『Ivress Spin A Tale』(6/29 受賞) を発見。CSS Design Awards SOTD にも別途受賞、5 月には FWA of the Month 獲得と多面的評価済み。使う色は #000000 の黒 1 色のみ、WebGL・3D 演出・ストーリーテリングで勝負した設計を、JP audience に届く『日本発の国際受賞』ロールモデル題材として product-launches × 柱⑤ ポートフォリオ事例で抽出。method 選定 (Friday weekday news 帯): product-launches は直近 14 日で 1/13 = 7.7% と target 20% に対し著しく不足、TOP1 method 実績 (4/29 Magic Patterns 485 views・4/26 Ashley Brooke 249 views) の再現性を狙う Exploit。6/28 Ten Years Away 以来 5 日空き、直近 2 日 (7/2 figma-community, 7/1 news-en) と重複なし、7 日 2 回到達ガード対象外。official-src (直近 14 日 4/13 = 31% 過剰使用) と news-en 依存の解消も兼ねる。柱⑤ (直近 14 日 1/13 = 7.7%、target 10% 未達) を埋める最大の運用ギャップ補正。NG パターン回避: (a) AI=補助輪フレーム維持 — 制約設計は人間の判断で AI 生成の色数暴発を抑える文脈、(b) 仕事を奪う NG 非該当、(c) freshness_hours=96 で 168 NG ライン余裕、(d) 出典 5 ソースで multi-source confirm、(e) 駆け出しの『多色に頼りたくなる誘惑を絞る勇気』という具体行動指針で着地",
     "sources": [
-      "https://www.figma.com/blog/config-2026-recap/",
-      "https://help.figma.com/hc/en-us/articles/41147702210071-Quick-start-guide-to-generative-plugins-and-shaders",
-      "https://help.figma.com/hc/en-us/articles/41408937853463",
-      "https://help.figma.com/hc/en-us/articles/4406787442711-What-Figma-features-are-in-beta",
-      "https://www.figma.com/community/file/1649113171902698068/config-2026-unlocking-speed-and-visual-expression-with-generative-plugins-and-shader-effects",
-      "https://www.figma.com/@edwche",
-      "https://thenextweb.com/news/figma-config-code-layers-ai-skills-plugins-animations"
+      "https://www.awwwards.com/sites/ivress-spin-a-tale",
+      "https://www.awwwards.com/inspiration/spin-a-tale-ivress-spin-a-tale",
+      "https://www.awwwards.com/LaughMind/",
+      "https://www.cssdesignawards.com/sites/ivress-spin-a-tale/49279/",
+      "https://www.awwwards.com/websites/sites_of_the_day/"
     ],
-    "query": "Figma generative plugins Config 2026 beta rollout HTML dashboard designer Edward Chechique",
-    "freshness_hours": 168
+    "query": "Awwwards Site of the Day June 29 2026 Ivress Spin A Tale Laugh Mind Utsubo Japan studio WebGL storytelling",
+    "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma 生成プラグイン、駆け出しがコード無しで自分専用ツールを日本語プロンプトで作れる時代",
-      "description": "Figma で自分専用ツールを、コード書かずに作れる時代が来たの知ってますか?",
-      "detail": "Config 2026 発表の生成プラグイン。日本語で『やりたいこと』を書くだけで AI が Figma 内に動くツールを自動生成します。",
-      "narration": "Figma で自分専用ツールを、コード書かずに作れる時代が来たの知ってますか?先週から生成プラグインが順次公開中です。",
-      "tags": ["Figma", "生成プラグイン", "Config 2026", "AI", "駆け出しデザイナー"],
+      "title": "日本のスタジオが Awwwards SOTD 受賞、黒 1 色勝負に駆け出しが学ぶ制約設計",
+      "description": "先週、日本のスタジオが Awwwards Site of the Day を受賞",
+      "detail": "東京の Laugh Mind Co. と Utsubo による『Ivress Spin A Tale』が Awwwards SOTD を獲得。使う色は黒 1 色、WebGL 3D 演出とストーリーテリングだけで勝負した設計が国際評価に届いた。",
+      "narration": "知ってました？先週、日本のスタジオが世界最高峰 Awwwards の SOTD を受賞したんです。駆け出しにも盗める学びが濃い必見の一件です。",
+      "tags": ["Awwwards", "日本発", "ポートフォリオ事例"],
       "narration_sections": {
-        "hook": "Figma で自分専用ツールを、コード書かずに作れる時代が来たの知ってますか?先週から生成プラグインが順次公開中です。",
-        "origin": "仕組みは日本語で『やりたいこと』を書くだけ。AI が Figma 内に動くツールを自動生成します。ダッシュボードのレイアウト、カラーパレット、HTML の Figma 取り込みなど、開発知識ゼロで日常の面倒作業を自分の手で自動化できます。",
-        "recommend": "毎日繰り返してる作業を1つメモしておきましょう。Community 公開が始まる前に自分専用ツールとして仕上げておけます。"
+        "hook": "知ってました？先週、日本のスタジオが世界最高峰 Awwwards の SOTD を受賞したんです。駆け出しにも盗める学びが濃い必見の一件です。",
+        "origin": "東京の Laugh Mind Co. と Utsubo が『Ivress Spin A Tale』で SOTD 獲得。使う色は黒 1 色のみ、WebGL の 3D 演出とストーリーテリングだけで勝負。多色に頼らない設計が国際評価に届きました。",
+        "recommend": "駆け出しは色数を思い切って絞る一歩を今日 Figma で試そう。制約は個性になり、世界に届く武器になります。"
       },
       "section_titles": {
-        "hook": "生成プラグイン登場",
-        "origin": "日本語で自作する仕組み",
-        "recommend": "今日仕込む第一歩"
+        "hook": "日本発 SOTD 受賞",
+        "origin": "1色黒だけで勝負",
+        "recommend": "駆け出しへの学び"
       },
       "section_descriptions": {
-        "hook": "Config 2026 発表、駆け出しでも作れる時代",
-        "origin": "日本語プロンプトで AI がツールを自動生成",
-        "recommend": "Community 公開前に自分の作業を仕込む"
+        "hook": "先週、日本のスタジオが Awwwards SOTD 受賞",
+        "origin": "Laugh Mind と Utsubo が黒 1 色で受賞",
+        "recommend": "色数を絞る勇気を Figma で試す最初の一歩"
       }
     }
   ]
