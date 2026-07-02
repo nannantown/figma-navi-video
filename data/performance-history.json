@@ -2031,7 +2031,7 @@
         "views": 6,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-30T00:19:18.841Z"
+        "updatedAt": "2026-07-02T00:21:13.958Z"
       }
     },
     {
@@ -2076,7 +2076,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-30T00:19:18.841Z"
+        "updatedAt": "2026-07-02T00:21:13.958Z"
       }
     },
     {
@@ -2121,7 +2121,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-30T00:19:18.841Z"
+        "updatedAt": "2026-07-02T00:21:13.958Z"
       }
     },
     {
@@ -2166,7 +2166,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-30T00:19:18.841Z"
+        "updatedAt": "2026-07-02T00:21:13.958Z"
       }
     },
     {
@@ -2213,7 +2213,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-30T00:19:18.841Z"
+        "updatedAt": "2026-07-02T00:21:13.958Z"
       }
     },
     {
@@ -2260,7 +2260,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-30T00:19:18.841Z"
+        "updatedAt": "2026-07-02T00:21:13.958Z"
       }
     },
     {
@@ -2304,7 +2304,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-30T00:19:18.841Z"
+        "updatedAt": "2026-07-02T00:21:13.959Z"
       }
     },
     {
@@ -2346,7 +2346,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-30T00:19:18.841Z"
+        "updatedAt": "2026-07-02T00:21:13.959Z"
       }
     },
     {
@@ -2388,6 +2388,52 @@
         "freshness_hours": 24
       },
       "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-07-02T00:21:13.959Z"
+      }
+    },
+    {
+      "videoId": "x5XNZZ4TJFw",
+      "videoUrl": "https://youtube.com/shorts/x5XNZZ4TJFw",
+      "date": "2026-07-02",
+      "title": "【デザインニュース】Figma 生成プラグイン、駆け出しがコード無しで自分専用ツールを日本語プロンプトで作れる時代｜2026/07/02 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 44,
+      "discovery": {
+        "method": "figma-community",
+        "description": "Figma Community と Config 2026 発表を横断調査し、6/24 から段階配布中の生成プラグイン (Generative Plugins) を抽出。日本語プロンプトでコードなしに自分専用プラグインを Figma 内で自作でき、駆け出しでも毎日の繰り返し作業を自動化できる。Community 公開はまだ未開放だが今後数ヶ月内予定のため『公開前に自分用として仕込む』というタイミング訴求が成立。method 選定: figma-community は 14 日以上ドライ (最終使用 6/16)、TOP method の official-src (直近14日 4/9 = 44% で過剰使用) の偏り解消を狙う Explore。直近 2 日 (7/1 news-en, 6/30 official-src) と重複なし。柱② プラグイン/エコシステム (target 20%) を埋める意図とも整合。昨日 7/1 の Custom Skills (プロンプト再利用) とは切り口を明確に分離し、今日は『プラグイン本体を自作する側』にフォーカス。NG パターン回避: AI=補助輪フレームを維持し、『毎日の面倒作業を自分の言葉で言語化してから AI に作らせる』として学習者の判断力を主役に置く",
+        "sources": [
+          "https://www.figma.com/blog/config-2026-recap/",
+          "https://help.figma.com/hc/en-us/articles/41147702210071-Quick-start-guide-to-generative-plugins-and-shaders",
+          "https://help.figma.com/hc/en-us/articles/41408937853463",
+          "https://help.figma.com/hc/en-us/articles/4406787442711-What-Figma-features-are-in-beta",
+          "https://www.figma.com/community/file/1649113171902698068/config-2026-unlocking-speed-and-visual-expression-with-generative-plugins-and-shader-effects",
+          "https://www.figma.com/@edwche",
+          "https://thenextweb.com/news/figma-config-code-layers-ai-skills-plugins-animations"
+        ],
+        "query": "Figma generative plugins Config 2026 beta rollout HTML dashboard designer Edward Chechique",
+        "freshness_hours": 168
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -2396,14 +2442,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-19",
-      "changes": [
-        "standard: 131 avg views (23 videos)",
-        "Day performance: Wed=223, Sat=196, Sun=131, Thu=120, Fri=105, Tue=98, Mon=63"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-20",
       "changes": [
@@ -2633,6 +2671,14 @@
       "changes": [
         "standard: 65 avg views (52 videos)",
         "Day performance: Wed=109, Sat=67, Sun=67, Thu=66, Tue=62, Fri=50, Mon=34"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-02",
+      "changes": [
+        "standard: 63 avg views (53 videos)",
+        "Day performance: Wed=109, Sat=67, Sun=67, Thu=66, Tue=55, Fri=50, Mon=34"
       ],
       "recommendedTemplate": "standard"
     }
