@@ -2031,7 +2031,7 @@
         "views": 6,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-02T00:21:13.958Z"
+        "updatedAt": "2026-07-03T00:18:56.240Z"
       }
     },
     {
@@ -2076,7 +2076,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-02T00:21:13.958Z"
+        "updatedAt": "2026-07-03T00:18:56.240Z"
       }
     },
     {
@@ -2121,7 +2121,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-02T00:21:13.958Z"
+        "updatedAt": "2026-07-03T00:18:56.240Z"
       }
     },
     {
@@ -2166,7 +2166,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-02T00:21:13.958Z"
+        "updatedAt": "2026-07-03T00:18:56.240Z"
       }
     },
     {
@@ -2210,10 +2210,10 @@
         "freshness_hours": 12
       },
       "stats": {
-        "views": 3,
+        "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-02T00:21:13.958Z"
+        "updatedAt": "2026-07-03T00:18:56.240Z"
       }
     },
     {
@@ -2260,7 +2260,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-02T00:21:13.958Z"
+        "updatedAt": "2026-07-03T00:18:56.240Z"
       }
     },
     {
@@ -2304,7 +2304,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-02T00:21:13.959Z"
+        "updatedAt": "2026-07-03T00:18:56.240Z"
       }
     },
     {
@@ -2346,7 +2346,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-02T00:21:13.959Z"
+        "updatedAt": "2026-07-03T00:18:56.240Z"
       }
     },
     {
@@ -2388,10 +2388,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 1,
+        "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-02T00:21:13.959Z"
+        "updatedAt": "2026-07-03T00:18:56.240Z"
       }
     },
     {
@@ -2437,19 +2437,55 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-07-03T00:18:56.240Z"
+      }
+    },
+    {
+      "videoId": "xv6T7bGBNCk",
+      "videoUrl": "https://youtube.com/shorts/xv6T7bGBNCk",
+      "date": "2026-07-03",
+      "title": "【デザインニュース】日本のスタジオが Awwwards SOTD 受賞、黒 1 色勝負に駆け出しが学ぶ制約設計｜2026/07/03 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 43,
+      "discovery": {
+        "method": "product-launches",
+        "description": "Awwwards Sites of the Day リストを 6/28-7/2 で横断し、日本の Laugh Mind Co. + Utsubo による『Ivress Spin A Tale』(6/29 受賞) を発見。CSS Design Awards SOTD にも別途受賞、5 月には FWA of the Month 獲得と多面的評価済み。使う色は #000000 の黒 1 色のみ、WebGL・3D 演出・ストーリーテリングで勝負した設計を、JP audience に届く『日本発の国際受賞』ロールモデル題材として product-launches × 柱⑤ ポートフォリオ事例で抽出。method 選定 (Friday weekday news 帯): product-launches は直近 14 日で 1/13 = 7.7% と target 20% に対し著しく不足、TOP1 method 実績 (4/29 Magic Patterns 485 views・4/26 Ashley Brooke 249 views) の再現性を狙う Exploit。6/28 Ten Years Away 以来 5 日空き、直近 2 日 (7/2 figma-community, 7/1 news-en) と重複なし、7 日 2 回到達ガード対象外。official-src (直近 14 日 4/13 = 31% 過剰使用) と news-en 依存の解消も兼ねる。柱⑤ (直近 14 日 1/13 = 7.7%、target 10% 未達) を埋める最大の運用ギャップ補正。NG パターン回避: (a) AI=補助輪フレーム維持 — 制約設計は人間の判断で AI 生成の色数暴発を抑える文脈、(b) 仕事を奪う NG 非該当、(c) freshness_hours=96 で 168 NG ライン余裕、(d) 出典 5 ソースで multi-source confirm、(e) 駆け出しの『多色に頼りたくなる誘惑を絞る勇気』という具体行動指針で着地",
+        "sources": [
+          "https://www.awwwards.com/sites/ivress-spin-a-tale",
+          "https://www.awwwards.com/inspiration/spin-a-tale-ivress-spin-a-tale",
+          "https://www.awwwards.com/LaughMind/",
+          "https://www.cssdesignawards.com/sites/ivress-spin-a-tale/49279/",
+          "https://www.awwwards.com/websites/sites_of_the_day/"
+        ],
+        "query": "Awwwards Site of the Day June 29 2026 Ivress Spin A Tale Laugh Mind Utsubo Japan studio WebGL storytelling",
+        "freshness_hours": 96
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-20",
-      "changes": [
-        "standard: 127 avg views (24 videos)",
-        "Day performance: Wed=223, Sat=196, Sun=131, Thu=120, Fri=105, Tue=83, Mon=64"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-21",
       "changes": [
@@ -2679,6 +2715,14 @@
       "changes": [
         "standard: 63 avg views (53 videos)",
         "Day performance: Wed=109, Sat=67, Sun=67, Thu=66, Tue=55, Fri=50, Mon=34"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-03",
+      "changes": [
+        "standard: 62 avg views (54 videos)",
+        "Day performance: Wed=109, Sat=67, Sun=67, Thu=56, Tue=55, Fri=50, Mon=34"
       ],
       "recommendedTemplate": "standard"
     }
