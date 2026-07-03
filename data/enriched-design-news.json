@@ -1,40 +1,40 @@
 {
-  "date": "2026-07-03",
+  "date": "2026-07-04",
   "discovery": {
-    "method": "product-launches",
-    "description": "Awwwards Sites of the Day リストを 6/28-7/2 で横断し、日本の Laugh Mind Co. + Utsubo による『Ivress Spin A Tale』(6/29 受賞) を発見。CSS Design Awards SOTD にも別途受賞、5 月には FWA of the Month 獲得と多面的評価済み。使う色は #000000 の黒 1 色のみ、WebGL・3D 演出・ストーリーテリングで勝負した設計を、JP audience に届く『日本発の国際受賞』ロールモデル題材として product-launches × 柱⑤ ポートフォリオ事例で抽出。method 選定 (Friday weekday news 帯): product-launches は直近 14 日で 1/13 = 7.7% と target 20% に対し著しく不足、TOP1 method 実績 (4/29 Magic Patterns 485 views・4/26 Ashley Brooke 249 views) の再現性を狙う Exploit。6/28 Ten Years Away 以来 5 日空き、直近 2 日 (7/2 figma-community, 7/1 news-en) と重複なし、7 日 2 回到達ガード対象外。official-src (直近 14 日 4/13 = 31% 過剰使用) と news-en 依存の解消も兼ねる。柱⑤ (直近 14 日 1/13 = 7.7%、target 10% 未達) を埋める最大の運用ギャップ補正。NG パターン回避: (a) AI=補助輪フレーム維持 — 制約設計は人間の判断で AI 生成の色数暴発を抑える文脈、(b) 仕事を奪う NG 非該当、(c) freshness_hours=96 で 168 NG ライン余裕、(d) 出典 5 ソースで multi-source confirm、(e) 駆け出しの『多色に頼りたくなる誘惑を絞る勇気』という具体行動指針で着地",
+    "method": "expert-blog",
+    "description": "Smashing Magazine 7/2 公開の Victor Yocco (ServiceNow UX リサーチャー) 執筆記事『Matching AI Modality To User Intent: Designing The Right Interface』を主軸に、Nielsen Norman Group の ChatGPT/Bard/Bing 425 会話研究、Jakob Nielsen の『Delegative UI』論、Medium 実務家 Stefan Klocek の modality 選択ガイド、St Albans Web Design 二次要約を横断する aggregator 型で英語界隈の議論を束ねる。柱⑥ UI 批評 + 柱④ Tips のクロス枠。method 選定 (Saturday evergreen 帯): expert-blog は最終 5/10 = 55 日超ドライで前 PDCA (7/2) が aggregator 型再挑戦を提案済み、直近 2 日 (7/3 product-launches, 7/2 figma-community) と重複なし、7 日 2 回到達ガード対象外、WORST 2 週連続凍結対象外。直近 14 日で 柱④ Tips = 0/14 = 0% (target 15%)・柱⑥ UI 批評 = 0/14 = 0% (target 10%) と最大の運用ギャップを 1 本で埋める最適枠。NG パターン回避: (a) AI=補助輪フレーム維持 — 『AI にどの形で仕事させるかを決めるのは人間』と学習者主体で位置づけ、(b) 『AI がデザイナーの仕事を奪う』NG 非該当 — 学習者の判断力を強化する題材、(c) 『AI に任せれば考えなくていい』NG 非該当 — むしろ『とりあえずチャット』の思考停止を批評、(d) freshness_hours=48 で 168 NG ライン大幅余裕、(e) 出典 5 ソース (Smashing 主軸 + NN/G + Nielsen Substack + Medium + secondary summary) で multi-source aggregator confirm、(f) 駆け出し向けに Figma で場面を紙に書く具体行動指針で着地させ抽象で終わらせない",
     "sources": [
-      "https://www.awwwards.com/sites/ivress-spin-a-tale",
-      "https://www.awwwards.com/inspiration/spin-a-tale-ivress-spin-a-tale",
-      "https://www.awwwards.com/LaughMind/",
-      "https://www.cssdesignawards.com/sites/ivress-spin-a-tale/49279/",
-      "https://www.awwwards.com/websites/sites_of_the_day/"
+      "https://www.smashingmagazine.com/2026/07/matching-ai-modality-user-intent-designing-right-interface/",
+      "https://www.nngroup.com/articles/ux-ai-adoption/",
+      "https://jakobnielsenphd.substack.com/p/ai-is-first-new-ui-paradigm-in-60",
+      "https://medium.com/design-bootcamp/choosing-the-right-ai-interaction-modality-a-practical-guide-435d789c20d0",
+      "https://www.stalbanswebdesign.com/matching-ai-modality-to-user-intent-designing-the-right-interface/"
     ],
-    "query": "Awwwards Site of the Day June 29 2026 Ivress Spin A Tale Laugh Mind Utsubo Japan studio WebGL storytelling",
-    "freshness_hours": 96
+    "query": "Smashing Magazine AI modality user intent Victor Yocco July 2 2026 conversational tunnel vision designer aggregator",
+    "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "日本のスタジオが Awwwards SOTD 受賞、黒 1 色勝負に駆け出しが学ぶ制約設計",
-      "description": "先週、日本のスタジオが Awwwards Site of the Day を受賞",
-      "detail": "東京の Laugh Mind Co. と Utsubo による『Ivress Spin A Tale』が Awwwards SOTD を獲得。使う色は黒 1 色、WebGL 3D 演出とストーリーテリングだけで勝負した設計が国際評価に届いた。",
-      "narration": "知ってました？先週、日本のスタジオが世界最高峰 Awwwards の SOTD を受賞したんです。駆け出しにも盗める学びが濃い必見の一件です。",
-      "tags": ["Awwwards", "日本発", "ポートフォリオ事例"],
+      "title": "AI機能=チャットボックス思考停止に、UX業界が今週 鋭い批評",
+      "description": "AI機能を作るとき、迷わずチャット UI を選んでいないか",
+      "detail": "7月2日 Smashing Magazine で ServiceNow UX リサーチャーの Victor Yocco が、荷物とコーヒーを抱えた旅行者にチャットで長い予約番号を打たせる UI を失敗例に、入力・出力・場・認知負荷の4軸で AI モダリティを選ぶ判断フレームを提示。Nielsen Norman や Jakob Nielsen も同様に Delegative UI への転換を示唆。",
+      "narration": "知ってました？AI機能を作るとき、迷わずチャットボックスを置いていませんか。今週UX業界の権威 Smashing がその常識に鋭い批評を入れました。",
+      "tags": ["AI UX", "UI批評", "デザイン学習"],
       "narration_sections": {
-        "hook": "知ってました？先週、日本のスタジオが世界最高峰 Awwwards の SOTD を受賞したんです。駆け出しにも盗める学びが濃い必見の一件です。",
-        "origin": "東京の Laugh Mind Co. と Utsubo が『Ivress Spin A Tale』で SOTD 獲得。使う色は黒 1 色のみ、WebGL の 3D 演出とストーリーテリングだけで勝負。多色に頼らない設計が国際評価に届きました。",
-        "recommend": "駆け出しは色数を思い切って絞る一歩を今日 Figma で試そう。制約は個性になり、世界に届く武器になります。"
+        "hook": "知ってました？AI機能を作るとき、迷わずチャットボックスを置いていませんか。今週UX業界の権威 Smashing がその常識に鋭い批評を入れました。",
+        "origin": "7月2日 Smashing Magazine で UXリサーチャーの Victor Yocco が発表。荷物を引きコーヒーを持つ旅行者にチャットで長い予約番号を打たせる UI は失敗と指摘し、入力・出力・場・認知負荷の4軸で最適解を選べと提案しました。",
+        "recommend": "Figma で AI 機能を描く前に、まず利用場面を紙に書きましょう。チャットは道具の1つで、答えではありません。"
       },
       "section_titles": {
-        "hook": "日本発 SOTD 受賞",
-        "origin": "1色黒だけで勝負",
-        "recommend": "駆け出しへの学び"
+        "hook": "AIチャット依存に警鐘",
+        "origin": "4軸で選ぶAIのUI",
+        "recommend": "先に場面を描こう"
       },
       "section_descriptions": {
-        "hook": "先週、日本のスタジオが Awwwards SOTD 受賞",
-        "origin": "Laugh Mind と Utsubo が黒 1 色で受賞",
-        "recommend": "色数を絞る勇気を Figma で試す最初の一歩"
+        "hook": "業界の『AI全部チャット』に鋭い批評が入りました",
+        "origin": "旅行者の失敗例と、4軸判断フレームを解説",
+        "recommend": "Figma で描く前にまず利用場面を紙に整理"
       }
     }
   ]
