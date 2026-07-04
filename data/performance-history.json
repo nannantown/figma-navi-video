@@ -2076,7 +2076,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-03T00:18:56.240Z"
+        "updatedAt": "2026-07-04T00:16:53.121Z"
       }
     },
     {
@@ -2121,7 +2121,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-03T00:18:56.240Z"
+        "updatedAt": "2026-07-04T00:16:53.121Z"
       }
     },
     {
@@ -2166,7 +2166,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-03T00:18:56.240Z"
+        "updatedAt": "2026-07-04T00:16:53.121Z"
       }
     },
     {
@@ -2213,7 +2213,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-03T00:18:56.240Z"
+        "updatedAt": "2026-07-04T00:16:53.121Z"
       }
     },
     {
@@ -2260,7 +2260,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-03T00:18:56.240Z"
+        "updatedAt": "2026-07-04T00:16:53.121Z"
       }
     },
     {
@@ -2301,10 +2301,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 2,
+        "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-03T00:18:56.240Z"
+        "updatedAt": "2026-07-04T00:16:53.121Z"
       }
     },
     {
@@ -2346,7 +2346,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-03T00:18:56.240Z"
+        "updatedAt": "2026-07-04T00:16:53.121Z"
       }
     },
     {
@@ -2391,7 +2391,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-03T00:18:56.240Z"
+        "updatedAt": "2026-07-04T00:16:53.121Z"
       }
     },
     {
@@ -2434,10 +2434,10 @@
         "freshness_hours": 168
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-03T00:18:56.240Z"
+        "updatedAt": "2026-07-04T00:16:53.121Z"
       }
     },
     {
@@ -2481,19 +2481,55 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-07-04T00:16:53.121Z"
+      }
+    },
+    {
+      "videoId": "Ne8lkt6W9Go",
+      "videoUrl": "https://youtube.com/shorts/Ne8lkt6W9Go",
+      "date": "2026-07-04",
+      "title": "【デザインニュース】AI機能=チャットボックス思考停止に、UX業界が今週 鋭い批評｜2026/07/04 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 47,
+      "discovery": {
+        "method": "expert-blog",
+        "description": "Smashing Magazine 7/2 公開の Victor Yocco (ServiceNow UX リサーチャー) 執筆記事『Matching AI Modality To User Intent: Designing The Right Interface』を主軸に、Nielsen Norman Group の ChatGPT/Bard/Bing 425 会話研究、Jakob Nielsen の『Delegative UI』論、Medium 実務家 Stefan Klocek の modality 選択ガイド、St Albans Web Design 二次要約を横断する aggregator 型で英語界隈の議論を束ねる。柱⑥ UI 批評 + 柱④ Tips のクロス枠。method 選定 (Saturday evergreen 帯): expert-blog は最終 5/10 = 55 日超ドライで前 PDCA (7/2) が aggregator 型再挑戦を提案済み、直近 2 日 (7/3 product-launches, 7/2 figma-community) と重複なし、7 日 2 回到達ガード対象外、WORST 2 週連続凍結対象外。直近 14 日で 柱④ Tips = 0/14 = 0% (target 15%)・柱⑥ UI 批評 = 0/14 = 0% (target 10%) と最大の運用ギャップを 1 本で埋める最適枠。NG パターン回避: (a) AI=補助輪フレーム維持 — 『AI にどの形で仕事させるかを決めるのは人間』と学習者主体で位置づけ、(b) 『AI がデザイナーの仕事を奪う』NG 非該当 — 学習者の判断力を強化する題材、(c) 『AI に任せれば考えなくていい』NG 非該当 — むしろ『とりあえずチャット』の思考停止を批評、(d) freshness_hours=48 で 168 NG ライン大幅余裕、(e) 出典 5 ソース (Smashing 主軸 + NN/G + Nielsen Substack + Medium + secondary summary) で multi-source aggregator confirm、(f) 駆け出し向けに Figma で場面を紙に書く具体行動指針で着地させ抽象で終わらせない",
+        "sources": [
+          "https://www.smashingmagazine.com/2026/07/matching-ai-modality-user-intent-designing-right-interface/",
+          "https://www.nngroup.com/articles/ux-ai-adoption/",
+          "https://jakobnielsenphd.substack.com/p/ai-is-first-new-ui-paradigm-in-60",
+          "https://medium.com/design-bootcamp/choosing-the-right-ai-interaction-modality-a-practical-guide-435d789c20d0",
+          "https://www.stalbanswebdesign.com/matching-ai-modality-to-user-intent-designing-the-right-interface/"
+        ],
+        "query": "Smashing Magazine AI modality user intent Victor Yocco July 2 2026 conversational tunnel vision designer aggregator",
+        "freshness_hours": 48
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-21",
-      "changes": [
-        "standard: 125 avg views (25 videos)",
-        "Day performance: Sat=196, Wed=184, Sun=130, Thu=120, Fri=105, Tue=87, Mon=65"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-22",
       "changes": [
@@ -2723,6 +2759,14 @@
       "changes": [
         "standard: 62 avg views (54 videos)",
         "Day performance: Wed=109, Sat=67, Sun=67, Thu=56, Tue=55, Fri=50, Mon=34"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-04",
+      "changes": [
+        "standard: 61 avg views (55 videos)",
+        "Day performance: Wed=109, Sat=67, Sun=67, Thu=56, Tue=55, Fri=44, Mon=34"
       ],
       "recommendedTemplate": "standard"
     }
