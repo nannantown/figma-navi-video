@@ -2121,7 +2121,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-04T00:16:53.121Z"
+        "updatedAt": "2026-07-05T00:12:49.608Z"
       }
     },
     {
@@ -2166,7 +2166,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-04T00:16:53.121Z"
+        "updatedAt": "2026-07-05T00:12:49.608Z"
       }
     },
     {
@@ -2213,7 +2213,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-04T00:16:53.121Z"
+        "updatedAt": "2026-07-05T00:12:49.608Z"
       }
     },
     {
@@ -2260,7 +2260,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-04T00:16:53.121Z"
+        "updatedAt": "2026-07-05T00:12:49.608Z"
       }
     },
     {
@@ -2304,7 +2304,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-04T00:16:53.121Z"
+        "updatedAt": "2026-07-05T00:12:49.608Z"
       }
     },
     {
@@ -2346,7 +2346,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-04T00:16:53.121Z"
+        "updatedAt": "2026-07-05T00:12:49.608Z"
       }
     },
     {
@@ -2391,7 +2391,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-04T00:16:53.121Z"
+        "updatedAt": "2026-07-05T00:12:49.608Z"
       }
     },
     {
@@ -2437,7 +2437,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-04T00:16:53.121Z"
+        "updatedAt": "2026-07-05T00:12:49.608Z"
       }
     },
     {
@@ -2478,10 +2478,10 @@
         "freshness_hours": 96
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-04T00:16:53.121Z"
+        "updatedAt": "2026-07-05T00:12:49.608Z"
       }
     },
     {
@@ -2522,6 +2522,50 @@
         "freshness_hours": 48
       },
       "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-07-05T00:12:49.608Z"
+      }
+    },
+    {
+      "videoId": "GaSApVZ0QPY",
+      "videoUrl": "https://youtube.com/shorts/GaSApVZ0QPY",
+      "date": "2026-07-05",
+      "title": "【デザインニュース】Figma Variables のモード切替、駆け出しが日曜 15 分でライト/ダーク実装｜2026/07/05 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 42,
+      "discovery": {
+        "method": "official-src",
+        "description": "日曜 evergreen 帯。Figma Learn Center 公式ドキュメント『Modes for variables』と『Guide to variables』を主軸に、Config 2026 recap の brand new 施策で再注目を集めた Variables のモード機能を、駆け出し向け Tips に翻訳する official-src アプローチ。method 選定: 過去 14 日で official-src は avg views 3.3 (TOP 3)・最終使用 6/30 で直近 2 日連続ガード外・柱④ Tips が 0/14=0% で 15% target と最大ギャップ・NG『AI に任せて考えない』回避 (自分の手で 15 分作る指示)・NG『機能説明メイン』回避 (面接ポートフォリオ実用シーンから入る)・freshness 土日 evergreen 例外適用。英語圏の David Supik『2026 Playbook』(Medium 6 月) と Zeroheight『26 Tips for 2026』が『実務家の 90% が Variables を活用しきれていない』と提起、Sunday Tips でこのギャップを Figma 公式手順に着地させ Primary 駆け出し層に届ける",
+        "sources": [
+          "https://help.figma.com/hc/en-us/articles/15343816063383-Modes-for-variables",
+          "https://help.figma.com/hc/en-us/articles/15339657135383-Guide-to-variables",
+          "https://www.figma.com/blog/config-2026-recap/",
+          "https://zeroheight.com/blog/building-scalable-design-systems-with-figma-26-tips-for-2026/",
+          "https://david-supik.medium.com/mastering-figma-variables-the-complete-2026-playbook-f4651ec85473"
+        ],
+        "query": "Figma variables modes light dark tutorial official Learn Center 2026 beginner practical steps",
+        "freshness_hours": 168
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -2530,14 +2574,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-22",
-      "changes": [
-        "standard: 122 avg views (26 videos)",
-        "Day performance: Sat=196, Wed=189, Sun=130, Fri=106, Thu=94, Tue=90, Mon=65"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-23",
       "changes": [
@@ -2767,6 +2803,14 @@
       "changes": [
         "standard: 61 avg views (55 videos)",
         "Day performance: Wed=109, Sat=67, Sun=67, Thu=56, Tue=55, Fri=44, Mon=34"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-05",
+      "changes": [
+        "standard: 60 avg views (56 videos)",
+        "Day performance: Wed=109, Sun=67, Sat=60, Thu=56, Tue=55, Fri=44, Mon=34"
       ],
       "recommendedTemplate": "standard"
     }
