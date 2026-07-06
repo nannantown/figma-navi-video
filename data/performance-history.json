@@ -2166,7 +2166,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-05T00:12:49.608Z"
+        "updatedAt": "2026-07-06T00:16:26.274Z"
       }
     },
     {
@@ -2213,7 +2213,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-05T00:12:49.608Z"
+        "updatedAt": "2026-07-06T00:16:26.274Z"
       }
     },
     {
@@ -2260,7 +2260,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-05T00:12:49.608Z"
+        "updatedAt": "2026-07-06T00:16:26.274Z"
       }
     },
     {
@@ -2304,7 +2304,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-05T00:12:49.608Z"
+        "updatedAt": "2026-07-06T00:16:26.274Z"
       }
     },
     {
@@ -2346,7 +2346,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-05T00:12:49.608Z"
+        "updatedAt": "2026-07-06T00:16:26.274Z"
       }
     },
     {
@@ -2391,7 +2391,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-05T00:12:49.608Z"
+        "updatedAt": "2026-07-06T00:16:26.274Z"
       }
     },
     {
@@ -2437,7 +2437,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-05T00:12:49.608Z"
+        "updatedAt": "2026-07-06T00:16:26.274Z"
       }
     },
     {
@@ -2481,7 +2481,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-05T00:12:49.608Z"
+        "updatedAt": "2026-07-06T00:16:26.274Z"
       }
     },
     {
@@ -2522,10 +2522,10 @@
         "freshness_hours": 48
       },
       "stats": {
-        "views": 1,
+        "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-05T00:12:49.608Z"
+        "updatedAt": "2026-07-06T00:16:26.274Z"
       }
     },
     {
@@ -2569,19 +2569,54 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-07-06T00:16:26.274Z"
+      }
+    },
+    {
+      "videoId": "wN0iltE3cWk",
+      "videoUrl": "https://youtube.com/shorts/wN0iltE3cWk",
+      "date": "2026-07-06",
+      "title": "【デザインニュース】Framer が Fable 5 と Sonnet 5 を搭載、駆け出しがコード無しで shader・アニメを実装できる時代｜2026/07/06 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 42,
+      "discovery": {
+        "method": "news-en",
+        "description": "Framer 公式 updates ページと Anthropic Sonnet 5 発表、IT-Connect の解説記事をクロスチェックして、Fable 5・Sonnet 5 の Framer 導入を業界ニュースとして抽出",
+        "sources": [
+          "https://www.framer.com/updates/fable-5",
+          "https://www.framer.com/updates",
+          "https://www.it-connect.tech/claude-fable-5-returns-worldwide-as-anthropic-launches-sonnet-5/",
+          "https://www.anthropic.com/news/claude-sonnet-5"
+        ],
+        "query": "Framer Fable 5 Sonnet 5 July 3 2026 shader animation AI model",
+        "freshness_hours": 72
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-23",
-      "changes": [
-        "standard: 118 avg views (27 videos)",
-        "Day performance: Sat=196, Wed=189, Sun=130, Thu=95, Tue=90, Fri=84, Mon=65"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-27",
       "changes": [
@@ -2811,6 +2846,14 @@
       "changes": [
         "standard: 60 avg views (56 videos)",
         "Day performance: Wed=109, Sun=67, Sat=60, Thu=56, Tue=55, Fri=44, Mon=34"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-06",
+      "changes": [
+        "standard: 59 avg views (57 videos)",
+        "Day performance: Wed=109, Sat=60, Sun=60, Thu=56, Tue=55, Fri=44, Mon=34"
       ],
       "recommendedTemplate": "standard"
     }
