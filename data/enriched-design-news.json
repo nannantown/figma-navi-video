@@ -1,45 +1,46 @@
 {
-  "date": "2026-07-06",
+  "date": "2026-07-07",
   "discovery": {
-    "method": "news-en",
-    "description": "Framer 公式 updates ページと Anthropic Sonnet 5 発表、IT-Connect の解説記事をクロスチェックして、Fable 5・Sonnet 5 の Framer 導入を業界ニュースとして抽出",
+    "method": "social-en",
+    "description": "X/HN/dev コミュニティで拡散中の DESIGN.md 熱を、gfish.online の 5.8 万スター記事と VoltAgent の集約リポ・superdesign.dev のガイドでクロスチェックして、AI に読ませる 1 枚仕様書として抽出",
     "sources": [
-      "https://www.framer.com/updates/fable-5",
-      "https://www.framer.com/updates",
-      "https://www.it-connect.tech/claude-fable-5-returns-worldwide-as-anthropic-launches-sonnet-5/",
-      "https://www.anthropic.com/news/claude-sonnet-5"
+      "https://gfish.online/en/blog/design-md-why-viral/",
+      "https://github.com/VoltAgent/awesome-design-md",
+      "https://www.superdesign.dev/blog/what-is-design-md",
+      "https://www.designmd.co/",
+      "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-ai-ui-design/"
     ],
-    "query": "Framer Fable 5 Sonnet 5 July 3 2026 shader animation AI model",
-    "freshness_hours": 72
+    "query": "DESIGN.md viral GitHub stars July 2026 designer AI markdown design system",
+    "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Framer が Fable 5 と Sonnet 5 を搭載、駆け出しがコード無しで shader・アニメを実装できる時代",
-      "description": "今週 Framer が最新 AI モデル 2 種を導入、shader やアニメも自動で組める新章",
-      "detail": "Fable 5 は 7/3 に Framer 入りし、shader や微細アニメを Sonnet より綺麗に組む最もプロアクティブなモデル。Sonnet 5 は 7/1 導入で、レイアウトと視覚方向の判断が鋭くなり、隣で編集する相棒感が強まった。",
-      "narration": "今週発表、Framer が Fable 5 と Sonnet 5 を導入、駆け出しがコード無しで shader やアニメを作れる時代に入りました。",
+      "title": "DESIGN.md が GitHub 5.8 万スター突破、駆け出しが AI に自分のブランドを守らせる時代",
+      "description": "AI が作るデザインが毎回バラバラ問題を、Markdown 1 枚で駆け出しでも解決できる新フォーマット",
+      "detail": "4 月に Google Labs が公開した DESIGN.md は、色・タイポ・余白・部品のルールを AI に読ませる Markdown 形式。Claude Code や Cursor、Figma AI が同じ画面を毎回組めるので、駆け出しでも作品にプロっぽい統一感が出せます。",
+      "narration": "AI が作るデザインが毎回バラバラで困る問題を、Markdown 1 枚で解決する DESIGN.md、GitHub で先週 5.8 万スター突破しました。",
       "tags": [
-        "Framer",
-        "Fable5",
-        "Sonnet5",
+        "DESIGNmd",
         "AI",
+        "デザインシステム",
+        "駆け出しデザイナー",
         "デザインニュース"
       ],
       "narration_sections": {
-        "hook": "今週発表、Framer が Fable 5 と Sonnet 5 を導入、駆け出しがコード無しで shader やアニメを作れる時代に入りました。",
-        "origin": "Fable 5 は 7/3 に Framer 入り、shader や微細アニメを Sonnet より綺麗に組み、スタイル整備も先回りするモデル。Sonnet 5 は 7/1 導入で、レイアウトや視覚方向の判断が鋭く、隣で編集する相棒に近づきました。",
-        "recommend": "駆け出しは Framer と Figma を行き来する練習を。AI は補助輪、意思決定は自分で握るのが強い武器です。"
+        "hook": "AI が作るデザインが毎回バラバラで困る問題を、Markdown 1 枚で解決する DESIGN.md、GitHub で先週 5.8 万スター突破しました。",
+        "origin": "4 月に Google Labs が公開したこの仕様書は、色・タイポ・余白・部品のルールを AI に読ませる形式。Claude Code や Cursor、Figma AI が同じ画面を毎回組め、駆け出しの作品にプロっぽい統一感が出せます。",
+        "recommend": "まずは公開サンプル 20 種類から真似て、色とフォントを自分仕様に書き換えるだけ。Figmaナビでも同じ発想が効きます。"
       },
       "section_titles": {
-        "hook": "Framer AI 更新",
-        "origin": "2 モデルの得意",
-        "recommend": "駆け出しの学び方"
+        "hook": "DESIGN.md急上昇",
+        "origin": "AIに読ませる仕様書",
+        "recommend": "駆け出しの盗み方"
       },
       "section_descriptions": {
-        "hook": "今週 Framer が最新 AI モデル 2 種を導入",
-        "origin": "Fable 5 と Sonnet 5 で何が変わるかを整理",
-        "recommend": "駆け出しが今週すぐ試せる練習法と AI との向き合い方"
+        "hook": "GitHub で先週 5.8 万スター、駆け出しの武器に",
+        "origin": "色・タイポ・余白を AI が守る Markdown 1 枚",
+        "recommend": "公開サンプル 20 種を真似る 3 分ワザ"
       }
     }
   ]
