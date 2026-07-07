@@ -1,46 +1,47 @@
 {
-  "date": "2026-07-07",
+  "date": "2026-07-08",
   "discovery": {
-    "method": "social-en",
-    "description": "X/HN/dev コミュニティで拡散中の DESIGN.md 熱を、gfish.online の 5.8 万スター記事と VoltAgent の集約リポ・superdesign.dev のガイドでクロスチェックして、AI に読ませる 1 枚仕様書として抽出",
+    "method": "official-src",
+    "description": "Figma 公式ブログ Trust You Can Verify (7/1 公開) と Newsroom / compliance.figma.com を一次取得。Config 2026 で AI 機能を大量投入した Figma が Schellman 監査で ISO 42001 を業界で先陣取得した事実を、駆け出しの AI 不安への解毒剤としてフレーム",
     "sources": [
-      "https://gfish.online/en/blog/design-md-why-viral/",
-      "https://github.com/VoltAgent/awesome-design-md",
-      "https://www.superdesign.dev/blog/what-is-design-md",
-      "https://www.designmd.co/",
-      "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-ai-ui-design/"
+      "https://www.figma.com/blog/figma-is-now-iso-42001-certified/",
+      "https://www.figma.com/newsroom/",
+      "https://compliance.figma.com/",
+      "https://www.schellman.com/blog/iso-certifications/guide-to-iso-42001-certification",
+      "https://www.figma.com/blog/config-2026-recap/",
+      "https://www.figma.com/blog/agent-custom-tools-context-skills/"
     ],
-    "query": "DESIGN.md viral GitHub stars July 2026 designer AI markdown design system",
-    "freshness_hours": 96
+    "query": "Figma ISO 42001 responsible AI certification Schellman July 2026 designer",
+    "freshness_hours": 168
   },
   "articles": [
     {
       "rank": 1,
-      "title": "DESIGN.md が GitHub 5.8 万スター突破、駆け出しが AI に自分のブランドを守らせる時代",
-      "description": "AI が作るデザインが毎回バラバラ問題を、Markdown 1 枚で駆け出しでも解決できる新フォーマット",
-      "detail": "4 月に Google Labs が公開した DESIGN.md は、色・タイポ・余白・部品のルールを AI に読ませる Markdown 形式。Claude Code や Cursor、Figma AI が同じ画面を毎回組めるので、駆け出しでも作品にプロっぽい統一感が出せます。",
-      "narration": "AI が作るデザインが毎回バラバラで困る問題を、Markdown 1 枚で解決する DESIGN.md、GitHub で先週 5.8 万スター突破しました。",
+      "title": "Figma が ISO 42001 認定を業界先陣で取得、AI の使い方を第三者監査で証明した駆け出しへの朗報",
+      "description": "Config 2026 で AI 機能を大量投入した Figma が、AI 責任運用を国際規格で数字化した",
+      "detail": "ISO 42001 は AI 管理システムの国際規格。Figma は Schellman 独立監査で開発から運用まで審査を通過し、SOC 2 と ISO 27001 に AI 版が並びました。駆け出しの『AI 進化が怖い』を『使う私が信頼できる基盤』へ反転する朗報です。",
+      "narration": "Figma が先週 ISO 42001 を取得、AI の使い方を第三者監査で証明した業界初のニュースが、駆け出しへの静かな朗報です。",
       "tags": [
-        "DESIGNmd",
+        "Figma",
+        "ISO42001",
         "AI",
-        "デザインシステム",
         "駆け出しデザイナー",
         "デザインニュース"
       ],
       "narration_sections": {
-        "hook": "AI が作るデザインが毎回バラバラで困る問題を、Markdown 1 枚で解決する DESIGN.md、GitHub で先週 5.8 万スター突破しました。",
-        "origin": "4 月に Google Labs が公開したこの仕様書は、色・タイポ・余白・部品のルールを AI に読ませる形式。Claude Code や Cursor、Figma AI が同じ画面を毎回組め、駆け出しの作品にプロっぽい統一感が出せます。",
-        "recommend": "まずは公開サンプル 20 種類から真似て、色とフォントを自分仕様に書き換えるだけ。Figmaナビでも同じ発想が効きます。"
+        "hook": "Figma が先週 ISO 42001 を取得、AI の使い方を第三者監査で証明した業界初のニュースが、駆け出しへの静かな朗報です。",
+        "origin": "ISO 42001 は AI 管理システムの国際規格。Config 2026 で Motion や Code Layers を投入した Figma が、独立審査で『責任ある AI』を数字で担保。SOC 2 と ISO 27001 に AI 版が並びました。",
+        "recommend": "駆け出しは『AI が主役ではなく使う私が主導権を握る基盤』と読み替えて OK。Figmaナビも同じ思想で毎日の作業に寄り添います。"
       },
       "section_titles": {
-        "hook": "DESIGN.md急上昇",
-        "origin": "AIに読ませる仕様書",
-        "recommend": "駆け出しの盗み方"
+        "hook": "Figma AI 認定",
+        "origin": "AI 責任を数字で証明",
+        "recommend": "駆け出しの読み替え"
       },
       "section_descriptions": {
-        "hook": "GitHub で先週 5.8 万スター、駆け出しの武器に",
-        "origin": "色・タイポ・余白を AI が守る Markdown 1 枚",
-        "recommend": "公開サンプル 20 種を真似る 3 分ワザ"
+        "hook": "7/1 発表、業界初の AI 責任監査を通過",
+        "origin": "Config 2026 AI 機能ラッシュ後の基盤保証",
+        "recommend": "AI 進化ラッシュ下で主導権を握る 1 行"
       }
     }
   ]
