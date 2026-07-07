@@ -2213,7 +2213,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-06T00:16:26.274Z"
+        "updatedAt": "2026-07-07T00:20:05.704Z"
       }
     },
     {
@@ -2260,7 +2260,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-06T00:16:26.274Z"
+        "updatedAt": "2026-07-07T00:20:05.704Z"
       }
     },
     {
@@ -2304,7 +2304,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-06T00:16:26.274Z"
+        "updatedAt": "2026-07-07T00:20:05.704Z"
       }
     },
     {
@@ -2346,7 +2346,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-06T00:16:26.274Z"
+        "updatedAt": "2026-07-07T00:20:05.704Z"
       }
     },
     {
@@ -2391,7 +2391,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-06T00:16:26.274Z"
+        "updatedAt": "2026-07-07T00:20:05.704Z"
       }
     },
     {
@@ -2437,7 +2437,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-06T00:16:26.274Z"
+        "updatedAt": "2026-07-07T00:20:05.704Z"
       }
     },
     {
@@ -2481,7 +2481,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-06T00:16:26.274Z"
+        "updatedAt": "2026-07-07T00:20:05.704Z"
       }
     },
     {
@@ -2525,7 +2525,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-06T00:16:26.274Z"
+        "updatedAt": "2026-07-07T00:20:05.704Z"
       }
     },
     {
@@ -2566,10 +2566,10 @@
         "freshness_hours": 168
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-06T00:16:26.274Z"
+        "updatedAt": "2026-07-07T00:20:05.704Z"
       }
     },
     {
@@ -2609,6 +2609,50 @@
         "freshness_hours": 72
       },
       "stats": {
+        "views": 2,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-07-07T00:20:05.704Z"
+      }
+    },
+    {
+      "videoId": "kkdm3kmI-pU",
+      "videoUrl": "https://youtube.com/shorts/kkdm3kmI-pU",
+      "date": "2026-07-07",
+      "title": "【デザインニュース】DESIGN.md が GitHub 5.8 万スター突破、駆け出しが AI に自分のブランドを守らせる時代｜2026/07/07 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 43,
+      "discovery": {
+        "method": "social-en",
+        "description": "X/HN/dev コミュニティで拡散中の DESIGN.md 熱を、gfish.online の 5.8 万スター記事と VoltAgent の集約リポ・superdesign.dev のガイドでクロスチェックして、AI に読ませる 1 枚仕様書として抽出",
+        "sources": [
+          "https://gfish.online/en/blog/design-md-why-viral/",
+          "https://github.com/VoltAgent/awesome-design-md",
+          "https://www.superdesign.dev/blog/what-is-design-md",
+          "https://www.designmd.co/",
+          "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-ai-ui-design/"
+        ],
+        "query": "DESIGN.md viral GitHub stars July 2026 designer AI markdown design system",
+        "freshness_hours": 96
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -2617,14 +2661,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-27",
-      "changes": [
-        "standard: 114 avg views (28 videos)",
-        "Day performance: Wed=189, Sat=148, Sun=130, Thu=95, Tue=90, Fri=85, Mon=65"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-28",
       "changes": [
@@ -2854,6 +2890,14 @@
       "changes": [
         "standard: 59 avg views (57 videos)",
         "Day performance: Wed=109, Sat=60, Sun=60, Thu=56, Tue=55, Fri=44, Mon=34"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-07",
+      "changes": [
+        "standard: 58 avg views (58 videos)",
+        "Day performance: Wed=109, Sat=60, Sun=60, Thu=56, Tue=55, Fri=44, Mon=30"
       ],
       "recommendedTemplate": "standard"
     }
