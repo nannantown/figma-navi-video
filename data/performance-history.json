@@ -2213,7 +2213,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-07T00:20:05.704Z"
+        "updatedAt": "2026-07-08T00:11:16.923Z"
       }
     },
     {
@@ -2260,7 +2260,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-07T00:20:05.704Z"
+        "updatedAt": "2026-07-08T00:11:16.923Z"
       }
     },
     {
@@ -2304,7 +2304,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-07T00:20:05.704Z"
+        "updatedAt": "2026-07-08T00:11:16.923Z"
       }
     },
     {
@@ -2346,7 +2346,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-07T00:20:05.704Z"
+        "updatedAt": "2026-07-08T00:11:16.923Z"
       }
     },
     {
@@ -2391,7 +2391,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-07T00:20:05.704Z"
+        "updatedAt": "2026-07-08T00:11:16.923Z"
       }
     },
     {
@@ -2437,7 +2437,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-07T00:20:05.704Z"
+        "updatedAt": "2026-07-08T00:11:16.923Z"
       }
     },
     {
@@ -2481,7 +2481,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-07T00:20:05.704Z"
+        "updatedAt": "2026-07-08T00:11:16.923Z"
       }
     },
     {
@@ -2525,7 +2525,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-07T00:20:05.704Z"
+        "updatedAt": "2026-07-08T00:11:16.923Z"
       }
     },
     {
@@ -2569,7 +2569,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-07T00:20:05.704Z"
+        "updatedAt": "2026-07-08T00:11:16.923Z"
       }
     },
     {
@@ -2612,7 +2612,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-07T00:20:05.704Z"
+        "updatedAt": "2026-07-08T00:11:16.923Z"
       }
     },
     {
@@ -2656,19 +2656,56 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-07-08T00:11:16.923Z"
+      }
+    },
+    {
+      "videoId": "svQLy4FzAs4",
+      "videoUrl": "https://youtube.com/shorts/svQLy4FzAs4",
+      "date": "2026-07-08",
+      "title": "【デザインニュース】Figma が ISO 42001 認定を業界先陣で取得、AI の使い方を第三者監査で証明した駆け出しへの朗報｜2026/07/08 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 47,
+      "discovery": {
+        "method": "official-src",
+        "description": "Figma 公式ブログ Trust You Can Verify (7/1 公開) と Newsroom / compliance.figma.com を一次取得。Config 2026 で AI 機能を大量投入した Figma が Schellman 監査で ISO 42001 を業界で先陣取得した事実を、駆け出しの AI 不安への解毒剤としてフレーム",
+        "sources": [
+          "https://www.figma.com/blog/figma-is-now-iso-42001-certified/",
+          "https://www.figma.com/newsroom/",
+          "https://compliance.figma.com/",
+          "https://www.schellman.com/blog/iso-certifications/guide-to-iso-42001-certification",
+          "https://www.figma.com/blog/config-2026-recap/",
+          "https://www.figma.com/blog/agent-custom-tools-context-skills/"
+        ],
+        "query": "Figma ISO 42001 responsible AI certification Schellman July 2026 designer",
+        "freshness_hours": 168
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-28",
-      "changes": [
-        "standard: 110 avg views (29 videos)",
-        "Day performance: Wed=151, Sat=148, Sun=130, Thu=95, Tue=90, Fri=85, Mon=65"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-29",
       "changes": [
@@ -2898,6 +2935,14 @@
       "changes": [
         "standard: 58 avg views (58 videos)",
         "Day performance: Wed=109, Sat=60, Sun=60, Thu=56, Tue=55, Fri=44, Mon=30"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-08",
+      "changes": [
+        "standard: 57 avg views (59 videos)",
+        "Day performance: Wed=109, Sat=60, Sun=60, Thu=56, Tue=49, Fri=44, Mon=30"
       ],
       "recommendedTemplate": "standard"
     }
