@@ -2213,7 +2213,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-08T00:11:16.923Z"
+        "updatedAt": "2026-07-09T00:20:43.628Z"
       }
     },
     {
@@ -2260,7 +2260,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-08T00:11:16.923Z"
+        "updatedAt": "2026-07-09T00:20:43.628Z"
       }
     },
     {
@@ -2304,7 +2304,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-08T00:11:16.923Z"
+        "updatedAt": "2026-07-09T00:20:43.628Z"
       }
     },
     {
@@ -2346,7 +2346,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-08T00:11:16.923Z"
+        "updatedAt": "2026-07-09T00:20:43.628Z"
       }
     },
     {
@@ -2391,7 +2391,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-08T00:11:16.923Z"
+        "updatedAt": "2026-07-09T00:20:43.628Z"
       }
     },
     {
@@ -2437,7 +2437,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-08T00:11:16.923Z"
+        "updatedAt": "2026-07-09T00:20:43.628Z"
       }
     },
     {
@@ -2481,7 +2481,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-08T00:11:16.923Z"
+        "updatedAt": "2026-07-09T00:20:43.628Z"
       }
     },
     {
@@ -2525,7 +2525,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-08T00:11:16.923Z"
+        "updatedAt": "2026-07-09T00:20:43.628Z"
       }
     },
     {
@@ -2569,7 +2569,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-08T00:11:16.923Z"
+        "updatedAt": "2026-07-09T00:20:43.628Z"
       }
     },
     {
@@ -2612,7 +2612,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-08T00:11:16.923Z"
+        "updatedAt": "2026-07-09T00:20:43.628Z"
       }
     },
     {
@@ -2656,7 +2656,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-08T00:11:16.923Z"
+        "updatedAt": "2026-07-09T00:20:43.628Z"
       }
     },
     {
@@ -2701,19 +2701,56 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-07-09T00:20:43.628Z"
+      }
+    },
+    {
+      "videoId": "QQInGzfutp8",
+      "videoUrl": "https://youtube.com/shorts/QQInGzfutp8",
+      "date": "2026-07-09",
+      "title": "【デザインニュース】Meta が Instagram Stories に画像 AI Muse Image 搭載、駆け出しの発信面が AI 標準時代へ｜2026/07/09 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 41,
+      "discovery": {
+        "method": "news-en",
+        "description": "英語テック媒体 (TechCrunch / CNBC / Axios / about.fb.com) から Meta が 7/7 火曜に発表した Muse Image (Meta Superintelligence Labs 初の画像 AI モデル、Instagram Stories・WhatsApp・Meta AI アプリに搭載) を一次取得。配布面 Instagram に AI 画像生成が標準搭載された事実を、駆け出しデザイナーの反転フレーム材料として抽出",
+        "sources": [
+          "https://about.fb.com/news/2026/07/introducing-muse-image-meta-ai/",
+          "https://techcrunch.com/2026/07/07/meta-rolls-out-muse-a-new-ai-image-generator/",
+          "https://www.cnbc.com/2026/07/07/meta-ai-muse-image.html",
+          "https://www.axios.com/2026/07/07/ai-meta-image-generator",
+          "https://theaiinsider.tech/2026/07/08/meta-launches-muse-image-ai-generator-amid-privacy-concerns-over-photo-tagging-feature/",
+          "https://www.fonearena.com/blog/487008/meta-muse-image-ai-instagram-stories-whatsapp-integration.html"
+        ],
+        "query": "Meta Muse Image Instagram Stories WhatsApp launch designer July 2026",
+        "freshness_hours": 48
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-29",
-      "changes": [
-        "standard: 107 avg views (30 videos)",
-        "Day performance: Wed=151, Sat=148, Sun=130, Tue=90, Fri=85, Thu=78, Mon=65"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-30",
       "changes": [
@@ -2943,6 +2980,14 @@
       "changes": [
         "standard: 57 avg views (59 videos)",
         "Day performance: Wed=109, Sat=60, Sun=60, Thu=56, Tue=49, Fri=44, Mon=30"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-09",
+      "changes": [
+        "standard: 56 avg views (60 videos)",
+        "Day performance: Wed=95, Sat=60, Sun=60, Thu=56, Tue=49, Fri=44, Mon=30"
       ],
       "recommendedTemplate": "standard"
     }
