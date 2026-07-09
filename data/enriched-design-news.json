@@ -1,47 +1,47 @@
 {
-  "date": "2026-07-09",
+  "date": "2026-07-10",
   "discovery": {
-    "method": "news-en",
-    "description": "英語テック媒体 (TechCrunch / CNBC / Axios / about.fb.com) から Meta が 7/7 火曜に発表した Muse Image (Meta Superintelligence Labs 初の画像 AI モデル、Instagram Stories・WhatsApp・Meta AI アプリに搭載) を一次取得。配布面 Instagram に AI 画像生成が標準搭載された事実を、駆け出しデザイナーの反転フレーム材料として抽出",
+    "method": "social-en",
+    "description": "Figma 公式 X アカウントの新機能告知投稿と Muzli / Figma Forum のコミュニティ反応、Mantlr の実践レビューを起点に、今週 Figma Design Agent に追加された web search と parallel AI image edits を『駆け出しの作業型が変わる』角度で抽出。official-src (07-08) と news-en (07-09) が直近2日ルールで除外される中、TOP3 method の social-en は 07-07 以来 3 日空きで最適。柱① Figma 公式ニュースを社会/コミュニティ反応レンズで噛み砕く",
     "sources": [
-      "https://about.fb.com/news/2026/07/introducing-muse-image-meta-ai/",
-      "https://techcrunch.com/2026/07/07/meta-rolls-out-muse-a-new-ai-image-generator/",
-      "https://www.cnbc.com/2026/07/07/meta-ai-muse-image.html",
-      "https://www.axios.com/2026/07/07/ai-meta-image-generator",
-      "https://theaiinsider.tech/2026/07/08/meta-launches-muse-image-ai-generator-amid-privacy-concerns-over-photo-tagging-feature/",
-      "https://www.fonearena.com/blog/487008/meta-muse-image-ai-instagram-stories-whatsapp-integration.html"
+      "https://x.com/figma/status/2069827742800253230",
+      "https://x.com/watilde/status/2071554283309531310",
+      "https://www.figma.com/blog/the-figma-agent-is-here/",
+      "https://muz.li/blog/figma-just-put-an-agent-inside-your-file-heres-what-it-actually-does/",
+      "https://forum.figma.com/product-updates-3/figma-s-ai-agent-is-here-and-it-s-rolling-out-now-54154",
+      "https://mantlr.com/blog/figma-ai-agent-guide-2026"
     ],
-    "query": "Meta Muse Image Instagram Stories WhatsApp launch designer July 2026",
-    "freshness_hours": 48
+    "query": "Figma design agent web search parallel AI image edits designer reaction July 2026",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Meta が Instagram Stories に画像 AI Muse Image 搭載、駆け出しの発信面が AI 標準時代へ",
-      "description": "Meta が今週火曜、AI 画像生成 Muse Image を Instagram と WhatsApp に搭載した",
-      "detail": "Muse Image は Meta Superintelligence Labs 初の自社画像 AI。複数写真統合、Web 情報参照、読める文字入り画像、QR コード生成に対応。Instagram Stories には 30 種類以上の AI エフェクトが同時投入され、駆け出しの発信面に AI 画像が標準搭載されました。",
-      "narration": "Meta が今週火曜、AI 画像生成 Muse Image を Instagram Stories と WhatsApp に搭載しました。",
+      "title": "Figma agent が今週 Web 検索と並列画像編集に対応、駆け出しの作業型が変わる",
+      "description": "Figma の AI agent が今週、Web 検索と AI 画像編集の同時実行に対応した",
+      "detail": "Figma 公式は 7 月 7 日、parallel AI image edits を告知。直前追加の web search 機能と組み合わせれば、agent に『最新トレンドを Web で調べて画面に反映』と頼みながら、複数の画像編集を裏で走らせて次のフレームを触れる。駆け出しの作業の型が『順番にやる』から『指示して並行で回す』へ切り替わる転換点です。",
+      "narration": "知ってましたか?Figma の AI agent が今週、Web 検索と画像編集の同時実行に対応。駆け出しの作業の型が変わり始めています。",
       "tags": [
-        "Meta",
-        "MuseImage",
-        "InstagramStories",
-        "AIデザイン",
+        "Figma",
+        "AIエージェント",
+        "WebSearch",
+        "並列編集",
         "駆け出しデザイナー"
       ],
       "narration_sections": {
-        "hook": "Meta が今週火曜、AI 画像生成 Muse Image を Instagram Stories と WhatsApp に搭載しました。",
-        "origin": "開発は Meta Superintelligence Labs。複数写真の統合や Web 情報参照で、室内リフォームや髪型変更、テキスト入り画像まで生成。Story に 30 種類以上の AI エフェクトも同時投入されました。",
-        "recommend": "駆け出しは『プロンプト力』より『何を選ぶ目』で差がつく時代。Figmaナビも『判断は人』の思想で毎朝の作業を助けます。"
+        "hook": "知ってましたか?Figma の AI agent が今週、Web 検索と画像編集の同時実行に対応。駆け出しの作業の型が変わり始めています。",
+        "origin": "Figma 公式は 7 月 7 日、parallel AI image edits を発表。web search と組み合わせれば、agent に『最新トレンドを調べて画面に反映』と頼み、画像編集を裏で走らせながら次のフレームを触れます。",
+        "recommend": "大事なのは何を調べさせるかを自分の言葉にする側に回ること。AI は補助輪、駆け出しの判断力が価値を作ります。"
       },
       "section_titles": {
-        "hook": "Meta の画像 AI",
-        "origin": "画像 AI が標準に",
-        "recommend": "駆け出しの位置取り"
+        "hook": "Figma AI 新機能",
+        "origin": "Web 検索と並列編集",
+        "recommend": "駆け出しの新しい型"
       },
       "section_descriptions": {
-        "hook": "Meta が火曜 IG と WA に画像 AI 投入",
-        "origin": "室内リフォーム・髪型・文字画像を 1 発生成",
-        "recommend": "AI 大量生成時代、駆け出しは何で勝つか"
+        "hook": "Figma agent が今週 Web 検索対応",
+        "origin": "7/7 発表の並列 image edits で作業型変わる",
+        "recommend": "AI は補助輪、駆け出しの判断こそが武器"
       }
     }
   ]
