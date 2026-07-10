@@ -2213,7 +2213,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-09T00:20:43.628Z"
+        "updatedAt": "2026-07-10T00:19:13.138Z"
       }
     },
     {
@@ -2260,7 +2260,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-09T00:20:43.628Z"
+        "updatedAt": "2026-07-10T00:19:13.138Z"
       }
     },
     {
@@ -2304,7 +2304,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-09T00:20:43.628Z"
+        "updatedAt": "2026-07-10T00:19:13.138Z"
       }
     },
     {
@@ -2346,7 +2346,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-09T00:20:43.628Z"
+        "updatedAt": "2026-07-10T00:19:13.138Z"
       }
     },
     {
@@ -2391,7 +2391,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-09T00:20:43.628Z"
+        "updatedAt": "2026-07-10T00:19:13.138Z"
       }
     },
     {
@@ -2437,7 +2437,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-09T00:20:43.628Z"
+        "updatedAt": "2026-07-10T00:19:13.138Z"
       }
     },
     {
@@ -2481,7 +2481,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-09T00:20:43.628Z"
+        "updatedAt": "2026-07-10T00:19:13.138Z"
       }
     },
     {
@@ -2525,7 +2525,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-09T00:20:43.628Z"
+        "updatedAt": "2026-07-10T00:19:13.138Z"
       }
     },
     {
@@ -2569,7 +2569,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-09T00:20:43.628Z"
+        "updatedAt": "2026-07-10T00:19:13.138Z"
       }
     },
     {
@@ -2612,7 +2612,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-09T00:20:43.628Z"
+        "updatedAt": "2026-07-10T00:19:13.138Z"
       }
     },
     {
@@ -2656,7 +2656,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-09T00:20:43.628Z"
+        "updatedAt": "2026-07-10T00:19:13.138Z"
       }
     },
     {
@@ -2698,10 +2698,10 @@
         "freshness_hours": 168
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-09T00:20:43.628Z"
+        "updatedAt": "2026-07-10T00:19:13.138Z"
       }
     },
     {
@@ -2746,19 +2746,56 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-07-10T00:19:13.138Z"
+      }
+    },
+    {
+      "videoId": "IsSzVlU64RU",
+      "videoUrl": "https://youtube.com/shorts/IsSzVlU64RU",
+      "date": "2026-07-10",
+      "title": "【デザインニュース】Figma agent が今週 Web 検索と並列画像編集に対応、駆け出しの作業型が変わる｜2026/07/10 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 43,
+      "discovery": {
+        "method": "social-en",
+        "description": "Figma 公式 X アカウントの新機能告知投稿と Muzli / Figma Forum のコミュニティ反応、Mantlr の実践レビューを起点に、今週 Figma Design Agent に追加された web search と parallel AI image edits を『駆け出しの作業型が変わる』角度で抽出。official-src (07-08) と news-en (07-09) が直近2日ルールで除外される中、TOP3 method の social-en は 07-07 以来 3 日空きで最適。柱① Figma 公式ニュースを社会/コミュニティ反応レンズで噛み砕く",
+        "sources": [
+          "https://x.com/figma/status/2069827742800253230",
+          "https://x.com/watilde/status/2071554283309531310",
+          "https://www.figma.com/blog/the-figma-agent-is-here/",
+          "https://muz.li/blog/figma-just-put-an-agent-inside-your-file-heres-what-it-actually-does/",
+          "https://forum.figma.com/product-updates-3/figma-s-ai-agent-is-here-and-it-s-rolling-out-now-54154",
+          "https://mantlr.com/blog/figma-ai-agent-guide-2026"
+        ],
+        "query": "Figma design agent web search parallel AI image edits designer reaction July 2026",
+        "freshness_hours": 72
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-30",
-      "changes": [
-        "standard: 104 avg views (31 videos)",
-        "Day performance: Wed=151, Sat=148, Sun=130, Tue=90, Thu=78, Fri=68, Mon=65"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-31",
       "changes": [
@@ -2988,6 +3025,14 @@
       "changes": [
         "standard: 56 avg views (60 videos)",
         "Day performance: Wed=95, Sat=60, Sun=60, Thu=56, Tue=49, Fri=44, Mon=30"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-10",
+      "changes": [
+        "standard: 55 avg views (61 videos)",
+        "Day performance: Wed=95, Sat=60, Sun=60, Thu=49, Tue=49, Fri=44, Mon=30"
       ],
       "recommendedTemplate": "standard"
     }
