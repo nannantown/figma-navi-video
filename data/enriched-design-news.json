@@ -1,47 +1,46 @@
 {
-  "date": "2026-07-10",
+  "date": "2026-07-11",
   "discovery": {
-    "method": "social-en",
-    "description": "Figma 公式 X アカウントの新機能告知投稿と Muzli / Figma Forum のコミュニティ反応、Mantlr の実践レビューを起点に、今週 Figma Design Agent に追加された web search と parallel AI image edits を『駆け出しの作業型が変わる』角度で抽出。official-src (07-08) と news-en (07-09) が直近2日ルールで除外される中、TOP3 method の social-en は 07-07 以来 3 日空きで最適。柱① Figma 公式ニュースを社会/コミュニティ反応レンズで噛み砕く",
+    "method": "expert-blog",
+    "description": "Smashing Magazine 7/9 公開の Kat Homan (DŌBRA Studio) 論考『Designing For Distressed Users: Why Mental Health Apps Shouldn't Follow Every UI Fashion』を起点に、UI トレンドを 4 評価軸(認知負荷/感情との整合/ナビゲーションの信頼性/アクセシビリティ)で測るフレームを、駆け出しデザイナーが作例やポートフォリオでトレンドを取り込むか判断する道具として翻訳。method 選定(Saturday evergreen 帯): 直近 14 日 method 別 avg views は product-launches=2.0 と expert-blog=2.0 が TOP3 タイ、official-src=1.75。expert-blog は 7/4 以来 7 日空きで直近 2 日 (7/10 social-en, 7/9 news-en) と重複なし、7 日 2 回到達ガードもクリア。social-en は 7/7+7/10 で 2 週連続 WORST 凍結、news-en は 7/9 が最新で 2 日ルール抵触。柱⑥ UI 批評 は直近 14 日 1/13 = 7.7% で target 10% 未達 = 今日でここを埋める意図と整合。土曜 evergreen 帯で Tips + UI 批評 のクロスに fit。数字 30 日継続 3.3% と 95% 離脱を hook 冒頭に配置して 3 秒引き込みを設計。NG パターン回避: プロ向け高度議論ではなく『トレンドを 4 問で測る』という具体判定手順、AI=補助輪フレームを維持し『選ぶ力を鍛えるのは駆け出し自身』と位置づけ",
     "sources": [
-      "https://x.com/figma/status/2069827742800253230",
-      "https://x.com/watilde/status/2071554283309531310",
-      "https://www.figma.com/blog/the-figma-agent-is-here/",
-      "https://muz.li/blog/figma-just-put-an-agent-inside-your-file-heres-what-it-actually-does/",
-      "https://forum.figma.com/product-updates-3/figma-s-ai-agent-is-here-and-it-s-rolling-out-now-54154",
-      "https://mantlr.com/blog/figma-ai-agent-guide-2026"
+      "https://www.smashingmagazine.com/2026/07/designing-distressed-users-mental-health-apps-ui/",
+      "https://www.smashingmagazine.com/category/ux/",
+      "https://www.smashingmagazine.com/category/ui/",
+      "https://www.smashingmagazine.com/2026/02/building-empathy-centred-ux-framework-mental-health-apps/",
+      "https://www.stalbanswebdesign.com/designing-for-distressed-users-why-mental-health-apps-shouldnt-follow-every-ui-fashion/"
     ],
-    "query": "Figma design agent web search parallel AI image edits designer reaction July 2026",
-    "freshness_hours": 72
+    "query": "Smashing Magazine July 2026 designing distressed users mental health apps UI trends Kat Homan evaluation framework cognitive load",
+    "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma agent が今週 Web 検索と並列画像編集に対応、駆け出しの作業型が変わる",
-      "description": "Figma の AI agent が今週、Web 検索と AI 画像編集の同時実行に対応した",
-      "detail": "Figma 公式は 7 月 7 日、parallel AI image edits を告知。直前追加の web search 機能と組み合わせれば、agent に『最新トレンドを Web で調べて画面に反映』と頼みながら、複数の画像編集を裏で走らせて次のフレームを触れる。駆け出しの作業の型が『順番にやる』から『指示して並行で回す』へ切り替わる転換点です。",
-      "narration": "知ってましたか?Figma の AI agent が今週、Web 検索と画像編集の同時実行に対応。駆け出しの作業の型が変わり始めています。",
+      "title": "Smashing 7/9 論考、UIトレンドを4評価軸で測る Kat Homan フレーム",
+      "description": "Smashing Magazine が公開、UI トレンドを 4 評価軸で判定するフレーム",
+      "detail": "Smashing Magazine が 7 月 9 日に公開した DŌBRA Studio の Kat Homan の論考。メンタルヘルスアプリの 30 日継続率がわずか 3.3%、Day 1 で開いた人の 95% が 30 日で離脱するという現状を出発点に、UI トレンドを取り込む前に 4 つで測るフレームを提案しています。認知負荷を減らすか、感情の幅と合うか、毎回同じ場所で見つけられるか、アクセシビリティを保つか。駆け出しが作例やポートフォリオでトレンドを引用するときも、対象ユーザーの状態に合うかをこの 4 問で先に判定するのが狙い。",
+      "narration": "知ってました?メンタルヘルスアプリ、開いた人の30日継続がたった3.3%。原因の一つはUIトレンドをそのまま真似ることでした。",
       "tags": [
-        "Figma",
-        "AIエージェント",
-        "WebSearch",
-        "並列編集",
-        "駆け出しデザイナー"
+        "Smashing Magazine",
+        "UI批評",
+        "UXフレーム",
+        "駆け出しデザイナー",
+        "トレンド評価"
       ],
       "narration_sections": {
-        "hook": "知ってましたか?Figma の AI agent が今週、Web 検索と画像編集の同時実行に対応。駆け出しの作業の型が変わり始めています。",
-        "origin": "Figma 公式は 7 月 7 日、parallel AI image edits を発表。web search と組み合わせれば、agent に『最新トレンドを調べて画面に反映』と頼み、画像編集を裏で走らせながら次のフレームを触れます。",
-        "recommend": "大事なのは何を調べさせるかを自分の言葉にする側に回ること。AI は補助輪、駆け出しの判断力が価値を作ります。"
+        "hook": "知ってました?メンタルヘルスアプリ、開いた人の30日継続がたった3.3%。原因の一つはUIトレンドをそのまま真似ることでした。",
+        "origin": "Smashing Magazineが7月9日に公開。DŌBRA StudioのKat Homanは、UIトレンド採用前に4つで測ります。認知負荷を減らすか、感情と合うか、毎回同じ場所にあるか、アクセシビリティを保つか。対象ユーザーとの相性を判定します。",
+        "recommend": "駆け出しは真似より判定が武器。トレンドを4問で測って作例に採るか決めましょう。AIは補助輪、選ぶ力を鍛えるのはあなたです。"
       },
       "section_titles": {
-        "hook": "Figma AI 新機能",
-        "origin": "Web 検索と並列編集",
-        "recommend": "駆け出しの新しい型"
+        "hook": "UIトレンドの落とし穴",
+        "origin": "4つの評価軸で測る",
+        "recommend": "判定が駆け出しの武器"
       },
       "section_descriptions": {
-        "hook": "Figma agent が今週 Web 検索対応",
-        "origin": "7/7 発表の並列 image edits で作業型変わる",
-        "recommend": "AI は補助輪、駆け出しの判断こそが武器"
+        "hook": "30日継続3.3%、真似が招くメンタル系離脱",
+        "origin": "Kat Homanが提示する4つの評価軸フレーム",
+        "recommend": "AIは補助輪、選ぶ力を4問で自分で鍛える"
       }
     }
   ]
