@@ -2260,7 +2260,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-10T00:19:13.138Z"
+        "updatedAt": "2026-07-11T00:09:36.859Z"
       }
     },
     {
@@ -2304,7 +2304,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-10T00:19:13.138Z"
+        "updatedAt": "2026-07-11T00:09:36.859Z"
       }
     },
     {
@@ -2346,7 +2346,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-10T00:19:13.138Z"
+        "updatedAt": "2026-07-11T00:09:36.859Z"
       }
     },
     {
@@ -2391,7 +2391,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-10T00:19:13.138Z"
+        "updatedAt": "2026-07-11T00:09:36.859Z"
       }
     },
     {
@@ -2437,7 +2437,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-10T00:19:13.138Z"
+        "updatedAt": "2026-07-11T00:09:36.859Z"
       }
     },
     {
@@ -2481,7 +2481,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-10T00:19:13.138Z"
+        "updatedAt": "2026-07-11T00:09:36.859Z"
       }
     },
     {
@@ -2525,7 +2525,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-10T00:19:13.138Z"
+        "updatedAt": "2026-07-11T00:09:36.859Z"
       }
     },
     {
@@ -2569,7 +2569,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-10T00:19:13.138Z"
+        "updatedAt": "2026-07-11T00:09:36.859Z"
       }
     },
     {
@@ -2612,7 +2612,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-10T00:19:13.138Z"
+        "updatedAt": "2026-07-11T00:09:36.859Z"
       }
     },
     {
@@ -2656,7 +2656,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-10T00:19:13.138Z"
+        "updatedAt": "2026-07-11T00:09:36.859Z"
       }
     },
     {
@@ -2698,10 +2698,10 @@
         "freshness_hours": 168
       },
       "stats": {
-        "views": 1,
+        "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-10T00:19:13.138Z"
+        "updatedAt": "2026-07-11T00:09:36.859Z"
       }
     },
     {
@@ -2743,10 +2743,10 @@
         "freshness_hours": 48
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-10T00:19:13.138Z"
+        "updatedAt": "2026-07-11T00:09:36.859Z"
       }
     },
     {
@@ -2788,6 +2788,50 @@
         "freshness_hours": 72
       },
       "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-07-11T00:09:36.859Z"
+      }
+    },
+    {
+      "videoId": "Nm4GDurcb3c",
+      "videoUrl": "https://youtube.com/shorts/Nm4GDurcb3c",
+      "date": "2026-07-11",
+      "title": "【デザインニュース】Smashing 7/9 論考、UIトレンドを4評価軸で測る Kat Homan フレーム｜2026/07/11 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 48,
+      "discovery": {
+        "method": "expert-blog",
+        "description": "Smashing Magazine 7/9 公開の Kat Homan (DŌBRA Studio) 論考『Designing For Distressed Users: Why Mental Health Apps Shouldn't Follow Every UI Fashion』を起点に、UI トレンドを 4 評価軸(認知負荷/感情との整合/ナビゲーションの信頼性/アクセシビリティ)で測るフレームを、駆け出しデザイナーが作例やポートフォリオでトレンドを取り込むか判断する道具として翻訳。method 選定(Saturday evergreen 帯): 直近 14 日 method 別 avg views は product-launches=2.0 と expert-blog=2.0 が TOP3 タイ、official-src=1.75。expert-blog は 7/4 以来 7 日空きで直近 2 日 (7/10 social-en, 7/9 news-en) と重複なし、7 日 2 回到達ガードもクリア。social-en は 7/7+7/10 で 2 週連続 WORST 凍結、news-en は 7/9 が最新で 2 日ルール抵触。柱⑥ UI 批評 は直近 14 日 1/13 = 7.7% で target 10% 未達 = 今日でここを埋める意図と整合。土曜 evergreen 帯で Tips + UI 批評 のクロスに fit。数字 30 日継続 3.3% と 95% 離脱を hook 冒頭に配置して 3 秒引き込みを設計。NG パターン回避: プロ向け高度議論ではなく『トレンドを 4 問で測る』という具体判定手順、AI=補助輪フレームを維持し『選ぶ力を鍛えるのは駆け出し自身』と位置づけ",
+        "sources": [
+          "https://www.smashingmagazine.com/2026/07/designing-distressed-users-mental-health-apps-ui/",
+          "https://www.smashingmagazine.com/category/ux/",
+          "https://www.smashingmagazine.com/category/ui/",
+          "https://www.smashingmagazine.com/2026/02/building-empathy-centred-ux-framework-mental-health-apps/",
+          "https://www.stalbanswebdesign.com/designing-for-distressed-users-why-mental-health-apps-shouldnt-follow-every-ui-fashion/"
+        ],
+        "query": "Smashing Magazine July 2026 designing distressed users mental health apps UI trends Kat Homan evaluation framework cognitive load",
+        "freshness_hours": 48
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -2796,14 +2840,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-31",
-      "changes": [
-        "standard: 101 avg views (32 videos)",
-        "Day performance: Wed=151, Sun=130, Sat=118, Tue=90, Thu=78, Fri=68, Mon=65"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-06-01",
       "changes": [
@@ -3033,6 +3069,14 @@
       "changes": [
         "standard: 55 avg views (61 videos)",
         "Day performance: Wed=95, Sat=60, Sun=60, Thu=49, Tue=49, Fri=44, Mon=30"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-11",
+      "changes": [
+        "standard: 54 avg views (62 videos)",
+        "Day performance: Wed=95, Sat=60, Sun=60, Thu=49, Tue=49, Fri=39, Mon=30"
       ],
       "recommendedTemplate": "standard"
     }
