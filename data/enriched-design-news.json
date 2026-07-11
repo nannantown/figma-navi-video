@@ -1,46 +1,47 @@
 {
-  "date": "2026-07-11",
+  "date": "2026-07-12",
   "discovery": {
-    "method": "expert-blog",
-    "description": "Smashing Magazine 7/9 公開の Kat Homan (DŌBRA Studio) 論考『Designing For Distressed Users: Why Mental Health Apps Shouldn't Follow Every UI Fashion』を起点に、UI トレンドを 4 評価軸(認知負荷/感情との整合/ナビゲーションの信頼性/アクセシビリティ)で測るフレームを、駆け出しデザイナーが作例やポートフォリオでトレンドを取り込むか判断する道具として翻訳。method 選定(Saturday evergreen 帯): 直近 14 日 method 別 avg views は product-launches=2.0 と expert-blog=2.0 が TOP3 タイ、official-src=1.75。expert-blog は 7/4 以来 7 日空きで直近 2 日 (7/10 social-en, 7/9 news-en) と重複なし、7 日 2 回到達ガードもクリア。social-en は 7/7+7/10 で 2 週連続 WORST 凍結、news-en は 7/9 が最新で 2 日ルール抵触。柱⑥ UI 批評 は直近 14 日 1/13 = 7.7% で target 10% 未達 = 今日でここを埋める意図と整合。土曜 evergreen 帯で Tips + UI 批評 のクロスに fit。数字 30 日継続 3.3% と 95% 離脱を hook 冒頭に配置して 3 秒引き込みを設計。NG パターン回避: プロ向け高度議論ではなく『トレンドを 4 問で測る』という具体判定手順、AI=補助輪フレームを維持し『選ぶ力を鍛えるのは駆け出し自身』と位置づけ",
+    "method": "product-launches",
+    "description": "Awwwards Sites of the Day 直近リストと FWA of the Day の同日重複受賞を横断し、7 月 11 日に SOTD + FWA of the Day を同時受賞した Vectr (AI 人材紹介 B2B スタートアップ、制作 Utsubo スタジオ) を一次選定。Utsubo 公式 case study と DesignRush の解説から、Lighthouse 4 項目 (Performance 94 / Accessibility 98 / Best Practices 100 / SEO 100) と Three.js WebGPU Web Worker + OffscreenCanvas 構成、5 ステップ応募モーダル + LocalStorage 保存という技術判断を裏取り。method 選定 (Sunday evergreen 帯): 直近 14 日 method 別 avg views は product-launches=2.0 が TOP1、official-src=1.67 が TOP2、news-en=1.0 が TOP3、social-en は 2 週連続 WORST で 07-24 まで凍結、expert-blog は 07-11 直前利用で 2 日ルール抵触、figma-community は 07-02 で 10 日空きだが柱② 主戦場は平日温存、official-src は 07-08 で 4 日空きだが柱① が既に 38.5% で overweight。product-launches は 07-03 で 9 日空き・2 日ルール OK・7 日 2 回到達ガード OK・柱⑤ 最大ギャップ 10pt を最速で埋められる唯一の Exploit 手段として最適解。柱⑤ Before/After・ポートフォリオ事例 は直近 14 日 0/13 = 0% で最大の運用ギャップ、Sunday 30 分実行課題フォーマットで『Lighthouse で自分のポートフォリオを測って数字を作品の隣に貼る』行動指針に翻訳。NG パターン回避: プロ向け高度議論ではなく駆け出しが週末 30 分で真似できる 4 つの数字目標にフォーカス、AI=補助輪フレームを維持し『測る力と並べる力は駆け出し自身の武器』として位置づけ、07-11 数字先出しフック (3.3%+95%) を Sunday でも 94・98・100・100 の 4 数字連打で継続、freshness_hours=24 で SOTD 前日受賞の速報性を確保",
     "sources": [
-      "https://www.smashingmagazine.com/2026/07/designing-distressed-users-mental-health-apps-ui/",
-      "https://www.smashingmagazine.com/category/ux/",
-      "https://www.smashingmagazine.com/category/ui/",
-      "https://www.smashingmagazine.com/2026/02/building-empathy-centred-ux-framework-mental-health-apps/",
-      "https://www.stalbanswebdesign.com/designing-for-distressed-users-why-mental-health-apps-shouldnt-follow-every-ui-fashion/"
+      "https://www.awwwards.com/sites/vectr",
+      "https://www.utsubo.com/blog/vectr-ai-startup-branding-case-study",
+      "https://www.designrush.com/best-designs/websites/vectr-website-design",
+      "https://www.awwwards.com/websites/sites_of_the_day/",
+      "https://www.awwwards.com/developer-award/",
+      "https://www.awwwards.com/websites/interaction-design/"
     ],
-    "query": "Smashing Magazine July 2026 designing distressed users mental health apps UI trends Kat Homan evaluation framework cognitive load",
-    "freshness_hours": 48
+    "query": "Awwwards Site of the Day July 11 2026 Vectr AI staffing Utsubo Three.js WebGPU Lighthouse FWA of the day developer award",
+    "freshness_hours": 24
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Smashing 7/9 論考、UIトレンドを4評価軸で測る Kat Homan フレーム",
-      "description": "Smashing Magazine が公開、UI トレンドを 4 評価軸で判定するフレーム",
-      "detail": "Smashing Magazine が 7 月 9 日に公開した DŌBRA Studio の Kat Homan の論考。メンタルヘルスアプリの 30 日継続率がわずか 3.3%、Day 1 で開いた人の 95% が 30 日で離脱するという現状を出発点に、UI トレンドを取り込む前に 4 つで測るフレームを提案しています。認知負荷を減らすか、感情の幅と合うか、毎回同じ場所で見つけられるか、アクセシビリティを保つか。駆け出しが作例やポートフォリオでトレンドを引用するときも、対象ユーザーの状態に合うかをこの 4 問で先に判定するのが狙い。",
-      "narration": "知ってました?メンタルヘルスアプリ、開いた人の30日継続がたった3.3%。原因の一つはUIトレンドをそのまま真似ることでした。",
+      "title": "Vectr が Awwwards SOTD 昨日受賞、Lighthouse 94・98・100・100 駆け出しがポートフォリオに数字を貼る",
+      "description": "Awwwards SOTD 昨日受賞の Vectr が Lighthouse 4 項目で高得点を叩き出した",
+      "detail": "Utsubo スタジオが制作した AI 人材紹介サービス Vectr のサイトが、7 月 11 日に Awwwards Site of the Day と FWA of the Day を同時受賞しました。3D ヒーローは Three.js の WebGPU を Web Worker と OffscreenCanvas でメインスレッド外に逃がし、スクロールとトランジションの滑らかさを確保。候補者向けの応募フローは 5 ステップのモーダル + LocalStorage で途中離脱しても進捗が残る設計、クライアント向けは 1 ステップのシンプルな依頼フォーム。Lighthouse は Performance 94、Accessibility 98、Best Practices 100、SEO 100。B2B AI サイトが『機能で語る前に空気で語る』を、数字と技術選択の両輪で並べたケースです。",
+      "narration": "知ってました?昨日Awwwards SOTDに選ばれたサイト、Lighthouseの4項目で94・98・100・100を出しています。",
       "tags": [
-        "Smashing Magazine",
-        "UI批評",
-        "UXフレーム",
-        "駆け出しデザイナー",
-        "トレンド評価"
+        "Awwwards SOTD",
+        "Vectr",
+        "Utsubo",
+        "Lighthouse",
+        "ポートフォリオ事例"
       ],
       "narration_sections": {
-        "hook": "知ってました?メンタルヘルスアプリ、開いた人の30日継続がたった3.3%。原因の一つはUIトレンドをそのまま真似ることでした。",
-        "origin": "Smashing Magazineが7月9日に公開。DŌBRA StudioのKat Homanは、UIトレンド採用前に4つで測ります。認知負荷を減らすか、感情と合うか、毎回同じ場所にあるか、アクセシビリティを保つか。対象ユーザーとの相性を判定します。",
-        "recommend": "駆け出しは真似より判定が武器。トレンドを4問で測って作例に採るか決めましょう。AIは補助輪、選ぶ力を鍛えるのはあなたです。"
+        "hook": "知ってました?昨日Awwwards SOTDに選ばれたサイト、Lighthouseの4項目で94・98・100・100を出しています。",
+        "origin": "AI人材紹介VectrをUtsuboスタジオが制作。3DヒーローはThree.js WebGPUをWeb Workerで軽く動かし、応募フォームはLocalStorageで途中離脱にも耐える。技術の選択と数字も作品として並べています。",
+        "recommend": "日曜30分の宿題です。自分のポートフォリオもLighthouseで測って、数字を作品の隣に貼ってみるといいですよ。"
       },
       "section_titles": {
-        "hook": "UIトレンドの落とし穴",
-        "origin": "4つの評価軸で測る",
-        "recommend": "判定が駆け出しの武器"
+        "hook": "昨日のSOTD受賞",
+        "origin": "Utsuboの技術3点",
+        "recommend": "日曜30分の宿題"
       },
       "section_descriptions": {
-        "hook": "30日継続3.3%、真似が招くメンタル系離脱",
-        "origin": "Kat Homanが提示する4つの評価軸フレーム",
-        "recommend": "AIは補助輪、選ぶ力を4問で自分で鍛える"
+        "hook": "B2B AIサイトの4項目Lighthouse高得点",
+        "origin": "Utsubo制作、駆け出しが盗む3つの設計",
+        "recommend": "駆け出しのポートフォリオに数字を並べる練習"
       }
     }
   ]
