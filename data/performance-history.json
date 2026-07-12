@@ -2304,7 +2304,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-11T00:09:36.859Z"
+        "updatedAt": "2026-07-12T00:11:07.967Z"
       }
     },
     {
@@ -2346,7 +2346,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-11T00:09:36.859Z"
+        "updatedAt": "2026-07-12T00:11:07.967Z"
       }
     },
     {
@@ -2391,7 +2391,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-11T00:09:36.859Z"
+        "updatedAt": "2026-07-12T00:11:07.967Z"
       }
     },
     {
@@ -2437,7 +2437,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-11T00:09:36.859Z"
+        "updatedAt": "2026-07-12T00:11:07.967Z"
       }
     },
     {
@@ -2481,7 +2481,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-11T00:09:36.859Z"
+        "updatedAt": "2026-07-12T00:11:07.967Z"
       }
     },
     {
@@ -2525,7 +2525,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-11T00:09:36.859Z"
+        "updatedAt": "2026-07-12T00:11:07.967Z"
       }
     },
     {
@@ -2569,7 +2569,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-11T00:09:36.859Z"
+        "updatedAt": "2026-07-12T00:11:07.967Z"
       }
     },
     {
@@ -2612,7 +2612,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-11T00:09:36.859Z"
+        "updatedAt": "2026-07-12T00:11:07.967Z"
       }
     },
     {
@@ -2656,7 +2656,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-11T00:09:36.859Z"
+        "updatedAt": "2026-07-12T00:11:07.967Z"
       }
     },
     {
@@ -2701,7 +2701,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-11T00:09:36.859Z"
+        "updatedAt": "2026-07-12T00:11:07.967Z"
       }
     },
     {
@@ -2746,7 +2746,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-11T00:09:36.859Z"
+        "updatedAt": "2026-07-12T00:11:07.967Z"
       }
     },
     {
@@ -2791,7 +2791,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-11T00:09:36.859Z"
+        "updatedAt": "2026-07-12T00:11:07.967Z"
       }
     },
     {
@@ -2835,19 +2835,56 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-07-12T00:11:07.967Z"
+      }
+    },
+    {
+      "videoId": "d2R2wNO9KZs",
+      "videoUrl": "https://youtube.com/shorts/d2R2wNO9KZs",
+      "date": "2026-07-12",
+      "title": "【デザインニュース】Vectr が Awwwards SOTD 昨日受賞、Lighthouse 94・98・100・100 駆け出しがポートフォリオに数字を貼る｜2026/07/12 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 42,
+      "discovery": {
+        "method": "product-launches",
+        "description": "Awwwards Sites of the Day 直近リストと FWA of the Day の同日重複受賞を横断し、7 月 11 日に SOTD + FWA of the Day を同時受賞した Vectr (AI 人材紹介 B2B スタートアップ、制作 Utsubo スタジオ) を一次選定。Utsubo 公式 case study と DesignRush の解説から、Lighthouse 4 項目 (Performance 94 / Accessibility 98 / Best Practices 100 / SEO 100) と Three.js WebGPU Web Worker + OffscreenCanvas 構成、5 ステップ応募モーダル + LocalStorage 保存という技術判断を裏取り。method 選定 (Sunday evergreen 帯): 直近 14 日 method 別 avg views は product-launches=2.0 が TOP1、official-src=1.67 が TOP2、news-en=1.0 が TOP3、social-en は 2 週連続 WORST で 07-24 まで凍結、expert-blog は 07-11 直前利用で 2 日ルール抵触、figma-community は 07-02 で 10 日空きだが柱② 主戦場は平日温存、official-src は 07-08 で 4 日空きだが柱① が既に 38.5% で overweight。product-launches は 07-03 で 9 日空き・2 日ルール OK・7 日 2 回到達ガード OK・柱⑤ 最大ギャップ 10pt を最速で埋められる唯一の Exploit 手段として最適解。柱⑤ Before/After・ポートフォリオ事例 は直近 14 日 0/13 = 0% で最大の運用ギャップ、Sunday 30 分実行課題フォーマットで『Lighthouse で自分のポートフォリオを測って数字を作品の隣に貼る』行動指針に翻訳。NG パターン回避: プロ向け高度議論ではなく駆け出しが週末 30 分で真似できる 4 つの数字目標にフォーカス、AI=補助輪フレームを維持し『測る力と並べる力は駆け出し自身の武器』として位置づけ、07-11 数字先出しフック (3.3%+95%) を Sunday でも 94・98・100・100 の 4 数字連打で継続、freshness_hours=24 で SOTD 前日受賞の速報性を確保",
+        "sources": [
+          "https://www.awwwards.com/sites/vectr",
+          "https://www.utsubo.com/blog/vectr-ai-startup-branding-case-study",
+          "https://www.designrush.com/best-designs/websites/vectr-website-design",
+          "https://www.awwwards.com/websites/sites_of_the_day/",
+          "https://www.awwwards.com/developer-award/",
+          "https://www.awwwards.com/websites/interaction-design/"
+        ],
+        "query": "Awwwards Site of the Day July 11 2026 Vectr AI staffing Utsubo Three.js WebGPU Lighthouse FWA of the day developer award",
+        "freshness_hours": 24
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-06-01",
-      "changes": [
-        "standard: 98 avg views (33 videos)",
-        "Day performance: Wed=151, Sat=118, Sun=105, Tue=90, Thu=79, Fri=69, Mon=65"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-06-02",
       "changes": [
@@ -3077,6 +3114,14 @@
       "changes": [
         "standard: 54 avg views (62 videos)",
         "Day performance: Wed=95, Sat=60, Sun=60, Thu=49, Tue=49, Fri=39, Mon=30"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-12",
+      "changes": [
+        "standard: 53 avg views (63 videos)",
+        "Day performance: Wed=95, Sun=60, Sat=55, Thu=49, Tue=49, Fri=39, Mon=30"
       ],
       "recommendedTemplate": "standard"
     }
