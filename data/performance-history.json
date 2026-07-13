@@ -2346,7 +2346,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-12T00:11:07.967Z"
+        "updatedAt": "2026-07-13T00:10:59.546Z"
       }
     },
     {
@@ -2391,7 +2391,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-12T00:11:07.967Z"
+        "updatedAt": "2026-07-13T00:10:59.546Z"
       }
     },
     {
@@ -2437,7 +2437,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-12T00:11:07.967Z"
+        "updatedAt": "2026-07-13T00:10:59.546Z"
       }
     },
     {
@@ -2481,7 +2481,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-12T00:11:07.967Z"
+        "updatedAt": "2026-07-13T00:10:59.546Z"
       }
     },
     {
@@ -2525,7 +2525,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-12T00:11:07.967Z"
+        "updatedAt": "2026-07-13T00:10:59.546Z"
       }
     },
     {
@@ -2569,7 +2569,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-12T00:11:07.967Z"
+        "updatedAt": "2026-07-13T00:10:59.546Z"
       }
     },
     {
@@ -2612,7 +2612,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-12T00:11:07.967Z"
+        "updatedAt": "2026-07-13T00:10:59.546Z"
       }
     },
     {
@@ -2656,7 +2656,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-12T00:11:07.967Z"
+        "updatedAt": "2026-07-13T00:10:59.546Z"
       }
     },
     {
@@ -2701,7 +2701,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-12T00:11:07.967Z"
+        "updatedAt": "2026-07-13T00:10:59.546Z"
       }
     },
     {
@@ -2746,7 +2746,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-12T00:11:07.967Z"
+        "updatedAt": "2026-07-13T00:10:59.546Z"
       }
     },
     {
@@ -2791,7 +2791,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-12T00:11:07.967Z"
+        "updatedAt": "2026-07-13T00:10:59.546Z"
       }
     },
     {
@@ -2835,7 +2835,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-12T00:11:07.967Z"
+        "updatedAt": "2026-07-13T00:10:59.546Z"
       }
     },
     {
@@ -2880,19 +2880,56 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-07-13T00:10:59.546Z"
+      }
+    },
+    {
+      "videoId": "fwLKSGHYDAE",
+      "videoUrl": "https://youtube.com/shorts/fwLKSGHYDAE",
+      "date": "2026-07-13",
+      "title": "【デザインニュース】Figma左パネルに20+AI画像編集内蔵、Weaveツールがベータ無料で駆け出しのプラグイン探し終了｜2026/07/13 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 45,
+      "discovery": {
+        "method": "figma-community",
+        "description": "Figma Community の Weave 特集ページと help.figma.com の Use Weave tools in Figma、Config 2026 Recap、Connecting Figma and Weave ブログを一次取得。6/24 Config 発表で Professional 以上に順次展開中の Weave ツール (Figma Design 左パネルの 20+ AI 画像タスク・オープンベータ無料・Figma AI クレジット消費ゼロ・背景差し替え / ロゴ配置 / アスペクト比変更 / スタイル転写を 1 クリック実行、Community 側では他ユーザーの workflow も落とせる) を、07-10 の Figma Agent 拡張 (Web 検索 + 並列画像編集) と 07-09 GPT-5.6 in Figma Make の連続鮮度で駆け出し層向けに『プラグイン探しゼロで届く公式 AI 画像編集』角度で抽出。method 選定 (Monday weekday news 帯): 直近 14 日 method 別 avg views は official-src=1.67 (n=3, TOP1)・news-en=1.33 (n=3, TOP2)・expert-blog=1.00 (n=2, 中)・figma-community=1.00 (n=1, 中)・product-launches=0.50 (n=2, 下)・social-en は 2 週連続 WORST で 07-24 まで凍結。今日 07-13 は直近 2 日ルール (07-12 product-launches / 07-11 expert-blog) 除外、7 日 2 回到達ガードで news-en (07-06+07-09 で 7 日窓内 2 回) と official-src (07-05+07-08 で 7 日 2 回到達) が抵触、weekday news-preferred 4 タグ中の唯一の生存タグとして figma-community (07-02 以来 11 日空き) を Exploit 採用。柱② プラグイン/エコシステム (直近 14 日 1/13 = 7.7% で target 20% 未達、12.3pt gap) を今日 1 本で 6.6pt 圧縮し柱② underweight 修復を最優先、柱① Figma 公式 (38.5% overweight 13.5pt) 過剰使用回避も兼ねる。07-02 Generative Plugins (ユーザー自作) との切り分け: 今日は『Figma 公式が組んだ AI ワークフローが既に左パネルに標準搭載・Community で他人の workflow を落とすだけ』角度で、ユーザー側を『作る側』から『装着済み + 落とすだけ』に完全反転させ重複回避。NG パターン回避: (a) AI=補助輪フレーム維持 — Weave ツールが機械処理する範囲 (背景差し替え / ロゴ配置 / アスペクト比変更) と駆け出しの構図判断責任を明確に分離、(b) プラグイン機能説明メイン NG 回避で『プラグイン探しの疲弊』という Primary 学習者の課題から入る、(c) freshness_hours=168 は 07-05 Variables・07-08 ISO 42001 の evergreen 週単位 rollout パターンを踏襲 (Weave は 6/24 発表後も 07-08 parallel edits / 07-09 GPT-5.6 で継続拡張中)、(d) 出典 6 ソースで multi-source confirm、(e) 月曜 30 分実験フォーマット (07-05 15 分 → 07-12 30 分 → 07-13 30 分) で抽象で終わらせず具体行動 1 個に絞る",
+        "sources": [
+          "https://www.figma.com/blog/connecting-figma-and-weave/",
+          "https://help.figma.com/hc/en-us/articles/40779260614935-Use-Weave-tools-in-Figma",
+          "https://www.figma.com/community/weave",
+          "https://help.figma.com/hc/en-us/articles/39582753756695-What-s-new-from-Config-2026",
+          "https://www.figma.com/blog/five-figma-weave-workflows/",
+          "https://www.figma.com/blog/config-2026-recap/"
+        ],
+        "query": "Figma Weave tools Community workflows 20 AI image tasks open beta July 2026 left panel Professional",
+        "freshness_hours": 168
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-06-02",
-      "changes": [
-        "standard: 95 avg views (34 videos)",
-        "Day performance: Wed=151, Sat=118, Sun=105, Tue=90, Thu=79, Fri=69, Mon=52"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-06-03",
       "changes": [
@@ -3122,6 +3159,14 @@
       "changes": [
         "standard: 53 avg views (63 videos)",
         "Day performance: Wed=95, Sun=60, Sat=55, Thu=49, Tue=49, Fri=39, Mon=30"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-13",
+      "changes": [
+        "standard: 53 avg views (64 videos)",
+        "Day performance: Wed=95, Sat=55, Sun=54, Thu=49, Tue=49, Fri=39, Mon=30"
       ],
       "recommendedTemplate": "standard"
     }
