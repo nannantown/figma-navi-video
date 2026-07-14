@@ -2391,7 +2391,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-13T00:10:59.546Z"
+        "updatedAt": "2026-07-14T00:07:32.438Z"
       }
     },
     {
@@ -2437,7 +2437,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-13T00:10:59.546Z"
+        "updatedAt": "2026-07-14T00:07:32.438Z"
       }
     },
     {
@@ -2481,7 +2481,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-13T00:10:59.546Z"
+        "updatedAt": "2026-07-14T00:07:32.438Z"
       }
     },
     {
@@ -2525,7 +2525,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-13T00:10:59.546Z"
+        "updatedAt": "2026-07-14T00:07:32.438Z"
       }
     },
     {
@@ -2569,7 +2569,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-13T00:10:59.546Z"
+        "updatedAt": "2026-07-14T00:07:32.438Z"
       }
     },
     {
@@ -2612,7 +2612,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-13T00:10:59.546Z"
+        "updatedAt": "2026-07-14T00:07:32.438Z"
       }
     },
     {
@@ -2656,7 +2656,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-13T00:10:59.546Z"
+        "updatedAt": "2026-07-14T00:07:32.438Z"
       }
     },
     {
@@ -2698,10 +2698,10 @@
         "freshness_hours": 168
       },
       "stats": {
-        "views": 2,
+        "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-13T00:10:59.546Z"
+        "updatedAt": "2026-07-14T00:07:32.438Z"
       }
     },
     {
@@ -2746,7 +2746,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-13T00:10:59.546Z"
+        "updatedAt": "2026-07-14T00:07:32.438Z"
       }
     },
     {
@@ -2791,7 +2791,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-13T00:10:59.546Z"
+        "updatedAt": "2026-07-14T00:07:32.438Z"
       }
     },
     {
@@ -2835,7 +2835,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-13T00:10:59.546Z"
+        "updatedAt": "2026-07-14T00:07:32.438Z"
       }
     },
     {
@@ -2880,7 +2880,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-13T00:10:59.546Z"
+        "updatedAt": "2026-07-14T00:07:32.438Z"
       }
     },
     {
@@ -2925,19 +2925,56 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-07-14T00:07:32.438Z"
+      }
+    },
+    {
+      "videoId": "_SPgHFWsaJM",
+      "videoUrl": "https://youtube.com/shorts/_SPgHFWsaJM",
+      "date": "2026-07-14",
+      "title": "【デザインニュース】GPT-5.6 が Figma Make に参戦、駆け出しのモデル選びが3択に拡張｜2026/07/14 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 46,
+      "discovery": {
+        "method": "news-en",
+        "description": "OpenAI 公式 GPT-5.6 発表ページ、banani.co の Figma Make 内 UI 生成レビュー、testingcatalog + Neowin の 07-09 公開告知、lushbinary の Claude Fable 5 vs GPT-5.5 vs Gemini 3.1 Pro 比較、finance.biggo.com podcast (I Tested GPT-5.6 Sol for a Month) を一次取得。07-09 公開の GPT-5.6 は Sol/Terra/Luna の 3 tier で Terra は前世代 GPT-5.5 の 2 倍安く同等性能、Sol はフロントエンド QA ベンチで 4.4/5 (5.5=4.0/5) を記録。Figma Make 内では既存の Fable 5 (Anthropic) + Gemini 3.1 Pro (Google) と合わせて選択肢が 3 モデルに拡張、駆け出しがプロトタイプを作る際の『どのモデルを使うか』判断が日常化するフェーズに入る。ただし fidelity (指示忠実性) では Fable 5 がまだ優位、GPT-5.6 は自由裁量 UI に強く Reddit で card-stuffed layout が指摘される等の使い分けが必要。method 選定 (Tuesday weekday news 帯): 直近 14 日 method 別 avg views は official-src=1.67 (n=3, TOP1)・news-en=1.50 (n=2, TOP2)・expert-blog=1.00 (n=2, 中)・figma-community=0.50 (n=2, 07-13 計測未確定)・product-launches=0.50 (n=2, 下)・social-en は 2 週連続 WORST で 07-24 まで凍結。直近 2 日ルール (07-13 figma-community / 07-12 product-launches) 除外、7 日 2 回到達ガードで news-en (07-09 のみ 1 回で clear) と official-src (07-08 のみ 1 回で clear) 両者 clear。柱① Figma 公式 (直近 14 日 4/12 = 33.3%、target 25%、overweight 8.3pt) 過剰使用回避のため official-src は今日は非採用、news-en を Exploit として採用。柱③ 業界 (25.0%) を 3 → 4 本目に伸ばして target 20% 微 over 域を維持し、柱① を今日はゼロ加算に固定して overweight を 7.7pt に微緩和。07-02 Generative Plugins (ユーザー自作) / 07-06 Framer Fable 5 (別ツール別モデル) / 07-13 Weave (Figma 内蔵 AI 画像編集) との切り分け: 今日は『Figma Make 内の選択肢が 3 モデルに拡張、駆け出しが同じ画面を 2 モデルで並列生成し出力差を目で確認』角度で、AI モデル選び物語の縦糸 (07-06→07-09→07-13→07-14 の 4 週連続) を初めて具体行動指示 (30 分見比べ) に落とす。NG パターン回避: (a) AI=補助輪フレーム維持 — GPT-5.6 の失敗パターン (card-stuffed layout, fidelity 低下) を駆け出しが『選ぶ責任』の側面として明示、(b) 『AI が仕事を奪う』系 NG 回避で『駆け出しの選択肢が広がる』前向きフレームに固定、(c) freshness_hours=120 (07-09 launch から 5 日、07-12 banani.co ベンチ結果公開から 2 日)、(d) 出典 6 ソースで multi-source confirm (公式 + 3 独立レビュー + 財経 podcast)、(e) 火曜 30 分実験フォーマット (07-13 月曜 30 分の翌日展開) で抽象論で終わらせず具体行動 1 個に絞る、(f) 数字先出しフック 4 日連続 (07-11 3.3%+95% → 07-12 94/98/100/100 → 07-13 20+ → 07-14 3+4.4/4.0) の判定材料投入も兼ねる",
+        "sources": [
+          "https://openai.com/index/gpt-5-6/",
+          "https://openai.com/index/previewing-gpt-5-6-sol/",
+          "https://www.banani.co/blog/gpt-5.6-ui-design-review",
+          "https://www.testingcatalog.com/openai-launches-gpt-5-6-sol-terra-and-luna-on-apps-and-api/",
+          "https://www.neowin.net/news/openai-to-release-gpt-56-sol-terra-and-luna-on-july-9/",
+          "https://lushbinary.com/blog/claude-fable-5-vs-gpt-5-5-vs-gemini-3-1-pro-comparison/"
+        ],
+        "query": "GPT-5.6 Sol Terra Luna Figma Make Fable 5 Gemini 3.1 Pro frontend UI benchmark July 2026",
+        "freshness_hours": 120
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-06-03",
-      "changes": [
-        "standard: 93 avg views (35 videos)",
-        "Day performance: Wed=151, Sat=118, Sun=105, Thu=79, Tue=79, Fri=69, Mon=52"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-06-06",
       "changes": [
@@ -3167,6 +3204,14 @@
       "changes": [
         "standard: 53 avg views (64 videos)",
         "Day performance: Wed=95, Sat=55, Sun=54, Thu=49, Tue=49, Fri=39, Mon=30"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-14",
+      "changes": [
+        "standard: 52 avg views (65 videos)",
+        "Day performance: Wed=96, Sat=55, Sun=54, Thu=49, Tue=49, Fri=39, Mon=27"
       ],
       "recommendedTemplate": "standard"
     }
