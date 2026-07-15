@@ -1,41 +1,47 @@
 {
-  "date": "2026-07-15",
+  "date": "2026-07-16",
   "discovery": {
-    "method": "expert-blog",
-    "description": "Smashing Magazine 5 日前公開の Anastasia Sycheva (Feely Studio / 技術系スタートアップ向けブランディング代理店 founder+art director) 論考『From Kickoff To First Concept: How To Turn Brand Strategy Into Visual Direction』を一次取得。駆け出しが Figma に飛びつく前の pre-concept phase を、ブランドワークショップ→言葉から画像への相対比較→ステークホルダー参加型マップの 3 段構造で読み解く。Smashing 公式 X アカウント (@smashingmag) が同記事を『The strongest visual concepts don't start in Figma. They start with the right questions.』と紹介したポストで X 側の反応も裏取り。expert-blog method (直近 14 日 avg 1.00, n=2, TOP2 tied; 07-11 = 4 日前で 2-day rule OK、7-day 窓に 07-11 の 1 回のみで到達ガード OK)。柱④ Tips/Figma 実践 (target 15%, 直近 14 日 7.7% で 7.3pt under = 今週最大の運用ギャップ) を weekday news 帯で先制修復する意図。数字先出しフック 4 日連続 (07-11〜07-14) が 0-0-0-0 で確定した直後の反問/対比フック Explore 初日、戦略更新提案 (b) の A/B window (07-15〜07-19) 開始点。ペルソナ Primary 駆け出しデザイナーの『どこから作り始めればいい?』最重要痛点を、著者 = 技術系ブランド代理店ディレクターという発言者権威で担保。NG パターン回避: AI = 補助輪フレーム維持、『AI を使う前に人間の判断』側から入って学習者の味方として位置づけ、07-13 (ツール) → 07-14 (モデル) → 07-15 (人間) の 3 日縦糸で AI 時代の駆け出しの立ち位置を再強化。",
+    "method": "official-src",
+    "description": "Figma 公式 Blog『Introducing Figma Motion: Your Canvas Now Has a Timeline』・Figma Motion 製品ページ (figma.com/motion)・Help Center『Explore Figma Motion』『What Figma features are in beta』『What's new from Config 2026』・release notes を横断調査し、6/24 Config 2026 発表の Figma Motion が『rolling out gradually from June 24』の progressive rollout フェーズを経て、今週 Starter を含む全プランで Open beta 解禁 (Starter は limited export、フル export/agent motion/publish は Full seat 有料) に到達している事実を一次取得。プラグイン (Motion 系)・別ツール (After Effects/Principle/Jitter) が必要だった駆け出しの『動きを実装したいけど道具がない』という壁を Figma 本体だけで越えられるようになったタイミング。method 選定 (Thursday weekday news 帯): TOP3 method 候補のうち expert-blog (07-15 = 昨日利用で 2-day rule 抵触)、news-en (07-14 = 一昨日利用で 2-day rule 抵触)、official-src (07-08 = 8 日前で 2-day rule 余裕、7-day-2-time gate も 07-08 が 8 日前=window 外で clear、直近 14 日 avg 2.00 n=2 で TOP1 method) → official-src を最適な空き日に Exploit 採用。social-en は 2 週連続 WORST 凍結中 (〜07-24)、figma-community (07-13, 3 日前) と product-launches (07-12, 4 日前) は 2-day rule OK だが avg 0.5 で TOP1 に劣後。柱① Figma 公式ニュース (直近 14 日 21.4-23.1% で target 25% の 1.9-3.6pt 微 under) を Motion で厚塗り。柱② プラグイン (7.1%, 12.9pt under) を狙うなら figma-community だが method avg 差 (2.00 vs 0.5) が大きすぎ、今日は method Exploit を優先。数字先出しフック 4 連続 0 の直後 (07-15 反問フック Explore 初日) を継ぎ、今日は 07-15〜07-19 A/B window の 2 日目として『After Effects、まだ買わないで』型の対比/反問フックを継続投入。NG パターン回避: AI=補助輪フレーム維持 (agent が下地キーフレーム→人が微調整)、学習者の味方 (『動きをつけたい』ハードル解消、Starter=無料で試せる)、プラグイン機能説明メインではなく駆け出しの課題 (After Effects 買うべきか) から入る、freshness_hours は Config 発表からの累積ではなく『今週の全プラン Open beta 到達』milestone に anchor して 120h。",
     "sources": [
-      "https://www.smashingmagazine.com/2026/07/how-turn-brand-strategy-into-visual-direction/",
-      "https://x.com/smashingmag/status/2075591829643227534",
-      "https://daily.dev/posts/from-kickoff-to-first-concept-how-to-turn-brand-strategy-into-visual-direction-smashing-magazine-uc6clmikq",
-      "https://www.smashingmagazine.com/category/branding/",
-      "https://www.smashingmagazine.com/articles/",
-      "https://www.colorpark.io/blog/How%20to%20Translate%20Brand%20Strategy%20Into%20Visual%20Design:%20A%20Practical%20Guide%20for%202026"
+      "https://www.figma.com/blog/introducing-figma-motion/",
+      "https://www.figma.com/motion/",
+      "https://help.figma.com/hc/en-us/articles/41274629073303-Explore-Figma-Motion",
+      "https://help.figma.com/hc/en-us/articles/4406787442711-What-Figma-features-are-in-beta",
+      "https://help.figma.com/hc/en-us/articles/39582753756695-What-s-new-from-Config-2026",
+      "https://www.figma.com/release-notes/",
+      "https://www.figma.com/blog/config-2026-recap/",
+      "https://www.figma.com/community/file/966913921712314277/get-started-with-motion-in-2-minutes"
     ],
-    "query": "Smashing Magazine July 10 2026 From Kickoff To First Concept brand strategy visual direction Anastasia Sycheva Feely Studio pre-concept phase",
+    "query": "Figma Motion open beta all plans Starter export agent keyframe July 2026 progressive rollout",
     "freshness_hours": 120
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Smashing 5 日前論考、駆け出しが Figma を開く前にやる 3 手",
-      "description": "Figma を開くのを、少しだけ待ってください。5 日前 Smashing 掲載の一節、駆け出しの 9 割が飛ばす『概念前フェーズ』の話です。",
-      "detail": "著者は技術系ブランド代理店 Feely Studio の Anastasia。ワークショップで事業と競合を言葉で握り、次に画像や連想で相対比較。競合マップをステークホルダーに置かせ理由を語らせると、意見のズレが 1 案前に見えます。",
-      "narration": "Figma を開くのを、少しだけ待ってください。5 日前 Smashing 掲載の一節、駆け出しの 9 割が飛ばす『概念前フェーズ』の話です。",
-      "tags": ["デザイン", "ブランディング", "駆け出し"],
+      "title": "Figma Motion 全プラン開ベータ到達、駆け出しがアニメを Figma だけで完結",
+      "description": "After Effects や Principle を買う前に、Figma を開いて。ネイティブ Motion が今週 Starter 含む全プランで解禁。",
+      "detail": "タイムライン・キーフレーム・プリセット・イージングが Figma のキャンバスに内蔵。Figma agent に『ホバーでふわっと出したい』と話せば下書きのキーフレームを置いてくれ、手で微調整で完成。他プラグインも別ツールも不要。",
+      "narration": "After Effects、まだ買わないでください。Figma Motion が今週、Starter プラン含む全プラン開ベータで解禁されています。",
+      "tags": [
+        "Figma",
+        "Motion",
+        "アニメーション"
+      ],
       "narration_sections": {
-        "hook": "Figma を開くのを、少しだけ待ってください。5 日前 Smashing 掲載の一節、駆け出しの 9 割が飛ばす『概念前フェーズ』の話です。",
-        "origin": "著者は技術系ブランド代理店 Feely Studio の Anastasia。ワークショップで事業と競合を言葉で握り、次に画像や連想で相対比較。競合マップをステークホルダーに置かせ理由を語らせると、意見のズレが 1 案前に見えます。",
-        "recommend": "駆け出しは今日、Figma を閉じて 3 つ問うだけ。誰が競合か、なぜそう感じるか、どの画像に近いか。AI と差がつく最初の手前です。"
+        "hook": "After Effects、まだ買わないでください。Figma Motion が今週、Starter プラン含む全プラン開ベータで解禁されています。",
+        "origin": "タイムライン・キーフレーム・プリセットが Figma のキャンバスに直接内蔵。しかも agent に『ホバーでふわっと』と話せば、下書きのキーフレームを置いてくれます。あとは手で微調整、他プラグインも別ツールもいりません。",
+        "recommend": "Starter で無料で触れます。プラグイン購入前に、まず Figma を開いて。判断は AI ではなく、あなたのタイミングで。"
       },
       "section_titles": {
-        "hook": "Figma開く前が9割",
-        "origin": "ワークショップの3手",
-        "recommend": "Figma閉じて問う"
+        "hook": "Motion 全プラン",
+        "origin": "タイムライン内蔵",
+        "recommend": "Starter でも無料"
       },
       "section_descriptions": {
-        "hook": "5 日前 Smashing、駆け出しが飛ばす概念前 3 手",
-        "origin": "事業→競合を言葉で握り、画像で相対比較させる",
-        "recommend": "Figma を閉じ、競合・理由・画像で 30 分"
+        "hook": "Figma Motion が今週、全プラン開ベータに解禁",
+        "origin": "Figma のキャンバスに直接、動きの実装が完結",
+        "recommend": "無料枠から触れる、まず Figma を開こう"
       }
     }
   ]
