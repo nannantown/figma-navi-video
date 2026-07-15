@@ -2437,7 +2437,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-14T00:07:32.438Z"
+        "updatedAt": "2026-07-15T00:05:25.096Z"
       }
     },
     {
@@ -2481,7 +2481,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-14T00:07:32.438Z"
+        "updatedAt": "2026-07-15T00:05:25.096Z"
       }
     },
     {
@@ -2525,7 +2525,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-14T00:07:32.438Z"
+        "updatedAt": "2026-07-15T00:05:25.096Z"
       }
     },
     {
@@ -2569,7 +2569,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-14T00:07:32.438Z"
+        "updatedAt": "2026-07-15T00:05:25.096Z"
       }
     },
     {
@@ -2612,7 +2612,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-14T00:07:32.438Z"
+        "updatedAt": "2026-07-15T00:05:25.096Z"
       }
     },
     {
@@ -2656,7 +2656,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-14T00:07:32.438Z"
+        "updatedAt": "2026-07-15T00:05:25.096Z"
       }
     },
     {
@@ -2701,7 +2701,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-14T00:07:32.438Z"
+        "updatedAt": "2026-07-15T00:05:25.096Z"
       }
     },
     {
@@ -2746,7 +2746,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-14T00:07:32.438Z"
+        "updatedAt": "2026-07-15T00:05:25.096Z"
       }
     },
     {
@@ -2791,7 +2791,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-14T00:07:32.438Z"
+        "updatedAt": "2026-07-15T00:05:25.096Z"
       }
     },
     {
@@ -2835,7 +2835,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-14T00:07:32.438Z"
+        "updatedAt": "2026-07-15T00:05:25.096Z"
       }
     },
     {
@@ -2880,7 +2880,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-14T00:07:32.438Z"
+        "updatedAt": "2026-07-15T00:05:25.096Z"
       }
     },
     {
@@ -2925,7 +2925,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-14T00:07:32.438Z"
+        "updatedAt": "2026-07-15T00:05:25.096Z"
       }
     },
     {
@@ -2970,19 +2970,56 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-07-15T00:05:25.096Z"
+      }
+    },
+    {
+      "videoId": "r6IBXzOyBfc",
+      "videoUrl": "https://youtube.com/shorts/r6IBXzOyBfc",
+      "date": "2026-07-15",
+      "title": "【デザインニュース】Smashing 5 日前論考、駆け出しが Figma を開く前にやる 3 手｜2026/07/15 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 45,
+      "discovery": {
+        "method": "expert-blog",
+        "description": "Smashing Magazine 5 日前公開の Anastasia Sycheva (Feely Studio / 技術系スタートアップ向けブランディング代理店 founder+art director) 論考『From Kickoff To First Concept: How To Turn Brand Strategy Into Visual Direction』を一次取得。駆け出しが Figma に飛びつく前の pre-concept phase を、ブランドワークショップ→言葉から画像への相対比較→ステークホルダー参加型マップの 3 段構造で読み解く。Smashing 公式 X アカウント (@smashingmag) が同記事を『The strongest visual concepts don't start in Figma. They start with the right questions.』と紹介したポストで X 側の反応も裏取り。expert-blog method (直近 14 日 avg 1.00, n=2, TOP2 tied; 07-11 = 4 日前で 2-day rule OK、7-day 窓に 07-11 の 1 回のみで到達ガード OK)。柱④ Tips/Figma 実践 (target 15%, 直近 14 日 7.7% で 7.3pt under = 今週最大の運用ギャップ) を weekday news 帯で先制修復する意図。数字先出しフック 4 日連続 (07-11〜07-14) が 0-0-0-0 で確定した直後の反問/対比フック Explore 初日、戦略更新提案 (b) の A/B window (07-15〜07-19) 開始点。ペルソナ Primary 駆け出しデザイナーの『どこから作り始めればいい?』最重要痛点を、著者 = 技術系ブランド代理店ディレクターという発言者権威で担保。NG パターン回避: AI = 補助輪フレーム維持、『AI を使う前に人間の判断』側から入って学習者の味方として位置づけ、07-13 (ツール) → 07-14 (モデル) → 07-15 (人間) の 3 日縦糸で AI 時代の駆け出しの立ち位置を再強化。",
+        "sources": [
+          "https://www.smashingmagazine.com/2026/07/how-turn-brand-strategy-into-visual-direction/",
+          "https://x.com/smashingmag/status/2075591829643227534",
+          "https://daily.dev/posts/from-kickoff-to-first-concept-how-to-turn-brand-strategy-into-visual-direction-smashing-magazine-uc6clmikq",
+          "https://www.smashingmagazine.com/category/branding/",
+          "https://www.smashingmagazine.com/articles/",
+          "https://www.colorpark.io/blog/How%20to%20Translate%20Brand%20Strategy%20Into%20Visual%20Design:%20A%20Practical%20Guide%20for%202026"
+        ],
+        "query": "Smashing Magazine July 10 2026 From Kickoff To First Concept brand strategy visual direction Anastasia Sycheva Feely Studio pre-concept phase",
+        "freshness_hours": 120
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-06-06",
-      "changes": [
-        "standard: 91 avg views (36 videos)",
-        "Day performance: Wed=127, Sat=118, Sun=106, Tue=82, Thu=79, Fri=69, Mon=52"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-06-07",
       "changes": [
@@ -3212,6 +3249,14 @@
       "changes": [
         "standard: 52 avg views (65 videos)",
         "Day performance: Wed=96, Sat=55, Sun=54, Thu=49, Tue=49, Fri=39, Mon=27"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-15",
+      "changes": [
+        "standard: 51 avg views (66 videos)",
+        "Day performance: Wed=96, Sat=55, Sun=54, Thu=49, Tue=44, Fri=39, Mon=27"
       ],
       "recommendedTemplate": "standard"
     }
