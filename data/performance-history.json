@@ -2437,7 +2437,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-15T00:05:25.096Z"
+        "updatedAt": "2026-07-16T00:09:52.224Z"
       }
     },
     {
@@ -2481,7 +2481,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-15T00:05:25.096Z"
+        "updatedAt": "2026-07-16T00:09:52.224Z"
       }
     },
     {
@@ -2525,7 +2525,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-15T00:05:25.096Z"
+        "updatedAt": "2026-07-16T00:09:52.224Z"
       }
     },
     {
@@ -2569,7 +2569,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-15T00:05:25.096Z"
+        "updatedAt": "2026-07-16T00:09:52.224Z"
       }
     },
     {
@@ -2612,7 +2612,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-15T00:05:25.096Z"
+        "updatedAt": "2026-07-16T00:09:52.224Z"
       }
     },
     {
@@ -2656,7 +2656,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-15T00:05:25.096Z"
+        "updatedAt": "2026-07-16T00:09:52.224Z"
       }
     },
     {
@@ -2701,7 +2701,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-15T00:05:25.096Z"
+        "updatedAt": "2026-07-16T00:09:52.224Z"
       }
     },
     {
@@ -2746,7 +2746,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-15T00:05:25.096Z"
+        "updatedAt": "2026-07-16T00:09:52.224Z"
       }
     },
     {
@@ -2791,7 +2791,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-15T00:05:25.096Z"
+        "updatedAt": "2026-07-16T00:09:52.224Z"
       }
     },
     {
@@ -2835,7 +2835,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-15T00:05:25.096Z"
+        "updatedAt": "2026-07-16T00:09:52.224Z"
       }
     },
     {
@@ -2880,7 +2880,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-15T00:05:25.096Z"
+        "updatedAt": "2026-07-16T00:09:52.224Z"
       }
     },
     {
@@ -2925,7 +2925,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-15T00:05:25.096Z"
+        "updatedAt": "2026-07-16T00:09:52.224Z"
       }
     },
     {
@@ -2970,7 +2970,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-15T00:05:25.096Z"
+        "updatedAt": "2026-07-16T00:09:52.224Z"
       }
     },
     {
@@ -3015,19 +3015,58 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-07-16T00:09:52.224Z"
+      }
+    },
+    {
+      "videoId": "V2zVm4bN62Y",
+      "videoUrl": "https://youtube.com/shorts/V2zVm4bN62Y",
+      "date": "2026-07-16",
+      "title": "【デザインニュース】Figma Motion 全プラン開ベータ到達、駆け出しがアニメを Figma だけで完結｜2026/07/16 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 42,
+      "discovery": {
+        "method": "official-src",
+        "description": "Figma 公式 Blog『Introducing Figma Motion: Your Canvas Now Has a Timeline』・Figma Motion 製品ページ (figma.com/motion)・Help Center『Explore Figma Motion』『What Figma features are in beta』『What's new from Config 2026』・release notes を横断調査し、6/24 Config 2026 発表の Figma Motion が『rolling out gradually from June 24』の progressive rollout フェーズを経て、今週 Starter を含む全プランで Open beta 解禁 (Starter は limited export、フル export/agent motion/publish は Full seat 有料) に到達している事実を一次取得。プラグイン (Motion 系)・別ツール (After Effects/Principle/Jitter) が必要だった駆け出しの『動きを実装したいけど道具がない』という壁を Figma 本体だけで越えられるようになったタイミング。method 選定 (Thursday weekday news 帯): TOP3 method 候補のうち expert-blog (07-15 = 昨日利用で 2-day rule 抵触)、news-en (07-14 = 一昨日利用で 2-day rule 抵触)、official-src (07-08 = 8 日前で 2-day rule 余裕、7-day-2-time gate も 07-08 が 8 日前=window 外で clear、直近 14 日 avg 2.00 n=2 で TOP1 method) → official-src を最適な空き日に Exploit 採用。social-en は 2 週連続 WORST 凍結中 (〜07-24)、figma-community (07-13, 3 日前) と product-launches (07-12, 4 日前) は 2-day rule OK だが avg 0.5 で TOP1 に劣後。柱① Figma 公式ニュース (直近 14 日 21.4-23.1% で target 25% の 1.9-3.6pt 微 under) を Motion で厚塗り。柱② プラグイン (7.1%, 12.9pt under) を狙うなら figma-community だが method avg 差 (2.00 vs 0.5) が大きすぎ、今日は method Exploit を優先。数字先出しフック 4 連続 0 の直後 (07-15 反問フック Explore 初日) を継ぎ、今日は 07-15〜07-19 A/B window の 2 日目として『After Effects、まだ買わないで』型の対比/反問フックを継続投入。NG パターン回避: AI=補助輪フレーム維持 (agent が下地キーフレーム→人が微調整)、学習者の味方 (『動きをつけたい』ハードル解消、Starter=無料で試せる)、プラグイン機能説明メインではなく駆け出しの課題 (After Effects 買うべきか) から入る、freshness_hours は Config 発表からの累積ではなく『今週の全プラン Open beta 到達』milestone に anchor して 120h。",
+        "sources": [
+          "https://www.figma.com/blog/introducing-figma-motion/",
+          "https://www.figma.com/motion/",
+          "https://help.figma.com/hc/en-us/articles/41274629073303-Explore-Figma-Motion",
+          "https://help.figma.com/hc/en-us/articles/4406787442711-What-Figma-features-are-in-beta",
+          "https://help.figma.com/hc/en-us/articles/39582753756695-What-s-new-from-Config-2026",
+          "https://www.figma.com/release-notes/",
+          "https://www.figma.com/blog/config-2026-recap/",
+          "https://www.figma.com/community/file/966913921712314277/get-started-with-motion-in-2-minutes"
+        ],
+        "query": "Figma Motion open beta all plans Starter export agent keyframe July 2026 progressive rollout",
+        "freshness_hours": 120
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-06-07",
-      "changes": [
-        "standard: 89 avg views (37 videos)",
-        "Day performance: Wed=127, Sun=106, Sat=99, Tue=82, Thu=79, Fri=69, Mon=52"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-06-09",
       "changes": [
@@ -3257,6 +3296,14 @@
       "changes": [
         "standard: 51 avg views (66 videos)",
         "Day performance: Wed=96, Sat=55, Sun=54, Thu=49, Tue=44, Fri=39, Mon=27"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-16",
+      "changes": [
+        "standard: 50 avg views (67 videos)",
+        "Day performance: Wed=85, Sat=55, Sun=54, Thu=49, Tue=44, Fri=39, Mon=27"
       ],
       "recommendedTemplate": "standard"
     }
