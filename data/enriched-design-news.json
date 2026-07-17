@@ -1,45 +1,45 @@
 {
-  "date": "2026-07-17",
+  "date": "2026-07-18",
   "discovery": {
-    "method": "figma-community",
-    "description": "Figma Community プラグイン新着と Product Hunt ローンチページを横断調査し、7/12 頃に Product Hunt で launch された Fluido (作者 Ihor Antonishen 個人・図形/文字/ベクターを 1 クリックで液体クロム/メタルに変換・ノンデストラクティブで形状変更しても効果が追従・光沢や色収差まで自動生成) を発見。Y2K/Chromecore トレンド再燃期に Figma だけで実装できる生成プラグインという文脈で、駆け出しが Blender や After Effects を開かずにポートフォリオ FV に高難度演出を仕込める題材として抽出。method 選定 (Friday weekday news 帯): 直近 14 日 method 別 avg views は official-src=1.33 (n=3, TOP1) だが 07-16 = 昨日利用で 2-day rule 抵触、news-en=1.00 (n=3, TOP2) は 07-14 = 3 日前・7-day-2-time gate OK だが 07-16 PDCA Action #3 で『07-17 Fri か 07-18 Sat に figma-community + プラグイン topic で柱② 修復』予約タスクを明示、expert-blog=0.67 (n=3) は 07-15 = 一昨日利用で 2-day rule 抵触、social-en は 2 週連続 WORST で 07-24 まで凍結、product-launches=0.50 (n=2) は 07-12 = 5 日前で gate OK だが柱② 修復の焦点外。figma-community=0.00 (n=1, 07-13 Weave のみ、07-13 = 4 日前で 2-day rule OK、7-day 窓内で 07-13 のみ 1 回=残 1 枠、07-19 まで) を予約タスク実行として今日採用。柱② プラグイン/エコシステム (直近 14 日 1/13 = 7.7%、target 20% で 12.3pt under、最大の運用ギャップ) を今日 1 本で 6.6pt 圧縮する意図。Figma 集中期 (07-08→07-10→07-13→07-15→07-16 の 5 本 Figma 主題) の反動プランで、今日は『Figma プラットフォームだが 3rd party 個人開発プラグイン』角度に topic を寄せ、Figma 本体の official news から一段離れて縁側視聴者を確保する rotation を実行。07-13 Weave (Figma 内蔵 AI 画像編集) と切り分け: Weave は Figma 公式が組んだ既製 workflow、Fluido は個人開発者が作った特殊効果生成、レイヤーが違うため重複回避。NG パターン回避: (a) AI=補助輪フレーム維持 — 生成部分は AI・shape 選択と効果の強弱調整は駆け出し自身、(b) 『プラグイン機能説明メイン』回避 — Primary 学習者の pain 『ポートフォリオ FV でトレンドを取り入れたいけど Blender は重すぎ・時間がない』から入る、(c) freshness_hours=120 (Product Hunt launch から 5 日) で 168 NG ライン余裕、(d) 出典 6 ソースで multi-source confirm (Figma Community + Product Hunt + UIComet + 作者プロフィール + Webflow Y2K トレンド解説 + Figma 生成プラグイン公式ガイド)、(e) Y2K/Chromecore トレンドは webflow.com 側で正式に業界トレンドとして解説されており、駆け出しの『いま流行っているものを自分のポートフォリオに取り入れる』という具体行動指針で着地。数字先出しフック 5 連続 0-0-0-0-未確定 の直後、07-15〜07-19 A/B window の 3 日目として『Blender、まだ開かないで』型の反問/対比フックを継続投入し 07-20 (Mon) PDCA での判定材料を積む。",
+    "method": "expert-blog",
+    "description": "Smashing Magazine 7/15 公開の Vitaly Friedman 論考『No, People Don't Want More AI In Their Life』を一次取得。Smashing 創業者本人が、多くの企業が『みんな AI 機能を欲しがっている』と勘違いしていると名指しで批判、実際にユーザーが望むのは自分を AI 側に合わせる AI ではなく、面倒な作業を代わりにやってくれる AI であるという主張を、駆け出しがポートフォリオや作例に AI 機能を条件反射で盛らないための警鐘として抽出。Jakob Nielsen 07-17 公開の Substack UX Roundup (『Usability of AI Skills』: 41,662 skills 調査で 53% は導入後一度も更新されない・エージェントがユーザーをどう扱うかのルールがほぼ触られていない) を multi-source confirm の裏取りに追加、Vitaly の前作 7/3『Users Don't Need More Tools』も同軸の縦糸ソースとして併記。method 選定 (Saturday weekend evergreen 帯): 07-17 PDCA Action #3 予約タスク『07-18 (Sat) 柱⑥ UI 批評 = 微 under 2.3pt を expert-blog method で修復、expert-blog が 2-day rule 上 07-18 で解禁されるためタイミング一致』を実行。直近 14 日 (07-05〜07-17) method 別 avg views は official-src=1.33 (n=3, TOP1) だが 07-16 昨日利用で 2-day rule 抵触、news-en=1.00 (n=3, TOP2) は 07-14 = 4 日前で gate OK だが土曜 evergreen 帯 + 柱⑥ 修復焦点外、social-en は 2 週連続 WORST で 07-24 まで凍結、figma-community は 07-17 昨日利用で 2-day rule 抵触、product-launches (n=1, 07-12=6日前 gate OK) は柱⑤ Before/After (7.7%) 修復向きだが今日の柱⑥ 予約と齟齬、expert-blog (n=2, avg=0.00, 07-11 は 07-18 から 7 日前ちょうどで window 外・07-15=3 日前で 1 hit in window=残 1 枠、07-15 3日空きで 2-day rule OK) を採用。柱⑥ UI 批評 は直近14日 1/13 = 7.7% (target 10%) で 2.3pt under、今日 1 本で 2/14 = 14.3% (target 10%) まで 4.3pt over-shoot する運用、次回 07-19 (Sun) は柱⑤ Before/After (7.7%) or 柱② プラグイン (7.7%) に振って全体平準化予定。Figma 集中期 (07-08→07-10→07-13→07-14→07-16) と Fluido 3rd party (07-17) を経て、今日は Figma 主題から完全に離れ『AI 全般に対する UX 業界の警鐘』角度で topic を切り替え、07-04『AI=チャットボックス思考停止』(modality 批評) の 14 日後・上位互換として『AI そのものを盛りすぎ』批評を投入する縦糸継承。数字先出しフック 5 連続 (07-11〜07-14) 直後、07-15〜07-19 A/B window の 4 日目として反問/対比フックを継投、07-15『Figma を開く前に』→ 07-16『After Effects まだ買わないで』→ 07-17『Blender まだ開かないで』→ 今日 07-18『AI 機能つけとこうって思ってた』と 4 日連続で反問フックを重ね、07-20 (Mon) PDCA でフックタイプ別 method 分業を正式判定する材料を積む。NG パターン回避: (a) AI=補助輪フレーム維持 — Vitaly の『自分を AI 側に合わせる AI vs 面倒を代わりにやる AI』の切り分けを、駆け出しの『目的が先、AI は道具』に翻訳、(b) 『AI がデザイナーの仕事を奪う』系不安を煽らない — Vitaly は AI を消せと言っておらず『目的を先に決めよ』が主張、駆け出しの味方として positioning 維持、(c) freshness_hours=72 (07-15 公開から 3 日) で 168 NG ライン余裕、(d) 出典 6 ソースで multi-source confirm (Smashing Vitaly 07-15 + Smashing Vitaly 07-03 前作 + Nielsen 07-17 Substack + Smashing 記事一覧ページ + Vitaly LinkedIn プロフィール + Vitaly のインタビュー podcast)、(e) 純 UI 批評 に振りすぎず『何のためのAIか』という Primary 学習者が明日から使える判断軸で着地。",
     "sources": [
-      "https://www.figma.com/community/plugin/1643351089558193643/fluido-liquid-chrome-effects",
-      "https://www.producthunt.com/products/fluido",
-      "https://launches.uicomet.com/products/fluido-mphvk",
-      "https://www.figma.com/@ihorantonishen",
-      "https://webflow.com/blog/y2k-aesthetic",
-      "https://help.figma.com/hc/en-us/articles/41147702210071-Quick-start-guide-to-generative-plugins-and-shaders"
+      "https://www.smashingmagazine.com/2026/07/people-dont-want-more-ai/",
+      "https://www.smashingmagazine.com/2026/07/users-dont-need-more-tools-need-seamless-integrations/",
+      "https://jakobnielsenphd.substack.com/p/ux-roundup-20260717",
+      "https://www.smashingmagazine.com/author/vitaly-friedman/",
+      "https://de.linkedin.com/in/vitalyfriedman",
+      "https://podcasts.apple.com/us/podcast/26-vitaly-friedman-on-smashing-magazine-complexity/id1818525189?i=1000754569971"
     ],
-    "query": "Fluido Figma plugin liquid metal chrome Product Hunt launch July 2026 Ihor Antonishen non-destructive Y2K Chromecore",
-    "freshness_hours": 120
+    "query": "Vitaly Friedman Smashing Magazine No People Dont Want More AI July 15 2026 automation boring stuff seamless integration",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Fluido が今週 Product Hunt 上位、駆け出しが液体クロムを Figma だけで 1 クリック",
-      "description": "Blender や After Effects を開かないで。図形も文字も 1 クリックで液体クロムに変わる Figma プラグイン Fluido が今週 Product Hunt 入りしました。",
-      "detail": "作者は Figma デザイナー Ihor Antonishen さん個人。四角・文字・ベクターを選んで実行すると光沢や色収差まで自然に生成、ノンデストラクティブなのであとで形を変えても効果はそのままついてきます。Y2K/Chromecore トレンドが再燃中、ポートフォリオ FV や CTA ボタンに Figma だけで仕込めます。",
-      "narration": "ポートフォリオでいま Blender 開いてる駆け出し、Figma で液体クロムが 1 クリック生成できるプラグイン Fluido が出ました。",
+      "title": "Smashing 創業者 Vitaly が今週 AI 機能病を名指し批判、駆け出しに響く 3 日前論考",
+      "description": "ポートフォリオに AI 機能、とりあえずつけとこうって思ってた駆け出し。Smashing 創業者 Vitaly が今週、その発想を名指しで批判しました。",
+      "detail": "多くの企業がユーザーは AI 機能を欲しがっていると勘違いしていると Vitaly さんは指摘。実際にユーザーが望んでいるのは、面倒な作業を代わりにやってくれる AI であって、自分を AI 側に合わせて変える AI ではないという主張です。ちょうど昨日 Jakob Nielsen も、世に出た 41,662 の AI Skills のうち 53% は導入後一度も更新されていないと発表、AI の中身より置いた事実で満足する UX の危うさを裏付けています。",
+      "narration": "ポートフォリオに AI 機能、つけとこうって思ってた駆け出し。今週 Smashing の Vitaly さんが、その発想を名指しで批判しました。",
       "tags": [
-        "Figma",
-        "プラグイン",
-        "Fluido"
+        "UX批評",
+        "AI",
+        "Smashing"
       ],
       "narration_sections": {
-        "hook": "ポートフォリオでいま Blender 開いてる駆け出し、Figma で液体クロムが 1 クリック生成できるプラグイン Fluido が出ました。",
-        "origin": "作ったのはデザイナー Ihor さん個人。四角・文字・ベクターを選んで実行するだけで、光沢や色収差まで自然な液体メタルに変換されます。ノンデストラクティブ設計なので、あとから形を変えても効果はそのままついてきます。Blender 要らずです。",
-        "recommend": "Y2K や Chromecore 再燃中、駆け出しがトレンド演出を Figma だけで試せます。効果は AI、判断はあなたで。"
+        "hook": "ポートフォリオに AI 機能、つけとこうって思ってた駆け出し。今週 Smashing の Vitaly さんが、その発想を名指しで批判しました。",
+        "origin": "多くの企業がユーザーは AI 機能を欲しがっていると勘違いしていると Vitaly さんは指摘。実際は違い、人は面倒な作業を代わりにやってくれる AI を望んでいて、自分を AI 側に合わせて変える AI は望んでいないのだと。",
+        "recommend": "作品に AI 機能を並べる前に、消したい面倒を先に決めるのが今週の学びです。AI は補助輪、目的が先です。"
       },
       "section_titles": {
-        "hook": "液体クロム1クリック",
-        "origin": "光沢も色収差も自動",
-        "recommend": "Y2Kトレンド再燃"
+        "hook": "AI詰めるな警鐘",
+        "origin": "Smashing今週批評",
+        "recommend": "面倒を先に決める"
       },
       "section_descriptions": {
-        "hook": "Product Huntで今週話題のFigmaプラグイン",
-        "origin": "四角・文字・ベクターを選んで実行で液体化",
-        "recommend": "Y2K・Chromecore再燃期の駆け出し武器"
+        "hook": "Smashing今週の話題論考、駆け出し必読",
+        "origin": "多くの企業が勘違いしているとVitalyが指摘",
+        "recommend": "AIは補助輪、目的から逆算する視点で選ぶ"
       }
     }
   ]
