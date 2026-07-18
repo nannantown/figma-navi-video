@@ -2525,7 +2525,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-16T00:09:52.224Z"
+        "updatedAt": "2026-07-18T00:08:48.785Z"
       }
     },
     {
@@ -2569,7 +2569,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-16T00:09:52.224Z"
+        "updatedAt": "2026-07-18T00:08:48.785Z"
       }
     },
     {
@@ -2612,7 +2612,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-16T00:09:52.224Z"
+        "updatedAt": "2026-07-18T00:08:48.785Z"
       }
     },
     {
@@ -2656,7 +2656,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-16T00:09:52.224Z"
+        "updatedAt": "2026-07-18T00:08:48.785Z"
       }
     },
     {
@@ -2701,7 +2701,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-16T00:09:52.224Z"
+        "updatedAt": "2026-07-18T00:08:48.785Z"
       }
     },
     {
@@ -2746,7 +2746,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-16T00:09:52.224Z"
+        "updatedAt": "2026-07-18T00:08:48.785Z"
       }
     },
     {
@@ -2788,10 +2788,10 @@
         "freshness_hours": 72
       },
       "stats": {
-        "views": 1,
+        "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-16T00:09:52.224Z"
+        "updatedAt": "2026-07-18T00:08:48.785Z"
       }
     },
     {
@@ -2835,7 +2835,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-16T00:09:52.224Z"
+        "updatedAt": "2026-07-18T00:08:48.785Z"
       }
     },
     {
@@ -2880,7 +2880,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-16T00:09:52.224Z"
+        "updatedAt": "2026-07-18T00:08:48.785Z"
       }
     },
     {
@@ -2925,7 +2925,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-16T00:09:52.224Z"
+        "updatedAt": "2026-07-18T00:08:48.785Z"
       }
     },
     {
@@ -2970,7 +2970,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-16T00:09:52.224Z"
+        "updatedAt": "2026-07-18T00:08:48.785Z"
       }
     },
     {
@@ -3015,7 +3015,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-16T00:09:52.224Z"
+        "updatedAt": "2026-07-18T00:08:48.785Z"
       }
     },
     {
@@ -3059,6 +3059,51 @@
         "freshness_hours": 120
       },
       "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-07-18T00:08:48.785Z"
+      }
+    },
+    {
+      "videoId": "oAW1N85mrLM",
+      "videoUrl": "https://youtube.com/shorts/oAW1N85mrLM",
+      "date": "2026-07-18",
+      "title": "【デザインニュース】Smashing 創業者 Vitaly が今週 AI 機能病を名指し批判、駆け出しに響く 3 日前論考｜2026/07/18 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 42,
+      "discovery": {
+        "method": "expert-blog",
+        "description": "Smashing Magazine 7/15 公開の Vitaly Friedman 論考『No, People Don't Want More AI In Their Life』を一次取得。Smashing 創業者本人が、多くの企業が『みんな AI 機能を欲しがっている』と勘違いしていると名指しで批判、実際にユーザーが望むのは自分を AI 側に合わせる AI ではなく、面倒な作業を代わりにやってくれる AI であるという主張を、駆け出しがポートフォリオや作例に AI 機能を条件反射で盛らないための警鐘として抽出。Jakob Nielsen 07-17 公開の Substack UX Roundup (『Usability of AI Skills』: 41,662 skills 調査で 53% は導入後一度も更新されない・エージェントがユーザーをどう扱うかのルールがほぼ触られていない) を multi-source confirm の裏取りに追加、Vitaly の前作 7/3『Users Don't Need More Tools』も同軸の縦糸ソースとして併記。method 選定 (Saturday weekend evergreen 帯): 07-17 PDCA Action #3 予約タスク『07-18 (Sat) 柱⑥ UI 批評 = 微 under 2.3pt を expert-blog method で修復、expert-blog が 2-day rule 上 07-18 で解禁されるためタイミング一致』を実行。直近 14 日 (07-05〜07-17) method 別 avg views は official-src=1.33 (n=3, TOP1) だが 07-16 昨日利用で 2-day rule 抵触、news-en=1.00 (n=3, TOP2) は 07-14 = 4 日前で gate OK だが土曜 evergreen 帯 + 柱⑥ 修復焦点外、social-en は 2 週連続 WORST で 07-24 まで凍結、figma-community は 07-17 昨日利用で 2-day rule 抵触、product-launches (n=1, 07-12=6日前 gate OK) は柱⑤ Before/After (7.7%) 修復向きだが今日の柱⑥ 予約と齟齬、expert-blog (n=2, avg=0.00, 07-11 は 07-18 から 7 日前ちょうどで window 外・07-15=3 日前で 1 hit in window=残 1 枠、07-15 3日空きで 2-day rule OK) を採用。柱⑥ UI 批評 は直近14日 1/13 = 7.7% (target 10%) で 2.3pt under、今日 1 本で 2/14 = 14.3% (target 10%) まで 4.3pt over-shoot する運用、次回 07-19 (Sun) は柱⑤ Before/After (7.7%) or 柱② プラグイン (7.7%) に振って全体平準化予定。Figma 集中期 (07-08→07-10→07-13→07-14→07-16) と Fluido 3rd party (07-17) を経て、今日は Figma 主題から完全に離れ『AI 全般に対する UX 業界の警鐘』角度で topic を切り替え、07-04『AI=チャットボックス思考停止』(modality 批評) の 14 日後・上位互換として『AI そのものを盛りすぎ』批評を投入する縦糸継承。数字先出しフック 5 連続 (07-11〜07-14) 直後、07-15〜07-19 A/B window の 4 日目として反問/対比フックを継投、07-15『Figma を開く前に』→ 07-16『After Effects まだ買わないで』→ 07-17『Blender まだ開かないで』→ 今日 07-18『AI 機能つけとこうって思ってた』と 4 日連続で反問フックを重ね、07-20 (Mon) PDCA でフックタイプ別 method 分業を正式判定する材料を積む。NG パターン回避: (a) AI=補助輪フレーム維持 — Vitaly の『自分を AI 側に合わせる AI vs 面倒を代わりにやる AI』の切り分けを、駆け出しの『目的が先、AI は道具』に翻訳、(b) 『AI がデザイナーの仕事を奪う』系不安を煽らない — Vitaly は AI を消せと言っておらず『目的を先に決めよ』が主張、駆け出しの味方として positioning 維持、(c) freshness_hours=72 (07-15 公開から 3 日) で 168 NG ライン余裕、(d) 出典 6 ソースで multi-source confirm (Smashing Vitaly 07-15 + Smashing Vitaly 07-03 前作 + Nielsen 07-17 Substack + Smashing 記事一覧ページ + Vitaly LinkedIn プロフィール + Vitaly のインタビュー podcast)、(e) 純 UI 批評 に振りすぎず『何のためのAIか』という Primary 学習者が明日から使える判断軸で着地。",
+        "sources": [
+          "https://www.smashingmagazine.com/2026/07/people-dont-want-more-ai/",
+          "https://www.smashingmagazine.com/2026/07/users-dont-need-more-tools-need-seamless-integrations/",
+          "https://jakobnielsenphd.substack.com/p/ux-roundup-20260717",
+          "https://www.smashingmagazine.com/author/vitaly-friedman/",
+          "https://de.linkedin.com/in/vitalyfriedman",
+          "https://podcasts.apple.com/us/podcast/26-vitaly-friedman-on-smashing-magazine-complexity/id1818525189?i=1000754569971"
+        ],
+        "query": "Vitaly Friedman Smashing Magazine No People Dont Want More AI July 15 2026 automation boring stuff seamless integration",
+        "freshness_hours": 72
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -3067,14 +3112,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-06-09",
-      "changes": [
-        "standard: 87 avg views (38 videos)",
-        "Day performance: Wed=127, Sat=99, Sun=88, Tue=82, Thu=79, Fri=69, Mon=52"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-06-10",
       "changes": [
@@ -3304,6 +3341,14 @@
       "changes": [
         "standard: 50 avg views (67 videos)",
         "Day performance: Wed=85, Sat=55, Sun=54, Thu=49, Tue=44, Fri=39, Mon=27"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-18",
+      "changes": [
+        "standard: 50 avg views (68 videos)",
+        "Day performance: Wed=85, Sat=55, Sun=54, Thu=44, Tue=44, Fri=40, Mon=27"
       ],
       "recommendedTemplate": "standard"
     }
