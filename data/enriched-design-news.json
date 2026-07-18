@@ -1,45 +1,42 @@
 {
-  "date": "2026-07-18",
+  "date": "2026-07-19",
   "discovery": {
-    "method": "expert-blog",
-    "description": "Smashing Magazine 7/15 公開の Vitaly Friedman 論考『No, People Don't Want More AI In Their Life』を一次取得。Smashing 創業者本人が、多くの企業が『みんな AI 機能を欲しがっている』と勘違いしていると名指しで批判、実際にユーザーが望むのは自分を AI 側に合わせる AI ではなく、面倒な作業を代わりにやってくれる AI であるという主張を、駆け出しがポートフォリオや作例に AI 機能を条件反射で盛らないための警鐘として抽出。Jakob Nielsen 07-17 公開の Substack UX Roundup (『Usability of AI Skills』: 41,662 skills 調査で 53% は導入後一度も更新されない・エージェントがユーザーをどう扱うかのルールがほぼ触られていない) を multi-source confirm の裏取りに追加、Vitaly の前作 7/3『Users Don't Need More Tools』も同軸の縦糸ソースとして併記。method 選定 (Saturday weekend evergreen 帯): 07-17 PDCA Action #3 予約タスク『07-18 (Sat) 柱⑥ UI 批評 = 微 under 2.3pt を expert-blog method で修復、expert-blog が 2-day rule 上 07-18 で解禁されるためタイミング一致』を実行。直近 14 日 (07-05〜07-17) method 別 avg views は official-src=1.33 (n=3, TOP1) だが 07-16 昨日利用で 2-day rule 抵触、news-en=1.00 (n=3, TOP2) は 07-14 = 4 日前で gate OK だが土曜 evergreen 帯 + 柱⑥ 修復焦点外、social-en は 2 週連続 WORST で 07-24 まで凍結、figma-community は 07-17 昨日利用で 2-day rule 抵触、product-launches (n=1, 07-12=6日前 gate OK) は柱⑤ Before/After (7.7%) 修復向きだが今日の柱⑥ 予約と齟齬、expert-blog (n=2, avg=0.00, 07-11 は 07-18 から 7 日前ちょうどで window 外・07-15=3 日前で 1 hit in window=残 1 枠、07-15 3日空きで 2-day rule OK) を採用。柱⑥ UI 批評 は直近14日 1/13 = 7.7% (target 10%) で 2.3pt under、今日 1 本で 2/14 = 14.3% (target 10%) まで 4.3pt over-shoot する運用、次回 07-19 (Sun) は柱⑤ Before/After (7.7%) or 柱② プラグイン (7.7%) に振って全体平準化予定。Figma 集中期 (07-08→07-10→07-13→07-14→07-16) と Fluido 3rd party (07-17) を経て、今日は Figma 主題から完全に離れ『AI 全般に対する UX 業界の警鐘』角度で topic を切り替え、07-04『AI=チャットボックス思考停止』(modality 批評) の 14 日後・上位互換として『AI そのものを盛りすぎ』批評を投入する縦糸継承。数字先出しフック 5 連続 (07-11〜07-14) 直後、07-15〜07-19 A/B window の 4 日目として反問/対比フックを継投、07-15『Figma を開く前に』→ 07-16『After Effects まだ買わないで』→ 07-17『Blender まだ開かないで』→ 今日 07-18『AI 機能つけとこうって思ってた』と 4 日連続で反問フックを重ね、07-20 (Mon) PDCA でフックタイプ別 method 分業を正式判定する材料を積む。NG パターン回避: (a) AI=補助輪フレーム維持 — Vitaly の『自分を AI 側に合わせる AI vs 面倒を代わりにやる AI』の切り分けを、駆け出しの『目的が先、AI は道具』に翻訳、(b) 『AI がデザイナーの仕事を奪う』系不安を煽らない — Vitaly は AI を消せと言っておらず『目的を先に決めよ』が主張、駆け出しの味方として positioning 維持、(c) freshness_hours=72 (07-15 公開から 3 日) で 168 NG ライン余裕、(d) 出典 6 ソースで multi-source confirm (Smashing Vitaly 07-15 + Smashing Vitaly 07-03 前作 + Nielsen 07-17 Substack + Smashing 記事一覧ページ + Vitaly LinkedIn プロフィール + Vitaly のインタビュー podcast)、(e) 純 UI 批評 に振りすぎず『何のためのAIか』という Primary 学習者が明日から使える判断軸で着地。",
+    "method": "product-launches",
+    "description": "Awwwards SOTD の直近 5 日間 (07-14〜07-19) を crawl し、日本人ソロ開発者 Daiki Odaka の Galaxy of Structures (SOTD 2026-07-14, HTML5 Canvas + vanilla JavaScript で 7000 個の粒子を実装、ライブラリ 0) を Sunday evergreen 帯 + 柱⑤ ポートフォリオ事例 (-2.3pt gap) 修復向けに抽出。07-18 PDCA Action #3 予約タスク『07-19 (Sun) は柱⑤ Before/After (7.7%) 修復に振る、method 候補は product-launches (Awwwards SOTD で柱⑤ 直撃可能、avg 0.00 だが 07-12 = 7 日前で丁度 window 外 clear) or news-en (avg 1.00)』を実行。method 選定: 直近 14 日 (07-06〜07-18) method 別 avg views は official-src=2.00 (n=2, TOP1) だが柱① Figma 公式 が既に 30.8% (over 5.8pt) で Figma 集中期の反動長期化リスク大につき回避、news-en=1.00 (n=3, TOP2 viable) と product-launches=0.00 (n=1) の 2 択のうち、Sunday evergreen 帯 (戦略運用フォーマット『土日 Tips・Before/After・ポートフォリオ事例 OK』) と柱⑤ 修復 (-2.3pt) + Awwwards SOTD 直撃可能性の 3 点合致で product-launches を Explore 枠として採用。social-en は 07-10 = 3 view 伸長で avg 1.50 に急上昇したが 07-18 PDCA での 2 週連続 WORST → 07-24 まで凍結決定を規律優先で継続、expert-blog は 07-15+07-18 で 2 hits in 7-day window で 07-22 まで凍結、figma-community は 07-17 = 2 日前で 2-day rule 抵触、official-src は 07-16 = 3 日前 gate OK だが柱① over 回避で退避。product-launches 前回登場 07-12 Vectr Awwwards SOTD (views=0) の失敗を、07-12 の数字先出しフック (Lighthouse 94/98/100/100) → 今日 07-19 は storytelling 先出しフック (『駆け出しがポートフォリオに悩む日曜。日本人ソロ開発者がライブラリ 0 で獲得』) に切り替えて再挑戦、フックタイプの A/B を method 内で走らせる形。反問/対比フック A/B window は 07-15〜07-19 の 5 日連続で完成 (07-15 『Figma を開く前に』 → 07-16 『After Effects まだ買わないで』 → 07-17 『Blender まだ開かないで』 → 07-18 『AI 機能つけとこうって思ってた』 → 今日 07-19 『駆け出しがポートフォリオに悩む日曜』)、07-20 (Mon) PDCA でフックタイプ別 method 分業を正式判定する。柱バランス緊急度 > method rank ルール N=3 蓄積完了 (07-17+07-18+今日) で 07-25 頃に strategy.md 追記候補『柱の gap が過去 14 日 avg views 上位 method との差より大きい場合、柱修復を優先する』の正式明文化を再検討。日本人デザイナー縦糸を今日から新開始、既存 200 人の日本語 YouTube 講座フォロワー Primary 層に『日本人が世界で戦えている』フレームは Japan-only channel の独自 positioning として強力な candidate、08 月に月 1-2 回リズムで日本発デザイナー/開発者 (Awwwards / Figma Community / Product Hunt / Config talks) を並べる運用フォーマット追記提案。個人開発者ストーリー縦糸の 2 号目消化 (07-17 Fluido Ihor Figma プラグイン開発者 → 今日 07-19 Daiki Odaka Web 作品開発者)、次候補は 07-24 (Fri) の figma-community 枠で 3 号目。NG パターン回避: (a) AI=補助輪フレーム維持 — Daiki Odaka の『ライブラリ 0 で作品完成』は AI 不使用の Craft 側の事例で、Primary の『自分の手で作る』self-efficacy に直撃、(b) 高度すぎるプロ議論ではなく『Figma で構造だけ写経して自分の作品に翻訳する』日曜の実践 tip で着地、(c) freshness_hours=120 (07-14 SOTD 授与から 5 日) で 168 NG ライン内、(d) 出典 3 ソースで multi-source confirm (Awwwards Galaxy of Structures ページ + Awwwards SOTD リスト + Awwwards Portfolio カテゴリ)、(e) 純ポートフォリオ批評に振りすぎず『真似したくなる作品を Figma で写経する』という Primary 学習者が今日から使える actionable な weekend routine で着地。",
     "sources": [
-      "https://www.smashingmagazine.com/2026/07/people-dont-want-more-ai/",
-      "https://www.smashingmagazine.com/2026/07/users-dont-need-more-tools-need-seamless-integrations/",
-      "https://jakobnielsenphd.substack.com/p/ux-roundup-20260717",
-      "https://www.smashingmagazine.com/author/vitaly-friedman/",
-      "https://de.linkedin.com/in/vitalyfriedman",
-      "https://podcasts.apple.com/us/podcast/26-vitaly-friedman-on-smashing-magazine-complexity/id1818525189?i=1000754569971"
+      "https://www.awwwards.com/sites/galaxy-of-structures",
+      "https://www.awwwards.com/websites/sites_of_the_day/",
+      "https://www.awwwards.com/websites/portfolio/"
     ],
-    "query": "Vitaly Friedman Smashing Magazine No People Dont Want More AI July 15 2026 automation boring stuff seamless integration",
-    "freshness_hours": 72
+    "query": "Awwwards Site of the Day July 2026 designer portfolio Galaxy of Structures Daiki Odaka HTML5 Canvas vanilla JavaScript 7000 particles",
+    "freshness_hours": 120
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Smashing 創業者 Vitaly が今週 AI 機能病を名指し批判、駆け出しに響く 3 日前論考",
-      "description": "ポートフォリオに AI 機能、とりあえずつけとこうって思ってた駆け出し。Smashing 創業者 Vitaly が今週、その発想を名指しで批判しました。",
-      "detail": "多くの企業がユーザーは AI 機能を欲しがっていると勘違いしていると Vitaly さんは指摘。実際にユーザーが望んでいるのは、面倒な作業を代わりにやってくれる AI であって、自分を AI 側に合わせて変える AI ではないという主張です。ちょうど昨日 Jakob Nielsen も、世に出た 41,662 の AI Skills のうち 53% は導入後一度も更新されていないと発表、AI の中身より置いた事実で満足する UX の危うさを裏付けています。",
-      "narration": "ポートフォリオに AI 機能、つけとこうって思ってた駆け出し。今週 Smashing の Vitaly さんが、その発想を名指しで批判しました。",
+      "title": "日本人ソロ開発者が今週の Awwwards SOTD、ライブラリ 0 で 7000 粒子の宇宙",
+      "description": "駆け出しがポートフォリオに悩む日曜。今週の Awwwards SOTD、日本人ソロ開発者がライブラリ 0 で獲得しました。",
+      "detail": "Daiki Odaka さんの Galaxy of Structures は、素の JavaScript だけで 7000 個の粒子が動く宇宙を実装。今週火曜の Awwwards SOTD を獲り、ライブラリ盛らない手数の絞りが世界で評価されました。",
+      "narration": "駆け出しがポートフォリオに悩む日曜。今週の Awwwards SOTD、日本人ソロ開発者がライブラリ 0 で獲りました。",
       "tags": [
-        "UX批評",
-        "AI",
-        "Smashing"
+        "Awwwards",
+        "SOTD",
+        "ポートフォリオ事例"
       ],
       "narration_sections": {
-        "hook": "ポートフォリオに AI 機能、つけとこうって思ってた駆け出し。今週 Smashing の Vitaly さんが、その発想を名指しで批判しました。",
-        "origin": "多くの企業がユーザーは AI 機能を欲しがっていると勘違いしていると Vitaly さんは指摘。実際は違い、人は面倒な作業を代わりにやってくれる AI を望んでいて、自分を AI 側に合わせて変える AI は望んでいないのだと。",
-        "recommend": "作品に AI 機能を並べる前に、消したい面倒を先に決めるのが今週の学びです。AI は補助輪、目的が先です。"
+        "hook": "駆け出しがポートフォリオに悩む日曜。今週の Awwwards SOTD、日本人ソロ開発者がライブラリ 0 で獲りました。",
+        "origin": "Daiki Odaka さんの Galaxy of Structures は、素の JavaScript だけで 7000 個の粒子が動く宇宙を実装。今週火曜の Awwwards SOTD を獲り、ライブラリ盛らない手数の絞りが世界で評価されました。",
+        "recommend": "凄いポートフォリオは真似したくなるもの。Figma で構造だけ写経して、自分の作品に翻訳する日曜が最短ルートです。"
       },
       "section_titles": {
-        "hook": "AI詰めるな警鐘",
-        "origin": "Smashing今週批評",
-        "recommend": "面倒を先に決める"
+        "hook": "SOTD日本人単独",
+        "origin": "素のJS 7000粒子",
+        "recommend": "Figmaで構造写経"
       },
       "section_descriptions": {
-        "hook": "Smashing今週の話題論考、駆け出し必読",
-        "origin": "多くの企業が勘違いしているとVitalyが指摘",
-        "recommend": "AIは補助輪、目的から逆算する視点で選ぶ"
+        "hook": "今週 SOTD、駆け出しに刺さる日本人快挙",
+        "origin": "Three.js 使わず素のCanvasで宇宙を実装",
+        "recommend": "凄い作品を Figma で写経し自分に翻訳する"
       }
     }
   ]
