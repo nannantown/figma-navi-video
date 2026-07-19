@@ -1,42 +1,42 @@
 {
-  "date": "2026-07-19",
+  "date": "2026-07-20",
   "discovery": {
-    "method": "product-launches",
-    "description": "Awwwards SOTD の直近 5 日間 (07-14〜07-19) を crawl し、日本人ソロ開発者 Daiki Odaka の Galaxy of Structures (SOTD 2026-07-14, HTML5 Canvas + vanilla JavaScript で 7000 個の粒子を実装、ライブラリ 0) を Sunday evergreen 帯 + 柱⑤ ポートフォリオ事例 (-2.3pt gap) 修復向けに抽出。07-18 PDCA Action #3 予約タスク『07-19 (Sun) は柱⑤ Before/After (7.7%) 修復に振る、method 候補は product-launches (Awwwards SOTD で柱⑤ 直撃可能、avg 0.00 だが 07-12 = 7 日前で丁度 window 外 clear) or news-en (avg 1.00)』を実行。method 選定: 直近 14 日 (07-06〜07-18) method 別 avg views は official-src=2.00 (n=2, TOP1) だが柱① Figma 公式 が既に 30.8% (over 5.8pt) で Figma 集中期の反動長期化リスク大につき回避、news-en=1.00 (n=3, TOP2 viable) と product-launches=0.00 (n=1) の 2 択のうち、Sunday evergreen 帯 (戦略運用フォーマット『土日 Tips・Before/After・ポートフォリオ事例 OK』) と柱⑤ 修復 (-2.3pt) + Awwwards SOTD 直撃可能性の 3 点合致で product-launches を Explore 枠として採用。social-en は 07-10 = 3 view 伸長で avg 1.50 に急上昇したが 07-18 PDCA での 2 週連続 WORST → 07-24 まで凍結決定を規律優先で継続、expert-blog は 07-15+07-18 で 2 hits in 7-day window で 07-22 まで凍結、figma-community は 07-17 = 2 日前で 2-day rule 抵触、official-src は 07-16 = 3 日前 gate OK だが柱① over 回避で退避。product-launches 前回登場 07-12 Vectr Awwwards SOTD (views=0) の失敗を、07-12 の数字先出しフック (Lighthouse 94/98/100/100) → 今日 07-19 は storytelling 先出しフック (『駆け出しがポートフォリオに悩む日曜。日本人ソロ開発者がライブラリ 0 で獲得』) に切り替えて再挑戦、フックタイプの A/B を method 内で走らせる形。反問/対比フック A/B window は 07-15〜07-19 の 5 日連続で完成 (07-15 『Figma を開く前に』 → 07-16 『After Effects まだ買わないで』 → 07-17 『Blender まだ開かないで』 → 07-18 『AI 機能つけとこうって思ってた』 → 今日 07-19 『駆け出しがポートフォリオに悩む日曜』)、07-20 (Mon) PDCA でフックタイプ別 method 分業を正式判定する。柱バランス緊急度 > method rank ルール N=3 蓄積完了 (07-17+07-18+今日) で 07-25 頃に strategy.md 追記候補『柱の gap が過去 14 日 avg views 上位 method との差より大きい場合、柱修復を優先する』の正式明文化を再検討。日本人デザイナー縦糸を今日から新開始、既存 200 人の日本語 YouTube 講座フォロワー Primary 層に『日本人が世界で戦えている』フレームは Japan-only channel の独自 positioning として強力な candidate、08 月に月 1-2 回リズムで日本発デザイナー/開発者 (Awwwards / Figma Community / Product Hunt / Config talks) を並べる運用フォーマット追記提案。個人開発者ストーリー縦糸の 2 号目消化 (07-17 Fluido Ihor Figma プラグイン開発者 → 今日 07-19 Daiki Odaka Web 作品開発者)、次候補は 07-24 (Fri) の figma-community 枠で 3 号目。NG パターン回避: (a) AI=補助輪フレーム維持 — Daiki Odaka の『ライブラリ 0 で作品完成』は AI 不使用の Craft 側の事例で、Primary の『自分の手で作る』self-efficacy に直撃、(b) 高度すぎるプロ議論ではなく『Figma で構造だけ写経して自分の作品に翻訳する』日曜の実践 tip で着地、(c) freshness_hours=120 (07-14 SOTD 授与から 5 日) で 168 NG ライン内、(d) 出典 3 ソースで multi-source confirm (Awwwards Galaxy of Structures ページ + Awwwards SOTD リスト + Awwwards Portfolio カテゴリ)、(e) 純ポートフォリオ批評に振りすぎず『真似したくなる作品を Figma で写経する』という Primary 学習者が今日から使える actionable な weekend routine で着地。",
+    "method": "news-en",
+    "description": "英語 UX 業界の権威 Nielsen Norman Group が 7/17 に公開した論考『Why Human-Led Research Still Matters in the Age of AI』を主軸に、AI が UX リサーチの成果物を出せても、ユーザーを一緒に観察してチームが意味を作る体験は外注できないという industry authority statement を pillar ③ 業界 修復向けに抽出。07-19 PDCA Action #3 予約タスク『07-20 (Mon) は平日ニュース帯復帰、柱② or 柱③ 修復、method 候補は official-src (avg 2.00 TOP1) or news-en (avg 1.00、07-14 = 6 日前 gate OK、柱② or ③ 直撃可能で最有力)』を実行。method 選定: 14 日窓 07-07〜07-19 で news-en は 07-06 Framer Fable 5 (views=2) が今日窓外に抜けて n=3→2、avg 1.00 → 0.50 に低下したが依然 TOP3、official-src TOP1 avg 2.00 は柱① Figma 公式 が 30.8% (over 5.8pt) 継続の反動長期化リスクで回避、figma-community avg 0.00 は柱② プラグイン (under 4.6pt) の修復緊急度が柱③ 12.3pt を下回るため後回し。柱③ 業界 は 07-06 Framer Fable 5 (柱③) 窓外抜けで 07-19 時点 2/13 = 15.4% → 今日 1/13 = 7.7% (under 12.3pt) に急落、14 日窓最大の運用ギャップに浮上、news-en で直撃修復が緊急度最高。product-launches は 07-19 = 昨日で 2-day rule 抵触、expert-blog は 07-18 = 2 日前 2-day rule + 07-15+07-18 = 7-day 2 hits で 07-22 まで凍結、social-en は 07-24 まで凍結継続。NG パターン回避: (a) NN Group の主張『AI がリサーチ結果を出せても、ユーザーを一緒に観察してチームが学び合う体験は外注できない』は我々の戦略『AI は補助輪、判断は人が』と同軸 = NG『AI がデザイナーの仕事を奪う系』の逆張り論考として位置づけ、Primary 駆け出しデザイナー志望者の『観察スキル・ユーザーインタビュー実施経験が面接で語れる資産になる』self-efficacy を厚塗り、権威との一致による安心感を届ける、(b) freshness_hours=72 (07-17 論考公開から 3 日) で 168 NG ライン大幅内、(c) 出典 3 ソースで multi-source confirm (NN Group 論考本体 + NN Group articles list + NN Group AI topic 一覧)、(d) プロ向け高度議論ではなく『駆け出しが次回のユーザーインタビューで、AI 要約と自分のメモを Figma で横並びに残しておく』actionable な weekday routine で着地、(e) NN Group を industry authority reference として今後も柱③/⑥ で選択的引用するリズム候補、07-25 頃に strategy.md『industry authority reference の縦糸化』追記提案。07-18 Vitaly (柱⑥) → 今日 07-20 NN Group (柱③) と 2 日空きで AI hype 逆張り論考 2 連続、視聴者飽きリスク要監視、07-21 (Tue) は必ず AI hype 逆張り以外の topic (Figma 公式 or プラグイン product news) に切り替える運用ルール新規提案。反問/対比フック A/B window は 07-15〜07-19 の 5 日連続で完成、今日 07-20 は月曜ニュース帯で反問/対比型を継続 (『AI でリサーチも全部いける』引用+真反対の権威結論)、weekday news 帯に伝染するかの追加観測日、判定は 07-22 or 07-23 PDCA で正式化。個人開発者ストーリー縦糸は今日は休み、07-24 (Fri) の figma-community 枠で 3 号目再開予約継続。日本人デザイナー縦糸は 07-19 Daiki Odaka で 1 号投入済、次回 08 月中旬候補。柱バランス緊急度 > method rank ルール N=4 蓄積完了 (07-17+07-18+07-19+今日) で 07-25 頃に strategy.md 追記『柱の gap が過去 14 日 avg views 上位 method との差より大きい場合、柱修復を優先する』の正式明文化を再検討、今日は柱③ gap 12.3pt vs official-src と news-en の avg 差 1.5 で 8 倍規模のギャップ緊急度、判定は明白。",
     "sources": [
-      "https://www.awwwards.com/sites/galaxy-of-structures",
-      "https://www.awwwards.com/websites/sites_of_the_day/",
-      "https://www.awwwards.com/websites/portfolio/"
+      "https://www.nngroup.com/articles/human-led-research-still-matters/",
+      "https://www.nngroup.com/articles/",
+      "https://www.nngroup.com/topic/ai/"
     ],
-    "query": "Awwwards Site of the Day July 2026 designer portfolio Galaxy of Structures Daiki Odaka HTML5 Canvas vanilla JavaScript 7000 particles",
-    "freshness_hours": 120
+    "query": "Nielsen Norman Group July 17 2026 human-led research AI UX researcher observe users team learning",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "日本人ソロ開発者が今週の Awwwards SOTD、ライブラリ 0 で 7000 粒子の宇宙",
-      "description": "駆け出しがポートフォリオに悩む日曜。今週の Awwwards SOTD、日本人ソロ開発者がライブラリ 0 で獲得しました。",
-      "detail": "Daiki Odaka さんの Galaxy of Structures は、素の JavaScript だけで 7000 個の粒子が動く宇宙を実装。今週火曜の Awwwards SOTD を獲り、ライブラリ盛らない手数の絞りが世界で評価されました。",
-      "narration": "駆け出しがポートフォリオに悩む日曜。今週の Awwwards SOTD、日本人ソロ開発者がライブラリ 0 で獲りました。",
+      "title": "NN Group が 7/17 に AI vs 人間 UX リサーチに結論、観察の場は外注できない",
+      "description": "「AI でリサーチも全部いける」— 駆け出しがそう思った月曜。UX の権威 NN Group が 7/17、真反対の結論を出しました。",
+      "detail": "NN の 7/17 論考の要点は『AI がリサーチの結果を出せても、ユーザーを一緒に観察してチームが意味を作る体験は外注できない』。数字だけが成果物ではなく、その観察の場そのものが駆け出しデザイナーの現場価値になる、が主張です。",
+      "narration": "「AI でリサーチも全部いける」— 駆け出しがそう思った月曜。UX の権威 NN Group が 7/17、真反対の結論を出しました。",
       "tags": [
-        "Awwwards",
-        "SOTD",
-        "ポートフォリオ事例"
+        "Nielsen Norman Group",
+        "UX リサーチ",
+        "AI 補助輪"
       ],
       "narration_sections": {
-        "hook": "駆け出しがポートフォリオに悩む日曜。今週の Awwwards SOTD、日本人ソロ開発者がライブラリ 0 で獲りました。",
-        "origin": "Daiki Odaka さんの Galaxy of Structures は、素の JavaScript だけで 7000 個の粒子が動く宇宙を実装。今週火曜の Awwwards SOTD を獲り、ライブラリ盛らない手数の絞りが世界で評価されました。",
-        "recommend": "凄いポートフォリオは真似したくなるもの。Figma で構造だけ写経して、自分の作品に翻訳する日曜が最短ルートです。"
+        "hook": "「AI でリサーチも全部いける」— 駆け出しがそう思った月曜。UX の権威 NN Group が 7/17、真反対の結論を出しました。",
+        "origin": "NN の 7/17 論考の要点は『AI がリサーチの結果を出せても、ユーザーを一緒に観察してチームが意味を作る体験は外注できない』。数字だけが成果物ではなく、その観察の場そのものが駆け出しデザイナーの現場価値になる、が主張です。",
+        "recommend": "面接で語れる強みが1つ増える発見。次のユーザーインタビュー、AI の要約と自分のメモ、Figma で横並びに残しましょう。"
       },
       "section_titles": {
-        "hook": "SOTD日本人単独",
-        "origin": "素のJS 7000粒子",
-        "recommend": "Figmaで構造写経"
+        "hook": "NN Groupが警鐘",
+        "origin": "観察の場は外注不可",
+        "recommend": "Figmaで観察資産化"
       },
       "section_descriptions": {
-        "hook": "今週 SOTD、駆け出しに刺さる日本人快挙",
-        "origin": "Three.js 使わず素のCanvasで宇宙を実装",
-        "recommend": "凄い作品を Figma で写経し自分に翻訳する"
+        "hook": "AI全能論に7/17、NNが真反対の結論",
+        "origin": "観察でチームが学ぶ体験こそ現場の価値になる",
+        "recommend": "面接で語れる観察力、Figmaで記録する"
       }
     }
   ]
