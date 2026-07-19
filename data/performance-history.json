@@ -2569,7 +2569,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-18T00:08:48.785Z"
+        "updatedAt": "2026-07-19T00:10:16.478Z"
       }
     },
     {
@@ -2612,7 +2612,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-18T00:08:48.785Z"
+        "updatedAt": "2026-07-19T00:10:16.478Z"
       }
     },
     {
@@ -2656,7 +2656,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-18T00:08:48.785Z"
+        "updatedAt": "2026-07-19T00:10:16.478Z"
       }
     },
     {
@@ -2701,7 +2701,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-18T00:08:48.785Z"
+        "updatedAt": "2026-07-19T00:10:16.478Z"
       }
     },
     {
@@ -2746,7 +2746,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-18T00:08:48.785Z"
+        "updatedAt": "2026-07-19T00:10:16.478Z"
       }
     },
     {
@@ -2791,7 +2791,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-18T00:08:48.785Z"
+        "updatedAt": "2026-07-19T00:10:16.478Z"
       }
     },
     {
@@ -2835,7 +2835,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-18T00:08:48.785Z"
+        "updatedAt": "2026-07-19T00:10:16.478Z"
       }
     },
     {
@@ -2880,7 +2880,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-18T00:08:48.785Z"
+        "updatedAt": "2026-07-19T00:10:16.478Z"
       }
     },
     {
@@ -2925,7 +2925,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-18T00:08:48.785Z"
+        "updatedAt": "2026-07-19T00:10:16.478Z"
       }
     },
     {
@@ -2970,7 +2970,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-18T00:08:48.785Z"
+        "updatedAt": "2026-07-19T00:10:16.478Z"
       }
     },
     {
@@ -3015,7 +3015,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-18T00:08:48.785Z"
+        "updatedAt": "2026-07-19T00:10:16.478Z"
       }
     },
     {
@@ -3062,7 +3062,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-18T00:08:48.785Z"
+        "updatedAt": "2026-07-19T00:10:16.478Z"
       }
     },
     {
@@ -3104,6 +3104,48 @@
         "freshness_hours": 72
       },
       "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-07-19T00:10:16.478Z"
+      }
+    },
+    {
+      "videoId": "go7nSpLvW70",
+      "videoUrl": "https://youtube.com/shorts/go7nSpLvW70",
+      "date": "2026-07-19",
+      "title": "【デザインニュース】日本人ソロ開発者が今週の Awwwards SOTD、ライブラリ 0 で 7000 粒子の宇宙｜2026/07/19 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 39,
+      "discovery": {
+        "method": "product-launches",
+        "description": "Awwwards SOTD の直近 5 日間 (07-14〜07-19) を crawl し、日本人ソロ開発者 Daiki Odaka の Galaxy of Structures (SOTD 2026-07-14, HTML5 Canvas + vanilla JavaScript で 7000 個の粒子を実装、ライブラリ 0) を Sunday evergreen 帯 + 柱⑤ ポートフォリオ事例 (-2.3pt gap) 修復向けに抽出。07-18 PDCA Action #3 予約タスク『07-19 (Sun) は柱⑤ Before/After (7.7%) 修復に振る、method 候補は product-launches (Awwwards SOTD で柱⑤ 直撃可能、avg 0.00 だが 07-12 = 7 日前で丁度 window 外 clear) or news-en (avg 1.00)』を実行。method 選定: 直近 14 日 (07-06〜07-18) method 別 avg views は official-src=2.00 (n=2, TOP1) だが柱① Figma 公式 が既に 30.8% (over 5.8pt) で Figma 集中期の反動長期化リスク大につき回避、news-en=1.00 (n=3, TOP2 viable) と product-launches=0.00 (n=1) の 2 択のうち、Sunday evergreen 帯 (戦略運用フォーマット『土日 Tips・Before/After・ポートフォリオ事例 OK』) と柱⑤ 修復 (-2.3pt) + Awwwards SOTD 直撃可能性の 3 点合致で product-launches を Explore 枠として採用。social-en は 07-10 = 3 view 伸長で avg 1.50 に急上昇したが 07-18 PDCA での 2 週連続 WORST → 07-24 まで凍結決定を規律優先で継続、expert-blog は 07-15+07-18 で 2 hits in 7-day window で 07-22 まで凍結、figma-community は 07-17 = 2 日前で 2-day rule 抵触、official-src は 07-16 = 3 日前 gate OK だが柱① over 回避で退避。product-launches 前回登場 07-12 Vectr Awwwards SOTD (views=0) の失敗を、07-12 の数字先出しフック (Lighthouse 94/98/100/100) → 今日 07-19 は storytelling 先出しフック (『駆け出しがポートフォリオに悩む日曜。日本人ソロ開発者がライブラリ 0 で獲得』) に切り替えて再挑戦、フックタイプの A/B を method 内で走らせる形。反問/対比フック A/B window は 07-15〜07-19 の 5 日連続で完成 (07-15 『Figma を開く前に』 → 07-16 『After Effects まだ買わないで』 → 07-17 『Blender まだ開かないで』 → 07-18 『AI 機能つけとこうって思ってた』 → 今日 07-19 『駆け出しがポートフォリオに悩む日曜』)、07-20 (Mon) PDCA でフックタイプ別 method 分業を正式判定する。柱バランス緊急度 > method rank ルール N=3 蓄積完了 (07-17+07-18+今日) で 07-25 頃に strategy.md 追記候補『柱の gap が過去 14 日 avg views 上位 method との差より大きい場合、柱修復を優先する』の正式明文化を再検討。日本人デザイナー縦糸を今日から新開始、既存 200 人の日本語 YouTube 講座フォロワー Primary 層に『日本人が世界で戦えている』フレームは Japan-only channel の独自 positioning として強力な candidate、08 月に月 1-2 回リズムで日本発デザイナー/開発者 (Awwwards / Figma Community / Product Hunt / Config talks) を並べる運用フォーマット追記提案。個人開発者ストーリー縦糸の 2 号目消化 (07-17 Fluido Ihor Figma プラグイン開発者 → 今日 07-19 Daiki Odaka Web 作品開発者)、次候補は 07-24 (Fri) の figma-community 枠で 3 号目。NG パターン回避: (a) AI=補助輪フレーム維持 — Daiki Odaka の『ライブラリ 0 で作品完成』は AI 不使用の Craft 側の事例で、Primary の『自分の手で作る』self-efficacy に直撃、(b) 高度すぎるプロ議論ではなく『Figma で構造だけ写経して自分の作品に翻訳する』日曜の実践 tip で着地、(c) freshness_hours=120 (07-14 SOTD 授与から 5 日) で 168 NG ライン内、(d) 出典 3 ソースで multi-source confirm (Awwwards Galaxy of Structures ページ + Awwwards SOTD リスト + Awwwards Portfolio カテゴリ)、(e) 純ポートフォリオ批評に振りすぎず『真似したくなる作品を Figma で写経する』という Primary 学習者が今日から使える actionable な weekend routine で着地。",
+        "sources": [
+          "https://www.awwwards.com/sites/galaxy-of-structures",
+          "https://www.awwwards.com/websites/sites_of_the_day/",
+          "https://www.awwwards.com/websites/portfolio/"
+        ],
+        "query": "Awwwards Site of the Day July 2026 designer portfolio Galaxy of Structures Daiki Odaka HTML5 Canvas vanilla JavaScript 7000 particles",
+        "freshness_hours": 120
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -3112,14 +3154,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-06-10",
-      "changes": [
-        "standard: 85 avg views (39 videos)",
-        "Day performance: Wed=127, Sat=99, Sun=88, Thu=79, Tue=72, Fri=69, Mon=52"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-06-11",
       "changes": [
@@ -3349,6 +3383,14 @@
       "changes": [
         "standard: 50 avg views (68 videos)",
         "Day performance: Wed=85, Sat=55, Sun=54, Thu=44, Tue=44, Fri=40, Mon=27"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-19",
+      "changes": [
+        "standard: 49 avg views (69 videos)",
+        "Day performance: Wed=85, Sun=54, Sat=50, Thu=44, Tue=44, Fri=40, Mon=27"
       ],
       "recommendedTemplate": "standard"
     }
