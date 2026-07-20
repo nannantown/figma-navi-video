@@ -2612,7 +2612,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-19T00:10:16.478Z"
+        "updatedAt": "2026-07-20T02:12:58.430Z"
       }
     },
     {
@@ -2656,7 +2656,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-19T00:10:16.478Z"
+        "updatedAt": "2026-07-20T02:12:58.430Z"
       }
     },
     {
@@ -2701,7 +2701,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-19T00:10:16.478Z"
+        "updatedAt": "2026-07-20T02:12:58.430Z"
       }
     },
     {
@@ -2746,7 +2746,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-19T00:10:16.478Z"
+        "updatedAt": "2026-07-20T02:12:58.430Z"
       }
     },
     {
@@ -2791,7 +2791,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-19T00:10:16.478Z"
+        "updatedAt": "2026-07-20T02:12:58.430Z"
       }
     },
     {
@@ -2835,7 +2835,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-19T00:10:16.478Z"
+        "updatedAt": "2026-07-20T02:12:58.430Z"
       }
     },
     {
@@ -2880,7 +2880,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-19T00:10:16.478Z"
+        "updatedAt": "2026-07-20T02:12:58.430Z"
       }
     },
     {
@@ -2925,7 +2925,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-19T00:10:16.478Z"
+        "updatedAt": "2026-07-20T02:12:58.430Z"
       }
     },
     {
@@ -2970,7 +2970,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-19T00:10:16.478Z"
+        "updatedAt": "2026-07-20T02:12:58.430Z"
       }
     },
     {
@@ -3015,7 +3015,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-19T00:10:16.478Z"
+        "updatedAt": "2026-07-20T02:12:58.430Z"
       }
     },
     {
@@ -3062,7 +3062,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-19T00:10:16.478Z"
+        "updatedAt": "2026-07-20T02:12:58.430Z"
       }
     },
     {
@@ -3107,7 +3107,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-19T00:10:16.478Z"
+        "updatedAt": "2026-07-20T02:12:58.430Z"
       }
     },
     {
@@ -3146,6 +3146,48 @@
         "freshness_hours": 120
       },
       "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-07-20T02:12:58.430Z"
+      }
+    },
+    {
+      "videoId": "LEYlEg9wEvo",
+      "videoUrl": "https://youtube.com/shorts/LEYlEg9wEvo",
+      "date": "2026-07-20",
+      "title": "【デザインニュース】NN Group が 7/17 に AI vs 人間 UX リサーチに結論、観察の場は外注できない｜2026/07/20 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 45,
+      "discovery": {
+        "method": "news-en",
+        "description": "英語 UX 業界の権威 Nielsen Norman Group が 7/17 に公開した論考『Why Human-Led Research Still Matters in the Age of AI』を主軸に、AI が UX リサーチの成果物を出せても、ユーザーを一緒に観察してチームが意味を作る体験は外注できないという industry authority statement を pillar ③ 業界 修復向けに抽出。07-19 PDCA Action #3 予約タスク『07-20 (Mon) は平日ニュース帯復帰、柱② or 柱③ 修復、method 候補は official-src (avg 2.00 TOP1) or news-en (avg 1.00、07-14 = 6 日前 gate OK、柱② or ③ 直撃可能で最有力)』を実行。method 選定: 14 日窓 07-07〜07-19 で news-en は 07-06 Framer Fable 5 (views=2) が今日窓外に抜けて n=3→2、avg 1.00 → 0.50 に低下したが依然 TOP3、official-src TOP1 avg 2.00 は柱① Figma 公式 が 30.8% (over 5.8pt) 継続の反動長期化リスクで回避、figma-community avg 0.00 は柱② プラグイン (under 4.6pt) の修復緊急度が柱③ 12.3pt を下回るため後回し。柱③ 業界 は 07-06 Framer Fable 5 (柱③) 窓外抜けで 07-19 時点 2/13 = 15.4% → 今日 1/13 = 7.7% (under 12.3pt) に急落、14 日窓最大の運用ギャップに浮上、news-en で直撃修復が緊急度最高。product-launches は 07-19 = 昨日で 2-day rule 抵触、expert-blog は 07-18 = 2 日前 2-day rule + 07-15+07-18 = 7-day 2 hits で 07-22 まで凍結、social-en は 07-24 まで凍結継続。NG パターン回避: (a) NN Group の主張『AI がリサーチ結果を出せても、ユーザーを一緒に観察してチームが学び合う体験は外注できない』は我々の戦略『AI は補助輪、判断は人が』と同軸 = NG『AI がデザイナーの仕事を奪う系』の逆張り論考として位置づけ、Primary 駆け出しデザイナー志望者の『観察スキル・ユーザーインタビュー実施経験が面接で語れる資産になる』self-efficacy を厚塗り、権威との一致による安心感を届ける、(b) freshness_hours=72 (07-17 論考公開から 3 日) で 168 NG ライン大幅内、(c) 出典 3 ソースで multi-source confirm (NN Group 論考本体 + NN Group articles list + NN Group AI topic 一覧)、(d) プロ向け高度議論ではなく『駆け出しが次回のユーザーインタビューで、AI 要約と自分のメモを Figma で横並びに残しておく』actionable な weekday routine で着地、(e) NN Group を industry authority reference として今後も柱③/⑥ で選択的引用するリズム候補、07-25 頃に strategy.md『industry authority reference の縦糸化』追記提案。07-18 Vitaly (柱⑥) → 今日 07-20 NN Group (柱③) と 2 日空きで AI hype 逆張り論考 2 連続、視聴者飽きリスク要監視、07-21 (Tue) は必ず AI hype 逆張り以外の topic (Figma 公式 or プラグイン product news) に切り替える運用ルール新規提案。反問/対比フック A/B window は 07-15〜07-19 の 5 日連続で完成、今日 07-20 は月曜ニュース帯で反問/対比型を継続 (『AI でリサーチも全部いける』引用+真反対の権威結論)、weekday news 帯に伝染するかの追加観測日、判定は 07-22 or 07-23 PDCA で正式化。個人開発者ストーリー縦糸は今日は休み、07-24 (Fri) の figma-community 枠で 3 号目再開予約継続。日本人デザイナー縦糸は 07-19 Daiki Odaka で 1 号投入済、次回 08 月中旬候補。柱バランス緊急度 > method rank ルール N=4 蓄積完了 (07-17+07-18+07-19+今日) で 07-25 頃に strategy.md 追記『柱の gap が過去 14 日 avg views 上位 method との差より大きい場合、柱修復を優先する』の正式明文化を再検討、今日は柱③ gap 12.3pt vs official-src と news-en の avg 差 1.5 で 8 倍規模のギャップ緊急度、判定は明白。",
+        "sources": [
+          "https://www.nngroup.com/articles/human-led-research-still-matters/",
+          "https://www.nngroup.com/articles/",
+          "https://www.nngroup.com/topic/ai/"
+        ],
+        "query": "Nielsen Norman Group July 17 2026 human-led research AI UX researcher observe users team learning",
+        "freshness_hours": 72
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -3154,14 +3196,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-06-11",
-      "changes": [
-        "standard: 83 avg views (40 videos)",
-        "Day performance: Wed=109, Sat=100, Sun=88, Thu=79, Tue=72, Fri=69, Mon=52"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-06-13",
       "changes": [
@@ -3391,6 +3425,14 @@
       "changes": [
         "standard: 49 avg views (69 videos)",
         "Day performance: Wed=85, Sun=54, Sat=50, Thu=44, Tue=44, Fri=40, Mon=27"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-20",
+      "changes": [
+        "standard: 48 avg views (70 videos)",
+        "Day performance: Wed=85, Sat=50, Sun=49, Thu=44, Tue=44, Fri=40, Mon=27"
       ],
       "recommendedTemplate": "standard"
     }
