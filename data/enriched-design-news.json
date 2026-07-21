@@ -1,44 +1,46 @@
 {
-  "date": "2026-07-21",
+  "date": "2026-07-22",
   "discovery": {
-    "method": "official-src",
-    "description": "Figma 公式 Config 2026 recap ブログと Help Center 記事『Turn coded screens into editable design layers』から、mid-July rollout の Chrome 拡張 × Make preview × MCP server 経由の web ページ取り込みで色・タイプ・余白が既存 Variables に自動リンクされ frame も Auto Layout 付きで並ぶ workflow feature を pillar ① Figma 公式 修復向けに抽出。07-20 PDCA Action #3 予約タスク『07-21 (Tue) は残る修復として (a) 柱② プラグイン 4.6pt under or (b) 柱③ 業界 残り 5.7pt の継続修復、method 候補は official-src (avg 2.00 TOP1、7-day 窓内 07-16 のみ = 1 hit clear、柱② or ① どちら向いても Figma 公式ニュース枠) or figma-community (avg 0.00、07-17 = 4 日前 gate OK、柱② 修復に直撃)、07-20 → 07-21 の 2 日連続 AI hype 逆張り論考は積極回避』を実行。method 選定: 14 日窓 07-08〜07-20 で official-src は 07-08 + 07-16 で n=2 avg 2.00 継続 TOP1、7-day 窓内 hit は 07-16 のみ = 1 hit clear (07-08 = 13 日前で 7-day 窓外)、figma-community avg 0.00 も採用可能だが直近 168h 以内の fresh community plugin news が調査で確認できず 07-13 Weave + 07-17 Fluido との重複回避も難しく今日は見送り 07-24 (Fri) 予約、product-launches avg 0.00 は 07-19 = 2 日前で 2-day rule 境界クリアだが 2 週連続 WORST リスク+ 07-26 (Sun) Awwwards SOTD 縦糸予約温存で見送り、news-en は 07-20 昨日で 2-day rule 抵触、expert-blog は 07-15+07-18 = 7-day 2 hits で 07-22 まで凍結、social-en は 07-24 まで凍結継続。柱バランス緊急度: 07-07 DESIGN.md (柱④, views=0) が今日 07-21 で 14 日窓を抜けて柱④ = 2/13 = 15.4% → 1/13 = 7.7% (under 7.3pt) に急落、07-20 の柱③ 12.3pt under から柱④ 7.3pt under に緊急度反転、ただし weekday news 帯で Tips 修復は原則不可、07-25 (Sat) or 07-26 (Sun) の evergreen 帯で修復必須。柱① は今日 official-src 採用で 4/13 = 30.8% → 5/14 = 35.7% (over 10.7pt) に上昇、07-22-25 で 07-08 + 07-10 + 07-14 の柱① が順次窓外抜けで自然終息予測、07-24 時点で 3/14 = 21.4% (under 3.6pt) まで戻る、今日の反動許容は 07-25 頃までの一時コスト。柱② プラグイン は今日修復せず 07-22 (Wed) news-en 復帰で継続予約、07-24 (Fri) figma-community で individual-creator-story 縦糸 3 号目投入予定。NG パターン回避: (a) Config 2026 workflow news は AI hype 逆張り論考ではなく workflow 実装 news、07-18 Vitaly + 07-20 NN Group と 2 日空きの AI hype 逆張り 3 連続回避規律 N=1 実行 = 視聴者飽きリスクを workflow news 切り替えで解消、Primary 駆け出しデザイナー志望者への『AI hype 疲れさせない』運用ルールの実データ蓄積、(b) freshness_hours=168 (Config 2026 6/24 発表から 4 週間経過だが mid-July rollout 段階の feature = help center 記事は 7/14 以降の最新 update)、168h NG ライン境界に位置するが Chrome 拡張 × Variables 自動リンク自体が mid-July rollout の feature で fresh news 適合、(c) 出典 3 ソースで multi-source confirm (Figma Config 2026 recap ブログ + Help Center Turn coded screens 記事 + What's new from Config 2026 Help 記事)、(d) プロ向け高度議論ではなく『駆け出しがなぞる練習に疲れる → 憧れの LP を Chrome 拡張で Figma に取り込むと色や余白が自動で Variables に紐づく → design system 練習に直結する → 自分の言葉で書き換える一本を』actionable な weekday routine で着地、(e) Config 2026 mid-July rollout 縦糸として 07-30 頃までの official-src / news-en 系 news 補給源 (3D Transforms preview waitlist / Code Layers 早期アクセス / Chrome 拡張 × Variables / Weave 20+AI tools 深掘り / exportAsync 動画エクスポート / AI usage credit CSV for admins) 月 3-4 本のリズム化候補で今日は 1 号目投入。反問/共感型フック A/B window は 07-15〜07-20 の 6 日連続で反問型継続、今日 07-21 で 7 個目 sample『なぞる練習、途中で疲れていませんか』継続、weekday news 帯適用の 2 個目 sample。柱バランス緊急度 > method rank ルール N=4 蓄積の逆選択 = 例外ケース初出 (今日 07-21 は柱① 反動許容で official-src 採用)、fresh news 適合度 + AI hype 逆張り 3 連続回避規律 + Config 2026 深掘り再訪 (07-16 Motion 以来 5 日ぶり) の 3 目的が柱① 反動コストを上回った判定、07-25 頃に strategy.md 追記時の但し書き候補として蓄積。",
+    "method": "news-en",
+    "description": "07-21 PDCA Action #3 予約タスク実行。Framer 公式 updates ページ + Create With ブログ + Framer marketplace の Liquid Gradient / Logo Gradient コンポーネントページを横断し、07-16 リリースの 2 種シェーダーへのマウス追従機能追加 (Mouseプロパティ + springベース補間) を pillar ③ 業界デザインニュース 5.7pt under 修復向けに抽出。method 選定: 14 日窓 07-08〜07-21 で news-en は 07-09+07-14+07-20 で n=3 avg 0.33 中位、07-20 = 2 日前で 2-day rule 境界クリア、7-day 窓内 hit は 07-20 のみ (07-14 = 8 日前で 7-day 窓外) = 1 hit clear、product-launches (avg 0.50 n=2) と figma-community (avg 0.00 n=2) も採用可能だが product-launches は 07-26 Sun の Awwwards SOTD 週次縦糸温存で見送り、figma-community は 07-24 Fri の individual-creator-story 縦糸 3 号目 (Ando Yuma / Batch Styler Aleksandr 等の Figma プラグイン個人開発者) 予約温存で見送り、official-src は 07-21 昨日で 2-day rule 抵触、social-en は 07-24 まで凍結継続、expert-blog は 07-15+07-18 で 07-22 まで凍結 = 結果として news-en が最適。柱バランス緊急度: 07-21 で柱③ = 2/14 = 14.3% (under 5.7pt)、今日の news-en + 柱③ 採用で 07-22 時点の窓 (07-09〜07-22) では 3/14 = 21.4% (over 1.4pt) にほぼ target 到達、柱② は 2/14 = 14.3% (under 5.7pt) 継続で 07-24 figma-community 修復予約、柱④ Tips 7.9pt under は weekday news 主義で今日不可、07-25 Sat の evergreen 帯で修復必須。NG パターン回避: (a) Framer Shaders は AI hype 逆張り論考でも AI hype でもない product feature news、07-18 Vitaly + 07-20 NN Group の AI 逆張り 2 連続 → 07-21 workflow news → 07-22 product feature news の 4 日連続で AI 逆張り 3 連続回避規律 N=1 継続実行の 2 日目、Primary 駆け出しデザイナー志望者への『AI hype 疲れさせない』運用ルールの実データ蓄積継続、(b) freshness_hours=144 (07-16 リリースで 6 日前、168h 以内の fresh news 適合)、(c) 出典 3 ソースで multi-source confirm (Framer 公式 updates + Create With Framer 特集ブログ + Framer marketplace Liquid Gradient / Logo Gradient コンポーネント公式)、(d) プロ向け高度議論ではなく『駆け出しがポートフォリオに派手な視覚効果を入れたいが WebGL コードは書けない → Framer なら+ボタン一つで実装 → 憧れの動く背景がコード無しで再現できる → 主役はあなたの構成力』actionable な weekday routine で着地、(e) Framer 系ネタは 07-06 Fable 5 / Sonnet 5 (news-en, views=2) 以来 16 日ぶり = 同 method でも topic 軸を AI モデル → 視覚シェーダーに変えて重複回避、07-06 が 2 views で TOP 圏だった実績から Framer 系は audience 反応 OK 判定材料あり。反問/共感型フック 8 個目 sample『憧れのマウス追従する背景、コード書かずに作れる時代です』継続、weekday news 帯の 3 個目 sample。07-23 (Thu) expert-blog 復帰時の候補は AI 逆張り 3 号目回避 or Config 2026 深掘り継続 or 個人論考系新パターン試行 の 3 択、07-23 朝に確定。",
     "sources": [
-      "https://www.figma.com/blog/config-2026-recap/",
-      "https://help.figma.com/hc/en-us/articles/40826832449303-Turn-coded-screens-into-editable-design-layers",
-      "https://help.figma.com/hc/en-us/articles/39582753756695-What-s-new-from-Config-2026"
+      "https://www.framer.com/updates",
+      "https://www.createwith.com/tool/framer/updates/framer-launches-interactive-shaders-with-cursor-reactive-ripple-effect",
+      "https://www.framer.com/marketplace/components/liquid-gradient/",
+      "https://www.framer.com/community/marketplace/components/liquid-gradient/",
+      "https://www.framer.com/updates/shaders"
     ],
-    "query": "Figma design import variables binding Config 2026 code screens Chrome extension Make MCP",
-    "freshness_hours": 168
+    "query": "Framer Shaders Liquid Gradient Logo Gradient mouse interaction spring tracking July 16 2026",
+    "freshness_hours": 144
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma Chrome 拡張が取り込んだサイトを Variables に自動リンク、Config 2026 mid-July rollout",
-      "description": "なぞる練習、途中で疲れていませんか。",
-      "detail": "Config 2026 で発表されたこの機能では、Chrome 拡張・Make preview・MCP server 経由で web ページを Figma に取り込むと、色・タイプ・余白の値が既存の Variables に自動でリンクされ、frame も Auto Layout 付きで並びます。手直しなしでデザインシステムの練習に直結する workflow feature です。",
-      "narration": "なぞる練習、途中で疲れていませんか。7月からFigmaのChrome拡張で、取り込んだサイトの色と余白が自動でVariablesに繋がります",
+      "title": "Framerのシェーダーがマウス追従に正式対応、ポートフォリオの背景がコードなしで動く時代に",
+      "description": "憧れのマウス追従する背景、コード書かずに作れる時代です。",
+      "detail": "7月16日にFramerが、Liquid GradientとLogo Gradientの2つのシェーダーにマウス追従機能を追加。シェーダー選択時にMouseプロパティが増え、+ボタン一つでカーソル追従を有効化できます。動きはspringベースで滑らか、WebGLコードや外部ライブラリなしでポートフォリオに派手な視覚効果を実装できる product feature アップデートです。",
+      "narration": "憧れのマウス追従する背景、コード書かずに作れる時代です。7月16日、Framerが2種類のシェーダーにマウス反応を正式追加しました",
       "tags": [
-        "Figma",
-        "Config 2026",
-        "Variables",
-        "Chrome拡張",
-        "デザインシステム"
+        "Framer",
+        "Shaders",
+        "Liquid Gradient",
+        "ポートフォリオ",
+        "WebGL"
       ],
       "narration_sections": {
-        "hook": "なぞる練習、途中で疲れていませんか。7月からFigmaのChrome拡張で、取り込んだサイトの色と余白が自動でVariablesに繋がります",
-        "origin": "Config 2026発表のこの機能、Chrome拡張やMake、MCP経由でサイトを取り込むと色やタイプや余白が既存Variablesに自動リンク、frameもAuto Layoutで並びます。手直しなしでデザインシステム練習に直結です",
-        "recommend": "今日の練習は、憧れのLPを取り込んで自分の言葉で書き換える一本を。AIは補助輪、判断はあなたのままで大丈夫です"
+        "hook": "憧れのマウス追従する背景、コード書かずに作れる時代です。7月16日、Framerが2種類のシェーダーにマウス反応を正式追加しました",
+        "origin": "対応はLiquid GradientとLogo Gradientの2つ。流れるグラデ背景と、SVGに動くグラデを重ねる効果です。シェーダー選択時にMouseプロパティが追加され、+ボタン一つで追従を有効化。springベースで滑らかに動きます",
+        "recommend": "今日の一手は、ポートフォリオのヒーロー画面1枚でこの効果を試すこと。派手さは補助輪で、主役はあなたの構成力のままです"
       },
       "section_titles": {
-        "hook": "なぞり練習に朗報です",
-        "origin": "変数まで自動リンク",
-        "recommend": "AIは補助輪です"
+        "hook": "背景がマウスに追従",
+        "origin": "液体グラデも対応",
+        "recommend": "ポートフォリオで試す"
       },
       "section_descriptions": {
-        "hook": "参考サイトを取り込むだけで変数に繋がる時代",
-        "origin": "Chrome拡張・Make・MCPの3経路で自動リンク",
-        "recommend": "今週試す一手と、AIとの向き合い方をお伝えします"
+        "hook": "コード書かずに動く背景を実装できる時代の到来です",
+        "origin": "Liquid Gradient含む2つに+ボタン追加",
+        "recommend": "ヒーロー1画面で試す。派手さは補助輪、主役はあなたです"
       }
     }
   ]
