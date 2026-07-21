@@ -2656,7 +2656,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-20T02:12:58.430Z"
+        "updatedAt": "2026-07-21T00:08:56.208Z"
       }
     },
     {
@@ -2701,7 +2701,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-20T02:12:58.430Z"
+        "updatedAt": "2026-07-21T00:08:56.208Z"
       }
     },
     {
@@ -2746,7 +2746,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-20T02:12:58.430Z"
+        "updatedAt": "2026-07-21T00:08:56.208Z"
       }
     },
     {
@@ -2791,7 +2791,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-20T02:12:58.430Z"
+        "updatedAt": "2026-07-21T00:08:56.208Z"
       }
     },
     {
@@ -2835,7 +2835,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-20T02:12:58.430Z"
+        "updatedAt": "2026-07-21T00:08:56.208Z"
       }
     },
     {
@@ -2880,7 +2880,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-20T02:12:58.430Z"
+        "updatedAt": "2026-07-21T00:08:56.208Z"
       }
     },
     {
@@ -2925,7 +2925,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-20T02:12:58.430Z"
+        "updatedAt": "2026-07-21T00:08:56.208Z"
       }
     },
     {
@@ -2970,7 +2970,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-20T02:12:58.430Z"
+        "updatedAt": "2026-07-21T00:08:56.208Z"
       }
     },
     {
@@ -3015,7 +3015,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-20T02:12:58.430Z"
+        "updatedAt": "2026-07-21T00:08:56.208Z"
       }
     },
     {
@@ -3062,7 +3062,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-20T02:12:58.430Z"
+        "updatedAt": "2026-07-21T00:08:56.208Z"
       }
     },
     {
@@ -3107,7 +3107,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-20T02:12:58.430Z"
+        "updatedAt": "2026-07-21T00:08:56.208Z"
       }
     },
     {
@@ -3149,7 +3149,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-20T02:12:58.430Z"
+        "updatedAt": "2026-07-21T00:08:56.208Z"
       }
     },
     {
@@ -3191,19 +3191,53 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-07-21T00:08:56.208Z"
+      }
+    },
+    {
+      "videoId": "9_rW0aF9xCI",
+      "videoUrl": "https://youtube.com/shorts/9_rW0aF9xCI",
+      "date": "2026-07-21",
+      "title": "【デザインニュース】Figma Chrome 拡張が取り込んだサイトを Variables に自動リンク、Config 2026 mid-July rollout｜2026/07/21 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 44,
+      "discovery": {
+        "method": "official-src",
+        "description": "Figma 公式 Config 2026 recap ブログと Help Center 記事『Turn coded screens into editable design layers』から、mid-July rollout の Chrome 拡張 × Make preview × MCP server 経由の web ページ取り込みで色・タイプ・余白が既存 Variables に自動リンクされ frame も Auto Layout 付きで並ぶ workflow feature を pillar ① Figma 公式 修復向けに抽出。07-20 PDCA Action #3 予約タスク『07-21 (Tue) は残る修復として (a) 柱② プラグイン 4.6pt under or (b) 柱③ 業界 残り 5.7pt の継続修復、method 候補は official-src (avg 2.00 TOP1、7-day 窓内 07-16 のみ = 1 hit clear、柱② or ① どちら向いても Figma 公式ニュース枠) or figma-community (avg 0.00、07-17 = 4 日前 gate OK、柱② 修復に直撃)、07-20 → 07-21 の 2 日連続 AI hype 逆張り論考は積極回避』を実行。method 選定: 14 日窓 07-08〜07-20 で official-src は 07-08 + 07-16 で n=2 avg 2.00 継続 TOP1、7-day 窓内 hit は 07-16 のみ = 1 hit clear (07-08 = 13 日前で 7-day 窓外)、figma-community avg 0.00 も採用可能だが直近 168h 以内の fresh community plugin news が調査で確認できず 07-13 Weave + 07-17 Fluido との重複回避も難しく今日は見送り 07-24 (Fri) 予約、product-launches avg 0.00 は 07-19 = 2 日前で 2-day rule 境界クリアだが 2 週連続 WORST リスク+ 07-26 (Sun) Awwwards SOTD 縦糸予約温存で見送り、news-en は 07-20 昨日で 2-day rule 抵触、expert-blog は 07-15+07-18 = 7-day 2 hits で 07-22 まで凍結、social-en は 07-24 まで凍結継続。柱バランス緊急度: 07-07 DESIGN.md (柱④, views=0) が今日 07-21 で 14 日窓を抜けて柱④ = 2/13 = 15.4% → 1/13 = 7.7% (under 7.3pt) に急落、07-20 の柱③ 12.3pt under から柱④ 7.3pt under に緊急度反転、ただし weekday news 帯で Tips 修復は原則不可、07-25 (Sat) or 07-26 (Sun) の evergreen 帯で修復必須。柱① は今日 official-src 採用で 4/13 = 30.8% → 5/14 = 35.7% (over 10.7pt) に上昇、07-22-25 で 07-08 + 07-10 + 07-14 の柱① が順次窓外抜けで自然終息予測、07-24 時点で 3/14 = 21.4% (under 3.6pt) まで戻る、今日の反動許容は 07-25 頃までの一時コスト。柱② プラグイン は今日修復せず 07-22 (Wed) news-en 復帰で継続予約、07-24 (Fri) figma-community で individual-creator-story 縦糸 3 号目投入予定。NG パターン回避: (a) Config 2026 workflow news は AI hype 逆張り論考ではなく workflow 実装 news、07-18 Vitaly + 07-20 NN Group と 2 日空きの AI hype 逆張り 3 連続回避規律 N=1 実行 = 視聴者飽きリスクを workflow news 切り替えで解消、Primary 駆け出しデザイナー志望者への『AI hype 疲れさせない』運用ルールの実データ蓄積、(b) freshness_hours=168 (Config 2026 6/24 発表から 4 週間経過だが mid-July rollout 段階の feature = help center 記事は 7/14 以降の最新 update)、168h NG ライン境界に位置するが Chrome 拡張 × Variables 自動リンク自体が mid-July rollout の feature で fresh news 適合、(c) 出典 3 ソースで multi-source confirm (Figma Config 2026 recap ブログ + Help Center Turn coded screens 記事 + What's new from Config 2026 Help 記事)、(d) プロ向け高度議論ではなく『駆け出しがなぞる練習に疲れる → 憧れの LP を Chrome 拡張で Figma に取り込むと色や余白が自動で Variables に紐づく → design system 練習に直結する → 自分の言葉で書き換える一本を』actionable な weekday routine で着地、(e) Config 2026 mid-July rollout 縦糸として 07-30 頃までの official-src / news-en 系 news 補給源 (3D Transforms preview waitlist / Code Layers 早期アクセス / Chrome 拡張 × Variables / Weave 20+AI tools 深掘り / exportAsync 動画エクスポート / AI usage credit CSV for admins) 月 3-4 本のリズム化候補で今日は 1 号目投入。反問/共感型フック A/B window は 07-15〜07-20 の 6 日連続で反問型継続、今日 07-21 で 7 個目 sample『なぞる練習、途中で疲れていませんか』継続、weekday news 帯適用の 2 個目 sample。柱バランス緊急度 > method rank ルール N=4 蓄積の逆選択 = 例外ケース初出 (今日 07-21 は柱① 反動許容で official-src 採用)、fresh news 適合度 + AI hype 逆張り 3 連続回避規律 + Config 2026 深掘り再訪 (07-16 Motion 以来 5 日ぶり) の 3 目的が柱① 反動コストを上回った判定、07-25 頃に strategy.md 追記時の但し書き候補として蓄積。",
+        "sources": [
+          "https://www.figma.com/blog/config-2026-recap/",
+          "https://help.figma.com/hc/en-us/articles/40826832449303-Turn-coded-screens-into-editable-design-layers",
+          "https://help.figma.com/hc/en-us/articles/39582753756695-What-s-new-from-Config-2026"
+        ],
+        "query": "Figma design import variables binding Config 2026 code screens Chrome extension Make MCP",
+        "freshness_hours": 168
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-06-13",
-      "changes": [
-        "standard: 81 avg views (41 videos)",
-        "Day performance: Wed=109, Sat=100, Sun=88, Tue=72, Fri=69, Thu=66, Mon=52"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-06-15",
       "changes": [
@@ -3433,6 +3467,14 @@
       "changes": [
         "standard: 48 avg views (70 videos)",
         "Day performance: Wed=85, Sat=50, Sun=49, Thu=44, Tue=44, Fri=40, Mon=27"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-21",
+      "changes": [
+        "standard: 48 avg views (71 videos)",
+        "Day performance: Wed=85, Sat=50, Sun=49, Thu=44, Tue=44, Fri=40, Mon=25"
       ],
       "recommendedTemplate": "standard"
     }
