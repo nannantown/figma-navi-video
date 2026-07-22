@@ -1,46 +1,45 @@
 {
-  "date": "2026-07-22",
+  "date": "2026-07-23",
   "discovery": {
-    "method": "news-en",
-    "description": "07-21 PDCA Action #3 予約タスク実行。Framer 公式 updates ページ + Create With ブログ + Framer marketplace の Liquid Gradient / Logo Gradient コンポーネントページを横断し、07-16 リリースの 2 種シェーダーへのマウス追従機能追加 (Mouseプロパティ + springベース補間) を pillar ③ 業界デザインニュース 5.7pt under 修復向けに抽出。method 選定: 14 日窓 07-08〜07-21 で news-en は 07-09+07-14+07-20 で n=3 avg 0.33 中位、07-20 = 2 日前で 2-day rule 境界クリア、7-day 窓内 hit は 07-20 のみ (07-14 = 8 日前で 7-day 窓外) = 1 hit clear、product-launches (avg 0.50 n=2) と figma-community (avg 0.00 n=2) も採用可能だが product-launches は 07-26 Sun の Awwwards SOTD 週次縦糸温存で見送り、figma-community は 07-24 Fri の individual-creator-story 縦糸 3 号目 (Ando Yuma / Batch Styler Aleksandr 等の Figma プラグイン個人開発者) 予約温存で見送り、official-src は 07-21 昨日で 2-day rule 抵触、social-en は 07-24 まで凍結継続、expert-blog は 07-15+07-18 で 07-22 まで凍結 = 結果として news-en が最適。柱バランス緊急度: 07-21 で柱③ = 2/14 = 14.3% (under 5.7pt)、今日の news-en + 柱③ 採用で 07-22 時点の窓 (07-09〜07-22) では 3/14 = 21.4% (over 1.4pt) にほぼ target 到達、柱② は 2/14 = 14.3% (under 5.7pt) 継続で 07-24 figma-community 修復予約、柱④ Tips 7.9pt under は weekday news 主義で今日不可、07-25 Sat の evergreen 帯で修復必須。NG パターン回避: (a) Framer Shaders は AI hype 逆張り論考でも AI hype でもない product feature news、07-18 Vitaly + 07-20 NN Group の AI 逆張り 2 連続 → 07-21 workflow news → 07-22 product feature news の 4 日連続で AI 逆張り 3 連続回避規律 N=1 継続実行の 2 日目、Primary 駆け出しデザイナー志望者への『AI hype 疲れさせない』運用ルールの実データ蓄積継続、(b) freshness_hours=144 (07-16 リリースで 6 日前、168h 以内の fresh news 適合)、(c) 出典 3 ソースで multi-source confirm (Framer 公式 updates + Create With Framer 特集ブログ + Framer marketplace Liquid Gradient / Logo Gradient コンポーネント公式)、(d) プロ向け高度議論ではなく『駆け出しがポートフォリオに派手な視覚効果を入れたいが WebGL コードは書けない → Framer なら+ボタン一つで実装 → 憧れの動く背景がコード無しで再現できる → 主役はあなたの構成力』actionable な weekday routine で着地、(e) Framer 系ネタは 07-06 Fable 5 / Sonnet 5 (news-en, views=2) 以来 16 日ぶり = 同 method でも topic 軸を AI モデル → 視覚シェーダーに変えて重複回避、07-06 が 2 views で TOP 圏だった実績から Framer 系は audience 反応 OK 判定材料あり。反問/共感型フック 8 個目 sample『憧れのマウス追従する背景、コード書かずに作れる時代です』継続、weekday news 帯の 3 個目 sample。07-23 (Thu) expert-blog 復帰時の候補は AI 逆張り 3 号目回避 or Config 2026 深掘り継続 or 個人論考系新パターン試行 の 3 択、07-23 朝に確定。",
+    "method": "expert-blog",
+    "description": "07-22 PDCA Action #3 予約タスク実行。NN/g (Nielsen Norman Group) 7/17 (Fri) 発表の Megan Brown 論考『Transitioning from Graphic Design to UX』を、Primary 駆け出しデザイナー志望者の『グラフィックからUXに移りたいけど、ゼロからやり直し?』 pain 直撃 + 柱④ Tips 7.9pt under = 14 日窓最大 gap 修復のダブル狙いで抽出。method 選定: 14 日窓 07-10〜07-23 で expert-blog は 07-11+07-15+07-18 の n=3 avg 0.33 だが 07-15 が今日で 8 日前 = 7-day 窓外に抜けて 07-18 の 1 hit clear、07-18 = 5 日前で 2-day rule OK、gate 通過。official-src (07-21 = 2 日前で 2-day 境界クリア、柱① 反動継続で温存)・product-launches (07-26 Sun Awwwards SOTD 縦糸温存)・figma-community (07-24 Fri individual-creator-story 縦糸 3 号目温存)・news-en (07-22 = 昨日で 2-day rule 抵触、07-24 復帰可能)・social-en (07-24 まで凍結) = 結果として expert-blog が今日の唯一の予約完全一致 method。柱バランス緊急度: 07-22 で柱④ = 1/14 = 7.1% (under 7.9pt = 14 日窓最大 gap)、今日の expert-blog + 柱④ 採用で 07-23 時点の窓 (07-10〜07-23) では 2/14 = 14.3% (under 0.7pt) にほぼ target 到達 = 14 日窓最大 gap 修復完了。柱② 5.7pt under 修復は 07-24 figma-community + individual-creator-story 縦糸 3 号目で継続予約、柱③ 5.7pt under (07-09 Meta Muse 窓外化で反落) は 07-27 頃 news-en 復帰時に修復予約。NG パターン回避: (a) NN/g 論考は AI hype でも AI hype 逆張りでもない career mindset content = 07-21 workflow + 07-22 product feature + 07-23 career mindset で AI hype 逆張り 3 連続回避規律 N=1 継続実行の 3 日目、Primary 駆け出しへの『AI hype 疲れさせない』運用ルールの実データ蓄積継続、(b) freshness_hours=144 (07-17 発表で 6 日前、168h 以内の fresh 論考適合)、(c) 出典 4 ソースで multi-source confirm (NN/g UX Career Advice 記事 + State of UX 2026 論考 + NN/g Careers in UX 2nd Edition レポート PDF + NN/g Articles 一覧)、(d) プロ向け高度議論ではなく『グラフィック出身の駆け出しはUX転向がゼロやり直しに見えるが、視覚設計力・細部への配慮という中核スキルはそのまま資産、2 年でリーダー職候補にも上がれる』actionable な weekday routine で着地 = 学習者を励ます正のメッセージ、(e) NN/g 系ネタは 07-20 NN Group『AI vs 人間 UX リサーチ』(news-en, views=0) 以来 3 日ぶりだが 7/17 同日 2 論考のうち後発 (前回 AI positioning → 今回 career mindset) で topic 軸を変え、method も news-en → expert-blog に切替で重複回避、NN/g 縦糸月次 1-2 本ペースの 2 号目消化継続 (次候補 08-04 Tue)。反問/共感型フック 9 個目 sample『グラフィック出身の駆け出しさん、UXに移るとゼロからやり直しに見えますよね』継続、weekday news 帯の 4 個目 sample。07-24 (Fri) 予約タスクは figma-community + individual-creator-story 縦糸 3 号目 (Ando Yuma / Batch Styler Aleksandr 等の Figma プラグイン個人開発者) + 柱② プラグイン 5.7pt under 修復、07-24 朝に確定。",
     "sources": [
-      "https://www.framer.com/updates",
-      "https://www.createwith.com/tool/framer/updates/framer-launches-interactive-shaders-with-cursor-reactive-ripple-effect",
-      "https://www.framer.com/marketplace/components/liquid-gradient/",
-      "https://www.framer.com/community/marketplace/components/liquid-gradient/",
-      "https://www.framer.com/updates/shaders"
+      "https://www.nngroup.com/articles/",
+      "https://www.nngroup.com/articles/ux-career-advice/",
+      "https://www.nngroup.com/articles/state-of-ux-2026/",
+      "https://media.nngroup.com/media/reports/free/UserExperienceCareers_2nd_Edition.pdf"
     ],
-    "query": "Framer Shaders Liquid Gradient Logo Gradient mouse interaction spring tracking July 16 2026",
+    "query": "Nielsen Norman Group Transitioning from Graphic Design to UX Megan Brown July 17 2026 transferable skills career",
     "freshness_hours": 144
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Framerのシェーダーがマウス追従に正式対応、ポートフォリオの背景がコードなしで動く時代に",
-      "description": "憧れのマウス追従する背景、コード書かずに作れる時代です。",
-      "detail": "7月16日にFramerが、Liquid GradientとLogo Gradientの2つのシェーダーにマウス追従機能を追加。シェーダー選択時にMouseプロパティが増え、+ボタン一つでカーソル追従を有効化できます。動きはspringベースで滑らか、WebGLコードや外部ライブラリなしでポートフォリオに派手な視覚効果を実装できる product feature アップデートです。",
-      "narration": "憧れのマウス追従する背景、コード書かずに作れる時代です。7月16日、Framerが2種類のシェーダーにマウス反応を正式追加しました",
+      "title": "NN/gが先週発表、グラフィックからUXの転向はゼロからじゃない。既存スキルが資産です",
+      "description": "グラフィック出身の駆け出しさん、UXに移るとゼロからやり直しに見えますよね。",
+      "detail": "7月17日にNielsen Norman GroupがMegan Brown筆の論考を公開。グラフィックデザイナーの中核スキルはUXへそのまま転用できると結論し、視覚設計力はユーザーの感情反応を生む資産、細部への配慮はUXでも武器と位置づけました。転職者は2年でリーダー職候補にも上がれるとの調査結果です。",
+      "narration": "グラフィック出身の駆け出しさん、UXに移るとゼロからやり直しに見えますよね。先週金曜のNN/g論考は、その常識を明確に否定しました",
       "tags": [
-        "Framer",
-        "Shaders",
-        "Liquid Gradient",
-        "ポートフォリオ",
-        "WebGL"
+        "NN/g",
+        "UX転向",
+        "駆け出し",
+        "キャリア",
+        "グラフィックデザイン"
       ],
       "narration_sections": {
-        "hook": "憧れのマウス追従する背景、コード書かずに作れる時代です。7月16日、Framerが2種類のシェーダーにマウス反応を正式追加しました",
-        "origin": "対応はLiquid GradientとLogo Gradientの2つ。流れるグラデ背景と、SVGに動くグラデを重ねる効果です。シェーダー選択時にMouseプロパティが追加され、+ボタン一つで追従を有効化。springベースで滑らかに動きます",
-        "recommend": "今日の一手は、ポートフォリオのヒーロー画面1枚でこの効果を試すこと。派手さは補助輪で、主役はあなたの構成力のままです"
+        "hook": "グラフィック出身の駆け出しさん、UXに移るとゼロからやり直しに見えますよね。先週金曜のNN/g論考は、その常識を明確に否定しました",
+        "origin": "発表内容はシンプルで、グラフィックデザイナーの中核スキルはUXへそのまま転用できる、というもの。視覚設計力はユーザーの感情反応を生む資産、細部への配慮はUXでも武器。転職者は2年でリーダー職候補にも上がれると調査で結論しています",
+        "recommend": "今日の一手は、過去作から視覚判断が光る一点を選び、UX理由付きで語る訓練を始めること。あなたの積み上げが資産です"
       },
       "section_titles": {
-        "hook": "背景がマウスに追従",
-        "origin": "液体グラデも対応",
-        "recommend": "ポートフォリオで試す"
+        "hook": "UX転向はゼロじゃない",
+        "origin": "スキルは直接転用",
+        "recommend": "過去作をUXで語る"
       },
       "section_descriptions": {
-        "hook": "コード書かずに動く背景を実装できる時代の到来です",
-        "origin": "Liquid Gradient含む2つに+ボタン追加",
-        "recommend": "ヒーロー1画面で試す。派手さは補助輪、主役はあなたです"
+        "hook": "NN/gがグラフィック→UX転向の常識を否定した論考",
+        "origin": "視覚力・細部配慮は資産。2年でリーダー職候補にも",
+        "recommend": "視覚判断が光る過去作を1点、UX理由で語る訓練を"
       }
     }
   ]
