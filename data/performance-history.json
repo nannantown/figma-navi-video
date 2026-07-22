@@ -2,51 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "LQnVJUeKRBM",
-      "videoUrl": "https://youtube.com/shorts/LQnVJUeKRBM",
-      "date": "2026-04-22",
-      "title": "【デザインニュース】Claude Design 参戦、Figma 株 7% 下落の衝撃｜2026/04/22 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 46,
-      "discovery": {
-        "method": "social-en",
-        "description": "Hacker News と Reddit r/ClaudeAI のスレッドから、4/17 発表の Claude Design に対するデザイナー実感を抽出",
-        "sources": [
-          "https://news.ycombinator.com/item?id=47806725",
-          "https://news.ycombinator.com/item?id=47818700",
-          "https://news.ycombinator.com/item?id=47832366",
-          "https://www.theneurondaily.com/p/anthropic-s-claude-design-launched-and-reddit-has-thoughts",
-          "https://venturebeat.com/technology/anthropic-just-launched-claude-design-an-ai-tool-that-turns-prompts-into-prototypes-and-challenges-figma",
-          "https://gizmodo.com/anthropic-launches-claude-design-figma-stock-immediately-nosedives-2000748071"
-        ],
-        "query": "Claude Design Hacker News Reddit designer reaction",
-        "freshness_hours": 120
-      },
-      "stats": {
-        "views": 144,
-        "likes": 1,
-        "comments": 0,
-        "updatedAt": "2026-05-05T00:08:26.872Z"
-      }
-    },
-    {
       "videoId": "aFIX-W4ph9E",
       "videoUrl": "https://youtube.com/shorts/aFIX-W4ph9E",
       "date": "2026-04-23",
@@ -2701,7 +2656,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-21T00:08:56.208Z"
+        "updatedAt": "2026-07-22T00:07:23.495Z"
       }
     },
     {
@@ -2746,7 +2701,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-21T00:08:56.208Z"
+        "updatedAt": "2026-07-22T00:07:23.495Z"
       }
     },
     {
@@ -2791,7 +2746,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-21T00:08:56.208Z"
+        "updatedAt": "2026-07-22T00:07:23.495Z"
       }
     },
     {
@@ -2835,7 +2790,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-21T00:08:56.208Z"
+        "updatedAt": "2026-07-22T00:07:23.495Z"
       }
     },
     {
@@ -2880,7 +2835,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-21T00:08:56.208Z"
+        "updatedAt": "2026-07-22T00:07:23.495Z"
       }
     },
     {
@@ -2925,7 +2880,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-21T00:08:56.208Z"
+        "updatedAt": "2026-07-22T00:07:23.495Z"
       }
     },
     {
@@ -2970,7 +2925,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-21T00:08:56.208Z"
+        "updatedAt": "2026-07-22T00:07:23.495Z"
       }
     },
     {
@@ -3015,7 +2970,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-21T00:08:56.208Z"
+        "updatedAt": "2026-07-22T00:07:23.495Z"
       }
     },
     {
@@ -3062,7 +3017,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-21T00:08:56.208Z"
+        "updatedAt": "2026-07-22T00:07:23.495Z"
       }
     },
     {
@@ -3107,7 +3062,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-21T00:08:56.208Z"
+        "updatedAt": "2026-07-22T00:07:23.495Z"
       }
     },
     {
@@ -3149,7 +3104,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-21T00:08:56.208Z"
+        "updatedAt": "2026-07-22T00:07:23.495Z"
       }
     },
     {
@@ -3191,7 +3146,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-21T00:08:56.208Z"
+        "updatedAt": "2026-07-22T00:07:23.495Z"
       }
     },
     {
@@ -3233,19 +3188,55 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-07-22T00:07:23.495Z"
+      }
+    },
+    {
+      "videoId": "b2q5x7B7Vw8",
+      "videoUrl": "https://youtube.com/shorts/b2q5x7B7Vw8",
+      "date": "2026-07-22",
+      "title": "【デザインニュース】Framerのシェーダーがマウス追従に正式対応、ポートフォリオの背景がコードなしで動く時代に｜2026/07/22 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 46,
+      "discovery": {
+        "method": "news-en",
+        "description": "07-21 PDCA Action #3 予約タスク実行。Framer 公式 updates ページ + Create With ブログ + Framer marketplace の Liquid Gradient / Logo Gradient コンポーネントページを横断し、07-16 リリースの 2 種シェーダーへのマウス追従機能追加 (Mouseプロパティ + springベース補間) を pillar ③ 業界デザインニュース 5.7pt under 修復向けに抽出。method 選定: 14 日窓 07-08〜07-21 で news-en は 07-09+07-14+07-20 で n=3 avg 0.33 中位、07-20 = 2 日前で 2-day rule 境界クリア、7-day 窓内 hit は 07-20 のみ (07-14 = 8 日前で 7-day 窓外) = 1 hit clear、product-launches (avg 0.50 n=2) と figma-community (avg 0.00 n=2) も採用可能だが product-launches は 07-26 Sun の Awwwards SOTD 週次縦糸温存で見送り、figma-community は 07-24 Fri の individual-creator-story 縦糸 3 号目 (Ando Yuma / Batch Styler Aleksandr 等の Figma プラグイン個人開発者) 予約温存で見送り、official-src は 07-21 昨日で 2-day rule 抵触、social-en は 07-24 まで凍結継続、expert-blog は 07-15+07-18 で 07-22 まで凍結 = 結果として news-en が最適。柱バランス緊急度: 07-21 で柱③ = 2/14 = 14.3% (under 5.7pt)、今日の news-en + 柱③ 採用で 07-22 時点の窓 (07-09〜07-22) では 3/14 = 21.4% (over 1.4pt) にほぼ target 到達、柱② は 2/14 = 14.3% (under 5.7pt) 継続で 07-24 figma-community 修復予約、柱④ Tips 7.9pt under は weekday news 主義で今日不可、07-25 Sat の evergreen 帯で修復必須。NG パターン回避: (a) Framer Shaders は AI hype 逆張り論考でも AI hype でもない product feature news、07-18 Vitaly + 07-20 NN Group の AI 逆張り 2 連続 → 07-21 workflow news → 07-22 product feature news の 4 日連続で AI 逆張り 3 連続回避規律 N=1 継続実行の 2 日目、Primary 駆け出しデザイナー志望者への『AI hype 疲れさせない』運用ルールの実データ蓄積継続、(b) freshness_hours=144 (07-16 リリースで 6 日前、168h 以内の fresh news 適合)、(c) 出典 3 ソースで multi-source confirm (Framer 公式 updates + Create With Framer 特集ブログ + Framer marketplace Liquid Gradient / Logo Gradient コンポーネント公式)、(d) プロ向け高度議論ではなく『駆け出しがポートフォリオに派手な視覚効果を入れたいが WebGL コードは書けない → Framer なら+ボタン一つで実装 → 憧れの動く背景がコード無しで再現できる → 主役はあなたの構成力』actionable な weekday routine で着地、(e) Framer 系ネタは 07-06 Fable 5 / Sonnet 5 (news-en, views=2) 以来 16 日ぶり = 同 method でも topic 軸を AI モデル → 視覚シェーダーに変えて重複回避、07-06 が 2 views で TOP 圏だった実績から Framer 系は audience 反応 OK 判定材料あり。反問/共感型フック 8 個目 sample『憧れのマウス追従する背景、コード書かずに作れる時代です』継続、weekday news 帯の 3 個目 sample。07-23 (Thu) expert-blog 復帰時の候補は AI 逆張り 3 号目回避 or Config 2026 深掘り継続 or 個人論考系新パターン試行 の 3 択、07-23 朝に確定。",
+        "sources": [
+          "https://www.framer.com/updates",
+          "https://www.createwith.com/tool/framer/updates/framer-launches-interactive-shaders-with-cursor-reactive-ripple-effect",
+          "https://www.framer.com/marketplace/components/liquid-gradient/",
+          "https://www.framer.com/community/marketplace/components/liquid-gradient/",
+          "https://www.framer.com/updates/shaders"
+        ],
+        "query": "Framer Shaders Liquid Gradient Logo Gradient mouse interaction spring tracking July 16 2026",
+        "freshness_hours": 144
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-06-15",
-      "changes": [
-        "standard: 79 avg views (42 videos)",
-        "Day performance: Wed=109, Sun=88, Sat=85, Tue=72, Fri=69, Thu=66, Mon=52"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-06-16",
       "changes": [
@@ -3475,6 +3466,14 @@
       "changes": [
         "standard: 48 avg views (71 videos)",
         "Day performance: Wed=85, Sat=50, Sun=49, Thu=44, Tue=44, Fri=40, Mon=25"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-22",
+      "changes": [
+        "standard: 47 avg views (72 videos)",
+        "Day performance: Wed=85, Sat=50, Sun=49, Thu=44, Fri=40, Tue=40, Mon=25"
       ],
       "recommendedTemplate": "standard"
     }
