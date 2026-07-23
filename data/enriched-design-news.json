@@ -1,45 +1,45 @@
 {
-  "date": "2026-07-23",
+  "date": "2026-07-24",
   "discovery": {
-    "method": "expert-blog",
-    "description": "07-22 PDCA Action #3 予約タスク実行。NN/g (Nielsen Norman Group) 7/17 (Fri) 発表の Megan Brown 論考『Transitioning from Graphic Design to UX』を、Primary 駆け出しデザイナー志望者の『グラフィックからUXに移りたいけど、ゼロからやり直し?』 pain 直撃 + 柱④ Tips 7.9pt under = 14 日窓最大 gap 修復のダブル狙いで抽出。method 選定: 14 日窓 07-10〜07-23 で expert-blog は 07-11+07-15+07-18 の n=3 avg 0.33 だが 07-15 が今日で 8 日前 = 7-day 窓外に抜けて 07-18 の 1 hit clear、07-18 = 5 日前で 2-day rule OK、gate 通過。official-src (07-21 = 2 日前で 2-day 境界クリア、柱① 反動継続で温存)・product-launches (07-26 Sun Awwwards SOTD 縦糸温存)・figma-community (07-24 Fri individual-creator-story 縦糸 3 号目温存)・news-en (07-22 = 昨日で 2-day rule 抵触、07-24 復帰可能)・social-en (07-24 まで凍結) = 結果として expert-blog が今日の唯一の予約完全一致 method。柱バランス緊急度: 07-22 で柱④ = 1/14 = 7.1% (under 7.9pt = 14 日窓最大 gap)、今日の expert-blog + 柱④ 採用で 07-23 時点の窓 (07-10〜07-23) では 2/14 = 14.3% (under 0.7pt) にほぼ target 到達 = 14 日窓最大 gap 修復完了。柱② 5.7pt under 修復は 07-24 figma-community + individual-creator-story 縦糸 3 号目で継続予約、柱③ 5.7pt under (07-09 Meta Muse 窓外化で反落) は 07-27 頃 news-en 復帰時に修復予約。NG パターン回避: (a) NN/g 論考は AI hype でも AI hype 逆張りでもない career mindset content = 07-21 workflow + 07-22 product feature + 07-23 career mindset で AI hype 逆張り 3 連続回避規律 N=1 継続実行の 3 日目、Primary 駆け出しへの『AI hype 疲れさせない』運用ルールの実データ蓄積継続、(b) freshness_hours=144 (07-17 発表で 6 日前、168h 以内の fresh 論考適合)、(c) 出典 4 ソースで multi-source confirm (NN/g UX Career Advice 記事 + State of UX 2026 論考 + NN/g Careers in UX 2nd Edition レポート PDF + NN/g Articles 一覧)、(d) プロ向け高度議論ではなく『グラフィック出身の駆け出しはUX転向がゼロやり直しに見えるが、視覚設計力・細部への配慮という中核スキルはそのまま資産、2 年でリーダー職候補にも上がれる』actionable な weekday routine で着地 = 学習者を励ます正のメッセージ、(e) NN/g 系ネタは 07-20 NN Group『AI vs 人間 UX リサーチ』(news-en, views=0) 以来 3 日ぶりだが 7/17 同日 2 論考のうち後発 (前回 AI positioning → 今回 career mindset) で topic 軸を変え、method も news-en → expert-blog に切替で重複回避、NN/g 縦糸月次 1-2 本ペースの 2 号目消化継続 (次候補 08-04 Tue)。反問/共感型フック 9 個目 sample『グラフィック出身の駆け出しさん、UXに移るとゼロからやり直しに見えますよね』継続、weekday news 帯の 4 個目 sample。07-24 (Fri) 予約タスクは figma-community + individual-creator-story 縦糸 3 号目 (Ando Yuma / Batch Styler Aleksandr 等の Figma プラグイン個人開発者) + 柱② プラグイン 5.7pt under 修復、07-24 朝に確定。",
+    "method": "news-en",
+    "description": "07-23 PDCA 予約『figma-community + individual-creator-story 縦糸 3 号目』が Ando (Maiko Ando) / Batch Styler (six7 Aleksandr) / Text Layout Snake (Nick) / 3D Layer Transform (v6 06-30 = 24 日前) / 3D Layers (v2 05-26 = 59 日前) / Artifig AI (v82 03-10) / figma-ai-designer (v3 01-15) の 7 候補全てで fresh 168h 以内の材料が調査で確認できず、fallback として 07-22 PDCA Method 提案候補『Adobe Illustrator 2026 July Firefly ネイティブ Generative Shape』の新縦糸初号目を採用。7 月に Adobe が Illustrator 2026 で Firefly を本体に統合、Generative Shape ツールがツールバーに常駐し四角を引きプロンプトを打つと Firefly が編集可能なベクターパスを直接生成 (外部ブラウザ往復不要)、Text to Vector も既存スウォッチを読んで自動配色、Vector Model 2 で完全編集可能な出力。1 回 1 クレジット消費で Standard プラン月 250 回。method 選定: 14 日窓 07-11〜07-24 で news-en は 07-14+07-20+07-22 の n=3 avg 0.00 だが 07-22 = 2 日前で 2-day rule 境界クリア、07-14 が今日で 10 日前 = 7-day 窓外で 07-20 + 07-22 の 2 hit で 7 日 2 回到達ガード境界クリア、gate 通過。official-src (07-21 = 3 日前 gate OK だが柱① 21.4% under 3.6pt 継続で 07-27 頃復帰枠温存)・expert-blog (07-23 = 昨日で 2-day rule 抵触、今日不可)・product-launches (07-19 = 5 日前 gate OK だが 07-26 Sun Awwwards 縦糸温存)・figma-community (07-17 = 7 日前 gate OK だが fresh 材料不足で後倒し)・social-en (07-10 が今日で窓外化で n=0、07-25/27 後倒し継続) = 結果として news-en が今日の唯一の fresh 材料 × gate 通過 method で fallback 採用の必然。柱バランス緊急度: 07-23 で柱③ = 2/14 = 14.3% (under 5.7pt = 07-09 Meta Muse Image 窓外化から 15 日 gap 継続)、今日の news-en + 柱③ 採用で 07-24 時点の窓 (07-11〜07-24) では 3/14 = 21.4% (over 1.4pt) に修復完了 = 15 日 gap 解消完了。柱② 5.7pt under 修復は 07-25 (Sat) or 08 月上旬に後倒し。NG パターン回避: (a) Adobe の AI 統合ニュースだが『AI が仕事を奪う』ではなく『Illustrator 触る駆け出しでも AI ベクターを補助輪として使える』pro-learner フレーミングで着地 = AI hype 逆張り 3 連続回避規律 N=1 継続実行の 4 日目 (07-21 workflow → 07-22 product feature → 07-23 career mindset → 07-24 ベクター AI 業界動向 pro-learner)、(b) freshness_hours=120 (7 月更新の推定日、5 日前想定、168h 以内の fresh 適合)、(c) 出典 4 ソースで multi-source confirm (Adobe 公式 Firefly Illustrator ヘルプ + Firefly Text to Vector ヘルプ + Oreate AI ブログ論考 + Favtutor Firefly Illustrator Photoshop 記事)、(d) プロ向け高度議論ではなく『Illustrator 派の駆け出しが AI ベクターを外部往復なしで扱える時代の入口』actionable な weekday routine で着地、(e) 業界動向論考として Adobe × Figma × Framer の 3 者ベクター AI 競争軸の縦糸初号目、08 月中旬に 3 者比較論考 (Figma Draw との棲み分け / Framer 3.0 との比較) で 2 号目連続化予約。反問/共感型フック 10 個目 sample『Illustrator を触る駆け出しさん、7 月更新で Firefly が本体に入り AI ベクターが外部往復なしで作れる時代になりました』継続、weekday news 帯の 5 個目 sample。07-25 (Sat) 予約タスクは evergreen 帯 (Tips / Before-After / UI 批評 OK) で individual-creator-story 縦糸 3 号目後倒し候補 3 案 (Awwwards SOTD / Smashing 論考 / Product Hunt Figma プラグイン) から fresh 材料出現次第確定。",
     "sources": [
-      "https://www.nngroup.com/articles/",
-      "https://www.nngroup.com/articles/ux-career-advice/",
-      "https://www.nngroup.com/articles/state-of-ux-2026/",
-      "https://media.nngroup.com/media/reports/free/UserExperienceCareers_2nd_Edition.pdf"
+      "https://helpx.adobe.com/illustrator/desktop/use-generative-ai/generate-shape-fills.html",
+      "https://helpx.adobe.com/firefly/web/generate-vectors/text-to-vector/generate-vectors-using-text-prompts.html",
+      "https://www.oreateai.com/blog/adobe-firefly-in-illustrator-2026-weaving-magic-into-vector-design/ad14610999b9a3f670d2578019fe783f",
+      "https://favtutor.com/articles/adobe-illustrator-photoshop-firefly-ai-generative-features/"
     ],
-    "query": "Nielsen Norman Group Transitioning from Graphic Design to UX Megan Brown July 17 2026 transferable skills career",
-    "freshness_hours": 144
+    "query": "Adobe Illustrator 2026 July Firefly native Generative Shape Vector Model 2 text-to-vector swatches editable paths",
+    "freshness_hours": 120
   },
   "articles": [
     {
       "rank": 1,
-      "title": "NN/gが先週発表、グラフィックからUXの転向はゼロからじゃない。既存スキルが資産です",
-      "description": "グラフィック出身の駆け出しさん、UXに移るとゼロからやり直しに見えますよね。",
-      "detail": "7月17日にNielsen Norman GroupがMegan Brown筆の論考を公開。グラフィックデザイナーの中核スキルはUXへそのまま転用できると結論し、視覚設計力はユーザーの感情反応を生む資産、細部への配慮はUXでも武器と位置づけました。転職者は2年でリーダー職候補にも上がれるとの調査結果です。",
-      "narration": "グラフィック出身の駆け出しさん、UXに移るとゼロからやり直しに見えますよね。先週金曜のNN/g論考は、その常識を明確に否定しました",
+      "title": "Adobeが7月更新、IllustratorにFirefly本体統合。AIベクターが外部往復なしに",
+      "description": "Illustratorを触る駆け出しさん、7月更新でFireflyが本体に入り、AIベクターが外部往復なしで作れる時代になりました。",
+      "detail": "Adobeが7月にIllustrator 2026を更新、Generative Shapeがツールバーに常駐しました。四角を引きプロンプトを打つとFireflyが編集可能なベクターを直接生成、既存スウォッチを読んで自動配色まで実行します。1回1クレジット消費、Standardプラン月250回。ベクターAI競争はFigmaのDraw、Framer 3.0と並ぶ3者の局面になりました。",
+      "narration": "Illustratorを触る駆け出しさん、7月更新でFireflyが本体に入り、AIベクターが外部往復なしで作れる時代になりました",
       "tags": [
-        "NN/g",
-        "UX転向",
-        "駆け出し",
-        "キャリア",
-        "グラフィックデザイン"
+        "Adobe",
+        "Illustrator",
+        "Firefly",
+        "ベクターAI",
+        "駆け出し"
       ],
       "narration_sections": {
-        "hook": "グラフィック出身の駆け出しさん、UXに移るとゼロからやり直しに見えますよね。先週金曜のNN/g論考は、その常識を明確に否定しました",
-        "origin": "発表内容はシンプルで、グラフィックデザイナーの中核スキルはUXへそのまま転用できる、というもの。視覚設計力はユーザーの感情反応を生む資産、細部への配慮はUXでも武器。転職者は2年でリーダー職候補にも上がれると調査で結論しています",
-        "recommend": "今日の一手は、過去作から視覚判断が光る一点を選び、UX理由付きで語る訓練を始めること。あなたの積み上げが資産です"
+        "hook": "Illustratorを触る駆け出しさん、7月更新でFireflyが本体に入り、AIベクターが外部往復なしで作れる時代になりました",
+        "origin": "Adobeが7月にIllustrator 2026を更新、Generative Shapeがツールバーに常駐です。四角を引きプロンプトを打つとFireflyが編集可能なベクターを直接生成、スウォッチを読んで自動配色まで。1回1クレジット消費です",
+        "recommend": "今日の一手は、いつもの練習ロゴをFireflyで下書きしてから手で仕上げ、AIは補助輪と再確認することです"
       },
       "section_titles": {
-        "hook": "UX転向はゼロじゃない",
-        "origin": "スキルは直接転用",
-        "recommend": "過去作をUXで語る"
+        "hook": "Firefly本体化",
+        "origin": "AIベクター詳細",
+        "recommend": "練習ロゴで試そう"
       },
       "section_descriptions": {
-        "hook": "NN/gがグラフィック→UX転向の常識を否定した論考",
-        "origin": "視覚力・細部配慮は資産。2年でリーダー職候補にも",
-        "recommend": "視覚判断が光る過去作を1点、UX理由で語る訓練を"
+        "hook": "AdobeがFireflyをIllustrator本体に統合",
+        "origin": "編集可能ベクター生成、月250クレジットまで無料",
+        "recommend": "練習ロゴをAI下書き→手で仕上げ、補助輪運用"
       }
     }
   ]
