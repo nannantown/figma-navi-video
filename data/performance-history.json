@@ -2,51 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "jesQOPFtC_A",
-      "videoUrl": "https://youtube.com/shorts/jesQOPFtC_A",
-      "date": "2026-04-24",
-      "title": "【デザインニュース】ChatGPT Images 2.0、Figmaで直接使えるように｜2026/04/24 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 48,
-      "discovery": {
-        "method": "news-en",
-        "description": "英語テック/デザインメディア(the-decoder, The Next Web)と Figma 公式 release notes を突き合わせ、ChatGPT Images 2.0 の Figma 統合という AI×デザインの大ネタを抽出",
-        "sources": [
-          "https://the-decoder.com/openais-chatgpt-images-2-0-thinks-before-it-generates-adding-reasoning-and-web-search-to-image-creation/",
-          "https://thenextweb.com/news/openai-chatgpt-images-2-0-reasoning-image-generation",
-          "https://www.figma.com/release-notes/",
-          "https://releasebot.io/updates/figma",
-          "https://developers.openai.com/api/docs/models/gpt-image-2",
-          "https://help.figma.com/hc/en-us/articles/35326636109975-Use-ChatGPT-with-Figma"
-        ],
-        "query": "ChatGPT Images 2.0 Figma Make Image Edit Image release April 2026",
-        "freshness_hours": 72
-      },
-      "stats": {
-        "views": 74,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-05-05T00:08:26.872Z"
-      }
-    },
-    {
       "videoId": "BvNB1JwbxBo",
       "videoUrl": "https://youtube.com/shorts/BvNB1JwbxBo",
       "date": "2026-04-25",
@@ -2702,7 +2657,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-23T00:13:16.195Z"
+        "updatedAt": "2026-07-24T00:10:20.658Z"
       }
     },
     {
@@ -2746,7 +2701,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-23T00:13:16.195Z"
+        "updatedAt": "2026-07-24T00:10:20.658Z"
       }
     },
     {
@@ -2791,7 +2746,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-23T00:13:16.195Z"
+        "updatedAt": "2026-07-24T00:10:20.658Z"
       }
     },
     {
@@ -2836,7 +2791,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-23T00:13:16.195Z"
+        "updatedAt": "2026-07-24T00:10:20.658Z"
       }
     },
     {
@@ -2881,7 +2836,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-23T00:13:16.195Z"
+        "updatedAt": "2026-07-24T00:10:20.658Z"
       }
     },
     {
@@ -2926,7 +2881,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-23T00:13:16.195Z"
+        "updatedAt": "2026-07-24T00:10:20.658Z"
       }
     },
     {
@@ -2973,7 +2928,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-23T00:13:16.195Z"
+        "updatedAt": "2026-07-24T00:10:20.658Z"
       }
     },
     {
@@ -3018,7 +2973,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-23T00:13:16.195Z"
+        "updatedAt": "2026-07-24T00:10:20.658Z"
       }
     },
     {
@@ -3060,7 +3015,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-23T00:13:16.195Z"
+        "updatedAt": "2026-07-24T00:10:20.658Z"
       }
     },
     {
@@ -3102,7 +3057,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-23T00:13:16.195Z"
+        "updatedAt": "2026-07-24T00:10:20.658Z"
       }
     },
     {
@@ -3144,7 +3099,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-23T00:13:16.195Z"
+        "updatedAt": "2026-07-24T00:10:20.658Z"
       }
     },
     {
@@ -3188,7 +3143,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-23T00:13:16.195Z"
+        "updatedAt": "2026-07-24T00:10:20.658Z"
       }
     },
     {
@@ -3231,19 +3186,54 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-07-24T00:10:20.658Z"
+      }
+    },
+    {
+      "videoId": "G9vhN60SZD0",
+      "videoUrl": "https://youtube.com/shorts/G9vhN60SZD0",
+      "date": "2026-07-24",
+      "title": "【デザインニュース】Adobeが7月更新、IllustratorにFirefly本体統合。AIベクターが外部往復なしに｜2026/07/24 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 43,
+      "discovery": {
+        "method": "news-en",
+        "description": "07-23 PDCA 予約『figma-community + individual-creator-story 縦糸 3 号目』が Ando (Maiko Ando) / Batch Styler (six7 Aleksandr) / Text Layout Snake (Nick) / 3D Layer Transform (v6 06-30 = 24 日前) / 3D Layers (v2 05-26 = 59 日前) / Artifig AI (v82 03-10) / figma-ai-designer (v3 01-15) の 7 候補全てで fresh 168h 以内の材料が調査で確認できず、fallback として 07-22 PDCA Method 提案候補『Adobe Illustrator 2026 July Firefly ネイティブ Generative Shape』の新縦糸初号目を採用。7 月に Adobe が Illustrator 2026 で Firefly を本体に統合、Generative Shape ツールがツールバーに常駐し四角を引きプロンプトを打つと Firefly が編集可能なベクターパスを直接生成 (外部ブラウザ往復不要)、Text to Vector も既存スウォッチを読んで自動配色、Vector Model 2 で完全編集可能な出力。1 回 1 クレジット消費で Standard プラン月 250 回。method 選定: 14 日窓 07-11〜07-24 で news-en は 07-14+07-20+07-22 の n=3 avg 0.00 だが 07-22 = 2 日前で 2-day rule 境界クリア、07-14 が今日で 10 日前 = 7-day 窓外で 07-20 + 07-22 の 2 hit で 7 日 2 回到達ガード境界クリア、gate 通過。official-src (07-21 = 3 日前 gate OK だが柱① 21.4% under 3.6pt 継続で 07-27 頃復帰枠温存)・expert-blog (07-23 = 昨日で 2-day rule 抵触、今日不可)・product-launches (07-19 = 5 日前 gate OK だが 07-26 Sun Awwwards 縦糸温存)・figma-community (07-17 = 7 日前 gate OK だが fresh 材料不足で後倒し)・social-en (07-10 が今日で窓外化で n=0、07-25/27 後倒し継続) = 結果として news-en が今日の唯一の fresh 材料 × gate 通過 method で fallback 採用の必然。柱バランス緊急度: 07-23 で柱③ = 2/14 = 14.3% (under 5.7pt = 07-09 Meta Muse Image 窓外化から 15 日 gap 継続)、今日の news-en + 柱③ 採用で 07-24 時点の窓 (07-11〜07-24) では 3/14 = 21.4% (over 1.4pt) に修復完了 = 15 日 gap 解消完了。柱② 5.7pt under 修復は 07-25 (Sat) or 08 月上旬に後倒し。NG パターン回避: (a) Adobe の AI 統合ニュースだが『AI が仕事を奪う』ではなく『Illustrator 触る駆け出しでも AI ベクターを補助輪として使える』pro-learner フレーミングで着地 = AI hype 逆張り 3 連続回避規律 N=1 継続実行の 4 日目 (07-21 workflow → 07-22 product feature → 07-23 career mindset → 07-24 ベクター AI 業界動向 pro-learner)、(b) freshness_hours=120 (7 月更新の推定日、5 日前想定、168h 以内の fresh 適合)、(c) 出典 4 ソースで multi-source confirm (Adobe 公式 Firefly Illustrator ヘルプ + Firefly Text to Vector ヘルプ + Oreate AI ブログ論考 + Favtutor Firefly Illustrator Photoshop 記事)、(d) プロ向け高度議論ではなく『Illustrator 派の駆け出しが AI ベクターを外部往復なしで扱える時代の入口』actionable な weekday routine で着地、(e) 業界動向論考として Adobe × Figma × Framer の 3 者ベクター AI 競争軸の縦糸初号目、08 月中旬に 3 者比較論考 (Figma Draw との棲み分け / Framer 3.0 との比較) で 2 号目連続化予約。反問/共感型フック 10 個目 sample『Illustrator を触る駆け出しさん、7 月更新で Firefly が本体に入り AI ベクターが外部往復なしで作れる時代になりました』継続、weekday news 帯の 5 個目 sample。07-25 (Sat) 予約タスクは evergreen 帯 (Tips / Before-After / UI 批評 OK) で individual-creator-story 縦糸 3 号目後倒し候補 3 案 (Awwwards SOTD / Smashing 論考 / Product Hunt Figma プラグイン) から fresh 材料出現次第確定。",
+        "sources": [
+          "https://helpx.adobe.com/illustrator/desktop/use-generative-ai/generate-shape-fills.html",
+          "https://helpx.adobe.com/firefly/web/generate-vectors/text-to-vector/generate-vectors-using-text-prompts.html",
+          "https://www.oreateai.com/blog/adobe-firefly-in-illustrator-2026-weaving-magic-into-vector-design/ad14610999b9a3f670d2578019fe783f",
+          "https://favtutor.com/articles/adobe-illustrator-photoshop-firefly-ai-generative-features/"
+        ],
+        "query": "Adobe Illustrator 2026 July Firefly native Generative Shape Vector Model 2 text-to-vector swatches editable paths",
+        "freshness_hours": 120
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-06-19",
-      "changes": [
-        "standard: 76 avg views (44 videos)",
-        "Day performance: Wed=109, Sun=88, Sat=85, Fri=69, Thu=66, Tue=62, Mon=44"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-06-20",
       "changes": [
@@ -3473,6 +3463,14 @@
       "changes": [
         "standard: 45 avg views (72 videos)",
         "Day performance: Wed=69, Sat=50, Sun=49, Thu=44, Fri=40, Tue=40, Mon=25"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-24",
+      "changes": [
+        "standard: 42 avg views (72 videos)",
+        "Day performance: Wed=69, Sat=50, Sun=49, Fri=40, Tue=40, Mon=25, Thu=25"
       ],
       "recommendedTemplate": "standard"
     }
