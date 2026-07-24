@@ -1,45 +1,40 @@
 {
-  "date": "2026-07-24",
+  "date": "2026-07-25",
   "discovery": {
-    "method": "news-en",
-    "description": "07-23 PDCA 予約『figma-community + individual-creator-story 縦糸 3 号目』が Ando (Maiko Ando) / Batch Styler (six7 Aleksandr) / Text Layout Snake (Nick) / 3D Layer Transform (v6 06-30 = 24 日前) / 3D Layers (v2 05-26 = 59 日前) / Artifig AI (v82 03-10) / figma-ai-designer (v3 01-15) の 7 候補全てで fresh 168h 以内の材料が調査で確認できず、fallback として 07-22 PDCA Method 提案候補『Adobe Illustrator 2026 July Firefly ネイティブ Generative Shape』の新縦糸初号目を採用。7 月に Adobe が Illustrator 2026 で Firefly を本体に統合、Generative Shape ツールがツールバーに常駐し四角を引きプロンプトを打つと Firefly が編集可能なベクターパスを直接生成 (外部ブラウザ往復不要)、Text to Vector も既存スウォッチを読んで自動配色、Vector Model 2 で完全編集可能な出力。1 回 1 クレジット消費で Standard プラン月 250 回。method 選定: 14 日窓 07-11〜07-24 で news-en は 07-14+07-20+07-22 の n=3 avg 0.00 だが 07-22 = 2 日前で 2-day rule 境界クリア、07-14 が今日で 10 日前 = 7-day 窓外で 07-20 + 07-22 の 2 hit で 7 日 2 回到達ガード境界クリア、gate 通過。official-src (07-21 = 3 日前 gate OK だが柱① 21.4% under 3.6pt 継続で 07-27 頃復帰枠温存)・expert-blog (07-23 = 昨日で 2-day rule 抵触、今日不可)・product-launches (07-19 = 5 日前 gate OK だが 07-26 Sun Awwwards 縦糸温存)・figma-community (07-17 = 7 日前 gate OK だが fresh 材料不足で後倒し)・social-en (07-10 が今日で窓外化で n=0、07-25/27 後倒し継続) = 結果として news-en が今日の唯一の fresh 材料 × gate 通過 method で fallback 採用の必然。柱バランス緊急度: 07-23 で柱③ = 2/14 = 14.3% (under 5.7pt = 07-09 Meta Muse Image 窓外化から 15 日 gap 継続)、今日の news-en + 柱③ 採用で 07-24 時点の窓 (07-11〜07-24) では 3/14 = 21.4% (over 1.4pt) に修復完了 = 15 日 gap 解消完了。柱② 5.7pt under 修復は 07-25 (Sat) or 08 月上旬に後倒し。NG パターン回避: (a) Adobe の AI 統合ニュースだが『AI が仕事を奪う』ではなく『Illustrator 触る駆け出しでも AI ベクターを補助輪として使える』pro-learner フレーミングで着地 = AI hype 逆張り 3 連続回避規律 N=1 継続実行の 4 日目 (07-21 workflow → 07-22 product feature → 07-23 career mindset → 07-24 ベクター AI 業界動向 pro-learner)、(b) freshness_hours=120 (7 月更新の推定日、5 日前想定、168h 以内の fresh 適合)、(c) 出典 4 ソースで multi-source confirm (Adobe 公式 Firefly Illustrator ヘルプ + Firefly Text to Vector ヘルプ + Oreate AI ブログ論考 + Favtutor Firefly Illustrator Photoshop 記事)、(d) プロ向け高度議論ではなく『Illustrator 派の駆け出しが AI ベクターを外部往復なしで扱える時代の入口』actionable な weekday routine で着地、(e) 業界動向論考として Adobe × Figma × Framer の 3 者ベクター AI 競争軸の縦糸初号目、08 月中旬に 3 者比較論考 (Figma Draw との棲み分け / Framer 3.0 との比較) で 2 号目連続化予約。反問/共感型フック 10 個目 sample『Illustrator を触る駆け出しさん、7 月更新で Firefly が本体に入り AI ベクターが外部往復なしで作れる時代になりました』継続、weekday news 帯の 5 個目 sample。07-25 (Sat) 予約タスクは evergreen 帯 (Tips / Before-After / UI 批評 OK) で individual-creator-story 縦糸 3 号目後倒し候補 3 案 (Awwwards SOTD / Smashing 論考 / Product Hunt Figma プラグイン) から fresh 材料出現次第確定。",
+    "method": "product-launches",
+    "description": "Awwwards Site of the Day の 7/20-24 受賞 5 本 (Glitch&Grit / Lama Lama / Lacoste Polo Factory / Dragonfly Redux / NORMAL IS BORING) を横断調査し、7/21 SOTD 受賞のオランダ Amsterdam のデザインエージェンシー Lama Lama 自社ポートフォリオを主軸に選定。カラーはオフホワイト #F9F4EB と黒 #1A1C1C のたった 2 色、実装は WebGL/GSAP でモーション主体、Awwwards 総合スコア 7.51 (デザイン 7.64 / 使いやすさ 7.36 / 創造性 7.52 / コンテンツ 7.39) で駆け出し層の『色を増やす前に動きと余白で勝負する』学びに直接落とし込める素材。土曜 evergreen 帯で柱⑥ UI 批評 (直近 14 日 0%、target 10% で最大ギャップ) と柱⑤ ポートフォリオ事例 (target 10%) のクロス配置。method 選定: 2-day rule で news-en (7/24) と expert-blog (7/23) が今日不可、TOP1 タイの official-src (7/21 = 4 日前) は柱① 40% 超過中で柱バランス悪化のため回避、product-launches は 7/19 使用の 6 日前で 7-day-2-time が軟トリップだが avg 差が 0.5 の誤差レベルのため 2-day rule + 柱ギャップ + WORST 凍結の 3 ガード充足を優先して採用。NG パターン回避: 『AI に任せれば考えなくていい』を回避 (色の絞り込みは人の判断)、『プロ向け高度議論』を回避 (駆け出しがすぐ真似できる 2 色縛りの具体化)、AI = 補助輪フレームは維持 (Recommend で人側の判断を強化)。",
     "sources": [
-      "https://helpx.adobe.com/illustrator/desktop/use-generative-ai/generate-shape-fills.html",
-      "https://helpx.adobe.com/firefly/web/generate-vectors/text-to-vector/generate-vectors-using-text-prompts.html",
-      "https://www.oreateai.com/blog/adobe-firefly-in-illustrator-2026-weaving-magic-into-vector-design/ad14610999b9a3f670d2578019fe783f",
-      "https://favtutor.com/articles/adobe-illustrator-photoshop-firefly-ai-generative-features/"
+      "https://www.awwwards.com/sites/lama-lama-2",
+      "https://www.awwwards.com/lamalama/",
+      "https://www.awwwards.com/websites/sites_of_the_day/",
+      "https://www.sortlist.com/agency/lama-lama",
+      "https://www.awwwards.com/websites/portfolio/"
     ],
-    "query": "Adobe Illustrator 2026 July Firefly native Generative Shape Vector Model 2 text-to-vector swatches editable paths",
-    "freshness_hours": 120
+    "query": "Awwwards Site of the Day July 21 2026 Lama Lama Amsterdam design agency portfolio 2 color minimalist WebGL GSAP",
+    "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Adobeが7月更新、IllustratorにFirefly本体統合。AIベクターが外部往復なしに",
-      "description": "Illustratorを触る駆け出しさん、7月更新でFireflyが本体に入り、AIベクターが外部往復なしで作れる時代になりました。",
-      "detail": "Adobeが7月にIllustrator 2026を更新、Generative Shapeがツールバーに常駐しました。四角を引きプロンプトを打つとFireflyが編集可能なベクターを直接生成、既存スウォッチを読んで自動配色まで実行します。1回1クレジット消費、Standardプラン月250回。ベクターAI競争はFigmaのDraw、Framer 3.0と並ぶ3者の局面になりました。",
-      "narration": "Illustratorを触る駆け出しさん、7月更新でFireflyが本体に入り、AIベクターが外部往復なしで作れる時代になりました",
-      "tags": [
-        "Adobe",
-        "Illustrator",
-        "Firefly",
-        "ベクターAI",
-        "駆け出し"
-      ],
+      "title": "Awwwards先週火曜Lama Lamaが2色で受賞、駆け出しの色の絞り方",
+      "description": "オランダのデザイン会社Lama Lamaがたった2色でAwwwards SOTDを受賞",
+      "detail": "7/21 Awwwards Site of the Day を獲ったのはオランダ Amsterdam のデザイン会社 Lama Lama の自社ポートフォリオ。使った色はオフホワイトと黒の 2 色のみ、動きは WebGL と GSAP、総合スコア 7.51 点。色を増やすより、動きと余白の設計に振り切って勝った事例です。",
+      "narration": "知ってました?先週火曜のAwwwards Site of the Day、たった2色で作られたデザイン会社のポートフォリオが受賞したんです。",
+      "tags": ["Awwwards", "ポートフォリオ", "デザイン学習"],
       "narration_sections": {
-        "hook": "Illustratorを触る駆け出しさん、7月更新でFireflyが本体に入り、AIベクターが外部往復なしで作れる時代になりました",
-        "origin": "Adobeが7月にIllustrator 2026を更新、Generative Shapeがツールバーに常駐です。四角を引きプロンプトを打つとFireflyが編集可能なベクターを直接生成、スウォッチを読んで自動配色まで。1回1クレジット消費です",
-        "recommend": "今日の一手は、いつもの練習ロゴをFireflyで下書きしてから手で仕上げ、AIは補助輪と再確認することです"
+        "hook": "知ってました?先週火曜のAwwwards Site of the Day、たった2色で作られたデザイン会社のポートフォリオが受賞したんです。",
+        "origin": "オランダのLama Lamaという小さなデザイン会社の自社サイトです。カラーはオフホワイトと黒の2色だけ、でも中身はWebGLとGSAPで動画のようにヌルヌル動きます。デザイン7.64、使いやすさ7.36、総合7.51点で堂々の受賞。",
+        "recommend": "駆け出しほど色を増やしがちですが、勝ってるのは動きと余白の設計。ポートフォリオ、まず2色に絞ってみませんか。"
       },
       "section_titles": {
-        "hook": "Firefly本体化",
-        "origin": "AIベクター詳細",
-        "recommend": "練習ロゴで試そう"
+        "hook": "たった2色で受賞",
+        "origin": "Lama Lamaを分解",
+        "recommend": "色より動きと余白"
       },
       "section_descriptions": {
-        "hook": "AdobeがFireflyをIllustrator本体に統合",
-        "origin": "編集可能ベクター生成、月250クレジットまで無料",
-        "recommend": "練習ロゴをAI下書き→手で仕上げ、補助輪運用"
+        "hook": "先週火曜のAwwwards SOTDは2色構成",
+        "origin": "オランダの小さな会社が総合7.51で受賞",
+        "recommend": "駆け出しは色を絞って動きと余白で勝負しよう"
       }
     }
   ]
