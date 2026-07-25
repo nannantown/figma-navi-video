@@ -2,51 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "BvNB1JwbxBo",
-      "videoUrl": "https://youtube.com/shorts/BvNB1JwbxBo",
-      "date": "2026-04-25",
-      "title": "【デザインニュース】Figma×AI画像、日本語LPで失敗しない3コツ｜2026/04/25 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 49,
-      "discovery": {
-        "method": "expert-blog",
-        "description": "金曜のニュース(ChatGPT Images 2.0 × Figma)の週末深掘り。デザイナー向け prompt 解説ブログ(Promptolis / PixVerse / OpenAI Cookbook)から、日本語テキスト・ロゴ合成・Figma 後処理の具体 Tip を抽出",
-        "sources": [
-          "https://promptolis.com/blog/chatgpt-images-2-0-honest-guide-25-prompts/",
-          "https://pixverse.ai/en/blog/gpt-image-2-review-and-prompt-guide",
-          "https://developers.openai.com/cookbook/examples/multimodal/image-gen-models-prompting-guide",
-          "https://medium.com/no-time/chatgpt-images-2-0-just-dropped-and-its-seriously-good-38f31becd626",
-          "https://venturebeat.com/technology/openais-chatgpt-images-2-0-is-here-and-it-does-multilingual-text-full-infographics-slides-maps-even-manga-seemingly-flawlessly",
-          "https://techcrunch.com/2026/04/21/chatgpts-new-images-2-0-model-is-surprisingly-good-at-generating-text/"
-        ],
-        "query": "gpt-image-2 Japanese text literal prompt designer Figma workflow tips",
-        "freshness_hours": 96
-      },
-      "stats": {
-        "views": 115,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-05-09T00:10:44.447Z"
-      }
-    },
-    {
       "videoId": "AlqED-AiRyI",
       "videoUrl": "https://youtube.com/shorts/AlqED-AiRyI",
       "date": "2026-04-26",
@@ -2701,7 +2656,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-24T00:10:20.658Z"
+        "updatedAt": "2026-07-25T00:15:01.315Z"
       }
     },
     {
@@ -2746,7 +2701,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-24T00:10:20.658Z"
+        "updatedAt": "2026-07-25T00:15:01.315Z"
       }
     },
     {
@@ -2791,7 +2746,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-24T00:10:20.658Z"
+        "updatedAt": "2026-07-25T00:15:01.315Z"
       }
     },
     {
@@ -2836,7 +2791,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-24T00:10:20.658Z"
+        "updatedAt": "2026-07-25T00:15:01.315Z"
       }
     },
     {
@@ -2881,7 +2836,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-24T00:10:20.658Z"
+        "updatedAt": "2026-07-25T00:15:01.315Z"
       }
     },
     {
@@ -2928,7 +2883,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-24T00:10:20.658Z"
+        "updatedAt": "2026-07-25T00:15:01.315Z"
       }
     },
     {
@@ -2973,7 +2928,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-24T00:10:20.658Z"
+        "updatedAt": "2026-07-25T00:15:01.315Z"
       }
     },
     {
@@ -3015,7 +2970,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-24T00:10:20.658Z"
+        "updatedAt": "2026-07-25T00:15:01.315Z"
       }
     },
     {
@@ -3057,7 +3012,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-24T00:10:20.658Z"
+        "updatedAt": "2026-07-25T00:15:01.315Z"
       }
     },
     {
@@ -3099,7 +3054,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-24T00:10:20.658Z"
+        "updatedAt": "2026-07-25T00:15:01.315Z"
       }
     },
     {
@@ -3143,7 +3098,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-24T00:10:20.658Z"
+        "updatedAt": "2026-07-25T00:15:01.315Z"
       }
     },
     {
@@ -3186,7 +3141,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-24T00:10:20.658Z"
+        "updatedAt": "2026-07-25T00:15:01.315Z"
       }
     },
     {
@@ -3229,19 +3184,55 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-07-25T00:15:01.315Z"
+      }
+    },
+    {
+      "videoId": "t4Fz3hEmCyw",
+      "videoUrl": "https://youtube.com/shorts/t4Fz3hEmCyw",
+      "date": "2026-07-25",
+      "title": "【デザインニュース】Awwwards先週火曜Lama Lamaが2色で受賞、駆け出しの色の絞り方｜2026/07/25 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 43,
+      "discovery": {
+        "method": "product-launches",
+        "description": "Awwwards Site of the Day の 7/20-24 受賞 5 本 (Glitch&Grit / Lama Lama / Lacoste Polo Factory / Dragonfly Redux / NORMAL IS BORING) を横断調査し、7/21 SOTD 受賞のオランダ Amsterdam のデザインエージェンシー Lama Lama 自社ポートフォリオを主軸に選定。カラーはオフホワイト #F9F4EB と黒 #1A1C1C のたった 2 色、実装は WebGL/GSAP でモーション主体、Awwwards 総合スコア 7.51 (デザイン 7.64 / 使いやすさ 7.36 / 創造性 7.52 / コンテンツ 7.39) で駆け出し層の『色を増やす前に動きと余白で勝負する』学びに直接落とし込める素材。土曜 evergreen 帯で柱⑥ UI 批評 (直近 14 日 0%、target 10% で最大ギャップ) と柱⑤ ポートフォリオ事例 (target 10%) のクロス配置。method 選定: 2-day rule で news-en (7/24) と expert-blog (7/23) が今日不可、TOP1 タイの official-src (7/21 = 4 日前) は柱① 40% 超過中で柱バランス悪化のため回避、product-launches は 7/19 使用の 6 日前で 7-day-2-time が軟トリップだが avg 差が 0.5 の誤差レベルのため 2-day rule + 柱ギャップ + WORST 凍結の 3 ガード充足を優先して採用。NG パターン回避: 『AI に任せれば考えなくていい』を回避 (色の絞り込みは人の判断)、『プロ向け高度議論』を回避 (駆け出しがすぐ真似できる 2 色縛りの具体化)、AI = 補助輪フレームは維持 (Recommend で人側の判断を強化)。",
+        "sources": [
+          "https://www.awwwards.com/sites/lama-lama-2",
+          "https://www.awwwards.com/lamalama/",
+          "https://www.awwwards.com/websites/sites_of_the_day/",
+          "https://www.sortlist.com/agency/lama-lama",
+          "https://www.awwwards.com/websites/portfolio/"
+        ],
+        "query": "Awwwards Site of the Day July 21 2026 Lama Lama Amsterdam design agency portfolio 2 color minimalist WebGL GSAP",
+        "freshness_hours": 96
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-06-20",
-      "changes": [
-        "standard: 74 avg views (45 videos)",
-        "Day performance: Wed=109, Sun=88, Sat=85, Thu=66, Tue=62, Fri=58, Mon=44"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-06-21",
       "changes": [
@@ -3471,6 +3462,14 @@
       "changes": [
         "standard: 42 avg views (72 videos)",
         "Day performance: Wed=69, Sat=50, Sun=49, Fri=40, Tue=40, Mon=25, Thu=25"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-25",
+      "changes": [
+        "standard: 41 avg views (72 videos)",
+        "Day performance: Wed=69, Sat=50, Sun=49, Tue=40, Fri=31, Mon=25, Thu=25"
       ],
       "recommendedTemplate": "standard"
     }
