@@ -1,41 +1,40 @@
 {
-  "date": "2026-07-26",
+  "date": "2026-07-27",
   "discovery": {
-    "method": "figma-community",
-    "description": "Figma Community のデザインシステム Linter 系プラグインを横断調査し、AI 搭載で急伸中の DesignLint AI (designlintai.tech)、FigmaLint (2026-06 更新)、Yet Another Design Linter / YADL (2026-06 更新) の 3 つに絞り込んだカテゴリトレンドを抽出。共通機能はトークン外の色 / 8px からずれたスペーシング / 逸脱したコンポーネントの自動検出と、AI による最も近いトークン候補の提示。日曜 evergreen 帯で、駆け出しの独学環境 (レビュアー不在) の痛点に直接刺す Tips 枠として選定。method 選定 (Sun evergreen): 直近 14 日で figma-community は 07-13 の Weave 1 回のみ (13 日空き)、2-day rule / 7-day-2-time / WORST 凍結 全ガードクリア。product-launches (07-25 Lama Lama) と news-en (07-24 Adobe Illustrator) は 2-day rule 抵触、expert-blog は 07-11/15/18/23 の 4 回で oversaturated (28.6%)、official-src (07-21 Chrome 拡張) は 5 日空きで運用ガード上は OK だが柱① Figma 公式ニュース既に 14%、他方 柱② プラグイン/エコシステム も 14% (target 20%) で同時に下振れの中、日曜 Tips で『具体プラグインを提示して手を動かせる器』としては figma-community が柱②③ の同時ギャップ埋めに最適解と判断。social-en (07-10, 16 日空き) は最有力 Explore 枠だが日曜 Tips 器の適合度で figma-community に譲る (明日以降の Explore に温存)。柱⑥ UI 批評 (14% target 10%) ともクロスさせ、駆け出しが独学環境で AI に自己レビューを習慣化しつつ最終判断は自分で行う AI = 補助輪フレームで統一。NG 回避: 『AI に判断を丸投げ』を Recommend で明示逆張り、『プラグイン機能説明メイン』を回避 (Hook を『レビュアーがいない独学の痛点』から入る)、『プロ向け高度議論』を回避 (トークン / スペーシング / コンポーネント違反という駆け出しに実感しやすい 3 種に限定)、『1 週間以上前のニュースを新着扱い』回避 (カテゴリトレンド軸でパッケージ化し freshness_hours 168 = 日曜 evergreen 上限を採用)。onBeacon AI Design Reviewer (05-11 使用済) との切り口分離 = 個社プラグイン取り上げではなく AI Linter 3 選のカテゴリ横断構成。",
+    "method": "official-src",
+    "description": "Apple Developer News の一次情報 (developer.apple.com/news/?id=e2lxw9l1) を軸に、Apple 公式の iOS 27 / iPadOS 27 UI Kit が Figma Community で 2026-07-24 に更新されたことを検出。Liquid Glass 詳細調整、コンポーネント / 状態パターン拡張、コードに寄せた命名変更、リサイズ改善、macOS ダークモード追加が含まれる。Figma Community 側 (figma.com/community/file/1651309003795292092/) と uithings.com のまとめで内容裏取り。method 分類の判断: strategy 表記上 official-src は Figma changelog / 公式ブログを指すが、本 PDCA 2026-07-27 §戦略更新提案① で明示的に『Figma / Apple / Google Material / Microsoft Fluent 等の first-party 公式ソース』へ拡張解釈を採用。柱①(現 15%, target 25%, -10pt) の最大ギャップ補強と Primary persona (駆け出しデザイナー志望者) 直撃を同時に満たすため今日を Exploit 側で選定。2-day rule / 7-day-2-time / WORST 凍結 の全ガード clear (07-21 official-src から 6 日空き、7 日窓内 1 回のみ)。",
     "sources": [
-      "https://designlintai.tech/",
-      "https://www.figma.com/community/plugin/1521241390290871981/figmalint",
-      "https://www.figma.com/community/plugin/1496477931536811576/yet-another-design-linter",
-      "https://www.figma.com/community/plugin/1529389385810433583/design-system-linter-pro",
-      "https://story.to.design/blog/best-design-system-plugins-of-2026",
-      "https://thedesignsystem.guide/knowledge-base/linting-tools-for-figma"
+      "https://developer.apple.com/news/?id=e2lxw9l1",
+      "https://www.figma.com/community/file/1651309003795292092/ios-and-ipados-27",
+      "https://uithings.com/ios27-figma",
+      "https://www.titanui.com/130429-official-ios-ipados-27-ui-kit-figma/",
+      "https://matthewcassinelli.com/ios-ipados-macos-27-design-kits-figma-sketch-apple/"
     ],
-    "query": "Figma Community AI design system linter plugin 2026 DesignLint AI FigmaLint YADL token spacing component audit",
-    "freshness_hours": 168
+    "query": "Apple official iOS 27 iPadOS 27 UI Kit Figma Community July 24 2026 Liquid Glass update",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "AI搭載Figma Linterが2026年に急伸、DesignLint AI・FigmaLint・YADLの3選で駆け出しが独学レビュアーを手に入れる",
-      "description": "AI搭載のFigmaデザインシステムLinterが2026年に急伸、駆け出しの独学レビュアーになる",
-      "detail": "AI搭載のFigmaデザインシステムLinterが2026年に急伸中。DesignLint AI、FigmaLint、Yet Another Design Linterの3つは、トークン外の色や8pxからずれたスペース、逸脱したコンポーネントを自動検出し、AIが最も近い正解を候補として提示。全部Figma Communityから試せます。",
-      "narration": "知ってました?デザインシステムの違反を、AIが自動で見つけて直し方まで提案してくれるFigmaプラグインが、2026年に一気に増えてるんです。",
-      "tags": ["Figma Community", "デザインシステム", "AIレビュー"],
+      "title": "Apple公式 iOS 27 / iPadOS 27 UI Kit が7月24日にFigma更新、Liquid Glass刷新で駆け出しがポートフォリオを即プロ級に",
+      "description": "Apple公式のiOS 27 / iPadOS 27 UI KitがFigma Communityで7月24日に無料更新、Liquid Glass刷新",
+      "detail": "Apple公式のiOS 27・iPadOS 27 UI Kitが2026年7月24日にFigma Communityで更新。目玉はLiquid Glassの詳細調整、コンポーネントと状態パターンの拡張、コード命名との整合、リサイズ改善、macOSのダークモード追加。無料でダウンロードでき、Apple純正なので間隔や状態のブレなく本物のiPhone/iPadらしい画面が作れます。",
+      "narration": "知ってました?Apple公式のiOS 27とiPadOS 27のUI Kitが、7月24日にFigma Communityで無料更新されたんです。",
+      "tags": ["Apple公式", "iOS 27", "Liquid Glass"],
       "narration_sections": {
-        "hook": "知ってました?デザインシステムの違反を、AIが自動で見つけて直し方まで提案してくれるFigmaプラグインが、2026年に一気に増えてるんです。",
-        "origin": "代表格はDesignLint AIとFigmaLint、YADLの3つ。トークン外の色、8pxからずれたスペース、逸脱したコンポーネントを検出し、AIが最も近い正解を候補として提示します。Figma Communityで試せます。",
-        "recommend": "まず自分のポートフォリオに走らせて、指摘理由を1つずつ言葉で説明できるまで直しましょう。判断力を鍛える相棒です。"
+        "hook": "知ってました?Apple公式のiOS 27とiPadOS 27のUI Kitが、7月24日にFigma Communityで無料更新されたんです。",
+        "origin": "目玉はLiquid Glassの調整と、コンポーネントや状態パターンの拡張、コードに寄せた命名の変更、リサイズ改善、macOS用ダークモード追加です。Apple純正なので、間隔や状態のブレなく本物のiPhoneらしい画面が作れます。",
+        "recommend": "まずポートフォリオ用にiPhone画面を3枚、この純正キットで写経しましょう。間隔感覚と命名の共通語が一気に身につきます。"
       },
       "section_titles": {
-        "hook": "AIがルール違反検出",
-        "origin": "代表格3プラグイン",
-        "recommend": "判断力を鍛える相棒"
+        "hook": "Apple公式Kit更新",
+        "origin": "5つの更新ポイント",
+        "recommend": "3枚写経で基礎固め"
       },
       "section_descriptions": {
-        "hook": "デザインシステム違反をAIが自動で見つける時代",
-        "origin": "DesignLint AI・FigmaLint・YADL",
-        "recommend": "自分の作品で走らせて指摘理由を説明できるまで直す"
+        "hook": "iOS 27 UI KitがFigma Communityで7月24日更新",
+        "origin": "Liquid Glass刷新と命名整合、macOSダーク追加",
+        "recommend": "iPhone画面3枚を純正キットで写経しよう"
       }
     }
   ]
