@@ -1,40 +1,39 @@
 {
-  "date": "2026-07-27",
+  "date": "2026-07-28",
   "discovery": {
-    "method": "official-src",
-    "description": "Apple Developer News の一次情報 (developer.apple.com/news/?id=e2lxw9l1) を軸に、Apple 公式の iOS 27 / iPadOS 27 UI Kit が Figma Community で 2026-07-24 に更新されたことを検出。Liquid Glass 詳細調整、コンポーネント / 状態パターン拡張、コードに寄せた命名変更、リサイズ改善、macOS ダークモード追加が含まれる。Figma Community 側 (figma.com/community/file/1651309003795292092/) と uithings.com のまとめで内容裏取り。method 分類の判断: strategy 表記上 official-src は Figma changelog / 公式ブログを指すが、本 PDCA 2026-07-27 §戦略更新提案① で明示的に『Figma / Apple / Google Material / Microsoft Fluent 等の first-party 公式ソース』へ拡張解釈を採用。柱①(現 15%, target 25%, -10pt) の最大ギャップ補強と Primary persona (駆け出しデザイナー志望者) 直撃を同時に満たすため今日を Exploit 側で選定。2-day rule / 7-day-2-time / WORST 凍結 の全ガード clear (07-21 official-src から 6 日空き、7 日窓内 1 回のみ)。",
+    "method": "social-en",
+    "description": "Hacker News の 2026-07-27 トップ入り記事から Steph Ango (Obsidian CEO) の論考『Design is compromise』(stephango.com/design-is-compromise、HN item #49059367) を検出。原著と HN 話題を横断してデザイン設計思想を一次取得。social-en (HN designer 界隈 = strategy Discovery Methods 表記どおり) を Explore で採用。過去 5 日連続 Exploit method (expert-blog / news-en / product-launches / figma-community / official-src) で Explore が 0 回、07-10 以来 social-en 18 日空きで Explore 予算最大、07-27 PDCA §Method 提案①『火水のどこかで Explore 復活』に完全合致。2-day rule (07-27 official-src, 07-26 figma-community ブロック) / 7-day-2-time (news-en 3 回目 = 違反、social-en 0 回) / WORST 凍結 全ガード clear。柱⑥ UI 批評/学習要素 (design philosophy 論考) を主、柱③ 業界ニュース (HN 話題) をサブで刺しつつ、柱③ を追加せず超過 +11pt の自然圧縮を継続。Primary persona (駆け出しデザイナー) の『完璧を目指して手が止まる』病に『何を捨てたかを一行添える』具体 action で直撃、AI = 補助輪フレーム維持。",
     "sources": [
-      "https://developer.apple.com/news/?id=e2lxw9l1",
-      "https://www.figma.com/community/file/1651309003795292092/ios-and-ipados-27",
-      "https://uithings.com/ios27-figma",
-      "https://www.titanui.com/130429-official-ios-ipados-27-ui-kit-figma/",
-      "https://matthewcassinelli.com/ios-ipados-macos-27-design-kits-figma-sketch-apple/"
+      "https://stephango.com/design-is-compromise",
+      "https://news.ycombinator.com/item?id=49059367",
+      "https://en.wikipedia.org/wiki/Obsidian_(software)",
+      "https://www.linkedin.com/in/stephango"
     ],
-    "query": "Apple official iOS 27 iPadOS 27 UI Kit Figma Community July 24 2026 Liquid Glass update",
-    "freshness_hours": 72
+    "query": "Hacker News top story design July 27 2026 stephango Obsidian CEO Design is compromise tradeoff",
+    "freshness_hours": 28
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Apple公式 iOS 27 / iPadOS 27 UI Kit が7月24日にFigma更新、Liquid Glass刷新で駆け出しがポートフォリオを即プロ級に",
-      "description": "Apple公式のiOS 27 / iPadOS 27 UI KitがFigma Communityで7月24日に無料更新、Liquid Glass刷新",
-      "detail": "Apple公式のiOS 27・iPadOS 27 UI Kitが2026年7月24日にFigma Communityで更新。目玉はLiquid Glassの詳細調整、コンポーネントと状態パターンの拡張、コード命名との整合、リサイズ改善、macOSのダークモード追加。無料でダウンロードでき、Apple純正なので間隔や状態のブレなく本物のiPhone/iPadらしい画面が作れます。",
-      "narration": "知ってました?Apple公式のiOS 27とiPadOS 27のUI Kitが、7月24日にFigma Communityで無料更新されたんです。",
-      "tags": ["Apple公式", "iOS 27", "Liquid Glass"],
+      "title": "Obsidian CEO Steph Angoの論考『Design is compromise』がHN昨日トップ、駆け出しの完璧病に効く一言",
+      "description": "Hacker Newsで昨日トップの記事、Obsidian CEO Steph Angoが『デザインは妥協』と言い切る論考",
+      "detail": "妥協はネガティブに聞こえるが、記事の趣旨は違う。強みを取るために弱みを受け入れる『トレードオフ』を選ぶことが良いデザイン。『無妥協』は幻想で、方向を決めた瞬間に他の選択肢を捨てている、というオピニオンあるメッセージ。駆け出しの完璧主義病に直接刺さる論考です。",
+      "narration": "HackerNewsで昨日トップの記事、ObsidianのCEO Steph Angoさんが『デザインは妥協』とはっきり書いてます。",
+      "tags": ["Steph Ango", "デザイン論", "HN話題"],
       "narration_sections": {
-        "hook": "知ってました?Apple公式のiOS 27とiPadOS 27のUI Kitが、7月24日にFigma Communityで無料更新されたんです。",
-        "origin": "目玉はLiquid Glassの調整と、コンポーネントや状態パターンの拡張、コードに寄せた命名の変更、リサイズ改善、macOS用ダークモード追加です。Apple純正なので、間隔や状態のブレなく本物のiPhoneらしい画面が作れます。",
-        "recommend": "まずポートフォリオ用にiPhone画面を3枚、この純正キットで写経しましょう。間隔感覚と命名の共通語が一気に身につきます。"
+        "hook": "HackerNewsで昨日トップの記事、ObsidianのCEO Steph Angoさんが『デザインは妥協』とはっきり書いてます。",
+        "origin": "妥協って言葉、ネガティブに聞こえますよね。でもこの記事は違う視点で、強みを取るために弱みを受け入れる『トレードオフ』を選ぶことが良いデザインだと言ってます。『無妥協』は幻想で、方向を決めた瞬間、他の選択肢を捨てているんです。",
+        "recommend": "駆け出しはポートフォリオに『何を捨てたか』を一行添えましょう。面接で一気に刺さります。AIは選択肢を素早く出す補助輪ですよ。"
       },
       "section_titles": {
-        "hook": "Apple公式Kit更新",
-        "origin": "5つの更新ポイント",
-        "recommend": "3枚写経で基礎固め"
+        "hook": "HNトップの論考",
+        "origin": "妥協=トレードオフ",
+        "recommend": "捨てた点を1行書く"
       },
       "section_descriptions": {
-        "hook": "iOS 27 UI KitがFigma Communityで7月24日更新",
-        "origin": "Liquid Glass刷新と命名整合、macOSダーク追加",
-        "recommend": "iPhone画面3枚を純正キットで写経しよう"
+        "hook": "HN昨日トップ、Obsidian CEOのデザイン論",
+        "origin": "無妥協は幻想、強みのために弱みを引き受ける",
+        "recommend": "何を捨てたかを一行添えるだけで面接で刺さる"
       }
     }
   ]
