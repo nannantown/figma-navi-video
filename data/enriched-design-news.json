@@ -1,39 +1,40 @@
 {
-  "date": "2026-07-28",
+  "date": "2026-07-29",
   "discovery": {
-    "method": "social-en",
-    "description": "Hacker News の 2026-07-27 トップ入り記事から Steph Ango (Obsidian CEO) の論考『Design is compromise』(stephango.com/design-is-compromise、HN item #49059367) を検出。原著と HN 話題を横断してデザイン設計思想を一次取得。social-en (HN designer 界隈 = strategy Discovery Methods 表記どおり) を Explore で採用。過去 5 日連続 Exploit method (expert-blog / news-en / product-launches / figma-community / official-src) で Explore が 0 回、07-10 以来 social-en 18 日空きで Explore 予算最大、07-27 PDCA §Method 提案①『火水のどこかで Explore 復活』に完全合致。2-day rule (07-27 official-src, 07-26 figma-community ブロック) / 7-day-2-time (news-en 3 回目 = 違反、social-en 0 回) / WORST 凍結 全ガード clear。柱⑥ UI 批評/学習要素 (design philosophy 論考) を主、柱③ 業界ニュース (HN 話題) をサブで刺しつつ、柱③ を追加せず超過 +11pt の自然圧縮を継続。Primary persona (駆け出しデザイナー) の『完璧を目指して手が止まる』病に『何を捨てたかを一行添える』具体 action で直撃、AI = 補助輪フレーム維持。",
+    "method": "product-launches",
+    "description": "Awwwards Site of the Day 2026-07-28 に AI-powered digital studio TRIONN のポートフォリオサイトが選出されたことを検出。Awwwards TRIONN ページ / CSS Design Awards / Codrops 技術解説 / 創業者 (Sunny Rathod) LinkedIn を横断し、GSAP + Three.js + Lenis + Web Audio の 4 スタック合体を 4 ヶ月構築という技術内訳と『音の使い方』を一次取得。product-launches (Awwwards SOTD = strategy Discovery Methods の Product Hunt / Awwwards / Dribbble Trending 直下) を Exploit で採用。07-28 PDCA §Method 提案①『明日 07-29 (Wed) は product-launches or news-ja が第一候補』に完全合致、4 日空きで 2-day rule (07-27 official-src / 07-28 social-en ブロック) / 7-day-2-time (product-launches 1 回目 → 2 回目 = OK) / WORST 凍結 全ガード clear。news-ja は fresh 日本語ソース未確保のため次サイクル送り。10 日で 3 件目の Awwwards SOTD だが、07-19 (個人開発者の技術見本 7000 粒子) / 07-25 (個人の 2 色制約) と重複しない『AI スタジオ / 4 スタック合体 / 音 (Web Audio)』角度で差別化。柱⑤ (portfolio事例) 主 + 柱④ (Tips / 音を 1 個添える具体 action) 副、柱③ (+9pt 超過) を追加しない選択で自然圧縮継続。Primary persona (駆け出しデザイナー) の『真似できない受賞作を見て手が止まる』病に『4 スタックは真似せず音 1 個だけ盗む』具体 action で直撃、AI = 補助輪フレーム維持 (『選択肢を素早く出す道具、選ぶのはあなた』)。",
     "sources": [
-      "https://stephango.com/design-is-compromise",
-      "https://news.ycombinator.com/item?id=49059367",
-      "https://en.wikipedia.org/wiki/Obsidian_(software)",
-      "https://www.linkedin.com/in/stephango"
+      "https://www.awwwards.com/sites/trionn-2",
+      "https://www.awwwards.com/trionn/",
+      "https://www.cssdesignawards.com/sites/trionn/49548/",
+      "https://tympanus.net/codrops/2026/07/15/the-architecture-behind-trionn-coordinating-gsap-three-js-lenis-and-web-audio/",
+      "https://www.linkedin.com/in/sunnyrathod/"
     ],
-    "query": "Hacker News top story design July 27 2026 stephango Obsidian CEO Design is compromise tradeoff",
+    "query": "Awwwards Site of the Day July 28 2026 TRIONN AI digital studio GSAP Three.js Lenis Web Audio 4 stack portfolio",
     "freshness_hours": 28
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Obsidian CEO Steph Angoの論考『Design is compromise』がHN昨日トップ、駆け出しの完璧病に効く一言",
-      "description": "Hacker Newsで昨日トップの記事、Obsidian CEO Steph Angoが『デザインは妥協』と言い切る論考",
-      "detail": "妥協はネガティブに聞こえるが、記事の趣旨は違う。強みを取るために弱みを受け入れる『トレードオフ』を選ぶことが良いデザイン。『無妥協』は幻想で、方向を決めた瞬間に他の選択肢を捨てている、というオピニオンあるメッセージ。駆け出しの完璧主義病に直接刺さる論考です。",
-      "narration": "HackerNewsで昨日トップの記事、ObsidianのCEO Steph Angoさんが『デザインは妥協』とはっきり書いてます。",
-      "tags": ["Steph Ango", "デザイン論", "HN話題"],
+      "title": "AIデザインスタジオTRIONNがAwwwards昨日1位、駆け出しは4スタックより『音』を1個盗む",
+      "description": "Awwwards昨日1位はAIデザインスタジオTRIONN、4ヶ月かけて音とアニメを合体させた話題作",
+      "detail": "GSAPで動き、Three.jsで3D、Lenisで滑らかスクロール、そこにWeb Audioで音を重ねる4層構造。4ヶ月かかった規模感ですが、駆け出しが盗むべきは音のところ。ボタンクリックに1音重ねるだけで、ポートフォリオの印象は段違いに変わります。",
+      "narration": "Awwwards昨日1位、AIデザインスタジオTRIONNが4ヶ月かけて音とアニメを合体させた話題作、駆け出しには真似せず盗んで欲しい。",
+      "tags": ["TRIONN", "Awwwards", "Web Audio"],
       "narration_sections": {
-        "hook": "HackerNewsで昨日トップの記事、ObsidianのCEO Steph Angoさんが『デザインは妥協』とはっきり書いてます。",
-        "origin": "妥協って言葉、ネガティブに聞こえますよね。でもこの記事は違う視点で、強みを取るために弱みを受け入れる『トレードオフ』を選ぶことが良いデザインだと言ってます。『無妥協』は幻想で、方向を決めた瞬間、他の選択肢を捨てているんです。",
-        "recommend": "駆け出しはポートフォリオに『何を捨てたか』を一行添えましょう。面接で一気に刺さります。AIは選択肢を素早く出す補助輪ですよ。"
+        "hook": "Awwwards昨日1位、AIデザインスタジオTRIONNが4ヶ月かけて音とアニメを合体させた話題作、駆け出しには真似せず盗んで欲しい。",
+        "origin": "GSAPで動き、Three.jsで3D、Lenisで滑らかスクロール、そこにWeb Audioで音を重ねる4層構造です。4ヶ月かかった規模感ですが、駆け出しが盗むべきは音のところ。ボタンクリックに1音重ねるだけで、ポートフォリオの印象は段違いに変わります。",
+        "recommend": "無料の効果音サイトから3秒探して、クリック音を1個追加してみてください。AIは選択肢を出す補助輪、選ぶのはあなたです。"
       },
       "section_titles": {
-        "hook": "HNトップの論考",
-        "origin": "妥協=トレードオフ",
-        "recommend": "捨てた点を1行書く"
+        "hook": "Awwwards1位獲得",
+        "origin": "音まで作り込む4層",
+        "recommend": "クリック音を1個"
       },
       "section_descriptions": {
-        "hook": "HN昨日トップ、Obsidian CEOのデザイン論",
-        "origin": "無妥協は幻想、強みのために弱みを引き受ける",
-        "recommend": "何を捨てたかを一行添えるだけで面接で刺さる"
+        "hook": "AIデザインスタジオが昨日Awwwards1位に",
+        "origin": "動きと3Dと滑らかさに音を重ねる4層設計",
+        "recommend": "無料の効果音サイトから3秒探して1個添える"
       }
     }
   ]
