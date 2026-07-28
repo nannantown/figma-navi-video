@@ -2,141 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "AlqED-AiRyI",
-      "videoUrl": "https://youtube.com/shorts/AlqED-AiRyI",
-      "date": "2026-04-26",
-      "title": "【デザインニュース】黒×白だけで戦うAwwwards受賞ポートフォリオ｜2026/04/26 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 47,
-      "discovery": {
-        "method": "product-launches",
-        "description": "Awwwards Site of the Day (2026/04/25 受賞) Ashley Brooke を中心に、Awwwards SOTD リストとデザイナー Ethan Suero の Webflow / CSS Design Awards 関連ページを横断し、2色設計・Webflow+GSAP 構成・余白で作品を主役にする 3 つの学びを抽出。日曜の UI 批評 / Tips 枠 (柱⑥+④) として運用",
-        "sources": [
-          "https://www.awwwards.com/sites/ashley-brooke",
-          "https://www.awwwards.com/websites/sites_of_the_day/",
-          "https://webflow.com/@ethan-suero",
-          "https://www.ethansuero.com/",
-          "https://www.cssdesignawards.com/sites/ethan-suero-portfolio/42271/",
-          "https://www.awwwards.com/awwwards_collections/collections/black-and-white-websites/"
-        ],
-        "query": "Awwwards Site of the Day April 2026 Ashley Brooke Ethan Suero portfolio design",
-        "freshness_hours": 30
-      },
-      "stats": {
-        "views": 249,
-        "likes": 1,
-        "comments": 0,
-        "updatedAt": "2026-05-10T00:04:37.727Z"
-      }
-    },
-    {
-      "videoId": "2e54HyTWO1Y",
-      "videoUrl": "https://youtube.com/shorts/2e54HyTWO1Y",
-      "date": "2026-04-27",
-      "title": "【デザインニュース】Figmaが大幅高速化、ベクター10倍&メモリ警告92%減｜2026/04/27 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 50,
-      "discovery": {
-        "method": "official-src",
-        "description": "Figma 公式 release notes と product updates blog を一次取得。4/23-24 公開のパフォーマンス改善 (ベクター編集10倍、Makeフレーム4倍、メモリ警告92%減、読み込み高速化) を、AI画像系3日連続で疲労してきた視聴者向けに「学習者の日々の体感に効く地味デカ更新」として柱①Figma公式ニュース枠で抽出",
-        "sources": [
-          "https://www.figma.com/release-notes/",
-          "https://releasebot.io/updates/figma",
-          "https://www.figma.com/blog/product-updates/",
-          "https://www.figma.com/blog/state-of-the-designer-2026/",
-          "https://blog.logrocket.com/ux-design/figma-ai-2026-quick-overview/",
-          "https://www.figma.com/blog/keeping-figma-fast/"
-        ],
-        "query": "Figma release notes April 2026 vector editing 10x performance Make frame rate memory",
-        "freshness_hours": 96
-      },
-      "stats": {
-        "views": 101,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-05-11T00:09:31.264Z"
-      }
-    },
-    {
-      "videoId": "JLtCuaFLFcg",
-      "videoUrl": "https://youtube.com/shorts/JLtCuaFLFcg",
-      "date": "2026-04-28",
-      "title": "【デザインニュース】Gemini UX 2.0 リーク、AI処理中の演出が大刷新｜2026/04/28 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 45,
-      "discovery": {
-        "method": "news-en",
-        "description": "Android Authority (4/27 公開) と Android Headlines を中心に、Gemini Android アプリの UX 2.0 リーク (グラデアニメ・サイドバー全画面化・処理中演出の刷新) を一次的に拾い、英語テック報道ソースを束ねて柱③業界デザインニュース枠で抽出。前 PDCA で WORST だった news-en を、AI画像系を外した別ネタで再挑戦する Explore 枠",
-        "sources": [
-          "https://www.androidauthority.com/google-gemini-animated-gradient-backgrounds-redesign-3661003/",
-          "https://www.androidheadlines.com/2026/04/google-gemini-redesign-ux-animated-backgrounds.html",
-          "https://www.androidauthority.com/gemini-android-colorful-upgrade-3659835/",
-          "https://www.androidpolice.com/google-gemini-animated-backgrounds-queries/",
-          "https://www.techlusive.in/news/google-gemini-app-leaks-highlight-new-sidebar-icons-and-live-interface-changes-1659025/",
-          "https://www.androidauthority.com/gemini-overlay-and-live-ui-changes-3655577/"
-        ],
-        "query": "Google Gemini UX 2.0 leak APK teardown gradient animation sidebar April 2026",
-        "freshness_hours": 24
-      },
-      "stats": {
-        "views": 114,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-05-12T00:10:36.798Z"
-      }
-    },
-    {
       "videoId": "fX-rdF_wWkk",
       "videoUrl": "https://youtube.com/shorts/fX-rdF_wWkk",
       "date": "2026-04-29",
@@ -2791,7 +2656,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-25T00:15:01.315Z"
+        "updatedAt": "2026-07-28T00:12:32.857Z"
       }
     },
     {
@@ -2836,7 +2701,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-25T00:15:01.315Z"
+        "updatedAt": "2026-07-28T00:12:32.857Z"
       }
     },
     {
@@ -2883,7 +2748,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-25T00:15:01.315Z"
+        "updatedAt": "2026-07-28T00:12:32.857Z"
       }
     },
     {
@@ -2928,7 +2793,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-25T00:15:01.315Z"
+        "updatedAt": "2026-07-28T00:12:32.857Z"
       }
     },
     {
@@ -2970,7 +2835,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-25T00:15:01.315Z"
+        "updatedAt": "2026-07-28T00:12:32.857Z"
       }
     },
     {
@@ -3012,7 +2877,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-25T00:15:01.315Z"
+        "updatedAt": "2026-07-28T00:12:32.857Z"
       }
     },
     {
@@ -3054,7 +2919,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-25T00:15:01.315Z"
+        "updatedAt": "2026-07-28T00:12:32.857Z"
       }
     },
     {
@@ -3098,7 +2963,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-25T00:15:01.315Z"
+        "updatedAt": "2026-07-28T00:12:32.857Z"
       }
     },
     {
@@ -3141,7 +3006,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-25T00:15:01.315Z"
+        "updatedAt": "2026-07-28T00:12:32.857Z"
       }
     },
     {
@@ -3184,7 +3049,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-25T00:15:01.315Z"
+        "updatedAt": "2026-07-28T00:12:32.857Z"
       }
     },
     {
@@ -3225,6 +3090,49 @@
         "freshness_hours": 96
       },
       "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-07-28T00:12:32.857Z"
+      }
+    },
+    {
+      "videoId": "VyS4JhvzS9E",
+      "videoUrl": "https://youtube.com/shorts/VyS4JhvzS9E",
+      "date": "2026-07-28",
+      "title": "【デザインニュース】Obsidian CEO Steph Angoの論考『Design is compromise』がHN昨日トップ、駆け出しの完璧病に効く一言｜2026/07/28 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 44,
+      "discovery": {
+        "method": "social-en",
+        "description": "Hacker News の 2026-07-27 トップ入り記事から Steph Ango (Obsidian CEO) の論考『Design is compromise』(stephango.com/design-is-compromise、HN item #49059367) を検出。原著と HN 話題を横断してデザイン設計思想を一次取得。social-en (HN designer 界隈 = strategy Discovery Methods 表記どおり) を Explore で採用。過去 5 日連続 Exploit method (expert-blog / news-en / product-launches / figma-community / official-src) で Explore が 0 回、07-10 以来 social-en 18 日空きで Explore 予算最大、07-27 PDCA §Method 提案①『火水のどこかで Explore 復活』に完全合致。2-day rule (07-27 official-src, 07-26 figma-community ブロック) / 7-day-2-time (news-en 3 回目 = 違反、social-en 0 回) / WORST 凍結 全ガード clear。柱⑥ UI 批評/学習要素 (design philosophy 論考) を主、柱③ 業界ニュース (HN 話題) をサブで刺しつつ、柱③ を追加せず超過 +11pt の自然圧縮を継続。Primary persona (駆け出しデザイナー) の『完璧を目指して手が止まる』病に『何を捨てたかを一行添える』具体 action で直撃、AI = 補助輪フレーム維持。",
+        "sources": [
+          "https://stephango.com/design-is-compromise",
+          "https://news.ycombinator.com/item?id=49059367",
+          "https://en.wikipedia.org/wiki/Obsidian_(software)",
+          "https://www.linkedin.com/in/stephango"
+        ],
+        "query": "Hacker News top story design July 27 2026 stephango Obsidian CEO Design is compromise tradeoff",
+        "freshness_hours": 28
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -3233,14 +3141,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-06-21",
-      "changes": [
-        "standard: 72 avg views (46 videos)",
-        "Day performance: Wed=109, Sun=88, Sat=75, Thu=66, Tue=62, Fri=58, Mon=44"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-06-22",
       "changes": [
@@ -3470,6 +3370,14 @@
       "changes": [
         "standard: 41 avg views (72 videos)",
         "Day performance: Wed=69, Sat=50, Sun=49, Tue=40, Fri=31, Mon=25, Thu=25"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-28",
+      "changes": [
+        "standard: 40 avg views (72 videos)",
+        "Day performance: Wed=69, Sun=49, Sat=41, Tue=40, Fri=31, Mon=25, Thu=25"
       ],
       "recommendedTemplate": "standard"
     }
