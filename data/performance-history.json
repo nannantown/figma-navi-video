@@ -2,51 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "fX-rdF_wWkk",
-      "videoUrl": "https://youtube.com/shorts/fX-rdF_wWkk",
-      "date": "2026-04-29",
-      "title": "【デザインニュース】Magic Patterns Agent 2.0、AIデザインツールが効率の数字で競争へ｜2026/04/29 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 47,
-      "discovery": {
-        "method": "product-launches",
-        "description": "Magic Patterns 公式ブログと Product Hunt / UIComet の launch ページを横断、4/23 に発表された Agent 2.0 の効率指標(クレジット-15%/TTFT+10%/エラー率-8%)・1,500社導入(Granola/Vanta/Freedom Mortgage)・Figma 直接連携の3点を一次取得。柱② プラグイン/エコシステム枠を、TOP1 method (4/26 product-launches=249views) で Exploit 再投入。直近2日(4/28 news-en, 4/27 official-src) と method 重複なし、AI画像系から topic 軸も切り替え",
-        "sources": [
-          "https://www.magicpatterns.com/blog/magic-patterns-agent-2-0",
-          "https://launches.uicomet.com/products/magic-patterns-agent-20-YTzle",
-          "https://www.producthunt.com/products/magicpatterns/launches",
-          "https://www.magicpatterns.com/",
-          "https://www.figma.com/community/plugin/1304255855834420274/magic-patterns",
-          "https://www.magicpatterns.com/blog/figma-make-alternatives"
-        ],
-        "query": "Magic Patterns Agent 2.0 launch April 23 2026 metrics 1500 teams Figma integration",
-        "freshness_hours": 144
-      },
-      "stats": {
-        "views": 485,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-05-13T00:16:15.353Z"
-      }
-    },
-    {
       "videoId": "-oJqyqxBSUg",
       "videoUrl": "https://youtube.com/shorts/-oJqyqxBSUg",
       "date": "2026-04-30",
@@ -2701,7 +2656,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-28T00:12:32.857Z"
+        "updatedAt": "2026-07-29T00:08:56.568Z"
       }
     },
     {
@@ -2748,7 +2703,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-28T00:12:32.857Z"
+        "updatedAt": "2026-07-29T00:08:56.568Z"
       }
     },
     {
@@ -2793,7 +2748,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-28T00:12:32.857Z"
+        "updatedAt": "2026-07-29T00:08:56.568Z"
       }
     },
     {
@@ -2835,7 +2790,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-28T00:12:32.857Z"
+        "updatedAt": "2026-07-29T00:08:56.568Z"
       }
     },
     {
@@ -2877,7 +2832,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-28T00:12:32.857Z"
+        "updatedAt": "2026-07-29T00:08:56.568Z"
       }
     },
     {
@@ -2919,7 +2874,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-28T00:12:32.857Z"
+        "updatedAt": "2026-07-29T00:08:56.568Z"
       }
     },
     {
@@ -2963,7 +2918,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-28T00:12:32.857Z"
+        "updatedAt": "2026-07-29T00:08:56.568Z"
       }
     },
     {
@@ -3006,7 +2961,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-28T00:12:32.857Z"
+        "updatedAt": "2026-07-29T00:08:56.568Z"
       }
     },
     {
@@ -3049,7 +3004,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-28T00:12:32.857Z"
+        "updatedAt": "2026-07-29T00:08:56.568Z"
       }
     },
     {
@@ -3093,7 +3048,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-28T00:12:32.857Z"
+        "updatedAt": "2026-07-29T00:08:56.568Z"
       }
     },
     {
@@ -3136,19 +3091,55 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-07-29T00:08:56.568Z"
+      }
+    },
+    {
+      "videoId": "IY3EsFPb4xI",
+      "videoUrl": "https://youtube.com/shorts/IY3EsFPb4xI",
+      "date": "2026-07-29",
+      "title": "【デザインニュース】AIデザインスタジオTRIONNがAwwwards昨日1位、駆け出しは4スタックより『音』を1個盗む｜2026/07/29 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 47,
+      "discovery": {
+        "method": "product-launches",
+        "description": "Awwwards Site of the Day 2026-07-28 に AI-powered digital studio TRIONN のポートフォリオサイトが選出されたことを検出。Awwwards TRIONN ページ / CSS Design Awards / Codrops 技術解説 / 創業者 (Sunny Rathod) LinkedIn を横断し、GSAP + Three.js + Lenis + Web Audio の 4 スタック合体を 4 ヶ月構築という技術内訳と『音の使い方』を一次取得。product-launches (Awwwards SOTD = strategy Discovery Methods の Product Hunt / Awwwards / Dribbble Trending 直下) を Exploit で採用。07-28 PDCA §Method 提案①『明日 07-29 (Wed) は product-launches or news-ja が第一候補』に完全合致、4 日空きで 2-day rule (07-27 official-src / 07-28 social-en ブロック) / 7-day-2-time (product-launches 1 回目 → 2 回目 = OK) / WORST 凍結 全ガード clear。news-ja は fresh 日本語ソース未確保のため次サイクル送り。10 日で 3 件目の Awwwards SOTD だが、07-19 (個人開発者の技術見本 7000 粒子) / 07-25 (個人の 2 色制約) と重複しない『AI スタジオ / 4 スタック合体 / 音 (Web Audio)』角度で差別化。柱⑤ (portfolio事例) 主 + 柱④ (Tips / 音を 1 個添える具体 action) 副、柱③ (+9pt 超過) を追加しない選択で自然圧縮継続。Primary persona (駆け出しデザイナー) の『真似できない受賞作を見て手が止まる』病に『4 スタックは真似せず音 1 個だけ盗む』具体 action で直撃、AI = 補助輪フレーム維持 (『選択肢を素早く出す道具、選ぶのはあなた』)。",
+        "sources": [
+          "https://www.awwwards.com/sites/trionn-2",
+          "https://www.awwwards.com/trionn/",
+          "https://www.cssdesignawards.com/sites/trionn/49548/",
+          "https://tympanus.net/codrops/2026/07/15/the-architecture-behind-trionn-coordinating-gsap-three-js-lenis-and-web-audio/",
+          "https://www.linkedin.com/in/sunnyrathod/"
+        ],
+        "query": "Awwwards Site of the Day July 28 2026 TRIONN AI digital studio GSAP Three.js Lenis Web Audio 4 stack portfolio",
+        "freshness_hours": 28
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-06-22",
-      "changes": [
-        "standard: 71 avg views (47 videos)",
-        "Day performance: Wed=109, Sun=76, Sat=75, Thu=66, Tue=62, Fri=58, Mon=44"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-06-26",
       "changes": [
@@ -3378,6 +3369,14 @@
       "changes": [
         "standard: 40 avg views (72 videos)",
         "Day performance: Wed=69, Sun=49, Sat=41, Tue=40, Fri=31, Mon=25, Thu=25"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-29",
+      "changes": [
+        "standard: 34 avg views (70 videos)",
+        "Day performance: Wed=69, Sat=41, Fri=31, Tue=30, Sun=29, Thu=25, Mon=17"
       ],
       "recommendedTemplate": "standard"
     }
