@@ -1,40 +1,47 @@
 {
-  "date": "2026-07-29",
+  "date": "2026-07-30",
   "discovery": {
-    "method": "product-launches",
-    "description": "Awwwards Site of the Day 2026-07-28 に AI-powered digital studio TRIONN のポートフォリオサイトが選出されたことを検出。Awwwards TRIONN ページ / CSS Design Awards / Codrops 技術解説 / 創業者 (Sunny Rathod) LinkedIn を横断し、GSAP + Three.js + Lenis + Web Audio の 4 スタック合体を 4 ヶ月構築という技術内訳と『音の使い方』を一次取得。product-launches (Awwwards SOTD = strategy Discovery Methods の Product Hunt / Awwwards / Dribbble Trending 直下) を Exploit で採用。07-28 PDCA §Method 提案①『明日 07-29 (Wed) は product-launches or news-ja が第一候補』に完全合致、4 日空きで 2-day rule (07-27 official-src / 07-28 social-en ブロック) / 7-day-2-time (product-launches 1 回目 → 2 回目 = OK) / WORST 凍結 全ガード clear。news-ja は fresh 日本語ソース未確保のため次サイクル送り。10 日で 3 件目の Awwwards SOTD だが、07-19 (個人開発者の技術見本 7000 粒子) / 07-25 (個人の 2 色制約) と重複しない『AI スタジオ / 4 スタック合体 / 音 (Web Audio)』角度で差別化。柱⑤ (portfolio事例) 主 + 柱④ (Tips / 音を 1 個添える具体 action) 副、柱③ (+9pt 超過) を追加しない選択で自然圧縮継続。Primary persona (駆け出しデザイナー) の『真似できない受賞作を見て手が止まる』病に『4 スタックは真似せず音 1 個だけ盗む』具体 action で直撃、AI = 補助輪フレーム維持 (『選択肢を素早く出す道具、選ぶのはあなた』)。",
+    "method": "figma-community",
+    "description": "Figma Community 上位 AI プラグイン群の直近版数更新を横断調査し、UX Pilot (community/plugin/1257688030051249633) が 07-29 に v142 と v143 を 1 日で連続リリースした事実を検出。100K+ インストールを持つ Figma 公式 Community トップ層 AI UI ジェネレーターで、テキスト 1 行から高解像度ワイヤー 15 画面が数分で並ぶ、無料 90 クレジット / Standard 月 15 ドルの beginner-friendly 価格帯。昨日 07-29 PDCA §Method 提案①『明日 07-30 (Thu) は figma-community が第一候補』に完全合致、4 日空きで 2-day rule / 7-day-2-time / WORST 凍結 全ガード clear。柱② プラグイン/エコシステム (-5.7pt) を直撃修復、柱① Figma 公式 Community 上位トレンド (-3.6pt) を副次補強。Primary persona (駆け出しデザイナー志望者) の『白紙のワイヤーで 30 分止まる』pain 直撃、AI = 補助輪フレーム維持で『AI は下書き機、選ぶのは人』に着地。UX Pilot は Figmaナビ の直接競合カテゴリだが、戦略柱② 明文『AI 系ツールの新着、Figmaナビ も自然にここで紹介』に沿い、日本語対応 ¥980 の同ジャンル選択肢として自社を並列位置づけ、強い購買 CTA は避けて選択肢提示に留める。",
     "sources": [
-      "https://www.awwwards.com/sites/trionn-2",
-      "https://www.awwwards.com/trionn/",
-      "https://www.cssdesignawards.com/sites/trionn/49548/",
-      "https://tympanus.net/codrops/2026/07/15/the-architecture-behind-trionn-coordinating-gsap-three-js-lenis-and-web-audio/",
-      "https://www.linkedin.com/in/sunnyrathod/"
+      "https://www.figma.com/community/plugin/1257688030051249633/ux-pilot-ai-ui-generator-design-system-wireframe-generator",
+      "https://uxpilot.ai/figma-ai",
+      "https://uxpilot.ai/blogs/best-figma-ai-plugins",
+      "https://dupple.com/reviews/ux-pilot",
+      "https://flowstep.ai/blog/ux-pilot-pricing/",
+      "https://aigearbase.com/tool/ux-pilot"
     ],
-    "query": "Awwwards Site of the Day July 28 2026 TRIONN AI digital studio GSAP Three.js Lenis Web Audio 4 stack portfolio",
-    "freshness_hours": 28
+    "query": "UX Pilot Figma plugin version 143 142 July 29 2026 AI UI generator wireframe 100k installs",
+    "freshness_hours": 30
   },
   "articles": [
     {
       "rank": 1,
-      "title": "AIデザインスタジオTRIONNがAwwwards昨日1位、駆け出しは4スタックより『音』を1個盗む",
-      "description": "Awwwards昨日1位はAIデザインスタジオTRIONN、4ヶ月かけて音とアニメを合体させた話題作",
-      "detail": "GSAPで動き、Three.jsで3D、Lenisで滑らかスクロール、そこにWeb Audioで音を重ねる4層構造。4ヶ月かかった規模感ですが、駆け出しが盗むべきは音のところ。ボタンクリックに1音重ねるだけで、ポートフォリオの印象は段違いに変わります。",
-      "narration": "Awwwards昨日1位、AIデザインスタジオTRIONNが4ヶ月かけて音とアニメを合体させた話題作、駆け出しには真似せず盗んで欲しい。",
-      "tags": ["TRIONN", "Awwwards", "Web Audio"],
+      "title": "UX Pilotが7/29に1日連続v143更新、10万インストールAIプラグイン",
+      "description": "駆け出しさんの白紙ワイヤーを、AIが下書きしてくれる時代の速報。",
+      "detail": "UX Pilotが7/29にv142・v143を1日で連続リリース。10万件以上のインストールを持つAI UIジェネレーターで、テキスト1行から高解像度のワイヤー15画面が数分で並びます。無料枠は90クレジット、Standardは月15ドル。",
+      "narration": "駆け出しさん、Figmaの白紙のワイヤーで30分止まっていませんか。10万インストールのAI UI生成プラグインが、昨日1日で2回更新されました。",
+      "tags": [
+        "Figma",
+        "プラグイン",
+        "AI",
+        "UX Pilot",
+        "ワイヤーフレーム"
+      ],
       "narration_sections": {
-        "hook": "Awwwards昨日1位、AIデザインスタジオTRIONNが4ヶ月かけて音とアニメを合体させた話題作、駆け出しには真似せず盗んで欲しい。",
-        "origin": "GSAPで動き、Three.jsで3D、Lenisで滑らかスクロール、そこにWeb Audioで音を重ねる4層構造です。4ヶ月かかった規模感ですが、駆け出しが盗むべきは音のところ。ボタンクリックに1音重ねるだけで、ポートフォリオの印象は段違いに変わります。",
-        "recommend": "無料の効果音サイトから3秒探して、クリック音を1個追加してみてください。AIは選択肢を出す補助輪、選ぶのはあなたです。"
+        "hook": "駆け出しさん、Figmaの白紙のワイヤーで30分止まっていませんか。10万インストールのAI UI生成プラグインが、昨日1日で2回更新されました。",
+        "origin": "UX Pilotが7/29にv142・v143を1日で連続リリース。10万件以上のインストールを持つAI UIジェネレーターで、テキスト1行から高解像度のワイヤー15画面が数分で並びます。無料枠は90クレジット、Standardは月15ドル。",
+        "recommend": "AIは下書き機、選ぶのはあなたです。同ジャンル日本語対応¥980のFigmaナビも、比べる選択肢の1つにどうぞ。"
       },
       "section_titles": {
-        "hook": "Awwwards1位獲得",
-        "origin": "音まで作り込む4層",
-        "recommend": "クリック音を1個"
+        "hook": "白紙で30分止まる",
+        "origin": "1日で2回リリース",
+        "recommend": "AIは下書き機です"
       },
       "section_descriptions": {
-        "hook": "AIデザインスタジオが昨日Awwwards1位に",
-        "origin": "動きと3Dと滑らかさに音を重ねる4層設計",
-        "recommend": "無料の効果音サイトから3秒探して1個添える"
+        "hook": "10万件のAIプラグインが昨日1日で2回更新",
+        "origin": "v142・v143の中身、無料90クレジット",
+        "recommend": "選ぶのは人、Figmaナビも同ジャンルの選択肢"
       }
     }
   ]
