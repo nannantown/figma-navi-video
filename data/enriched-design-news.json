@@ -1,47 +1,46 @@
 {
-  "date": "2026-07-30",
+  "date": "2026-07-31",
   "discovery": {
-    "method": "figma-community",
-    "description": "Figma Community 上位 AI プラグイン群の直近版数更新を横断調査し、UX Pilot (community/plugin/1257688030051249633) が 07-29 に v142 と v143 を 1 日で連続リリースした事実を検出。100K+ インストールを持つ Figma 公式 Community トップ層 AI UI ジェネレーターで、テキスト 1 行から高解像度ワイヤー 15 画面が数分で並ぶ、無料 90 クレジット / Standard 月 15 ドルの beginner-friendly 価格帯。昨日 07-29 PDCA §Method 提案①『明日 07-30 (Thu) は figma-community が第一候補』に完全合致、4 日空きで 2-day rule / 7-day-2-time / WORST 凍結 全ガード clear。柱② プラグイン/エコシステム (-5.7pt) を直撃修復、柱① Figma 公式 Community 上位トレンド (-3.6pt) を副次補強。Primary persona (駆け出しデザイナー志望者) の『白紙のワイヤーで 30 分止まる』pain 直撃、AI = 補助輪フレーム維持で『AI は下書き機、選ぶのは人』に着地。UX Pilot は Figmaナビ の直接競合カテゴリだが、戦略柱② 明文『AI 系ツールの新着、Figmaナビ も自然にここで紹介』に沿い、日本語対応 ¥980 の同ジャンル選択肢として自社を並列位置づけ、強い購買 CTA は避けて選択肢提示に留める。",
+    "method": "official-src",
+    "description": "Figma 公式ブログを直接巡回し、07-27 公開の Matt Alagiah 執筆記事『Digital Tools, Human Expression: The Visual Identity Behind Config 2026』を一次取得。Chelsea White 率いる Figma Brand Studio が Config 2026 conference のビジュアルアイデンティティを設計した過程を解説、テーマ『Digital Tools, Human Expression』を『グリフ (glyphs)』という3段階変化するモチーフ (手書き風→生成風→シャープ)、プロンプト生成テクスチャ、構造化コンポジションで表現し AI 感と人間の手仕事を両立する craft を紹介。method 選定 (Friday weekday): TOP3 候補で図式化: figma-community (07-30昨日で直近2日抵触)、product-launches (07-29 で直近2日抵触)、social-en (07-28 で直近2日抵触)、news-en (07-24=7日前=window ぎりぎり外、昨日 PDCA 第一候補) と official-src (07-27=4日前=直近2日OK、7day-2-time 1回OK) の 2 method が今日利用可能。今朝の実調査 (WebSearch 6 ラウンド) で news-en 候補は Runway Aleph 2.0 × Figma Weave (06-18 発表で 168h NG 超過)、MCP 2026-07-28 spec release (Primary persona 直撃度低)、NN/g 07-24 curated-context (直近14日 NN/g 2 度消化済で重複)、Adobe Illustrator July 2026 (07-24 直近重複)、Prelint (開発者向け) と全候補が却下されたため、代替として official-src の 07-27 Figma Blog 新着記事に切替。official-src を Exploit 採用、柱① Figma公式ニュース (-3.6pt) を直撃修復。Primary persona (aspiring designers) 直撃: 駆け出しが最も学びたい『AI 時代のブランド設計の craft』を Figma 自社の実案件解説から吸収できる希少な公式教材。NG パターン回避: AI = 補助輪 (テーマそのものが人の craft と AI の両立)、プロ向け高度議論回避 (グリフの3段階変化という1コンセプトに絞る)、プラグイン機能説明メイン回避 (Figma 自社の設計事例)、駆け出しの視点で『判断基準を学べる教材』として位置づけ、Figmaナビ への強い購買 CTA は避ける。柱⑤ ポートフォリオ事例 (+11.4pt 超過) を助長しないため pillar 主帰属は柱① にカウント。freshness_hours ≈ 96h (07-27 公開から 07-31 朝配信で 4 日、168h fresh 上限の 57% で余裕)。",
     "sources": [
-      "https://www.figma.com/community/plugin/1257688030051249633/ux-pilot-ai-ui-generator-design-system-wireframe-generator",
-      "https://uxpilot.ai/figma-ai",
-      "https://uxpilot.ai/blogs/best-figma-ai-plugins",
-      "https://dupple.com/reviews/ux-pilot",
-      "https://flowstep.ai/blog/ux-pilot-pricing/",
-      "https://aigearbase.com/tool/ux-pilot"
+      "https://www.figma.com/blog/the-visual-identity-behind-config-2026/",
+      "https://www.figma.com/blog/config-2026-recap/",
+      "https://config.figma.com/san-francisco/",
+      "https://www.figma.com/blog/how-we-shaped-the-visual-identity-for-config-2025/",
+      "https://analyticsindiamag.com/ai-news/figma-unveils-ai-agents-and-code-native-design-tools-at-config-2026"
     ],
-    "query": "UX Pilot Figma plugin version 143 142 July 29 2026 AI UI generator wireframe 100k installs",
-    "freshness_hours": 30
+    "query": "Digital Tools Human Expression Figma Config 2026 visual identity Matt Alagiah Chelsea White Brand Studio glyphs",
+    "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "UX Pilotが7/29に1日連続v143更新、10万インストールAIプラグイン",
-      "description": "駆け出しさんの白紙ワイヤーを、AIが下書きしてくれる時代の速報。",
-      "detail": "UX Pilotが7/29にv142・v143を1日で連続リリース。10万件以上のインストールを持つAI UIジェネレーターで、テキスト1行から高解像度のワイヤー15画面が数分で並びます。無料枠は90クレジット、Standardは月15ドル。",
-      "narration": "駆け出しさん、Figmaの白紙のワイヤーで30分止まっていませんか。10万インストールのAI UI生成プラグインが、昨日1日で2回更新されました。",
+      "title": "Figma自社ブランドチームがConfig 2026のビジュアルアイデンティティ設計を解説",
+      "description": "駆け出しさんが最も欲しい『AI 時代のブランド craft』の教材が Figma 公式に登場。",
+      "detail": "テーマは『Digital Tools, Human Expression』。Chelsea White 率いる Figma Brand Studio が、AI 感と人の手仕事を両立させる方針を『グリフ』という3段階変化するモチーフに落とし込みました。手書き風から生成風、シャープへと変わり、アイデアが揺れる過程を視覚化しています。",
+      "narration": "駆け出しさん、Figma自社のブランドチームが Config 2026 をどう設計したか、7/27に舞台裏の記事が公開されました。学び宝庫です。",
       "tags": [
         "Figma",
-        "プラグイン",
-        "AI",
-        "UX Pilot",
-        "ワイヤーフレーム"
+        "ブランドデザイン",
+        "Config 2026",
+        "ビジュアルアイデンティティ",
+        "デザインシステム"
       ],
       "narration_sections": {
-        "hook": "駆け出しさん、Figmaの白紙のワイヤーで30分止まっていませんか。10万インストールのAI UI生成プラグインが、昨日1日で2回更新されました。",
-        "origin": "UX Pilotが7/29にv142・v143を1日で連続リリース。10万件以上のインストールを持つAI UIジェネレーターで、テキスト1行から高解像度のワイヤー15画面が数分で並びます。無料枠は90クレジット、Standardは月15ドル。",
-        "recommend": "AIは下書き機、選ぶのはあなたです。同ジャンル日本語対応¥980のFigmaナビも、比べる選択肢の1つにどうぞ。"
+        "hook": "駆け出しさん、Figma自社のブランドチームが Config 2026 をどう設計したか、7/27に舞台裏の記事が公開されました。学び宝庫です。",
+        "origin": "テーマは『Digital Tools, Human Expression』。AI感と人の手仕事を両立させる方針を、『グリフ』という3段階で変化するモチーフで表現。手書き風から生成風、シャープへと変わり、アイデアが揺れる過程を視覚化しています。",
+        "recommend": "AI時代のブランド設計を、公式の解説記事で学べる機会は貴重。判断の基準を吸収する教材として、一度目を通すと差がつきます。"
       },
       "section_titles": {
-        "hook": "白紙で30分止まる",
-        "origin": "1日で2回リリース",
-        "recommend": "AIは下書き機です"
+        "hook": "Figma自社の裏側",
+        "origin": "3段階変化のグリフ",
+        "recommend": "公式教材で差がつく"
       },
       "section_descriptions": {
-        "hook": "10万件のAIプラグインが昨日1日で2回更新",
-        "origin": "v142・v143の中身、無料90クレジット",
-        "recommend": "選ぶのは人、Figmaナビも同ジャンルの選択肢"
+        "hook": "7/27 Figma公式 Config 2026 舞台裏公開",
+        "origin": "AI感と手仕事の両立を3段階グリフで表現",
+        "recommend": "AI時代のブランド設計を公式解説で学ぶ機会"
       }
     }
   ]
