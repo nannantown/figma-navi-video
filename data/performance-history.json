@@ -2,50 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "-oJqyqxBSUg",
-      "videoUrl": "https://youtube.com/shorts/-oJqyqxBSUg",
-      "date": "2026-04-30",
-      "title": "【デザインニュース】Figma画像AI、キャンバスから直接ドラッグで参照可能に｜2026/04/30 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 42,
-      "discovery": {
-        "method": "official-src",
-        "description": "Figma 公式 release notes / Newsroom / Help Center を直接当たり、4/29 公開の Make Image / Edit Image『Add reference』機能を一次取得。official-src は過去14日 avg views=136 (n=2) で TOP3 method、直近利用4/27で2日空きあり、直近2日(4/29 product-launches, 4/28 news-en)とも重複なし。柱① Figma 公式ニュース。Primary 層のポートフォリオ作成シーンに直接効く UX 改善で、AI を補助輪として位置づけやすい題材",
-        "sources": [
-          "https://www.figma.com/release-notes/",
-          "https://www.figma.com/newsroom/",
-          "https://help.figma.com/hc/en-us/articles/31304529835671-Attach-designs-and-images-to-a-prompt",
-          "https://releasebot.io/updates/figma",
-          "https://www.figma.com/blog/figjam-your-coding-agents-whiteboard/"
-        ],
-        "query": "Figma release notes April 29 2026 Add reference Make Image Edit Image canvas drag drop",
-        "freshness_hours": 20
-      },
-      "stats": {
-        "views": 87,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-05-14T00:15:03.338Z"
-      }
-    },
-    {
       "videoId": "v2zuxeC6joE",
       "videoUrl": "https://youtube.com/shorts/v2zuxeC6joE",
       "date": "2026-05-01",
@@ -2703,7 +2659,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-29T00:08:56.568Z"
+        "updatedAt": "2026-07-30T00:14:33.401Z"
       }
     },
     {
@@ -2748,7 +2704,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-29T00:08:56.568Z"
+        "updatedAt": "2026-07-30T00:14:33.401Z"
       }
     },
     {
@@ -2790,7 +2746,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-29T00:08:56.568Z"
+        "updatedAt": "2026-07-30T00:14:33.401Z"
       }
     },
     {
@@ -2832,7 +2788,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-29T00:08:56.568Z"
+        "updatedAt": "2026-07-30T00:14:33.402Z"
       }
     },
     {
@@ -2874,7 +2830,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-29T00:08:56.568Z"
+        "updatedAt": "2026-07-30T00:14:33.402Z"
       }
     },
     {
@@ -2918,7 +2874,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-29T00:08:56.568Z"
+        "updatedAt": "2026-07-30T00:14:33.402Z"
       }
     },
     {
@@ -2961,7 +2917,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-29T00:08:56.568Z"
+        "updatedAt": "2026-07-30T00:14:33.402Z"
       }
     },
     {
@@ -3004,7 +2960,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-29T00:08:56.568Z"
+        "updatedAt": "2026-07-30T00:14:33.402Z"
       }
     },
     {
@@ -3048,7 +3004,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-29T00:08:56.568Z"
+        "updatedAt": "2026-07-30T00:14:33.402Z"
       }
     },
     {
@@ -3091,7 +3047,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-29T00:08:56.568Z"
+        "updatedAt": "2026-07-30T00:14:33.402Z"
       }
     },
     {
@@ -3135,19 +3091,56 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-07-30T00:14:33.402Z"
+      }
+    },
+    {
+      "videoId": "2m_0aPqhltM",
+      "videoUrl": "https://youtube.com/shorts/2m_0aPqhltM",
+      "date": "2026-07-30",
+      "title": "【デザインニュース】UX Pilotが7/29に1日連続v143更新、10万インストールAIプラグイン｜2026/07/30 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 50,
+      "discovery": {
+        "method": "figma-community",
+        "description": "Figma Community 上位 AI プラグイン群の直近版数更新を横断調査し、UX Pilot (community/plugin/1257688030051249633) が 07-29 に v142 と v143 を 1 日で連続リリースした事実を検出。100K+ インストールを持つ Figma 公式 Community トップ層 AI UI ジェネレーターで、テキスト 1 行から高解像度ワイヤー 15 画面が数分で並ぶ、無料 90 クレジット / Standard 月 15 ドルの beginner-friendly 価格帯。昨日 07-29 PDCA §Method 提案①『明日 07-30 (Thu) は figma-community が第一候補』に完全合致、4 日空きで 2-day rule / 7-day-2-time / WORST 凍結 全ガード clear。柱② プラグイン/エコシステム (-5.7pt) を直撃修復、柱① Figma 公式 Community 上位トレンド (-3.6pt) を副次補強。Primary persona (駆け出しデザイナー志望者) の『白紙のワイヤーで 30 分止まる』pain 直撃、AI = 補助輪フレーム維持で『AI は下書き機、選ぶのは人』に着地。UX Pilot は Figmaナビ の直接競合カテゴリだが、戦略柱② 明文『AI 系ツールの新着、Figmaナビ も自然にここで紹介』に沿い、日本語対応 ¥980 の同ジャンル選択肢として自社を並列位置づけ、強い購買 CTA は避けて選択肢提示に留める。",
+        "sources": [
+          "https://www.figma.com/community/plugin/1257688030051249633/ux-pilot-ai-ui-generator-design-system-wireframe-generator",
+          "https://uxpilot.ai/figma-ai",
+          "https://uxpilot.ai/blogs/best-figma-ai-plugins",
+          "https://dupple.com/reviews/ux-pilot",
+          "https://flowstep.ai/blog/ux-pilot-pricing/",
+          "https://aigearbase.com/tool/ux-pilot"
+        ],
+        "query": "UX Pilot Figma plugin version 143 142 July 29 2026 AI UI generator wireframe 100k installs",
+        "freshness_hours": 30
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-06-26",
-      "changes": [
-        "standard: 70 avg views (48 videos)",
-        "Day performance: Wed=109, Sun=76, Sat=75, Thu=66, Tue=62, Fri=58, Mon=39"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-06-27",
       "changes": [
@@ -3377,6 +3370,14 @@
       "changes": [
         "standard: 34 avg views (70 videos)",
         "Day performance: Wed=69, Sat=41, Fri=31, Tue=30, Sun=29, Thu=25, Mon=17"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-30",
+      "changes": [
+        "standard: 27 avg views (70 videos)",
+        "Day performance: Sat=41, Fri=31, Tue=30, Sun=29, Thu=25, Mon=17, Wed=15"
       ],
       "recommendedTemplate": "standard"
     }
