@@ -2,51 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "v2zuxeC6joE",
-      "videoUrl": "https://youtube.com/shorts/v2zuxeC6joE",
-      "date": "2026-05-01",
-      "title": "【デザインニュース】Figma Draw、円に沿うテキストが公式機能に｜2026/05/01 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 45,
-      "discovery": {
-        "method": "social-en",
-        "description": "Pablo Stanley の X 投稿(Text on Path を『underrated new figma feature』と紹介)と、Figma Forum の長年スレッド『make text follow a path or a circle』『Figma Type on Path』のコミュニティ要望を起点に、4/29 公開の Figma Draw 大型アップデートで Text on Path がネイティブ実装された事実を発見。プラグイン依存・Illustrator 戻りという駆け出し層の壁が消えるニュース。official-src の release-notes と Figma Blog で裏取り。直近 2 日(4/30 official-src, 4/29 product-launches)と method 重複なし。social-en は 4/22 以来 9 日空きの TOP3 method(過去14日 avg 143)。柱① Figma 公式ニュースを Primary 学習者の課題(ロゴ・円形バナー作成)起点で噛み砕く",
-        "sources": [
-          "https://x.com/pablostanley/status/1920215348743475689",
-          "https://forum.figma.com/suggest-a-feature-11/make-text-follow-a-path-or-a-circle-34880",
-          "https://forum.figma.com/report-a-problem-6/figma-type-on-path-41240",
-          "https://www.figma.com/release-notes/",
-          "https://releasebot.io/updates/figma",
-          "https://www.figma.com/community/file/1505397383440534720/text-on-path"
-        ],
-        "query": "Figma Draw text on path designer reaction X Twitter Forum April 29 2026",
-        "freshness_hours": 36
-      },
-      "stats": {
-        "views": 116,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-05-15T01:33:59.100Z"
-      }
-    },
-    {
       "videoId": "_V4GcnQuW24",
       "videoUrl": "https://youtube.com/shorts/_V4GcnQuW24",
       "date": "2026-05-03",
@@ -2704,7 +2659,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-30T00:14:33.401Z"
+        "updatedAt": "2026-07-31T00:15:37.128Z"
       }
     },
     {
@@ -2746,7 +2701,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-30T00:14:33.401Z"
+        "updatedAt": "2026-07-31T00:15:37.128Z"
       }
     },
     {
@@ -2788,7 +2743,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-30T00:14:33.402Z"
+        "updatedAt": "2026-07-31T00:15:37.128Z"
       }
     },
     {
@@ -2830,7 +2785,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-30T00:14:33.402Z"
+        "updatedAt": "2026-07-31T00:15:37.128Z"
       }
     },
     {
@@ -2874,7 +2829,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-30T00:14:33.402Z"
+        "updatedAt": "2026-07-31T00:15:37.128Z"
       }
     },
     {
@@ -2917,7 +2872,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-30T00:14:33.402Z"
+        "updatedAt": "2026-07-31T00:15:37.128Z"
       }
     },
     {
@@ -2960,7 +2915,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-30T00:14:33.402Z"
+        "updatedAt": "2026-07-31T00:15:37.128Z"
       }
     },
     {
@@ -3004,7 +2959,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-30T00:14:33.402Z"
+        "updatedAt": "2026-07-31T00:15:37.128Z"
       }
     },
     {
@@ -3047,7 +3002,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-30T00:14:33.402Z"
+        "updatedAt": "2026-07-31T00:15:37.128Z"
       }
     },
     {
@@ -3091,7 +3046,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-30T00:14:33.402Z"
+        "updatedAt": "2026-07-31T00:15:37.128Z"
       }
     },
     {
@@ -3136,19 +3091,55 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-07-31T00:15:37.128Z"
+      }
+    },
+    {
+      "videoId": "PeLoYR3qck8",
+      "videoUrl": "https://youtube.com/shorts/PeLoYR3qck8",
+      "date": "2026-07-31",
+      "title": "【デザインニュース】Figma自社ブランドチームがConfig 2026のビジュアルアイデンティティ設計を解説｜2026/07/31 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 47,
+      "discovery": {
+        "method": "official-src",
+        "description": "Figma 公式ブログを直接巡回し、07-27 公開の Matt Alagiah 執筆記事『Digital Tools, Human Expression: The Visual Identity Behind Config 2026』を一次取得。Chelsea White 率いる Figma Brand Studio が Config 2026 conference のビジュアルアイデンティティを設計した過程を解説、テーマ『Digital Tools, Human Expression』を『グリフ (glyphs)』という3段階変化するモチーフ (手書き風→生成風→シャープ)、プロンプト生成テクスチャ、構造化コンポジションで表現し AI 感と人間の手仕事を両立する craft を紹介。method 選定 (Friday weekday): TOP3 候補で図式化: figma-community (07-30昨日で直近2日抵触)、product-launches (07-29 で直近2日抵触)、social-en (07-28 で直近2日抵触)、news-en (07-24=7日前=window ぎりぎり外、昨日 PDCA 第一候補) と official-src (07-27=4日前=直近2日OK、7day-2-time 1回OK) の 2 method が今日利用可能。今朝の実調査 (WebSearch 6 ラウンド) で news-en 候補は Runway Aleph 2.0 × Figma Weave (06-18 発表で 168h NG 超過)、MCP 2026-07-28 spec release (Primary persona 直撃度低)、NN/g 07-24 curated-context (直近14日 NN/g 2 度消化済で重複)、Adobe Illustrator July 2026 (07-24 直近重複)、Prelint (開発者向け) と全候補が却下されたため、代替として official-src の 07-27 Figma Blog 新着記事に切替。official-src を Exploit 採用、柱① Figma公式ニュース (-3.6pt) を直撃修復。Primary persona (aspiring designers) 直撃: 駆け出しが最も学びたい『AI 時代のブランド設計の craft』を Figma 自社の実案件解説から吸収できる希少な公式教材。NG パターン回避: AI = 補助輪 (テーマそのものが人の craft と AI の両立)、プロ向け高度議論回避 (グリフの3段階変化という1コンセプトに絞る)、プラグイン機能説明メイン回避 (Figma 自社の設計事例)、駆け出しの視点で『判断基準を学べる教材』として位置づけ、Figmaナビ への強い購買 CTA は避ける。柱⑤ ポートフォリオ事例 (+11.4pt 超過) を助長しないため pillar 主帰属は柱① にカウント。freshness_hours ≈ 96h (07-27 公開から 07-31 朝配信で 4 日、168h fresh 上限の 57% で余裕)。",
+        "sources": [
+          "https://www.figma.com/blog/the-visual-identity-behind-config-2026/",
+          "https://www.figma.com/blog/config-2026-recap/",
+          "https://config.figma.com/san-francisco/",
+          "https://www.figma.com/blog/how-we-shaped-the-visual-identity-for-config-2025/",
+          "https://analyticsindiamag.com/ai-news/figma-unveils-ai-agents-and-code-native-design-tools-at-config-2026"
+        ],
+        "query": "Digital Tools Human Expression Figma Config 2026 visual identity Matt Alagiah Chelsea White Brand Studio glyphs",
+        "freshness_hours": 96
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-06-27",
-      "changes": [
-        "standard: 68 avg views (49 videos)",
-        "Day performance: Wed=109, Sun=76, Sat=75, Thu=66, Tue=62, Fri=50, Mon=39"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-06-28",
       "changes": [
@@ -3378,6 +3369,14 @@
       "changes": [
         "standard: 27 avg views (70 videos)",
         "Day performance: Sat=41, Fri=31, Tue=30, Sun=29, Thu=25, Mon=17, Wed=15"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-31",
+      "changes": [
+        "standard: 26 avg views (70 videos)",
+        "Day performance: Sat=41, Fri=31, Tue=30, Sun=29, Mon=17, Wed=15, Thu=15"
       ],
       "recommendedTemplate": "standard"
     }
