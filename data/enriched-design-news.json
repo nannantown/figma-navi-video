@@ -1,46 +1,46 @@
 {
-  "date": "2026-07-31",
+  "date": "2026-08-01",
   "discovery": {
-    "method": "official-src",
-    "description": "Figma 公式ブログを直接巡回し、07-27 公開の Matt Alagiah 執筆記事『Digital Tools, Human Expression: The Visual Identity Behind Config 2026』を一次取得。Chelsea White 率いる Figma Brand Studio が Config 2026 conference のビジュアルアイデンティティを設計した過程を解説、テーマ『Digital Tools, Human Expression』を『グリフ (glyphs)』という3段階変化するモチーフ (手書き風→生成風→シャープ)、プロンプト生成テクスチャ、構造化コンポジションで表現し AI 感と人間の手仕事を両立する craft を紹介。method 選定 (Friday weekday): TOP3 候補で図式化: figma-community (07-30昨日で直近2日抵触)、product-launches (07-29 で直近2日抵触)、social-en (07-28 で直近2日抵触)、news-en (07-24=7日前=window ぎりぎり外、昨日 PDCA 第一候補) と official-src (07-27=4日前=直近2日OK、7day-2-time 1回OK) の 2 method が今日利用可能。今朝の実調査 (WebSearch 6 ラウンド) で news-en 候補は Runway Aleph 2.0 × Figma Weave (06-18 発表で 168h NG 超過)、MCP 2026-07-28 spec release (Primary persona 直撃度低)、NN/g 07-24 curated-context (直近14日 NN/g 2 度消化済で重複)、Adobe Illustrator July 2026 (07-24 直近重複)、Prelint (開発者向け) と全候補が却下されたため、代替として official-src の 07-27 Figma Blog 新着記事に切替。official-src を Exploit 採用、柱① Figma公式ニュース (-3.6pt) を直撃修復。Primary persona (aspiring designers) 直撃: 駆け出しが最も学びたい『AI 時代のブランド設計の craft』を Figma 自社の実案件解説から吸収できる希少な公式教材。NG パターン回避: AI = 補助輪 (テーマそのものが人の craft と AI の両立)、プロ向け高度議論回避 (グリフの3段階変化という1コンセプトに絞る)、プラグイン機能説明メイン回避 (Figma 自社の設計事例)、駆け出しの視点で『判断基準を学べる教材』として位置づけ、Figmaナビ への強い購買 CTA は避ける。柱⑤ ポートフォリオ事例 (+11.4pt 超過) を助長しないため pillar 主帰属は柱① にカウント。freshness_hours ≈ 96h (07-27 公開から 07-31 朝配信で 4 日、168h fresh 上限の 57% で余裕)。",
+    "method": "expert-blog",
+    "description": "NN/g 07-31 公開の Rachel Krause『Why You Need Mentorship and How to Get It Right』を一次資料とし、著者プロフィール (NN/g Live Training Director, junior UX pros focus) と関連 NN/g mentorship 動画 3 本で裏取り。07-31 PDCA pre-schedule (expert-blog 第一候補、9日空き) 通り正規採用、24h fresh でトップスピード。柱④ Tips (target 15% で -15pt) を career practice tips サブ角度で修復、柱⑥ UI 批評 の 学習要素 面 (Rachel の junior focus) を副で読める、柱①③⑤ 超過を助長しない構成。土曜 evergreen 帯として運用フォーマット適合、Primary persona 駆け出しデザイナー (既存 YouTube デザイン講座 ~200 人サブスクの延長層) の独学孤立問題への直撃解法。NG パターン全回避: 『AI がデザイナーの仕事を奪う』の逆張り = 『独学 + AI + メンター = 立ち上がりが速い駆け出し』の前向きフレーム、AI = 補助輪フレームを『AI 時代こそ判断軸を人から吸収』の recommend で再強化。NN/g 直近 3 回連続 (07-20 / 07-23 / 08-01) の source-fatigue 懸念は、トピックが全く別 (AI vs 人間 UXリサーチ → グラフィック→UX 転向 → メンター論) で内容重複ゼロ、著者も別 (Kate Moran / Kara Pernice / Rachel Krause)、24h fresh の突出鮮度優位で採用正当化、次回 NN/g は 14日 quarantine で 08-14 以降推奨。",
     "sources": [
-      "https://www.figma.com/blog/the-visual-identity-behind-config-2026/",
-      "https://www.figma.com/blog/config-2026-recap/",
-      "https://config.figma.com/san-francisco/",
-      "https://www.figma.com/blog/how-we-shaped-the-visual-identity-for-config-2025/",
-      "https://analyticsindiamag.com/ai-news/figma-unveils-ai-agents-and-code-native-design-tools-at-config-2026"
+      "https://www.nngroup.com/articles/mentorship/",
+      "https://www.nngroup.com/people/rachel-krause/",
+      "https://www.nngroup.com/videos/why-ux-mentoring/",
+      "https://www.nngroup.com/videos/finding-ux-mentors/",
+      "https://www.nngroup.com/videos/great-ux-mentorship/"
     ],
-    "query": "Digital Tools Human Expression Figma Config 2026 visual identity Matt Alagiah Chelsea White Brand Studio glyphs",
-    "freshness_hours": 96
+    "query": "Nielsen Norman Group mentorship how to get it right Rachel Krause junior UX designer July 31 2026",
+    "freshness_hours": 24
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma自社ブランドチームがConfig 2026のビジュアルアイデンティティ設計を解説",
-      "description": "駆け出しさんが最も欲しい『AI 時代のブランド craft』の教材が Figma 公式に登場。",
-      "detail": "テーマは『Digital Tools, Human Expression』。Chelsea White 率いる Figma Brand Studio が、AI 感と人の手仕事を両立させる方針を『グリフ』という3段階変化するモチーフに落とし込みました。手書き風から生成風、シャープへと変わり、アイデアが揺れる過程を視覚化しています。",
-      "narration": "駆け出しさん、Figma自社のブランドチームが Config 2026 をどう設計したか、7/27に舞台裏の記事が公開されました。学び宝庫です。",
+      "title": "NN/g 昨日公開の駆け出し必読論考、メンター選び間違えない3原則",
+      "description": "Nielsen Norman Groupが昨日7月31日、駆け出しデザイナー必読の論考を公開しました。",
+      "detail": "著者はNN/g Rachel Krause氏。メンターは技術的助言、精神的支え、ロールモデルの3タイプの支援をくれると3本柱で整理。よくある誤解は『上司がいれば不要』『1〜2回で十分』ですが、実際は継続関係こそ効果を生むと釘を刺します。",
+      "narration": "Nielsen Norman Groupが昨日7月31日、駆け出しデザイナー必読の論考を公開しました。テーマは『メンター選び、間違えない3原則』。",
       "tags": [
-        "Figma",
-        "ブランドデザイン",
-        "Config 2026",
-        "ビジュアルアイデンティティ",
-        "デザインシステム"
+        "メンター",
+        "NN/g",
+        "駆け出しデザイナー",
+        "キャリア",
+        "デザイン学習"
       ],
       "narration_sections": {
-        "hook": "駆け出しさん、Figma自社のブランドチームが Config 2026 をどう設計したか、7/27に舞台裏の記事が公開されました。学び宝庫です。",
-        "origin": "テーマは『Digital Tools, Human Expression』。AI感と人の手仕事を両立させる方針を、『グリフ』という3段階で変化するモチーフで表現。手書き風から生成風、シャープへと変わり、アイデアが揺れる過程を視覚化しています。",
-        "recommend": "AI時代のブランド設計を、公式の解説記事で学べる機会は貴重。判断の基準を吸収する教材として、一度目を通すと差がつきます。"
+        "hook": "Nielsen Norman Groupが昨日7月31日、駆け出しデザイナー必読の論考を公開しました。テーマは『メンター選び、間違えない3原則』。",
+        "origin": "著者はNN/g Rachel Krause氏。メンターは技術的助言、精神的支え、ロールモデルの3タイプの支援をくれると3本柱で整理。よくある誤解は『上司がいれば不要』『1〜2回で十分』ですが、実際は継続関係こそ効果を生むと釘を刺します。",
+        "recommend": "独学の駆け出しほど、月1回でも継続対話できる相手を早めに見つけるのが成長の第一歩です。判断軸を人から吸収する姿勢は、AI時代こそ効きます。"
       },
       "section_titles": {
-        "hook": "Figma自社の裏側",
-        "origin": "3段階変化のグリフ",
-        "recommend": "公式教材で差がつく"
+        "hook": "NN/g昨日の最新論考",
+        "origin": "支援3本柱と誤解",
+        "recommend": "月1回の継続対話"
       },
       "section_descriptions": {
-        "hook": "7/27 Figma公式 Config 2026 舞台裏公開",
-        "origin": "AI感と手仕事の両立を3段階グリフで表現",
-        "recommend": "AI時代のブランド設計を公式解説で学ぶ機会"
+        "hook": "NN/g昨日公開、駆け出し必読のメンター論",
+        "origin": "3タイプの支援と、ありがちな4つの誤解を整理",
+        "recommend": "月1回でも継続、独学から抜け出す最初の一歩"
       }
     }
   ]
