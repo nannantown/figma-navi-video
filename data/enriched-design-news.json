@@ -1,46 +1,46 @@
 {
-  "date": "2026-08-01",
+  "date": "2026-08-02",
   "discovery": {
-    "method": "expert-blog",
-    "description": "NN/g 07-31 公開の Rachel Krause『Why You Need Mentorship and How to Get It Right』を一次資料とし、著者プロフィール (NN/g Live Training Director, junior UX pros focus) と関連 NN/g mentorship 動画 3 本で裏取り。07-31 PDCA pre-schedule (expert-blog 第一候補、9日空き) 通り正規採用、24h fresh でトップスピード。柱④ Tips (target 15% で -15pt) を career practice tips サブ角度で修復、柱⑥ UI 批評 の 学習要素 面 (Rachel の junior focus) を副で読める、柱①③⑤ 超過を助長しない構成。土曜 evergreen 帯として運用フォーマット適合、Primary persona 駆け出しデザイナー (既存 YouTube デザイン講座 ~200 人サブスクの延長層) の独学孤立問題への直撃解法。NG パターン全回避: 『AI がデザイナーの仕事を奪う』の逆張り = 『独学 + AI + メンター = 立ち上がりが速い駆け出し』の前向きフレーム、AI = 補助輪フレームを『AI 時代こそ判断軸を人から吸収』の recommend で再強化。NN/g 直近 3 回連続 (07-20 / 07-23 / 08-01) の source-fatigue 懸念は、トピックが全く別 (AI vs 人間 UXリサーチ → グラフィック→UX 転向 → メンター論) で内容重複ゼロ、著者も別 (Kate Moran / Kara Pernice / Rachel Krause)、24h fresh の突出鮮度優位で採用正当化、次回 NN/g は 14日 quarantine で 08-14 以降推奨。",
+    "method": "news-ja",
+    "description": "Wantedly Designers Lounge 07-27 開催『AIで変化する開発現場と問い直されるデザイナーの役割』(グッドパッチ執行役員 石井克尚 登壇)を一次資料化。connpass event ページ + Goodpatch Tokyo 公式 X 告知の 2 段で開催実績・登壇者・議題を担保、AI in Design Report 2026 (Designer Fund/Foundation Capital、5月20日発表) の 91% 週次AI利用データを議論の背景として引用。08-01 PDCA pre-schedule (Sun evergreen は figma-community or news-ja) から news-ja を選択、7月中 news-ja/social-ja 0 件連続の Explore 予算最大 method を初投入、14+日空きで 2-day rule / 7-day-2-time / WORST 凍結 全ガード clear。柱⑥ UI 批評 (target 10% で -10pt) を industry meta-critique 角度で修復主眼、柱④ Tips (career practice: 判断・言語化) の学習要素面を副で読める、柱①③⑤ 超過を助長しない。日曜 evergreen 帯として運用フォーマット適合、Primary persona 駆け出しデザイナー (既存 YouTube デザイン講座 ~200 人サブスクの延長層) の『AI 時代、自分の役割は?』『何を武器にすれば残れる?』への直撃解法。NG パターン全回避: 『AI がデザイナーの仕事を奪う』の逆張り = 『AI 時代こそデザイナーの判断力が価値の中心』の前向きフレーム、AI = 補助輪フレームを『AI に案は任せて、なぜこの色・この配置かを言語化する癖こそ武器』の recommend で再強化。144h fresh で 168h 上限の 86%、突出鮮度優位で採用正当化、次回 news-ja は 08-14 前後 (2週サイクル) で cocoda / note / X 日本語デザイナー界隈へ切替推奨。",
     "sources": [
-      "https://www.nngroup.com/articles/mentorship/",
-      "https://www.nngroup.com/people/rachel-krause/",
-      "https://www.nngroup.com/videos/why-ux-mentoring/",
-      "https://www.nngroup.com/videos/finding-ux-mentors/",
-      "https://www.nngroup.com/videos/great-ux-mentorship/"
+      "https://wantedly.connpass.com/event/399275/",
+      "https://x.com/GoodpatchTokyo/status/2074341023728492920",
+      "https://goodpatch.com/company/members",
+      "https://stateofaidesign.com/",
+      "https://designerfund.com/blog/ai-in-design-2026"
     ],
-    "query": "Nielsen Norman Group mentorship how to get it right Rachel Krause junior UX designer July 31 2026",
-    "freshness_hours": 24
+    "query": "Wantedly Designers Lounge AIで変化する開発現場 問い直されるデザイナーの役割 グッドパッチ 石井克尚 2026-07-27",
+    "freshness_hours": 144
   },
   "articles": [
     {
       "rank": 1,
-      "title": "NN/g 昨日公開の駆け出し必読論考、メンター選び間違えない3原則",
-      "description": "Nielsen Norman Groupが昨日7月31日、駆け出しデザイナー必読の論考を公開しました。",
-      "detail": "著者はNN/g Rachel Krause氏。メンターは技術的助言、精神的支え、ロールモデルの3タイプの支援をくれると3本柱で整理。よくある誤解は『上司がいれば不要』『1〜2回で十分』ですが、実際は継続関係こそ効果を生むと釘を刺します。",
-      "narration": "Nielsen Norman Groupが昨日7月31日、駆け出しデザイナー必読の論考を公開しました。テーマは『メンター選び、間違えない3原則』。",
+      "title": "Wantedly Designers Lounge 07-27 グッドパッチ石井登壇 AI時代のデザイナー役割議論",
+      "description": "東京で先週月曜、Wantedly Designers Lounge開催。話題はAI時代のデザイナー役割です。",
+      "detail": "登壇はグッドパッチ執行役員の石井克尚さん。背景の海外調査では今や91パーセントのデザイナーが毎週AIを使用。デザイナーの仕事は『作る人』から『目的を絞り、案を選ぶ人』へ移行と議論されました。",
+      "narration": "東京で先週月曜、Wantedly Designers Loungeが開催、話題は『AIで変わる開発現場と、問い直されるデザイナーの役割』でした。",
       "tags": [
-        "メンター",
-        "NN/g",
-        "駆け出しデザイナー",
-        "キャリア",
-        "デザイン学習"
+        "Wantedly",
+        "Goodpatch",
+        "AIデザイン",
+        "デザイナー役割",
+        "駆け出しデザイナー"
       ],
       "narration_sections": {
-        "hook": "Nielsen Norman Groupが昨日7月31日、駆け出しデザイナー必読の論考を公開しました。テーマは『メンター選び、間違えない3原則』。",
-        "origin": "著者はNN/g Rachel Krause氏。メンターは技術的助言、精神的支え、ロールモデルの3タイプの支援をくれると3本柱で整理。よくある誤解は『上司がいれば不要』『1〜2回で十分』ですが、実際は継続関係こそ効果を生むと釘を刺します。",
-        "recommend": "独学の駆け出しほど、月1回でも継続対話できる相手を早めに見つけるのが成長の第一歩です。判断軸を人から吸収する姿勢は、AI時代こそ効きます。"
+        "hook": "東京で先週月曜、Wantedly Designers Loungeが開催、話題は『AIで変わる開発現場と、問い直されるデザイナーの役割』でした。",
+        "origin": "登壇はグッドパッチ執行役員の石井克尚さん。背景の海外調査では、今や91パーセントのデザイナーが毎週AIを使用。デザイナーの仕事は『作る人』から『目的を絞り、案を選ぶ人』へ。判断と意味づけこそが、これからの価値の中心と議論されました。",
+        "recommend": "駆け出しの人こそ、AIに任せず『なぜこの色、この配置か』を言語化する癖を。判断力こそが、AI時代の一番の武器になります。"
       },
       "section_titles": {
-        "hook": "NN/g昨日の最新論考",
-        "origin": "支援3本柱と誤解",
-        "recommend": "月1回の継続対話"
+        "hook": "AI時代の役割議論",
+        "origin": "作る人から選ぶ人へ",
+        "recommend": "判断力こそ武器に"
       },
       "section_descriptions": {
-        "hook": "NN/g昨日公開、駆け出し必読のメンター論",
-        "origin": "3タイプの支援と、ありがちな4つの誤解を整理",
-        "recommend": "月1回でも継続、独学から抜け出す最初の一歩"
+        "hook": "Wantedly主催、AI時代のデザイナー像議論",
+        "origin": "グッドパッチ石井さん登壇と海外調査91%",
+        "recommend": "言語化する癖で駆け出しがAI時代を勝ち抜く"
       }
     }
   ]
