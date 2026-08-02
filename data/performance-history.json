@@ -2,51 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "_V4GcnQuW24",
-      "videoUrl": "https://youtube.com/shorts/_V4GcnQuW24",
-      "date": "2026-05-03",
-      "title": "【デザインニュース】Figma Communityで4万人が使うアクセシビリティ神プラグインStark｜2026/05/03 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 46,
-      "discovery": {
-        "method": "figma-community",
-        "description": "Figma Community のアクセシビリティ系トレンドプラグインを横断調査。28,000 社・40,000 デザイナーが日常使いする Stark を起点に、WCAG 自動チェック・色覚シミュレーション・AI alt text 提案の3機能を、Primary 駆け出しデザイナーが面接で語れるアクセシビリティ実装力に落とし込む日曜 evergreen Tips。method タグ figma-community は Explore (n=0、過去14日未試行) として PDCA 提案通り初投入。直近2日(5/2 product-launches, 5/1 social-en)と method 重複なし、product-launches 7日3連投ガード(PDCA戦略提案)を尊重して TOP1 method の連投を回避。柱④ Tips・Figma実践 + 柱⑥ UI批評 (アクセシビリティ視点) のクロス枠。Sunday evergreen のため freshness_hours は 168 (NG パターン回避の上限値) を採用",
-        "sources": [
-          "https://www.figma.com/community/plugin/732603254453395948/stark-contrast-accessibility-checker",
-          "https://www.getstark.co/figma/",
-          "https://www.g2.com/products/stark-stark/reviews",
-          "https://www.browserstack.com/guide/best-figma-plugins-for-accessibility",
-          "https://sparkbox.com/foundry/stark_for_figma_accessibility_testing_tool_design_website_accessibility_and_accessible_design_review_tool",
-          "https://www.figma.com/blog/state-of-the-designer-2026/"
-        ],
-        "query": "Stark Figma Community plugin AI accessibility WCAG contrast color blindness alt text designer 2026",
-        "freshness_hours": 168
-      },
-      "stats": {
-        "views": 103,
-        "likes": 1,
-        "comments": 0,
-        "updatedAt": "2026-05-17T00:08:54.678Z"
-      }
-    },
-    {
       "videoId": "zHXzRcE0aD4",
       "videoUrl": "https://youtube.com/shorts/zHXzRcE0aD4",
       "date": "2026-05-04",
@@ -2701,7 +2656,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-01T00:11:18.481Z"
+        "updatedAt": "2026-08-02T00:11:45.961Z"
       }
     },
     {
@@ -2743,7 +2698,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-01T00:11:18.481Z"
+        "updatedAt": "2026-08-02T00:11:45.961Z"
       }
     },
     {
@@ -2785,7 +2740,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-01T00:11:18.481Z"
+        "updatedAt": "2026-08-02T00:11:45.961Z"
       }
     },
     {
@@ -2829,7 +2784,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-01T00:11:18.481Z"
+        "updatedAt": "2026-08-02T00:11:45.961Z"
       }
     },
     {
@@ -2872,7 +2827,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-01T00:11:18.481Z"
+        "updatedAt": "2026-08-02T00:11:45.961Z"
       }
     },
     {
@@ -2915,7 +2870,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-01T00:11:18.481Z"
+        "updatedAt": "2026-08-02T00:11:45.961Z"
       }
     },
     {
@@ -2959,7 +2914,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-01T00:11:18.481Z"
+        "updatedAt": "2026-08-02T00:11:45.961Z"
       }
     },
     {
@@ -3002,7 +2957,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-01T00:11:18.481Z"
+        "updatedAt": "2026-08-02T00:11:45.961Z"
       }
     },
     {
@@ -3046,7 +3001,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-01T00:11:18.481Z"
+        "updatedAt": "2026-08-02T00:11:45.961Z"
       }
     },
     {
@@ -3091,7 +3046,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-01T00:11:18.481Z"
+        "updatedAt": "2026-08-02T00:11:45.961Z"
       }
     },
     {
@@ -3135,7 +3090,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-01T00:11:18.481Z"
+        "updatedAt": "2026-08-02T00:11:45.961Z"
       }
     },
     {
@@ -3179,19 +3134,55 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-02T00:11:45.961Z"
+      }
+    },
+    {
+      "videoId": "PEyqPJv3Am0",
+      "videoUrl": "https://youtube.com/shorts/PEyqPJv3Am0",
+      "date": "2026-08-02",
+      "title": "【デザインニュース】Wantedly Designers Lounge 07-27 グッドパッチ石井登壇 AI時代のデザイナー役割議論｜2026/08/02 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 49,
+      "discovery": {
+        "method": "news-ja",
+        "description": "Wantedly Designers Lounge 07-27 開催『AIで変化する開発現場と問い直されるデザイナーの役割』(グッドパッチ執行役員 石井克尚 登壇)を一次資料化。connpass event ページ + Goodpatch Tokyo 公式 X 告知の 2 段で開催実績・登壇者・議題を担保、AI in Design Report 2026 (Designer Fund/Foundation Capital、5月20日発表) の 91% 週次AI利用データを議論の背景として引用。08-01 PDCA pre-schedule (Sun evergreen は figma-community or news-ja) から news-ja を選択、7月中 news-ja/social-ja 0 件連続の Explore 予算最大 method を初投入、14+日空きで 2-day rule / 7-day-2-time / WORST 凍結 全ガード clear。柱⑥ UI 批評 (target 10% で -10pt) を industry meta-critique 角度で修復主眼、柱④ Tips (career practice: 判断・言語化) の学習要素面を副で読める、柱①③⑤ 超過を助長しない。日曜 evergreen 帯として運用フォーマット適合、Primary persona 駆け出しデザイナー (既存 YouTube デザイン講座 ~200 人サブスクの延長層) の『AI 時代、自分の役割は?』『何を武器にすれば残れる?』への直撃解法。NG パターン全回避: 『AI がデザイナーの仕事を奪う』の逆張り = 『AI 時代こそデザイナーの判断力が価値の中心』の前向きフレーム、AI = 補助輪フレームを『AI に案は任せて、なぜこの色・この配置かを言語化する癖こそ武器』の recommend で再強化。144h fresh で 168h 上限の 86%、突出鮮度優位で採用正当化、次回 news-ja は 08-14 前後 (2週サイクル) で cocoda / note / X 日本語デザイナー界隈へ切替推奨。",
+        "sources": [
+          "https://wantedly.connpass.com/event/399275/",
+          "https://x.com/GoodpatchTokyo/status/2074341023728492920",
+          "https://goodpatch.com/company/members",
+          "https://stateofaidesign.com/",
+          "https://designerfund.com/blog/ai-in-design-2026"
+        ],
+        "query": "Wantedly Designers Lounge AIで変化する開発現場 問い直されるデザイナーの役割 グッドパッチ 石井克尚 2026-07-27",
+        "freshness_hours": 144
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-06-29",
-      "changes": [
-        "standard: 66 avg views (51 videos)",
-        "Day performance: Wed=109, Sat=67, Sun=67, Thu=66, Tue=62, Fri=50, Mon=39"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-06-30",
       "changes": [
@@ -3421,6 +3412,14 @@
       "changes": [
         "standard: 25 avg views (70 videos)",
         "Day performance: Sat=41, Tue=30, Sun=29, Fri=19, Mon=17, Wed=15, Thu=15"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-02",
+      "changes": [
+        "standard: 24 avg views (71 videos)",
+        "Day performance: Sat=38, Tue=30, Sun=29, Fri=19, Mon=17, Wed=15, Thu=15"
       ],
       "recommendedTemplate": "standard"
     }
