@@ -1,46 +1,47 @@
 {
-  "date": "2026-08-02",
+  "date": "2026-08-03",
   "discovery": {
-    "method": "news-ja",
-    "description": "Wantedly Designers Lounge 07-27 開催『AIで変化する開発現場と問い直されるデザイナーの役割』(グッドパッチ執行役員 石井克尚 登壇)を一次資料化。connpass event ページ + Goodpatch Tokyo 公式 X 告知の 2 段で開催実績・登壇者・議題を担保、AI in Design Report 2026 (Designer Fund/Foundation Capital、5月20日発表) の 91% 週次AI利用データを議論の背景として引用。08-01 PDCA pre-schedule (Sun evergreen は figma-community or news-ja) から news-ja を選択、7月中 news-ja/social-ja 0 件連続の Explore 予算最大 method を初投入、14+日空きで 2-day rule / 7-day-2-time / WORST 凍結 全ガード clear。柱⑥ UI 批評 (target 10% で -10pt) を industry meta-critique 角度で修復主眼、柱④ Tips (career practice: 判断・言語化) の学習要素面を副で読める、柱①③⑤ 超過を助長しない。日曜 evergreen 帯として運用フォーマット適合、Primary persona 駆け出しデザイナー (既存 YouTube デザイン講座 ~200 人サブスクの延長層) の『AI 時代、自分の役割は?』『何を武器にすれば残れる?』への直撃解法。NG パターン全回避: 『AI がデザイナーの仕事を奪う』の逆張り = 『AI 時代こそデザイナーの判断力が価値の中心』の前向きフレーム、AI = 補助輪フレームを『AI に案は任せて、なぜこの色・この配置かを言語化する癖こそ武器』の recommend で再強化。144h fresh で 168h 上限の 86%、突出鮮度優位で採用正当化、次回 news-ja は 08-14 前後 (2週サイクル) で cocoda / note / X 日本語デザイナー界隈へ切替推奨。",
+    "method": "news-en",
+    "description": "TechCrunch / Axios / SiliconANGLE / Anthropic 公式 で Claude Opus 5 リリース (07-24) を裏取り、Framer 公式のアップデートページ (07-28 Opus 5 対応) で駆け出し向け具体数値 (Navigation Benchmark) を発掘、The New Stack で Opus 5 ≒ Fable 5 分析を補強。Framer 対応 07-28 起算で 144h fresh、168h 上限内 (86%)。08-02 PDCA pre-schedule (Mon weekday news-en 第一候補、07-24 =10日前で 2週連続 WORST 凍結明けの再検証タイミング) から news-en を採用、直近 2 日 (08-02 news-ja / 08-01 expert-blog) と重複なし、news-en 7-day window (07-28 to 08-03) 0 回で追加可能、10 日空きで 2-day rule / 7-day-2-time / WORST 凍結 全ガード clear。柱② プラグイン / エコシステム (target 20%、+1.4pt で適正内) を主 (Framer = デザインツールエコシステム重要プレイヤー)、柱③ 業界・デザインニュース (target 20%、+8.6pt で超過) の AI × デザイン角度を副、柱①③⑤ 超過を新規に助長しない構成 (柱②が主、柱③副で ①⑤ には触れない)。Primary persona 駆け出しデザイナー (既存 YouTube デザイン講座 ~200 人サブスクの延長層) が『ポートフォリオを Framer で作るとき、AI コストがどう変わるか』の具体課題に直撃、Framer は 2026 年時点でポートフォリオ制作の第一選択、07-24 Anthropic Opus 5 リリース + 07-28 Framer 実装で『先週デザインツール界隈で何が起きたか』の週次 recap ニュースとして成立。NG パターン全回避: 『AI がデザイナーの仕事を奪う』回避 (『モデル選びも武器の一つ』の前向きフレーム)、『AI に任せれば考えなくていい』回避 (『同じプロンプトでも選択で速度もコストも変わる』で判断力を強調、AI = 補助輪 維持)、『プラグイン機能説明メイン』回避 (Framer のプロダクト紹介ではなく Opus 5 統合ニュース + Primary の判断力育成)、『英語/日本語の中途半端な混在』回避 (固有名詞 Framer / Anthropic / Opus 5 / Fable 5 / Navigation Benchmark 以外は日本語)、『1週間以上前ニュースを新着扱い』回避 (Framer 対応 07-28 = 144h fresh、168h の 86%)、『出典不明』回避 (Framer 公式 update page + TechCrunch + Axios + SiliconANGLE + Anthropic 公式 + The New Stack の 6 段 sourcing)。次回 news-en は 08-13 前後 (2 週サイクル) で UX Collective / Smashing / The Verge 直近論考 or Adobe / Figma 系 major release 候補化推奨。",
     "sources": [
-      "https://wantedly.connpass.com/event/399275/",
-      "https://x.com/GoodpatchTokyo/status/2074341023728492920",
-      "https://goodpatch.com/company/members",
-      "https://stateofaidesign.com/",
-      "https://designerfund.com/blog/ai-in-design-2026"
+      "https://www.framer.com/updates/opus-5",
+      "https://techcrunch.com/2026/07/24/anthropic-launches-opus-5/",
+      "https://www.axios.com/2026/07/24/anthropic-releases-new-model-opus-5",
+      "https://siliconangle.com/2026/07/24/anthropic-launches-claude-opus-5-efficiency-safety-improvements/",
+      "https://www.anthropic.com/news/claude-opus-5",
+      "https://thenewstack.io/anthropics-opus-5-almost-fable-5/"
     ],
-    "query": "Wantedly Designers Lounge AIで変化する開発現場 問い直されるデザイナーの役割 グッドパッチ 石井克尚 2026-07-27",
+    "query": "Framer Opus 5 July 28 2026 benchmark Anthropic launch designer portfolio AI cost",
     "freshness_hours": 144
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Wantedly Designers Lounge 07-27 グッドパッチ石井登壇 AI時代のデザイナー役割議論",
-      "description": "東京で先週月曜、Wantedly Designers Lounge開催。話題はAI時代のデザイナー役割です。",
-      "detail": "登壇はグッドパッチ執行役員の石井克尚さん。背景の海外調査では今や91パーセントのデザイナーが毎週AIを使用。デザイナーの仕事は『作る人』から『目的を絞り、案を選ぶ人』へ移行と議論されました。",
-      "narration": "東京で先週月曜、Wantedly Designers Loungeが開催、話題は『AIで変わる開発現場と、問い直されるデザイナーの役割』でした。",
+      "title": "Framer 7/28 Opus 5対応、駆け出しのポートフォリオAIが速く安く",
+      "description": "駆け出しのポートフォリオ制作、AIコストが激減します。Framerが先週7/28、AnthropicのOpus 5に対応。",
+      "detail": "Framer公式のNavigation Benchmarkで、Opus 5はOpus 4.8より1.5分速く12%効率的。最上位Fable 5と同スコアを半分のクレジットで達成しました。",
+      "narration": "駆け出しのポートフォリオ制作、AIコストが激減します。Framerが先週7/28、AnthropicのOpus 5に対応。前より速く、しかも半額です。",
       "tags": [
-        "Wantedly",
-        "Goodpatch",
-        "AIデザイン",
-        "デザイナー役割",
-        "駆け出しデザイナー"
+        "Framer",
+        "Opus 5",
+        "Anthropic",
+        "AIモデル",
+        "ポートフォリオ"
       ],
       "narration_sections": {
-        "hook": "東京で先週月曜、Wantedly Designers Loungeが開催、話題は『AIで変わる開発現場と、問い直されるデザイナーの役割』でした。",
-        "origin": "登壇はグッドパッチ執行役員の石井克尚さん。背景の海外調査では、今や91パーセントのデザイナーが毎週AIを使用。デザイナーの仕事は『作る人』から『目的を絞り、案を選ぶ人』へ。判断と意味づけこそが、これからの価値の中心と議論されました。",
-        "recommend": "駆け出しの人こそ、AIに任せず『なぜこの色、この配置か』を言語化する癖を。判断力こそが、AI時代の一番の武器になります。"
+        "hook": "駆け出しのポートフォリオ制作、AIコストが激減します。Framerが先週7/28、AnthropicのOpus 5に対応。前より速く、しかも半額です。",
+        "origin": "FramerのNavigation Benchmarkで、Opus 5はOpus 4.8より1.5分速く12%効率的。最上位Fable 5と同スコアを半分のクレジットで達成。Anthropic 7/24発表、価格は半額です。",
+        "recommend": "AIは補助輪、モデル選びも武器です。同じプロンプトでも選択で速度もコストも変わる。Figmaナビもデザインシステム準拠でAIを効率化します。"
       },
       "section_titles": {
-        "hook": "AI時代の役割議論",
-        "origin": "作る人から選ぶ人へ",
-        "recommend": "判断力こそ武器に"
+        "hook": "AIコスト激減",
+        "origin": "1.5分速く半額",
+        "recommend": "モデル選びも武器"
       },
       "section_descriptions": {
-        "hook": "Wantedly主催、AI時代のデザイナー像議論",
-        "origin": "グッドパッチ石井さん登壇と海外調査91%",
-        "recommend": "言語化する癖で駆け出しがAI時代を勝ち抜く"
+        "hook": "Framerが7/28にOpus 5対応、速く安く",
+        "origin": "Navigation Benchmark比較データ",
+        "recommend": "AIは補助輪、モデル選択も判断力の武器です"
       }
     }
   ]
