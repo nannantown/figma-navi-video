@@ -1,47 +1,40 @@
 {
-  "date": "2026-08-03",
+  "date": "2026-08-04",
   "discovery": {
-    "method": "news-en",
-    "description": "TechCrunch / Axios / SiliconANGLE / Anthropic 公式 で Claude Opus 5 リリース (07-24) を裏取り、Framer 公式のアップデートページ (07-28 Opus 5 対応) で駆け出し向け具体数値 (Navigation Benchmark) を発掘、The New Stack で Opus 5 ≒ Fable 5 分析を補強。Framer 対応 07-28 起算で 144h fresh、168h 上限内 (86%)。08-02 PDCA pre-schedule (Mon weekday news-en 第一候補、07-24 =10日前で 2週連続 WORST 凍結明けの再検証タイミング) から news-en を採用、直近 2 日 (08-02 news-ja / 08-01 expert-blog) と重複なし、news-en 7-day window (07-28 to 08-03) 0 回で追加可能、10 日空きで 2-day rule / 7-day-2-time / WORST 凍結 全ガード clear。柱② プラグイン / エコシステム (target 20%、+1.4pt で適正内) を主 (Framer = デザインツールエコシステム重要プレイヤー)、柱③ 業界・デザインニュース (target 20%、+8.6pt で超過) の AI × デザイン角度を副、柱①③⑤ 超過を新規に助長しない構成 (柱②が主、柱③副で ①⑤ には触れない)。Primary persona 駆け出しデザイナー (既存 YouTube デザイン講座 ~200 人サブスクの延長層) が『ポートフォリオを Framer で作るとき、AI コストがどう変わるか』の具体課題に直撃、Framer は 2026 年時点でポートフォリオ制作の第一選択、07-24 Anthropic Opus 5 リリース + 07-28 Framer 実装で『先週デザインツール界隈で何が起きたか』の週次 recap ニュースとして成立。NG パターン全回避: 『AI がデザイナーの仕事を奪う』回避 (『モデル選びも武器の一つ』の前向きフレーム)、『AI に任せれば考えなくていい』回避 (『同じプロンプトでも選択で速度もコストも変わる』で判断力を強調、AI = 補助輪 維持)、『プラグイン機能説明メイン』回避 (Framer のプロダクト紹介ではなく Opus 5 統合ニュース + Primary の判断力育成)、『英語/日本語の中途半端な混在』回避 (固有名詞 Framer / Anthropic / Opus 5 / Fable 5 / Navigation Benchmark 以外は日本語)、『1週間以上前ニュースを新着扱い』回避 (Framer 対応 07-28 = 144h fresh、168h の 86%)、『出典不明』回避 (Framer 公式 update page + TechCrunch + Axios + SiliconANGLE + Anthropic 公式 + The New Stack の 6 段 sourcing)。次回 news-en は 08-13 前後 (2 週サイクル) で UX Collective / Smashing / The Verge 直近論考 or Adobe / Figma 系 major release 候補化推奨。",
+    "method": "product-launches",
+    "description": "Awwwards Sites of the Day 08-03 発表分から Primary persona 学び直結の高得点 SOTD を抽出、Muzli / Brandon King blog / X 公式アカウントで裏取り、Merci Michel 制作、スコア 7.46/10、Three.js のブランドゲーム、実世界の賞品でリピート設計。Primary persona 駆け出しデザイナーが名門スタジオのブランドサイト設計を学ぶ導線。07-25 Lama Lama / 07-29 TRIONN と同じ product-launches Awwwards SOTD 縦糸を継続、7-day-2-time は 07-29 のみ 1 回で追加可能、2-day rule は 08-03 news-en / 08-02 news-ja でクリア。柱⑤ ポートフォリオ事例 (target 10%、+4.3pt 超過継続だが SOTD 縦糸として週次リズム維持) 主、柱③ 業界・デザインニュース副。",
     "sources": [
-      "https://www.framer.com/updates/opus-5",
-      "https://techcrunch.com/2026/07/24/anthropic-launches-opus-5/",
-      "https://www.axios.com/2026/07/24/anthropic-releases-new-model-opus-5",
-      "https://siliconangle.com/2026/07/24/anthropic-launches-claude-opus-5-efficiency-safety-improvements/",
-      "https://www.anthropic.com/news/claude-opus-5",
-      "https://thenewstack.io/anthropics-opus-5-almost-fable-5/"
+      "https://www.awwwards.com/sites/lacoste-ace-breaker",
+      "https://x.com/awwwards/status/2084188311380263256",
+      "https://me.muz.li/merci-michel/lacoste-ace-breaker-2",
+      "https://brandoneking.wordpress.com/2026/07/04/lacoste-ace-breaker-merci-michel/",
+      "https://x.com/Lacoste/status/1982853970927464726"
     ],
-    "query": "Framer Opus 5 July 28 2026 benchmark Anthropic launch designer portfolio AI cost",
-    "freshness_hours": 144
+    "query": "Awwwards Site of the Day August 2026 Lacoste Ace Breaker Merci Michel Roland Garros Three.js",
+    "freshness_hours": 24
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Framer 7/28 Opus 5対応、駆け出しのポートフォリオAIが速く安く",
-      "description": "駆け出しのポートフォリオ制作、AIコストが激減します。Framerが先週7/28、AnthropicのOpus 5に対応。",
-      "detail": "Framer公式のNavigation Benchmarkで、Opus 5はOpus 4.8より1.5分速く12%効率的。最上位Fable 5と同スコアを半分のクレジットで達成しました。",
-      "narration": "駆け出しのポートフォリオ制作、AIコストが激減します。Framerが先週7/28、AnthropicのOpus 5に対応。前より速く、しかも半額です。",
-      "tags": [
-        "Framer",
-        "Opus 5",
-        "Anthropic",
-        "AIモデル",
-        "ポートフォリオ"
-      ],
+      "title": "Lacoste Ace Breaker が Awwwards SOTD 08-03、Merci Michel の 1動詞×3色設計",
+      "description": "昨日 Awwwards SOTD を取ったブランドゲーム、Merci Michel の設計が駆け出しに刺さる",
+      "detail": "Lacoste × Roland Garros のブランドキャンペーン Ace Breaker が 2026-08-03 の Awwwards Site of the Day を受賞、スコア 7.46。制作は名門 Merci Michel。Three.js のブロック崩し風ゲーム 1 本に機能を絞り、緑・白・黄のトリコロールでブランドを即認識、賞品は本物のロラン・ギャロス観戦チケットと限定ポロシャツで、実世界の報酬がリピートを設計する。駆け出しに学べる 2 点は動詞を 1 つに絞る力とブランドカラーで即読ませる力。",
+      "narration": "昨日発表のAwwwards SOTD、Lacoste × Roland Garros のブランドゲームがトップ受賞、制作はMerci Michelです。",
+      "tags": ["Awwwards", "Merci Michel", "Lacoste", "Three.js", "ブランドサイト", "ポートフォリオ学習"],
       "narration_sections": {
-        "hook": "駆け出しのポートフォリオ制作、AIコストが激減します。Framerが先週7/28、AnthropicのOpus 5に対応。前より速く、しかも半額です。",
-        "origin": "FramerのNavigation Benchmarkで、Opus 5はOpus 4.8より1.5分速く12%効率的。最上位Fable 5と同スコアを半分のクレジットで達成。Anthropic 7/24発表、価格は半額です。",
-        "recommend": "AIは補助輪、モデル選びも武器です。同じプロンプトでも選択で速度もコストも変わる。Figmaナビもデザインシステム準拠でAIを効率化します。"
+        "hook": "昨日発表のAwwwards SOTD、Lacoste × Roland Garros のブランドゲームがトップ受賞、制作はMerci Michelです。",
+        "origin": "動詞は打つの1つだけ、Three.jsのブロック崩し風に機能を絞り、緑・白・黄のブランドカラーで瞬時に読ませます。賞品は本物のロラン・ギャロス観戦チケットとポロシャツで、実世界の報酬が繰り返し遊ばせる設計になっています。",
+        "recommend": "駆け出しが学ぶのは動詞を1つに絞る力と、ブランド色で即読ませる力、Figmaナビも同じ思想で速く迷わず作れます。"
       },
       "section_titles": {
-        "hook": "AIコスト激減",
-        "origin": "1.5分速く半額",
-        "recommend": "モデル選びも武器"
+        "hook": "昨日のSOTD速報",
+        "origin": "1動詞×3色の解剖",
+        "recommend": "駆け出しへの応用"
       },
       "section_descriptions": {
-        "hook": "Framerが7/28にOpus 5対応、速く安く",
-        "origin": "Navigation Benchmark比較データ",
-        "recommend": "AIは補助輪、モデル選択も判断力の武器です"
+        "hook": "昨日 Awwwards SOTDに輝いたブランドゲームです",
+        "origin": "Merci Michelがブランド世界に落とし込んだ設計",
+        "recommend": "駆け出しがすぐ応用できる、2つの実務ヒント"
       }
     }
   ]
