@@ -2,51 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "zHXzRcE0aD4",
-      "videoUrl": "https://youtube.com/shorts/zHXzRcE0aD4",
-      "date": "2026-05-04",
-      "title": "【デザインニュース】Figma Make、声でプロンプト入力が公式対応｜2026/05/04 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 45,
-      "discovery": {
-        "method": "social-en",
-        "description": "Figma Forum 2026年2月の長年要望スレッド『Add voice to text prompting to Figma Make』を起点に、4/30 公式リリースされた Figma Make 大型アップデート(voice-to-text・Zapier コネクター・version history・clear context・question cards の5機能同梱)を、Willow Voice の voice-dictation 比較ブログ、Figma 公式リリースノート、UX Collective の Make プロンプト解説、Figma 公式 X アカウントの告知で裏取り。直近2日(5/3 figma-community, 5/2 product-launches) と method 重複なし、5/1 social-en (Text on Path Pablo Stanley) から3日空き。official-src は 4/27+4/30 で 7日内2回到達、product-launches は 4/29+5/2 で同様に到達、news-en は 2週連続 WORST 凍結ライン、figma-community は 5/3 直前 — 結果として social-en が 2-day rule・7-day-2-time rule・WORST 凍結 全部クリアで最適。柱① Figma 公式ニュース。Primary 駆け出しデザイナーの『プロンプトを打つのが面倒・タイピングが追いつかない』という具体課題を、フォーラム長年要望→Willow など 3rd-party が先回りで埋めていた市場→ついに公式実装、という community-driven story arc で噛み砕く。NG パターン回避: AI=補助輪に位置づけ、『声と手の両輪』として学習者の手を止めない使い方を提示",
-        "sources": [
-          "https://forum.figma.com/suggest-a-feature-11/add-voice-to-text-prompting-to-figma-make-prompt-in-adding-to-typing-a-prompt-50900",
-          "https://willowvoice.com/blog/how-to-use-ai-voice-dictation-in-figma",
-          "https://www.figma.com/release-notes/",
-          "https://uxdesign.cc/how-to-prompt-figma-makes-ai-better-for-product-design-627daf3f4036",
-          "https://help.figma.com/hc/en-us/articles/35108701485591-Automate-design-workflows-with-Zapier-and-Figma",
-          "https://x.com/figma"
-        ],
-        "query": "Figma Make voice-to-text Zapier connector April 30 2026 community forum demand voice dictation",
-        "freshness_hours": 96
-      },
-      "stats": {
-        "views": 86,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-05-18T00:11:22.612Z"
-      }
-    },
-    {
       "videoId": "dLHxYsHFm1E",
       "videoUrl": "https://youtube.com/shorts/dLHxYsHFm1E",
       "date": "2026-05-05",
@@ -2698,7 +2653,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-02T00:11:45.961Z"
+        "updatedAt": "2026-08-03T00:12:10.897Z"
       }
     },
     {
@@ -2740,7 +2695,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-02T00:11:45.961Z"
+        "updatedAt": "2026-08-03T00:12:10.897Z"
       }
     },
     {
@@ -2784,7 +2739,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-02T00:11:45.961Z"
+        "updatedAt": "2026-08-03T00:12:10.897Z"
       }
     },
     {
@@ -2827,7 +2782,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-02T00:11:45.961Z"
+        "updatedAt": "2026-08-03T00:12:10.897Z"
       }
     },
     {
@@ -2870,7 +2825,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-02T00:11:45.961Z"
+        "updatedAt": "2026-08-03T00:12:10.897Z"
       }
     },
     {
@@ -2914,7 +2869,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-02T00:11:45.961Z"
+        "updatedAt": "2026-08-03T00:12:10.897Z"
       }
     },
     {
@@ -2957,7 +2912,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-02T00:11:45.961Z"
+        "updatedAt": "2026-08-03T00:12:10.897Z"
       }
     },
     {
@@ -3001,7 +2956,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-02T00:11:45.961Z"
+        "updatedAt": "2026-08-03T00:12:10.897Z"
       }
     },
     {
@@ -3046,7 +3001,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-02T00:11:45.961Z"
+        "updatedAt": "2026-08-03T00:12:10.897Z"
       }
     },
     {
@@ -3090,7 +3045,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-02T00:11:45.961Z"
+        "updatedAt": "2026-08-03T00:12:10.897Z"
       }
     },
     {
@@ -3134,7 +3089,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-02T00:11:45.961Z"
+        "updatedAt": "2026-08-03T00:12:10.897Z"
       }
     },
     {
@@ -3178,19 +3133,56 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-03T00:12:10.897Z"
+      }
+    },
+    {
+      "videoId": "9aBRuwV9YbA",
+      "videoUrl": "https://youtube.com/shorts/9aBRuwV9YbA",
+      "date": "2026-08-03",
+      "title": "【デザインニュース】Framer 7/28 Opus 5対応、駆け出しのポートフォリオAIが速く安く｜2026/08/03 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 49,
+      "discovery": {
+        "method": "news-en",
+        "description": "TechCrunch / Axios / SiliconANGLE / Anthropic 公式 で Claude Opus 5 リリース (07-24) を裏取り、Framer 公式のアップデートページ (07-28 Opus 5 対応) で駆け出し向け具体数値 (Navigation Benchmark) を発掘、The New Stack で Opus 5 ≒ Fable 5 分析を補強。Framer 対応 07-28 起算で 144h fresh、168h 上限内 (86%)。08-02 PDCA pre-schedule (Mon weekday news-en 第一候補、07-24 =10日前で 2週連続 WORST 凍結明けの再検証タイミング) から news-en を採用、直近 2 日 (08-02 news-ja / 08-01 expert-blog) と重複なし、news-en 7-day window (07-28 to 08-03) 0 回で追加可能、10 日空きで 2-day rule / 7-day-2-time / WORST 凍結 全ガード clear。柱② プラグイン / エコシステム (target 20%、+1.4pt で適正内) を主 (Framer = デザインツールエコシステム重要プレイヤー)、柱③ 業界・デザインニュース (target 20%、+8.6pt で超過) の AI × デザイン角度を副、柱①③⑤ 超過を新規に助長しない構成 (柱②が主、柱③副で ①⑤ には触れない)。Primary persona 駆け出しデザイナー (既存 YouTube デザイン講座 ~200 人サブスクの延長層) が『ポートフォリオを Framer で作るとき、AI コストがどう変わるか』の具体課題に直撃、Framer は 2026 年時点でポートフォリオ制作の第一選択、07-24 Anthropic Opus 5 リリース + 07-28 Framer 実装で『先週デザインツール界隈で何が起きたか』の週次 recap ニュースとして成立。NG パターン全回避: 『AI がデザイナーの仕事を奪う』回避 (『モデル選びも武器の一つ』の前向きフレーム)、『AI に任せれば考えなくていい』回避 (『同じプロンプトでも選択で速度もコストも変わる』で判断力を強調、AI = 補助輪 維持)、『プラグイン機能説明メイン』回避 (Framer のプロダクト紹介ではなく Opus 5 統合ニュース + Primary の判断力育成)、『英語/日本語の中途半端な混在』回避 (固有名詞 Framer / Anthropic / Opus 5 / Fable 5 / Navigation Benchmark 以外は日本語)、『1週間以上前ニュースを新着扱い』回避 (Framer 対応 07-28 = 144h fresh、168h の 86%)、『出典不明』回避 (Framer 公式 update page + TechCrunch + Axios + SiliconANGLE + Anthropic 公式 + The New Stack の 6 段 sourcing)。次回 news-en は 08-13 前後 (2 週サイクル) で UX Collective / Smashing / The Verge 直近論考 or Adobe / Figma 系 major release 候補化推奨。",
+        "sources": [
+          "https://www.framer.com/updates/opus-5",
+          "https://techcrunch.com/2026/07/24/anthropic-launches-opus-5/",
+          "https://www.axios.com/2026/07/24/anthropic-releases-new-model-opus-5",
+          "https://siliconangle.com/2026/07/24/anthropic-launches-claude-opus-5-efficiency-safety-improvements/",
+          "https://www.anthropic.com/news/claude-opus-5",
+          "https://thenewstack.io/anthropics-opus-5-almost-fable-5/"
+        ],
+        "query": "Framer Opus 5 July 28 2026 benchmark Anthropic launch designer portfolio AI cost",
+        "freshness_hours": 144
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-06-30",
-      "changes": [
-        "standard: 65 avg views (52 videos)",
-        "Day performance: Wed=109, Sat=67, Sun=67, Thu=66, Tue=62, Fri=50, Mon=34"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-02",
       "changes": [
@@ -3420,6 +3412,14 @@
       "changes": [
         "standard: 24 avg views (71 videos)",
         "Day performance: Sat=38, Tue=30, Sun=29, Fri=19, Mon=17, Wed=15, Thu=15"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-03",
+      "changes": [
+        "standard: 23 avg views (71 videos)",
+        "Day performance: Sat=38, Tue=30, Sun=19, Fri=19, Mon=17, Wed=15, Thu=15"
       ],
       "recommendedTemplate": "standard"
     }
