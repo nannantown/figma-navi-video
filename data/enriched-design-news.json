@@ -1,40 +1,39 @@
 {
-  "date": "2026-08-04",
+  "date": "2026-08-05",
   "discovery": {
-    "method": "product-launches",
-    "description": "Awwwards Sites of the Day 08-03 発表分から Primary persona 学び直結の高得点 SOTD を抽出、Muzli / Brandon King blog / X 公式アカウントで裏取り、Merci Michel 制作、スコア 7.46/10、Three.js のブランドゲーム、実世界の賞品でリピート設計。Primary persona 駆け出しデザイナーが名門スタジオのブランドサイト設計を学ぶ導線。07-25 Lama Lama / 07-29 TRIONN と同じ product-launches Awwwards SOTD 縦糸を継続、7-day-2-time は 07-29 のみ 1 回で追加可能、2-day rule は 08-03 news-en / 08-02 news-ja でクリア。柱⑤ ポートフォリオ事例 (target 10%、+4.3pt 超過継続だが SOTD 縦糸として週次リズム維持) 主、柱③ 業界・デザインニュース副。",
+    "method": "official-src",
+    "description": "Figma Blog 07-30 の Figma Make properties panel + annotations 追加を主候補として採用。ソースは Figma 公式 Blog + Figma Newsroom + Config 2026 recap の関連セクション。144h fresh、168h 上限の 86%。08-04 PDCA §Method 提案の 08-06 予約を 1 日前倒し (freshness expiry 回避)、08-05 予約 figma-community は本ルーチン内で有効候補確保に失敗のため 08-06 へ振り替え。Primary persona 駆け出しデザイナーの『AI プロンプト打ち直し疲れ』を Figma UI 慣れの局所修正で解消する具体解。柱① Figma公式ニュース (target 25%, -3.6pt) 修復。",
     "sources": [
-      "https://www.awwwards.com/sites/lacoste-ace-breaker",
-      "https://x.com/awwwards/status/2084188311380263256",
-      "https://me.muz.li/merci-michel/lacoste-ace-breaker-2",
-      "https://brandoneking.wordpress.com/2026/07/04/lacoste-ace-breaker-merci-michel/",
-      "https://x.com/Lacoste/status/1982853970927464726"
+      "https://www.figma.com/blog/properties-panel-and-annotations-now-in-figma-make/",
+      "https://www.figma.com/release-notes/",
+      "https://www.figma.com/blog/config-2026-recap/",
+      "https://help.figma.com/hc/en-us/articles/39582753756695-What-s-new-from-Config-2026"
     ],
-    "query": "Awwwards Site of the Day August 2026 Lacoste Ace Breaker Merci Michel Roland Garros Three.js",
-    "freshness_hours": 24
+    "query": "Figma Make properties panel annotations July 30 2026 visual editing launch",
+    "freshness_hours": 144
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Lacoste Ace Breaker が Awwwards SOTD 08-03、Merci Michel の 1動詞×3色設計",
-      "description": "昨日 Awwwards SOTD を取ったブランドゲーム、Merci Michel の設計が駆け出しに刺さる",
-      "detail": "Lacoste × Roland Garros のブランドキャンペーン Ace Breaker が 2026-08-03 の Awwwards Site of the Day を受賞、スコア 7.46。制作は名門 Merci Michel。Three.js のブロック崩し風ゲーム 1 本に機能を絞り、緑・白・黄のトリコロールでブランドを即認識、賞品は本物のロラン・ギャロス観戦チケットと限定ポロシャツで、実世界の報酬がリピートを設計する。駆け出しに学べる 2 点は動詞を 1 つに絞る力とブランドカラーで即読ませる力。",
-      "narration": "昨日発表のAwwwards SOTD、Lacoste × Roland Garros のブランドゲームがトップ受賞、制作はMerci Michelです。",
-      "tags": ["Awwwards", "Merci Michel", "Lacoste", "Three.js", "ブランドサイト", "ポートフォリオ学習"],
+      "title": "Figma Makeがvisual editing対応、プロンプト頼みからFigma慣れの操作へ",
+      "description": "07-30公開、駆け出しでもプロンプト打ち直し無しで局所修正できる大更新",
+      "detail": "Figma公式が07-30、Figma Makeにvisual editingとannotationsを追加。プロパティパネルはFigma Designと同じ余白・タイポ・レイアウトの操作感を持ち込み、annotationsはキャンバス上で変えたい要素を丸で囲んで『ここを300ミリ秒フェードイン』のように自然言語で書き込むだけ。プロンプトを毎回書き直さずに局所修正できるので、AIプロンプト職人化を避けて駆け出しでも扱いやすくなる。",
+      "narration": "先週木曜Figma Makeに大きな更新、プロンプト頼みじゃなく駆け出しに嬉しいFigma慣れのプロパティパネルで直接直せるようになりました。",
+      "tags": ["Figma Make", "Figma公式", "visual editing", "annotations", "AI補助輪", "駆け出し向け"],
       "narration_sections": {
-        "hook": "昨日発表のAwwwards SOTD、Lacoste × Roland Garros のブランドゲームがトップ受賞、制作はMerci Michelです。",
-        "origin": "動詞は打つの1つだけ、Three.jsのブロック崩し風に機能を絞り、緑・白・黄のブランドカラーで瞬時に読ませます。賞品は本物のロラン・ギャロス観戦チケットとポロシャツで、実世界の報酬が繰り返し遊ばせる設計になっています。",
-        "recommend": "駆け出しが学ぶのは動詞を1つに絞る力と、ブランド色で即読ませる力、Figmaナビも同じ思想で速く迷わず作れます。"
+        "hook": "先週木曜Figma Makeに大きな更新、プロンプト頼みじゃなく駆け出しに嬉しいFigma慣れのプロパティパネルで直接直せるようになりました。",
+        "origin": "新しいプロパティパネルはFigma Designと同じ余白・タイポ・レイアウトの操作感、annotationsは変えたい場所を丸で囲んで『ここを300ミリ秒フェードイン』と書き込むだけで、AIに繰り返しプロンプトを打ち直す時間がなくなります。",
+        "recommend": "AIは丸投げする相手じゃなく道具、Figmaナビも同じ発想で駆け出しが自分で判断する時間を残します。"
       },
       "section_titles": {
-        "hook": "昨日のSOTD速報",
-        "origin": "1動詞×3色の解剖",
+        "hook": "Figma Make更新",
+        "origin": "パネル×注釈の中身",
         "recommend": "駆け出しへの応用"
       },
       "section_descriptions": {
-        "hook": "昨日 Awwwards SOTDに輝いたブランドゲームです",
-        "origin": "Merci Michelがブランド世界に落とし込んだ設計",
-        "recommend": "駆け出しがすぐ応用できる、2つの実務ヒント"
+        "hook": "Figma Makeが07-30に大きな更新を発表",
+        "origin": "Figma Designと同じ操作感と自然言語注釈",
+        "recommend": "駆け出しがAIプロンプト職人化を避ける方法"
       }
     }
   ]
