@@ -2,53 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "dLHxYsHFm1E",
-      "videoUrl": "https://youtube.com/shorts/dLHxYsHFm1E",
-      "date": "2026-05-05",
-      "title": "【デザインニュース】Figma本日大型ライブ、AIがキャンバスに直接デザインを描く時代へ｜2026/05/05 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 42,
-      "discovery": {
-        "method": "official-src",
-        "description": "Figma 公式 events-and-webinars / Figma Blog / Help Center / GitHub の figma/mcp-server-guide を直接当たり、本日 (5/5) PT9:00 (= JST 5/6 1:00) 開催の Figma ライブストリーム『AI agent と co-design』を一次取得。先月公開された Figma MCP server beta (use_figma tool / Skills as markdown / Claude Code・Codex・Cursor 連携) が今日のライブで実演デモされる構図を、Primary 駆け出しデザイナー視点で『AIにデザインシステムを守らせて生成させる時代の入口』として柱① Figma 公式ニュース枠で噛み砕く。method 選定: 直近14日 method 別 avg views で official-src=121 (n=3, TOP3) を Exploit。TOP1 product-launches (avg 367) は 4/29+5/2 で 7日2回到達のため連投回避、TOP2 social-en も 5/1+5/4 で同様。official-src は 4/30 以来 5 日空きで 2-day rule・7-day-2-time rule とも余裕。直近2日 (5/3 figma-community, 5/4 social-en) と method 重複なし。NG パターン回避: 『AIが描く時代でも、ルールを設計するのは人間』と学習者の役割を逆強調し、AI=補助輪のフレームを徹底",
-        "sources": [
-          "https://www.figma.com/events-and-webinars/",
-          "https://www.figma.com/blog/the-figma-canvas-is-now-open-to-agents/",
-          "https://help.figma.com/hc/en-us/articles/39216419318551-Get-started-with-the-Figma-MCP-server",
-          "https://help.figma.com/hc/en-us/articles/39166810751895-Figma-skills-for-MCP",
-          "https://github.com/figma/mcp-server-guide",
-          "https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/",
-          "https://www.figma.com/release-notes/",
-          "https://x.com/figma"
-        ],
-        "query": "Figma livestream May 5 2026 AI agents co-design use_figma MCP Skills Claude Cursor",
-        "freshness_hours": 0
-      },
-      "stats": {
-        "views": 117,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-05-19T00:18:29.856Z"
-      }
-    },
-    {
       "videoId": "1Z2V-F5G36M",
       "videoUrl": "https://youtube.com/shorts/1Z2V-F5G36M",
       "date": "2026-05-09",
@@ -2695,7 +2648,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-03T00:12:10.897Z"
+        "updatedAt": "2026-08-04T00:15:50.198Z"
       }
     },
     {
@@ -2739,7 +2692,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-03T00:12:10.897Z"
+        "updatedAt": "2026-08-04T00:15:50.198Z"
       }
     },
     {
@@ -2782,7 +2735,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-03T00:12:10.897Z"
+        "updatedAt": "2026-08-04T00:15:50.198Z"
       }
     },
     {
@@ -2825,7 +2778,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-03T00:12:10.897Z"
+        "updatedAt": "2026-08-04T00:15:50.198Z"
       }
     },
     {
@@ -2869,7 +2822,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-03T00:12:10.897Z"
+        "updatedAt": "2026-08-04T00:15:50.198Z"
       }
     },
     {
@@ -2912,7 +2865,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-03T00:12:10.897Z"
+        "updatedAt": "2026-08-04T00:15:50.198Z"
       }
     },
     {
@@ -2956,7 +2909,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-03T00:12:10.897Z"
+        "updatedAt": "2026-08-04T00:15:50.198Z"
       }
     },
     {
@@ -3001,7 +2954,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-03T00:12:10.897Z"
+        "updatedAt": "2026-08-04T00:15:50.198Z"
       }
     },
     {
@@ -3045,7 +2998,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-03T00:12:10.897Z"
+        "updatedAt": "2026-08-04T00:15:50.198Z"
       }
     },
     {
@@ -3089,7 +3042,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-03T00:12:10.897Z"
+        "updatedAt": "2026-08-04T00:15:50.198Z"
       }
     },
     {
@@ -3130,10 +3083,10 @@
         "freshness_hours": 144
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-03T00:12:10.897Z"
+        "updatedAt": "2026-08-04T00:15:50.198Z"
       }
     },
     {
@@ -3178,19 +3131,55 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-04T00:15:50.198Z"
+      }
+    },
+    {
+      "videoId": "AWzFpVqWSvs",
+      "videoUrl": "https://youtube.com/shorts/AWzFpVqWSvs",
+      "date": "2026-08-04",
+      "title": "【デザインニュース】Lacoste Ace Breaker が Awwwards SOTD 08-03、Merci Michel の 1動詞×3色設計｜2026/08/04 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 43,
+      "discovery": {
+        "method": "product-launches",
+        "description": "Awwwards Sites of the Day 08-03 発表分から Primary persona 学び直結の高得点 SOTD を抽出、Muzli / Brandon King blog / X 公式アカウントで裏取り、Merci Michel 制作、スコア 7.46/10、Three.js のブランドゲーム、実世界の賞品でリピート設計。Primary persona 駆け出しデザイナーが名門スタジオのブランドサイト設計を学ぶ導線。07-25 Lama Lama / 07-29 TRIONN と同じ product-launches Awwwards SOTD 縦糸を継続、7-day-2-time は 07-29 のみ 1 回で追加可能、2-day rule は 08-03 news-en / 08-02 news-ja でクリア。柱⑤ ポートフォリオ事例 (target 10%、+4.3pt 超過継続だが SOTD 縦糸として週次リズム維持) 主、柱③ 業界・デザインニュース副。",
+        "sources": [
+          "https://www.awwwards.com/sites/lacoste-ace-breaker",
+          "https://x.com/awwwards/status/2084188311380263256",
+          "https://me.muz.li/merci-michel/lacoste-ace-breaker-2",
+          "https://brandoneking.wordpress.com/2026/07/04/lacoste-ace-breaker-merci-michel/",
+          "https://x.com/Lacoste/status/1982853970927464726"
+        ],
+        "query": "Awwwards Site of the Day August 2026 Lacoste Ace Breaker Merci Michel Roland Garros Three.js",
+        "freshness_hours": 24
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-02",
-      "changes": [
-        "standard: 63 avg views (53 videos)",
-        "Day performance: Wed=109, Sat=67, Sun=67, Thu=66, Tue=55, Fri=50, Mon=34"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-03",
       "changes": [
@@ -3420,6 +3409,14 @@
       "changes": [
         "standard: 23 avg views (71 videos)",
         "Day performance: Sat=38, Tue=30, Sun=19, Fri=19, Mon=17, Wed=15, Thu=15"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-04",
+      "changes": [
+        "standard: 22 avg views (71 videos)",
+        "Day performance: Sat=38, Tue=30, Sun=19, Fri=19, Wed=15, Thu=15, Mon=9"
       ],
       "recommendedTemplate": "standard"
     }
