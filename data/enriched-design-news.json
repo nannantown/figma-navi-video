@@ -1,39 +1,39 @@
 {
-  "date": "2026-08-05",
+  "date": "2026-08-06",
   "discovery": {
-    "method": "official-src",
-    "description": "Figma Blog 07-30 の Figma Make properties panel + annotations 追加を主候補として採用。ソースは Figma 公式 Blog + Figma Newsroom + Config 2026 recap の関連セクション。144h fresh、168h 上限の 86%。08-04 PDCA §Method 提案の 08-06 予約を 1 日前倒し (freshness expiry 回避)、08-05 予約 figma-community は本ルーチン内で有効候補確保に失敗のため 08-06 へ振り替え。Primary persona 駆け出しデザイナーの『AI プロンプト打ち直し疲れ』を Figma UI 慣れの局所修正で解消する具体解。柱① Figma公式ニュース (target 25%, -3.6pt) 修復。",
+    "method": "news-en",
+    "description": "英語系デザインテックメディア (AlternativeTo 2026-08 記事 + DesignRemoteJobs) がFigma nested folders 08-03ロールアウトを速報カバー、Figma公式ブログの技術舞台裏『Code, Craft, and the Making of Nested Folders』も同日公開でPrimary persona 駆け出しデザイナーのファイル整理課題に直撃。08-05 PDCA §Method 提案の 08-06 予約 figma-community は fresh (<168h) 有効候補確保に失敗 (Buddy 07-10 stale / UX Pilot 07-30 使用済 / Matt DesLauriers 記事は 2019年 stale) のため news-en へ振替、2-day rule (08-05 official-src / 08-04 product-launches) と 7-day-2-time (08-03 news-en 1回のみ、追加で2回でギリ) 共にクリア。official-src は 07-31 + 08-05 で既に 2 回、7-day-2-time 上限で追加不可のため回避。柱① Figma公式ニュース (target 25%, -3.6pt → 08-05 で修復開始) 引続き修復方向、記事は Figma 発だが discovery flow は英語業界メディア経由で news-en 妥当。",
     "sources": [
-      "https://www.figma.com/blog/properties-panel-and-annotations-now-in-figma-make/",
-      "https://www.figma.com/release-notes/",
-      "https://www.figma.com/blog/config-2026-recap/",
-      "https://help.figma.com/hc/en-us/articles/39582753756695-What-s-new-from-Config-2026"
+      "https://alternativeto.net/news/2026/8/figma-introduces-nested-folders-for-improved-file-organization-and-team-collaboration/",
+      "https://www.designremotejobs.com/article/how-figma-rethought-teamwork-to-ship-nested-folders-code-craft-and-collaboration",
+      "https://www.figma.com/blog/code-craft-and-the-making-of-nested-folders/",
+      "https://help.figma.com/hc/en-us/articles/41753150926103-Updates-to-Figma-s-file-management"
     ],
-    "query": "Figma Make properties panel annotations July 30 2026 visual editing launch",
-    "freshness_hours": 144
+    "query": "Figma nested folders August 3 2026 rollout 10 levels engineering craft PR first",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma Makeがvisual editing対応、プロンプト頼みからFigma慣れの操作へ",
-      "description": "07-30公開、駆け出しでもプロンプト打ち直し無しで局所修正できる大更新",
-      "detail": "Figma公式が07-30、Figma Makeにvisual editingとannotationsを追加。プロパティパネルはFigma Designと同じ余白・タイポ・レイアウトの操作感を持ち込み、annotationsはキャンバス上で変えたい要素を丸で囲んで『ここを300ミリ秒フェードイン』のように自然言語で書き込むだけ。プロンプトを毎回書き直さずに局所修正できるので、AIプロンプト職人化を避けて駆け出しでも扱いやすくなる。",
-      "narration": "先週木曜Figma Makeに大きな更新、プロンプト頼みじゃなく駆け出しに嬉しいFigma慣れのプロパティパネルで直接直せるようになりました。",
-      "tags": ["Figma Make", "Figma公式", "visual editing", "annotations", "AI補助輪", "駆け出し向け"],
+      "title": "Figma nested folders 08-03ロールアウト、有料10階層と作り方の舞台裏",
+      "description": "08-03公開、Projectsがフォルダに移行して有料プランは10階層までネスト可能に",
+      "detail": "Figmaが08-03からnested foldersのロールアウトを開始、既存Projectsが順次Foldersに移行、有料プランなら10階層までフォルダを入れ子にできます。同日Figma公式ブログには『Code, Craft, and the Making of Nested Folders』が公開、Slackで議論を回すより先にPull Requestを立てて試作を回し、エンジニアが設計判断まで踏み込む進め方でProjects基盤を丸ごと作り直したと語られています。",
+      "narration": "今週月曜Aug 3、Figmaがフォルダの入れ子対応スタート、Projectsが順次移行し有料プランなら10階層まで整理できます。",
+      "tags": ["Figma", "nested folders", "Figma公式", "ファイル整理", "駆け出し向け", "エンジニアリング craft"],
       "narration_sections": {
-        "hook": "先週木曜Figma Makeに大きな更新、プロンプト頼みじゃなく駆け出しに嬉しいFigma慣れのプロパティパネルで直接直せるようになりました。",
-        "origin": "新しいプロパティパネルはFigma Designと同じ余白・タイポ・レイアウトの操作感、annotationsは変えたい場所を丸で囲んで『ここを300ミリ秒フェードイン』と書き込むだけで、AIに繰り返しプロンプトを打ち直す時間がなくなります。",
-        "recommend": "AIは丸投げする相手じゃなく道具、Figmaナビも同じ発想で駆け出しが自分で判断する時間を残します。"
+        "hook": "今週月曜Aug 3、Figmaがフォルダの入れ子対応スタート、Projectsが順次移行し有料プランなら10階層まで整理できます。",
+        "origin": "同日Figma公式ブログには『Code, Craft, and the Making of Nested Folders』が公開、議論より先にPull Requestで試作を回してエンジニアが設計判断まで踏み込む進め方でProjects基盤を作り直しました。",
+        "recommend": "駆け出しは学習用と案件を親フォルダで分けて整理習慣を、Figmaナビも整った土台で最大限に活きます。"
       },
       "section_titles": {
-        "hook": "Figma Make更新",
-        "origin": "パネル×注釈の中身",
-        "recommend": "駆け出しへの応用"
+        "hook": "Figmaフォルダ入子",
+        "origin": "PR先行の作り方",
+        "recommend": "駆け出しの整理術"
       },
       "section_descriptions": {
-        "hook": "Figma Makeが07-30に大きな更新を発表",
-        "origin": "Figma Designと同じ操作感と自然言語注釈",
-        "recommend": "駆け出しがAIプロンプト職人化を避ける方法"
+        "hook": "Aug 3公開のフォルダ入れ子機能を紹介",
+        "origin": "Figma公式ブログでエンジニア舞台裏公開",
+        "recommend": "駆け出しが今日から真似できるフォルダ整理"
       }
     }
   ]
