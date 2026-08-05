@@ -2692,7 +2692,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-04T00:15:50.198Z"
+        "updatedAt": "2026-08-05T00:15:08.670Z"
       }
     },
     {
@@ -2735,7 +2735,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-04T00:15:50.198Z"
+        "updatedAt": "2026-08-05T00:15:08.670Z"
       }
     },
     {
@@ -2778,7 +2778,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-04T00:15:50.198Z"
+        "updatedAt": "2026-08-05T00:15:08.670Z"
       }
     },
     {
@@ -2822,7 +2822,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-04T00:15:50.198Z"
+        "updatedAt": "2026-08-05T00:15:08.670Z"
       }
     },
     {
@@ -2865,7 +2865,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-04T00:15:50.198Z"
+        "updatedAt": "2026-08-05T00:15:08.670Z"
       }
     },
     {
@@ -2909,7 +2909,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-04T00:15:50.198Z"
+        "updatedAt": "2026-08-05T00:15:08.670Z"
       }
     },
     {
@@ -2954,7 +2954,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-04T00:15:50.198Z"
+        "updatedAt": "2026-08-05T00:15:08.670Z"
       }
     },
     {
@@ -2998,7 +2998,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-04T00:15:50.198Z"
+        "updatedAt": "2026-08-05T00:15:08.670Z"
       }
     },
     {
@@ -3042,7 +3042,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-04T00:15:50.198Z"
+        "updatedAt": "2026-08-05T00:15:08.670Z"
       }
     },
     {
@@ -3086,7 +3086,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-04T00:15:50.198Z"
+        "updatedAt": "2026-08-05T00:15:08.670Z"
       }
     },
     {
@@ -3128,10 +3128,10 @@
         "freshness_hours": 144
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-04T00:15:50.198Z"
+        "updatedAt": "2026-08-05T00:15:08.670Z"
       }
     },
     {
@@ -3172,6 +3172,49 @@
         "freshness_hours": 24
       },
       "stats": {
+        "views": 2,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-08-05T00:15:08.670Z"
+      }
+    },
+    {
+      "videoId": "R-_qe2GlMIA",
+      "videoUrl": "https://youtube.com/shorts/R-_qe2GlMIA",
+      "date": "2026-08-05",
+      "title": "【デザインニュース】Figma Makeがvisual editing対応、プロンプト頼みからFigma慣れの操作へ｜2026/08/05 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 40,
+      "discovery": {
+        "method": "official-src",
+        "description": "Figma Blog 07-30 の Figma Make properties panel + annotations 追加を主候補として採用。ソースは Figma 公式 Blog + Figma Newsroom + Config 2026 recap の関連セクション。144h fresh、168h 上限の 86%。08-04 PDCA §Method 提案の 08-06 予約を 1 日前倒し (freshness expiry 回避)、08-05 予約 figma-community は本ルーチン内で有効候補確保に失敗のため 08-06 へ振り替え。Primary persona 駆け出しデザイナーの『AI プロンプト打ち直し疲れ』を Figma UI 慣れの局所修正で解消する具体解。柱① Figma公式ニュース (target 25%, -3.6pt) 修復。",
+        "sources": [
+          "https://www.figma.com/blog/properties-panel-and-annotations-now-in-figma-make/",
+          "https://www.figma.com/release-notes/",
+          "https://www.figma.com/blog/config-2026-recap/",
+          "https://help.figma.com/hc/en-us/articles/39582753756695-What-s-new-from-Config-2026"
+        ],
+        "query": "Figma Make properties panel annotations July 30 2026 visual editing launch",
+        "freshness_hours": 144
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -3180,14 +3223,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-03",
-      "changes": [
-        "standard: 62 avg views (54 videos)",
-        "Day performance: Wed=109, Sat=67, Sun=67, Thu=56, Tue=55, Fri=50, Mon=34"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-04",
       "changes": [
@@ -3417,6 +3452,14 @@
       "changes": [
         "standard: 22 avg views (71 videos)",
         "Day performance: Sat=38, Tue=30, Sun=19, Fri=19, Wed=15, Thu=15, Mon=9"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-05",
+      "changes": [
+        "standard: 20 avg views (71 videos)",
+        "Day performance: Sat=38, Sun=19, Tue=19, Fri=19, Wed=15, Thu=15, Mon=9"
       ],
       "recommendedTemplate": "standard"
     }
