@@ -2735,7 +2735,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-05T00:15:08.670Z"
+        "updatedAt": "2026-08-06T00:10:09.915Z"
       }
     },
     {
@@ -2778,7 +2778,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-05T00:15:08.670Z"
+        "updatedAt": "2026-08-06T00:10:09.915Z"
       }
     },
     {
@@ -2822,7 +2822,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-05T00:15:08.670Z"
+        "updatedAt": "2026-08-06T00:10:09.915Z"
       }
     },
     {
@@ -2865,7 +2865,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-05T00:15:08.670Z"
+        "updatedAt": "2026-08-06T00:10:09.915Z"
       }
     },
     {
@@ -2909,7 +2909,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-05T00:15:08.670Z"
+        "updatedAt": "2026-08-06T00:10:09.915Z"
       }
     },
     {
@@ -2954,7 +2954,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-05T00:15:08.670Z"
+        "updatedAt": "2026-08-06T00:10:09.915Z"
       }
     },
     {
@@ -2998,7 +2998,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-05T00:15:08.670Z"
+        "updatedAt": "2026-08-06T00:10:09.916Z"
       }
     },
     {
@@ -3042,7 +3042,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-05T00:15:08.670Z"
+        "updatedAt": "2026-08-06T00:10:09.916Z"
       }
     },
     {
@@ -3086,7 +3086,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-05T00:15:08.670Z"
+        "updatedAt": "2026-08-06T00:10:09.916Z"
       }
     },
     {
@@ -3131,7 +3131,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-05T00:15:08.670Z"
+        "updatedAt": "2026-08-06T00:10:09.916Z"
       }
     },
     {
@@ -3172,10 +3172,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 2,
+        "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-05T00:15:08.670Z"
+        "updatedAt": "2026-08-06T00:10:09.916Z"
       }
     },
     {
@@ -3215,6 +3215,49 @@
         "freshness_hours": 144
       },
       "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-08-06T00:10:09.916Z"
+      }
+    },
+    {
+      "videoId": "P8OygDnLY3w",
+      "videoUrl": "https://youtube.com/shorts/P8OygDnLY3w",
+      "date": "2026-08-06",
+      "title": "【デザインニュース】Figma nested folders 08-03ロールアウト、有料10階層と作り方の舞台裏｜2026/08/06 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 41,
+      "discovery": {
+        "method": "news-en",
+        "description": "英語系デザインテックメディア (AlternativeTo 2026-08 記事 + DesignRemoteJobs) がFigma nested folders 08-03ロールアウトを速報カバー、Figma公式ブログの技術舞台裏『Code, Craft, and the Making of Nested Folders』も同日公開でPrimary persona 駆け出しデザイナーのファイル整理課題に直撃。08-05 PDCA §Method 提案の 08-06 予約 figma-community は fresh (<168h) 有効候補確保に失敗 (Buddy 07-10 stale / UX Pilot 07-30 使用済 / Matt DesLauriers 記事は 2019年 stale) のため news-en へ振替、2-day rule (08-05 official-src / 08-04 product-launches) と 7-day-2-time (08-03 news-en 1回のみ、追加で2回でギリ) 共にクリア。official-src は 07-31 + 08-05 で既に 2 回、7-day-2-time 上限で追加不可のため回避。柱① Figma公式ニュース (target 25%, -3.6pt → 08-05 で修復開始) 引続き修復方向、記事は Figma 発だが discovery flow は英語業界メディア経由で news-en 妥当。",
+        "sources": [
+          "https://alternativeto.net/news/2026/8/figma-introduces-nested-folders-for-improved-file-organization-and-team-collaboration/",
+          "https://www.designremotejobs.com/article/how-figma-rethought-teamwork-to-ship-nested-folders-code-craft-and-collaboration",
+          "https://www.figma.com/blog/code-craft-and-the-making-of-nested-folders/",
+          "https://help.figma.com/hc/en-us/articles/41753150926103-Updates-to-Figma-s-file-management"
+        ],
+        "query": "Figma nested folders August 3 2026 rollout 10 levels engineering craft PR first",
+        "freshness_hours": 72
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -3223,14 +3266,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-04",
-      "changes": [
-        "standard: 61 avg views (55 videos)",
-        "Day performance: Wed=109, Sat=67, Sun=67, Thu=56, Tue=55, Fri=44, Mon=34"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-05",
       "changes": [
@@ -3460,6 +3495,14 @@
       "changes": [
         "standard: 20 avg views (71 videos)",
         "Day performance: Sat=38, Sun=19, Tue=19, Fri=19, Wed=15, Thu=15, Mon=9"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-06",
+      "changes": [
+        "standard: 20 avg views (72 videos)",
+        "Day performance: Sat=38, Sun=19, Tue=19, Fri=19, Thu=15, Wed=14, Mon=9"
       ],
       "recommendedTemplate": "standard"
     }
