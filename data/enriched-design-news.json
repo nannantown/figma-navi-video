@@ -1,39 +1,43 @@
 {
-  "date": "2026-08-06",
+  "date": "2026-08-07",
   "discovery": {
-    "method": "news-en",
-    "description": "英語系デザインテックメディア (AlternativeTo 2026-08 記事 + DesignRemoteJobs) がFigma nested folders 08-03ロールアウトを速報カバー、Figma公式ブログの技術舞台裏『Code, Craft, and the Making of Nested Folders』も同日公開でPrimary persona 駆け出しデザイナーのファイル整理課題に直撃。08-05 PDCA §Method 提案の 08-06 予約 figma-community は fresh (<168h) 有効候補確保に失敗 (Buddy 07-10 stale / UX Pilot 07-30 使用済 / Matt DesLauriers 記事は 2019年 stale) のため news-en へ振替、2-day rule (08-05 official-src / 08-04 product-launches) と 7-day-2-time (08-03 news-en 1回のみ、追加で2回でギリ) 共にクリア。official-src は 07-31 + 08-05 で既に 2 回、7-day-2-time 上限で追加不可のため回避。柱① Figma公式ニュース (target 25%, -3.6pt → 08-05 で修復開始) 引続き修復方向、記事は Figma 発だが discovery flow は英語業界メディア経由で news-en 妥当。",
+    "method": "figma-community",
+    "description": "Figma release notes + createwith.com + SARVAYA + iTWire の 4 経路で Figma Weave workflows の Figma Community 解禁 (08-03 rollout の bundled announcement) を発見、release notes 内の『Weave workflows are live on the Figma Community today』告知と figma.com/community/ai-workflows での 20+ 公式テンプレ公開開始、および Figma Design 左パネルからの 20+ AI 画像タスク直接実行機能を横断確認。method 選定 (Fri 平日 news 帯): weekday news-preferred 4 タグから news-en (08-03+08-06 で 7-day-2-time 到達 + 08-06 直近 2 日抵触) と official-src (08-05 直近 2 日抵触) は完全 NG、product-launches (08-04=3日前、追加すると 08-04+08-07 で 7-day-2-time ギリ 2 回、可能だが柱⑤ 25% で過剰集中方向 + Awwwards SOTD 08-04 直後で source 差別化負荷大)、残る figma-community (07-30 が 08-07 で window 端 = 8 日前ちょうど、追加すると window 内 1 回のみ、直近 2 日 OK、weekday news-preferred set 内で唯一クリーン) を Exploit 採用。柱② プラグイン/エコシステム (target 20%) は直近12本で 07-30 UX Pilot v143 のみ = 1/12 = 8% で最大の運用ギャップ (-12pt)、Community × 20+ AI workflows テンプレ配布の題材で 2/13 ≒ 15% に押し上げて 8pt 縮小。08-05 Make visual editing (official-src, ①Figma公式) + 08-06 nested folders (news-en, ①Figma公式) から 3 日連続の Figma 系だが angle 差別化: 08-05 = Make の UI 操作、08-06 = ファイル整理 folder、08-07 = Community × AI ワークフロー配布 と各日でユーザー痛点が異なる。08-06 PDCA §5 で棄却された Figma Weave workflows 候補は「特定 user workflow の公開日確定不可」が理由だったが、今日の angle は user workflow ではなく platform-level launch (release notes の 08-03 bundled announcement) を起点にした 20+ 公式テンプレ + 左パネル 20+ AI 画像タスクのリリース事実そのもので freshness 検証可能 (08-03 → 08-07 = 96h)。NG パターン回避: 『プラグイン機能説明メイン』にならないよう Primary 駆け出しの『AI 画像生成の手順が毎回ゼロから』の痛点を Hook 起点、『AI に任せれば考えなくていい』回避策に『まず真似て型を覚え自分用に組み替える』の主体的アクションを Recommend に据え AI=補助輪フレーム維持、Figmaナビは Recommend 末尾 1 行の軽 CTA のみで強い購買誘導は回避。freshness_hours = 96 (08-03 rollout から 08-07 朝 JST で約 4 日、168h 上限を大きく下回り当週 fresh)。",
     "sources": [
-      "https://alternativeto.net/news/2026/8/figma-introduces-nested-folders-for-improved-file-organization-and-team-collaboration/",
-      "https://www.designremotejobs.com/article/how-figma-rethought-teamwork-to-ship-nested-folders-code-craft-and-collaboration",
-      "https://www.figma.com/blog/code-craft-and-the-making-of-nested-folders/",
-      "https://help.figma.com/hc/en-us/articles/41753150926103-Updates-to-Figma-s-file-management"
+      "https://www.figma.com/blog/connecting-figma-and-weave/",
+      "https://www.figma.com/blog/five-figma-weave-workflows/",
+      "https://www.figma.com/community/weave",
+      "https://help.figma.com/hc/en-us/articles/39582753756695-What-s-new-from-Config-2026",
+      "https://help.weavy.ai/en/articles/15624624-publish-weave-workflows-to-the-figma-community",
+      "https://www.createwith.com/tool/figma/updates/figma-reintroduces-weave-with-20-new-templates-for-image-video-and-3d-workflows",
+      "https://sarvaya.in/blog/figma-weave-ai-workflows-creative-production-2026",
+      "https://itwire.com/guest-articles/company-news/reintroducing-figma-weave-with-20-new-workflows-for-ai-native-design"
     ],
-    "query": "Figma nested folders August 3 2026 rollout 10 levels engineering craft PR first",
-    "freshness_hours": 72
+    "query": "Figma Weave workflows Figma Community August 3 2026 rollout 20 AI image tasks templates publish duplicate",
+    "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma nested folders 08-03ロールアウト、有料10階層と作り方の舞台裏",
-      "description": "08-03公開、Projectsがフォルダに移行して有料プランは10階層までネスト可能に",
-      "detail": "Figmaが08-03からnested foldersのロールアウトを開始、既存Projectsが順次Foldersに移行、有料プランなら10階層までフォルダを入れ子にできます。同日Figma公式ブログには『Code, Craft, and the Making of Nested Folders』が公開、Slackで議論を回すより先にPull Requestを立てて試作を回し、エンジニアが設計判断まで踏み込む進め方でProjects基盤を丸ごと作り直したと語られています。",
-      "narration": "今週月曜Aug 3、Figmaがフォルダの入れ子対応スタート、Projectsが順次移行し有料プランなら10階層まで整理できます。",
-      "tags": ["Figma", "nested folders", "Figma公式", "ファイル整理", "駆け出し向け", "エンジニアリング craft"],
+      "title": "Weave公式テンプレが Figma Community に解禁、20+ AI画像タスクを複製1発で",
+      "description": "Figma公式Weave workflowsが Community で解禁、20+テンプレを複製1発で自分のcanvasへ",
+      "detail": "Figmaが8/3のロールアウトで、AI画像ワークフロー Weave の公式テンプレを Figma Community に解禁。背景差し替え、ロゴ合成、アスペクト比変換など20以上のAI画像タスクが Figma Design の左パネルから直接呼び出せる。テンプレは複製ボタン1つで自分のcanvasに丸ごと入り、他のデザイナーが積み上げたAI画像生成の手順を最短で自分の作業フローに取り込める。",
+      "narration": "AI画像生成のワークフローを、他のデザイナーが完成させたテンプレでまるごともらえる時代です。8/3、Figma Community で解禁。",
+      "tags": ["Figma", "Weave", "Figma Community", "AIワークフロー", "駆け出し向け"],
       "narration_sections": {
-        "hook": "今週月曜Aug 3、Figmaがフォルダの入れ子対応スタート、Projectsが順次移行し有料プランなら10階層まで整理できます。",
-        "origin": "同日Figma公式ブログには『Code, Craft, and the Making of Nested Folders』が公開、議論より先にPull Requestで試作を回してエンジニアが設計判断まで踏み込む進め方でProjects基盤を作り直しました。",
-        "recommend": "駆け出しは学習用と案件を親フォルダで分けて整理習慣を、Figmaナビも整った土台で最大限に活きます。"
+        "hook": "AI画像生成のワークフローを、他のデザイナーが完成させたテンプレでまるごともらえる時代です。8/3、Figma Community で解禁。",
+        "origin": "Figmaが8/3のロールアウトで、AI画像ワークフロー Weave の公式テンプレを Community に解禁。背景差し替え、ロゴ合成、比率変換など20以上のタスクが左パネルから直接呼び出せ、テンプレは複製1発で自分のcanvasに丸ごと入ります。",
+        "recommend": "まずは公式20テンプレを複製して型を覚え、次に自分用に組み替えるのが最短です。Figmaナビも無料枠で下書きから試せます。"
       },
       "section_titles": {
-        "hook": "Figmaフォルダ入子",
-        "origin": "PR先行の作り方",
-        "recommend": "駆け出しの整理術"
+        "hook": "Weave公式解禁",
+        "origin": "20テンプレ 左パネル",
+        "recommend": "まず複製で型を借りる"
       },
       "section_descriptions": {
-        "hook": "Aug 3公開のフォルダ入れ子機能を紹介",
-        "origin": "Figma公式ブログでエンジニア舞台裏公開",
-        "recommend": "駆け出しが今日から真似できるフォルダ整理"
+        "hook": "8/3公開、AI画像生成の完成テンプレをCommunity化",
+        "origin": "背景・ロゴ・比率など20AIタスクを左パネル呼び出し",
+        "recommend": "公式20テンプレを複製→自分用に組み替え最短"
       }
     }
   ]
