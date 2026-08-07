@@ -2778,7 +2778,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T01:44:07.388Z"
+        "updatedAt": "2026-08-07T23:48:26.944Z"
       }
     },
     {
@@ -2822,7 +2822,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T01:44:07.388Z"
+        "updatedAt": "2026-08-07T23:48:26.944Z"
       }
     },
     {
@@ -2865,7 +2865,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T01:44:07.388Z"
+        "updatedAt": "2026-08-07T23:48:26.944Z"
       }
     },
     {
@@ -2909,7 +2909,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T01:44:07.388Z"
+        "updatedAt": "2026-08-07T23:48:26.944Z"
       }
     },
     {
@@ -2954,7 +2954,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T01:44:07.388Z"
+        "updatedAt": "2026-08-07T23:48:26.944Z"
       }
     },
     {
@@ -2998,7 +2998,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T01:44:07.388Z"
+        "updatedAt": "2026-08-07T23:48:26.944Z"
       }
     },
     {
@@ -3042,7 +3042,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T01:44:07.388Z"
+        "updatedAt": "2026-08-07T23:48:26.944Z"
       }
     },
     {
@@ -3086,7 +3086,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T01:44:07.388Z"
+        "updatedAt": "2026-08-07T23:48:26.944Z"
       }
     },
     {
@@ -3131,7 +3131,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T01:44:07.388Z"
+        "updatedAt": "2026-08-07T23:48:26.944Z"
       }
     },
     {
@@ -3172,10 +3172,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 3,
+        "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T01:44:07.388Z"
+        "updatedAt": "2026-08-07T23:48:26.944Z"
       }
     },
     {
@@ -3218,7 +3218,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T01:44:07.388Z"
+        "updatedAt": "2026-08-07T23:48:26.944Z"
       }
     },
     {
@@ -3261,7 +3261,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T01:44:07.388Z"
+        "updatedAt": "2026-08-07T23:48:26.944Z"
       }
     },
     {
@@ -3305,6 +3305,52 @@
         "freshness_hours": 96
       },
       "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-08-07T23:48:26.944Z"
+      }
+    },
+    {
+      "videoId": "W5OMPdr3EsE",
+      "videoUrl": "https://youtube.com/shorts/W5OMPdr3EsE",
+      "date": "2026-08-08",
+      "title": "【デザインニュース】NN/g 08-07公開 AIツール採用判定フレーム PROVE 5軸で1タスク検証｜2026/08/08 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 48,
+      "discovery": {
+        "method": "expert-blog",
+        "description": "NN/g articles 一覧ページ、NN/g PROVE framework 記事直リンク、複数キーワード WebSearch (Kate Kaplan/Bruce McCarthy/Problem Alignment/Risk/Output Quality/Velocity/Experience)、AI ツール評価比較記事の 4 経路で NN/g が 08-07 に公開した AI ツール採用判定フレーム『PROVE』を発見・照合。PROVE=Problem Alignment(問題との適合)/Risk(リスク)/Output Quality(出力の質)/Velocity(速さ)/Experience(使い心地) の 5 軸で AI ツールを 1 タスクずつ検証し、周りの空気ではなく自分の作業に効くかを言葉で守れる provisional decision に落とす lightweight evaluation framework。method 選定 (Sat 週末 evergreen 帯): 直近 14 日 (07-25〜08-07) で expert-blog は 08-01 単発 (v=0)、08-08 から見て 08-02 起点の 7-day window では in-window 0 回、直近 2 日 (08-07 figma-community/08-06 news-en) 抵触なし、7-day-2-time ガード 0/2 で余裕。TOP method の product-launches (avg=1.33, n=3) は 08-04=4 日前で 2-day rule OK だが Awwwards SOTD 08-04 直後で source 差別化コスト高、また週末は news preferred set 外の evergreen 型が戦略上優先で選定外。柱バランスは直近 12 本で ④Tips/Figma 実践 0/12=0% (target 15%, -15pt = 最大ギャップ)、⑥UI 批評 0/12=0% (-10pt)、②プラグイン/エコシステム 08-07 Weave で 2/13=15% (-5pt) と過小、今日の PROVE は AI ツール評価軸を明文化する Tips-Framework 型で ④Tips に直接ハマり最大ギャップを 1/13=7.7% に埋め戻す方向。ペルソナ Primary 駆け出しの『AI ツール多すぎて何を入れたらいいか分からない/導入したけど使い続けるか判断できない』痛点を Hook 起点、AI=補助輪フレーム維持 (周りの空気で導入せず自分で採点する視点)、Recommend で 5 軸採点を今日実行できる形に落とし、Figmaナビは同じ物差しで無料枠から試せる軽 CTA のみで強い購買誘導は回避。08-01 の NN/g Rachel Krause メンター論とは author (Kate Kaplan/Enterprise 側) と論点 (メンター選び vs ツール評価) が別で連続感なし、07-23 NN/g Rachel Krause グラフィック→UX 転向論 (2 週間半前) からも十分距離あり。freshness_hours = 24 (08-07 公開 → 08-08 朝 JST で約 24h、168h 上限を大きく下回り当日級 fresh)。",
+        "sources": [
+          "https://www.nngroup.com/articles/prove-framework/",
+          "https://www.nngroup.com/articles/",
+          "https://www.nngroup.com/people/kate-kaplan/",
+          "https://www.nngroup.com/articles/dogfooding/",
+          "https://designbuddy.substack.com/p/a-framework-to-use-ai-with-intent",
+          "https://silentmarketer.substack.com/p/choosing-ai-tools-that-work-for-you",
+          "https://www.nngroup.com/topic/ai/"
+        ],
+        "query": "NN/g PROVE framework AI tool evaluation Problem Alignment Risk Output Quality Velocity Experience August 7 2026 how to decide when an AI tool is worth keeping",
+        "freshness_hours": 24
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -3313,14 +3359,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-06",
-      "changes": [
-        "standard: 59 avg views (57 videos)",
-        "Day performance: Wed=109, Sat=60, Sun=60, Thu=56, Tue=55, Fri=44, Mon=34"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-07",
       "changes": [
@@ -3550,6 +3588,14 @@
       "changes": [
         "standard: 19 avg views (73 videos)",
         "Day performance: Sat=38, Sun=19, Tue=19, Fri=19, Wed=14, Thu=13, Mon=9"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-07",
+      "changes": [
+        "standard: 19 avg views (74 videos)",
+        "Day performance: Sat=38, Sun=19, Tue=19, Fri=17, Wed=14, Thu=13, Mon=9"
       ],
       "recommendedTemplate": "standard"
     }
