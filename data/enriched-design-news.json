@@ -1,43 +1,42 @@
 {
-  "date": "2026-08-07",
+  "date": "2026-08-08",
   "discovery": {
-    "method": "figma-community",
-    "description": "Figma release notes + createwith.com + SARVAYA + iTWire の 4 経路で Figma Weave workflows の Figma Community 解禁 (08-03 rollout の bundled announcement) を発見、release notes 内の『Weave workflows are live on the Figma Community today』告知と figma.com/community/ai-workflows での 20+ 公式テンプレ公開開始、および Figma Design 左パネルからの 20+ AI 画像タスク直接実行機能を横断確認。method 選定 (Fri 平日 news 帯): weekday news-preferred 4 タグから news-en (08-03+08-06 で 7-day-2-time 到達 + 08-06 直近 2 日抵触) と official-src (08-05 直近 2 日抵触) は完全 NG、product-launches (08-04=3日前、追加すると 08-04+08-07 で 7-day-2-time ギリ 2 回、可能だが柱⑤ 25% で過剰集中方向 + Awwwards SOTD 08-04 直後で source 差別化負荷大)、残る figma-community (07-30 が 08-07 で window 端 = 8 日前ちょうど、追加すると window 内 1 回のみ、直近 2 日 OK、weekday news-preferred set 内で唯一クリーン) を Exploit 採用。柱② プラグイン/エコシステム (target 20%) は直近12本で 07-30 UX Pilot v143 のみ = 1/12 = 8% で最大の運用ギャップ (-12pt)、Community × 20+ AI workflows テンプレ配布の題材で 2/13 ≒ 15% に押し上げて 8pt 縮小。08-05 Make visual editing (official-src, ①Figma公式) + 08-06 nested folders (news-en, ①Figma公式) から 3 日連続の Figma 系だが angle 差別化: 08-05 = Make の UI 操作、08-06 = ファイル整理 folder、08-07 = Community × AI ワークフロー配布 と各日でユーザー痛点が異なる。08-06 PDCA §5 で棄却された Figma Weave workflows 候補は「特定 user workflow の公開日確定不可」が理由だったが、今日の angle は user workflow ではなく platform-level launch (release notes の 08-03 bundled announcement) を起点にした 20+ 公式テンプレ + 左パネル 20+ AI 画像タスクのリリース事実そのもので freshness 検証可能 (08-03 → 08-07 = 96h)。NG パターン回避: 『プラグイン機能説明メイン』にならないよう Primary 駆け出しの『AI 画像生成の手順が毎回ゼロから』の痛点を Hook 起点、『AI に任せれば考えなくていい』回避策に『まず真似て型を覚え自分用に組み替える』の主体的アクションを Recommend に据え AI=補助輪フレーム維持、Figmaナビは Recommend 末尾 1 行の軽 CTA のみで強い購買誘導は回避。freshness_hours = 96 (08-03 rollout から 08-07 朝 JST で約 4 日、168h 上限を大きく下回り当週 fresh)。",
+    "method": "expert-blog",
+    "description": "NN/g articles 一覧ページ、NN/g PROVE framework 記事直リンク、複数キーワード WebSearch (Kate Kaplan/Bruce McCarthy/Problem Alignment/Risk/Output Quality/Velocity/Experience)、AI ツール評価比較記事の 4 経路で NN/g が 08-07 に公開した AI ツール採用判定フレーム『PROVE』を発見・照合。PROVE=Problem Alignment(問題との適合)/Risk(リスク)/Output Quality(出力の質)/Velocity(速さ)/Experience(使い心地) の 5 軸で AI ツールを 1 タスクずつ検証し、周りの空気ではなく自分の作業に効くかを言葉で守れる provisional decision に落とす lightweight evaluation framework。method 選定 (Sat 週末 evergreen 帯): 直近 14 日 (07-25〜08-07) で expert-blog は 08-01 単発 (v=0)、08-08 から見て 08-02 起点の 7-day window では in-window 0 回、直近 2 日 (08-07 figma-community/08-06 news-en) 抵触なし、7-day-2-time ガード 0/2 で余裕。TOP method の product-launches (avg=1.33, n=3) は 08-04=4 日前で 2-day rule OK だが Awwwards SOTD 08-04 直後で source 差別化コスト高、また週末は news preferred set 外の evergreen 型が戦略上優先で選定外。柱バランスは直近 12 本で ④Tips/Figma 実践 0/12=0% (target 15%, -15pt = 最大ギャップ)、⑥UI 批評 0/12=0% (-10pt)、②プラグイン/エコシステム 08-07 Weave で 2/13=15% (-5pt) と過小、今日の PROVE は AI ツール評価軸を明文化する Tips-Framework 型で ④Tips に直接ハマり最大ギャップを 1/13=7.7% に埋め戻す方向。ペルソナ Primary 駆け出しの『AI ツール多すぎて何を入れたらいいか分からない/導入したけど使い続けるか判断できない』痛点を Hook 起点、AI=補助輪フレーム維持 (周りの空気で導入せず自分で採点する視点)、Recommend で 5 軸採点を今日実行できる形に落とし、Figmaナビは同じ物差しで無料枠から試せる軽 CTA のみで強い購買誘導は回避。08-01 の NN/g Rachel Krause メンター論とは author (Kate Kaplan/Enterprise 側) と論点 (メンター選び vs ツール評価) が別で連続感なし、07-23 NN/g Rachel Krause グラフィック→UX 転向論 (2 週間半前) からも十分距離あり。freshness_hours = 24 (08-07 公開 → 08-08 朝 JST で約 24h、168h 上限を大きく下回り当日級 fresh)。",
     "sources": [
-      "https://www.figma.com/blog/connecting-figma-and-weave/",
-      "https://www.figma.com/blog/five-figma-weave-workflows/",
-      "https://www.figma.com/community/weave",
-      "https://help.figma.com/hc/en-us/articles/39582753756695-What-s-new-from-Config-2026",
-      "https://help.weavy.ai/en/articles/15624624-publish-weave-workflows-to-the-figma-community",
-      "https://www.createwith.com/tool/figma/updates/figma-reintroduces-weave-with-20-new-templates-for-image-video-and-3d-workflows",
-      "https://sarvaya.in/blog/figma-weave-ai-workflows-creative-production-2026",
-      "https://itwire.com/guest-articles/company-news/reintroducing-figma-weave-with-20-new-workflows-for-ai-native-design"
+      "https://www.nngroup.com/articles/prove-framework/",
+      "https://www.nngroup.com/articles/",
+      "https://www.nngroup.com/people/kate-kaplan/",
+      "https://www.nngroup.com/articles/dogfooding/",
+      "https://designbuddy.substack.com/p/a-framework-to-use-ai-with-intent",
+      "https://silentmarketer.substack.com/p/choosing-ai-tools-that-work-for-you",
+      "https://www.nngroup.com/topic/ai/"
     ],
-    "query": "Figma Weave workflows Figma Community August 3 2026 rollout 20 AI image tasks templates publish duplicate",
-    "freshness_hours": 96
+    "query": "NN/g PROVE framework AI tool evaluation Problem Alignment Risk Output Quality Velocity Experience August 7 2026 how to decide when an AI tool is worth keeping",
+    "freshness_hours": 24
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Weave公式テンプレが Figma Community に解禁、20+ AI画像タスクを複製1発で",
-      "description": "Figma公式Weave workflowsが Community で解禁、20+テンプレを複製1発で自分のcanvasへ",
-      "detail": "Figmaが8/3のロールアウトで、AI画像ワークフロー Weave の公式テンプレを Figma Community に解禁。背景差し替え、ロゴ合成、アスペクト比変換など20以上のAI画像タスクが Figma Design の左パネルから直接呼び出せる。テンプレは複製ボタン1つで自分のcanvasに丸ごと入り、他のデザイナーが積み上げたAI画像生成の手順を最短で自分の作業フローに取り込める。",
-      "narration": "AI画像生成のワークフローを、他のデザイナーが完成させたテンプレでまるごともらえる時代です。8/3、Figma Community で解禁。",
-      "tags": ["Figma", "Weave", "Figma Community", "AIワークフロー", "駆け出し向け"],
+      "title": "NN/g 08-07公開 AIツール採用判定フレーム PROVE 5軸で1タスク検証",
+      "description": "そのAIツール本当に効いてる?NN/g 昨日公開の PROVE 5軸で自分の作業に効くかを言葉で守れる判断に",
+      "detail": "NN/g が 2026-08-07 に公開した AI ツール採用判定フレーム PROVE。Problem Alignment (問題との適合)、Risk (リスク)、Output Quality (出力の質)、Velocity (速さ)、Experience (使い心地) の 5 軸で AI ツールを 1 タスクずつ検証し、周りの空気ではなく自分の作業に効くかを言葉で守れる判断に変える lightweight evaluation framework。導入前の 30 分検証で「一度きりの慣れコスト」と「毎回発生するフリクション」を分けて評価するのが特徴で、駆け出しの『AI ツール多すぎて何入れたらいいか分からない』痛点への直接処方箋になる。",
+      "narration": "そのAIツール、あなたの作業を本当に速くできていますか?昨日8/7、NN/gがAIツール判定フレーム「PROVE」を公開しました。",
+      "tags": ["NN/g", "PROVE", "AIツール評価", "駆け出し向け", "デザインTips"],
       "narration_sections": {
-        "hook": "AI画像生成のワークフローを、他のデザイナーが完成させたテンプレでまるごともらえる時代です。8/3、Figma Community で解禁。",
-        "origin": "Figmaが8/3のロールアウトで、AI画像ワークフロー Weave の公式テンプレを Community に解禁。背景差し替え、ロゴ合成、比率変換など20以上のタスクが左パネルから直接呼び出せ、テンプレは複製1発で自分のcanvasに丸ごと入ります。",
-        "recommend": "まずは公式20テンプレを複製して型を覚え、次に自分用に組み替えるのが最短です。Figmaナビも無料枠で下書きから試せます。"
+        "hook": "そのAIツール、あなたの作業を本当に速くできていますか?昨日8/7、NN/gがAIツール判定フレーム「PROVE」を公開しました。",
+        "origin": "PROVEは、問題との適合、リスク、出力の質、速さ、使い心地の5軸で、AIツールを1タスクずつ検証する枠組みです。周りの空気で導入するのではなく、自分の作業に効いてるかを言葉で守れる判断に変わります。導入前の30分検証で十分です。",
+        "recommend": "今Figmaで使ってるAIツールを1つ、この5軸で採点してみてください。Figmaナビも無料枠から同じ物差しで試せます。"
       },
       "section_titles": {
-        "hook": "Weave公式解禁",
-        "origin": "20テンプレ 左パネル",
-        "recommend": "まず複製で型を借りる"
+        "hook": "PROVE 昨日公開",
+        "origin": "5軸で1タスク検証",
+        "recommend": "今日1ツール採点"
       },
       "section_descriptions": {
-        "hook": "8/3公開、AI画像生成の完成テンプレをCommunity化",
-        "origin": "背景・ロゴ・比率など20AIタスクを左パネル呼び出し",
-        "recommend": "公式20テンプレを複製→自分用に組み替え最短"
+        "hook": "8/7 NN/g発 AIツール判定の新フレーム PROVE",
+        "origin": "問題適合・リスク・質・速さ・使い心地の5軸",
+        "recommend": "Figmaで使う1ツールを5軸で採点してみる"
       }
     }
   ]
