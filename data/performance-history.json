@@ -2,50 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "1Z2V-F5G36M",
-      "videoUrl": "https://youtube.com/shorts/1Z2V-F5G36M",
-      "date": "2026-05-09",
-      "title": "【デザインニュース】Awwwards SOTD連続4本がポートフォリオ、駆け出しが学ぶ『軸で見せる』編集力｜2026/05/09 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 44,
-      "discovery": {
-        "method": "product-launches",
-        "description": "Awwwards Site of the Day の直近 6 日 (5/3〜5/8) の受賞リストを巡回し、5/3 TREY HOLLINGER, 5/4 Victor Furuya '26, 5/6 Aterlab, 5/8 Paul Dunbar Selected Work と 4 本連続でデザイナー個人ポートフォリオが SOTD を獲っているトレンドを特定。最新の 5/8 受賞 Paul Dunbar Selected Work (studiodunbar.xyz) を主軸に、ブランド/広告畑 → 2018 年 SaaS プロダクト転向という経歴を『領域でバラ売りせず 1 本の軸で整理』した構成が評価された点を抽出。method 選定: 直近14日 method 別 avg views で product-launches=367 (n=2, TOP1) を Exploit、5/2 Studio375 が今日 5/9 で 7 日窓を抜けるため 5/6 + 5/9 = 2 回でぎりぎりクリア (連投ガード OK)、直近 2 日 (5/8 official-src, 5/7 expert-blog) と method 重複なし、WORST 凍結 (news-en) 対象外。土曜 → 戦略の運用フォーマット上 Tips/Before-After/ポートフォリオ事例 OK 帯。柱⑤ Before/After/ポートフォリオ事例 が直近14日 0/15 = 0% (target 10%) で最大の運用ギャップだったため、これを埋める意図で柱⑤ にあてる。ペルソナ Primary 駆け出し層の最大の詰まり (= 何を載せ・どう魅せるかでポートフォリオが進まない) に直接刺す角度。NG パターン回避: プロ向け高度議論ではなく『軸で見せる』という具体行動指針、AI=補助輪として『AI で量を出す前に自分の言葉で芯を決める』と再強化、5/7 expert-blog の決める力テーマと連続性確保",
-        "sources": [
-          "https://www.awwwards.com/websites/sites_of_the_day/",
-          "https://www.awwwards.com/websites/winner_category_portfolio/",
-          "https://www.awwwards.com/websites/portfolio/",
-          "https://studiodunbar.xyz/",
-          "https://dribbble.com/Dunbar_IV"
-        ],
-        "query": "Awwwards Site of the Day May 2026 portfolio winner Paul Dunbar Selected Work",
-        "freshness_hours": 24
-      },
-      "stats": {
-        "views": 72,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-05-23T00:16:11.962Z"
-      }
-    },
-    {
       "videoId": "YctJDp1gOfA",
       "videoUrl": "https://youtube.com/shorts/YctJDp1gOfA",
       "date": "2026-05-10",
@@ -2822,7 +2778,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T23:48:26.944Z"
+        "updatedAt": "2026-08-08T23:44:08.871Z"
       }
     },
     {
@@ -2865,7 +2821,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T23:48:26.944Z"
+        "updatedAt": "2026-08-08T23:44:08.871Z"
       }
     },
     {
@@ -2909,7 +2865,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T23:48:26.944Z"
+        "updatedAt": "2026-08-08T23:44:08.871Z"
       }
     },
     {
@@ -2954,7 +2910,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T23:48:26.944Z"
+        "updatedAt": "2026-08-08T23:44:08.871Z"
       }
     },
     {
@@ -2998,7 +2954,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T23:48:26.944Z"
+        "updatedAt": "2026-08-08T23:44:08.871Z"
       }
     },
     {
@@ -3042,7 +2998,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T23:48:26.944Z"
+        "updatedAt": "2026-08-08T23:44:08.871Z"
       }
     },
     {
@@ -3086,7 +3042,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T23:48:26.944Z"
+        "updatedAt": "2026-08-08T23:44:08.871Z"
       }
     },
     {
@@ -3131,7 +3087,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T23:48:26.944Z"
+        "updatedAt": "2026-08-08T23:44:08.871Z"
       }
     },
     {
@@ -3175,7 +3131,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T23:48:26.944Z"
+        "updatedAt": "2026-08-08T23:44:08.871Z"
       }
     },
     {
@@ -3218,7 +3174,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T23:48:26.944Z"
+        "updatedAt": "2026-08-08T23:44:08.871Z"
       }
     },
     {
@@ -3261,7 +3217,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T23:48:26.944Z"
+        "updatedAt": "2026-08-08T23:44:08.871Z"
       }
     },
     {
@@ -3308,7 +3264,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T23:48:26.944Z"
+        "updatedAt": "2026-08-08T23:44:08.871Z"
       }
     },
     {
@@ -3354,19 +3310,56 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-08T23:44:08.871Z"
+      }
+    },
+    {
+      "videoId": "D_EcIih7Agg",
+      "videoUrl": "https://youtube.com/shorts/D_EcIih7Agg",
+      "date": "2026-08-09",
+      "title": "【デザインニュース】Awwwards 08-07 SOTD /nk.studio 20周年サイト 実績列じゃなく人と瞬間の生きたアーカイブ｜2026/08/09 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 46,
+      "discovery": {
+        "method": "product-launches",
+        "description": "Awwwards Site of the Day の直近 8 日 (08-01〜08-08) の受賞リストを巡回し、08-01 2xA Studio / 08-02 Noomo Showcase / 08-03 Hearst Exhibit 2026 / 08-04 Lacoste Ace Breaker / 08-05 Serotoninn / 08-06 Alethia / 08-07 20 Years Inspired by People (/nk.studio) / 08-08 Vero New-York と 8 本を照合。デザイナー志望・駆け出しの Primary 層が今週末に真似できる『実績列じゃない portfolio 設計思想』として、Awwwards SOTD 08-07 の /nk.studio 『20 Years Inspired by People』(20 周年アニバーサリーサイト、Webflow 実装、アルゼンチンの最多受賞スタジオ) を主軸に選定。特徴は『実績自慢の trophy wall』ではなく『20 年間で自分たちを動かしてくれた人と瞬間』の生きたアーカイブとして構成し、ゆったりした書体・余白・寄稿招待メッセージで訪問者にも entry を促す editorial pacing、principle は『信頼は人と逸話から生まれる、トロフィー壁からではない』を体現。method 選定 (Sun 週末 evergreen 帯 day2): 直近 14 日 (07-26〜08-08) で product-launches は 07-29 TRIONN v=0 + 08-04 Lacoste v=4 = n=2, avg=2.00 で TOP method 首位、08-09 から見て 08-04 は 5 日前で 2-day rule OK、7-day window (08-03〜08-09) 内 1 回で追加すると 2 回でギリ (cap 抵触なし)、weekend evergreen preferred set (social-en/social-ja/product-launches/news-ja) 内で TOP method exploit の合理性最大。yesterday's PDCA §Method 提案第一候補の social-en は 07-28 window 外・in-window 0 で clean だが、X 個別投稿の WebSearch 特定精度が低く UI/UX Savior 08-01 tweet 4.4M views は 8 日前で 168h 超過 = NG、single-source 化コストの高さから今日は第二候補に retreat。柱バランスは直近 12 本で ⑥UI 批評 0/12=0% (target 10%, -10pt = 最大ギャップ)、⑤Before/After・ポートフォリオ 1/12=8% (-2pt)、④Tips/Figma 実践 08-08 PROVE で 2/12=17% (+2pt) と 08-08 で ④ は回復済み、今日は ⑥ の -10pt を SOTD × UI 批評フレームで埋める。08-04 Lacoste (柱⑤『1動詞×3色 = 見せ方の設計』) と 08-09 /nk.studio (柱⑥『実績列じゃなく生きたアーカイブ = 中身の構造の批評』) を同 product-launches method で柱を明確に切り分けることで、SOTD 素材の overuse を避けつつ『SOTD を駆け出しがデザイン判断を言語化する練習台にする』縦糸を新規開拓 (Method 提案 §sotd-critique-series の初 2 本目 = 実証)。ペルソナ Primary 駆け出しの『ポートフォリオが実績列になってしまう/実績が少なくて何を載せていいか分からない』痛点を Hook 起点、AI=補助輪フレーム維持 (Recommend は Figma で 30 分書き出しを軽 CTA、Figmaナビは同じ frame で無料枠試行に留め強い購買誘導は回避)。08-04 Lacoste の Merci Michel 案件と author (nk.studio = Buenos Aires/Mar del Plata studio) は別で連続感なし、07-29 TRIONN Awwwards SOTD (11 日前) からも十分距離あり、直近 14 日で /nk.studio 言及 0 回でトピック重複なし。freshness_hours = 48 (08-07 SOTD 発表 → 08-09 朝 JST で約 48h、168h 上限を大きく下回り fresh)。",
+        "sources": [
+          "https://www.awwwards.com/sites/20-years-inspired-by-people",
+          "https://inspiring.nk.studio/",
+          "https://www.nk.studio/",
+          "https://www.nk.studio/awards/",
+          "https://www.landing.love/sites/inspiring-nk-studio/",
+          "https://www.awwwards.com/websites/sites_of_the_day/"
+        ],
+        "query": "Awwwards Site of the Day August 7 2026 /nk.studio 20 Years Inspired by People 20 anniversary microsite living archive design decisions Webflow editorial pacing",
+        "freshness_hours": 48
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-07",
-      "changes": [
-        "standard: 58 avg views (58 videos)",
-        "Day performance: Wed=109, Sat=60, Sun=60, Thu=56, Tue=55, Fri=44, Mon=30"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-08",
       "changes": [
@@ -3596,6 +3589,14 @@
       "changes": [
         "standard: 19 avg views (74 videos)",
         "Day performance: Sat=38, Sun=19, Tue=19, Fri=17, Wed=14, Thu=13, Mon=9"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-08",
+      "changes": [
+        "standard: 19 avg views (75 videos)",
+        "Day performance: Sat=35, Sun=19, Tue=19, Fri=17, Wed=14, Thu=13, Mon=9"
       ],
       "recommendedTemplate": "standard"
     }
