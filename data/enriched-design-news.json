@@ -1,42 +1,41 @@
 {
-  "date": "2026-08-08",
+  "date": "2026-08-09",
   "discovery": {
-    "method": "expert-blog",
-    "description": "NN/g articles 一覧ページ、NN/g PROVE framework 記事直リンク、複数キーワード WebSearch (Kate Kaplan/Bruce McCarthy/Problem Alignment/Risk/Output Quality/Velocity/Experience)、AI ツール評価比較記事の 4 経路で NN/g が 08-07 に公開した AI ツール採用判定フレーム『PROVE』を発見・照合。PROVE=Problem Alignment(問題との適合)/Risk(リスク)/Output Quality(出力の質)/Velocity(速さ)/Experience(使い心地) の 5 軸で AI ツールを 1 タスクずつ検証し、周りの空気ではなく自分の作業に効くかを言葉で守れる provisional decision に落とす lightweight evaluation framework。method 選定 (Sat 週末 evergreen 帯): 直近 14 日 (07-25〜08-07) で expert-blog は 08-01 単発 (v=0)、08-08 から見て 08-02 起点の 7-day window では in-window 0 回、直近 2 日 (08-07 figma-community/08-06 news-en) 抵触なし、7-day-2-time ガード 0/2 で余裕。TOP method の product-launches (avg=1.33, n=3) は 08-04=4 日前で 2-day rule OK だが Awwwards SOTD 08-04 直後で source 差別化コスト高、また週末は news preferred set 外の evergreen 型が戦略上優先で選定外。柱バランスは直近 12 本で ④Tips/Figma 実践 0/12=0% (target 15%, -15pt = 最大ギャップ)、⑥UI 批評 0/12=0% (-10pt)、②プラグイン/エコシステム 08-07 Weave で 2/13=15% (-5pt) と過小、今日の PROVE は AI ツール評価軸を明文化する Tips-Framework 型で ④Tips に直接ハマり最大ギャップを 1/13=7.7% に埋め戻す方向。ペルソナ Primary 駆け出しの『AI ツール多すぎて何を入れたらいいか分からない/導入したけど使い続けるか判断できない』痛点を Hook 起点、AI=補助輪フレーム維持 (周りの空気で導入せず自分で採点する視点)、Recommend で 5 軸採点を今日実行できる形に落とし、Figmaナビは同じ物差しで無料枠から試せる軽 CTA のみで強い購買誘導は回避。08-01 の NN/g Rachel Krause メンター論とは author (Kate Kaplan/Enterprise 側) と論点 (メンター選び vs ツール評価) が別で連続感なし、07-23 NN/g Rachel Krause グラフィック→UX 転向論 (2 週間半前) からも十分距離あり。freshness_hours = 24 (08-07 公開 → 08-08 朝 JST で約 24h、168h 上限を大きく下回り当日級 fresh)。",
+    "method": "product-launches",
+    "description": "Awwwards Site of the Day の直近 8 日 (08-01〜08-08) の受賞リストを巡回し、08-01 2xA Studio / 08-02 Noomo Showcase / 08-03 Hearst Exhibit 2026 / 08-04 Lacoste Ace Breaker / 08-05 Serotoninn / 08-06 Alethia / 08-07 20 Years Inspired by People (/nk.studio) / 08-08 Vero New-York と 8 本を照合。デザイナー志望・駆け出しの Primary 層が今週末に真似できる『実績列じゃない portfolio 設計思想』として、Awwwards SOTD 08-07 の /nk.studio 『20 Years Inspired by People』(20 周年アニバーサリーサイト、Webflow 実装、アルゼンチンの最多受賞スタジオ) を主軸に選定。特徴は『実績自慢の trophy wall』ではなく『20 年間で自分たちを動かしてくれた人と瞬間』の生きたアーカイブとして構成し、ゆったりした書体・余白・寄稿招待メッセージで訪問者にも entry を促す editorial pacing、principle は『信頼は人と逸話から生まれる、トロフィー壁からではない』を体現。method 選定 (Sun 週末 evergreen 帯 day2): 直近 14 日 (07-26〜08-08) で product-launches は 07-29 TRIONN v=0 + 08-04 Lacoste v=4 = n=2, avg=2.00 で TOP method 首位、08-09 から見て 08-04 は 5 日前で 2-day rule OK、7-day window (08-03〜08-09) 内 1 回で追加すると 2 回でギリ (cap 抵触なし)、weekend evergreen preferred set (social-en/social-ja/product-launches/news-ja) 内で TOP method exploit の合理性最大。yesterday's PDCA §Method 提案第一候補の social-en は 07-28 window 外・in-window 0 で clean だが、X 個別投稿の WebSearch 特定精度が低く UI/UX Savior 08-01 tweet 4.4M views は 8 日前で 168h 超過 = NG、single-source 化コストの高さから今日は第二候補に retreat。柱バランスは直近 12 本で ⑥UI 批評 0/12=0% (target 10%, -10pt = 最大ギャップ)、⑤Before/After・ポートフォリオ 1/12=8% (-2pt)、④Tips/Figma 実践 08-08 PROVE で 2/12=17% (+2pt) と 08-08 で ④ は回復済み、今日は ⑥ の -10pt を SOTD × UI 批評フレームで埋める。08-04 Lacoste (柱⑤『1動詞×3色 = 見せ方の設計』) と 08-09 /nk.studio (柱⑥『実績列じゃなく生きたアーカイブ = 中身の構造の批評』) を同 product-launches method で柱を明確に切り分けることで、SOTD 素材の overuse を避けつつ『SOTD を駆け出しがデザイン判断を言語化する練習台にする』縦糸を新規開拓 (Method 提案 §sotd-critique-series の初 2 本目 = 実証)。ペルソナ Primary 駆け出しの『ポートフォリオが実績列になってしまう/実績が少なくて何を載せていいか分からない』痛点を Hook 起点、AI=補助輪フレーム維持 (Recommend は Figma で 30 分書き出しを軽 CTA、Figmaナビは同じ frame で無料枠試行に留め強い購買誘導は回避)。08-04 Lacoste の Merci Michel 案件と author (nk.studio = Buenos Aires/Mar del Plata studio) は別で連続感なし、07-29 TRIONN Awwwards SOTD (11 日前) からも十分距離あり、直近 14 日で /nk.studio 言及 0 回でトピック重複なし。freshness_hours = 48 (08-07 SOTD 発表 → 08-09 朝 JST で約 48h、168h 上限を大きく下回り fresh)。",
     "sources": [
-      "https://www.nngroup.com/articles/prove-framework/",
-      "https://www.nngroup.com/articles/",
-      "https://www.nngroup.com/people/kate-kaplan/",
-      "https://www.nngroup.com/articles/dogfooding/",
-      "https://designbuddy.substack.com/p/a-framework-to-use-ai-with-intent",
-      "https://silentmarketer.substack.com/p/choosing-ai-tools-that-work-for-you",
-      "https://www.nngroup.com/topic/ai/"
+      "https://www.awwwards.com/sites/20-years-inspired-by-people",
+      "https://inspiring.nk.studio/",
+      "https://www.nk.studio/",
+      "https://www.nk.studio/awards/",
+      "https://www.landing.love/sites/inspiring-nk-studio/",
+      "https://www.awwwards.com/websites/sites_of_the_day/"
     ],
-    "query": "NN/g PROVE framework AI tool evaluation Problem Alignment Risk Output Quality Velocity Experience August 7 2026 how to decide when an AI tool is worth keeping",
-    "freshness_hours": 24
+    "query": "Awwwards Site of the Day August 7 2026 /nk.studio 20 Years Inspired by People 20 anniversary microsite living archive design decisions Webflow editorial pacing",
+    "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "NN/g 08-07公開 AIツール採用判定フレーム PROVE 5軸で1タスク検証",
-      "description": "そのAIツール本当に効いてる?NN/g 昨日公開の PROVE 5軸で自分の作業に効くかを言葉で守れる判断に",
-      "detail": "NN/g が 2026-08-07 に公開した AI ツール採用判定フレーム PROVE。Problem Alignment (問題との適合)、Risk (リスク)、Output Quality (出力の質)、Velocity (速さ)、Experience (使い心地) の 5 軸で AI ツールを 1 タスクずつ検証し、周りの空気ではなく自分の作業に効くかを言葉で守れる判断に変える lightweight evaluation framework。導入前の 30 分検証で「一度きりの慣れコスト」と「毎回発生するフリクション」を分けて評価するのが特徴で、駆け出しの『AI ツール多すぎて何入れたらいいか分からない』痛点への直接処方箋になる。",
-      "narration": "そのAIツール、あなたの作業を本当に速くできていますか?昨日8/7、NN/gがAIツール判定フレーム「PROVE」を公開しました。",
-      "tags": ["NN/g", "PROVE", "AIツール評価", "駆け出し向け", "デザインTips"],
+      "title": "Awwwards 08-07 SOTD /nk.studio 20周年サイト 実績列じゃなく人と瞬間の生きたアーカイブ",
+      "description": "自分のポートフォリオ、実績を並べただけになってません?金曜 Awwwards SOTD が示した『archive として設計する』20周年サイトの発想",
+      "detail": "アルゼンチンの最多受賞スタジオ /nk.studio が 2026-08-07 に Awwwards Site of the Day を受賞した 20 周年サイト『20 Years Inspired by People』。実績自慢の trophy wall ではなく『20 年間で自分たちを動かしてくれた人と瞬間』の生きたアーカイブとして構成し、ゆったりした書体・余白・寄稿招待メッセージで訪問者にも entry を促す editorial pacing が特徴。principle は『信頼は人と逸話から生まれる、トロフィー壁からではない』。駆け出しの『ポートフォリオが実績列になってしまう/実績が少なくて何を載せていいか分からない』痛点に対して、『archive として設計する』という中身の構造の批評視点を与える。",
+      "narration": "自分のポートフォリオ、実績を並べただけになってません?Awwwardsが金曜SOTDに選んだ、あるアルゼンチンスタジオの20周年サイトが答えです。",
+      "tags": ["Awwwards", "SOTD", "nk.studio", "ポートフォリオ設計", "UI批評"],
       "narration_sections": {
-        "hook": "そのAIツール、あなたの作業を本当に速くできていますか?昨日8/7、NN/gがAIツール判定フレーム「PROVE」を公開しました。",
-        "origin": "PROVEは、問題との適合、リスク、出力の質、速さ、使い心地の5軸で、AIツールを1タスクずつ検証する枠組みです。周りの空気で導入するのではなく、自分の作業に効いてるかを言葉で守れる判断に変わります。導入前の30分検証で十分です。",
-        "recommend": "今Figmaで使ってるAIツールを1つ、この5軸で採点してみてください。Figmaナビも無料枠から同じ物差しで試せます。"
+        "hook": "自分のポートフォリオ、実績を並べただけになってません?Awwwardsが金曜SOTDに選んだ、あるアルゼンチンスタジオの20周年サイトが答えです。",
+        "origin": "アルゼンチンの最多受賞スタジオ/nk.studioが20周年で公開したのは、実績自慢ではなく『20年間で自分たちを動かしてくれた人と瞬間』の生きたアーカイブ。ゆったりした書体と余白、寄稿招待で訪問者にも参加を促す構成です。",
+        "recommend": "駆け出しのポートフォリオも、実績列より『誰と何にワクワクしたか』を1本入れると差が出ます。Figmaで30分、まず書き出してみてください。"
       },
       "section_titles": {
-        "hook": "PROVE 昨日公開",
-        "origin": "5軸で1タスク検証",
-        "recommend": "今日1ツール採点"
+        "hook": "実績列じゃなく20年",
+        "origin": "生きたアーカイブ構成",
+        "recommend": "1本『人』を入れる"
       },
       "section_descriptions": {
-        "hook": "8/7 NN/g発 AIツール判定の新フレーム PROVE",
-        "origin": "問題適合・リスク・質・速さ・使い心地の5軸",
-        "recommend": "Figmaで使う1ツールを5軸で採点してみる"
+        "hook": "8/7 Awwwards SOTD 20周年サイト",
+        "origin": "20年で動かされた人と瞬間の生アーカイブ",
+        "recommend": "実績列より『誰にワクワク』を1本Figmaで書く"
       }
     }
   ]
