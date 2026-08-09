@@ -1,41 +1,38 @@
 {
-  "date": "2026-08-09",
+  "date": "2026-08-10",
   "discovery": {
-    "method": "product-launches",
-    "description": "Awwwards Site of the Day の直近 8 日 (08-01〜08-08) の受賞リストを巡回し、08-01 2xA Studio / 08-02 Noomo Showcase / 08-03 Hearst Exhibit 2026 / 08-04 Lacoste Ace Breaker / 08-05 Serotoninn / 08-06 Alethia / 08-07 20 Years Inspired by People (/nk.studio) / 08-08 Vero New-York と 8 本を照合。デザイナー志望・駆け出しの Primary 層が今週末に真似できる『実績列じゃない portfolio 設計思想』として、Awwwards SOTD 08-07 の /nk.studio 『20 Years Inspired by People』(20 周年アニバーサリーサイト、Webflow 実装、アルゼンチンの最多受賞スタジオ) を主軸に選定。特徴は『実績自慢の trophy wall』ではなく『20 年間で自分たちを動かしてくれた人と瞬間』の生きたアーカイブとして構成し、ゆったりした書体・余白・寄稿招待メッセージで訪問者にも entry を促す editorial pacing、principle は『信頼は人と逸話から生まれる、トロフィー壁からではない』を体現。method 選定 (Sun 週末 evergreen 帯 day2): 直近 14 日 (07-26〜08-08) で product-launches は 07-29 TRIONN v=0 + 08-04 Lacoste v=4 = n=2, avg=2.00 で TOP method 首位、08-09 から見て 08-04 は 5 日前で 2-day rule OK、7-day window (08-03〜08-09) 内 1 回で追加すると 2 回でギリ (cap 抵触なし)、weekend evergreen preferred set (social-en/social-ja/product-launches/news-ja) 内で TOP method exploit の合理性最大。yesterday's PDCA §Method 提案第一候補の social-en は 07-28 window 外・in-window 0 で clean だが、X 個別投稿の WebSearch 特定精度が低く UI/UX Savior 08-01 tweet 4.4M views は 8 日前で 168h 超過 = NG、single-source 化コストの高さから今日は第二候補に retreat。柱バランスは直近 12 本で ⑥UI 批評 0/12=0% (target 10%, -10pt = 最大ギャップ)、⑤Before/After・ポートフォリオ 1/12=8% (-2pt)、④Tips/Figma 実践 08-08 PROVE で 2/12=17% (+2pt) と 08-08 で ④ は回復済み、今日は ⑥ の -10pt を SOTD × UI 批評フレームで埋める。08-04 Lacoste (柱⑤『1動詞×3色 = 見せ方の設計』) と 08-09 /nk.studio (柱⑥『実績列じゃなく生きたアーカイブ = 中身の構造の批評』) を同 product-launches method で柱を明確に切り分けることで、SOTD 素材の overuse を避けつつ『SOTD を駆け出しがデザイン判断を言語化する練習台にする』縦糸を新規開拓 (Method 提案 §sotd-critique-series の初 2 本目 = 実証)。ペルソナ Primary 駆け出しの『ポートフォリオが実績列になってしまう/実績が少なくて何を載せていいか分からない』痛点を Hook 起点、AI=補助輪フレーム維持 (Recommend は Figma で 30 分書き出しを軽 CTA、Figmaナビは同じ frame で無料枠試行に留め強い購買誘導は回避)。08-04 Lacoste の Merci Michel 案件と author (nk.studio = Buenos Aires/Mar del Plata studio) は別で連続感なし、07-29 TRIONN Awwwards SOTD (11 日前) からも十分距離あり、直近 14 日で /nk.studio 言及 0 回でトピック重複なし。freshness_hours = 48 (08-07 SOTD 発表 → 08-09 朝 JST で約 48h、168h 上限を大きく下回り fresh)。",
+    "method": "news-en",
+    "description": "Smashing Magazine のAIカテゴリを英語で追い、Durgesh Pawar が2026-08-05に公開した『AI-Generated UI Is Inaccessible by Default』を発見。AIが生成したReactサイドバーが29行中10個のアクセシビリティ欠陥を持つ問題と、それを止める5層防御を、駆け出しでも今日から1行で試せる形に翻訳",
     "sources": [
-      "https://www.awwwards.com/sites/20-years-inspired-by-people",
-      "https://inspiring.nk.studio/",
-      "https://www.nk.studio/",
-      "https://www.nk.studio/awards/",
-      "https://www.landing.love/sites/inspiring-nk-studio/",
-      "https://www.awwwards.com/websites/sites_of_the_day/"
+      "https://www.smashingmagazine.com/author/durgesh-pawar/",
+      "https://www.smashingmagazine.com/category/ai/",
+      "https://frontendmasters.com/blog/ai-generated-ui-is-inaccessible-by-default/"
     ],
-    "query": "Awwwards Site of the Day August 7 2026 /nk.studio 20 Years Inspired by People 20 anniversary microsite living archive design decisions Webflow editorial pacing",
-    "freshness_hours": 48
+    "query": "Smashing Magazine Durgesh Pawar AI-generated UI inaccessible by default five-layer enforcement semantic August 2026",
+    "freshness_hours": 120
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Awwwards 08-07 SOTD /nk.studio 20周年サイト 実績列じゃなく人と瞬間の生きたアーカイブ",
-      "description": "自分のポートフォリオ、実績を並べただけになってません?金曜 Awwwards SOTD が示した『archive として設計する』20周年サイトの発想",
-      "detail": "アルゼンチンの最多受賞スタジオ /nk.studio が 2026-08-07 に Awwwards Site of the Day を受賞した 20 周年サイト『20 Years Inspired by People』。実績自慢の trophy wall ではなく『20 年間で自分たちを動かしてくれた人と瞬間』の生きたアーカイブとして構成し、ゆったりした書体・余白・寄稿招待メッセージで訪問者にも entry を促す editorial pacing が特徴。principle は『信頼は人と逸話から生まれる、トロフィー壁からではない』。駆け出しの『ポートフォリオが実績列になってしまう/実績が少なくて何を載せていいか分からない』痛点に対して、『archive として設計する』という中身の構造の批評視点を与える。",
-      "narration": "自分のポートフォリオ、実績を並べただけになってません?Awwwardsが金曜SOTDに選んだ、あるアルゼンチンスタジオの20周年サイトが答えです。",
-      "tags": ["Awwwards", "SOTD", "nk.studio", "ポートフォリオ設計", "UI批評"],
+      "title": "AI生成UIは初期状態で壊れてる Smashing 08-05 Pawar式5層防御",
+      "description": "AIで作ったサイドバー、29行に10個の欠陥を Smashing が指摘",
+      "detail": "Durgesh Pawar 氏が Smashing Magazine で公開した『AI-Generated UI Is Inaccessible by Default』。ReactサイドバーをLLMで数秒生成した結果、button風のdiv、空のaria-label、キーボード非対応など29行中10個の欠陥。プロンプト制約、テンプレ、リンター、テスト、監査の5層で意味を強制する設計",
+      "narration": "AIで作ったサイドバー、たった29行に10個のアクセシビリティ欠陥が。Smashingが8/5に5層防御策を公開しました。",
+      "tags": ["AIデザイン", "アクセシビリティ", "Smashing"],
       "narration_sections": {
-        "hook": "自分のポートフォリオ、実績を並べただけになってません?Awwwardsが金曜SOTDに選んだ、あるアルゼンチンスタジオの20周年サイトが答えです。",
-        "origin": "アルゼンチンの最多受賞スタジオ/nk.studioが20周年で公開したのは、実績自慢ではなく『20年間で自分たちを動かしてくれた人と瞬間』の生きたアーカイブ。ゆったりした書体と余白、寄稿招待で訪問者にも参加を促す構成です。",
-        "recommend": "駆け出しのポートフォリオも、実績列より『誰と何にワクワクしたか』を1本入れると差が出ます。Figmaで30分、まず書き出してみてください。"
+        "hook": "AIで作ったサイドバー、たった29行に10個のアクセシビリティ欠陥が。Smashingが8/5に5層防御策を公開しました。",
+        "origin": "著者はDurgesh Pawar氏。button風のdiv、空のaria-label、キーボード非対応など見た目OKでも支援技術に届かない罠を指摘。プロンプト制約、テンプレ、リンター、テスト、監査の5層で意味を強制する設計です。",
+        "recommend": "AIは補助輪。最初のプロンプトに『button要素とaria-labelを付けて』と1行足すだけで結果は変わります。"
       },
       "section_titles": {
-        "hook": "実績列じゃなく20年",
-        "origin": "生きたアーカイブ構成",
-        "recommend": "1本『人』を入れる"
+        "hook": "AI生成UIの盲点",
+        "origin": "Pawar式5層防御",
+        "recommend": "今日試すプロンプト"
       },
       "section_descriptions": {
-        "hook": "8/7 Awwwards SOTD 20周年サイト",
-        "origin": "20年で動かされた人と瞬間の生アーカイブ",
-        "recommend": "実績列より『誰にワクワク』を1本Figmaで書く"
+        "hook": "見た目OKでも支援技術に届かない設計問題",
+        "origin": "制約・テンプレ・リンター・テスト・監査の順",
+        "recommend": "最初のプロンプトに要素名と属性を1行足す"
       }
     }
   ]
