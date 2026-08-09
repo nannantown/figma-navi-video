@@ -2,50 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "YctJDp1gOfA",
-      "videoUrl": "https://youtube.com/shorts/YctJDp1gOfA",
-      "date": "2026-05-10",
-      "title": "【デザインニュース】Smashing最新論考、CleanMyMacに学ぶ機能=体験の3原則｜2026/05/10 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 49,
-      "discovery": {
-        "method": "expert-blog",
-        "description": "Smashing Magazine 5/5 公開の Kyrylo Levashov / MacPaw 寄稿『Rethinking The Experience Of System Tools』を一次取得し、CleanMyMac の感情設計3原則(色・奥行き・動き・3Dイラストで、問題の診断ではなく『何を空けたか・何を守ったか』をユーザーに返す)を駆け出しが学べる『機能=体験』フレームに翻訳。method 選定: expert-blog は直近14日 avg 115 (n=1) で TOP3 method、5/7 以来 3 日空きで直近2日(5/9 product-launches, 5/8 official-src)・7日2回到達ガード・WORST 凍結 すべてクリア。土曜 5/9 で柱⑤ ポートフォリオを埋めたので、日曜の今日は柱⑥ UI 批評 (直近14日 0/15 = 0%、target 10% で最大の運用ギャップ) + 柱④ Tips (3 原則 framework) のクロスで埋める。Sunday evergreen 帯のため Tips/UI 批評 が運用フォーマット上 OK。NG パターン回避: AI に丸投げではなく『何を返したいかを言葉にしてから AI に書かせる』と AI=補助輪を再強化。5/7 (decision power) → 5/8 (Question Cards UX) → 5/9 (軸の言語化) → 5/10 (機能を体験へ翻訳する責任) と 4 日連続の縦糸を完成、Primary 駆け出し層への『あなたの判断と編集力こそが価値』というメタメッセージを厚塗り",
-        "sources": [
-          "https://www.smashingmagazine.com/2026/05/rethinking-experience-system-tools/",
-          "https://www.smashingmagazine.com/category/ux/",
-          "https://www.smashingmagazine.com/category/emotional-design/page/2/",
-          "https://macpaw.com/cleanmymac",
-          "https://www.smashingmagazine.com/"
-        ],
-        "query": "Smashing Magazine MacPaw CleanMyMac emotional design system tools rethinking May 2026 Kyrylo Levashov",
-        "freshness_hours": 120
-      },
-      "stats": {
-        "views": 62,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-05-23T00:16:11.962Z"
-      }
-    },
-    {
       "videoId": "ptpjdWqKs-0",
       "videoUrl": "https://youtube.com/shorts/ptpjdWqKs-0",
       "date": "2026-05-11",
@@ -2821,7 +2777,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-08T23:44:08.871Z"
+        "updatedAt": "2026-08-09T23:46:30.217Z"
       }
     },
     {
@@ -2865,7 +2821,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-08T23:44:08.871Z"
+        "updatedAt": "2026-08-09T23:46:30.217Z"
       }
     },
     {
@@ -2910,7 +2866,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-08T23:44:08.871Z"
+        "updatedAt": "2026-08-09T23:46:30.217Z"
       }
     },
     {
@@ -2954,7 +2910,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-08T23:44:08.871Z"
+        "updatedAt": "2026-08-09T23:46:30.217Z"
       }
     },
     {
@@ -2998,7 +2954,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-08T23:44:08.871Z"
+        "updatedAt": "2026-08-09T23:46:30.217Z"
       }
     },
     {
@@ -3042,7 +2998,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-08T23:44:08.871Z"
+        "updatedAt": "2026-08-09T23:46:30.217Z"
       }
     },
     {
@@ -3087,7 +3043,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-08T23:44:08.871Z"
+        "updatedAt": "2026-08-09T23:46:30.217Z"
       }
     },
     {
@@ -3131,7 +3087,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-08T23:44:08.871Z"
+        "updatedAt": "2026-08-09T23:46:30.217Z"
       }
     },
     {
@@ -3174,7 +3130,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-08T23:44:08.871Z"
+        "updatedAt": "2026-08-09T23:46:30.217Z"
       }
     },
     {
@@ -3217,7 +3173,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-08T23:44:08.871Z"
+        "updatedAt": "2026-08-09T23:46:30.217Z"
       }
     },
     {
@@ -3264,7 +3220,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-08T23:44:08.871Z"
+        "updatedAt": "2026-08-09T23:46:30.217Z"
       }
     },
     {
@@ -3310,7 +3266,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-08T23:44:08.871Z"
+        "updatedAt": "2026-08-09T23:46:30.217Z"
       }
     },
     {
@@ -3355,19 +3311,53 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-09T23:46:30.217Z"
+      }
+    },
+    {
+      "videoId": "ooHb5o9Uj90",
+      "videoUrl": "https://youtube.com/shorts/ooHb5o9Uj90",
+      "date": "2026-08-10",
+      "title": "【デザインニュース】AI生成UIは初期状態で壊れてる Smashing 08-05 Pawar式5層防御｜2026/08/10 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 44,
+      "discovery": {
+        "method": "news-en",
+        "description": "Smashing Magazine のAIカテゴリを英語で追い、Durgesh Pawar が2026-08-05に公開した『AI-Generated UI Is Inaccessible by Default』を発見。AIが生成したReactサイドバーが29行中10個のアクセシビリティ欠陥を持つ問題と、それを止める5層防御を、駆け出しでも今日から1行で試せる形に翻訳",
+        "sources": [
+          "https://www.smashingmagazine.com/author/durgesh-pawar/",
+          "https://www.smashingmagazine.com/category/ai/",
+          "https://frontendmasters.com/blog/ai-generated-ui-is-inaccessible-by-default/"
+        ],
+        "query": "Smashing Magazine Durgesh Pawar AI-generated UI inaccessible by default five-layer enforcement semantic August 2026",
+        "freshness_hours": 120
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-08",
-      "changes": [
-        "standard: 57 avg views (59 videos)",
-        "Day performance: Wed=109, Sat=60, Sun=60, Thu=56, Tue=49, Fri=44, Mon=30"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-09",
       "changes": [
@@ -3597,6 +3587,14 @@
       "changes": [
         "standard: 19 avg views (75 videos)",
         "Day performance: Sat=35, Sun=19, Tue=19, Fri=17, Wed=14, Thu=13, Mon=9"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-09",
+      "changes": [
+        "standard: 18 avg views (75 videos)",
+        "Day performance: Sat=32, Tue=19, Sun=17, Fri=17, Wed=14, Thu=13, Mon=9"
       ],
       "recommendedTemplate": "standard"
     }
