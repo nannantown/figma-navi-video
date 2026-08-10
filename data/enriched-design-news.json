@@ -1,38 +1,39 @@
 {
-  "date": "2026-08-10",
+  "date": "2026-08-11",
   "discovery": {
-    "method": "news-en",
-    "description": "Smashing Magazine のAIカテゴリを英語で追い、Durgesh Pawar が2026-08-05に公開した『AI-Generated UI Is Inaccessible by Default』を発見。AIが生成したReactサイドバーが29行中10個のアクセシビリティ欠陥を持つ問題と、それを止める5層防御を、駆け出しでも今日から1行で試せる形に翻訳",
+    "method": "official-src",
+    "description": "Figma 公式リリース (release notes / help center) 経由で AI credits 管理機能追加 (2026-08-05) を発見。実務あるあるペイン起点で再構造化",
     "sources": [
-      "https://www.smashingmagazine.com/author/durgesh-pawar/",
-      "https://www.smashingmagazine.com/category/ai/",
-      "https://frontendmasters.com/blog/ai-generated-ui-is-inaccessible-by-default/"
+      "https://www.figma.com/release-notes/",
+      "https://help.figma.com/hc/en-us/articles/35865276858647-Manage-AI-credits",
+      "https://help.figma.com/hc/en-us/articles/33459875669015-How-AI-credits-work",
+      "https://www.figma.com/blog/updates-to-ai-credits-in-figma/"
     ],
-    "query": "Smashing Magazine Durgesh Pawar AI-generated UI inaccessible by default five-layer enforcement semantic August 2026",
-    "freshness_hours": 120
+    "query": "Figma AI administration controls custom credit limits August 2026",
+    "freshness_hours": 144
   },
   "articles": [
     {
       "rank": 1,
-      "title": "AI生成UIは初期状態で壊れてる Smashing 08-05 Pawar式5層防御",
-      "description": "AIで作ったサイドバー、29行に10個の欠陥を Smashing が指摘",
-      "detail": "Durgesh Pawar 氏が Smashing Magazine で公開した『AI-Generated UI Is Inaccessible by Default』。ReactサイドバーをLLMで数秒生成した結果、button風のdiv、空のaria-label、キーボード非対応など29行中10個の欠陥。プロンプト制約、テンプレ、リンター、テスト、監査の5層で意味を強制する設計",
-      "narration": "AIで作ったサイドバー、たった29行に10個のアクセシビリティ欠陥が。Smashingが8/5に5層防御策を公開しました。",
-      "tags": ["AIデザイン", "アクセシビリティ", "Smashing"],
+      "title": "Figma AI credits 管理機能追加 8/5",
+      "description": "月末クレジット枯渇のあるあるを、8/5追加の申請機能で解決",
+      "detail": "Figma が 2026-08-05 に AI credits 管理機能を拡張。管理者が個別上限を設定でき、ユーザーは上限到達時に追加リクエストを送信可能。CSV でチーム全体の消費も可視化",
+      "narration": "Figma AIが月末に急に止まった経験ありませんか？8月5日発表の新機能で、上限到達時に管理者へ追加を申請できるようになりました",
+      "tags": ["Figma", "AIクレジット", "デザインツール"],
       "narration_sections": {
-        "hook": "AIで作ったサイドバー、たった29行に10個のアクセシビリティ欠陥が。Smashingが8/5に5層防御策を公開しました。",
-        "origin": "著者はDurgesh Pawar氏。button風のdiv、空のaria-label、キーボード非対応など見た目OKでも支援技術に届かない罠を指摘。プロンプト制約、テンプレ、リンター、テスト、監査の5層で意味を強制する設計です。",
-        "recommend": "AIは補助輪。最初のプロンプトに『button要素とaria-labelを付けて』と1行足すだけで結果は変わります。"
+        "hook": "Figma AIが月末に急に止まった経験ありませんか？8月5日発表の新機能で、上限到達時に管理者へ追加を申請できるようになりました",
+        "origin": "Figma AIのクレジット、Freeは月500・Pro月3000が上限です。今回の更新で管理者が個別上限をユーザーごとに設定可能に。上限到達時はユーザー側から追加リクエストを送信でき、CSVでチーム全体の消費も可視化されました",
+        "recommend": "AIクレジットは有限資源。自分の消費ペースを把握する意識が第一歩。Figmaナビも命令数管理型、配分の設計思考が武器になります"
       },
       "section_titles": {
-        "hook": "AI生成UIの盲点",
-        "origin": "Pawar式5層防御",
-        "recommend": "今日試すプロンプト"
+        "hook": "AI残高不足の壁",
+        "origin": "8/5更新の中身",
+        "recommend": "配分設計を武器に"
       },
       "section_descriptions": {
-        "hook": "見た目OKでも支援技術に届かない設計問題",
-        "origin": "制約・テンプレ・リンター・テスト・監査の順",
-        "recommend": "最初のプロンプトに要素名と属性を1行足す"
+        "hook": "月末にクレジット枯渇、あるあるですよね？",
+        "origin": "Free500/Pro3000。管理と申請の新機能",
+        "recommend": "命令数を配分する設計思考、それ自体が武器"
       }
     }
   ]
