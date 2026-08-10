@@ -2,52 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "ptpjdWqKs-0",
-      "videoUrl": "https://youtube.com/shorts/ptpjdWqKs-0",
-      "date": "2026-05-11",
-      "title": "【デザインニュース】Figma Communityで話題、元Siri出身チームのAI Design Reviewer｜2026/05/11 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 43,
-      "discovery": {
-        "method": "figma-community",
-        "description": "Figma Community のトレンドプラグイン横断調査で、元 Apple Siri チーム出身者 (onBeacon) が公開した『AI Design Reviewer: UI/UX, Accessibility, Design System Linter + Prototypes』を発見。複数の Figma プラグインまとめ媒体 (Muzli / UXPilot / Mockuuups Studio) が直近 1 週間以内に同プラグインを『Apple Siri 出身チーム発の AI デザインレビュアー』として一斉ピックアップしており、GPT-5 と Claude Sonnet/Opus のデュアル LLM、Nielsen Norman ヒューリスティック + WCAG AA/AAA、120+ の行動科学原則というスペック面の独自性が確認できた。method 選定 (Monday weekday news 帯): TOP3 候補のうち product-launches (5/9 利用、2日ルール抵触) / expert-blog (5/10 利用、2日ルール+7日2回到達ガード抵触) は今日不可、official-src (5/8 利用、5/5+5/8 で7日2回到達済) も同様にガード抵触、news-en は 2 週連続 WORST 凍結 (5/19まで)。残る Exploit 候補は figma-community (5/3 = 8 日空き、avg 103 で TOP4、weekday news-preferred set 4 タグ中の最後の生存タグ) と Explore 候補 social-en (5/4 = 7 日空き、avg 100.5、weekday news-preferred set 外) の 2 つ。**今日は figma-community をぴったりの空き日に Exploit 採用**。Sunday 4 日連続の縦糸 (5/7 expert-blog → 5/8 official-src → 5/9 product-launches → 5/10 expert-blog の人側論考軸) を月曜で Figma 製品ニュース系の横糸に切り替える節目として、Primary 駆け出しデザイナーの『誰にレビューもらうか分からない・ポートフォリオを出してから止まる』という最も生々しい痛点を直撃。柱② プラグイン/エコシステム (target 20%) は直近14日で 1/15 = 6.7% と未達、ここを埋める意図でも整合。NG パターン回避: AI=補助輪フレームを維持し『AI が先輩レビューを代替する』ではなく『AI で自己レビューを習慣化、判断は人がする』として位置づけ、5/10 の『機能を体験へ翻訳する責任』縦糸の余韻を切らさず Figmaナビ 本体 (AI 生成プラグイン) と同じカテゴリの隣接サービス紹介で自社ポジショニングも自然に補強",
-        "sources": [
-          "https://www.figma.com/community/plugin/1339202278007297015/ai-design-reviewer-ui-ux-accessibility-design-system-linter-prototypes",
-          "https://onbeacon.ai/",
-          "https://landing.onbeacon.ai/designers",
-          "https://onbeacon.ai/figma-plugin-auth",
-          "https://muz.li/blog/best-figma-plugins-for-designers-in-2026/",
-          "https://uxpilot.ai/blogs/best-figma-ai-plugins",
-          "https://mockuuups.studio/blog/post/figma-ai-plugins/"
-        ],
-        "query": "Figma Community AI Design Reviewer onBeacon Apple Siri team plugin GPT-5 Claude Sonnet accessibility WCAG behavioral science May 2026",
-        "freshness_hours": 144
-      },
-      "stats": {
-        "views": 53,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-05-23T00:16:11.962Z"
-      }
-    },
-    {
       "videoId": "dN2Xa1SBhgY",
       "videoUrl": "https://youtube.com/shorts/dN2Xa1SBhgY",
       "date": "2026-05-12",
@@ -2777,7 +2731,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-09T23:46:30.217Z"
+        "updatedAt": "2026-08-10T23:50:54.580Z"
       }
     },
     {
@@ -2821,7 +2775,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-09T23:46:30.217Z"
+        "updatedAt": "2026-08-10T23:50:54.580Z"
       }
     },
     {
@@ -2866,7 +2820,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-09T23:46:30.217Z"
+        "updatedAt": "2026-08-10T23:50:54.580Z"
       }
     },
     {
@@ -2910,7 +2864,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-09T23:46:30.217Z"
+        "updatedAt": "2026-08-10T23:50:54.580Z"
       }
     },
     {
@@ -2954,7 +2908,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-09T23:46:30.217Z"
+        "updatedAt": "2026-08-10T23:50:54.580Z"
       }
     },
     {
@@ -2998,7 +2952,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-09T23:46:30.217Z"
+        "updatedAt": "2026-08-10T23:50:54.580Z"
       }
     },
     {
@@ -3043,7 +2997,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-09T23:46:30.217Z"
+        "updatedAt": "2026-08-10T23:50:54.580Z"
       }
     },
     {
@@ -3087,7 +3041,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-09T23:46:30.217Z"
+        "updatedAt": "2026-08-10T23:50:54.580Z"
       }
     },
     {
@@ -3130,7 +3084,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-09T23:46:30.217Z"
+        "updatedAt": "2026-08-10T23:50:54.580Z"
       }
     },
     {
@@ -3173,7 +3127,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-09T23:46:30.217Z"
+        "updatedAt": "2026-08-10T23:50:54.580Z"
       }
     },
     {
@@ -3220,7 +3174,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-09T23:46:30.217Z"
+        "updatedAt": "2026-08-10T23:50:54.580Z"
       }
     },
     {
@@ -3266,7 +3220,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-09T23:46:30.217Z"
+        "updatedAt": "2026-08-10T23:50:54.580Z"
       }
     },
     {
@@ -3311,7 +3265,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-09T23:46:30.217Z"
+        "updatedAt": "2026-08-10T23:50:54.580Z"
       }
     },
     {
@@ -3353,19 +3307,54 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-10T23:50:54.580Z"
+      }
+    },
+    {
+      "videoId": "gK6cd-hNeFI",
+      "videoUrl": "https://youtube.com/shorts/gK6cd-hNeFI",
+      "date": "2026-08-11",
+      "title": "【デザインニュース】Figma AI credits 管理機能追加 8/5｜2026/08/11 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 49,
+      "discovery": {
+        "method": "official-src",
+        "description": "Figma 公式リリース (release notes / help center) 経由で AI credits 管理機能追加 (2026-08-05) を発見。実務あるあるペイン起点で再構造化",
+        "sources": [
+          "https://www.figma.com/release-notes/",
+          "https://help.figma.com/hc/en-us/articles/35865276858647-Manage-AI-credits",
+          "https://help.figma.com/hc/en-us/articles/33459875669015-How-AI-credits-work",
+          "https://www.figma.com/blog/updates-to-ai-credits-in-figma/"
+        ],
+        "query": "Figma AI administration controls custom credit limits August 2026",
+        "freshness_hours": 144
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-09",
-      "changes": [
-        "standard: 56 avg views (60 videos)",
-        "Day performance: Wed=95, Sat=60, Sun=60, Thu=56, Tue=49, Fri=44, Mon=30"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-10",
       "changes": [
@@ -3595,6 +3584,14 @@
       "changes": [
         "standard: 18 avg views (75 videos)",
         "Day performance: Sat=32, Tue=19, Sun=17, Fri=17, Wed=14, Thu=13, Mon=9"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-10",
+      "changes": [
+        "standard: 17 avg views (75 videos)",
+        "Day performance: Sat=32, Tue=19, Fri=17, Wed=14, Thu=13, Sun=13, Mon=8"
       ],
       "recommendedTemplate": "standard"
     }
