@@ -1,39 +1,39 @@
 {
-  "date": "2026-08-11",
+  "date": "2026-08-12",
   "discovery": {
-    "method": "official-src",
-    "description": "Figma 公式リリース (release notes / help center) 経由で AI credits 管理機能追加 (2026-08-05) を発見。実務あるあるペイン起点で再構造化",
+    "method": "figma-community",
+    "description": "Figma Community の ai-workflows ページで 8/11 に MCP 対応が拡張された Weave ワークフロー (20+種) を発見。Community × 外部 AI エージェント (ChatGPT/Claude/Cursor) の接続点を切り口として、駆け出しの作業導線変化を主語にリフレーム",
     "sources": [
       "https://www.figma.com/release-notes/",
-      "https://help.figma.com/hc/en-us/articles/35865276858647-Manage-AI-credits",
-      "https://help.figma.com/hc/en-us/articles/33459875669015-How-AI-credits-work",
-      "https://www.figma.com/blog/updates-to-ai-credits-in-figma/"
+      "https://help.weavy.ai/en/articles/15624624-publish-weave-workflows-to-the-figma-community",
+      "https://www.figma.com/blog/connecting-figma-and-weave/",
+      "https://help.figma.com/hc/en-us/articles/39582753756695-What-s-new-from-Config-2026"
     ],
-    "query": "Figma AI administration controls custom credit limits August 2026",
-    "freshness_hours": 144
+    "query": "Figma Community Weave workflows MCP ChatGPT Claude Cursor August 11 2026",
+    "freshness_hours": 24
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma AI credits 管理機能追加 8/5",
-      "description": "月末クレジット枯渇のあるあるを、8/5追加の申請機能で解決",
-      "detail": "Figma が 2026-08-05 に AI credits 管理機能を拡張。管理者が個別上限を設定でき、ユーザーは上限到達時に追加リクエストを送信可能。CSV でチーム全体の消費も可視化",
-      "narration": "Figma AIが月末に急に止まった経験ありませんか？8月5日発表の新機能で、上限到達時に管理者へ追加を申請できるようになりました",
-      "tags": ["Figma", "AIクレジット", "デザインツール"],
+      "title": "Figma Community Weave 20+ワークフロー MCP対応 8/11",
+      "description": "AI画像編集のタブ切替疲れを、8/11のMCP対応で一撃解消",
+      "detail": "Figma Community 公開の Weave AI ワークフロー 20+ 種が 2026-08-11 から MCP サーバー経由で Claude Code、Cursor、ChatGPT から直接呼び出せるように。背景差し替え、ロゴ合成、比率変更などが対象。プロンプト・画像・ブランドガイドラインの文脈を保ったまま結果が返る",
+      "narration": "Figma AI画像編集、毎回タブ切替えていませんか？8月11日、Communityの20+ワークフローがClaudeやChatGPTから呼べるように",
+      "tags": ["Figma Community", "Weave", "MCP"],
       "narration_sections": {
-        "hook": "Figma AIが月末に急に止まった経験ありませんか？8月5日発表の新機能で、上限到達時に管理者へ追加を申請できるようになりました",
-        "origin": "Figma AIのクレジット、Freeは月500・Pro月3000が上限です。今回の更新で管理者が個別上限をユーザーごとに設定可能に。上限到達時はユーザー側から追加リクエストを送信でき、CSVでチーム全体の消費も可視化されました",
-        "recommend": "AIクレジットは有限資源。自分の消費ペースを把握する意識が第一歩。Figmaナビも命令数管理型、配分の設計思考が武器になります"
+        "hook": "Figma AI画像編集、毎回タブ切替えていませんか？8月11日、Communityの20+ワークフローがClaudeやChatGPTから呼べるように",
+        "origin": "対象はFigma Community公開の背景差し替え、ロゴ合成、比率変更など20+のAIワークフロー。MCPサーバー経由でClaude Code、Cursor、ChatGPTから会話で呼び出せ、画像やプロンプトの文脈を保ったまま結果が戻ります",
+        "recommend": "ツール切替えを1つ減らす設計思考が武器。Figmaナビも命令数管理型、AI往復を減らす発想は学習者にも効きます"
       },
       "section_titles": {
-        "hook": "AI残高不足の壁",
-        "origin": "8/5更新の中身",
-        "recommend": "配分設計を武器に"
+        "hook": "AIツール切替疲れ",
+        "origin": "MCPで直接呼出し",
+        "recommend": "往復を減らす発想"
       },
       "section_descriptions": {
-        "hook": "月末にクレジット枯渇、あるあるですよね？",
-        "origin": "Free500/Pro3000。管理と申請の新機能",
-        "recommend": "命令数を配分する設計思考、それ自体が武器"
+        "hook": "AI画像編集で毎回タブ切替、疲れませんか？",
+        "origin": "20+ワークフローがClaudeやChatGPTから呼べます",
+        "recommend": "AIとの往復を減らす発想が学習者にも効きます"
       }
     }
   ]
