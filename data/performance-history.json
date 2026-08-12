@@ -2,99 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "dN2Xa1SBhgY",
-      "videoUrl": "https://youtube.com/shorts/dN2Xa1SBhgY",
-      "date": "2026-05-12",
-      "title": "【デザインニュース】Figma Make Skillsが公式実装、自作プロンプトを/呼び出しで再利用へ｜2026/05/12 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 43,
-      "discovery": {
-        "method": "official-src",
-        "description": "Figma 公式 release notes / Figma Make ヘルプ / 開発者ドキュメントを横断調査し、昨日 5/11 公開の Figma Make Skills(ユーザーが markdown で書く再利用プロンプトを slash command で呼び出せる新機能)を一次取得。5/6 で扱った FigJam の MCP Skills(サーバー/エージェント側で動く Skills)とは切り口を明確に分離し、今日は『ユーザー自身が書いて使う側の Skills』としてフレーム。method 選定(Tuesday weekday news 帯): TOP3 method 候補のうち product-launches(5/9利用、5/6+5/9で7日2回到達ガード抵触)/ figma-community(5/11=昨日利用で直近2日ルール抵触)/ expert-blog(5/10利用で直近2日ルール+5/7+5/10で7日2回到達ガード抵触)が全て今日 NG、news-en は 2 週連続 WORST 凍結中(5/19まで)、social-en は weekday news-preferred set 外。official-src(avg 101.67, n=3, TOP2 method, 5/8=4日前で直近2日 OK、5/5+5/8 が境界の 7日2回到達だが 5/12 から見て 5/5 は丁度 7 日前で window 外と判定、weekday news-preferred の最右翼)を Exploit 採用。柱① Figma 公式ニュース(target 25%)は直近14日で 6/15 = 40% と既に target を超過しているが、5/8 以降 official-src 空白で柱① 比率は今日入れて 7/15 = 46.7% で天井形成、明日以降は他の柱配分の練り直し前提。NG パターン回避: 『プラグインの機能説明メイン』にならないよう、Primary 駆け出しデザイナーの『プロンプト下手・毎回同じこと書いて時間が溶ける』という痛点から入り、AI=補助輪フレーミングを維持して『AI に任せれば考えなくていい』NG を回避、判断と運用は人(駆け出し自身)で位置づける。",
-        "sources": [
-          "https://www.figma.com/release-notes/",
-          "https://help.figma.com/hc/en-us/articles/40219873508247-Release-notes-roundup-May-2026",
-          "https://help.figma.com/hc/en-us/articles/39287396773399-Use-skills-with-the-Figma-MCP-server",
-          "https://help.figma.com/hc/en-us/articles/39166810751895-Figma-skills-for-MCP",
-          "https://developers.figma.com/docs/figma-mcp-server/create-skills/",
-          "https://help.figma.com/hc/en-us/articles/33665861260823-Add-guidelines-to-Figma-Make",
-          "https://help.figma.com/hc/en-us/articles/31304412302231-Explore-Figma-Make",
-          "https://fig-events.figma.com/may-rn-2026/"
-        ],
-        "query": "Figma Make Skills slash command markdown reusable workflow insert-sample-data build-from-prd May 11 2026 official release notes",
-        "freshness_hours": 30
-      },
-      "stats": {
-        "views": 64,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-05-23T00:16:11.962Z"
-      }
-    },
-    {
-      "videoId": "-P0jJnXtNOM",
-      "videoUrl": "https://youtube.com/shorts/-P0jJnXtNOM",
-      "date": "2026-05-13",
-      "title": "【デザインニュース】明日Figma初の四半期決算、Claude Design衝撃から1ヶ月の試金石｜2026/05/13 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 50,
-      "discovery": {
-        "method": "news-en",
-        "description": "BusinessWire / Motley Fool / Yahoo Finance / Stocktitan / Zacks の英語ビジネス/テック報道を横断調査し、明日 5/14 (Thu) 米国市場終了後に発表される Figma Q1 2026 earnings の preview を一次取得。市場予想は売上 315-317M ドル / 前年比 38% 増、株は年初来 48% 下落 (4/17 Claude Design 発表時に 7% 急落、4/22 の本チャンネル動画と同題材の続編)、AI クレジット課金は年内開始予定、ガイダンスは年間 30% で残り 3 四半期 27% という保守設定で beat-and-raise 期待。method 選定 (Wednesday weekday news 帯): TOP3 method 候補のうち product-launches (5/9 利用、5/6+5/9 で 7日2回到達ガード抵触、仮ルール適用)、official-src (5/12 = 昨日利用、直近2日ルール抵触)、social-en (5/4 = 9 日前で OK だが weekday news-preferred set 外)、加えて figma-community (5/11 = 2 日前、直近2日ルール抵触) と expert-blog (5/10 = 3 日前、5/7+5/10 で 7日2回到達ガード抵触) が全て今日 NG。weekday news-preferred 4 タグ (news-en / official-src / figma-community / product-launches) 全滅の 3 日連続局面。news-en は 2 週連続 WORST で 5/19 まで凍結扱いだったが、**戦略ドキュメント Explore 規定『WORST method に再挑戦 (アプローチを変えて)』を正規適用**: 前回 WORST 案件 4/24 (ChatGPT Images 2.0 ハイプ総括) / 4/28 (Gemini UX 2.0 リーク報道) と本日案件 (特定企業の単一イベント直前 preview = event-preview 角度) は構造的に異なる切り口で、5/12 PDCA Method 提案『event-preview』の初実戦投入として運用。柱③ 業界・デザインニュース (target 20%) は直近14日 1-2 件 = ~10% で target 未達、5/12 PDCA 戦略更新提案 #1『5/13-5/18 は柱③④ 優先期間』の初日該当。NG パターン回避: 『プロ向け高度議論』にならないよう投資家用語を駆け出し向けに翻訳 (『決算 = AI 機能投入ペースを決める数字』として自分事化)、『AI に任せれば考えなくていい』NG を Recommend の『判断するのは自分です』で真逆フレームに、『AI が仕事を奪う』NG を『AI 機能投入加速 = 駆け出しが使える新ツール増』と前向き翻訳。4/22 動画 (Claude Design × Figma 株 7% 下落) の続編ナラティブで視聴履歴のある層に連続性を提供。freshness_hours = 24 (明日のイベント前日)。",
-        "sources": [
-          "https://www.businesswire.com/news/home/20260422841631/en/Figma-to-Announce-First-Quarter-2026-Financial-Results-on-May-14-2026",
-          "https://investor.figma.com/news-events/events-and-presentations/event-details/2026/Figma-Q1-2026-Earnings-Call/default.aspx",
-          "https://www.fool.com/investing/2026/05/11/figmas-next-earnings-report-on-may-14-could-send-t/",
-          "https://www.stocktitan.net/news/FIG/figma-to-announce-first-quarter-2026-financial-results-on-may-14-lymsjhx6qtoo.html",
-          "https://finance.yahoo.com/markets/stocks/articles/figma-report-q1-earnings-whats-161300428.html",
-          "https://www.nasdaq.com/market-activity/stocks/fig/earnings",
-          "https://simplywall.st/stocks/us/software/nyse-fig/figma/news/is-it-time-to-reassess-figma-fig-after-its-48-year-to-date-s"
-        ],
-        "query": "Figma Q1 2026 earnings May 14 preview revenue guidance 315M 38% YoY Claude Design AI monetization",
-        "freshness_hours": 24
-      },
-      "stats": {
-        "views": 40,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-05-27T00:18:00.367Z"
-      }
-    },
-    {
       "videoId": "P8Z-WKd98jY",
       "videoUrl": "https://youtube.com/shorts/P8Z-WKd98jY",
       "date": "2026-05-14",
@@ -2731,7 +2638,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-10T23:50:54.580Z"
+        "updatedAt": "2026-08-11T23:59:51.095Z"
       }
     },
     {
@@ -2775,7 +2682,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-10T23:50:54.580Z"
+        "updatedAt": "2026-08-11T23:59:51.095Z"
       }
     },
     {
@@ -2820,7 +2727,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-10T23:50:54.580Z"
+        "updatedAt": "2026-08-11T23:59:51.095Z"
       }
     },
     {
@@ -2864,7 +2771,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-10T23:50:54.580Z"
+        "updatedAt": "2026-08-11T23:59:51.095Z"
       }
     },
     {
@@ -2908,7 +2815,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-10T23:50:54.580Z"
+        "updatedAt": "2026-08-11T23:59:51.095Z"
       }
     },
     {
@@ -2952,7 +2859,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-10T23:50:54.580Z"
+        "updatedAt": "2026-08-11T23:59:51.095Z"
       }
     },
     {
@@ -2997,7 +2904,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-10T23:50:54.580Z"
+        "updatedAt": "2026-08-11T23:59:51.095Z"
       }
     },
     {
@@ -3041,7 +2948,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-10T23:50:54.580Z"
+        "updatedAt": "2026-08-11T23:59:51.095Z"
       }
     },
     {
@@ -3084,7 +2991,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-10T23:50:54.580Z"
+        "updatedAt": "2026-08-11T23:59:51.095Z"
       }
     },
     {
@@ -3127,7 +3034,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-10T23:50:54.580Z"
+        "updatedAt": "2026-08-11T23:59:51.095Z"
       }
     },
     {
@@ -3174,7 +3081,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-10T23:50:54.580Z"
+        "updatedAt": "2026-08-11T23:59:51.095Z"
       }
     },
     {
@@ -3220,7 +3127,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-10T23:50:54.580Z"
+        "updatedAt": "2026-08-11T23:59:51.095Z"
       }
     },
     {
@@ -3265,7 +3172,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-10T23:50:54.580Z"
+        "updatedAt": "2026-08-11T23:59:51.095Z"
       }
     },
     {
@@ -3307,7 +3214,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-10T23:50:54.580Z"
+        "updatedAt": "2026-08-11T23:59:51.095Z"
       }
     },
     {
@@ -3350,19 +3257,54 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-11T23:59:51.095Z"
+      }
+    },
+    {
+      "videoId": "guHMU6ulmKI",
+      "videoUrl": "https://youtube.com/shorts/guHMU6ulmKI",
+      "date": "2026-08-12",
+      "title": "【デザインニュース】Figma Community Weave 20+ワークフロー MCP対応 8/11｜2026/08/12 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 46,
+      "discovery": {
+        "method": "figma-community",
+        "description": "Figma Community の ai-workflows ページで 8/11 に MCP 対応が拡張された Weave ワークフロー (20+種) を発見。Community × 外部 AI エージェント (ChatGPT/Claude/Cursor) の接続点を切り口として、駆け出しの作業導線変化を主語にリフレーム",
+        "sources": [
+          "https://www.figma.com/release-notes/",
+          "https://help.weavy.ai/en/articles/15624624-publish-weave-workflows-to-the-figma-community",
+          "https://www.figma.com/blog/connecting-figma-and-weave/",
+          "https://help.figma.com/hc/en-us/articles/39582753756695-What-s-new-from-Config-2026"
+        ],
+        "query": "Figma Community Weave workflows MCP ChatGPT Claude Cursor August 11 2026",
+        "freshness_hours": 24
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-10",
-      "changes": [
-        "standard: 55 avg views (61 videos)",
-        "Day performance: Wed=95, Sat=60, Sun=60, Thu=49, Tue=49, Fri=44, Mon=30"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-11",
       "changes": [
@@ -3592,6 +3534,14 @@
       "changes": [
         "standard: 17 avg views (75 videos)",
         "Day performance: Sat=32, Tue=19, Fri=17, Wed=14, Thu=13, Sun=13, Mon=8"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-11",
+      "changes": [
+        "standard: 16 avg views (75 videos)",
+        "Day performance: Sat=32, Tue=18, Fri=17, Wed=14, Thu=13, Sun=13, Mon=4"
       ],
       "recommendedTemplate": "standard"
     }
