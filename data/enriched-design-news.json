@@ -1,39 +1,43 @@
 {
-  "date": "2026-08-12",
+  "date": "2026-08-13",
   "discovery": {
-    "method": "figma-community",
-    "description": "Figma Community の ai-workflows ページで 8/11 に MCP 対応が拡張された Weave ワークフロー (20+種) を発見。Community × 外部 AI エージェント (ChatGPT/Claude/Cursor) の接続点を切り口として、駆け出しの作業導線変化を主語にリフレーム",
+    "method": "product-launches",
+    "description": "Awwwards Sites Of The Day リストで 08-10 SOTD かつ Developer Award の二冠を確認、当該サイト NOTHIN' PRO の詳細ページ (デザイン: Thomas Carré / エンジニア: Pierre Patrault, Webflow 制作, GSAP+WebGL+3D+mouse interaction+microinteractions) を裏取り。08-12 PDCA で残された 4連続0views ストリークからの脱出策として、直近14日 TOP method (product-launches n=2 avg=2.0, 08-04 Lacoste が単日 4 views を記録) を Exploit lane で採用。連続禁止ガード: 08-11 official-src と 08-12 figma-community が直近2日、product-launches は 08-09 /nk.studio で 4日ぶり=クリア。凍結中は expert-blog のみ。柱⑤ Before/After・ポートフォリオ事例 (target 10%、直近14日ではノータッチ) の直接補強と柱③ 業界・デザインニュース (Awwwards 業界評価) の二柱同時タッチ。08-04 ヒット同様、単日 SOTD の具体固有名詞＋設計原則を Hook に置く型を継続、加えて『二人組フリーランス duo が Dev Award と SOTD 二冠』という Primary 駆け出し・Secondary フリーランス両方に接続する構図が今回の差分。NG 回避: 『AI が奪う』系不該当、『プロ向け高度議論』回避策 → Webflow ベース (no-code) で GSAP/WebGL 演出可能という初心者接続点で翻訳、『機能説明メイン』回避 → 学習者痛点『ポートフォリオに動きどこまで入れるか』から入る action-first hook 型 (08-12 PDCA 提案の action-first-hook を継続実装)。freshness_hours=72 (08-10 SOTD → 08-13 08:00 JST 実行時点で 72h、168h ガード内)。",
     "sources": [
-      "https://www.figma.com/release-notes/",
-      "https://help.weavy.ai/en/articles/15624624-publish-weave-workflows-to-the-figma-community",
-      "https://www.figma.com/blog/connecting-figma-and-weave/",
-      "https://help.figma.com/hc/en-us/articles/39582753756695-What-s-new-from-Config-2026"
+      "https://www.awwwards.com/sites/nothin",
+      "https://www.awwwards.com/websites/sites_of_the_day/",
+      "https://www.awwwards.com/websites/developer/",
+      "https://www.awwwards.com/websites/gsap/"
     ],
-    "query": "Figma Community Weave workflows MCP ChatGPT Claude Cursor August 11 2026",
-    "freshness_hours": 24
+    "query": "NOTHIN PRO Awwwards Site of the Day Developer Award August 10 2026 Thomas Carré Pierre Patrault Webflow GSAP WebGL",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma Community Weave 20+ワークフロー MCP対応 8/11",
-      "description": "AI画像編集のタブ切替疲れを、8/11のMCP対応で一撃解消",
-      "detail": "Figma Community 公開の Weave AI ワークフロー 20+ 種が 2026-08-11 から MCP サーバー経由で Claude Code、Cursor、ChatGPT から直接呼び出せるように。背景差し替え、ロゴ合成、比率変更などが対象。プロンプト・画像・ブランドガイドラインの文脈を保ったまま結果が返る",
-      "narration": "Figma AI画像編集、毎回タブ切替えていませんか？8月11日、Communityの20+ワークフローがClaudeやChatGPTから呼べるように",
-      "tags": ["Figma Community", "Weave", "MCP"],
+      "title": "NOTHIN' PRO 二人組フリーランスが Awwwards SOTD＋Developer Award 二冠 8/10",
+      "description": "ポートフォリオに動きどこまで入れる？8/10 Awwwards、二人組フリーランス作品が SOTD と Developer Award の二冠。",
+      "detail": "デザイナー Thomas Carré さんとエンジニア Pierre Patrault さんの二人組サイト NOTHIN' PRO。Webflow に GSAP と WebGL の 3D 演出を重ね、動きの精度が Developer Award を決めました。",
+      "narration": "ポートフォリオに動きどこまで入れる？8/10 Awwwards、二人組フリーランス作品が SOTD と Developer Award の二冠。",
+      "tags": [
+        "Awwwards",
+        "ポートフォリオ",
+        "Webflow"
+      ],
       "narration_sections": {
-        "hook": "Figma AI画像編集、毎回タブ切替えていませんか？8月11日、Communityの20+ワークフローがClaudeやChatGPTから呼べるように",
-        "origin": "対象はFigma Community公開の背景差し替え、ロゴ合成、比率変更など20+のAIワークフロー。MCPサーバー経由でClaude Code、Cursor、ChatGPTから会話で呼び出せ、画像やプロンプトの文脈を保ったまま結果が戻ります",
-        "recommend": "ツール切替えを1つ減らす設計思考が武器。Figmaナビも命令数管理型、AI往復を減らす発想は学習者にも効きます"
+        "hook": "ポートフォリオに動きどこまで入れる？8/10 Awwwards、二人組フリーランス作品が SOTD と Developer Award の二冠。",
+        "origin": "デザイナー Thomas Carré さんとエンジニア Pierre Patrault さんの二人組サイト NOTHIN' PRO。Webflow に GSAP と WebGL の 3D 演出を重ね、動きの精度が Developer Award を決めました。",
+        "recommend": "まずはボタン1個のマイクロインタラクションから真似。動きの精度が競争力になる時代、駆け出しでも今日試せます。"
       },
       "section_titles": {
-        "hook": "AIツール切替疲れ",
-        "origin": "MCPで直接呼出し",
-        "recommend": "往復を減らす発想"
+        "hook": "フリーランス二冠",
+        "origin": "動きの設計で勝つ",
+        "recommend": "動きから真似する"
       },
       "section_descriptions": {
-        "hook": "AI画像編集で毎回タブ切替、疲れませんか？",
-        "origin": "20+ワークフローがClaudeやChatGPTから呼べます",
-        "recommend": "AIとの往復を減らす発想が学習者にも効きます"
+        "hook": "Awwwards 8/10 SOTD+Dev Award",
+        "origin": "Webflow+GSAP+WebGL で 3D 演出を重ねる",
+        "recommend": "ボタン1個のマイクロインタラクションから真似"
       }
     }
   ]
