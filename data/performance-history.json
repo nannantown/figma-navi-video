@@ -2682,7 +2682,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-11T23:59:51.095Z"
+        "updatedAt": "2026-08-12T23:57:40.491Z"
       }
     },
     {
@@ -2727,7 +2727,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-11T23:59:51.095Z"
+        "updatedAt": "2026-08-12T23:57:40.491Z"
       }
     },
     {
@@ -2771,7 +2771,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-11T23:59:51.095Z"
+        "updatedAt": "2026-08-12T23:57:40.491Z"
       }
     },
     {
@@ -2815,7 +2815,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-11T23:59:51.095Z"
+        "updatedAt": "2026-08-12T23:57:40.491Z"
       }
     },
     {
@@ -2859,7 +2859,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-11T23:59:51.095Z"
+        "updatedAt": "2026-08-12T23:57:40.491Z"
       }
     },
     {
@@ -2904,7 +2904,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-11T23:59:51.095Z"
+        "updatedAt": "2026-08-12T23:57:40.491Z"
       }
     },
     {
@@ -2948,7 +2948,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-11T23:59:51.095Z"
+        "updatedAt": "2026-08-12T23:57:40.491Z"
       }
     },
     {
@@ -2991,7 +2991,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-11T23:59:51.095Z"
+        "updatedAt": "2026-08-12T23:57:40.491Z"
       }
     },
     {
@@ -3034,7 +3034,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-11T23:59:51.095Z"
+        "updatedAt": "2026-08-12T23:57:40.491Z"
       }
     },
     {
@@ -3081,7 +3081,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-11T23:59:51.095Z"
+        "updatedAt": "2026-08-12T23:57:40.491Z"
       }
     },
     {
@@ -3127,7 +3127,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-11T23:59:51.095Z"
+        "updatedAt": "2026-08-12T23:57:40.491Z"
       }
     },
     {
@@ -3172,7 +3172,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-11T23:59:51.095Z"
+        "updatedAt": "2026-08-12T23:57:40.491Z"
       }
     },
     {
@@ -3214,7 +3214,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-11T23:59:51.095Z"
+        "updatedAt": "2026-08-12T23:57:40.491Z"
       }
     },
     {
@@ -3257,7 +3257,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-11T23:59:51.095Z"
+        "updatedAt": "2026-08-12T23:57:40.491Z"
       }
     },
     {
@@ -3300,19 +3300,54 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-12T23:57:40.491Z"
+      }
+    },
+    {
+      "videoId": "lD6k9l66CtQ",
+      "videoUrl": "https://youtube.com/shorts/lD6k9l66CtQ",
+      "date": "2026-08-13",
+      "title": "【デザインニュース】NOTHIN' PRO 二人組フリーランスが Awwwards SOTD＋Developer Award 二冠 8/10｜2026/08/13 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 40,
+      "discovery": {
+        "method": "product-launches",
+        "description": "Awwwards Sites Of The Day リストで 08-10 SOTD かつ Developer Award の二冠を確認、当該サイト NOTHIN' PRO の詳細ページ (デザイン: Thomas Carré / エンジニア: Pierre Patrault, Webflow 制作, GSAP+WebGL+3D+mouse interaction+microinteractions) を裏取り。08-12 PDCA で残された 4連続0views ストリークからの脱出策として、直近14日 TOP method (product-launches n=2 avg=2.0, 08-04 Lacoste が単日 4 views を記録) を Exploit lane で採用。連続禁止ガード: 08-11 official-src と 08-12 figma-community が直近2日、product-launches は 08-09 /nk.studio で 4日ぶり=クリア。凍結中は expert-blog のみ。柱⑤ Before/After・ポートフォリオ事例 (target 10%、直近14日ではノータッチ) の直接補強と柱③ 業界・デザインニュース (Awwwards 業界評価) の二柱同時タッチ。08-04 ヒット同様、単日 SOTD の具体固有名詞＋設計原則を Hook に置く型を継続、加えて『二人組フリーランス duo が Dev Award と SOTD 二冠』という Primary 駆け出し・Secondary フリーランス両方に接続する構図が今回の差分。NG 回避: 『AI が奪う』系不該当、『プロ向け高度議論』回避策 → Webflow ベース (no-code) で GSAP/WebGL 演出可能という初心者接続点で翻訳、『機能説明メイン』回避 → 学習者痛点『ポートフォリオに動きどこまで入れるか』から入る action-first hook 型 (08-12 PDCA 提案の action-first-hook を継続実装)。freshness_hours=72 (08-10 SOTD → 08-13 08:00 JST 実行時点で 72h、168h ガード内)。",
+        "sources": [
+          "https://www.awwwards.com/sites/nothin",
+          "https://www.awwwards.com/websites/sites_of_the_day/",
+          "https://www.awwwards.com/websites/developer/",
+          "https://www.awwwards.com/websites/gsap/"
+        ],
+        "query": "NOTHIN PRO Awwwards Site of the Day Developer Award August 10 2026 Thomas Carré Pierre Patrault Webflow GSAP WebGL",
+        "freshness_hours": 72
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-11",
-      "changes": [
-        "standard: 54 avg views (62 videos)",
-        "Day performance: Wed=95, Sat=60, Sun=60, Thu=49, Tue=49, Fri=39, Mon=30"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-12",
       "changes": [
@@ -3542,6 +3577,14 @@
       "changes": [
         "standard: 16 avg views (75 videos)",
         "Day performance: Sat=32, Tue=18, Fri=17, Wed=14, Thu=13, Sun=13, Mon=4"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-12",
+      "changes": [
+        "standard: 15 avg views (74 videos)",
+        "Day performance: Sat=32, Fri=17, Tue=14, Thu=13, Sun=13, Wed=10, Mon=4"
       ],
       "recommendedTemplate": "standard"
     }
