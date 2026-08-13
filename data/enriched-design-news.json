@@ -1,43 +1,44 @@
 {
-  "date": "2026-08-13",
+  "date": "2026-08-14",
   "discovery": {
-    "method": "product-launches",
-    "description": "Awwwards Sites Of The Day リストで 08-10 SOTD かつ Developer Award の二冠を確認、当該サイト NOTHIN' PRO の詳細ページ (デザイン: Thomas Carré / エンジニア: Pierre Patrault, Webflow 制作, GSAP+WebGL+3D+mouse interaction+microinteractions) を裏取り。08-12 PDCA で残された 4連続0views ストリークからの脱出策として、直近14日 TOP method (product-launches n=2 avg=2.0, 08-04 Lacoste が単日 4 views を記録) を Exploit lane で採用。連続禁止ガード: 08-11 official-src と 08-12 figma-community が直近2日、product-launches は 08-09 /nk.studio で 4日ぶり=クリア。凍結中は expert-blog のみ。柱⑤ Before/After・ポートフォリオ事例 (target 10%、直近14日ではノータッチ) の直接補強と柱③ 業界・デザインニュース (Awwwards 業界評価) の二柱同時タッチ。08-04 ヒット同様、単日 SOTD の具体固有名詞＋設計原則を Hook に置く型を継続、加えて『二人組フリーランス duo が Dev Award と SOTD 二冠』という Primary 駆け出し・Secondary フリーランス両方に接続する構図が今回の差分。NG 回避: 『AI が奪う』系不該当、『プロ向け高度議論』回避策 → Webflow ベース (no-code) で GSAP/WebGL 演出可能という初心者接続点で翻訳、『機能説明メイン』回避 → 学習者痛点『ポートフォリオに動きどこまで入れるか』から入る action-first hook 型 (08-12 PDCA 提案の action-first-hook を継続実装)。freshness_hours=72 (08-10 SOTD → 08-13 08:00 JST 実行時点で 72h、168h ガード内)。",
+    "method": "news-en",
+    "description": "Smashing Magazine の Design カテゴリで 08-11 公開の Alexey Kopytin『Building Tactile UX: Honoring Intentional Design With Lottie』を一次資料に、Isadora Agency 公式 Stress Release ページ + Dribbble ケーススタディ + daily.dev の記事シェアで裏取り。物理エンジン (Matter.js / Cannon.js / WebGL) の代わりに Lottie の programmatic API (playSegments)・DOM イベント・Pythagoras 距離計算で 181 フレームの mega squeeze を再現し、アニメーターの意図した動きを崩さないアーキテクチャを提示。method 選定 (Fri 平日 news 帯): 直近2日 (08-13 product-launches / 08-12 figma-community) 抵触なし、weekday news-preferred 4 タグ内でクリーン候補は news-en (08-10=4日前, 7日1回) と official-src (08-11=3日前, 7日1回) の 2 択。official-src は Figma agent skills 08-13 community launch という 24h fresh 候補があるが、直近8本のうち 5本 (08-05/06/11/12 + 07-31) が Figma 中心で『Figma glut 疲労』の可能性が高く、5連続0views 継続 (08-08〜08-12) の diagnostic として『トピック多様性を強く振る』方針で news-en を Exploit、Smashing 08-05 Pawar 記事 (news-en, v=0) からは著者・トピック・角度が全別で連続感なし。柱⑥ UI 批評/学習要素 (target 10%、直近14日 08-08 PROVE のみで 1/14=7% で target 未達) と柱④ Tips/Figma 実践 (target 15%、08-08 PROVE で 1/14=7% で -8pt) の両方に該当する『Web モーションの制御レシピ』題材。Primary persona 駆け出しの『インタラクション凝りたいが物理計算が難しそう』pain 直撃、Kopytin の記事は React/Vue 非依存で 素の DOM + Lottie という Figma 学習者にも手が届く技術セット。08-04 Lacoste ヒット (product-launches, v=4) と同じ『具体固有名詞 (Isadora Stress Release) × 短い原則 (Lottie+距離計算=狙った手触り)』構造で news-en 内での再現性検証を狙う。NG パターン回避: 『AI が奪う』完全非該当 (AI トピックですらない)、『プロ向け高度議論』回避策 → Pythagoras/playSegments/CSS custom properties 等の専門語を『距離計算で採点』『再生範囲操作』の平易日本語に翻訳、『AI に任せれば考えなくていい』回避策 → Recommend は『まず好きな演出を1つ真似』の主体的アクションで締め AI=補助輪フレーム維持、『機能説明メイン』回避策 → 学習者痛点『手触りをどう作るか』hook 起点、Figmaナビ は本回言及なしで完全に題材優先。freshness_hours=72 (08-11 publish → 08-14 08:00 JST で約 72h、168h 上限内で当週 fresh)。",
     "sources": [
-      "https://www.awwwards.com/sites/nothin",
-      "https://www.awwwards.com/websites/sites_of_the_day/",
-      "https://www.awwwards.com/websites/developer/",
-      "https://www.awwwards.com/websites/gsap/"
+      "https://www.smashingmagazine.com/2026/08/building-tactile-ux-honoring-intentional-design-lottie/",
+      "https://stressrelease.isadoradigitalagency.com/",
+      "https://dribbble.com/shots/26180213-Stress-Release-Interactive-Game",
+      "https://daily.dev/posts/building-tactile-ux-honoring-intentional-design-with-lottie-smashing-magazine-yvokqrlps"
     ],
-    "query": "NOTHIN PRO Awwwards Site of the Day Developer Award August 10 2026 Thomas Carré Pierre Patrault Webflow GSAP WebGL",
+    "query": "Alexey Kopytin Smashing Magazine Building Tactile UX Lottie Isadora Agency Stress Release playSegments distance math August 11 2026",
     "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "NOTHIN' PRO 二人組フリーランスが Awwwards SOTD＋Developer Award 二冠 8/10",
-      "description": "ポートフォリオに動きどこまで入れる？8/10 Awwwards、二人組フリーランス作品が SOTD と Developer Award の二冠。",
-      "detail": "デザイナー Thomas Carré さんとエンジニア Pierre Patrault さんの二人組サイト NOTHIN' PRO。Webflow に GSAP と WebGL の 3D 演出を重ね、動きの精度が Developer Award を決めました。",
-      "narration": "ポートフォリオに動きどこまで入れる？8/10 Awwwards、二人組フリーランス作品が SOTD と Developer Award の二冠。",
+      "title": "Smashing 8/11 手触りWebはLottieと距離計算で作れる Isadora『Stress Release』式",
+      "description": "知ってました？気持ちいい手触りのWeb、物理エンジンを使わずLottieと距離計算だけで作れるんです。8/11 Smashingが特集しました。",
+      "detail": "Isadora Agencyが作った『Stress Release』は、キャラをつまんで潰す癒し系ゲーム。物理エンジンで自然な動きを作るのではなく、Lottieの再生範囲操作と距離計算で181フレームの狙った反応を再現。デザイナーの意図をコードが崩さない設計です。",
+      "narration": "知ってました？気持ちいい手触りのWeb、物理エンジンを使わずLottieと距離計算だけで作れるんです。8/11 Smashingが特集しました。",
       "tags": [
-        "Awwwards",
-        "ポートフォリオ",
-        "Webflow"
+        "Lottie",
+        "UX",
+        "アニメーション",
+        "Smashing"
       ],
       "narration_sections": {
-        "hook": "ポートフォリオに動きどこまで入れる？8/10 Awwwards、二人組フリーランス作品が SOTD と Developer Award の二冠。",
-        "origin": "デザイナー Thomas Carré さんとエンジニア Pierre Patrault さんの二人組サイト NOTHIN' PRO。Webflow に GSAP と WebGL の 3D 演出を重ね、動きの精度が Developer Award を決めました。",
-        "recommend": "まずはボタン1個のマイクロインタラクションから真似。動きの精度が競争力になる時代、駆け出しでも今日試せます。"
+        "hook": "知ってました？気持ちいい手触りのWeb、物理エンジンを使わずLottieと距離計算だけで作れるんです。8/11 Smashingが特集しました。",
+        "origin": "Isadora Agencyが作った『Stress Release』は、キャラをつまんで潰す癒し系ゲーム。物理エンジンで自然な動きを作るのではなく、Lottieの再生範囲操作と距離計算で181フレームの狙った反応を再現。デザイナーの意図をコードが崩さない設計です。",
+        "recommend": "派手なライブラリより狙った1動作の再現度で差がつく時代。まず好きなマイクロ演出を1つ選んで真似てみましょう。"
       },
       "section_titles": {
-        "hook": "フリーランス二冠",
-        "origin": "動きの設計で勝つ",
-        "recommend": "動きから真似する"
+        "hook": "手触りWebの新常識",
+        "origin": "距離計算で狙う181f",
+        "recommend": "1動作の再現度が武器"
       },
       "section_descriptions": {
-        "hook": "Awwwards 8/10 SOTD+Dev Award",
-        "origin": "Webflow+GSAP+WebGL で 3D 演出を重ねる",
-        "recommend": "ボタン1個のマイクロインタラクションから真似"
+        "hook": "物理エンジンなしで狙った手触りを作る発想",
+        "origin": "Lottie再生範囲と距離計算で意図を守る",
+        "recommend": "好きなマイクロ演出を1つ選んで真似ること"
       }
     }
   ]
