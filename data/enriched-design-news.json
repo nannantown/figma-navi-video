@@ -1,44 +1,45 @@
 {
-  "date": "2026-08-14",
+  "date": "2026-08-15",
   "discovery": {
-    "method": "news-en",
-    "description": "Smashing Magazine の Design カテゴリで 08-11 公開の Alexey Kopytin『Building Tactile UX: Honoring Intentional Design With Lottie』を一次資料に、Isadora Agency 公式 Stress Release ページ + Dribbble ケーススタディ + daily.dev の記事シェアで裏取り。物理エンジン (Matter.js / Cannon.js / WebGL) の代わりに Lottie の programmatic API (playSegments)・DOM イベント・Pythagoras 距離計算で 181 フレームの mega squeeze を再現し、アニメーターの意図した動きを崩さないアーキテクチャを提示。method 選定 (Fri 平日 news 帯): 直近2日 (08-13 product-launches / 08-12 figma-community) 抵触なし、weekday news-preferred 4 タグ内でクリーン候補は news-en (08-10=4日前, 7日1回) と official-src (08-11=3日前, 7日1回) の 2 択。official-src は Figma agent skills 08-13 community launch という 24h fresh 候補があるが、直近8本のうち 5本 (08-05/06/11/12 + 07-31) が Figma 中心で『Figma glut 疲労』の可能性が高く、5連続0views 継続 (08-08〜08-12) の diagnostic として『トピック多様性を強く振る』方針で news-en を Exploit、Smashing 08-05 Pawar 記事 (news-en, v=0) からは著者・トピック・角度が全別で連続感なし。柱⑥ UI 批評/学習要素 (target 10%、直近14日 08-08 PROVE のみで 1/14=7% で target 未達) と柱④ Tips/Figma 実践 (target 15%、08-08 PROVE で 1/14=7% で -8pt) の両方に該当する『Web モーションの制御レシピ』題材。Primary persona 駆け出しの『インタラクション凝りたいが物理計算が難しそう』pain 直撃、Kopytin の記事は React/Vue 非依存で 素の DOM + Lottie という Figma 学習者にも手が届く技術セット。08-04 Lacoste ヒット (product-launches, v=4) と同じ『具体固有名詞 (Isadora Stress Release) × 短い原則 (Lottie+距離計算=狙った手触り)』構造で news-en 内での再現性検証を狙う。NG パターン回避: 『AI が奪う』完全非該当 (AI トピックですらない)、『プロ向け高度議論』回避策 → Pythagoras/playSegments/CSS custom properties 等の専門語を『距離計算で採点』『再生範囲操作』の平易日本語に翻訳、『AI に任せれば考えなくていい』回避策 → Recommend は『まず好きな演出を1つ真似』の主体的アクションで締め AI=補助輪フレーム維持、『機能説明メイン』回避策 → 学習者痛点『手触りをどう作るか』hook 起点、Figmaナビ は本回言及なしで完全に題材優先。freshness_hours=72 (08-11 publish → 08-14 08:00 JST で約 72h、168h 上限内で当週 fresh)。",
+    "method": "figma-community",
+    "description": "Figma Community 公式『Auto Layout Playground』ファイル群 + Figma Help『Guide to auto layout』ドキュメント + Figma Forum の wrap 議論スレ + LogRocket『Configuring Figma's auto layout wrap』実装記事の 4 軸を横断し、Auto Layout の wrap 発火時に子要素が Hug contents 設定のままだとカード高さがバラつく駆け出しの実装 pain を、Community Playground ファイル複製 → Fill / Hug / Fixed の 3 切替 5 分実験というレシピに翻訳。method 選定 (Sat evergreen 帯): 直近2日 (08-14 news-en / 08-13 product-launches) 抵触なし、expert-blog 凍結中 (08-22 まで) を除外、weekday news-preferred 4 タグの Sat 使用は precedent 通り acceptable でその中で残る官選 official-src / figma-community の 2 択、Figma glut 診断中に Figma 中心度が最大となる official-src (公式リリース情報) を意図的に回避して figma-community を選択 (2026-05-16 Auto Layout 絶対位置 = figma-community × Sat evergreen の型を踏襲)、7連続0views (08-08〜08-14 暫定) からの脱出仮説として 08-04 Lacoste ヒット (product-launches, v=4) の『1動詞×3色』単文原則構造を『3切替×5分』の数値密度型 micro-recipe に一般化して同 pattern の再現力を figma-community 内で検証。柱④ Tips / Figma 実践 (target 15%、直近14日 2/14=14% で target ラインぎりぎり) + 柱② プラグイン・エコシステム (target 20%、直近14日 2/14=14% で -6pt) の 2 柱同時補強に該当。Primary persona 駆け出しがカードグリッドをポートフォリオや LP に配置する際に必ず遭遇する『折り返した瞬間 UI 崩れる』pain 直撃、既存 YouTube 講座 200人層の『Figma は触れるが実案件で詰まる』典型症状の解消。NG パターン回避: 『プロ向け高度議論』回避策 → Hug / Fill / Fixed の英語専門語を『内容量ぶんに縮む』『親フレームに広げる』『高さ固定』の平易日本語補足、『プラグイン機能説明メイン』回避策 → 学習者痛点『カード折り返して高さバラバラ』の hook 起点で Community ファイルは pain 解決の手段として後段配置、『AI が奪う』完全非該当 (Figma ネイティブ機能で AI 未言及)、『AI に任せれば考えなくていい』回避 → Recommend で『手を動かして 5 分試す』主体アクションで締めて AI 依存フレームゼロ、『英語/日本語中途半端な混在』→ 出力は日本語で専門語 (Auto Layout / wrap / Hug / Fill / Fixed / Playground / Community) は英語原文表記維持、『出典不明ニュース』→ Community 2 file + Help 1 + Forum 1 + LogRocket 1 の 5 URL 明記。freshness_hours=168 (Sat evergreen 上限、Auto Layout Wrap は 2024 導入の安定機能で Community Playground は継続維持、Help 文書は 2024 以降定期更新、トピック自体は時間軸非依存の永続 pain)。",
     "sources": [
-      "https://www.smashingmagazine.com/2026/08/building-tactile-ux-honoring-intentional-design-lottie/",
-      "https://stressrelease.isadoradigitalagency.com/",
-      "https://dribbble.com/shots/26180213-Stress-Release-Interactive-Game",
-      "https://daily.dev/posts/building-tactile-ux-honoring-intentional-design-with-lottie-smashing-magazine-yvokqrlps"
+      "https://www.figma.com/community/file/1018107557624125170/auto-layout-tutorial-for-beginners",
+      "https://www.figma.com/community/file/945723846646263624",
+      "https://help.figma.com/hc/en-us/articles/360040451373-Guide-to-auto-layout",
+      "https://blog.logrocket.com/ux-design/configuring-figmas-auto-layout-wrap/",
+      "https://forum.figma.com/t/dynamic-height-for-auto-layout-wrap/64195"
     ],
-    "query": "Alexey Kopytin Smashing Magazine Building Tactile UX Lottie Isadora Agency Stress Release playSegments distance math August 11 2026",
-    "freshness_hours": 72
+    "query": "Figma Community Auto Layout Playground wrap hug fill fixed beginner tutorial dynamic height card responsive 2024 2026",
+    "freshness_hours": 168
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Smashing 8/11 手触りWebはLottieと距離計算で作れる Isadora『Stress Release』式",
-      "description": "知ってました？気持ちいい手触りのWeb、物理エンジンを使わずLottieと距離計算だけで作れるんです。8/11 Smashingが特集しました。",
-      "detail": "Isadora Agencyが作った『Stress Release』は、キャラをつまんで潰す癒し系ゲーム。物理エンジンで自然な動きを作るのではなく、Lottieの再生範囲操作と距離計算で181フレームの狙った反応を再現。デザイナーの意図をコードが崩さない設計です。",
-      "narration": "知ってました？気持ちいい手触りのWeb、物理エンジンを使わずLottieと距離計算だけで作れるんです。8/11 Smashingが特集しました。",
+      "title": "Auto Layout wrap でカード高さがバラつく罠 週末5分の3切替レシピ",
+      "description": "知ってました？Auto Layoutでカードを折り返した瞬間、高さがバラバラになる罠。駆け出しが必ず引っかかる伏兵です。",
+      "detail": "Figma公式のAuto Layout Playgroundを触るとすぐ再現できます。犯人はwrap時の子要素Hug設定。個々のカードが内容量ぶんに縮むのが正体。直し方は各カードをFixed heightにするか、Fillでそろえる2択で一気に整います。",
+      "narration": "知ってました？Auto Layoutでカードを折り返した瞬間、高さがバラバラになる罠。駆け出しが必ず引っかかる伏兵です。",
       "tags": [
-        "Lottie",
-        "UX",
-        "アニメーション",
-        "Smashing"
+        "Figma",
+        "Auto Layout",
+        "Tips",
+        "駆け出し"
       ],
       "narration_sections": {
-        "hook": "知ってました？気持ちいい手触りのWeb、物理エンジンを使わずLottieと距離計算だけで作れるんです。8/11 Smashingが特集しました。",
-        "origin": "Isadora Agencyが作った『Stress Release』は、キャラをつまんで潰す癒し系ゲーム。物理エンジンで自然な動きを作るのではなく、Lottieの再生範囲操作と距離計算で181フレームの狙った反応を再現。デザイナーの意図をコードが崩さない設計です。",
-        "recommend": "派手なライブラリより狙った1動作の再現度で差がつく時代。まず好きなマイクロ演出を1つ選んで真似てみましょう。"
+        "hook": "知ってました？Auto Layoutでカードを折り返した瞬間、高さがバラバラになる罠。駆け出しが必ず引っかかる伏兵です。",
+        "origin": "Figma公式のAuto Layout Playgroundを触るとすぐ再現できます。犯人はwrap時の子要素Hug設定。個々のカードが内容量ぶんに縮むのが正体。直し方は各カードをFixed heightにするか、Fillでそろえる2択で一気に整います。",
+        "recommend": "Community『Auto Layout Playground』を複製し、Fill・Hug・Fixedの3切替を5分試すのが今週末の一手。"
       },
       "section_titles": {
-        "hook": "手触りWebの新常識",
-        "origin": "距離計算で狙う181f",
-        "recommend": "1動作の再現度が武器"
+        "hook": "折り返しカードの罠",
+        "origin": "犯人はHug設定",
+        "recommend": "週末5分で3切替"
       },
       "section_descriptions": {
-        "hook": "物理エンジンなしで狙った手触りを作る発想",
-        "origin": "Lottie再生範囲と距離計算で意図を守る",
-        "recommend": "好きなマイクロ演出を1つ選んで真似ること"
+        "hook": "折り返した瞬間カードの高さがバラつく現象",
+        "origin": "子要素Hug設定が縮ませる仕組みと直し方",
+        "recommend": "公式Playground複製で3切替を練習"
       }
     }
   ]
