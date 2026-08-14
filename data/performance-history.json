@@ -2,100 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "P8Z-WKd98jY",
-      "videoUrl": "https://youtube.com/shorts/P8Z-WKd98jY",
-      "date": "2026-05-14",
-      "title": "【デザインニュース】Google『Liquid Glass採用しない』、AndroidはMaterial 3継続でデザイン路線が分岐｜2026/05/14 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 44,
-      "discovery": {
-        "method": "social-en",
-        "description": "英語デザイナー界隈の X / テックメディア横断調査で『Google Android 責任者 Sameer Samat 氏が Apple Liquid Glass を Android で採用しないと X で明言、5/12 Android Show: I/O Edition で Material 3 Expressive 路線継続が確定』というトピックを抽出。トリガーは Samat 氏の 5/5 X 返信『Not happening. Y'all are wild.』、増幅イベントは 2 日前の 5/12 Android Show 本番(Android 17 / Android Auto Material 3 Expressive 化を披露)、波及記事は Tom's Guide / Macworld / Android Authority / Digital Trends / 9to5Google / MacRumors / Trusted Reviews 等の英語テックメディア多発報道。method 選定 (Thursday weekday): 直近 14 日 stats 確定母集団(5/1-5/13)で social-en n=2 avg=101.0 (5/1=116, 5/4=86) が TOP 1 タイ、official-src n=2 avg=90.5 (5/12=64 で下振れ)、figma-community n=2 avg=77.5、product-launches n=1 avg=72、expert-blog n=1 avg=61。weekday news-preferred 4 タグ (news-en / official-src / figma-community / product-launches) の今日適用可否: news-en は 5/13 利用直近2日 + 2 週連続 WORST 凍結継続、official-src は 5/12 = 2 日前 + 5/12=64 で WORST 圏入り、figma-community は 5/11 + 5/3 で 7日内 1 回ながら avg 77.5 で減衰、product-launches は 5/9 単発で n 不足。social-en は 5/4 = 10 日前で 直近2日/7日2回到達 ガード両方クリア + TOP1 候補 + 5/13 PDCA で『5/14 朝は preview 重ね or other 業界ニュース (news-en 凍結明け前なので social-en か expert-blog)』と pre-scheduled 済み、本ルートを Exploit lane で正式採用。柱③ 業界・デザインニュース (target 20%) 補強週 (5/13-5/18) の 2 日目該当、5/13 Figma earnings preview (柱③、business-news 角度) と差別化して 5/14 は『デザイン言語の分岐』(柱③、platform-design 角度) で同柱内の角度ローテーション。NG パターン回避: 『AI が仕事を奪う』NG 不該当(プラットフォーム別デザイン言語の話)、『プロ向け高度議論』回避策 → Material 3 Expressive / Liquid Glass を駆け出しが触る iOS と Android の見た目差として翻訳、『AI に任せれば考えなくていい』NG 回避策 → Recommend の『判断は自分』で締め、『英語/日本語の中途半端な混在』回避策 → Liquid Glass / Material 3 Expressive / Android Show は固有名詞表記許容範囲。freshness_hours = 48 (5/12 Android Show 5/14 朝時点で 2 日経過、Samat 氏 X 投稿 5/5 起算なら 216h で borderline 超だが、増幅イベント = Android Show 起算で 48h、ニュースサイクルとしては fresh)。",
-        "sources": [
-          "https://www.tomsguide.com/phones/google-pixel-phones/not-happening-yall-are-crazy-google-shoots-down-rumors-android-will-copy-the-iphones-liquid-glass-design",
-          "https://9to5google.com/2026/05/06/liquid-glass-for-android-is-not-happening-at-least-not-for-pixels/",
-          "https://www.macrumors.com/2026/05/06/google-pixel-no-liquid-glass/",
-          "https://www.digitaltrends.com/phones/android-boss-shoots-down-a-liquid-glass-copyjob-on-pixels-and-thats-a-relief/",
-          "https://www.androidauthority.com/google-android-no-liquid-glass-redesign-3664004/",
-          "https://blog.google/products-and-platforms/platforms/android/android-show-io-edition-2026/",
-          "https://www.engadget.com/2171038/everything-announced-at-android-show-google-io-2026/",
-          "https://www.techradar.com/news/live/android-show-2026-live"
-        ],
-        "query": "Sameer Samat Android Liquid Glass not happening Android Show I/O Edition 2026 Material 3 Expressive Android 17",
-        "freshness_hours": 48
-      },
-      "stats": {
-        "views": 99,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-05-28T00:14:26.225Z"
-      }
-    },
-    {
-      "videoId": "EKB-actvX6Y",
-      "videoUrl": "https://youtube.com/shorts/EKB-actvX6Y",
-      "date": "2026-05-15",
-      "title": "【デザインニュース】Figma Q1決算、売上46%増の過去最高ペース、AI製品が成長を牽引｜2026/05/15 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 53,
-      "discovery": {
-        "method": "official-src",
-        "description": "Figma 投資家情報 (IR) と 5/14 米国時間引け後発表の Q1 2026 決算プレスリリースを一次取得し、複数英語テックメディア (Benzinga / Seeking Alpha / Yahoo Finance / Investing.com 等) で裏取り。5/13 PDCA で予約された 3 段運用 (5/13 earnings preview → 5/14 platform-design pivot → 5/15 earnings recap) のクライマックスとして、official-src + event-recap 角度を 5/14 PDCA pre-schedule どおり実行。method 選定 (Friday weekday): 直近 14 日 確定 stats で official-src n=2 avg=90.5 (5/5=117 TOP1 級, 5/12=64 で WORST 圏入りも) で TOP 2、social-en (5/14 利用、直近2日ガード抵触) と figma-community (avg 77.5 で WORST 圏寄り) は本日不可。official-src 前回利用 5/12 = 3 日前で直近2日ガード OK、weekday news-preferred 4 タグ内で唯一クリーン。柱③ 業界・デザインニュース (target 20%) 補強週 (5/13-5/18) の 3 日目、business-news 角度で 5/13 earnings preview を recap として回収。Primary 駆け出し痛点への翻訳 = 『AI×Figma を学ぶ価値が数字で証明された』として、NG パターン『プロ向け高度議論』回避策に Q1 決算の数字を学習者市場価値に直接接続。freshness_hours = 3 (5/14 US 引け後 = 5/15 朝 JST 5-6 時に発表、ルーチン実行 7:30 JST 時点で 2-3 時間経過)。",
-        "sources": [
-          "https://investor.figma.com/news-events/news/news-details/2026/Figma-to-Announce-First-Quarter-2026-Financial-Results-on-May-14-2026/default.aspx",
-          "https://www.businesswire.com/news/home/20260514730702/en/Figma-Announces-First-Quarter-2026-Financial-Results",
-          "https://www.stocktitan.net/news/FIG/figma-announces-first-quarter-2026-financial-iya4neqkozgm.html",
-          "https://seekingalpha.com/news/4593241-figma-climbs-as-q1-features-46-revenue-surge-driven-by-significant-seat-expansion",
-          "https://www.benzinga.com/markets/earnings/26/05/52582384/figma-stock-jumps-on-q1-earnings-beat-as-customers-go-bigger-and-broader",
-          "https://www.investing.com/news/transcripts/earnings-call-transcript-figmas-q1-2026-beats-expectations-with-strong-eps-and-revenue-93CH-4690815",
-          "https://finance.yahoo.com/markets/stocks/articles/figma-report-q1-earnings-whats-161300428.html",
-          "https://www.morningstar.com/news/business-wire/20260514730702/figma-announces-first-quarter-2026-financial-results"
-        ],
-        "query": "Figma Q1 2026 earnings results revenue 333M 46% AI Figma Make MCP Weave guidance NDR 139%",
-        "freshness_hours": 3
-      },
-      "stats": {
-        "views": 130,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-05-29T00:20:30.211Z"
-      }
-    },
-    {
       "videoId": "VU3Qjv1MUzM",
       "videoUrl": "https://youtube.com/shorts/VU3Qjv1MUzM",
       "date": "2026-05-16",
@@ -2727,7 +2633,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-12T23:57:40.491Z"
+        "updatedAt": "2026-08-13T23:58:22.653Z"
       }
     },
     {
@@ -2771,7 +2677,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-12T23:57:40.491Z"
+        "updatedAt": "2026-08-13T23:58:22.653Z"
       }
     },
     {
@@ -2815,7 +2721,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-12T23:57:40.491Z"
+        "updatedAt": "2026-08-13T23:58:22.653Z"
       }
     },
     {
@@ -2859,7 +2765,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-12T23:57:40.491Z"
+        "updatedAt": "2026-08-13T23:58:22.653Z"
       }
     },
     {
@@ -2904,7 +2810,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-12T23:57:40.491Z"
+        "updatedAt": "2026-08-13T23:58:22.653Z"
       }
     },
     {
@@ -2948,7 +2854,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-12T23:57:40.491Z"
+        "updatedAt": "2026-08-13T23:58:22.653Z"
       }
     },
     {
@@ -2991,7 +2897,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-12T23:57:40.491Z"
+        "updatedAt": "2026-08-13T23:58:22.653Z"
       }
     },
     {
@@ -3034,7 +2940,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-12T23:57:40.491Z"
+        "updatedAt": "2026-08-13T23:58:22.653Z"
       }
     },
     {
@@ -3081,7 +2987,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-12T23:57:40.491Z"
+        "updatedAt": "2026-08-13T23:58:22.653Z"
       }
     },
     {
@@ -3127,7 +3033,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-12T23:57:40.491Z"
+        "updatedAt": "2026-08-13T23:58:22.653Z"
       }
     },
     {
@@ -3172,7 +3078,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-12T23:57:40.491Z"
+        "updatedAt": "2026-08-13T23:58:22.653Z"
       }
     },
     {
@@ -3214,7 +3120,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-12T23:57:40.491Z"
+        "updatedAt": "2026-08-13T23:58:22.653Z"
       }
     },
     {
@@ -3257,7 +3163,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-12T23:57:40.491Z"
+        "updatedAt": "2026-08-13T23:58:22.653Z"
       }
     },
     {
@@ -3300,7 +3206,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-12T23:57:40.491Z"
+        "updatedAt": "2026-08-13T23:58:22.653Z"
       }
     },
     {
@@ -3343,19 +3249,54 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-13T23:58:22.653Z"
+      }
+    },
+    {
+      "videoId": "TsLHXa-NFvw",
+      "videoUrl": "https://youtube.com/shorts/TsLHXa-NFvw",
+      "date": "2026-08-14",
+      "title": "【デザインニュース】Smashing 8/11 手触りWebはLottieと距離計算で作れる Isadora『Stress Release』式｜2026/08/14 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 45,
+      "discovery": {
+        "method": "news-en",
+        "description": "Smashing Magazine の Design カテゴリで 08-11 公開の Alexey Kopytin『Building Tactile UX: Honoring Intentional Design With Lottie』を一次資料に、Isadora Agency 公式 Stress Release ページ + Dribbble ケーススタディ + daily.dev の記事シェアで裏取り。物理エンジン (Matter.js / Cannon.js / WebGL) の代わりに Lottie の programmatic API (playSegments)・DOM イベント・Pythagoras 距離計算で 181 フレームの mega squeeze を再現し、アニメーターの意図した動きを崩さないアーキテクチャを提示。method 選定 (Fri 平日 news 帯): 直近2日 (08-13 product-launches / 08-12 figma-community) 抵触なし、weekday news-preferred 4 タグ内でクリーン候補は news-en (08-10=4日前, 7日1回) と official-src (08-11=3日前, 7日1回) の 2 択。official-src は Figma agent skills 08-13 community launch という 24h fresh 候補があるが、直近8本のうち 5本 (08-05/06/11/12 + 07-31) が Figma 中心で『Figma glut 疲労』の可能性が高く、5連続0views 継続 (08-08〜08-12) の diagnostic として『トピック多様性を強く振る』方針で news-en を Exploit、Smashing 08-05 Pawar 記事 (news-en, v=0) からは著者・トピック・角度が全別で連続感なし。柱⑥ UI 批評/学習要素 (target 10%、直近14日 08-08 PROVE のみで 1/14=7% で target 未達) と柱④ Tips/Figma 実践 (target 15%、08-08 PROVE で 1/14=7% で -8pt) の両方に該当する『Web モーションの制御レシピ』題材。Primary persona 駆け出しの『インタラクション凝りたいが物理計算が難しそう』pain 直撃、Kopytin の記事は React/Vue 非依存で 素の DOM + Lottie という Figma 学習者にも手が届く技術セット。08-04 Lacoste ヒット (product-launches, v=4) と同じ『具体固有名詞 (Isadora Stress Release) × 短い原則 (Lottie+距離計算=狙った手触り)』構造で news-en 内での再現性検証を狙う。NG パターン回避: 『AI が奪う』完全非該当 (AI トピックですらない)、『プロ向け高度議論』回避策 → Pythagoras/playSegments/CSS custom properties 等の専門語を『距離計算で採点』『再生範囲操作』の平易日本語に翻訳、『AI に任せれば考えなくていい』回避策 → Recommend は『まず好きな演出を1つ真似』の主体的アクションで締め AI=補助輪フレーム維持、『機能説明メイン』回避策 → 学習者痛点『手触りをどう作るか』hook 起点、Figmaナビ は本回言及なしで完全に題材優先。freshness_hours=72 (08-11 publish → 08-14 08:00 JST で約 72h、168h 上限内で当週 fresh)。",
+        "sources": [
+          "https://www.smashingmagazine.com/2026/08/building-tactile-ux-honoring-intentional-design-lottie/",
+          "https://stressrelease.isadoradigitalagency.com/",
+          "https://dribbble.com/shots/26180213-Stress-Release-Interactive-Game",
+          "https://daily.dev/posts/building-tactile-ux-honoring-intentional-design-with-lottie-smashing-magazine-yvokqrlps"
+        ],
+        "query": "Alexey Kopytin Smashing Magazine Building Tactile UX Lottie Isadora Agency Stress Release playSegments distance math August 11 2026",
+        "freshness_hours": 72
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-12",
-      "changes": [
-        "standard: 53 avg views (63 videos)",
-        "Day performance: Wed=95, Sun=60, Sat=55, Thu=49, Tue=49, Fri=39, Mon=30"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-13",
       "changes": [
@@ -3585,6 +3526,14 @@
       "changes": [
         "standard: 15 avg views (74 videos)",
         "Day performance: Sat=32, Fri=17, Tue=14, Thu=13, Sun=13, Wed=10, Mon=4"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-13",
+      "changes": [
+        "standard: 15 avg views (75 videos)",
+        "Day performance: Sat=32, Fri=17, Tue=14, Sun=13, Thu=12, Wed=10, Mon=4"
       ],
       "recommendedTemplate": "standard"
     }
