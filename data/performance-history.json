@@ -2677,7 +2677,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-13T23:58:22.653Z"
+        "updatedAt": "2026-08-14T23:36:11.827Z"
       }
     },
     {
@@ -2721,7 +2721,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-13T23:58:22.653Z"
+        "updatedAt": "2026-08-14T23:36:11.827Z"
       }
     },
     {
@@ -2765,7 +2765,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-13T23:58:22.653Z"
+        "updatedAt": "2026-08-14T23:36:11.827Z"
       }
     },
     {
@@ -2810,7 +2810,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-13T23:58:22.653Z"
+        "updatedAt": "2026-08-14T23:36:11.827Z"
       }
     },
     {
@@ -2854,7 +2854,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-13T23:58:22.653Z"
+        "updatedAt": "2026-08-14T23:36:11.827Z"
       }
     },
     {
@@ -2897,7 +2897,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-13T23:58:22.653Z"
+        "updatedAt": "2026-08-14T23:36:11.827Z"
       }
     },
     {
@@ -2940,7 +2940,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-13T23:58:22.653Z"
+        "updatedAt": "2026-08-14T23:36:11.827Z"
       }
     },
     {
@@ -2987,7 +2987,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-13T23:58:22.653Z"
+        "updatedAt": "2026-08-14T23:36:11.827Z"
       }
     },
     {
@@ -3033,7 +3033,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-13T23:58:22.653Z"
+        "updatedAt": "2026-08-14T23:36:11.827Z"
       }
     },
     {
@@ -3078,7 +3078,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-13T23:58:22.653Z"
+        "updatedAt": "2026-08-14T23:36:11.827Z"
       }
     },
     {
@@ -3120,7 +3120,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-13T23:58:22.653Z"
+        "updatedAt": "2026-08-14T23:36:11.827Z"
       }
     },
     {
@@ -3163,7 +3163,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-13T23:58:22.653Z"
+        "updatedAt": "2026-08-14T23:36:11.827Z"
       }
     },
     {
@@ -3203,10 +3203,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-13T23:58:22.653Z"
+        "updatedAt": "2026-08-14T23:36:11.827Z"
       }
     },
     {
@@ -3246,10 +3246,10 @@
         "freshness_hours": 72
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-13T23:58:22.653Z"
+        "updatedAt": "2026-08-14T23:36:11.827Z"
       }
     },
     {
@@ -3289,6 +3289,50 @@
         "freshness_hours": 72
       },
       "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-08-14T23:36:11.827Z"
+      }
+    },
+    {
+      "videoId": "Rsc5GEJoZQk",
+      "videoUrl": "https://youtube.com/shorts/Rsc5GEJoZQk",
+      "date": "2026-08-15",
+      "title": "【デザインニュース】Auto Layout wrap でカード高さがバラつく罠 週末5分の3切替レシピ｜2026/08/15 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 44,
+      "discovery": {
+        "method": "figma-community",
+        "description": "Figma Community 公式『Auto Layout Playground』ファイル群 + Figma Help『Guide to auto layout』ドキュメント + Figma Forum の wrap 議論スレ + LogRocket『Configuring Figma's auto layout wrap』実装記事の 4 軸を横断し、Auto Layout の wrap 発火時に子要素が Hug contents 設定のままだとカード高さがバラつく駆け出しの実装 pain を、Community Playground ファイル複製 → Fill / Hug / Fixed の 3 切替 5 分実験というレシピに翻訳。method 選定 (Sat evergreen 帯): 直近2日 (08-14 news-en / 08-13 product-launches) 抵触なし、expert-blog 凍結中 (08-22 まで) を除外、weekday news-preferred 4 タグの Sat 使用は precedent 通り acceptable でその中で残る官選 official-src / figma-community の 2 択、Figma glut 診断中に Figma 中心度が最大となる official-src (公式リリース情報) を意図的に回避して figma-community を選択 (2026-05-16 Auto Layout 絶対位置 = figma-community × Sat evergreen の型を踏襲)、7連続0views (08-08〜08-14 暫定) からの脱出仮説として 08-04 Lacoste ヒット (product-launches, v=4) の『1動詞×3色』単文原則構造を『3切替×5分』の数値密度型 micro-recipe に一般化して同 pattern の再現力を figma-community 内で検証。柱④ Tips / Figma 実践 (target 15%、直近14日 2/14=14% で target ラインぎりぎり) + 柱② プラグイン・エコシステム (target 20%、直近14日 2/14=14% で -6pt) の 2 柱同時補強に該当。Primary persona 駆け出しがカードグリッドをポートフォリオや LP に配置する際に必ず遭遇する『折り返した瞬間 UI 崩れる』pain 直撃、既存 YouTube 講座 200人層の『Figma は触れるが実案件で詰まる』典型症状の解消。NG パターン回避: 『プロ向け高度議論』回避策 → Hug / Fill / Fixed の英語専門語を『内容量ぶんに縮む』『親フレームに広げる』『高さ固定』の平易日本語補足、『プラグイン機能説明メイン』回避策 → 学習者痛点『カード折り返して高さバラバラ』の hook 起点で Community ファイルは pain 解決の手段として後段配置、『AI が奪う』完全非該当 (Figma ネイティブ機能で AI 未言及)、『AI に任せれば考えなくていい』回避 → Recommend で『手を動かして 5 分試す』主体アクションで締めて AI 依存フレームゼロ、『英語/日本語中途半端な混在』→ 出力は日本語で専門語 (Auto Layout / wrap / Hug / Fill / Fixed / Playground / Community) は英語原文表記維持、『出典不明ニュース』→ Community 2 file + Help 1 + Forum 1 + LogRocket 1 の 5 URL 明記。freshness_hours=168 (Sat evergreen 上限、Auto Layout Wrap は 2024 導入の安定機能で Community Playground は継続維持、Help 文書は 2024 以降定期更新、トピック自体は時間軸非依存の永続 pain)。",
+        "sources": [
+          "https://www.figma.com/community/file/1018107557624125170/auto-layout-tutorial-for-beginners",
+          "https://www.figma.com/community/file/945723846646263624",
+          "https://help.figma.com/hc/en-us/articles/360040451373-Guide-to-auto-layout",
+          "https://blog.logrocket.com/ux-design/configuring-figmas-auto-layout-wrap/",
+          "https://forum.figma.com/t/dynamic-height-for-auto-layout-wrap/64195"
+        ],
+        "query": "Figma Community Auto Layout Playground wrap hug fill fixed beginner tutorial dynamic height card responsive 2024 2026",
+        "freshness_hours": 168
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -3297,14 +3341,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-13",
-      "changes": [
-        "standard: 53 avg views (64 videos)",
-        "Day performance: Wed=95, Sat=55, Sun=54, Thu=49, Tue=49, Fri=39, Mon=30"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-14",
       "changes": [
@@ -3534,6 +3570,14 @@
       "changes": [
         "standard: 15 avg views (75 videos)",
         "Day performance: Sat=32, Fri=17, Tue=14, Sun=13, Thu=12, Wed=10, Mon=4"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-14",
+      "changes": [
+        "standard: 12 avg views (74 videos)",
+        "Day performance: Sat=32, Tue=14, Sun=13, Wed=10, Mon=4, Thu=4, Fri=4"
       ],
       "recommendedTemplate": "standard"
     }
