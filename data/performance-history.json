@@ -2,51 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "VU3Qjv1MUzM",
-      "videoUrl": "https://youtube.com/shorts/VU3Qjv1MUzM",
-      "date": "2026-05-16",
-      "title": "【デザインニュース】Auto Layout絶対位置、上に重ねたいズレを一発解決｜2026/05/16 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 45,
-      "discovery": {
-        "method": "figma-community",
-        "description": "Saturday evergreen 帯。5/15 PDCA Action #3 で予約された figma-community Exploit を実行。Figma Community の Auto Layout デモファイル / Figma Help (Use absolute position) / Figma 公式 blog (Auto Layout craft) の 3 軸を横断し、駆け出しが Auto Layout を組んだ直後に必ず詰まる『絶対位置 (Absolute Position)』をテーマに、通知バッジ・カードのリボン装飾・フローティングボタン (FAB) の 3 つの普遍ユースケースへ翻訳。method 選定 (Sat evergreen): TOP3 method 候補のうち official-src (5/15=昨日利用で直近2日ガード抵触+5/12+5/15で7日2回到達=過剰集中) と social-en (5/14利用、news 系性格で土曜 evergreen トピックとフレーム不一致リスク) は本日不可、expert-blog は 5/10=62 で WORST 圏かつ avg 最低でしばらく回避方針、news-en は 5/13=2 で 2 週連続 WORST 凍結確定 (本 PDCA で 6/2 まで延長正式化)、product-launches は 5/9=72 で n=1 代表性不足。残った figma-community (5/11=5日前、avg 78、n=2、直近2日 OK + 7日2回到達 OK + WORST 凍結対象外) が pre-schedule 通り唯一クリーン。柱④ Tips / Figma 実践 (target 15%) は直近14日 0/15 = 0% で最大運用ギャップの一つ、5/13-5/15 の柱③ 3 日連続消化からの evergreen 帯切替の節目として最適。NG パターン回避: 『プラグイン機能説明メイン』ではなく Figma 本体機能 (Auto Layout 絶対位置) を駆け出し痛点起点で解説、『プロ向け高度議論』回避策に専門用語『絶対位置』『親フレーム』を『右パネルのチェック』『X,Y 座標で固定』に翻訳、『AI に任せれば考えなくていい』NG 回避策に AI 生成後の手仕事として絶対位置を位置づけ、AI=補助輪フレームを維持。freshness_hours = 168 (Saturday evergreen で許容上限、Figma Help 文書は 2024 以降の継続更新、Community テンプレートも長期生存、トピック自体は時間軸非依存)。",
-        "sources": [
-          "https://help.figma.com/hc/en-us/articles/5731482952599-Use-absolute-position",
-          "https://help.figma.com/hc/en-us/articles/360040451373-Explore-auto-layout-properties",
-          "https://www.figma.com/blog/inside-figma-our-craft-of-the-auto-layout/",
-          "https://www.figma.com/community/file/890345722581503056/auto-layout-playground",
-          "https://www.figma.com/community/file/1240466834308253845/auto-layout-3-0-playground",
-          "https://www.figma.com/community/tag/auto-layout/files"
-        ],
-        "query": "Figma absolute position Auto Layout overlay badge ribbon floating action button beginner tutorial",
-        "freshness_hours": 168
-      },
-      "stats": {
-        "views": 400,
-        "likes": 1,
-        "comments": 0,
-        "updatedAt": "2026-05-30T00:19:02.532Z"
-      }
-    },
-    {
       "videoId": "qYW0HfXQB0A",
       "videoUrl": "https://youtube.com/shorts/qYW0HfXQB0A",
       "date": "2026-05-17",
@@ -2721,7 +2676,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-14T23:36:11.827Z"
+        "updatedAt": "2026-08-15T23:34:24.134Z"
       }
     },
     {
@@ -2765,7 +2720,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-14T23:36:11.827Z"
+        "updatedAt": "2026-08-15T23:34:24.134Z"
       }
     },
     {
@@ -2810,7 +2765,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-14T23:36:11.827Z"
+        "updatedAt": "2026-08-15T23:34:24.134Z"
       }
     },
     {
@@ -2854,7 +2809,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-14T23:36:11.827Z"
+        "updatedAt": "2026-08-15T23:34:24.134Z"
       }
     },
     {
@@ -2897,7 +2852,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-14T23:36:11.827Z"
+        "updatedAt": "2026-08-15T23:34:24.134Z"
       }
     },
     {
@@ -2940,7 +2895,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-14T23:36:11.827Z"
+        "updatedAt": "2026-08-15T23:34:24.134Z"
       }
     },
     {
@@ -2987,7 +2942,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-14T23:36:11.827Z"
+        "updatedAt": "2026-08-15T23:34:24.134Z"
       }
     },
     {
@@ -3033,7 +2988,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-14T23:36:11.827Z"
+        "updatedAt": "2026-08-15T23:34:24.134Z"
       }
     },
     {
@@ -3078,7 +3033,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-14T23:36:11.827Z"
+        "updatedAt": "2026-08-15T23:34:24.134Z"
       }
     },
     {
@@ -3120,7 +3075,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-14T23:36:11.827Z"
+        "updatedAt": "2026-08-15T23:34:24.134Z"
       }
     },
     {
@@ -3163,7 +3118,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-14T23:36:11.827Z"
+        "updatedAt": "2026-08-15T23:34:24.134Z"
       }
     },
     {
@@ -3206,7 +3161,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-14T23:36:11.827Z"
+        "updatedAt": "2026-08-15T23:34:24.134Z"
       }
     },
     {
@@ -3249,7 +3204,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-14T23:36:11.827Z"
+        "updatedAt": "2026-08-15T23:34:24.134Z"
       }
     },
     {
@@ -3292,7 +3247,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-14T23:36:11.827Z"
+        "updatedAt": "2026-08-15T23:34:24.134Z"
       }
     },
     {
@@ -3336,19 +3291,55 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-15T23:34:24.134Z"
+      }
+    },
+    {
+      "videoId": "3oOUQ0QI2Q8",
+      "videoUrl": "https://youtube.com/shorts/3oOUQ0QI2Q8",
+      "date": "2026-08-16",
+      "title": "【デザインニュース】駆け出しポートフォリオを『Designed』止まりから救う Before/After 数値化3型｜2026/08/16 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 48,
+      "discovery": {
+        "method": "news-ja",
+        "description": "日本語ソース群 (ReDesigner Magazine『800人以上と面談したキャリアデザイナー』推薦のポートフォリオ図鑑 + トム・イシカワ note『未経験から転職成功した駆け出しデザイナーのめっちゃいいポートフォリオまとめ10選』+ Cocoda! ポートフォリオ機能) を Primary 論拠に据え、英語 2026 case study 指針 (UI/UX Designing 2026 examples + Design Decade 2026 structure) から具体数値 (task completion 62%→87%、support tickets 40%減) を接続する hybrid 構成。駆け出しデザイナーが週末 30 分で仕込める『ポートフォリオ case study の Before/After 数値化 3 型』を、キャリアデザイナー視点 (採用担当が 3 秒で判断する) + 具体数値ゴール (施策と成果を数字で結ぶ) + 週末 hands-on アクション (1 案件だけ Before/After に数字を 1 本ずつ足す) の 3 層で構造化。method 選定 (Sun evergreen ⑤ 帯): 直近 2 日 (08-15 figma-community / 08-14 news-en) 抵触なし、expert-blog 凍結中 (08-22 まで) 除外、product-launches (TOP1 avg 1.67) は 3 日前使用で 4 日以上のインターバル確保のため今日は温存 (来週 Sat/Sun の選択肢に確保)、official-src は Figma glut 診断中の中心度最大タグで Sat/Sun 非Figma題材 diagnostic 継続のため回避、news-ja (Explore-return TOP2 avg 1.0、14 日前使用 = 選定ウィンドウ内) を選定して Primary persona (駆け出しデザイナー・転職準備中) 到達に最短距離。柱⑤ Before/After / ポートフォリオ事例 (target 10%、直近14日 1/14=7% で -3pt) の未達を Sun 定期枠として着手、yesterday PDCA の strategy 更新提案『曜日固定 (火=②/水=④/木=⑥/金=③/日=⑤)』の第1回実装として運用パターン化を開始。7 連続 0views の 08-14 news-en (Isadora v=1) 暫定脱出後の『微陽性 v=1 圏』を、08-04 Lacoste (v=4) の『1動詞×3色』構造を数値密度型 micro-recipe に一般化した『800人 × 62%→87% × 40%減 × 30分』の 4 数値密度で再現テスト (yesterday『3切替×5分』figma-community × Sat に続く 2 サイクル目)。Primary persona (駆け出しデザイナー・転職準備中) の『Figma は触れるが実案件で詰まる』次段階 pain『作れても伝わらない』を直撃、ReDesigner『800人以上と面談したキャリアデザイナー』視点は Primary の職務目標 (転職成功) にリバースアプローチで刺さる。NG パターン回避: 『プロ向け高度議論』回避策 → 数値化例を『62%→87%』『40%減』の小学校算数レベルに固定、UX 業界用語 (task completion 等) は日本語補足なし原文『タスク完了率』直訳で駆け出しに直帰、『プラグイン機能説明メイン』回避策 → 学習者痛点『Designed X 止まりで見てもらえない』hook 起点で Figmaナビ関連 CTA なし (Sun evergreen は CTA 弱め方針)、『AI が奪う』完全非該当 (人が自分の case study を書き直すレシピ)、『AI に任せれば考えなくていい』回避 → Recommend で『30分で自分で数字を1本足す』主体アクションで締めて AI 依存フレームゼロ、『英語/日本語中途半端な混在』→ 出力は日本語で専門語 (Designed / Before / After) は英語原文表記維持、『出典不明ニュース』→ 日本語 3 URL + 英語 2 URL の 5 URL 明記。freshness_hours=168 (Sun evergreen 上限、strategy 記載『土日 evergreen は freshness 168h 例外』適用、ポートフォリオ数値化テクは時間軸非依存の永続テーマで採用担当の視点も年単位で安定)。",
+        "sources": [
+          "https://magazine.redesigner.jp/post/recomend-portfolio",
+          "https://note.com/tomonoriishikawa/n/nd57b10f8f179",
+          "https://cocoda.design/",
+          "https://uiuxdesigning.com/ux-case-study-examples/",
+          "https://designdecade.org/how-to-write-a-ux-case-study-complete-structure-tips-and-examples-for-2026/"
+        ],
+        "query": "駆け出しデザイナー ポートフォリオ 転職 数値化 Before After case study 2026 キャリアデザイナー 800人 面談 ReDesigner Cocoda note 未経験 UX metric task completion",
+        "freshness_hours": 168
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-14",
-      "changes": [
-        "standard: 52 avg views (65 videos)",
-        "Day performance: Wed=96, Sat=55, Sun=54, Thu=49, Tue=49, Fri=39, Mon=27"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-15",
       "changes": [
@@ -3578,6 +3569,14 @@
       "changes": [
         "standard: 12 avg views (74 videos)",
         "Day performance: Sat=32, Tue=14, Sun=13, Wed=10, Mon=4, Thu=4, Fri=4"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-15",
+      "changes": [
+        "standard: 12 avg views (75 videos)",
+        "Day performance: Sat=30, Tue=14, Sun=13, Wed=10, Mon=4, Thu=4, Fri=4"
       ],
       "recommendedTemplate": "standard"
     }
