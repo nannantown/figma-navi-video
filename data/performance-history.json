@@ -2,49 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "qYW0HfXQB0A",
-      "videoUrl": "https://youtube.com/shorts/qYW0HfXQB0A",
-      "date": "2026-05-17",
-      "title": "【デザインニュース】30年使ったスピナー、AI時代に通用しない理由｜2026/05/17 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 48,
-      "discovery": {
-        "method": "expert-blog",
-        "description": "Sunday evergreen 帯。5/16 PDCA Action #3 で予約された Sunday 候補 (product-launches or expert-blog) のうち expert-blog を Explore 寄りで採用。Smashing Magazine 5/13 publish の Victor Yocco (ServiceNow UX Researcher, 著書『Design for the Mind』) 最新論考『Practical Interface Patterns For AI Transparency (Part 2)』を一次資料に、柱⑥ UI 批評 (target 10%、直近14日 0% で最大運用ギャップの一つ) と AI×デザイン (柱③/⑥ 横断テーマ) の二重命中。method 選定: TOP3 method の official-src (5/15=2日前で直近2日抵触+7日2回到達済) と figma-community (5/16=昨日で直近2日抵触) は本日不可、social-en (5/14=3日前) は唯一クリーンな TOP 帯だが news 系性格で Sunday evergreen トピックとフレーム不一致、product-launches (5/9=8日前) は同じ Awwwards SOTD ソース連続使用で角度差別化負荷大かつ Awwwards WebFetch が 403 で一次資料 depth 確保リスクあり。結果 expert-blog (5/10=7日前、avg 62 WORST 圏だが n=1 で代表性低) を Explore で採用、ui-critique-ai 新 method の試行を兼ねる。NG パターン回避: 『プロ向け高度議論』回避策に専門用語 (agentic AI, status stream, latency) を『AIが考える時間』『状態テキスト』に翻訳、『AIが仕事を奪う』NG 回避策に AI 機能を作る駆け出しデザイナーの実務 Tips として位置づけ。freshness_hours = 96 (5/13 publish, 4日新着で当週 fresh)、出典 URL 4 件記録。",
-        "sources": [
-          "https://www.smashingmagazine.com/2026/05/practical-interface-patterns-ai-transparency/",
-          "https://www.smashingmagazine.com/2026/04/identifying-necessary-transparency-moments-agentic-ai-part1/",
-          "https://www.smashingmagazine.com/2026/02/designing-agentic-ai-practical-ux-patterns/",
-          "https://www.smashingmagazine.com/category/ux/"
-        ],
-        "query": "Smashing Magazine Practical Interface Patterns AI Transparency Victor Yocco spinner status stream agentic",
-        "freshness_hours": 96
-      },
-      "stats": {
-        "views": 107,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-05-31T00:14:21.201Z"
-      }
-    },
-    {
       "videoId": "9y4paRQvL24",
       "videoUrl": "https://youtube.com/shorts/9y4paRQvL24",
       "date": "2026-05-18",
@@ -2720,7 +2677,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-15T23:34:24.134Z"
+        "updatedAt": "2026-08-16T23:34:03.701Z"
       }
     },
     {
@@ -2765,7 +2722,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-15T23:34:24.134Z"
+        "updatedAt": "2026-08-16T23:34:03.701Z"
       }
     },
     {
@@ -2809,7 +2766,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-15T23:34:24.134Z"
+        "updatedAt": "2026-08-16T23:34:03.701Z"
       }
     },
     {
@@ -2852,7 +2809,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-15T23:34:24.134Z"
+        "updatedAt": "2026-08-16T23:34:03.701Z"
       }
     },
     {
@@ -2895,7 +2852,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-15T23:34:24.134Z"
+        "updatedAt": "2026-08-16T23:34:03.701Z"
       }
     },
     {
@@ -2942,7 +2899,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-15T23:34:24.134Z"
+        "updatedAt": "2026-08-16T23:34:03.701Z"
       }
     },
     {
@@ -2988,7 +2945,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-15T23:34:24.134Z"
+        "updatedAt": "2026-08-16T23:34:03.701Z"
       }
     },
     {
@@ -3033,7 +2990,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-15T23:34:24.134Z"
+        "updatedAt": "2026-08-16T23:34:03.701Z"
       }
     },
     {
@@ -3075,7 +3032,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-15T23:34:24.134Z"
+        "updatedAt": "2026-08-16T23:34:03.701Z"
       }
     },
     {
@@ -3118,7 +3075,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-15T23:34:24.134Z"
+        "updatedAt": "2026-08-16T23:34:03.701Z"
       }
     },
     {
@@ -3161,7 +3118,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-15T23:34:24.134Z"
+        "updatedAt": "2026-08-16T23:34:03.701Z"
       }
     },
     {
@@ -3204,7 +3161,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-15T23:34:24.134Z"
+        "updatedAt": "2026-08-16T23:34:03.701Z"
       }
     },
     {
@@ -3247,7 +3204,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-15T23:34:24.134Z"
+        "updatedAt": "2026-08-16T23:34:03.701Z"
       }
     },
     {
@@ -3288,10 +3245,10 @@
         "freshness_hours": 168
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-15T23:34:24.134Z"
+        "updatedAt": "2026-08-16T23:34:03.701Z"
       }
     },
     {
@@ -3335,19 +3292,57 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-16T23:34:03.701Z"
+      }
+    },
+    {
+      "videoId": "fxFk1wX61KI",
+      "videoUrl": "https://youtube.com/shorts/fxFk1wX61KI",
+      "date": "2026-08-17",
+      "title": "【デザインニュース】Figma text wrapに Balance/Pretty追加 8/14、見出しの改行が1クリックでプロっぽく整う｜2026/08/17 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 45,
+      "discovery": {
+        "method": "official-src",
+        "description": "Figma 公式 release notes / Help Center (Explore text properties) / Product Updates forum を一次ソースに、8/14 ロールアウトの text wrap 新機能 (Balance と Pretty の 2 種類) を捕捉。Balance は各行の長さを揃えて見出しやボタンの形を整え、Pretty は長文の最終行に単語1個だけ残る『みなしご行 (orphan)』を防ぐ。text style / 個別 paragraph / text layer の 3 レベルで設定可能で、スタイルに設定すればファイル全体に一気に効く。CSS の text-wrap プロパティ (2023 頃から Chrome/Edge 対応) を Figma の設計面に持ち込んだ形で、駆け出しデザイナーがポートフォリオの見出しや本文で無意識に生じているタイポの粗さを 1 クリックで消せる直接的な hands-on アップデート。method 選定 (Mon weekday news 帯): TOP3 method 候補のうち product-launches (avg 1.67 TOP1、08-13=4日前で 7日ウィンドウ 2回到達済=過剰集中回避で温存)、news-ja (avg 0.5、08-16 前日=直近2日ガード抵触で不可)、figma-community (avg 0.33、08-15 2日前=直近2日ガード抵触で不可)、expert-blog (avg 0.0、凍結中 08-22 まで)、news-en (avg 0.5、08-14 3日前で TOP method 候補だが 4本目 avg=0.5 で official-src と同格)、social-en (07-28 で窓外脱落 Explore return 準備中)、social-ja (未使用 Explore 新規) を全チェック。official-src (avg 0.5、08-11 6日前で 7日ウィンドウ 1回のみ、TOP method 内で最も休養+exploit 余地最大) が weekday news 4 method の中で freshness × 直近ガード × 資源余裕の 3 軸で最適。柱① Figma 公式ニュース (target 25%、直近14日 3/15=20% で -5pt) を 4/15=27% に補正し target 達成、8/14 リリースから 72h fresh で weekday news 帯の理想値。yesterday PDCA Action #3『Mon=① 曜日固定』新提案の第1回実装、feature-launch-visual-density 新角度 (yesterday の数値密度 v=0 空振りから視覚要素密度に切替、Before/After 図解と親和性高い Figma 公式機能ニュース系で n=1 試行、Balance × Pretty × 1クリック × 1分 の 4 視覚要素密度で 08-04 Lacoste 型の伸び再現テスト継続) を組み込み。Primary persona (駆け出しデザイナー・転職準備中) 直撃: ポートフォリオの見出しや本文タイポの粗さは採用担当が『素人感』を最初に感じ取る要素の一つで、1クリック × スタイル一括適用の day-1 で使える具体武器として『H1 を Balance に、本文を Pretty に切替えるだけ、1分でタイポの粗さが消え面接映え』の recommend で締める。NG パターン回避: 『プロ向け高度議論』回避策 → CSS text-wrap の技術背景 (W3C 議論、Chromium 実装史) には触れず『各行の長さを揃える』『最終行に単語1個だけ残る現象を防ぐ』の平易日本語に翻訳、orphan は『みなしご行』の直訳で駆け出しに直帰、『プラグイン機能説明メイン』完全非該当 (Figma 公式機能ニュース)、『AI が奪う』完全非該当 (人の手作業タイポ品質改善レシピ、AI 一切不使用)、『AI に任せれば考えなくていい』回避策 → Recommend で『今日1分で自分で切替』主体アクションで締めて AI 依存フレームゼロ、『英語/日本語中途半端な混在』回避策 → 出力は日本語で text wrap / Balance / Pretty / H1 は Figma UI 表示の固有名詞として英語原文表記維持、『1週間以上前のニュースを新着扱い』回避策 → freshness_hours=72 で 168h NG 上限を大幅に下回る当週 fresh、『出典不明ニュース』回避策 → Figma 公式 release-notes 1 + Help Center 1 + Product Updates forum 1 + 機能要望 forum 2 (Balance/Pretty それぞれ) + CSS 技術記事 2 (dev.to + ishadeed) の計 7 URL multi-source confirm。図解しやすさ: Before/After (改行位置が揃わない → 揃う、みなしご行あり → なし) が視覚的に一目瞭然で Shorts のスライド構成に最適、視覚密度型 micro-recipe の n=1 試行素材として理想。",
+        "sources": [
+          "https://www.figma.com/release-notes/",
+          "https://help.figma.com/hc/en-us/articles/360039956634-Explore-text-properties",
+          "https://forum.figma.com/product-updates-3",
+          "https://forum.figma.com/suggest-a-feature-11/add-text-wrap-balance-38602",
+          "https://forum.figma.com/suggest-a-feature-11/typography-add-text-wrap-pretty-44526",
+          "https://dev.to/nickbenksim/the-property-text-wrap-balance-and-text-wrap-pretty-for-perfect-headings-3061",
+          "https://ishadeed.com/article/balancing-text-css/"
+        ],
+        "query": "Figma text wrap Balance Pretty release August 14 2026 typography orphan headline button style paragraph",
+        "freshness_hours": 72
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-15",
-      "changes": [
-        "standard: 51 avg views (66 videos)",
-        "Day performance: Wed=96, Sat=55, Sun=54, Thu=49, Tue=44, Fri=39, Mon=27"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-16",
       "changes": [
@@ -3577,6 +3572,14 @@
       "changes": [
         "standard: 12 avg views (75 videos)",
         "Day performance: Sat=30, Tue=14, Sun=13, Wed=10, Mon=4, Thu=4, Fri=4"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-16",
+      "changes": [
+        "standard: 7 avg views (75 videos)",
+        "Day performance: Tue=14, Sun=12, Wed=10, Mon=4, Thu=4, Fri=4, Sat=2"
       ],
       "recommendedTemplate": "standard"
     }
