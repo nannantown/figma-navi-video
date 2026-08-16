@@ -1,45 +1,47 @@
 {
-  "date": "2026-08-16",
+  "date": "2026-08-17",
   "discovery": {
-    "method": "news-ja",
-    "description": "日本語ソース群 (ReDesigner Magazine『800人以上と面談したキャリアデザイナー』推薦のポートフォリオ図鑑 + トム・イシカワ note『未経験から転職成功した駆け出しデザイナーのめっちゃいいポートフォリオまとめ10選』+ Cocoda! ポートフォリオ機能) を Primary 論拠に据え、英語 2026 case study 指針 (UI/UX Designing 2026 examples + Design Decade 2026 structure) から具体数値 (task completion 62%→87%、support tickets 40%減) を接続する hybrid 構成。駆け出しデザイナーが週末 30 分で仕込める『ポートフォリオ case study の Before/After 数値化 3 型』を、キャリアデザイナー視点 (採用担当が 3 秒で判断する) + 具体数値ゴール (施策と成果を数字で結ぶ) + 週末 hands-on アクション (1 案件だけ Before/After に数字を 1 本ずつ足す) の 3 層で構造化。method 選定 (Sun evergreen ⑤ 帯): 直近 2 日 (08-15 figma-community / 08-14 news-en) 抵触なし、expert-blog 凍結中 (08-22 まで) 除外、product-launches (TOP1 avg 1.67) は 3 日前使用で 4 日以上のインターバル確保のため今日は温存 (来週 Sat/Sun の選択肢に確保)、official-src は Figma glut 診断中の中心度最大タグで Sat/Sun 非Figma題材 diagnostic 継続のため回避、news-ja (Explore-return TOP2 avg 1.0、14 日前使用 = 選定ウィンドウ内) を選定して Primary persona (駆け出しデザイナー・転職準備中) 到達に最短距離。柱⑤ Before/After / ポートフォリオ事例 (target 10%、直近14日 1/14=7% で -3pt) の未達を Sun 定期枠として着手、yesterday PDCA の strategy 更新提案『曜日固定 (火=②/水=④/木=⑥/金=③/日=⑤)』の第1回実装として運用パターン化を開始。7 連続 0views の 08-14 news-en (Isadora v=1) 暫定脱出後の『微陽性 v=1 圏』を、08-04 Lacoste (v=4) の『1動詞×3色』構造を数値密度型 micro-recipe に一般化した『800人 × 62%→87% × 40%減 × 30分』の 4 数値密度で再現テスト (yesterday『3切替×5分』figma-community × Sat に続く 2 サイクル目)。Primary persona (駆け出しデザイナー・転職準備中) の『Figma は触れるが実案件で詰まる』次段階 pain『作れても伝わらない』を直撃、ReDesigner『800人以上と面談したキャリアデザイナー』視点は Primary の職務目標 (転職成功) にリバースアプローチで刺さる。NG パターン回避: 『プロ向け高度議論』回避策 → 数値化例を『62%→87%』『40%減』の小学校算数レベルに固定、UX 業界用語 (task completion 等) は日本語補足なし原文『タスク完了率』直訳で駆け出しに直帰、『プラグイン機能説明メイン』回避策 → 学習者痛点『Designed X 止まりで見てもらえない』hook 起点で Figmaナビ関連 CTA なし (Sun evergreen は CTA 弱め方針)、『AI が奪う』完全非該当 (人が自分の case study を書き直すレシピ)、『AI に任せれば考えなくていい』回避 → Recommend で『30分で自分で数字を1本足す』主体アクションで締めて AI 依存フレームゼロ、『英語/日本語中途半端な混在』→ 出力は日本語で専門語 (Designed / Before / After) は英語原文表記維持、『出典不明ニュース』→ 日本語 3 URL + 英語 2 URL の 5 URL 明記。freshness_hours=168 (Sun evergreen 上限、strategy 記載『土日 evergreen は freshness 168h 例外』適用、ポートフォリオ数値化テクは時間軸非依存の永続テーマで採用担当の視点も年単位で安定)。",
+    "method": "official-src",
+    "description": "Figma 公式 release notes / Help Center (Explore text properties) / Product Updates forum を一次ソースに、8/14 ロールアウトの text wrap 新機能 (Balance と Pretty の 2 種類) を捕捉。Balance は各行の長さを揃えて見出しやボタンの形を整え、Pretty は長文の最終行に単語1個だけ残る『みなしご行 (orphan)』を防ぐ。text style / 個別 paragraph / text layer の 3 レベルで設定可能で、スタイルに設定すればファイル全体に一気に効く。CSS の text-wrap プロパティ (2023 頃から Chrome/Edge 対応) を Figma の設計面に持ち込んだ形で、駆け出しデザイナーがポートフォリオの見出しや本文で無意識に生じているタイポの粗さを 1 クリックで消せる直接的な hands-on アップデート。method 選定 (Mon weekday news 帯): TOP3 method 候補のうち product-launches (avg 1.67 TOP1、08-13=4日前で 7日ウィンドウ 2回到達済=過剰集中回避で温存)、news-ja (avg 0.5、08-16 前日=直近2日ガード抵触で不可)、figma-community (avg 0.33、08-15 2日前=直近2日ガード抵触で不可)、expert-blog (avg 0.0、凍結中 08-22 まで)、news-en (avg 0.5、08-14 3日前で TOP method 候補だが 4本目 avg=0.5 で official-src と同格)、social-en (07-28 で窓外脱落 Explore return 準備中)、social-ja (未使用 Explore 新規) を全チェック。official-src (avg 0.5、08-11 6日前で 7日ウィンドウ 1回のみ、TOP method 内で最も休養+exploit 余地最大) が weekday news 4 method の中で freshness × 直近ガード × 資源余裕の 3 軸で最適。柱① Figma 公式ニュース (target 25%、直近14日 3/15=20% で -5pt) を 4/15=27% に補正し target 達成、8/14 リリースから 72h fresh で weekday news 帯の理想値。yesterday PDCA Action #3『Mon=① 曜日固定』新提案の第1回実装、feature-launch-visual-density 新角度 (yesterday の数値密度 v=0 空振りから視覚要素密度に切替、Before/After 図解と親和性高い Figma 公式機能ニュース系で n=1 試行、Balance × Pretty × 1クリック × 1分 の 4 視覚要素密度で 08-04 Lacoste 型の伸び再現テスト継続) を組み込み。Primary persona (駆け出しデザイナー・転職準備中) 直撃: ポートフォリオの見出しや本文タイポの粗さは採用担当が『素人感』を最初に感じ取る要素の一つで、1クリック × スタイル一括適用の day-1 で使える具体武器として『H1 を Balance に、本文を Pretty に切替えるだけ、1分でタイポの粗さが消え面接映え』の recommend で締める。NG パターン回避: 『プロ向け高度議論』回避策 → CSS text-wrap の技術背景 (W3C 議論、Chromium 実装史) には触れず『各行の長さを揃える』『最終行に単語1個だけ残る現象を防ぐ』の平易日本語に翻訳、orphan は『みなしご行』の直訳で駆け出しに直帰、『プラグイン機能説明メイン』完全非該当 (Figma 公式機能ニュース)、『AI が奪う』完全非該当 (人の手作業タイポ品質改善レシピ、AI 一切不使用)、『AI に任せれば考えなくていい』回避策 → Recommend で『今日1分で自分で切替』主体アクションで締めて AI 依存フレームゼロ、『英語/日本語中途半端な混在』回避策 → 出力は日本語で text wrap / Balance / Pretty / H1 は Figma UI 表示の固有名詞として英語原文表記維持、『1週間以上前のニュースを新着扱い』回避策 → freshness_hours=72 で 168h NG 上限を大幅に下回る当週 fresh、『出典不明ニュース』回避策 → Figma 公式 release-notes 1 + Help Center 1 + Product Updates forum 1 + 機能要望 forum 2 (Balance/Pretty それぞれ) + CSS 技術記事 2 (dev.to + ishadeed) の計 7 URL multi-source confirm。図解しやすさ: Before/After (改行位置が揃わない → 揃う、みなしご行あり → なし) が視覚的に一目瞭然で Shorts のスライド構成に最適、視覚密度型 micro-recipe の n=1 試行素材として理想。",
     "sources": [
-      "https://magazine.redesigner.jp/post/recomend-portfolio",
-      "https://note.com/tomonoriishikawa/n/nd57b10f8f179",
-      "https://cocoda.design/",
-      "https://uiuxdesigning.com/ux-case-study-examples/",
-      "https://designdecade.org/how-to-write-a-ux-case-study-complete-structure-tips-and-examples-for-2026/"
+      "https://www.figma.com/release-notes/",
+      "https://help.figma.com/hc/en-us/articles/360039956634-Explore-text-properties",
+      "https://forum.figma.com/product-updates-3",
+      "https://forum.figma.com/suggest-a-feature-11/add-text-wrap-balance-38602",
+      "https://forum.figma.com/suggest-a-feature-11/typography-add-text-wrap-pretty-44526",
+      "https://dev.to/nickbenksim/the-property-text-wrap-balance-and-text-wrap-pretty-for-perfect-headings-3061",
+      "https://ishadeed.com/article/balancing-text-css/"
     ],
-    "query": "駆け出しデザイナー ポートフォリオ 転職 数値化 Before After case study 2026 キャリアデザイナー 800人 面談 ReDesigner Cocoda note 未経験 UX metric task completion",
-    "freshness_hours": 168
+    "query": "Figma text wrap Balance Pretty release August 14 2026 typography orphan headline button style paragraph",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "駆け出しポートフォリオを『Designed』止まりから救う Before/After 数値化3型",
-      "description": "知ってました？『Designed』止まりのポートフォリオ、採用担当は最初の3秒でスクロールして閉じます。伸びる駆け出しは1つだけ違います。",
-      "detail": "800人以上と面談したキャリアデザイナー曰く、通るポートフォリオは施策の前後を数字で結ぶBefore/After。『タスク完了率が改善』ではなく『62%→87%』『問い合わせ40%減』のように1本入れれば、経験ゼロでも仕事の視点ありと即断されます。",
-      "narration": "知ってました？『Designed』止まりのポートフォリオ、採用担当は最初の3秒でスクロールして閉じます。伸びる駆け出しは1つだけ違います。",
+      "title": "Figma text wrapに Balance/Pretty追加 8/14、見出しの改行が1クリックでプロっぽく整う",
+      "description": "知ってました？Figmaが8月14日にこっそり追加した『text wrap』、見出しの改行が1クリックで一気にプロっぽく整います。",
+      "detail": "追加されたのはBalanceとPrettyの2種類。Balanceは各行の長さを揃えて見出しやボタンの形を整え、Prettyは長文の最終行に単語1個だけ残る『みなしご行』を防ぎます。スタイルに設定すればファイル全体に一気に効きます。",
+      "narration": "知ってました？Figmaが8月14日にこっそり追加した『text wrap』、見出しの改行が1クリックで一気にプロっぽく整います。",
       "tags": [
-        "ポートフォリオ",
-        "駆け出しデザイナー",
-        "転職",
-        "case study"
+        "Figma",
+        "text wrap",
+        "タイポグラフィ",
+        "駆け出しデザイナー"
       ],
       "narration_sections": {
-        "hook": "知ってました？『Designed』止まりのポートフォリオ、採用担当は最初の3秒でスクロールして閉じます。伸びる駆け出しは1つだけ違います。",
-        "origin": "800人以上と面談したキャリアデザイナー曰く、通るポートフォリオは施策の前後を数字で結ぶBefore/After。『タスク完了率が改善』ではなく『62%→87%』『問い合わせ40%減』のように1本入れれば、経験ゼロでも仕事の視点ありと即断されます。",
-        "recommend": "今日の30分で、1案件だけBeforeとAfterに数字を1本ずつ足す。秋の転職シーズン前の下準備、これだけで効きます。"
+        "hook": "知ってました？Figmaが8月14日にこっそり追加した『text wrap』、見出しの改行が1クリックで一気にプロっぽく整います。",
+        "origin": "追加されたのはBalanceとPrettyの2種類。Balanceは各行の長さを揃えて見出しやボタンの形を整え、Prettyは長文の最終行に単語1個だけ残る『みなしご行』を防ぎます。スタイルに設定すればファイル全体に一気に効きます。",
+        "recommend": "今日、ポートフォリオのH1とボタンをBalanceに、本文をPrettyに切替えるだけ。1分でタイポの粗さが消え、面接映えします。"
       },
       "section_titles": {
-        "hook": "『Designed』の罠",
-        "origin": "800人が認めた型",
-        "recommend": "30分で数字1本"
+        "hook": "text wrap新登場",
+        "origin": "見出しはBalance",
+        "recommend": "H1を1分で整える"
       },
       "section_descriptions": {
-        "hook": "『Designed』止まりは3秒で閉じられる採用視点",
-        "origin": "キャリアデザイナーが即断するBefore/After数値",
-        "recommend": "30分で1案件のBeforeAfterに数字1本"
+        "hook": "Figma 8/14公開、見出しの改行が劇的に整う",
+        "origin": "Balanceは各行揃え、Prettyはみなしご行防止",
+        "recommend": "ポートフォリオH1を今日Balanceに切替"
       }
     }
   ]
