@@ -1,47 +1,46 @@
 {
-  "date": "2026-08-17",
+  "date": "2026-08-18",
   "discovery": {
-    "method": "official-src",
-    "description": "Figma 公式 release notes / Help Center (Explore text properties) / Product Updates forum を一次ソースに、8/14 ロールアウトの text wrap 新機能 (Balance と Pretty の 2 種類) を捕捉。Balance は各行の長さを揃えて見出しやボタンの形を整え、Pretty は長文の最終行に単語1個だけ残る『みなしご行 (orphan)』を防ぐ。text style / 個別 paragraph / text layer の 3 レベルで設定可能で、スタイルに設定すればファイル全体に一気に効く。CSS の text-wrap プロパティ (2023 頃から Chrome/Edge 対応) を Figma の設計面に持ち込んだ形で、駆け出しデザイナーがポートフォリオの見出しや本文で無意識に生じているタイポの粗さを 1 クリックで消せる直接的な hands-on アップデート。method 選定 (Mon weekday news 帯): TOP3 method 候補のうち product-launches (avg 1.67 TOP1、08-13=4日前で 7日ウィンドウ 2回到達済=過剰集中回避で温存)、news-ja (avg 0.5、08-16 前日=直近2日ガード抵触で不可)、figma-community (avg 0.33、08-15 2日前=直近2日ガード抵触で不可)、expert-blog (avg 0.0、凍結中 08-22 まで)、news-en (avg 0.5、08-14 3日前で TOP method 候補だが 4本目 avg=0.5 で official-src と同格)、social-en (07-28 で窓外脱落 Explore return 準備中)、social-ja (未使用 Explore 新規) を全チェック。official-src (avg 0.5、08-11 6日前で 7日ウィンドウ 1回のみ、TOP method 内で最も休養+exploit 余地最大) が weekday news 4 method の中で freshness × 直近ガード × 資源余裕の 3 軸で最適。柱① Figma 公式ニュース (target 25%、直近14日 3/15=20% で -5pt) を 4/15=27% に補正し target 達成、8/14 リリースから 72h fresh で weekday news 帯の理想値。yesterday PDCA Action #3『Mon=① 曜日固定』新提案の第1回実装、feature-launch-visual-density 新角度 (yesterday の数値密度 v=0 空振りから視覚要素密度に切替、Before/After 図解と親和性高い Figma 公式機能ニュース系で n=1 試行、Balance × Pretty × 1クリック × 1分 の 4 視覚要素密度で 08-04 Lacoste 型の伸び再現テスト継続) を組み込み。Primary persona (駆け出しデザイナー・転職準備中) 直撃: ポートフォリオの見出しや本文タイポの粗さは採用担当が『素人感』を最初に感じ取る要素の一つで、1クリック × スタイル一括適用の day-1 で使える具体武器として『H1 を Balance に、本文を Pretty に切替えるだけ、1分でタイポの粗さが消え面接映え』の recommend で締める。NG パターン回避: 『プロ向け高度議論』回避策 → CSS text-wrap の技術背景 (W3C 議論、Chromium 実装史) には触れず『各行の長さを揃える』『最終行に単語1個だけ残る現象を防ぐ』の平易日本語に翻訳、orphan は『みなしご行』の直訳で駆け出しに直帰、『プラグイン機能説明メイン』完全非該当 (Figma 公式機能ニュース)、『AI が奪う』完全非該当 (人の手作業タイポ品質改善レシピ、AI 一切不使用)、『AI に任せれば考えなくていい』回避策 → Recommend で『今日1分で自分で切替』主体アクションで締めて AI 依存フレームゼロ、『英語/日本語中途半端な混在』回避策 → 出力は日本語で text wrap / Balance / Pretty / H1 は Figma UI 表示の固有名詞として英語原文表記維持、『1週間以上前のニュースを新着扱い』回避策 → freshness_hours=72 で 168h NG 上限を大幅に下回る当週 fresh、『出典不明ニュース』回避策 → Figma 公式 release-notes 1 + Help Center 1 + Product Updates forum 1 + 機能要望 forum 2 (Balance/Pretty それぞれ) + CSS 技術記事 2 (dev.to + ishadeed) の計 7 URL multi-source confirm。図解しやすさ: Before/After (改行位置が揃わない → 揃う、みなしご行あり → なし) が視覚的に一目瞭然で Shorts のスライド構成に最適、視覚密度型 micro-recipe の n=1 試行素材として理想。",
+    "method": "figma-community",
+    "description": "Figma 公式 blog / Community skills library / X (Figma 公式) / Help Center / Mazette 解説 / 実践者 blog を横断ソースに、8/13 に Figma が Community で公開した Agent Skills ライブラリ (50+ 個) を捕捉。Skills は Figma agent 用の再利用可能なプロンプトテンプレート (Markdown ベース) で、Community から他人の Skills を『使う』『真似る』『改造』の 3 クリックで導入し、/design-crit や /follow-ds-guidelines などのスラッシュコマンド 1 発で発動する。08-12 の Weave (workflow 連携 MCP) とは仕組みが異なり、Weave=20+ ワークフロー連携、Skills=スラッシュコマンドで呼び出す再利用プロンプト集 の棲み分け。method 選定 (Tue weekday news 帯): TOP method 候補のうち product-launches (avg 1.67 TOP1、08-13=5日前で 7日ウィンドウ 1回のみで exploit 余裕大だが Framer Variant Selector 等の候補は Primary persona 直撃度低い)、figma-community (avg 1.00 TOP2、直近 3連続 v=1 で黒字化、08-15=3日前で 7日ウィンドウ 2回 08-12/08-15 到達済で 3回目=過剰集中懸念あり)、news-en (avg 0.50、08-14=4日前で 7日ウィンドウ 1回のみ)、news-ja (avg 0.50、08-16=2日前で境界)、official-src (avg 0.33、08-17=前日で直近2日ガード抵触で不可)、expert-blog (avg 0.00、凍結中 08-22 まで)、social-en (07-28 で窓外脱落 Explore return 準備)、social-ja (未使用 Explore 新規) を全チェック。figma-community は 3-in-7d 過剰集中認識しつつも Tue=pillar ② weekday-pillar-lock の第1回として今日の Agent Skills Community launch は数少ない ② 直撃 fresh 弾のため見送りは機会損失、コンテンツ品質最優先で選定。過剰集中の副作用は次回 figma-community を最低 4日以上空ける (08-22 以降) 運用ルールで相殺。柱② プラグイン・エコシステム (target 20%、直近14日 3/15=20% で target 準拠) を 4/15=27% にわずか超過、weekday-pillar-lock-tue で Tue 固定なら月次 4本=20% ちょうど。yesterday PDCA Action #3『視覚要素密度型 micro-recipe』第2回実装、feature-launch-visual-density 継続 (yesterday official-src × Balance/Pretty/1クリック/1分 の v=0 空振りから method 変数を figma-community に隔離し『50+ × スラッシュ1発 × 3クリック × 1分』の 4視覚要素密度で n=2 試行、08-04 Lacoste v=4 型の伸び再現テストを method 変数隔離で継続)。Primary persona (駆け出しデザイナー・転職準備中) 直撃: 先輩デザイナーの指摘を再現する /design-crit は駆け出し層の『レビュー依頼できる先輩が居ない』課題を Community 越しに間接解決、day-1 で使える具体武器として『Community の /design-crit を入れて自分のポートフォリオ画面を叩く、1分で先輩デザイナーの指摘が届く』の recommend で締める。NG パターン回避: 『プロ向け高度議論』回避策 → Markdown プロンプト設計論や agent アーキテクチャ (MCP, tool-use loop 等) には触れず『繰り返し使う AI 指示を Markdown でまとめたテンプレ』の平易日本語に翻訳、『プラグイン機能説明メイン』回避策 → 学習者の課題 (先輩の指摘が欲しい・デザインシステム準拠が難しい) から入り Skills はその解として提示し機能説明は最小限、『AI が奪う』完全非該当 (人が呼び出す Skills、AI は補助輪)、『AI に任せれば考えなくていい』回避策 → Recommend で『自分のポートフォリオ画面を叩いてみて』の主体アクションで締めて AI 依存フレームゼロ、『英語/日本語中途半端な混在』回避策 → 出力は日本語で Skills / Agent / Community / Markdown / design-crit / follow-ds-guidelines / Weave は Figma UI・コマンド固有名詞として英語原文表記維持、『1週間以上前のニュースを新着扱い』回避策 → freshness_hours=120 で 168h NG 上限内の当週 fresh、『出典不明ニュース』回避策 → Figma 公式 blog 2 + Community skills library 1 + X (Figma 公式) 1 + Help Center 1 + Mazette 記事 1 + 実践者 blog 1 の計 7 URL multi-source confirm。08-12 Weave (ワークフロー連携 MCP) と Skills (スラッシュコマンドで発動するプロンプトテンプレ) は仕組みが異なる別題材で、narration 内で『Weave はワークフロー連携、Skills はスラッシュコマンド』と明示差別化して混同回避。図解しやすさ: Before (レビューして/くれる先輩が居ない) → After (/design-crit で自動指摘) と、Community 画面 → 3クリック → スラッシュ入力 の連続スクショが視覚的に一目瞭然で Shorts のスライド構成に最適。",
     "sources": [
-      "https://www.figma.com/release-notes/",
-      "https://help.figma.com/hc/en-us/articles/360039956634-Explore-text-properties",
-      "https://forum.figma.com/product-updates-3",
-      "https://forum.figma.com/suggest-a-feature-11/add-text-wrap-balance-38602",
-      "https://forum.figma.com/suggest-a-feature-11/typography-add-text-wrap-pretty-44526",
-      "https://dev.to/nickbenksim/the-property-text-wrap-balance-and-text-wrap-pretty-for-perfect-headings-3061",
-      "https://ishadeed.com/article/balancing-text-css/"
+      "https://www.figma.com/blog/try-these-10-skills-and-show-off-your-own/",
+      "https://www.figma.com/community/ai-skills",
+      "https://x.com/figma/status/2087944862272459214",
+      "https://help.figma.com/hc/en-us/articles/40283639496599-Custom-skills-for-the-Figma-agent-and-Figma-Make",
+      "https://www.mazette.co/en/blog/skills-for-the-figma-agent-the-community-becomes-your-ai-toolbox",
+      "https://mikekwal.com/blog/figma-agent-skills/"
     ],
-    "query": "Figma text wrap Balance Pretty release August 14 2026 typography orphan headline button style paragraph",
-    "freshness_hours": 72
+    "query": "Figma Agent Skills Community launch August 13 2026 slash command design-crit follow-ds-guidelines Markdown prompt template library",
+    "freshness_hours": 120
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma text wrapに Balance/Pretty追加 8/14、見出しの改行が1クリックでプロっぽく整う",
-      "description": "知ってました？Figmaが8月14日にこっそり追加した『text wrap』、見出しの改行が1クリックで一気にプロっぽく整います。",
-      "detail": "追加されたのはBalanceとPrettyの2種類。Balanceは各行の長さを揃えて見出しやボタンの形を整え、Prettyは長文の最終行に単語1個だけ残る『みなしご行』を防ぎます。スタイルに設定すればファイル全体に一気に効きます。",
-      "narration": "知ってました？Figmaが8月14日にこっそり追加した『text wrap』、見出しの改行が1クリックで一気にプロっぽく整います。",
+      "title": "Figma Agent Skills 50+ Community解禁 8/13、スラッシュ1発でプロの手順が呼び出せる",
+      "description": "知ってました？Figmaが8月13日にAgent Skillsを50個以上Communityで公開、スラッシュ1発でプロの手順が呼び出せます。",
+      "detail": "Skillsは繰り返し使うAI指示をMarkdownでまとめたテンプレで、Weaveのワークフロー連携と違い、design-critなどのスラッシュ1発で発動します。Communityで他人のSkillsを使う・真似る・改造が3クリック。",
+      "narration": "知ってました？Figmaが8月13日にAgent Skillsを50個以上Communityで公開、スラッシュ1発でプロの手順が呼び出せます。",
       "tags": [
         "Figma",
-        "text wrap",
-        "タイポグラフィ",
+        "Agent Skills",
+        "Community",
         "駆け出しデザイナー"
       ],
       "narration_sections": {
-        "hook": "知ってました？Figmaが8月14日にこっそり追加した『text wrap』、見出しの改行が1クリックで一気にプロっぽく整います。",
-        "origin": "追加されたのはBalanceとPrettyの2種類。Balanceは各行の長さを揃えて見出しやボタンの形を整え、Prettyは長文の最終行に単語1個だけ残る『みなしご行』を防ぎます。スタイルに設定すればファイル全体に一気に効きます。",
-        "recommend": "今日、ポートフォリオのH1とボタンをBalanceに、本文をPrettyに切替えるだけ。1分でタイポの粗さが消え、面接映えします。"
+        "hook": "知ってました？Figmaが8月13日にAgent Skillsを50個以上Communityで公開、スラッシュ1発でプロの手順が呼び出せます。",
+        "origin": "Skillsは繰り返し使うAI指示をMarkdownでまとめたテンプレで、Weaveのワークフロー連携と違い、design-critなどのスラッシュ1発で発動します。Communityで他人のSkillsを使う・真似る・改造が3クリック。",
+        "recommend": "今日、Communityの/design-critを入れて自分のポートフォリオ画面を叩いてみて。1分で先輩デザイナーの指摘が届きます。"
       },
       "section_titles": {
-        "hook": "text wrap新登場",
-        "origin": "見出しはBalance",
-        "recommend": "H1を1分で整える"
+        "hook": "Skills 50+解禁",
+        "origin": "スラッシュで発動",
+        "recommend": "今日Skillsを試す"
       },
       "section_descriptions": {
-        "hook": "Figma 8/14公開、見出しの改行が劇的に整う",
-        "origin": "Balanceは各行揃え、Prettyはみなしご行防止",
-        "recommend": "ポートフォリオH1を今日Balanceに切替"
+        "hook": "Figma 8/13、CommunityでSkills解禁",
+        "origin": "MarkdownでまとめたAI指示テンプレ",
+        "recommend": "/design-crit を試して指摘をもらう"
       }
     }
   ]
