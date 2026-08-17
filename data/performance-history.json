@@ -2,49 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "9y4paRQvL24",
-      "videoUrl": "https://youtube.com/shorts/9y4paRQvL24",
-      "date": "2026-05-18",
-      "title": "【デザインニュース】UXのROIは9,900%、Smashing最新10数値が英語デザイナー界隈で話題｜2026/05/18 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 53,
-      "discovery": {
-        "method": "social-en",
-        "description": "英語デザイナー界隈の週末話題から Smashing Magazine 5/15 publish の Carrie Webster『Ten Data-Backed Truths of User Experience ROI』の主要数値を抽出、Figma Q1 決算 (5/14) の 75% AI 枠超過後継続課金と接続して『AI が浸透した今こそ数字で語れる UX 力が差になる』フレームへ翻訳。method 選定: TOP3 method の figma-community (5/16=2日前で直近2日抵触) と official-src (5/12+5/15 で 7日2回到達済、本日採用すれば 7日3回到達で過剰集中) は本日不可、expert-blog (5/17=昨日で直近2日抵触) も不可、news-en は 6/2 まで凍結、product-launches (5/9=9日前で全クリア) は 5/24 Awwwards 再投入を pre-schedule 済で差別化負荷あり。結果 social-en (5/14=4日前で全ガードクリア+月曜news-preferred制約適合) が唯一クリーンな TOP 3 method として正式採用。Exploit 寄り運用で ux-roi-narrative 新角度の試行を兼ねる。NG パターン回避: 『AIがデザイナーの仕事を奪う系』と『AIに任せれば考えなくていい系』を回避するため、5 数値スタック (9,900% ROI / 47% 2秒期待 / 20% 1秒遅延 / 50ミリ秒第一印象 / 93% gen-AI 浸透 + Figma 75% AI継続課金) を『AI が浸透した今こそ数字で語れる UX 力が差になる』Primary 層 (駆け出し) を励ます方向へ翻訳、Recommend で能動アクション (ポートフォリオに『何ミリ秒短縮で何%上がる』と書く) へ接続、Figmaナビは『下書きを時短し検証に時間を回すための補助輪』として軽 CTA。freshness_hours = 72 (Smashing 5/15 publish, 3日新着で当週 fresh + Figma 決算 5/14 = 4日新着で当週 fresh)、出典 URL 4 件記録。",
-        "sources": [
-          "https://www.smashingmagazine.com/2026/05/data-backed-truths-user-experience-roi/",
-          "https://rollingout.com/2026/05/15/figma-stock-hits-7-week-high-3-reasons/",
-          "https://thenextweb.com/news/figma-q1-earnings-ai-monetization-stock-rebound",
-          "https://seekingalpha.com/news/4593727-figmas-ai-credit-monetization-strategy-shows-stickiness-analysts"
-        ],
-        "query": "Smashing Magazine UX ROI data-backed truths Carrie Webster May 2026 + Figma Q1 2026 75% AI credit retention designer twitter reaction",
-        "freshness_hours": 72
-      },
-      "stats": {
-        "views": 19,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-06-01T00:15:45.412Z"
-      }
-    },
-    {
       "videoId": "YU31xHwS3_c",
       "videoUrl": "https://youtube.com/shorts/YU31xHwS3_c",
       "date": "2026-05-19",
@@ -2722,7 +2679,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-16T23:34:03.701Z"
+        "updatedAt": "2026-08-17T23:35:57.840Z"
       }
     },
     {
@@ -2766,7 +2723,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-16T23:34:03.701Z"
+        "updatedAt": "2026-08-17T23:35:57.840Z"
       }
     },
     {
@@ -2809,7 +2766,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-16T23:34:03.701Z"
+        "updatedAt": "2026-08-17T23:35:57.840Z"
       }
     },
     {
@@ -2852,7 +2809,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-16T23:34:03.701Z"
+        "updatedAt": "2026-08-17T23:35:57.840Z"
       }
     },
     {
@@ -2899,7 +2856,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-16T23:34:03.701Z"
+        "updatedAt": "2026-08-17T23:35:57.840Z"
       }
     },
     {
@@ -2945,7 +2902,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-16T23:34:03.701Z"
+        "updatedAt": "2026-08-17T23:35:57.840Z"
       }
     },
     {
@@ -2990,7 +2947,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-16T23:34:03.701Z"
+        "updatedAt": "2026-08-17T23:35:57.840Z"
       }
     },
     {
@@ -3032,7 +2989,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-16T23:34:03.701Z"
+        "updatedAt": "2026-08-17T23:35:57.840Z"
       }
     },
     {
@@ -3075,7 +3032,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-16T23:34:03.701Z"
+        "updatedAt": "2026-08-17T23:35:57.840Z"
       }
     },
     {
@@ -3118,7 +3075,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-16T23:34:03.701Z"
+        "updatedAt": "2026-08-17T23:35:57.840Z"
       }
     },
     {
@@ -3161,7 +3118,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-16T23:34:03.701Z"
+        "updatedAt": "2026-08-17T23:35:57.840Z"
       }
     },
     {
@@ -3204,7 +3161,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-16T23:34:03.701Z"
+        "updatedAt": "2026-08-17T23:35:57.840Z"
       }
     },
     {
@@ -3248,7 +3205,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-16T23:34:03.701Z"
+        "updatedAt": "2026-08-17T23:35:57.840Z"
       }
     },
     {
@@ -3292,7 +3249,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-16T23:34:03.701Z"
+        "updatedAt": "2026-08-17T23:35:57.840Z"
       }
     },
     {
@@ -3338,19 +3295,56 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-17T23:35:57.840Z"
+      }
+    },
+    {
+      "videoId": "oXx1DdtdSFE",
+      "videoUrl": "https://youtube.com/shorts/oXx1DdtdSFE",
+      "date": "2026-08-18",
+      "title": "【デザインニュース】Figma Agent Skills 50+ Community解禁 8/13、スラッシュ1発でプロの手順が呼び出せる｜2026/08/18 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 42,
+      "discovery": {
+        "method": "figma-community",
+        "description": "Figma 公式 blog / Community skills library / X (Figma 公式) / Help Center / Mazette 解説 / 実践者 blog を横断ソースに、8/13 に Figma が Community で公開した Agent Skills ライブラリ (50+ 個) を捕捉。Skills は Figma agent 用の再利用可能なプロンプトテンプレート (Markdown ベース) で、Community から他人の Skills を『使う』『真似る』『改造』の 3 クリックで導入し、/design-crit や /follow-ds-guidelines などのスラッシュコマンド 1 発で発動する。08-12 の Weave (workflow 連携 MCP) とは仕組みが異なり、Weave=20+ ワークフロー連携、Skills=スラッシュコマンドで呼び出す再利用プロンプト集 の棲み分け。method 選定 (Tue weekday news 帯): TOP method 候補のうち product-launches (avg 1.67 TOP1、08-13=5日前で 7日ウィンドウ 1回のみで exploit 余裕大だが Framer Variant Selector 等の候補は Primary persona 直撃度低い)、figma-community (avg 1.00 TOP2、直近 3連続 v=1 で黒字化、08-15=3日前で 7日ウィンドウ 2回 08-12/08-15 到達済で 3回目=過剰集中懸念あり)、news-en (avg 0.50、08-14=4日前で 7日ウィンドウ 1回のみ)、news-ja (avg 0.50、08-16=2日前で境界)、official-src (avg 0.33、08-17=前日で直近2日ガード抵触で不可)、expert-blog (avg 0.00、凍結中 08-22 まで)、social-en (07-28 で窓外脱落 Explore return 準備)、social-ja (未使用 Explore 新規) を全チェック。figma-community は 3-in-7d 過剰集中認識しつつも Tue=pillar ② weekday-pillar-lock の第1回として今日の Agent Skills Community launch は数少ない ② 直撃 fresh 弾のため見送りは機会損失、コンテンツ品質最優先で選定。過剰集中の副作用は次回 figma-community を最低 4日以上空ける (08-22 以降) 運用ルールで相殺。柱② プラグイン・エコシステム (target 20%、直近14日 3/15=20% で target 準拠) を 4/15=27% にわずか超過、weekday-pillar-lock-tue で Tue 固定なら月次 4本=20% ちょうど。yesterday PDCA Action #3『視覚要素密度型 micro-recipe』第2回実装、feature-launch-visual-density 継続 (yesterday official-src × Balance/Pretty/1クリック/1分 の v=0 空振りから method 変数を figma-community に隔離し『50+ × スラッシュ1発 × 3クリック × 1分』の 4視覚要素密度で n=2 試行、08-04 Lacoste v=4 型の伸び再現テストを method 変数隔離で継続)。Primary persona (駆け出しデザイナー・転職準備中) 直撃: 先輩デザイナーの指摘を再現する /design-crit は駆け出し層の『レビュー依頼できる先輩が居ない』課題を Community 越しに間接解決、day-1 で使える具体武器として『Community の /design-crit を入れて自分のポートフォリオ画面を叩く、1分で先輩デザイナーの指摘が届く』の recommend で締める。NG パターン回避: 『プロ向け高度議論』回避策 → Markdown プロンプト設計論や agent アーキテクチャ (MCP, tool-use loop 等) には触れず『繰り返し使う AI 指示を Markdown でまとめたテンプレ』の平易日本語に翻訳、『プラグイン機能説明メイン』回避策 → 学習者の課題 (先輩の指摘が欲しい・デザインシステム準拠が難しい) から入り Skills はその解として提示し機能説明は最小限、『AI が奪う』完全非該当 (人が呼び出す Skills、AI は補助輪)、『AI に任せれば考えなくていい』回避策 → Recommend で『自分のポートフォリオ画面を叩いてみて』の主体アクションで締めて AI 依存フレームゼロ、『英語/日本語中途半端な混在』回避策 → 出力は日本語で Skills / Agent / Community / Markdown / design-crit / follow-ds-guidelines / Weave は Figma UI・コマンド固有名詞として英語原文表記維持、『1週間以上前のニュースを新着扱い』回避策 → freshness_hours=120 で 168h NG 上限内の当週 fresh、『出典不明ニュース』回避策 → Figma 公式 blog 2 + Community skills library 1 + X (Figma 公式) 1 + Help Center 1 + Mazette 記事 1 + 実践者 blog 1 の計 7 URL multi-source confirm。08-12 Weave (ワークフロー連携 MCP) と Skills (スラッシュコマンドで発動するプロンプトテンプレ) は仕組みが異なる別題材で、narration 内で『Weave はワークフロー連携、Skills はスラッシュコマンド』と明示差別化して混同回避。図解しやすさ: Before (レビューして/くれる先輩が居ない) → After (/design-crit で自動指摘) と、Community 画面 → 3クリック → スラッシュ入力 の連続スクショが視覚的に一目瞭然で Shorts のスライド構成に最適。",
+        "sources": [
+          "https://www.figma.com/blog/try-these-10-skills-and-show-off-your-own/",
+          "https://www.figma.com/community/ai-skills",
+          "https://x.com/figma/status/2087944862272459214",
+          "https://help.figma.com/hc/en-us/articles/40283639496599-Custom-skills-for-the-Figma-agent-and-Figma-Make",
+          "https://www.mazette.co/en/blog/skills-for-the-figma-agent-the-community-becomes-your-ai-toolbox",
+          "https://mikekwal.com/blog/figma-agent-skills/"
+        ],
+        "query": "Figma Agent Skills Community launch August 13 2026 slash command design-crit follow-ds-guidelines Markdown prompt template library",
+        "freshness_hours": 120
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-16",
-      "changes": [
-        "standard: 50 avg views (67 videos)",
-        "Day performance: Wed=85, Sat=55, Sun=54, Thu=49, Tue=44, Fri=39, Mon=27"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-18",
       "changes": [
@@ -3580,6 +3574,14 @@
       "changes": [
         "standard: 7 avg views (75 videos)",
         "Day performance: Tue=14, Sun=12, Wed=10, Mon=4, Thu=4, Fri=4, Sat=2"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-17",
+      "changes": [
+        "standard: 5 avg views (75 videos)",
+        "Day performance: Tue=14, Wed=10, Thu=4, Fri=4, Mon=3, Sat=2, Sun=2"
       ],
       "recommendedTemplate": "standard"
     }
