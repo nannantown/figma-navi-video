@@ -2,49 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "YU31xHwS3_c",
-      "videoUrl": "https://youtube.com/shorts/YU31xHwS3_c",
-      "date": "2026-05-19",
-      "title": "【デザインニュース】Componentが30個に膨れる原因、Boolean Propertyで半減｜2026/05/19 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 44,
-      "discovery": {
-        "method": "figma-community",
-        "description": "Figma Forum と公式 Help Center で頻出する Boolean Property × Variant 設計の躓きを起点に、駆け出し向け Component Tips を community-tips-bundle 角度で抽出。method 選定: 5/18 PDCA の pre-schedule 第一候補通り、figma-community (5/16=3日前で直近2日 OK + 1回/7日で集中度クリア + avg 227 で TOP method) を採用、Tips-bundle 角度は 5/16 Auto Layout 絶対位置 (401 views) と異なる Components プロパティ角度で差別化。official-src は 5/12+5/15 で 7日2回到達済、本日採用すれば 7日3回到達で過剰集中ゆえ温存。expert-blog (5/17=2日前) と social-en (5/18=昨日) は直近2日抵触で不可、news-en は 6/2 まで凍結。NG パターン回避: プラグイン機能説明メインではなく、Figma 本体の Component Properties 機能の駆け出しが詰まる落とし穴を起点に、Boolean Property 切替で半減する具体数値を提示、Figmaナビは『整理されたコンポを AI に渡す』補助輪として軽 CTA、強い購買誘導は回避。freshness_hours = 24 (community-tips-bundle 角度は evergreen Tip だが Forum で議論継続中のため当日 discovery として記録)、出典 URL 4 件記録 (Figma 公式 Help Center / Figma Forum / Design Systems Collective 2025-2026 playbook / LogRocket guide)。",
-        "sources": [
-          "https://help.figma.com/hc/en-us/articles/5579474826519-Explore-component-properties",
-          "https://forum.figma.com/ask-the-community-7/how-to-apply-boolean-property-of-a-component-into-its-variants-19238",
-          "https://www.designsystemscollective.com/design-system-mastery-with-figma-variables-the-2025-2026-best-practice-playbook-da0500ca0e66",
-          "https://blog.logrocket.com/ux-design/using-component-properties-figma/"
-        ],
-        "query": "Figma Boolean Property component variant explosion mistake 2026",
-        "freshness_hours": 24
-      },
-      "stats": {
-        "views": 64,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-06-02T01:36:46.323Z"
-      }
-    },
-    {
       "videoId": "dUSQyUc0WHk",
       "videoUrl": "https://youtube.com/shorts/dUSQyUc0WHk",
       "date": "2026-05-20",
@@ -2723,7 +2680,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-17T23:35:57.840Z"
+        "updatedAt": "2026-08-18T23:35:16.966Z"
       }
     },
     {
@@ -2766,7 +2723,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-17T23:35:57.840Z"
+        "updatedAt": "2026-08-18T23:35:16.966Z"
       }
     },
     {
@@ -2809,7 +2766,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-17T23:35:57.840Z"
+        "updatedAt": "2026-08-18T23:35:16.966Z"
       }
     },
     {
@@ -2856,7 +2813,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-17T23:35:57.840Z"
+        "updatedAt": "2026-08-18T23:35:16.966Z"
       }
     },
     {
@@ -2902,7 +2859,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-17T23:35:57.840Z"
+        "updatedAt": "2026-08-18T23:35:16.966Z"
       }
     },
     {
@@ -2947,7 +2904,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-17T23:35:57.840Z"
+        "updatedAt": "2026-08-18T23:35:16.966Z"
       }
     },
     {
@@ -2989,7 +2946,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-17T23:35:57.840Z"
+        "updatedAt": "2026-08-18T23:35:16.966Z"
       }
     },
     {
@@ -3032,7 +2989,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-17T23:35:57.840Z"
+        "updatedAt": "2026-08-18T23:35:16.966Z"
       }
     },
     {
@@ -3075,7 +3032,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-17T23:35:57.840Z"
+        "updatedAt": "2026-08-18T23:35:16.966Z"
       }
     },
     {
@@ -3118,7 +3075,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-17T23:35:57.840Z"
+        "updatedAt": "2026-08-18T23:35:16.966Z"
       }
     },
     {
@@ -3161,7 +3118,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-17T23:35:57.840Z"
+        "updatedAt": "2026-08-18T23:35:16.966Z"
       }
     },
     {
@@ -3205,7 +3162,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-17T23:35:57.840Z"
+        "updatedAt": "2026-08-18T23:35:16.966Z"
       }
     },
     {
@@ -3249,7 +3206,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-17T23:35:57.840Z"
+        "updatedAt": "2026-08-18T23:35:16.966Z"
       }
     },
     {
@@ -3295,7 +3252,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-17T23:35:57.840Z"
+        "updatedAt": "2026-08-18T23:35:16.966Z"
       }
     },
     {
@@ -3340,19 +3297,54 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-18T23:35:16.966Z"
+      }
+    },
+    {
+      "videoId": "dgnWxtnxRyQ",
+      "videoUrl": "https://youtube.com/shorts/dgnWxtnxRyQ",
+      "date": "2026-08-19",
+      "title": "【デザインニュース】駆け出しUXポートフォリオ2026の正解、Case Study Clubが8/17にトップ20公開｜2026/08/19 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 44,
+      "discovery": {
+        "method": "news-en",
+        "description": "英語のデザイン系メディア (Case Study Club, Awwwards, Smashing Magazine, Product Hunt daily leaderboard) を横断して 48h 以内の fresh ネタを探索。8/17 に Case Study Club が『Top 20 UX Designer Portfolio Websites in 2026』を公開しており、Primary persona (駆け出しデザイナー・転職準備中) が探している『2026 年基準のポートフォリオの答え』が権威ある英語ソースから届いたタイミングとして最適と判断。method 選定: 直近2日 (08-17 official-src / 08-18 figma-community) が連続ガードで自動除外。TOP 3 method (figma-community 0.75 / product-launches 0.50 / news-en=official-src=0.33) のうち、figma-community/official-src はガードで不可、product-launches は 08-13 で 6日空きの Exploit 候補だが Awwwards 直近ソースが 08-18 Michael Gatt Folio (音楽・映像業界ポートフォリオ) で Primary persona 直撃度が弱い。news-en (08-14 が直近で 5日空き、TOP tie) を Exploit で選択。08-16 news-ja の『駆け出しポートフォリオ Before/After 数値化』が v=0 で沈んだが、今日は同テーマを英語ソース (Case Study Club の 20選、Dropbox の Ed Chao / Help Scout の Buzz Usborne / フリーランスの Aleksi Tappura など具体名の並ぶ権威リスト) で角度を変えて再アタック、同テーマ再挑戦の method 変数隔離テスト。柱としては ⑤ Before/After・ポートフォリオ事例 (target 10%) と ③ 業界・デザインニュース (target 20%) の合流点。NG パターン回避: 『プロ向け高度議論』回避策 → シニア向けデザインリサーチ話 (Smashing の Eight Pillars) は避け、共通点 3 つ (タイポ / 物語 / AI 共作の透明性) の平易日本語に絞る。『AI が奪う』完全非該当 → 『AI との共作プロセスもオープンに書く』でむしろ AI を武器として肯定的に扱う。『プラグイン機能説明メイン』回避策 → 学習者の『ポートフォリオ何書けばいいか分からない』課題から入り、Figmaナビは rec の最後で『LP も半日で組めます』の軽い接続 1 文のみ、機能説明ゼロ。『1週間以上前のニュース』回避策 → freshness_hours=48 で 168h 上限内。『出典不明』回避策 → Case Study Club 記事 URL 1 + Awwwards SOTD 一覧 1 + 補完調査 (Aleksi Tappura 個人サイト・pafolios) 2 の計 4 URL multi-source。日本語での再構成にあたって Ed Chao (Dropbox) / Buzz Usborne (Help Scout) / Aleksi Tappura (freelance) の 3 名は英語圏で確認済みの実在デザイナーで、共通点として『crisp typography』『personal storytelling』『AI-transparent process』を英語圏コミュニティで抽出。動画構成: hook で権威+日付+具体数、origin で 3 名の実名+共通点 3 つ (具体的で真似できる粒度) の 2 枚重ね、recommend で『TOP1枚だけ書き直す』の day-1 で完了する minimum viable action + Figmaナビ軽接続で締める。Meta-PDCA 副作用モニタ: news-en 3連続の疲弊リスクは 08-06/08-10/08-14 の週 1 ペースだったため、今日 08-19 で週 1 継続=過剰にはならない。次週は social-en / social-ja の Explore 枠試験を検討 (別 PDCA レポートに記録済)。",
+        "sources": [
+          "https://www.casestudy.club/journal/ux-designer-portfolio",
+          "https://www.awwwards.com/websites/sites_of_the_day/",
+          "https://pafolios.com/aleksi-tappura",
+          "https://aleksitappura.com/"
+        ],
+        "query": "Case Study Club Top 20 UX Designer Portfolio Websites 2026 August 17 Buzz Usborne Ed Chao Aleksi Tappura typography storytelling",
+        "freshness_hours": 48
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-18",
-      "changes": [
-        "standard: 50 avg views (68 videos)",
-        "Day performance: Wed=85, Sat=55, Sun=54, Thu=44, Tue=44, Fri=40, Mon=27"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-19",
       "changes": [
@@ -3582,6 +3574,14 @@
       "changes": [
         "standard: 5 avg views (75 videos)",
         "Day performance: Tue=14, Wed=10, Thu=4, Fri=4, Mon=3, Sat=2, Sun=2"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-18",
+      "changes": [
+        "standard: 5 avg views (75 videos)",
+        "Day performance: Tue=12, Wed=10, Thu=4, Fri=4, Sat=2, Sun=2, Mon=2"
       ],
       "recommendedTemplate": "standard"
     }
