@@ -1,46 +1,45 @@
 {
-  "date": "2026-08-18",
+  "date": "2026-08-19",
   "discovery": {
-    "method": "figma-community",
-    "description": "Figma 公式 blog / Community skills library / X (Figma 公式) / Help Center / Mazette 解説 / 実践者 blog を横断ソースに、8/13 に Figma が Community で公開した Agent Skills ライブラリ (50+ 個) を捕捉。Skills は Figma agent 用の再利用可能なプロンプトテンプレート (Markdown ベース) で、Community から他人の Skills を『使う』『真似る』『改造』の 3 クリックで導入し、/design-crit や /follow-ds-guidelines などのスラッシュコマンド 1 発で発動する。08-12 の Weave (workflow 連携 MCP) とは仕組みが異なり、Weave=20+ ワークフロー連携、Skills=スラッシュコマンドで呼び出す再利用プロンプト集 の棲み分け。method 選定 (Tue weekday news 帯): TOP method 候補のうち product-launches (avg 1.67 TOP1、08-13=5日前で 7日ウィンドウ 1回のみで exploit 余裕大だが Framer Variant Selector 等の候補は Primary persona 直撃度低い)、figma-community (avg 1.00 TOP2、直近 3連続 v=1 で黒字化、08-15=3日前で 7日ウィンドウ 2回 08-12/08-15 到達済で 3回目=過剰集中懸念あり)、news-en (avg 0.50、08-14=4日前で 7日ウィンドウ 1回のみ)、news-ja (avg 0.50、08-16=2日前で境界)、official-src (avg 0.33、08-17=前日で直近2日ガード抵触で不可)、expert-blog (avg 0.00、凍結中 08-22 まで)、social-en (07-28 で窓外脱落 Explore return 準備)、social-ja (未使用 Explore 新規) を全チェック。figma-community は 3-in-7d 過剰集中認識しつつも Tue=pillar ② weekday-pillar-lock の第1回として今日の Agent Skills Community launch は数少ない ② 直撃 fresh 弾のため見送りは機会損失、コンテンツ品質最優先で選定。過剰集中の副作用は次回 figma-community を最低 4日以上空ける (08-22 以降) 運用ルールで相殺。柱② プラグイン・エコシステム (target 20%、直近14日 3/15=20% で target 準拠) を 4/15=27% にわずか超過、weekday-pillar-lock-tue で Tue 固定なら月次 4本=20% ちょうど。yesterday PDCA Action #3『視覚要素密度型 micro-recipe』第2回実装、feature-launch-visual-density 継続 (yesterday official-src × Balance/Pretty/1クリック/1分 の v=0 空振りから method 変数を figma-community に隔離し『50+ × スラッシュ1発 × 3クリック × 1分』の 4視覚要素密度で n=2 試行、08-04 Lacoste v=4 型の伸び再現テストを method 変数隔離で継続)。Primary persona (駆け出しデザイナー・転職準備中) 直撃: 先輩デザイナーの指摘を再現する /design-crit は駆け出し層の『レビュー依頼できる先輩が居ない』課題を Community 越しに間接解決、day-1 で使える具体武器として『Community の /design-crit を入れて自分のポートフォリオ画面を叩く、1分で先輩デザイナーの指摘が届く』の recommend で締める。NG パターン回避: 『プロ向け高度議論』回避策 → Markdown プロンプト設計論や agent アーキテクチャ (MCP, tool-use loop 等) には触れず『繰り返し使う AI 指示を Markdown でまとめたテンプレ』の平易日本語に翻訳、『プラグイン機能説明メイン』回避策 → 学習者の課題 (先輩の指摘が欲しい・デザインシステム準拠が難しい) から入り Skills はその解として提示し機能説明は最小限、『AI が奪う』完全非該当 (人が呼び出す Skills、AI は補助輪)、『AI に任せれば考えなくていい』回避策 → Recommend で『自分のポートフォリオ画面を叩いてみて』の主体アクションで締めて AI 依存フレームゼロ、『英語/日本語中途半端な混在』回避策 → 出力は日本語で Skills / Agent / Community / Markdown / design-crit / follow-ds-guidelines / Weave は Figma UI・コマンド固有名詞として英語原文表記維持、『1週間以上前のニュースを新着扱い』回避策 → freshness_hours=120 で 168h NG 上限内の当週 fresh、『出典不明ニュース』回避策 → Figma 公式 blog 2 + Community skills library 1 + X (Figma 公式) 1 + Help Center 1 + Mazette 記事 1 + 実践者 blog 1 の計 7 URL multi-source confirm。08-12 Weave (ワークフロー連携 MCP) と Skills (スラッシュコマンドで発動するプロンプトテンプレ) は仕組みが異なる別題材で、narration 内で『Weave はワークフロー連携、Skills はスラッシュコマンド』と明示差別化して混同回避。図解しやすさ: Before (レビューして/くれる先輩が居ない) → After (/design-crit で自動指摘) と、Community 画面 → 3クリック → スラッシュ入力 の連続スクショが視覚的に一目瞭然で Shorts のスライド構成に最適。",
+    "method": "news-en",
+    "description": "英語のデザイン系メディア (Case Study Club, Awwwards, Smashing Magazine, Product Hunt daily leaderboard) を横断して 48h 以内の fresh ネタを探索。8/17 に Case Study Club が『Top 20 UX Designer Portfolio Websites in 2026』を公開しており、Primary persona (駆け出しデザイナー・転職準備中) が探している『2026 年基準のポートフォリオの答え』が権威ある英語ソースから届いたタイミングとして最適と判断。method 選定: 直近2日 (08-17 official-src / 08-18 figma-community) が連続ガードで自動除外。TOP 3 method (figma-community 0.75 / product-launches 0.50 / news-en=official-src=0.33) のうち、figma-community/official-src はガードで不可、product-launches は 08-13 で 6日空きの Exploit 候補だが Awwwards 直近ソースが 08-18 Michael Gatt Folio (音楽・映像業界ポートフォリオ) で Primary persona 直撃度が弱い。news-en (08-14 が直近で 5日空き、TOP tie) を Exploit で選択。08-16 news-ja の『駆け出しポートフォリオ Before/After 数値化』が v=0 で沈んだが、今日は同テーマを英語ソース (Case Study Club の 20選、Dropbox の Ed Chao / Help Scout の Buzz Usborne / フリーランスの Aleksi Tappura など具体名の並ぶ権威リスト) で角度を変えて再アタック、同テーマ再挑戦の method 変数隔離テスト。柱としては ⑤ Before/After・ポートフォリオ事例 (target 10%) と ③ 業界・デザインニュース (target 20%) の合流点。NG パターン回避: 『プロ向け高度議論』回避策 → シニア向けデザインリサーチ話 (Smashing の Eight Pillars) は避け、共通点 3 つ (タイポ / 物語 / AI 共作の透明性) の平易日本語に絞る。『AI が奪う』完全非該当 → 『AI との共作プロセスもオープンに書く』でむしろ AI を武器として肯定的に扱う。『プラグイン機能説明メイン』回避策 → 学習者の『ポートフォリオ何書けばいいか分からない』課題から入り、Figmaナビは rec の最後で『LP も半日で組めます』の軽い接続 1 文のみ、機能説明ゼロ。『1週間以上前のニュース』回避策 → freshness_hours=48 で 168h 上限内。『出典不明』回避策 → Case Study Club 記事 URL 1 + Awwwards SOTD 一覧 1 + 補完調査 (Aleksi Tappura 個人サイト・pafolios) 2 の計 4 URL multi-source。日本語での再構成にあたって Ed Chao (Dropbox) / Buzz Usborne (Help Scout) / Aleksi Tappura (freelance) の 3 名は英語圏で確認済みの実在デザイナーで、共通点として『crisp typography』『personal storytelling』『AI-transparent process』を英語圏コミュニティで抽出。動画構成: hook で権威+日付+具体数、origin で 3 名の実名+共通点 3 つ (具体的で真似できる粒度) の 2 枚重ね、recommend で『TOP1枚だけ書き直す』の day-1 で完了する minimum viable action + Figmaナビ軽接続で締める。Meta-PDCA 副作用モニタ: news-en 3連続の疲弊リスクは 08-06/08-10/08-14 の週 1 ペースだったため、今日 08-19 で週 1 継続=過剰にはならない。次週は social-en / social-ja の Explore 枠試験を検討 (別 PDCA レポートに記録済)。",
     "sources": [
-      "https://www.figma.com/blog/try-these-10-skills-and-show-off-your-own/",
-      "https://www.figma.com/community/ai-skills",
-      "https://x.com/figma/status/2087944862272459214",
-      "https://help.figma.com/hc/en-us/articles/40283639496599-Custom-skills-for-the-Figma-agent-and-Figma-Make",
-      "https://www.mazette.co/en/blog/skills-for-the-figma-agent-the-community-becomes-your-ai-toolbox",
-      "https://mikekwal.com/blog/figma-agent-skills/"
+      "https://www.casestudy.club/journal/ux-designer-portfolio",
+      "https://www.awwwards.com/websites/sites_of_the_day/",
+      "https://pafolios.com/aleksi-tappura",
+      "https://aleksitappura.com/"
     ],
-    "query": "Figma Agent Skills Community launch August 13 2026 slash command design-crit follow-ds-guidelines Markdown prompt template library",
-    "freshness_hours": 120
+    "query": "Case Study Club Top 20 UX Designer Portfolio Websites 2026 August 17 Buzz Usborne Ed Chao Aleksi Tappura typography storytelling",
+    "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma Agent Skills 50+ Community解禁 8/13、スラッシュ1発でプロの手順が呼び出せる",
-      "description": "知ってました？Figmaが8月13日にAgent Skillsを50個以上Communityで公開、スラッシュ1発でプロの手順が呼び出せます。",
-      "detail": "Skillsは繰り返し使うAI指示をMarkdownでまとめたテンプレで、Weaveのワークフロー連携と違い、design-critなどのスラッシュ1発で発動します。Communityで他人のSkillsを使う・真似る・改造が3クリック。",
-      "narration": "知ってました？Figmaが8月13日にAgent Skillsを50個以上Communityで公開、スラッシュ1発でプロの手順が呼び出せます。",
+      "title": "駆け出しUXポートフォリオ2026の正解、Case Study Clubが8/17にトップ20公開",
+      "description": "駆け出しデザイナーのポートフォリオ、正解が8/17に出ました。Case Study Clubの2026年UXポートフォリオトップ20公開です。",
+      "detail": "DropboxのEd Chao、Help ScoutのBuzz Usborne、フリーランスのAleksi Tappuraなど20名。共通点は3つ、シャープなタイポで読ませる、案件じゃなく自分の物語を並べる、AIとの共作プロセスもオープンに書く姿勢です。",
+      "narration": "駆け出しデザイナーのポートフォリオ、正解が8/17に出ました。Case Study Clubの2026年UXポートフォリオトップ20公開です。",
       "tags": [
-        "Figma",
-        "Agent Skills",
-        "Community",
-        "駆け出しデザイナー"
+        "ポートフォリオ",
+        "UXデザイン",
+        "駆け出しデザイナー",
+        "Case Study Club",
+        "2026トレンド"
       ],
       "narration_sections": {
-        "hook": "知ってました？Figmaが8月13日にAgent Skillsを50個以上Communityで公開、スラッシュ1発でプロの手順が呼び出せます。",
-        "origin": "Skillsは繰り返し使うAI指示をMarkdownでまとめたテンプレで、Weaveのワークフロー連携と違い、design-critなどのスラッシュ1発で発動します。Communityで他人のSkillsを使う・真似る・改造が3クリック。",
-        "recommend": "今日、Communityの/design-critを入れて自分のポートフォリオ画面を叩いてみて。1分で先輩デザイナーの指摘が届きます。"
+        "hook": "駆け出しデザイナーのポートフォリオ、正解が8/17に出ました。Case Study Clubの2026年UXポートフォリオトップ20公開です。",
+        "origin": "DropboxのEd Chao、Help ScoutのBuzz Usborne、フリーランスのAleksi Tappuraなど20名。共通点は3つ、シャープなタイポで読ませる、案件じゃなく自分の物語を並べる、AIとの共作プロセスもオープンに書く姿勢です。",
+        "recommend": "今日は上位3サイトのTOPページを1枚だけマネして書き換えてみてください。FigmaナビでLPも半日で組めます。"
       },
       "section_titles": {
-        "hook": "Skills 50+解禁",
-        "origin": "スラッシュで発動",
-        "recommend": "今日Skillsを試す"
+        "hook": "駆け出し向けの正解20",
+        "origin": "20名の共通点は3つ",
+        "recommend": "TOP1枚だけ書き直す"
       },
       "section_descriptions": {
-        "hook": "Figma 8/13、CommunityでSkills解禁",
-        "origin": "MarkdownでまとめたAI指示テンプレ",
-        "recommend": "/design-crit を試して指摘をもらう"
+        "hook": "Case Study Clubが8/17公開のUX最強20選",
+        "origin": "Dropboxからフリーランスまで、共通点を3行で整理",
+        "recommend": "今日の半日で真似する具体的な手順とFigmaナビ連携"
       }
     }
   ]
