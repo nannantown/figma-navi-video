@@ -2,49 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "dUSQyUc0WHk",
-      "videoUrl": "https://youtube.com/shorts/dUSQyUc0WHk",
-      "date": "2026-05-20",
-      "title": "【デザインニュース】Figma SlidesにSections機能、20枚超デッキの迷子問題が一発解消｜2026/05/20 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 42,
-      "discovery": {
-        "method": "official-src",
-        "description": "Figma 公式 release notes / Figma Learn の May 2026 roundup から、5/18 公式実装の Figma Slides Sections 機能を一次取得。method 選定: 5/19 PDCA の pre-schedule 第一候補通り、official-src (5/15=5日前で直近2日 OK + 5/12 が 7日外に外れて 7日1回のみで集中度クリア + avg 102 で TOP 2 method) を採用、当初想定の Figma Draw 新機能 (4/29 リリース ~3週間経過で freshness_hours > 500 で NG ガード抵触) より鮮度高の Slides Sections (5/18 公式実装 ~48h) に角度差替え。figma-community (5/19=昨日) と social-en (5/18=2日前ギリ + ux-roi-narrative フェイル判定中) は不可、expert-blog は temporal で温存し 5/21 候補に。NG パターン回避: 機能列挙の NG を避け、Primary (駆け出し) のポートフォリオ/提案デッキで章ごとに迷子になる実体験課題を起点に、Figmaナビは『AI下書きも章別整理が捗る』として軽 CTA、強い購買誘導は回避。freshness_hours = 48 (5/18 公式実装から計算)、出典 URL 4 件記録 (Figma Learn May 2026 roundup / Figma Slides Help Center / Figma Slides product page / Figma 公式 release notes)。",
-        "sources": [
-          "https://help.figma.com/hc/en-us/articles/40219873508247-Release-notes-roundup-May-2026",
-          "https://help.figma.com/hc/en-us/articles/24170630629911-Explore-Figma-Slides",
-          "https://www.figma.com/slides/",
-          "https://www.figma.com/release-notes/"
-        ],
-        "query": "Figma Slides sections release May 2026 navigate presenter audience view design mode",
-        "freshness_hours": 48
-      },
-      "stats": {
-        "views": 86,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-06-03T01:47:08.509Z"
-      }
-    },
-    {
       "videoId": "hBceRU-63hM",
       "videoUrl": "https://youtube.com/shorts/hBceRU-63hM",
       "date": "2026-05-21",
@@ -2723,7 +2680,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-18T23:35:16.966Z"
+        "updatedAt": "2026-08-19T23:35:56.144Z"
       }
     },
     {
@@ -2766,7 +2723,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-18T23:35:16.966Z"
+        "updatedAt": "2026-08-19T23:35:56.144Z"
       }
     },
     {
@@ -2813,7 +2770,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-18T23:35:16.966Z"
+        "updatedAt": "2026-08-19T23:35:56.144Z"
       }
     },
     {
@@ -2859,7 +2816,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-18T23:35:16.966Z"
+        "updatedAt": "2026-08-19T23:35:56.144Z"
       }
     },
     {
@@ -2904,7 +2861,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-18T23:35:16.966Z"
+        "updatedAt": "2026-08-19T23:35:56.144Z"
       }
     },
     {
@@ -2946,7 +2903,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-18T23:35:16.966Z"
+        "updatedAt": "2026-08-19T23:35:56.144Z"
       }
     },
     {
@@ -2986,10 +2943,10 @@
         "freshness_hours": 144
       },
       "stats": {
-        "views": 0,
+        "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-18T23:35:16.966Z"
+        "updatedAt": "2026-08-19T23:35:56.144Z"
       }
     },
     {
@@ -3032,7 +2989,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-18T23:35:16.966Z"
+        "updatedAt": "2026-08-19T23:35:56.144Z"
       }
     },
     {
@@ -3075,7 +3032,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-18T23:35:16.966Z"
+        "updatedAt": "2026-08-19T23:35:56.144Z"
       }
     },
     {
@@ -3118,7 +3075,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-18T23:35:16.966Z"
+        "updatedAt": "2026-08-19T23:35:56.144Z"
       }
     },
     {
@@ -3162,7 +3119,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-18T23:35:16.966Z"
+        "updatedAt": "2026-08-19T23:35:56.144Z"
       }
     },
     {
@@ -3206,7 +3163,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-18T23:35:16.966Z"
+        "updatedAt": "2026-08-19T23:35:56.144Z"
       }
     },
     {
@@ -3252,7 +3209,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-18T23:35:16.966Z"
+        "updatedAt": "2026-08-19T23:35:56.144Z"
       }
     },
     {
@@ -3297,7 +3254,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-18T23:35:16.966Z"
+        "updatedAt": "2026-08-19T23:35:56.144Z"
       }
     },
     {
@@ -3340,19 +3297,52 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-19T23:35:56.144Z"
+      }
+    },
+    {
+      "videoId": "iokwU1NEcu4",
+      "videoUrl": "https://youtube.com/shorts/iokwU1NEcu4",
+      "date": "2026-08-20",
+      "title": "【デザインニュース】Awwwards SOTD 8/18 Michael Gatt 色2つで Creativity 7.73 の全項目トップ｜2026/08/20 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 46,
+      "discovery": {
+        "method": "product-launches",
+        "description": "Awwwards Site of the Day 8/18 の受賞ポートフォリオを 2 色配色の学びとして深掘り",
+        "sources": [
+          "https://www.awwwards.com/sites/michael-gatt",
+          "https://michaelgatt.com/"
+        ],
+        "query": "Awwwards Site of the Day August 18 2026 Michael Gatt portfolio",
+        "freshness_hours": 48
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-19",
-      "changes": [
-        "standard: 49 avg views (69 videos)",
-        "Day performance: Wed=85, Sun=54, Sat=50, Thu=44, Tue=44, Fri=40, Mon=27"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-20",
       "changes": [
@@ -3582,6 +3572,14 @@
       "changes": [
         "standard: 5 avg views (75 videos)",
         "Day performance: Tue=12, Wed=10, Thu=4, Fri=4, Sat=2, Sun=2, Mon=2"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-19",
+      "changes": [
+        "standard: 4 avg views (75 videos)",
+        "Day performance: Wed=9, Tue=8, Thu=4, Fri=4, Sat=2, Sun=2, Mon=2"
       ],
       "recommendedTemplate": "standard"
     }
