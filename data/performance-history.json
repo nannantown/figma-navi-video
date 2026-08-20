@@ -2,51 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "hBceRU-63hM",
-      "videoUrl": "https://youtube.com/shorts/hBceRU-63hM",
-      "date": "2026-05-21",
-      "title": "【デザインニュース】Figma公式AIエージェントが昨日5/20ベータ公開、canvasに直接デザインを描く時代へ｜2026/05/21 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 46,
-      "discovery": {
-        "method": "official-src",
-        "description": "Figma 公式 Blog / Help Center / Forum から 5/20 公式リリースの Figma Design Agent (canvas 直結 AI エージェント) を一次取得。method 選定: 5/20 PDCA Action #3 の pre-schedule で『5/20 Slides Sections の鮮度継続次第で official-src 連投も視野』と明記、本日朝の公式ソース確認で 5/20 = Figma Agent (Figmaナビ直接競合プロダクト、年最大級ニュース ~24h fresh) を発見、直近2日ガード抵触 1 日分を Figma Agent のニュース性極大 + Figmaナビ (AI でデザイン生成する Figma plugin) との直接競合関係で特例承認、新 angle 『flagship-launch』で投入。figma-community (5/19=2日前で 7日2回到達ガード抵触) と social-en (ux-roi-narrative 72h=17 でフェイル確定) は不可、expert-blog は 5/22 routine 第一候補に温存、product-launches は 5/24 Awwwards 投入と差別化要で温存。NG パターン回避: 戦略 NG 『AI がデザイナーの仕事を奪う系』に極めて触れやすいトピックゆえ、Primary (駆け出し) の『AI に任せる範囲と自分で決める範囲を切り分ける練習機会』として positive 化、機能列挙の NG を避け学習者の実用シーン接続を優先、Figmaナビは Recommend で『無料枠で AI 下書きをすぐ試せる』軽 CTA、強い購買誘導は回避。freshness_hours = 24 (5/20 公式リリースから JST 朝で逆算)、出典 URL 6 件記録 (Figma Blog 公式ローンチ記事 / Help Center beta access / Help Center 使い方 / Help Center May 2026 roundup / TechCrunch / Fast Company)。",
-        "sources": [
-          "https://www.figma.com/blog/the-figma-agent-is-here/",
-          "https://help.figma.com/hc/en-us/articles/34932042346775-How-do-I-access-the-AI-agent-beta-in-Figma-Design",
-          "https://help.figma.com/hc/en-us/articles/37998629035799-Work-with-the-AI-agent-in-Figma-Design",
-          "https://help.figma.com/hc/en-us/articles/40219873508247-Release-notes-roundup-May-2026",
-          "https://techcrunch.com/2026/05/20/figma-adds-an-ai-assistant-to-its-collaborative-canvas/",
-          "https://www.fastcompany.com/91545179/figma-ai-agent-tool"
-        ],
-        "query": "Figma AI agent May 2026 beta design system tokens components Cmd Enter generate remix Full seat",
-        "freshness_hours": 24
-      },
-      "stats": {
-        "views": 25,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-06-03T01:47:08.509Z"
-      }
-    },
-    {
       "videoId": "M-OgzsTi4Ew",
       "videoUrl": "https://youtube.com/shorts/M-OgzsTi4Ew",
       "date": "2026-05-22",
@@ -2723,7 +2678,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-19T23:35:56.144Z"
+        "updatedAt": "2026-08-20T23:40:25.952Z"
       }
     },
     {
@@ -2770,7 +2725,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-19T23:35:56.144Z"
+        "updatedAt": "2026-08-20T23:40:25.952Z"
       }
     },
     {
@@ -2816,7 +2771,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-19T23:35:56.144Z"
+        "updatedAt": "2026-08-20T23:40:25.952Z"
       }
     },
     {
@@ -2861,7 +2816,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-19T23:35:56.144Z"
+        "updatedAt": "2026-08-20T23:40:25.952Z"
       }
     },
     {
@@ -2903,7 +2858,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-19T23:35:56.144Z"
+        "updatedAt": "2026-08-20T23:40:25.952Z"
       }
     },
     {
@@ -2946,7 +2901,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-19T23:35:56.144Z"
+        "updatedAt": "2026-08-20T23:40:25.952Z"
       }
     },
     {
@@ -2989,7 +2944,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-19T23:35:56.144Z"
+        "updatedAt": "2026-08-20T23:40:25.952Z"
       }
     },
     {
@@ -3032,7 +2987,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-19T23:35:56.144Z"
+        "updatedAt": "2026-08-20T23:40:25.952Z"
       }
     },
     {
@@ -3075,7 +3030,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-19T23:35:56.144Z"
+        "updatedAt": "2026-08-20T23:40:25.952Z"
       }
     },
     {
@@ -3119,7 +3074,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-19T23:35:56.144Z"
+        "updatedAt": "2026-08-20T23:40:25.952Z"
       }
     },
     {
@@ -3163,7 +3118,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-19T23:35:56.144Z"
+        "updatedAt": "2026-08-20T23:40:25.952Z"
       }
     },
     {
@@ -3206,10 +3161,10 @@
         "freshness_hours": 72
       },
       "stats": {
-        "views": 0,
+        "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-19T23:35:56.144Z"
+        "updatedAt": "2026-08-20T23:40:25.952Z"
       }
     },
     {
@@ -3254,7 +3209,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-19T23:35:56.144Z"
+        "updatedAt": "2026-08-20T23:40:25.952Z"
       }
     },
     {
@@ -3297,7 +3252,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-19T23:35:56.144Z"
+        "updatedAt": "2026-08-20T23:40:25.952Z"
       }
     },
     {
@@ -3338,19 +3293,54 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-20T23:40:25.952Z"
+      }
+    },
+    {
+      "videoId": "2nygMUTluLY",
+      "videoUrl": "https://youtube.com/shorts/2nygMUTluLY",
+      "date": "2026-08-21",
+      "title": "【デザインニュース】AIに読めるDS Mabellini 8/15 Blue-500の限界とJSON化80%削減｜2026/08/21 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 41,
+      "discovery": {
+        "method": "social-en",
+        "description": "英語圏デザイナー界隈 (Designer News 08-20 号 + Hacker News 討議 + Into Design Systems ブログ) で急拡散した Andrea Mabellini 氏 8/15 の『Your Design System Isn't Ready for AI』を捕捉。昨日 PDCA が今日の Explore 第一候補として明示。Primary (駆け出し) の学習パスに直結する『最初から意味付き命名で作れば手戻りゼロ』を Indeed の実測データで補強。",
+        "sources": [
+          "https://www.andreamabellini.com/2026/08/15/your-design-system-isnt-ready-for-ai/",
+          "https://www.intodesignsystems.com/blog/design-system-not-ready-for-ai-agents",
+          "https://designernews.co/editions",
+          "https://help.figma.com/hc/en-us/articles/38978644498199-Best-practices-to-help-Figma-AI-understand-your-design-system"
+        ],
+        "query": "design system AI agents ready tokens semantic naming Designer News Aug 20 2026 Mabellini",
+        "freshness_hours": 144
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-20",
-      "changes": [
-        "standard: 48 avg views (70 videos)",
-        "Day performance: Wed=85, Sat=50, Sun=49, Thu=44, Tue=44, Fri=40, Mon=27"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-21",
       "changes": [
@@ -3580,6 +3570,14 @@
       "changes": [
         "standard: 4 avg views (75 videos)",
         "Day performance: Wed=9, Tue=8, Thu=4, Fri=4, Sat=2, Sun=2, Mon=2"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-20",
+      "changes": [
+        "standard: 3 avg views (75 videos)",
+        "Day performance: Tue=8, Fri=4, Thu=3, Sat=2, Sun=2, Mon=2, Wed=1"
       ],
       "recommendedTemplate": "standard"
     }
