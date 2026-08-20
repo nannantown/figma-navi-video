@@ -1,37 +1,39 @@
 {
-  "date": "2026-08-20",
+  "date": "2026-08-21",
   "discovery": {
-    "method": "product-launches",
-    "description": "Awwwards Site of the Day 8/18 の受賞ポートフォリオを 2 色配色の学びとして深掘り",
+    "method": "social-en",
+    "description": "英語圏デザイナー界隈 (Designer News 08-20 号 + Hacker News 討議 + Into Design Systems ブログ) で急拡散した Andrea Mabellini 氏 8/15 の『Your Design System Isn't Ready for AI』を捕捉。昨日 PDCA が今日の Explore 第一候補として明示。Primary (駆け出し) の学習パスに直結する『最初から意味付き命名で作れば手戻りゼロ』を Indeed の実測データで補強。",
     "sources": [
-      "https://www.awwwards.com/sites/michael-gatt",
-      "https://michaelgatt.com/"
+      "https://www.andreamabellini.com/2026/08/15/your-design-system-isnt-ready-for-ai/",
+      "https://www.intodesignsystems.com/blog/design-system-not-ready-for-ai-agents",
+      "https://designernews.co/editions",
+      "https://help.figma.com/hc/en-us/articles/38978644498199-Best-practices-to-help-Figma-AI-understand-your-design-system"
     ],
-    "query": "Awwwards Site of the Day August 18 2026 Michael Gatt portfolio",
-    "freshness_hours": 48
+    "query": "design system AI agents ready tokens semantic naming Designer News Aug 20 2026 Mabellini",
+    "freshness_hours": 144
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Awwwards SOTD 8/18 Michael Gatt 色2つで Creativity 7.73 の全項目トップ",
-      "description": "8月18日のAwwwards Site of the Dayが、色2つだけのポートフォリオでした。",
-      "detail": "受賞したのは作曲家Michael Gattの新サイト。ほぼ黒とライトグレーの2色だけで、Creativityが7.73と全項目トップ。Developer Awardも受賞。Vue.jsとWebGLで音と映像の世界観を1画面に凝縮した設計です。",
-      "narration": "8月18日のAwwwards Site of the Dayが、色2つだけのポートフォリオでした。最高評価の理由を要点で。",
-      "tags": ["Awwwards", "ポートフォリオ", "配色"],
+      "title": "AIに読めるDS Mabellini 8/15 Blue-500の限界とJSON化80%削減",
+      "description": "英語圏のデザイナー界隈が今、あなたのデザインシステムはAIエージェントに読めますかで盛り上がっています。",
+      "detail": "8月15日の Mabellini 氏のブログで、Blue-500 のような色番号は AI に伝わらず、color-action-hover のような意図名を使うべきと解説。Indeed の実測ではJSON化するとAIが読むトークンが80%減。",
+      "narration": "英語圏のデザイナー界隈が今、『あなたのデザインシステム、AIエージェントに読めますか』というブログで盛り上がっています。",
+      "tags": ["デザインシステム", "AIエージェント", "命名規則"],
       "narration_sections": {
-        "hook": "8月18日のAwwwards Site of the Dayが、色2つだけのポートフォリオでした。最高評価の理由を要点で。",
-        "origin": "受賞したのは作曲家Michael Gattの新サイト。ほぼ黒とライトグレーの2色だけで、Creativityが7.73と全項目トップ。Developer Awardも受賞。Vue.jsとWebGLで音と映像の世界観を1画面に凝縮した設計です。",
-        "recommend": "制約は強みになります。今日はFigmaで自分の色を2つ選ぶ練習を。Figmaナビは変数の下地作りから伴走します。"
+        "hook": "英語圏のデザイナー界隈が今、『あなたのデザインシステム、AIエージェントに読めますか』というブログで盛り上がっています。",
+        "origin": "8月15日の Mabellini 氏のブログで、Blue-500 のような色番号は AI に伝わらず、color-action-hover のような意図名を使うべきと解説。Indeed の実測ではJSON化するとAIが読むトークンが80%減。",
+        "recommend": "駆け出しなら今日から意味付き命名で作れば、後で全部直す手戻りが要りません。Figmaナビは変数命名の下地作りから伴走します。"
       },
       "section_titles": {
-        "hook": "色2つで最高評価",
-        "origin": "創造性が押し上げ",
-        "recommend": "まず2色から始める"
+        "hook": "AIに読めるDS",
+        "origin": "Blue-500の限界",
+        "recommend": "手戻りゼロの命名"
       },
       "section_descriptions": {
-        "hook": "8月18日のAwwwards SOTDが色2つで頂点",
-        "origin": "Creativity 7.73が全項目トップだった理由",
-        "recommend": "Figmaで自分の2色を選ぶ実践に落とす"
+        "hook": "英語圏で議論中のAI時代デザインシステム論",
+        "origin": "Blue-500が伝わらずJSON化で80%削減",
+        "recommend": "駆け出しこそ最初から意味付き命名を始めよう"
       }
     }
   ]
