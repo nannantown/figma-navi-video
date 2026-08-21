@@ -2,51 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "M-OgzsTi4Ew",
-      "videoUrl": "https://youtube.com/shorts/M-OgzsTi4Ew",
-      "date": "2026-05-22",
-      "title": "【デザインニュース】Google Stitch大進化で『Figmaキラー』論争、現場のデザイナーの答えは『両方使う』｜2026/05/22 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 51,
-      "discovery": {
-        "method": "social-en",
-        "description": "平日(金)の news 帯。戦略の weekday 推奨 news 系 4 method を順に検討: news-en は 2 週連続 WORST で 6/2 まで凍結中ゆえ不可、official-src は 5/20+5/21 の連投で直近2日連続ガード抵触ゆえ不可、figma-community は 5/16+5/19 で 7日2回到達済ゆえ過剰集中回避で温存、product-launches は 5/24(日) の Awwwards 投入に pre-schedule 済で温存。残る選択として social-en を採用。social-en は 5/18 が4日前で直近2日クリア・7日2回未到達・method 自体は非凍結(凍結方向は ux-roi-narrative 角度のみ)。角度は social-en の唯一の健全 TOP 角度 platform-design-rivalry(5/14 Google Liquid Glass=99 views)を Exploit。topic は Google I/O 2026(5/20)で発表された Google Stitch のリアルタイム AI エージェント。英語デザイナー界隈(HN/Reddit/X、Figma 講師や 20 年級デザイナーの個人発信)で『Figma キラー』論争として拡散しており social-en チャネルで一次把握。NG 回避: 戦略 NG『AI がデザイナーの仕事を奪う系』に触れやすい題材ゆえ、現場の経験者コンセンサス『Stitch で下書き・Figma で仕上げ、両方併用、基礎はより重要』を payoff に据え、AI=補助輪・学習者の味方として positive 化。Figmaナビは Recommend で『無料で試せる』軽 CTA のみ、強い購買誘導は回避。freshness_hours=46(5/20 発表から JST 朝で逆算)、出典 6 件記録。5/21 routine の pre-schedule(expert-blog を 5/22 第一候補)は、expert-blog が weekday news 系外 method かつ過去2回とも週末利用ゆえ金曜 news 帯に不適と判断し override、~46h fresh の Google Stitch news + 実績ある platform-design-rivalry 角度を優先、expert-blog は 5/23-25 週末枠に再温存。",
-        "sources": [
-          "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-updates/",
-          "https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-collection/",
-          "https://www.techtimes.com/articles/316903/20260520/google-stitch-launches-real-time-ai-agent-multiplayer-editing-figma-charges-15-seat.htm",
-          "https://aiweekly.co/alerts/google-stitch-adds-streaming-design-agent-free-multiplayer",
-          "https://www.nxcode.io/resources/news/google-stitch-vs-figma-ai-design-comparison-2026",
-          "https://smoothmojo.com/blog/google-stitch-vs-figma/"
-        ],
-        "query": "Google Stitch I/O 2026 real-time agent vs Figma designers reaction Hacker News Reddit",
-        "freshness_hours": 46
-      },
-      "stats": {
-        "views": 19,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-06-03T01:47:08.509Z"
-      }
-    },
-    {
       "videoId": "O-GLBp1e3BY",
       "videoUrl": "https://youtube.com/shorts/O-GLBp1e3BY",
       "date": "2026-05-23",
@@ -2725,7 +2680,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-20T23:40:25.952Z"
+        "updatedAt": "2026-08-21T23:37:35.725Z"
       }
     },
     {
@@ -2771,7 +2726,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-20T23:40:25.952Z"
+        "updatedAt": "2026-08-21T23:37:35.725Z"
       }
     },
     {
@@ -2816,7 +2771,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-20T23:40:25.952Z"
+        "updatedAt": "2026-08-21T23:37:35.725Z"
       }
     },
     {
@@ -2858,7 +2813,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-20T23:40:25.952Z"
+        "updatedAt": "2026-08-21T23:37:35.725Z"
       }
     },
     {
@@ -2901,7 +2856,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-20T23:40:25.952Z"
+        "updatedAt": "2026-08-21T23:37:35.725Z"
       }
     },
     {
@@ -2944,7 +2899,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-20T23:40:25.952Z"
+        "updatedAt": "2026-08-21T23:37:35.725Z"
       }
     },
     {
@@ -2987,7 +2942,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-20T23:40:25.952Z"
+        "updatedAt": "2026-08-21T23:37:35.725Z"
       }
     },
     {
@@ -3030,7 +2985,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-20T23:40:25.952Z"
+        "updatedAt": "2026-08-21T23:37:35.725Z"
       }
     },
     {
@@ -3074,7 +3029,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-20T23:40:25.952Z"
+        "updatedAt": "2026-08-21T23:37:35.725Z"
       }
     },
     {
@@ -3118,7 +3073,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-20T23:40:25.952Z"
+        "updatedAt": "2026-08-21T23:37:35.725Z"
       }
     },
     {
@@ -3164,7 +3119,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-20T23:40:25.952Z"
+        "updatedAt": "2026-08-21T23:37:35.725Z"
       }
     },
     {
@@ -3209,7 +3164,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-20T23:40:25.952Z"
+        "updatedAt": "2026-08-21T23:37:35.725Z"
       }
     },
     {
@@ -3252,7 +3207,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-20T23:40:25.952Z"
+        "updatedAt": "2026-08-21T23:37:35.725Z"
       }
     },
     {
@@ -3293,7 +3248,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-20T23:40:25.952Z"
+        "updatedAt": "2026-08-21T23:37:35.725Z"
       }
     },
     {
@@ -3336,19 +3291,54 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-21T23:37:35.725Z"
+      }
+    },
+    {
+      "videoId": "3gBBQE6UXyk",
+      "videoUrl": "https://youtube.com/shorts/3gBBQE6UXyk",
+      "date": "2026-08-22",
+      "title": "【デザインニュース】Figma Nested Folders 8/3ロールアウトが週末完了 色分けで駆け出しも即整理｜2026/08/22 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 46,
+      "discovery": {
+        "method": "official-src",
+        "description": "Figma 公式 Help Center と Release Notes から Nested Folders (8/3 ロールアウト開始) を土曜 evergreen Tips 帯として採用。ロールアウトは数週間かけて全ユーザーに順次到達するとの公式アナウンス通り、多くのアカウントで今週末に完了到着中。10 階層ネスト (Pro 以上)、色分け (全プラン)、既存 Projects の自動 Folders 化を Primary (駆け出し) が 5 分で試せる形に翻訳。",
+        "sources": [
+          "https://help.figma.com/hc/en-us/articles/41753150926103-Updates-to-Figma-s-file-management",
+          "https://help.figma.com/hc/en-us/articles/360038006494-Create-and-manage-folders",
+          "https://forum.figma.com/share-your-feedback-26/rolling-out-projects-become-folders-56675",
+          "https://www.figma.com/release-notes/"
+        ],
+        "query": "Figma nested folders release rollout August 2026 projects become folders colored",
+        "freshness_hours": 48
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-21",
-      "changes": [
-        "standard: 48 avg views (71 videos)",
-        "Day performance: Wed=85, Sat=50, Sun=49, Thu=44, Tue=44, Fri=40, Mon=25"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-22",
       "changes": [
@@ -3578,6 +3568,14 @@
       "changes": [
         "standard: 3 avg views (75 videos)",
         "Day performance: Tue=8, Fri=4, Thu=3, Sat=2, Sun=2, Mon=2, Wed=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-21",
+      "changes": [
+        "standard: 3 avg views (75 videos)",
+        "Day performance: Tue=8, Fri=4, Sat=2, Sun=2, Mon=2, Wed=1, Thu=1"
       ],
       "recommendedTemplate": "standard"
     }
