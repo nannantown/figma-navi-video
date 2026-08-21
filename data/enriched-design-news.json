@@ -1,39 +1,39 @@
 {
-  "date": "2026-08-21",
+  "date": "2026-08-22",
   "discovery": {
-    "method": "social-en",
-    "description": "英語圏デザイナー界隈 (Designer News 08-20 号 + Hacker News 討議 + Into Design Systems ブログ) で急拡散した Andrea Mabellini 氏 8/15 の『Your Design System Isn't Ready for AI』を捕捉。昨日 PDCA が今日の Explore 第一候補として明示。Primary (駆け出し) の学習パスに直結する『最初から意味付き命名で作れば手戻りゼロ』を Indeed の実測データで補強。",
+    "method": "official-src",
+    "description": "Figma 公式 Help Center と Release Notes から Nested Folders (8/3 ロールアウト開始) を土曜 evergreen Tips 帯として採用。ロールアウトは数週間かけて全ユーザーに順次到達するとの公式アナウンス通り、多くのアカウントで今週末に完了到着中。10 階層ネスト (Pro 以上)、色分け (全プラン)、既存 Projects の自動 Folders 化を Primary (駆け出し) が 5 分で試せる形に翻訳。",
     "sources": [
-      "https://www.andreamabellini.com/2026/08/15/your-design-system-isnt-ready-for-ai/",
-      "https://www.intodesignsystems.com/blog/design-system-not-ready-for-ai-agents",
-      "https://designernews.co/editions",
-      "https://help.figma.com/hc/en-us/articles/38978644498199-Best-practices-to-help-Figma-AI-understand-your-design-system"
+      "https://help.figma.com/hc/en-us/articles/41753150926103-Updates-to-Figma-s-file-management",
+      "https://help.figma.com/hc/en-us/articles/360038006494-Create-and-manage-folders",
+      "https://forum.figma.com/share-your-feedback-26/rolling-out-projects-become-folders-56675",
+      "https://www.figma.com/release-notes/"
     ],
-    "query": "design system AI agents ready tokens semantic naming Designer News Aug 20 2026 Mabellini",
-    "freshness_hours": 144
+    "query": "Figma nested folders release rollout August 2026 projects become folders colored",
+    "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "AIに読めるDS Mabellini 8/15 Blue-500の限界とJSON化80%削減",
-      "description": "英語圏のデザイナー界隈が今、あなたのデザインシステムはAIエージェントに読めますかで盛り上がっています。",
-      "detail": "8月15日の Mabellini 氏のブログで、Blue-500 のような色番号は AI に伝わらず、color-action-hover のような意図名を使うべきと解説。Indeed の実測ではJSON化するとAIが読むトークンが80%減。",
-      "narration": "英語圏のデザイナー界隈が今、『あなたのデザインシステム、AIエージェントに読めますか』というブログで盛り上がっています。",
-      "tags": ["デザインシステム", "AIエージェント", "命名規則"],
+      "title": "Figma Nested Folders 8/3ロールアウトが週末完了 色分けで駆け出しも即整理",
+      "description": "あなたの Figma、Projects が Folders に変わってましたか。8/3 開始のロールアウトが週末に多くの人へ届いています。",
+      "detail": "新機能は3つ。10階層ネスト(Pro以上)、右クリック色分け(全プラン)、既存 Projects は名前もメンバーも保ったまま自動で Folders に変換。",
+      "narration": "あなたの Figma、Projects が Folders に変わってましたか。8/3 開始のロールアウトが週末に多くの人へ届いています。",
+      "tags": ["Figma新機能", "Folders", "ファイル整理"],
       "narration_sections": {
-        "hook": "英語圏のデザイナー界隈が今、『あなたのデザインシステム、AIエージェントに読めますか』というブログで盛り上がっています。",
-        "origin": "8月15日の Mabellini 氏のブログで、Blue-500 のような色番号は AI に伝わらず、color-action-hover のような意図名を使うべきと解説。Indeed の実測ではJSON化するとAIが読むトークンが80%減。",
-        "recommend": "駆け出しなら今日から意味付き命名で作れば、後で全部直す手戻りが要りません。Figmaナビは変数命名の下地作りから伴走します。"
+        "hook": "あなたの Figma、Projects が Folders に変わってましたか。8/3 開始のロールアウトが週末に多くの人へ届いています。",
+        "origin": "新機能は3つ。1つ、フォルダを 10 階層までネスト可能で Pro プラン以上が対象。2つ、色分けは全プラン対応で右クリックから即設定。3つ、既存 Projects は名前もメンバーも保ったまま自動で Folders に変換されました。",
+        "recommend": "駆け出しの週末 5 分、色分けを案件別に振れば探す時間がゼロに。整理は制作の土台、Figmaナビが命名の下地作りを伴走します。"
       },
       "section_titles": {
-        "hook": "AIに読めるDS",
-        "origin": "Blue-500の限界",
-        "recommend": "手戻りゼロの命名"
+        "hook": "Folders移行完了",
+        "origin": "新機能3つの中身",
+        "recommend": "週末5分で埋没ゼロ"
       },
       "section_descriptions": {
-        "hook": "英語圏で議論中のAI時代デザインシステム論",
-        "origin": "Blue-500が伝わらずJSON化で80%削減",
-        "recommend": "駆け出しこそ最初から意味付き命名を始めよう"
+        "hook": "8/3開始のロールアウトが今週完了、Foldersが届く",
+        "origin": "10階層ネスト+色分け+自動移行、失うものゼロ",
+        "recommend": "駆け出しの週末5分、色で案件別を区別する"
       }
     }
   ]
