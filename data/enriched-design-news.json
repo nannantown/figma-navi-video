@@ -1,39 +1,38 @@
 {
-  "date": "2026-08-22",
+  "date": "2026-08-23",
   "discovery": {
-    "method": "official-src",
-    "description": "Figma 公式 Help Center と Release Notes から Nested Folders (8/3 ロールアウト開始) を土曜 evergreen Tips 帯として採用。ロールアウトは数週間かけて全ユーザーに順次到達するとの公式アナウンス通り、多くのアカウントで今週末に完了到着中。10 階層ネスト (Pro 以上)、色分け (全プラン)、既存 Projects の自動 Folders 化を Primary (駆け出し) が 5 分で試せる形に翻訳。",
+    "method": "figma-community",
+    "description": "Figma 公式が 8 月に 3 週連続 Web 標準寄せ (8/3 Nested Folders、8/14 text wrap Balance/Pretty、8/21 Auto Layout Around/Evenly 追加) を出した流れをきっかけに Figma Community アクセシビリティ枠を見直し。駆け出しが次に押さえるべき Web 標準 = WCAG コントラストの週末 5 分導入枠として Stark - Contrast & Accessibility Checker を選出。Muzli 2026 プラグイン特集でも Stark は WCAG 2.2 AA 検査の代表として掲載継続中。全プラン無料で Install → 選択 → Check Contrast の 3 手順で判定と代替色提案まで完結する Sunday evergreen Tips に翻訳。",
     "sources": [
-      "https://help.figma.com/hc/en-us/articles/41753150926103-Updates-to-Figma-s-file-management",
-      "https://help.figma.com/hc/en-us/articles/360038006494-Create-and-manage-folders",
-      "https://forum.figma.com/share-your-feedback-26/rolling-out-projects-become-folders-56675",
-      "https://www.figma.com/release-notes/"
+      "https://www.figma.com/community/plugin/732603254453395948/stark-contrast-accessibility-checker",
+      "https://muz.li/blog/best-figma-plugins-for-designers-in-2026/",
+      "https://releasebot.io/updates/figma"
     ],
-    "query": "Figma nested folders release rollout August 2026 projects become folders colored",
+    "query": "figma community stark contrast accessibility WCAG 2026 designer plugin weekend beginner",
     "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma Nested Folders 8/3ロールアウトが週末完了 色分けで駆け出しも即整理",
-      "description": "あなたの Figma、Projects が Folders に変わってましたか。8/3 開始のロールアウトが週末に多くの人へ届いています。",
-      "detail": "新機能は3つ。10階層ネスト(Pro以上)、右クリック色分け(全プラン)、既存 Projects は名前もメンバーも保ったまま自動で Folders に変換。",
-      "narration": "あなたの Figma、Projects が Folders に変わってましたか。8/3 開始のロールアウトが週末に多くの人へ届いています。",
-      "tags": ["Figma新機能", "Folders", "ファイル整理"],
+      "title": "Stark で駆け出しの週末 5 分ポートフォリオコントラスト検査",
+      "description": "駆け出しのポートフォリオで意外と見逃されがちなのが文字コントラスト。Figma Community の Stark、週末 5 分で全画面チェックできます。",
+      "detail": "Figma Community で Stark を検索して Install、テキストやボタンを選んで Check Contrast、WCAG 2.2 AA/AAA を即判定、代替色まで提案。全プラン無料。",
+      "narration": "駆け出しのポートフォリオ、意外と見逃されがちなのが文字コントラスト。Figma Community の Stark、週末 5 分で入れて全画面チェックできます。",
+      "tags": ["Stark", "アクセシビリティ", "Figmaプラグイン"],
       "narration_sections": {
-        "hook": "あなたの Figma、Projects が Folders に変わってましたか。8/3 開始のロールアウトが週末に多くの人へ届いています。",
-        "origin": "新機能は3つ。1つ、フォルダを 10 階層までネスト可能で Pro プラン以上が対象。2つ、色分けは全プラン対応で右クリックから即設定。3つ、既存 Projects は名前もメンバーも保ったまま自動で Folders に変換されました。",
-        "recommend": "駆け出しの週末 5 分、色分けを案件別に振れば探す時間がゼロに。整理は制作の土台、Figmaナビが命名の下地作りを伴走します。"
+        "hook": "駆け出しのポートフォリオ、意外と見逃されがちなのが文字コントラスト。Figma Community の Stark、週末 5 分で入れて全画面チェックできます。",
+        "origin": "使い方は 3 ステップ。Figma Community で Stark を検索して Install。テキストやボタンを選んで右メニューから Check Contrast。WCAG 2.2 AA/AAA を即判定、代替色まで提案。全プラン無料。",
+        "recommend": "応募 30 秒前の全画面 Stark 通しが駆け出しの差別化に。色と整えの下地作りは Figmaナビが伴走します。"
       },
       "section_titles": {
-        "hook": "Folders移行完了",
-        "origin": "新機能3つの中身",
-        "recommend": "週末5分で埋没ゼロ"
+        "hook": "コントラスト盲点",
+        "origin": "Stark 3 ステップ",
+        "recommend": "応募前の 30 秒型"
       },
       "section_descriptions": {
-        "hook": "8/3開始のロールアウトが今週完了、Foldersが届く",
-        "origin": "10階層ネスト+色分け+自動移行、失うものゼロ",
-        "recommend": "駆け出しの週末5分、色で案件別を区別する"
+        "hook": "駆け出しが見逃しがちなアクセシビリティの盲点",
+        "origin": "検索→選択→Check、WCAG 判定と代替色まで",
+        "recommend": "応募 30 秒前に走らせる、駆け出し差別化の型"
       }
     }
   ]
