@@ -2725,7 +2725,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-22T23:35:02.220Z"
+        "updatedAt": "2026-08-23T23:35:26.562Z"
       }
     },
     {
@@ -2767,7 +2767,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-22T23:35:02.220Z"
+        "updatedAt": "2026-08-23T23:35:26.562Z"
       }
     },
     {
@@ -2810,7 +2810,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-22T23:35:02.220Z"
+        "updatedAt": "2026-08-23T23:35:26.562Z"
       }
     },
     {
@@ -2853,7 +2853,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-22T23:35:02.220Z"
+        "updatedAt": "2026-08-23T23:35:26.562Z"
       }
     },
     {
@@ -2896,7 +2896,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-22T23:35:02.220Z"
+        "updatedAt": "2026-08-23T23:35:26.562Z"
       }
     },
     {
@@ -2939,7 +2939,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-22T23:35:02.220Z"
+        "updatedAt": "2026-08-23T23:35:26.562Z"
       }
     },
     {
@@ -2983,7 +2983,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-22T23:35:02.220Z"
+        "updatedAt": "2026-08-23T23:35:26.562Z"
       }
     },
     {
@@ -3027,7 +3027,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-22T23:35:02.220Z"
+        "updatedAt": "2026-08-23T23:35:26.562Z"
       }
     },
     {
@@ -3073,7 +3073,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-22T23:35:02.220Z"
+        "updatedAt": "2026-08-23T23:35:26.562Z"
       }
     },
     {
@@ -3118,7 +3118,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-22T23:35:02.220Z"
+        "updatedAt": "2026-08-23T23:35:26.562Z"
       }
     },
     {
@@ -3161,7 +3161,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-22T23:35:02.220Z"
+        "updatedAt": "2026-08-23T23:35:26.562Z"
       }
     },
     {
@@ -3202,7 +3202,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-22T23:35:02.220Z"
+        "updatedAt": "2026-08-23T23:35:26.562Z"
       }
     },
     {
@@ -3245,7 +3245,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-22T23:35:02.220Z"
+        "updatedAt": "2026-08-23T23:35:26.562Z"
       }
     },
     {
@@ -3288,7 +3288,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-22T23:35:02.220Z"
+        "updatedAt": "2026-08-23T23:35:26.562Z"
       }
     },
     {
@@ -3327,6 +3327,48 @@
         "freshness_hours": 48
       },
       "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-08-23T23:35:26.562Z"
+      }
+    },
+    {
+      "videoId": "DRE1wMgrmyo",
+      "videoUrl": "https://youtube.com/shorts/DRE1wMgrmyo",
+      "date": "2026-08-24",
+      "title": "【デザインニュース】Smashing 2 連発 component contracts で駆け出しの応募語彙が更新｜2026/08/24 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 42,
+      "discovery": {
+        "method": "news-en",
+        "description": "Smashing Magazine で 3 日以内に 2 本の DS 権威記事が同テーマで出た converging news を接続。Rothenberg 8/18 + Curtis 8/20 で 『component contracts』 に収束。",
+        "sources": [
+          "https://nathanacurtis.substack.com/p/component-contracts-and-schemas",
+          "https://mattrothenberg.com/notes/you-dont-have-a-design-system/",
+          "https://www.smashingmagazine.com/category/design-systems/"
+        ],
+        "query": "component contracts Smashing Magazine August 2026 Nathan Curtis Matt Rothenberg",
+        "freshness_hours": 96
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -3335,14 +3377,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-23",
-      "changes": [
-        "standard: 45 avg views (72 videos)",
-        "Day performance: Wed=69, Sat=50, Sun=49, Thu=44, Fri=40, Tue=40, Mon=25"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-24",
       "changes": [
@@ -3572,6 +3606,14 @@
       "changes": [
         "standard: 3 avg views (75 videos)",
         "Day performance: Tue=8, Fri=2, Sun=2, Mon=2, Sat=1, Wed=1, Thu=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-23",
+      "changes": [
+        "standard: 3 avg views (75 videos)",
+        "Day performance: Tue=8, Fri=2, Sun=2, Mon=2, Wed=1, Thu=1, Sat=1"
       ],
       "recommendedTemplate": "standard"
     }
