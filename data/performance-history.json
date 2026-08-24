@@ -2767,7 +2767,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-23T23:35:26.562Z"
+        "updatedAt": "2026-08-24T23:34:46.671Z"
       }
     },
     {
@@ -2810,7 +2810,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-23T23:35:26.562Z"
+        "updatedAt": "2026-08-24T23:34:46.671Z"
       }
     },
     {
@@ -2853,7 +2853,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-23T23:35:26.562Z"
+        "updatedAt": "2026-08-24T23:34:46.671Z"
       }
     },
     {
@@ -2896,7 +2896,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-23T23:35:26.562Z"
+        "updatedAt": "2026-08-24T23:34:46.671Z"
       }
     },
     {
@@ -2939,7 +2939,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-23T23:35:26.562Z"
+        "updatedAt": "2026-08-24T23:34:46.671Z"
       }
     },
     {
@@ -2983,7 +2983,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-23T23:35:26.562Z"
+        "updatedAt": "2026-08-24T23:34:46.671Z"
       }
     },
     {
@@ -3027,7 +3027,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-23T23:35:26.562Z"
+        "updatedAt": "2026-08-24T23:34:46.671Z"
       }
     },
     {
@@ -3073,7 +3073,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-23T23:35:26.562Z"
+        "updatedAt": "2026-08-24T23:34:46.671Z"
       }
     },
     {
@@ -3118,7 +3118,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-23T23:35:26.562Z"
+        "updatedAt": "2026-08-24T23:34:46.671Z"
       }
     },
     {
@@ -3161,7 +3161,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-23T23:35:26.562Z"
+        "updatedAt": "2026-08-24T23:34:46.671Z"
       }
     },
     {
@@ -3202,7 +3202,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-23T23:35:26.562Z"
+        "updatedAt": "2026-08-24T23:34:46.671Z"
       }
     },
     {
@@ -3245,7 +3245,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-23T23:35:26.562Z"
+        "updatedAt": "2026-08-24T23:34:46.671Z"
       }
     },
     {
@@ -3288,7 +3288,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-23T23:35:26.562Z"
+        "updatedAt": "2026-08-24T23:34:46.672Z"
       }
     },
     {
@@ -3330,7 +3330,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-23T23:35:26.562Z"
+        "updatedAt": "2026-08-24T23:34:46.672Z"
       }
     },
     {
@@ -3372,19 +3372,53 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-24T23:34:46.672Z"
+      }
+    },
+    {
+      "videoId": "_XuwBiESnXk",
+      "videoUrl": "https://youtube.com/shorts/_XuwBiESnXk",
+      "date": "2026-08-25",
+      "title": "【デザインニュース】Figma 8/24 ベクター編集に消しゴム＋塗りバケツ アイコン修正が Figma だけで完結｜2026/08/25 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 44,
+      "discovery": {
+        "method": "official-src",
+        "description": "Figma 公式リリースノートを再スキャンし 8/24 分の新機能『ベクター編集の消しゴム＋塗りバケツ』を特定。3 日空きで official-src 復帰枠に該当し、freshness 24h 以内で最鮮度。",
+        "sources": [
+          "https://www.figma.com/release-notes/",
+          "https://releasebot.io/updates/figma",
+          "https://releases.sh/figma/figma-release-notes"
+        ],
+        "query": "Figma release notes August 24 2026 eraser tool paint bucket vector editing",
+        "freshness_hours": 15
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-24",
-      "changes": [
-        "standard: 42 avg views (72 videos)",
-        "Day performance: Wed=69, Sat=50, Sun=49, Fri=40, Tue=40, Mon=25, Thu=25"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-25",
       "changes": [
@@ -3613,6 +3647,14 @@
       "date": "2026-08-23",
       "changes": [
         "standard: 3 avg views (75 videos)",
+        "Day performance: Tue=8, Fri=2, Sun=2, Mon=2, Wed=1, Thu=1, Sat=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-24",
+      "changes": [
+        "standard: 3 avg views (76 videos)",
         "Day performance: Tue=8, Fri=2, Sun=2, Mon=2, Wed=1, Thu=1, Sat=1"
       ],
       "recommendedTemplate": "standard"
