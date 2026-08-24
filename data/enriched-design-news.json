@@ -1,38 +1,38 @@
 {
-  "date": "2026-08-24",
+  "date": "2026-08-25",
   "discovery": {
-    "method": "news-en",
-    "description": "Smashing Magazine で 3 日以内に 2 本の DS 権威記事が同テーマで出た converging news を接続。Rothenberg 8/18 + Curtis 8/20 で 『component contracts』 に収束。",
+    "method": "official-src",
+    "description": "Figma 公式リリースノートを再スキャンし 8/24 分の新機能『ベクター編集の消しゴム＋塗りバケツ』を特定。3 日空きで official-src 復帰枠に該当し、freshness 24h 以内で最鮮度。",
     "sources": [
-      "https://nathanacurtis.substack.com/p/component-contracts-and-schemas",
-      "https://mattrothenberg.com/notes/you-dont-have-a-design-system/",
-      "https://www.smashingmagazine.com/category/design-systems/"
+      "https://www.figma.com/release-notes/",
+      "https://releasebot.io/updates/figma",
+      "https://releases.sh/figma/figma-release-notes"
     ],
-    "query": "component contracts Smashing Magazine August 2026 Nathan Curtis Matt Rothenberg",
-    "freshness_hours": 96
+    "query": "Figma release notes August 24 2026 eraser tool paint bucket vector editing",
+    "freshness_hours": 15
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Smashing 2 連発 component contracts で駆け出しの応募語彙が更新",
-      "description": "同じ Figma ライブラリなのにチームで見た目がバラつく理由に、Smashing が今週答えを 2 連発で置きました。",
-      "detail": "8/18 Matt Rothenberg『共有だけじゃ一貫しない』、8/20 Nathan Curtis『component contracts and schemas』。答えは 1 コンポーネントに 1 枚の JSON 契約。props、トークン、slot、a11y を 1 ファイルに集めます。",
-      "narration": "同じ Figma ライブラリなのにチームで見た目バラつく? Smashing が今週答えを 2 連発で出しました。",
-      "tags": ["Design System", "component contracts", "Smashing", "駆け出し", "Figma"],
+      "title": "Figma 8/24 ベクター編集に消しゴム＋塗りバケツ アイコン修正が Figma だけで完結",
+      "description": "Figma でアイコンを微調整するたびに Illustrator を開いていた時代が、8/24 で終わりました。",
+      "detail": "Figma 公式リリースノート 8/24 分。ベクター編集モードで Shift+E を押すと消しゴムに切替、パスの余分な部分を直接削除できます。塗りバケツは色やグラデーションを選んでドラッグするだけで、複数エリアを一気に塗り替え可能。",
+      "narration": "Figma でアイコンの微調整のたびに Illustrator を開くの、正直めんどい。8/24、消しゴムと塗りバケツが Figma に来ました。",
+      "tags": ["Figma", "ベクター編集", "消しゴム", "塗りバケツ", "リリースノート"],
       "narration_sections": {
-        "hook": "同じ Figma ライブラリなのにチームで見た目バラつく? Smashing が今週答えを 2 連発で出しました。",
-        "origin": "8/18 Matt Rothenberg『共有だけじゃ一貫しない』、8/20 Nathan Curtis『component contracts』。答えは 1 コンポーネント 1 枚の JSON 契約。props、トークン、slot、a11y を 1 ファイルに集めます。",
-        "recommend": "駆け出しも真似できます。ボタン 1 個に『variant4、size2、tokenで塗る』と 1 行書けば、応募面接で通じる語彙に。"
+        "hook": "Figma でアイコンの微調整のたびに Illustrator を開くの、正直めんどい。8/24、消しゴムと塗りバケツが Figma に来ました。",
+        "origin": "Figma 公式リリースノート 8/24 分。ベクター編集モードで Shift+E を押すと消しゴムに切り替わり、パスの余分な部分を直接削除できます。塗りバケツは色やグラデーションを選んでドラッグするだけで、複数エリアを一気に塗り替えできます。",
+        "recommend": "ポートフォリオのアイコンを Illustrator に戻さず Figma で完結。今夜 5 分、消しゴムを試してみてください。"
       },
       "section_titles": {
-        "hook": "見た目バラつく謎",
-        "origin": "契約=1枚のJSON",
-        "recommend": "駆け出しの応募語彙"
+        "hook": "8/24 消しゴム追加",
+        "origin": "消しゴム＋塗りバケツ",
+        "recommend": "今夜 5 分で試そう"
       },
       "section_descriptions": {
-        "hook": "同じ Figma ライブラリなのにチームで見た目バラつく理由",
-        "origin": "Smashing 8/18 と 8/20 が同じ答えを提示",
-        "recommend": "ボタン 1 個に『約束』を 1 行書けば語彙になる"
+        "hook": "アイコン修正が Figma 単体で完結する",
+        "origin": "Shift+E で切替、ドラッグで一括塗替",
+        "recommend": "自分のポートフォリオのアイコンで 5 分体験"
       }
     }
   ]
