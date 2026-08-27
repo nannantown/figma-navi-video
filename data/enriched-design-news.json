@@ -1,39 +1,39 @@
 {
-  "date": "2026-08-27",
+  "date": "2026-08-28",
   "discovery": {
-    "method": "news-en",
-    "description": "8/25 Smashing Magazine 掲載の Martin Tomitsch & Steve Baty 共著『The UX butterfly effect』を、UX Collective 再掲版と DOC 独立記事で三重確認して駆け出し向けにやわらかく訳出。昨日 PDCA が 09-01 週の news-en 4 投目として温存指定していた候補を、本日 TOP 3 method (official-src/product-launches) が 2 日ガードで全滅かつ figma-community が fresh 候補不在のため前倒し採用。",
+    "method": "official-src",
+    "description": "Figma 公式 release notes を WebSearch 経由で確認、8/26 掲載の Desktop Agent Chat Panel 別ウィンドウ切り出し機能を、Aug 26 の他アップデート (Vector Editing / Enterprise MCP) と共に多重確認して駆け出し向けに要点抽出。TOP 3 method (official-src / figma-community / news-en) から、2 日ガード後に残る official-src / figma-community のうち、48h 圏の fresh 官公新機能を優先。",
     "sources": [
-      "https://uxdesign.cc/the-ux-butterfly-effect-58dd180a0e13",
-      "https://newsletter.uxdesign.cc/p/the-ux-butterfly-effect",
-      "https://www.doc.cc/articles/ux-butterfly-effect",
-      "https://www.smashingmagazine.com/category/ux/"
+      "https://www.figma.com/release-notes/",
+      "https://releasebot.io/updates/figma",
+      "https://help.figma.com/hc/en-us/articles/37998629035799-Work-with-the-Figma-agent-in-design-files",
+      "https://www.figma.com/blog/the-figma-agent-is-here/"
     ],
-    "query": "Smashing Magazine UX butterfly effect Tomitsch Baty unintended consequences 2026-08-25 Facebook depression TikTok CO2 Juul teen marketing fine",
+    "query": "Figma agent chat panel window desktop macOS Windows August 26 2026 release notes",
     "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Smashing 8/25 UX バタフライ効果 駆け出しの1決定が世界に波紋",
-      "description": "配色や配置の判断1つが、想定外の波紋を作る。8/25 Smashing の警鐘記事です。",
-      "detail": "8/25 に Smashing Magazine が Martin Tomitsch と Steve Baty の共著『The UX butterfly effect』を掲載。Facebook 上陸後に米大学生の鬱は7%増・不安は20%増、TikTok は1分視聴で 2.63g の CO₂、Juul は10代マーケで 4.39 億ドル罰金。小さな UI 決定が想像を超える波紋を作ると警鐘を鳴らします。",
-      "narration": "知ってました?小さな UI の判断が、世界を動かすかもしれません。8/25 Smashing 掲載、UX バタフライ効果が話題です。",
-      "tags": ["Smashing", "UXデザイン", "設計判断", "駆け出し", "業界ニュース"],
+      "title": "Figma Agent 8/26 別ウィンドウ切り出し 駆け出しの常時先生化",
+      "description": "8/26 デスクトップ更新で Figma Agent チャットが別窓に。駆け出しの独学が加速します。",
+      "detail": "8/26 に Figma が macOS / Windows デスクトップアプリで Agent Chat Panel の別ウィンドウ切り出しを解禁。今までサイドバー固定で質問するとキャンバスが狭くなる悩みが、常時表示の浮動ウィンドウ化で解消。他アプリやタブ切替中も見え続け、モニタの好きな位置に固定できます。",
+      "narration": "知ってました?Figma Agent が別ウィンドウで浮かせられるようになりました。8/26 デスクトップ更新、駆け出しの学習が変わります。",
+      "tags": ["Figma", "FigmaAgent", "デスクトップ", "駆け出し", "公式ニュース"],
       "narration_sections": {
-        "hook": "知ってました?小さな UI の判断が、世界を動かすかもしれません。8/25 Smashing 掲載、UX バタフライ効果が話題です。",
-        "origin": "Tomitsch と Baty の記事です。Facebook 上陸後の米大学生は鬱が7%増、TikTok は1分見るだけで CO₂ が 2.63g、Juul の10代マーケは 4.39 億ドル罰金。小さな設計判断が世界に波紋を作った実例です。",
-        "recommend": "駆け出しの今こそ、1決定ごとに『これ、誰にどう波及する?』と自問する癖を。応募先での判断力が武器になります。"
+        "hook": "知ってました?Figma Agent が別ウィンドウで浮かせられるようになりました。8/26 デスクトップ更新、駆け出しの学習が変わります。",
+        "origin": "今までサイドバー固定で、質問するとキャンバスが狭くなる悩みがありました。8/26 から Mac も Windows も別ウィンドウ切り出しに対応。他アプリやタブ切替でも常時表示、好きな位置に固定できます。学習中の Q&A ループが止まらない設計です。",
+        "recommend": "Auto Layout でつまったら Agent に即質問、答えを見ながらキャンバス実践。駆け出しの独学速度が一段上がります。"
       },
       "section_titles": {
-        "hook": "UXバタフライ効果",
-        "origin": "小さな判断の波紋",
-        "recommend": "1決定ごとに自問"
+        "hook": "Agent 別ウィンドウ",
+        "origin": "常時表示の学習箱",
+        "recommend": "独学速度が上がる"
       },
       "section_descriptions": {
-        "hook": "8/25 Smashing、判断1つが世界を動かす話",
-        "origin": "米大学生の鬱・TikTok の CO₂・Juul 罰金",
-        "recommend": "駆け出しから鍛える判断力、応募先で武器に"
+        "hook": "8/26 デスクトップ更新、駆け出し向け革新",
+        "origin": "サイドバー固定→別窓化、他アプリ切替でも常時表示",
+        "recommend": "質問→答え→即実践、独学ループが止まらない"
       }
     }
   ]
