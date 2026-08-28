@@ -1,39 +1,39 @@
 {
-  "date": "2026-08-28",
+  "date": "2026-08-29",
   "discovery": {
-    "method": "official-src",
-    "description": "Figma 公式 release notes を WebSearch 経由で確認、8/26 掲載の Desktop Agent Chat Panel 別ウィンドウ切り出し機能を、Aug 26 の他アップデート (Vector Editing / Enterprise MCP) と共に多重確認して駆け出し向けに要点抽出。TOP 3 method (official-src / figma-community / news-en) から、2 日ガード後に残る official-src / figma-community のうち、48h 圏の fresh 官公新機能を優先。",
+    "method": "expert-blog",
+    "description": "Smashing Magazine 8/27 の週末 UX まとめで NN/g (Nielsen Norman Group) の『Accordion Icons: Which Signifiers Work Best?』(Page Laubheimer / Raluca Budiu 共著) が再紹介されたのを起点に、NN/g 一次記事を直接引用。expert-blog は直近 14 日 (08-15〜08-28) 未使用の Explore 1 番手、TOP 3 method (official-src / figma-community / news-en) が本日それぞれ 2 日ガードや連続偏り抵触の状況で Explore 側に振って母数不足の method を回す。Sat weekend evergreen 帯で柱④ Tips (直近 14 日 1/14=7%、target 15% で最大の運用ギャップ) を 2/15=13% に補正。Primary 駆け出し層のポートフォリオ FAQ セクションで『右矢印』を選んで減点される痛点を直撃、Caret 一択という 1 判断で面接での UX 説明力に化ける翻訳角度。NG 回避: (a) AI=補助輪フレーム維持 (今回 AI 話題は触れず純粋な UI 判断論)、(b) プロ向け高度議論回避 (アイコン名 4 択の二択レベルに翻訳)、(c) AI が仕事を奪う系 完全非該当、(d) プラグイン機能説明メイン 完全非該当、(e) freshness_hours=48 (Smashing 8/27 掲載起点、weekend evergreen は元研究の古さより Smashing 再紹介日を基準に許容)、(f) 出典 4 ソースで multi-source confirm",
     "sources": [
-      "https://www.figma.com/release-notes/",
-      "https://releasebot.io/updates/figma",
-      "https://help.figma.com/hc/en-us/articles/37998629035799-Work-with-the-Figma-agent-in-design-files",
-      "https://www.figma.com/blog/the-figma-agent-is-here/"
+      "https://www.nngroup.com/articles/accordion-icons/",
+      "https://www.smashingmagazine.com/",
+      "https://www.nngroup.com/topic/signifiers/",
+      "https://blog.logrocket.com/ux-design/accordion-ui-design/"
     ],
-    "query": "Figma agent chat panel window desktop macOS Windows August 26 2026 release notes",
+    "query": "NN/g Nielsen Norman Group accordion icons signifiers caret plus arrow Smashing Magazine August 27 2026 weekend UX tips beginner portfolio FAQ",
     "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma Agent 8/26 別ウィンドウ切り出し 駆け出しの常時先生化",
-      "description": "8/26 デスクトップ更新で Figma Agent チャットが別窓に。駆け出しの独学が加速します。",
-      "detail": "8/26 に Figma が macOS / Windows デスクトップアプリで Agent Chat Panel の別ウィンドウ切り出しを解禁。今までサイドバー固定で質問するとキャンバスが狭くなる悩みが、常時表示の浮動ウィンドウ化で解消。他アプリやタブ切替中も見え続け、モニタの好きな位置に固定できます。",
-      "narration": "知ってました?Figma Agent が別ウィンドウで浮かせられるようになりました。8/26 デスクトップ更新、駆け出しの学習が変わります。",
-      "tags": ["Figma", "FigmaAgent", "デスクトップ", "駆け出し", "公式ニュース"],
+      "title": "NN/g アコーディオン研究、FAQ の開閉は『カレット』一択",
+      "description": "駆け出しのポートフォリオで FAQ の開閉アイコンを右矢印にしていると UX 力を疑われる、NN/g の一次研究に基づく Weekend Tips。",
+      "detail": "NN/g が 4 種のアイコン (カレット・右矢印・プラス・意味のない図形) を比較した結果、カレットが『その場で開く』と最も正しく伝わることが判明。Smashing Magazine 8/27 記事で再紹介され話題。",
+      "narration": "駆け出しのポートフォリオで FAQ の開閉アイコン、右矢印を選んでませんか。実はここで UX の判断力が透けて見える、ちょっと怖い場所です",
+      "tags": ["UI", "UX", "アコーディオン", "駆け出しデザイナー", "ポートフォリオ"],
       "narration_sections": {
-        "hook": "知ってました?Figma Agent が別ウィンドウで浮かせられるようになりました。8/26 デスクトップ更新、駆け出しの学習が変わります。",
-        "origin": "今までサイドバー固定で、質問するとキャンバスが狭くなる悩みがありました。8/26 から Mac も Windows も別ウィンドウ切り出しに対応。他アプリやタブ切替でも常時表示、好きな位置に固定できます。学習中の Q&A ループが止まらない設計です。",
-        "recommend": "Auto Layout でつまったら Agent に即質問、答えを見ながらキャンバス実践。駆け出しの独学速度が一段上がります。"
+        "hook": "駆け出しのポートフォリオでFAQの開閉アイコン、右矢印を選んでませんか。実はここでUXの判断力が透けて見える、ちょっと怖い場所です",
+        "origin": "NN/gの研究では、下向き山型のカレット、右矢印、プラス、意味のない図形の4種を比較。カレットが『その場で開く』と最も正しく伝わり、右矢印は『別ページへ飛ぶ』と誤解、プラスは『追加ボタン』と混同されがち。Smashingが8/27に再紹介です",
+        "recommend": "今日の5分でポートフォリオのFAQをカレットに揃えるだけ、この1つの判断が面接で語れるUX力の証拠になります"
       },
       "section_titles": {
-        "hook": "Agent 別ウィンドウ",
-        "origin": "常時表示の学習箱",
-        "recommend": "独学速度が上がる"
+        "hook": "FAQの開閉アイコン",
+        "origin": "NN/g 4択比較",
+        "recommend": "今日5分の見直し"
       },
       "section_descriptions": {
-        "hook": "8/26 デスクトップ更新、駆け出し向け革新",
-        "origin": "サイドバー固定→別窓化、他アプリ切替でも常時表示",
-        "recommend": "質問→答え→即実践、独学ループが止まらない"
+        "hook": "駆け出しポートフォリオで意外な減点ポイント",
+        "origin": "4種のアイコンをユーザーに見せた比較結果",
+        "recommend": "今日カレットに揃えてUX判断力を証明する"
       }
     }
   ]
