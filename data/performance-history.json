@@ -2,50 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "AFYkY-L2Vpw",
-      "videoUrl": "https://youtube.com/shorts/AFYkY-L2Vpw",
-      "date": "2026-05-29",
-      "title": "【デザインニュース】Figma Make が本番コードに直結、ターミナル要らずでデザイナーが GitHub に PR を出せる時代へ｜2026/05/29 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 45,
-      "discovery": {
-        "method": "social-en",
-        "description": "Figma 公式 X 発表 + VentureBeat 業界分析を 24h fresh news cycle で捕捉、social-en の新角度 design-to-code-driverseat を Explore 試行。official-src は直近2日 + 7日2回ガード両抵触、news-en は 6/2 まで凍結のため、X + 業界メディア起点の social-en で扱う。",
-        "sources": [
-          "https://x.com/figma/status/2059987170065093001",
-          "https://www.figma.com/blog/figma-make-now-on-your-local-code/",
-          "https://venturebeat.com/technology/are-designers-the-new-swes-figma-makes-new-two-way-github-integration-turns-designs-into-live-production-code-with-built-in-governance",
-          "https://help.figma.com/hc/en-us/articles/35463818346647-Push-from-Figma-Make-to-GitHub",
-          "https://www.figma.com/release-notes/"
-        ],
-        "query": "Figma Make local code GitHub PR branch beta May 28 2026 designer 45% terminal-less codebase integration MCP",
-        "freshness_hours": 24
-      },
-      "stats": {
-        "views": 4,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-06-11T01:39:51.072Z"
-      }
-    },
-    {
       "videoId": "wWCu5LOzlWE",
       "videoUrl": "https://youtube.com/shorts/wWCu5LOzlWE",
       "date": "2026-05-30",
@@ -2849,7 +2805,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-27T04:31:30.117Z"
+        "updatedAt": "2026-08-28T06:56:21.604Z"
       }
     },
     {
@@ -2893,7 +2849,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-27T04:31:30.117Z"
+        "updatedAt": "2026-08-28T06:56:21.604Z"
       }
     },
     {
@@ -2937,7 +2893,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-27T04:31:30.117Z"
+        "updatedAt": "2026-08-28T06:56:21.604Z"
       }
     },
     {
@@ -2983,7 +2939,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-27T04:31:30.117Z"
+        "updatedAt": "2026-08-28T06:56:21.604Z"
       }
     },
     {
@@ -3028,7 +2984,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-27T04:31:30.117Z"
+        "updatedAt": "2026-08-28T06:56:21.604Z"
       }
     },
     {
@@ -3071,7 +3027,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-27T04:31:30.117Z"
+        "updatedAt": "2026-08-28T06:56:21.604Z"
       }
     },
     {
@@ -3112,7 +3068,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-27T04:31:30.117Z"
+        "updatedAt": "2026-08-28T06:56:21.604Z"
       }
     },
     {
@@ -3152,10 +3108,10 @@
         "freshness_hours": 144
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-27T04:31:30.117Z"
+        "updatedAt": "2026-08-28T06:56:21.604Z"
       }
     },
     {
@@ -3198,7 +3154,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-27T04:31:30.117Z"
+        "updatedAt": "2026-08-28T06:56:21.604Z"
       }
     },
     {
@@ -3240,7 +3196,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-27T04:31:30.117Z"
+        "updatedAt": "2026-08-28T06:56:21.604Z"
       }
     },
     {
@@ -3282,7 +3238,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-27T04:31:30.117Z"
+        "updatedAt": "2026-08-28T06:56:21.604Z"
       }
     },
     {
@@ -3324,7 +3280,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-27T04:31:30.117Z"
+        "updatedAt": "2026-08-28T06:56:21.604Z"
       }
     },
     {
@@ -3367,7 +3323,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-27T04:31:30.117Z"
+        "updatedAt": "2026-08-28T06:56:21.604Z"
       }
     },
     {
@@ -3407,6 +3363,49 @@
         "freshness_hours": 48
       },
       "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-08-28T06:56:21.604Z"
+      }
+    },
+    {
+      "videoId": "J_0mvNkx9n0",
+      "videoUrl": "https://youtube.com/shorts/J_0mvNkx9n0",
+      "date": "2026-08-28",
+      "title": "【デザインニュース】Figma Agent 8/26 別ウィンドウ切り出し 駆け出しの常時先生化｜2026/08/28 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 45,
+      "discovery": {
+        "method": "official-src",
+        "description": "Figma 公式 release notes を WebSearch 経由で確認、8/26 掲載の Desktop Agent Chat Panel 別ウィンドウ切り出し機能を、Aug 26 の他アップデート (Vector Editing / Enterprise MCP) と共に多重確認して駆け出し向けに要点抽出。TOP 3 method (official-src / figma-community / news-en) から、2 日ガード後に残る official-src / figma-community のうち、48h 圏の fresh 官公新機能を優先。",
+        "sources": [
+          "https://www.figma.com/release-notes/",
+          "https://releasebot.io/updates/figma",
+          "https://help.figma.com/hc/en-us/articles/37998629035799-Work-with-the-Figma-agent-in-design-files",
+          "https://www.figma.com/blog/the-figma-agent-is-here/"
+        ],
+        "query": "Figma agent chat panel window desktop macOS Windows August 26 2026 release notes",
+        "freshness_hours": 48
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -3415,14 +3414,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-29",
-      "changes": [
-        "standard: 34 avg views (70 videos)",
-        "Day performance: Wed=69, Sat=41, Fri=31, Tue=30, Sun=29, Thu=25, Mon=17"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-30",
       "changes": [
@@ -3652,6 +3643,14 @@
       "changes": [
         "standard: 2 avg views (78 videos)",
         "Day performance: Tue=7, Fri=2, Sun=2, Mon=2, Wed=1, Thu=1, Sat=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-28",
+      "changes": [
+        "standard: 2 avg views (77 videos)",
+        "Day performance: Tue=7, Fri=2, Sun=2, Mon=2, Sat=1, Wed=1, Thu=1"
       ],
       "recommendedTemplate": "standard"
     }
