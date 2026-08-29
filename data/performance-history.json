@@ -2,50 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "wWCu5LOzlWE",
-      "videoUrl": "https://youtube.com/shorts/wWCu5LOzlWE",
-      "date": "2026-05-30",
-      "title": "【デザインニュース】Variables の Mode、Frame に当てるだけで Light/Dark 切替。画面 2 枚作らないで済む｜2026/05/30 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 34,
-      "discovery": {
-        "method": "figma-community",
-        "description": "Figma 公式 Help Center の Variables / Modes 解説と community で広く実践されている『Frame に Mode を当てる Light/Dark 1 操作切替』Tips を、community-tips-bundle 角度 (5/16 Auto Layout 絶対位置=400, 5/19 Component Boolean Property=64) と同じ『Primary persona が知らずにハマっている 1 操作 fix』フレームで再投入。週末 evergreen 枠で freshness 制約は緩い、Figma 公式機能の正攻法 Tips として扱う。",
-        "sources": [
-          "https://help.figma.com/hc/en-us/articles/15343816063383-Modes-for-variables",
-          "https://help.figma.com/hc/en-us/articles/15343107263511-Apply-variables-to-designs",
-          "https://help.figma.com/hc/en-us/articles/14506821864087-Overview-of-variables-collections-and-modes",
-          "https://spin.atomicobject.com/light-dark-themes-figma/",
-          "https://www.digidop.com/blog/how-to-create-dark-light-mode-variables-figma"
-        ],
-        "query": "Figma Variables modes apply to frame light dark switching dropdown 2026 tutorial designer time-save beginner",
-        "freshness_hours": 168
-      },
-      "stats": {
-        "views": 5,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-06-13T01:34:32.674Z"
-      }
-    },
-    {
       "videoId": "VB9ogwil9l4",
       "videoUrl": "https://youtube.com/shorts/VB9ogwil9l4",
       "date": "2026-05-31",
@@ -2849,7 +2805,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-28T06:56:21.604Z"
+        "updatedAt": "2026-08-29T04:10:20.520Z"
       }
     },
     {
@@ -2893,7 +2849,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-28T06:56:21.604Z"
+        "updatedAt": "2026-08-29T04:10:20.520Z"
       }
     },
     {
@@ -2939,7 +2895,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-28T06:56:21.604Z"
+        "updatedAt": "2026-08-29T04:10:20.520Z"
       }
     },
     {
@@ -2984,7 +2940,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-28T06:56:21.604Z"
+        "updatedAt": "2026-08-29T04:10:20.520Z"
       }
     },
     {
@@ -3027,7 +2983,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-28T06:56:21.604Z"
+        "updatedAt": "2026-08-29T04:10:20.520Z"
       }
     },
     {
@@ -3068,7 +3024,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-28T06:56:21.604Z"
+        "updatedAt": "2026-08-29T04:10:20.520Z"
       }
     },
     {
@@ -3111,7 +3067,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-28T06:56:21.604Z"
+        "updatedAt": "2026-08-29T04:10:20.520Z"
       }
     },
     {
@@ -3154,7 +3110,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-28T06:56:21.604Z"
+        "updatedAt": "2026-08-29T04:10:20.520Z"
       }
     },
     {
@@ -3196,7 +3152,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-28T06:56:21.604Z"
+        "updatedAt": "2026-08-29T04:10:20.520Z"
       }
     },
     {
@@ -3238,7 +3194,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-28T06:56:21.604Z"
+        "updatedAt": "2026-08-29T04:10:20.520Z"
       }
     },
     {
@@ -3277,10 +3233,10 @@
         "freshness_hours": 15
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-28T06:56:21.604Z"
+        "updatedAt": "2026-08-29T04:10:20.520Z"
       }
     },
     {
@@ -3323,7 +3279,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-28T06:56:21.604Z"
+        "updatedAt": "2026-08-29T04:10:20.520Z"
       }
     },
     {
@@ -3366,7 +3322,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-28T06:56:21.604Z"
+        "updatedAt": "2026-08-29T04:10:20.520Z"
       }
     },
     {
@@ -3409,19 +3365,54 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-29T04:10:20.520Z"
+      }
+    },
+    {
+      "videoId": "x0SE2O6KaHc",
+      "videoUrl": "https://youtube.com/shorts/x0SE2O6KaHc",
+      "date": "2026-08-29",
+      "title": "【デザインニュース】NN/g アコーディオン研究、FAQ の開閉は『カレット』一択｜2026/08/29 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 49,
+      "discovery": {
+        "method": "expert-blog",
+        "description": "Smashing Magazine 8/27 の週末 UX まとめで NN/g (Nielsen Norman Group) の『Accordion Icons: Which Signifiers Work Best?』(Page Laubheimer / Raluca Budiu 共著) が再紹介されたのを起点に、NN/g 一次記事を直接引用。expert-blog は直近 14 日 (08-15〜08-28) 未使用の Explore 1 番手、TOP 3 method (official-src / figma-community / news-en) が本日それぞれ 2 日ガードや連続偏り抵触の状況で Explore 側に振って母数不足の method を回す。Sat weekend evergreen 帯で柱④ Tips (直近 14 日 1/14=7%、target 15% で最大の運用ギャップ) を 2/15=13% に補正。Primary 駆け出し層のポートフォリオ FAQ セクションで『右矢印』を選んで減点される痛点を直撃、Caret 一択という 1 判断で面接での UX 説明力に化ける翻訳角度。NG 回避: (a) AI=補助輪フレーム維持 (今回 AI 話題は触れず純粋な UI 判断論)、(b) プロ向け高度議論回避 (アイコン名 4 択の二択レベルに翻訳)、(c) AI が仕事を奪う系 完全非該当、(d) プラグイン機能説明メイン 完全非該当、(e) freshness_hours=48 (Smashing 8/27 掲載起点、weekend evergreen は元研究の古さより Smashing 再紹介日を基準に許容)、(f) 出典 4 ソースで multi-source confirm",
+        "sources": [
+          "https://www.nngroup.com/articles/accordion-icons/",
+          "https://www.smashingmagazine.com/",
+          "https://www.nngroup.com/topic/signifiers/",
+          "https://blog.logrocket.com/ux-design/accordion-ui-design/"
+        ],
+        "query": "NN/g Nielsen Norman Group accordion icons signifiers caret plus arrow Smashing Magazine August 27 2026 weekend UX tips beginner portfolio FAQ",
+        "freshness_hours": 48
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-30",
-      "changes": [
-        "standard: 27 avg views (70 videos)",
-        "Day performance: Sat=41, Fri=31, Tue=30, Sun=29, Thu=25, Mon=17, Wed=15"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-31",
       "changes": [
@@ -3651,6 +3642,14 @@
       "changes": [
         "standard: 2 avg views (77 videos)",
         "Day performance: Tue=7, Fri=2, Sun=2, Mon=2, Sat=1, Wed=1, Thu=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-29",
+      "changes": [
+        "standard: 2 avg views (77 videos)",
+        "Day performance: Tue=7, Sun=2, Mon=2, Fri=2, Sat=1, Wed=1, Thu=1"
       ],
       "recommendedTemplate": "standard"
     }
