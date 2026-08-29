@@ -1,39 +1,39 @@
 {
-  "date": "2026-08-29",
+  "date": "2026-08-30",
   "discovery": {
-    "method": "expert-blog",
-    "description": "Smashing Magazine 8/27 の週末 UX まとめで NN/g (Nielsen Norman Group) の『Accordion Icons: Which Signifiers Work Best?』(Page Laubheimer / Raluca Budiu 共著) が再紹介されたのを起点に、NN/g 一次記事を直接引用。expert-blog は直近 14 日 (08-15〜08-28) 未使用の Explore 1 番手、TOP 3 method (official-src / figma-community / news-en) が本日それぞれ 2 日ガードや連続偏り抵触の状況で Explore 側に振って母数不足の method を回す。Sat weekend evergreen 帯で柱④ Tips (直近 14 日 1/14=7%、target 15% で最大の運用ギャップ) を 2/15=13% に補正。Primary 駆け出し層のポートフォリオ FAQ セクションで『右矢印』を選んで減点される痛点を直撃、Caret 一択という 1 判断で面接での UX 説明力に化ける翻訳角度。NG 回避: (a) AI=補助輪フレーム維持 (今回 AI 話題は触れず純粋な UI 判断論)、(b) プロ向け高度議論回避 (アイコン名 4 択の二択レベルに翻訳)、(c) AI が仕事を奪う系 完全非該当、(d) プラグイン機能説明メイン 完全非該当、(e) freshness_hours=48 (Smashing 8/27 掲載起点、weekend evergreen は元研究の古さより Smashing 再紹介日を基準に許容)、(f) 出典 4 ソースで multi-source confirm",
+    "method": "figma-community",
+    "description": "Sun weekend evergreen 枠、Figma Community の UX writing カテゴリ (Typeout / Microcopy Fixer / Micro / AI Microcopies by Wordtract / mucopy) を横断調査、Typeout (最も歴史的に安定、Prototypr Toolbox / html.to.design 週次まとめ / Few Medium『Top 15 Figma Plugins for 2026』で 3 サイト共通で推奨されるベンチマーク的存在) を選定。Primary 駆け出しペルソナの『ポートフォリオの LP 作例が Lorem Ipsum で埋まっており、採用担当に「実案件やってない」と即判定される』痛点を直撃する weekend Tips として翻訳。method 選定: 直近 14 日 TOP3 (official-src / social-en / news-en) のうち news-en は 08-24 (Smashing 2連発 component contracts) + 08-27 (Smashing UX butterfly effect) で 7 日 2 回到達ガード抵触 (今日採用で 3 回目連投になり不可)、official-src は 08-28 (Agent Chat Panel) で 2 日ガード抵触で不可、social-en (08-21 Mabellini から 9 日空き) は健全だが weekend evergreen 帯で n=1 の母数を積むより figma-community で pillar ② 補強の Meta PDCA 価値高い。figma-community は 08-23 (Stark) から 7 日で 1 usage、7 日 2 回ガード余裕、2 日ガードもクリア。WORST 判定 (avg 0.67, product-launches と同率タイ) からの復帰試行としてアプローチ変更: 08-18 (Skills 50+ = AI 機能焦点 = 0 views) / 08-23 (Stark = accessibility 焦点 = 1 view) と別系統で、今回は『UX ライティング × Primary 駆け出しの LP 作例痛点』の新 sub-angle 初投入。柱② プラグイン/エコシステム (target 20%、直近 14 日 08-18 + 08-23 = 2/14 = 14% で未達) を 3/15 = 20% で target 到達、副 柱⑤ Before/After・ポートフォリオ事例 (target 10%、直近 14 日 08-16 のみ = 7% で未達) にも LP 作例 = ポートフォリオ事例として接続、2 柱同時補強。08-16 (Before/After 数値化) → 08-19 (Case Study Club Top20) → 08-29 (NN/g アコーディオン) → 08-30 (Typeout LP 実文言) で『駆け出し応募武装 4 部作』の 4 本目、既視聴者 retention 狙い。NG パターン回避: (a) プラグイン機能説明メインではなく Primary 痛点 (Lorem Ipsum 問題) 起点で入る、(b) AI = 補助輪フレーム維持 (Typeout は非 AI で人が選ぶ、判断主体性完全保持、Figmaナビ本体 = AI で UI 生成との補完関係を暗に成立)、(c) 『AI が仕事を奪う』完全非該当、(d) 『プロ向け高度議論』回避 = UX ライティング理論ではなく『ダミー文言を今日置換』の 5 分アクション粒度、(e) freshness_hours=168 は weekend evergreen 例外運用 (先例: 08-15 figma-community Auto Layout wrap = 1 view / 08-23 figma-community Stark = 1 view / 08-29 expert-blog NN/g accordion = 判定待ち)、(f) 出典 4 ソースで multi-source confirm",
     "sources": [
-      "https://www.nngroup.com/articles/accordion-icons/",
-      "https://www.smashingmagazine.com/",
-      "https://www.nngroup.com/topic/signifiers/",
-      "https://blog.logrocket.com/ux-design/accordion-ui-design/"
+      "https://www.figma.com/community/plugin/847852693987887357/Typeout",
+      "https://html.to.design/blog/best-figma-plugins-for-ux-writing/",
+      "https://prototypr.io/toolbox/typeout-for-figma",
+      "https://few.medium.com/top-15-figma-plugins-for-2026-f3087ef65e4b"
     ],
-    "query": "NN/g Nielsen Norman Group accordion icons signifiers caret plus arrow Smashing Magazine August 27 2026 weekend UX tips beginner portfolio FAQ",
-    "freshness_hours": 48
+    "query": "Figma Community Typeout microcopy UX writing plugin 2026 Lorem Ipsum beginner portfolio LP button empty state form error",
+    "freshness_hours": 168
   },
   "articles": [
     {
       "rank": 1,
-      "title": "NN/g アコーディオン研究、FAQ の開閉は『カレット』一択",
-      "description": "駆け出しのポートフォリオで FAQ の開閉アイコンを右矢印にしていると UX 力を疑われる、NN/g の一次研究に基づく Weekend Tips。",
-      "detail": "NN/g が 4 種のアイコン (カレット・右矢印・プラス・意味のない図形) を比較した結果、カレットが『その場で開く』と最も正しく伝わることが判明。Smashing Magazine 8/27 記事で再紹介され話題。",
-      "narration": "駆け出しのポートフォリオで FAQ の開閉アイコン、右矢印を選んでませんか。実はここで UX の判断力が透けて見える、ちょっと怖い場所です",
-      "tags": ["UI", "UX", "アコーディオン", "駆け出しデザイナー", "ポートフォリオ"],
+      "title": "Typeout プラグイン、LP 作例の Lorem Ipsum を今日撲滅",
+      "description": "駆け出しのポートフォリオ LP 作例が Lorem Ipsum のままだと採用担当に『実案件やってない』と即判定される、Figma Community の定番 Typeout で今日 5 分で置換する weekend Tips。",
+      "detail": "Typeout は Figma Community のマイクロコピー雛形プラグイン。ボタン文言・フォームエラー・空状態メッセージなど UX コピーを検索してワンクリックで挿入でき、Lorem Ipsum の見た目薄っぺらさを解消する。Prototypr Toolbox / html.to.design / Few Medium『Top 15 Figma Plugins for 2026』で 3 サイト共通で推奨。",
+      "narration": "駆け出しの LP 作例、Lorem Ipsum で埋めたまま出してませんか。実はここで採用担当が『実案件やってない』と即判断します",
+      "tags": ["Figma", "プラグイン", "UX ライティング", "ポートフォリオ", "駆け出しデザイナー"],
       "narration_sections": {
-        "hook": "駆け出しのポートフォリオでFAQの開閉アイコン、右矢印を選んでませんか。実はここでUXの判断力が透けて見える、ちょっと怖い場所です",
-        "origin": "NN/gの研究では、下向き山型のカレット、右矢印、プラス、意味のない図形の4種を比較。カレットが『その場で開く』と最も正しく伝わり、右矢印は『別ページへ飛ぶ』と誤解、プラスは『追加ボタン』と混同されがち。Smashingが8/27に再紹介です",
-        "recommend": "今日の5分でポートフォリオのFAQをカレットに揃えるだけ、この1つの判断が面接で語れるUX力の証拠になります"
+        "hook": "駆け出しの LP 作例、Lorem Ipsum で埋めたまま出してませんか。実はここで採用担当が『実案件やってない』と即判断します",
+        "origin": "Figma Community の Typeout は、ボタン文言・フォームエラー・空状態メッセージなど UX コピー雛形をワンクリック挿入。Lorem Ipsum を『登録する』『メールアドレス形式が違います』の実文言に置換できます",
+        "recommend": "今日 5 分でポートフォリオの LP 作例からダミー文言を全消し、Typeout の実文言に置き換えると採用担当の印象が一気に立ちます"
       },
       "section_titles": {
-        "hook": "FAQの開閉アイコン",
-        "origin": "NN/g 4択比較",
-        "recommend": "今日5分の見直し"
+        "hook": "LP のダミー文言",
+        "origin": "UX コピー雛形集",
+        "recommend": "今日 5 分で置換"
       },
       "section_descriptions": {
-        "hook": "駆け出しポートフォリオで意外な減点ポイント",
-        "origin": "4種のアイコンをユーザーに見せた比較結果",
-        "recommend": "今日カレットに揃えてUX判断力を証明する"
+        "hook": "駆け出し LP 作例で採用担当が即判定する場所",
+        "origin": "ワンクリックで UX コピーを挿入できる仕組み",
+        "recommend": "ダミー文言を実文言に置き換えるアクション"
       }
     }
   ]
