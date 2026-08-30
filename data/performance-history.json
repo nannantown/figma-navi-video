@@ -2,52 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "VB9ogwil9l4",
-      "videoUrl": "https://youtube.com/shorts/VB9ogwil9l4",
-      "date": "2026-05-31",
-      "title": "【デザインニュース】MicrosoftがCopilot真ん中→サイドバーに復活、2026『AIは画面の端へ』が新常識｜2026/05/31 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 42,
-      "discovery": {
-        "method": "expert-blog",
-        "description": "UX Collective (Sharang Sharma『Where should AI sit in your UI?』, Katya Korovkina『Are we doing UX for AI the right way?』) と Ascedia『What Good AI UX Actually Looks Like in 2026』, Mantlr『Designing for AI Agents: 10 UX Patterns 2026』を横断調査、英語デザイン論考が並行で『チャットボット中央配置=AI fatigue 失敗』『AI は sidebar / inline / collapsible に置く』に収束する潮流を確認。Microsoft が 5/24 公開の Windows 11 Insider Build で Copilot をフローティング窓→幅 280〜500 ピクセルの docked サイドバーに復活させた具体ニュースを軸に、Notion AI / Linear / GitHub Copilot / Figma AI / Gmail Gemini の同方向収束を裏取り。method 選定 (Sunday weekend evergreen 帯): 直近2日 (5/30 figma-community, 5/29 social-en) 抵触なし、7日2回ガード (5/25-5/31) で official-src (5/25+5/28=2回) と figma-community (5/27+5/30=2回) は抵触、残る Exploit 候補 = expert-blog (5/26、5 日前で全ガードクリア) と product-launches (5/24、7 日前)。expert-blog の 5/17 ui-critique-ai 角度 (=107 view、14日 window 外に脱落) の TOP1 角度復活が最大狙い、5/23 accessibility-personas-critique (3) と 5/26 customer-understanding-framework (pending) の framework 系2連敗からの軌道修正として『5/17型 = 具体的な named UI artifact の批評』に回帰。柱⑥ UI 批評 (target 10%、直近14日 5/23+5/26 で 2/13 = 15% 超過気味だが Sunday evergreen 枠の本命) クロス柱④ Tips (target 15% 達成済)。Primary persona 駆け出し層の『面接で AI 設計眼を語れる』武器化を直接狙い、AI = 補助輪フレームを literal『サイドバー = 端の補助』比喩で完全合致。NG パターン回避: プロ向け高度議論ではなく『真ん中チャット窓 vs 端のサイドバー』の二択で誰でも判断可、『AI が仕事を奪う』完全非該当 (むしろ駆け出しの AI 設計力武装)、『AI に任せれば考えなくていい』真逆 (AI を端に置くのは人の判断を中央に残すため)、『プラグイン機能説明メイン』完全非該当、freshness_hours=168 (5/24 Microsoft ニュース起点で 7 日 = 境界値、Sunday evergreen 例外で許容)",
-        "sources": [
-          "https://www.windowslatest.com/2026/05/24/microsofts-new-copilot-turns-into-a-windows-11-sidebar-that-pushes-your-apps-aside-to-make-room/",
-          "https://windowsnews.ai/article/windows-11-copilot-docked-sidebar-optional-ai-that-reserves-screen-space.420328",
-          "https://windowsforum.com/threads/windows-11-copilot-docking-sidebar-returns-as-ai-clutter-sparks-trust-debate.419660/",
-          "https://uxdesign.cc/where-should-ai-sit-in-your-ui-1710a258390e",
-          "https://uxdesign.cc/are-we-doing-ux-for-ai-the-right-way-aea01e14138e",
-          "https://www.ascedia.com/insights/what-good-ai-ux-actually-looks-like-in-2026",
-          "https://mantlr.com/blog/designing-for-ai-agents-ux-patterns-2026"
-        ],
-        "query": "AI UI sidebar pattern 2026 Microsoft Copilot docked Windows 11 Notion Linear Gmail Gemini chatbot critique UX Collective fatigue",
-        "freshness_hours": 168
-      },
-      "stats": {
-        "views": 7,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-06-13T01:34:32.674Z"
-      }
-    },
-    {
       "videoId": "MQZ5WHHV7UY",
       "videoUrl": "https://youtube.com/shorts/MQZ5WHHV7UY",
       "date": "2026-06-01",
@@ -2849,7 +2803,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-29T04:10:20.520Z"
+        "updatedAt": "2026-08-30T01:15:42.701Z"
       }
     },
     {
@@ -2895,7 +2849,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-29T04:10:20.520Z"
+        "updatedAt": "2026-08-30T01:15:42.701Z"
       }
     },
     {
@@ -2940,7 +2894,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-29T04:10:20.520Z"
+        "updatedAt": "2026-08-30T01:15:42.701Z"
       }
     },
     {
@@ -2983,7 +2937,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-29T04:10:20.520Z"
+        "updatedAt": "2026-08-30T01:15:42.701Z"
       }
     },
     {
@@ -3024,7 +2978,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-29T04:10:20.520Z"
+        "updatedAt": "2026-08-30T01:15:42.701Z"
       }
     },
     {
@@ -3067,7 +3021,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-29T04:10:20.520Z"
+        "updatedAt": "2026-08-30T01:15:42.701Z"
       }
     },
     {
@@ -3110,7 +3064,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-29T04:10:20.520Z"
+        "updatedAt": "2026-08-30T01:15:42.701Z"
       }
     },
     {
@@ -3152,7 +3106,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-29T04:10:20.520Z"
+        "updatedAt": "2026-08-30T01:15:42.701Z"
       }
     },
     {
@@ -3194,7 +3148,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-29T04:10:20.520Z"
+        "updatedAt": "2026-08-30T01:15:42.701Z"
       }
     },
     {
@@ -3236,7 +3190,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-29T04:10:20.520Z"
+        "updatedAt": "2026-08-30T01:15:42.701Z"
       }
     },
     {
@@ -3279,7 +3233,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-29T04:10:20.520Z"
+        "updatedAt": "2026-08-30T01:15:42.701Z"
       }
     },
     {
@@ -3322,7 +3276,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-29T04:10:20.520Z"
+        "updatedAt": "2026-08-30T01:15:42.701Z"
       }
     },
     {
@@ -3365,7 +3319,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-29T04:10:20.520Z"
+        "updatedAt": "2026-08-30T01:15:42.701Z"
       }
     },
     {
@@ -3408,19 +3362,54 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-30T01:15:42.701Z"
+      }
+    },
+    {
+      "videoId": "3RwFQ4lpM8w",
+      "videoUrl": "https://youtube.com/shorts/3RwFQ4lpM8w",
+      "date": "2026-08-30",
+      "title": "【デザインニュース】Typeout プラグイン、LP 作例の Lorem Ipsum を今日撲滅｜2026/08/30 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 43,
+      "discovery": {
+        "method": "figma-community",
+        "description": "Sun weekend evergreen 枠、Figma Community の UX writing カテゴリ (Typeout / Microcopy Fixer / Micro / AI Microcopies by Wordtract / mucopy) を横断調査、Typeout (最も歴史的に安定、Prototypr Toolbox / html.to.design 週次まとめ / Few Medium『Top 15 Figma Plugins for 2026』で 3 サイト共通で推奨されるベンチマーク的存在) を選定。Primary 駆け出しペルソナの『ポートフォリオの LP 作例が Lorem Ipsum で埋まっており、採用担当に「実案件やってない」と即判定される』痛点を直撃する weekend Tips として翻訳。method 選定: 直近 14 日 TOP3 (official-src / social-en / news-en) のうち news-en は 08-24 (Smashing 2連発 component contracts) + 08-27 (Smashing UX butterfly effect) で 7 日 2 回到達ガード抵触 (今日採用で 3 回目連投になり不可)、official-src は 08-28 (Agent Chat Panel) で 2 日ガード抵触で不可、social-en (08-21 Mabellini から 9 日空き) は健全だが weekend evergreen 帯で n=1 の母数を積むより figma-community で pillar ② 補強の Meta PDCA 価値高い。figma-community は 08-23 (Stark) から 7 日で 1 usage、7 日 2 回ガード余裕、2 日ガードもクリア。WORST 判定 (avg 0.67, product-launches と同率タイ) からの復帰試行としてアプローチ変更: 08-18 (Skills 50+ = AI 機能焦点 = 0 views) / 08-23 (Stark = accessibility 焦点 = 1 view) と別系統で、今回は『UX ライティング × Primary 駆け出しの LP 作例痛点』の新 sub-angle 初投入。柱② プラグイン/エコシステム (target 20%、直近 14 日 08-18 + 08-23 = 2/14 = 14% で未達) を 3/15 = 20% で target 到達、副 柱⑤ Before/After・ポートフォリオ事例 (target 10%、直近 14 日 08-16 のみ = 7% で未達) にも LP 作例 = ポートフォリオ事例として接続、2 柱同時補強。08-16 (Before/After 数値化) → 08-19 (Case Study Club Top20) → 08-29 (NN/g アコーディオン) → 08-30 (Typeout LP 実文言) で『駆け出し応募武装 4 部作』の 4 本目、既視聴者 retention 狙い。NG パターン回避: (a) プラグイン機能説明メインではなく Primary 痛点 (Lorem Ipsum 問題) 起点で入る、(b) AI = 補助輪フレーム維持 (Typeout は非 AI で人が選ぶ、判断主体性完全保持、Figmaナビ本体 = AI で UI 生成との補完関係を暗に成立)、(c) 『AI が仕事を奪う』完全非該当、(d) 『プロ向け高度議論』回避 = UX ライティング理論ではなく『ダミー文言を今日置換』の 5 分アクション粒度、(e) freshness_hours=168 は weekend evergreen 例外運用 (先例: 08-15 figma-community Auto Layout wrap = 1 view / 08-23 figma-community Stark = 1 view / 08-29 expert-blog NN/g accordion = 判定待ち)、(f) 出典 4 ソースで multi-source confirm",
+        "sources": [
+          "https://www.figma.com/community/plugin/847852693987887357/Typeout",
+          "https://html.to.design/blog/best-figma-plugins-for-ux-writing/",
+          "https://prototypr.io/toolbox/typeout-for-figma",
+          "https://few.medium.com/top-15-figma-plugins-for-2026-f3087ef65e4b"
+        ],
+        "query": "Figma Community Typeout microcopy UX writing plugin 2026 Lorem Ipsum beginner portfolio LP button empty state form error",
+        "freshness_hours": 168
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-31",
-      "changes": [
-        "standard: 26 avg views (70 videos)",
-        "Day performance: Sat=41, Fri=31, Tue=30, Sun=29, Mon=17, Wed=15, Thu=15"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-08-01",
       "changes": [
@@ -3650,6 +3639,14 @@
       "changes": [
         "standard: 2 avg views (77 videos)",
         "Day performance: Tue=7, Sun=2, Mon=2, Fri=2, Sat=1, Wed=1, Thu=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-30",
+      "changes": [
+        "standard: 2 avg views (77 videos)",
+        "Day performance: Tue=7, Sun=2, Mon=2, Fri=2, Wed=1, Sat=1, Thu=1"
       ],
       "recommendedTemplate": "standard"
     }
