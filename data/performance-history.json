@@ -2,98 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "MQZ5WHHV7UY",
-      "videoUrl": "https://youtube.com/shorts/MQZ5WHHV7UY",
-      "date": "2026-06-01",
-      "title": "【デザインニュース】Figmaが5/30にWeave Community本格化、20以上のAIワークフローが節点繋ぎで使える時代に｜2026/06/01 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 45,
-      "discovery": {
-        "method": "official-src",
-        "description": "Figma 公式ブログ 5/30 公開『Turning Prompts into Five Scalable Workflows with Figma Weave』と Figma Community Weave hub、weave.figma.com 公式ランディングを一次取得。iTWire 5/29 報道『Reintroducing Figma Weave with 20+ new workflows for AI-native design』、Gadgetbond『Five Figma Weave workflows that supercharge AI-powered design』、MarketScreener 経済報道、Figmalion 業界ニュースで multi-source confirm。Weave Community に 20+ ワークフローテンプレが配備、その代表 5 本として『画像→動画』『3Dモデル化（Rodin 3D V2 経由）』『8 つの distortion フィルター並列』『アスペクト比一括展開』『2 枚の参照からスタイルガイド合成』が公式ブログで解説された。method 選定 (Monday weekday news 帯): TOP3 method 候補のうち expert-blog (5/26+5/31 で 7日2回ガード抵触+5/31 で 直近2日抵触)・figma-community (5/27+5/30 で 7日2回ガード抵触+5/30 で 直近2日抵触) が本日不可、news-en は 6/2 まで凍結 (本日凍結最終日)、social-en は健全だが design-to-code-driverseat 凍結方向で角度資源減。official-src (avg 30.8, n=4, TOP1 method、5/28=4日前で全ガードクリア、5/25 が window 外脱落で 7日2回ガード解放、weekday news-preferred の本命) を Exploit 採用。5/31 PDCA Action #3 で pre-schedule された『6/1 候補 = social-en or expert-blog』は両 method の制約発生で override、Weave Community workflows という公式新機能 + 視覚的に面白い + 駆け出し直結の triple ヒット素材を優先。角度 = feature-launch 再投入 (5/20 Figma Slides Sections=86 の同型フレーム、official-src 内 TOP 角度の n=3 化試行)、新 sub-angle workflow-showcase を組み合わせ初試行。柱選定: ② プラグイン・エコシステム (target 20%、直近 14 日 5/27 のみ = 1/14 = 7% で大幅未達、本日投入で 2/14 = 14% に補正、Weave Community は『Figma 公式エコシステム』として柱②直撃) クロス ① Figma 公式ニュース (既に 36% で target 超過だが Weave は明確に新領域=video/3D/AI で①重複コストは限定的)。Primary persona 直接接続: 駆け出しが『AI 画像/動画ツールを単発で使うレベルから一段上に行きたい』時、Weave Community テンプレで節点接続を学べば面接で『AI チェーンを設計できます』が言える武装メッセージ。NG パターン回避: 『プロ向け高度議論』回避 = ノード/DAG/pipeline 等を『節点で繋ぐ』『チェーン式』に翻訳、『AI が仕事を奪う系』完全反転 = AI チェーン設計者になる positive 化、『AI に任せれば考えなくていい』完全真逆 = チェーン設計 = 人の判断 / AI = 実行係、『プラグイン機能説明メイン』回避 = Primary persona 武装メッセージ起点、『英語/日本語混在』Figma/Weave/Community/Sora/Veo/Flux/Ideogram は固有名詞許容範囲、『1 週間以上前のニュースを新着扱い』完全クリア = 約 30h fresh、『出典不明』Figma 公式 blog + Figma Community Weave hub + weave.figma.com + iTWire + Gadgetbond + MarketScreener + Figmalion 計 7 ソース multi-source confirm",
-        "sources": [
-          "https://www.figma.com/blog/five-figma-weave-workflows/",
-          "https://www.figma.com/community/weave",
-          "https://weave.figma.com/",
-          "https://itwire.com/guest-articles/company-news/reintroducing-figma-weave-with-20-new-workflows-for-ai-native-design.html",
-          "https://gadgetbond.com/figma-weave-ai-workflows/",
-          "https://www.marketscreener.com/news/figma-turning-prompts-into-five-scalable-workflows-with-figma-weave-ce7e50d8d980f521",
-          "https://figmalion.com/topics/figma-weave"
-        ],
-        "query": "Figma Weave Community workflows 20 templates May 30 2026 node based AI chain image video 3D Rodin Sora Veo Flux Ideogram",
-        "freshness_hours": 30
-      },
-      "stats": {
-        "views": 1,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-06-15T01:41:19.078Z"
-      }
-    },
-    {
-      "videoId": "96zplbO3NDg",
-      "videoUrl": "https://youtube.com/shorts/96zplbO3NDg",
-      "date": "2026-06-02",
-      "title": "【デザインニュース】Apple『All Systems Glow』で WWDC 2026 予告、来週 6/8 から Liquid Glass が全 OS 統一へ｜2026/06/02 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 46,
-      "discovery": {
-        "method": "news-en",
-        "description": "英語デザイン/Apple系メディアから、Apple が 6/1 公開した WWDC 2026『All Systems Glow』予告 + Liquid Glass の全 OS 統一前夜という業界最大級ニュースを抽出。news-en は 5/13 以来 20 日空き、本日 6/2 で 7日窓・直近2日ガードともに完全クリアの凍結解放日投入",
-        "sources": [
-          "https://9to5mac.com/2026/06/01/apple-teases-all-systems-glow-for-wwdc-as-livestream-link-debuts-on-youtube/",
-          "https://appleinsider.com/articles/26/06/01/wwdc-t-minus-one-week-all-systems-glow-with-new-wallpaper-playlist",
-          "https://www.cultofmac.com/news/wwdc26-all-systems-glow",
-          "https://www.macobserver.com/news/apple-shares-new-wwdc-2026-wallpaper-playlist-and-get-ready-video/",
-          "https://wi-fiplanet.com/all-systems-glow-apple-ramps-up-wwdc-2026-hype/",
-          "https://developer.apple.com/wwdc26/",
-          "https://www.apple.com/newsroom/2026/05/apple-kicks-off-worldwide-developers-conference-on-june-8/"
-        ],
-        "query": "Apple WWDC 2026 All Systems Glow tease Liquid Glass June 1",
-        "freshness_hours": 30
-      },
-      "stats": {
-        "views": 53,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-06-16T01:46:42.283Z"
-      }
-    },
-    {
       "videoId": "QH1K9X4kunk",
       "videoUrl": "https://youtube.com/shorts/QH1K9X4kunk",
       "date": "2026-06-03",
@@ -2894,7 +2802,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-30T01:15:42.701Z"
+        "updatedAt": "2026-09-01T01:49:56.903Z"
       }
     },
     {
@@ -2937,7 +2845,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-30T01:15:42.701Z"
+        "updatedAt": "2026-09-01T01:49:56.903Z"
       }
     },
     {
@@ -2978,7 +2886,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-30T01:15:42.701Z"
+        "updatedAt": "2026-09-01T01:49:56.903Z"
       }
     },
     {
@@ -3021,7 +2929,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-30T01:15:42.701Z"
+        "updatedAt": "2026-09-01T01:49:56.903Z"
       }
     },
     {
@@ -3064,7 +2972,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-30T01:15:42.701Z"
+        "updatedAt": "2026-09-01T01:49:56.903Z"
       }
     },
     {
@@ -3106,7 +3014,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-30T01:15:42.701Z"
+        "updatedAt": "2026-09-01T01:49:56.903Z"
       }
     },
     {
@@ -3148,7 +3056,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-30T01:15:42.701Z"
+        "updatedAt": "2026-09-01T01:49:56.903Z"
       }
     },
     {
@@ -3190,7 +3098,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-30T01:15:42.701Z"
+        "updatedAt": "2026-09-01T01:49:56.903Z"
       }
     },
     {
@@ -3233,7 +3141,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-30T01:15:42.701Z"
+        "updatedAt": "2026-09-01T01:49:56.903Z"
       }
     },
     {
@@ -3276,7 +3184,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-30T01:15:42.701Z"
+        "updatedAt": "2026-09-01T01:49:56.903Z"
       }
     },
     {
@@ -3319,7 +3227,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-30T01:15:42.701Z"
+        "updatedAt": "2026-09-01T01:49:56.903Z"
       }
     },
     {
@@ -3362,7 +3270,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-30T01:15:42.701Z"
+        "updatedAt": "2026-09-01T01:49:56.903Z"
       }
     },
     {
@@ -3402,6 +3310,52 @@
         "freshness_hours": 168
       },
       "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-09-01T01:49:56.903Z"
+      }
+    },
+    {
+      "videoId": "TGRQPgaDkII",
+      "videoUrl": "https://youtube.com/shorts/TGRQPgaDkII",
+      "date": "2026-09-01",
+      "title": "【デザインニュース】Smashing 8/31『アクセシビリティ・オーバーレイは害になる』駆け出しの語彙武装｜2026/09/01 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 44,
+      "discovery": {
+        "method": "news-en",
+        "description": "Tue weekday news 帯、Smashing Magazine 2026-08-31 公開 Ruben Ferreira Duarte 執筆『アクセシビリティ・オーバーレイは害になる』を一次取得。AI 自動検出は WCAG 違反の 20〜30% しか拾えず残り 7 割は実機テスト必須、視覚障害ユーザーの多くはオーバーレイをブロックする拡張機能を導入している、という業界共通見解を Smashing・accessibility.build・wcagsafe・AudioEye・Brickfield など複数一次で multi-source confirm。method 選定: 直近 14 日 TOP3 タイ (news-en avg 0.33 n=3 / official-src avg 0.33 n=3 / figma-community avg 0.33 n=3) のうち official-src は 08-25+08-28 で 7 日窓 2 回到達ガード抵触、figma-community は 08-30 で 2 日ガード抵触、expert-blog は 08-29 で 2 日ガード抵触、product-launches は WORST + 08-26 使用で温存、social-en は TOP1 avg 1.00 だが n=1 サンプル小で Smashing 一次ソースには news-en の方が整合性高い。news-en は 08-27 (Smashing UX butterfly effect) から 5 日空き、7 日窓 (08-26-09-01) に 1 usage で 2 回ガード余裕、2 日ガード完全クリア → Exploit 採用。柱⑥ UI 批評 (target 10%、直近 14 日 0/13 = 0% で最大ギャップ) を初補正、アクセシビリティ・オーバーレイ = 業界アンチパターン批評として直撃、副 柱③ 業界・デザインニュース にも計上。Primary 駆け出しペルソナ痛点: ポートフォリオに『アクセシビリティ対応』を謳いたくてオーバーレイ導入を検討する場面で、それが逆効果と知らないと面接で減点、逆に『AI 丸投げでなくソースで直す判断』を持てば語彙武装になる。08-16 数値化 → 08-19 Case Study → 08-24 component contracts → 08-29 カレット → 08-30 UX コピー に続く駆け出し応募武装シリーズ 6 本目。NG パターン回避: (a) AI = 補助輪フレーム維持 (AI 自動検出の 3 割止まりを事実提示し、7 割は人が判断する必要と明示)、(b) 『AI が仕事を奪う』完全非該当 (むしろ人の判断が必要と示す positive 反転)、(c) 『プロ向け高度議論』回避 = WCAG 2.2 SC の逐条解説ではなく『20-30% しか検出できない』の粒度、(d) 『AI に任せれば考えなくていい』完全真逆 = 判断主体性の明示、(e) freshness_hours=30 で 168 NG ライン余裕、(f) 出典 6 ソースで multi-source confirm",
+        "sources": [
+          "https://www.smashingmagazine.com/",
+          "https://www.smashingmagazine.com/category/user-experience/",
+          "https://www.smashingmagazine.com/guides/accessibility/",
+          "https://accessibility.build/guides/accessibility-overlays",
+          "https://wcagsafe.com/blog/accessibility-overlays-dont-work",
+          "https://www.audioeye.com/post/accessibility-overlay/",
+          "https://brickfield.ie/2026/03/27/why-accessibility-overlays-fail/"
+        ],
+        "query": "Smashing Magazine accessibility overlays harm Ruben Ferreira Duarte August 31 2026 WCAG detection rate 20 30 percent screen reader extension block",
+        "freshness_hours": 30
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -3410,14 +3364,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-08-01",
-      "changes": [
-        "standard: 25 avg views (70 videos)",
-        "Day performance: Sat=41, Tue=30, Sun=29, Fri=19, Mon=17, Wed=15, Thu=15"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-08-02",
       "changes": [
@@ -3647,6 +3593,14 @@
       "changes": [
         "standard: 2 avg views (77 videos)",
         "Day performance: Tue=7, Sun=2, Mon=2, Fri=2, Wed=1, Sat=1, Thu=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-09-01",
+      "changes": [
+        "standard: 2 avg views (77 videos)",
+        "Day performance: Tue=7, Mon=2, Fri=2, Wed=1, Sat=1, Sun=1, Thu=1"
       ],
       "recommendedTemplate": "standard"
     }
