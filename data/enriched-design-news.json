@@ -1,42 +1,41 @@
 {
-  "date": "2026-09-01",
+  "date": "2026-09-02",
   "discovery": {
-    "method": "news-en",
-    "description": "Tue weekday news 帯、Smashing Magazine 2026-08-31 公開 Ruben Ferreira Duarte 執筆『アクセシビリティ・オーバーレイは害になる』を一次取得。AI 自動検出は WCAG 違反の 20〜30% しか拾えず残り 7 割は実機テスト必須、視覚障害ユーザーの多くはオーバーレイをブロックする拡張機能を導入している、という業界共通見解を Smashing・accessibility.build・wcagsafe・AudioEye・Brickfield など複数一次で multi-source confirm。method 選定: 直近 14 日 TOP3 タイ (news-en avg 0.33 n=3 / official-src avg 0.33 n=3 / figma-community avg 0.33 n=3) のうち official-src は 08-25+08-28 で 7 日窓 2 回到達ガード抵触、figma-community は 08-30 で 2 日ガード抵触、expert-blog は 08-29 で 2 日ガード抵触、product-launches は WORST + 08-26 使用で温存、social-en は TOP1 avg 1.00 だが n=1 サンプル小で Smashing 一次ソースには news-en の方が整合性高い。news-en は 08-27 (Smashing UX butterfly effect) から 5 日空き、7 日窓 (08-26-09-01) に 1 usage で 2 回ガード余裕、2 日ガード完全クリア → Exploit 採用。柱⑥ UI 批評 (target 10%、直近 14 日 0/13 = 0% で最大ギャップ) を初補正、アクセシビリティ・オーバーレイ = 業界アンチパターン批評として直撃、副 柱③ 業界・デザインニュース にも計上。Primary 駆け出しペルソナ痛点: ポートフォリオに『アクセシビリティ対応』を謳いたくてオーバーレイ導入を検討する場面で、それが逆効果と知らないと面接で減点、逆に『AI 丸投げでなくソースで直す判断』を持てば語彙武装になる。08-16 数値化 → 08-19 Case Study → 08-24 component contracts → 08-29 カレット → 08-30 UX コピー に続く駆け出し応募武装シリーズ 6 本目。NG パターン回避: (a) AI = 補助輪フレーム維持 (AI 自動検出の 3 割止まりを事実提示し、7 割は人が判断する必要と明示)、(b) 『AI が仕事を奪う』完全非該当 (むしろ人の判断が必要と示す positive 反転)、(c) 『プロ向け高度議論』回避 = WCAG 2.2 SC の逐条解説ではなく『20-30% しか検出できない』の粒度、(d) 『AI に任せれば考えなくていい』完全真逆 = 判断主体性の明示、(e) freshness_hours=30 で 168 NG ライン余裕、(f) 出典 6 ソースで multi-source confirm",
+    "method": "official-src",
+    "description": "Wed weekday news 帯、Figma 公式リリースノート 2026-09-01 掲載『Generative plugins and shaders: animations, interactions, publishing, code access』を一次取得。9/1 に (a) 動くシェーダー (motion timeline でキーフレーム可) 解禁、(b) マウスに反応するインタラクティブシェーダーは coming soon (パフォーマンス最適化中)、(c) 生成プラグインとシェーダーを Figma Community に world 公開 / organization 内 private 公開 (Org・Enterprise プラン) の 2 経路が同時オープン、を Figma Help Center Quick start guide + Figma Blog Config 2026 recap + 複数英語メディア (uwarp.design / explainx.ai / secretuxd.com / cmswire) で multi-source confirm。6/24 Config 2026 で予告された『build your own tools』の 9/1 大型アップデート、driving the future of the canvas。method 選定: 直近 14 日 TOP3 タイ (news-en / official-src / figma-community それぞれ avg 0.33 n=3、+ social-en avg 1.00 n=1) のうち news-en は 08-27 + 09-01 で 7 日窓 (08-27〜09-02) 2 回到達ガード抵触で今日 3 回目連投不可、figma-community は 08-30 で 2 日ガード抵触、expert-blog は 08-29 で 2 日ガード抵触、product-launches は WORST + 08-26 使用で温存、social-en は n=1 サンプル小で Figma 一次ソース整合性低い。official-src は 08-28 (Agent Chat Panel) から 5 日空き、7 日窓に 1 usage で 2 回ガード余裕、2 日ガード完全クリア → TOP3 タイからの Exploit 継続採用。柱① Figma 公式ニュース (target 25%、直近 14 日 08-22 + 08-25 + 08-28 = 3/13 = 23% で ほぼ達成) を 4/14 = 29% で target 到達、副 柱② プラグイン/エコシステム (target 20%、直近 14 日 08-18 + 08-23 + 08-30 = 3/14 = 21% で達成) を Community publishing 角度で継続補強。Apple 系 5 連投 (6 月) や Config 縦糸 (6/23-6/26) と同じ『大型公式イベント予告→展開→続報』パターンの一部で、6/25 Config Recap → 9/1 Generative Plugins/Shaders 公開機能解禁 の縦糸中継点。Primary 駆け出しペルソナ痛点: (a) 『自分でプラグインを作りたいけど dev 環境も plugin API 知識もなくて詰む』を『テキスト命令だけで作れる』で反転、(b) 『Community に何か 1 つでも公開して実績を積みたい』を『生成プラグイン 1 つで応募時の武器化できる』で回収、(c) 08-30 Typeout LP 撲滅シリーズや 08-16 数値化からの応募武装縦糸 7 本目、既視聴者 retention 継続。08-19 Case Study Club Top20 → 08-24 component contracts → 08-29 カレット → 08-30 UX コピー → 09-01 アクセシビリティ・オーバーレイ → 09-02 生成プラグイン Community 公開 で駆け出し応募武装 7 本目に接続。NG パターン回避: (a) AI = 補助輪フレーム維持 (テキスト命令で作るのは AI、公開する判断は自分、と recommend で判断主体性を明示)、(b) プラグイン機能説明メインではなく Primary 痛点『応募実績が積めない』起点で入る、(c) 『AI が仕事を奪う』完全非該当 (むしろ駆け出しに公開の門戸を開く positive 翻訳)、(d) 『プロ向け高度議論』回避 = GLSL シェーダー構文や plugin API 詳細は出さず『動きが付く』『Community に出せる』の粒度、(e) freshness_hours = 24 (9/1 リリース → 9/2 08:15 JST 配信で 168 NG ラインの 1/7 の超鮮度)、(f) 出典 6 ソースで multi-source confirm、(g) Figma 公式リリースノートで確認済みだがドメイン egress 制限のため WebSearch 経由で 3 系統から確認 + Config 2026 blog + 英語メディアで裏取り",
     "sources": [
-      "https://www.smashingmagazine.com/",
-      "https://www.smashingmagazine.com/category/user-experience/",
-      "https://www.smashingmagazine.com/guides/accessibility/",
-      "https://accessibility.build/guides/accessibility-overlays",
-      "https://wcagsafe.com/blog/accessibility-overlays-dont-work",
-      "https://www.audioeye.com/post/accessibility-overlay/",
-      "https://brickfield.ie/2026/03/27/why-accessibility-overlays-fail/"
+      "https://www.figma.com/release-notes/",
+      "https://help.figma.com/hc/en-us/articles/41147702210071-Quick-start-guide-to-generative-plugins-and-shaders",
+      "https://www.figma.com/blog/config-2026-recap/",
+      "https://help.figma.com/hc/en-us/articles/39582753756695-What-s-new-from-Config-2026",
+      "https://www.uwarp.design/blog/figma-config-2026-recap-code-motion-agent",
+      "https://explainx.ai/blog/figma-config-2026-complete-recap-motion-code-shaders-ai-2026"
     ],
-    "query": "Smashing Magazine accessibility overlays harm Ruben Ferreira Duarte August 31 2026 WCAG detection rate 20 30 percent screen reader extension block",
-    "freshness_hours": 30
+    "query": "Figma release notes September 1 2026 generative plugins shaders animations interactions publish Community organization private",
+    "freshness_hours": 24
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Smashing 8/31『アクセシビリティ・オーバーレイは害になる』駆け出しの語彙武装",
-      "description": "『アクセシビリティ対応』を謳うオーバーレイは AI 検出 3 割止まりで残り 7 割は実機テスト必須、駆け出しは面接で『AI 丸投げでなくソースで直す』と語れる語彙武装に。",
-      "detail": "Smashing Magazine が 8 月 31 日、Ruben Ferreira Duarte 執筆でアクセシビリティ・オーバーレイの害を公開。サイトに 1 行スクリプトを貼るだけで対応済みと謳う overlay は、AI 自動検出が WCAG 違反の 20〜30% しか拾えず残り 7 割は人が実機テストする必要があり、視覚障害ユーザーの多くはオーバーレイをブロックする拡張機能を入れている実態を報告。",
-      "narration": "『アクセシビリティ対応』のオーバーレイ、実は逆効果ってご存じでした？Smashingが昨日、駆け出しも知るべき理由を公開しました。",
-      "tags": ["デザインニュース", "アクセシビリティ", "Smashing", "駆け出しデザイナー", "UI批評"],
+      "title": "Figma 9/1 生成プラグイン Community 公開解禁、動くシェーダーも同日オープン",
+      "description": "9月1日にFigmaが発表、あなたが作った生成プラグインをCommunityに公開できるようになりました。",
+      "detail": "生成プラグインはテキスト命令だけで自分専用ツールが作れる仕組み。6月Config発表分に、9/1で動くシェーダーとCommunity公開機能が乗りました。",
+      "narration": "9月1日にFigmaが発表、あなたが作った生成プラグインをCommunityに公開できるようになりました。しかも動きも付きます。",
+      "tags": ["Figma", "生成プラグイン", "Community"],
       "narration_sections": {
-        "hook": "『アクセシビリティ対応』のオーバーレイ、実は逆効果ってご存じでした？Smashingが昨日、駆け出しも知るべき理由を公開しました。",
-        "origin": "筆者Ruben Ferreira Duarteによると、AIが自動検出できるWCAG違反はたった20〜30パーセント。残り7割はスクリーンリーダー実機テストが必須で、視覚障害ユーザーの多くはオーバーレイをブロックする拡張機能を入れています。",
-        "recommend": "駆け出しは面接で『AI丸投げでなくソースで直す』と語れる語彙武装に。Figmaの段階でコントラストと文言を自分で判断しましょう。"
+        "hook": "9月1日にFigmaが発表、あなたが作った生成プラグインをCommunityに公開できるようになりました。しかも動きも付きます。",
+        "origin": "生成プラグインは、テキスト命令だけで自分専用ツールが作れる仕組みで、6月Configの目玉発表でした。9月1日には動くシェーダーが解禁、Community公開機能も同日オープン、マウスに反応する演出もテキスト指示で作れる見通しです。",
+        "recommend": "駆け出しでも作ったツールをCommunityに1つ出せば、応募時の武器になります。AIは補助輪、公開する判断は自分で決めます。"
       },
       "section_titles": {
-        "hook": "オーバーレイの罠",
-        "origin": "AI検出は3割止まり",
-        "recommend": "駆け出しの語彙武装"
+        "hook": "Figma 9/1発表",
+        "origin": "動くシェーダー解禁",
+        "recommend": "駆け出しも公開OK"
       },
       "section_descriptions": {
-        "hook": "貼るだけで対応済みと謳うオーバーレイが逆効果な話",
-        "origin": "AI自動検出は3割、7割は実機テストが必須",
-        "recommend": "面接で語れるAI丸投げしない判断の視点"
+        "hook": "9月1日にFigmaが新機能を発表しました",
+        "origin": "6月Config予告分が9月1日に本番展開",
+        "recommend": "Community公開で応募時の実績に変わる"
       }
     }
   ]
