@@ -2,52 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "QH1K9X4kunk",
-      "videoUrl": "https://youtube.com/shorts/QH1K9X4kunk",
-      "date": "2026-06-03",
-      "title": "【デザインニュース】Figma Slots が 6/1 に正式版へ、Community プラグインも一斉対応で駆け出しが『壊れない設計』を組める時代に｜2026/06/03 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 43,
-      "discovery": {
-        "method": "figma-community",
-        "description": "Figma Community 主要プラグインの直近更新を横断し、6/1 公式 Slots GA (open beta 2026-03-05 以来 88 日) と『守りの設定』4 種追加 (min/max layers / preferred instances 限定 / empty slot 表示 / fill default) に合わせて Tokens Studio v217 (5/25 リリース) が『slot support for theme propagation』を先回り対応済み、Community 主要プラグイン群が今日から本番運用に入る波を抽出。figma-community は 5/30 以来 4 日空きで 5/27 が 7日窓外脱落し 7日2回ガード解放、6/1 PDCA 戦略更新提案 #3『柱② 補強週 (6/1-6/7)』+ 6/2 PDCA Action #3『6/3 候補 = figma-community』pre-schedule 該当の exploit gate-recovery 投入。新 sub-angle slots-ga-plugin-ready で community-tips-bundle / plugin-major-update の WORST 角度と完全別系統",
-        "sources": [
-          "https://www.figma.com/release-notes/",
-          "https://www.figma.com/blog/supercharge-your-design-system-with-slots/",
-          "https://forum.figma.com/share-your-feedback-26/slots-51602",
-          "https://forum.figma.com/ask-the-community-7/release-of-slots-50615",
-          "https://feedback.tokens.studio/changelog",
-          "https://www.figma.com/community/plugin/843461159747178978/tokens-studio-for-figma",
-          "https://help.figma.com/hc/en-us/articles/38741465279895-The-difference-between-slots-instance-swaps-and-variants"
-        ],
-        "query": "Figma Slots GA June 1 2026 guardrails preferred instances Tokens Studio community plugin slot support theme propagation",
-        "freshness_hours": 48
-      },
-      "stats": {
-        "views": 4,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-06-16T01:46:42.283Z"
-      }
-    },
-    {
       "videoId": "6XInR43R-tE",
       "videoUrl": "https://youtube.com/shorts/6XInR43R-tE",
       "date": "2026-06-06",
@@ -2845,7 +2799,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-01T01:49:56.903Z"
+        "updatedAt": "2026-09-02T01:01:30.912Z"
       }
     },
     {
@@ -2886,7 +2840,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-01T01:49:56.903Z"
+        "updatedAt": "2026-09-02T01:01:30.912Z"
       }
     },
     {
@@ -2929,7 +2883,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-01T01:49:56.903Z"
+        "updatedAt": "2026-09-02T01:01:30.912Z"
       }
     },
     {
@@ -2972,7 +2926,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-01T01:49:56.903Z"
+        "updatedAt": "2026-09-02T01:01:30.912Z"
       }
     },
     {
@@ -3014,7 +2968,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-01T01:49:56.903Z"
+        "updatedAt": "2026-09-02T01:01:30.912Z"
       }
     },
     {
@@ -3056,7 +3010,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-01T01:49:56.903Z"
+        "updatedAt": "2026-09-02T01:01:30.912Z"
       }
     },
     {
@@ -3095,10 +3049,10 @@
         "freshness_hours": 15
       },
       "stats": {
-        "views": 1,
+        "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-01T01:49:56.903Z"
+        "updatedAt": "2026-09-02T01:01:30.912Z"
       }
     },
     {
@@ -3141,7 +3095,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-01T01:49:56.903Z"
+        "updatedAt": "2026-09-02T01:01:30.912Z"
       }
     },
     {
@@ -3184,7 +3138,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-01T01:49:56.903Z"
+        "updatedAt": "2026-09-02T01:01:30.912Z"
       }
     },
     {
@@ -3227,7 +3181,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-01T01:49:56.903Z"
+        "updatedAt": "2026-09-02T01:01:30.912Z"
       }
     },
     {
@@ -3270,7 +3224,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-01T01:49:56.903Z"
+        "updatedAt": "2026-09-02T01:01:30.912Z"
       }
     },
     {
@@ -3313,7 +3267,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-01T01:49:56.903Z"
+        "updatedAt": "2026-09-02T01:01:30.912Z"
       }
     },
     {
@@ -3359,19 +3313,56 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-09-02T01:01:30.912Z"
+      }
+    },
+    {
+      "videoId": "lo3R51j9xUM",
+      "videoUrl": "https://youtube.com/shorts/lo3R51j9xUM",
+      "date": "2026-09-02",
+      "title": "【デザインニュース】Figma 9/1 生成プラグイン Community 公開解禁、動くシェーダーも同日オープン｜2026/09/02 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 44,
+      "discovery": {
+        "method": "official-src",
+        "description": "Wed weekday news 帯、Figma 公式リリースノート 2026-09-01 掲載『Generative plugins and shaders: animations, interactions, publishing, code access』を一次取得。9/1 に (a) 動くシェーダー (motion timeline でキーフレーム可) 解禁、(b) マウスに反応するインタラクティブシェーダーは coming soon (パフォーマンス最適化中)、(c) 生成プラグインとシェーダーを Figma Community に world 公開 / organization 内 private 公開 (Org・Enterprise プラン) の 2 経路が同時オープン、を Figma Help Center Quick start guide + Figma Blog Config 2026 recap + 複数英語メディア (uwarp.design / explainx.ai / secretuxd.com / cmswire) で multi-source confirm。6/24 Config 2026 で予告された『build your own tools』の 9/1 大型アップデート、driving the future of the canvas。method 選定: 直近 14 日 TOP3 タイ (news-en / official-src / figma-community それぞれ avg 0.33 n=3、+ social-en avg 1.00 n=1) のうち news-en は 08-27 + 09-01 で 7 日窓 (08-27〜09-02) 2 回到達ガード抵触で今日 3 回目連投不可、figma-community は 08-30 で 2 日ガード抵触、expert-blog は 08-29 で 2 日ガード抵触、product-launches は WORST + 08-26 使用で温存、social-en は n=1 サンプル小で Figma 一次ソース整合性低い。official-src は 08-28 (Agent Chat Panel) から 5 日空き、7 日窓に 1 usage で 2 回ガード余裕、2 日ガード完全クリア → TOP3 タイからの Exploit 継続採用。柱① Figma 公式ニュース (target 25%、直近 14 日 08-22 + 08-25 + 08-28 = 3/13 = 23% で ほぼ達成) を 4/14 = 29% で target 到達、副 柱② プラグイン/エコシステム (target 20%、直近 14 日 08-18 + 08-23 + 08-30 = 3/14 = 21% で達成) を Community publishing 角度で継続補強。Apple 系 5 連投 (6 月) や Config 縦糸 (6/23-6/26) と同じ『大型公式イベント予告→展開→続報』パターンの一部で、6/25 Config Recap → 9/1 Generative Plugins/Shaders 公開機能解禁 の縦糸中継点。Primary 駆け出しペルソナ痛点: (a) 『自分でプラグインを作りたいけど dev 環境も plugin API 知識もなくて詰む』を『テキスト命令だけで作れる』で反転、(b) 『Community に何か 1 つでも公開して実績を積みたい』を『生成プラグイン 1 つで応募時の武器化できる』で回収、(c) 08-30 Typeout LP 撲滅シリーズや 08-16 数値化からの応募武装縦糸 7 本目、既視聴者 retention 継続。08-19 Case Study Club Top20 → 08-24 component contracts → 08-29 カレット → 08-30 UX コピー → 09-01 アクセシビリティ・オーバーレイ → 09-02 生成プラグイン Community 公開 で駆け出し応募武装 7 本目に接続。NG パターン回避: (a) AI = 補助輪フレーム維持 (テキスト命令で作るのは AI、公開する判断は自分、と recommend で判断主体性を明示)、(b) プラグイン機能説明メインではなく Primary 痛点『応募実績が積めない』起点で入る、(c) 『AI が仕事を奪う』完全非該当 (むしろ駆け出しに公開の門戸を開く positive 翻訳)、(d) 『プロ向け高度議論』回避 = GLSL シェーダー構文や plugin API 詳細は出さず『動きが付く』『Community に出せる』の粒度、(e) freshness_hours = 24 (9/1 リリース → 9/2 08:15 JST 配信で 168 NG ラインの 1/7 の超鮮度)、(f) 出典 6 ソースで multi-source confirm、(g) Figma 公式リリースノートで確認済みだがドメイン egress 制限のため WebSearch 経由で 3 系統から確認 + Config 2026 blog + 英語メディアで裏取り",
+        "sources": [
+          "https://www.figma.com/release-notes/",
+          "https://help.figma.com/hc/en-us/articles/41147702210071-Quick-start-guide-to-generative-plugins-and-shaders",
+          "https://www.figma.com/blog/config-2026-recap/",
+          "https://help.figma.com/hc/en-us/articles/39582753756695-What-s-new-from-Config-2026",
+          "https://www.uwarp.design/blog/figma-config-2026-recap-code-motion-agent",
+          "https://explainx.ai/blog/figma-config-2026-complete-recap-motion-code-shaders-ai-2026"
+        ],
+        "query": "Figma release notes September 1 2026 generative plugins shaders animations interactions publish Community organization private",
+        "freshness_hours": 24
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-08-02",
-      "changes": [
-        "standard: 24 avg views (71 videos)",
-        "Day performance: Sat=38, Tue=30, Sun=29, Fri=19, Mon=17, Wed=15, Thu=15"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-08-03",
       "changes": [
@@ -3601,6 +3592,14 @@
       "changes": [
         "standard: 2 avg views (77 videos)",
         "Day performance: Tue=7, Mon=2, Fri=2, Wed=1, Sat=1, Sun=1, Thu=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-09-02",
+      "changes": [
+        "standard: 2 avg views (76 videos)",
+        "Day performance: Tue=3, Mon=2, Fri=2, Wed=1, Sat=1, Sun=1, Thu=1"
       ],
       "recommendedTemplate": "standard"
     }
