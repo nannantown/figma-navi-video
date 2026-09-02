@@ -1,41 +1,39 @@
 {
-  "date": "2026-09-02",
+  "date": "2026-09-03",
   "discovery": {
-    "method": "official-src",
-    "description": "Wed weekday news 帯、Figma 公式リリースノート 2026-09-01 掲載『Generative plugins and shaders: animations, interactions, publishing, code access』を一次取得。9/1 に (a) 動くシェーダー (motion timeline でキーフレーム可) 解禁、(b) マウスに反応するインタラクティブシェーダーは coming soon (パフォーマンス最適化中)、(c) 生成プラグインとシェーダーを Figma Community に world 公開 / organization 内 private 公開 (Org・Enterprise プラン) の 2 経路が同時オープン、を Figma Help Center Quick start guide + Figma Blog Config 2026 recap + 複数英語メディア (uwarp.design / explainx.ai / secretuxd.com / cmswire) で multi-source confirm。6/24 Config 2026 で予告された『build your own tools』の 9/1 大型アップデート、driving the future of the canvas。method 選定: 直近 14 日 TOP3 タイ (news-en / official-src / figma-community それぞれ avg 0.33 n=3、+ social-en avg 1.00 n=1) のうち news-en は 08-27 + 09-01 で 7 日窓 (08-27〜09-02) 2 回到達ガード抵触で今日 3 回目連投不可、figma-community は 08-30 で 2 日ガード抵触、expert-blog は 08-29 で 2 日ガード抵触、product-launches は WORST + 08-26 使用で温存、social-en は n=1 サンプル小で Figma 一次ソース整合性低い。official-src は 08-28 (Agent Chat Panel) から 5 日空き、7 日窓に 1 usage で 2 回ガード余裕、2 日ガード完全クリア → TOP3 タイからの Exploit 継続採用。柱① Figma 公式ニュース (target 25%、直近 14 日 08-22 + 08-25 + 08-28 = 3/13 = 23% で ほぼ達成) を 4/14 = 29% で target 到達、副 柱② プラグイン/エコシステム (target 20%、直近 14 日 08-18 + 08-23 + 08-30 = 3/14 = 21% で達成) を Community publishing 角度で継続補強。Apple 系 5 連投 (6 月) や Config 縦糸 (6/23-6/26) と同じ『大型公式イベント予告→展開→続報』パターンの一部で、6/25 Config Recap → 9/1 Generative Plugins/Shaders 公開機能解禁 の縦糸中継点。Primary 駆け出しペルソナ痛点: (a) 『自分でプラグインを作りたいけど dev 環境も plugin API 知識もなくて詰む』を『テキスト命令だけで作れる』で反転、(b) 『Community に何か 1 つでも公開して実績を積みたい』を『生成プラグイン 1 つで応募時の武器化できる』で回収、(c) 08-30 Typeout LP 撲滅シリーズや 08-16 数値化からの応募武装縦糸 7 本目、既視聴者 retention 継続。08-19 Case Study Club Top20 → 08-24 component contracts → 08-29 カレット → 08-30 UX コピー → 09-01 アクセシビリティ・オーバーレイ → 09-02 生成プラグイン Community 公開 で駆け出し応募武装 7 本目に接続。NG パターン回避: (a) AI = 補助輪フレーム維持 (テキスト命令で作るのは AI、公開する判断は自分、と recommend で判断主体性を明示)、(b) プラグイン機能説明メインではなく Primary 痛点『応募実績が積めない』起点で入る、(c) 『AI が仕事を奪う』完全非該当 (むしろ駆け出しに公開の門戸を開く positive 翻訳)、(d) 『プロ向け高度議論』回避 = GLSL シェーダー構文や plugin API 詳細は出さず『動きが付く』『Community に出せる』の粒度、(e) freshness_hours = 24 (9/1 リリース → 9/2 08:15 JST 配信で 168 NG ラインの 1/7 の超鮮度)、(f) 出典 6 ソースで multi-source confirm、(g) Figma 公式リリースノートで確認済みだがドメイン egress 制限のため WebSearch 経由で 3 系統から確認 + Config 2026 blog + 英語メディアで裏取り",
+    "method": "figma-community",
+    "description": "Figma Community の新カテゴリ Shaders 特設ページを起点に、9/1 の生成プラグイン Community 公開解禁で登場した AI シェーダー素材群を確認",
     "sources": [
-      "https://www.figma.com/release-notes/",
-      "https://help.figma.com/hc/en-us/articles/41147702210071-Quick-start-guide-to-generative-plugins-and-shaders",
-      "https://www.figma.com/blog/config-2026-recap/",
-      "https://help.figma.com/hc/en-us/articles/39582753756695-What-s-new-from-Config-2026",
-      "https://www.uwarp.design/blog/figma-config-2026-recap-code-motion-agent",
-      "https://explainx.ai/blog/figma-config-2026-complete-recap-motion-code-shaders-ai-2026"
+      "https://www.figma.com/community/shaders",
+      "https://help.figma.com/hc/en-us/articles/41175721167767-Use-shaders-in-designs",
+      "https://help.figma.com/hc/en-us/articles/41159710233623-AI-workflows-collection-Build-your-own-shaders-and-effects",
+      "https://help.figma.com/hc/en-us/articles/41147702210071-Quick-start-guide-to-generative-plugins-and-shaders"
     ],
-    "query": "Figma release notes September 1 2026 generative plugins shaders animations interactions publish Community organization private",
-    "freshness_hours": 24
+    "query": "Figma Community shader Frosted glass Metaball install",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma 9/1 生成プラグイン Community 公開解禁、動くシェーダーも同日オープン",
-      "description": "9月1日にFigmaが発表、あなたが作った生成プラグインをCommunityに公開できるようになりました。",
-      "detail": "生成プラグインはテキスト命令だけで自分専用ツールが作れる仕組み。6月Config発表分に、9/1で動くシェーダーとCommunity公開機能が乗りました。",
-      "narration": "9月1日にFigmaが発表、あなたが作った生成プラグインをCommunityに公開できるようになりました。しかも動きも付きます。",
-      "tags": ["Figma", "生成プラグイン", "Community"],
+      "title": "Figma Community 9/1 AIシェーダー特設ページ 駆け出しが1クリックでFrosted glass導入",
+      "description": "Figma Community に AI シェーダー専用ページが 9/1 新設、Frosted も Metaball も1クリック導入",
+      "detail": "シェーダーは GPU で動く小プログラムで光や質感を細かく制御する技術。従来はコード必須でしたが、Figma Agent に日本語で頼めば自動生成され、9/1 から Community 共有も解禁。無料シェーダーを即インストールできます。",
+      "narration": "9/1発表、Figma CommunityにAIシェーダー専用ページが新設。Frosted glassもNoiseも駆け出しが1クリックで試せます。",
+      "tags": ["Figma", "Community", "AIシェーダー"],
       "narration_sections": {
-        "hook": "9月1日にFigmaが発表、あなたが作った生成プラグインをCommunityに公開できるようになりました。しかも動きも付きます。",
-        "origin": "生成プラグインは、テキスト命令だけで自分専用ツールが作れる仕組みで、6月Configの目玉発表でした。9月1日には動くシェーダーが解禁、Community公開機能も同日オープン、マウスに反応する演出もテキスト指示で作れる見通しです。",
-        "recommend": "駆け出しでも作ったツールをCommunityに1つ出せば、応募時の武器になります。AIは補助輪、公開する判断は自分で決めます。"
+        "hook": "9/1発表、Figma CommunityにAIシェーダー専用ページが新設。Frosted glassもNoiseも駆け出しが1クリックで試せます。",
+        "origin": "シェーダーはGPUで動く小プログラム、光や質感を細かく制御する技術。今までコード必須でしたが、Figma Agentに日本語で頼めば自動生成、9/1からCommunity共有も解禁。無料のFrostedやMetaballを即インストールできます。",
+        "recommend": "演出過多は禁物、駆け出しはヒーロー1面だけに絞ると一気にプロっぽく見えます。まず3種類触って比較するのが安全です。"
       },
       "section_titles": {
-        "hook": "Figma 9/1発表",
-        "origin": "動くシェーダー解禁",
-        "recommend": "駆け出しも公開OK"
+        "hook": "AIシェーダー特設棚",
+        "origin": "日本語で質感生成",
+        "recommend": "使い所は1面まで"
       },
       "section_descriptions": {
-        "hook": "9月1日にFigmaが新機能を発表しました",
-        "origin": "6月Config予告分が9月1日に本番展開",
-        "recommend": "Community公開で応募時の実績に変わる"
+        "hook": "Figma CommunityにAIシェーダー特設ページ",
+        "origin": "GPU上プログラムを日本語プロンプトで自動生成",
+        "recommend": "駆け出しはヒーロー1面だけに絞ると効果的"
       }
     }
   ]
