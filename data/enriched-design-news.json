@@ -1,39 +1,40 @@
 {
-  "date": "2026-09-03",
+  "date": "2026-09-04",
   "discovery": {
-    "method": "figma-community",
-    "description": "Figma Community の新カテゴリ Shaders 特設ページを起点に、9/1 の生成プラグイン Community 公開解禁で登場した AI シェーダー素材群を確認",
+    "method": "news-en",
+    "description": "英語デザインメディア Smashing Magazine が 9/1 に Matej Latin『8 micro tips for remarkably better typography』を再掲したのを受け、原著サイト matejlatin.com / UX Collective 版 / betterwebtype.com の一次情報を横断し、駆け出しデザイナーが今日 Figma で 15 分で試せる 3 則 (大見出しの letter-spacing 圧縮 / 本文数字の old-style figures 化 / 1lI O0 での書体見分け確認) に翻訳。method 選定 (Friday weekday news 帯): 直近 14 日 (08-21〜09-03) の method 別 avg views は social-en=1.00 (n=1)、official-src=0.75 (n=4)、figma-community=0.67 (n=3)、news-en=0.67 (n=3)、product-launches=0 (n=1, 2 週連続 0 で凍結)、expert-blog=0 (n=1)。TOP1 social-en は 08-21 から 14 日空きで採用可だが Config 系反響拾いに温存し 9/5 週末投入を PDCA で提案済のため今日は news-en (TOP タイ、09-01 から 3 日空き、2 日ガード OK、7 日 2 回到達ガード OK) を Exploit 継続。official-src (09-02) と figma-community (09-03) は 2 日ガード抵触で不可。土曜が近づく Fri は evergreen Tips 直前の news 帯として最適で、typography は Primary 駆け出しの最頻痛点 (ポートフォリオが素人っぽい原因の 9 割) に直撃。柱③業界・デザインニュース (target 20%、直近 14 日 4/14=29% でやや過剰) だが本テーマは柱④Tips/Figma 実践 (target 15% 慢性未達) にも柱⑥UI 批評的な『見分けの目』にも接続する跨り題材として位置づけ、柱④の 9 月序盤の空白を news 帯で先埋め。NG パターン回避: (a) AI=補助輪フレーム維持 (Recommend で『AI に整えさせる前に自分の目で判断する練習』と主体性明示)、(b) プロ向け高度議論回避 (kerning テーブル・OpenType feature 詳細等は避け、letter-spacing 数値と old-style figures の 2 語で説明を止める)、(c) プラグイン機能説明メイン回避 (Figmaナビ本体への直接接続なし、Tips 純粋提供)、(d) 『AI に任せれば考えなくていい』NG 回避 (判断=人、AI=補助を明示)、(e) freshness_hours=72 (Smashing 9/1 再掲 → 9/4 08:15 JST 配信) で 168 NG ライン余裕、(f) 出典 5 ソースで multi-source confirm。source 分散: 08-24 / 08-27 / 09-01 と news-en 3 連続 Smashing だったが、本日は Smashing を再掲元として引用しつつ原著サイト matejlatin.com と UX Collective 版を主軸に据えることで source 実質分散を実現、Smashing 単独出典から抜けて news-en の弱点 (Smashing 依存) を緩和。連動性: 9/3 (figma-community AI シェーダー) → 9/4 (news-en タイポ 8 則) → 9/5-9/6 週末 (social-en で X 反響拾い or expert-blog で NN/g 系) を予定、Primary 応募武装縦糸 (前週 Typeout / アクセシビリティ・オーバーレイ / シェーダー特設) の本文まわり側面補完",
     "sources": [
-      "https://www.figma.com/community/shaders",
-      "https://help.figma.com/hc/en-us/articles/41175721167767-Use-shaders-in-designs",
-      "https://help.figma.com/hc/en-us/articles/41159710233623-AI-workflows-collection-Build-your-own-shaders-and-effects",
-      "https://help.figma.com/hc/en-us/articles/41147702210071-Quick-start-guide-to-generative-plugins-and-shaders"
+      "https://www.smashingmagazine.com/2026/09/8-micro-tips-remarkably-better-typography/",
+      "https://uxdesign.cc/8-micro-tips-for-remarkably-better-typography-986c8c4f6d85",
+      "https://matejlatin.com/designers-digest/8-tips-for-remarkably-better-typography/",
+      "https://betterwebtype.com/8-tips-for-remarkably-better-typography/",
+      "https://uxdesign.cc/8-more-micro-tips-for-remarkably-better-typography-82bf65fb2043"
     ],
-    "query": "Figma Community shader Frosted glass Metaball install",
+    "query": "Matej Latin 8 micro tips remarkably better typography Smashing September 1 2026 letter-spacing old-style figures 1lI O0 legibility",
     "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma Community 9/1 AIシェーダー特設ページ 駆け出しが1クリックでFrosted glass導入",
-      "description": "Figma Community に AI シェーダー専用ページが 9/1 新設、Frosted も Metaball も1クリック導入",
-      "detail": "シェーダーは GPU で動く小プログラムで光や質感を細かく制御する技術。従来はコード必須でしたが、Figma Agent に日本語で頼めば自動生成され、9/1 から Community 共有も解禁。無料シェーダーを即インストールできます。",
-      "narration": "9/1発表、Figma CommunityにAIシェーダー専用ページが新設。Frosted glassもNoiseも駆け出しが1クリックで試せます。",
-      "tags": ["Figma", "Community", "AIシェーダー"],
+      "title": "Smashingが9/1にMatej Latinのタイポ8則を再掲、駆け出しの本文が素人っぽく見える原因は9割ここ",
+      "description": "Smashingが9/1、Matej Latinのタイポ8則を再掲。駆け出しのポートフォリオが素人っぽく見える原因の9割はここです。",
+      "detail": "8則から即効性の高い3つを抜粋。大見出しはletter-spacingをマイナス1から2%圧縮して間延びを止める。本文の数字はold-style figuresで揃え視線をノイズから守る。最後に1lI O0の並びで書体の見分けやすさを確認します。",
+      "narration": "Smashingが9/1、Matej Latinのタイポ8則を再掲。駆け出しのポートフォリオが素人っぽく見える原因の9割はここです。",
+      "tags": ["タイポグラフィ", "Smashing", "Matej Latin"],
       "narration_sections": {
-        "hook": "9/1発表、Figma CommunityにAIシェーダー専用ページが新設。Frosted glassもNoiseも駆け出しが1クリックで試せます。",
-        "origin": "シェーダーはGPUで動く小プログラム、光や質感を細かく制御する技術。今までコード必須でしたが、Figma Agentに日本語で頼めば自動生成、9/1からCommunity共有も解禁。無料のFrostedやMetaballを即インストールできます。",
-        "recommend": "演出過多は禁物、駆け出しはヒーロー1面だけに絞ると一気にプロっぽく見えます。まず3種類触って比較するのが安全です。"
+        "hook": "Smashingが9/1、Matej Latinのタイポ8則を再掲。駆け出しのポートフォリオが素人っぽく見える原因の9割はここです。",
+        "origin": "8則から即効性の高い3つを抜粋。大見出しはletter-spacingをマイナス1から2%圧縮して間延びを止める。本文の数字はold-style figuresで揃え視線をノイズから守る。最後に1lI O0の並びで書体の見分けやすさを確認します。",
+        "recommend": "3則ならFigmaで15分。週末のポートフォリオ見直し前に本文を点検。AIに整えさせる前に、自分の目で判断する練習になります。"
       },
       "section_titles": {
-        "hook": "AIシェーダー特設棚",
-        "origin": "日本語で質感生成",
-        "recommend": "使い所は1面まで"
+        "hook": "タイポ8則が再掲",
+        "origin": "即効の3則を抜粋",
+        "recommend": "週末15分の点検"
       },
       "section_descriptions": {
-        "hook": "Figma CommunityにAIシェーダー特設ページ",
-        "origin": "GPU上プログラムを日本語プロンプトで自動生成",
-        "recommend": "駆け出しはヒーロー1面だけに絞ると効果的"
+        "hook": "Smashing 9/1再掲、素人っぽさの原因はタイポ",
+        "origin": "letter-spacing・数字・書体の3則を要約",
+        "recommend": "自分の目で整える練習として本文まわりを見直す"
       }
     }
   ]
