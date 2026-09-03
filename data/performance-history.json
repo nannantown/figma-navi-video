@@ -2840,7 +2840,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-02T01:01:30.912Z"
+        "updatedAt": "2026-09-03T01:07:13.580Z"
       }
     },
     {
@@ -2883,7 +2883,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-02T01:01:30.912Z"
+        "updatedAt": "2026-09-03T01:07:13.580Z"
       }
     },
     {
@@ -2926,7 +2926,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-02T01:01:30.912Z"
+        "updatedAt": "2026-09-03T01:07:13.580Z"
       }
     },
     {
@@ -2968,7 +2968,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-02T01:01:30.912Z"
+        "updatedAt": "2026-09-03T01:07:13.580Z"
       }
     },
     {
@@ -3010,7 +3010,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-02T01:01:30.912Z"
+        "updatedAt": "2026-09-03T01:07:13.580Z"
       }
     },
     {
@@ -3052,7 +3052,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-02T01:01:30.912Z"
+        "updatedAt": "2026-09-03T01:07:13.580Z"
       }
     },
     {
@@ -3095,7 +3095,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-02T01:01:30.912Z"
+        "updatedAt": "2026-09-03T01:07:13.580Z"
       }
     },
     {
@@ -3138,7 +3138,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-02T01:01:30.912Z"
+        "updatedAt": "2026-09-03T01:07:13.580Z"
       }
     },
     {
@@ -3181,7 +3181,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-02T01:01:30.912Z"
+        "updatedAt": "2026-09-03T01:07:13.580Z"
       }
     },
     {
@@ -3224,7 +3224,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-02T01:01:30.912Z"
+        "updatedAt": "2026-09-03T01:07:13.580Z"
       }
     },
     {
@@ -3267,7 +3267,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-02T01:01:30.912Z"
+        "updatedAt": "2026-09-03T01:07:13.580Z"
       }
     },
     {
@@ -3310,10 +3310,10 @@
         "freshness_hours": 30
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-02T01:01:30.912Z"
+        "updatedAt": "2026-09-03T01:07:13.580Z"
       }
     },
     {
@@ -3355,6 +3355,49 @@
         "freshness_hours": 24
       },
       "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-09-03T01:07:13.580Z"
+      }
+    },
+    {
+      "videoId": "u46w9hExNqU",
+      "videoUrl": "https://youtube.com/shorts/u46w9hExNqU",
+      "date": "2026-09-03",
+      "title": "【デザインニュース】Figma Community 9/1 AIシェーダー特設ページ 駆け出しが1クリックでFrosted glass導入｜2026/09/03 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 46,
+      "discovery": {
+        "method": "figma-community",
+        "description": "Figma Community の新カテゴリ Shaders 特設ページを起点に、9/1 の生成プラグイン Community 公開解禁で登場した AI シェーダー素材群を確認",
+        "sources": [
+          "https://www.figma.com/community/shaders",
+          "https://help.figma.com/hc/en-us/articles/41175721167767-Use-shaders-in-designs",
+          "https://help.figma.com/hc/en-us/articles/41159710233623-AI-workflows-collection-Build-your-own-shaders-and-effects",
+          "https://help.figma.com/hc/en-us/articles/41147702210071-Quick-start-guide-to-generative-plugins-and-shaders"
+        ],
+        "query": "Figma Community shader Frosted glass Metaball install",
+        "freshness_hours": 72
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -3363,14 +3406,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-08-03",
-      "changes": [
-        "standard: 23 avg views (71 videos)",
-        "Day performance: Sat=38, Tue=30, Sun=19, Fri=19, Mon=17, Wed=15, Thu=15"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-08-04",
       "changes": [
@@ -3600,6 +3635,14 @@
       "changes": [
         "standard: 2 avg views (76 videos)",
         "Day performance: Tue=3, Mon=2, Fri=2, Wed=1, Sat=1, Sun=1, Thu=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-09-03",
+      "changes": [
+        "standard: 2 avg views (76 videos)",
+        "Day performance: Tue=3, Mon=2, Fri=2, Sat=1, Sun=1, Wed=1, Thu=1"
       ],
       "recommendedTemplate": "standard"
     }
