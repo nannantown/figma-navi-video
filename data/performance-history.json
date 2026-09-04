@@ -2883,7 +2883,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-03T01:07:13.580Z"
+        "updatedAt": "2026-09-04T00:59:01.738Z"
       }
     },
     {
@@ -2926,7 +2926,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-03T01:07:13.580Z"
+        "updatedAt": "2026-09-04T00:59:01.738Z"
       }
     },
     {
@@ -2968,7 +2968,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-03T01:07:13.580Z"
+        "updatedAt": "2026-09-04T00:59:01.738Z"
       }
     },
     {
@@ -3010,7 +3010,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-03T01:07:13.580Z"
+        "updatedAt": "2026-09-04T00:59:01.738Z"
       }
     },
     {
@@ -3052,7 +3052,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-03T01:07:13.580Z"
+        "updatedAt": "2026-09-04T00:59:01.738Z"
       }
     },
     {
@@ -3095,7 +3095,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-03T01:07:13.580Z"
+        "updatedAt": "2026-09-04T00:59:01.738Z"
       }
     },
     {
@@ -3138,7 +3138,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-03T01:07:13.580Z"
+        "updatedAt": "2026-09-04T00:59:01.738Z"
       }
     },
     {
@@ -3181,7 +3181,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-03T01:07:13.580Z"
+        "updatedAt": "2026-09-04T00:59:01.738Z"
       }
     },
     {
@@ -3221,10 +3221,10 @@
         "freshness_hours": 48
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-03T01:07:13.580Z"
+        "updatedAt": "2026-09-04T00:59:01.738Z"
       }
     },
     {
@@ -3267,7 +3267,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-03T01:07:13.580Z"
+        "updatedAt": "2026-09-04T00:59:01.738Z"
       }
     },
     {
@@ -3313,7 +3313,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-03T01:07:13.580Z"
+        "updatedAt": "2026-09-04T00:59:01.738Z"
       }
     },
     {
@@ -3355,10 +3355,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 1,
+        "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-03T01:07:13.580Z"
+        "updatedAt": "2026-09-04T00:59:01.738Z"
       }
     },
     {
@@ -3398,6 +3398,50 @@
         "freshness_hours": 72
       },
       "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-09-04T00:59:01.738Z"
+      }
+    },
+    {
+      "videoId": "uoqpq0TGHbs",
+      "videoUrl": "https://youtube.com/shorts/uoqpq0TGHbs",
+      "date": "2026-09-04",
+      "title": "【デザインニュース】Smashingが9/1にMatej Latinのタイポ8則を再掲、駆け出しの本文が素人っぽく見える原因は9割ここ｜2026/09/04 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 48,
+      "discovery": {
+        "method": "news-en",
+        "description": "英語デザインメディア Smashing Magazine が 9/1 に Matej Latin『8 micro tips for remarkably better typography』を再掲したのを受け、原著サイト matejlatin.com / UX Collective 版 / betterwebtype.com の一次情報を横断し、駆け出しデザイナーが今日 Figma で 15 分で試せる 3 則 (大見出しの letter-spacing 圧縮 / 本文数字の old-style figures 化 / 1lI O0 での書体見分け確認) に翻訳。method 選定 (Friday weekday news 帯): 直近 14 日 (08-21〜09-03) の method 別 avg views は social-en=1.00 (n=1)、official-src=0.75 (n=4)、figma-community=0.67 (n=3)、news-en=0.67 (n=3)、product-launches=0 (n=1, 2 週連続 0 で凍結)、expert-blog=0 (n=1)。TOP1 social-en は 08-21 から 14 日空きで採用可だが Config 系反響拾いに温存し 9/5 週末投入を PDCA で提案済のため今日は news-en (TOP タイ、09-01 から 3 日空き、2 日ガード OK、7 日 2 回到達ガード OK) を Exploit 継続。official-src (09-02) と figma-community (09-03) は 2 日ガード抵触で不可。土曜が近づく Fri は evergreen Tips 直前の news 帯として最適で、typography は Primary 駆け出しの最頻痛点 (ポートフォリオが素人っぽい原因の 9 割) に直撃。柱③業界・デザインニュース (target 20%、直近 14 日 4/14=29% でやや過剰) だが本テーマは柱④Tips/Figma 実践 (target 15% 慢性未達) にも柱⑥UI 批評的な『見分けの目』にも接続する跨り題材として位置づけ、柱④の 9 月序盤の空白を news 帯で先埋め。NG パターン回避: (a) AI=補助輪フレーム維持 (Recommend で『AI に整えさせる前に自分の目で判断する練習』と主体性明示)、(b) プロ向け高度議論回避 (kerning テーブル・OpenType feature 詳細等は避け、letter-spacing 数値と old-style figures の 2 語で説明を止める)、(c) プラグイン機能説明メイン回避 (Figmaナビ本体への直接接続なし、Tips 純粋提供)、(d) 『AI に任せれば考えなくていい』NG 回避 (判断=人、AI=補助を明示)、(e) freshness_hours=72 (Smashing 9/1 再掲 → 9/4 08:15 JST 配信) で 168 NG ライン余裕、(f) 出典 5 ソースで multi-source confirm。source 分散: 08-24 / 08-27 / 09-01 と news-en 3 連続 Smashing だったが、本日は Smashing を再掲元として引用しつつ原著サイト matejlatin.com と UX Collective 版を主軸に据えることで source 実質分散を実現、Smashing 単独出典から抜けて news-en の弱点 (Smashing 依存) を緩和。連動性: 9/3 (figma-community AI シェーダー) → 9/4 (news-en タイポ 8 則) → 9/5-9/6 週末 (social-en で X 反響拾い or expert-blog で NN/g 系) を予定、Primary 応募武装縦糸 (前週 Typeout / アクセシビリティ・オーバーレイ / シェーダー特設) の本文まわり側面補完",
+        "sources": [
+          "https://www.smashingmagazine.com/2026/09/8-micro-tips-remarkably-better-typography/",
+          "https://uxdesign.cc/8-micro-tips-for-remarkably-better-typography-986c8c4f6d85",
+          "https://matejlatin.com/designers-digest/8-tips-for-remarkably-better-typography/",
+          "https://betterwebtype.com/8-tips-for-remarkably-better-typography/",
+          "https://uxdesign.cc/8-more-micro-tips-for-remarkably-better-typography-82bf65fb2043"
+        ],
+        "query": "Matej Latin 8 micro tips remarkably better typography Smashing September 1 2026 letter-spacing old-style figures 1lI O0 legibility",
+        "freshness_hours": 72
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -3406,14 +3450,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-08-04",
-      "changes": [
-        "standard: 22 avg views (71 videos)",
-        "Day performance: Sat=38, Tue=30, Sun=19, Fri=19, Wed=15, Thu=15, Mon=9"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-08-05",
       "changes": [
@@ -3642,6 +3678,14 @@
       "date": "2026-09-03",
       "changes": [
         "standard: 2 avg views (76 videos)",
+        "Day performance: Tue=3, Mon=2, Fri=2, Sat=1, Sun=1, Wed=1, Thu=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-09-04",
+      "changes": [
+        "standard: 2 avg views (77 videos)",
         "Day performance: Tue=3, Mon=2, Fri=2, Sat=1, Sun=1, Wed=1, Thu=1"
       ],
       "recommendedTemplate": "standard"
