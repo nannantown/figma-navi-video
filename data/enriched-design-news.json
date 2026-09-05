@@ -1,46 +1,45 @@
 {
-  "date": "2026-09-05",
+  "date": "2026-09-06",
   "discovery": {
-    "method": "social-en",
-    "description": "英語圏著名デザイナー Nick Babich の X 投稿 (Config 2026 総括) を主軸に、UX Planet 記事と Design Buddies Substack 記事で裏取り。Sat evergreen 帯で駆け出しのマインドセット Tips に落とし込み。",
+    "method": "figma-community",
+    "description": "Sunday evergreen枠。Figma Communityの『Portfolio Case Study Builder』プラグインを、駆け出しがポートフォリオを10分で立ち上げるTipsとして取り上げ。裏付けに『採用担当がポートフォリオを見る平均時間は30〜60秒』の受験研究を接続。",
     "sources": [
-      "https://x.com/101babich/status/2070122390000980182",
-      "https://uxplanet.org/figma-config-2026-recap-1852ccf5e1d1",
-      "https://designbuddies.substack.com/p/config-2026",
-      "https://www.figma.com/blog/config-2026-recap/",
-      "https://www.everydayux.net/figma-config-2026-ai-future-design/"
+      "https://www.figma.com/community/plugin/1597279192707205488/portfolio-case-study-builder",
+      "https://www.coursera.org/articles/ux-designer-portfolio-beginners-guide",
+      "https://blog.opendoorscareers.com/p/the-ultimate-portfolio-guide-for-product-designers-in-2026",
+      "https://thecrit.co/resources/figma-portfolio-guide"
     ],
-    "query": "Figma Config 2026 designer reactions X thread + Nick Babich AI creative layer",
-    "freshness_hours": 168
+    "query": "Portfolio Case Study Builder Figma plugin 2026 beginner + portfolio scan 30-60 seconds",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Nick Babich が Config 2026 で断言「AIはデザイナーの代替じゃない、創作のレイヤーだ」駆け出しの姿勢",
-      "description": "Config 2026 総括の1文が、駆け出しの Figma との付き合い方を決めます。",
-      "detail": "Babichはデザイナーがキュレーター側に回る時代を示し、Motion / Shaders / Code Layers / Skills を挙げて AI が下地を大量に出す構造を説明。判断力を持たない駆け出しは流されて終わる、と警鐘。",
-      "narration": "Nick Babichが Config 2026 の総括で断言しました。「AIはデザイナーの代わりじゃない、創作のレイヤーだ」。駆け出しほど効きます。",
+      "title": "Portfolio Case Study Builderで10分ポートフォリオ骨組み、30秒審査に耐える駆け出しの型",
+      "description": "採用担当がポートフォリオを見る平均時間は30〜60秒。骨組みから作る駆け出し向けTipsです。",
+      "detail": "Figma Communityの『Portfolio Case Study Builder』プラグインは、1クリックで10ページ構成の雛形を自動生成。Case Study/Pitch Deck/Brand Identityの3型から選べて、見出しとダミー本文まで埋まった状態でスタートできます。",
+      "narration": "採用担当がポートフォリオを見る時間、平均30〜60秒って知ってました?駆け出しの応募も一瞬で決まる。30秒に耐える構成、今日はこれ。",
       "tags": [
         "Figma",
-        "Config 2026",
-        "AI デザイン",
-        "デザイン初心者",
-        "マインドセット"
+        "プラグイン",
+        "ポートフォリオ",
+        "駆け出しデザイナー",
+        "デザイン初心者"
       ],
       "narration_sections": {
-        "hook": "Nick Babichが Config 2026 の総括で断言しました。「AIはデザイナーの代わりじゃない、創作のレイヤーだ」。駆け出しほど効きます。",
-        "origin": "彼はこう続けます。デザイナーはキュレーター側に回ると。Motion、Shaders、Code Layers、Skills、AIが下地を大量に出す時代。良い案を選び削り整える判断力がない駆け出しは、生成の波に流されて終わります。",
-        "recommend": "今日の練習は1つ。AI生成の前に自分の手で3案スケッチ、比べて選ぶ。10分で判断の目が育ちます。Figmaナビも同じで、選ぶのはあなた。"
+        "hook": "採用担当がポートフォリオを見る時間、平均30〜60秒って知ってました?駆け出しの応募も一瞬で決まる。30秒に耐える構成、今日はこれ。",
+        "origin": "Figma Communityの『Portfolio Case Study Builder』。1クリックで10ページの骨組みを自動生成。Case Study、Pitch Deck、Brand Identityの3型を選べて、見出しとダミー本文まで入ります。",
+        "recommend": "今週末10分でOK。骨組みを入れて1案から差し替え。埋める前に型を持つ、これが30秒突破の近道。Figmaナビと相性◎です。"
       },
       "section_titles": {
-        "hook": "AIは代替じゃない",
-        "origin": "駆け出しはキュレーター",
-        "recommend": "判断力を鍛える3案法"
+        "hook": "30秒で見られる",
+        "origin": "1クリック10ページ",
+        "recommend": "10分で型を作る"
       },
       "section_descriptions": {
-        "hook": "Config 2026 総括、Nick Babichの名言",
-        "origin": "AIが下地を出す時代の駆け出しの立ち回り方",
-        "recommend": "今日から10分で判断力を鍛える練習ドリル"
+        "hook": "採用担当がポートフォリオを見る平均時間、実は",
+        "origin": "Figmaのプラグインで骨組みを一気に作る方法",
+        "recommend": "今週末10分、埋める前に型を作る駆け出しの近道"
       }
     }
   ]
