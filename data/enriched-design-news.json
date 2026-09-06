@@ -1,45 +1,45 @@
 {
-  "date": "2026-09-06",
+  "date": "2026-09-07",
   "discovery": {
-    "method": "figma-community",
-    "description": "Sunday evergreen枠。Figma Communityの『Portfolio Case Study Builder』プラグインを、駆け出しがポートフォリオを10分で立ち上げるTipsとして取り上げ。裏付けに『採用担当がポートフォリオを見る平均時間は30〜60秒』の受験研究を接続。",
+    "method": "official-src",
+    "description": "Figma公式リリースノートの9/3更新『Update opacity in the variables modal』を英語で捕捉、変数モーダル拡張で不透明度がalias維持のまま適用可能になった新機能を駆け出し翻訳。過去14日 TOP method official-src(平均1.33views、9/2と8/25で2views)を Exploit継続、9/2 以来 5 日空きで 2 日ガード OK、Monday news 帯の 1 機能 1 数字 1 アクション型。裏付けは Figma Forum に長年の要望スレッド複数、Medium/コミュニティで workaround 記事化される pain point だった点。柱①Figma公式ニュース(target 25%)を補強、Primaryの駆け出しに『disabled state のグレーを手打ちしていた工数がゼロに』の実務痛点起点で翻訳。NG回避: (a)機能説明メインではなく学習者の課題起点、(b)AI代替系触れず、(c)freshness_hours=96(4日)で 168 ラインに余裕",
     "sources": [
-      "https://www.figma.com/community/plugin/1597279192707205488/portfolio-case-study-builder",
-      "https://www.coursera.org/articles/ux-designer-portfolio-beginners-guide",
-      "https://blog.opendoorscareers.com/p/the-ultimate-portfolio-guide-for-product-designers-in-2026",
-      "https://thecrit.co/resources/figma-portfolio-guide"
+      "https://www.figma.com/release-notes/",
+      "https://forum.figma.com/suggest-a-feature-11/add-way-to-change-opacity-for-color-variables-alias-fills-strokes-etc-15448",
+      "https://forum.figma.com/suggest-a-feature-11/variables-color-alias-with-alpha-opacity-rgba-ideally-14240",
+      "https://forum.figma.com/showcase-your-work-14/override-color-variable-opacity-without-breaking-your-token-aliases-54246"
     ],
-    "query": "Portfolio Case Study Builder Figma plugin 2026 beginner + portfolio scan 30-60 seconds",
-    "freshness_hours": 72
+    "query": "Figma release notes September 3 2026 opacity variables modal alias disabled overlay scrim",
+    "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Portfolio Case Study Builderで10分ポートフォリオ骨組み、30秒審査に耐える駆け出しの型",
-      "description": "採用担当がポートフォリオを見る平均時間は30〜60秒。骨組みから作る駆け出し向けTipsです。",
-      "detail": "Figma Communityの『Portfolio Case Study Builder』プラグインは、1クリックで10ページ構成の雛形を自動生成。Case Study/Pitch Deck/Brand Identityの3型から選べて、見出しとダミー本文まで埋まった状態でスタートできます。",
-      "narration": "採用担当がポートフォリオを見る時間、平均30〜60秒って知ってました?駆け出しの応募も一瞬で決まる。30秒に耐える構成、今日はこれ。",
+      "title": "Figma 9/3 Variablesモーダルで不透明度が alias維持のまま適用、disabledのグレー手打ち卒業",
+      "description": "disabled state のグレー、まだ手打ちで12%とかしてませんか?9/3にFigmaが仕様更新しました。",
+      "detail": "Figma公式リリースノート(9/3)で、Variablesモーダルに不透明度更新が追加。Colorのトークンaliasを解除せず、上から不透明度だけ差し替えられるようになりました。disabled/overlay/scrimなど半透明状態が、色のalias切らずに一括更新可能に。長年の要望がやっと実装です。",
+      "narration": "知ってました?Figmaが9/3、不透明度をVariablesで管理できるように。disabledのグレー、もう手打ちしなくていいんです。",
       "tags": [
         "Figma",
-        "プラグイン",
-        "ポートフォリオ",
+        "Variables",
+        "デザインシステム",
         "駆け出しデザイナー",
         "デザイン初心者"
       ],
       "narration_sections": {
-        "hook": "採用担当がポートフォリオを見る時間、平均30〜60秒って知ってました?駆け出しの応募も一瞬で決まる。30秒に耐える構成、今日はこれ。",
-        "origin": "Figma Communityの『Portfolio Case Study Builder』。1クリックで10ページの骨組みを自動生成。Case Study、Pitch Deck、Brand Identityの3型を選べて、見出しとダミー本文まで入ります。",
-        "recommend": "今週末10分でOK。骨組みを入れて1案から差し替え。埋める前に型を持つ、これが30秒突破の近道。Figmaナビと相性◎です。"
+        "hook": "知ってました?Figmaが9/3、不透明度をVariablesで管理できるように。disabledのグレー、もう手打ちしなくていいんです。",
+        "origin": "Figmaの公式発表。Colorのトークンを維持したまま、上から不透明度だけ差し替えられるように。disabled、overlay、scrimなど半透明状態が、alias切らずに一括更新可能。長年の要望がやっと実装されました。",
+        "recommend": "駆け出しはまずdisabled stateを1つVariablesで作る。手打ち12%を卒業、トークン運用が今日から始まります。"
       },
       "section_titles": {
-        "hook": "30秒で見られる",
-        "origin": "1クリック10ページ",
-        "recommend": "10分で型を作る"
+        "hook": "不透明度もトークン化",
+        "origin": "aliasを切らずに",
+        "recommend": "手打ち12%を卒業"
       },
       "section_descriptions": {
-        "hook": "採用担当がポートフォリオを見る平均時間、実は",
-        "origin": "Figmaのプラグインで骨組みを一気に作る方法",
-        "recommend": "今週末10分、埋める前に型を作る駆け出しの近道"
+        "hook": "Figma公式、9/3の変数モーダル更新",
+        "origin": "トークンを解除せず不透明度を適用できる新機能",
+        "recommend": "駆け出しがdisabled stateを1個作る手順"
       }
     }
   ]
