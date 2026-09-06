@@ -2,51 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "-auU382q-ho",
-      "videoUrl": "https://youtube.com/shorts/-auU382q-ho",
-      "date": "2026-06-07",
-      "title": "【デザインニュース】Smashing最新、AI生成Figmaがブレる本当の理由はデザシス側の暗黙ルール、処方箋はspec files｜2026/06/07 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 41,
-      "discovery": {
-        "method": "expert-blog",
-        "description": "Smashing Magazine 6/3 公開の Vitaly Friedman 寄稿『How To Make Your Design System AI-Ready』を一次取得し、AI 生成 Figma がブレる根本原因 (= デザインシステム上の『書かれてない暗黙ルール』: documented されない判断・古い hard-coded 値・mock-up 解釈依存) を、spec files (markdown で書く色・余白・コンポーネント使用規則の構造化テキスト) で埋めるという処方箋を、駆け出しデザイナーがポートフォリオに spec.md を 1 枚添えるだけで AI 生成精度が上がる粒度に翻訳。method 選定 (Sunday evergreen 帯): 直近 14 日 TOP1 news-en (6/2 = 51 views) は 6/8 WWDC 当日号で再利用予定のため温存、TOP2 official-src (6/6 = 昨日利用) は 2 日ガード抵触で本日不可、TOP3 expert-blog (5/31 利用、7 日空き、avg 7 views) を Exploit 採用。5/31 + 6/7 = ちょうど 7 日で 7 日 2 回到達ガード境界クリア (6/6 PDCA で 5/5 + 5/12 を同基準評価済の前例踏襲)。Apple 軸 3 連投 (6/5 ADA news → 6/6 ADA 深掘り → 6/8 WWDC 当日) の谷間日として 6/6 PDCA Action 3 の明示計画と完全合致。柱⑥ UI 批評 (直近 14 日 1/14 = 7%、target 10% で不足) + 柱④ Tips (target 15% でほぼ達成) + 柱② エコシステム (figma-community 凍結で停滞中) の 3 柱クロス枠で柱⑥ を 2/14 = 14% へ補強。6/4 social-en (DESIGN.md = 1 ファイルで AI に方針を渡す angle) → 6/7 expert-blog (spec files = デザシス全体を構造化 markdown で書く angle) として 3 日空きの縦糸を確保、5/26 + 5/31 + 6/7 の expert-blog 縦糸も同時に完成。Figmaナビ 本体の差別化ポイント『デザインシステム準拠・チームのルール入力対応』(戦略.md L42) と完全一致する一次ソースで自社ポジショニングを宣伝色なしで自然補強。NG パターン回避: AI = 補助輪フレーム維持 (『AI に任せれば考えなくていい』ではなく『AI に正しく考えさせるためのルール作りは人がする』と判断主体を明示)、プロ向け高度議論回避 (YAML front matter / token reference 構文は出さず、spec.md 1 枚という駆け出しが今日から始められる粒度)、freshness_hours = 96 (Smashing 6/3 公開、本日 6/7 で 4 日経過、168 NG ラインの余裕クリア)",
-        "sources": [
-          "https://www.smashingmagazine.com/2026/06/how-make-design-system-ai-ready/",
-          "https://smashingconf.com/online-workshops/workshops/ai-interfaces-vitaly-friedman/",
-          "https://www.smashingmagazine.com/category/ai/",
-          "https://www.figma.com/solutions/ai-design-systems-generator/",
-          "https://github.com/google-labs-code/design.md",
-          "https://designmd.app/what-is-design-md/"
-        ],
-        "query": "Smashing Magazine Vitaly Friedman How To Make Your Design System AI-Ready spec files markdown design tokens June 2026",
-        "freshness_hours": 96
-      },
-      "stats": {
-        "views": 2,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-06-21T01:39:59.124Z"
-      }
-    },
-    {
       "videoId": "mNIJwETQBqU",
       "videoUrl": "https://youtube.com/shorts/mNIJwETQBqU",
       "date": "2026-06-09",
@@ -2923,7 +2878,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-05T00:57:35.238Z"
+        "updatedAt": "2026-09-06T00:57:43.523Z"
       }
     },
     {
@@ -2965,7 +2920,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-05T00:57:35.238Z"
+        "updatedAt": "2026-09-06T00:57:43.523Z"
       }
     },
     {
@@ -3007,7 +2962,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-05T00:57:35.238Z"
+        "updatedAt": "2026-09-06T00:57:43.523Z"
       }
     },
     {
@@ -3050,7 +3005,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-05T00:57:35.238Z"
+        "updatedAt": "2026-09-06T00:57:43.523Z"
       }
     },
     {
@@ -3093,7 +3048,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-05T00:57:35.238Z"
+        "updatedAt": "2026-09-06T00:57:43.523Z"
       }
     },
     {
@@ -3136,7 +3091,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-05T00:57:35.238Z"
+        "updatedAt": "2026-09-06T00:57:43.523Z"
       }
     },
     {
@@ -3179,7 +3134,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-05T00:57:35.238Z"
+        "updatedAt": "2026-09-06T00:57:43.523Z"
       }
     },
     {
@@ -3222,7 +3177,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-05T00:57:35.238Z"
+        "updatedAt": "2026-09-06T00:57:43.523Z"
       }
     },
     {
@@ -3268,7 +3223,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-05T00:57:35.238Z"
+        "updatedAt": "2026-09-06T00:57:43.523Z"
       }
     },
     {
@@ -3313,7 +3268,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-05T00:57:35.238Z"
+        "updatedAt": "2026-09-06T00:57:43.523Z"
       }
     },
     {
@@ -3356,7 +3311,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-05T00:57:35.238Z"
+        "updatedAt": "2026-09-06T00:57:43.523Z"
       }
     },
     {
@@ -3400,7 +3355,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-05T00:57:35.238Z"
+        "updatedAt": "2026-09-06T00:57:43.523Z"
       }
     },
     {
@@ -3444,19 +3399,54 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-09-06T00:57:43.523Z"
+      }
+    },
+    {
+      "videoId": "5mm9nVJ-WQ8",
+      "videoUrl": "https://youtube.com/shorts/5mm9nVJ-WQ8",
+      "date": "2026-09-06",
+      "title": "【デザインニュース】Portfolio Case Study Builderで10分ポートフォリオ骨組み、30秒審査に耐える駆け出しの型｜2026/09/06 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 47,
+      "discovery": {
+        "method": "figma-community",
+        "description": "Sunday evergreen枠。Figma Communityの『Portfolio Case Study Builder』プラグインを、駆け出しがポートフォリオを10分で立ち上げるTipsとして取り上げ。裏付けに『採用担当がポートフォリオを見る平均時間は30〜60秒』の受験研究を接続。",
+        "sources": [
+          "https://www.figma.com/community/plugin/1597279192707205488/portfolio-case-study-builder",
+          "https://www.coursera.org/articles/ux-designer-portfolio-beginners-guide",
+          "https://blog.opendoorscareers.com/p/the-ultimate-portfolio-guide-for-product-designers-in-2026",
+          "https://thecrit.co/resources/figma-portfolio-guide"
+        ],
+        "query": "Portfolio Case Study Builder Figma plugin 2026 beginner + portfolio scan 30-60 seconds",
+        "freshness_hours": 72
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-08-06",
-      "changes": [
-        "standard: 20 avg views (72 videos)",
-        "Day performance: Sat=38, Sun=19, Tue=19, Fri=19, Thu=15, Wed=14, Mon=9"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-08-07",
       "changes": [
@@ -3686,6 +3676,14 @@
       "changes": [
         "standard: 2 avg views (78 videos)",
         "Day performance: Tue=3, Mon=2, Fri=2, Sat=1, Sun=1, Wed=1, Thu=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-09-06",
+      "changes": [
+        "standard: 1 avg views (78 videos)",
+        "Day performance: Tue=3, Mon=2, Fri=2, Sun=1, Wed=1, Thu=1, Sat=1"
       ],
       "recommendedTemplate": "standard"
     }
