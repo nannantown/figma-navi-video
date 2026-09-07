@@ -1,45 +1,44 @@
 {
-  "date": "2026-09-07",
+  "date": "2026-09-08",
   "discovery": {
-    "method": "official-src",
-    "description": "Figma公式リリースノートの9/3更新『Update opacity in the variables modal』を英語で捕捉、変数モーダル拡張で不透明度がalias維持のまま適用可能になった新機能を駆け出し翻訳。過去14日 TOP method official-src(平均1.33views、9/2と8/25で2views)を Exploit継続、9/2 以来 5 日空きで 2 日ガード OK、Monday news 帯の 1 機能 1 数字 1 アクション型。裏付けは Figma Forum に長年の要望スレッド複数、Medium/コミュニティで workaround 記事化される pain point だった点。柱①Figma公式ニュース(target 25%)を補強、Primaryの駆け出しに『disabled state のグレーを手打ちしていた工数がゼロに』の実務痛点起点で翻訳。NG回避: (a)機能説明メインではなく学習者の課題起点、(b)AI代替系触れず、(c)freshness_hours=96(4日)で 168 ラインに余裕",
+    "method": "expert-blog",
+    "description": "Hardik Pandya (Atlassian) の個人ブログ hvpandya.com『Expose your design system to LLMs』が Smashing Magazine 9/2 に転載。LLM がデザインシステムの色・余白トークンを毎回捏造・値を推測・セッションで忘れる問題に、3層の対策 (spec ファイル / 閉じたトークン層 / 自動監査) を提唱。Figmaナビの差別化『デザインシステム / ルール入力可能』とど真ん中で重なるトピック。過去14日 method 別 TOP tier expert-blog (平均1.00views、8/29以来10日空き)を Exploit、直近2日 (official-src 9/7 / figma-community 9/6) を回避、weekday news 帯として学習者の実務痛点『AIに作らせた画面が微妙に色ズレする』起点で翻訳。freshness_hours=144 (6日)、168ライン以内。NG回避: (a) 機能説明メインではなく学習者の課題起点、(b) AI 代替系は触れず補助輪ポジション、(c) 出典URL 3件明示、(d) 『1トピック x 3 数字 x 1 アクション』の勝ちパターン厳守。",
     "sources": [
-      "https://www.figma.com/release-notes/",
-      "https://forum.figma.com/suggest-a-feature-11/add-way-to-change-opacity-for-color-variables-alias-fills-strokes-etc-15448",
-      "https://forum.figma.com/suggest-a-feature-11/variables-color-alias-with-alpha-opacity-rgba-ideally-14240",
-      "https://forum.figma.com/showcase-your-work-14/override-color-variable-opacity-without-breaking-your-token-aliases-54246"
+      "https://hvpandya.com/llm-design-systems",
+      "https://www.smashingmagazine.com/2026/09/",
+      "https://hardik.substack.com/p/expose-your-design-system-to-llms"
     ],
-    "query": "Figma release notes September 3 2026 opacity variables modal alias disabled overlay scrim",
-    "freshness_hours": 96
+    "query": "Hardik Pandya expose design system LLMs Smashing September 2026 spec token audit three layers",
+    "freshness_hours": 144
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma 9/3 Variablesモーダルで不透明度が alias維持のまま適用、disabledのグレー手打ち卒業",
-      "description": "disabled state のグレー、まだ手打ちで12%とかしてませんか?9/3にFigmaが仕様更新しました。",
-      "detail": "Figma公式リリースノート(9/3)で、Variablesモーダルに不透明度更新が追加。Colorのトークンaliasを解除せず、上から不透明度だけ差し替えられるようになりました。disabled/overlay/scrimなど半透明状態が、色のalias切らずに一括更新可能に。長年の要望がやっと実装です。",
-      "narration": "知ってました?Figmaが9/3、不透明度をVariablesで管理できるように。disabledのグレー、もう手打ちしなくていいんです。",
+      "title": "Atlassian Hardik Pandya が発表、AIに作らせたUIの色ズレはLLMのトークン捏造が原因、spec 1枚で解決",
+      "description": "AIに作らせた画面の色が微妙にズレる原因、Atlassian の Hardik Pandya が3層の対策を発表。",
+      "detail": "Atlassian の Hardik Pandya が Smashing Magazine 9/2 に寄稿。LLM でデザインを生成すると色トークン名の捏造・値の推測・セッション毎の記憶消失で毎回微妙にズレる。対策は3層。spec ファイルで色や余白を宣言、閉じたトークン層で選択肢を限定、監査で違反を全捕捉。Infrastructure as Code の考え方をデザインに転用します。",
+      "narration": "知ってました?AIが作るUIの色が微妙にズレるのは、LLMがトークン名を毎回捏造するから。Atlassian のデザイナーが対策発表。",
       "tags": [
         "Figma",
-        "Variables",
         "デザインシステム",
+        "AI",
         "駆け出しデザイナー",
-        "デザイン初心者"
+        "LLM"
       ],
       "narration_sections": {
-        "hook": "知ってました?Figmaが9/3、不透明度をVariablesで管理できるように。disabledのグレー、もう手打ちしなくていいんです。",
-        "origin": "Figmaの公式発表。Colorのトークンを維持したまま、上から不透明度だけ差し替えられるように。disabled、overlay、scrimなど半透明状態が、alias切らずに一括更新可能。長年の要望がやっと実装されました。",
-        "recommend": "駆け出しはまずdisabled stateを1つVariablesで作る。手打ち12%を卒業、トークン運用が今日から始まります。"
+        "hook": "知ってました?AIが作るUIの色が微妙にズレるのは、LLMがトークン名を毎回捏造するから。Atlassian のデザイナーが対策発表。",
+        "origin": "LLMの弱点は3つ。トークン名を捏造、値を推測、セッション毎に全部忘れる。対策も3層。specファイルで色と余白を宣言、トークン層を閉じる、監査で違反を拾う。Infrastructure as Code のデザイン版です。",
+        "recommend": "駆け出しは色トークンだけ1枚 spec 化してAIに食わせる。色ズレゼロの制作が今日から。Figmaナビもルール入力対応です。"
       },
       "section_titles": {
-        "hook": "不透明度もトークン化",
-        "origin": "aliasを切らずに",
-        "recommend": "手打ち12%を卒業"
+        "hook": "AIの色ズレの原因",
+        "origin": "LLM向け3層設計",
+        "recommend": "色トークン1枚から"
       },
       "section_descriptions": {
-        "hook": "Figma公式、9/3の変数モーダル更新",
-        "origin": "トークンを解除せず不透明度を適用できる新機能",
-        "recommend": "駆け出しがdisabled stateを1個作る手順"
+        "hook": "Hardik Pandya が Smashing で発表",
+        "origin": "spec / トークン / 監査の3層アーキテクチャ",
+        "recommend": "駆け出しの初手、色 spec 1 枚を AI に"
       }
     }
   ]
