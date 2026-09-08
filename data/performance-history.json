@@ -2,57 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "mNIJwETQBqU",
-      "videoUrl": "https://youtube.com/shorts/mNIJwETQBqU",
-      "date": "2026-06-09",
-      "title": "【デザインニュース】Apple WWDC 2026 開幕、Liquid Glass に透明度スライダー、読みにくい問題が公式に決着｜2026/06/09 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 46,
-      "discovery": {
-        "method": "official-src",
-        "description": "WWDC 2026 keynote (6/8 10am PT = JST 6/9 2:00am) 終了直後の朝、Apple Newsroom 公式リリース + Apple Developer wwdc26 公式ページ + MacRumors/Engadget/TechRadar/Tom's Guide/CNBC/TechTimes/The Apple Post/Neowin の英語メディア複数報道を横断、Liquid Glass 透明度スライダー + アプリアイコン新レイヤー + iOS 27 写真 70%/AirDrop 80% 高速化を確定情報として捕捉。method 選定 (Tuesday weekday news 帯): 6/8 PDCA Action 2 で明示 pre-schedule の通り official-src で実施 (news-en は 6/8 利用 2 日ガード抵触で不可)。6/6 official-src から 3 日空き 2 日ガード OK、新 sub-angle `keynote-day-recap` 初投入で WORST 履歴の組換え。Apple 軸縦糸 5/14 (Google が Liquid Glass 不採用 = 99 views) → 6/2 (WWDC 予告 = 51 views) → 6/5 (ADA news) → 6/6 (ADA 深掘り) → 6/8 (WWDC 当日号) → 6/9 (WWDC 当日 recap) の 6 連結最終回。新運用ルール『縦糸 3 連結 (6/2 予告 + 6/8 当日 + 6/9 recap)』初実装、Reels の同チャンネル連続視聴アルゴリズム評価向上を狙う。柱③ 業界・デザインニュース (target 20%、直近 14 日 2/14 = 14%) を 3/14 = 21% へ補強、ようやく target クリア。Primary 駆け出しデザイナーには『デザイナーの声 (NN/g が指摘した Liquid Glass の accessibility failure = translucent + busy background でコントラスト readable threshold 以下) が Apple を動かしたケース』として翻訳。題材は駆け出しが翻訳できる 3 点に絞る (透明度スライダー / アプリアイコン新レイヤー / iOS 27 性能数値)、Siri AI / macOS Golden Gate / Tim Cook 退任は情報過多防止のため今回外す。NG パターン回避: (a) iOS API レベル詳細 (SwiftUI Material API 等) は避け『透明度スライダーで読みやすさ調整』『icon にレイヤー足す』という Figma 作例化粒度、(b) 『AI が仕事を奪う』NG 回避 = Siri AI 部分は今回触れず Liquid Glass refinement にフォーカスして positive 翻訳、(c) 『美しさ vs 読みやすさ』を判断主体性のフレームで提示、(d) freshness_hours = 5 (keynote 終了から 5 時間)、超鮮度で速報性勝負",
-        "sources": [
-          "https://developer.apple.com/wwdc26/",
-          "https://www.apple.com/newsroom/2026/05/apple-kicks-off-worldwide-developers-conference-on-june-8/",
-          "https://www.macrumors.com/2026/06/08/apple-announces-liquid-glass-improvements/",
-          "https://www.macrumors.com/2026/06/08/wwdc-2026-live-coverage/",
-          "https://www.engadget.com/2189698/everything-announced-at-apples-wwdc-2026-keynote/",
-          "https://www.tomsguide.com/news/live/wwdc-2026-live-news-updates",
-          "https://www.techradar.com/news/live/apple-wwdc-2026-live",
-          "https://www.cnbc.com/2026/06/08/apple-wwdc-2026-live-updates.html",
-          "https://www.macstories.net/news/wwdc-2026-apple-publishes-keynote-video/",
-          "https://www.techtimes.com/articles/317975/20260608/apple-liquid-glass-ios-27-wwdc-2026-brings-refinements-developers-must-adopt-today.htm",
-          "https://www.theapplepost.com/2026/06/08/70807/ios-27-includes-new-slider-for-controlling-liquid-glass-ui/",
-          "https://www.neowin.net/news/apple-finally-brings-the-slider-for-liquid-glass-and-many-other-changes/"
-        ],
-        "query": "WWDC 2026 keynote Liquid Glass transparency slider iOS 27 layered icons announcements",
-        "freshness_hours": 5
-      },
-      "stats": {
-        "views": 25,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-06-22T01:41:29.149Z"
-      }
-    },
-    {
       "videoId": "-XVT3Q2Ijn0",
       "videoUrl": "https://youtube.com/shorts/-XVT3Q2Ijn0",
       "date": "2026-06-10",
@@ -2962,7 +2911,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-07T01:01:26.086Z"
+        "updatedAt": "2026-09-08T01:12:35.065Z"
       }
     },
     {
@@ -3005,7 +2954,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-07T01:01:26.086Z"
+        "updatedAt": "2026-09-08T01:12:35.065Z"
       }
     },
     {
@@ -3048,7 +2997,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-07T01:01:26.086Z"
+        "updatedAt": "2026-09-08T01:12:35.065Z"
       }
     },
     {
@@ -3091,7 +3040,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-07T01:01:26.086Z"
+        "updatedAt": "2026-09-08T01:12:35.065Z"
       }
     },
     {
@@ -3134,7 +3083,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-07T01:01:26.086Z"
+        "updatedAt": "2026-09-08T01:12:35.065Z"
       }
     },
     {
@@ -3177,7 +3126,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-07T01:01:26.086Z"
+        "updatedAt": "2026-09-08T01:12:35.065Z"
       }
     },
     {
@@ -3223,7 +3172,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-07T01:01:26.086Z"
+        "updatedAt": "2026-09-08T01:12:35.065Z"
       }
     },
     {
@@ -3268,7 +3217,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-07T01:01:26.086Z"
+        "updatedAt": "2026-09-08T01:12:35.065Z"
       }
     },
     {
@@ -3311,7 +3260,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-07T01:01:26.086Z"
+        "updatedAt": "2026-09-08T01:12:35.065Z"
       }
     },
     {
@@ -3355,7 +3304,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-07T01:01:26.086Z"
+        "updatedAt": "2026-09-08T01:12:35.065Z"
       }
     },
     {
@@ -3396,10 +3345,10 @@
         "freshness_hours": 168
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-07T01:01:26.086Z"
+        "updatedAt": "2026-09-08T01:12:35.065Z"
       }
     },
     {
@@ -3439,10 +3388,10 @@
         "freshness_hours": 72
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-07T01:01:26.086Z"
+        "updatedAt": "2026-09-08T01:12:35.065Z"
       }
     },
     {
@@ -3482,6 +3431,48 @@
         "freshness_hours": 96
       },
       "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-09-08T01:12:35.065Z"
+      }
+    },
+    {
+      "videoId": "-sQOa0p38Dg",
+      "videoUrl": "https://youtube.com/shorts/-sQOa0p38Dg",
+      "date": "2026-09-08",
+      "title": "【デザインニュース】Atlassian Hardik Pandya が発表、AIに作らせたUIの色ズレはLLMのトークン捏造が原因、spec 1枚で解決｜2026/09/08 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 47,
+      "discovery": {
+        "method": "expert-blog",
+        "description": "Hardik Pandya (Atlassian) の個人ブログ hvpandya.com『Expose your design system to LLMs』が Smashing Magazine 9/2 に転載。LLM がデザインシステムの色・余白トークンを毎回捏造・値を推測・セッションで忘れる問題に、3層の対策 (spec ファイル / 閉じたトークン層 / 自動監査) を提唱。Figmaナビの差別化『デザインシステム / ルール入力可能』とど真ん中で重なるトピック。過去14日 method 別 TOP tier expert-blog (平均1.00views、8/29以来10日空き)を Exploit、直近2日 (official-src 9/7 / figma-community 9/6) を回避、weekday news 帯として学習者の実務痛点『AIに作らせた画面が微妙に色ズレする』起点で翻訳。freshness_hours=144 (6日)、168ライン以内。NG回避: (a) 機能説明メインではなく学習者の課題起点、(b) AI 代替系は触れず補助輪ポジション、(c) 出典URL 3件明示、(d) 『1トピック x 3 数字 x 1 アクション』の勝ちパターン厳守。",
+        "sources": [
+          "https://hvpandya.com/llm-design-systems",
+          "https://www.smashingmagazine.com/2026/09/",
+          "https://hardik.substack.com/p/expose-your-design-system-to-llms"
+        ],
+        "query": "Hardik Pandya expose design system LLMs Smashing September 2026 spec token audit three layers",
+        "freshness_hours": 144
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -3490,14 +3481,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-08-07",
-      "changes": [
-        "standard: 19 avg views (74 videos)",
-        "Day performance: Sat=38, Sun=19, Tue=19, Fri=17, Wed=14, Thu=13, Mon=9"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-08-08",
       "changes": [
@@ -3726,6 +3709,14 @@
       "date": "2026-09-07",
       "changes": [
         "standard: 1 avg views (78 videos)",
+        "Day performance: Tue=3, Mon=2, Fri=2, Wed=1, Thu=1, Sat=1, Sun=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-09-08",
+      "changes": [
+        "standard: 1 avg views (79 videos)",
         "Day performance: Tue=3, Mon=2, Fri=2, Wed=1, Thu=1, Sat=1, Sun=1"
       ],
       "recommendedTemplate": "standard"
