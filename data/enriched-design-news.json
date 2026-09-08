@@ -1,44 +1,45 @@
 {
-  "date": "2026-09-08",
+  "date": "2026-09-09",
   "discovery": {
-    "method": "expert-blog",
-    "description": "Hardik Pandya (Atlassian) の個人ブログ hvpandya.com『Expose your design system to LLMs』が Smashing Magazine 9/2 に転載。LLM がデザインシステムの色・余白トークンを毎回捏造・値を推測・セッションで忘れる問題に、3層の対策 (spec ファイル / 閉じたトークン層 / 自動監査) を提唱。Figmaナビの差別化『デザインシステム / ルール入力可能』とど真ん中で重なるトピック。過去14日 method 別 TOP tier expert-blog (平均1.00views、8/29以来10日空き)を Exploit、直近2日 (official-src 9/7 / figma-community 9/6) を回避、weekday news 帯として学習者の実務痛点『AIに作らせた画面が微妙に色ズレする』起点で翻訳。freshness_hours=144 (6日)、168ライン以内。NG回避: (a) 機能説明メインではなく学習者の課題起点、(b) AI 代替系は触れず補助輪ポジション、(c) 出典URL 3件明示、(d) 『1トピック x 3 数字 x 1 アクション』の勝ちパターン厳守。",
+    "method": "news-en",
+    "description": "Smashing Magazine 9/8 の新プラグイン紹介記事から FigmaLint (Southleft / TJ Pitre) を一次取得。AI が Figma コンポーネントを 3 軸 (デザインシステム準拠・アクセシビリティ・開発引き渡し準備) で自動診断する無料 beta、Figma Community で公開中、GitHub open source。Smashing のプラグイン紹介経路として news-en で拾い、駆け出しの『応募前セルフレビュー』痛点起点で翻訳。過去14日 TOP tier の official-src (9/7) / expert-blog (9/8) が 2 日ガード抵触、figma-community (9/3+9/6) が 7 日 2 回ガード抵触で凍結、残る候補の news-en (n=3, avg 0.67) を Exploit。9/2 official-src Figma 生成プラグイン公開が 2 views の勝ちパターンをプラグインニュースで踏襲狙い。freshness_hours = 24 (Smashing 発 9/8 → 投稿 9/9)、168 NG ライン超余裕。柱② プラグイン/エコシステム (target 20%) を補強、Figmaナビ差別化『ルール入力対応』に軽く並列接続、強い CTA は避ける。NG回避: (a) 機能説明メインを避け『応募前レビュー』学習者痛点起点、(b) AI=補助輪フレーム維持 (診断側は AI、判断は自分)、(c) 『仕事を奪う』系 NG 非該当、(d) 出典 4 ソースで multi-source confirm。",
     "sources": [
-      "https://hvpandya.com/llm-design-systems",
       "https://www.smashingmagazine.com/2026/09/",
-      "https://hardik.substack.com/p/expose-your-design-system-to-llms"
+      "https://www.figma.com/community/plugin/1521241390290871981/figmalint",
+      "https://github.com/southleft/figmalint",
+      "https://southleft.com/insights/design-systems/designing-for-developers-introducing-figmalint/"
     ],
-    "query": "Hardik Pandya expose design system LLMs Smashing September 2026 spec token audit three layers",
-    "freshness_hours": 144
+    "query": "FigmaLint Southleft TJ Pitre AI Figma plugin design system compliance accessibility developer readiness Smashing September 2026",
+    "freshness_hours": 24
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Atlassian Hardik Pandya が発表、AIに作らせたUIの色ズレはLLMのトークン捏造が原因、spec 1枚で解決",
-      "description": "AIに作らせた画面の色が微妙にズレる原因、Atlassian の Hardik Pandya が3層の対策を発表。",
-      "detail": "Atlassian の Hardik Pandya が Smashing Magazine 9/2 に寄稿。LLM でデザインを生成すると色トークン名の捏造・値の推測・セッション毎の記憶消失で毎回微妙にズレる。対策は3層。spec ファイルで色や余白を宣言、閉じたトークン層で選択肢を限定、監査で違反を全捕捉。Infrastructure as Code の考え方をデザインに転用します。",
-      "narration": "知ってました?AIが作るUIの色が微妙にズレるのは、LLMがトークン名を毎回捏造するから。Atlassian のデザイナーが対策発表。",
+      "title": "Smashing 9/8 が紹介、FigmaLint が Figma コンポーネントを AI で 3 軸自動診断",
+      "description": "駆け出しの応募前セルフレビューを5分で終わらせる無料AIプラグインが登場。",
+      "detail": "TJ Pitre (Southleft、NASDAQ 等担当) の無料プラグイン FigmaLint がSmashing に紹介。デザイン規則遵守・アクセシビリティ・開発引き渡しの3軸でコンポーネントを診断。ハードコード値や命名の甘さ、抜けた状態を検出し、AI がトークン変数へのバインドやリネームの修正案をその場で提示します。Figma Community で公開中、GitHub open source。",
+      "narration": "知ってました?AIがFigmaコンポーネントを自動診断する無料プラグインFigmaLintが、Smashingで昨日紹介されました。",
       "tags": [
         "Figma",
         "デザインシステム",
         "AI",
         "駆け出しデザイナー",
-        "LLM"
+        "プラグイン"
       ],
       "narration_sections": {
-        "hook": "知ってました?AIが作るUIの色が微妙にズレるのは、LLMがトークン名を毎回捏造するから。Atlassian のデザイナーが対策発表。",
-        "origin": "LLMの弱点は3つ。トークン名を捏造、値を推測、セッション毎に全部忘れる。対策も3層。specファイルで色と余白を宣言、トークン層を閉じる、監査で違反を拾う。Infrastructure as Code のデザイン版です。",
-        "recommend": "駆け出しは色トークンだけ1枚 spec 化してAIに食わせる。色ズレゼロの制作が今日から。Figmaナビもルール入力対応です。"
+        "hook": "知ってました?AIがFigmaコンポーネントを自動診断する無料プラグインFigmaLintが、Smashingで昨日紹介されました。",
+        "origin": "作者は大手NASDAQ担当のTJ Pitreさん。FigmaLintはコンポーネントを3軸で診断します。デザイン規則、アクセシビリティ、開発引き渡し。ハードコードや命名の甘さ、抜けた状態を検出し、その場でAIが修正案まで出します。",
+        "recommend": "駆け出しはFigmaコミュニティで検索して1つ入れてみて。応募前の自主レビューが5分で終わります。Figmaナビもルール入力対応です。"
       },
       "section_titles": {
-        "hook": "AIの色ズレの原因",
-        "origin": "LLM向け3層設計",
-        "recommend": "色トークン1枚から"
+        "hook": "FigmaLint診断",
+        "origin": "3軸で不具合検出",
+        "recommend": "応募前5分レビュー"
       },
       "section_descriptions": {
-        "hook": "Hardik Pandya が Smashing で発表",
-        "origin": "spec / トークン / 監査の3層アーキテクチャ",
-        "recommend": "駆け出しの初手、色 spec 1 枚を AI に"
+        "hook": "Smashingが9月8日紹介した無料AIプラグイン",
+        "origin": "デザイン規則・a11y・開発準備の3軸で診断",
+        "recommend": "駆け出しの応募作品を提出前に5分レビュー"
       }
     }
   ]
