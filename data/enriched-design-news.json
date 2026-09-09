@@ -1,45 +1,38 @@
 {
-  "date": "2026-09-09",
+  "date": "2026-09-10",
   "discovery": {
-    "method": "news-en",
-    "description": "Smashing Magazine 9/8 の新プラグイン紹介記事から FigmaLint (Southleft / TJ Pitre) を一次取得。AI が Figma コンポーネントを 3 軸 (デザインシステム準拠・アクセシビリティ・開発引き渡し準備) で自動診断する無料 beta、Figma Community で公開中、GitHub open source。Smashing のプラグイン紹介経路として news-en で拾い、駆け出しの『応募前セルフレビュー』痛点起点で翻訳。過去14日 TOP tier の official-src (9/7) / expert-blog (9/8) が 2 日ガード抵触、figma-community (9/3+9/6) が 7 日 2 回ガード抵触で凍結、残る候補の news-en (n=3, avg 0.67) を Exploit。9/2 official-src Figma 生成プラグイン公開が 2 views の勝ちパターンをプラグインニュースで踏襲狙い。freshness_hours = 24 (Smashing 発 9/8 → 投稿 9/9)、168 NG ライン超余裕。柱② プラグイン/エコシステム (target 20%) を補強、Figmaナビ差別化『ルール入力対応』に軽く並列接続、強い CTA は避ける。NG回避: (a) 機能説明メインを避け『応募前レビュー』学習者痛点起点、(b) AI=補助輪フレーム維持 (診断側は AI、判断は自分)、(c) 『仕事を奪う』系 NG 非該当、(d) 出典 4 ソースで multi-source confirm。",
+    "method": "product-launches",
+    "description": "Awwwards Sites of the Day 一覧から 9/9 選定の Seasats (San Diego robotics / Raw Materials PRO 制作) を抽出、駆け出しが応募ポートフォリオに盗める 3 構造 (2 色縛り / 縦メニュー / 全編動画) に分解。product-launches は 15 日ドライで柱⑤ ポートフォリオ事例 (直近14日 0/13 = 0%、target 10%) を大幅未達補正、8/26 zeroz 0 view の反省を踏まえ具体 HEX × 3 構造 × 1 アクションのテンプレで再挑戦。",
     "sources": [
-      "https://www.smashingmagazine.com/2026/09/",
-      "https://www.figma.com/community/plugin/1521241390290871981/figmalint",
-      "https://github.com/southleft/figmalint",
-      "https://southleft.com/insights/design-systems/designing-for-developers-introducing-figmalint/"
+      "https://www.awwwards.com/sites/seasats",
+      "https://www.awwwards.com/websites/sites_of_the_day/",
+      "https://www.awwwards.com/websites/"
     ],
-    "query": "FigmaLint Southleft TJ Pitre AI Figma plugin design system compliance accessibility developer readiness Smashing September 2026",
-    "freshness_hours": 24
+    "query": "Awwwards Site of the Day September 9 2026 Seasats robotics Raw Materials PRO 2 color vertical menu video",
+    "freshness_hours": 30
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Smashing 9/8 が紹介、FigmaLint が Figma コンポーネントを AI で 3 軸自動診断",
-      "description": "駆け出しの応募前セルフレビューを5分で終わらせる無料AIプラグインが登場。",
-      "detail": "TJ Pitre (Southleft、NASDAQ 等担当) の無料プラグイン FigmaLint がSmashing に紹介。デザイン規則遵守・アクセシビリティ・開発引き渡しの3軸でコンポーネントを診断。ハードコード値や命名の甘さ、抜けた状態を検出し、AI がトークン変数へのバインドやリネームの修正案をその場で提示します。Figma Community で公開中、GitHub open source。",
-      "narration": "知ってました?AIがFigmaコンポーネントを自動診断する無料プラグインFigmaLintが、Smashingで昨日紹介されました。",
-      "tags": [
-        "Figma",
-        "デザインシステム",
-        "AI",
-        "駆け出しデザイナー",
-        "プラグイン"
-      ],
+      "title": "Seasats が Awwwards SOTD 9/9、駆け出しが応募作品で盗める 3 構造",
+      "description": "Awwwards サイト・オブ・ザ・デイ 9/9 選定の Seasats から、駆け出しがポートフォリオに盗める 3 つの構造を紹介します。",
+      "detail": "1 つ目、使う色はティール #619785 とオレンジ #BF5114 の 2 色縛り。2 つ目、ナビは横ヘッダーではなく縦メニュー配置で差別化。3 つ目、Header や Products など全セクションに動画を仕込み動きで没入感を作る設計です。",
+      "narration": "Awwwards サイト・オブ・ザ・デイに 9/9 選ばれた Seasats、駆け出しが応募作品で盗める 3 構造を紹介します。",
+      "tags": ["Awwwards", "ポートフォリオ", "デザイン事例"],
       "narration_sections": {
-        "hook": "知ってました?AIがFigmaコンポーネントを自動診断する無料プラグインFigmaLintが、Smashingで昨日紹介されました。",
-        "origin": "作者は大手NASDAQ担当のTJ Pitreさん。FigmaLintはコンポーネントを3軸で診断します。デザイン規則、アクセシビリティ、開発引き渡し。ハードコードや命名の甘さ、抜けた状態を検出し、その場でAIが修正案まで出します。",
-        "recommend": "駆け出しはFigmaコミュニティで検索して1つ入れてみて。応募前の自主レビューが5分で終わります。Figmaナビもルール入力対応です。"
+        "hook": "Awwwards サイト・オブ・ザ・デイに 9/9 選ばれた Seasats、駆け出しが応募作品で盗める 3 構造を紹介します。",
+        "origin": "1 つ目、使う色はティール #619785 とオレンジ #BF5114 の 2 色縛り。2 つ目、ナビは横ヘッダーではなく縦メニュー配置で差別化。3 つ目、Header や Products など全セクションに動画を仕込み動きで没入感を作る設計です。",
+        "recommend": "今日は自分の作品を『色 2 つに絞れるか』1 個だけ試してください。Figmaナビも色ルール入力で 2 色縛りの練習に使えます。"
       },
       "section_titles": {
-        "hook": "FigmaLint診断",
-        "origin": "3軸で不具合検出",
-        "recommend": "応募前5分レビュー"
+        "hook": "Seasats SOTD",
+        "origin": "盗める 3 構造",
+        "recommend": "駆け出しの 1 手"
       },
       "section_descriptions": {
-        "hook": "Smashingが9月8日紹介した無料AIプラグイン",
-        "origin": "デザイン規則・a11y・開発準備の3軸で診断",
-        "recommend": "駆け出しの応募作品を提出前に5分レビュー"
+        "hook": "9/9 SOTD Seasats、盗める 3 構造",
+        "origin": "2 色縛り・縦メニュー・全編動画の 3 軸",
+        "recommend": "作品を 2 色に絞る 1 手、Figmaナビでも練習可"
       }
     }
   ]
