@@ -1,38 +1,39 @@
 {
-  "date": "2026-09-10",
+  "date": "2026-09-11",
   "discovery": {
-    "method": "product-launches",
-    "description": "Awwwards Sites of the Day 一覧から 9/9 選定の Seasats (San Diego robotics / Raw Materials PRO 制作) を抽出、駆け出しが応募ポートフォリオに盗める 3 構造 (2 色縛り / 縦メニュー / 全編動画) に分解。product-launches は 15 日ドライで柱⑤ ポートフォリオ事例 (直近14日 0/13 = 0%、target 10%) を大幅未達補正、8/26 zeroz 0 view の反省を踏まえ具体 HEX × 3 構造 × 1 アクションのテンプレで再挑戦。",
+    "method": "figma-community",
+    "description": "Figma Community の変化ウォッチ角度で、9/9 に告知された ProtoPie Genie プラグインのサンセット (無料でインタラクション付きプロトが作れる希少枠、V2 直後の撤退) を抽出。駆け出しの応募ポートフォリオが外部プラグインに依存する怖さへ翻訳し、Figma 公式機能を軸足にする姿勢と Figmaナビの公式枠内動作を軽く並列。figma-community は直近14日 3/3 = 1.00 views の TOP3 method、9/6 Portfolio Builder 以来 5 日空きで 2 日ガード / 7日2回ガードともクリア。",
     "sources": [
-      "https://www.awwwards.com/sites/seasats",
-      "https://www.awwwards.com/websites/sites_of_the_day/",
-      "https://www.awwwards.com/websites/"
+      "https://www.figma.com/community/plugin/908870217222043020/protopie",
+      "https://www.protopie.io/blog/protopie-genie-plugin-figma",
+      "https://www.protopie.io/learn/docs/import/protopie-genie-plugin-figma",
+      "https://www.protopie.io/blog/best-figma-plugins"
     ],
-    "query": "Awwwards Site of the Day September 9 2026 Seasats robotics Raw Materials PRO 2 color vertical menu video",
-    "freshness_hours": 30
+    "query": "ProtoPie Genie plugin sunset Figma Community September 9 2026 discontinued alternative",
+    "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Seasats が Awwwards SOTD 9/9、駆け出しが応募作品で盗める 3 構造",
-      "description": "Awwwards サイト・オブ・ザ・デイ 9/9 選定の Seasats から、駆け出しがポートフォリオに盗める 3 つの構造を紹介します。",
-      "detail": "1 つ目、使う色はティール #619785 とオレンジ #BF5114 の 2 色縛り。2 つ目、ナビは横ヘッダーではなく縦メニュー配置で差別化。3 つ目、Header や Products など全セクションに動画を仕込み動きで没入感を作る設計です。",
-      "narration": "Awwwards サイト・オブ・ザ・デイに 9/9 選ばれた Seasats、駆け出しが応募作品で盗める 3 構造を紹介します。",
-      "tags": ["Awwwards", "ポートフォリオ", "デザイン事例"],
+      "title": "ProtoPie Genie が Figma Community から 9/9 サンセット、駆け出しのツール依存に警告灯",
+      "description": "9/9 に人気の ProtoPie Genie プラグインが Figma Community から突然サンセット。駆け出しのツール選びに何が起きたか整理します。",
+      "detail": "運営元 ProtoPie が公式ブログで発表、無料でインタラクション付きプロトを作れる希少な枠で、V2 が出た矢先の撤退。代替は同社の ProtoPie for Figma のみで、外部プラグイン 1 個に依存する怖さが露呈しました。",
+      "narration": "9/9 に Figma Community から人気の ProtoPie Genie プラグインが突然サンセット。駆け出しのツール選びに警告灯です。",
+      "tags": ["Figma", "プラグイン", "ProtoPie"],
       "narration_sections": {
-        "hook": "Awwwards サイト・オブ・ザ・デイに 9/9 選ばれた Seasats、駆け出しが応募作品で盗める 3 構造を紹介します。",
-        "origin": "1 つ目、使う色はティール #619785 とオレンジ #BF5114 の 2 色縛り。2 つ目、ナビは横ヘッダーではなく縦メニュー配置で差別化。3 つ目、Header や Products など全セクションに動画を仕込み動きで没入感を作る設計です。",
-        "recommend": "今日は自分の作品を『色 2 つに絞れるか』1 個だけ試してください。Figmaナビも色ルール入力で 2 色縛りの練習に使えます。"
+        "hook": "9/9 に Figma Community から人気の ProtoPie Genie プラグインが突然サンセット。駆け出しのツール選びに警告灯です。",
+        "origin": "運営元 ProtoPie が公式ブログで発表、無料でインタラクション付きプロトを作れる希少な枠で、V2 が出た矢先の撤退。代替は同社の ProtoPie for Figma のみで、外部プラグイン 1 個に依存する怖さが露呈しました。",
+        "recommend": "必須機能は 1 プラグイン任せにせず、Figma 公式機能に軸足を置くのが安全。Figmaナビも公式枠で動くので消えにくいです。"
       },
       "section_titles": {
-        "hook": "Seasats SOTD",
-        "origin": "盗める 3 構造",
-        "recommend": "駆け出しの 1 手"
+        "hook": "Genie サンセット",
+        "origin": "何が消えたのか整理",
+        "recommend": "駆け出しの守り方"
       },
       "section_descriptions": {
-        "hook": "9/9 SOTD Seasats、盗める 3 構造",
-        "origin": "2 色縛り・縦メニュー・全編動画の 3 軸",
-        "recommend": "作品を 2 色に絞る 1 手、Figmaナビでも練習可"
+        "hook": "9/9 Genie が Community から撤退",
+        "origin": "V2 直後の撤退、代替は同社別プラグインのみ",
+        "recommend": "公式機能を軸足に、Figmaナビも公式枠で安心"
       }
     }
   ]
