@@ -2,50 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "X0j4C7gx4Ug",
-      "videoUrl": "https://youtube.com/shorts/X0j4C7gx4Ug",
-      "date": "2026-06-11",
-      "title": "【デザインニュース】NN/g『AI が生んだデザイン仕事は 4 種類』、駆け出しはまず 1 つ目から入ると最短｜2026/06/11 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 50,
-      "discovery": {
-        "method": "expert-blog",
-        "description": "NN/g (Nielsen Norman Group) articles ハブと検索で 2026-06-05 公開の Maria Rosala 『The Four Design Jobs AI Created (So Far)』を一次取得、AI 関連記事ハブとも整合確認。method 選定 (Thursday weekday news 帯、Apple 軸 5 連投 reset 続行 2 日目): 6/10 PDCA Action 2『6/11 (Thu) は柱④ Tips or 柱② の連投で「プラグイン週」を組成、候補 method = news-en (6/8 利用 → 6/11 で 3 日空きで 7 日 2 回ガード余裕) / official-src (6/9 利用 → 6/11 で 2 日空きで境界) / social-en (6/4 利用 → 7 日空き)』を再評価、(a) news-en は 7 日窓 (6/5-6/11) に 6/5 + 6/8 で 2 回到達済み、6/11 採用で 3 回目連投ガード抵触のため不可、(b) official-src は 6/9 利用で 2 日連続ガード境界、保守的に不可、(c) figma-community は 6/12 まで凍結、(d) product-launches は 6/10 利用で 2 日ガード抵触で不可、(e) expert-blog は 6/7 利用で 4 日空き、TOP3 同率 (avg 7.0、5/31 Microsoft Copilot = 7 views) で本日採用、(f) social-en (avg 4.0) は採用可だが Primary 翻訳適性で expert-blog 優先。expert-blog 内の出典分散として直近 14 日 Smashing 占有 (5/31 + 6/7) を NN/g に振って初の Smashing 外題材、`nng-translation` 新 sub-angle 初投入。柱③ industry/design news (target 20% → 直近 14 日 5/35 = 36% で Apple 偏重) の内訳分散として UX 研究機関枠を新設、Apple 5 連投の飽和を軽減。Primary 駆け出しデザイナーへの翻訳角度: 『AI で仕事を奪われる』恐怖の直球反転翻訳、NN/g 公式が『AI が新しく生んだ 4 つの仕事』を整理した枠組みを使い、駆け出しは 4 つのうち (1) AI 機能の UI 設計 から入るのが最短ルートと示唆、Figmaナビ 本体 (Figma 上で AI が生成する UI) は (1) のど真ん中だが本日は直接接続せず肩書き戦略の翻訳メインに振る。NG パターン回避: (a) 『AI が仕事を奪う』 NG → 直球反転で『奪われるは古い、AI が新しく作った 4 つ』と提示、(b) 『プロ向け高度議論』 NG → LLM 評価/ファインチューニング等の専門用語は (4) で『AI 自体のふるまい設計』と平易に翻訳、(c) 『AI に任せれば考えなくていい』 NG → Recommend で『どれを極めるか宣言』と判断主体性を明示、(d) 『プラグイン機能説明メイン』 NG → Figmaナビ への直接接続は控えて肩書き戦略翻訳に振り切る、(e) freshness_hours = 144 (公開 6/5 → 投稿 6/11 8:15 JST = 6 日後) で 168 NG ライン内、日本語コミュニティの解説はまだ事実上ゼロで速報性で勝てる。",
-        "sources": [
-          "https://www.nngroup.com/articles/design-jobs-ai-created/",
-          "https://www.nngroup.com/articles/",
-          "https://www.nngroup.com/topic/ai/",
-          "https://www.nngroup.com/articles/prepare-for-ai/",
-          "https://www.nngroup.com/articles/ai-work-study-guide/"
-        ],
-        "query": "Nielsen Norman Group AI design four jobs designer roles 2026 designing with AI designing the AI conversational agent infrastructure LLM behavior",
-        "freshness_hours": 144
-      },
-      "stats": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-06-22T01:41:29.149Z"
-      }
-    },
-    {
       "videoId": "-KJQN587z28",
       "videoUrl": "https://youtube.com/shorts/-KJQN587z28",
       "date": "2026-06-13",
@@ -2951,7 +2907,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-09T01:15:41.513Z"
+        "updatedAt": "2026-09-10T01:04:18.985Z"
       }
     },
     {
@@ -2994,7 +2950,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-09T01:15:41.513Z"
+        "updatedAt": "2026-09-10T01:04:18.985Z"
       }
     },
     {
@@ -3037,7 +2993,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-09T01:15:41.513Z"
+        "updatedAt": "2026-09-10T01:04:18.985Z"
       }
     },
     {
@@ -3080,7 +3036,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-09T01:15:41.513Z"
+        "updatedAt": "2026-09-10T01:04:18.985Z"
       }
     },
     {
@@ -3126,7 +3082,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-09T01:15:41.513Z"
+        "updatedAt": "2026-09-10T01:04:18.985Z"
       }
     },
     {
@@ -3171,7 +3127,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-09T01:15:41.513Z"
+        "updatedAt": "2026-09-10T01:04:18.985Z"
       }
     },
     {
@@ -3214,7 +3170,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-09T01:15:41.514Z"
+        "updatedAt": "2026-09-10T01:04:18.985Z"
       }
     },
     {
@@ -3258,7 +3214,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-09T01:15:41.514Z"
+        "updatedAt": "2026-09-10T01:04:18.985Z"
       }
     },
     {
@@ -3302,7 +3258,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-09T01:15:41.514Z"
+        "updatedAt": "2026-09-10T01:04:18.985Z"
       }
     },
     {
@@ -3345,7 +3301,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-09T01:15:41.514Z"
+        "updatedAt": "2026-09-10T01:04:18.985Z"
       }
     },
     {
@@ -3388,7 +3344,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-09T01:15:41.514Z"
+        "updatedAt": "2026-09-10T01:04:18.985Z"
       }
     },
     {
@@ -3430,7 +3386,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-09T01:15:41.514Z"
+        "updatedAt": "2026-09-10T01:04:18.985Z"
       }
     },
     {
@@ -3470,6 +3426,48 @@
         "freshness_hours": 24
       },
       "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-09-10T01:04:18.985Z"
+      }
+    },
+    {
+      "videoId": "VD0jhcK7qWk",
+      "videoUrl": "https://youtube.com/shorts/VD0jhcK7qWk",
+      "date": "2026-09-10",
+      "title": "【デザインニュース】Seasats が Awwwards SOTD 9/9、駆け出しが応募作品で盗める 3 構造｜2026/09/10 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 46,
+      "discovery": {
+        "method": "product-launches",
+        "description": "Awwwards Sites of the Day 一覧から 9/9 選定の Seasats (San Diego robotics / Raw Materials PRO 制作) を抽出、駆け出しが応募ポートフォリオに盗める 3 構造 (2 色縛り / 縦メニュー / 全編動画) に分解。product-launches は 15 日ドライで柱⑤ ポートフォリオ事例 (直近14日 0/13 = 0%、target 10%) を大幅未達補正、8/26 zeroz 0 view の反省を踏まえ具体 HEX × 3 構造 × 1 アクションのテンプレで再挑戦。",
+        "sources": [
+          "https://www.awwwards.com/sites/seasats",
+          "https://www.awwwards.com/websites/sites_of_the_day/",
+          "https://www.awwwards.com/websites/"
+        ],
+        "query": "Awwwards Site of the Day September 9 2026 Seasats robotics Raw Materials PRO 2 color vertical menu video",
+        "freshness_hours": 30
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -3478,14 +3476,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-08-09",
-      "changes": [
-        "standard: 18 avg views (75 videos)",
-        "Day performance: Sat=32, Tue=19, Sun=17, Fri=17, Wed=14, Thu=13, Mon=9"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-08-10",
       "changes": [
@@ -3715,6 +3705,14 @@
       "changes": [
         "standard: 1 avg views (79 videos)",
         "Day performance: Mon=2, Fri=2, Wed=1, Thu=1, Sat=1, Tue=1, Sun=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-09-10",
+      "changes": [
+        "standard: 1 avg views (79 videos)",
+        "Day performance: Mon=2, Fri=2, Thu=1, Sat=1, Tue=1, Sun=1, Wed=1"
       ],
       "recommendedTemplate": "standard"
     }
