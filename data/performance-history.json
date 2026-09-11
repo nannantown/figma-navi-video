@@ -2950,7 +2950,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-10T01:04:18.985Z"
+        "updatedAt": "2026-09-11T01:05:24.634Z"
       }
     },
     {
@@ -2993,7 +2993,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-10T01:04:18.985Z"
+        "updatedAt": "2026-09-11T01:05:24.634Z"
       }
     },
     {
@@ -3036,7 +3036,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-10T01:04:18.985Z"
+        "updatedAt": "2026-09-11T01:05:24.634Z"
       }
     },
     {
@@ -3082,7 +3082,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-10T01:04:18.985Z"
+        "updatedAt": "2026-09-11T01:05:24.634Z"
       }
     },
     {
@@ -3127,7 +3127,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-10T01:04:18.985Z"
+        "updatedAt": "2026-09-11T01:05:24.634Z"
       }
     },
     {
@@ -3170,7 +3170,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-10T01:04:18.985Z"
+        "updatedAt": "2026-09-11T01:05:24.634Z"
       }
     },
     {
@@ -3214,7 +3214,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-10T01:04:18.985Z"
+        "updatedAt": "2026-09-11T01:05:24.634Z"
       }
     },
     {
@@ -3258,7 +3258,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-10T01:04:18.985Z"
+        "updatedAt": "2026-09-11T01:05:24.634Z"
       }
     },
     {
@@ -3301,7 +3301,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-10T01:04:18.985Z"
+        "updatedAt": "2026-09-11T01:05:24.634Z"
       }
     },
     {
@@ -3344,7 +3344,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-10T01:04:18.985Z"
+        "updatedAt": "2026-09-11T01:05:24.634Z"
       }
     },
     {
@@ -3386,7 +3386,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-10T01:04:18.985Z"
+        "updatedAt": "2026-09-11T01:05:24.634Z"
       }
     },
     {
@@ -3429,7 +3429,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-10T01:04:18.985Z"
+        "updatedAt": "2026-09-11T01:05:24.634Z"
       }
     },
     {
@@ -3471,19 +3471,54 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-09-11T01:05:24.634Z"
+      }
+    },
+    {
+      "videoId": "foIC8fgV5Js",
+      "videoUrl": "https://youtube.com/shorts/foIC8fgV5Js",
+      "date": "2026-09-11",
+      "title": "【デザインニュース】ProtoPie Genie が Figma Community から 9/9 サンセット、駆け出しのツール依存に警告灯｜2026/09/11 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 42,
+      "discovery": {
+        "method": "figma-community",
+        "description": "Figma Community の変化ウォッチ角度で、9/9 に告知された ProtoPie Genie プラグインのサンセット (無料でインタラクション付きプロトが作れる希少枠、V2 直後の撤退) を抽出。駆け出しの応募ポートフォリオが外部プラグインに依存する怖さへ翻訳し、Figma 公式機能を軸足にする姿勢と Figmaナビの公式枠内動作を軽く並列。figma-community は直近14日 3/3 = 1.00 views の TOP3 method、9/6 Portfolio Builder 以来 5 日空きで 2 日ガード / 7日2回ガードともクリア。",
+        "sources": [
+          "https://www.figma.com/community/plugin/908870217222043020/protopie",
+          "https://www.protopie.io/blog/protopie-genie-plugin-figma",
+          "https://www.protopie.io/learn/docs/import/protopie-genie-plugin-figma",
+          "https://www.protopie.io/blog/best-figma-plugins"
+        ],
+        "query": "ProtoPie Genie plugin sunset Figma Community September 9 2026 discontinued alternative",
+        "freshness_hours": 48
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-08-10",
-      "changes": [
-        "standard: 17 avg views (75 videos)",
-        "Day performance: Sat=32, Tue=19, Fri=17, Wed=14, Thu=13, Sun=13, Mon=8"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-08-11",
       "changes": [
@@ -3713,6 +3748,14 @@
       "changes": [
         "standard: 1 avg views (79 videos)",
         "Day performance: Mon=2, Fri=2, Thu=1, Sat=1, Tue=1, Sun=1, Wed=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-09-11",
+      "changes": [
+        "standard: 1 avg views (79 videos)",
+        "Day performance: Mon=2, Fri=2, Sat=1, Tue=1, Sun=1, Thu=1, Wed=1"
       ],
       "recommendedTemplate": "standard"
     }
