@@ -1,39 +1,41 @@
 {
-  "date": "2026-09-11",
+  "date": "2026-09-12",
   "discovery": {
-    "method": "figma-community",
-    "description": "Figma Community の変化ウォッチ角度で、9/9 に告知された ProtoPie Genie プラグインのサンセット (無料でインタラクション付きプロトが作れる希少枠、V2 直後の撤退) を抽出。駆け出しの応募ポートフォリオが外部プラグインに依存する怖さへ翻訳し、Figma 公式機能を軸足にする姿勢と Figmaナビの公式枠内動作を軽く並列。figma-community は直近14日 3/3 = 1.00 views の TOP3 method、9/6 Portfolio Builder 以来 5 日空きで 2 日ガード / 7日2回ガードともクリア。",
+    "method": "official-src",
+    "description": "Figma 公式の Community AI Skills catalog / Figma Blog / Help doc を横断して、Config 2026 の 50+ から Community 投稿で 60+ まで拡張中の状況を土曜 Tips 用に抽出。official-src は直近 14 日 3/3 = 1.00 views の TOP method、9/7 Variables 不透明度から 5 日空きで 2 日ガード (9/11 figma-community / 9/10 product-launches) と重複なし。pillar ④ Tips (target 15% / 実績 0/14 = 0%) の壊滅比率を土日 evergreen で復旧させる回帰投入。",
     "sources": [
-      "https://www.figma.com/community/plugin/908870217222043020/protopie",
-      "https://www.protopie.io/blog/protopie-genie-plugin-figma",
-      "https://www.protopie.io/learn/docs/import/protopie-genie-plugin-figma",
-      "https://www.protopie.io/blog/best-figma-plugins"
+      "https://www.figma.com/community/ai-skills",
+      "https://www.figma.com/blog/try-these-10-skills-and-show-off-your-own/",
+      "https://help.figma.com/hc/en-us/articles/42287852075543-Find-and-use-skills-from-the-Figma-Community",
+      "https://help.figma.com/hc/en-us/articles/39166810751895-Figma-skills-for-MCP",
+      "https://skillscout.sh/guides/figma-ai-skills/",
+      "https://mantlr.com/blog/free-figma-skills-2026"
     ],
-    "query": "ProtoPie Genie plugin sunset Figma Community September 9 2026 discontinued alternative",
-    "freshness_hours": 48
+    "query": "Figma AI Skills Community catalog 60+ beginner audit tokens handoff September 2026",
+    "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "ProtoPie Genie が Figma Community から 9/9 サンセット、駆け出しのツール依存に警告灯",
-      "description": "9/9 に人気の ProtoPie Genie プラグインが Figma Community から突然サンセット。駆け出しのツール選びに何が起きたか整理します。",
-      "detail": "運営元 ProtoPie が公式ブログで発表、無料でインタラクション付きプロトを作れる希少な枠で、V2 が出た矢先の撤退。代替は同社の ProtoPie for Figma のみで、外部プラグイン 1 個に依存する怖さが露呈しました。",
-      "narration": "9/9 に Figma Community から人気の ProtoPie Genie プラグインが突然サンセット。駆け出しのツール選びに警告灯です。",
-      "tags": ["Figma", "プラグイン", "ProtoPie"],
+      "title": "Figma AI Skills Community catalog が 60+ 到達、駆け出しの土曜 15 分実践 3 タイプ",
+      "description": "Config 2026 で解禁された Figma AI Skills、Community 投稿で 60+ まで拡大。駆け出しが土曜 15 分で試すべき 3 タイプを整理します。",
+      "detail": "Skills は agent に手順を教える再利用 Markdown ファイル。Config 2026 の 50+ 公開後、Community 投稿で 60+ まで拡大し、design audit・tokens・components・prototyping・handoff・generation・research の 7 分野に整理。Figma agent と Claude / Cursor / Codex 等 MCP 互換 agent の両方から、スラッシュコマンドで呼び出せます。",
+      "narration": "Figma AI Skills、Community で 60+ スキル到達。駆け出しが土曜 15 分で試すべき 3 タイプを整理します。",
+      "tags": ["Figma", "AI Skills", "Community"],
       "narration_sections": {
-        "hook": "9/9 に Figma Community から人気の ProtoPie Genie プラグインが突然サンセット。駆け出しのツール選びに警告灯です。",
-        "origin": "運営元 ProtoPie が公式ブログで発表、無料でインタラクション付きプロトを作れる希少な枠で、V2 が出た矢先の撤退。代替は同社の ProtoPie for Figma のみで、外部プラグイン 1 個に依存する怖さが露呈しました。",
-        "recommend": "必須機能は 1 プラグイン任せにせず、Figma 公式機能に軸足を置くのが安全。Figmaナビも公式枠で動くので消えにくいです。"
+        "hook": "Figma AI Skills、Community で 60+ スキル到達。駆け出しが土曜 15 分で試すべき 3 タイプを整理します。",
+        "origin": "Skills は agent に手順を教える再利用 Markdown。Config 2026 の 50+ から Community 投稿で 60+ まで拡大、audit・tokens・components・handoff の 7 分野で整理中。",
+        "recommend": "土曜 15 分の 3 タイプは audit・tokens・handoff。スラッシュコマンドで 1 個だけ試すのがコツです。"
       },
       "section_titles": {
-        "hook": "Genie サンセット",
-        "origin": "何が消えたのか整理",
-        "recommend": "駆け出しの守り方"
+        "hook": "Skills 60+到達",
+        "origin": "Community 拡大",
+        "recommend": "土曜15分3タイプ"
       },
       "section_descriptions": {
-        "hook": "9/9 Genie が Community から撤退",
-        "origin": "V2 直後の撤退、代替は同社別プラグインのみ",
-        "recommend": "公式機能を軸足に、Figmaナビも公式枠で安心"
+        "hook": "Community で 60+ 到達、駆け出し整理",
+        "origin": "Config 50+ から 7 分野に拡大中",
+        "recommend": "audit・tokens・handoff の 3 選"
       }
     }
   ]
