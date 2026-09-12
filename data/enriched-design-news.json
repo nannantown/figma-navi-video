@@ -1,41 +1,44 @@
 {
-  "date": "2026-09-12",
+  "date": "2026-09-13",
   "discovery": {
-    "method": "official-src",
-    "description": "Figma 公式の Community AI Skills catalog / Figma Blog / Help doc を横断して、Config 2026 の 50+ から Community 投稿で 60+ まで拡張中の状況を土曜 Tips 用に抽出。official-src は直近 14 日 3/3 = 1.00 views の TOP method、9/7 Variables 不透明度から 5 日空きで 2 日ガード (9/11 figma-community / 9/10 product-launches) と重複なし。pillar ④ Tips (target 15% / 実績 0/14 = 0%) の壊滅比率を土日 evergreen で復旧させる回帰投入。",
+    "method": "news-en",
+    "description": "Smashing Magazine 9/10 掲載の Wouter de Bres 無料本『Product Design Psychology』を英語ソース起点で捕捉、日曜 evergreen Tips として翻訳",
     "sources": [
-      "https://www.figma.com/community/ai-skills",
-      "https://www.figma.com/blog/try-these-10-skills-and-show-off-your-own/",
-      "https://help.figma.com/hc/en-us/articles/42287852075543-Find-and-use-skills-from-the-Figma-Community",
-      "https://help.figma.com/hc/en-us/articles/39166810751895-Figma-skills-for-MCP",
-      "https://skillscout.sh/guides/figma-ai-skills/",
-      "https://mantlr.com/blog/free-figma-skills-2026"
+      "https://www.smashingmagazine.com/",
+      "https://productdesignpsychology.com/",
+      "https://productdesignpsychology.com/00-introduction/",
+      "https://productdesignpsychology.com/01-nobody-thinks-like-you/",
+      "https://productdesignpsychology.com/wouter-de-bres/",
+      "https://medium.com/@WdeB/a-book-about-product-design-psychology-8e8accb0ac5",
+      "https://rogerwong.me/2026/07/intuitive-just-means-familiar",
+      "https://heydesigner.com/newsletter/product-design-psychology/",
+      "https://x.com/AdhamDannaway/status/2090085627652087913"
     ],
-    "query": "Figma AI Skills Community catalog 60+ beginner audit tokens handoff September 2026",
-    "freshness_hours": 96
+    "query": "Smashing Magazine Product Design Psychology Wouter de Bres free ebook September 2026",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma AI Skills Community catalog が 60+ 到達、駆け出しの土曜 15 分実践 3 タイプ",
-      "description": "Config 2026 で解禁された Figma AI Skills、Community 投稿で 60+ まで拡大。駆け出しが土曜 15 分で試すべき 3 タイプを整理します。",
-      "detail": "Skills は agent に手順を教える再利用 Markdown ファイル。Config 2026 の 50+ 公開後、Community 投稿で 60+ まで拡大し、design audit・tokens・components・prototyping・handoff・generation・research の 7 分野に整理。Figma agent と Claude / Cursor / Codex 等 MCP 互換 agent の両方から、スラッシュコマンドで呼び出せます。",
-      "narration": "Figma AI Skills、Community で 60+ スキル到達。駆け出しが土曜 15 分で試すべき 3 タイプを整理します。",
-      "tags": ["Figma", "AI Skills", "Community"],
+      "title": "Smashing 9/10 紹介 心理学の無料本『Product Design Psychology』40 章 4 領域 駆け出しの日曜 15 分学習",
+      "description": "9/10 に Smashing が紹介した無料本『Product Design Psychology』、駆け出しの UI 迷子を心理学で解決します。",
+      "detail": "著者は元心理学者の Wouter de Bres。全 40 章を「ユーザー」「画面」「自分の思考」「組織」の 4 領域に整理。『分かりやすい＝見慣れている』など、日々の UI 判断の裏側を初心者にも伝わる言葉で言語化しています。",
+      "narration": "9/10 に Smashing が紹介した無料本『Product Design Psychology』、駆け出しの UI 迷子を心理学で解決します。",
+      "tags": ["心理学", "無料本", "UI"],
       "narration_sections": {
-        "hook": "Figma AI Skills、Community で 60+ スキル到達。駆け出しが土曜 15 分で試すべき 3 タイプを整理します。",
-        "origin": "Skills は agent に手順を教える再利用 Markdown。Config 2026 の 50+ から Community 投稿で 60+ まで拡大、audit・tokens・components・handoff の 7 分野で整理中。",
-        "recommend": "土曜 15 分の 3 タイプは audit・tokens・handoff。スラッシュコマンドで 1 個だけ試すのがコツです。"
+        "hook": "9/10 に Smashing が紹介した無料本『Product Design Psychology』、駆け出しの UI 迷子を心理学で解決します。",
+        "origin": "著者は元心理学者の Wouter de Bres。全 40 章を「ユーザー」「画面」「自分の思考」「組織」の 4 領域に整理。『分かりやすい＝見慣れている』など、日々の UI 判断の裏側を初心者にも伝わる言葉で言語化しています。",
+        "recommend": "日曜は 1 章 15 分。第 1 章『Nobody Thinks Like You』からが入り口として最短。Web 無料版でどうぞ。"
       },
       "section_titles": {
-        "hook": "Skills 60+到達",
-        "origin": "Community 拡大",
-        "recommend": "土曜15分3タイプ"
+        "hook": "9/10 心理学の無料本",
+        "origin": "40 章 4 領域まとめ",
+        "recommend": "日曜 15 分の一章"
       },
       "section_descriptions": {
-        "hook": "Community で 60+ 到達、駆け出し整理",
-        "origin": "Config 50+ から 7 分野に拡大中",
-        "recommend": "audit・tokens・handoff の 3 選"
+        "hook": "駆け出しの UI 迷子を心理学で解く無料本を紹介",
+        "origin": "元心理学者が 4 領域 40 章で UI 判断を言語化",
+        "recommend": "日曜 15 分、第 1 章から Web 無料版で読む"
       }
     }
   ]
