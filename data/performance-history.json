@@ -2,52 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "-KJQN587z28",
-      "videoUrl": "https://youtube.com/shorts/-KJQN587z28",
-      "date": "2026-06-13",
-      "title": "【デザインニュース】note 人気記事『Figma は触れるのに UI がイマイチな理由』を駆け出し向け Tips 翻訳、原因は判断していないこと｜2026/06/13 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 45,
-      "discovery": {
-        "method": "news-ja",
-        "description": "土曜の evergreen 帯で Explore 1 番手として news-ja を初投入。PDCA 6/12 Action 2 の予告通り、note / cocoda の長尺 Tips 記事を駆け出しデザイナー向けに 60 秒翻訳する角度で着地。note 検索で『Figma + 駆け出し + UI』クエリ群の上位継続記事を抽出した結果、smzk0123『デザイナーの読み物』チャンネル『Figma は触れるのに、UI がイマイチな理由』が Primary 痛点 (Figma 操作はできるのに UI が垢抜けない) を直撃する題材として確定。主旨は『Figma の操作スキルと UI 品質は直結しない、原因は判断していないこと、UI デザインは現場で積み上げる判断力が本質』。Figmaナビ本体の『AI は補助輪、判断は自分』フレームと完全整合し、自社ポジショニングを Tips 文脈で自然強化できる。method 選定: 直近 14 日 0 投稿の Explore 1 番手、土曜 evergreen 帯で長尺翻訳の最適枠、平日の英語 news 群 (news-en / official-src / product-launches / expert-blog) は土曜の evergreen 適性で優先度低下、figma-community は 2-day rule 抵触で不可、social-ja は別日温存。柱配分: 柱④ Tips/Figma 実践 (target 15%、直近 14 日 0% で大幅未達) の補充を兼ねる。freshness 運用: 戦略 NG パターン『1 週間以上前のニュースを新着扱い』は土日 evergreen Tips は例外、note 記事は『今話題のスナップショット』として freshness_hours = 96 (4 日相当) で記録、運用先例を作る。NG パターン回避: 『AI に任せれば考えなくていい』を避けて『判断 = 人がやる』を強調、『AI が仕事を奪う』ではなく『面接で語れる強み』の前向き訴求、Figmaナビ への直接 CTA は控えて Tips の延長として AI 時代の判断力訴求に着地。",
-        "sources": [
-          "https://note.com/smzk0123/n/n5b346211315e",
-          "https://note.com/hiraly/n/na862a7c0944b",
-          "https://note.com/tsukulink/n/ne1ade725a043",
-          "https://note.com/fjkn/n/n9bc5b6ec9fc2",
-          "https://blog.nijibox.jp/article/web-uidesign_trend/",
-          "https://qiita.com/katoriko/items/c8ed058644beb0023b8a",
-          "https://note.com/nokowashiyama/n/n73833fb32343"
-        ],
-        "query": "note Figma 駆け出し UI デザイナー Tips 2026 / Figmaは触れるのに UI イマイチ 理由 / smzk0123 デザイナーの読み物",
-        "freshness_hours": 96
-      },
-      "stats": {
-        "views": 1,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-06-27T00:20:23.632Z"
-      }
-    },
-    {
       "videoId": "snJH_8Z2a_M",
       "videoUrl": "https://youtube.com/shorts/snJH_8Z2a_M",
       "date": "2026-06-15",
@@ -2993,7 +2947,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-11T01:05:24.634Z"
+        "updatedAt": "2026-09-12T01:06:58.752Z"
       }
     },
     {
@@ -3036,7 +2990,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-11T01:05:24.634Z"
+        "updatedAt": "2026-09-12T01:06:58.752Z"
       }
     },
     {
@@ -3082,7 +3036,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-11T01:05:24.634Z"
+        "updatedAt": "2026-09-12T01:06:58.752Z"
       }
     },
     {
@@ -3127,7 +3081,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-11T01:05:24.634Z"
+        "updatedAt": "2026-09-12T01:06:58.752Z"
       }
     },
     {
@@ -3170,7 +3124,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-11T01:05:24.634Z"
+        "updatedAt": "2026-09-12T01:06:58.752Z"
       }
     },
     {
@@ -3214,7 +3168,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-11T01:05:24.634Z"
+        "updatedAt": "2026-09-12T01:06:58.752Z"
       }
     },
     {
@@ -3258,7 +3212,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-11T01:05:24.634Z"
+        "updatedAt": "2026-09-12T01:06:58.753Z"
       }
     },
     {
@@ -3301,7 +3255,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-11T01:05:24.634Z"
+        "updatedAt": "2026-09-12T01:06:58.753Z"
       }
     },
     {
@@ -3344,7 +3298,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-11T01:05:24.634Z"
+        "updatedAt": "2026-09-12T01:06:58.753Z"
       }
     },
     {
@@ -3386,7 +3340,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-11T01:05:24.634Z"
+        "updatedAt": "2026-09-12T01:06:58.753Z"
       }
     },
     {
@@ -3429,7 +3383,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-11T01:05:24.634Z"
+        "updatedAt": "2026-09-12T01:06:58.753Z"
       }
     },
     {
@@ -3471,7 +3425,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-11T01:05:24.634Z"
+        "updatedAt": "2026-09-12T01:06:58.753Z"
       }
     },
     {
@@ -3514,19 +3468,56 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-09-12T01:06:58.753Z"
+      }
+    },
+    {
+      "videoId": "WndCAe5Oro4",
+      "videoUrl": "https://youtube.com/shorts/WndCAe5Oro4",
+      "date": "2026-09-12",
+      "title": "【デザインニュース】Figma AI Skills Community catalog が 60+ 到達、駆け出しの土曜 15 分実践 3 タイプ｜2026/09/12 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 40,
+      "discovery": {
+        "method": "official-src",
+        "description": "Figma 公式の Community AI Skills catalog / Figma Blog / Help doc を横断して、Config 2026 の 50+ から Community 投稿で 60+ まで拡張中の状況を土曜 Tips 用に抽出。official-src は直近 14 日 3/3 = 1.00 views の TOP method、9/7 Variables 不透明度から 5 日空きで 2 日ガード (9/11 figma-community / 9/10 product-launches) と重複なし。pillar ④ Tips (target 15% / 実績 0/14 = 0%) の壊滅比率を土日 evergreen で復旧させる回帰投入。",
+        "sources": [
+          "https://www.figma.com/community/ai-skills",
+          "https://www.figma.com/blog/try-these-10-skills-and-show-off-your-own/",
+          "https://help.figma.com/hc/en-us/articles/42287852075543-Find-and-use-skills-from-the-Figma-Community",
+          "https://help.figma.com/hc/en-us/articles/39166810751895-Figma-skills-for-MCP",
+          "https://skillscout.sh/guides/figma-ai-skills/",
+          "https://mantlr.com/blog/free-figma-skills-2026"
+        ],
+        "query": "Figma AI Skills Community catalog 60+ beginner audit tokens handoff September 2026",
+        "freshness_hours": 96
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-08-11",
-      "changes": [
-        "standard: 16 avg views (75 videos)",
-        "Day performance: Sat=32, Tue=18, Fri=17, Wed=14, Thu=13, Sun=13, Mon=4"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-08-12",
       "changes": [
@@ -3756,6 +3747,14 @@
       "changes": [
         "standard: 1 avg views (79 videos)",
         "Day performance: Mon=2, Fri=2, Sat=1, Tue=1, Sun=1, Thu=1, Wed=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-09-12",
+      "changes": [
+        "standard: 1 avg views (80 videos)",
+        "Day performance: Mon=2, Sat=1, Tue=1, Fri=1, Sun=1, Thu=1, Wed=1"
       ],
       "recommendedTemplate": "standard"
     }
