@@ -115,6 +115,9 @@ AI がデザインを生成する。デザインシステム準拠・チーム�
 毎日のルーチンで以下を分析:
 
 1. 直近 14 日の `performance-history.json` から **method → 平均 views / プラグインインストール** テーブルを作成
+   - YouTube は `stats.views`、Instagram Reels は `instagram.views`（加えて `reach` / `shares` / `saved`）を**別列で並べる**。両者を合算しない（計測定義が違う）
+   - `instagram` が `null` の動画は IG 投稿と突き合わせ不能だった回。IG 側の平均から除外する
+   - IG insights は最大 48 時間遅れる。前日・当日分の IG 値は暫定として扱う
 2. TOP 3 / WORST 3 method を特定
 3. 「今日はどの method で探すか」を 80/20 ルールで決める
 4. 新しい method アイデアは PDCA レポートの「Method 提案」セクションに記録
@@ -178,7 +181,18 @@ Figma Community ページ（プラグインインストール）
 - MRR
 - SNS → プラグインページ流入数（UTM 推奨）
 - 既存 YouTube 登録者からの流入割合
-- **Method 別 views 平均 + プラグイン CV 数**（meta PDCA用）
+- **Method 別 views 平均 + プラグイン CV 数**（meta PDCA用。YouTube / Instagram を別々に）
+- IG Reels の保存数・シェア数・リーチ（`performance-history.json` の `instagram.saved` / `shares` / `reach`）
+
+### performance-history.json の指標
+
+| キー | 取得元 | 更新 |
+|---|---|---|
+| `stats.views` / `likes` / `comments` | YouTube Data API v3 | `fetch-stats.mjs`（直近 14 日） |
+| `instagram.mediaId` | 投稿時に `upload-instagram.mjs` → `record-upload.mjs` が記録。無い回は `fetch-stats.mjs` が IG 投稿一覧と JST 投稿日で突き合わせて復元 | 投稿時 / 初回取得時 |
+| `instagram.views` / `reach` / `likes` / `comments` / `shares` / `saved` | Instagram Graph API `/{ig-media-id}/insights`（`plays` は廃止済みのため `views` を使用） | `fetch-stats.mjs`（直近 14 日 + 未取得の回） |
+
+手動で更新だけしたいときは `gh workflow run fetch-stats.yml`（動画生成・投稿はしない）。
 
 ## データスキーマ拡張（enriched-*.json）
 
