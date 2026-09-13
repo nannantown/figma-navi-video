@@ -1,44 +1,43 @@
 {
-  "date": "2026-09-13",
+  "date": "2026-09-14",
   "discovery": {
-    "method": "news-en",
-    "description": "Smashing Magazine 9/10 掲載の Wouter de Bres 無料本『Product Design Psychology』を英語ソース起点で捕捉、日曜 evergreen Tips として翻訳",
+    "method": "figma-community",
+    "description": "Figma Community の shadcn/ui 公認キット (Community file id 1342715840824755935) の 9/10 更新 v3.0 を英語ソース (shadcndesign.com blog) 経由で捕捉、Tailwind v4 パレット刷新とプラグイン 3.0 同時リリースを一次確認",
     "sources": [
-      "https://www.smashingmagazine.com/",
-      "https://productdesignpsychology.com/",
-      "https://productdesignpsychology.com/00-introduction/",
-      "https://productdesignpsychology.com/01-nobody-thinks-like-you/",
-      "https://productdesignpsychology.com/wouter-de-bres/",
-      "https://medium.com/@WdeB/a-book-about-product-design-psychology-8e8accb0ac5",
-      "https://rogerwong.me/2026/07/intuitive-just-means-familiar",
-      "https://heydesigner.com/newsletter/product-design-psychology/",
-      "https://x.com/AdhamDannaway/status/2090085627652087913"
+      "https://www.figma.com/community/file/1342715840824755935/shadcn-ui-components-with-variables-tailwind-classes-updated-september-2026",
+      "https://www.shadcndesign.com/blog/variables-update-september-2026",
+      "https://www.shadcndesign.com/",
+      "https://www.shadcndesign.com/components",
+      "https://www.shadcndesign.com/docs/theming",
+      "https://ui.shadcn.com/docs/figma",
+      "https://ui.shadcn.com/docs/tailwind-v4",
+      "https://www.shadcnblocks.com/blog/tailwind4-shadcn-themeing"
     ],
-    "query": "Smashing Magazine Product Design Psychology Wouter de Bres free ebook September 2026",
-    "freshness_hours": 72
+    "query": "shadcn/ui Figma kit v3.0 September 2026 Tailwind v4 palette alias-based theming plugin 3.0 community",
+    "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Smashing 9/10 紹介 心理学の無料本『Product Design Psychology』40 章 4 領域 駆け出しの日曜 15 分学習",
-      "description": "9/10 に Smashing が紹介した無料本『Product Design Psychology』、駆け出しの UI 迷子を心理学で解決します。",
-      "detail": "著者は元心理学者の Wouter de Bres。全 40 章を「ユーザー」「画面」「自分の思考」「組織」の 4 領域に整理。『分かりやすい＝見慣れている』など、日々の UI 判断の裏側を初心者にも伝わる言葉で言語化しています。",
-      "narration": "9/10 に Smashing が紹介した無料本『Product Design Psychology』、駆け出しの UI 迷子を心理学で解決します。",
-      "tags": ["心理学", "無料本", "UI"],
+      "title": "shadcn/ui 作者公認 Figma キット v3.0 が 9/10 更新、Tailwind v4 パレットと 2000+ 部品で駆け出しのデザインシステム自作を今日終わらせる",
+      "description": "9/10 更新、shadcn/ui 作者公認の Figma キットが v3.0、駆け出しのデザインシステム自作を今日終わらせられます。",
+      "detail": "中身は Tailwind CSS v4 パレット、2000+ コンポーネント、8 スタイル、ダーク・ライト両対応の Variables 入り。同日のプラグイン 3.0 が Figma で選んだ色を globals.css に直接書き出します。",
+      "narration": "9/10 更新、shadcn/ui 作者公認の Figma キットが v3.0、駆け出しのデザインシステム自作を今日終わらせられます。",
+      "tags": ["shadcn/ui", "Figma Community", "デザインシステム"],
       "narration_sections": {
-        "hook": "9/10 に Smashing が紹介した無料本『Product Design Psychology』、駆け出しの UI 迷子を心理学で解決します。",
-        "origin": "著者は元心理学者の Wouter de Bres。全 40 章を「ユーザー」「画面」「自分の思考」「組織」の 4 領域に整理。『分かりやすい＝見慣れている』など、日々の UI 判断の裏側を初心者にも伝わる言葉で言語化しています。",
-        "recommend": "日曜は 1 章 15 分。第 1 章『Nobody Thinks Like You』からが入り口として最短。Web 無料版でどうぞ。"
+        "hook": "9/10 更新、shadcn/ui 作者公認の Figma キットが v3.0、駆け出しのデザインシステム自作を今日終わらせられます。",
+        "origin": "中身は Tailwind CSS v4 パレット、2000+ コンポーネント、8 スタイル、ダーク・ライト両対応の Variables 入り。同日のプラグイン 3.0 が Figma で選んだ色を globals.css に直接書き出します。",
+        "recommend": "Community から 5 分でインポート。土台 8 割は借りて、残り 2 割で自分色を乗せるのが 2026 年の近道です。"
       },
       "section_titles": {
-        "hook": "9/10 心理学の無料本",
-        "origin": "40 章 4 領域まとめ",
-        "recommend": "日曜 15 分の一章"
+        "hook": "shadcn v3.0",
+        "origin": "v4 パレット刷新",
+        "recommend": "5 分で 8 割借り"
       },
       "section_descriptions": {
-        "hook": "駆け出しの UI 迷子を心理学で解く無料本を紹介",
-        "origin": "元心理学者が 4 領域 40 章で UI 判断を言語化",
-        "recommend": "日曜 15 分、第 1 章から Web 無料版で読む"
+        "hook": "作者公認 Figma キット v3.0 が 9/10 更新",
+        "origin": "Tailwind v4 で 2000+ 部品・8 スタイル",
+        "recommend": "Community 5 分導入で 8 割借り 2 割自分色"
       }
     }
   ]
