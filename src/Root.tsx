@@ -1,26 +1,24 @@
 import React from "react";
 import { Composition } from "remotion";
-import { TrendingVideo, Props } from "./compositions/TrendingVideo";
-import {
-  defaultProjects,
-  defaultDurations,
-  calculateFrameDurations,
-} from "./data";
+import { AiToolsVideo, Props } from "./compositions/AiToolsVideo";
+import { defaultTools, defaultMeta, defaultDurations, calculateFrameDurations, FPS } from "./data";
+
+// Composition id is referenced by scripts/pipeline.mjs and package.json.
+export const COMPOSITION_ID = "AiToolsTop5";
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
       <Composition
-        id="FigmaNaviVideo"
-        component={
-          TrendingVideo as unknown as React.FC<Record<string, unknown>>
-        }
+        id={COMPOSITION_ID}
+        component={AiToolsVideo as unknown as React.FC<Record<string, unknown>>}
         durationInFrames={calculateFrameDurations(defaultDurations).total}
-        fps={30}
+        fps={FPS}
         width={1080}
         height={1920}
         defaultProps={{
-          projects: defaultProjects,
+          tools: defaultTools,
+          meta: defaultMeta,
           audioDurations: defaultDurations,
         }}
         calculateMetadata={async ({ props }) => {

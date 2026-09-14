@@ -18,6 +18,8 @@
 
 import { google } from "googleapis";
 import { readFileSync, writeFileSync, existsSync } from "fs";
+import { GENRE } from "./enriched-schema.mjs";
+import { YT_BASE_TAGS } from "./generate-caption.mjs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { updateInstagramStats } from "./instagram-insights.mjs";
@@ -301,17 +303,19 @@ async function main() {
     reasoning: [],
   };
 
+  // Only learn from the current genre (trial #1: AI tools TOP5). The
+  // design-news videos used different hashtags/titles and would skew hints.
+  const genreVideos = history.videos.filter((v) => v.genre === GENRE);
+
   // Hashtag analysis
-  const hashtagResult = analyzeHashtags(history.videos);
+  const hashtagResult = analyzeHashtags(genreVideos);
   if (hashtagResult) {
     hints.droppedHashtags = hashtagResult.dropped;
     hints.reasoning.push(...hashtagResult.reasoning);
 
-    // Build recommended hashtags: base set + boosted - dropped
-    const baseHashtags = [
-      "デザイン", "Figma", "UI", "UX", "デザイナー",
-      "デザイン勉強", "AIデザイン", "Design", "Shorts",
-    ];
+    // Build recommended hashtags: base set + boosted - dropped.
+    // generate-caption.mjs keeps Instagram at its fixed 5 tags regardless.
+    const baseHashtags = YT_BASE_TAGS;
     const recommended = baseHashtags.filter(
       (h) => !hashtagResult.dropped.includes(h)
     );
@@ -322,7 +326,7 @@ async function main() {
   }
 
   // Title template analysis
-  const titleResult = analyzeTitleTemplates(history.videos);
+  const titleResult = analyzeTitleTemplates(genreVideos);
   if (titleResult) {
     hints.recommendedTitleTemplate = titleResult.recommended;
     hints.reasoning.push(...titleResult.reasoning);

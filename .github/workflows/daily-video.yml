@@ -1,10 +1,15 @@
-name: Daily Figma Navi Video
+name: Daily AI Tools TOP5 Video
 
 on:
   schedule:
     # 23:15 UTC = 08:15 JST (between AI Trend Daily 08:00 and Coffee 08:30)
     - cron: "15 23 * * *"
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "検証モード: サンプルデータで動画だけ作る（投稿・コミットしない）"
+        type: boolean
+        default: false
   push:
     paths:
       - '.recovery-trigger'
@@ -15,7 +20,13 @@ permissions:
 jobs:
   generate-video:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
+
+    # Anything that is not the main branch is a verification run: it renders
+    # from the committed sample and never posts or commits, even if someone
+    # forgets to tick dry_run.
+    env:
+      VERIFY_RUN: ${{ (inputs.dry_run == true || github.ref != 'refs/heads/main') && '1' || '' }}
 
     steps:
       - name: Checkout
@@ -41,7 +52,10 @@ jobs:
         run: node scripts/pipeline.mjs
         env:
           TZ: Asia/Tokyo
-          SNS_POST_ENABLED: ${{ secrets.SNS_POST_ENABLED }}
+          SNS_POST_ENABLED: ${{ env.VERIFY_RUN != '1' && secrets.SNS_POST_ENABLED || 'false' }}
+          DRY_RUN: ${{ env.VERIFY_RUN }}
+          ENRICHED_PATH: ${{ env.VERIFY_RUN == '1' && 'data/samples/enriched-ai-tools.sample.json' || '' }}
+          ALLOW_STALE_DATE: ${{ env.VERIFY_RUN }}
           # YouTube
           YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
           YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
@@ -54,6 +68,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit performance history
+        if: env.VERIFY_RUN != '1'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -64,8 +79,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload video artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: design-video-${{ github.run_number }}
-          path: output/design-*.mp4
+          name: aitools-video-${{ github.run_number }}${{ env.VERIFY_RUN == '1' && '-dryrun' || '' }}
+          path: |
+            output/aitools-*.mp4
+            output/aitools-*-cover.jpg
+            output/captions.json
+            output/trending-data.json
+          if-no-files-found: warn
           retention-days: 30

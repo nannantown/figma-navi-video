@@ -9,12 +9,13 @@
 import { readFileSync, writeFileSync, existsSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
+import { GENRE, TRIAL } from "./enriched-schema.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
 const outputDir = join(rootDir, "output");
 const historyPath = join(rootDir, "data", "performance-history.json");
-const enrichedPath = join(rootDir, "data", "enriched-design-news.json");
+const enrichedPath = join(rootDir, "data", "enriched-ai-tools.json");
 
 function readJSON(path) {
   if (!existsSync(path)) return null;
@@ -64,19 +65,23 @@ function main() {
   const today = new Date();
   const dateStr = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
 
+  const tools = trendingData?.tools || [];
   const entry = {
     videoId: uploadResult.videoId,
     videoUrl: uploadResult.videoUrl,
     date: dateStr,
+    // Genre trial bookkeeping: pdca-summary.mjs finds the trial start date
+    // from the first entry carrying this genre.
+    genre: GENRE,
+    trial: TRIAL,
     title: captions?.youtube?.title || "",
-    titleTemplate: "standard", // will be dynamic in Phase 3
+    titleTemplate: captions?.youtube?.titleTemplate || "standard",
     hashtags: captions?.youtube?.tags || [],
-    languages: trendingData?.projects
-      ? [...new Set(trendingData.projects.map((p) => p.language).filter(Boolean))]
-      : [],
-    projects: trendingData?.projects
-      ? trendingData.projects.map((p) => p.fullName)
-      : [],
+    languages: [],
+    projects: tools.map((t) => t.name),
+    // Used by the routine to avoid featuring the same tool again within 30 days.
+    tools: tools.map((t) => ({ name: t.name, slug: t.slug, phUrl: t.phUrl, website: t.website, pricing: t.pricing })),
+    source: trendingData?.meta ? { mode: trendingData.meta.mode, label: trendingData.meta.sourceLabel } : null,
     durationSeconds: Math.round(durationSeconds),
     discovery: enriched?.discovery || null,
     stats: {
@@ -123,7 +128,7 @@ function main() {
   writeFileSync(historyPath, JSON.stringify(history, null, 2));
   console.log(`record-upload: recorded ${entry.videoId} (${dateStr})`);
   console.log(`  Title: ${entry.title}`);
-  console.log(`  Languages: ${entry.languages.join(", ")}`);
+  console.log(`  Tools: ${entry.projects.join(" / ")}`);
   console.log(`  Instagram: ${entry.instagram ? entry.instagram.mediaId : "no media id (restored later by fetch-stats)"}`);
   if (entry.discovery) {
     console.log(`  Discovery: ${entry.discovery.method} (${entry.discovery.description || "no description"})`);

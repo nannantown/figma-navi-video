@@ -26,27 +26,22 @@ const voiceName =
     ? "ja-JP-KeitaNeural"
     : "ja-JP-NanamiNeural";
 
-// Default narrations (fallback when no --data is provided)
-// Fallback narrations used only when --data= is not passed (e.g., local smoke
-// test). Production always uses --data=output/trending-data.json, which is
-// built from the Claude Routine's enriched-design-news.json.
+// Speaking rate. +30% matches AI Trend Daily's TOP5 videos; pipeline.mjs
+// re-runs with a faster rate if the rendered video would pass 58 s.
+const rateArg = process.argv.find((a) => a.startsWith("--rate="));
+const speakingRate = rateArg ? rateArg.slice("--rate=".length) : "+30%";
+
+// Fallback narrations used only when --data= is not passed (local smoke
+// test). Production always uses --data=output/trending-data.json, built from
+// the Claude Routine's data/enriched-ai-tools.json.
 const defaultNarrations = [
-  {
-    filename: "project-1",
-    text: "今日のデザインニュースです。Figma が新機能を発表しました。",
-  },
-  {
-    filename: "project-2",
-    text: "この機能は、これまで手作業でやっていた作業を大幅に短縮します。",
-  },
-  {
-    filename: "project-3",
-    text: "ぜひ今日のうちに試してみてください。",
-  },
-  {
-    filename: "ending",
-    text: "以上、今日のデザインニュースでした。フォローといいねで、毎日の情報をチェックしましょう。",
-  },
+  { filename: "opening", text: "新作AIツール、トップ5を紹介します。" },
+  { filename: "tool-1", text: "会議の要点を自動でまとめるAIツールです。議事録づくりの時間がほぼゼロになります。" },
+  { filename: "tool-2", text: "文章の下書きを数秒で作るAIアシスタントです。メールの書き出しで迷わなくなります。" },
+  { filename: "tool-3", text: "画像から不要な物を消せるAI編集ツールです。ブラウザだけで手軽に試せます。" },
+  { filename: "tool-4", text: "資料をアップするだけで要約してくれるツールです。長いPDFも3行でつかめます。" },
+  { filename: "tool-5", text: "作業の自動化をノーコードで組めるサービスです。定型業務を毎日の手間から外せます。" },
+  { filename: "ending", text: "気になるツールは保存して、あとで試してみてください。" },
 ];
 
 function loadNarrations() {
@@ -60,8 +55,8 @@ function loadNarrations() {
   if (data.openingNarration && data.openingNarration.trim()) {
     narrations.push({ filename: "opening", text: data.openingNarration });
   }
-  data.projects.forEach((p, i) => {
-    narrations.push({ filename: `project-${i + 1}`, text: p.narration });
+  data.tools.forEach((t, i) => {
+    narrations.push({ filename: `tool-${i + 1}`, text: t.narration });
   });
   narrations.push({ filename: "ending", text: data.endingNarration });
 
@@ -79,7 +74,7 @@ async function synthesize(text, outputPath) {
     try {
       const comm = new Communicate(text, {
         voice: voiceName,
-        rate: "+15%",
+        rate: speakingRate,
         pitch: "+0Hz",
       });
 
@@ -115,7 +110,7 @@ async function main() {
 
   const narrations = loadNarrations();
 
-  console.log(`Voice: ${voiceName}`);
+  console.log(`Voice: ${voiceName} (rate ${speakingRate})`);
   console.log(`Output: ${audioDir}\n`);
 
   const durations = {};

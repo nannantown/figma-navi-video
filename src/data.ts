@@ -1,56 +1,106 @@
-export interface Project {
+export type Pricing = "free" | "freemium" | "trial" | "paid" | "unknown";
+
+// One card of the "新作AIツール TOP5" video. Production values come from
+// output/trending-data.json (scripts/generate-data.mjs ← data/enriched-ai-tools.json).
+export interface Tool {
   rank: number;
   name: string;
-  fullName: string;
+  /** 一言: what it does (10-24 chars) */
   description: string;
-  detail: string;
+  /** 誰向け */
+  who: string;
+  pricing: Pricing;
+  pricingLabel: string;
+  website: string;
+  domain: string;
   narration: string;
-  category?: string;
-  url: string;
+  /** Path under public/ for staticFile(), or null for a text-only card */
+  image?: string | null;
+  imageSize?: { width: number; height: number } | null;
 }
 
-// Preview-only defaults for Remotion Studio. Production reads from
-// trending-data.json (built by generate-data.mjs from enriched-design-news.json).
-export const defaultProjects: Project[] = [
+export interface VideoMeta {
+  date: string;
+  /** "2026.09.15 (火)" */
+  dateLabel: string;
+  /** "9/15" */
+  shortDate: string;
+  mode: "ranking" | "pickup";
+  /** "Product Hunt 9/13 ランキングより" */
+  sourceLabel: string;
+}
+
+// Preview-only data for Remotion Studio. Fictional tools on purpose.
+export const defaultTools: Tool[] = [
   {
     rank: 1,
-    name: "Figma 新機能発表",
-    fullName: "Figma News",
-    description: "今日のデザインニュース",
-    detail: "",
-    narration:
-      "今日のデザインニュース。Figma が新機能を発表しました。デザイナーの作業を大きく変える可能性があります。",
-    category: "design",
-    url: "",
+    name: "Sample Notes AI",
+    description: "会議メモを自動で要約",
+    who: "会社員・PM",
+    pricing: "freemium",
+    pricingLabel: "無料プランあり",
+    website: "https://example.com",
+    domain: "example.com",
+    narration: "会議の要点を自動でまとめるAIツールです。議事録づくりの時間がほぼゼロになります。",
+    image: null,
   },
   {
     rank: 2,
-    name: "詳しく",
-    fullName: "Figma News",
-    description: "具体的に何が変わる",
-    detail: "",
-    narration:
-      "この機能を使うと、これまで手作業で数分かかっていた部分が、一瞬で終わります。プロトタイピングの速度が大幅に改善されます。",
-    category: "design",
-    url: "",
+    name: "Draft Buddy",
+    description: "文章の下書きを数秒で作成",
+    who: "ライター・営業",
+    pricing: "free",
+    pricingLabel: "無料",
+    website: "https://example.org",
+    domain: "example.org",
+    narration: "文章の下書きを数秒で作るAIアシスタントです。メールの書き出しで迷わなくなります。",
+    image: null,
   },
   {
     rank: 3,
-    name: "おすすめ",
-    fullName: "Figma News",
-    description: "試す価値あり",
-    detail: "",
-    narration:
-      "ぜひ今日のうちに試してみてください。Figmaナビと組み合わせれば更に効率化できます。",
-    category: "design",
-    url: "",
+    name: "Clean Shot Magic",
+    description: "写真の不要物をワンタップで消去",
+    who: "SNS運用者",
+    pricing: "trial",
+    pricingLabel: "無料トライアルあり",
+    website: "https://example.net",
+    domain: "example.net",
+    narration: "画像から不要な物を消せるAI編集ツールです。ブラウザだけで手軽に試せます。",
+    image: null,
+  },
+  {
+    rank: 4,
+    name: "PDF Digest",
+    description: "長いPDFを3行で要約",
+    who: "学生・研究者",
+    pricing: "paid",
+    pricingLabel: "月$8〜",
+    website: "https://example.com/pdf",
+    domain: "example.com",
+    narration: "資料をアップするだけで要約してくれるツールです。長いPDFも3行でつかめます。",
+    image: null,
+  },
+  {
+    rank: 5,
+    name: "Flow Builder",
+    description: "定型業務をノーコードで自動化",
+    who: "バックオフィス",
+    pricing: "unknown",
+    pricingLabel: "料金は公式サイトで確認",
+    website: "https://example.com/flow",
+    domain: "example.com",
+    narration: "作業の自動化をノーコードで組めるサービスです。定型業務を毎日の手間から外せます。",
+    image: null,
   },
 ];
 
-// Narrations for opening and ending
-export const openingNarration = "毎朝のデザインニュースをお届けします。";
-export const endingNarration =
-  "以上、今日のデザインニュースでした。フォローといいねで、毎日の情報をチェックしましょう。";
+export const defaultMeta: VideoMeta = {
+  date: "2026-09-15",
+  dateLabel: "2026.09.15 (火)",
+  shortDate: "9/15",
+  mode: "ranking",
+  sourceLabel: "Product Hunt 9/13 ランキングより",
+};
 
 // Subtitle data (word boundaries from Edge TTS)
 export interface WordBoundary {
@@ -68,33 +118,34 @@ export interface SubtitleMap {
   [key: string]: SubtitleEntry;
 }
 
-// Audio durations (seconds per audio file)
-// Keys: "project-1" .. "project-N", "ending". "opening" is optional —
-// figma-navi-video skips the brand intro entirely to reduce drop-off
-// on IG Reels / YT Shorts (viewers bounce during the title call).
+// Audio durations (seconds per audio file).
+// Keys: "opening", "tool-1" .. "tool-N", "ending".
 export interface AudioDurations {
   opening?: number;
   ending: number;
   [key: string]: number | undefined;
 }
 
-// Default durations for local dev (3 sections: hook, origin, recommend).
-// opening is 0 — the video starts straight with the main content.
+// Default durations for Remotion Studio preview.
 export const defaultDurations: AudioDurations = {
-  opening: 0,
-  "project-1": 12.0,
-  "project-2": 18.0,
-  "project-3": 8.0,
-  ending: 6.0,
+  opening: 2.8,
+  "tool-1": 8.5,
+  "tool-2": 8.5,
+  "tool-3": 8.5,
+  "tool-4": 8.5,
+  "tool-5": 8.5,
+  ending: 4.0,
 };
 
-const FPS = 30;
-const PADDING = 15; // 0.5s padding after audio
-const ENDING_EXTRA = 30; // 1s extra for ending
+// Keep in sync with scripts/pipeline.mjs (videoSeconds) — it uses the same
+// arithmetic to keep the video under Instagram's 60 s limit before rendering.
+export const FPS = 30;
+const PADDING = 15; // 0.5s padding after each narration
+const ENDING_EXTRA = 30; // 1s extra hold on the ending
 
-export function getProjectCount(d: AudioDurations): number {
+export function getToolCount(d: AudioDurations): number {
   let count = 0;
-  while (d[`project-${count + 1}`] !== undefined) count++;
+  while (d[`tool-${count + 1}`] !== undefined) count++;
   return Math.max(count, 1);
 }
 
@@ -102,13 +153,13 @@ export function calculateFrameDurations(d: AudioDurations) {
   // Opening is optional: 0 duration (or missing) → skipped entirely.
   const openingSec = d.opening ?? 0;
   const opening = openingSec > 0 ? Math.ceil(openingSec * FPS) + PADDING : 0;
-  const count = getProjectCount(d);
-  const projects: number[] = [];
+  const count = getToolCount(d);
+  const tools: number[] = [];
   for (let i = 1; i <= count; i++) {
-    const dur = d[`project-${i}`];
-    projects.push(Math.ceil(((dur as number) || 10) * FPS) + PADDING);
+    const dur = d[`tool-${i}`];
+    tools.push(Math.ceil(((dur as number) || 8) * FPS) + PADDING);
   }
   const ending = Math.ceil(d.ending * FPS) + ENDING_EXTRA;
-  const total = opening + projects.reduce((a, b) => a + b, 0) + ending;
-  return { opening, projects, ending, total };
+  const total = opening + tools.reduce((a, b) => a + b, 0) + ending;
+  return { opening, tools, ending, total };
 }
