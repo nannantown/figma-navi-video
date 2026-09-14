@@ -75,6 +75,13 @@ function main() {
   // Step 1: Routine data → output/trending-data.json (hard error if missing/stale/invalid)
   console.log("\n=== Step 1: Generate Data ===");
   run("node scripts/generate-data.mjs");
+  const skipPath = join(outputDir, "skip.json");
+  if (existsSync(skipPath)) {
+    // The routine found fewer new launches than the minimum: no video today, by design.
+    const skip = JSON.parse(readFileSync(skipPath, "utf-8"));
+    console.log(`\n=== Skipped ${skip.date}: ${skip.reason} (fresh candidates: ${skip.fresh_candidates}) — no video, no post ===`);
+    return;
+  }
 
   // Step 1b: Logos / screenshots (best effort, never blocks)
   console.log("\n=== Step 1b: Tool Images ===");

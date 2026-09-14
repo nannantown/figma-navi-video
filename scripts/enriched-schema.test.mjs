@@ -80,6 +80,15 @@ test("pickup mode accepts 2-5 tools and refuses fewer (no post that day)", () =>
   assert.match(errorsOf(pickup(6)), /pickup mode needs 2-5 tools/);
 });
 
+test("a skip day is valid only when fewer than 2 new launches were usable, and lists no tools", () => {
+  const skip = (overrides = {}) => ({ date: "2026-09-15", genre: "ai-tools-top5", trial: 1, skip: { reason: "新作の候補が1本のため休止", fresh_candidates: 1 }, ...overrides });
+  assert.deepEqual(validateEnriched(skip(), { today: "2026-09-15" }).errors, []);
+  assert.match(errorsOf(skip({ skip: { reason: "気分で休止", fresh_candidates: 4 } })), /may only be skipped when fewer than 2/);
+  assert.match(errorsOf(skip({ tools: [tool(1)] })), /must not list tools/);
+  assert.match(errorsOf(skip({ skip: { reason: "詳細は https://evil.example", fresh_candidates: 0 } })), /skip\.reason contains a URL/);
+  assert.match(errorsOf(skip(), "2026-09-16"), /does not match today/);
+});
+
 test("only new launches pass: ph_published_at must be inside the freshness window", () => {
   // Window for 2026-09-15 starts at 2026-09-13 00:00 PDT.
   assert.equal(freshSince("2026-09-15").toISOString(), "2026-09-13T07:00:00.000Z");

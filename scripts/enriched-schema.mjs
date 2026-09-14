@@ -241,6 +241,22 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true } 
 
   if (data.genre !== GENRE) errors.push(`genre must be "${GENRE}" (got ${JSON.stringify(data.genre)})`);
 
+  // A skip day: fewer than PICKUP_MIN_TOOLS usable new launches → no video, on purpose.
+  if (data.skip != null) {
+    if (typeof data.skip !== "object" || Array.isArray(data.skip)) {
+      errors.push("skip must be an object { reason, fresh_candidates }");
+    } else {
+      checkLength(errors, warnings, "skip.reason", data.skip.reason, { hard: [4, 80] });
+      checkText(errors, "skip.reason", data.skip.reason);
+      const n = data.skip.fresh_candidates;
+      if (!Number.isInteger(n) || n < 0 || n >= PICKUP_MIN_TOOLS) {
+        errors.push(`skip.fresh_candidates must be 0-${PICKUP_MIN_TOOLS - 1}: a day may only be skipped when fewer than ${PICKUP_MIN_TOOLS} new launches are usable`);
+      }
+    }
+    if (Array.isArray(data.tools) && data.tools.length > 0) errors.push("a skip day must not list tools");
+    return { errors, warnings };
+  }
+
   const source = data.source || {};
   const mode = source.mode;
   if (!SOURCE_MODES.includes(mode)) {

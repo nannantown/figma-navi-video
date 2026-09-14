@@ -14,7 +14,7 @@
  *     (refused when SNS_POST_ENABLED=true, so a sample can never be posted)
  */
 
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
+import { readFileSync, writeFileSync, existsSync, mkdirSync, rmSync } from "fs";
 import { join, dirname, isAbsolute } from "path";
 import { fileURLToPath } from "url";
 import {
@@ -56,6 +56,16 @@ function main() {
   for (const w of warnings) console.warn(`  WARN ${w}`);
   if (errors.length > 0) {
     throw new Error(`enriched-ai-tools.json is invalid:\n  - ${errors.join("\n  - ")}`);
+  }
+
+  mkdirSync(outputDir, { recursive: true });
+  const skipPath = join(outputDir, "skip.json");
+  rmSync(skipPath, { force: true });
+  if (data.skip) {
+    // Intentional no-video day (too few new launches). pipeline.mjs stops cleanly.
+    writeFileSync(skipPath, JSON.stringify({ date: data.date, ...data.skip }, null, 2));
+    console.log(`  SKIP ${data.date}: ${data.skip.reason} (fresh candidates: ${data.skip.fresh_candidates})`);
+    return;
   }
 
   const tools = toVideoTools(data);
