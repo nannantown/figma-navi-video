@@ -34,6 +34,9 @@ jobs:
         with:
           # Verification runs never push, so they do not keep a write token.
           persist-credentials: ${{ env.VERIFY_RUN != '1' }}
+          # generate-data.mjs cross-checks against the Product Hunt snapshot in
+          # the routine's commit, a few commits back; depth 1 would hide it.
+          fetch-depth: 50
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -58,6 +61,7 @@ jobs:
           SNS_POST_ENABLED: ${{ env.VERIFY_RUN != '1' && secrets.SNS_POST_ENABLED || 'false' }}
           DRY_RUN: ${{ env.VERIFY_RUN }}
           ENRICHED_PATH: ${{ env.VERIFY_RUN == '1' && 'data/samples/enriched-ai-tools.sample.json' || '' }}
+          PH_SNAPSHOT_PATH: ${{ env.VERIFY_RUN == '1' && 'data/samples/product-hunt-daily.sample.json' || '' }}
           ALLOW_STALE_DATE: ${{ env.VERIFY_RUN }}
           # Platform credentials only reach production runs; a verification
           # run cannot post even if a branch's pipeline ignored DRY_RUN.

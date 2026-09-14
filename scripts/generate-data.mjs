@@ -12,6 +12,7 @@
  *   ENRICHED_PATH=data/samples/enriched-ai-tools.sample.json   use another file
  *   ALLOW_STALE_DATE=1                                          skip the "date == today JST" check
  *     (refused when SNS_POST_ENABLED=true, so a sample can never be posted)
+ *   PH_SNAPSHOT_PATH=data/samples/product-hunt-daily.sample.json  cross-check against another snapshot
  */
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync, rmSync } from "fs";
@@ -27,7 +28,7 @@ import {
   skipSnapshotCheck,
   DEFAULT_ENDING_NARRATION,
 } from "./enriched-schema.mjs";
-import { loadSnapshot } from "./snapshot.mjs";
+import { loadSnapshotForRun } from "./snapshot.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
@@ -54,9 +55,13 @@ function main() {
   const { data, repaired } = parseEnrichedText(readFileSync(enrichedPath, "utf-8"));
   if (repaired) console.warn("  JSON needed auto-repair (unescaped quotes) — tell the routine to escape them.");
 
-  // The committed Product Hunt snapshot cross-checks skip days and ranking ranks.
-  const { snapshot, error: snapshotError } = loadSnapshot(rootDir);
+  // Skip days, ranking ranks and pickup tools are cross-checked against the
+  // Product Hunt snapshot the routine's commit carries (a snapshot fetched after
+  // the routine must not fail its day — see loadSnapshotForRun).
+  const { snapshot, path: snapshotPath, error: snapshotError, notes: snapshotNotes } = loadSnapshotForRun(rootDir);
+  for (const note of snapshotNotes) console.log(`  NOTE ${note}`);
   if (snapshotError) console.warn(`  WARN ${snapshotError}`);
+  console.log(`  snapshot: ${snapshotPath}${snapshot ? ` (for ${snapshot.forVideoDate}, fetched ${snapshot.fetchedAt})` : " (none)"}`);
 
   const { errors, warnings } = validateEnriched(data, { today: todayJst(), checkDate: !allowStale, snapshot });
   for (const w of warnings) console.warn(`  WARN ${w}`);

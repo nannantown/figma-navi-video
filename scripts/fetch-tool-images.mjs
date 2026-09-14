@@ -28,7 +28,7 @@
  *   https://www.iana.org/assignments/iana-ipv6-special-registry/ (2026-09-14)
  */
 
-import { readFileSync, writeFileSync, mkdirSync, mkdtempSync, existsSync, rmSync, realpathSync } from "fs";
+import { readFileSync, writeFileSync, mkdirSync, mkdtempSync, rmSync, realpathSync } from "fs";
 import { join, dirname } from "path";
 import { tmpdir } from "os";
 import { execFileSync } from "child_process";
@@ -36,12 +36,12 @@ import { lookup as dnsLookup } from "dns/promises";
 import { isIP } from "net";
 import https from "https";
 import { fileURLToPath } from "url";
+import { loadSnapshot } from "./snapshot.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
 const outputDir = join(rootDir, "output");
 const imagesDir = join(rootDir, "public", "tools");
-const snapshotPath = join(rootDir, "data", "product-hunt-daily.json");
 
 export const MAX_BYTES = 5 * 1024 * 1024;
 export const MAX_HTML_BYTES = 1024 * 1024;
@@ -506,14 +506,9 @@ async function main() {
   }
   mkdirSync(imagesDir, { recursive: true });
 
-  let snapshot = null;
-  if (existsSync(snapshotPath)) {
-    try {
-      snapshot = JSON.parse(readFileSync(snapshotPath, "utf-8"));
-    } catch (err) {
-      console.warn(`fetch-tool-images: unreadable snapshot (${err.message})`);
-    }
-  }
+  // Thumbnails only, so the working-tree snapshot is fine (PH_SNAPSHOT_PATH in dry runs).
+  const { snapshot, error: snapshotError } = loadSnapshot(rootDir);
+  if (snapshotError) console.warn(`fetch-tool-images: ${snapshotError}`);
   const thumbnails = snapshotThumbnails(snapshot);
 
   // Images are decoration: the whole step gets a fixed budget, and one slow
