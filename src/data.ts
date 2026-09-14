@@ -4,6 +4,10 @@ export type Pricing = "free" | "freemium" | "trial" | "paid" | "unknown";
 // output/trending-data.json (scripts/generate-data.mjs ← data/enriched-ai-tools.json).
 export interface Tool {
   rank: number;
+  /** Card badge: "1".."5" in ranking mode, "1/3" in pickup mode */
+  badge: string;
+  /** "Product Hunt 9/13 総合9位" (ranking) / "Product Hunt 9/13 公開" (pickup) */
+  sourceNote: string;
   name: string;
   /** 一言: what it does (10-24 chars) */
   description: string;
@@ -26,14 +30,23 @@ export interface VideoMeta {
   /** "9/15" */
   shortDate: string;
   mode: "ranking" | "pickup";
-  /** "Product Hunt 9/13 ランキングより" */
+  count: number;
+  /** "新作AIツール TOP5" (ranking) / "新作AIツール 3選" (pickup — never "TOP") */
+  headline: string;
+  /** Big opening word: "TOP5" / "3選" */
+  bigLabel: string;
+  /** Caption/description attribution */
   sourceLabel: string;
+  /** Opening pill: "Product Hunt 9/13 の AI ツール上位" / "Product Hunt の新着から厳選" */
+  openingSourceLabel: string;
 }
 
 // Preview-only data for Remotion Studio. Fictional tools on purpose.
 export const defaultTools: Tool[] = [
   {
     rank: 1,
+    badge: "1",
+    sourceNote: "Product Hunt 9/13 総合1位",
     name: "Sample Notes AI",
     description: "会議メモを自動で要約",
     who: "会社員・PM",
@@ -46,6 +59,8 @@ export const defaultTools: Tool[] = [
   },
   {
     rank: 2,
+    badge: "2",
+    sourceNote: "Product Hunt 9/13 総合3位",
     name: "Draft Buddy",
     description: "文章の下書きを数秒で作成",
     who: "ライター・営業",
@@ -58,6 +73,8 @@ export const defaultTools: Tool[] = [
   },
   {
     rank: 3,
+    badge: "3",
+    sourceNote: "Product Hunt 9/13 総合4位",
     name: "Clean Shot Magic",
     description: "写真の不要物をワンタップで消去",
     who: "SNS運用者",
@@ -70,6 +87,8 @@ export const defaultTools: Tool[] = [
   },
   {
     rank: 4,
+    badge: "4",
+    sourceNote: "Product Hunt 9/13 総合6位",
     name: "PDF Digest",
     description: "長いPDFを3行で要約",
     who: "学生・研究者",
@@ -82,6 +101,8 @@ export const defaultTools: Tool[] = [
   },
   {
     rank: 5,
+    badge: "5",
+    sourceNote: "Product Hunt 9/13 総合9位",
     name: "Flow Builder",
     description: "定型業務をノーコードで自動化",
     who: "バックオフィス",
@@ -99,7 +120,11 @@ export const defaultMeta: VideoMeta = {
   dateLabel: "2026.09.15 (火)",
   shortDate: "9/15",
   mode: "ranking",
-  sourceLabel: "Product Hunt 9/13 ランキングより",
+  count: 5,
+  headline: "新作AIツール TOP5",
+  bigLabel: "TOP5",
+  sourceLabel: "Product Hunt 9/13 ランキングの AI ツール上位5本",
+  openingSourceLabel: "Product Hunt 9/13 の AI ツール上位",
 };
 
 // Subtitle data (word boundaries from Edge TTS)

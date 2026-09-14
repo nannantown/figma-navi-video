@@ -23,7 +23,7 @@ import {
   toVideoTools,
   buildMeta,
   todayJst,
-  DEFAULT_OPENING_NARRATION,
+  defaultOpeningNarration,
   DEFAULT_ENDING_NARRATION,
 } from "./enriched-schema.mjs";
 
@@ -60,11 +60,11 @@ function main() {
 
   const tools = toVideoTools(data);
   const meta = buildMeta(data);
-  console.log(`  ${meta.dateLabel} / ${meta.sourceLabel} / method: ${meta.method}`);
-  for (const t of tools) console.log(`  ${t.rank}. ${t.name} — ${t.description} (${t.who} / ${t.pricingLabel})`);
+  console.log(`  ${meta.dateLabel} / ${meta.headline} / ${meta.sourceLabel} / method: ${meta.method}`);
+  for (const t of tools) console.log(`  ${t.badge}. ${t.name} — ${t.description} (${t.who} / ${t.pricingLabel}) [${t.sourceNote}]`);
 
   const out = {
-    openingNarration: (data.opening_narration && data.opening_narration.trim()) || DEFAULT_OPENING_NARRATION,
+    openingNarration: (data.opening_narration && data.opening_narration.trim()) || defaultOpeningNarration(meta.mode, meta.count),
     endingNarration: DEFAULT_ENDING_NARRATION,
     meta,
     tools,

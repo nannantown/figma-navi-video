@@ -15,7 +15,8 @@ interface Props {
   tool: Tool;
   localFrame: number;
   totalTools: number;
-  sourceLabel: string;
+  /** "新作AIツール TOP5" / "新作AIツール 3選" */
+  headline: string;
 }
 
 const CONTENT_WIDTH = 1080 - SAFE_X * 2;
@@ -29,7 +30,7 @@ function fadeUp(frame: number, start: number, fps: number) {
   return { opacity, transform: `translateY(${y}px)` };
 }
 
-export const ToolCard: React.FC<Props> = ({ tool, localFrame, totalTools, sourceLabel }) => {
+export const ToolCard: React.FC<Props> = ({ tool, localFrame, totalTools, headline }) => {
   const { fps } = useVideoConfig();
   const [imageFailed, setImageFailed] = useState(false);
 
@@ -87,19 +88,19 @@ export const ToolCard: React.FC<Props> = ({ tool, localFrame, totalTools, source
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            fontSize: 68,
+            // "1/3" (pickup order, not a rank) needs a smaller size than "1".
+            fontSize: tool.badge.length > 1 ? 44 : 68,
             fontWeight: 900,
             color: "#0b0b14",
             flexShrink: 0,
           }}
         >
-          {tool.rank}
+          {tool.badge}
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 10, flexGrow: 1, opacity: badgeOpacity }}>
-          <div style={{ fontSize: 36, fontWeight: 800, color: COLORS.text, letterSpacing: "1px" }}>
-            新作AIツール TOP{totalTools}
-          </div>
-          <div style={{ fontSize: 24, fontWeight: 500, color: COLORS.textMuted }}>{sourceLabel}</div>
+          <div style={{ fontSize: 36, fontWeight: 800, color: COLORS.text, letterSpacing: "1px" }}>{headline}</div>
+          {/* What Product Hunt itself says: overall rank (ranking) or publish date (pickup). */}
+          <div style={{ fontSize: 24, fontWeight: 500, color: COLORS.textMuted }}>{tool.sourceNote}</div>
         </div>
         <div style={{ display: "flex", gap: 8, opacity: badgeOpacity }}>
           {Array.from({ length: totalTools }, (_, i) => i + 1).map((n) => (

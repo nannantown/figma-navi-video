@@ -41,7 +41,7 @@ export const AiToolsVideo: React.FC<Props> = ({ tools, meta = defaultMeta, audio
 
         {tools.map((tool, i) => (
           <Series.Sequence key={tool.rank} durationInFrames={frames.tools[i] || frames.tools[0]}>
-            <ToolCardWrapper tool={tool} totalTools={tools.length} sourceLabel={meta.sourceLabel} />
+            <ToolCardWrapper tool={tool} totalTools={tools.length} headline={meta.headline} />
             <Subtitle data={sub(`tool-${i + 1}`)} />
             <Audio src={staticFile(`audio/tool-${i + 1}.mp3`)} volume={1} />
           </Series.Sequence>
@@ -57,7 +57,7 @@ export const AiToolsVideo: React.FC<Props> = ({ tools, meta = defaultMeta, audio
   );
 };
 
-const ToolCardWrapper: React.FC<{ tool: Tool; totalTools: number; sourceLabel: string }> = (props) => {
+const ToolCardWrapper: React.FC<{ tool: Tool; totalTools: number; headline: string }> = (props) => {
   const localFrame = useCurrentFrame();
   return <ToolCard {...props} localFrame={localFrame} />;
 };

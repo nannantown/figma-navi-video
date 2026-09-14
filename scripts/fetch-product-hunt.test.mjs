@@ -137,6 +137,56 @@ test("an API failure falls back to the feed in pickup mode and records the error
   assert.equal(snap.days[0].status, "feed");
 });
 
+test("feed entries are marked fresh only when published inside the window for the video date", async () => {
+  const freshEntry = FEED.replace(
+    "</feed>",
+    `  <entry>
+    <id>tag:www.producthunt.com,2005:Post/1250000</id>
+    <published>2026-09-13T19:52:46-07:00</published>
+    <link rel="alternate" type="text/html" href="https://www.producthunt.com/products/slashy"/>
+    <title>Slashy Assistant</title>
+    <content type="html">&lt;p&gt;The AI assistant that does email for you&lt;/p&gt;</content>
+  </entry>
+</feed>`
+  );
+  const fetchImpl = async () => new Response(freshEntry, { status: 200 });
+  // 06:30 JST on 2026-09-15 → video 2026-09-15 → fresh since 2026-09-13 00:00 PDT
+  const snap = await buildSnapshot({ env: {}, fetchImpl, now: new Date("2026-09-14T21:30:00Z") });
+  assert.equal(snap.freshSince, "2026-09-13T07:00:00.000Z");
+  const byName = Object.fromEntries(snap.days[0].posts.map((p) => [p.name, p]));
+  assert.equal(byName["Slashy Assistant"].fresh, true);
+  assert.equal(byName["Slashy Assistant"].publishedAt, "2026-09-13T19:52:46-07:00");
+  assert.equal(byName.Juggler.fresh, false); // published 2026-09-11
+  assert.equal(snap.days[0].freshCount, 1);
+  assert.equal(snap.days[0].freshAiCount, 1);
+});
+
+test("API posts use featuredAt as the publish time", () => {
+  const post = normalizePost({ id: 1, name: "X", tagline: "AI", slug: "x", url: "https://www.producthunt.com/posts/x", createdAt: "2026-09-10T10:00:00Z", featuredAt: "2026-09-13T07:01:00Z", topics: { edges: [] } });
+  assert.equal(post.publishedAt, "2026-09-13T07:01:00Z");
+});
+
+test("a failing AI category feed does not fail the snapshot; both failing does", async () => {
+  const aiDown = async (url) =>
+    String(url).includes("category=") ? new Response("", { status: 503 }) : new Response(FEED, { status: 200 });
+  const snap = await buildSnapshot({ env: {}, fetchImpl: aiDown, now: new Date("2026-09-14T21:30:00Z") });
+  assert.equal(snap.days[0].posts.length, 2);
+  assert.equal(snap.days[0].aiCategoryFilter, "unknown");
+
+  const allDown = async () => new Response("", { status: 503 });
+  await assert.rejects(buildSnapshot({ env: {}, fetchImpl: allDown, now: new Date("2026-09-14T21:30:00Z") }), /Both Product Hunt feeds failed/);
+});
+
+test("keyword classification avoids 'agents' and 'code' false positives", () => {
+  const plain = (name, tagline) => classifyPost({ name, tagline, topics: [] });
+  assert.equal(plain("Homely", "CRM for real estate agents").isAI, false);
+  assert.equal(plain("QRify", "Beautiful QR code generator").isDev, false);
+  assert.equal(plain("Promo Hub", "Share promo code deals").isDev, false);
+  assert.equal(plain("Crew", "Build AI agents for support").isAI, true);
+  assert.equal(plain("Reviewly", "Automated code review for teams").isDev, true);
+  assert.equal(plain("Stackr", "Open-source SDK for developers").isDev, true);
+});
+
 test("classifyPost recognises dev tools by keyword", () => {
   assert.equal(classifyPost({ name: "Fastship", tagline: "Deploy from your terminal", topics: [] }).isDev, true);
 });

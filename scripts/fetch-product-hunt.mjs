@@ -37,6 +37,14 @@
 import { writeFileSync, mkdirSync, realpathSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
+import {
+  PACIFIC_TZ,
+  zonedMidnightUtc,
+  pacificDayBounds,
+  videoDateForSnapshot,
+  freshSince,
+  isFresh,
+} from "./pacific-time.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
@@ -45,7 +53,6 @@ export const API_URL = "https://api.producthunt.com/v2/api/graphql";
 export const FEED_URL = "https://www.producthunt.com/feed";
 export const USER_AGENT =
   "sns-hub-figma-navi-video/1.0 (+https://github.com/nannantown/figma-navi-video)";
-export const PACIFIC_TZ = "America/Los_Angeles";
 export const MAX_POSTS_PER_DAY = 30;
 export const DEFAULT_OUT = join(rootDir, "data", "product-hunt-daily.json");
 
@@ -78,85 +85,13 @@ export const DEV_TOPIC_SLUGS = new Set([
   "devops",
   "coding-agents",
 ]);
-const AI_KEYWORDS = /\bAI\b|\bA\.I\.|GPT|\bLLMs?\b|agentic|\bagents?\b|copilot|machine learning|generative|\bML\b|neural/i;
-const DEV_KEYWORDS = /\bdevs?\b|developer|\bAPIs?\b|\bSDK\b|\bCLI\b|open[- ]source|\bcode\b|coding|terminal|\bIDE\b/i;
+// Keyword fallback for posts without topics (the feed has none). Bare
+// "agent(s)" (real-estate / user agents) and bare "code" (QR / promo code)
+// produced false positives, so only unambiguous forms count.
+const AI_KEYWORDS = /\bAI\b|\bA\.I\.|\bGPT|\bLLMs?\b|\bagentic\b|\bAI[- ]?agents?\b|\bcopilot\b|machine learning|\bgenerative\b|\bML\b|\bneural\b|\bchatbots?\b|\bRAG\b/i;
+const DEV_KEYWORDS = /\bdevs?\b|\bdevelopers?\b|\bAPIs?\b|\bSDKs?\b|\bCLI\b|open[- ]source|\bcoding\b|\bsource code\b|\bcodebases?\b|\bcode review\b|\bterminal\b|\bIDE\b|\bGitHub\b|\bdevops\b/i;
 
-// ---------------------------------------------------------------------------
-// Time helpers — Product Hunt's day is midnight-to-midnight Pacific time.
-// ---------------------------------------------------------------------------
-
-function tzParts(date, timeZone) {
-  const parts = new Intl.DateTimeFormat("en-US", {
-    timeZone,
-    hourCycle: "h23",
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-  }).formatToParts(date);
-  const get = (t) => Number(parts.find((p) => p.type === t).value);
-  return {
-    year: get("year"),
-    month: get("month"),
-    day: get("day"),
-    hour: get("hour"),
-    minute: get("minute"),
-    second: get("second"),
-  };
-}
-
-function tzOffsetMinutes(date, timeZone) {
-  const p = tzParts(date, timeZone);
-  const asUtc = Date.UTC(p.year, p.month - 1, p.day, p.hour, p.minute, p.second);
-  return (asUtc - date.getTime()) / 60000;
-}
-
-function ymd(y, m, d) {
-  return `${y}-${String(m).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
-}
-
-/** UTC instant of local midnight (00:00:00) on y-m-d in `timeZone`, DST-safe. */
-export function zonedMidnightUtc(year, month, day, timeZone = PACIFIC_TZ) {
-  const naive = Date.UTC(year, month - 1, day, 0, 0, 0);
-  let guess = naive - tzOffsetMinutes(new Date(naive), timeZone) * 60000;
-  const offset = tzOffsetMinutes(new Date(guess), timeZone);
-  guess = naive - offset * 60000;
-  return new Date(guess);
-}
-
-/**
- * Bounds of the Pacific calendar day `dayOffset` days from `now`
- * (0 = the day currently in progress on Product Hunt, -1 = the last closed day).
- */
-export function pacificDayBounds(dayOffset = 0, now = new Date()) {
-  const p = tzParts(now, PACIFIC_TZ);
-  const target = new Date(Date.UTC(p.year, p.month - 1, p.day + dayOffset));
-  const y = target.getUTCFullYear();
-  const m = target.getUTCMonth() + 1;
-  const d = target.getUTCDate();
-  const after = zonedMidnightUtc(y, m, d);
-  const next = new Date(Date.UTC(y, m - 1, d + 1));
-  const before = zonedMidnightUtc(next.getUTCFullYear(), next.getUTCMonth() + 1, next.getUTCDate());
-  return {
-    date: ymd(y, m, d),
-    postedAfter: after.toISOString(),
-    postedBefore: before.toISOString(),
-    status: before.getTime() <= now.getTime() ? "final" : "in_progress",
-    leaderboardUrl: `https://www.producthunt.com/leaderboard/daily/${y}/${m}/${d}`,
-  };
-}
-
-/**
- * JST date of the morning video this snapshot is meant for.
- * Runs from 12:00 JST onward prepare the next morning's video.
- */
-export function videoDateForSnapshot(now = new Date()) {
-  const p = tzParts(now, "Asia/Tokyo");
-  const base = new Date(Date.UTC(p.year, p.month - 1, p.day + (p.hour >= 12 ? 1 : 0)));
-  return ymd(base.getUTCFullYear(), base.getUTCMonth() + 1, base.getUTCDate());
-}
+export { PACIFIC_TZ, zonedMidnightUtc, pacificDayBounds, videoDateForSnapshot, freshSince, isFresh };
 
 // ---------------------------------------------------------------------------
 // GraphQL API
@@ -287,6 +222,8 @@ export function normalizePost(node) {
     comments: Number.isFinite(node.commentsCount) ? node.commentsCount : null,
     createdAt: node.createdAt || null,
     featuredAt: node.featuredAt || null,
+    // When the launch went public on Product Hunt (feature time; creation time as fallback).
+    publishedAt: node.featuredAt || node.createdAt || null,
     dailyRank: Number.isFinite(node.dailyRank) ? node.dailyRank : null,
     thumbnail: thumb && thumb.url && thumb.type !== "video" ? thumb.url : null,
     topics,
@@ -386,6 +323,10 @@ export function parseAtomFeed(xml) {
       comments: null,
       createdAt: textOf(e, "published") || null,
       featuredAt: null,
+      // Atom <published>. For launches this is when the post was created, which
+      // is never after the launch — so filtering on it never lets an old
+      // launch through (it can only drop some fresh ones).
+      publishedAt: textOf(e, "published") || null,
       dailyRank: null,
       thumbnail: null,
       topics: [],
@@ -441,17 +382,31 @@ export function mergeFeedEntries(aiEntries, allEntries) {
 // Snapshot
 // ---------------------------------------------------------------------------
 
+/** Mark every post with `fresh` for the video date and count what the routine may use. */
+export function annotateFreshness(posts, videoDate) {
+  const annotated = posts.map((p) => ({ ...p, fresh: isFresh(p.publishedAt, videoDate) }));
+  return {
+    posts: annotated,
+    freshCount: annotated.filter((p) => p.fresh).length,
+    freshAiCount: annotated.filter((p) => p.fresh && (p.isAI || p.inAiCategory === true)).length,
+  };
+}
+
 export async function buildSnapshot({ env = process.env, fetchImpl = fetch, now = new Date(), sleepImpl = sleep } = {}) {
   const token = getToken(env);
+  const forVideoDate = videoDateForSnapshot(now);
   const snapshot = {
-    schemaVersion: 1,
+    schemaVersion: 2,
     fetchedAt: now.toISOString(),
-    forVideoDate: videoDateForSnapshot(now),
+    forVideoDate,
+    // "新作" = published on Product Hunt at or after this instant (00:00 Pacific
+    // on the day before the Pacific day in progress at 07:30 JST of forVideoDate).
+    freshSince: freshSince(forVideoDate).toISOString(),
     source: token ? "api" : "feed",
     mode: token ? "ranking" : "pickup",
     note: token
-      ? "Official API. days[] = last closed Pacific day (final ranking) and the day in progress. Pick the TOP5 from the latest day with status=final, in dailyRank order."
-      : "No API token: public Atom feed (AI category first). Order is NOT a ranking — the routine must present the 5 tools as an editorial pickup.",
+      ? "Official API. days[] = last closed Pacific day (final ranking) and the day in progress. Pick the TOP5 from the latest day with status=final, in dailyRank order, fresh posts only."
+      : "No API token: public Atom feed (AI category first). Order is NOT a ranking — use only posts with fresh=true and present them as an editorial pickup (2-5 tools, never 'TOP5').",
     days: [],
   };
 
@@ -459,10 +414,11 @@ export async function buildSnapshot({ env = process.env, fetchImpl = fetch, now 
     try {
       for (const offset of [-1, 0]) {
         const bounds = pacificDayBounds(offset, now);
-        const posts = await fetchDayViaApi(token, bounds, { fetchImpl, sleepImpl });
-        snapshot.days.push({ ...bounds, source: "api", posts });
+        const fetched = await fetchDayViaApi(token, bounds, { fetchImpl, sleepImpl });
+        const { posts, freshCount, freshAiCount } = annotateFreshness(fetched, forVideoDate);
+        snapshot.days.push({ ...bounds, source: "api", freshCount, freshAiCount, posts });
         console.log(
-          `  ${bounds.date} (${bounds.status}): ${posts.length} posts, AI=${posts.filter((p) => p.isAI).length}, dev=${posts.filter((p) => p.isDev).length}`
+          `  ${bounds.date} (${bounds.status}): ${posts.length} posts, AI=${posts.filter((p) => p.isAI).length}, dev=${posts.filter((p) => p.isDev).length}, fresh AI=${freshAiCount}`
         );
       }
       return snapshot;
@@ -473,23 +429,32 @@ export async function buildSnapshot({ env = process.env, fetchImpl = fetch, now 
       snapshot.source = "feed";
       snapshot.mode = "pickup";
       snapshot.apiError = err.message;
-      snapshot.note = `API failed (${err.message}). Public Atom feed instead: order is NOT a ranking — present the 5 tools as an editorial pickup.`;
+      snapshot.note = `API failed (${err.message}). Public Atom feed instead: order is NOT a ranking — use only posts with fresh=true and present them as an editorial pickup (2-5 tools, never 'TOP5').`;
       snapshot.days = [];
     }
   } else {
     console.warn("  PRODUCT_HUNT_API_TOKEN not set — using the public Atom feed (no votes, no rank).");
   }
 
+  // Either feed may fail on its own; only both failing is fatal.
   const bounds = pacificDayBounds(0, now);
-  const aiEntries = await fetchFeed({ fetchImpl, category: "artificial-intelligence" });
+  const aiEntries = await fetchFeed({ fetchImpl, category: "artificial-intelligence" }).catch((err) => {
+    console.warn(`  AI category feed failed (non-blocking): ${err.message}`);
+    return [];
+  });
   const allEntries = await fetchFeed({ fetchImpl, category: "" }).catch((err) => {
     console.warn(`  general feed failed (non-blocking): ${err.message}`);
     return [];
   });
-  const posts = mergeFeedEntries(aiEntries, allEntries);
+  if (aiEntries.length === 0 && allEntries.length === 0) {
+    throw new Error("Both Product Hunt feeds failed or were empty.");
+  }
   const aiCategoryFilter = aiCategoryFilterStatus(aiEntries, allEntries);
-  snapshot.days.push({ ...bounds, status: "feed", source: "feed", aiCategoryFilter, posts });
-  console.log(`  feed: ${posts.length} entries, AI=${posts.filter((p) => p.isAI).length}, category filter: ${aiCategoryFilter}`);
+  const { posts, freshCount, freshAiCount } = annotateFreshness(mergeFeedEntries(aiEntries, allEntries), forVideoDate);
+  snapshot.days.push({ ...bounds, status: "feed", source: "feed", aiCategoryFilter, freshCount, freshAiCount, posts });
+  console.log(
+    `  feed: ${posts.length} entries, AI=${posts.filter((p) => p.isAI).length}, fresh=${freshCount}, fresh AI=${freshAiCount}, category filter: ${aiCategoryFilter}`
+  );
   return snapshot;
 }
 
@@ -508,9 +473,10 @@ async function main() {
   const day = snapshot.days[0];
   for (const p of day.posts.slice(0, 10)) {
     console.log(
-      `  ${p.dailyRank ? `#${p.dailyRank}` : `(${p.order})`} ${p.name} — ${p.tagline}${p.votes != null ? ` (${p.votes} votes)` : ""}${p.isAI ? " [AI]" : ""}${p.isDev ? " [dev]" : ""}`
+      `  ${p.dailyRank ? `#${p.dailyRank}` : `(${p.order})`} ${p.name} — ${p.tagline}${p.votes != null ? ` (${p.votes} votes)` : ""}${p.isAI ? " [AI]" : ""}${p.isDev ? " [dev]" : ""}${p.fresh ? " [fresh]" : ""}`
     );
   }
+  console.log(`  fresh since ${snapshot.freshSince} (for video ${snapshot.forVideoDate})`);
 
   if (dryRun) {
     console.log("\n--dry-run: snapshot not written");

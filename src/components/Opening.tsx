@@ -4,7 +4,7 @@ import { VideoMeta } from "../data";
 import { ACCENT_GRADIENT, COLORS, FONT_FAMILY, SAFE_BOTTOM, SAFE_TOP, SAFE_X } from "./theme";
 
 /**
- * ~3 s hook: date → "新作AIツール TOP5" → source.
+ * ~3 s hook: date → "新作AIツール" + "TOP5" (ranking) or "3選" (pickup) → source.
  * Everything is fully visible by frame 30 because pipeline.mjs grabs the
  * Instagram/YouTube cover still at frame 60.
  */
@@ -77,7 +77,7 @@ export const Opening: React.FC<{ meta: VideoMeta }> = ({ meta }) => {
           alignSelf: "flex-start",
         }}
       >
-        TOP5
+        {meta.bigLabel}
       </div>
 
       <div
@@ -94,7 +94,7 @@ export const Opening: React.FC<{ meta: VideoMeta }> = ({ meta }) => {
           padding: "10px 32px",
         }}
       >
-        {meta.sourceLabel}
+        {meta.openingSourceLabel}
       </div>
     </AbsoluteFill>
   );

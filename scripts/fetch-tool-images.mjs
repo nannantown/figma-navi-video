@@ -19,6 +19,8 @@ import { readFileSync, writeFileSync, mkdirSync, mkdtempSync, existsSync, rmSync
 import { join, dirname } from "path";
 import { tmpdir } from "os";
 import { execFileSync } from "child_process";
+import { lookup as dnsLookup } from "dns/promises";
+import { isIP } from "net";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -158,33 +160,110 @@ export function extractOgImage(html, pageUrl) {
   return null;
 }
 
-async function fetchWithTimeout(url, fetchImpl, accept) {
-  return fetchImpl(url, {
-    headers: { "User-Agent": USER_AGENT, Accept: accept },
-    redirect: "follow",
-    signal: AbortSignal.timeout(12000),
-  });
+// --- Network safety --------------------------------------------------------
+// The URLs come from the routine (and, through it, from third-party pages), so
+// every hop must be https to a public address: no http, no credentials, no
+// localhost / private / link-local targets, bounded redirects and body size.
+
+export const MAX_HTML_BYTES = 1024 * 1024;
+const MAX_REDIRECTS = 5;
+
+/** true for loopback, private, link-local, CGNAT, multicast/reserved and unspecified addresses. */
+export function isPrivateAddress(ip) {
+  const v = isIP(ip);
+  if (v === 4) {
+    const [a, b] = ip.split(".").map(Number);
+    return (
+      a === 0 || a === 10 || a === 127 || a >= 224 ||
+      (a === 100 && b >= 64 && b <= 127) ||
+      (a === 169 && b === 254) ||
+      (a === 172 && b >= 16 && b <= 31) ||
+      (a === 192 && b === 168) ||
+      (a === 192 && b === 0) ||
+      (a === 198 && (b === 18 || b === 19))
+    );
+  }
+  if (v === 6) {
+    const s = ip.toLowerCase();
+    if (s === "::" || s === "::1") return true;
+    const mapped = s.match(/^::ffff:(\d+\.\d+\.\d+\.\d+)$/);
+    if (mapped) return isPrivateAddress(mapped[1]);
+    return /^(fc|fd|fe8|fe9|fea|feb|ff)/.test(s);
+  }
+  return true; // not an IP at all — never treat as public
+}
+
+export async function assertPublicHttps(url, { lookupImpl = dnsLookup } = {}) {
+  let u;
+  try {
+    u = new URL(url);
+  } catch {
+    throw new Error(`invalid URL ${url}`);
+  }
+  if (u.protocol !== "https:") throw new Error(`blocked non-https URL ${u.protocol}//${u.host}`);
+  if (u.username || u.password) throw new Error("blocked URL with credentials");
+  const host = u.hostname.replace(/^\[|\]$/g, "").toLowerCase();
+  if (!host || host === "localhost" || host.endsWith(".localhost") || host.endsWith(".local") || host.endsWith(".internal")) {
+    throw new Error(`blocked local host ${host}`);
+  }
+  const addresses = isIP(host) ? [host] : (await lookupImpl(host, { all: true, verbatim: true })).map((a) => a.address);
+  if (addresses.length === 0 || addresses.some(isPrivateAddress)) {
+    throw new Error(`blocked private address for ${host}`);
+  }
+}
+
+/** fetch with manual, validated redirects (https + public address on every hop). */
+export async function safeFetch(url, { fetchImpl = fetch, lookupImpl = dnsLookup, accept = "*/*" } = {}) {
+  let current = url;
+  for (let hop = 0; hop <= MAX_REDIRECTS; hop++) {
+    await assertPublicHttps(current, { lookupImpl });
+    const res = await fetchImpl(current, {
+      headers: { "User-Agent": USER_AGENT, Accept: accept },
+      redirect: "manual",
+      signal: AbortSignal.timeout(12000),
+    });
+    if ([301, 302, 303, 307, 308].includes(res.status)) {
+      const location = res.headers.get("location");
+      if (!location) throw new Error(`redirect without location from ${current}`);
+      current = new URL(location, current).toString();
+      continue;
+    }
+    return { res, finalUrl: current };
+  }
+  throw new Error(`too many redirects from ${url}`);
+}
+
+/** Read a response body but stop as soon as it grows past maxBytes. */
+export async function readBodyLimited(res, maxBytes) {
+  const declared = Number(res.headers.get("content-length") || 0);
+  if (declared > maxBytes) throw new Error(`${declared} bytes > ${maxBytes}`);
+  if (!res.body) return Buffer.alloc(0);
+  const reader = res.body.getReader();
+  const chunks = [];
+  let total = 0;
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    total += value.byteLength;
+    if (total > maxBytes) {
+      await reader.cancel().catch(() => {});
+      throw new Error(`body exceeds ${maxBytes} bytes`);
+    }
+    chunks.push(Buffer.from(value));
+  }
+  return Buffer.concat(chunks);
 }
 
 /** @returns {Promise<{buf: Buffer, type: string, width: number, height: number} | null>} */
-export async function downloadImage(url, { fetchImpl = fetch, log = console.log, firstFrame = ffmpegFirstFrame } = {}) {
-  if (!url || !/^https?:\/\//i.test(url)) return null;
+export async function downloadImage(url, { fetchImpl = fetch, lookupImpl = dnsLookup, log = console.log, firstFrame = ffmpegFirstFrame } = {}) {
+  if (!url) return null;
   try {
-    const res = await fetchWithTimeout(url, fetchImpl, "image/png,image/jpeg,image/webp,image/gif;q=0.9,*/*;q=0.1");
+    const { res } = await safeFetch(url, { fetchImpl, lookupImpl, accept: "image/png,image/jpeg,image/webp,image/gif;q=0.9,*/*;q=0.1" });
     if (!res.ok) {
       log(`    skip ${url}: HTTP ${res.status}`);
       return null;
     }
-    const declared = Number(res.headers.get("content-length") || 0);
-    if (declared > MAX_BYTES) {
-      log(`    skip ${url}: ${declared} bytes > ${MAX_BYTES}`);
-      return null;
-    }
-    let buf = Buffer.from(await res.arrayBuffer());
-    if (buf.length > MAX_BYTES) {
-      log(`    skip ${url}: ${buf.length} bytes > ${MAX_BYTES}`);
-      return null;
-    }
+    let buf = await readBodyLimited(res, MAX_BYTES);
     let type = sniffImageType(buf);
     if (!type) {
       log(`    skip ${url}: not PNG/JPEG/WebP/GIF`);
@@ -219,16 +298,16 @@ export async function downloadImage(url, { fetchImpl = fetch, log = console.log,
   }
 }
 
-export async function findOgImageUrl(website, { fetchImpl = fetch, log = console.log } = {}) {
+export async function findOgImageUrl(website, { fetchImpl = fetch, lookupImpl = dnsLookup, log = console.log } = {}) {
   if (!website) return null;
   try {
-    const res = await fetchWithTimeout(website, fetchImpl, "text/html,application/xhtml+xml;q=0.9,*/*;q=0.1");
+    const { res, finalUrl } = await safeFetch(website, { fetchImpl, lookupImpl, accept: "text/html,application/xhtml+xml;q=0.9,*/*;q=0.1" });
     if (!res.ok) {
       log(`    og:image lookup ${website}: HTTP ${res.status}`);
       return null;
     }
-    const html = (await res.text()).slice(0, 400_000);
-    return extractOgImage(html, res.url || website);
+    const html = (await readBodyLimited(res, MAX_HTML_BYTES)).toString("utf-8");
+    return extractOgImage(html, finalUrl);
   } catch (err) {
     log(`    og:image lookup ${website}: ${err.message}`);
     return null;
@@ -245,20 +324,20 @@ export function snapshotThumbnails(snapshot) {
   return map;
 }
 
-export async function resolveToolImage(tool, { thumbnails = new Map(), fetchImpl = fetch, log = console.log } = {}) {
+export async function resolveToolImage(tool, { thumbnails = new Map(), fetchImpl = fetch, lookupImpl = dnsLookup, log = console.log, firstFrame = ffmpegFirstFrame } = {}) {
   const tried = new Set();
   const attempt = async (url, label) => {
     if (!url || tried.has(url)) return null;
     tried.add(url);
     log(`    try ${label}: ${url}`);
-    const img = await downloadImage(url, { fetchImpl, log });
+    const img = await downloadImage(url, { fetchImpl, lookupImpl, log, firstFrame });
     return img ? { ...img, from: label, url } : null;
   };
 
   return (
     (await attempt(tool.imageUrl, "routine image_url")) ||
     (await attempt(thumbnails.get(tool.slug), "Product Hunt thumbnail")) ||
-    (await attempt(await findOgImageUrl(tool.website, { fetchImpl, log }), "official og:image"))
+    (await attempt(await findOgImageUrl(tool.website, { fetchImpl, lookupImpl, log }), "official og:image"))
   );
 }
 
