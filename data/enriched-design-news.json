@@ -1,43 +1,40 @@
 {
-  "date": "2026-09-14",
+  "date": "2026-09-15",
   "discovery": {
-    "method": "figma-community",
-    "description": "Figma Community の shadcn/ui 公認キット (Community file id 1342715840824755935) の 9/10 更新 v3.0 を英語ソース (shadcndesign.com blog) 経由で捕捉、Tailwind v4 パレット刷新とプラグイン 3.0 同時リリースを一次確認",
+    "method": "official-src",
+    "description": "Figma 公式ブログ 9/14 記事「4 Ways We're Using Our MCP Server at Figma」を一次ソースとして採用。社内 4 パターン活用例のうち駆け出しに即実行可能な 2 パターン (既存コード → Figma 逆変換、Slack/Notion → 資料自動更新) を主軸に翻訳。",
     "sources": [
-      "https://www.figma.com/community/file/1342715840824755935/shadcn-ui-components-with-variables-tailwind-classes-updated-september-2026",
-      "https://www.shadcndesign.com/blog/variables-update-september-2026",
-      "https://www.shadcndesign.com/",
-      "https://www.shadcndesign.com/components",
-      "https://www.shadcndesign.com/docs/theming",
-      "https://ui.shadcn.com/docs/figma",
-      "https://ui.shadcn.com/docs/tailwind-v4",
-      "https://www.shadcnblocks.com/blog/tailwind4-shadcn-themeing"
+      "https://www.figma.com/blog/4-ways-were-using-our-mcp-server-at-figma/",
+      "https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Figma-MCP-server",
+      "https://help.figma.com/hc/en-us/articles/39888612464151-Claude-Code-and-Figma-Set-up-the-MCP-server",
+      "https://www.figma.com/blog/how-coinbase-used-code-connect-to-shrink-token-costs/",
+      "https://developers.figma.com/docs/figma-mcp-server/code-connect-integration"
     ],
-    "query": "shadcn/ui Figma kit v3.0 September 2026 Tailwind v4 palette alias-based theming plugin 3.0 community",
-    "freshness_hours": 96
+    "query": "Figma MCP server use cases 4 ways September 2026 official blog",
+    "freshness_hours": 30
   },
   "articles": [
     {
       "rank": 1,
-      "title": "shadcn/ui 作者公認 Figma キット v3.0 が 9/10 更新、Tailwind v4 パレットと 2000+ 部品で駆け出しのデザインシステム自作を今日終わらせる",
-      "description": "9/10 更新、shadcn/ui 作者公認の Figma キットが v3.0、駆け出しのデザインシステム自作を今日終わらせられます。",
-      "detail": "中身は Tailwind CSS v4 パレット、2000+ コンポーネント、8 スタイル、ダーク・ライト両対応の Variables 入り。同日のプラグイン 3.0 が Figma で選んだ色を globals.css に直接書き出します。",
-      "narration": "9/10 更新、shadcn/ui 作者公認の Figma キットが v3.0、駆け出しのデザインシステム自作を今日終わらせられます。",
-      "tags": ["shadcn/ui", "Figma Community", "デザインシステム"],
+      "title": "Figma 社内が MCP サーバーを 4 通り活用、駆け出しに即使えるのは 2 パターン",
+      "description": "9/14 Figma 公式ブログが社内活用例 4 パターンを公開。駆け出しでも即試せる例が含まれます。",
+      "detail": "Figma 公式ブログ 9/14 発。①デザイナーアドボケイトが Slack/Drive/リリースノートから発表資料を自動更新、②PM が Slack/Notion/Asana のデータから FigJam ワークショップボードを自動生成、③デザイナーが Figma Make とコードを双方向同期して GitHub PR に反映、④PM がコードのみの画面を Figma に逆変換して既存デザインシステム部品と Variables を再利用。読み取り側は GA で無料、書き込み側はベータで将来有料化予定。",
+      "narration": "Figma社内での MCP サーバー活用法 4 つが昨日公開。駆け出しでも即試せる例があります。",
+      "tags": ["Figma", "MCP サーバー", "Claude Code", "デザインシステム", "official-src"],
       "narration_sections": {
-        "hook": "9/10 更新、shadcn/ui 作者公認の Figma キットが v3.0、駆け出しのデザインシステム自作を今日終わらせられます。",
-        "origin": "中身は Tailwind CSS v4 パレット、2000+ コンポーネント、8 スタイル、ダーク・ライト両対応の Variables 入り。同日のプラグイン 3.0 が Figma で選んだ色を globals.css に直接書き出します。",
-        "recommend": "Community から 5 分でインポート。土台 8 割は借りて、残り 2 割で自分色を乗せるのが 2026 年の近道です。"
+        "hook": "Figma社内での MCP サーバー活用法 4 つが昨日公開。駆け出しでも即試せる例があります。",
+        "origin": "9/14 Figma 公式ブログが社内事例を発表。既存コードを Figma へ逆変換してデザインシステム部品化、Slack や Notion のデータから資料を自動更新。Claude Code や Cursor から Figma を直接読める仕組みです。",
+        "recommend": "まず読み取り側だけ試すのが吉。GA で無料、応募ポートフォリオの部品化が一気に速くなります。"
       },
       "section_titles": {
-        "hook": "shadcn v3.0",
-        "origin": "v4 パレット刷新",
-        "recommend": "5 分で 8 割借り"
+        "hook": "Figma社内の4活用法",
+        "origin": "駆け出し即試せる例",
+        "recommend": "読み取り側から無料で"
       },
       "section_descriptions": {
-        "hook": "作者公認 Figma キット v3.0 が 9/10 更新",
-        "origin": "Tailwind v4 で 2000+ 部品・8 スタイル",
-        "recommend": "Community 5 分導入で 8 割借り 2 割自分色"
+        "hook": "9/14 Figma 公式ブログが社内 MCP 活用例 4 種を公開",
+        "origin": "既存コード逆変換とデータ連携で作業が数分に短縮",
+        "recommend": "GA で無料、応募ポートフォリオの部品化に効きます"
       }
     }
   ]
