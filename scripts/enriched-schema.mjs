@@ -36,6 +36,7 @@ export const LIMITS = {
   opening_narration: { hard: [0, 30] },
   // Keeps the YouTube description (5000 bytes) far from its limit with 5 tools.
   website: { hard: [0, 200] },
+  ph_url: { hard: [0, 120] },
   totalNarration: { hard: 300 },
 };
 
@@ -72,24 +73,58 @@ const PH_URL_RE = /^https:\/\/www\.producthunt\.com\/(products|posts)\/[a-z0-9][
 // half-width katakana) are caught; control/invisible checks also run on the raw value.
 // C0/C1 control characters, including line breaks and tabs.
 export const CONTROL_CHARS_RE = /[\u{0}-\u{1F}\u{7F}-\u{9F}]/u;
-// Zero-width / invisible / bidi-control characters and the BOM:
-// soft hyphen, CGJ, Arabic letter mark, Hangul fillers, Khmer/Mongolian
-// invisibles, ZWSP..RLM, LS/PS + bidi embeddings/overrides, word joiner and
-// bidi isolates, variation selectors, ZWNBSP, halfwidth Hangul filler.
-export const INVISIBLE_CHARS_RE = /[\u{AD}\u{34F}\u{61C}\u{115F}\u{1160}\u{17B4}\u{17B5}\u{180B}-\u{180F}\u{200B}-\u{200F}\u{2028}-\u{202E}\u{2060}-\u{206F}\u{3164}\u{FE00}-\u{FE0F}\u{FEFF}\u{FFA0}]/u;
+// Invisible characters: every format character (Cf — ZWSP/ZWJ, bidi controls,
+// BOM, tag characters, interlinear annotations …), every default-ignorable code
+// point (variation selectors incl. the supplement, Hangul fillers, CGJ …) and
+// the line / paragraph separators.
+export const INVISIBLE_CHARS_RE = /[\p{Cf}\p{Default_Ignorable_Code_Point}\u{2028}\u{2029}]/u;
 const URL_RE = /[a-z][a-z0-9+.\-]*:\/\/|\bwww\./iu;
-// Any host-like "label.label" whose last label starts with a letter (evil.shop,
-// x.ai, Node.js). Real TLDs never start with a digit, so versions and decimals
-// (v2.10, 1.5GB) stay allowed.
-const DOMAIN_RE = /[a-z0-9](?:[a-z0-9\-]*[a-z0-9])?\.[a-z][a-z0-9\-]*[a-z0-9]/iu;
-// Defanged dots: evil[.]com, evil(.)com, evil{dot}com
-const DEFANGED_DOT_RE = /[\[\(\{]\s*(?:\.|dot)\s*[\]\)\}]/iu;
+// NFKC leaves the ideographic full stop (and maps its half-width form to it);
+// treat both as dots for the domain checks.
+const IDEOGRAPHIC_DOTS_G = /[\u{3002}\u{FF61}]/gu;
+// Host-like "label.label" (ASCII) whose last label starts with a letter:
+// evil.shop, x.ai, Node.js. Versions and decimals (v2.10, 1.5GB) stay allowed.
+const DOMAIN_SOURCE = "[a-z0-9](?:[a-z0-9\\-]*[a-z0-9])?(?:\\.[a-z0-9](?:[a-z0-9\\-]*[a-z0-9])?)*\\.[a-z][a-z0-9\\-]*[a-z0-9]";
+const DOMAIN_RE = new RegExp(DOMAIN_SOURCE, "iu");
+const DOMAIN_G = new RegExp(DOMAIN_SOURCE, "giu");
+// Non-ASCII labels on common TLDs (e.g. a Japanese label + ".com"); lowercase TLD only so ".NET" stays allowed.
+const INTL_DOMAIN_RE = /[\p{L}\p{N}][\p{L}\p{N}\-]*\.(?:com|net|org|jp|io|ai|app|dev|co|shop|store|site|online|xyz|info|biz|me|tv|ly)(?![\p{L}\p{N}])/u;
+// Disguised dots: evil[.]com, evil(dot)com, evil dot com (any case) and
+// evil . com / evil .com (lowercase TLD only, so "Unity .NET" stays legal).
+const COMMON_TLDS = "(?:com|net|org|jp|io|ai|app|dev|co|shop|store|site|online|xyz|info|biz|me|tv|ly)";
+const DEFANGED_BRACKET_RE = /[\[\(\{]\s*(?:\.|dot)\s*[\]\)\}]/iu;
+const DEFANGED_WORD_RE = new RegExp(`[a-z0-9\\-]+\\s+dot\\s+${COMMON_TLDS}\\b`, "iu");
+const DEFANGED_SPACED_RE = new RegExp(`[A-Za-z0-9\\-]+(?:\\s+\\.\\s*|\\s*\\.\\s+)${COMMON_TLDS}\\b`, "u");
+const isDefanged = (s) => DEFANGED_BRACKET_RE.test(s) || DEFANGED_WORD_RE.test(s) || DEFANGED_SPACED_RE.test(s);
+const IPV4_RE = /(?<![\d.])\d{1,3}(?:\.\d{1,3}){3}(?![\d.])/u;
 const MENTION_RE = /@[a-z0-9_]/iu;
 const HASHTAG_RE = /#[^\s#]/u;
+// Dotted product names that are not links (Node.js, ML.NET).
+const TECH_SUFFIX_RE = /\.(?:js|ts|jsx|tsx|mjs|cjs|py|rb|rs|sh|md|NET)$/u;
 // Ranking vocabulary that must not appear when the order is an editorial pick
-// (checked after NFKC): TOP5 / Top-5 / トップ5 / ランキング / 5位 / 一位 / 首位 /
-// 上位5 / ベスト5 / No.1 — kanji numerals included.
-const RANKING_WORDS_RE = /TOP[\s\-_]*\d|\u{30C8}\u{30C3}\u{30D7}[\s\-_]*[\d\u{4E00}\u{4E8C}\u{4E09}\u{56DB}\u{4E94}\u{516D}\u{4E03}\u{516B}\u{4E5D}\u{5341}]|\u{30E9}\u{30F3}\u{30AD}\u{30F3}\u{30B0}|\d+\s*\u{4F4D}|[\u{4E00}\u{4E8C}\u{4E09}\u{56DB}\u{4E94}\u{516D}\u{4E03}\u{516B}\u{4E5D}\u{5341}\u{767E}]+\s*\u{4F4D}|\u{9996}\u{4F4D}|\u{4E0A}\u{4F4D}\s*[\d\u{4E00}\u{4E8C}\u{4E09}\u{56DB}\u{4E94}\u{516D}\u{4E03}\u{516B}\u{4E5D}\u{5341}]|\u{30D9}\u{30B9}\u{30C8}[\s\-_]*[\d\u{4E00}\u{4E8C}\u{4E09}\u{56DB}\u{4E94}\u{516D}\u{4E03}\u{516B}\u{4E5D}\u{5341}]|\bNo\.?\s*\d/iu;
+// (checked after NFKC). Katakana/Latin left boundaries keep デスクトップ3台 and
+// Laptop 4 GB legal; 位置 and 三位一体 are not ranks; "No 2FA" is not "No.2".
+const RANK_SEP = "[\\s\\-_:\\u{30FB}\\u{2013}\\u{2014}]*";
+const KANJI_DIGIT = "[\\u{4E00}\\u{4E8C}\\u{4E09}\\u{56DB}\\u{4E94}\\u{516D}\\u{4E03}\\u{516B}\\u{4E5D}\\u{5341}]";
+const RANKING_WORDS_RE = new RegExp(
+  [
+    `(?<![a-z])TOP${RANK_SEP}\\d`,
+    `(?<![\\u{30A0}-\\u{30FF}])\\u{30C8}\\u{30C3}\\u{30D7}${RANK_SEP}(?:\\d|${KANJI_DIGIT})`,
+    "\\u{30E9}\\u{30F3}\\u{30AD}\\u{30F3}\\u{30B0}",
+    "\\bRANKING\\b",
+    "\\bRANK\\s*#?\\d",
+    "\\d+\\s*\\u{4F4D}(?!\\u{7F6E})",
+    `(?:${KANJI_DIGIT}|\\u{767E})+\\s*\\u{4F4D}(?!\\u{7F6E}|\\u{4E00}\\u{4F53})`,
+    "\\u{9996}\\u{4F4D}(?!\\u{7F6E})",
+    `\\u{4E0A}\\u{4F4D}\\s*(?:\\d|${KANJI_DIGIT})`,
+    `\\u{30D9}\\u{30B9}\\u{30C8}${RANK_SEP}(?:\\d|${KANJI_DIGIT})`,
+    `\\bBEST${RANK_SEP}\\d`,
+    "\\u{30CA}\\u{30F3}\\u{30D0}\\u{30FC}\\s*(?:\\u{30EF}\\u{30F3}|\\d)",
+    "\\bNo\\.\\s*\\d",
+    "\\bNo\\d",
+  ].join("|"),
+  "iu"
+);
 
 // Example values in docs/routine-prompt.md; copying them verbatim is a mistake.
 const TEMPLATE_PLACEHOLDERS = {
@@ -105,16 +140,46 @@ export function normalizeForChecks(value) {
   return String(value ?? "").normalize("NFKC");
 }
 
-/** Problems with a displayed text value (links, domains, mentions, hashtags, control/invisible chars). */
-export function textSafetyProblems(value, { allowDomains = false } = {}) {
+export function hostOf(url) {
+  try {
+    return new URL(url).hostname.toLowerCase();
+  } catch {
+    return null;
+  }
+}
+
+/** Dotted tokens in a product name that are neither tech names nor the official host. */
+function foreignDomains(dotted, allowedHost) {
+  return (dotted.match(DOMAIN_G) || []).filter((token) => {
+    if (TECH_SUFFIX_RE.test(token)) return false;
+    if (!allowedHost) return false;
+    const t = token.toLowerCase();
+    return !(allowedHost === t || allowedHost.endsWith(`.${t}`) || t.endsWith(`.${allowedHost}`));
+  });
+}
+
+/**
+ * Problems with a displayed text value (links, domains, IPs, mentions, hashtags,
+ * control/invisible chars). `allowDomains` is for tool names: dotted product
+ * names are allowed when they are tech names (Node.js) or match `allowedHost`
+ * (the official site's host, e.g. X.ai for https://x.ai).
+ */
+export function textSafetyProblems(value, { allowDomains = false, allowedHost = null } = {}) {
   if (typeof value !== "string") return [];
   const norm = normalizeForChecks(value);
+  const dotted = norm.replace(IDEOGRAPHIC_DOTS_G, ".");
   const problems = [];
   if (CONTROL_CHARS_RE.test(value) || CONTROL_CHARS_RE.test(norm)) problems.push("contains a line break or control character");
-  if (INVISIBLE_CHARS_RE.test(value) || INVISIBLE_CHARS_RE.test(norm)) problems.push("contains an invisible (zero-width / bidi) character");
-  if (URL_RE.test(norm)) problems.push("contains a URL");
-  else if (DEFANGED_DOT_RE.test(norm)) problems.push("contains a defanged domain");
-  else if (!allowDomains && DOMAIN_RE.test(norm)) problems.push("contains a domain name (put URLs in website only)");
+  if (INVISIBLE_CHARS_RE.test(value) || INVISIBLE_CHARS_RE.test(norm)) problems.push("contains an invisible (zero-width / bidi / tag) character");
+  if (URL_RE.test(dotted)) problems.push("contains a URL");
+  else if (isDefanged(dotted)) problems.push("contains a defanged domain");
+  else if (IPV4_RE.test(dotted)) problems.push("contains an IP address");
+  else if (allowDomains) {
+    const foreign = foreignDomains(dotted, allowedHost);
+    if (foreign.length > 0) problems.push(`contains a domain that is not the official site (${foreign.join(", ")})`);
+  } else if (DOMAIN_RE.test(dotted) || INTL_DOMAIN_RE.test(dotted)) {
+    problems.push("contains a domain name (put URLs in website only)");
+  }
   if (MENTION_RE.test(norm)) problems.push("contains an @mention");
   if (HASHTAG_RE.test(norm)) problems.push("contains a #hashtag");
   return problems;
@@ -243,16 +308,22 @@ function checkText(errors, label, value, opts) {
   for (const problem of textSafetyProblems(value, opts)) errors.push(`${label} ${problem}`);
 }
 
+/** Stable identity of a snapshot post (ids can be empty in odd feed entries). */
+function postKey(p) {
+  return String(p.id || p.phUrl || p.url || p.name || "");
+}
+
 /** Distinct new AI launches in a snapshot for a video date (freshness recomputed, not trusted). */
 export function snapshotFreshAiCount(snapshot, videoDate) {
-  const ids = new Set();
+  const keys = new Set();
   for (const day of snapshot?.days || []) {
     for (const p of day.posts || []) {
       const ai = p.isAI === true || p.inAiCategory === true;
-      if (ai && isFresh(p.publishedAt, videoDate)) ids.add(String(p.id ?? p.phUrl ?? p.name));
+      const key = postKey(p);
+      if (ai && key && isFresh(p.publishedAt, videoDate)) keys.add(key);
     }
   }
-  return ids.size;
+  return keys.size;
 }
 
 /**
@@ -275,10 +346,20 @@ function sameUrl(a, b) {
   return clean(a) !== "" && clean(a) === clean(b);
 }
 
+function findPostByUrl(snapshot, url) {
+  for (const day of snapshot?.days || []) {
+    for (const p of day.posts || []) {
+      if (sameUrl(p.phUrl || p.url, url)) return p;
+    }
+  }
+  return null;
+}
+
 /**
  * @param {object} data parsed data/enriched-ai-tools.json
  * @param {{ today?: string, checkDate?: boolean, snapshot?: object | null }} opts
- *   snapshot = parsed data/product-hunt-daily.json when available (cross-checks skip days and ranking ranks)
+ *   snapshot = the Product Hunt snapshot the routine worked from (data/product-hunt-daily.json).
+ *   It cross-checks skip days, ranking ranks and pickup candidates.
  * @returns {{ errors: string[], warnings: string[] }}
  */
 export function validateEnriched(data, { today = todayJst(), checkDate = true, snapshot = null } = {}) {
@@ -329,12 +410,24 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true, s
   if (!SOURCE_MODES.includes(mode)) {
     errors.push(`source.mode must be one of ${SOURCE_MODES.join(" / ")} (got ${JSON.stringify(mode)})`);
   }
+  const snapshotForToday = dateOk && snapshot && snapshot.forVideoDate === data.date ? snapshot : null;
   const expectedPhDate = dateOk ? expectedRankingDate(data.date) : null;
+  let rankingDay = null;
   if (mode === "ranking") {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(source.ph_date || "")) {
       errors.push("source.ph_date (Pacific date of the ranking, YYYY-MM-DD) is required in ranking mode");
     } else if (expectedPhDate && source.ph_date !== expectedPhDate) {
       errors.push(`source.ph_date ${source.ph_date} must be ${expectedPhDate} (the last closed Pacific day at the ${data.date} routine)`);
+    }
+    // Ranks can only come from the official API ranking of that day.
+    rankingDay = (snapshotForToday?.days || []).find((d) => d.date === source.ph_date && d.source === "api" && d.status === "final") || null;
+    if (!rankingDay) {
+      const why = !snapshot
+        ? "there is no Product Hunt snapshot"
+        : !snapshotForToday
+          ? `the snapshot is for ${snapshot.forVideoDate}`
+          : `the snapshot has no final API ranking for ${source.ph_date}`;
+      errors.push(`ranking mode needs the final Product Hunt API ranking in the snapshot for ${data.date}, but ${why} — use pickup mode instead`);
     }
   }
 
@@ -383,7 +476,7 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true, s
     if (t.rank !== i + 1) errors.push(`${at}.rank must be ${i + 1} (tools are listed in video order)`);
 
     checkLength(errors, warnings, `${at}.name`, t.name, LIMITS.name);
-    checkText(errors, `${at}.name`, t.name, { allowDomains: true });
+    checkText(errors, `${at}.name`, t.name, { allowDomains: true, allowedHost: hostOf(t.website) });
     const key = String(t.name ?? "").normalize("NFKC").trim().toLowerCase();
     if (key && seenNames.has(key)) errors.push(`${at}.name "${t.name}" is duplicated`);
     seenNames.add(key);
@@ -410,6 +503,8 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true, s
     }
     if (!PH_URL_RE.test(t.ph_url || "")) {
       errors.push(`${at}.ph_url must be https://www.producthunt.com/products/<slug> or /posts/<slug> without a query (got ${JSON.stringify(t.ph_url)})`);
+    } else if (charLength(t.ph_url) > LIMITS.ph_url.hard[1]) {
+      errors.push(`${at}.ph_url: ${charLength(t.ph_url)} chars (allowed up to ${LIMITS.ph_url.hard[1]})`);
     }
     if (t.image_url != null && t.image_url !== "" && !isHttpsUrl(t.image_url)) {
       errors.push(`${at}.image_url must be an https URL or null`);
@@ -458,20 +553,39 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true, s
         break;
       }
     }
-    // Ranks must be the real ones when the snapshot holds that day's ranking.
-    const day = (snapshot?.days || []).find((d) => d.date === source.ph_date && d.source === "api");
-    if (day) {
+    if (rankingDay) {
       tools.forEach((t, i) => {
         if (!t || !Number.isInteger(t.ph_rank)) return;
-        const post = (day.posts || []).find((p) => p.dailyRank === t.ph_rank);
+        const post = (rankingDay.posts || []).find((p) => p.dailyRank === t.ph_rank);
         if (!post) {
           errors.push(`tools[${i}].ph_rank ${t.ph_rank} is not in the Product Hunt ${source.ph_date} ranking snapshot`);
         } else if (!sameUrl(post.phUrl || post.url, t.ph_url)) {
           errors.push(`tools[${i}] ph_rank ${t.ph_rank} is ${post.phUrl || post.url} in the snapshot, not ${t.ph_url}`);
+        } else if (dateOk && !isFresh(post.publishedAt, data.date)) {
+          errors.push(`tools[${i}] was published ${post.publishedAt} per the snapshot — not a new launch for ${data.date}`);
         }
       });
-    } else if (source.ph_date) {
-      warnings.push(`ranking could not be cross-checked: no API snapshot day for ${source.ph_date}`);
+    }
+  }
+
+  if (mode === "pickup") {
+    // Pickup candidates must come from the snapshot (and be new per the snapshot, not per the routine).
+    if (snapshotForToday) {
+      tools.forEach((t, i) => {
+        if (!t || typeof t.ph_url !== "string") return;
+        const post = findPostByUrl(snapshotForToday, t.ph_url);
+        if (!post) {
+          errors.push(`tools[${i}].ph_url ${t.ph_url} is not in the Product Hunt snapshot for ${data.date}`);
+        } else if (!isFresh(post.publishedAt, data.date)) {
+          errors.push(`tools[${i}] was published ${post.publishedAt} per the snapshot — not a new launch for ${data.date}`);
+        } else if (typeof t.ph_published_at === "string" && Date.parse(t.ph_published_at) !== Date.parse(post.publishedAt)) {
+          warnings.push(`tools[${i}].ph_published_at differs from the snapshot (${post.publishedAt})`);
+        }
+      });
+    } else if (dateOk) {
+      warnings.push(
+        `pickup tools could not be cross-checked: ${snapshot ? `the snapshot is for ${snapshot.forVideoDate}, not ${data.date}` : "no Product Hunt snapshot"}`
+      );
     }
   }
 

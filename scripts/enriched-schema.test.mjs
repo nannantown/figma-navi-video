@@ -57,13 +57,28 @@ const pickup = (count, toolOverrides = {}) =>
 
 const errorsOf = (data, today = "2026-09-15") => validateEnriched(data, { today }).errors.join("\n");
 
-test("a well-formed ranking file passes with the date check", () => {
-  assert.deepEqual(validateEnriched(valid(), { today: "2026-09-15" }).errors, []);
+/** The final API ranking a ranking-mode file must come from. */
+const apiSnapshotFor = (data) => ({
+  schemaVersion: 2,
+  forVideoDate: data.date,
+  source: "api",
+  days: [
+    {
+      date: data.source.ph_date,
+      status: "final",
+      source: "api",
+      posts: data.tools.map((t) => ({ id: `id-${t.rank}`, dailyRank: t.ph_rank, phUrl: t.ph_url, publishedAt: t.ph_published_at, isAI: true })),
+    },
+  ],
+});
+
+test("a well-formed ranking file passes with the date check and its API snapshot", () => {
+  assert.deepEqual(validateEnriched(valid(), { today: "2026-09-15", snapshot: apiSnapshotFor(valid()) }).errors, []);
 });
 
 test("stale date is an error unless the date check is off", () => {
   assert.match(errorsOf(valid(), "2026-09-16"), /does not match today/);
-  assert.deepEqual(validateEnriched(valid(), { today: "2026-09-16", checkDate: false }).errors, []);
+  assert.deepEqual(validateEnriched(valid(), { today: "2026-09-16", checkDate: false, snapshot: apiSnapshotFor(valid()) }).errors, []);
 });
 
 test("ranking mode needs exactly five tools in video order", () => {
@@ -113,7 +128,7 @@ test("pickup mode must not use ranking vocabulary anywhere", () => {
   assert.match(errorsOf(pickup(3, { narration: "今日のランキング1位のAIツールです。議事録づくりの時間がほぼゼロになります。" })), /uses ranking words/);
   // Ranking mode only warns.
   const ranked = valid({ tools: [tool(1, { narration: "総合1位のAIツールです。議事録づくりの時間がほぼゼロになります。" }), tool(2), tool(3), tool(4), tool(5)] });
-  const res = validateEnriched(ranked, { today: "2026-09-15" });
+  const res = validateEnriched(ranked, { today: "2026-09-15", snapshot: apiSnapshotFor(ranked) });
   assert.deepEqual(res.errors, []);
   assert.match(res.warnings.join("\n"), /mentions a rank/);
 });

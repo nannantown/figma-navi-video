@@ -104,14 +104,16 @@ test("ranking ph_rank must be integers >= 1, unique and ascending", () => {
   assert.match(run(zero, null).errors.join("\n"), /integer >= 1/);
 });
 
-test("ranking ranks and URLs must match the API snapshot for that day when it exists", () => {
-  const apiDay = {
-    date: "2026-09-13",
-    status: "final",
-    source: "api",
-    posts: [2, 3, 4, 5, 6].map((r) => ({ id: String(r), dailyRank: r, phUrl: `https://www.producthunt.com/posts/tool-${r - 1}`, isAI: true, publishedAt: FRESH })),
-  };
-  const snapshot = { schemaVersion: 2, forVideoDate: "2026-09-15", source: "api", days: [apiDay] };
+const apiRankingDay = (overrides = {}) => ({
+  date: "2026-09-13",
+  status: "final",
+  source: "api",
+  posts: [2, 3, 4, 5, 6].map((r) => ({ id: String(r), dailyRank: r, phUrl: `https://www.producthunt.com/posts/tool-${r - 1}`, isAI: true, publishedAt: FRESH })),
+  ...overrides,
+});
+
+test("ranking ranks and URLs must match the final API ranking in the snapshot for the video date", () => {
+  const snapshot = { schemaVersion: 2, forVideoDate: "2026-09-15", source: "api", days: [apiRankingDay()] };
   assert.deepEqual(run(ranking(), snapshot).errors, []);
 
   const wrongUrl = ranking({ tools: [tool(1, { ph_url: "https://www.producthunt.com/posts/someone-else" }), tool(2), tool(3), tool(4), tool(5)] });
@@ -120,7 +122,23 @@ test("ranking ranks and URLs must match the API snapshot for that day when it ex
   const inventedRank = ranking({ tools: [tool(1), tool(2), tool(3), tool(4), tool(5, { ph_rank: 40 })] });
   assert.match(run(inventedRank, snapshot).errors.join("\n"), /ph_rank 40 is not in the Product Hunt 2026-09-13 ranking snapshot/);
 
-  assert.match(run(ranking(), null).warnings.join("\n"), /ranking could not be cross-checked/);
+  const staleLaunch = { ...snapshot, days: [apiRankingDay({ posts: apiRankingDay().posts.map((p) => ({ ...p, publishedAt: p.dailyRank === 2 ? STALE : FRESH })) })] };
+  assert.match(run(ranking(), staleLaunch).errors.join("\n"), /tools\[0\] was published 2026-09-10T00:01:00-07:00 per the snapshot/);
+});
+
+test("ranking mode is refused without a final API ranking for the video date (no invented ranks)", () => {
+  assert.match(run(ranking(), null).errors.join("\n"), /ranking mode needs the final Product Hunt API ranking .* there is no Product Hunt snapshot/);
+
+  const feedOnly = snapshotFor("2026-09-15", [feedPost(1), feedPost(2)]);
+  feedOnly.days[0].date = "2026-09-13";
+  assert.match(run(ranking(), feedOnly).errors.join("\n"), /has no final API ranking for 2026-09-13/);
+
+  // Yesterday's snapshot whose in-progress day happens to be ph_date: provisional ranks are not accepted.
+  const stale = { schemaVersion: 2, forVideoDate: "2026-09-14", source: "api", days: [apiRankingDay({ status: "in_progress" })] };
+  assert.match(run(ranking(), stale).errors.join("\n"), /the snapshot is for 2026-09-14/);
+
+  const provisional = { schemaVersion: 2, forVideoDate: "2026-09-15", source: "api", days: [apiRankingDay({ status: "in_progress" })] };
+  assert.match(run(ranking(), provisional).errors.join("\n"), /has no final API ranking for 2026-09-13/);
 });
 
 // --- Recommended 3: ranking vocabulary after NFKC ------------------------------
@@ -168,4 +186,75 @@ test("domains of any TLD, full-width URLs and defanged dots are rejected in text
 test("website is limited to 200 characters", () => {
   const long = pickup({ website: `https://tool.example.com/${"a".repeat(200)}` });
   assert.match(run(long, null).errors.join("\n"), /website: \d+ chars \(allowed up to 200\)/);
+});
+
+// --- Review round 2: pickup cross-check, bypasses, misfires, limits -----------
+
+test("pickup tools must be in the snapshot for the video date and new per the snapshot's publish time", () => {
+  const data = pickup();
+  const posts = data.tools.map((t, i) => feedPost(i + 1, { phUrl: t.ph_url }));
+  assert.deepEqual(run(data, snapshotFor("2026-09-15", posts)).errors, []);
+
+  const missing = snapshotFor("2026-09-15", posts.slice(0, 2));
+  assert.match(run(data, missing).errors.join("\n"), /tools\[2\]\.ph_url https:\/\/www\.producthunt\.com\/posts\/tool-3 is not in the Product Hunt snapshot for 2026-09-15/);
+
+  const oldLaunch = snapshotFor("2026-09-15", posts.map((p, i) => (i === 0 ? { ...p, publishedAt: STALE } : p)));
+  assert.match(run(data, oldLaunch).errors.join("\n"), /tools\[0\] was published 2026-09-10T00:01:00-07:00 per the snapshot/);
+
+  const differs = snapshotFor("2026-09-15", posts.map((p) => ({ ...p, publishedAt: "2026-09-13T08:00:00-07:00" })));
+  const res = run(data, differs);
+  assert.deepEqual(res.errors, []);
+  assert.match(res.warnings.join("\n"), /ph_published_at differs from the snapshot/);
+
+  assert.match(run(data, null).warnings.join("\n"), /pickup tools could not be cross-checked: no Product Hunt snapshot/);
+});
+
+test("snapshot posts without ids are still counted separately", () => {
+  const snapshot = snapshotFor("2026-09-15", [feedPost(1, { id: "" }), feedPost(2, { id: "" })]);
+  assert.equal(skipSnapshotCheck(snapshot, "2026-09-15").freshAi, 2);
+  assert.match(run(skipDay(), snapshot).errors.join("\n"), /skip is not allowed/);
+});
+
+test("domain bypasses with ideographic dots, non-ASCII labels, spaced or spelled-out dots and IPs are rejected", () => {
+  for (const value of ["evil。com で配布", "evil｡com で配布", "お名前.com で取得", "evil dot com を見て", "evil . com を見て", "evil .com を見て", "192.168.0.1 に接続"]) {
+    assert.ok(textSafetyProblems(value).length > 0, value);
+  }
+  // Japanese sentences and tech words stay legal.
+  for (const value of ["議事録を自動で作るAIツールです。Slackと連携できます。", "Unity と .NET 向けの開発支援", "Unity .NET 対応", "v2.10対応の要約AI", "1.5GBまで無料"]) {
+    assert.deepEqual(textSafetyProblems(value), [], value);
+  }
+});
+
+test("invisible tag characters, variation selector supplements and interlinear annotations are rejected", () => {
+  for (const value of ["見えない\u{E0041}\u{E0042}タグ", "異体字\u{E0100}セレクタ", "注釈\u{FFF9}記号\u{FFFB}", "結合\u{200D}子"]) {
+    assert.ok(textSafetyProblems(value).some((p) => /invisible/.test(p)), value);
+  }
+});
+
+test("dotted tool names are allowed only for tech names or the official site's host", () => {
+  assert.deepEqual(textSafetyProblems("Node.js Copilot", { allowDomains: true, allowedHost: "nodecopilot.dev" }), []);
+  assert.deepEqual(textSafetyProblems("X.ai Grok", { allowDomains: true, allowedHost: "x.ai" }), []);
+  assert.deepEqual(textSafetyProblems("Cal.com", { allowDomains: true, allowedHost: "cal.com" }), []);
+  assert.deepEqual(textSafetyProblems("Perplexity.ai", { allowDomains: true, allowedHost: "www.perplexity.ai" }), []);
+  assert.deepEqual(textSafetyProblems("ML.NET Assistant", { allowDomains: true, allowedHost: "dotnet.microsoft.com" }), []);
+  const spam = textSafetyProblems("Buy at cheap-pills.shop/now", { allowDomains: true, allowedHost: "tool.example.com" });
+  assert.match(spam.join("\n"), /not the official site \(cheap-pills\.shop\)/);
+
+  const data = pickup();
+  data.tools[0].name = "Deals at cheap-pills.shop";
+  assert.match(run(data, null).errors.join("\n"), /tools\[0\]\.name contains a domain that is not the official site/);
+});
+
+test("ranking vocabulary: English, ナンバーワン and separators are caught; desktop/laptop/位置/三位一体/No 2FA are not", () => {
+  for (const phrase of ["Best 5 AI tools", "best5", "Ranking of the day", "rank 1 on launch", "ナンバーワンの要約AI", "ナンバー1のツール", "トップ・5", "Top\u{2013}5", "Top:5", "今日のトップ５"]) {
+    assert.equal(hasRankingWords(phrase), true, phrase);
+  }
+  for (const phrase of ["デスクトップ3台で同期", "ラップトップ2台に対応", "Laptop 4 GB でも動く", "Stop 3 times", "三位一体の設計", "同一位置に保存", "No 2FA required", "Rank Math 連携"]) {
+    assert.equal(hasRankingWords(phrase), false, phrase);
+  }
+});
+
+test("ph_url is limited to 120 characters", () => {
+  const long = pickup({ ph_url: `https://www.producthunt.com/posts/${"a".repeat(100)}` });
+  assert.match(run(long, null).errors.join("\n"), /ph_url: \d+ chars \(allowed up to 120\)/);
 });
