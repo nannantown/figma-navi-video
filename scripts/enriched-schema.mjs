@@ -433,7 +433,7 @@ export function buildMeta(data) {
     bigLabel: ranking ? `TOP${count}` : `${count}選`,
     sourceLabel: ranking
       ? `Product Hunt ${phDay} ランキングの AI ツール上位${count}本`
-      : "Product Hunt の新着（直近48時間の公開）から厳選",
+      : "Product Hunt の直近48時間の新着から厳選",
     openingSourceLabel: ranking ? `Product Hunt ${phDay} の AI ツール上位` : "Product Hunt の新着から厳選",
     method: data.discovery?.method || null,
   };

@@ -41,7 +41,7 @@ const pickupMeta = (count) => ({
   count,
   headline: `新作AIツール ${count}選`,
   titleTag: `新作AIツール${count}選`,
-  sourceLabel: "Product Hunt の新着（直近48時間の公開）から厳選",
+  sourceLabel: "Product Hunt の直近48時間の新着から厳選",
 });
 
 const data = (names, meta = rankingMeta) => ({ meta, tools: names.map((n, i) => baseTool(i + 1, n)) });
@@ -85,7 +85,7 @@ test("YouTube description links every tool to Product Hunt; Instagram keeps a pl
     assert.ok(youtube.description.includes(`公式サイト: ${t.website}`), t.name);
   }
   assert.match(youtube.description, /出典: Product Hunt https:\/\/www\.producthunt\.com\//);
-  assert.match(instagram, /出典: Product Hunt（/);
+  assert.match(instagram, /出典: Product Hunt 9\/13 ランキングの AI ツール上位5本/);
   assert.ok(!/https?:\/\//.test(instagram), "IG captions carry no links");
 });
 

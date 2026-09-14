@@ -21,36 +21,44 @@
 
 ## 自動生成されるキャプションの例（検証用サンプル 2026-09-15 分）
 
+呼び方はモードで変わる。**ranking（公式 API の日）は「TOP5」、pickup（公式フィードの日）は「N選」で、pickup では TOP・トップ・ランキング・◯位 を使わない。**
+
 ### YouTube タイトル（100 字以内。超えそうなときはツール名を減らす）
 
 ```
-【新作AIツールTOP5】Resurf・Perplexity Hybrid Compute・Cognition SWE-2 ほか｜2026/09/15 #Shorts
+ranking: 【新作AIツールTOP5】Resurf・Perplexity Hybrid Compute・Cognition SWE-2 ほか｜2026/09/15 #Shorts
+pickup:  【新作AIツール3選】Resurf・Visiby・GhostWriter by MyHandler｜2026/09/15 #Shorts
 ```
 
 2026-09-13・14 の YouTube 投稿は、タイトルが 100 字を超えて失敗していた（`invalid or empty video title`）。新しいタイトルは必ず 100 字以内に収める。
 
-### YouTube 概要欄
+### YouTube 概要欄（ranking の例。各ツールに Product Hunt ページへのリンクを付ける）
 
 ```
-2026/09/15 の新作AIツール TOP5（Product Hunt 9/13 ランキングより）
+2026/09/15 の新作AIツール TOP5（Product Hunt 9/13 ランキングの AI ツール上位5本）
 
 1. Resurf｜メモもリンクもPDFも1か所に保存
    誰向け: Macユーザー ／ 料金: 無料プランあり
-   https://resurf.so/
+   公式サイト: https://resurf.so/
+   Product Hunt: https://www.producthunt.com/products/resurf-2
 
 2. Perplexity Hybrid Compute｜調べ物はクラウド、個人情報はMacで処理
    誰向け: Perplexity有料会員 ／ 料金: Pro以上の有料プラン
-   https://www.perplexity.ai/hub/products/hybrid-compute
+   公式サイト: https://www.perplexity.ai/hub/products/hybrid-compute
+   Product Hunt: https://www.producthunt.com/products/perplexity-ai
 （3〜5 本目も同じ形式）
 
-出典: Product Hunt。料金や仕様は変わることがあるので、使う前に公式サイトで確認してください。
+出典: Product Hunt https://www.producthunt.com/
+料金や仕様は変わることがあるので、使う前に公式サイトで確認してください。
 毎朝、使える新作AIツールを1分で紹介しています。
 気になるツールは保存して、あとで試してみてください。
 
 #AIツール #生成AI #ProductHunt #新作AIツール #Shorts
 ```
 
-### Instagram キャプション
+pickup の日は 1 行目が「2026/09/15 の新作AIツール 3選（Product Hunt の直近48時間の新着から厳選）」になる。
+
+### Instagram キャプション（ranking の例。リンクは効かないので出典は文字で書く）
 
 ```
 新作AIツール TOP5（9/15）
@@ -66,11 +74,14 @@
 5. GhostWriter by MyHandler：2タップで文章を下書き
    Windowsユーザー向け／無料プランあり／myhandler.ai
 
-Product Hunt 9/13 ランキングより。料金や仕様は変わることがあるので、公式サイトで確認してください。
+出典: Product Hunt 9/13 ランキングの AI ツール上位5本
+料金や仕様は変わることがあるので、公式サイトで確認してください。
 気になるツールは保存して、あとで試してみてください。
 
 #AIツール #生成AI #業務効率化 #便利ツール #ProductHunt
 ```
+
+pickup の日は 1 行目が「新作AIツール 3選（9/15）」、出典の行が「出典: Product Hunt の直近48時間の新着から厳選」になる。
 
 ## プロフィール・チャンネル説明文の案
 
@@ -79,7 +90,7 @@ Product Hunt 9/13 ランキングより。料金や仕様は変わることが�
 **案 A（シンプル）**
 
 ```
-毎朝、使える新作AIツールを5つ紹介
+毎朝、公開されたばかりの使えるAIツールを紹介
 名前・できること・誰向け・料金を1分で
 気になったら保存して、あとで試そう
 出典: Product Hunt
@@ -89,14 +100,14 @@ Product Hunt 9/13 ランキングより。料金や仕様は変わることが�
 
 ```
 「AIツール、多すぎて追えない」人へ
-Product Hunt の新作から、仕事で使える5本を毎朝厳選
+Product Hunt の新作から、仕事で使えるものを毎朝厳選
 無料で試せるかも必ずチェック
 ```
 
 ### YouTube チャンネル説明文
 
 ```
-世界中の新作が集まる Product Hunt から、仕事や創作にすぐ使える AI ツールを毎朝 5 本、1 分で紹介するチャンネルです。
+世界中の新作が集まる Product Hunt から、公開されたばかりで仕事や創作にすぐ使える AI ツールを、毎朝 1 分で紹介するチャンネルです。
 
 ・何ができるか
 ・誰に向いているか

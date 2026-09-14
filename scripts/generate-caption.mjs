@@ -132,7 +132,8 @@ export function buildInstagramCaption(data) {
   }
   const tail = [
     "",
-    `出典: Product Hunt（${cleanText(meta.sourceLabel)}）`,
+    // sourceLabel always starts with "Product Hunt …" (see buildMeta).
+    `出典: ${cleanText(meta.sourceLabel)}`,
     "料金や仕様は変わることがあるので、公式サイトで確認してください。",
     "気になるツールは保存して、あとで試してみてください。",
     "",

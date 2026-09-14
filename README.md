@@ -1,6 +1,6 @@
 # figma-navi-video
 
-毎朝の縦型ショート動画「**新作AIツール TOP5**」（出典: Product Hunt）を作り、YouTube Shorts と Instagram Reels に投稿する。sns-hub の**ジャンル試行 #1**（2026-09-15 開始予定、判定 2026-09-29）。
+毎朝の縦型ショート動画「**新作AIツール TOP5**」（公式 API の日）/「**新作AIツール N選**」（公式フィードの日、2〜5 本）を作り、YouTube Shorts と Instagram Reels に投稿する。出典は Product Hunt で、扱うのは直近 48 時間以内に公開されたツールだけ。sns-hub の**ジャンル試行 #1**（2026-09-15 開始予定、判定 2026-09-29）。
 
 - リポ名は旧ジャンル（Figmaナビ販促のデザインニュース, 2026-04〜09）の名残。改名は別途
 - 戦略・ペルソナ・判定ルール: [docs/strategy.md](docs/strategy.md)
@@ -35,7 +35,7 @@ GH_PAT                    # 週次の IG token 延長用
 PRODUCT_HUNT_API_TOKEN    # 任意。Product Hunt の developer token。あると ranking モード（順位・票数・サムネイル）
 ```
 
-値の取得方法は親 `sns-hub/CLAUDE.md` と `sns-hub/docs/shared-patterns.md` を参照。Product Hunt API の規約には「商用目的での利用は hello@producthunt.com に要連絡」とあるため、トークンを登録するかどうかはオーナーが判断する。
+値の取得方法は親 `sns-hub/CLAUDE.md` と `sns-hub/docs/shared-patterns.md` を参照。Product Hunt のデータ（公式 API・公式フィード）の利用条件はオーナー確認中（`docs/strategy.md` の「取得モード」）。トークンを登録するかどうかもオーナーが判断する。
 
 ## Verify
 
