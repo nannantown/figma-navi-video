@@ -52,6 +52,7 @@ export const ToolCard: React.FC<Props> = ({ tool, localFrame, totalTools, source
 
   return (
     <AbsoluteFill
+      lang="ja"
       style={{
         background: COLORS.background,
         fontFamily: FONT_FAMILY,
@@ -180,7 +181,8 @@ export const ToolCard: React.FC<Props> = ({ tool, localFrame, totalTools, source
             WebkitLineClamp: 2,
             WebkitBoxOrient: "vertical",
             overflow: "hidden",
-            wordBreak: "break-word",
+            wordBreak: "auto-phrase",
+            overflowWrap: "anywhere",
             textWrap: "balance",
           }}
         >
@@ -197,6 +199,10 @@ export const ToolCard: React.FC<Props> = ({ tool, localFrame, totalTools, source
           fontWeight: 700,
           color: COLORS.textSub,
           lineHeight: 1.35,
+          // Japanese phrase-aware wrapping (needs lang="ja"; Chrome ≥ 119,
+          // Remotion's headless Chrome is 144): no "個 / 人情報" splits.
+          wordBreak: "auto-phrase",
+          overflowWrap: "anywhere",
           textWrap: "balance",
         }}
       >

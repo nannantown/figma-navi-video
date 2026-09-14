@@ -166,6 +166,18 @@ export function renderMarkdown(history, { today, plannedStart = PLANNED_START })
   }
   lines.push("");
   lines.push("※ IG insights は最大 48 時間遅れる。未取得の回は中央値・合計から除外している。");
+  lines.push("");
+
+  // Dedupe input for the routine: tools featured in the last 30 days.
+  const featured = [];
+  for (const v of videos.filter((x) => x.date >= addDays(today, -30) && x.date <= today)) {
+    for (const t of v.tools || []) {
+      if (t?.name && !featured.includes(t.name)) featured.push(t.name);
+    }
+  }
+  lines.push("## 直近 30 日に紹介したツール（再掲しない）");
+  lines.push("");
+  lines.push(featured.length > 0 ? featured.join(" / ") : "（まだなし）");
   return lines.join("\n");
 }
 

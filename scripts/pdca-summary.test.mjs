@@ -82,4 +82,5 @@ test("renderMarkdown shows IG median + saves and the design-news baseline", () =
   assert.match(md, /\| IG \| #1 \| 新作AIツールTOP5（Product Hunt） \| 2026-09-15 \| Day 2 \/ 14 \| 09-15\.\.09-16 \(n=1\) \| 120 \| 7 \|/);
   assert.match(md, /比較（旧ジャンル: デザインニュース/);
   assert.match(md, /\| 2026-09-15 \| ai-tools-top5 \| — \| Resurf \| 120 \| 7 \| 2 \| 3 \|/);
+  assert.match(md, /## 直近 30 日に紹介したツール（再掲しない）\n\nResurf/);
 });
