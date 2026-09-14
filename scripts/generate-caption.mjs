@@ -98,28 +98,49 @@ export function buildYouTubeTags(tools) {
   return out;
 }
 
-export function buildYouTubeDescription(data) {
+/**
+ * YouTube description, packed so the attribution always survives the 5000-byte
+ * limit: optional lines are dropped first (CTA → who/pricing → official site →
+ * long descriptions); every tool keeps its "Product Hunt: <url>" link and the
+ * "出典: Product Hunt" line always stays.
+ */
+export function buildYouTubeDescription(data, { maxBytes = YT_DESCRIPTION_MAX_BYTES } = {}) {
   const { meta, tools } = data;
-  const lines = [`${meta.date.replace(/-/g, "/")} の${cleanText(meta.headline)}（${cleanText(meta.sourceLabel)}）`, ""];
-  for (const t of tools) {
-    lines.push(`${t.rank}. ${cleanText(t.name)}｜${cleanText(t.description)}`);
-    lines.push(`   誰向け: ${cleanText(t.who)} ／ 料金: ${cleanText(t.pricingLabel)}`);
-    lines.push(`   公式サイト: ${t.website}`);
-    lines.push(`   Product Hunt: ${t.phUrl}`);
+  const dateLabel = meta.date.replace(/-/g, "/");
+  const cta = [
+    "料金や仕様は変わることがあるので、使う前に公式サイトで確認してください。",
+    "毎朝、使える新作AIツールを1分で紹介しています。",
+    "気になるツールは保存して、あとで試してみてください。",
+  ];
+  const strip = (s) => String(s ?? "").replace(/[<>]/g, "");
+  const bytes = (s) => Buffer.byteLength(s, "utf-8");
+
+  const compose = (level) => {
+    const lines = [strip(level >= 5 ? `${dateLabel} の${cleanText(meta.headline)}` : `${dateLabel} の${cleanText(meta.headline)}（${cleanText(meta.sourceLabel)}）`), ""];
+    for (const t of tools) {
+      const name = strip(cleanText(t.name));
+      lines.push(level >= 4 ? `${t.rank}. ${name}` : `${t.rank}. ${name}｜${strip(cleanText(t.description))}`);
+      if (level < 2) lines.push(`   誰向け: ${strip(cleanText(t.who))} ／ 料金: ${strip(cleanText(t.pricingLabel))}`);
+      if (level < 3) lines.push(`   公式サイト: ${strip(t.website)}`);
+      lines.push(`   Product Hunt: ${strip(t.phUrl)}`);
+      lines.push("");
+    }
+    lines.push(`出典: Product Hunt ${PRODUCT_HUNT_HOME}`);
+    if (level < 1) lines.push(...cta);
     lines.push("");
+    lines.push(YT_DESCRIPTION_HASHTAGS.join(" "));
+    return lines.join("\n");
+  };
+
+  for (let level = 0; level <= 5; level++) {
+    const description = compose(level);
+    if (bytes(description) <= maxBytes) return description;
   }
-  lines.push(`出典: Product Hunt ${PRODUCT_HUNT_HOME}`);
-  lines.push("料金や仕様は変わることがあるので、使う前に公式サイトで確認してください。");
-  lines.push("毎朝、使える新作AIツールを1分で紹介しています。");
-  lines.push("気になるツールは保存して、あとで試してみてください。");
-  lines.push("");
-  lines.push(YT_DESCRIPTION_HASHTAGS.join(" "));
-  // snippet.description: max 5000 bytes, no "<" / ">".
-  let description = lines.join("\n").replace(/[<>]/g, "");
-  if (Buffer.byteLength(description, "utf-8") > YT_DESCRIPTION_MAX_BYTES) {
-    description = Buffer.from(description, "utf-8").subarray(0, YT_DESCRIPTION_MAX_BYTES).toString("utf-8").replace(/\u{FFFD}+$/u, "");
-  }
-  return description;
+  // Unreachable with the validator's limits (name ≤ 40, website ≤ 200); keep the
+  // attribution block and cut tool names as a last resort.
+  const attribution = `\n出典: Product Hunt ${PRODUCT_HUNT_HOME}\n\n${YT_DESCRIPTION_HASHTAGS.join(" ")}`;
+  const links = tools.map((t) => `${t.rank}. Product Hunt: ${strip(t.phUrl)}`).join("\n");
+  return Buffer.from(links, "utf-8").subarray(0, Math.max(0, maxBytes - bytes(attribution))).toString("utf-8").replace(/\u{FFFD}+$/u, "") + attribution;
 }
 
 export function buildInstagramCaption(data) {

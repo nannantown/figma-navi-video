@@ -4,6 +4,7 @@ import {
   buildYouTubeTitle,
   buildYouTubeTags,
   buildInstagramCaption,
+  buildYouTubeDescription,
   buildCaptions,
   cleanText,
   YT_TITLE_MAX,
@@ -119,6 +120,23 @@ test("YouTube description drops < > and stays within 5000 bytes", () => {
   const captions = buildCaptions(d, null);
   assert.ok(!/[<>]/.test(captions.youtube.description));
   assert.ok(Buffer.byteLength(captions.youtube.description, "utf-8") <= 5000);
+});
+
+test("a tight description budget drops optional lines first and always keeps Product Hunt links and attribution", () => {
+  const d = data(["Resurf", "Visiby", "Clipwise", "SWE-2", "Epilude"]);
+  for (const t of d.tools) t.website = `https://tool.example.com/${"a".repeat(180)}`;
+  const full = buildYouTubeDescription(d);
+  const budget = Buffer.byteLength(full, "utf-8") - 200;
+  const packed = buildYouTubeDescription(d, { maxBytes: budget });
+  assert.ok(Buffer.byteLength(packed, "utf-8") <= budget);
+  for (const t of d.tools) assert.ok(packed.includes(`Product Hunt: ${t.phUrl}`), t.name);
+  assert.match(packed, /出典: Product Hunt https:\/\/www\.producthunt\.com\//);
+  assert.ok(!packed.includes("毎朝、使える新作AIツール"), "CTA lines go first");
+
+  // Even an absurdly small budget keeps the attribution block.
+  const tiny = buildYouTubeDescription(d, { maxBytes: 400 });
+  assert.ok(Buffer.byteLength(tiny, "utf-8") <= 400);
+  assert.match(tiny, /出典: Product Hunt https:\/\/www\.producthunt\.com\//);
 });
 
 test("buildCaptions uses the hinted template and category 28", () => {
