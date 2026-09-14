@@ -4399,6 +4399,22 @@
   ],
   "optimizationLog": [
     {
+      "date": "2026-08-13",
+      "changes": [
+        "standard: 15 avg views (75 videos)",
+        "Day performance: Sat=32, Fri=17, Tue=14, Sun=13, Thu=12, Wed=10, Mon=4"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-14",
+      "changes": [
+        "standard: 12 avg views (74 videos)",
+        "Day performance: Sat=32, Tue=14, Sun=13, Wed=10, Mon=4, Thu=4, Fri=4"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
       "date": "2026-08-15",
       "changes": [
         "standard: 12 avg views (75 videos)",
@@ -4618,20 +4634,6 @@
       "date": "2026-09-13",
       "changes": [
         "standard: 1 avg views (80 videos)",
-        "Day performance: Mon=2, Tue=1, Fri=1, Sat=1, Sun=1, Thu=1, Wed=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
-    {
-      "date": "2026-09-14",
-      "changes": [
-        "Day performance: Mon=2, Tue=1, Fri=1, Sat=1, Sun=1, Thu=1, Wed=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
-    {
-      "date": "2026-09-14",
-      "changes": [
         "Day performance: Mon=2, Tue=1, Fri=1, Sat=1, Sun=1, Thu=1, Wed=1"
       ],
       "recommendedTemplate": "standard"
