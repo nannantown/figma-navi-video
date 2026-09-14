@@ -9,8 +9,10 @@
  *     rejected with "invalid or empty video title" (what broke 2026-09-13/14).
  *   - Instagram: ≤ 5 hashtags per Reel, caption ≤ 2,200 characters.
  *
- * 【一次資料】YouTube Data API videos resource: snippet.title max 100 chars, no < >
- *   https://developers.google.com/youtube/v3/docs/videos#snippet.title (2026-09-14)
+ * 【一次資料】YouTube Data API videos resource (2026-09-14):
+ *   snippet.title max 100 characters, snippet.description max 5000 bytes, both
+ *   without "<" / ">"; snippet.tags max 500 characters incl. commas
+ *   https://developers.google.com/youtube/v3/docs/videos
  *   Instagram @creators 2025-12 announcement: up to 5 hashtags per post/Reel
  *   https://www.instagram.com/p/DSaxmEWkfL4/ ,
  *   https://www.socialmediatoday.com/news/instagram-implements-new-limits-on-hashtag-use/808309/
@@ -25,6 +27,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const outputDir = join(__dirname, "..", "output");
 
 export const YT_TITLE_MAX = 100;
+export const YT_DESCRIPTION_MAX_BYTES = 5000;
 export const IG_CAPTION_MAX = 2200;
 export const IG_HASHTAGS = ["#AIツール", "#生成AI", "#業務効率化", "#便利ツール", "#ProductHunt"];
 export const YT_DESCRIPTION_HASHTAGS = ["#AIツール", "#生成AI", "#ProductHunt", "#新作AIツール", "#Shorts"];
@@ -93,7 +96,12 @@ export function buildYouTubeDescription(data) {
   lines.push("気になるツールは保存して、あとで試してみてください。");
   lines.push("");
   lines.push(YT_DESCRIPTION_HASHTAGS.join(" "));
-  return lines.join("\n");
+  // snippet.description: max 5000 bytes, no "<" / ">".
+  let description = lines.join("\n").replace(/[<>]/g, "");
+  if (Buffer.byteLength(description, "utf-8") > YT_DESCRIPTION_MAX_BYTES) {
+    description = Buffer.from(description, "utf-8").subarray(0, YT_DESCRIPTION_MAX_BYTES).toString("utf-8").replace(/�+$/, "");
+  }
+  return description;
 }
 
 export function buildInstagramCaption(data) {

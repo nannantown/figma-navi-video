@@ -1,0 +1,94 @@
+{
+  "date": "2026-09-15",
+  "genre": "ai-tools-top5",
+  "trial": 1,
+  "source": {
+    "mode": "ranking",
+    "ph_date": "2026-09-13",
+    "snapshot_fetched_at": "2026-09-14T09:30:00Z"
+  },
+  "discovery": {
+    "method": "rank-pure",
+    "description": "【サンプル・検証用】Product Hunt 2026-09-13 の確定ランキングから AI タグ付きの上位 5 本。料金・機能は各公式サイトで 2026-09-14 に確認",
+    "sources": [
+      "https://www.producthunt.com/leaderboard/daily/2026/9/13",
+      "https://resurf.so/",
+      "https://www.perplexity.ai/hub/products/hybrid-compute",
+      "https://cognition.com/blog/swe-2",
+      "https://visiby.net/",
+      "https://myhandler.ai/ghostwriter"
+    ],
+    "query": "",
+    "freshness_hours": 40
+  },
+  "tools": [
+    {
+      "rank": 1,
+      "ph_rank": 1,
+      "name": "Resurf",
+      "ph_url": "https://www.producthunt.com/products/resurf-2",
+      "website": "https://resurf.so/",
+      "tagline_en": "A Personal Context Library for Mac",
+      "description": "メモもリンクもPDFも1か所に保存",
+      "who": "Macユーザー",
+      "pricing": "freemium",
+      "narration": "メモやリンク、PDFをまとめて保存できるMacアプリです。データは手元に残るので、オフラインでも探せます。",
+      "image_url": null
+    },
+    {
+      "rank": 2,
+      "ph_rank": 2,
+      "name": "Perplexity Hybrid Compute",
+      "ph_url": "https://www.producthunt.com/products/perplexity-ai",
+      "website": "https://www.perplexity.ai/hub/products/hybrid-compute",
+      "tagline_en": "Splitting AI tasks: Cloud for research, Mac for privacy",
+      "description": "調べ物はクラウド、個人情報はMacで処理",
+      "who": "Perplexity有料会員",
+      "pricing": "paid",
+      "pricing_note": "Pro以上の有料プラン",
+      "narration": "調べ物はクラウド、個人データはMacの中で処理するAI機能です。プライバシーを守りながら検索を任せられます。",
+      "image_url": "https://frontend-cdn.perplexity.ai/_agi_assets/marketing/hub/products/hybrid-compute/en-us/hybrid-compute-og.jpg"
+    },
+    {
+      "rank": 3,
+      "ph_rank": 3,
+      "name": "Cognition SWE-2",
+      "ph_url": "https://www.producthunt.com/products/cognition-s-swe-2",
+      "website": "https://cognition.com/blog/swe-2",
+      "tagline_en": "Coding model, 64% cheaper than Fable 5.1",
+      "description": "安く速いコーディング用AIモデル",
+      "who": "Devinを使う開発者",
+      "pricing": "trial",
+      "pricing_note": "10/8まで無料",
+      "narration": "Devinで使えるコーディング用の新しいAIモデルです。性能を保ちつつ、利用料を大きく抑えられます。",
+      "image_url": "https://cognition.com/images/swe-2/cover.jpg"
+    },
+    {
+      "rank": 4,
+      "ph_rank": 5,
+      "name": "Visiby",
+      "ph_url": "https://www.producthunt.com/products/visiby",
+      "website": "https://visiby.net/",
+      "tagline_en": "Track and grow your visibility across AI search",
+      "description": "AI検索での自社の見え方を追跡",
+      "who": "マーケター",
+      "pricing": "paid",
+      "pricing_note": "月$49〜",
+      "narration": "ChatGPTなどのAI検索で、自社がどう紹介されているかを追えるツールです。露出を伸ばす手がかりも得られます。",
+      "image_url": "https://visiby.net/opengraph-image"
+    },
+    {
+      "rank": 5,
+      "ph_rank": 9,
+      "name": "GhostWriter by MyHandler",
+      "ph_url": "https://www.producthunt.com/products/ghostwriter-by-myhandler",
+      "website": "https://myhandler.ai/ghostwriter",
+      "tagline_en": "Two taps and it's already written",
+      "description": "2タップで文章を下書き",
+      "who": "Windowsユーザー",
+      "pricing": "freemium",
+      "narration": "2タップで文章の下書きを作ってくれるWindows向けAIです。メールやチャットの文面づくりが速くなります。",
+      "image_url": "https://myhandler.ai/images/og-image.png"
+    }
+  ]
+}

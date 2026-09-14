@@ -64,6 +64,14 @@ test("YouTube tags stay under the API budget and include tool names", () => {
   assert.ok(tags.join(",").length <= 500);
 });
 
+test("YouTube description drops < > and stays within 5000 bytes", () => {
+  const d = data(["<A>", "B", "C", "D", "E"]);
+  d.tools[0].description = "あ".repeat(3000);
+  const captions = buildCaptions(d, null);
+  assert.ok(!/[<>]/.test(captions.youtube.description));
+  assert.ok(Buffer.byteLength(captions.youtube.description, "utf-8") <= 5000);
+});
+
 test("buildCaptions uses the hinted template and category 28", () => {
   const captions = buildCaptions(data(["A", "B", "C", "D", "E"]), { recommendedTitleTemplate: "highlight" });
   assert.equal(captions.youtube.titleTemplate, "highlight");

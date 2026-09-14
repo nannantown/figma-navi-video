@@ -388,11 +388,16 @@ export async function fetchFeed({ fetchImpl = fetch, category = "" } = {}) {
   return parseAtomFeed(await res.text());
 }
 
-/** AI category entries first, then the general feed, deduplicated by post id. */
+/**
+ * AI category entries first, then the general feed, deduplicated by post id.
+ * `?category=` is undocumented, so category membership is kept as its own
+ * flag (inAiCategory) next to the keyword-based isAI.
+ */
 export function mergeFeedEntries(aiEntries, allEntries) {
   const seen = new Set();
   const merged = [];
-  for (const p of [...aiEntries.map((e) => ({ ...e, isAI: true })), ...allEntries]) {
+  const tagged = aiEntries.map((e) => ({ ...e, inAiCategory: true, isAI: true }));
+  for (const p of [...tagged, ...allEntries.map((e) => ({ ...e, inAiCategory: false }))]) {
     if (seen.has(p.id)) continue;
     seen.add(p.id);
     merged.push(p);
