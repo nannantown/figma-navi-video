@@ -218,5 +218,3 @@ Figma Community ページ（プラグインインストール）
 - [ ] プランの詳細（¥980/50命令以外の 2 プランの価格と命令数）
 - [ ] 無料枠の命令数
 - [ ] トライアル期間の有無
-
-> ジャンル実験（日次 PDCA の上位層）の台帳と要点: [docs/genre-experiment.md](genre-experiment.md)
