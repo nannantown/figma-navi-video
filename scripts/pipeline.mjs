@@ -124,9 +124,12 @@ function main() {
     run(renderCmd);
   }
 
-  console.log(`\n=== Step 4b: Normalize to yuv420p → ${outputFile} ===`);
+  // Convert the full-range (pc) frames to limited range (tv) explicitly:
+  // `-pix_fmt yuv420p` alone keeps color_range=pc on newer ffmpeg (8.x), which
+  // ffprobe still reports as yuvj420p — the format Instagram rejects.
+  console.log(`\n=== Step 4b: Normalize to yuv420p (tv range) → ${outputFile} ===`);
   run(
-    `ffmpeg -y -i "${rawFile}" -c:v libx264 -pix_fmt yuv420p -profile:v high -level 4.0 -crf 20 -preset fast -c:a copy -movflags +faststart "${outputFile}"`
+    `ffmpeg -y -i "${rawFile}" -vf "scale=out_range=tv,format=yuv420p" -c:v libx264 -pix_fmt yuv420p -color_range tv -profile:v high -level 4.0 -crf 20 -preset fast -c:a copy -movflags +faststart "${outputFile}"`
   );
   rmSync(join(rootDir, rawFile), { force: true });
 

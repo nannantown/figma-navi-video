@@ -43,6 +43,13 @@ export const ToolCard: React.FC<Props> = ({ tool, localFrame, totalTools, source
 
   const glow = interpolate(localFrame % 150, [0, 75, 150], [0.18, 0.3, 0.18]);
 
+  // Long product names ("Perplexity Hybrid Compute") step down so they stay
+  // within two lines next to the rest of the card.
+  const nameLength = Array.from(tool.name).length;
+  const nameSize = hasImage
+    ? nameLength <= 14 ? 78 : nameLength <= 22 ? 66 : 56
+    : nameLength <= 14 ? 96 : nameLength <= 22 ? 80 : 66;
+
   return (
     <AbsoluteFill
       style={{
@@ -108,6 +115,16 @@ export const ToolCard: React.FC<Props> = ({ tool, localFrame, totalTools, source
         </div>
       </div>
 
+      {/* Body: flows from the top under an image, centred when text-only */}
+      <div
+        style={{
+          flexGrow: 1,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: hasImage ? "flex-start" : "center",
+          paddingBottom: hasImage ? 0 : 60,
+        }}
+      >
       {/* Screenshot / banner (wide images) */}
       {wideImage && (
         <div
@@ -154,7 +171,7 @@ export const ToolCard: React.FC<Props> = ({ tool, localFrame, totalTools, source
         )}
         <div
           style={{
-            fontSize: hasImage ? 78 : 88,
+            fontSize: nameSize,
             fontWeight: 800,
             color: COLORS.text,
             lineHeight: 1.12,
@@ -164,6 +181,7 @@ export const ToolCard: React.FC<Props> = ({ tool, localFrame, totalTools, source
             WebkitBoxOrient: "vertical",
             overflow: "hidden",
             wordBreak: "break-word",
+            textWrap: "balance",
           }}
         >
           {tool.name}
@@ -175,10 +193,11 @@ export const ToolCard: React.FC<Props> = ({ tool, localFrame, totalTools, source
         style={{
           ...fadeUp(localFrame, 14, fps),
           marginTop: 24,
-          fontSize: hasImage ? 46 : 52,
+          fontSize: hasImage ? 46 : 54,
           fontWeight: 700,
           color: COLORS.textSub,
           lineHeight: 1.35,
+          textWrap: "balance",
         }}
       >
         {tool.description}
@@ -207,6 +226,7 @@ export const ToolCard: React.FC<Props> = ({ tool, localFrame, totalTools, source
         <SpecRow label="公式" style={fadeUp(localFrame, 30, fps)}>
           <span style={{ fontSize: 36, fontWeight: 600, color: COLORS.accentLight }}>{tool.domain}</span>
         </SpecRow>
+      </div>
       </div>
     </AbsoluteFill>
   );
