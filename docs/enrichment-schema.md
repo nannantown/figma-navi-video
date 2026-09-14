@@ -16,7 +16,7 @@
 | `discovery.description` | string | | どう選んだかの一行説明 |
 | `discovery.sources` | string[] | ○ | 見たページの URL（1 件以上） |
 | `discovery.query` / `freshness_hours` | | | 検索語 / 公開からの経過時間 |
-| `opening_narration` | string | | 30 字以内。省略時は「新作AIツール、トップ5を紹介します。」 |
+| `opening_narration` | string | | 30 字以内。省略時は「新作AIツール、トップ5を紹介します。」。短くしてもオープニングは 3 秒以上表示する（カバー画像と IG サムネイルがタイトルカードになるように） |
 | `tools` | object[] | ○ | **ちょうど 5 件**。配列の順 = 動画の順 |
 
 ## tools[]
@@ -26,7 +26,7 @@
 | `rank` | number | ○ | | 1〜5。配列の位置と一致させる |
 | `ph_rank` | number | ranking のとき ○ | | Product Hunt の dailyRank |
 | `name` | string | ○ | 1〜40 | ツール名（原文）。5 件の中で重複不可 |
-| `ph_url` | URL | ○ | | `https://www.producthunt.com/products/<slug>` |
+| `ph_url` | URL | ○ | | `https://www.producthunt.com/products/<slug>` または `/posts/<slug>`（クエリ文字列なし。スナップショットの `phUrl` をそのまま使う） |
 | `website` | https URL | ○ | | 公式サイト（Product Hunt のリダイレクト URL は不可） |
 | `tagline_en` | string | | | Product Hunt のタグライン（原文、記録用） |
 | `description` | string | ○ | 6〜30 / 10〜24 | 一言（何ができるか） |
@@ -39,8 +39,9 @@
 ## パイプラインでの扱い
 
 - `generate-data.mjs` が検証 → `output/trending-data.json`（`tools` / `meta` / ナレーション）を作る
-- `fetch-tool-images.mjs` が画像を探す: `image_url` → スナップショットの Product Hunt サムネイル（API モード）→ 公式サイトの og:image。PNG / JPEG / WebP / GIF で 120px 以上のものだけ使い、無ければ文字だけのカードにする
-- `record-upload.mjs` が投稿後に `performance-history.json` へ `genre` / `tools[]` / `source` / `discovery` を記録する
+- `fetch-tool-images.mjs` が画像を探す: `image_url` → スナップショットの Product Hunt サムネイル（API モード）→ 公式サイトの og:image。PNG / JPEG / WebP / GIF で 120px 以上のものだけ使う。動く GIF は 1 コマ目を静止画にし、動く WebP は使わない。無ければ文字だけのカードにする
+- テンプレートの見本値（「一言」「誰向け」「任意」など）が残っている、`website` が Product Hunt の URL、などは検証で NG になる
+- `record-upload.mjs` が投稿後に `performance-history.json` へ `genre` / `tools[]` / `source` / `discovery` を記録する（YouTube と Instagram のどちらか一方だけ成功した日も記録する）
 
 ## 検証用サンプル
 
