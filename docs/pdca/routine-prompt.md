@@ -64,34 +64,49 @@ TODAY=$(TZ=Asia/Tokyo date +%Y-%m-%d)
   - **出典不明ニュース** (sources URL 必ず記録)
 - **現在の Phase**: Phase 1 (合算フォロワー 800 / 有料 15 までの立ち上げ)
 
-戦略ファイル自体の書き換えは本ルーチンでは行わない。改善提案は `docs/pdca/$TODAY.md` の末尾「戦略更新提案」に記録。
+**ジャンル実験（日次 PDCA の上位層・最優先）**: `docs/strategy.md` 冒頭の「ジャンル実験」節も必ず読む。このリポの IG / YT 2 アカウントの試行台帳（試行 #・開始日 S・型の初回投稿日 F・導入時の判定）、判定窓の計算式、判定指標と集計コマンド、閾値、モードの決め方、配信死亡モード中のルール、レポート節のフォーマットが書いてある。**この節の指示は、手順 1〜2 の method 最適化より優先する**。IG と YT は別アカウントとして別々に評価し、数字を合算しない。
+
+戦略ファイル自体の書き換えは本ルーチンでは行わない（「ジャンル実験」節の台帳・閾値も書き換えない）。改善提案は `docs/pdca/$TODAY.md` の末尾「戦略更新提案」に記録。
 
 ### 1. PDCA 分析 (必須)
 
+**0) ジャンル試行の状態 (必須・最初に)** — `docs/strategy.md`「ジャンル実験」節の手順どおりに行う
+- 同節の台帳から IG / YT それぞれの試行 #・開始日 S・型の初回投稿日 F を読み、計算式で今日の判定窓・経過日・次の判定日を出す
+- 同節の集計コマンド (jq) で、判定窓の **IG views 中央値・IG 保存合計** と **YT views 中央値** を出す。n は IG / YT 別に数える。**IG と YT を足したり平均したりしない**
+- 前回モード (`docs/pdca/` の最新レポートの「ジャンル試行の状態」節。無ければ台帳の「導入時の判定」) と今日の判定値から、同節の「モードの決め方」でアカウントごとに今日のモード (通常 / 切替候補 / 配信死亡モード) を決める。今日が判定日なら続行 / 切替候補 / 配信死亡を判定する
+- ここで決めたモードが、下の c)〜e) と手順 2 の振る舞いを決める。結果は f) のレポート冒頭に書く
+- `docs/strategy.md` に「ジャンル実験」節が見つからない場合だけ、この 0) を省略し、レポート冒頭に `## ジャンル試行の状態` と `- docs/strategy.md にジャンル実験節なし（未導入）` の 2 行だけを書いて、以下を従来どおり進める
+
 **a) 過去パフォーマンスを読む**
-- `data/performance-history.json` から過去 14 日の `stats.views` / `stats.likes` / `title` / `discovery.method` を抽出 (未運用期間中は空 OK)
+- `data/performance-history.json` から過去 14 日の `stats.views` (YT) / `instagram.views`・`instagram.saved` (IG。`instagram` か `instagram.views` が null の回は IG 側から除外) / `stats.likes` / `title` / `discovery.method` を抽出 (未運用期間中は空 OK)
 
 **b) 直近トピックの重複チェック**
 ```bash
 git log -n 14 --pretty=format:'%s' -- data/enriched-design-news.json
 ```
 
-**c) TOP 3 / WORST 3 を特定** (views 基準、トピック・柱も一緒にメモ)
+**c) TOP 3 / WORST 3 を特定** (IG は `instagram.views`、YT は `stats.views` で**別々に**。トピック・柱も一緒にメモ。配信死亡モードのアカウントの TOP/WORST は参考表示のみで、d) 以降の根拠にしない)
 
 **d) Method 別パフォーマンス分析 (Meta-PDCA、重要)**
 - 過去 14 日の entries を discovery.method でグループ化
-- 各 method の投稿数 / 平均 views をテーブル化
+- 各 method の投稿数 / 平均 views をテーブル化 (IG と YT は別列。合算しない)
 - TOP 3 method と WORST 3 method を特定
+- **配信死亡モードの例外** (0) で決めたモード): 配信死亡モードのアカウントの数字は method 比較に使わない。2 アカウントとも配信死亡モードならテーブルは参考表示に留め、TOP/WORST method を決めない。片方だけなら、生きている側のアカウントの指標だけで TOP/WORST method を決める
 - データがまだ薄い時期は Explore 寄り(新 method を試す)で OK
 
-**e) 今日の改善アクションを 3 つまで決める** (戦略のコンテンツ柱比率、勝ち筋 method 継続 or 新 method 試行を考慮)
+**e) 今日の改善アクションを 3 つまで決める** (戦略のコンテンツ柱比率、勝ち筋 method 継続 or 新 method 試行を考慮。**配信死亡モードのアカウントについては method のアクションを書かず、構造実験 (タイトル個別化 / 型変更 / ジャンル変更) を「何を変えるか / 何で測るか / 14 日後の合格ライン」で提案する**。このリポの制約: ジャンル・型・タイトル方針のすべてを変えてよい)
 
-**f) `docs/pdca/$TODAY.md` にレポート** (TOP3 / WORST3 / Method別テーブル / 直近14日のトピック / 気づき / 今日のAction / Method提案 / 戦略更新提案)
+**f) `docs/pdca/$TODAY.md` にレポート** (**冒頭 (タイトル直下) に「ジャンル試行の状態」節** (`docs/strategy.md`「ジャンル実験」節のフォーマットどおり) / 判定日のみ「ジャンル判定」節 / 配信死亡モードのアカウントがある日は「構造実験の提案」節 / 続けて TOP3・WORST3 (IG / YT 別) / Method別テーブル / 直近14日のトピック / 気づき / 今日のAction / Method提案 / 戦略更新提案)
 
 ### 2. 今日の Discovery Method を決める (80/20)
 
 **Exploit (80%)**: 手順 1 の Method TOP 3 から選ぶ
 **Explore (20%)**: 戦略ドキュメントに載ってない新 method、または WORST method に再挑戦(アプローチを変えて)
+
+**配信死亡モードの例外** (手順 1 の 0) で決めたモード):
+- 2 アカウントとも配信死亡モード → 80/20 を使わない。method は性能データで選ばず、戦略のコンテンツ柱比率・曜日フォーマット・下の選定制約だけで決める (WORST method の凍結もしない)
+- 片方だけ配信死亡モード → 生きている側のアカウントの指標で作った TOP 3 から 80/20 で選ぶ
+- どれを適用したかを、レポートの「ジャンル試行の状態」節の「今日の method 方針」に書く
 
 選定の制約:
 - **平日は news 系(news-en / official-src / figma-community / product-launches) を主に選ぶ**。土日は Tips・UI 批評・Before/After OK
