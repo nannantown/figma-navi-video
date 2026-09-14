@@ -1,6 +1,8 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import http from "node:http";
 import {
+  httpsTransport,
   sniffImageType,
   imageSize,
   extractOgImage,
@@ -226,4 +228,117 @@ test("resolveToolImage returns null when nothing usable exists", async () => {
   const { transport } = fakeTransport({ "https://nothing.example": ok("<html></html>") });
   const img = await resolveToolImage({ imageUrl: null, slug: "x", website: "https://nothing.example" }, { transport, lookupImpl: publicLookup, log });
   assert.equal(img, null);
+});
+
+// --- Time limits ----------------------------------------------------------------
+
+/** Local plain-http server; the transport is pointed at it with http.request. */
+async function localServer(handler) {
+  const server = http.createServer(handler);
+  await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
+  return {
+    port: server.address().port,
+    close: async () => {
+      server.closeAllConnections();
+      await new Promise((resolve) => server.close(resolve));
+    },
+  };
+}
+
+test("IPv6 outside global unicast 2000::/3 and special blocks inside it are not public", () => {
+  // IPv4-translated (::ffff:0:a.b.c.d), other reserved ::/8, SRv6, documentation, benchmarking, ORCHID.
+  for (const ip of [
+    "::ffff:0:7f00:1", "::ffff:0:127.0.0.1", "::ffff:0:a00:1", "0:0:0:0:ffff:0:c0a8:1", "0:0:ffff::1",
+    "5f00::1", "3fff::1", "3fff:fff::1", "2001:2::1", "2001:10::1", "2001:1ff::1", "4000::1", "e000::1",
+  ]) {
+    assert.equal(isPrivateAddress(ip), true, ip);
+  }
+  for (const ip of ["2a00:1450:ffff:0::1", "2001:200::1", "3fff:1000::1", "2400:cb00:2048:1::c629:d7a2"]) {
+    assert.equal(isPrivateAddress(ip), false, ip);
+  }
+});
+
+test("httpsTransport gives up at the wall-clock deadline even while the server keeps sending bytes", async () => {
+  const srv = await localServer((req, res) => {
+    res.writeHead(200, { "Content-Type": "image/png" });
+    const timer = setInterval(() => res.write("x"), 20);
+    res.on("close", () => clearInterval(timer));
+  });
+  const started = Date.now();
+  try {
+    await assert.rejects(
+      httpsTransport(`http://slow.example.test:${srv.port}/logo.png`, {
+        address: "127.0.0.1",
+        family: 4,
+        accept: "*/*",
+        maxBytes: 1024 * 1024,
+        timeoutMs: 300,
+        request: http.request,
+      }),
+      (err) => err.message === "timeout after 300 ms"
+    );
+    assert.ok(Date.now() - started < 2000, `took ${Date.now() - started} ms`);
+  } finally {
+    await srv.close();
+  }
+});
+
+test("httpsTransport connects to the pinned address, reads small bodies and refuses oversized ones", async () => {
+  const srv = await localServer((req, res) => {
+    if (req.url === "/big") {
+      res.writeHead(200, { "Content-Length": "5000" });
+      res.end(Buffer.alloc(5000));
+      return;
+    }
+    res.writeHead(200, { "Content-Type": "text/plain" });
+    res.end(`host=${req.headers.host}`);
+  });
+  const opts = { address: "127.0.0.1", family: 4, accept: "*/*", maxBytes: 1000, timeoutMs: 2000, request: http.request };
+  try {
+    // "pinned.example.test" does not resolve anywhere: only the pinned lookup can connect it.
+    const res = await httpsTransport(`http://pinned.example.test:${srv.port}/ok`, opts);
+    assert.equal(res.status, 200);
+    assert.equal(res.body.toString(), `host=pinned.example.test:${srv.port}`);
+    await assert.rejects(httpsTransport(`http://pinned.example.test:${srv.port}/big`, opts), /5000 bytes > 1000/);
+  } finally {
+    await srv.close();
+  }
+});
+
+test("safeGet shares one time budget across redirect hops and stops when it is spent", async () => {
+  let clock = 1000;
+  const seen = [];
+  const transport = async (url, opts) => {
+    seen.push(opts.timeoutMs);
+    clock += 400;
+    return url.endsWith("/a") ? redirect("https://tool.example.com/b") : ok("x");
+  };
+  const res = await safeGet("https://tool.example.com/a", { transport, lookupImpl: publicLookup, deadlineAt: 2000, now: () => clock });
+  assert.equal(res.finalUrl, "https://tool.example.com/b");
+  assert.deepEqual(seen, [1000, 600]);
+
+  clock = 2500;
+  await assert.rejects(safeGet("https://tool.example.com/a", { transport, lookupImpl: publicLookup, deadlineAt: 2000, now: () => clock }), /time budget exhausted/);
+
+  const hangingLookup = () => new Promise(() => {});
+  await assert.rejects(
+    safeGet("https://tool.example.com/a", { transport, lookupImpl: hangingLookup, deadlineAt: Date.now() + 100 }),
+    /address lookup timed out after \d+ ms/
+  );
+});
+
+test("resolveToolImage stops trying further sources once the tool's budget is spent", async () => {
+  let clock = 0;
+  const { transport, calls } = fakeTransport({
+    "https://slow.example/logo.png": () => {
+      clock += 5000;
+      return { status: 500, headers: {}, body: Buffer.alloc(0) };
+    },
+  });
+  const img = await resolveToolImage(
+    { imageUrl: "https://slow.example/logo.png", slug: "tool", website: "https://tool.example.com" },
+    { thumbnails: new Map([["tool", "https://ph-files.example/thumb.png"]]), transport, lookupImpl: publicLookup, log, deadlineAt: 4000, now: () => clock }
+  );
+  assert.equal(img, null);
+  assert.deepEqual(calls.map((c) => c.url), ["https://slow.example/logo.png"]);
 });

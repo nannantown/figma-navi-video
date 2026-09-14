@@ -28,15 +28,16 @@ const ENDING_EXTRA_FRAMES = 30;
 const MIN_OPENING_FRAMES = 90; // cover still (frame 60) + IG thumb_offset 2000 ms must hit the title card
 const TARGET_MAX_SECONDS = 58; // Instagram Reels rejects > 60 s
 const HARD_MAX_SECONDS = 59.5;
+const IMAGE_STEP_KILL_MS = 150000; // fetch-tool-images.mjs budgets itself to STEP_BUDGET_MS (90 s)
 
 function run(cmd, opts = {}) {
   console.log(`\n>>> ${cmd}\n`);
   execSync(cmd, { cwd: rootDir, stdio: "inherit", ...opts });
 }
 
-function runSafe(cmd, label) {
+function runSafe(cmd, label, opts = {}) {
   try {
-    run(cmd);
+    run(cmd, opts);
     return true;
   } catch (err) {
     console.error(`${label} failed (non-blocking): ${err.message}`);
@@ -92,7 +93,8 @@ function main() {
 
   // Step 1b: Logos / screenshots (best effort, never blocks)
   console.log("\n=== Step 1b: Tool Images ===");
-  runSafe("node scripts/fetch-tool-images.mjs", "fetch-tool-images");
+  // The script keeps its own time budget; the kill is only a backstop (cards stay text-only).
+  runSafe("node scripts/fetch-tool-images.mjs", "fetch-tool-images", { timeout: IMAGE_STEP_KILL_MS, killSignal: "SIGKILL" });
 
   // Step 2: TTS + BGM, keeping the video under 60 s
   console.log("\n=== Step 2: Generate Audio ===");

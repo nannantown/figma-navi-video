@@ -206,7 +206,9 @@ async function fetchInstagramStats(history) {
 
   console.log("fetch-stats: fetching Instagram Reels insights...");
   try {
-    const result = await updateInstagramStats(history, process.env);
+    // Skip days (no video) must never be matched to a Reel. Same entry objects,
+    // so the stats written by updateInstagramStats land in `history`.
+    const result = await updateInstagramStats({ ...history, videos: postedVideos(history.videos) }, process.env);
     console.log(
       `  IG: matched ${result.matched}, updated ${result.updated}, failed ${result.failed}, ` +
         `skipped ${result.skipped}, unmatched ${result.unmatched.length}` +

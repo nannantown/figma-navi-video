@@ -47,7 +47,9 @@ export const MAX_BYTES = 5 * 1024 * 1024;
 export const MAX_HTML_BYTES = 1024 * 1024;
 export const MIN_SIDE = 120;
 const MAX_REDIRECTS = 5;
-const TIMEOUT_MS = 12000;
+const TIMEOUT_MS = 12000; // one DNS lookup or one request, wall clock
+export const PER_TOOL_BUDGET_MS = 30000; // all attempts for one tool
+export const STEP_BUDGET_MS = 90000; // all tools (pipeline.mjs also kills the step at IMAGE_STEP_KILL_MS)
 const USER_AGENT = "Mozilla/5.0 (compatible; sns-hub-figma-navi-video/1.0; +https://github.com/nannantown/figma-navi-video)";
 
 // --- Image format ----------------------------------------------------------
@@ -244,20 +246,17 @@ export function ipv6Bytes(ip) {
 export function isPrivateIPv6(ip) {
   const b = ipv6Bytes(ip);
   if (!b) return true;
-  const zeroPrefix = (n) => b.slice(0, n).every((x) => x === 0);
-  if (zeroPrefix(10) && ((b[10] === 0 && b[11] === 0) || (b[10] === 0xff && b[11] === 0xff))) {
-    return true; // ::, ::1, IPv4-compatible (::a.b.c.d / ::7f00:1) and IPv4-mapped (::ffff:*)
-  }
-  if (zeroPrefix(4) && b[4] === 0xff && b[5] === 0xff && b[6] === 0 && b[7] === 0) return true; // ::ffff:0:a.b.c.d (translated)
-  if (b[0] === 0x00 && b[1] === 0x64 && b[2] === 0xff && b[3] === 0x9b) return true; // 64:ff9b::/32 NAT64 (well-known + local-use)
-  if (b[0] === 0x01 && b[1] === 0x00 && b.slice(2, 8).every((x) => x === 0)) return true; // 100::/64 discard
-  if (b[0] === 0x20 && b[1] === 0x01 && b[2] === 0x00 && b[3] === 0x00) return true; // 2001::/32 Teredo
+  // IANA IPv6 Address Space: only 2000::/3 is Global Unicast. Everything else is
+  // never an image host — ::/8 (unspecified, loopback, IPv4-compatible, -mapped
+  // ::ffff:a.b.c.d and -translated ::ffff:0:a.b.c.d), 64:ff9b::/96 and
+  // 64:ff9b:1::/48 NAT64 (they reach IPv4 addresses, private ones included),
+  // 100::/64 discard, 5f00::/16 SRv6, fc00::/7, fe80::/10, fec0::/10, ff00::/8.
+  if ((b[0] & 0xe0) !== 0x20) return true;
+  // Special-purpose blocks inside 2000::/3 (IANA IPv6 Special-Purpose Address Registry).
+  if (b[0] === 0x20 && b[1] === 0x01 && (b[2] & 0xfe) === 0x00) return true; // 2001::/23 IETF protocol assignments (Teredo 2001::/32, benchmarking, ORCHID)
   if (b[0] === 0x20 && b[1] === 0x01 && b[2] === 0x0d && b[3] === 0xb8) return true; // 2001:db8::/32 documentation
-  if (b[0] === 0x20 && b[1] === 0x02) return true; // 2002::/16 6to4
-  if ((b[0] & 0xfe) === 0xfc) return true; // fc00::/7 unique local
-  if (b[0] === 0xfe && (b[1] & 0xc0) === 0x80) return true; // fe80::/10 link-local
-  if (b[0] === 0xfe && (b[1] & 0xc0) === 0xc0) return true; // fec0::/10 site-local (deprecated)
-  if (b[0] === 0xff) return true; // multicast
+  if (b[0] === 0x20 && b[1] === 0x02) return true; // 2002::/16 6to4 (embeds an IPv4 address)
+  if (b[0] === 0x3f && b[1] === 0xff && (b[2] & 0xf0) === 0x00) return true; // 3fff::/20 documentation
   return false;
 }
 
@@ -298,15 +297,26 @@ export async function resolvePublicTarget(url, { lookupImpl = dnsLookup } = {}) 
 /**
  * GET over https with the socket connected to `address` (no second lookup).
  * Redirect responses resolve without a body; others are read up to maxBytes.
+ * `timeoutMs` bounds the whole exchange (wall clock), not just idle gaps, so a
+ * server that trickles one byte at a time cannot hold the job open.
+ * `request` is injectable for tests (http.request against a local server).
  * @returns {Promise<{ status: number, headers: { location?: string }, body: Buffer }>}
  */
-export function httpsTransport(url, { address, family, accept, maxBytes, timeoutMs = TIMEOUT_MS }) {
+export function httpsTransport(url, { address, family, accept, maxBytes, timeoutMs = TIMEOUT_MS, request = https.request }) {
   return new Promise((resolve, reject) => {
+    let settled = false;
+    let deadline = null;
+    const settle = (fn, value) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(deadline);
+      fn(value);
+    };
     const pinnedLookup = (_hostname, options, callback) => {
       if (options && options.all) callback(null, [{ address, family }]);
       else callback(null, address, family);
     };
-    const req = https.request(
+    const req = request(
       url,
       {
         method: "GET",
@@ -318,13 +328,13 @@ export function httpsTransport(url, { address, family, accept, maxBytes, timeout
         const headers = { location: res.headers.location };
         if (status >= 300 && status < 400) {
           res.resume();
-          resolve({ status, headers, body: Buffer.alloc(0) });
+          settle(resolve, { status, headers, body: Buffer.alloc(0) });
           return;
         }
         const declared = Number(res.headers["content-length"] || 0);
         if (declared > maxBytes) {
+          settle(reject, new Error(`${declared} bytes > ${maxBytes}`));
           req.destroy();
-          reject(new Error(`${declared} bytes > ${maxBytes}`));
           return;
         }
         const chunks = [];
@@ -337,22 +347,45 @@ export function httpsTransport(url, { address, family, accept, maxBytes, timeout
           }
           chunks.push(chunk);
         });
-        res.on("end", () => resolve({ status, headers, body: Buffer.concat(chunks) }));
-        res.on("error", reject);
+        res.on("end", () => settle(resolve, { status, headers, body: Buffer.concat(chunks) }));
+        res.on("error", (err) => settle(reject, err));
       }
     );
-    req.setTimeout(timeoutMs, () => req.destroy(new Error(`timeout after ${timeoutMs} ms`)));
-    req.on("error", reject);
+    deadline = setTimeout(() => {
+      const err = new Error(`timeout after ${timeoutMs} ms`);
+      settle(reject, err);
+      req.destroy(err);
+    }, timeoutMs);
+    req.on("error", (err) => settle(reject, err));
     req.end();
   });
 }
 
-/** GET with validated, bounded redirects; every hop re-checks https + public address. */
-export async function safeGet(url, { transport = httpsTransport, lookupImpl = dnsLookup, accept = "*/*", maxBytes = MAX_BYTES } = {}) {
+/** Reject when `promise` has not settled within `ms` (the work itself is not cancelled). */
+function withTimeout(promise, ms, label) {
+  let timer = null;
+  const timeout = new Promise((_, reject) => {
+    timer = setTimeout(() => reject(new Error(`${label} timed out after ${ms} ms`)), ms);
+  });
+  return Promise.race([promise, timeout]).finally(() => clearTimeout(timer));
+}
+
+/**
+ * GET with validated, bounded redirects; every hop re-checks https + public address.
+ * `deadlineAt` (epoch ms) is a budget shared by all hops: each DNS lookup and
+ * request gets at most what is left, and no new hop starts once it is spent.
+ */
+export async function safeGet(url, { transport = httpsTransport, lookupImpl = dnsLookup, accept = "*/*", maxBytes = MAX_BYTES, deadlineAt = Infinity, now = Date.now } = {}) {
+  const budgetLeft = () => {
+    const left = deadlineAt - now();
+    if (left <= 0) throw new Error("time budget exhausted");
+    return Math.min(TIMEOUT_MS, left);
+  };
   let current = url;
   for (let hop = 0; hop <= MAX_REDIRECTS; hop++) {
-    const target = await resolvePublicTarget(current, { lookupImpl });
-    const res = await transport(current, { address: target.address, family: target.family, accept, maxBytes });
+    const lookupMs = budgetLeft();
+    const target = await withTimeout(resolvePublicTarget(current, { lookupImpl }), lookupMs, "address lookup");
+    const res = await transport(current, { address: target.address, family: target.family, accept, maxBytes, timeoutMs: budgetLeft() });
     if ([301, 302, 303, 307, 308].includes(res.status)) {
       if (!res.headers?.location) throw new Error(`redirect without location from ${current}`);
       current = new URL(res.headers.location, current).toString();
@@ -367,10 +400,10 @@ export async function safeGet(url, { transport = httpsTransport, lookupImpl = dn
 // --- Image resolution ---------------------------------------------------------
 
 /** @returns {Promise<{buf: Buffer, type: string, width: number, height: number} | null>} */
-export async function downloadImage(url, { transport = httpsTransport, lookupImpl = dnsLookup, log = console.log, firstFrame = ffmpegFirstFrame } = {}) {
+export async function downloadImage(url, { transport = httpsTransport, lookupImpl = dnsLookup, log = console.log, firstFrame = ffmpegFirstFrame, deadlineAt = Infinity, now = Date.now } = {}) {
   if (!url) return null;
   try {
-    const res = await safeGet(url, { transport, lookupImpl, accept: "image/png,image/jpeg,image/webp,image/gif;q=0.9,*/*;q=0.1", maxBytes: MAX_BYTES });
+    const res = await safeGet(url, { transport, lookupImpl, accept: "image/png,image/jpeg,image/webp,image/gif;q=0.9,*/*;q=0.1", maxBytes: MAX_BYTES, deadlineAt, now });
     if (res.status !== 200) {
       log(`    skip ${url}: HTTP ${res.status}`);
       return null;
@@ -410,10 +443,10 @@ export async function downloadImage(url, { transport = httpsTransport, lookupImp
   }
 }
 
-export async function findOgImageUrl(website, { transport = httpsTransport, lookupImpl = dnsLookup, log = console.log } = {}) {
+export async function findOgImageUrl(website, { transport = httpsTransport, lookupImpl = dnsLookup, log = console.log, deadlineAt = Infinity, now = Date.now } = {}) {
   if (!website) return null;
   try {
-    const res = await safeGet(website, { transport, lookupImpl, accept: "text/html,application/xhtml+xml;q=0.9,*/*;q=0.1", maxBytes: MAX_HTML_BYTES });
+    const res = await safeGet(website, { transport, lookupImpl, accept: "text/html,application/xhtml+xml;q=0.9,*/*;q=0.1", maxBytes: MAX_HTML_BYTES, deadlineAt, now });
     if (res.status !== 200) {
       log(`    og:image lookup ${website}: HTTP ${res.status}`);
       return null;
@@ -435,20 +468,27 @@ export function snapshotThumbnails(snapshot) {
   return map;
 }
 
-export async function resolveToolImage(tool, { thumbnails = new Map(), transport = httpsTransport, lookupImpl = dnsLookup, log = console.log, firstFrame = ffmpegFirstFrame } = {}) {
+export async function resolveToolImage(
+  tool,
+  { thumbnails = new Map(), transport = httpsTransport, lookupImpl = dnsLookup, log = console.log, firstFrame = ffmpegFirstFrame, deadlineAt = Infinity, now = Date.now } = {}
+) {
   const tried = new Set();
   const attempt = async (url, label) => {
     if (!url || tried.has(url)) return null;
+    if (now() >= deadlineAt) {
+      log(`    skip ${label}: time budget exhausted`);
+      return null;
+    }
     tried.add(url);
     log(`    try ${label}: ${url}`);
-    const img = await downloadImage(url, { transport, lookupImpl, log, firstFrame });
+    const img = await downloadImage(url, { transport, lookupImpl, log, firstFrame, deadlineAt, now });
     return img ? { ...img, from: label, url } : null;
   };
 
   return (
     (await attempt(tool.imageUrl, "routine image_url")) ||
     (await attempt(thumbnails.get(tool.slug), "Product Hunt thumbnail")) ||
-    (await attempt(await findOgImageUrl(tool.website, { transport, lookupImpl, log }), "official og:image"))
+    (now() < deadlineAt ? await attempt(await findOgImageUrl(tool.website, { transport, lookupImpl, log, deadlineAt, now }), "official og:image") : null)
   );
 }
 
@@ -476,13 +516,17 @@ async function main() {
   }
   const thumbnails = snapshotThumbnails(snapshot);
 
+  // Images are decoration: the whole step gets a fixed budget, and one slow
+  // site cannot use up the time of the tools after it.
+  const stepDeadline = Date.now() + STEP_BUDGET_MS;
   let found = 0;
   for (const tool of tools) {
     console.log(`  [${tool.rank}] ${tool.name}`);
-    const img = await resolveToolImage(tool, { thumbnails });
+    const deadlineAt = Math.min(stepDeadline, Date.now() + PER_TOOL_BUDGET_MS);
+    const img = Date.now() < stepDeadline ? await resolveToolImage(tool, { thumbnails, deadlineAt }) : null;
     if (!img) {
       tool.image = null;
-      console.log("    → no usable image, text-only card");
+      console.log(Date.now() < stepDeadline ? "    → no usable image, text-only card" : "    → image step time budget used up, text-only card");
       continue;
     }
     const ext = img.type === "jpeg" ? "jpg" : img.type;
