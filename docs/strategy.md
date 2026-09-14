@@ -11,7 +11,7 @@
 |---|---|
 | 試行 # | **1** |
 | ジャンル / 型 | 新作 AI ツール TOP5（出典: Product Hunt）/ 毎日のカタログ型（AI Trend Daily と同じ型）。公式 API が使える日は「TOP5」、使えない日は新着からの「N選」（2〜5 本） |
-| **開始日** | **2026-09-15**（予定）。開始日は「この型の初回投稿日」のこと。main への統合が 09-15 の朝 07:30 JST より遅れた場合は、実際の初回投稿日を開始日とする。`node scripts/pdca-summary.mjs` は `performance-history.json` に最初に記録された `genre: "ai-tools-top5"` の日付から開始日を自動で決める |
+| **開始日** | **2026-09-15**（予定）。開始日は「この型の初回投稿日」のこと。main への統合が 09-15 の朝 07:30 JST より遅れた場合は、実際の初回投稿日を開始日とする。`node scripts/pdca-summary.mjs` は `performance-history.json` で最初に投稿された `genre: "ai-tools-top5"` の日付（休止日は除く）から開始日を自動で決める |
 | **判定日** | **2026-09-29**（予定。開始日 + 14 日 = Day 15 の朝ルーチン） |
 | 判定窓 | 開始日〜開始日 + 13 日に投稿した 14 本 |
 | 判定指標 | IG は **views 中央値** と **保存数の合計**。YT は **views 中央値**。IG と YT の値は合算しない |
@@ -132,6 +132,7 @@ daily-video.yml           08:15 JST
 | キー | 取得元 | 更新 |
 |---|---|---|
 | `genre` / `trial` / `tools[]` / `source` | 投稿時に `record-upload.mjs` が記録（`tools[]` は 30 日以内の重複チェックにも使う） | 投稿時 |
+| `skip`（休止日だけ） | `record-upload.mjs --skip` が `{ reason, fresh_candidates, snapshot_fresh_ai }` を記録。`videoId` / `instagram` は null。中央値・合計・学習・開始日には使わない | 休止した朝 |
 | `stats.views` / `likes` / `comments` | YouTube Data API v3 | `fetch-stats.mjs`（直近 14 日） |
 | `instagram.mediaId` | 投稿時に `upload-instagram.mjs` → `record-upload.mjs` が記録。記録がない回は `fetch-stats.mjs` が IG の投稿一覧と JST の投稿日で突き合わせて復元する | 投稿時 / 初回取得時 |
 | `instagram.views` / `reach` / `likes` / `comments` / `shares` / `saved` | Instagram Graph API `/{ig-media-id}/insights` | `fetch-stats.mjs`（直近 14 日 + 未取得の回）。最大 48 時間遅れる |
