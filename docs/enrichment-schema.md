@@ -1,6 +1,6 @@
 # data/enriched-ai-tools.json — スキーマ
 
-朝ルーチンが毎朝 1 ファイルを上書きする（過去分は git 履歴に残る）。検証ルールの実体は `scripts/enriched-schema.mjs` にあり、パイプライン（`generate-data.mjs`）とルーチンの自己チェック（`validate-enriched.mjs`）は同じ関数を使う。どちらも、コミット済みの Product Hunt スナップショット `data/product-hunt-daily.json` があれば読み込んで照合する（場所は環境変数 `PH_SNAPSHOT_PATH` で変更可）。
+朝ルーチンが毎朝 1 ファイルを上書きする（過去分は git 履歴に残る）。検証ルールの実体は `scripts/enriched-schema.mjs` にあり、パイプライン（`generate-data.mjs`）とルーチンの自己チェック（`validate-enriched.mjs`）は同じ関数を使う。どちらも、コミット済みの Product Hunt スナップショット `data/product-hunt-daily.json` があれば読み込んで照合する（場所は環境変数 `PH_SNAPSHOT_PATH` で変更可）。ルーチンは main の最新版で、パイプラインは原稿をマージしたコミットに入っている版で照合する（後から届いた更新で失敗しないため。下の「パイプラインでの扱い」）。
 
 ## 形は 2 種類
 
@@ -28,7 +28,13 @@
 
 - `source.ph_date` は、`date` の朝 07:30 JST 時点で最後に集計が確定した太平洋時間の日（`node scripts/fresh-since.mjs` が表示）と一致すること
 - `tools[].ph_rank` は 1 以上の整数・重複なし・動画の並び順で昇順
-- スナップショットに `source.ph_date` の API ランキング（`days[].source === "api"`）があれば、各ツールの `ph_rank` の投稿の URL が `ph_url` と一致すること（違えばエラー）。無ければ警告
+- **ranking には確定ランキングが必要**: 当日向けのスナップショット（`forVideoDate` が `date`）に、`source.ph_date` の API ランキング（`days[].source === "api"` かつ `status === "final"`）が無ければエラー（スナップショットが無い・別の日向け・フィードだけ・集計中の日しか無い、のどれでも）。その日は pickup にする
+- 各ツールについて、確定ランキングの `ph_rank` 番目の投稿の URL が `ph_url` と一致し、その投稿の公開日時（スナップショットの `publishedAt`）が新作の範囲に入っていること
+
+### pickup の照合
+
+- 当日向けのスナップショットがあるとき、各ツールの `ph_url` がスナップショットに載っていること（無ければエラー）と、スナップショットの `publishedAt` で新作の範囲に入っていること（範囲外はエラー）。`ph_published_at` がスナップショットと違うだけなら警告
+- スナップショットが無い・別の日向けのときは照合できないので警告（ルーチンが公式フィードから直接選んだ日）
 
 ## 新作の定義
 
@@ -84,21 +90,25 @@ node scripts/fresh-since.mjs 2026-09-15
 `name` / `description` / `who` / `pricing_note` / `narration` / `opening_narration` / `skip.reason` は、**NFKC 正規化（全角英数・全角記号・半角カナを通常の文字にそろえる）をしてから**判定し、次のどれかがあると検証エラーになる。
 
 - URL（`https://` などのスキーム。全角の `ｈｔｔｐｓ：／／` も同じ）、`www.`（全角の `ｗｗｗ．` も同じ）
-- ドメイン名: 「英数字.英字で始まる 2 文字以上」の形はすべて（`evil.shop`、`x.ai` など。`v2.10` や `1.5GB` は該当しない）。`evil[.]com` `evil(dot)com` のような書き換えも同じ。**`name` だけは製品名の `Node.js` `X.ai` のような形を許可**（URL と書き換え表記は不可）
+- ドメイン名: 「英数字.英字で始まる 2 文字以上」の形はすべて（`evil.shop`、`x.ai` など。`v2.10` や `1.5GB` は該当しない）。句点（`evil。com`）・英字以外のラベル（`お名前.com`）・IP アドレス、`evil[.]com` `evil(dot)com` `evil dot com` `evil . com` のような書き換えも同じ（`Unity .NET` のように大文字の技術名は該当しない）。**`name` だけは、`Node.js` `ML.NET` のような技術名（`.js` `.ts` `.py` `.NET` などで終わる形）と、公式サイト `website` と同じドメインの製品名（`website` が `https://cal.com/` なら `Cal.com`）を許可**。それ以外のドメインを含む名前、URL、書き換え表記は不可
 - `@` で始まるメンション、`#` で始まるハッシュタグ
 - 改行・タブなどの制御文字、ゼロ幅スペース・方向制御文字・BOM などの見えない文字（正規化前の値でも判定）
 
-pickup モードでは加えて、**順位を思わせる言葉**が `name` / `description` / `who` / `pricing_note` / `narration` / `opening_narration` にあるとエラーになる（ranking モードでは name 以外に警告）: `TOP5` `Top-5` `トップ5`（半角カナも）`ランキング` `3位` `一位` `首位` `上位5` `ベスト5` `No.1`。`上位プラン` `トップページ` のように数字が続かないものは該当しない。
+pickup モードでは加えて、**順位を思わせる言葉**が `name` / `description` / `who` / `pricing_note` / `narration` / `opening_narration` にあるとエラーになる（ranking モードでは name 以外に警告）: `TOP5` `Top-5` `Top:5` `トップ5` `トップ・5`（半角カナ・全角も）`ランキング` `RANKING` `rank 1` `3位` `一位` `首位` `上位5` `ベスト5` `Best 5` `No.1` `ナンバーワン` `ナンバー1`。`上位プラン` `トップページ` のように数字が続かないもの、`デスクトップ3台` `Laptop 4 GB` `三位一体` `位置` `No 2FA` は該当しない。
 
 キャプション生成（`generate-caption.mjs`）でも、改行と見えない文字を念のため取り除く。
 
 ## パイプラインでの扱い
 
 - `generate-data.mjs` が検証 → `output/trending-data.json`（`tools` / `meta` / ナレーション）を作る。休止の日は `output/skip.json`（理由・候補数・スナップショット照合の結果）を書き、`pipeline.mjs` は警告と要約を出し、本番なら `record-upload.mjs --skip` で休止日を記録して正常終了する
+  - 照合に使うスナップショットは、`data/enriched-ai-tools.json` を最後に変えたコミット（ルーチンの squash merge）に入っている版（`scripts/snapshot.mjs` の `loadSnapshotForRun`）。ルーチンのあと 08:15 までに `fetch-product-hunt.yml` が新しい版をコミットしても、それでは照合しない（候補が増えて休止が矛盾に見える、pickup の候補がフィードから消える、といった誤った失敗を防ぐ）
+  - そのコミットがスナップショットも変えていたら、1 つ前の版を使う（ルーチンは取得データを編集しない）
+  - `PH_SNAPSHOT_PATH` か `ENRICHED_PATH` を指定したとき（ドライラン・検証モード）、履歴が浅くてそのコミットが見えないとき（`daily-video.yml` は `fetch-depth: 50`）、原稿に未コミットの変更があるときは作業ツリーの版を使い、ログに `NOTE` を出す
 - `fetch-tool-images.mjs` が画像を探す: `image_url` → スナップショットの Product Hunt サムネイル（API モード）→ 公式サイトの og:image
-  - 取得は https のみ。リダイレクトは最大 5 回で、毎回 https と公開アドレスを確認する（DNS の答えに 1 つでも非公開アドレスがあれば不可）。IPv4 の localhost・10.x・172.16〜31.x・192.168.x・169.254.x・100.64/10・テスト用アドレス、IPv6 の ::1・IPv4 射影/互換（`::ffff:7f00:1` `::7f00:1`）・64:ff9b::/32・2002::/16・2001::/32・2001:db8::/32・fc00::/7・fe80::/10・fec0::/10・マルチキャストを拒否
+  - 取得は https のみ。リダイレクトは最大 5 回で、毎回 https と公開アドレスを確認する（DNS の答えに 1 つでも非公開アドレスがあれば不可）。IPv4 の localhost・10.x・172.16〜31.x・192.168.x・169.254.x・100.64/10・テスト用アドレスを拒否。IPv6 はグローバルユニキャスト 2000::/3 以外をすべて拒否（::1、IPv4 射影/互換/変換 `::ffff:7f00:1` `::7f00:1` `::ffff:0:7f00:1`、64:ff9b::/96・64:ff9b:1::/48、fc00::/7、fe80::/10、fec0::/10、マルチキャストなど）し、その中でも 2001::/23（Teredo を含む）・2001:db8::/32・2002::/16・3fff::/20 を拒否（IANA IPv6 Special-Purpose Address Registry に基づく）
   - 接続は確認したアドレスに固定する（2 回目の DNS 解決をしないので、確認後に向き先を変えられない）
   - 本文は読み込みながら 5MB（HTML は 1MB）で打ち切る
+  - 時間の上限: DNS 解決 1 回・リクエスト 1 回はそれぞれ最大 12 秒（少しずつ送り続けるサーバーでも経過時間で打ち切る）、1 ツールあたり 30 秒、画像の手順全体で 90 秒。`pipeline.mjs` は念のため 150 秒で手順ごと止め、文字だけのカードで続行する
   - PNG / JPEG / WebP / GIF で 120px 以上のものだけ使い、動く GIF は 1 コマ目を静止画にし、動く WebP は使わない。無ければ文字だけのカードにする
 - YouTube 概要欄は 5000 バイトに収める。あふれそうなときは、使い方の呼びかけ → 誰向け・料金 → 公式サイト → 一言の順に削り、各ツールの `Product Hunt: <ph_url>` と「出典: Product Hunt」の行は必ず残す
 - テンプレートの見本値（「一言」「誰向け」「任意」など）が残っている、などは検証で NG になる
@@ -109,7 +119,13 @@ pickup モードでは加えて、**順位を思わせる言葉**が `name` / `d
 - `data/samples/enriched-ai-tools.sample.json`: ranking（2026-09-13 のランキングから作成。料金・機能は公式サイトで 2026-09-14 に確認）
 - `data/samples/enriched-ai-tools.pickup.sample.json`: pickup（3 本）
 - `data/samples/enriched-ai-tools.skip.sample.json`: 休止の日
+- `data/samples/product-hunt-daily.sample.json`: ranking / pickup サンプルの照合用スナップショット（2026-09-15 向け。9/13 の確定ランキングにサンプルの 5 本が同じ順位・URL で入っている）
+- `data/samples/product-hunt-daily.skip.sample.json`: 休止サンプルの照合用（新作の AI 系が 1 本だけ）
 
 ```bash
-npm run dry-run   # DRY_RUN=1: ranking サンプルで動画とキャプションを作るだけ。投稿・記録はしない
+npm run dry-run          # DRY_RUN=1: ranking サンプルで動画とキャプションを作るだけ。投稿・記録はしない
+npm run dry-run:pickup   # pickup サンプルで同じことをする
+npm run dry-run:skip     # 休止サンプル: 動画を作らず、警告と要約だけ出して終わる
 ```
+
+`daily-video.yml` の検証モード（`dry_run` にチェック、または main 以外のブランチ）は、ranking サンプルと照合用スナップショットで動かす。

@@ -44,6 +44,8 @@ npm test                      # unit tests (node --test)
 npm run typecheck             # tsc --noEmit
 npm run fetch-ph -- --dry-run # Product Hunt 取得だけ試す（書き込みなし）
 npm run dry-run               # サンプルデータで動画 + キャプションを作る（投稿・記録なし）
+npm run dry-run:pickup        # pickup（N選）のサンプルで同じことをする
+npm run dry-run:skip          # 休止の日のサンプル（動画は作らず、警告と要約だけ）
 ```
 
 GitHub Actions 上の検証:
@@ -63,6 +65,7 @@ data/product-hunt-daily.json        # fetch-product-hunt.yml のスナップシ�
 data/samples/                       # 検証用サンプル
 scripts/fetch-product-hunt.mjs      # 公式 API / Atom フィードの取得
 scripts/enriched-schema.mjs         # データ検証（パイプラインとルーチンで共通）
+scripts/snapshot.mjs                # 照合用スナップショットの読み込み（パイプラインはルーチンのコミット時点の版）
 scripts/fetch-tool-images.mjs       # ロゴ / スクリーンショット取得（失敗しても止めない）
 scripts/generate-caption.mjs        # YT タイトル 100 字・IG ハッシュタグ 5 個の制限を守る
 scripts/pdca-summary.mjs            # IG views 中央値・保存合計・判定日を出す

@@ -77,7 +77,7 @@ node scripts/pdca-summary.mjs
 
 ### 3. 候補を取得する
 
-**a) スナップショットを読む**: `data/product-hunt-daily.json`（`fetch-product-hunt.yml` が前夜 18:30 と朝 06:30 JST に更新）。`forVideoDate` が `$TODAY` なら使う。**`fresh: true` の post だけが候補**（`freshSince` がスナップショットに入っている）。
+**a) スナップショットを読む**: `data/product-hunt-daily.json`（`fetch-product-hunt.yml` が前夜 18:30 と朝 06:30 JST に更新）。`forVideoDate` が `$TODAY` なら使う。**`fresh: true` の post だけが候補**（`freshSince` がスナップショットに入っている）。このファイルは取得データなので**編集もコミットもしない**。
 
 | `mode` | 使うデータ | `source` に書く値 |
 |---|---|---|
@@ -88,7 +88,7 @@ node scripts/pdca-summary.mjs
 - `apiError` が入っているときは API 取得に失敗して pickup に落ちた日。レポートの「気づき」に一行書く
 - `freshAiCount` がその日に使える AI 系の候補数の目安
 
-**b) スナップショットが無い、または `forVideoDate` が古い場合**: WebFetch で `https://www.producthunt.com/feed?category=artificial-intelligence`（公式フィード）を 1 回だけ取得し、各エントリの **title / link / published** をそのまま書き出してもらう。`published` が手順 0 の時刻以降のものだけを候補にする（`source.mode` は `"pickup"`、`ph_published_at` は `published` の値）。
+**b) スナップショットが無い、または `forVideoDate` が古い場合**: WebFetch で `https://www.producthunt.com/feed?category=artificial-intelligence`（公式フィード）を 1 回だけ取得し、各エントリの **title / link / published** をそのまま書き出してもらう。`published` が手順 0 の時刻以降のものだけを候補にする（`source.mode` は `"pickup"`、`ph_published_at` は `published` の値）。照合できる確定ランキングが無いので、この日は ranking にできない。
 
 **c) どちらも取れない場合**: 捏造せずに中止し、最終レポートに理由を書く（その日は投稿されない）。
 
@@ -97,9 +97,10 @@ node scripts/pdca-summary.mjs
 | モード | 本数 | 並び | 画面・キャプションの呼び方 |
 |---|---|---|---|
 | `ranking` | **ちょうど 5 本** | dailyRank 順（`ph_rank` に dailyRank を入れる） | 「新作AIツール TOP5」 |
-| `pickup` | **2〜5 本**（新作の範囲に入った候補から、使えるものがある分だけ） | おすすめ順（`ph_rank` は入れない） | 「新作AIツール N選」。**順位を思わせる言葉（TOP・トップ・ランキング・◯位・一位・首位・上位N・ベストN・No.N。全角・半角カナ・英語表記も）は、ツール名を含めて一切使わない** |
+| `pickup` | **2〜5 本**（新作の範囲に入った候補から、使えるものがある分だけ） | おすすめ順（`ph_rank` は入れない） | 「新作AIツール N選」。**順位を思わせる言葉（TOP・トップ・ランキング・RANK・◯位・一位・首位・上位N・ベストN・BEST N・No.N・ナンバーワン。全角・半角カナ・英語表記・「Top-5」「トップ・5」のように記号をはさんだ書き方も）は、ツール名を含めて一切使わない** |
 
-- **ranking の順位は本物だけ**: `source.ph_date` は `node scripts/fresh-since.mjs` が表示する日（スナップショットの `status: "final"` の日）と一致させる。`ph_rank` はその日の dailyRank をそのまま使い、1 以上・重複なし・動画の並び順で昇順にする。スナップショットにその日のランキングがあると、`ph_rank` と `ph_url` の組が 1 つでも違えば検証エラーになる
+- **ranking の順位は本物だけ**: ranking にできるのは、当日向けのスナップショット（`forVideoDate` が `$TODAY`）に Product Hunt API の確定ランキング（`source: "api"` かつ `status: "final"` の日）があり、その日が `node scripts/fresh-since.mjs` の表示する日と同じときだけ（無ければ検証エラーなので pickup にする）。`source.ph_date` はその日、`ph_rank` はその日の dailyRank をそのまま使い、1 以上・重複なし・動画の並び順で昇順にする。`ph_rank` と `ph_url` の組が 1 つでも違えば検証エラー
+- **pickup のツールもスナップショットに載っているものだけ**: 当日向けのスナップショットがある日は、各ツールの `ph_url` がスナップショットに載っていて、スナップショットの `publishedAt` で新作の範囲に入っていないと検証エラー（スナップショットが無い・古い日は照合できないため警告だけ）
 - **pickup で使える候補が 2 本に満たない日は投稿しない**: `data/enriched-ai-tools.json` を次の「休止」の形で書き、PDCA レポートと一緒に PR で入れる。パイプラインは動画を作らずに終わり、GitHub に警告と要約を出し、performance-history.json に休止日として記録する。最終レポートにも「新作の候補が N 本のため休止」と書く
 
   ```json
@@ -136,7 +137,7 @@ node scripts/pdca-summary.mjs
 **文字のフィールド（name / description / who / pricing_note / narration / opening_narration）に入れてはいけないもの**（全角・半角の違いは同じ文字として判定される）:
 
 - URL（`https://`、全角の `ｈｔｔｐｓ：／／`、`www.`）
-- ドメイン名（`evil.shop` のように「英数字.英字」の形はすべて。`evil[.]com` のような書き換えも同じ）。**`name` だけは製品名の `Node.js` `X.ai` のような形を許可**。`v2.10` や `1.5GB` のような数字は問題ない
+- ドメイン名（`evil.shop` のように「英数字.英字」の形はすべて。`evil[.]com`・`evil dot com`・`evil . com`・句点を使った `evil。com`・`お名前.com` のような書き換えも同じ）。**`name` だけは、`Node.js` のような技術名の形と、公式サイト（`website`）と同じドメインの製品名（例: 公式サイトが `cal.com` の `Cal.com`、`x.ai` の `X.ai`）を許可**。それ以外のドメインを含む名前は NG。`v2.10` や `1.5GB` のような数字は問題ない
 - `@` で始まるメンション、`#` で始まるハッシュタグ
 - 改行、制御文字、ゼロ幅文字などの見えない文字
 
@@ -197,10 +198,19 @@ Product Hunt のタグラインや公式サイトの文章をコピーすると�
 ### 8. 検証（必須・省略禁止）
 
 ```bash
-node scripts/validate-enriched.mjs
+# 手順 3 の後にスナップショットが更新されていることがあるので、main の最新で検証する
+git fetch origin main --quiet
+if git show origin/main:data/product-hunt-daily.json > /tmp/ph-snapshot.json 2>/dev/null; then
+  PH_SNAPSHOT_PATH=/tmp/ph-snapshot.json node scripts/validate-enriched.mjs
+else
+  node scripts/validate-enriched.mjs
+fi
 ```
 
 `OK` が出るまで直す。`NG` が残ったままコミットしない。`WARN` もできる範囲で直す。新作の範囲に入る候補が 2 本に満たず直せない場合は、手順 4 の「休止」の形にする（休止の形も同じコマンドで検証する）。
+
+- 動画生成（08:15）は、この原稿をマージしたコミットに入っているスナップショットで同じ照合をする。マージの後に届いたスナップショットでは照合しないので、ここで main の最新に対して `OK` にしておけば、後からの更新で失敗することはない
+- main の最新スナップショットのせいで `NG` になったとき（候補が増えて休止が認められない、pickup の候補がフィードから消えた、など）は、`/tmp/ph-snapshot.json` を読んで手順 3 から選び直す
 
 ### 9. main に反映する（PR 経由）
 
@@ -226,7 +236,16 @@ git log origin/main -10 --format=%s | grep -F "新作AIツール $TODAY" \
   && git show origin/main:data/enriched-ai-tools.json | grep -E "\"date\": ?\"$TODAY\"" \
   && echo "OK: main updated with today's content" \
   || echo "WARN: main did NOT receive today's content — investigate manually"
+
+# マージ後の照合（必須）— 動画生成と同じ版のスナップショット（原稿をマージしたコミットの中身）で検証する
+MERGED=$(git log -1 --format=%H origin/main -- data/enriched-ai-tools.json)
+if git show "$MERGED:data/product-hunt-daily.json" > /tmp/ph-snapshot-merged.json 2>/dev/null; then
+  PH_SNAPSHOT_PATH=/tmp/ph-snapshot-merged.json node scripts/validate-enriched.mjs \
+    || echo "WARN: the snapshot changed while merging and today's data no longer validates"
+fi
 ```
+
+マージ後の照合で WARN が出たとき（検証の直後にスナップショットが更新された、まれなケース）は、`/tmp/ph-snapshot-merged.json` で手順 3〜8 をやり直し、同じ手順でもう一度反映する。08:15 に間に合わないときは最終レポートに書く。
 
 投稿しない日（手順 4 の「休止」）も同じ手順で、休止の形の `data/enriched-ai-tools.json` と `docs/pdca/$TODAY.md` をコミットする。件名は `Content: 新作AIツール $TODAY 休止（新作の候補 N 本） [skip ci]`（着弾確認のコマンドはそのまま使える）。
 
