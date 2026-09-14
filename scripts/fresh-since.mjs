@@ -7,7 +7,7 @@
  *   node scripts/fresh-since.mjs 2026-09-15
  */
 
-import { freshSince, tzParts, PACIFIC_TZ } from "./pacific-time.mjs";
+import { freshSince, expectedRankingDate, tzParts, PACIFIC_TZ } from "./pacific-time.mjs";
 import { todayJst } from "./enriched-schema.mjs";
 
 const videoDate = process.argv[2] || todayJst();
@@ -18,3 +18,4 @@ if (!/^\d{4}-\d{2}-\d{2}$/.test(videoDate)) {
 const since = freshSince(videoDate);
 const p = tzParts(since, PACIFIC_TZ);
 console.log(`video date ${videoDate}: new launches = published at or after ${since.toISOString()} (${p.month}/${p.day} 00:00 Pacific)`);
+console.log(`ranking mode: source.ph_date must be ${expectedRankingDate(videoDate)} (that day's final Product Hunt ranking)`);
