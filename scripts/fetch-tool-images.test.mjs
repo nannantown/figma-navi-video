@@ -7,6 +7,7 @@ import {
   downloadImage,
   resolveToolImage,
   snapshotThumbnails,
+  isAnimated,
 } from "./fetch-tool-images.mjs";
 
 function png(width, height) {
@@ -97,6 +98,27 @@ test("resolveToolImage falls back routine → PH thumbnail → og:image", async 
   );
   assert.equal(img.from, "official og:image");
   assert.equal(img.type, "jpeg");
+});
+
+test("animated GIFs are flattened to their first frame, animated WebP is skipped", async () => {
+  const log = () => {};
+  // GIF header + two Graphic Control Extensions = two frames
+  const gif = Buffer.concat([Buffer.from("GIF89a"), Buffer.alloc(7), Buffer.from([0x21, 0xf9, 0x04, 0, 0, 0, 0, 0]), Buffer.alloc(10), Buffer.from([0x21, 0xf9, 0x04, 0, 0, 0, 0, 0])]);
+  assert.equal(isAnimated(gif), true);
+  assert.equal(isAnimated(Buffer.concat([Buffer.from("GIF89a"), Buffer.alloc(7), Buffer.from([0x21, 0xf9, 0x04])])), false);
+  const flattened = await downloadImage("https://x.example/logo.gif", {
+    fetchImpl: async () => respond(gif),
+    firstFrame: () => png(400, 400),
+    log,
+  });
+  assert.equal(flattened.type, "png");
+  assert.equal(flattened.width, 400);
+
+  const animatedWebp = webpVp8x(512, 512);
+  animatedWebp[20] = 0x02;
+  assert.equal(isAnimated(animatedWebp), true);
+  assert.equal(isAnimated(webpVp8x(512, 512)), false);
+  assert.equal(await downloadImage("https://x.example/a.webp", { fetchImpl: async () => respond(animatedWebp), log }), null);
 });
 
 test("resolveToolImage returns null when nothing usable exists", async () => {

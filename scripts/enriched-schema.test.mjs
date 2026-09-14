@@ -85,6 +85,15 @@ test("narration length is enforced per tool and in total, sentence count is a wa
   assert.match(res.warnings.join("\n"), /4 sentences/);
 });
 
+test("Product Hunt redirect as website and template placeholders are rejected", () => {
+  const redirect = valid({ tools: [tool(1, { website: "https://www.producthunt.com/r/p/1247901?app_id=339" }), tool(2), tool(3), tool(4), tool(5)] });
+  assert.match(validateEnriched(redirect, { today: "2026-09-15" }).errors.join("\n"), /website is a Product Hunt URL/);
+  const placeholder = valid({ tools: [tool(1, { pricing_note: "任意", who: "誰向け" }), tool(2), tool(3), tool(4), tool(5)] });
+  const errors = validateEnriched(placeholder, { today: "2026-09-15" }).errors.join("\n");
+  assert.match(errors, /pricing_note still has the template placeholder/);
+  assert.match(errors, /who still has the template placeholder/);
+});
+
 test("duplicate tool names are rejected", () => {
   const dup = valid({ tools: [tool(1), tool(2, { name: "tool 1" }), tool(3), tool(4), tool(5)] });
   assert.match(validateEnriched(dup, { today: "2026-09-15" }).errors.join("\n"), /duplicated/);

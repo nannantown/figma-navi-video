@@ -15,8 +15,10 @@
  * SKIP_TOOL_IMAGES=1 disables downloads (offline runs).
  */
 
-import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync, realpathSync } from "fs";
+import { readFileSync, writeFileSync, mkdirSync, mkdtempSync, existsSync, rmSync, realpathSync } from "fs";
 import { join, dirname } from "path";
+import { tmpdir } from "os";
+import { execFileSync } from "child_process";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -93,6 +95,40 @@ export function imageSize(buf, type = sniffImageType(buf)) {
   return null;
 }
 
+/**
+ * Animated GIF / WebP would play at the browser's own pace instead of in sync
+ * with the rendered frames, so they are flattened (GIF) or skipped (WebP).
+ */
+export function isAnimated(buf, type = sniffImageType(buf)) {
+  if (type === "gif") {
+    if (buf.includes("NETSCAPE2.0") || buf.includes("ANIMEXTS1.0")) return true;
+    let gce = 0;
+    for (let i = 0; i + 2 < buf.length; i++) {
+      if (buf[i] === 0x21 && buf[i + 1] === 0xf9 && buf[i + 2] === 0x04 && ++gce > 1) return true;
+    }
+    return false;
+  }
+  if (type === "webp") {
+    // Animated WebP always carries a VP8X header with the animation flag (0x02).
+    return buf.toString("ascii", 12, 16) === "VP8X" && (buf[20] & 0x02) !== 0;
+  }
+  return false;
+}
+
+/** First frame of an animated GIF as PNG via ffmpeg (installed by daily-video.yml). */
+export function ffmpegFirstFrame(buf) {
+  const dir = mkdtempSync(join(tmpdir(), "tool-img-"));
+  try {
+    const inPath = join(dir, "in.gif");
+    const outPath = join(dir, "out.png");
+    writeFileSync(inPath, buf);
+    execFileSync("ffmpeg", ["-v", "error", "-y", "-i", inPath, "-frames:v", "1", outPath], { stdio: "ignore", timeout: 20000 });
+    return readFileSync(outPath);
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+}
+
 function decodeAttr(s) {
   return s.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#39;/g, "'");
 }
@@ -131,7 +167,7 @@ async function fetchWithTimeout(url, fetchImpl, accept) {
 }
 
 /** @returns {Promise<{buf: Buffer, type: string, width: number, height: number} | null>} */
-export async function downloadImage(url, { fetchImpl = fetch, log = console.log } = {}) {
+export async function downloadImage(url, { fetchImpl = fetch, log = console.log, firstFrame = ffmpegFirstFrame } = {}) {
   if (!url || !/^https?:\/\//i.test(url)) return null;
   try {
     const res = await fetchWithTimeout(url, fetchImpl, "image/png,image/jpeg,image/webp,image/gif;q=0.9,*/*;q=0.1");
@@ -144,15 +180,32 @@ export async function downloadImage(url, { fetchImpl = fetch, log = console.log 
       log(`    skip ${url}: ${declared} bytes > ${MAX_BYTES}`);
       return null;
     }
-    const buf = Buffer.from(await res.arrayBuffer());
+    let buf = Buffer.from(await res.arrayBuffer());
     if (buf.length > MAX_BYTES) {
       log(`    skip ${url}: ${buf.length} bytes > ${MAX_BYTES}`);
       return null;
     }
-    const type = sniffImageType(buf);
+    let type = sniffImageType(buf);
     if (!type) {
       log(`    skip ${url}: not PNG/JPEG/WebP/GIF`);
       return null;
+    }
+    if (isAnimated(buf, type)) {
+      if (type !== "gif") {
+        log(`    skip ${url}: animated ${type}`);
+        return null;
+      }
+      try {
+        buf = firstFrame(buf);
+        type = sniffImageType(buf);
+      } catch (err) {
+        log(`    skip ${url}: animated gif, first-frame extraction failed (${err.message})`);
+        return null;
+      }
+      if (type !== "png") {
+        log(`    skip ${url}: animated gif, first frame is not a PNG`);
+        return null;
+      }
     }
     const size = imageSize(buf, type);
     if (!size || size.width < MIN_SIDE || size.height < MIN_SIDE) {

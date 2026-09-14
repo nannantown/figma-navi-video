@@ -142,6 +142,9 @@ export const defaultDurations: AudioDurations = {
 export const FPS = 30;
 const PADDING = 15; // 0.5s padding after each narration
 const ENDING_EXTRA = 30; // 1s extra hold on the ending
+// The cover still (frame 60) and Instagram's thumb_offset (2000 ms) must land
+// on the title card even when a routine tries a very short opening hook.
+const MIN_OPENING = 90;
 
 export function getToolCount(d: AudioDurations): number {
   let count = 0;
@@ -152,7 +155,7 @@ export function getToolCount(d: AudioDurations): number {
 export function calculateFrameDurations(d: AudioDurations) {
   // Opening is optional: 0 duration (or missing) → skipped entirely.
   const openingSec = d.opening ?? 0;
-  const opening = openingSec > 0 ? Math.ceil(openingSec * FPS) + PADDING : 0;
+  const opening = openingSec > 0 ? Math.max(Math.ceil(openingSec * FPS) + PADDING, MIN_OPENING) : 0;
   const count = getToolCount(d);
   const tools: number[] = [];
   for (let i = 1; i <= count; i++) {

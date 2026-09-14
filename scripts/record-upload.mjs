@@ -23,10 +23,24 @@ function readJSON(path) {
 }
 
 function main() {
-  // Read upload result
-  const uploadResult = readJSON(join(outputDir, "upload-result.json"));
-  if (!uploadResult || !uploadResult.videoId) {
-    console.log("record-upload: no upload-result.json found, skipping.");
+  // YouTube result (upload-youtube.mjs) and Instagram Media ID (upload-instagram.mjs).
+  // Either one is enough to record the day: a post that went live on one
+  // platform must not vanish from the history because the other one failed.
+  // A corrupt file must not cost the day's whole entry.
+  let uploadResult = null;
+  try {
+    uploadResult = readJSON(join(outputDir, "upload-result.json"));
+  } catch (err) {
+    console.error(`record-upload: unreadable upload-result.json (${err.message}), videoId: null`);
+  }
+  let igResult = null;
+  try {
+    igResult = readJSON(join(outputDir, "instagram-result.json"));
+  } catch (err) {
+    console.error(`record-upload: unreadable instagram-result.json (${err.message}), instagram: null`);
+  }
+  if (!uploadResult?.videoId && !igResult?.mediaId) {
+    console.log("record-upload: neither YouTube nor Instagram produced a result, skipping.");
     return;
   }
 
@@ -41,16 +55,6 @@ function main() {
 
   // Read enriched content for discovery metadata (Meta-PDCA input)
   const enriched = readJSON(enrichedPath);
-
-  // Instagram Media ID written by upload-instagram.mjs (absent if IG skipped/failed;
-  // fetch-stats.mjs then restores it by date-matching)
-  // A corrupt file must not cost the day's whole entry (incl. YouTube videoId).
-  let igResult = null;
-  try {
-    igResult = readJSON(join(outputDir, "instagram-result.json"));
-  } catch (err) {
-    console.error(`record-upload: unreadable instagram-result.json (${err.message}), instagram: null`);
-  }
 
   // Calculate total duration
   let durationSeconds = 0;
@@ -67,8 +71,9 @@ function main() {
 
   const tools = trendingData?.tools || [];
   const entry = {
-    videoId: uploadResult.videoId,
-    videoUrl: uploadResult.videoUrl,
+    // null when the YouTube upload failed or was skipped that day
+    videoId: uploadResult?.videoId ?? null,
+    videoUrl: uploadResult?.videoUrl ?? null,
     date: dateStr,
     // Genre trial bookkeeping: pdca-summary.mjs finds the trial start date
     // from the first entry carrying this genre.
@@ -126,7 +131,7 @@ function main() {
 
   // Write
   writeFileSync(historyPath, JSON.stringify(history, null, 2));
-  console.log(`record-upload: recorded ${entry.videoId} (${dateStr})`);
+  console.log(`record-upload: recorded ${entry.videoId ?? "(no YouTube upload)"} (${dateStr})`);
   console.log(`  Title: ${entry.title}`);
   console.log(`  Tools: ${entry.projects.join(" / ")}`);
   console.log(`  Instagram: ${entry.instagram ? entry.instagram.mediaId : "no media id (restored later by fetch-stats)"}`);

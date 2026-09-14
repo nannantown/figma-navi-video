@@ -255,19 +255,33 @@ export function classifyPost(post) {
   return { isAI, isDev };
 }
 
+/** Product Hunt URL without tracking query/hash — the form the routine copies into ph_url. */
+export function cleanPhUrl(url) {
+  if (!url) return "";
+  try {
+    const u = new URL(url);
+    return `${u.origin}${u.pathname}`.replace(/\/$/, "");
+  } catch {
+    return String(url).split(/[?#]/)[0].replace(/\/$/, "");
+  }
+}
+
 export function normalizePost(node) {
   const topics = (node.topics?.edges || []).map((e) => ({
     name: e.node?.name || "",
     slug: e.node?.slug || "",
   }));
   const thumb = node.thumbnail || null;
+  const phUrl = cleanPhUrl(node.url);
   const post = {
     id: String(node.id ?? ""),
     name: node.name || "",
     tagline: node.tagline || "",
     description: (node.description || "").slice(0, 400),
-    slug: node.slug || "",
-    url: node.url || "",
+    slug: node.slug || phUrl.split("/").pop() || "",
+    url: phUrl,
+    phUrl,
+    // Product Hunt redirect, not the official site — the routine looks the real URL up.
     website: node.website || "",
     votes: Number.isFinite(node.votesCount) ? node.votesCount : null,
     comments: Number.isFinite(node.commentsCount) ? node.commentsCount : null,
@@ -357,13 +371,16 @@ export function parseAtomFeed(xml) {
     const firstParagraph = content.match(/<p>([\s\S]*?)<\/p>/i);
     const tagline = stripTags(firstParagraph ? firstParagraph[1] : content);
     const redirect = content.match(/href="(https:\/\/www\.producthunt\.com\/r\/p\/[^"]+)"/i);
+    const phUrl = cleanPhUrl(url);
     const post = {
       id: (textOf(e, "id").match(/Post\/(\d+)/) || [])[1] || textOf(e, "id"),
       name,
       tagline,
       description: "",
-      slug: url.split("?")[0].split("/").filter(Boolean).pop() || "",
-      url: url.split("?")[0],
+      slug: phUrl.split("/").filter(Boolean).pop() || "",
+      url: phUrl,
+      phUrl,
+      // Product Hunt redirect (/r/p/<id>), not the official site.
       website: redirect ? redirect[1] : "",
       votes: null,
       comments: null,
@@ -389,15 +406,30 @@ export async function fetchFeed({ fetchImpl = fetch, category = "" } = {}) {
 }
 
 /**
+ * Whether `?category=artificial-intelligence` actually filtered the feed.
+ * The parameter is undocumented: an ignored one returns the general feed.
+ * @returns {"ok" | "ignored" | "unknown"}
+ */
+export function aiCategoryFilterStatus(aiEntries, allEntries) {
+  if (aiEntries.length === 0 || allEntries.length === 0) return "unknown";
+  const allIds = new Set(allEntries.map((e) => e.id));
+  const same = aiEntries.length === allEntries.length && aiEntries.every((e) => allIds.has(e.id));
+  return same ? "ignored" : "ok";
+}
+
+/**
  * AI category entries first, then the general feed, deduplicated by post id.
- * `?category=` is undocumented, so category membership is kept as its own
- * flag (inAiCategory) next to the keyword-based isAI.
+ * Category membership (inAiCategory) is only trusted when the category filter
+ * demonstrably worked; otherwise isAI stays keyword-based and inAiCategory null.
  */
 export function mergeFeedEntries(aiEntries, allEntries) {
+  const filter = aiCategoryFilterStatus(aiEntries, allEntries);
+  const trusted = filter === "ok";
   const seen = new Set();
   const merged = [];
-  const tagged = aiEntries.map((e) => ({ ...e, inAiCategory: true, isAI: true }));
-  for (const p of [...tagged, ...allEntries.map((e) => ({ ...e, inAiCategory: false }))]) {
+  const tagged = aiEntries.map((e) => (trusted ? { ...e, inAiCategory: true, isAI: true } : { ...e, inAiCategory: null }));
+  const rest = allEntries.map((e) => ({ ...e, inAiCategory: trusted ? false : null }));
+  for (const p of [...tagged, ...rest]) {
     if (seen.has(p.id)) continue;
     seen.add(p.id);
     merged.push(p);
@@ -424,18 +456,30 @@ export async function buildSnapshot({ env = process.env, fetchImpl = fetch, now 
   };
 
   if (token) {
-    for (const offset of [-1, 0]) {
-      const bounds = pacificDayBounds(offset, now);
-      const posts = await fetchDayViaApi(token, bounds, { fetchImpl, sleepImpl });
-      snapshot.days.push({ ...bounds, source: "api", posts });
-      console.log(
-        `  ${bounds.date} (${bounds.status}): ${posts.length} posts, AI=${posts.filter((p) => p.isAI).length}, dev=${posts.filter((p) => p.isDev).length}`
-      );
+    try {
+      for (const offset of [-1, 0]) {
+        const bounds = pacificDayBounds(offset, now);
+        const posts = await fetchDayViaApi(token, bounds, { fetchImpl, sleepImpl });
+        snapshot.days.push({ ...bounds, source: "api", posts });
+        console.log(
+          `  ${bounds.date} (${bounds.status}): ${posts.length} posts, AI=${posts.filter((p) => p.isAI).length}, dev=${posts.filter((p) => p.isDev).length}`
+        );
+      }
+      return snapshot;
+    } catch (err) {
+      // A bad day on the API must not leave the routine without candidates:
+      // fall back to the public feed in pickup mode and say why.
+      console.warn(`  Product Hunt API failed (${err.message}) — falling back to the public Atom feed.`);
+      snapshot.source = "feed";
+      snapshot.mode = "pickup";
+      snapshot.apiError = err.message;
+      snapshot.note = `API failed (${err.message}). Public Atom feed instead: order is NOT a ranking — present the 5 tools as an editorial pickup.`;
+      snapshot.days = [];
     }
-    return snapshot;
+  } else {
+    console.warn("  PRODUCT_HUNT_API_TOKEN not set — using the public Atom feed (no votes, no rank).");
   }
 
-  console.warn("  PRODUCT_HUNT_API_TOKEN not set — using the public Atom feed (no votes, no rank).");
   const bounds = pacificDayBounds(0, now);
   const aiEntries = await fetchFeed({ fetchImpl, category: "artificial-intelligence" });
   const allEntries = await fetchFeed({ fetchImpl, category: "" }).catch((err) => {
@@ -443,8 +487,9 @@ export async function buildSnapshot({ env = process.env, fetchImpl = fetch, now 
     return [];
   });
   const posts = mergeFeedEntries(aiEntries, allEntries);
-  snapshot.days.push({ ...bounds, status: "feed", source: "feed", posts });
-  console.log(`  feed: ${posts.length} entries, AI=${posts.filter((p) => p.isAI).length}`);
+  const aiCategoryFilter = aiCategoryFilterStatus(aiEntries, allEntries);
+  snapshot.days.push({ ...bounds, status: "feed", source: "feed", aiCategoryFilter, posts });
+  console.log(`  feed: ${posts.length} entries, AI=${posts.filter((p) => p.isAI).length}, category filter: ${aiCategoryFilter}`);
   return snapshot;
 }
 

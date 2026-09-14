@@ -11,6 +11,7 @@ import {
   getToken,
   buildSnapshot,
   fetchDayViaApi,
+  aiCategoryFilterStatus,
 } from "./fetch-product-hunt.mjs";
 
 const FEED = `<?xml version="1.0" encoding="UTF-8"?>
@@ -102,6 +103,38 @@ test("normalizePost + rankPosts order by dailyRank then votes", () => {
   assert.deepEqual(posts.map((p) => p.id), ["2", "4", "1", "3"]);
   assert.equal(posts[0].isAI, true);
   assert.equal(posts[0].thumbnail, "https://ph-files.imgix.net/2.png");
+});
+
+test("API URLs lose their tracking query so they can be copied into ph_url", () => {
+  const post = normalizePost({ id: 9, name: "X", tagline: "AI", slug: "x-ai", url: "https://www.producthunt.com/posts/x-ai?utm_campaign=producthunt-api&utm_medium=api-v2", topics: { edges: [] } });
+  assert.equal(post.phUrl, "https://www.producthunt.com/posts/x-ai");
+  assert.equal(post.url, post.phUrl);
+  assert.equal(post.slug, "x-ai");
+});
+
+test("an ignored ?category= (same entries as the general feed) does not mark everything as AI", () => {
+  const all = parseAtomFeed(FEED);
+  assert.equal(aiCategoryFilterStatus(all, all), "ignored");
+  const merged = mergeFeedEntries(all, all);
+  const oats = merged.find((p) => p.name === "Oats & Co");
+  assert.equal(oats.isAI, false);
+  assert.equal(oats.inAiCategory, null);
+  assert.equal(aiCategoryFilterStatus(all.slice(1), all), "ok");
+  assert.equal(aiCategoryFilterStatus(all, []), "unknown");
+});
+
+test("an API failure falls back to the feed in pickup mode and records the error", async () => {
+  const fetchImpl = async (url) => {
+    if (String(url).startsWith("https://api.producthunt.com")) return new Response("{}", { status: 502 });
+    return new Response(FEED, { status: 200 });
+  };
+  const snap = await buildSnapshot({ env: { PRODUCT_HUNT_API_TOKEN: "tok" }, fetchImpl, now: new Date("2026-09-14T09:30:00Z"), sleepImpl: async () => {} });
+  assert.equal(snap.source, "feed");
+  assert.equal(snap.mode, "pickup");
+  assert.match(snap.apiError, /502/);
+  assert.ok(!snap.apiError.includes("tok"));
+  assert.equal(snap.days.length, 1);
+  assert.equal(snap.days[0].status, "feed");
 });
 
 test("classifyPost recognises dev tools by keyword", () => {

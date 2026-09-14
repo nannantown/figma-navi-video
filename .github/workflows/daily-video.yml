@@ -31,6 +31,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # Verification runs never push, so they do not keep a write token.
+          persist-credentials: ${{ env.VERIFY_RUN != '1' }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -56,22 +59,26 @@ jobs:
           DRY_RUN: ${{ env.VERIFY_RUN }}
           ENRICHED_PATH: ${{ env.VERIFY_RUN == '1' && 'data/samples/enriched-ai-tools.sample.json' || '' }}
           ALLOW_STALE_DATE: ${{ env.VERIFY_RUN }}
+          # Platform credentials only reach production runs; a verification
+          # run cannot post even if a branch's pipeline ignored DRY_RUN.
           # YouTube
-          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
-          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
-          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          YOUTUBE_CLIENT_ID: ${{ env.VERIFY_RUN != '1' && secrets.YOUTUBE_CLIENT_ID || '' }}
+          YOUTUBE_CLIENT_SECRET: ${{ env.VERIFY_RUN != '1' && secrets.YOUTUBE_CLIENT_SECRET || '' }}
+          YOUTUBE_REFRESH_TOKEN: ${{ env.VERIFY_RUN != '1' && secrets.YOUTUBE_REFRESH_TOKEN || '' }}
           # Instagram
-          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
-          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
-          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
-          # Grid thumbnail = the "新作AIツール TOP5" title card (fully drawn by 1 s,
-          # opening lasts ~3.5 s) so the profile grid reads as one series.
+          INSTAGRAM_ACCESS_TOKEN: ${{ env.VERIFY_RUN != '1' && secrets.INSTAGRAM_ACCESS_TOKEN || '' }}
+          INSTAGRAM_USER_ID: ${{ env.VERIFY_RUN != '1' && secrets.INSTAGRAM_USER_ID || '' }}
+          FACEBOOK_PAGE_ID: ${{ env.VERIFY_RUN != '1' && secrets.FACEBOOK_PAGE_ID || '' }}
+          # Grid thumbnail = the "新作AIツール TOP5" title card (opening is held
+          # ≥ 3 s) so the profile grid reads as one series.
           INSTAGRAM_THUMB_OFFSET_MS: "2000"
           # GitHub (auto-provided, used for Release creation)
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ env.VERIFY_RUN != '1' && secrets.GITHUB_TOKEN || '' }}
 
       - name: Commit performance history
-        if: env.VERIFY_RUN != '1'
+        # always(): a post that went live on one platform is recorded even when
+        # the other platform failed the run.
+        if: always() && env.VERIFY_RUN != '1'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"

@@ -24,6 +24,7 @@ const COMPOSITION_ID = "AiToolsTop5"; // src/Root.tsx
 const FPS = 30; // keep in sync with calculateFrameDurations() in src/data.ts
 const PADDING_FRAMES = 15;
 const ENDING_EXTRA_FRAMES = 30;
+const MIN_OPENING_FRAMES = 90; // cover still (frame 60) + IG thumb_offset 2000 ms must hit the title card
 const TARGET_MAX_SECONDS = 58; // Instagram Reels rejects > 60 s
 const HARD_MAX_SECONDS = 59.5;
 
@@ -51,7 +52,9 @@ function videoSeconds(durations) {
   let frames = 0;
   for (const [key, sec] of Object.entries(durations)) {
     if (!sec) continue;
-    frames += Math.ceil(sec * FPS) + (key === "ending" ? ENDING_EXTRA_FRAMES : PADDING_FRAMES);
+    let f = Math.ceil(sec * FPS) + (key === "ending" ? ENDING_EXTRA_FRAMES : PADDING_FRAMES);
+    if (key === "opening") f = Math.max(f, MIN_OPENING_FRAMES);
+    frames += f;
   }
   return frames / FPS;
 }
@@ -141,17 +144,20 @@ function main() {
   // Step 5: Post to SNS
   if (snsEnabled) {
     console.log(`\n=== Step 5: Post to SNS ===`);
-    run(`node scripts/post-sns.mjs --video="${outputFile}"`);
+    try {
+      run(`node scripts/post-sns.mjs --video="${outputFile}"`);
+    } finally {
+      // Step 6: Record whatever did get posted — even when the other platform
+      // failed — so the trial's history (genre start date, 30-day repeat list,
+      // IG insights) never loses a live post. post-sns's failure still fails
+      // the run afterwards.
+      console.log(`\n=== Step 6: Record Upload ===`);
+      runSafe("node scripts/record-upload.mjs", "record-upload");
+    }
   } else {
     console.log(`\n=== Step 5: SNS posting skipped (${dryRun ? "DRY_RUN=1" : "set SNS_POST_ENABLED=true to enable"}) ===`);
     // Still produce captions so a dry run shows exactly what would be posted.
     runSafe("node scripts/generate-caption.mjs", "generate-caption");
-  }
-
-  // Step 6: Record upload for analytics tracking
-  if (snsEnabled) {
-    console.log(`\n=== Step 6: Record Upload ===`);
-    runSafe("node scripts/record-upload.mjs", "record-upload");
   }
 
   if (!existsSync(join(rootDir, outputFile))) throw new Error(`${outputFile} was not produced`);

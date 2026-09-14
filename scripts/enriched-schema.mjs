@@ -49,6 +49,25 @@ export const DEFAULT_ENDING_NARRATION = "気になるツールは保存して、
 
 const PH_URL_RE = /^https:\/\/www\.producthunt\.com\/(products|posts)\/[a-z0-9][a-z0-9-]*\/?$/i;
 
+// Example values in docs/routine-prompt.md; copying them verbatim is a mistake.
+const TEMPLATE_PLACEHOLDERS = {
+  name: "ツール名（原文）",
+  description: "一言",
+  who: "誰向け",
+  pricing_note: "任意",
+  narration: "フック文。要点文。",
+  tagline_en: "Product Hunt のタグライン（原文）",
+};
+
+export function isProductHuntHost(url) {
+  try {
+    const host = new URL(url).hostname.toLowerCase();
+    return host === "producthunt.com" || host.endsWith(".producthunt.com");
+  } catch {
+    return false;
+  }
+}
+
 export function todayJst(now = new Date()) {
   const jst = new Date(now.getTime() + 9 * 3600 * 1000);
   return `${jst.getUTCFullYear()}-${String(jst.getUTCMonth() + 1).padStart(2, "0")}-${String(jst.getUTCDate()).padStart(2, "0")}`;
@@ -229,6 +248,14 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true } 
     if (t.pricing_note != null) checkLength(errors, warnings, `${at}.pricing_note`, t.pricing_note, LIMITS.pricing_note);
 
     if (!isHttpsUrl(t.website)) errors.push(`${at}.website must be the tool's official https URL`);
+    else if (isProductHuntHost(t.website)) {
+      errors.push(`${at}.website is a Product Hunt URL — use the tool's own official site (the snapshot's website is only a redirect)`);
+    }
+    for (const [field, placeholder] of Object.entries(TEMPLATE_PLACEHOLDERS)) {
+      if (typeof t[field] === "string" && t[field].trim() === placeholder) {
+        errors.push(`${at}.${field} still has the template placeholder "${placeholder}"`);
+      }
+    }
     if (!PH_URL_RE.test(t.ph_url || "")) {
       errors.push(`${at}.ph_url must be https://www.producthunt.com/products/<slug> (got ${JSON.stringify(t.ph_url)})`);
     }
