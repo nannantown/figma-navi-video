@@ -24,8 +24,10 @@ import {
   buildMeta,
   todayJst,
   defaultOpeningNarration,
+  skipSnapshotCheck,
   DEFAULT_ENDING_NARRATION,
 } from "./enriched-schema.mjs";
+import { loadSnapshot } from "./snapshot.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
@@ -52,7 +54,11 @@ function main() {
   const { data, repaired } = parseEnrichedText(readFileSync(enrichedPath, "utf-8"));
   if (repaired) console.warn("  JSON needed auto-repair (unescaped quotes) — tell the routine to escape them.");
 
-  const { errors, warnings } = validateEnriched(data, { today: todayJst(), checkDate: !allowStale });
+  // The committed Product Hunt snapshot cross-checks skip days and ranking ranks.
+  const { snapshot, error: snapshotError } = loadSnapshot(rootDir);
+  if (snapshotError) console.warn(`  WARN ${snapshotError}`);
+
+  const { errors, warnings } = validateEnriched(data, { today: todayJst(), checkDate: !allowStale, snapshot });
   for (const w of warnings) console.warn(`  WARN ${w}`);
   if (errors.length > 0) {
     throw new Error(`enriched-ai-tools.json is invalid:\n  - ${errors.join("\n  - ")}`);
@@ -62,9 +68,19 @@ function main() {
   const skipPath = join(outputDir, "skip.json");
   rmSync(skipPath, { force: true });
   if (data.skip) {
-    // Intentional no-video day (too few new launches). pipeline.mjs stops cleanly.
-    writeFileSync(skipPath, JSON.stringify({ date: data.date, ...data.skip }, null, 2));
-    console.log(`  SKIP ${data.date}: ${data.skip.reason} (fresh candidates: ${data.skip.fresh_candidates})`);
+    // Intentional no-video day (too few new launches). pipeline.mjs stops
+    // cleanly but loudly (Actions warning + job summary + history entry).
+    const check = skipSnapshotCheck(snapshot, data.date);
+    const record = {
+      date: data.date,
+      reason: data.skip.reason,
+      fresh_candidates: data.skip.fresh_candidates,
+      snapshot_fresh_ai: check.freshAi,
+      snapshot_check: check.status,
+      snapshot_note: check.reason || null,
+    };
+    writeFileSync(skipPath, JSON.stringify(record, null, 2));
+    console.log(`  SKIP ${data.date}: ${record.reason} (fresh candidates: ${record.fresh_candidates}, snapshot: ${check.status}${check.freshAi != null ? ` ${check.freshAi}` : ""})`);
     return;
   }
 

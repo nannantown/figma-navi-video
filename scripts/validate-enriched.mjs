@@ -13,6 +13,7 @@ import { readFileSync, existsSync } from "fs";
 import { join, dirname, isAbsolute } from "path";
 import { fileURLToPath } from "url";
 import { parseEnrichedText, validateEnriched, todayJst } from "./enriched-schema.mjs";
+import { loadSnapshot } from "./snapshot.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
@@ -39,7 +40,9 @@ if (parsed.repaired) {
   process.exit(1);
 }
 
-const { errors, warnings } = validateEnriched(parsed.data, { today: todayJst(), checkDate });
+const { snapshot, error: snapshotError } = loadSnapshot(rootDir);
+if (snapshotError) console.log(`WARN: ${snapshotError}`);
+const { errors, warnings } = validateEnriched(parsed.data, { today: todayJst(), checkDate, snapshot });
 for (const w of warnings) console.log(`WARN: ${w}`);
 for (const e of errors) console.error(`NG: ${e}`);
 if (errors.length > 0) {

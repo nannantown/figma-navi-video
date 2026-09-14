@@ -103,6 +103,15 @@ export function freshSince(videoDate) {
   return zonedMidnightUtc(prev.getUTCFullYear(), prev.getUTCMonth() + 1, prev.getUTCDate());
 }
 
+/**
+ * The Pacific date whose final Product Hunt ranking a ranking-mode video must
+ * use: the day that starts at freshSince (the last closed day at 07:30 JST).
+ */
+export function expectedRankingDate(videoDate) {
+  const p = tzParts(freshSince(videoDate), PACIFIC_TZ);
+  return ymd(p.year, p.month, p.day);
+}
+
 /** true when `publishedAt` (ISO 8601 with offset) is inside the freshness window of `videoDate`. */
 export function isFresh(publishedAt, videoDate) {
   const t = Date.parse(publishedAt ?? "");

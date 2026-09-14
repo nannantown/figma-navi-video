@@ -19,6 +19,7 @@
 import { google } from "googleapis";
 import { readFileSync, writeFileSync, existsSync } from "fs";
 import { GENRE } from "./enriched-schema.mjs";
+import { postedVideos } from "./history.mjs";
 import { YT_BASE_TAGS } from "./generate-caption.mjs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
@@ -305,7 +306,9 @@ async function main() {
 
   // Only learn from the current genre (trial #1: AI tools TOP5). The
   // design-news videos used different hashtags/titles and would skew hints.
-  const genreVideos = history.videos.filter((v) => v.genre === GENRE);
+  // Skip days (no video on purpose) carry zero stats and must not drag averages down.
+  const posted = postedVideos(history.videos);
+  const genreVideos = posted.filter((v) => v.genre === GENRE);
 
   // Hashtag analysis
   const hashtagResult = analyzeHashtags(genreVideos);
@@ -333,7 +336,7 @@ async function main() {
   }
 
   // Language analysis
-  const langResult = analyzeLanguages(history.videos);
+  const langResult = analyzeLanguages(posted);
   if (langResult && langResult.length > 0) {
     hints.reasoning.push(
       `Trending languages: ${langResult.map((l) => `${l.language} (${l.ratio.toFixed(1)}x)`).join(", ")}`
@@ -341,7 +344,7 @@ async function main() {
   }
 
   // Day of week insights
-  const dayInsights = generateDayOfWeekInsights(history.videos);
+  const dayInsights = generateDayOfWeekInsights(posted);
   if (dayInsights.length > 0) {
     hints.reasoning.push(
       `Day performance: ${dayInsights.map((d) => `${d.day}=${d.avgViews}`).join(", ")}`

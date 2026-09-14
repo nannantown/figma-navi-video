@@ -19,6 +19,7 @@ import { readFileSync, realpathSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { GENRE, TRIAL, todayJst } from "./enriched-schema.mjs";
+import { isSkipEntry, postedVideos } from "./history.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const historyPath = join(__dirname, "..", "data", "performance-history.json");
@@ -59,13 +60,16 @@ export function genreOf(video) {
 }
 
 export function summarizeWindow(videos, { from, to }) {
-  const inWindow = videos.filter((v) => v.date >= from && v.date <= to);
+  const all = videos.filter((v) => v.date >= from && v.date <= to);
+  // Skip days (no video on purpose) are counted, never measured.
+  const inWindow = postedVideos(all);
   const yt = inWindow.filter((v) => v.stats?.updatedAt != null).map((v) => v.stats.views ?? 0);
   const ig = inWindow.filter((v) => v.instagram != null && v.instagram.views != null).map((v) => v.instagram);
   return {
     from,
     to,
     posts: inWindow.length,
+    skipped: all.length - inWindow.length,
     yt: { n: yt.length, viewsMedian: median(yt) },
     ig: {
       n: ig.length,
@@ -93,11 +97,12 @@ export function judgeYt({ n, viewsMedian }) {
   return "続行";
 }
 
-/** Trial position: actual start = first history entry of this genre, else the planned start. */
+/** Trial position: actual start = first posted entry of this genre (skip days do not start a trial), else the planned start. */
 export function trialStatus(videos, { today, plannedStart = PLANNED_START }) {
   const trialVideos = videos.filter((v) => genreOf(v) === GENRE).sort((a, b) => a.date.localeCompare(b.date));
-  const started = trialVideos.length > 0;
-  const startDate = started ? trialVideos[0].date : plannedStart;
+  const firstPost = postedVideos(trialVideos)[0];
+  const started = Boolean(firstPost);
+  const startDate = started ? firstPost.date : plannedStart;
   const judgmentDate = addDays(startDate, TRIAL_DAYS);
   const dayN = daysBetween(startDate, today) + 1;
   const windowTo = [today, addDays(startDate, TRIAL_DAYS - 1)].sort()[0];
@@ -136,6 +141,7 @@ export function renderMarkdown(history, { today, plannedStart = PLANNED_START })
   } else {
     lines.push(`- 今日の判定: なし（判定日 ${st.judgmentDate} まで待つ）。IG 参考: シェア合計 ${s.ig.sharesSum} / リーチ中央値 ${fmt(s.ig.reachMedian)}`);
   }
+  lines.push(`- 判定窓の投稿 ${s.posts} 本 / 休止 ${s.skipped} 日（休止日は中央値・合計に入れない）`);
   lines.push("");
 
   // Baseline: the design-news genre's last 14 days before this trial started.
@@ -157,6 +163,12 @@ export function renderMarkdown(history, { today, plannedStart = PLANNED_START })
   lines.push("| 日付 | ジャンル | method | ツール | IG views | IG 保存 | IG シェア | YT views |");
   lines.push("|---|---|---|---|---|---|---|---|");
   for (const v of recent) {
+    if (isSkipEntry(v)) {
+      lines.push(
+        `| ${v.date} | ${genreOf(v)} | — | 休止（${v.skip.reason}／新作の候補 ${v.skip.fresh_candidates ?? "?"}・スナップショットの新作AI ${v.skip.snapshot_fresh_ai ?? "照合なし"}） | — | — | — | — |`
+      );
+      continue;
+    }
     const tools = (v.tools || []).map((t) => t.name).join(" / ") || (v.projects || []).slice(0, 1).join("") || "—";
     const ig = v.instagram;
     const igPending = ig && ig.views == null ? "未取得" : "—";

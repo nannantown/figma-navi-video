@@ -1,0 +1,62 @@
+/**
+ * data/performance-history.json helpers shared by record-upload.mjs,
+ * fetch-stats.mjs and pdca-summary.mjs.
+ *
+ * A "skip entry" records a day the routine deliberately published nothing
+ * (too few new launches). It keeps the day visible in the history and the
+ * PDCA report, but must never be treated as a posted video: it has no
+ * videoId, no stats and no Instagram media, and it is excluded from medians,
+ * hashtag/title learning and the trial start date.
+ */
+
+export const HISTORY_KEEP_DAYS = 90;
+
+export function isSkipEntry(video) {
+  return Boolean(video && video.skip && typeof video.skip === "object");
+}
+
+/** Entries that are real posts (not skip days). */
+export function postedVideos(videos) {
+  return (videos || []).filter((v) => !isSkipEntry(v));
+}
+
+export function buildSkipEntry({ date, genre, trial, skip }) {
+  return {
+    videoId: null,
+    videoUrl: null,
+    date,
+    genre,
+    trial,
+    skip: {
+      reason: String(skip.reason ?? ""),
+      fresh_candidates: Number.isInteger(skip.fresh_candidates) ? skip.fresh_candidates : null,
+      snapshot_fresh_ai: Number.isInteger(skip.snapshot_fresh_ai) ? skip.snapshot_fresh_ai : null,
+    },
+    title: "",
+    titleTemplate: null,
+    hashtags: [],
+    languages: [],
+    projects: [],
+    tools: [],
+    source: null,
+    durationSeconds: 0,
+    discovery: null,
+    stats: { views: 0, likes: 0, comments: 0, updatedAt: null },
+    instagram: null,
+  };
+}
+
+function cutoffDate(now, keepDays) {
+  const cutoff = new Date(now.getTime());
+  cutoff.setDate(cutoff.getDate() - keepDays);
+  return cutoff.toISOString().slice(0, 10);
+}
+
+/** Replace the entry for the same date, append, and keep the last `keepDays` days. */
+export function upsertVideo(history, entry, { now = new Date(), keepDays = HISTORY_KEEP_DAYS } = {}) {
+  const base = history && Array.isArray(history.videos) ? history : { schemaVersion: 1, videos: [], optimizationLog: [], ...(history || {}) };
+  const limit = cutoffDate(now, keepDays);
+  const videos = (base.videos || []).filter((v) => v.date !== entry.date);
+  videos.push(entry);
+  return { ...base, videos: videos.filter((v) => v.date >= limit) };
+}

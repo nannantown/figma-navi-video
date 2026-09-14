@@ -15,6 +15,7 @@ import { execSync } from "child_process";
 import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
+import { reportSkip } from "./skip-report.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
@@ -77,9 +78,15 @@ function main() {
   run("node scripts/generate-data.mjs");
   const skipPath = join(outputDir, "skip.json");
   if (existsSync(skipPath)) {
-    // The routine found fewer new launches than the minimum: no video today, by design.
+    // The routine found fewer new launches than the minimum: no video today, by
+    // design — but never silently: warning annotation, job summary, history entry.
     const skip = JSON.parse(readFileSync(skipPath, "utf-8"));
     console.log(`\n=== Skipped ${skip.date}: ${skip.reason} (fresh candidates: ${skip.fresh_candidates}) — no video, no post ===`);
+    reportSkip(skip);
+    if (snsEnabled) {
+      console.log(`\n=== Record Skip Day ===`);
+      runSafe("node scripts/record-upload.mjs --skip", "record-upload --skip");
+    }
     return;
   }
 
