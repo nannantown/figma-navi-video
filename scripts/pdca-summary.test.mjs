@@ -68,7 +68,8 @@ test("after a judgment the next 14-day cycle runs; the verdict is not repeated e
   assert.equal(dayAfter.cycle, 2);
   assert.equal(dayAfter.dayInCycle, 2);
   assert.equal(dayAfter.judgmentDate, "2026-10-16");
-  assert.equal(`${dayAfter.summary.from}..${dayAfter.summary.to}`, "2026-10-02..2026-10-03");
+  // Same as docs/genre-experiment.md: max(start, today − 13)..today on non-judgment days.
+  assert.equal(`${dayAfter.summary.from}..${dayAfter.summary.to}`, "2026-09-20..2026-10-03");
 
   const second = trialStatus(videos, { today: "2026-10-16" });
   assert.equal(second.isJudgmentDay, true);

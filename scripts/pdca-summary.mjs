@@ -105,11 +105,12 @@ export function judgeYt({ n, viewsMedian }) {
  * Trial position: actual start = first posted entry of this genre (skip days do
  * not start a trial), else the planned start.
  *
- * The trial is judged every TRIAL_DAYS: cycle k (1-based) covers
- * start + 14(k-1) .. start + 14k - 1 and is judged on start + 14k. On a
- * judgment day the cycle that just ended is the window and `verdict` is set;
- * on every other day the running cycle is shown and `verdict` is null, so the
- * routine writes a judgment section once per cycle, not every morning after.
+ * The trial is judged every TRIAL_DAYS, as in docs/genre-experiment.md
+ * (d = today − start): on d ≥ 14 with d % 14 = 0 the window is
+ * (today − 14)..(today − 1), `verdict` is set and the next judgment is
+ * today + 14; on every other day the window is max(start, today − 13)..today,
+ * `verdict` is null and the next judgment is start + 14 × (floor(d / 14) + 1).
+ * So the routine writes a judgment section once per cycle, not every morning after.
  */
 export function trialStatus(videos, { today, plannedStart = PLANNED_START }) {
   const trialVideos = videos.filter((v) => genreOf(v) === GENRE).sort((a, b) => a.date.localeCompare(b.date));
@@ -121,8 +122,8 @@ export function trialStatus(videos, { today, plannedStart = PLANNED_START }) {
   const cycleIndex = started ? Math.floor(elapsed / TRIAL_DAYS) : 0;
   const cycleStart = addDays(startDate, cycleIndex * TRIAL_DAYS);
   const isJudgmentDay = started && elapsed > 0 && elapsed % TRIAL_DAYS === 0;
-  const from = isJudgmentDay ? addDays(cycleStart, -TRIAL_DAYS) : cycleStart;
-  const to = isJudgmentDay ? addDays(cycleStart, -1) : [today, addDays(cycleStart, TRIAL_DAYS - 1)].sort()[0];
+  const from = isJudgmentDay ? addDays(today, -TRIAL_DAYS) : [startDate, addDays(today, -(TRIAL_DAYS - 1))].sort().at(-1);
+  const to = isJudgmentDay ? addDays(today, -1) : today;
   const summary = summarizeWindow(trialVideos, { from, to });
   return {
     started,
