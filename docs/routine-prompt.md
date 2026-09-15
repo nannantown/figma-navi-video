@@ -33,6 +33,8 @@ node scripts/fresh-since.mjs "$TODAY"
 
 ### 2. PDCA（必須）
 
+**ジャンル実験ルールの写し `docs/genre-experiment.md` が main にある日**: 「ジャンル試行の状態」節の書式（列）・判定窓・経過日・次の判定日・モード（配信死亡モード中の method の選び方や、書かない節を含む）は `docs/genre-experiment.md` に従う。数値は下の `pdca-summary.mjs` の出力を使ってよい。この手順の b)〜e) とぶつかるところは `docs/genre-experiment.md` を優先する。ファイルが無い日は、この手順のとおりに書く。
+
 **a) 数字を出す**
 
 ```bash
