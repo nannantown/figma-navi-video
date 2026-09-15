@@ -1,40 +1,37 @@
 {
-  "date": "2026-09-15",
+  "date": "2026-09-16",
   "discovery": {
-    "method": "official-src",
-    "description": "Figma 公式ブログ 9/14 記事「4 Ways We're Using Our MCP Server at Figma」を一次ソースとして採用。社内 4 パターン活用例のうち駆け出しに即実行可能な 2 パターン (既存コード → Figma 逆変換、Slack/Notion → 資料自動更新) を主軸に翻訳。",
+    "method": "news-en",
+    "description": "英語デザインメディア (Smashing) の直近論考から、駆け出しが今日試せる実践に落ちるものを抽出",
     "sources": [
-      "https://www.figma.com/blog/4-ways-were-using-our-mcp-server-at-figma/",
-      "https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Figma-MCP-server",
-      "https://help.figma.com/hc/en-us/articles/39888612464151-Claude-Code-and-Figma-Set-up-the-MCP-server",
-      "https://www.figma.com/blog/how-coinbase-used-code-connect-to-shrink-token-costs/",
-      "https://developers.figma.com/docs/figma-mcp-server/code-connect-integration"
+      "https://www.smashingmagazine.com/articles/",
+      "https://www.rachelmcconnell.me/leadingcontentdesign"
     ],
-    "query": "Figma MCP server use cases 4 ways September 2026 official blog",
-    "freshness_hours": 30
+    "query": "Rachel McConnell content designer Smashing 2026 process stages diagram",
+    "freshness_hours": 120
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Figma 社内が MCP サーバーを 4 通り活用、駆け出しに即使えるのは 2 パターン",
-      "description": "9/14 Figma 公式ブログが社内活用例 4 パターンを公開。駆け出しでも即試せる例が含まれます。",
-      "detail": "Figma 公式ブログ 9/14 発。①デザイナーアドボケイトが Slack/Drive/リリースノートから発表資料を自動更新、②PM が Slack/Notion/Asana のデータから FigJam ワークショップボードを自動生成、③デザイナーが Figma Make とコードを双方向同期して GitHub PR に反映、④PM がコードのみの画面を Figma に逆変換して既存デザインシステム部品と Variables を再利用。読み取り側は GA で無料、書き込み側はベータで将来有料化予定。",
-      "narration": "Figma社内での MCP サーバー活用法 4 つが昨日公開。駆け出しでも即試せる例があります。",
-      "tags": ["Figma", "MCP サーバー", "Claude Code", "デザインシステム", "official-src"],
+      "title": "Smashing 9/11 Rachel McConnellがContent Design全工程参加論 駆け出しは文言先行でUI精度アップ",
+      "description": "Content Designerは最終工程の校正係じゃない、Rachel McConnellが Smashing 9/11 で全工程参加の設計図を公開。",
+      "detail": "発見・定義・設計・提供の4段階に、リサーチ設問・情報設計・マイクロコピー・A/Bテスト文言まで役割を配置しています。UIより先に文言を書くと画面設計の迷いが半減し、駆け出しでも構造で語れる作品に化けます。",
+      "narration": "Content Designerは最終工程の校正係じゃない。Rachel McConnellが9月11日のSmashingで全工程参加の設計図を公開しました。",
+      "tags": ["Smashing", "Content Design", "文言先行"],
       "narration_sections": {
-        "hook": "Figma社内での MCP サーバー活用法 4 つが昨日公開。駆け出しでも即試せる例があります。",
-        "origin": "9/14 Figma 公式ブログが社内事例を発表。既存コードを Figma へ逆変換してデザインシステム部品化、Slack や Notion のデータから資料を自動更新。Claude Code や Cursor から Figma を直接読める仕組みです。",
-        "recommend": "まず読み取り側だけ試すのが吉。GA で無料、応募ポートフォリオの部品化が一気に速くなります。"
+        "hook": "Content Designerは最終工程の校正係じゃない。Rachel McConnellが9月11日のSmashingで全工程参加の設計図を公開しました。",
+        "origin": "発見・定義・設計・提供の4段階に、リサーチ設問・情報設計・マイクロコピー・A/Bテスト文言まで役割を配置しています。UIより先に文言を書くと画面設計の迷いが半減し、駆け出しでも構造で語れる作品に化けます。実案件想定の作例にも直効きです。",
+        "recommend": "今日のポートフォリオ、ボタン文言と空状態のメッセージから先に埋めて、UIの完成度を跳ね上げましょう。"
       },
       "section_titles": {
-        "hook": "Figma社内の4活用法",
-        "origin": "駆け出し即試せる例",
-        "recommend": "読み取り側から無料で"
+        "hook": "文言先で設計精度",
+        "origin": "4段階で役割配置",
+        "recommend": "今日試す文言先行"
       },
       "section_descriptions": {
-        "hook": "9/14 Figma 公式ブログが社内 MCP 活用例 4 種を公開",
-        "origin": "既存コード逆変換とデータ連携で作業が数分に短縮",
-        "recommend": "GA で無料、応募ポートフォリオの部品化に効きます"
+        "hook": "Smashing 9/11 公開 Content Designer 全工程参加論",
+        "origin": "発見・定義・設計・提供の4段階で文言に役割を配置",
+        "recommend": "ボタン文言と空状態を先に決めてUI完成度を上げる"
       }
     }
   ]
