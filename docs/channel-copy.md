@@ -1,6 +1,8 @@
-# 発信文言の案 — 新作AIツール TOP5（ジャンル試行 #1）
+# 発信文言の案 — 新作AIツール N選（ジャンル試行 #1）
 
 アカウント名・プロフィール・チャンネル説明文の**変更はオーナーが行う**。ここにあるのは案で、キャプションとハッシュタグは `scripts/generate-caption.mjs` が毎日自動で作る。
+
+2026-09-15 のオーナー決定（Product Hunt は公式フィードだけを使う）により、**ランキング・投票数・順位は名乗らない**。見せ方は「新作AIツール N選」（使える新作が 5 本以上ある日は 5選）。
 
 ## ハッシュタグ
 
@@ -19,33 +21,32 @@
 - 概要欄の末尾: `#AIツール #生成AI #ProductHunt #新作AIツール #Shorts`（最初の 3 個がタイトルの上に表示される）
 - タグ（`snippet.tags`）: `AIツール, 生成AI, ProductHunt, 新作AIツール, AI活用, 便利ツール, 業務効率化, Shorts` + その日のツール名（合計 500 字以内）
 
-## 自動生成されるキャプションの例（検証用サンプル 2026-09-15 分）
+## 自動生成されるキャプションの例
 
-呼び方はモードで変わる。**ranking（公式 API の日）は「TOP5」、pickup（公式フィードの日）は「N選」で、pickup では TOP・トップ・ランキング・◯位 を使わない。**
+`npm run dry-run`（検証用サンプル: 2026-09-14 分、5 本）の実際の出力。**TOP・トップ・ランキング・◯位 は使わない**（原稿の検証でもエラーになる）。
 
 ### YouTube タイトル（100 字以内。超えそうなときはツール名を減らす）
 
 ```
-ranking: 【新作AIツールTOP5】Resurf・Perplexity Hybrid Compute・Cognition SWE-2 ほか｜2026/09/15 #Shorts
-pickup:  【新作AIツール3選】Resurf・Visiby・GhostWriter by MyHandler｜2026/09/15 #Shorts
+【新作AIツール5選】Resurf・GhostWriter by MyHandler・Visiby ほか｜2026/09/14 #Shorts
 ```
 
 2026-09-13・14 の YouTube 投稿は、タイトルが 100 字を超えて失敗していた（`invalid or empty video title`）。新しいタイトルは必ず 100 字以内に収める。
 
-### YouTube 概要欄（ranking の例。各ツールに Product Hunt ページへのリンクを付ける）
+### YouTube 概要欄（各ツールに Product Hunt ページへのリンクを付ける）
 
 ```
-2026/09/15 の新作AIツール TOP5（Product Hunt 9/13 ランキングの AI ツール上位5本）
+2026/09/14 の新作AIツール 5選（Product Hunt の直近48時間の新着から厳選）
 
 1. Resurf｜メモもリンクもPDFも1か所に保存
    誰向け: Macユーザー ／ 料金: 無料プランあり
    公式サイト: https://resurf.so/
    Product Hunt: https://www.producthunt.com/products/resurf-2
 
-2. Perplexity Hybrid Compute｜調べ物はクラウド、個人情報はMacで処理
-   誰向け: Perplexity有料会員 ／ 料金: Pro以上の有料プラン
-   公式サイト: https://www.perplexity.ai/hub/products/hybrid-compute
-   Product Hunt: https://www.producthunt.com/products/perplexity-ai
+2. GhostWriter by MyHandler｜2タップで文章を下書き
+   誰向け: Windowsユーザー ／ 料金: 無料プランあり
+   公式サイト: https://myhandler.ai/ghostwriter
+   Product Hunt: https://www.producthunt.com/products/ghostwriter-by-myhandler
 （3〜5 本目も同じ形式）
 
 出典: Product Hunt https://www.producthunt.com/
@@ -56,32 +57,30 @@ pickup:  【新作AIツール3選】Resurf・Visiby・GhostWriter by MyHandler�
 #AIツール #生成AI #ProductHunt #新作AIツール #Shorts
 ```
 
-pickup の日は 1 行目が「2026/09/15 の新作AIツール 3選（Product Hunt の直近48時間の新着から厳選）」になる。
-
-### Instagram キャプション（ranking の例。リンクは効かないので出典は文字で書く）
+### Instagram キャプション（リンクは効かないので出典は文字で書く）
 
 ```
-新作AIツール TOP5（9/15）
+新作AIツール 5選（9/14）
 
 1. Resurf：メモもリンクもPDFも1か所に保存
    Macユーザー向け／無料プランあり／resurf.so
-2. Perplexity Hybrid Compute：調べ物はクラウド、個人情報はMacで処理
-   Perplexity有料会員向け／Pro以上の有料プラン／perplexity.ai
-3. Cognition SWE-2：安く速いコーディング用AIモデル
-   Devinを使う開発者向け／10/8まで無料／cognition.com
-4. Visiby：AI検索での自社の見え方を追跡
-   マーケター向け／月$49〜／visiby.net
-5. GhostWriter by MyHandler：2タップで文章を下書き
+2. GhostWriter by MyHandler：2タップで文章を下書き
    Windowsユーザー向け／無料プランあり／myhandler.ai
+3. Visiby：AI検索での自社の見え方を追跡
+   マーケター向け／月$49〜／visiby.net
+4. Perplexity Hybrid Compute：調べ物はクラウド、個人情報はMacで処理
+   Perplexity有料会員向け／Pro以上の有料プラン／perplexity.ai
+5. Cognition SWE-2：安く速いコーディング用AIモデル
+   Devinを使う開発者向け／10/8まで無料／cognition.com
 
-出典: Product Hunt 9/13 ランキングの AI ツール上位5本
+出典: Product Hunt の直近48時間の新着から厳選
 料金や仕様は変わることがあるので、公式サイトで確認してください。
 気になるツールは保存して、あとで試してみてください。
 
 #AIツール #生成AI #業務効率化 #便利ツール #ProductHunt
 ```
 
-pickup の日は 1 行目が「新作AIツール 3選（9/15）」、出典の行が「出典: Product Hunt の直近48時間の新着から厳選」になる。
+新作が 2〜4 本の日は「新作AIツール 3選」のように本数が変わる。
 
 ## プロフィール・チャンネル説明文の案
 
@@ -115,7 +114,7 @@ Product Hunt の新作から、仕事で使えるものを毎朝厳選
 をまとめて伝えるので、気になったツールは保存して、あとでゆっくり試してみてください。
 
 ※ ツールの情報は投稿時点のものです。料金や仕様は各公式サイトで確認してください。
-※ 本チャンネルは Product Hunt の公式チャンネルではありません。
+※ 本チャンネルは Product Hunt の公式チャンネルではありません。紹介の順番は Product Hunt の順位ではありません。
 ```
 
 ### アカウント名の候補（決めるのはオーナー）
@@ -124,6 +123,6 @@ Product Hunt の新作から、仕事で使えるものを毎朝厳選
 |---|---|
 | AIツール図鑑 | 保存して見返す「図鑑」を連想させる |
 | 毎朝AIツール | 毎日更新であることが名前で分かる |
-| 新作AIツール TOP5 | 動画の中身をそのまま名前にする |
+| 新作AIツール便 | 毎朝届く「新作の便り」。順位を名乗らない（2026-09-15 の決定で「TOP5」案は外した） |
 
 現在の YouTube チャンネル名は「HAL- AI情報カフェ」（sns-hub docs/strategy/README.md の一覧より）。すでに AI 寄りの名前なので、YouTube は名前を変えずに説明文だけ差し替える選択肢もある。

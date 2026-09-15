@@ -9,9 +9,14 @@ import {
   rankPosts,
   classifyPost,
   getToken,
+  resolveSource,
   buildSnapshot,
   fetchDayViaApi,
   aiCategoryFilterStatus,
+  updateListing,
+  previousListing,
+  readPreviousSnapshot,
+  LISTING_RETENTION_DAYS,
 } from "./fetch-product-hunt.mjs";
 
 const FEED = `<?xml version="1.0" encoding="UTF-8"?>
@@ -128,7 +133,12 @@ test("an API failure falls back to the feed in pickup mode and records the error
     if (String(url).startsWith("https://api.producthunt.com")) return new Response("{}", { status: 502 });
     return new Response(FEED, { status: 200 });
   };
-  const snap = await buildSnapshot({ env: { PRODUCT_HUNT_API_TOKEN: "tok" }, fetchImpl, now: new Date("2026-09-14T09:30:00Z"), sleepImpl: async () => {} });
+  const snap = await buildSnapshot({
+    env: { PH_SOURCE: "api", PRODUCT_HUNT_API_TOKEN: "tok" },
+    fetchImpl,
+    now: new Date("2026-09-14T09:30:00Z"),
+    sleepImpl: async () => {},
+  });
   assert.equal(snap.source, "feed");
   assert.equal(snap.mode, "pickup");
   assert.match(snap.apiError, /502/);
@@ -194,6 +204,124 @@ test("classifyPost recognises dev tools by keyword", () => {
 test("getToken reads only PRODUCT_HUNT_API_TOKEN", () => {
   assert.equal(getToken({}), null);
   assert.equal(getToken({ PRODUCT_HUNT_API_TOKEN: "  abc " }), "abc");
+});
+
+test("resolveSource: the feed is the default; the API needs PH_SOURCE=api and a token (owner decision 2026-09-15)", () => {
+  assert.deepEqual(resolveSource({}), { source: "feed", token: null, notice: null });
+  assert.deepEqual(resolveSource({ PH_SOURCE: "feed" }), { source: "feed", token: null, notice: null });
+  const tokenOnly = resolveSource({ PRODUCT_HUNT_API_TOKEN: "secret-token" });
+  assert.equal(tokenOnly.source, "feed");
+  assert.equal(tokenOnly.token, null);
+  assert.match(tokenOnly.notice, /set but not used/);
+  assert.ok(!tokenOnly.notice.includes("secret-token"));
+  assert.deepEqual(resolveSource({ PH_SOURCE: " API ", PRODUCT_HUNT_API_TOKEN: "t" }), { source: "api", token: "t", notice: null });
+  const apiWithoutToken = resolveSource({ PH_SOURCE: "api" });
+  assert.equal(apiWithoutToken.source, "feed");
+  assert.match(apiWithoutToken.notice, /PRODUCT_HUNT_API_TOKEN is not set/);
+  assert.match(resolveSource({ PH_SOURCE: "graphql" }).notice, /Unknown PH_SOURCE "graphql"/);
+});
+
+test("a token alone never calls the API", async () => {
+  const calls = [];
+  const fetchImpl = async (url) => {
+    calls.push(String(url));
+    return new Response(FEED, { status: 200 });
+  };
+  const snap = await buildSnapshot({ env: { PRODUCT_HUNT_API_TOKEN: "tok" }, fetchImpl, now: new Date("2026-09-14T21:30:00Z") });
+  assert.equal(snap.source, "feed");
+  assert.equal(snap.mode, "pickup");
+  assert.equal(snap.apiError, undefined);
+  assert.ok(calls.every((u) => u.startsWith("https://www.producthunt.com/feed")), calls.join(", "));
+});
+
+// Feed with one post created weeks before its launch day (like Voiskey on 2026-09-15).
+const feedWith = (...entries) =>
+  `<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">${entries
+    .map(
+      ([id, published, name, tagline]) =>
+        `<entry><id>tag:www.producthunt.com,2005:Post/${id}</id><published>${published}</published><link rel="alternate" type="text/html" href="https://www.producthunt.com/products/${name.toLowerCase()}"/><title>${name}</title><content type="html">&lt;p&gt;${tagline}&lt;/p&gt;</content></entry>`
+    )
+    .join("")}</feed>`;
+const OLD_LAUNCH = ["1", "2026-09-10T08:00:00-07:00", "Oldie", "AI notes for teams"];
+const EARLY_POST = ["2", "2026-08-31T04:01:15-07:00", "Voicey", "AI voice typing in every app"];
+const OTHER = ["3", "2026-09-01T09:00:00-07:00", "Plainly", "Meal planner for families"];
+// AI category feed + general feed (different lists, so the category filter counts as working).
+const feeds = (ai, all) => async (url) => new Response(String(url).includes("category=") ? feedWith(...ai) : feedWith(...all), { status: 200 });
+
+test("listing registry: a post missing from a complete fetch inside the window is a new launch on the next fetch", async () => {
+  // 2026-09-15 06:30 JST (14:30 PDT 09-14): baseline — Voicey has not launched yet.
+  const first = await buildSnapshot({ env: {}, fetchImpl: feeds([OLD_LAUNCH], [OLD_LAUNCH, OTHER]), now: new Date("2026-09-14T21:30:00Z") });
+  assert.equal(first.listing.lastCompleteAt, "2026-09-14T21:30:00.000Z");
+  assert.ok(first.days[0].posts.every((p) => p.listedAfter === null));
+
+  // 2026-09-15 18:30 JST (02:30 PDT 09-15): Voicey launched at 00:01 PDT and is listed now.
+  const second = await buildSnapshot({
+    env: {},
+    fetchImpl: feeds([EARLY_POST, OLD_LAUNCH], [EARLY_POST, OLD_LAUNCH, OTHER]),
+    now: new Date("2026-09-15T09:30:00Z"),
+    previous: first,
+  });
+  assert.equal(second.forVideoDate, "2026-09-16"); // window starts 2026-09-14 00:00 PDT
+  const byName = Object.fromEntries(second.days[0].posts.map((p) => [p.name, p]));
+  assert.equal(byName.Voicey.listedAfter, "2026-09-14T21:30:00.000Z");
+  assert.equal(byName.Voicey.fresh, true); // created 08-31, but proven to launch after 09-14 14:30 PDT
+  assert.equal(byName.Oldie.listedAfter, null); // already listed at the baseline: unproven
+  assert.equal(byName.Oldie.fresh, false);
+  assert.equal(second.days[0].freshAiCount, 1);
+  assert.equal(second.listing.lastCompleteAt, "2026-09-15T09:30:00.000Z");
+
+  // The evidence is carried, not refreshed, on later fetches.
+  const third = await buildSnapshot({
+    env: {},
+    fetchImpl: feeds([EARLY_POST, OLD_LAUNCH], [EARLY_POST, OLD_LAUNCH, OTHER]),
+    now: new Date("2026-09-15T21:30:00Z"),
+    previous: second,
+  });
+  const voicey = third.days[0].posts.find((p) => p.name === "Voicey");
+  assert.equal(voicey.listedAfter, "2026-09-14T21:30:00.000Z");
+  assert.equal(third.listing.posts["2"].lastSeenAt, "2026-09-15T21:30:00.000Z");
+});
+
+test("listing registry: partial fetches do not move lastCompleteAt, so posts they missed do not look new later", async () => {
+  const base = await buildSnapshot({ env: {}, fetchImpl: feeds([OLD_LAUNCH, EARLY_POST], [OTHER]), now: new Date("2026-09-13T21:30:00Z") });
+  // The AI category feed fails: only the general feed answers.
+  const aiDown = async (url) =>
+    String(url).includes("category=") ? new Response("", { status: 503 }) : new Response(feedWith(OTHER), { status: 200 });
+  const partial = await buildSnapshot({ env: {}, fetchImpl: aiDown, now: new Date("2026-09-14T09:30:00Z"), previous: base });
+  assert.equal(partial.listing.lastCompleteAt, "2026-09-13T21:30:00.000Z");
+  assert.ok(partial.listing.posts["1"], "posts the partial fetch missed stay in the registry");
+
+  const back = await buildSnapshot({ env: {}, fetchImpl: feeds([OLD_LAUNCH, EARLY_POST], [OTHER]), now: new Date("2026-09-14T21:30:00Z"), previous: partial });
+  assert.ok(back.days[0].posts.every((p) => p.listedAfter === null), "nothing became new just because one fetch missed it");
+});
+
+test("listing registry: unusable previous snapshots start a new registry; stale entries are dropped", () => {
+  const now = new Date("2026-09-15T09:30:00Z");
+  const posts = [{ id: "7", phUrl: "https://www.producthunt.com/products/x" }];
+  assert.equal(previousListing(null, now), null);
+  assert.equal(previousListing({ source: "api", listing: { lastCompleteAt: null, posts: {} } }, now), null);
+  assert.equal(previousListing({ source: "feed", listing: { lastCompleteAt: "2026-09-16T00:00:00Z", posts: {} } }, now), null);
+  assert.deepEqual(updateListing(null, posts, { now, complete: true }), {
+    lastCompleteAt: "2026-09-15T09:30:00.000Z",
+    posts: { 7: { listedAfter: null, lastSeenAt: "2026-09-15T09:30:00.000Z" } },
+  });
+  const old = {
+    source: "feed",
+    listing: {
+      lastCompleteAt: "2026-09-14T21:30:00.000Z",
+      posts: { 9: { listedAfter: null, lastSeenAt: "2026-09-01T00:00:00.000Z" }, 8: { listedAfter: "bad", lastSeenAt: "2026-09-14T21:30:00.000Z" } },
+    },
+  };
+  const next = updateListing(old, posts, { now, complete: false });
+  assert.equal(next.posts["9"], undefined); // not listed for more than LISTING_RETENTION_DAYS
+  assert.equal(next.posts["8"].listedAfter, null);
+  assert.equal(next.posts["7"].listedAfter, "2026-09-14T21:30:00.000Z");
+  assert.equal(next.lastCompleteAt, "2026-09-14T21:30:00.000Z");
+  assert.equal(LISTING_RETENTION_DAYS, 10);
+});
+
+test("readPreviousSnapshot returns null for a missing or broken file", () => {
+  assert.equal(readPreviousSnapshot("/nonexistent/product-hunt-daily.json"), null);
 });
 
 test("buildSnapshot without a token uses the feed in pickup mode", async () => {

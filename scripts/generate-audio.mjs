@@ -35,7 +35,7 @@ const speakingRate = rateArg ? rateArg.slice("--rate=".length) : "+30%";
 // test). Production always uses --data=output/trending-data.json, built from
 // the Claude Routine's data/enriched-ai-tools.json.
 const defaultNarrations = [
-  { filename: "opening", text: "新作AIツール、トップ5を紹介します。" },
+  { filename: "opening", text: "新作AIツールを5つ紹介します。" },
   { filename: "tool-1", text: "会議の要点を自動でまとめるAIツールです。議事録づくりの時間がほぼゼロになります。" },
   { filename: "tool-2", text: "文章の下書きを数秒で作るAIアシスタントです。メールの書き出しで迷わなくなります。" },
   { filename: "tool-3", text: "画像から不要な物を消せるAI編集ツールです。ブラウザだけで手軽に試せます。" },

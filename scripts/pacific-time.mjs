@@ -118,3 +118,16 @@ export function isFresh(publishedAt, videoDate) {
   if (!Number.isFinite(t)) return false;
   return t >= freshSince(videoDate).getTime() && t <= routineAnchor(videoDate).getTime() + 24 * 3600 * 1000;
 }
+
+/**
+ * true when a Product Hunt snapshot post is a new launch for `videoDate`.
+ * Either time proves it, because both are never later than the launch:
+ *   - publishedAt: API featuredAt, or the feed's <published> (post creation,
+ *     which can be weeks before the launch)
+ *   - listedAfter: feed only — a complete fetch taken at this time did not list
+ *     the post yet, so it went live afterwards (see updateListing in
+ *     fetch-product-hunt.mjs)
+ */
+export function isNewLaunch(post, videoDate) {
+  return isFresh(post?.publishedAt, videoDate) || isFresh(post?.listedAfter, videoDate);
+}

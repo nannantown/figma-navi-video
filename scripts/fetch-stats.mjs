@@ -291,8 +291,13 @@ async function main() {
 
   await fetchInstagramStats(history);
 
+  // Dry runs (npm run dry-run, verification runs) only need the hints file;
+  // they must not rewrite the tracked history.
+  const persistHistory = process.env.DRY_RUN !== "1";
+  if (!persistHistory) console.log("fetch-stats: DRY_RUN=1 — data/performance-history.json is not written.");
+
   // Save updated history
-  writeFileSync(historyPath, JSON.stringify(history, null, 2));
+  if (persistHistory) writeFileSync(historyPath, JSON.stringify(history, null, 2));
 
   // Run optimization analysis
   console.log("fetch-stats: analyzing performance...");
@@ -375,7 +380,7 @@ async function main() {
       history.optimizationLog = history.optimizationLog.slice(-30);
     }
 
-    writeFileSync(historyPath, JSON.stringify(history, null, 2));
+    if (persistHistory) writeFileSync(historyPath, JSON.stringify(history, null, 2));
   }
 }
 

@@ -62,7 +62,7 @@ async function createGitHubRelease(videoPath, coverPath) {
   const today = new Date();
   const dateStr = `${today.getFullYear()}${String(today.getMonth() + 1).padStart(2, "0")}${String(today.getDate()).padStart(2, "0")}`;
   const tag = `v${dateStr}`;
-  const title = `AI Tools TOP5 ${dateStr}`;
+  const title = `New AI Tools ${dateStr}`;
   const videoFileName = basename(videoPath);
   const coverFileName = coverPath ? basename(coverPath) : null;
   const coverArg = coverPath && existsSync(coverPath) ? ` "${coverPath}"` : "";
@@ -77,7 +77,7 @@ async function createGitHubRelease(videoPath, coverPath) {
   try {
     // Create release and upload both video + cover image
     run(
-      `gh release create "${tag}" "${videoPath}"${coverArg} --title "${title}" --notes "Auto-generated AI tools TOP5 video for ${dateStr}" --latest`,
+      `gh release create "${tag}" "${videoPath}"${coverArg} --title "${title}" --notes "Auto-generated new AI tools video for ${dateStr}" --latest`,
       { env: { ...process.env, GH_TOKEN: token } }
     );
     console.log(`  Video URL:  ${videoUrl}`);

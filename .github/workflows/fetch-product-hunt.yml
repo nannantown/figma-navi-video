@@ -6,8 +6,14 @@ name: Fetch Product Hunt Snapshot
 # chance — GitHub cron can start 1-2 h late, so we never rely on a run right
 # before the routine.
 #
-# PRODUCT_HUNT_API_TOKEN (optional secret) → official API with ranks/votes/images.
-# Without it → public Atom feed (no ranking; the routine makes an editorial pick).
+# Source: the official Atom feed only (owner decision 2026-09-15, option B — no
+# ranking, no votes; the routine makes an editorial pickup). No secret is needed
+# and none is passed: registering PRODUCT_HUNT_API_TOKEN changes nothing. Using
+# the API would take an owner decision and a PR that sets PH_SOURCE=api and
+# passes the token here.
+#
+# Each run reads the snapshot it replaces (checked out from main) to carry the
+# feed listing registry, which dates launches whose posts were created early.
 
 on:
   schedule:
@@ -48,7 +54,7 @@ jobs:
         run: node scripts/fetch-product-hunt.mjs
         env:
           TZ: Asia/Tokyo
-          PRODUCT_HUNT_API_TOKEN: ${{ secrets.PRODUCT_HUNT_API_TOKEN }}
+          PH_SOURCE: feed
 
       - name: Upload snapshot artifact
         uses: actions/upload-artifact@v4

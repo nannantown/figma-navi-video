@@ -60,8 +60,10 @@ jobs:
           TZ: Asia/Tokyo
           SNS_POST_ENABLED: ${{ env.VERIFY_RUN != '1' && secrets.SNS_POST_ENABLED || 'false' }}
           DRY_RUN: ${{ env.VERIFY_RUN }}
-          ENRICHED_PATH: ${{ env.VERIFY_RUN == '1' && 'data/samples/enriched-ai-tools.sample.json' || '' }}
-          PH_SNAPSHOT_PATH: ${{ env.VERIFY_RUN == '1' && 'data/samples/product-hunt-daily.sample.json' || '' }}
+          # Verification renders the pickup sample (the production format since
+          # the owner decision of 2026-09-15) against its feed-shaped snapshot.
+          ENRICHED_PATH: ${{ env.VERIFY_RUN == '1' && 'data/samples/enriched-ai-tools.pickup.sample.json' || '' }}
+          PH_SNAPSHOT_PATH: ${{ env.VERIFY_RUN == '1' && 'data/samples/product-hunt-daily.pickup.sample.json' || '' }}
           ALLOW_STALE_DATE: ${{ env.VERIFY_RUN }}
           # Platform credentials only reach production runs; a verification
           # run cannot post even if a branch's pipeline ignored DRY_RUN.
@@ -73,7 +75,7 @@ jobs:
           INSTAGRAM_ACCESS_TOKEN: ${{ env.VERIFY_RUN != '1' && secrets.INSTAGRAM_ACCESS_TOKEN || '' }}
           INSTAGRAM_USER_ID: ${{ env.VERIFY_RUN != '1' && secrets.INSTAGRAM_USER_ID || '' }}
           FACEBOOK_PAGE_ID: ${{ env.VERIFY_RUN != '1' && secrets.FACEBOOK_PAGE_ID || '' }}
-          # Grid thumbnail = the "新作AIツール TOP5" title card (opening is held
+          # Grid thumbnail = the "新作AIツール N選" title card (opening is held
           # ≥ 3 s) so the profile grid reads as one series.
           INSTAGRAM_THUMB_OFFSET_MS: "2000"
           # GitHub (auto-provided, used for Release creation)

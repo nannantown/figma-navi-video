@@ -66,7 +66,7 @@ function titleFor(template, tag, list, dateFull) {
 }
 
 /** Longest title that fits: up to 3 tool names, then fewer, then a truncated first name. */
-export function buildYouTubeTitle(tools, dateFull, template = "standard", tag = "新作AIツールTOP5") {
+export function buildYouTubeTitle(tools, dateFull, template = "standard", tag = "新作AIツール") {
   const names = tools.map((t) => sanitizeTitlePart(t.name)).filter(Boolean);
   const safeTag = sanitizeTitlePart(tag);
   for (let n = Math.min(3, names.length); n >= 1; n--) {

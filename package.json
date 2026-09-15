@@ -1,15 +1,15 @@
 {
   "name": "figma-navi-video",
   "version": "1.0.0",
-  "description": "Daily vertical video: 新作AIツール TOP5 from Product Hunt (genre trial #1) for YouTube Shorts + Instagram Reels",
+  "description": "Daily vertical video: 新作AIツール N選 (pickup) from the Product Hunt feed (genre trial #1) for YouTube Shorts + Instagram Reels",
   "main": "index.js",
   "scripts": {
     "start": "npx remotion studio",
     "audio": "node scripts/generate-audio.mjs",
     "render": "npx remotion render AiToolsTop5 output/aitools.mp4",
     "pipeline": "node scripts/pipeline.mjs",
-    "dry-run": "DRY_RUN=1 ENRICHED_PATH=data/samples/enriched-ai-tools.sample.json PH_SNAPSHOT_PATH=data/samples/product-hunt-daily.sample.json ALLOW_STALE_DATE=1 node scripts/pipeline.mjs",
-    "dry-run:pickup": "DRY_RUN=1 ENRICHED_PATH=data/samples/enriched-ai-tools.pickup.sample.json PH_SNAPSHOT_PATH=data/samples/product-hunt-daily.sample.json ALLOW_STALE_DATE=1 node scripts/pipeline.mjs",
+    "dry-run": "DRY_RUN=1 ENRICHED_PATH=data/samples/enriched-ai-tools.pickup.sample.json PH_SNAPSHOT_PATH=data/samples/product-hunt-daily.pickup.sample.json ALLOW_STALE_DATE=1 node scripts/pipeline.mjs",
+    "dry-run:ranking": "DRY_RUN=1 ENRICHED_PATH=data/samples/enriched-ai-tools.sample.json PH_SNAPSHOT_PATH=data/samples/product-hunt-daily.sample.json ALLOW_STALE_DATE=1 node scripts/pipeline.mjs",
     "dry-run:skip": "DRY_RUN=1 ENRICHED_PATH=data/samples/enriched-ai-tools.skip.sample.json PH_SNAPSHOT_PATH=data/samples/product-hunt-daily.skip.sample.json ALLOW_STALE_DATE=1 node scripts/pipeline.mjs",
     "fetch-ph": "node scripts/fetch-product-hunt.mjs",
     "validate": "node scripts/validate-enriched.mjs",

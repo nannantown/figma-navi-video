@@ -48,8 +48,12 @@ const pickupMeta = (count) => ({
 const data = (names, meta = rankingMeta) => ({ meta, tools: names.map((n, i) => baseTool(i + 1, n)) });
 
 test("title lists up to three tool names when it fits", () => {
-  const title = buildYouTubeTitle(data(["Resurf", "Visiby", "Clipwise", "SWE-2", "Epilude"]).tools, "2026/09/15");
-  assert.equal(title, "【新作AIツールTOP5】Resurf・Visiby・Clipwise ほか｜2026/09/15 #Shorts");
+  const title = buildYouTubeTitle(data(["Resurf", "Visiby", "Clipwise", "SWE-2", "Epilude"]).tools, "2026/09/15", "standard", "新作AIツール5選");
+  assert.equal(title, "【新作AIツール5選】Resurf・Visiby・Clipwise ほか｜2026/09/15 #Shorts");
+  // Without a tag the fallback never claims a ranking (owner decision 2026-09-15).
+  const fallback = buildYouTubeTitle(data(["Resurf", "Visiby", "Clipwise"]).tools, "2026/09/15");
+  assert.match(fallback, /^【新作AIツール】Resurf/);
+  assert.doesNotMatch(fallback, /TOP|トップ/);
 });
 
 test("title never exceeds 100 characters (the 2026-09-14 YouTube failure)", () => {

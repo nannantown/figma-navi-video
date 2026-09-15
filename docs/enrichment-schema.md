@@ -4,8 +4,8 @@
 
 ## 形は 2 種類
 
-1. **通常の日**: `tools` にツールを並べる（本数はモード次第）
-2. **休止の日**: `pickup` で使える新作が 2 本に満たない日。`skip` を書き、`tools` は書かない
+1. **通常の日**: `tools` にツールを並べる（pickup で 2〜5 本）
+2. **休止の日**: 使える新作が 2 本に満たない日。`skip` を書き、`tools` は書かない
 
 ```json
 { "date": "2026-09-15", "genre": "ai-tools-top5", "trial": 1, "skip": { "reason": "新作の候補が1本のため休止", "fresh_candidates": 1 } }
@@ -13,7 +13,7 @@
 
 ### 休止の日の扱い
 
-- **スナップショットとの照合**: 当日向けのスナップショット（`forVideoDate` が `date` と同じ）で、新作の範囲に入る AI ツール（`isAI` または `inAiCategory`、公開日時から計算し直す）が **2 本以上あるのに休止なら検証エラー**（その朝のパイプラインは失敗して通知が行く）。スナップショットが無い・別の日向け・公開日時を持たない古い形式のときは照合できないので、休止は通るが警告を出す
+- **スナップショットとの照合**: 当日向けのスナップショット（`forVideoDate` が `date` と同じ）で、新作の範囲に入る AI ツール（`isAI` または `inAiCategory`、`publishedAt` / `listedAfter` から計算し直す）が **2 本以上あるのに休止なら検証エラー**（その朝のパイプラインは失敗して通知が行く）。スナップショットが無い・別の日向け・公開日時を持たない古い形式のときは照合できないので、休止は通るが警告を出す
 - **黙って終わらない**: パイプラインは動画を作らずに正常終了するが、GitHub Actions に `::warning::` の注記を出し、ジョブの要約（`$GITHUB_STEP_SUMMARY`）に理由・ルーチンが数えた候補数・スナップショットの件数を書く
 - **記録する**: 本番の実行では `performance-history.json` に休止日のエントリを残す（`videoId` などは null、`skip: { reason, fresh_candidates, snapshot_fresh_ai }`）。PDCA の中央値・合計、ハッシュタグやタイトルの学習、試行の開始日には使わない
 
@@ -21,10 +21,10 @@
 
 | `source.mode` | 本数 | 並び | 画面・キャプションの呼び方 |
 |---|---|---|---|
-| `ranking`（Product Hunt 公式 API） | ちょうど 5 | dailyRank 順 | 「新作AIツール TOP5」。カードに Product Hunt の総合順位（例「総合9位」）を併記 |
-| `pickup`（公式フィード） | 2〜5 | おすすめ順 | 「新作AIツール N選」。カードの番号は「1/3」表記。**順位を思わせる言葉はツール名を含めて使えない**（下の禁止事項） |
+| `pickup`（公式フィード。**2026-09-15 以降はこれだけ**） | 2〜5（使える新作が 5 本以上なら 5） | おすすめ順 | 「新作AIツール N選」。カードの番号は「1/5」表記、出典行は「Product Hunt 新着」。**順位を思わせる言葉はツール名を含めて使えない**（下の禁止事項） |
+| `ranking`（Product Hunt 公式 API。**使わない**） | ちょうど 5 | dailyRank 順 | 「新作AIツール TOP5」。カードに Product Hunt の総合順位を併記。API は `PH_SOURCE=api` を明示したときだけ取得されるため、通常の運用では確定ランキングが無く、ranking の原稿は検証エラーになる |
 
-### ranking の順位の検証
+### ranking の順位の検証（API を使う場合だけ。現在は使わない）
 
 - `source.ph_date` は、`date` の朝 07:30 JST 時点で最後に集計が確定した太平洋時間の日（`node scripts/fresh-since.mjs` が表示）と一致すること
 - `tools[].ph_rank` は 1 以上の整数・重複なし・動画の並び順で昇順
@@ -33,21 +33,23 @@
 
 ### pickup の照合
 
-- 当日向けのスナップショットがあるとき、各ツールの `ph_url` がスナップショットに載っていること（無ければエラー）と、スナップショットの `publishedAt` で新作の範囲に入っていること（範囲外はエラー）。`ph_published_at` がスナップショットと違うだけなら警告
+- 当日向けのスナップショットがあるとき、各ツールの `ph_url` がスナップショットに載っていること（無ければエラー）と、スナップショットの `publishedAt` か `listedAfter` で新作の範囲に入っていること（範囲外はエラー）。`ph_published_at` / `ph_listed_after` がスナップショットと違うだけなら警告
 - スナップショットが無い・別の日向けのときは照合できないので警告（ルーチンが公式フィードから直接選んだ日）
 
 ## 新作の定義
 
-`tools[].ph_published_at`（Product Hunt 上の公開日時）が、動画の日付 `date` の朝 07:30 JST の時点で進行中の太平洋時間の日の**前日 0:00（PT）以降**であること。朝の時点で必ず直近 48 時間以内（夏時間 39.5 時間・冬時間 38.5 時間以内）に収まる。範囲は `date` から決まるので、ルーチンと、後から走るパイプラインで判定がずれない。
+Product Hunt で公開（ローンチ）されたのが、動画の日付 `date` の朝 07:30 JST の時点で進行中の太平洋時間の日の**前日 0:00（PT）以降**であること。朝の時点で必ず直近 48 時間以内（夏時間 39.5 時間・冬時間 38.5 時間以内）に収まる。範囲は `date` から決まるので、ルーチンと、後から走るパイプラインで判定がずれない。公開の時刻そのものはフィードに無いので、公開より後になることのない次の 2 つの時刻の**どちらか**が範囲内なら新作とみなす（`scripts/pacific-time.mjs` の `isNewLaunch`）。
 
 ```bash
 node scripts/fresh-since.mjs 2026-09-15
-# video date 2026-09-15: new launches = published at or after 2026-09-13T07:00:00.000Z (9/13 00:00 Pacific)
-# ranking mode: source.ph_date must be 2026-09-13 (that day's final Product Hunt ranking)
+# video date 2026-09-15: new launches = launched at or after 2026-09-13T07:00:00.000Z (9/13 00:00 Pacific)
+#   a snapshot post counts when publishedAt or listedAfter is at or after this time (its fresh flag)
 ```
 
-- API（ranking）: `publishedAt` = `featuredAt`（公開された時刻）
-- フィード（pickup）: `publishedAt` = Atom の `published`。投稿を作った時刻で、公開より後になることはないため、古いツールが紛れ込むことはない（逆に、何日も前に作られて今日公開されたツールは外れる）
+- `ph_published_at`（スナップショットの `publishedAt`）: フィードでは Atom の `published` = **投稿を作った時刻**。公開より後になることはないが、公開の数週間〜数か月前のことが多い（2026-09-15 の実測: Voiskey は 8/31 作成・9/15 公開）。API を使う場合は `featuredAt`（公開の時刻）
+- `ph_listed_after`（スナップショットの `listedAfter`）: **この時刻に取った完全なスナップショットにはまだ載っていなかった**という記録。フィードは直近数日の公開分を新しい日から並べ、公開された投稿だけが載るので、その後に公開されたことが分かる。`fetch-product-hunt.mjs` が前回のスナップショット（`listing`）から引き継ぐ。記録が始まる前から載っていた投稿や、フィードから直接読んだ日は `null`
+  - 「完全」= AI カテゴリと一般の両方のフィードが取れ、カテゴリの指定が効いていた取得。片方が失敗した取得では記録の基準（`listing.lastCompleteAt`）を進めないので、取りこぼした投稿が次の取得で新作に見えることはない
+  - 記録は最後に載ってから 10 日で消える
 
 ## トップレベル
 
@@ -57,14 +59,14 @@ node scripts/fresh-since.mjs 2026-09-15
 | `genre` | `"ai-tools-top5"` | ○ | ジャンル試行の識別子 |
 | `trial` | number | | 試行番号（1） |
 | `skip` | `{ reason, fresh_candidates }` | 休止の日だけ | `reason` 4〜80 字、`fresh_candidates` は 0〜1。スナップショットと照合される |
-| `source.mode` | `"ranking"` / `"pickup"` | ○ | 上の表 |
-| `source.ph_date` | `YYYY-MM-DD` | ranking のとき ○ | ランキングの日付（太平洋時間）。上の「ranking の順位の検証」 |
+| `source.mode` | `"pickup"`（`"ranking"` は使わない） | ○ | 上の表 |
+| `source.ph_date` | `YYYY-MM-DD` | ranking のときだけ | ランキングの日付（太平洋時間）。上の「ranking の順位の検証」 |
 | `source.snapshot_fetched_at` | ISO 8601 | | 使ったスナップショットの `fetchedAt` |
 | `discovery.method` | string | ○ | `rank-pure` / `non-engineer` / `free-first` / `job-theme` / `creator-theme` / `dev-theme`（docs/strategy.md） |
 | `discovery.description` | string | | どう選んだかの一行説明 |
 | `discovery.sources` | string[] | ○ | 見たページの URL（1 件以上） |
 | `discovery.query` / `freshness_hours` | | | 検索語 / 公開からの経過時間 |
-| `opening_narration` | string | | 30 字以内。省略時は ranking「新作AIツール、トップ5を紹介します。」/ pickup「新作AIツールをNつ紹介します。」。短くしてもオープニングは 3 秒以上表示する |
+| `opening_narration` | string | | 30 字以内。省略時は「新作AIツールをNつ紹介します。」（ranking の場合は「新作AIツール、トップ5を紹介します。」）。短くしてもオープニングは 3 秒以上表示する |
 | `tools` | object[] | 通常の日 ○ | 本数は上の表。配列の順 = 動画の順 |
 
 ## tools[]
@@ -75,7 +77,8 @@ node scripts/fresh-since.mjs 2026-09-15
 | `ph_rank` | number | ranking のとき ○ | | Product Hunt の dailyRank（総合順位）。1 以上・重複なし・昇順 |
 | `name` | string | ○ | 1〜40 | ツール名（原文）。重複不可（全角・半角の違いは同じ扱い） |
 | `ph_url` | URL | ○ | | `https://www.producthunt.com/products/<slug>` または `/posts/<slug>`（クエリ文字列なし。スナップショットの `phUrl`）。YouTube 概要欄の出典リンクに使う |
-| `ph_published_at` | ISO 8601 | ○ | | Product Hunt 上の公開日時（スナップショットの `publishedAt`）。新作の範囲外はエラー |
+| `ph_published_at` | ISO 8601 | ○ | | スナップショットの `publishedAt`（フィードでは投稿を作った時刻）。`ph_listed_after` と合わせて新作の範囲外ならエラー |
+| `ph_listed_after` | ISO 8601 / null | | | スナップショットの `listedAfter`（この時刻の取得ではまだ載っていなかった）。`ph_published_at` が範囲外でも、これが範囲内なら新作。スナップショットの値をそのまま写す |
 | `website` | https URL | ○ | 〜200 | 公式サイト。Product Hunt の URL・http・認証情報入りの URL は不可 |
 | `tagline_en` | string | | | Product Hunt のタグライン（原文、記録用） |
 | `description` | string | ○ | 6〜30 / 10〜24 | 一言（何ができるか） |
@@ -94,7 +97,7 @@ node scripts/fresh-since.mjs 2026-09-15
 - `@` で始まるメンション、`#` で始まるハッシュタグ
 - 改行・タブなどの制御文字、ゼロ幅スペース・方向制御文字・BOM などの見えない文字（正規化前の値でも判定）
 
-pickup モードでは加えて、**順位を思わせる言葉**が `name` / `description` / `who` / `pricing_note` / `narration` / `opening_narration` にあるとエラーになる（ranking モードでは name 以外に警告）: `TOP5` `Top-5` `Top:5` `トップ5` `トップ・5`（半角カナ・全角も）`ランキング` `RANKING` `rank 1` `3位` `一位` `首位` `上位5` `ベスト5` `Best 5` `No.1` `ナンバーワン` `ナンバー1`。`上位プラン` `トップページ` のように数字が続かないもの、`デスクトップ3台` `Laptop 4 GB` `三位一体` `位置` `No 2FA` は該当しない。
+pickup モードでは加えて、**順位を思わせる言葉**が `name` / `description` / `who` / `pricing_note` / `narration` / `opening_narration` にあるとエラーになる（使わない ranking モードでは name 以外に警告）: `TOP5` `Top-5` `Top:5` `トップ5` `トップ・5`（半角カナ・全角も）`ランキング` `RANKING` `rank 1` `3位` `一位` `首位` `上位5` `ベスト5` `Best 5` `No.1` `ナンバーワン` `ナンバー1`。`上位プラン` `トップページ` のように数字が続かないもの、`デスクトップ3台` `Laptop 4 GB` `三位一体` `位置` `No 2FA` は該当しない。
 
 キャプション生成（`generate-caption.mjs`）でも、改行と見えない文字を念のため取り除く。
 
@@ -104,7 +107,7 @@ pickup モードでは加えて、**順位を思わせる言葉**が `name` / `d
   - 照合に使うスナップショットは、`data/enriched-ai-tools.json` を最後に変えたコミット（ルーチンの squash merge）に入っている版（`scripts/snapshot.mjs` の `loadSnapshotForRun`）。ルーチンのあと 08:15 までに `fetch-product-hunt.yml` が新しい版をコミットしても、それでは照合しない（候補が増えて休止が矛盾に見える、pickup の候補がフィードから消える、といった誤った失敗を防ぐ）
   - そのコミットがスナップショットも変えていたら、1 つ前の版を使う（ルーチンは取得データを編集しない）
   - `PH_SNAPSHOT_PATH` か `ENRICHED_PATH` を指定したとき（ドライラン・検証モード）、履歴が浅くてそのコミットが見えないとき（`daily-video.yml` は `fetch-depth: 50`）、原稿に未コミットの変更があるときは作業ツリーの版を使い、ログに `NOTE` を出す
-- `fetch-tool-images.mjs` が画像を探す: `image_url` → スナップショットの Product Hunt サムネイル（API モード）→ 公式サイトの og:image
+- `fetch-tool-images.mjs` が画像を探す: `image_url` → スナップショットの Product Hunt サムネイル（API モードだけ。フィードには無い）→ 公式サイトの og:image
   - 取得は https のみ。リダイレクトは最大 5 回で、毎回 https と公開アドレスを確認する（DNS の答えに 1 つでも非公開アドレスがあれば不可）。IPv4 の localhost・10.x・172.16〜31.x・192.168.x・169.254.x・100.64/10・テスト用アドレスを拒否。IPv6 はグローバルユニキャスト 2000::/3 以外をすべて拒否（::1、IPv4 射影/互換/変換 `::ffff:7f00:1` `::7f00:1` `::ffff:0:7f00:1`、64:ff9b::/96・64:ff9b:1::/48、fc00::/7、fe80::/10、fec0::/10、マルチキャストなど）し、その中でも 2001::/23（Teredo を含む）・2001:db8::/32・2002::/16・3fff::/20 を拒否（IANA IPv6 Special-Purpose Address Registry に基づく）
   - 接続は確認したアドレスに固定する（2 回目の DNS 解決をしないので、確認後に向き先を変えられない）
   - 本文は読み込みながら 5MB（HTML は 1MB）で打ち切る
@@ -116,16 +119,16 @@ pickup モードでは加えて、**順位を思わせる言葉**が `name` / `d
 
 ## 検証用サンプル
 
-- `data/samples/enriched-ai-tools.sample.json`: ranking（2026-09-13 のランキングから作成。料金・機能は公式サイトで 2026-09-14 に確認）
-- `data/samples/enriched-ai-tools.pickup.sample.json`: pickup（3 本）
+- `data/samples/enriched-ai-tools.pickup.sample.json`: pickup（5 本、2026-09-14 向け。9/13 に公開された AI ツール。料金・機能は公式サイトで 2026-09-14 に確認）
+- `data/samples/product-hunt-daily.pickup.sample.json`: pickup サンプルの照合用スナップショット（公式フィードの形。post の値は 2026-09-15 に実際のフィードから取ったもので、作成日時が古くても `listedAfter` で新作になる例と、新作でない例を含む）
 - `data/samples/enriched-ai-tools.skip.sample.json`: 休止の日
-- `data/samples/product-hunt-daily.sample.json`: ranking / pickup サンプルの照合用スナップショット（2026-09-15 向け。9/13 の確定ランキングにサンプルの 5 本が同じ順位・URL で入っている）
 - `data/samples/product-hunt-daily.skip.sample.json`: 休止サンプルの照合用（新作の AI 系が 1 本だけ）
+- `data/samples/enriched-ai-tools.sample.json` と `data/samples/product-hunt-daily.sample.json`: 旧 ranking の形（API を使わない決定のため参考用）
 
 ```bash
-npm run dry-run          # DRY_RUN=1: ranking サンプルで動画とキャプションを作るだけ。投稿・記録はしない
-npm run dry-run:pickup   # pickup サンプルで同じことをする
+npm run dry-run          # DRY_RUN=1: pickup サンプルで動画とキャプションを作るだけ。投稿・記録はしない（performance-history.json も書き換えない）
 npm run dry-run:skip     # 休止サンプル: 動画を作らず、警告と要約だけ出して終わる
+npm run dry-run:ranking  # 旧 ranking サンプル（参考用）
 ```
 
-`daily-video.yml` の検証モード（`dry_run` にチェック、または main 以外のブランチ）は、ranking サンプルと照合用スナップショットで動かす。
+`daily-video.yml` の検証モード（`dry_run` にチェック、または main 以外のブランチ）は、pickup サンプルと照合用スナップショットで動かす。

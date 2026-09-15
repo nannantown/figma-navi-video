@@ -25,7 +25,10 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const historyPath = join(__dirname, "..", "data", "performance-history.json");
 
 export const TRIAL_DAYS = 14;
-export const PLANNED_START = "2026-09-15";
+// Planned first post of the new format (the 09-15 morning still posted the old
+// format because the branch was not merged yet). The real start is the first
+// posted ai-tools-top5 day in performance-history.json.
+export const PLANNED_START = "2026-09-16";
 export const MIN_SAMPLES = 7;
 
 // Initial thresholds (sns-hub docs/strategy/genre-experiment.md (c), provisional).

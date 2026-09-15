@@ -13,7 +13,7 @@ import {
   defaultOpeningNarration,
   PRICING_LABELS,
 } from "./enriched-schema.mjs";
-import { freshSince, isFresh } from "./pacific-time.mjs";
+import { freshSince, isFresh, isNewLaunch } from "./pacific-time.mjs";
 
 // Published on Product Hunt 2026-09-13 (Pacific) — fresh for the 2026-09-15 video.
 const FRESH = "2026-09-13T00:01:00-07:00";
@@ -117,6 +117,21 @@ test("only new launches pass: ph_published_at must be inside the freshness windo
   assert.deepEqual(validateEnriched(pickup(3), { today: "2026-09-20", checkDate: false }).errors, []);
 });
 
+test("a feed post created long before its launch is new when the feed listed it only after a fetch inside the window", () => {
+  // Voiskey-like: post created 08-31, not listed by the 2026-09-13 14:30 PDT fetch (inside the window for 09-15).
+  const created = "2026-08-31T04:01:15-07:00";
+  const listed = pickup(3, { ph_published_at: created, ph_listed_after: "2026-09-13T21:30:00.000Z" });
+  assert.deepEqual(validateEnriched(listed, { today: "2026-09-15" }).errors, []);
+  assert.equal(isNewLaunch({ publishedAt: created, listedAfter: "2026-09-13T21:30:00.000Z" }, "2026-09-15"), true);
+  assert.equal(isNewLaunch({ publishedAt: created, listedAfter: null }, "2026-09-15"), false);
+
+  // Listed after a fetch taken before the window: the launch may be older than 48 h.
+  const early = pickup(3, { ph_published_at: created, ph_listed_after: "2026-09-12T21:30:00.000Z" });
+  assert.match(errorsOf(early), /ph_published_at 2026-08-31T04:01:15-07:00 and ph_listed_after 2026-09-12T21:30:00.000Z are both before 2026-09-13T07:00:00.000Z: tools\[0\] is not a new launch for 2026-09-15/);
+  assert.match(errorsOf(pickup(3, { ph_listed_after: "yesterday" })), /ph_listed_after must be an ISO 8601 time or null/);
+  assert.deepEqual(validateEnriched(pickup(3, { ph_listed_after: null }), { today: "2026-09-15" }).errors, []);
+});
+
 test("freshness window stays within 48 h of the routine start in PDT and PST", () => {
   const hours = (videoDate) => (new Date(`${videoDate}T07:30:00+09:00`) - freshSince(videoDate)) / 3600000;
   assert.equal(hours("2026-09-15"), 39.5); // PDT
@@ -203,7 +218,7 @@ test("narration length is enforced per tool and in total, sentence count is a wa
   assert.match(res.warnings.join("\n"), /4 sentences/);
 });
 
-test("toVideoTools: ranking shows the real Product Hunt rank, pickup shows order and publish date", () => {
+test("toVideoTools: ranking shows the real Product Hunt rank, pickup shows order and no date", () => {
   const ranked = toVideoTools(valid({ tools: [tool(1, { pricing_note: "月$12〜", ph_rank: 9 }), tool(2), tool(3), tool(4), tool(5)] }));
   assert.equal(ranked[0].badge, "1");
   assert.equal(ranked[0].sourceNote, "Product Hunt 9/13 総合9位");
@@ -214,7 +229,8 @@ test("toVideoTools: ranking shows the real Product Hunt rank, pickup shows order
 
   const picked = toVideoTools(pickup(3));
   assert.equal(picked[0].badge, "1/3");
-  assert.equal(picked[2].sourceNote, "Product Hunt 9/13 公開");
+  // The feed's publish time is the post creation, not the launch day — no date on pickup cards.
+  assert.equal(picked[2].sourceNote, "Product Hunt 新着");
   assert.equal(picked[0].phRank, null);
 });
 

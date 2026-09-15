@@ -209,6 +209,35 @@ test("pickup tools must be in the snapshot for the video date and new per the sn
   assert.match(run(data, null).warnings.join("\n"), /pickup tools could not be cross-checked: no Product Hunt snapshot/);
 });
 
+test("pickup cross-check and skip check accept launches proven by the feed listing (listedAfter)", () => {
+  const CREATED_EARLY = "2026-08-31T04:01:15-07:00"; // post created weeks before its launch
+  const LISTED_AFTER = "2026-09-13T21:30:00.000Z"; // 14:30 PDT fetch inside the 2026-09-15 window
+  const data = pickup({ ph_published_at: CREATED_EARLY, ph_listed_after: LISTED_AFTER });
+  const posts = data.tools.map((t, i) => feedPost(i + 1, { phUrl: t.ph_url, publishedAt: CREATED_EARLY, listedAfter: LISTED_AFTER }));
+  const ok = run(data, snapshotFor("2026-09-15", posts));
+  assert.deepEqual(ok.errors, []);
+  assert.ok(!ok.warnings.some((w) => /differs from the snapshot/.test(w)), ok.warnings.join("\n"));
+
+  // The snapshot never saw a listing inside the window: not a new launch, whatever the routine wrote.
+  const unproven = snapshotFor("2026-09-15", posts.map((p, i) => (i === 1 ? { ...p, listedAfter: null } : p)));
+  assert.match(run(data, unproven).errors.join("\n"), /tools\[1\] was published 2026-08-31T04:01:15-07:00 per the snapshot — not a new launch/);
+  const earlyListing = snapshotFor("2026-09-15", posts.map((p, i) => (i === 2 ? { ...p, listedAfter: "2026-09-12T21:30:00.000Z" } : p)));
+  assert.match(
+    run(data, earlyListing).errors.join("\n"),
+    /tools\[2\] was published 2026-08-31T04:01:15-07:00 and first listed after 2026-09-12T21:30:00.000Z per the snapshot/
+  );
+
+  // Omitting ph_listed_after fails the file's own check even when the snapshot proves the launch.
+  const res = run(pickup({ ph_published_at: CREATED_EARLY }), snapshotFor("2026-09-15", posts));
+  assert.match(res.errors.join("\n"), /is not a new launch for 2026-09-15/); // the file alone does not prove it
+  assert.match(res.warnings.join("\n"), /ph_listed_after differs from the snapshot \(2026-09-13T21:30:00.000Z\)/);
+
+  // Skip days count listing-proven launches too.
+  const skipSnap = snapshotFor("2026-09-15", [feedPost(1, { publishedAt: CREATED_EARLY, listedAfter: LISTED_AFTER }), feedPost(2, { publishedAt: CREATED_EARLY, listedAfter: LISTED_AFTER })]);
+  assert.equal(skipSnapshotCheck(skipSnap, "2026-09-15").freshAi, 2);
+  assert.match(run(skipDay(), skipSnap).errors.join("\n"), /skip is not allowed/);
+});
+
 test("snapshot posts without ids are still counted separately", () => {
   const snapshot = snapshotFor("2026-09-15", [feedPost(1, { id: "" }), feedPost(2, { id: "" })]);
   assert.equal(skipSnapshotCheck(snapshot, "2026-09-15").freshAi, 2);

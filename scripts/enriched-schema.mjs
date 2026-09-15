@@ -12,7 +12,7 @@
  * Human-readable spec: docs/enrichment-schema.md
  */
 
-import { isFresh, freshSince, expectedRankingDate, tzParts, PACIFIC_TZ } from "./pacific-time.mjs";
+import { isNewLaunch, freshSince, expectedRankingDate } from "./pacific-time.mjs";
 
 export const GENRE = "ai-tools-top5";
 export const TRIAL = 1;
@@ -313,14 +313,17 @@ function postKey(p) {
   return String(p.id || p.phUrl || p.url || p.name || "");
 }
 
-/** Distinct new AI launches in a snapshot for a video date (freshness recomputed, not trusted). */
+/**
+ * Distinct new AI launches in a snapshot for a video date. Freshness is
+ * recomputed from publishedAt / listedAfter, not trusted from the `fresh` flags.
+ */
 export function snapshotFreshAiCount(snapshot, videoDate) {
   const keys = new Set();
   for (const day of snapshot?.days || []) {
     for (const p of day.posts || []) {
       const ai = p.isAI === true || p.inAiCategory === true;
       const key = postKey(p);
-      if (ai && key && isFresh(p.publishedAt, videoDate)) keys.add(key);
+      if (ai && key && isNewLaunch(p, videoDate)) keys.add(key);
     }
   }
   return keys.size;
@@ -510,11 +513,21 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true, s
       errors.push(`${at}.image_url must be an https URL or null`);
     }
 
-    // 新作: published on Product Hunt within the freshness window of the video date.
+    // 新作: launched on Product Hunt within the freshness window of the video date,
+    // proven by the publish time or by the feed listing it only after a fetch
+    // taken inside the window (ph_listed_after = the snapshot's listedAfter).
+    const listedAfterValid =
+      t.ph_listed_after == null || (typeof t.ph_listed_after === "string" && Number.isFinite(Date.parse(t.ph_listed_after)));
+    if (!listedAfterValid) errors.push(`${at}.ph_listed_after must be an ISO 8601 time or null`);
+    const listedAfter = listedAfterValid && typeof t.ph_listed_after === "string" ? t.ph_listed_after : null;
     if (typeof t.ph_published_at !== "string" || !Number.isFinite(Date.parse(t.ph_published_at))) {
       errors.push(`${at}.ph_published_at (Product Hunt publish time, ISO 8601) is required`);
-    } else if (dateOk && !isFresh(t.ph_published_at, data.date)) {
-      errors.push(`${at}.ph_published_at ${t.ph_published_at} is not a new launch for ${data.date} (must be at or after ${windowStart})`);
+    } else if (dateOk && !isNewLaunch({ publishedAt: t.ph_published_at, listedAfter }, data.date)) {
+      errors.push(
+        listedAfter
+          ? `${at}.ph_published_at ${t.ph_published_at} and ph_listed_after ${listedAfter} are both before ${windowStart}: ${at} is not a new launch for ${data.date}`
+          : `${at}.ph_published_at ${t.ph_published_at} is not a new launch for ${data.date} (must be at or after ${windowStart})`
+      );
     }
 
     for (const [field, placeholder] of Object.entries(TEMPLATE_PLACEHOLDERS)) {
@@ -561,7 +574,7 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true, s
           errors.push(`tools[${i}].ph_rank ${t.ph_rank} is not in the Product Hunt ${source.ph_date} ranking snapshot`);
         } else if (!sameUrl(post.phUrl || post.url, t.ph_url)) {
           errors.push(`tools[${i}] ph_rank ${t.ph_rank} is ${post.phUrl || post.url} in the snapshot, not ${t.ph_url}`);
-        } else if (dateOk && !isFresh(post.publishedAt, data.date)) {
+        } else if (dateOk && !isNewLaunch(post, data.date)) {
           errors.push(`tools[${i}] was published ${post.publishedAt} per the snapshot — not a new launch for ${data.date}`);
         }
       });
@@ -576,10 +589,19 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true, s
         const post = findPostByUrl(snapshotForToday, t.ph_url);
         if (!post) {
           errors.push(`tools[${i}].ph_url ${t.ph_url} is not in the Product Hunt snapshot for ${data.date}`);
-        } else if (!isFresh(post.publishedAt, data.date)) {
-          errors.push(`tools[${i}] was published ${post.publishedAt} per the snapshot — not a new launch for ${data.date}`);
-        } else if (typeof t.ph_published_at === "string" && Date.parse(t.ph_published_at) !== Date.parse(post.publishedAt)) {
-          warnings.push(`tools[${i}].ph_published_at differs from the snapshot (${post.publishedAt})`);
+        } else if (!isNewLaunch(post, data.date)) {
+          errors.push(
+            `tools[${i}] was published ${post.publishedAt}${post.listedAfter ? ` and first listed after ${post.listedAfter}` : ""} per the snapshot — not a new launch for ${data.date}`
+          );
+        } else {
+          if (typeof t.ph_published_at === "string" && Date.parse(t.ph_published_at) !== Date.parse(post.publishedAt)) {
+            warnings.push(`tools[${i}].ph_published_at differs from the snapshot (${post.publishedAt})`);
+          }
+          const snapListed = typeof post.listedAfter === "string" ? Date.parse(post.listedAfter) : null;
+          const toolListed = typeof t.ph_listed_after === "string" ? Date.parse(t.ph_listed_after) : null;
+          if (snapListed !== toolListed) {
+            warnings.push(`tools[${i}].ph_listed_after differs from the snapshot (${post.listedAfter ?? null})`);
+          }
         }
       });
     } else if (dateOk) {
@@ -596,11 +618,6 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true, s
   return { errors, warnings };
 }
 
-function pacificMonthDay(iso) {
-  const p = tzParts(new Date(iso), PACIFIC_TZ);
-  return `${p.month}/${p.day}`;
-}
-
 /** Fill display defaults used by the video and captions. Assumes a valid input. */
 export function toVideoTools(data) {
   const ranking = data.source?.mode === "ranking";
@@ -611,8 +628,10 @@ export function toVideoTools(data) {
     // Big card badge: the position in this video. In pickup mode it is shown
     // as "1/3" so it cannot be read as a Product Hunt rank.
     badge: ranking ? String(t.rank) : `${t.rank}/${count}`,
-    // Small line under the headline: what Product Hunt actually says.
-    sourceNote: ranking ? `Product Hunt ${phDay} 総合${t.ph_rank}位` : `Product Hunt ${pacificMonthDay(t.ph_published_at)} 公開`,
+    // Small line under the headline: what Product Hunt actually says. The feed
+    // has no launch date (its publish time is when the post was created), so
+    // pickup cards only say the tool is a new launch there.
+    sourceNote: ranking ? `Product Hunt ${phDay} 総合${t.ph_rank}位` : "Product Hunt 新着",
     name: String(t.name).trim(),
     description: String(t.description).trim(),
     who: String(t.who).trim(),
