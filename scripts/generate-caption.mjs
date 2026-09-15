@@ -9,9 +9,10 @@
  *     rejected with "invalid or empty video title" (what broke 2026-09-13/14).
  *   - YouTube description ≤ 5000 bytes, no "<" / ">".
  *   - Instagram: ≤ 5 hashtags per Reel, caption ≤ 2,200 characters.
- * Attribution: the YouTube description links every tool to its Product Hunt
- * page (Product Hunt API docs ask for attribution with a link back); Instagram
- * captions cannot hold links, so they keep a plain "出典: Product Hunt".
+ * Attribution: the YouTube description lists every tool's Product Hunt page
+ * URL next to "出典: Product Hunt" — as text: URLs in Shorts descriptions are
+ * not clickable (YouTube Help answer 13748639, checked 2026-09-16). Instagram
+ * captions cannot hold links either, so they keep a plain "出典: Product Hunt".
  * Wording: "TOP5" only in ranking mode; pickup mode says "N選".
  *
  * 【一次資料】YouTube Data API videos resource (2026-09-14):

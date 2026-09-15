@@ -21,6 +21,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # generate-data.mjs cross-checks against the Product Hunt snapshot in
+          # the routine's commit (a few commits back), as daily-video.yml does.
+          fetch-depth: 50
 
       - name: Setup Node.js
         uses: actions/setup-node@v4

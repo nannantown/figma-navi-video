@@ -173,7 +173,9 @@ function main() {
   } else {
     console.log(`\n=== Step 5: SNS posting skipped (${dryRun ? "DRY_RUN=1" : "set SNS_POST_ENABLED=true to enable"}) ===`);
     // Still produce captions so a dry run shows exactly what would be posted.
-    runSafe("node scripts/generate-caption.mjs", "generate-caption");
+    // Fatal like the real run (post-sns stops before any upload when captions
+    // fail), so a green verification run means the captions work too.
+    run("node scripts/generate-caption.mjs");
   }
 
   if (!existsSync(join(rootDir, outputFile))) throw new Error(`${outputFile} was not produced`);

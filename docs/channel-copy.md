@@ -18,7 +18,7 @@
 
 ### YouTube
 
-- 概要欄の末尾: `#AIツール #生成AI #ProductHunt #新作AIツール #Shorts`（最初の 3 個がタイトルの上に表示される）
+- 概要欄の末尾: `#AIツール #生成AI #ProductHunt #新作AIツール #Shorts`（YouTube は概要欄のハッシュタグのうち、反応が良いと判断したものを最大 3 個までタイトルの近くに表示する。YouTube ヘルプ https://support.google.com/youtube/answer/6390658 、2026-09-16 確認）
 - タグ（`snippet.tags`）: `AIツール, 生成AI, ProductHunt, 新作AIツール, AI活用, 便利ツール, 業務効率化, Shorts` + その日のツール名（合計 500 字以内）
 
 ## 自動生成されるキャプションの例
@@ -33,7 +33,7 @@
 
 2026-09-13・14 の YouTube 投稿は、タイトルが 100 字を超えて失敗していた（`invalid or empty video title`）。新しいタイトルは必ず 100 字以内に収める。
 
-### YouTube 概要欄（各ツールに Product Hunt ページへのリンクを付ける）
+### YouTube 概要欄（各ツールに Product Hunt ページの URL を付ける。Shorts の概要欄の URL はクリックできない仕様なので、出典の明記として載せる。YouTube ヘルプ https://support.google.com/youtube/answer/13748639 ）
 
 ```
 2026/09/14 の新作AIツール 5選（Product Hunt の直近48時間の新着から厳選）
@@ -125,4 +125,4 @@ Product Hunt の新作から、仕事で使えるものを毎朝厳選
 | 毎朝AIツール | 毎日更新であることが名前で分かる |
 | 新作AIツール便 | 毎朝届く「新作の便り」。順位を名乗らない（2026-09-15 の決定で「TOP5」案は外した） |
 
-現在の YouTube チャンネル名は「HAL- AI情報カフェ」（sns-hub docs/strategy/README.md の一覧より）。すでに AI 寄りの名前なので、YouTube は名前を変えずに説明文だけ差し替える選択肢もある。
+現在の YouTube チャンネル名は「HAL- AI情報カフェ」（@hal-ai-9000。2026-09-14 に sns-hub のジャンル実験の作業で YouTube の埋め込み情報（oEmbed）から確認された名前。その作業メモはまだ sns-hub の main に入っていない）。すでに AI 寄りの名前なので、YouTube は名前を変えずに説明文だけ差し替える選択肢もある。

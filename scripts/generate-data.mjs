@@ -29,6 +29,7 @@ import {
   DEFAULT_ENDING_NARRATION,
 } from "./enriched-schema.mjs";
 import { loadSnapshotForRun } from "./snapshot.mjs";
+import { loadHistory } from "./history.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
@@ -63,7 +64,16 @@ function main() {
   if (snapshotError) console.warn(`  WARN ${snapshotError}`);
   console.log(`  snapshot: ${snapshotPath}${snapshot ? ` (for ${snapshot.forVideoDate}, fetched ${snapshot.fetchedAt})` : " (none)"}`);
 
-  const { errors, warnings } = validateEnriched(data, { today: todayJst(), checkDate: !allowStale, snapshot });
+  // History = the 30-day repeat check (today's own entry is ignored, so a re-run is fine).
+  // Ranks stay off unless PH_ALLOW_RANKING=1 (the reference dry run only).
+  const history = loadHistory(rootDir);
+  const { errors, warnings } = validateEnriched(data, {
+    today: todayJst(),
+    checkDate: !allowStale,
+    snapshot,
+    history,
+    allowRanking: process.env.PH_ALLOW_RANKING === "1",
+  });
   for (const w of warnings) console.warn(`  WARN ${w}`);
   if (errors.length > 0) {
     throw new Error(`enriched-ai-tools.json is invalid:\n  - ${errors.join("\n  - ")}`);
@@ -75,12 +85,14 @@ function main() {
   if (data.skip) {
     // Intentional no-video day (too few new launches). pipeline.mjs stops
     // cleanly but loudly (Actions warning + job summary + history entry).
-    const check = skipSnapshotCheck(snapshot, data.date);
+    const excludedUrls = (Array.isArray(data.skip.excluded) ? data.skip.excluded : []).map((x) => x?.ph_url).filter(Boolean);
+    const check = skipSnapshotCheck(snapshot, data.date, { excludedUrls });
     const record = {
       date: data.date,
       reason: data.skip.reason,
       fresh_candidates: data.skip.fresh_candidates,
       snapshot_fresh_ai: check.freshAi,
+      excluded: excludedUrls.length,
       snapshot_check: check.status,
       snapshot_note: check.reason || null,
     };

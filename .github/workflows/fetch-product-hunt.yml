@@ -1,10 +1,10 @@
 name: Fetch Product Hunt Snapshot
 
 # Product Hunt launches → data/product-hunt-daily.json for the next morning's
-# Claude Routine (07:30 JST). Runs the evening before (the last Pacific day is
-# already closed, so its ranking is final) and again early morning as a second
-# chance — GitHub cron can start 1-2 h late, so we never rely on a run right
-# before the routine.
+# Claude Routine (07:30 JST). Runs the evening before and again in the early
+# morning as a second chance. GitHub delays scheduled runs under load, worst at
+# the start of every hour, so both runs avoid :00/:30 and stay hours away from
+# the routine.
 #
 # Source: the official Atom feed only (owner decision 2026-09-15, option B — no
 # ranking, no votes; the routine makes an editorial pickup). No secret is needed
@@ -12,15 +12,26 @@ name: Fetch Product Hunt Snapshot
 # the API would take an owner decision and a PR that sets PH_SOURCE=api and
 # passes the token here.
 #
-# Each run reads the snapshot it replaces (checked out from main) to carry the
-# feed listing registry, which dates launches whose posts were created early.
+# Each run carries the feed listing registry from main's latest snapshot (read
+# from origin/main, not from the checkout, which can be stale for a queued run
+# or a re-run), commits the new snapshot on top of the latest main, and fails
+# its last step when the listing evidence has stopped working (after the commit,
+# so the morning still gets a snapshot).
+#
+# Verification: pull requests that touch the fetch run it without committing
+# (a workflow_dispatch only works once this file is on the default branch).
 
 on:
   schedule:
-    # 09:30 UTC = 18:30 JST (evening before)
-    - cron: "30 9 * * *"
-    # 21:30 UTC = 06:30 JST (second chance)
-    - cron: "30 21 * * *"
+    # 09:17 UTC = 18:17 JST (evening before; the day's launches went live at 16:01 JST, 17:01 in winter)
+    - cron: "17 9 * * *"
+    # 18:47 UTC = 03:47 JST (second chance, still hours before the 07:30 routine)
+    - cron: "47 18 * * *"
+  pull_request:
+    paths:
+      - ".github/workflows/fetch-product-hunt.yml"
+      - "scripts/fetch-product-hunt.mjs"
+      - "scripts/pacific-time.mjs"
   workflow_dispatch:
     inputs:
       verify:
@@ -31,55 +42,92 @@ on:
 permissions:
   contents: write
 
+# Runs that commit share one queue; verification runs never wait for or replace them.
 concurrency:
-  group: fetch-product-hunt
+  group: ${{ (github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && inputs.verify != true) && 'fetch-product-hunt-write' || format('fetch-product-hunt-verify-{0}', github.run_id) }}
   cancel-in-progress: false
 
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
+    env:
+      WRITE_RUN: ${{ (github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && inputs.verify != true) && '1' || '' }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          persist-credentials: ${{ env.WRITE_RUN == '1' }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
 
+      # The registry must come from main's latest snapshot, whatever commit this run checked out.
+      - name: Read main's latest snapshot
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 origin main
+          if git cat-file -e FETCH_HEAD:data/product-hunt-daily.json 2>/dev/null; then
+            git show FETCH_HEAD:data/product-hunt-daily.json > "$RUNNER_TEMP/previous-snapshot.json"
+            echo "previous snapshot: main $(git rev-parse --short FETCH_HEAD)"
+          else
+            echo "main has no snapshot yet: the listing registry starts with this run"
+          fi
+
       # No npm ci: the fetch script only uses Node built-ins (fetch, fs).
       - name: Fetch snapshot
-        run: node scripts/fetch-product-hunt.mjs
+        id: fetch
+        run: node scripts/fetch-product-hunt.mjs --previous="$RUNNER_TEMP/previous-snapshot.json"
         env:
           TZ: Asia/Tokyo
           PH_SOURCE: feed
 
+      - name: Commit snapshot (main only, not in verify mode or pull requests)
+        if: env.WRITE_RUN == '1'
+        run: |
+          set -u
+          cp data/product-hunt-daily.json "$RUNNER_TEMP/snapshot.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3; do
+            # Always commit on top of the latest main (other workflows and the routine push too).
+            git fetch --no-tags origin main
+            git checkout -f -B main FETCH_HEAD
+            cp "$RUNNER_TEMP/snapshot.json" data/product-hunt-daily.json
+            git add data/product-hunt-daily.json
+            if git diff --staged --quiet; then
+              echo "Snapshot unchanged, nothing to commit"
+              exit 0
+            fi
+            git commit -m "Product Hunt snapshot $(TZ=Asia/Tokyo date +%Y-%m-%dT%H:%M) [skip ci]"
+            if git push origin main; then
+              exit 0
+            fi
+            echo "push attempt $i failed, retrying"
+            sleep $((i * 10))
+          done
+          echo "::error title=Product Hunt snapshot::push failed after 3 attempts — the snapshot was not committed"
+          exit 1
+
       - name: Upload snapshot artifact
+        if: always()
+        continue-on-error: true
         uses: actions/upload-artifact@v4
         with:
           name: product-hunt-daily-${{ github.run_number }}
           path: data/product-hunt-daily.json
+          if-no-files-found: ignore
           retention-days: 14
 
-      - name: Commit snapshot (main only, skipped in verify mode)
-        if: github.ref == 'refs/heads/main' && inputs.verify != true
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/product-hunt-daily.json
-          if git diff --staged --quiet; then
-            echo "Snapshot unchanged, nothing to commit"
-            exit 0
-          fi
-          git commit -m "Product Hunt snapshot $(TZ=Asia/Tokyo date +%Y-%m-%dT%H:%M) [skip ci]"
-          for i in 1 2 3; do
-            git pull --rebase origin main && git push && exit 0
-            echo "push attempt $i failed, retrying"
-            sleep 5
-          done
-          echo "Push failed after 3 attempts"
-          exit 1
+      # After the commit: the snapshot is saved either way, and a red run notifies the owner.
+      - name: Listing health
+        if: steps.fetch.outputs.listing_alert != ''
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LISTING_ALERT: ${{ steps.fetch.outputs.listing_alert }}
+        run: |
+          echo "::error title=Product Hunt listing::$LISTING_ALERT"
+          echo "New launches can only be dated by their creation time until this is fixed (see docs/strategy.md, 取得モード)."
+          exit 1

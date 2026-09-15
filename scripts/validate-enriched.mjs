@@ -14,6 +14,7 @@ import { join, dirname, isAbsolute } from "path";
 import { fileURLToPath } from "url";
 import { parseEnrichedText, validateEnriched, todayJst } from "./enriched-schema.mjs";
 import { loadSnapshot } from "./snapshot.mjs";
+import { loadHistory } from "./history.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
@@ -42,7 +43,16 @@ if (parsed.repaired) {
 
 const { snapshot, error: snapshotError } = loadSnapshot(rootDir);
 if (snapshotError) console.log(`WARN: ${snapshotError}`);
-const { errors, warnings } = validateEnriched(parsed.data, { today: todayJst(), checkDate, snapshot });
+const history = loadHistory(rootDir);
+if (!history) console.log("WARN: data/performance-history.json is missing or unreadable — the 30-day repeat check is skipped");
+const { errors, warnings } = validateEnriched(parsed.data, {
+  today: todayJst(),
+  checkDate,
+  snapshot,
+  history,
+  // Ranks are off since the owner decision of 2026-09-15; only the reference dry run sets this.
+  allowRanking: process.env.PH_ALLOW_RANKING === "1",
+});
 for (const w of warnings) console.log(`WARN: ${w}`);
 for (const e of errors) console.error(`NG: ${e}`);
 if (errors.length > 0) {

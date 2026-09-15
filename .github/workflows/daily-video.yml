@@ -97,11 +97,15 @@ jobs:
           # fetch-product-hunt.yml and the routine also commit to main; rebase
           # onto them instead of losing today's upload record.
           for i in 1 2 3; do
-            git pull --rebase origin main && git push && exit 0
+            if git pull --rebase origin main && git push; then
+              exit 0
+            fi
+            # A failed rebase would block every later attempt.
+            git rebase --abort 2>/dev/null || true
             echo "push attempt $i failed, retrying"
-            sleep 5
+            sleep $((i * 10))
           done
-          echo "Push failed (non-blocking)"
+          echo "::warning title=performance history::push failed after 3 attempts — today's upload record is not on main (non-blocking; add it before the next routine, or the 30-day repeat check and the PDCA report miss this day)"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

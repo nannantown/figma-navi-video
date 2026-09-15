@@ -55,7 +55,8 @@ const pickup = (count, toolOverrides = {}) =>
     tools: Array.from({ length: count }, (_, i) => tool(i + 1, { ph_rank: undefined, ...toolOverrides })),
   });
 
-const errorsOf = (data, today = "2026-09-15") => validateEnriched(data, { today }).errors.join("\n");
+// Legacy ranking fixtures opt in to ranking mode (off by default since the owner decision of 2026-09-15).
+const errorsOf = (data, today = "2026-09-15") => validateEnriched(data, { today, allowRanking: true }).errors.join("\n");
 
 /** The final API ranking a ranking-mode file must come from. */
 const apiSnapshotFor = (data) => ({
@@ -73,12 +74,12 @@ const apiSnapshotFor = (data) => ({
 });
 
 test("a well-formed ranking file passes with the date check and its API snapshot", () => {
-  assert.deepEqual(validateEnriched(valid(), { today: "2026-09-15", snapshot: apiSnapshotFor(valid()) }).errors, []);
+  assert.deepEqual(validateEnriched(valid(), { today: "2026-09-15", snapshot: apiSnapshotFor(valid()), allowRanking: true }).errors, []);
 });
 
 test("stale date is an error unless the date check is off", () => {
   assert.match(errorsOf(valid(), "2026-09-16"), /does not match today/);
-  assert.deepEqual(validateEnriched(valid(), { today: "2026-09-16", checkDate: false, snapshot: apiSnapshotFor(valid()) }).errors, []);
+  assert.deepEqual(validateEnriched(valid(), { today: "2026-09-16", checkDate: false, snapshot: apiSnapshotFor(valid()), allowRanking: true }).errors, []);
 });
 
 test("ranking mode needs exactly five tools in video order", () => {
@@ -121,7 +122,22 @@ test("a feed post created long before its launch is new when the feed listed it 
   // Voiskey-like: post created 08-31, not listed by the 2026-09-13 14:30 PDT fetch (inside the window for 09-15).
   const created = "2026-08-31T04:01:15-07:00";
   const listed = pickup(3, { ph_published_at: created, ph_listed_after: "2026-09-13T21:30:00.000Z" });
-  assert.deepEqual(validateEnriched(listed, { today: "2026-09-15" }).errors, []);
+  const listingSnapshot = {
+    schemaVersion: 2,
+    forVideoDate: "2026-09-15",
+    source: "feed",
+    days: [
+      {
+        date: "2026-09-14",
+        status: "feed",
+        source: "feed",
+        posts: listed.tools.map((t) => ({ id: t.ph_url, name: t.name, phUrl: t.ph_url, publishedAt: created, listedAfter: "2026-09-13T21:30:00.000Z", isAI: true, inAiCategory: true })),
+      },
+    ],
+  };
+  assert.deepEqual(validateEnriched(listed, { today: "2026-09-15", snapshot: listingSnapshot }).errors, []);
+  // Listing evidence only exists in a snapshot: without the same-day one the value cannot be trusted.
+  assert.match(validateEnriched(listed, { today: "2026-09-15" }).errors.join("\n"), /tools\[0\]\.ph_listed_after needs the Product Hunt snapshot for 2026-09-15/);
   assert.equal(isNewLaunch({ publishedAt: created, listedAfter: "2026-09-13T21:30:00.000Z" }, "2026-09-15"), true);
   assert.equal(isNewLaunch({ publishedAt: created, listedAfter: null }, "2026-09-15"), false);
 
@@ -143,7 +159,7 @@ test("pickup mode must not use ranking vocabulary anywhere", () => {
   assert.match(errorsOf(pickup(3, { narration: "今日のランキング1位のAIツールです。議事録づくりの時間がほぼゼロになります。" })), /uses ranking words/);
   // Ranking mode only warns.
   const ranked = valid({ tools: [tool(1, { narration: "総合1位のAIツールです。議事録づくりの時間がほぼゼロになります。" }), tool(2), tool(3), tool(4), tool(5)] });
-  const res = validateEnriched(ranked, { today: "2026-09-15", snapshot: apiSnapshotFor(ranked) });
+  const res = validateEnriched(ranked, { today: "2026-09-15", snapshot: apiSnapshotFor(ranked), allowRanking: true });
   assert.deepEqual(res.errors, []);
   assert.match(res.warnings.join("\n"), /mentions a rank/);
 });

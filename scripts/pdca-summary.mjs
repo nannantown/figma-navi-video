@@ -1,5 +1,5 @@
 /**
- * Numbers for the daily PDCA report of genre trial #1 (AI tools TOP5).
+ * Numbers for the daily PDCA report of genre trial #1 (新作AIツール N選 from the Product Hunt feed).
  *
  * Reads data/performance-history.json and prints Markdown the routine pastes
  * into docs/pdca/YYYY-MM-DD.md. The judgement metrics are the IG views median
@@ -25,10 +25,11 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const historyPath = join(__dirname, "..", "data", "performance-history.json");
 
 export const TRIAL_DAYS = 14;
-// Planned first post of the new format (the 09-15 morning still posted the old
-// format because the branch was not merged yet). The real start is the first
-// posted ai-tools-top5 day in performance-history.json.
-export const PLANNED_START = "2026-09-16";
+// Planned first post of the new format: the branch is merged after the
+// 2026-09-16 daily run (that morning still posted the old format), so the first
+// new video is 2026-09-17. The real start is the first posted ai-tools-top5 day
+// in performance-history.json.
+export const PLANNED_START = "2026-09-17";
 export const MIN_SAMPLES = 7;
 
 // Initial thresholds (sns-hub docs/strategy/genre-experiment.md (c), provisional).
@@ -100,23 +101,39 @@ export function judgeYt({ n, viewsMedian }) {
   return "続行";
 }
 
-/** Trial position: actual start = first posted entry of this genre (skip days do not start a trial), else the planned start. */
+/**
+ * Trial position: actual start = first posted entry of this genre (skip days do
+ * not start a trial), else the planned start.
+ *
+ * The trial is judged every TRIAL_DAYS: cycle k (1-based) covers
+ * start + 14(k-1) .. start + 14k - 1 and is judged on start + 14k. On a
+ * judgment day the cycle that just ended is the window and `verdict` is set;
+ * on every other day the running cycle is shown and `verdict` is null, so the
+ * routine writes a judgment section once per cycle, not every morning after.
+ */
 export function trialStatus(videos, { today, plannedStart = PLANNED_START }) {
   const trialVideos = videos.filter((v) => genreOf(v) === GENRE).sort((a, b) => a.date.localeCompare(b.date));
   const firstPost = postedVideos(trialVideos)[0];
   const started = Boolean(firstPost);
   const startDate = started ? firstPost.date : plannedStart;
-  const judgmentDate = addDays(startDate, TRIAL_DAYS);
   const dayN = daysBetween(startDate, today) + 1;
-  const windowTo = [today, addDays(startDate, TRIAL_DAYS - 1)].sort()[0];
-  const summary = summarizeWindow(trialVideos, { from: startDate, to: windowTo });
-  const isJudgmentDay = today >= judgmentDate;
+  const elapsed = Math.max(0, dayN - 1);
+  const cycleIndex = started ? Math.floor(elapsed / TRIAL_DAYS) : 0;
+  const cycleStart = addDays(startDate, cycleIndex * TRIAL_DAYS);
+  const isJudgmentDay = started && elapsed > 0 && elapsed % TRIAL_DAYS === 0;
+  const from = isJudgmentDay ? addDays(cycleStart, -TRIAL_DAYS) : cycleStart;
+  const to = isJudgmentDay ? addDays(cycleStart, -1) : [today, addDays(cycleStart, TRIAL_DAYS - 1)].sort()[0];
+  const summary = summarizeWindow(trialVideos, { from, to });
   return {
     started,
     startDate,
-    judgmentDate,
     dayN,
+    cycle: cycleIndex + 1,
+    dayInCycle: started ? (elapsed % TRIAL_DAYS) + 1 : null,
+    // The next judgment after today (on a judgment day: the one after it).
+    judgmentDate: addDays(cycleStart, TRIAL_DAYS),
     isJudgmentDay,
+    judgedCycle: isJudgmentDay ? cycleIndex : null,
     summary,
     verdict: isJudgmentDay ? { ig: judgeIg(summary.ig), yt: judgeYt(summary.yt) } : null,
   };
@@ -129,20 +146,22 @@ export function renderMarkdown(history, { today, plannedStart = PLANNED_START })
   const st = trialStatus(videos, { today, plannedStart });
   const s = st.summary;
   const windowLabel = `${s.from.slice(5)}..${s.to.slice(5)}`;
-  const day = st.dayN < 1 ? `開始前（予定 ${st.startDate}）` : `Day ${Math.min(st.dayN, TRIAL_DAYS)} / ${TRIAL_DAYS}`;
+  const day = !st.started ? `開始前（予定 ${st.startDate}）` : `Day ${st.dayInCycle} / ${TRIAL_DAYS}（第 ${st.cycle} 期）`;
   const lines = [];
 
   lines.push("## ジャンル試行の状態");
   lines.push("");
   lines.push("| アカウント | 試行 # | ジャンル / 型 | 開始日 | 経過日 | 判定窓 | IG views 中央値 | IG 保存合計 | YT views 中央値 | 次の判定日 |");
   lines.push("|---|---|---|---|---|---|---|---|---|---|");
-  lines.push(`| IG | #${TRIAL} | 新作AIツールTOP5（Product Hunt） | ${st.startDate}${st.started ? "" : "（予定）"} | ${day} | ${windowLabel} (n=${s.ig.n}) | ${fmt(s.ig.viewsMedian)} | ${s.ig.savedSum} | — | ${st.judgmentDate} |`);
+  lines.push(`| IG | #${TRIAL} | 新作AIツール N選（Product Hunt 公式フィード） | ${st.startDate}${st.started ? "" : "（予定）"} | ${day} | ${windowLabel} (n=${s.ig.n}) | ${fmt(s.ig.viewsMedian)} | ${s.ig.savedSum} | — | ${st.judgmentDate} |`);
   lines.push(`| YT | #${TRIAL} | 同上 | ${st.startDate}${st.started ? "" : "（予定）"} | ${day} | ${windowLabel} (n=${s.yt.n}) | — | — | ${fmt(s.yt.viewsMedian)} | ${st.judgmentDate} |`);
   lines.push("");
   if (st.verdict) {
-    lines.push(`- 今日の判定（判定日 ${st.judgmentDate} 以降）: IG = **${st.verdict.ig}** / YT = **${st.verdict.yt}**（閾値: sns-hub docs/strategy/genre-experiment.md）`);
+    lines.push(
+      `- 今日の判定（今日は第 ${st.judgedCycle} 期 ${windowLabel} の判定日）: IG = **${st.verdict.ig}** / YT = **${st.verdict.yt}**（閾値: docs/strategy.md の合格ライン）`
+    );
   } else {
-    lines.push(`- 今日の判定: なし（判定日 ${st.judgmentDate} まで待つ）。IG 参考: シェア合計 ${s.ig.sharesSum} / リーチ中央値 ${fmt(s.ig.reachMedian)}`);
+    lines.push(`- 今日の判定: なし（次の判定日 ${st.judgmentDate} まで待つ）。IG 参考: シェア合計 ${s.ig.sharesSum} / リーチ中央値 ${fmt(s.ig.reachMedian)}`);
   }
   lines.push(`- 判定窓の投稿 ${s.posts} 本 / 休止 ${s.skipped} 日（休止日は中央値・合計に入れない）`);
   lines.push("");

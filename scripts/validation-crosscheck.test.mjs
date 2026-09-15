@@ -49,11 +49,12 @@ const skipDay = (freshCandidates = 1) => ({
   skip: { reason: "新作の候補が1本のため休止", fresh_candidates: freshCandidates },
 });
 
-const feedPost = (id, overrides = {}) => ({ id: String(id), name: `P${id}`, isAI: true, inAiCategory: true, publishedAt: FRESH, phUrl: `https://www.producthunt.com/products/p${id}`, ...overrides });
+const feedPost = (id, overrides = {}) => ({ id: String(id), name: `Tool ${id}`, isAI: true, inAiCategory: true, publishedAt: FRESH, phUrl: `https://www.producthunt.com/products/p${id}`, ...overrides });
 
 const snapshotFor = (videoDate, posts, extra = {}) => ({ schemaVersion: 2, forVideoDate: videoDate, source: "feed", days: [{ date: "2026-09-14", status: "feed", source: "feed", posts }], ...extra });
 
-const run = (data, snapshot) => validateEnriched(data, { today: "2026-09-15", snapshot });
+// Ranking mode is off by default (owner decision 2026-09-15); the legacy ranking tests opt in.
+const run = (data, snapshot, opts = {}) => validateEnriched(data, { today: "2026-09-15", snapshot, allowRanking: true, ...opts });
 
 // --- Must 1: skip days are cross-checked against the snapshot ----------------
 
@@ -159,10 +160,11 @@ test("pickup ranking vocabulary is caught in full-width, half-width, English and
 // --- Recommended 4: domains, full-width URLs, defanged dots ---------------------
 
 test("domains of any TLD, full-width URLs and defanged dots are rejected in text fields", () => {
-  for (const value of ["詳細は evil.shop で", "ｗｗｗ．evil．com へ", "https：／／evil.com", "evil[.]com を見て", "evil(dot)com を見て", "Node.js で動く"]) {
+  for (const value of ["詳細は evil.shop で", "ｗｗｗ．evil．com へ", "https：／／evil.com", "evil[.]com を見て", "evil(dot)com を見て", "evil.py で動く"]) {
     assert.ok(textSafetyProblems(value).length > 0, value);
   }
-  for (const value of ["v2.10対応の要約AI", "1.5GBまで無料", "3.5倍速く書ける", "Ph.D 取得者向け"]) {
+  // Tech names whose suffix is never a real TLD are fine in every field (review 2026-09-16).
+  for (const value of ["v2.10対応の要約AI", "1.5GBまで無料", "3.5倍速く書ける", "Ph.D 取得者向け", "Node.js で動く", "Next.jsのアプリを速くする", "ASP.NET開発者"]) {
     assert.deepEqual(textSafetyProblems(value), [], value);
   }
   // Product names keep their dots, never schemes or defanged forms.

@@ -1,11 +1,11 @@
 /**
  * Fetch Product Hunt launches into data/product-hunt-daily.json.
  *
- * Runs in GitHub Actions (fetch-product-hunt.yml) twice a day — 18:30 JST
- * (the evening before) and 06:30 JST (second chance) — so the Claude Routine
+ * Runs in GitHub Actions (fetch-product-hunt.yml) twice a day — 18:17 JST
+ * (the evening before) and 03:47 JST (second chance) — so the Claude Routine
  * (07:30 JST) can pick new AI tools from a fixed snapshot instead of crawling
- * the site itself. GitHub's cron can start 1-2 h late, which is why the primary
- * run is the evening before rather than just before the routine.
+ * the site itself. GitHub's cron can start 1-3 h late (worst at the top of the
+ * hour), which is why neither run is close to the routine or on :00/:30.
  *
  * Source (owner decision 2026-09-15, option B):
  *   - Default and only source used by the workflow: the official Atom feed.
@@ -18,14 +18,18 @@
  *
  * New launches from the feed: <published> is when the post was created, often
  * weeks before the launch, so each snapshot also carries a listing registry
- * (updateListing) and every post gets `listedAfter` — the last complete fetch
- * that did not list it yet. The previous snapshot at the output path is read
- * before it is overwritten.
+ * (updateListing) and posts that newly appear above every already-known post
+ * get `listedAfter` — the last complete fetch that did not list them yet. The
+ * previous snapshot (main's, passed with --previous in Actions) is read before
+ * it is overwritten. `listingHealth` in the snapshot says whether that evidence
+ * is working; problems are printed as Actions annotations and exported for the
+ * workflow's health step.
  *
  * Usage:
  *   node scripts/fetch-product-hunt.mjs              # writes data/product-hunt-daily.json
  *   node scripts/fetch-product-hunt.mjs --dry-run    # print summary only
  *   node scripts/fetch-product-hunt.mjs --out=/tmp/ph.json
+ *   node scripts/fetch-product-hunt.mjs --previous=/tmp/main-snapshot.json   # carry the registry from this file
  *
  * 【一次資料】(2026-09-15, checked by fetching the live pages)
  *   - https://www.producthunt.com/feed?category=artificial-intelligence (50 entries):
@@ -376,15 +380,48 @@ export function parseAtomFeed(xml) {
   return entries;
 }
 
-export async function fetchFeed({ fetchImpl = fetch, category = "" } = {}) {
+// A single bad answer at the evening run would otherwise leave the next morning thin.
+export const FEED_ATTEMPTS = 3;
+export const FEED_RETRY_DELAYS_MS = [5000, 20000];
+
+/**
+ * One feed, retried on network errors, timeouts, 429, 5xx and empty/unparseable
+ * bodies (challenge pages). Other 4xx answers fail at once.
+ */
+export async function fetchFeed({ fetchImpl = fetch, category = "", sleepImpl = sleep, attempts = FEED_ATTEMPTS } = {}) {
   const url = category ? `${FEED_URL}?category=${encodeURIComponent(category)}` : FEED_URL;
-  const res = await fetchImpl(url, {
-    headers: { Accept: "application/atom+xml, application/xml;q=0.9, */*;q=0.5", "User-Agent": USER_AGENT },
-    signal: AbortSignal.timeout(30000),
-  });
-  if (!res.ok) throw new Error(`Product Hunt feed HTTP ${res.status} (${url})`);
-  return parseAtomFeed(await res.text());
+  let lastError = null;
+  for (let attempt = 1; attempt <= attempts; attempt++) {
+    let retryable = true;
+    try {
+      const res = await fetchImpl(url, {
+        headers: { Accept: "application/atom+xml, application/xml;q=0.9, */*;q=0.5", "User-Agent": USER_AGENT },
+        signal: AbortSignal.timeout(30000),
+      });
+      if (!res.ok) {
+        retryable = res.status === 429 || res.status >= 500;
+        throw new Error(`Product Hunt feed HTTP ${res.status} (${url})`);
+      }
+      const entries = parseAtomFeed(await res.text());
+      if (entries.length === 0) throw new Error(`Product Hunt feed had no entries (${url})`);
+      return entries;
+    } catch (err) {
+      lastError = err;
+      if (!retryable || attempt === attempts) break;
+      console.warn(`  feed attempt ${attempt}/${attempts} failed (${err.message}) — retrying`);
+      await sleepImpl(FEED_RETRY_DELAYS_MS[attempt - 1] ?? FEED_RETRY_DELAYS_MS.at(-1));
+    }
+  }
+  throw lastError;
 }
+
+// A complete feed page has ~50 entries (checked 2026-09-15).
+export const MIN_FEED_ENTRIES = 20;
+// The AI category feed reaches ~5 launch days back and the general feed ~1.5,
+// so a working filter returns many entries the general feed does not have
+// (26 of 50 on 2026-09-15). Two cached copies of the general feed differ by a
+// post or two at most.
+export const MIN_AI_ONLY_ENTRIES = 10;
 
 /**
  * Whether `?category=artificial-intelligence` actually filtered the feed.
@@ -394,8 +431,9 @@ export async function fetchFeed({ fetchImpl = fetch, category = "" } = {}) {
 export function aiCategoryFilterStatus(aiEntries, allEntries) {
   if (aiEntries.length === 0 || allEntries.length === 0) return "unknown";
   const allIds = new Set(allEntries.map((e) => e.id));
-  const same = aiEntries.length === allEntries.length && aiEntries.every((e) => allIds.has(e.id));
-  return same ? "ignored" : "ok";
+  const aiOnly = aiEntries.filter((e) => !allIds.has(e.id)).length;
+  if (aiOnly === 0) return "ignored";
+  return aiOnly >= MIN_AI_ONLY_ENTRIES ? "ok" : "unknown";
 }
 
 /**
@@ -456,24 +494,34 @@ export function previousListing(previous, now) {
 /**
  * Carry the feed listing registry to this fetch.
  *
- * The feed shows the launches of the last few days, newest launch day first,
- * and a post only appears there once it has launched. So when a complete fetch
- * at time T did not list a post, the post launched after T:
+ * The feed shows the launches of the last few days, newest launch day first
+ * (order inside a day reshuffles within minutes), and a post only appears there
+ * once it has launched. A launch that happened after the last complete fetch
+ * (time T) therefore enters at the top: above every post the registry already
+ * knows. Such a post gets
  *
- *   listedAfter = lastCompleteAt of the registry when the post first showed up
- *                 (null when there was no earlier complete fetch)
+ *   listedAfter = T (the registry's lastCompleteAt when the post first showed up)
  *
- * A fetch is complete when both feeds answered and the AI category filter
- * worked. Partial fetches still add and refresh posts but never move
- * lastCompleteAt, so a feed that failed once cannot make everything it missed
- * look new on the next run. Posts not listed for LISTING_RETENTION_DAYS are dropped.
+ * A post that is new to the registry but sits below a known post in any feed
+ * it appears in is not dated: it is from an older launch day that the registry
+ * never saw (the registry just started, the post was below the 50-entry cap,
+ * a post above it was removed, or it joined the AI category late). Neither is
+ * a post in a feed where no post is known at all (a reset registry or a changed
+ * id format) — otherwise every listed post would look new at once.
+ *
+ * A fetch is complete when both feeds answered with a full page and the AI
+ * category filter demonstrably worked. Partial fetches still add and refresh
+ * posts but never move lastCompleteAt, so a feed that failed once cannot make
+ * everything it missed look new on the next run. Posts not listed for
+ * LISTING_RETENTION_DAYS are dropped.
  *
  * @param {object | null} previous snapshot being replaced (data/product-hunt-daily.json)
  * @param {object[]} posts posts listed by this fetch
- * @param {{ now: Date, complete: boolean }} opts
- * @returns {{ lastCompleteAt: string | null, posts: Record<string, { listedAfter: string | null, lastSeenAt: string }> }}
+ * @param {{ now: Date, complete: boolean, feeds?: string[][] }} opts
+ *   feeds = registry keys of each feed in feed order (AI category, general)
+ * @returns {{ lastCompleteAt: string | null, posts: Record<string, { listedAfter: string | null, lastSeenAt: string }>, stats: { known: number, added: number, dated: number, belowKnown: number, noKnownInFeed: number, feedsWithoutKnown: number } }}
  */
-export function updateListing(previous, posts, { now, complete }) {
+export function updateListing(previous, posts, { now, complete, feeds = [] }) {
   const nowIso = now.toISOString();
   const prev = previousListing(previous, now);
   const keepSince = now.getTime() - LISTING_RETENTION_DAYS * 24 * 3600 * 1000;
@@ -485,13 +533,86 @@ export function updateListing(previous, posts, { now, complete }) {
     registry[key] = { listedAfter, lastSeenAt: entry.lastSeenAt };
   }
   const bound = prev?.lastCompleteAt ?? null;
+  const knownKeys = new Set(Object.keys(registry));
+  const feedViews = feeds
+    .filter((keys) => Array.isArray(keys) && keys.length > 0)
+    .map((keys) => {
+      const firstKnown = keys.findIndex((k) => knownKeys.has(k));
+      return { listed: new Set(keys), hasKnown: firstKnown >= 0, aboveKnown: new Set(firstKnown >= 0 ? keys.slice(0, firstKnown) : []) };
+    });
+  const stats = {
+    known: 0,
+    added: 0,
+    dated: 0,
+    belowKnown: 0,
+    noKnownInFeed: 0,
+    feedsWithoutKnown: knownKeys.size > 0 ? feedViews.filter((f) => !f.hasKnown).length : 0,
+  };
   for (const p of posts) {
     const key = listingKey(p);
     if (!key) continue;
-    if (registry[key]) registry[key].lastSeenAt = nowIso;
-    else registry[key] = { listedAfter: bound, lastSeenAt: nowIso };
+    if (registry[key]) {
+      registry[key].lastSeenAt = nowIso;
+      stats.known++;
+      continue;
+    }
+    stats.added++;
+    let listedAfter = null;
+    if (bound !== null) {
+      const views = feedViews.filter((f) => f.listed.has(key));
+      if (views.length > 0 && views.every((f) => f.aboveKnown.has(key))) {
+        listedAfter = bound;
+        stats.dated++;
+      } else if (views.some((f) => !f.hasKnown)) {
+        stats.noKnownInFeed++;
+      } else {
+        stats.belowKnown++;
+      }
+    }
+    registry[key] = { listedAfter, lastSeenAt: nowIso };
   }
-  return { lastCompleteAt: complete ? nowIso : bound, posts: registry };
+  return { lastCompleteAt: complete ? nowIso : bound, posts: registry, stats };
+}
+
+// No complete fetch for this long = the listing evidence has stopped working.
+export const LISTING_STALE_HOURS = 30;
+// One launch day brings ~15-20 AI launches; far more dated at once is suspicious.
+export const LISTING_DATED_WARN = 40;
+
+/**
+ * Whether the listing evidence works, for the snapshot, the routine and the
+ * workflow. `alerts` fail the workflow's health step (after the snapshot is
+ * committed); `warnings` only annotate the run.
+ */
+export function listingHealth({ previous, listing, complete, now, aiCategoryFilter, feedSizes }) {
+  const carried = previousListing(previous, now) !== null;
+  const hours = listing.lastCompleteAt ? Math.round(((now.getTime() - Date.parse(listing.lastCompleteAt)) / 3600000) * 10) / 10 : null;
+  const alerts = [];
+  const warnings = [];
+  if (previous && !carried) {
+    alerts.push("the previous snapshot's listing registry could not be used, so it was restarted — launches cannot be dated by listing until two complete fetches have run");
+  }
+  if (!complete) {
+    const why = `AI category feed ${feedSizes.ai} entries, general feed ${feedSizes.all} entries, category filter ${aiCategoryFilter}`;
+    if (listing.lastCompleteAt === null && previous) alerts.push(`no complete fetch has been recorded yet (${why})`);
+    else if (hours !== null && hours >= LISTING_STALE_HOURS) alerts.push(`no complete fetch for ${hours} h — the listing baseline is frozen and new launches cannot be dated (${why})`);
+    else warnings.push(`this fetch was partial (${why}); the baseline did not move`);
+  }
+  if (listing.stats.feedsWithoutKnown > 0) {
+    alerts.push(`${listing.stats.feedsWithoutKnown} feed(s) had no post the registry knows (id format change?) — their new posts were not dated`);
+  }
+  if (listing.stats.dated > LISTING_DATED_WARN) {
+    warnings.push(`${listing.stats.dated} posts were dated by listing at once — check the feed`);
+  }
+  return {
+    registry: carried ? "carried" : previous ? "restarted" : "started",
+    thisFetch: complete ? "complete" : "partial",
+    lastCompleteAt: listing.lastCompleteAt,
+    hoursSinceComplete: hours,
+    ...listing.stats,
+    alerts,
+    warnings,
+  };
 }
 
 /** The snapshot currently at `path`, or null (first run, unreadable file). */
@@ -552,11 +673,11 @@ export async function buildSnapshot({ env = process.env, fetchImpl = fetch, now 
 
   // Either feed may fail on its own; only both failing is fatal.
   const bounds = pacificDayBounds(0, now);
-  const aiEntries = await fetchFeed({ fetchImpl, category: "artificial-intelligence" }).catch((err) => {
+  const aiEntries = await fetchFeed({ fetchImpl, category: "artificial-intelligence", sleepImpl }).catch((err) => {
     console.warn(`  AI category feed failed (non-blocking): ${err.message}`);
     return [];
   });
-  const allEntries = await fetchFeed({ fetchImpl, category: "" }).catch((err) => {
+  const allEntries = await fetchFeed({ fetchImpl, category: "", sleepImpl }).catch((err) => {
     console.warn(`  general feed failed (non-blocking): ${err.message}`);
     return [];
   });
@@ -565,31 +686,64 @@ export async function buildSnapshot({ env = process.env, fetchImpl = fetch, now 
   }
   const aiCategoryFilter = aiCategoryFilterStatus(aiEntries, allEntries);
   const merged = mergeFeedEntries(aiEntries, allEntries);
-  const complete = aiEntries.length > 0 && allEntries.length > 0 && aiCategoryFilter === "ok";
-  const listing = updateListing(previous, merged, { now, complete });
+  const complete = aiEntries.length >= MIN_FEED_ENTRIES && allEntries.length >= MIN_FEED_ENTRIES && aiCategoryFilter === "ok";
+  const { stats, ...listing } = updateListing(previous, merged, {
+    now,
+    complete,
+    feeds: [aiEntries.map(listingKey), allEntries.map(listingKey)],
+  });
   const listed = merged.map((p) => ({ ...p, listedAfter: listing.posts[listingKey(p)]?.listedAfter ?? null }));
   const { posts, freshCount, freshAiCount } = annotateFreshness(listed, forVideoDate);
   snapshot.listing = listing;
+  snapshot.listingHealth = listingHealth({
+    previous,
+    listing: { ...listing, stats },
+    complete,
+    now,
+    aiCategoryFilter,
+    feedSizes: { ai: aiEntries.length, all: allEntries.length },
+  });
   snapshot.days.push({ ...bounds, status: "feed", source: "feed", aiCategoryFilter, freshCount, freshAiCount, posts });
   const byPublish = posts.filter((p) => (p.isAI || p.inAiCategory === true) && isFresh(p.publishedAt, forVideoDate)).length;
   console.log(
     `  feed: ${posts.length} entries, AI=${posts.filter((p) => p.isAI).length}, fresh=${freshCount}, fresh AI=${freshAiCount} (by publish time ${byPublish}), category filter: ${aiCategoryFilter}`
   );
+  const health = snapshot.listingHealth;
   console.log(
-    `  listing: ${previousListing(previous, now) ? "carried from the previous snapshot" : "started (no usable previous snapshot)"}, this fetch ${complete ? "complete" : "partial"}, last complete fetch ${listing.lastCompleteAt ?? "none"}, tracked posts ${Object.keys(listing.posts).length}`
+    `  listing: registry ${health.registry}, this fetch ${health.thisFetch}, last complete fetch ${health.lastCompleteAt ?? "none"}, tracked posts ${Object.keys(listing.posts).length}; new posts ${health.added} (dated ${health.dated}, below a known post ${health.belowKnown}, feed without known posts ${health.noKnownInFeed})`
   );
   return snapshot;
+}
+
+/**
+ * Annotations for the run and outputs for the workflow's health step. Only
+ * our own counts and times go into them — never feed text.
+ */
+export function reportListingHealth(health, env = process.env, { write = writeFileSync, log = console.log } = {}) {
+  if (!health) return;
+  const inActions = env.GITHUB_ACTIONS === "true";
+  for (const w of health.warnings || []) log(inActions ? `::warning title=Product Hunt listing::${w}` : `  WARN ${w}`);
+  for (const a of health.alerts || []) log(inActions ? `::error title=Product Hunt listing::${a}` : `  ALERT ${a}`);
+  if (env.GITHUB_OUTPUT) {
+    const alert = (health.alerts || []).join(" / ").replace(/[\r\n]+/g, " ");
+    write(env.GITHUB_OUTPUT, `listing_alert=${alert}\n`, { flag: "a" });
+  }
 }
 
 async function main() {
   const dryRun = process.argv.includes("--dry-run");
   const outArg = process.argv.find((a) => a.startsWith("--out="));
   const outPath = outArg ? outArg.slice("--out=".length) : DEFAULT_OUT;
+  const previousArg = process.argv.find((a) => a.startsWith("--previous="));
 
   console.log("=== Fetch Product Hunt launches ===");
-  // The snapshot being replaced carries the feed listing registry forward.
-  const previous = readPreviousSnapshot(outPath);
+  // The snapshot being replaced carries the feed listing registry forward. In
+  // Actions it is main's latest one (--previous), not the possibly stale checkout.
+  const previousPath = previousArg ? previousArg.slice("--previous=".length) : outPath;
+  const previous = readPreviousSnapshot(previousPath);
+  console.log(`  previous snapshot: ${previous ? `${previousPath} (fetched ${previous.fetchedAt ?? "?"})` : `none at ${previousPath}`}`);
   const snapshot = await buildSnapshot({ previous });
+  reportListingHealth(snapshot.listingHealth);
   const total = snapshot.days.reduce((s, d) => s + d.posts.length, 0);
   if (total === 0) {
     throw new Error("Product Hunt returned zero posts from every source — not writing the snapshot.");

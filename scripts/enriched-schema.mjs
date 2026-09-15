@@ -12,7 +12,7 @@
  * Human-readable spec: docs/enrichment-schema.md
  */
 
-import { isNewLaunch, freshSince, expectedRankingDate } from "./pacific-time.mjs";
+import { isNewLaunch, freshSince, expectedRankingDate, routineAnchor } from "./pacific-time.mjs";
 
 export const GENRE = "ai-tools-top5";
 export const TRIAL = 1;
@@ -49,6 +49,14 @@ export const PRICING_LABELS = {
 };
 
 export const SOURCE_MODES = ["ranking", "pickup"];
+
+// Why a fresh AI launch in the snapshot was left out on a skip day
+// (docs/routine-prompt.md step 4). "not-ai" is only for keyword matches
+// outside the AI category.
+export const SKIP_EXCLUSION_REASONS = ["recent", "ng", "no-site", "invite-only", "not-ai"];
+
+// Tools featured within this many days are not featured again.
+export const REPEAT_WINDOW_DAYS = 30;
 
 export const DISCOVERY_METHODS = [
   "rank-pure",
@@ -101,6 +109,10 @@ const MENTION_RE = /@[a-z0-9_]/iu;
 const HASHTAG_RE = /#[^\s#]/u;
 // Dotted product names that are not links (Node.js, ML.NET).
 const TECH_SUFFIX_RE = /\.(?:js|ts|jsx|tsx|mjs|cjs|py|rb|rs|sh|md|NET)$/u;
+// The subset that is never a real top-level domain, allowed in every text
+// field ("Next.jsのアプリ", "ASP.NET開発者"). .py/.rs/.sh/.md are country TLDs,
+// so outside names they still count as domains.
+const SAFE_TECH_SUFFIX_RE = /\.(?:js|ts|jsx|tsx|mjs|cjs|NET)$/u;
 // Ranking vocabulary that must not appear when the order is an editorial pick
 // (checked after NFKC). Katakana/Latin left boundaries keep デスクトップ3台 and
 // Laptop 4 GB legal; 位置 and 三位一体 are not ranks; "No 2FA" is not "No.2".
@@ -125,6 +137,59 @@ const RANKING_WORDS_RE = new RegExp(
   ].join("|"),
   "iu"
 );
+
+// Vote, award and popularity claims about Product Hunt (checked after NFKC).
+// The feed carries none of these facts and the owner decision of 2026-09-15
+// forbids presenting them: 500票 / 1,200 upvotes / 票数 / 得票 / 投票数 /
+// Product of the Day / Golden Kitty / ランクイン / トップに輝く・トップを獲得 /
+// 一番人気 / top-rated / most upvoted / Product Hunt(プロダクトハント)で話題・人気・
+// 注目・高評価・絶賛・受賞・首位・トップ・急上昇・票.
+const PH_CLAIM_RE = new RegExp(
+  [
+    "\\d[\\d,]*\\s*(?:\\u{7968}|upvotes?\\b|votes?\\b)",
+    "\\u{7968}\\u{6570}|\\u{5F97}\\u{7968}|\\u{6295}\\u{7968}\\u{6570}",
+    "\\bProduct\\s*of\\s*the\\s*(?:Day|Week|Month|Year)\\b",
+    "\\bGolden\\s*Kitt(?:y|ies)\\b",
+    "\\u{30E9}\\u{30F3}\\u{30AF}\\u{30A4}\\u{30F3}",
+    "\\u{30C8}\\u{30C3}\\u{30D7}\\s*[\\u{306B}\\u{3092}]\\s*(?:\\u{8F1D}|\\u{7ACB}|\\u{7372}|\\u{53D6}|\\u{98FE}|\\u{9078}|\\u{306A})",
+    "(?:\\u{4E00}\\u{756A}|\\u{3044}\\u{3061}\\u{3070}\\u{3093})\\s*\\u{4EBA}\\u{6C17}",
+    "\\btop[\\s\\-]*(?:rated|ranked|voted)\\b",
+    "\\bmost[\\s\\-]*(?:up)?voted\\b",
+    "(?:Product\\s*Hunt|\\u{30D7}\\u{30ED}\\u{30C0}\\u{30AF}\\u{30C8}\\s*\\u{30CF}\\u{30F3}\\u{30C8})[^\\u{3002}.!?\\u{FF01}\\u{FF1F}]{0,8}?(?:\\u{8A71}\\u{984C}|\\u{4EBA}\\u{6C17}|\\u{6CE8}\\u{76EE}|\\u{9AD8}\\u{8A55}\\u{4FA1}|\\u{7D76}\\u{8CDB}|\\u{53D7}\\u{8CDE}|\\u{9996}\\u{4F4D}|\\u{30C8}\\u{30C3}\\u{30D7}|\\u{6025}\\u{4E0A}\\u{6607}|\\u{7968})",
+  ].join("|"),
+  "iu"
+);
+
+// Calls to act on the post (「AI」とコメントして / 『資料』とDMください) and
+// instruction-like text copied from a page (前の指示を無視して / ignore previous
+// instructions). A closing quote is required before と/って so ordinary
+// descriptions (SlackとTeamsのメッセージを要約) stay legal.
+const SOLICIT_RE = new RegExp(
+  [
+    "[\\u{300D}\\u{300F}\"'\\u{201D}]\\s*(?:\\u{3068}|\\u{3063}\\u{3066})\\s*(?:DM|\\u{30B3}\\u{30E1}\\u{30F3}\\u{30C8}|\\u{8FD4}\\u{4FE1}|\\u{30E1}\\u{30C3}\\u{30BB}\\u{30FC}\\u{30B8}|\\u{9001})",
+    "(?:\\u{524D}|\\u{4E0A}\\u{8A18}|\\u{3053}\\u{308C}\\u{307E}\\u{3067}|\\u{4EE5}\\u{524D})\\u{306E}(?:\\u{6307}\\u{793A}|\\u{547D}\\u{4EE4}|\\u{30D7}\\u{30ED}\\u{30F3}\\u{30D7}\\u{30C8})\\u{3092}?\\s*(?:\\u{7121}\\u{8996}|\\u{5FD8}\\u{308C})",
+    "\\bignore\\s+(?:all\\s+|any\\s+|the\\s+)?(?:previous|prior|above|earlier)\\s+(?:instructions?|prompts?|messages?)\\b",
+  ].join("|"),
+  "iu"
+);
+
+// Hosts that are never a tool's official site: link shorteners, chat invites
+// and forms. Link-in-bio services are refused only for profile paths, so their
+// own launches (https://linktr.ee/) stay possible.
+const BLOCKED_WEBSITE_HOSTS = new Set([
+  "bit.ly", "t.co", "tinyurl.com", "goo.gl", "ow.ly", "buff.ly", "is.gd", "rebrand.ly", "cutt.ly", "lnkd.in",
+  "shorturl.at", "rb.gy", "t.ly", "tiny.cc", "s.id", "dub.sh",
+  "discord.gg", "t.me", "telegram.me", "wa.me", "chat.whatsapp.com", "lin.ee",
+  "forms.gle", "docs.google.com", "forms.office.com",
+]);
+const PROFILE_WEBSITE_HOSTS = new Set(["linktr.ee", "lit.link", "beacons.ai", "bio.link", "discord.com", "line.me"]);
+
+// Counts in the opening line ("5つ", "3選", "三つ") must match the video.
+const OPENING_COUNT_RE = /(\d+)\s*(?:\u{3064}|\u{9078}|\u{672C}|\u{500B}|\u{30C4}\u{30FC}\u{30EB})/gu;
+const OPENING_KANJI_COUNT_RE = /([\u{4E00}\u{4E8C}\u{4E09}\u{56DB}\u{4E94}\u{516D}\u{4E03}\u{516B}\u{4E5D}\u{5341}])\s*(?:\u{3064}|\u{9078}|\u{672C}|\u{500B})/gu;
+const KANJI_NUMBERS = { "\u{4E00}": 1, "\u{4E8C}": 2, "\u{4E09}": 3, "\u{56DB}": 4, "\u{4E94}": 5, "\u{516D}": 6, "\u{4E03}": 7, "\u{516B}": 8, "\u{4E5D}": 9, "\u{5341}": 10 };
+// 「向け」 is added on screen and in captions.
+const WHO_SUFFIX_RE = /\u{5411}\u{3051}$/u;
 
 // Example values in docs/routine-prompt.md; copying them verbatim is a mistake.
 const TEMPLATE_PLACEHOLDERS = {
@@ -177,17 +242,110 @@ export function textSafetyProblems(value, { allowDomains = false, allowedHost = 
   else if (allowDomains) {
     const foreign = foreignDomains(dotted, allowedHost);
     if (foreign.length > 0) problems.push(`contains a domain that is not the official site (${foreign.join(", ")})`);
-  } else if (DOMAIN_RE.test(dotted) || INTL_DOMAIN_RE.test(dotted)) {
+  } else if ((dotted.match(DOMAIN_G) || []).some((token) => !SAFE_TECH_SUFFIX_RE.test(token)) || INTL_DOMAIN_RE.test(dotted)) {
     problems.push("contains a domain name (put URLs in website only)");
   }
   if (MENTION_RE.test(norm)) problems.push("contains an @mention");
   if (HASHTAG_RE.test(norm)) problems.push("contains a #hashtag");
+  // Product names are copied as they are; every other field is our own text.
+  if (!allowDomains && SOLICIT_RE.test(norm)) problems.push("contains a call to comment/DM or an instruction-like phrase");
   return problems;
 }
 
 /** Ranking vocabulary (TOP5, トップ5, ランキング, N位, 上位N, ベストN, No.N …) after NFKC normalisation. */
 export function hasRankingWords(value) {
   return typeof value === "string" && RANKING_WORDS_RE.test(normalizeForChecks(value));
+}
+
+/** Product Hunt vote / award / popularity claims (500票, Product of the Day, トップに輝く, 一番人気, Product Huntで話題 …). */
+export function hasProductHuntClaims(value) {
+  return typeof value === "string" && PH_CLAIM_RE.test(normalizeForChecks(value));
+}
+
+/** Words a pickup video must not use: ranking vocabulary or Product Hunt vote/award/popularity claims. */
+export function hasPickupForbiddenWords(value) {
+  return hasRankingWords(value) || hasProductHuntClaims(value);
+}
+
+/**
+ * Problems with a tool's official website beyond "https without credentials":
+ * ports, queries/fragments (?ref=producthunt), IP or punycode hosts, link
+ * shorteners, chat invites, forms and link-in-bio profile pages.
+ */
+export function officialWebsiteProblems(url) {
+  let u;
+  try {
+    u = new URL(url);
+  } catch {
+    return [];
+  }
+  const host = u.hostname.toLowerCase().replace(/\.$/, "");
+  const bare = host.replace(/^www\./, "");
+  const problems = [];
+  if (u.port) problems.push("has a port");
+  if (u.search || u.hash || url.includes("?") || url.includes("#")) problems.push("has a query or fragment (remove ?ref=… and #…)");
+  if (host.startsWith("[") || /^\d{1,3}(?:\.\d{1,3}){3}$/.test(host)) problems.push("is an IP address, not a site name");
+  if (host.split(".").some((label) => label.startsWith("xn--"))) problems.push("uses a punycode (xn--) host");
+  if (BLOCKED_WEBSITE_HOSTS.has(bare)) problems.push(`is a link shortener, chat invite or form (${bare}), not an official site`);
+  else if (PROFILE_WEBSITE_HOSTS.has(bare) && u.pathname !== "/") problems.push(`is a profile or invite page on ${bare}, not an official site`);
+  return problems;
+}
+
+/** Numbers of tools announced in an opening line ("5つ", "3選", "三つ") that differ from `count`. */
+export function openingCountMismatches(value, count) {
+  if (typeof value !== "string") return [];
+  const norm = normalizeForChecks(value);
+  const found = [
+    ...[...norm.matchAll(OPENING_COUNT_RE)].map((m) => Number(m[1])),
+    ...[...norm.matchAll(OPENING_KANJI_COUNT_RE)].map((m) => KANJI_NUMBERS[m[1]]),
+  ];
+  return found.filter((n) => n !== count);
+}
+
+const NAME_STOP_TOKENS = new Set(["ai", "the", "by", "for", "and", "of", "to", "app", "io", "an", "a", "with", "your", "on", "in"]);
+
+function nameTokens(name) {
+  return normalizeForChecks(name)
+    .toLowerCase()
+    .split(/[^\p{L}\p{N}]+/u)
+    .filter((t) => t && !NAME_STOP_TOKENS.has(t) && (t.length >= 2 || /\p{N}/u.test(t)));
+}
+
+/**
+ * Whether the name in the data is the Product Hunt post's name: one shared
+ * significant word is enough ("Cognition SWE-2" for "Cognition's SWE-2",
+ * "GhostWriter" for "GhostWriter by MyHandler"); names made only of stop
+ * words or single letters (X.ai) are compared as squashed strings.
+ */
+export function namesMatch(dataName, snapshotName) {
+  const a = nameTokens(dataName);
+  const b = new Set(nameTokens(snapshotName));
+  if (a.length > 0 && b.size > 0) return a.some((t) => b.has(t));
+  const squash = (s) => normalizeForChecks(s).toLowerCase().replace(/[^\p{L}\p{N}]+/gu, "");
+  const x = squash(dataName);
+  const y = squash(snapshotName);
+  return x !== "" && y !== "" && (x.includes(y) || y.includes(x));
+}
+
+/**
+ * Tools featured in history entries in the REPEAT_WINDOW_DAYS before `date`
+ * (the same date is ignored so a re-run of today's pipeline is not a repeat).
+ * @returns {Map<string, string>} cleaned Product Hunt URL → date featured
+ */
+export function recentlyFeatured(history, date, days = REPEAT_WINDOW_DAYS) {
+  const featured = new Map();
+  const videos = Array.isArray(history) ? history : history?.videos;
+  if (!Array.isArray(videos) || !/^\d{4}-\d{2}-\d{2}$/.test(date || "")) return featured;
+  const [y, m, d] = date.split("-").map(Number);
+  const from = new Date(Date.UTC(y, m - 1, d - days)).toISOString().slice(0, 10);
+  for (const v of videos) {
+    if (typeof v?.date !== "string" || v.date < from || v.date >= date) continue;
+    for (const t of Array.isArray(v.tools) ? v.tools : []) {
+      const key = cleanUrlKey(t?.phUrl || t?.ph_url);
+      if (key && !(featured.get(key) > v.date)) featured.set(key, v.date);
+    }
+  }
+  return featured;
 }
 
 export function isProductHuntHost(url) {
@@ -314,58 +472,84 @@ function postKey(p) {
 }
 
 /**
- * Distinct new AI launches in a snapshot for a video date. Freshness is
- * recomputed from publishedAt / listedAfter, not trusted from the `fresh` flags.
+ * Distinct new AI launches (AI category or AI keywords) in a snapshot for a
+ * video date. Freshness is recomputed from publishedAt / listedAfter, not
+ * trusted from the `fresh` flags.
  */
-export function snapshotFreshAiCount(snapshot, videoDate) {
-  const keys = new Set();
+export function snapshotFreshAiPosts(snapshot, videoDate) {
+  const byKey = new Map();
   for (const day of snapshot?.days || []) {
     for (const p of day.posts || []) {
       const ai = p.isAI === true || p.inAiCategory === true;
       const key = postKey(p);
-      if (ai && key && isNewLaunch(p, videoDate)) keys.add(key);
+      if (ai && key && !byKey.has(key) && isNewLaunch(p, videoDate)) byKey.set(key, p);
     }
   }
-  return keys.size;
+  return [...byKey.values()];
+}
+
+export function snapshotFreshAiCount(snapshot, videoDate) {
+  return snapshotFreshAiPosts(snapshot, videoDate).length;
 }
 
 /**
  * Cross-check a skip day against the Product Hunt snapshot committed for the same video date.
- * @returns {{ status: "contradicted" | "consistent" | "unchecked", freshAi: number | null, reason?: string }}
+ * Launches the routine excluded on purpose (skip.excluded, with a reason) do not count.
+ * @param {{ excludedUrls?: string[] }} [opts]
+ * @returns {{ status: "contradicted" | "consistent" | "unchecked", freshAi: number | null, excludedFresh?: number, usable?: object[], reason?: string }}
  */
-export function skipSnapshotCheck(snapshot, videoDate) {
+export function skipSnapshotCheck(snapshot, videoDate, { excludedUrls = [] } = {}) {
   if (!snapshot) return { status: "unchecked", freshAi: null, reason: "no Product Hunt snapshot (data/product-hunt-daily.json)" };
   if (snapshot.forVideoDate !== videoDate) {
     return { status: "unchecked", freshAi: null, reason: `the snapshot is for ${snapshot.forVideoDate}, not ${videoDate}` };
   }
   const hasPublishTimes = (snapshot.days || []).some((d) => (d.posts || []).some((p) => typeof p.publishedAt === "string"));
   if (!hasPublishTimes) return { status: "unchecked", freshAi: null, reason: "the snapshot has no publish times (old format)" };
-  const freshAi = snapshotFreshAiCount(snapshot, videoDate);
-  return { status: freshAi >= PICKUP_MIN_TOOLS ? "contradicted" : "consistent", freshAi };
+  const fresh = snapshotFreshAiPosts(snapshot, videoDate);
+  const usable = fresh.filter((p) => !excludedUrls.some((u) => sameUrl(p.phUrl || p.url, u)));
+  return {
+    status: usable.length >= PICKUP_MIN_TOOLS ? "contradicted" : "consistent",
+    freshAi: fresh.length,
+    excludedFresh: fresh.length - usable.length,
+    usable,
+  };
+}
+
+function cleanUrlKey(u) {
+  return String(u ?? "").split(/[?#]/)[0].replace(/\/$/, "").toLowerCase();
 }
 
 function sameUrl(a, b) {
-  const clean = (u) => String(u ?? "").split(/[?#]/)[0].replace(/\/$/, "").toLowerCase();
-  return clean(a) !== "" && clean(a) === clean(b);
+  return cleanUrlKey(a) !== "" && cleanUrlKey(a) === cleanUrlKey(b);
 }
 
-function findPostByUrl(snapshot, url) {
+/**
+ * The snapshot post for a Product Hunt URL. A relaunch shares its product URL
+ * with the earlier launch, so a match that is a new launch for `videoDate` wins.
+ */
+function findPostByUrl(snapshot, url, videoDate = null) {
+  const matches = [];
   for (const day of snapshot?.days || []) {
     for (const p of day.posts || []) {
-      if (sameUrl(p.phUrl || p.url, url)) return p;
+      if (sameUrl(p.phUrl || p.url, url)) matches.push(p);
     }
   }
-  return null;
+  return (videoDate && matches.find((p) => isNewLaunch(p, videoDate))) || matches[0] || null;
 }
 
 /**
  * @param {object} data parsed data/enriched-ai-tools.json
- * @param {{ today?: string, checkDate?: boolean, snapshot?: object | null }} opts
+ * @param {{ today?: string, checkDate?: boolean, snapshot?: object | null, history?: object | null, allowRanking?: boolean }} opts
  *   snapshot = the Product Hunt snapshot the routine worked from (data/product-hunt-daily.json).
  *   It cross-checks skip days, ranking ranks and pickup candidates.
+ *   history = data/performance-history.json; tools featured in the last
+ *   REPEAT_WINDOW_DAYS days are refused.
+ *   allowRanking = accept source.mode "ranking" (off since the owner decision of
+ *   2026-09-15; only PH_ALLOW_RANKING=1 — the reference dry run — turns it on),
+ *   so data alone can never bring ranks back.
  * @returns {{ errors: string[], warnings: string[] }}
  */
-export function validateEnriched(data, { today = todayJst(), checkDate = true, snapshot = null } = {}) {
+export function validateEnriched(data, { today = todayJst(), checkDate = true, snapshot = null, history = null, allowRanking = false } = {}) {
   const errors = [];
   const warnings = [];
 
@@ -384,8 +568,9 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true, s
 
   // A skip day: fewer than PICKUP_MIN_TOOLS usable new launches → no video, on purpose.
   if (data.skip != null) {
+    const excludedUrls = [];
     if (typeof data.skip !== "object" || Array.isArray(data.skip)) {
-      errors.push("skip must be an object { reason, fresh_candidates }");
+      errors.push("skip must be an object { reason, fresh_candidates, excluded? }");
     } else {
       checkLength(errors, warnings, "skip.reason", data.skip.reason, { hard: [4, 80] });
       checkText(errors, "skip.reason", data.skip.reason);
@@ -393,13 +578,47 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true, s
       if (!Number.isInteger(n) || n < 0 || n >= PICKUP_MIN_TOOLS) {
         errors.push(`skip.fresh_candidates must be 0-${PICKUP_MIN_TOOLS - 1}: a day may only be skipped when fewer than ${PICKUP_MIN_TOOLS} new launches are usable`);
       }
+      // New AI launches left out on purpose (docs/routine-prompt.md step 4) do not count against the skip.
+      const excluded = data.skip.excluded;
+      if (excluded != null) {
+        if (!Array.isArray(excluded) || excluded.length > 60) {
+          errors.push("skip.excluded must be an array (up to 60) of { ph_url, reason, note? }");
+        } else {
+          const featured = dateOk ? recentlyFeatured(history, data.date) : new Map();
+          const snapshotForSkip = dateOk && snapshot && snapshot.forVideoDate === data.date ? snapshot : null;
+          excluded.forEach((x, i) => {
+            const at = `skip.excluded[${i}]`;
+            if (!x || typeof x !== "object" || Array.isArray(x)) {
+              errors.push(`${at} must be an object { ph_url, reason, note? }`);
+              return;
+            }
+            const urlOk = PH_URL_RE.test(x.ph_url || "");
+            if (!urlOk) errors.push(`${at}.ph_url must be https://www.producthunt.com/products/<slug> or /posts/<slug> without a query (got ${JSON.stringify(x.ph_url)})`);
+            else excludedUrls.push(x.ph_url);
+            if (!SKIP_EXCLUSION_REASONS.includes(x.reason)) {
+              errors.push(`${at}.reason must be one of ${SKIP_EXCLUSION_REASONS.join(" / ")} (got ${JSON.stringify(x.reason)})`);
+            }
+            if (x.note != null) {
+              checkLength(errors, warnings, `${at}.note`, x.note, { hard: [0, 40] });
+              checkText(errors, `${at}.note`, x.note);
+            }
+            if (urlOk && x.reason === "not-ai" && snapshotForSkip && findPostByUrl(snapshotForSkip, x.ph_url, data.date)?.inAiCategory === true) {
+              errors.push(`${at} is in Product Hunt's AI category — "not-ai" is only for keyword matches outside it`);
+            }
+            if (urlOk && x.reason === "recent" && history && !featured.has(cleanUrlKey(x.ph_url))) {
+              warnings.push(`${at} is marked "recent" but is not in the last ${REPEAT_WINDOW_DAYS} days of performance history`);
+            }
+          });
+        }
+      }
     }
     if (Array.isArray(data.tools) && data.tools.length > 0) errors.push("a skip day must not list tools");
     if (dateOk) {
-      const check = skipSnapshotCheck(snapshot, data.date);
+      const check = skipSnapshotCheck(snapshot, data.date, { excludedUrls });
       if (check.status === "contradicted") {
+        const names = check.usable.slice(0, 6).map((p) => p.name || p.phUrl).join(" / ");
         errors.push(
-          `skip is not allowed: the Product Hunt snapshot for ${data.date} lists ${check.freshAi} new AI launches (>= ${PICKUP_MIN_TOOLS}) — pick them instead of skipping`
+          `skip is not allowed: the Product Hunt snapshot for ${data.date} lists ${check.freshAi} new AI launches and ${check.usable.length} of them are not in skip.excluded (>= ${PICKUP_MIN_TOOLS}: ${names}) — pick them, or list each one you leave out in skip.excluded with its reason`
         );
       } else if (check.status === "unchecked") {
         warnings.push(`skip could not be cross-checked against the snapshot: ${check.reason}`);
@@ -412,6 +631,9 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true, s
   const mode = source.mode;
   if (!SOURCE_MODES.includes(mode)) {
     errors.push(`source.mode must be one of ${SOURCE_MODES.join(" / ")} (got ${JSON.stringify(mode)})`);
+  }
+  if (mode === "ranking" && !allowRanking) {
+    errors.push('source.mode "ranking" is turned off (owner decision 2026-09-15: the official feed only, no ranks or votes) — use "pickup"');
   }
   const snapshotForToday = dateOk && snapshot && snapshot.forVideoDate === data.date ? snapshot : null;
   const expectedPhDate = dateOk ? expectedRankingDate(data.date) : null;
@@ -450,8 +672,8 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true, s
   if (data.opening_narration != null) {
     checkLength(errors, warnings, "opening_narration", data.opening_narration, LIMITS.opening_narration);
     checkText(errors, "opening_narration", data.opening_narration);
-    if (mode === "pickup" && hasRankingWords(data.opening_narration)) {
-      errors.push("opening_narration uses ranking words (TOP/トップ/ランキング/位/上位/ベスト/No.) in pickup mode");
+    if (mode === "pickup" && hasPickupForbiddenWords(data.opening_narration)) {
+      errors.push("opening_narration uses ranking words or Product Hunt vote/award/popularity claims (TOP/トップ/ランキング/位/上位/ベスト/No./票/Product of the Day/トップに輝く/一番人気/Product Huntで話題) in pickup mode");
     }
   }
 
@@ -459,6 +681,10 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true, s
   if (!Array.isArray(tools)) {
     errors.push("tools must be an array");
     return { errors, warnings };
+  }
+  if (mode === "pickup" && data.opening_narration != null) {
+    const wrong = openingCountMismatches(data.opening_narration, tools.length);
+    if (wrong.length > 0) errors.push(`opening_narration announces ${wrong.join("/")} tools but the video has ${tools.length}`);
   }
   if (mode === "ranking" && tools.length !== RANKING_TOOL_COUNT) {
     errors.push(`ranking mode needs exactly ${RANKING_TOOL_COUNT} tools (got ${tools.length})`);
@@ -468,6 +694,11 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true, s
   }
 
   const windowStart = dateOk ? freshSince(data.date).toISOString() : null;
+  const featured = dateOk ? recentlyFeatured(history, data.date) : new Map();
+  const sourceHosts = (Array.isArray(discovery?.sources) ? discovery.sources : [])
+    .map((s) => (typeof s === "string" ? hostOf(s) : null))
+    .filter(Boolean)
+    .map((h) => h.replace(/^www\./, ""));
   let totalNarration = 0;
   const seenNames = new Set();
   tools.forEach((t, i) => {
@@ -488,6 +719,9 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true, s
     checkText(errors, `${at}.description`, t.description);
     checkLength(errors, warnings, `${at}.who`, t.who, LIMITS.who);
     checkText(errors, `${at}.who`, t.who);
+    if (typeof t.who === "string" && WHO_SUFFIX_RE.test(t.who.trim())) {
+      warnings.push(`${at}.who ends with 向け — it is added on screen and in captions (dropped automatically)`);
+    }
 
     if (!Object.prototype.hasOwnProperty.call(PRICING_LABELS, t.pricing)) {
       errors.push(`${at}.pricing must be one of ${Object.keys(PRICING_LABELS).join(" / ")} (got ${JSON.stringify(t.pricing)})`);
@@ -500,6 +734,13 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true, s
     if (!isHttpsUrl(t.website)) errors.push(`${at}.website must be the tool's official https URL (no credentials)`);
     else if (isProductHuntHost(t.website)) {
       errors.push(`${at}.website is a Product Hunt URL — use the tool's own official site (the snapshot's website is only a redirect)`);
+    } else {
+      // Shown as "公式 <domain>" on the card and in both captions.
+      for (const problem of officialWebsiteProblems(t.website)) errors.push(`${at}.website ${problem}`);
+      const host = hostOf(t.website).replace(/^www\./, "");
+      if (!sourceHosts.some((s) => s === host || s.endsWith(`.${host}`) || host.endsWith(`.${s}`))) {
+        warnings.push(`${at}.website host ${host} is not in discovery.sources — add the official page you checked`);
+      }
     }
     if (typeof t.website === "string" && charLength(t.website) > LIMITS.website.hard[1]) {
       errors.push(`${at}.website: ${charLength(t.website)} chars (allowed up to ${LIMITS.website.hard[1]})`);
@@ -520,6 +761,17 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true, s
       t.ph_listed_after == null || (typeof t.ph_listed_after === "string" && Number.isFinite(Date.parse(t.ph_listed_after)));
     if (!listedAfterValid) errors.push(`${at}.ph_listed_after must be an ISO 8601 time or null`);
     const listedAfter = listedAfterValid && typeof t.ph_listed_after === "string" ? t.ph_listed_after : null;
+    if (listedAfter && dateOk) {
+      // Listing evidence only exists in a snapshot; it can never be later than the routine.
+      if (Date.parse(listedAfter) > routineAnchor(data.date).getTime()) {
+        errors.push(`${at}.ph_listed_after ${listedAfter} is later than the ${data.date} routine — copy the snapshot's listedAfter`);
+      } else if (!snapshotForToday) {
+        errors.push(`${at}.ph_listed_after needs the Product Hunt snapshot for ${data.date} — without one, write null (docs/routine-prompt.md step 3b)`);
+      }
+    }
+    if (typeof t.ph_url === "string" && featured.has(cleanUrlKey(t.ph_url))) {
+      errors.push(`${at} (${t.name}) was already featured on ${featured.get(cleanUrlKey(t.ph_url))} — tools from the last ${REPEAT_WINDOW_DAYS} days are not featured again`);
+    }
     if (typeof t.ph_published_at !== "string" || !Number.isFinite(Date.parse(t.ph_published_at))) {
       errors.push(`${at}.ph_published_at (Product Hunt publish time, ISO 8601) is required`);
     } else if (dateOk && !isNewLaunch({ publishedAt: t.ph_published_at, listedAfter }, data.date)) {
@@ -543,11 +795,13 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true, s
     if (sentences !== 2) warnings.push(`${at}.narration has ${sentences} sentences (rule: hook 1 + point 1)`);
 
     const rankingWordFields = ["name", "description", "who", "pricing_note", "narration"].filter(
-      (f) => typeof t[f] === "string" && hasRankingWords(t[f])
+      (f) => typeof t[f] === "string" && (mode === "pickup" ? hasPickupForbiddenWords(t[f]) : hasRankingWords(t[f]))
     );
     if (rankingWordFields.length > 0) {
       if (mode === "pickup") {
-        errors.push(`${at}.${rankingWordFields.join("/")} uses ranking words (TOP/トップ/ランキング/位/上位/ベスト/No.) in pickup mode`);
+        errors.push(
+          `${at}.${rankingWordFields.join("/")} uses ranking words or Product Hunt vote/award/popularity claims (TOP/トップ/ランキング/位/上位/ベスト/No./票/Product of the Day/トップに輝く/一番人気/Product Huntで話題) in pickup mode${rankingWordFields.includes("name") ? " — a tool whose own name does this is excluded, never renamed" : ""}`
+        );
       } else if (rankingWordFields.some((f) => f !== "name")) {
         warnings.push(`${at}.${rankingWordFields.filter((f) => f !== "name").join("/")} mentions a rank — the card already shows it`);
       }
@@ -586,10 +840,19 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true, s
     if (snapshotForToday) {
       tools.forEach((t, i) => {
         if (!t || typeof t.ph_url !== "string") return;
-        const post = findPostByUrl(snapshotForToday, t.ph_url);
+        const post = findPostByUrl(snapshotForToday, t.ph_url, data.date);
         if (!post) {
           errors.push(`tools[${i}].ph_url ${t.ph_url} is not in the Product Hunt snapshot for ${data.date}`);
-        } else if (!isNewLaunch(post, data.date)) {
+          return;
+        }
+        if (typeof post.name === "string" && post.name.trim()) {
+          if (hasPickupForbiddenWords(post.name)) {
+            errors.push(`tools[${i}]: the Product Hunt name "${post.name}" uses ranking words or vote/award claims — exclude this tool (do not rename it)`);
+          } else if (typeof t.name === "string" && !namesMatch(t.name, post.name)) {
+            errors.push(`tools[${i}].name "${t.name}" is not the Product Hunt name "${post.name}" of ${t.ph_url} — use the original name, or exclude the tool (never rename it)`);
+          }
+        }
+        if (!isNewLaunch(post, data.date)) {
           errors.push(
             `tools[${i}] was published ${post.publishedAt}${post.listedAfter ? ` and first listed after ${post.listedAfter}` : ""} per the snapshot — not a new launch for ${data.date}`
           );
@@ -634,7 +897,8 @@ export function toVideoTools(data) {
     sourceNote: ranking ? `Product Hunt ${phDay} 総合${t.ph_rank}位` : "Product Hunt 新着",
     name: String(t.name).trim(),
     description: String(t.description).trim(),
-    who: String(t.who).trim(),
+    // 「向け」 is added by the card and the captions.
+    who: String(t.who).trim().replace(WHO_SUFFIX_RE, "").trim() || String(t.who).trim(),
     pricing: t.pricing,
     pricingLabel: (t.pricing_note && String(t.pricing_note).trim()) || PRICING_LABELS[t.pricing],
     website: t.website,

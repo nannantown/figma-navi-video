@@ -16,8 +16,15 @@ import {
   updateListing,
   previousListing,
   readPreviousSnapshot,
+  fetchFeed,
+  listingHealth,
+  reportListingHealth,
   LISTING_RETENTION_DAYS,
+  MIN_AI_ONLY_ENTRIES,
+  FEED_RETRY_DELAYS_MS,
 } from "./fetch-product-hunt.mjs";
+
+const noSleep = async () => {};
 
 const FEED = `<?xml version="1.0" encoding="UTF-8"?>
 <feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom">
@@ -83,13 +90,19 @@ test("parseAtomFeed extracts name, tagline, slug and the redirect link", () => {
   assert.equal(oats.isAI, false);
 });
 
+// Older AI-category launches the general feed no longer shows (a working filter returns many).
+const archiveEntries = (n, start = 9000) =>
+  Array.from({ length: n }, (_, i) => ({ id: String(start + i), name: `Archive ${i}`, tagline: "AI archive", isAI: true, isDev: false }));
+
 test("mergeFeedEntries keeps AI-category entries first and dedupes", () => {
-  const ai = parseAtomFeed(FEED).slice(1); // Oats appears in the AI category feed
   const all = parseAtomFeed(FEED);
+  const ai = [all[1], ...archiveEntries(MIN_AI_ONLY_ENTRIES)]; // Oats appears in the AI category feed
   const merged = mergeFeedEntries(ai, all);
-  assert.deepEqual(merged.map((p) => p.name), ["Oats & Co", "Juggler"]);
+  assert.deepEqual(merged.slice(0, 1).map((p) => p.name), ["Oats & Co"]);
   assert.equal(merged[0].isAI, true);
-  assert.deepEqual(merged.map((p) => p.order), [1, 2]);
+  assert.equal(merged.at(-1).name, "Juggler");
+  assert.equal(merged.at(-1).inAiCategory, false);
+  assert.deepEqual(merged.map((p) => p.order), merged.map((_, i) => i + 1));
 });
 
 test("normalizePost + rankPosts order by dailyRank then votes", () => {
@@ -124,7 +137,10 @@ test("an ignored ?category= (same entries as the general feed) does not mark eve
   const oats = merged.find((p) => p.name === "Oats & Co");
   assert.equal(oats.isAI, false);
   assert.equal(oats.inAiCategory, null);
-  assert.equal(aiCategoryFilterStatus(all.slice(1), all), "ok");
+  assert.equal(aiCategoryFilterStatus(all.slice(1), all), "ignored"); // a subset of the general feed proves nothing
+  assert.equal(aiCategoryFilterStatus([...all, ...archiveEntries(MIN_AI_ONLY_ENTRIES)], all), "ok");
+  // Two cached copies of the general feed that differ by one post are not a working filter.
+  assert.equal(aiCategoryFilterStatus([...all, ...archiveEntries(1)], all), "unknown");
   assert.equal(aiCategoryFilterStatus(all, []), "unknown");
 });
 
@@ -179,12 +195,12 @@ test("API posts use featuredAt as the publish time", () => {
 test("a failing AI category feed does not fail the snapshot; both failing does", async () => {
   const aiDown = async (url) =>
     String(url).includes("category=") ? new Response("", { status: 503 }) : new Response(FEED, { status: 200 });
-  const snap = await buildSnapshot({ env: {}, fetchImpl: aiDown, now: new Date("2026-09-14T21:30:00Z") });
+  const snap = await buildSnapshot({ env: {}, fetchImpl: aiDown, now: new Date("2026-09-14T21:30:00Z"), sleepImpl: noSleep });
   assert.equal(snap.days[0].posts.length, 2);
   assert.equal(snap.days[0].aiCategoryFilter, "unknown");
 
   const allDown = async () => new Response("", { status: 503 });
-  await assert.rejects(buildSnapshot({ env: {}, fetchImpl: allDown, now: new Date("2026-09-14T21:30:00Z") }), /Both Product Hunt feeds failed/);
+  await assert.rejects(buildSnapshot({ env: {}, fetchImpl: allDown, now: new Date("2026-09-14T21:30:00Z"), sleepImpl: noSleep }), /Both Product Hunt feeds failed/);
 });
 
 test("keyword classification avoids 'agents' and 'code' false positives", () => {
@@ -245,8 +261,13 @@ const feedWith = (...entries) =>
 const OLD_LAUNCH = ["1", "2026-09-10T08:00:00-07:00", "Oldie", "AI notes for teams"];
 const EARLY_POST = ["2", "2026-08-31T04:01:15-07:00", "Voicey", "AI voice typing in every app"];
 const OTHER = ["3", "2026-09-01T09:00:00-07:00", "Plainly", "Meal planner for families"];
-// AI category feed + general feed (different lists, so the category filter counts as working).
-const feeds = (ai, all) => async (url) => new Response(String(url).includes("category=") ? feedWith(...ai) : feedWith(...all), { status: 200 });
+// A full page: older AI-category launches below the listed posts (only the AI
+// feed reaches that far back) and older general launches below the general feed.
+const AI_TAIL = Array.from({ length: 24 }, (_, i) => [String(900 + i), "2026-08-01T08:00:00-07:00", `Archive${i}`, "AI archive tool"]);
+const ALL_TAIL = Array.from({ length: 20 }, (_, i) => [String(800 + i), "2026-09-01T08:00:00-07:00", `General${i}`, "Recipe box for families"]);
+// AI category feed + general feed, each a complete page (so the fetch counts as complete).
+const feeds = (ai, all) => async (url) =>
+  new Response(String(url).includes("category=") ? feedWith(...ai, ...AI_TAIL) : feedWith(...all, ...ALL_TAIL), { status: 200 });
 
 test("listing registry: a post missing from a complete fetch inside the window is a new launch on the next fetch", async () => {
   // 2026-09-15 06:30 JST (14:30 PDT 09-14): baseline — Voicey has not launched yet.
@@ -287,7 +308,7 @@ test("listing registry: partial fetches do not move lastCompleteAt, so posts the
   // The AI category feed fails: only the general feed answers.
   const aiDown = async (url) =>
     String(url).includes("category=") ? new Response("", { status: 503 }) : new Response(feedWith(OTHER), { status: 200 });
-  const partial = await buildSnapshot({ env: {}, fetchImpl: aiDown, now: new Date("2026-09-14T09:30:00Z"), previous: base });
+  const partial = await buildSnapshot({ env: {}, fetchImpl: aiDown, now: new Date("2026-09-14T09:30:00Z"), previous: base, sleepImpl: noSleep });
   assert.equal(partial.listing.lastCompleteAt, "2026-09-13T21:30:00.000Z");
   assert.ok(partial.listing.posts["1"], "posts the partial fetch missed stay in the registry");
 
@@ -301,10 +322,12 @@ test("listing registry: unusable previous snapshots start a new registry; stale 
   assert.equal(previousListing(null, now), null);
   assert.equal(previousListing({ source: "api", listing: { lastCompleteAt: null, posts: {} } }, now), null);
   assert.equal(previousListing({ source: "feed", listing: { lastCompleteAt: "2026-09-16T00:00:00Z", posts: {} } }, now), null);
-  assert.deepEqual(updateListing(null, posts, { now, complete: true }), {
+  const { stats: firstStats, ...first } = updateListing(null, posts, { now, complete: true, feeds: [["7"]] });
+  assert.deepEqual(first, {
     lastCompleteAt: "2026-09-15T09:30:00.000Z",
     posts: { 7: { listedAfter: null, lastSeenAt: "2026-09-15T09:30:00.000Z" } },
   });
+  assert.equal(firstStats.added, 1);
   const old = {
     source: "feed",
     listing: {
@@ -312,12 +335,122 @@ test("listing registry: unusable previous snapshots start a new registry; stale 
       posts: { 9: { listedAfter: null, lastSeenAt: "2026-09-01T00:00:00.000Z" }, 8: { listedAfter: "bad", lastSeenAt: "2026-09-14T21:30:00.000Z" } },
     },
   };
-  const next = updateListing(old, posts, { now, complete: false });
+  const next = updateListing(old, posts, { now, complete: false, feeds: [["7", "8"]] });
   assert.equal(next.posts["9"], undefined); // not listed for more than LISTING_RETENTION_DAYS
   assert.equal(next.posts["8"].listedAfter, null);
-  assert.equal(next.posts["7"].listedAfter, "2026-09-14T21:30:00.000Z");
+  assert.equal(next.posts["7"].listedAfter, "2026-09-14T21:30:00.000Z"); // above the known post 8
   assert.equal(next.lastCompleteAt, "2026-09-14T21:30:00.000Z");
   assert.equal(LISTING_RETENTION_DAYS, 10);
+
+  // Below a known post = an older launch day the registry never saw: not dated.
+  const below = updateListing(old, posts, { now, complete: true, feeds: [["8", "7"]] });
+  assert.equal(below.posts["7"].listedAfter, null);
+  assert.equal(below.stats.belowKnown, 1);
+  // A feed with no known post at all (reset / id format change): not dated, and reported.
+  const unknownFeed = updateListing(old, posts, { now, complete: true, feeds: [["7"]] });
+  assert.equal(unknownFeed.posts["7"].listedAfter, null);
+  assert.equal(unknownFeed.stats.noKnownInFeed, 1);
+  assert.equal(unknownFeed.stats.feedsWithoutKnown, 1);
+  // Listed in two feeds: must be above the known posts in both.
+  const twoFeeds = updateListing(old, posts, { now, complete: true, feeds: [["7", "8"], ["8", "7"]] });
+  assert.equal(twoFeeds.posts["7"].listedAfter, null);
+});
+
+test("listing registry: an old post that first shows up low in the feed is not dated as a new launch", async () => {
+  // Baseline at 2026-09-14 21:30Z lists OLD_LAUNCH on top; the AI tail below.
+  const first = await buildSnapshot({ env: {}, fetchImpl: feeds([OLD_LAUNCH], [OLD_LAUNCH, OTHER]), now: new Date("2026-09-14T21:30:00Z") });
+  // Next fetch: Voicey launched (top), and an old post created 09-01 appears at the very bottom
+  // of the AI feed for the first time (e.g. a post above it was removed).
+  const SURFACED = ["777", "2026-09-01T10:00:00-07:00", "Resurfaced", "AI helper for old docs"];
+  const fetchImpl = async (url) =>
+    new Response(
+      String(url).includes("category=") ? feedWith(EARLY_POST, OLD_LAUNCH, ...AI_TAIL, SURFACED) : feedWith(EARLY_POST, OLD_LAUNCH, OTHER, ...ALL_TAIL),
+      { status: 200 }
+    );
+  const second = await buildSnapshot({ env: {}, fetchImpl, now: new Date("2026-09-15T09:30:00Z"), previous: first });
+  const byName = Object.fromEntries(second.days[0].posts.map((p) => [p.name, p]));
+  assert.equal(byName.Voicey.listedAfter, "2026-09-14T21:30:00.000Z");
+  assert.equal(byName.Voicey.fresh, true);
+  assert.equal(byName.Resurfaced.listedAfter, null);
+  assert.equal(byName.Resurfaced.fresh, false);
+  assert.equal(second.days[0].freshAiCount, 1);
+  assert.equal(second.listingHealth.dated, 1);
+  assert.equal(second.listingHealth.belowKnown, 1);
+  assert.deepEqual(second.listingHealth.alerts, []);
+});
+
+test("listing registry: a changed post id format dates nothing and raises an alert", async () => {
+  const first = await buildSnapshot({ env: {}, fetchImpl: feeds([OLD_LAUNCH, EARLY_POST], [OLD_LAUNCH, OTHER]), now: new Date("2026-09-14T21:30:00Z") });
+  const renamed = (xml) => xml.replaceAll(",2005:Post/", ",2005:Product/");
+  const fetchImpl = async (url, init) => new Response(renamed(await (await feeds([OLD_LAUNCH, EARLY_POST], [OLD_LAUNCH, OTHER])(url, init)).text()), { status: 200 });
+  const second = await buildSnapshot({ env: {}, fetchImpl, now: new Date("2026-09-15T09:30:00Z"), previous: first });
+  assert.ok(second.days[0].posts.every((p) => p.listedAfter === null));
+  assert.equal(second.days[0].freshAiCount, 0);
+  assert.match(second.listingHealth.alerts.join("\n"), /2 feed\(s\) had no post the registry knows/);
+});
+
+test("fetches with short pages or a barely different category feed are partial", async () => {
+  const short = async (url) => new Response(String(url).includes("category=") ? feedWith(EARLY_POST) : feedWith(OLD_LAUNCH, OTHER), { status: 200 });
+  const snap = await buildSnapshot({ env: {}, fetchImpl: short, now: new Date("2026-09-14T21:30:00Z") });
+  assert.equal(snap.listing.lastCompleteAt, null);
+  assert.equal(snap.listingHealth.thisFetch, "partial");
+  // Category ignored but the two cached copies differ by one post.
+  const general = [OLD_LAUNCH, OTHER, ...ALL_TAIL];
+  const cached = async (url) => new Response(String(url).includes("category=") ? feedWith(EARLY_POST, ...general) : feedWith(...general), { status: 200 });
+  const snap2 = await buildSnapshot({ env: {}, fetchImpl: cached, now: new Date("2026-09-14T21:30:00Z") });
+  assert.equal(snap2.days[0].aiCategoryFilter, "unknown");
+  assert.equal(snap2.listingHealth.thisFetch, "partial");
+  assert.ok(snap2.days[0].posts.every((p) => p.inAiCategory === null));
+});
+
+test("listingHealth: a frozen baseline and a restarted registry are alerts; one partial fetch is a warning", () => {
+  const now = new Date("2026-09-16T09:30:00Z");
+  const stats = { known: 10, added: 0, dated: 0, belowKnown: 0, noKnownInFeed: 0, feedsWithoutKnown: 0 };
+  const base = { previous: { source: "feed", listing: { lastCompleteAt: null, posts: {} } }, now, aiCategoryFilter: "unknown", feedSizes: { ai: 0, all: 50 } };
+  const recent = listingHealth({ ...base, listing: { lastCompleteAt: "2026-09-15T21:30:00.000Z", posts: {}, stats }, complete: false });
+  assert.deepEqual(recent.alerts, []);
+  assert.match(recent.warnings.join("\n"), /this fetch was partial/);
+  const frozen = listingHealth({ ...base, listing: { lastCompleteAt: "2026-09-15T00:00:00.000Z", posts: {}, stats }, complete: false });
+  assert.match(frozen.alerts.join("\n"), /no complete fetch for 33\.5 h/);
+  const restarted = listingHealth({ ...base, previous: { source: "api" }, listing: { lastCompleteAt: now.toISOString(), posts: {}, stats }, complete: true });
+  assert.equal(restarted.registry, "restarted");
+  assert.match(restarted.alerts.join("\n"), /could not be used/);
+  const started = listingHealth({ ...base, previous: null, listing: { lastCompleteAt: now.toISOString(), posts: {}, stats }, complete: true });
+  assert.equal(started.registry, "started");
+  assert.deepEqual(started.alerts, []);
+});
+
+test("reportListingHealth annotates the run and exports alerts for the workflow's health step", () => {
+  const lines = [];
+  const writes = [];
+  const health = { alerts: ["no complete fetch for 31 h"], warnings: ["this fetch was partial"] };
+  reportListingHealth(health, { GITHUB_ACTIONS: "true", GITHUB_OUTPUT: "/tmp/out" }, { log: (l) => lines.push(l), write: (...args) => writes.push(args) });
+  assert.deepEqual(lines, ["::warning title=Product Hunt listing::this fetch was partial", "::error title=Product Hunt listing::no complete fetch for 31 h"]);
+  assert.deepEqual(writes[0].slice(0, 2), ["/tmp/out", "listing_alert=no complete fetch for 31 h\n"]);
+  const quiet = [];
+  reportListingHealth({ alerts: [], warnings: [] }, { GITHUB_ACTIONS: "true", GITHUB_OUTPUT: "/tmp/out" }, { log: (l) => quiet.push(l), write: (...args) => writes.push(args) });
+  assert.deepEqual(quiet, []);
+  assert.equal(writes[1][1], "listing_alert=\n");
+});
+
+test("fetchFeed retries 5xx, 429 and empty pages with backoff, but not other 4xx", async () => {
+  const sleeps = [];
+  const sleepImpl = async (ms) => sleeps.push(ms);
+  const answers = [new Response("", { status: 503 }), new Response("<html>challenge</html>", { status: 200 }), new Response(FEED, { status: 200 })];
+  const entries = await fetchFeed({ fetchImpl: async () => answers.shift(), sleepImpl });
+  assert.equal(entries.length, 2);
+  assert.deepEqual(sleeps, FEED_RETRY_DELAYS_MS);
+
+  let calls = 0;
+  await assert.rejects(
+    fetchFeed({ fetchImpl: async () => (calls++, new Response("", { status: 404 })), sleepImpl }),
+    /HTTP 404/
+  );
+  assert.equal(calls, 1);
+
+  let tooMany = 0;
+  await assert.rejects(fetchFeed({ fetchImpl: async () => (tooMany++, new Response("", { status: 429 })), sleepImpl }), /HTTP 429/);
+  assert.equal(tooMany, 3);
 });
 
 test("readPreviousSnapshot returns null for a missing or broken file", () => {

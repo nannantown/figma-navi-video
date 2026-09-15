@@ -52,6 +52,30 @@ test("trialStatus starts at the first genre entry and judges on day 15", () => {
   assert.equal(judged.summary.ig.n, 14);
   assert.equal(judged.summary.ig.savedSum, 14);
   assert.deepEqual(judged.verdict, { ig: "続行", yt: "配信死亡" });
+  assert.equal(judged.isJudgmentDay, true);
+  assert.equal(judged.judgedCycle, 1);
+  assert.equal(judged.judgmentDate, "2026-10-14"); // the next one
+  assert.equal(`${judged.summary.from}..${judged.summary.to}`, "2026-09-16..2026-09-29");
+});
+
+test("after a judgment the next 14-day cycle runs; the verdict is not repeated every morning", () => {
+  const videos = [];
+  for (let i = 0; i < 40; i++) {
+    videos.push(video(addDays("2026-09-18", i), { genre: "ai-tools-top5", ig: { views: 30, saved: 0 }, yt: 1 }));
+  }
+  const dayAfter = trialStatus(videos, { today: "2026-10-03" }); // start 09-18, judged 10-02
+  assert.equal(dayAfter.verdict, null);
+  assert.equal(dayAfter.cycle, 2);
+  assert.equal(dayAfter.dayInCycle, 2);
+  assert.equal(dayAfter.judgmentDate, "2026-10-16");
+  assert.equal(`${dayAfter.summary.from}..${dayAfter.summary.to}`, "2026-10-02..2026-10-03");
+
+  const second = trialStatus(videos, { today: "2026-10-16" });
+  assert.equal(second.isJudgmentDay, true);
+  assert.equal(second.judgedCycle, 2);
+  assert.equal(`${second.summary.from}..${second.summary.to}`, "2026-10-02..2026-10-15");
+  assert.equal(second.summary.ig.n, 14);
+  assert.notEqual(second.verdict, null);
 });
 
 test("before the first post the planned start date is used", () => {
@@ -79,7 +103,8 @@ test("renderMarkdown shows IG median + saves and the design-news baseline", () =
   };
   const md = renderMarkdown(history, { today: "2026-09-16" });
   assert.match(md, /## ジャンル試行の状態/);
-  assert.match(md, /\| IG \| #1 \| 新作AIツールTOP5（Product Hunt） \| 2026-09-15 \| Day 2 \/ 14 \| 09-15\.\.09-16 \(n=1\) \| 120 \| 7 \|/);
+  assert.match(md, /\| IG \| #1 \| 新作AIツール N選（Product Hunt 公式フィード） \| 2026-09-15 \| Day 2 \/ 14（第 1 期） \| 09-15\.\.09-16 \(n=1\) \| 120 \| 7 \|/);
+  assert.doesNotMatch(md, /TOP5/);
   assert.match(md, /比較（旧ジャンル: デザインニュース/);
   assert.match(md, /\| 2026-09-15 \| ai-tools-top5 \| — \| Resurf \| 120 \| 7 \| 2 \| 3 \|/);
   assert.match(md, /## 直近 30 日に紹介したツール（再掲しない）\n\nResurf/);

@@ -9,7 +9,22 @@
  * hashtag/title learning and the trial start date.
  */
 
+import { readFileSync } from "fs";
+import { join } from "path";
+
 export const HISTORY_KEEP_DAYS = 90;
+
+/**
+ * data/performance-history.json for validation (the 30-day repeat check), or
+ * null when it is missing or unreadable — the check is then skipped, never fatal.
+ */
+export function loadHistory(rootDir) {
+  try {
+    return JSON.parse(readFileSync(join(rootDir, "data", "performance-history.json"), "utf-8"));
+  } catch {
+    return null;
+  }
+}
 
 export function isSkipEntry(video) {
   return Boolean(video && video.skip && typeof video.skip === "object");
