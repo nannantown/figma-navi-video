@@ -2,118 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "snJH_8Z2a_M",
-      "videoUrl": "https://youtube.com/shorts/snJH_8Z2a_M",
-      "date": "2026-06-15",
-      "title": "【デザインニュース】Figma 公式 Chrome 拡張が 6/11 公開、Web サイトを編集可能な Figma レイヤーで丸ごと取り込みできる新機能｜2026/06/15 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 46,
-      "discovery": {
-        "method": "news-en",
-        "description": "英語テック/デザイン媒体 (noqta.tn / theaiinsider など) と Figma 公式 Help Center・Release Notes・Chrome 拡張ダウンロードページを横断調査。6/11 公開の Figma 公式 Chrome 拡張 (Web サイトを編集可能な Figma レイヤーとして取り込む beta 機能、有料プラン限定) を一次取得。直近14日 method 別 TOP1 (news-en, avg 53 views, n=1) を 06-08 以来 7 日空きで Exploit 再投入。直近 2 日 (06-14 product-launches, 06-13 news-ja) と method 重複なし、7日2回到達ガードもクリア。柱① Figma 公式ニュース (target 25%, 直近 21% で未達) を埋め、Primary 駆け出しデザイナーの『他人の LP を模写して練習したいが時間がかかる』痛点を直撃。NG パターン回避: AI=補助輪フレームを維持、プラグイン機能説明メインではなく学習者の課題から入り、『AI/拡張が考えてくれる』ではなく『模写と観察の練習が一段ラクになる』として位置づけ",
-        "sources": [
-          "https://noqta.tn/en/news/figma-chrome-extension-web-to-editable-layers-2026",
-          "https://help.figma.com/hc/en-us/articles/40826832449303-Capture-web-pages-to-layers-with-the-Figma-Chrome-extension",
-          "https://www.figma.com/release-notes/",
-          "https://www.figma.com/downloads/chrome-extension/",
-          "https://chromewebstore.google.com/detail/figma/fkmaohpngenfoccdgceedjkfhkdcohmg",
-          "https://www.figma.com/community/plugin/1638163926915651446/web-to-figma-capture-any-web-page-as-editable-figma-layers"
-        ],
-        "query": "Figma Chrome extension website to editable layers June 11 2026 capture page select element paid plan beta",
-        "freshness_hours": 96
-      },
-      "stats": {
-        "views": 6,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-06-29T00:19:31.481Z"
-      },
-      "instagram": {
-        "mediaId": "17876845734671749",
-        "permalink": "https://www.instagram.com/reel/DZlqimwktVg/",
-        "views": 11,
-        "reach": 11,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
-      "videoId": "e2JygpLBzUk",
-      "videoUrl": "https://youtube.com/shorts/e2JygpLBzUk",
-      "date": "2026-06-16",
-      "title": "【デザインニュース】Figma Community のプロフィールが 6/12 大型刷新、ロール・経験・技術スタック追加とピン作品でポートフォリオ仕様に進化｜2026/06/16 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 42,
-      "discovery": {
-        "method": "official-src",
-        "description": "Figma 公式 Release Notes・Newsroom・Community Help Center を一次取得し、6/12 公開の Figma Community プロフィール大型刷新 (ロール・経験・技術スタックの欄追加、ピン留め作品・画像・説明リンク、X/サイトの社会的アカウント接続、FigPal カスタム設定) を確定。Config 2026 (6/23-25 San Francisco / 無料オンライン視聴) 開幕 1 週間前という timing 整合性で、世界が Figma Community に注目する前にプロフィールを整える意義として翻訳。method 選定 (Tuesday weekday news 帯): 直近14日 TOP1 news-en (06-15 利用、2日ガード抵触で本日不可)、TOP1 product-launches (06-14 利用、同様)、TOP3 figma-community (06-12 利用、2日ガード境界・直近2日ルール抵触)、expert-blog は 06-11 利用 + 2 週連続 WORST 接近で本日温存、news-ja は WORST。残る TOP2 official-src (avg 8.7、06-09 = 7日前、7日2回ガード window 06-10〜06-16 内は 0 回、完全クリア) を Exploit 採用。Apple WWDC 系 5 連投の谷間で Figma 公式新機能で official-src 独立母数を稼ぐ意図。柱① Figma 公式ニュース (target 25%) を主軸に、副 ② プラグイン/エコシステム (target 20%) を Community 領域として補強。NG パターン回避: (a) AI=補助輪フレーム維持 (プロフィール整備の判断は人がする側として位置づけ)、(b) プラグイン/機能説明メインではなく Primary 駆け出しデザイナーの『ポートフォリオを 1 枚で見せられる場所がない』痛点起点、(c) 『AIが仕事を奪う』NG 完全非該当、(d) freshness_hours=96 で 168 NG ライン余裕クリア、(e) 出典 6 ソースで multi-source confirm",
-        "sources": [
-          "https://www.figma.com/release-notes/",
-          "https://www.figma.com/newsroom/",
-          "https://www.figma.com/community",
-          "https://help.figma.com/hc/en-us/articles/360038510693-Guide-to-the-Figma-Community",
-          "https://www.figma.com/community/file/1556069421164105393/figpal-kit",
-          "https://config.figma.com/"
-        ],
-        "query": "Figma Community profile refresh role experience tech stack FigPal pin resources social channels June 12 2026 official",
-        "freshness_hours": 96
-      },
-      "stats": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-06-30T00:19:18.841Z"
-      },
-      "instagram": {
-        "mediaId": "18121698007706896",
-        "permalink": "https://www.instagram.com/reel/DZoP7urANTv/",
-        "views": 0,
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "hZrW5xkBf4E",
       "videoUrl": "https://youtube.com/shorts/hZrW5xkBf4E",
       "date": "2026-06-19",
@@ -3784,7 +3672,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-13T03:28:05.888Z"
+        "updatedAt": "2026-09-15T01:28:43.069Z"
       },
       "instagram": {
         "mediaId": "18103842395225338",
@@ -3795,7 +3683,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
+        "updatedAt": "2026-09-15T01:28:43.070Z"
       }
     },
     {
@@ -3840,7 +3728,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-13T03:28:05.888Z"
+        "updatedAt": "2026-09-15T01:28:43.069Z"
       },
       "instagram": {
         "mediaId": "17934666723364005",
@@ -3851,7 +3739,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
+        "updatedAt": "2026-09-15T01:28:43.070Z"
       }
     },
     {
@@ -3894,7 +3782,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-13T03:28:05.888Z"
+        "updatedAt": "2026-09-15T01:28:43.069Z"
       },
       "instagram": {
         "mediaId": "18085624811248541",
@@ -3905,7 +3793,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
+        "updatedAt": "2026-09-15T01:28:43.070Z"
       }
     },
     {
@@ -3949,7 +3837,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-13T03:28:05.888Z"
+        "updatedAt": "2026-09-15T01:28:43.069Z"
       },
       "instagram": {
         "mediaId": "17980054662088116",
@@ -3960,7 +3848,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
+        "updatedAt": "2026-09-15T01:28:43.070Z"
       }
     },
     {
@@ -4004,7 +3892,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-13T03:28:05.888Z"
+        "updatedAt": "2026-09-15T01:28:43.069Z"
       },
       "instagram": {
         "mediaId": "17892981939609271",
@@ -4015,7 +3903,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
+        "updatedAt": "2026-09-15T01:28:43.070Z"
       }
     },
     {
@@ -4058,7 +3946,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-13T03:28:05.888Z"
+        "updatedAt": "2026-09-15T01:28:43.069Z"
       },
       "instagram": {
         "mediaId": "18136023463713752",
@@ -4069,7 +3957,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
+        "updatedAt": "2026-09-15T01:28:43.070Z"
       }
     },
     {
@@ -4112,7 +4000,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-13T03:28:05.888Z"
+        "updatedAt": "2026-09-15T01:28:43.069Z"
       },
       "instagram": {
         "mediaId": "18125094217885686",
@@ -4123,7 +4011,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
+        "updatedAt": "2026-09-15T01:28:43.070Z"
       }
     },
     {
@@ -4165,7 +4053,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-13T03:28:05.888Z"
+        "updatedAt": "2026-09-15T01:28:43.069Z"
       },
       "instagram": {
         "mediaId": "18092694224393229",
@@ -4176,7 +4064,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
+        "updatedAt": "2026-09-15T01:28:43.070Z"
       }
     },
     {
@@ -4219,7 +4107,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-13T03:28:05.888Z"
+        "updatedAt": "2026-09-15T01:28:43.069Z"
       },
       "instagram": {
         "mediaId": "17991240810041045",
@@ -4230,7 +4118,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
+        "updatedAt": "2026-09-15T01:28:43.070Z"
       }
     },
     {
@@ -4272,7 +4160,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-13T03:28:05.888Z"
+        "updatedAt": "2026-09-15T01:28:43.069Z"
       },
       "instagram": {
         "mediaId": "17875102395563845",
@@ -4283,7 +4171,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
+        "updatedAt": "2026-09-15T01:28:43.070Z"
       }
     },
     {
@@ -4326,7 +4214,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-13T03:28:05.888Z"
+        "updatedAt": "2026-09-15T01:28:43.069Z"
       },
       "instagram": {
         "mediaId": "18144852367565394",
@@ -4337,7 +4225,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
+        "updatedAt": "2026-09-15T01:28:43.070Z"
       }
     },
     {
@@ -4382,7 +4270,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-13T03:28:05.888Z"
+        "updatedAt": "2026-09-15T01:28:43.069Z"
       },
       "instagram": {
         "mediaId": "17938898880359023",
@@ -4393,19 +4281,66 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
+        "updatedAt": "2026-09-15T01:28:43.070Z"
+      }
+    },
+    {
+      "videoId": "2pKDNuDEO0M",
+      "videoUrl": "https://youtube.com/shorts/2pKDNuDEO0M",
+      "date": "2026-09-15",
+      "title": "【デザインニュース】Figma 社内が MCP サーバーを 4 通り活用、駆け出しに即使えるのは 2 パターン｜2026/09/15 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "デザイン",
+        "Figma",
+        "UI",
+        "UX",
+        "デザイナー",
+        "デザイン勉強",
+        "AIデザイン",
+        "Design",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Figma Navi",
+        "Figma Navi",
+        "Figma Navi"
+      ],
+      "durationSeconds": 39,
+      "discovery": {
+        "method": "official-src",
+        "description": "Figma 公式ブログ 9/14 記事「4 Ways We're Using Our MCP Server at Figma」を一次ソースとして採用。社内 4 パターン活用例のうち駆け出しに即実行可能な 2 パターン (既存コード → Figma 逆変換、Slack/Notion → 資料自動更新) を主軸に翻訳。",
+        "sources": [
+          "https://www.figma.com/blog/4-ways-were-using-our-mcp-server-at-figma/",
+          "https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Figma-MCP-server",
+          "https://help.figma.com/hc/en-us/articles/39888612464151-Claude-Code-and-Figma-Set-up-the-MCP-server",
+          "https://www.figma.com/blog/how-coinbase-used-code-connect-to-shrink-token-costs/",
+          "https://developers.figma.com/docs/figma-mcp-server/code-connect-integration"
+        ],
+        "query": "Figma MCP server use cases 4 ways September 2026 official blog",
+        "freshness_hours": 30
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "17999656568806519",
+        "permalink": null,
+        "views": null,
+        "reach": null,
+        "likes": null,
+        "comments": null,
+        "shares": null,
+        "saved": null,
+        "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-08-13",
-      "changes": [
-        "standard: 15 avg views (75 videos)",
-        "Day performance: Sat=32, Fri=17, Tue=14, Sun=13, Thu=12, Wed=10, Mon=4"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-08-14",
       "changes": [
@@ -4632,6 +4567,14 @@
     },
     {
       "date": "2026-09-13",
+      "changes": [
+        "standard: 1 avg views (80 videos)",
+        "Day performance: Mon=2, Tue=1, Fri=1, Sat=1, Sun=1, Thu=1, Wed=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-09-15",
       "changes": [
         "standard: 1 avg views (80 videos)",
         "Day performance: Mon=2, Tue=1, Fri=1, Sat=1, Sun=1, Thu=1, Wed=1"
