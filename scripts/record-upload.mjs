@@ -37,6 +37,23 @@ function localDate(now = new Date()) {
   return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
 }
 
+/**
+ * Which day this run records. The Instagram recovery workflow can re-post an
+ * older day, and recording it as today would invent an entry for today (wiping
+ * today's real one) and leave the real day unrecorded.
+ *
+ * `--date=2026-09-17` or `--date=20260917`, or RECORD_DATE with the same forms.
+ * Anything else is a hard error: guessing here corrupts the history.
+ */
+export function resolveRecordDate({ argv = process.argv, env = process.env, now = new Date() } = {}) {
+  const arg = argv.find((a) => typeof a === "string" && a.startsWith("--date="));
+  const raw = (arg ? arg.slice("--date=".length) : env.RECORD_DATE || "").trim();
+  if (!raw) return localDate(now);
+  if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) return raw;
+  if (/^\d{8}$/.test(raw)) return `${raw.slice(0, 4)}-${raw.slice(4, 6)}-${raw.slice(6, 8)}`;
+  throw new Error(`record-upload: --date / RECORD_DATE must be YYYY-MM-DD or YYYYMMDD, got ${JSON.stringify(raw)}`);
+}
+
 /** History entry for a posted day. Either platform result is enough. */
 export function buildPostEntry({ date, uploadResult, igResult, trendingData, captions, audioDurations, enriched }) {
   const tools = trendingData?.tools || [];
@@ -102,8 +119,9 @@ function main() {
     return;
   }
 
+  const recordDate = resolveRecordDate();
   const entry = buildPostEntry({
-    date: localDate(),
+    date: recordDate,
     uploadResult,
     igResult,
     trendingData: readOptional("trending-data.json"),
@@ -117,12 +135,15 @@ function main() {
       }
     })(),
   });
-  history = upsertVideo(history, entry);
+  // Always fold into the day's entry: a run that only posted to one platform
+  // must not erase what the other one recorded.
+  history = upsertVideo(history, entry, { merge: true });
+  const stored = history.videos.find((v) => v.date === entry.date) || entry;
   writeFileSync(historyPath, JSON.stringify(history, null, 2));
-  console.log(`record-upload: recorded ${entry.videoId ?? "(no YouTube upload)"} (${entry.date})`);
+  console.log(`record-upload: recorded ${stored.videoId ?? "(no YouTube upload)"} (${stored.date})`);
   console.log(`  Title: ${entry.title}`);
   console.log(`  Tools: ${entry.projects.join(" / ")}`);
-  console.log(`  Instagram: ${entry.instagram ? entry.instagram.mediaId : "no media id (restored later by fetch-stats)"}`);
+  console.log(`  Instagram: ${stored.instagram ? stored.instagram.mediaId : "no media id (restored later by fetch-stats)"}`);
   console.log(`  Discovery: ${entry.discovery ? `${entry.discovery.method} (${entry.discovery.description || "no description"})` : "null"}`);
   console.log(`  History: ${history.videos.length} entries tracked`);
 }

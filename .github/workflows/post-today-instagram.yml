@@ -114,6 +114,9 @@ jobs:
       - name: Record the post
         env:
           TZ: Asia/Tokyo
+          # The day being recovered, not today: recording an older post as today
+          # would invent an entry for today and leave the real day unrecorded.
+          RECORD_DATE: ${{ steps.date.outputs.date }}
         run: |
           set -euo pipefail
           node scripts/record-upload.mjs

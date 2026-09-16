@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { buildSkipEntry, upsertVideo, postedVideos, isSkipEntry } from "./history.mjs";
+import { buildSkipEntry, upsertVideo, postedVideos, isSkipEntry, mergeVideoEntry } from "./history.mjs";
 import {
   skipWarningCommand,
   skipSummaryMarkdown,
@@ -12,7 +12,7 @@ import {
   reportSkipStreak,
   SKIP_STREAK_LIMIT,
 } from "./skip-report.mjs";
-import { buildPostEntry } from "./record-upload.mjs";
+import { buildPostEntry, resolveRecordDate } from "./record-upload.mjs";
 import { alreadyPostedProblem } from "./assert-not-posted.mjs";
 import { renderMarkdown, trialStatus, summarizeWindow } from "./pdca-summary.mjs";
 
@@ -167,4 +167,78 @@ test("alreadyPostedProblem blocks a day that already has an Instagram media id",
   assert.equal(alreadyPostedProblem(history, "20260913"), null, "a day with no entry may be posted");
   assert.equal(alreadyPostedProblem(null, "20260915"), null, "an unreadable history must not block a recovery");
   assert.match(alreadyPostedProblem(history, "2026-09-15"), /YYYYMMDD/);
+});
+
+// --- The Instagram recovery run must not erase the day's YouTube record ------
+const postedDay = (date) => ({
+  date,
+  genre: "ai-tools-top5",
+  trial: 1,
+  videoId: "yt-123",
+  videoUrl: "https://youtu.be/yt-123",
+  title: "【新作AIツール5選】…",
+  projects: ["Resurf", "Visiby"],
+  tools: [{ name: "Resurf", slug: "resurf" }],
+  discovery: { method: "product-hunt-feed" },
+  durationSeconds: 49,
+  stats: { views: 120, likes: 3, comments: 0, updatedAt: "2026-09-17T00:00:00Z" },
+  instagram: null,
+});
+
+test("a recovery record keeps the YouTube id, the stats and the tools of that day", () => {
+  // What the recovery run produces: it only downloaded the video, so no upload result.
+  const recovery = buildPostEntry({
+    date: "2026-09-17",
+    uploadResult: null,
+    igResult: { mediaId: "ig-789" },
+    trendingData: { tools: [], meta: null },
+    captions: null,
+    audioDurations: null,
+    enriched: null,
+  });
+  assert.equal(recovery.videoId, null, "the recovery run genuinely has no video id");
+
+  const history = { schemaVersion: 1, videos: [postedDay("2026-09-17")], optimizationLog: [] };
+  const after = upsertVideo(history, recovery, { merge: true, now: new Date("2026-09-17T12:00:00Z") });
+  const entry = after.videos.find((v) => v.date === "2026-09-17");
+
+  assert.equal(entry.videoId, "yt-123", "the YouTube id must survive");
+  assert.equal(entry.videoUrl, "https://youtu.be/yt-123");
+  assert.deepEqual(entry.stats, { views: 120, likes: 3, comments: 0, updatedAt: "2026-09-17T00:00:00Z" });
+  assert.deepEqual(entry.projects, ["Resurf", "Visiby"]);
+  assert.deepEqual(entry.discovery, { method: "product-hunt-feed" });
+  assert.equal(entry.durationSeconds, 49);
+  assert.equal(entry.title, "【新作AIツール5選】…");
+  assert.equal(entry.instagram.mediaId, "ig-789", "and the recovered media id is written");
+  assert.equal(after.videos.length, 1);
+});
+
+test("merging never trades a real value for an empty one, and clears a paused day", () => {
+  const existing = { ...postedDay("2026-09-17"), instagram: { mediaId: "ig-1", views: 10 } };
+  const merged = mergeVideoEntry(existing, { date: "2026-09-17", videoId: null, instagram: null, stats: { views: 0, likes: 0, comments: 0, updatedAt: null } });
+  assert.equal(merged.videoId, "yt-123");
+  assert.equal(merged.instagram.mediaId, "ig-1");
+  assert.equal(merged.stats.views, 120);
+
+  const paused = buildSkipEntry({ date: "2026-09-17", genre: "ai-tools-top5", trial: 1, skip: { ...skip, date: "2026-09-17" } });
+  const posted = mergeVideoEntry(paused, { date: "2026-09-17", videoId: "yt-9", instagram: { mediaId: "ig-9" } });
+  assert.equal(posted.skip, undefined, "a day that posted is not a paused day");
+  assert.equal(posted.videoId, "yt-9");
+
+  // Without merge the day is replaced, which is what the daily run wants.
+  const replaced = upsertVideo({ videos: [postedDay("2026-09-17")] }, { date: "2026-09-17", videoId: null }, { now: new Date("2026-09-17T12:00:00Z") });
+  assert.equal(replaced.videos[0].videoId, null);
+});
+
+test("resolveRecordDate takes the day from --date or RECORD_DATE, and refuses junk", () => {
+  const now = new Date("2026-09-17T09:00:00+09:00");
+  assert.equal(resolveRecordDate({ argv: ["node", "x"], env: {}, now }), "2026-09-17");
+  assert.equal(resolveRecordDate({ argv: ["node", "x", "--date=2026-09-15"], env: {}, now }), "2026-09-15");
+  assert.equal(resolveRecordDate({ argv: ["node", "x", "--date=20260915"], env: {}, now }), "2026-09-15");
+  assert.equal(resolveRecordDate({ argv: ["node", "x"], env: { RECORD_DATE: "20260914" }, now }), "2026-09-14");
+  assert.equal(resolveRecordDate({ argv: ["node", "x"], env: { RECORD_DATE: "" }, now }), "2026-09-17");
+  // The workflow's input wins over the environment default.
+  assert.equal(resolveRecordDate({ argv: ["node", "x", "--date=2026-09-13"], env: { RECORD_DATE: "20260914" }, now }), "2026-09-13");
+  assert.throws(() => resolveRecordDate({ argv: ["node", "x", "--date=yesterday"], env: {}, now }), /YYYY-MM-DD/);
+  assert.throws(() => resolveRecordDate({ argv: ["node", "x"], env: { RECORD_DATE: "2026/09/14" }, now }), /YYYY-MM-DD/);
 });

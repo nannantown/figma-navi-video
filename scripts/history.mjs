@@ -68,10 +68,53 @@ function cutoffDate(now, keepDays) {
 }
 
 /** Replace the entry for the same date, append, and keep the last `keepDays` days. */
-export function upsertVideo(history, entry, { now = new Date(), keepDays = HISTORY_KEEP_DAYS } = {}) {
+const isEmptyValue = (v) =>
+  v === null ||
+  v === undefined ||
+  v === "" ||
+  (Array.isArray(v) && v.length === 0) ||
+  (typeof v === "object" && !Array.isArray(v) && Object.keys(v).length === 0);
+
+/**
+ * Fold `next` into the entry already recorded for that day, keeping everything
+ * `next` does not know about.
+ *
+ * The Instagram recovery workflow only downloads the video from its Release, so
+ * it has no upload-result.json and reports `videoId: null`. Replacing the day
+ * with that would delete the YouTube id and the stats for good — and fetch-stats
+ * only refreshes entries that have a videoId, so the day would silently drop out
+ * of the YouTube median too.
+ */
+export function mergeVideoEntry(existing, next) {
+  if (!existing) return next;
+  const merged = { ...existing };
+  for (const [key, value] of Object.entries(next)) {
+    if (isEmptyValue(value)) continue; // never overwrite something with nothing
+    // 0 here means "this run did not measure it" (durationSeconds comes out 0
+    // when the recovery run has no audio-durations.json), never a real zero.
+    if (typeof value === "number" && value === 0 && typeof existing[key] === "number" && existing[key] > 0) continue;
+    if (key === "stats") {
+      // A fresh entry carries zeroes; they mean "not fetched yet", not "zero views".
+      const hasNumbers = value.views || value.likes || value.comments || value.updatedAt;
+      if (!hasNumbers && existing.stats) continue;
+    }
+    if (key === "instagram" && existing.instagram?.mediaId && !value?.mediaId) continue;
+    merged[key] = value;
+  }
+  // A day that posted is no longer a paused day.
+  if (!Object.prototype.hasOwnProperty.call(next, "skip") && merged.skip) delete merged.skip;
+  return merged;
+}
+
+/**
+ * Replace the day's entry (default), or fold into it with `merge: true` when the
+ * caller only knows part of the day (the Instagram recovery run).
+ */
+export function upsertVideo(history, entry, { now = new Date(), keepDays = HISTORY_KEEP_DAYS, merge = false } = {}) {
   const base = history && Array.isArray(history.videos) ? history : { schemaVersion: 1, videos: [], optimizationLog: [], ...(history || {}) };
   const limit = cutoffDate(now, keepDays);
+  const existing = merge ? (base.videos || []).find((v) => v && v.date === entry.date) : null;
   const videos = (base.videos || []).filter((v) => v.date !== entry.date);
-  videos.push(entry);
+  videos.push(merge ? mergeVideoEntry(existing, entry) : entry);
   return { ...base, videos: videos.filter((v) => v.date >= limit) };
 }
