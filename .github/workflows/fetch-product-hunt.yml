@@ -23,12 +23,14 @@ name: Fetch Product Hunt Snapshot
 
 on:
   schedule:
-    # 06:00 UTC = 15:00 JST = 23:00 Pacific (22:00 in winter): the last complete
+    # 05:43 UTC = 14:43 JST = 22:43 Pacific (21:43 in winter): the last complete
     # fetch before the Pacific day rolls over. It is what dates the next day's
     # 00:01 launches as new — without it their evidence points at the previous
     # midday and the whole closed day drops out of the freshness window
-    # (LISTING_GRACE_HOURS in scripts/pacific-time.mjs).
-    - cron: "0 6 * * *"
+    # (LISTING_GRACE_HOURS in scripts/pacific-time.mjs). Deliberately off the
+    # hour: runs scheduled at :00 are the most delayed, and a run that slips
+    # past 00:01 Pacific loses the whole cohort it was meant to date.
+    - cron: "43 5 * * *"
     # 09:17 UTC = 18:17 JST (evening before; the day's launches went live at 16:01 JST, 17:01 in winter)
     - cron: "17 9 * * *"
     # 18:47 UTC = 03:47 JST (second chance, still hours before the 07:30 routine)
@@ -64,7 +66,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          persist-credentials: ${{ env.WRITE_RUN == '1' }}
+          # Credentials stay for READING main in the next step. Dropping them on
+          # verify runs made `git fetch origin main` fail under `set -euo
+          # pipefail`, so the verify mode could never go green. Nothing is
+          # written without WRITE_RUN: the only push lives in the commit step,
+          # which is guarded by it.
+          persist-credentials: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -94,13 +101,19 @@ jobs:
       - name: Commit snapshot (main only, not in verify mode or pull requests)
         if: env.WRITE_RUN == '1'
         run: |
-          set -u
+          set -euo pipefail
           cp data/product-hunt-daily.json "$RUNNER_TEMP/snapshot.json"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           for i in 1 2 3; do
             # Always commit on top of the latest main (other workflows and the routine push too).
-            git fetch --no-tags origin main
+            # Only the network steps get to retry; anything else failing means a
+            # broken state, and `set -e` stops before it can be pushed.
+            if ! git fetch --no-tags origin main; then
+              echo "fetch attempt $i failed, retrying"
+              sleep $((i * 10))
+              continue
+            fi
             git checkout -f -B main FETCH_HEAD
             cp "$RUNNER_TEMP/snapshot.json" data/product-hunt-daily.json
             git add data/product-hunt-daily.json
