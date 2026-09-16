@@ -13,6 +13,7 @@ import {
   SKIP_STREAK_LIMIT,
 } from "./skip-report.mjs";
 import { buildPostEntry } from "./record-upload.mjs";
+import { alreadyPostedProblem } from "./assert-not-posted.mjs";
 import { renderMarkdown, trialStatus, summarizeWindow } from "./pdca-summary.mjs";
 
 const skip = { date: "2026-09-16", reason: "新作の候補が1本のため休止", fresh_candidates: 1, snapshot_fresh_ai: 1, snapshot_check: "consistent" };
@@ -148,4 +149,22 @@ test("reportSkipStreak writes the annotation and the job summary only when it fa
   assert.equal(lines.length, 1);
   assert.match(lines[0], /3 日連続で休止/);
   assert.equal(appended.length, 1);
+});
+
+// --- The recovery workflow must not post the same Reel twice -----------------
+test("alreadyPostedProblem blocks a day that already has an Instagram media id", () => {
+  const history = {
+    videos: [
+      { date: "2026-09-15", instagram: { mediaId: "1789" } },
+      { date: "2026-09-16", instagram: null },
+      { date: "2026-09-14", instagram: { mediaId: null } },
+    ],
+  };
+  assert.match(alreadyPostedProblem(history, "20260915"), /already recorded as posted/);
+  assert.match(alreadyPostedProblem(history, "20260915"), /force=true/);
+  assert.equal(alreadyPostedProblem(history, "20260916"), null);
+  assert.equal(alreadyPostedProblem(history, "20260914"), null);
+  assert.equal(alreadyPostedProblem(history, "20260913"), null, "a day with no entry may be posted");
+  assert.equal(alreadyPostedProblem(null, "20260915"), null, "an unreadable history must not block a recovery");
+  assert.match(alreadyPostedProblem(history, "2026-09-15"), /YYYYMMDD/);
 });

@@ -7,6 +7,11 @@ on:
         description: "Date tag (YYYYMMDD). Defaults to today JST."
         required: false
         default: ""
+      force:
+        description: "Post again even though the history already records a media id for that day"
+        type: boolean
+        required: false
+        default: false
   push:
     # main only: this job posts to Instagram for real, and every branch push
     # would otherwise fire it with the production credentials.
@@ -15,7 +20,9 @@ on:
       - .retry-ig-trigger
 
 permissions:
-  contents: read
+  # write: the recovery post is written back to data/performance-history.json,
+  # or the media id of this post would never reach the PDCA report.
+  contents: write
 
 jobs:
   post:
@@ -73,6 +80,14 @@ jobs:
           DATE: ${{ steps.date.outputs.date }}
         run: node scripts/assert-data-date.mjs "$DATE"
 
+      # Instagram has no idempotency key: a second run publishes the same Reel
+      # again. The history is the record of what already went out.
+      - name: Guard — this day is not on Instagram yet
+        if: inputs.force != true
+        env:
+          DATE: ${{ steps.date.outputs.date }}
+        run: node scripts/assert-not-posted.mjs "$DATE"
+
       - name: Prepare data + captions
         env:
           TZ: Asia/Tokyo
@@ -92,3 +107,38 @@ jobs:
           # as Content-Type: application/octet-stream, which IG rejects with
           # code 9004. upload-instagram.mjs falls back to thumb_offset.
           node scripts/upload-instagram.mjs --file="output/aitools-${DATE}.mp4"
+
+      # Without this the recovery post never reaches performance-history.json,
+      # so the day is missing from the IG median and the saved-count that decide
+      # the genre trial.
+      - name: Record the post
+        env:
+          TZ: Asia/Tokyo
+        run: |
+          set -euo pipefail
+          node scripts/record-upload.mjs
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3; do
+            if ! git fetch --no-tags origin main; then
+              echo "fetch attempt $i failed, retrying"
+              sleep $((i * 10))
+              continue
+            fi
+            cp data/performance-history.json "$RUNNER_TEMP/history.json"
+            git checkout -f -B main FETCH_HEAD
+            cp "$RUNNER_TEMP/history.json" data/performance-history.json
+            git add data/performance-history.json
+            if git diff --staged --quiet; then
+              echo "History unchanged, nothing to commit"
+              exit 0
+            fi
+            git commit -m "Record recovery Instagram post [skip ci]"
+            if git push origin main; then
+              exit 0
+            fi
+            echo "push attempt $i failed, retrying"
+            sleep $((i * 10))
+          done
+          echo "::error title=Recovery post::the post went out but the history could not be pushed — fetch-stats will restore the media id later"
+          exit 1

@@ -129,6 +129,14 @@ export function buildYouTubeTags(tools) {
  * long descriptions); every tool keeps its "Product Hunt: <url>" link and the
  * "出典: Product Hunt" line always stays.
  */
+/**
+ * Both captions number the tools 1. 2. 3., which a reader could take for a
+ * Product Hunt ranking. The video says "1/5" for the same reason. Only the
+ * channel description carried this disclaimer before, so every post now says it
+ * in pickup mode (ranking mode really is ranked, so it does not).
+ */
+export const NOT_A_RANKING_NOTE = "番号は紹介の順番で、Product Hunt の順位ではありません。";
+
 export function buildYouTubeDescription(data, { maxBytes = YT_DESCRIPTION_MAX_BYTES } = {}) {
   const { meta, tools } = data;
   const dateLabel = meta.date.replace(/-/g, "/");
@@ -151,6 +159,7 @@ export function buildYouTubeDescription(data, { maxBytes = YT_DESCRIPTION_MAX_BY
       lines.push("");
     }
     lines.push(`出典: Product Hunt ${PRODUCT_HUNT_HOME}`);
+    if (meta.mode !== "ranking") lines.push(NOT_A_RANKING_NOTE);
     if (level < 1) lines.push(...cta);
     lines.push("");
     lines.push(YT_DESCRIPTION_HASHTAGS.join(" "));
@@ -180,6 +189,7 @@ export function buildInstagramCaption(data) {
     "",
     // sourceLabel always starts with "Product Hunt …" (see buildMeta).
     `出典: ${cleanText(meta.sourceLabel)}`,
+    ...(meta.mode === "ranking" ? [] : [NOT_A_RANKING_NOTE]),
     "料金や仕様は変わることがあるので、公式サイトで確認してください。",
     "気になるツールは保存して、あとで試してみてください。",
     "",

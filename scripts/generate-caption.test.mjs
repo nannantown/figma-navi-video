@@ -9,6 +9,7 @@ import {
   cleanText,
   YT_TITLE_MAX,
   IG_HASHTAGS,
+  NOT_A_RANKING_NOTE,
 } from "./generate-caption.mjs";
 import { charLength } from "./enriched-schema.mjs";
 
@@ -170,4 +171,16 @@ test("one long tool name does not drop every shorter tag behind it", () => {
   const tags = buildYouTubeTags(data(["あ".repeat(400), "Resurf", "Visiby"]).tools);
   assert.ok(tags.includes("Resurf"), tags.join(", "));
   assert.ok(tags.includes("Visiby"), tags.join(", "));
+});
+
+test("every pickup post says the numbers are not a Product Hunt ranking", () => {
+  const pickupMeta = { ...rankingMeta, mode: "pickup", headline: "新作AIツール 3選", sourceLabel: "Product Hunt の直近48時間の新着から厳選" };
+  const d = { ...data(["Resurf", "Visiby", "Clipwise"]), meta: pickupMeta };
+  assert.ok(buildYouTubeDescription(d).includes(NOT_A_RANKING_NOTE));
+  assert.ok(buildInstagramCaption(d).includes(NOT_A_RANKING_NOTE));
+
+  // Ranking mode (API opt-in only) really is ranked, so it does not claim otherwise.
+  const ranked = data(["Resurf", "Visiby", "Clipwise"]);
+  assert.equal(buildYouTubeDescription(ranked).includes(NOT_A_RANKING_NOTE), false);
+  assert.equal(buildInstagramCaption(ranked).includes(NOT_A_RANKING_NOTE), false);
 });
