@@ -1,5 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import { isNewLaunch } from "./pacific-time.mjs";
 import {
   pacificDayBounds,
   videoDateForSnapshot,
@@ -22,9 +24,12 @@ import {
   LISTING_RETENTION_DAYS,
   MIN_AI_ONLY_ENTRIES,
   FEED_RETRY_DELAYS_MS,
+  decodeTextContent,
+  cleanPhUrl,
 } from "./fetch-product-hunt.mjs";
 
 const noSleep = async () => {};
+
 
 const FEED = `<?xml version="1.0" encoding="UTF-8"?>
 <feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom">
@@ -497,4 +502,81 @@ test("a rejected token fails fast without retries", async () => {
     /401/
   );
   assert.equal(calls, 1);
+});
+
+// --- Third-party text is sanitised before it reaches a log or the routine -----
+test("control, bidi and zero-width characters never survive a decoded feed field", () => {
+  // Written as escapes so the source file holds no invisible characters.
+  const esc = decodeTextContent("Note&#27;[31m red");
+  assert.equal(esc, "Note[31m red", esc);
+  assert.doesNotMatch(esc, /[\u0000-\u001F\u007F-\u009F]/);
+
+  const bidi = decodeTextContent("safe\u202Emoc.live\u202C tool");
+  assert.doesNotMatch(bidi, /[\u200E\u200F\u202A-\u202E\u2066-\u2069]/);
+  assert.equal(bidi, "safemoc.live tool");
+
+  const zw = decodeTextContent("Res\u200Burf\uFEFF");
+  assert.equal(zw, "Resurf");
+
+  // NFKC: full width and compatibility forms are folded.
+  assert.equal(decodeTextContent("\uFF32\uFF45\uFF53\uFF55\uFF52\uFF46"), "Resurf");
+
+  // A C1 control smuggled in as a numeric reference is dropped too.
+  assert.equal(decodeTextContent("A&#155;B"), "AB");
+
+  // Ordinary text is untouched apart from whitespace collapsing.
+  assert.equal(decodeTextContent("Research &amp; write  10x\nfaster"), "Research & write 10x faster");
+});
+
+test("a feed entry whose text carries an escape sequence is cleaned by parseAtomFeed", () => {
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <entry>
+    <id>tag:www.producthunt.com,2005:Post/1</id>
+    <title>Bad&#27;[31mName</title>
+    <link rel="alternate" href="https://www.producthunt.com/products/bad-name"/>
+    <content type="html">&lt;p&gt;Tag&#8203;line &amp;amp; more&lt;/p&gt;</content>
+  </entry>
+</feed>`;
+  const [post] = parseAtomFeed(xml);
+  assert.equal(post.name, "Bad[31mName");
+  assert.equal(post.tagline, "Tagline & more");
+  assert.doesNotMatch(post.name + post.tagline, /[\u0000-\u001F\u200B-\u200F\u202A-\u202E]/);
+});
+
+test("cleanPhUrl only keeps producthunt.com links", () => {
+  assert.equal(cleanPhUrl("https://www.producthunt.com/products/resurf-2?ref=x#top"), "https://www.producthunt.com/products/resurf-2");
+  assert.equal(cleanPhUrl("https://producthunt.com/posts/foo/"), "https://producthunt.com/posts/foo");
+  assert.equal(cleanPhUrl("https://WWW.PRODUCTHUNT.COM/products/Foo"), "https://www.producthunt.com/products/Foo");
+  for (const bad of [
+    "https://producthunt.com.evil.example/products/foo",
+    "https://evil.example/producthunt.com/foo",
+    "javascript:alert(1)",
+    "data:text/html,hi",
+    "not a url",
+    "",
+  ]) {
+    assert.equal(cleanPhUrl(bad), "", bad);
+  }
+});
+
+// --- The committed snapshot is a baseline, not a source of candidates --------
+test("one more complete fetch on top of the committed snapshot dates the next cohort", async () => {
+  const seed = JSON.parse(readFileSync(new URL("../data/product-hunt-daily.json", import.meta.url), "utf-8"));
+  const seededKeys = Object.keys(seed.listing.posts);
+  assert.ok(seededKeys.length > 0, "the committed snapshot must carry a registry");
+  assert.ok(
+    seededKeys.every((k) => seed.listing.posts[k].listedAfter === null),
+    "the committed snapshot itself dates nothing — it is only the baseline"
+  );
+
+  // The next complete fetch sees a launch above every post the registry knows.
+  const posts = [{ id: "ph-test-brand-new" }, ...seededKeys.slice(0, 3).map((id) => ({ id }))];
+  const keys = posts.map((post) => post.id);
+  const feeds = [keys, keys];
+  const listing = updateListing(seed, posts, { now: new Date("2026-09-16T09:17:00Z"), complete: true, feeds });
+  const dated = Object.values(listing.posts).filter((e) => e.listedAfter !== null);
+  assert.equal(dated.length, 1, JSON.stringify(listing.stats));
+  assert.equal(dated[0].listedAfter, seed.listing.lastCompleteAt);
+  assert.equal(isNewLaunch({ publishedAt: null, listedAfter: dated[0].listedAfter }, "2026-09-17"), true);
 });

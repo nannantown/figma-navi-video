@@ -56,7 +56,7 @@
  *   - Atom feed https://www.producthunt.com/feed (50 entries, no votes/rank/images)
  */
 
-import { writeFileSync, mkdirSync, realpathSync, readFileSync } from "fs";
+import { writeFileSync, mkdirSync, realpathSync, readFileSync, renameSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import {
@@ -234,14 +234,24 @@ export function classifyPost(post) {
   return { isAI, isDev };
 }
 
-/** Product Hunt URL without tracking query/hash — the form the routine copies into ph_url. */
+/** producthunt.com and its subdomains, nothing else. */
+const PH_HOST_RE = /^(?:[a-z0-9-]+\.)*producthunt\.com$/i;
+
+/**
+ * Product Hunt URL without tracking query/hash — the form the routine copies
+ * into ph_url. The feed is third-party input, so a link that does not point at
+ * producthunt.com is dropped entirely rather than passed on: ph_url ends up in
+ * the video's source line and in the YouTube description.
+ */
 export function cleanPhUrl(url) {
   if (!url) return "";
   try {
-    const u = new URL(url);
-    return `${u.origin}${u.pathname}`.replace(/\/$/, "");
+    const u = new URL(String(url).trim());
+    if (u.protocol !== "https:" && u.protocol !== "http:") return "";
+    if (!PH_HOST_RE.test(u.hostname)) return "";
+    return `https://${u.hostname.toLowerCase()}${u.pathname}`.replace(/\/$/, "");
   } catch {
-    return String(url).split(/[?#]/)[0].replace(/\/$/, "");
+    return "";
   }
 }
 
@@ -335,15 +345,37 @@ function decodeEntities(s) {
   });
 }
 
+// Characters that must never survive into a name or a tagline. They are written
+// as escapes on purpose: the source file stays readable and greppable.
+//   C0/C1 controls (ESC and friends) — they would colour or clear the Actions log
+//   bidi overrides (U+202A-202E, U+2066-2069, U+200E/U+200F) — they can reverse
+//     how a name reads, so "evil.com" can be displayed as "moc.live"
+//   zero-width and soft hyphen — invisible padding inside a word
+const TEXT_CONTROL_RE = /[\u0000-\u001F\u007F-\u009F]/g;
+const TEXT_BIDI_RE = /[\u200E\u200F\u202A-\u202E\u2066-\u2069]/g;
+const TEXT_INVISIBLE_RE = /[\u00AD\u200B\u200C\u200D\u2060\uFEFF]/g;
+
 /**
  * Product Hunt escapes the HTML of <content type="html">, so the words inside it
  * are escaped twice: the first pass turns `&lt;p&gt;` into real markup, and the
  * text it carries still holds `&amp;amp;` / `&amp;#8212;`. Decode that second
  * level only after the markup is gone, so a literal `<` in a tagline
  * ("Compress images <50KB") can never be eaten as a tag.
+ *
+ * Whatever comes out is third-party text that nobody reads before it reaches the
+ * Actions log and the morning routine's copy, so it is normalised (NFKC) and
+ * stripped of control, bidi and zero-width characters — decoding `&#27;` back
+ * into an escape sequence would otherwise be a way in.
  */
-function decodeTextContent(s) {
-  return decodeEntities(s).replace(/\s+/g, " ").trim();
+export function decodeTextContent(s) {
+  return decodeEntities(String(s ?? ""))
+    .normalize("NFKC")
+    .replace(/[\r\n\t]/g, " ")
+    .replace(TEXT_CONTROL_RE, "")
+    .replace(TEXT_BIDI_RE, "")
+    .replace(TEXT_INVISIBLE_RE, "")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function textOf(xml, tag) {
@@ -792,7 +824,11 @@ async function main() {
     return;
   }
   mkdirSync(dirname(outPath), { recursive: true });
-  writeFileSync(outPath, JSON.stringify(snapshot, null, 2) + "\n");
+  // The workflow copies this file straight after the step; a run cancelled mid
+  // write would leave truncated JSON behind, so it is put in place atomically.
+  const tmpPath = `${outPath}.tmp`;
+  writeFileSync(tmpPath, JSON.stringify(snapshot, null, 2) + "\n");
+  renameSync(tmpPath, outPath);
   console.log(`\nSnapshot → ${outPath} (source: ${snapshot.source}, for video ${snapshot.forVideoDate})`);
 }
 
