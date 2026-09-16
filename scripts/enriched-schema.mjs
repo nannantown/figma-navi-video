@@ -160,6 +160,27 @@ const PH_CLAIM_RE = new RegExp(
   "iu"
 );
 
+// Popularity and momentum claims that do not name Product Hunt. The feed
+// carries no votes, no ranking and no audience numbers, so "話題の" / "人気の" /
+// "急上昇" cannot be said honestly either (owner decision, 2026-09-15: never
+// claim ranking, votes or popularity). Japanese is written literally here for
+// readability; English is limited to phrases that cannot be a product's name.
+const POPULARITY_RE = new RegExp(
+  [
+    "(?:いま|今)?話題(?:の|な|に|沸騰|を集め)",
+    "人気(?:の|な|急上昇|を集め|を博)",
+    "(?:大)?注目(?:の|株|を集め)",
+    "急上昇",
+    "バズ(?:って|った|り|る)",
+    "支持を集め",
+    "定番(?:の|化)",
+    "\\bgoing\\s+viral\\b",
+    "\\bmost\\s+popular\\b",
+    "\\bfastest[-\\s]?growing\\b",
+  ].join("|"),
+  "iu"
+);
+
 // Calls to act on the post (「AI」とコメントして / 『資料』とDMください) and
 // instruction-like text copied from a page (前の指示を無視して / ignore previous
 // instructions). A closing quote is required before と/って so ordinary
@@ -257,9 +278,11 @@ export function hasRankingWords(value) {
   return typeof value === "string" && RANKING_WORDS_RE.test(normalizeForChecks(value));
 }
 
-/** Product Hunt vote / award / popularity claims (500票, Product of the Day, トップに輝く, 一番人気, Product Huntで話題 …). */
+/** Product Hunt vote / award / popularity claims (500票, Product of the Day, トップに輝く, 一番人気, Product Huntで話題, 話題の, 人気の, 急上昇 …). */
 export function hasProductHuntClaims(value) {
-  return typeof value === "string" && PH_CLAIM_RE.test(normalizeForChecks(value));
+  if (typeof value !== "string") return false;
+  const norm = normalizeForChecks(value);
+  return PH_CLAIM_RE.test(norm) || POPULARITY_RE.test(norm);
 }
 
 /** Words a pickup video must not use: ranking vocabulary or Product Hunt vote/award/popularity claims. */
@@ -282,6 +305,13 @@ export function officialWebsiteProblems(url) {
   const host = u.hostname.toLowerCase().replace(/\.$/, "");
   const bare = host.replace(/^www\./, "");
   const problems = [];
+  // The URL is printed on its own line in the YouTube description, so a tab or
+  // a newline inside it would put arbitrary text there. WHATWG URL() drops
+  // those characters before parsing, which is why href has to match the input.
+  if (CONTROL_CHARS_RE.test(url)) problems.push("contains a line break, tab or control character");
+  if (INVISIBLE_CHARS_RE.test(url)) problems.push("contains an invisible (zero-width / bidi) character");
+  if (url !== url.trim()) problems.push("has a leading or trailing space");
+  else if (url !== u.href && `${url}/` !== u.href) problems.push(`is not in its normalized form (use ${u.href})`);
   if (u.port) problems.push("has a port");
   if (u.search || u.hash || url.includes("?") || url.includes("#")) problems.push("has a query or fragment (remove ?ref=… and #…)");
   if (host.startsWith("[") || /^\d{1,3}(?:\.\d{1,3}){3}$/.test(host)) problems.push("is an IP address, not a site name");
@@ -673,7 +703,7 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true, s
     checkLength(errors, warnings, "opening_narration", data.opening_narration, LIMITS.opening_narration);
     checkText(errors, "opening_narration", data.opening_narration);
     if (mode === "pickup" && hasPickupForbiddenWords(data.opening_narration)) {
-      errors.push("opening_narration uses ranking words or Product Hunt vote/award/popularity claims (TOP/トップ/ランキング/位/上位/ベスト/No./票/Product of the Day/トップに輝く/一番人気/Product Huntで話題) in pickup mode");
+      errors.push("opening_narration uses ranking words or vote/award/popularity claims (TOP/トップ/ランキング/位/上位/ベスト/No./票/Product of the Day/トップに輝く/一番人気/Product Huntで話題/話題の/人気の/注目の/急上昇/バズって/定番の) in pickup mode");
     }
   }
 
@@ -752,6 +782,10 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true, s
     }
     if (t.image_url != null && t.image_url !== "" && !isHttpsUrl(t.image_url)) {
       errors.push(`${at}.image_url must be an https URL or null`);
+    } else if (typeof t.image_url === "string" && t.image_url !== "") {
+      if (CONTROL_CHARS_RE.test(t.image_url) || INVISIBLE_CHARS_RE.test(t.image_url) || t.image_url !== t.image_url.trim()) {
+        errors.push(`${at}.image_url contains a line break, tab or invisible character`);
+      }
     }
 
     // 新作: launched on Product Hunt within the freshness window of the video date,

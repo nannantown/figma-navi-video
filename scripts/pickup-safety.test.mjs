@@ -101,7 +101,7 @@ test("vote, award and popularity claims about Product Hunt are errors in pickup 
     assert.equal(hasProductHuntClaims(narration), true, narration);
     assert.match(errorsOf(pickup(3, { narration })), /narration uses ranking words or Product Hunt vote\/award\/popularity claims/, narration);
   }
-  for (const text of ["チームで投票をまとめるAIツール", "トップページから試せる", "人気のSlackと連携できる", "Product Huntの新着から選んだ", "コメントの要点を自動で整理", "注目したい指標を自動で抽出"]) {
+  for (const text of ["チームで投票をまとめるAIツール", "トップページから試せる", "Slackと連携できる", "Product Huntの新着から選んだ", "コメントの要点を自動で整理", "注目したい指標を自動で抽出"]) {
     assert.equal(hasPickupForbiddenWords(text), false, text);
   }
 });
@@ -257,4 +257,33 @@ test("a skip day may leave out fresh launches with a reason; the rest must still
     { ph_url: "https://www.producthunt.com/products/tool-2", reason: "recent" },
   ]);
   assert.match(warningsOf(recentUnrecorded, { snapshot, history: { videos: [] } }), /skip\.excluded\[0\] is marked "recent" but is not in the last 30 days/);
+});
+
+test("popularity claims are blocked even when Product Hunt is not named", () => {
+  for (const text of [
+    "いま話題の新作AIツール5つ。",
+    "話題のメモ保存アプリだよ。",
+    "人気の文字起こしツールです。",
+    "いま注目のAIエージェント。",
+    "急上昇のデザインツール。",
+    "バズっているAIアプリ。",
+    "定番の議事録ツール。",
+    "A going viral AI note app.",
+    "The most popular AI writer.",
+    // Popularity is not ours to claim even about a third-party app it connects
+    // to: "Slackと連携できる" carries the same information without the claim.
+    "人気のSlackと連携できる",
+  ]) {
+    assert.equal(hasPickupForbiddenWords(text), true, text);
+  }
+});
+
+test("ordinary copy that happens to contain 話題 or 注目 as plain nouns still passes", () => {
+  for (const text of [
+    "会議の話題を自動でまとめるツールです。",
+    "注目すべき点を後から確認できます。",
+    "人気度を測る機能はありません。",
+  ]) {
+    assert.equal(hasPickupForbiddenWords(text), false, text);
+  }
 });

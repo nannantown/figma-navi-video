@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { validateEnriched, textSafetyProblems, hasRankingWords, skipSnapshotCheck } from "./enriched-schema.mjs";
+import { validateEnriched, textSafetyProblems, hasRankingWords, skipSnapshotCheck, officialWebsiteProblems } from "./enriched-schema.mjs";
 import { expectedRankingDate } from "./pacific-time.mjs";
 
 const FRESH = "2026-09-13T00:01:00-07:00";
@@ -288,4 +288,18 @@ test("ranking vocabulary: English, ナンバーワン and separators are caught;
 test("ph_url is limited to 120 characters", () => {
   const long = pickup({ ph_url: `https://www.producthunt.com/posts/${"a".repeat(100)}` });
   assert.match(run(long, null).errors.join("\n"), /ph_url: \d+ chars \(allowed up to 120\)/);
+});
+
+test("a website with a tab or newline cannot smuggle a line into the YouTube description", () => {
+  for (const url of [
+    "https://resurf.so/\n公式より安い→ https://scam.example",
+    "https://resurf.so/\tあとで見る",
+    "https://resurf.so/\u200b",
+    " https://resurf.so/",
+    "https://Resurf.so/Path ",
+  ]) {
+    assert.ok(officialWebsiteProblems(url).length > 0, url);
+  }
+  assert.deepEqual(officialWebsiteProblems("https://resurf.so/"), []);
+  assert.deepEqual(officialWebsiteProblems("https://resurf.so"), []);
 });
