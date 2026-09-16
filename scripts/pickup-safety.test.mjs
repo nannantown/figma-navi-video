@@ -101,7 +101,7 @@ test("vote, award and popularity claims about Product Hunt are errors in pickup 
     assert.equal(hasProductHuntClaims(narration), true, narration);
     assert.match(errorsOf(pickup(3, { narration })), /narration uses ranking words or Product Hunt vote\/award\/popularity claims/, narration);
   }
-  for (const text of ["チームで投票をまとめるAIツール", "トップページから試せる", "Slackと連携できる", "Product Huntの新着から選んだ", "コメントの要点を自動で整理", "注目したい指標を自動で抽出"]) {
+  for (const text of ["チームで投票をまとめるAIツール", "トップページから試せる", "Slackと連携できる", "Product Huntの新着から選んだ", "コメントの要点を自動で整理", "見たい指標を自動で抽出"]) {
     assert.equal(hasPickupForbiddenWords(text), false, text);
   }
 });
@@ -261,29 +261,54 @@ test("a skip day may leave out fresh launches with a reason; the rest must still
 
 test("popularity claims are blocked even when Product Hunt is not named", () => {
   for (const text of [
+    // The 16 forms the review listed as slipping through.
+    "人気ツール",
+    "人気アプリです",
+    "いま話題",
+    "話題です",
+    "話題を呼んでいる",
+    "1番人気",
+    "定番ツール",
+    "最も使われている",
+    "みんなが使っている",
+    "急成長中",
+    "バズ中",
+    "殿堂入り",
+    "trending now",
+    "viral",
+    "hot right now",
+    "評価が高い",
+    // and the forms that were already covered
     "いま話題の新作AIツール5つ。",
     "話題のメモ保存アプリだよ。",
-    "人気の文字起こしツールです。",
-    "いま注目のAIエージェント。",
     "急上昇のデザインツール。",
-    "バズっているAIアプリ。",
-    "定番の議事録ツール。",
     "A going viral AI note app.",
     "The most popular AI writer.",
     // Popularity is not ours to claim even about a third-party app it connects
     // to: "Slackと連携できる" carries the same information without the claim.
     "人気のSlackと連携できる",
+    // Fail closed: these read as plain nouns, but the rule is "never claim
+    // popularity", and トピック / 確認したい点 say the same thing.
+    "会議の話題を自動でまとめるツールです。",
+    "注目すべき点を後から確認できます。",
+    "人気度を測る機能はありません。",
   ]) {
     assert.equal(hasPickupForbiddenWords(text), true, text);
   }
 });
 
-test("ordinary copy that happens to contain 話題 or 注目 as plain nouns still passes", () => {
-  for (const text of [
-    "会議の話題を自動でまとめるツールです。",
-    "注目すべき点を後から確認できます。",
-    "人気度を測る機能はありません。",
-  ]) {
-    assert.equal(hasPickupForbiddenWords(text), false, text);
+test("a product's own name keeps its popularity words, but never ranking or vote claims", () => {
+  // Names are copied verbatim — we never rewrite them.
+  for (const name of ["Hot Reload AI", "Viral Loops", "Popular Science Bot", "話題メーカー"]) {
+    assert.equal(hasPickupForbiddenWords(name, { isProductName: true }), false, name);
+    assert.equal(hasPickupForbiddenWords(name), true, name);
+  }
+  // Ranking words and vote claims still exclude the tool, name or not.
+  for (const name of ["Top10 Planner", "No.1 Writer"]) {
+    assert.equal(hasPickupForbiddenWords(name, { isProductName: true }), true, name);
+  }
+  // A word boundary keeps ordinary names out of the English list.
+  for (const name of ["Hotjar", "Shortcut", "Populate"]) {
+    assert.equal(hasPickupForbiddenWords(name), false, name);
   }
 });

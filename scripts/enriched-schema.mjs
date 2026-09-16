@@ -167,13 +167,28 @@ const PH_CLAIM_RE = new RegExp(
 // readability; English is limited to phrases that cannot be a product's name.
 const POPULARITY_RE = new RegExp(
   [
-    "(?:いま|今)?話題(?:の|な|に|沸騰|を集め)",
-    "人気(?:の|な|急上昇|を集め|を博)",
-    "(?:大)?注目(?:の|株|を集め)",
+    // Japanese: the bare word is enough. Blocking only 話題の / 人気の left
+    // "人気ツール" "いま話題" "話題です" "1番人気" through, and the docs already
+    // promised these are errors. Fail closed: a description that needs 話題 in
+    // its plain sense ("会議の話題") can say トピック instead.
+    "話題",
+    "人気",
+    "注目",
+    "定番",
+    "急成長",
     "急上昇",
-    "バズ(?:って|った|り|る)",
+    "バズ",
+    "殿堂",
+    "最も",
+    "みんなが",
+    "評価が高い",
+    "高評価",
     "支持を集め",
-    "定番(?:の|化)",
+    // English: word boundaries, so a name like "Hotjar" is not caught by "hot".
+    "\\btrending\\b",
+    "\\bviral\\b",
+    "\\bpopular\\b",
+    "\\bhot\\b",
     "\\bgoing\\s+viral\\b",
     "\\bmost\\s+popular\\b",
     "\\bfastest[-\\s]?growing\\b",
@@ -278,16 +293,34 @@ export function hasRankingWords(value) {
   return typeof value === "string" && RANKING_WORDS_RE.test(normalizeForChecks(value));
 }
 
-/** Product Hunt vote / award / popularity claims (500票, Product of the Day, トップに輝く, 一番人気, Product Huntで話題, 話題の, 人気の, 急上昇 …). */
+/** Product Hunt vote / award claims (500票, Product of the Day, トップに輝く, 一番人気, Product Huntで話題 …). */
 export function hasProductHuntClaims(value) {
-  if (typeof value !== "string") return false;
-  const norm = normalizeForChecks(value);
-  return PH_CLAIM_RE.test(norm) || POPULARITY_RE.test(norm);
+  return typeof value === "string" && PH_CLAIM_RE.test(normalizeForChecks(value));
 }
 
-/** Words a pickup video must not use: ranking vocabulary or Product Hunt vote/award/popularity claims. */
-export function hasPickupForbiddenWords(value) {
-  return hasRankingWords(value) || hasProductHuntClaims(value);
+/**
+ * Popularity and momentum words (話題 / 人気 / 注目 / 定番 / 急成長 / バズ /
+ * 殿堂 / 最も / みんなが / 評価が高い / trending / viral / popular / hot).
+ *
+ * The feed carries no votes, no ranking and no audience numbers, so none of
+ * this can be said honestly — owner decision of 2026-09-15. A product's own
+ * name is the one exception: it is copied as it is and must never be rewritten.
+ */
+export function hasPopularityWords(value) {
+  return typeof value === "string" && POPULARITY_RE.test(normalizeForChecks(value));
+}
+
+/**
+ * Words a pickup video must not use: ranking vocabulary, Product Hunt
+ * vote/award claims, or popularity words.
+ *
+ * @param {string} value
+ * @param {{ isProductName?: boolean }} [opts] a product's name keeps popularity
+ *   words (we copy names verbatim), but ranking and vote claims still exclude it
+ */
+export function hasPickupForbiddenWords(value, opts = {}) {
+  if (hasRankingWords(value) || hasProductHuntClaims(value)) return true;
+  return opts.isProductName ? false : hasPopularityWords(value);
 }
 
 /**
@@ -703,7 +736,7 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true, s
     checkLength(errors, warnings, "opening_narration", data.opening_narration, LIMITS.opening_narration);
     checkText(errors, "opening_narration", data.opening_narration);
     if (mode === "pickup" && hasPickupForbiddenWords(data.opening_narration)) {
-      errors.push("opening_narration uses ranking words or vote/award/popularity claims (TOP/トップ/ランキング/位/上位/ベスト/No./票/Product of the Day/トップに輝く/一番人気/Product Huntで話題/話題の/人気の/注目の/急上昇/バズって/定番の) in pickup mode");
+      errors.push("opening_narration uses ranking words or vote/award/popularity claims (TOP/トップ/ランキング/位/上位/ベスト/No./票/Product of the Day/トップに輝く/Product Huntで話題/話題/人気/注目/定番/急成長/急上昇/バズ/殿堂/最も/みんなが/評価が高い/trending/viral/popular/hot) in pickup mode");
     }
   }
 
@@ -832,7 +865,9 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true, s
     if (sentences !== 2) warnings.push(`${at}.narration has ${sentences} sentences (rule: hook 1 + point 1)`);
 
     const rankingWordFields = ["name", "description", "who", "pricing_note", "narration"].filter(
-      (f) => typeof t[f] === "string" && (mode === "pickup" ? hasPickupForbiddenWords(t[f]) : hasRankingWords(t[f]))
+      (f) =>
+        typeof t[f] === "string" &&
+        (mode === "pickup" ? hasPickupForbiddenWords(t[f], { isProductName: f === "name" }) : hasRankingWords(t[f]))
     );
     if (rankingWordFields.length > 0) {
       if (mode === "pickup") {
@@ -883,7 +918,7 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true, s
           return;
         }
         if (typeof post.name === "string" && post.name.trim()) {
-          if (hasPickupForbiddenWords(post.name)) {
+          if (hasPickupForbiddenWords(post.name, { isProductName: true })) {
             errors.push(`tools[${i}]: the Product Hunt name "${post.name}" uses ranking words or vote/award claims — exclude this tool (do not rename it)`);
           } else if (typeof t.name === "string" && !namesMatch(t.name, post.name)) {
             errors.push(`tools[${i}].name "${t.name}" is not the Product Hunt name "${post.name}" of ${t.ph_url} — use the original name, or exclude the tool (never rename it)`);
