@@ -28,7 +28,7 @@
  *   https://www.iana.org/assignments/iana-ipv6-special-registry/ (2026-09-14)
  */
 
-import { readFileSync, writeFileSync, mkdirSync, mkdtempSync, rmSync, realpathSync } from "fs";
+import { readFileSync, writeFileSync, mkdirSync, mkdtempSync, rmSync, realpathSync, renameSync } from "fs";
 import { join, dirname } from "path";
 import { tmpdir } from "os";
 import { execFileSync } from "child_process";
@@ -533,7 +533,12 @@ async function main() {
     console.log(`    → ${tool.image} (${img.width}x${img.height}, from ${img.from})`);
   }
 
-  writeFileSync(dataPath, JSON.stringify(data, null, 2));
+  // pipeline.mjs kills this step after IMAGE_STEP_KILL_MS. A SIGKILL landing in
+  // the middle of the write would leave a truncated file and break every later
+  // step, so the new content is put in place atomically.
+  const tmpPath = `${dataPath}.tmp`;
+  writeFileSync(tmpPath, JSON.stringify(data, null, 2));
+  renameSync(tmpPath, dataPath);
   console.log(`fetch-tool-images: ${found}/${tools.length} tools have an image`);
 }
 

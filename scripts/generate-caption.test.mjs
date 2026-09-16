@@ -150,3 +150,24 @@ test("buildCaptions uses the hinted template and category 28", () => {
   assert.match(captions.youtube.title, /^A・B・C ほか 新作AIツールTOP5｜/);
   assert.match(captions.youtube.description, /1\. A｜会議メモを自動で要約/);
 });
+
+test("a name outside the BMP cannot push the title past 100 UTF-16 units", () => {
+  // charLength counts an emoji once, YouTube may count it twice. Every title we
+  // build has to be inside the limit under both counts.
+  const names = ["\u{1F680}" + "あ".repeat(29), "い".repeat(20), "う".repeat(18)];
+  for (const template of ["standard", "question", "benefit"]) {
+    const title = buildYouTubeTitle(data(names).tools, "2026/09/15", template);
+    assert.ok(title.length <= YT_TITLE_MAX, `${template}: ${title.length} UTF-16 units — ${title}`);
+    assert.ok(Array.from(title).length <= YT_TITLE_MAX, `${template}: ${Array.from(title).length} code points`);
+  }
+
+  // All-astral names take the truncating path and must still fit.
+  const astral = buildYouTubeTitle(data(["\u{1F680}".repeat(60), "\u{1F4A1}".repeat(40)]).tools, "2026/09/15");
+  assert.ok(astral.length <= YT_TITLE_MAX, `${astral.length} UTF-16 units`);
+});
+
+test("one long tool name does not drop every shorter tag behind it", () => {
+  const tags = buildYouTubeTags(data(["あ".repeat(400), "Resurf", "Visiby"]).tools);
+  assert.ok(tags.includes("Resurf"), tags.join(", "));
+  assert.ok(tags.includes("Visiby"), tags.join(", "));
+});

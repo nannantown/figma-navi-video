@@ -66,6 +66,21 @@ function titleFor(template, tag, list, dateFull) {
   }
 }
 
+/**
+ * A title fits when it is within the limit by both ways of counting.
+ *
+ * 【一次資料】YouTube Data API, videos resource, snippet.title (2026-09-16):
+ * https://developers.google.com/youtube/v3/docs/videos — "The property value
+ * has a maximum length of 100 characters and may contain all valid UTF-8
+ * characters except < and >." It does not say whether a character outside the
+ * BMP (an emoji) counts once or twice, and the 2026-09-13/14 uploads already
+ * failed with `invalid or empty video title`, so the title has to fit under the
+ * stricter of the two counts: code points (Array.from) and UTF-16 units.
+ */
+function titleFits(title) {
+  return charLength(title) <= YT_TITLE_MAX && title.length <= YT_TITLE_MAX;
+}
+
 /** Longest title that fits: up to 3 tool names, then fewer, then a truncated first name. */
 export function buildYouTubeTitle(tools, dateFull, template = "standard", tag = "新作AIツール") {
   const names = tools.map((t) => sanitizeTitlePart(t.name)).filter(Boolean);
@@ -73,26 +88,35 @@ export function buildYouTubeTitle(tools, dateFull, template = "standard", tag = 
   for (let n = Math.min(3, names.length); n >= 1; n--) {
     const list = names.slice(0, n).join("・") + (n < names.length ? " ほか" : "");
     const title = titleFor(template, safeTag, list, dateFull);
-    if (charLength(title) <= YT_TITLE_MAX) return title;
+    if (titleFits(title)) return title;
   }
   const suffix = names.length > 1 ? " ほか" : "";
-  const overhead = charLength(titleFor(template, safeTag, suffix, dateFull));
-  const room = Math.max(1, YT_TITLE_MAX - overhead - 1);
-  const first = Array.from(names[0] || "AIツール").slice(0, room).join("") + "…";
-  return titleFor(template, safeTag, first + suffix, dateFull);
+  const chars = Array.from(names[0] || "AIツール");
+  for (let room = chars.length; room >= 1; room--) {
+    const title = titleFor(template, safeTag, `${chars.slice(0, room).join("")}…${suffix}`, dateFull);
+    if (titleFits(title)) return title;
+  }
+  return titleFor(template, safeTag, `…${suffix}`, dateFull);
 }
 
 export function buildYouTubeTags(tools) {
   const tags = [...YT_BASE_TAGS];
+  const seen = new Set(tags.map((t) => t.toLowerCase()));
   for (const t of tools) {
     const tag = sanitizeTitlePart(t.name).replace(/[,"]/g, "");
-    if (tag && !tags.includes(tag)) tags.push(tag);
+    // A tool called "Shorts" must not take a second slot next to the base tag.
+    if (tag && !seen.has(tag.toLowerCase())) {
+      tags.push(tag);
+      seen.add(tag.toLowerCase());
+    }
   }
   const out = [];
   let used = 0;
   for (const tag of tags) {
     const cost = charLength(tag) + 1;
-    if (used + cost > YT_TAGS_MAX_CHARS) break;
+    // Skip the ones that do not fit and keep going: one long tool name must not
+    // drop every shorter tag behind it.
+    if (used + cost > YT_TAGS_MAX_CHARS) continue;
     out.push(tag);
     used += cost;
   }
