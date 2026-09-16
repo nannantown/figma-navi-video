@@ -23,6 +23,12 @@ name: Fetch Product Hunt Snapshot
 
 on:
   schedule:
+    # 06:00 UTC = 15:00 JST = 23:00 Pacific (22:00 in winter): the last complete
+    # fetch before the Pacific day rolls over. It is what dates the next day's
+    # 00:01 launches as new — without it their evidence points at the previous
+    # midday and the whole closed day drops out of the freshness window
+    # (LISTING_GRACE_HOURS in scripts/pacific-time.mjs).
+    - cron: "0 6 * * *"
     # 09:17 UTC = 18:17 JST (evening before; the day's launches went live at 16:01 JST, 17:01 in winter)
     - cron: "17 9 * * *"
     # 18:47 UTC = 03:47 JST (second chance, still hours before the 07:30 routine)

@@ -112,6 +112,21 @@ export function expectedRankingDate(videoDate) {
   return ymd(p.year, p.month, p.day);
 }
 
+/**
+ * How long before the window starts a complete fetch still counts as evidence
+ * that the window's launches were not listed yet.
+ *
+ * Product Hunt lists a day's launches at 00:01 Pacific, so the only fetch that
+ * could prove "not listed before 00:00" would have to run inside that one
+ * minute. GitHub cron cannot promise that (runs start minutes late), and
+ * without the grace the whole closed Pacific day was dropped: its 00:01 cohort
+ * carried the previous evening's fetch time, which sits just before the window.
+ * The fetch scheduled at 06:00 UTC lands at 23:00 Pacific (22:00 in winter), so
+ * three hours of grace covers both, plus ~an hour of cron delay. The claim in
+ * the docs still holds: 39.5 h + 3 h = 42.5 h, inside "the last 48 hours".
+ */
+export const LISTING_GRACE_HOURS = 3;
+
 /** true when `publishedAt` (ISO 8601 with offset) is inside the freshness window of `videoDate`. */
 export function isFresh(publishedAt, videoDate) {
   const t = Date.parse(publishedAt ?? "");
@@ -129,5 +144,22 @@ export function isFresh(publishedAt, videoDate) {
  *     fetch-product-hunt.mjs)
  */
 export function isNewLaunch(post, videoDate) {
-  return isFresh(post?.publishedAt, videoDate) || isFresh(post?.listedAfter, videoDate);
+  return isFresh(post?.publishedAt, videoDate) || isFreshListing(post?.listedAfter, videoDate);
+}
+
+/**
+ * true when `listedAfter` (the time of a complete fetch that did not list the
+ * post yet) proves the post went live inside the freshness window, allowing
+ * LISTING_GRACE_HOURS for the fetch that ran shortly before the window opened.
+ */
+export function isFreshListing(listedAfter, videoDate) {
+  const t = Date.parse(listedAfter ?? "");
+  if (!Number.isFinite(t)) return false;
+  const from = freshSince(videoDate).getTime() - LISTING_GRACE_HOURS * 3600 * 1000;
+  return t >= from && t <= routineAnchor(videoDate).getTime() + 24 * 3600 * 1000;
+}
+
+/** Start of the window a `listedAfter` time is compared against (freshSince − grace). */
+export function listingWindowStart(videoDate) {
+  return new Date(freshSince(videoDate).getTime() - LISTING_GRACE_HOURS * 3600 * 1000);
 }

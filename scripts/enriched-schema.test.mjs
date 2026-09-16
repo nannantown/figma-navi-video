@@ -281,3 +281,49 @@ test("parseEnrichedText repairs unescaped quotes and reports it", () => {
   assert.equal(repaired, true);
   assert.equal(data.a, 'He said "hi" ok');
 });
+
+// --- The freshness window against the real cron times -----------------------
+//
+// The fetch runs at 06:00 / 09:17 / 18:47 UTC. Earlier versions of these tests
+// used made-up fetch times (21:30Z / 09:30Z), which hid the fact that the whole
+// closed Pacific day fell out of the window: its 00:01 cohort carries the
+// previous midday's fetch time as evidence.
+test("a launch from the closed Pacific day is new, dated by the fetch that ran before midnight", () => {
+  const videoDate = "2026-09-18"; // routine 07:30 JST 9/18 = 15:30 PDT 9/17
+  // Window opens at 00:00 PDT on 9/16.
+  assert.equal(freshSince(videoDate).toISOString(), "2026-09-16T07:00:00.000Z");
+
+  // 9/16 00:01 PDT cohort: the 06:00 UTC fetch (23:00 PDT on 9/15) is the last
+  // complete one that did not list it yet.
+  assert.equal(isNewLaunch({ publishedAt: null, listedAfter: "2026-09-16T06:00:00.000Z" }, videoDate), true);
+  // Same cohort seen an hour late (cron delay) — still before midnight.
+  assert.equal(isNewLaunch({ publishedAt: null, listedAfter: "2026-09-16T06:55:00.000Z" }, videoDate), true);
+
+  // 9/17 00:01 PDT cohort (the day in progress) was already covered.
+  assert.equal(isNewLaunch({ publishedAt: null, listedAfter: "2026-09-17T06:00:00.000Z" }, videoDate), true);
+
+  // Evidence from the previous midday (18:47 UTC = 11:47 PDT on 9/15) proves
+  // nothing about the window: it is 13 hours before it opens.
+  assert.equal(isNewLaunch({ publishedAt: null, listedAfter: "2026-09-15T18:47:00.000Z" }, videoDate), false);
+  // The grace is bounded: 20:00 PDT on 9/15 is four hours early.
+  assert.equal(isNewLaunch({ publishedAt: null, listedAfter: "2026-09-16T03:00:00.000Z" }, videoDate), false);
+  // A launch listed two days before the window is never new.
+  assert.equal(isNewLaunch({ publishedAt: null, listedAfter: "2026-09-14T18:47:00.000Z" }, videoDate), false);
+});
+
+test("the grace applies to listing evidence only, never to a publish time", () => {
+  const videoDate = "2026-09-18";
+  // 23:00 PDT on 9/15 as a publish time is outside the window: publishedAt is
+  // the launch itself, so it needs no allowance.
+  assert.equal(isNewLaunch({ publishedAt: "2026-09-16T06:00:00.000Z", listedAfter: null }, videoDate), false);
+  assert.equal(isNewLaunch({ publishedAt: "2026-09-16T07:00:00.000Z", listedAfter: null }, videoDate), true);
+});
+
+test("winter (PST): the 06:00 UTC fetch lands at 22:00 Pacific and still dates the next day", () => {
+  const videoDate = "2026-12-18"; // PST: UTC-8
+  assert.equal(freshSince(videoDate).toISOString(), "2026-12-16T08:00:00.000Z");
+  // 06:00 UTC on 12/16 = 22:00 PST on 12/15 — two hours before the window.
+  assert.equal(isNewLaunch({ publishedAt: null, listedAfter: "2026-12-16T06:00:00.000Z" }, videoDate), true);
+  // The previous midday is still out.
+  assert.equal(isNewLaunch({ publishedAt: null, listedAfter: "2026-12-15T18:47:00.000Z" }, videoDate), false);
+});
