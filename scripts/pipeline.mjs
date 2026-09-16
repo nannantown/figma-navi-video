@@ -84,7 +84,10 @@ function main() {
     const skip = JSON.parse(readFileSync(skipPath, "utf-8"));
     console.log(`\n=== Skipped ${skip.date}: ${skip.reason} (fresh candidates: ${skip.fresh_candidates}) — no video, no post ===`);
     reportSkip(skip);
-    if (snsEnabled) {
+    // Record the pause itself whenever this is a real run: a paused day has to
+    // stay visible to pdca-summary even while posting is switched off, or the
+    // 14-day window silently counts it as a day that never existed.
+    if (!dryRun) {
       console.log(`\n=== Record Skip Day ===`);
       runSafe("node scripts/record-upload.mjs --skip", "record-upload --skip");
     }

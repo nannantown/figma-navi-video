@@ -31,6 +31,8 @@ export const TRIAL_DAYS = 14;
 // in performance-history.json.
 export const PLANNED_START = "2026-09-17";
 export const MIN_SAMPLES = 7;
+// A judgment that was missed on its day stays due for this many more mornings.
+const JUDGMENT_GRACE_DAYS = 2;
 
 // Initial thresholds (sns-hub docs/strategy/genre-experiment.md (c), provisional).
 export const THRESHOLDS = {
@@ -107,10 +109,12 @@ export function judgeYt({ n, viewsMedian }) {
  *
  * The trial is judged every TRIAL_DAYS, as in docs/genre-experiment.md
  * (d = today − start): on d ≥ 14 with d % 14 = 0 the window is
- * (today − 14)..(today − 1), `verdict` is set and the next judgment is
- * today + 14; on every other day the window is max(start, today − 13)..today,
+ * (cycleStart − 14)..(cycleStart − 1), `verdict` is set and the next judgment is
+ * cycleStart + 14; on every other day the window is max(start, today − 13)..today,
  * `verdict` is null and the next judgment is start + 14 × (floor(d / 14) + 1).
  * So the routine writes a judgment section once per cycle, not every morning after.
+ * A judgment stays due for JUDGMENT_GRACE_DAYS mornings after its day (same
+ * window, same verdict) so that one missed morning cannot skip a whole cycle.
  */
 export function trialStatus(videos, { today, plannedStart = PLANNED_START }) {
   const trialVideos = videos.filter((v) => genreOf(v) === GENRE).sort((a, b) => a.date.localeCompare(b.date));
@@ -121,9 +125,16 @@ export function trialStatus(videos, { today, plannedStart = PLANNED_START }) {
   const elapsed = Math.max(0, dayN - 1);
   const cycleIndex = started ? Math.floor(elapsed / TRIAL_DAYS) : 0;
   const cycleStart = addDays(startDate, cycleIndex * TRIAL_DAYS);
-  const isJudgmentDay = started && elapsed > 0 && elapsed % TRIAL_DAYS === 0;
-  const from = isJudgmentDay ? addDays(today, -TRIAL_DAYS) : [startDate, addDays(today, -(TRIAL_DAYS - 1))].sort().at(-1);
-  const to = isJudgmentDay ? addDays(today, -1) : today;
+  const dayInCycleIndex = started ? elapsed % TRIAL_DAYS : 0;
+  // The judgment is due on day start + 14k, but the routine can miss a morning
+  // (a failed run, a late start). Without a grace window `% 14 === 0` would skip
+  // that cycle's judgment for good, so it stays due for JUDGMENT_GRACE_DAYS more
+  // mornings. The window is anchored to the finished cycle, not to today, so a
+  // late judgment reads exactly the same 14 days as an on-time one.
+  const isJudgmentDay = started && elapsed >= TRIAL_DAYS && dayInCycleIndex <= JUDGMENT_GRACE_DAYS;
+  const judgmentLate = isJudgmentDay && dayInCycleIndex > 0;
+  const from = isJudgmentDay ? addDays(cycleStart, -TRIAL_DAYS) : [startDate, addDays(today, -(TRIAL_DAYS - 1))].sort().at(-1);
+  const to = isJudgmentDay ? addDays(cycleStart, -1) : today;
   const summary = summarizeWindow(trialVideos, { from, to });
   return {
     started,
@@ -134,6 +145,7 @@ export function trialStatus(videos, { today, plannedStart = PLANNED_START }) {
     // The next judgment after today (on a judgment day: the one after it).
     judgmentDate: addDays(cycleStart, TRIAL_DAYS),
     isJudgmentDay,
+    judgmentLate,
     judgedCycle: isJudgmentDay ? cycleIndex : null,
     summary,
     verdict: isJudgmentDay ? { ig: judgeIg(summary.ig), yt: judgeYt(summary.yt) } : null,
@@ -146,7 +158,7 @@ export function renderMarkdown(history, { today, plannedStart = PLANNED_START })
   const videos = history.videos || [];
   const st = trialStatus(videos, { today, plannedStart });
   const s = st.summary;
-  const windowLabel = `${s.from.slice(5)}..${s.to.slice(5)}`;
+  const windowLabel = s.from > s.to ? "—" : `${s.from.slice(5)}..${s.to.slice(5)}`;
   const day = !st.started ? `開始前（予定 ${st.startDate}）` : `Day ${st.dayInCycle} / ${TRIAL_DAYS}（第 ${st.cycle} 期）`;
   const lines = [];
 
@@ -159,7 +171,7 @@ export function renderMarkdown(history, { today, plannedStart = PLANNED_START })
   lines.push("");
   if (st.verdict) {
     lines.push(
-      `- 今日の判定（今日は第 ${st.judgedCycle} 期 ${windowLabel} の判定日）: IG = **${st.verdict.ig}** / YT = **${st.verdict.yt}**（閾値: docs/strategy.md の合格ライン）`
+      `- 今日の判定（今日は第 ${st.judgedCycle} 期 ${windowLabel} の判定日${st.judgmentLate ? "。本来の判定日は " + addDays(st.startDate, st.judgedCycle * TRIAL_DAYS) + " で、その朝のレポートが出ていれば台帳に二重に書かない" : ""}）: IG = **${st.verdict.ig}** / YT = **${st.verdict.yt}**（閾値: docs/strategy.md の合格ライン）`
     );
   } else {
     lines.push(`- 今日の判定: なし（次の判定日 ${st.judgmentDate} まで待つ）。IG 参考: シェア合計 ${s.ig.sharesSum} / リーチ中央値 ${fmt(s.ig.reachMedian)}`);
@@ -221,7 +233,13 @@ function main() {
   const startArg = process.argv.find((a) => a.startsWith("--start="));
   const today = todayArg ? todayArg.slice("--today=".length) : todayJst();
   const plannedStart = startArg ? startArg.slice("--start=".length) : PLANNED_START;
-  const history = JSON.parse(readFileSync(historyPath, "utf-8"));
+  let history;
+  try {
+    history = JSON.parse(readFileSync(historyPath, "utf-8"));
+  } catch (err) {
+    console.error(`data/performance-history.json が読めません（${err.message}）。ファイルが壊れていないか確認してください。`);
+    process.exit(1);
+  }
   console.log(renderMarkdown(history, { today, plannedStart }));
 }
 

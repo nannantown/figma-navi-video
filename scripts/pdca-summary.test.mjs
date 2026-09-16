@@ -58,18 +58,35 @@ test("trialStatus starts at the first genre entry and judges on day 15", () => {
   assert.equal(`${judged.summary.from}..${judged.summary.to}`, "2026-09-16..2026-09-29");
 });
 
-test("after a judgment the next 14-day cycle runs; the verdict is not repeated every morning", () => {
+test("a missed judgment stays due for two more mornings, then the next 14-day cycle runs", () => {
   const videos = [];
   for (let i = 0; i < 40; i++) {
     videos.push(video(addDays("2026-09-18", i), { genre: "ai-tools-top5", ig: { views: 30, saved: 0 }, yt: 1 }));
   }
-  const dayAfter = trialStatus(videos, { today: "2026-10-03" }); // start 09-18, judged 10-02
+  const onTime = trialStatus(videos, { today: "2026-10-02" }); // start 09-18
+  assert.equal(onTime.isJudgmentDay, true);
+  assert.equal(onTime.judgmentLate, false);
+  assert.equal(`${onTime.summary.from}..${onTime.summary.to}`, "2026-09-18..2026-10-01");
+
+  // A missed morning must not skip the cycle: the judgment stays due, and it
+  // reads exactly the same 14 days as it would have on its own day.
+  for (const late of ["2026-10-03", "2026-10-04"]) {
+    const st = trialStatus(videos, { today: late });
+    assert.equal(st.isJudgmentDay, true, late);
+    assert.equal(st.judgmentLate, true, late);
+    assert.equal(st.judgedCycle, 1, late);
+    assert.equal(st.judgmentDate, "2026-10-16", late);
+    assert.deepEqual(st.verdict, onTime.verdict, late);
+    assert.equal(`${st.summary.from}..${st.summary.to}`, "2026-09-18..2026-10-01", late);
+  }
+
+  const dayAfter = trialStatus(videos, { today: "2026-10-05" }); // grace window is over
   assert.equal(dayAfter.verdict, null);
   assert.equal(dayAfter.cycle, 2);
-  assert.equal(dayAfter.dayInCycle, 2);
+  assert.equal(dayAfter.dayInCycle, 4);
   assert.equal(dayAfter.judgmentDate, "2026-10-16");
   // Same as docs/genre-experiment.md: max(start, today − 13)..today on non-judgment days.
-  assert.equal(`${dayAfter.summary.from}..${dayAfter.summary.to}`, "2026-09-20..2026-10-03");
+  assert.equal(`${dayAfter.summary.from}..${dayAfter.summary.to}`, "2026-09-22..2026-10-05");
 
   const second = trialStatus(videos, { today: "2026-10-16" });
   assert.equal(second.isJudgmentDay, true);

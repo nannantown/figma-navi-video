@@ -320,13 +320,30 @@ export async function fetchDayViaApi(token, bounds, { fetchImpl = fetch, maxPost
 // Atom feed fallback (no token)
 // ---------------------------------------------------------------------------
 
+const NAMED_ENTITIES = { lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", amp: "&" };
+
+/** One pass of XML/HTML entity decoding (named + numeric); unknown entities are left alone. */
 function decodeEntities(s) {
-  return s
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;|&apos;/g, "'")
-    .replace(/&amp;/g, "&");
+  return s.replace(/&(#[0-9]{1,7}|#[xX][0-9a-fA-F]{1,6}|[a-zA-Z][a-zA-Z0-9]{1,31});/g, (m, body) => {
+    if (body[0] === "#") {
+      const cp = body[1] === "x" || body[1] === "X" ? Number.parseInt(body.slice(2), 16) : Number.parseInt(body.slice(1), 10);
+      if (!Number.isInteger(cp) || cp <= 0 || cp > 0x10ffff || (cp >= 0xd800 && cp <= 0xdfff)) return m;
+      return String.fromCodePoint(cp);
+    }
+    const named = NAMED_ENTITIES[body.toLowerCase()];
+    return named === undefined ? m : named;
+  });
+}
+
+/**
+ * Product Hunt escapes the HTML of <content type="html">, so the words inside it
+ * are escaped twice: the first pass turns `&lt;p&gt;` into real markup, and the
+ * text it carries still holds `&amp;amp;` / `&amp;#8212;`. Decode that second
+ * level only after the markup is gone, so a literal `<` in a tagline
+ * ("Compress images <50KB") can never be eaten as a tag.
+ */
+function decodeTextContent(s) {
+  return decodeEntities(s).replace(/\s+/g, " ").trim();
 }
 
 function textOf(xml, tag) {
@@ -340,17 +357,17 @@ function stripTags(html) {
 
 export function parseAtomFeed(xml) {
   const entries = [];
-  const re = /<entry>([\s\S]*?)<\/entry>/g;
+  const re = /<entry(?:\s[^>]*)?>([\s\S]*?)<\/entry>/g;
   let m;
   while ((m = re.exec(xml))) {
     const e = m[1];
-    const name = decodeEntities(textOf(e, "title"));
+    const name = decodeTextContent(stripTags(decodeEntities(textOf(e, "title"))));
     const linkMatch = e.match(/<link[^>]*rel="alternate"[^>]*href="([^"]+)"/i) || e.match(/<link[^>]*href="([^"]+)"/i);
     const url = linkMatch ? decodeEntities(linkMatch[1]) : "";
     const content = decodeEntities(textOf(e, "content"));
     // content = <p>tagline</p><p><a>Discussion</a> | <a href="/r/p/ID">Link</a></p>
     const firstParagraph = content.match(/<p>([\s\S]*?)<\/p>/i);
-    const tagline = stripTags(firstParagraph ? firstParagraph[1] : content);
+    const tagline = decodeTextContent(stripTags(firstParagraph ? firstParagraph[1] : content));
     const redirect = content.match(/href="(https:\/\/www\.producthunt\.com\/r\/p\/[^"]+)"/i);
     const phUrl = cleanPhUrl(url);
     const post = {
@@ -399,7 +416,7 @@ export async function fetchFeed({ fetchImpl = fetch, category = "", sleepImpl = 
         signal: AbortSignal.timeout(30000),
       });
       if (!res.ok) {
-        retryable = res.status === 429 || res.status >= 500;
+        retryable = res.status === 403 || res.status === 408 || res.status === 429 || res.status >= 500;
         throw new Error(`Product Hunt feed HTTP ${res.status} (${url})`);
       }
       const entries = parseAtomFeed(await res.text());
@@ -547,6 +564,9 @@ export function updateListing(previous, posts, { now, complete, feeds = [] }) {
     belowKnown: 0,
     noKnownInFeed: 0,
     feedsWithoutKnown: knownKeys.size > 0 ? feedViews.filter((f) => !f.hasKnown).length : 0,
+    // Entries carried over from the previous snapshot that survived retention.
+    // 0 while a registry that used to hold posts means nothing can be dated.
+    registrySize: knownKeys.size,
   };
   for (const p of posts) {
     const key = listingKey(p);
@@ -598,8 +618,18 @@ export function listingHealth({ previous, listing, complete, now, aiCategoryFilt
     else if (hours !== null && hours >= LISTING_STALE_HOURS) alerts.push(`no complete fetch for ${hours} h — the listing baseline is frozen and new launches cannot be dated (${why})`);
     else warnings.push(`this fetch was partial (${why}); the baseline did not move`);
   }
+  if (carried && listing.stats.registrySize === 0) {
+    alerts.push(
+      "the carried listing registry is empty (every entry aged out, so the fetch has been down for days) — nothing can be dated by listing until two complete fetches have run",
+    );
+  }
+  if (!previous) {
+    warnings.push("no previous snapshot was given — the registry starts empty, so this fetch cannot date any launch by listing");
+  }
   if (listing.stats.feedsWithoutKnown > 0) {
-    alerts.push(`${listing.stats.feedsWithoutKnown} feed(s) had no post the registry knows (id format change?) — their new posts were not dated`);
+    alerts.push(
+      `${listing.stats.feedsWithoutKnown} feed(s) had no post the registry knows — their new posts were not dated (the feed rolled past the whole registry during a gap, or the id format changed)`,
+    );
   }
   if (listing.stats.dated > LISTING_DATED_WARN) {
     warnings.push(`${listing.stats.dated} posts were dated by listing at once — check the feed`);
