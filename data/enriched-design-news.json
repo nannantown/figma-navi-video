@@ -1,37 +1,37 @@
 {
-  "date": "2026-09-16",
+  "date": "2026-09-17",
   "discovery": {
     "method": "news-en",
-    "description": "英語デザインメディア (Smashing) の直近論考から、駆け出しが今日試せる実践に落ちるものを抽出",
+    "description": "英語デザインメディア Smashing の直近 UX ROI 論を、駆け出しの応募作品に落とせる指標訴求として翻案",
     "sources": [
-      "https://www.smashingmagazine.com/articles/",
-      "https://www.rachelmcconnell.me/leadingcontentdesign"
+      "https://www.smashingmagazine.com/2026/09/building-ux-roi-case-survives-boardroom/",
+      "https://www.smashingmagazine.com/articles/"
     ],
-    "query": "Rachel McConnell content designer Smashing 2026 process stages diagram",
-    "freshness_hours": 120
+    "query": "Smashing Magazine Alex Williams UX ROI 2026 September case for design investment",
+    "freshness_hours": 144
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Smashing 9/11 Rachel McConnellがContent Design全工程参加論 駆け出しは文言先行でUI精度アップ",
-      "description": "Content Designerは最終工程の校正係じゃない、Rachel McConnellが Smashing 9/11 で全工程参加の設計図を公開。",
-      "detail": "発見・定義・設計・提供の4段階に、リサーチ設問・情報設計・マイクロコピー・A/Bテスト文言まで役割を配置しています。UIより先に文言を書くと画面設計の迷いが半減し、駆け出しでも構造で語れる作品に化けます。",
-      "narration": "Content Designerは最終工程の校正係じゃない。Rachel McConnellが9月11日のSmashingで全工程参加の設計図を公開しました。",
-      "tags": ["Smashing", "Content Design", "文言先行"],
+      "title": "Smashing 9/11 Alex Williams UX ROI論 駆け出しの応募作品に効果指標1行で通過率アップ",
+      "description": "駆け出しの応募作品、UIの見た目説明だけだと落選します。",
+      "detail": "KPI設定、費用計算、因果検証、ボードルーム提示の4工程で、UX案を効果として語る流れです。UIの見た目でなく指標で語れば、応募先も投資として評価しやすくなります。",
+      "narration": "駆け出しの応募作品、UIの見た目説明だけだと落選します。Alex Williamsが9月11日のSmashingで、UXを効果で語る型を公開しました。",
+      "tags": ["Smashing", "UX ROI", "応募作品"],
       "narration_sections": {
-        "hook": "Content Designerは最終工程の校正係じゃない。Rachel McConnellが9月11日のSmashingで全工程参加の設計図を公開しました。",
-        "origin": "発見・定義・設計・提供の4段階に、リサーチ設問・情報設計・マイクロコピー・A/Bテスト文言まで役割を配置しています。UIより先に文言を書くと画面設計の迷いが半減し、駆け出しでも構造で語れる作品に化けます。実案件想定の作例にも直効きです。",
-        "recommend": "今日のポートフォリオ、ボタン文言と空状態のメッセージから先に埋めて、UIの完成度を跳ね上げましょう。"
+        "hook": "駆け出しの応募作品、UIの見た目説明だけだと落選します。Alex Williamsが9月11日のSmashingで、UXを効果で語る型を公開しました。",
+        "origin": "KPI設定、費用計算、因果検証、ボードルーム提示の4工程で、UX案を効果として語る流れです。UIの見た目でなく指標で語れば、応募先も投資として評価しやすくなります。駆け出しは離脱率仮3割減、フォーム完了仮1.4倍と一言添えるだけで通過率が跳ね上がります。",
+        "recommend": "今日、ポートフォリオの各作例に「狙った指標」を1行足しましょう。数字は仮でOK、意図を語れる駆け出しになれます。"
       },
       "section_titles": {
-        "hook": "文言先で設計精度",
-        "origin": "4段階で役割配置",
-        "recommend": "今日試す文言先行"
+        "hook": "UX案は指標で語る",
+        "origin": "4工程の効果訴求",
+        "recommend": "作例に効果指標1行"
       },
       "section_descriptions": {
-        "hook": "Smashing 9/11 公開 Content Designer 全工程参加論",
-        "origin": "発見・定義・設計・提供の4段階で文言に役割を配置",
-        "recommend": "ボタン文言と空状態を先に決めてUI完成度を上げる"
+        "hook": "Smashing 9/11 UX ROI型を公開",
+        "origin": "KPI・費用計算・因果・提示の4工程で効果訴求",
+        "recommend": "各作例に狙った指標を1行足して選考通過率アップ"
       }
     }
   ]
