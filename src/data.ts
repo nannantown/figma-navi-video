@@ -10,7 +10,7 @@ export interface Tool {
   /** "Product Hunt 新着" (pickup) / "Product Hunt 9/13 総合9位" (ranking) */
   sourceNote: string;
   name: string;
-  /** 一言: what it does (10-24 chars) */
+  /** 一言: what it does (6-30 chars, 10-24 preferred) */
   description: string;
   /** 誰向け */
   who: string;
@@ -22,6 +22,18 @@ export interface Tool {
   /** Path under public/ for staticFile(), or null for a text-only card */
   image?: string | null;
   imageSize?: { width: number; height: number } | null;
+  // Written by toVideoTools() as the source of the card; the captions and the
+  // logo fetcher read them, the components do not.
+  /** Product Hunt page, no trailing slash */
+  phUrl?: string;
+  /** Last path segment of phUrl */
+  slug?: string;
+  /** Product Hunt rank — always null in pickup mode */
+  phRank?: number | null;
+  /** The feed's <published>: when the post was created, not when it launched */
+  phPublishedAt?: string | null;
+  /** Logo / screenshot candidate, before fetch-tool-images downloads it */
+  imageUrl?: string | null;
 }
 
 export interface VideoMeta {
@@ -40,6 +52,10 @@ export interface VideoMeta {
   sourceLabel: string;
   /** Opening pill: "Product Hunt 9/13 の AI ツール上位" / "Product Hunt の新着から厳選" */
   openingSourceLabel: string;
+  /** "新作AIツール3選" — used by generate-caption.mjs, not by the components */
+  titleTag?: string;
+  /** How the tools were found (discovery.method), for the PDCA report */
+  method?: string | null;
 }
 
 // Preview-only data for Remotion Studio. Fictional tools on purpose.
