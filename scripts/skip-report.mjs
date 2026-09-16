@@ -81,10 +81,17 @@ export function precedingSkipStreak(videos, date, { maxLookback = 30 } = {}) {
 /**
  * null while pausing is still normal; otherwise the annotation and summary for
  * a run that must go red.
+ *
+ * `allowUntil` (repo variable ALLOW_SKIP_STREAK_UNTIL, YYYY-MM-DD) acknowledges
+ * a stretch where Product Hunt really is quiet — a long holiday — without
+ * leaving a red run nobody can clear. It expires on its own.
  */
-export function skipStreakProblem(videos, skip) {
+export function skipStreakProblem(videos, skip, { allowUntil = "" } = {}) {
   const streak = precedingSkipStreak(videos, skip?.date) + 1; // today included
   if (streak < SKIP_STREAK_LIMIT) return null;
+  if (/^\d{4}-\d{2}-\d{2}$/.test(allowUntil) && String(skip?.date) <= allowUntil) {
+    return { streak, acknowledged: true, allowUntil };
+  }
   const title = escapeWorkflowProperty(`新作AIツール ${streak} 日連続で休止`);
   const message = escapeWorkflowData(
     `${skip.date} まで ${streak} 日続けて投稿がありません。Product Hunt に新作が無い日が続くことは通常ないので、` +
@@ -112,8 +119,18 @@ export function reportSkip(skip, { env = process.env, log = console.log, append 
 
 /** Report a run of paused days; returns true when the run must fail. */
 export function reportSkipStreak(videos, skip, { env = process.env, log = console.error, append = appendFileSync } = {}) {
-  const problem = skipStreakProblem(videos, skip);
+  const problem = skipStreakProblem(videos, skip, { allowUntil: env.ALLOW_SKIP_STREAK_UNTIL || "" });
   if (!problem) return false;
+  if (problem.acknowledged) {
+    log(
+      `::warning title=${escapeWorkflowProperty(`新作AIツール ${problem.streak} 日連続で休止（承知済み）`)}::` +
+        escapeWorkflowData(
+          `ALLOW_SKIP_STREAK_UNTIL=${problem.allowUntil} が設定されているため、この連続休止では run を赤くしません。` +
+            `この日付を過ぎたら通常どおり赤くなります（変数を消すか日付を進めてください）。`
+        )
+    );
+    return false;
+  }
   log(problem.command);
   if (env.GITHUB_STEP_SUMMARY) append(env.GITHUB_STEP_SUMMARY, problem.summary + "\n");
   return true;

@@ -184,14 +184,13 @@ const POPULARITY_RE = new RegExp(
     "評価が高い",
     "高評価",
     "支持を集め",
-    // English: word boundaries, so a name like "Hotjar" is not caught by "hot".
-    "\\btrending\\b",
-    "\\bviral\\b",
-    "\\bpopular\\b",
-    "\\bhot\\b",
+    // English claims, spelled out.
     "\\bgoing\\s+viral\\b",
     "\\bmost\\s+popular\\b",
     "\\bfastest[-\\s]?growing\\b",
+    // Bare English popularity words are handled by hasEnglishPopularityClaim:
+    // the "is the next word capitalised" test has to be case sensitive, and
+    // this expression runs with the i flag.
   ].join("|"),
   "iu"
 );
@@ -298,6 +297,23 @@ export function hasProductHuntClaims(value) {
   return typeof value === "string" && PH_CLAIM_RE.test(normalizeForChecks(value));
 }
 
+// "trending" / "viral" / "popular" / "hot" on their own read as a claim, but
+// the same word in front of another capitalised word is part of a product's
+// name we are quoting: "Popular Science の記事を要約", "Hot Reload に対応",
+// "Viral Loops という名前のツール". Word boundaries keep Hotjar, Populate and
+// Shortcut out of it entirely.
+const ENGLISH_POPULARITY_RE = /\b(?:trending|viral|popular|hot)\b(\s+\S+)?/giu;
+const STARTS_CAPITAL_RE = /^[A-Z]/; // deliberately case sensitive
+
+export function hasEnglishPopularityClaim(text) {
+  for (const match of String(text).matchAll(ENGLISH_POPULARITY_RE)) {
+    const next = (match[1] || "").trim();
+    if (next && STARTS_CAPITAL_RE.test(next)) continue; // a product's name
+    return true;
+  }
+  return false;
+}
+
 /**
  * Popularity and momentum words (話題 / 人気 / 注目 / 定番 / 急成長 / バズ /
  * 殿堂 / 最も / みんなが / 評価が高い / trending / viral / popular / hot).
@@ -307,7 +323,9 @@ export function hasProductHuntClaims(value) {
  * name is the one exception: it is copied as it is and must never be rewritten.
  */
 export function hasPopularityWords(value) {
-  return typeof value === "string" && POPULARITY_RE.test(normalizeForChecks(value));
+  if (typeof value !== "string") return false;
+  const norm = normalizeForChecks(value);
+  return POPULARITY_RE.test(norm) || hasEnglishPopularityClaim(norm);
 }
 
 /**

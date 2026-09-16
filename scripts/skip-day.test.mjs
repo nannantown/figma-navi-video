@@ -242,3 +242,29 @@ test("resolveRecordDate takes the day from --date or RECORD_DATE, and refuses ju
   assert.throws(() => resolveRecordDate({ argv: ["node", "x", "--date=yesterday"], env: {}, now }), /YYYY-MM-DD/);
   assert.throws(() => resolveRecordDate({ argv: ["node", "x"], env: { RECORD_DATE: "2026/09/14" }, now }), /YYYY-MM-DD/);
 });
+
+test("an acknowledged stretch of paused days warns instead of failing, and expires", () => {
+  const videos = [skipOn("2026-09-15"), skipOn("2026-09-14")];
+  const lines = [];
+  const log = (l) => lines.push(l);
+
+  // Without the acknowledgement the run fails.
+  assert.equal(reportSkipStreak(videos, skip, { env: {}, log, append: () => {} }), true);
+  assert.match(lines.at(-1), /^::error title=/);
+
+  // Acknowledged: a warning, and the run stays green.
+  assert.equal(
+    reportSkipStreak(videos, skip, { env: { ALLOW_SKIP_STREAK_UNTIL: "2026-09-30" }, log, append: () => {} }),
+    false
+  );
+  assert.match(lines.at(-1), /^::warning title=/);
+  assert.match(lines.at(-1), /承知済み/);
+
+  // Expired: back to failing.
+  assert.equal(
+    reportSkipStreak(videos, skip, { env: { ALLOW_SKIP_STREAK_UNTIL: "2026-09-15" }, log, append: () => {} }),
+    true
+  );
+  // Junk in the variable must not disable the guard.
+  assert.equal(reportSkipStreak(videos, skip, { env: { ALLOW_SKIP_STREAK_UNTIL: "forever" }, log, append: () => {} }), true);
+});

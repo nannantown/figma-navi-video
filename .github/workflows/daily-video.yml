@@ -65,6 +65,10 @@ jobs:
           ENRICHED_PATH: ${{ env.VERIFY_RUN == '1' && 'data/samples/enriched-ai-tools.pickup.sample.json' || '' }}
           PH_SNAPSHOT_PATH: ${{ env.VERIFY_RUN == '1' && 'data/samples/product-hunt-daily.pickup.sample.json' || '' }}
           ALLOW_STALE_DATE: ${{ env.VERIFY_RUN }}
+          # Two paused days in a row fail the run. Set the repo variable
+          # ALLOW_SKIP_STREAK_UNTIL to a YYYY-MM-DD date to acknowledge a
+          # genuinely quiet stretch (a long holiday); it expires by itself.
+          ALLOW_SKIP_STREAK_UNTIL: ${{ vars.ALLOW_SKIP_STREAK_UNTIL }}
           # Platform credentials only reach production runs; a verification
           # run cannot post even if a branch's pipeline ignored DRY_RUN.
           # YouTube

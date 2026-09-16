@@ -298,10 +298,17 @@ test("popularity claims are blocked even when Product Hunt is not named", () => 
 });
 
 test("a product's own name keeps its popularity words, but never ranking or vote claims", () => {
-  // Names are copied verbatim — we never rewrite them.
-  for (const name of ["Hot Reload AI", "Viral Loops", "Popular Science Bot", "話題メーカー"]) {
+  // Names are copied verbatim — we never rewrite them. These read as claims
+  // anywhere else (a Japanese word, or an English one with nothing capitalised
+  // after it), so only the name field may keep them.
+  for (const name of ["話題メーカー", "人気ランチ", "Viral", "Trending"]) {
     assert.equal(hasPickupForbiddenWords(name, { isProductName: true }), false, name);
     assert.equal(hasPickupForbiddenWords(name), true, name);
+  }
+  // These read as names wherever they appear, so nothing flags them.
+  for (const name of ["Hot Reload AI", "Viral Loops", "Popular Science Bot"]) {
+    assert.equal(hasPickupForbiddenWords(name, { isProductName: true }), false, name);
+    assert.equal(hasPickupForbiddenWords(name), false, name);
   }
   // Ranking words and vote claims still exclude the tool, name or not.
   for (const name of ["Top10 Planner", "No.1 Writer"]) {
@@ -310,5 +317,21 @@ test("a product's own name keeps its popularity words, but never ranking or vote
   // A word boundary keeps ordinary names out of the English list.
   for (const name of ["Hotjar", "Shortcut", "Populate"]) {
     assert.equal(hasPickupForbiddenWords(name), false, name);
+  }
+});
+
+test("quoting an English product name is not a popularity claim", () => {
+  // The next word is capitalised, so this is a name, not a claim about it.
+  for (const text of [
+    "Popular Science の記事を要約できます。",
+    "Hot Reload に対応しています。",
+    "Viral Loops という名前のツールと連携します。",
+    "Product Hunt の新着から選んだ",
+  ]) {
+    assert.equal(hasPickupForbiddenWords(text), false, text);
+  }
+  // A bare word, or one followed by ordinary lowercase text, is still a claim.
+  for (const text of ["trending now", "hot right now", "viral", "a popular choice"]) {
+    assert.equal(hasPickupForbiddenWords(text), true, text);
   }
 });

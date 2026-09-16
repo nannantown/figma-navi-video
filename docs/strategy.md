@@ -10,6 +10,8 @@
 
 取得は毎日 3 回（14:43 / 18:17 JST と、予備の 03:47 JST）。14:43 の回は太平洋日が変わる直前の記録で、翌日分を「新作」と判定するための基準になる。
 
+**休止が 2 日続くと `daily-video.yml` の run が赤くなる**（供給が止まったサインなので、取得ワークフローと掲載の記録を見る）。連休などで本当に新作が出ない時期だと分かっているときは、リポジトリ変数 `ALLOW_SKIP_STREAK_UNTIL` に `YYYY-MM-DD` を入れるとその日まで赤くならない（警告は出る。日付を過ぎれば自動で元に戻る）。
+
 朝ルーチンの手順は [routine-prompt.md](routine-prompt.md)、データ仕様は [enrichment-schema.md](enrichment-schema.md)、キャプション・説明文の案は [channel-copy.md](channel-copy.md) にある。
 
 ## 試行 #1 の概要
