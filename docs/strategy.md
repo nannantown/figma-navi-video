@@ -8,6 +8,8 @@
 >
 > **オーナー回答（2026-09-16）**: **Figma 発信は終了**。このリポの IG / YT は「今日の新作 AI ツール pickup（Product Hunt 公式 Atom フィード）」に完全移行する（デザイン / Figma ニュース型は末尾と [strategy-archive/2026-04-design-news.md](strategy-archive/2026-04-design-news.md) に記録として残す。Figmaナビ販促を前提にした記述は残さない）。YouTube チャンネル名「HAL- AI情報カフェ」(@hal-ai-9000) は Figma 色がなく AI 汎用なので**維持**し、チャンネル説明文と IG プロフィールの文章だけ新ジャンルに差し替える（案は [channel-copy.md](channel-copy.md)、変更はオーナーが YouTube Studio / Instagram で）。IG のハンドルは未記録のまま（オーナー確認待ち。推測で書かない）。
 
+取得は毎日 3 回（15:00 / 18:17 JST と、予備の 03:47 JST）。15:00 の回は太平洋日が変わる直前の記録で、翌日分を「新作」と判定するための基準になる。
+
 朝ルーチンの手順は [routine-prompt.md](routine-prompt.md)、データ仕様は [enrichment-schema.md](enrichment-schema.md)、キャプション・説明文の案は [channel-copy.md](channel-copy.md) にある。
 
 ## 試行 #1 の概要

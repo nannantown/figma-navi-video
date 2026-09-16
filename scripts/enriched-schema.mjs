@@ -12,7 +12,7 @@
  * Human-readable spec: docs/enrichment-schema.md
  */
 
-import { isNewLaunch, freshSince, expectedRankingDate, routineAnchor } from "./pacific-time.mjs";
+import { isNewLaunch, freshSince, listingWindowStart, expectedRankingDate, routineAnchor } from "./pacific-time.mjs";
 
 export const GENRE = "ai-tools-top5";
 export const TRIAL = 1;
@@ -724,6 +724,9 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true, s
   }
 
   const windowStart = dateOk ? freshSince(data.date).toISOString() : null;
+  // Listing evidence is allowed to come from the fetch just before the window
+  // opened (see LISTING_GRACE_HOURS), so the two limits differ.
+  const listingWindow = dateOk ? listingWindowStart(data.date).toISOString() : null;
   const featured = dateOk ? recentlyFeatured(history, data.date) : new Map();
   const sourceHosts = (Array.isArray(discovery?.sources) ? discovery.sources : [])
     .map((s) => (typeof s === "string" ? hostOf(s) : null))
@@ -811,7 +814,7 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true, s
     } else if (dateOk && !isNewLaunch({ publishedAt: t.ph_published_at, listedAfter }, data.date)) {
       errors.push(
         listedAfter
-          ? `${at}.ph_published_at ${t.ph_published_at} and ph_listed_after ${listedAfter} are both before ${windowStart}: ${at} is not a new launch for ${data.date}`
+          ? `${at}.ph_published_at ${t.ph_published_at} is before ${windowStart} and ph_listed_after ${listedAfter} is before ${listingWindow}: ${at} is not a new launch for ${data.date}`
           : `${at}.ph_published_at ${t.ph_published_at} is not a new launch for ${data.date} (must be at or after ${windowStart})`
       );
     }

@@ -143,7 +143,9 @@ test("a feed post created long before its launch is new when the feed listed it 
 
   // Listed after a fetch taken before the window: the launch may be older than 48 h.
   const early = pickup(3, { ph_published_at: created, ph_listed_after: "2026-09-12T21:30:00.000Z" });
-  assert.match(errorsOf(early), /ph_published_at 2026-08-31T04:01:15-07:00 and ph_listed_after 2026-09-12T21:30:00.000Z are both before 2026-09-13T07:00:00.000Z: tools\[0\] is not a new launch for 2026-09-15/);
+  // The two limits differ: the publish time uses the window, the listing time
+  // is allowed LISTING_GRACE_HOURS before it (2026-09-13T04:00Z here).
+  assert.match(errorsOf(early), /ph_published_at 2026-08-31T04:01:15-07:00 is before 2026-09-13T07:00:00.000Z and ph_listed_after 2026-09-12T21:30:00.000Z is before 2026-09-13T04:00:00.000Z: tools\[0\] is not a new launch for 2026-09-15/);
   assert.match(errorsOf(pickup(3, { ph_listed_after: "yesterday" })), /ph_listed_after must be an ISO 8601 time or null/);
   assert.deepEqual(validateEnriched(pickup(3, { ph_listed_after: null }), { today: "2026-09-15" }).errors, []);
 });
