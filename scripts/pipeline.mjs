@@ -15,7 +15,8 @@ import { execSync } from "child_process";
 import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
-import { reportSkip } from "./skip-report.mjs";
+import { reportSkip, reportSkipStreak } from "./skip-report.mjs";
+import { loadHistory } from "./history.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
@@ -90,6 +91,12 @@ function main() {
     if (!dryRun) {
       console.log(`\n=== Record Skip Day ===`);
       runSafe("node scripts/record-upload.mjs --skip", "record-upload --skip");
+    }
+    // Pausing twice in a row is not "no launches today" any more — it means the
+    // supply stopped. Fail the run so somebody looks, instead of staying green
+    // with nothing posted.
+    if (reportSkipStreak(loadHistory(rootDir)?.videos || [], skip)) {
+      process.exitCode = 1;
     }
     return;
   }

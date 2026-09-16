@@ -1,7 +1,17 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { buildSkipEntry, upsertVideo, postedVideos, isSkipEntry } from "./history.mjs";
-import { skipWarningCommand, skipSummaryMarkdown, reportSkip, escapeWorkflowData, escapeWorkflowProperty } from "./skip-report.mjs";
+import {
+  skipWarningCommand,
+  skipSummaryMarkdown,
+  reportSkip,
+  escapeWorkflowData,
+  escapeWorkflowProperty,
+  precedingSkipStreak,
+  skipStreakProblem,
+  reportSkipStreak,
+  SKIP_STREAK_LIMIT,
+} from "./skip-report.mjs";
 import { buildPostEntry } from "./record-upload.mjs";
 import { renderMarkdown, trialStatus, summarizeWindow } from "./pdca-summary.mjs";
 
@@ -94,4 +104,48 @@ test("reportSkip prints the annotation and appends the job summary only inside A
   const local = [];
   reportSkip(skip, { env: {}, log: () => {}, append: (...args) => local.push(args) });
   assert.equal(local.length, 0);
+});
+
+// --- Two paused days in a row must fail the run ------------------------------
+const skipOn = (date) => buildSkipEntry({ date, genre: "ai-tools-top5", trial: 1, skip: { ...skip, date } });
+const postedOn = (date) => ({ date, genre: "ai-tools-top5", videoId: "v", instagram: { mediaId: "m" }, tools: [] });
+
+test("precedingSkipStreak counts paused days back to the last post", () => {
+  const videos = [postedOn("2026-09-12"), skipOn("2026-09-13"), skipOn("2026-09-14"), skipOn("2026-09-15")];
+  assert.equal(precedingSkipStreak(videos, "2026-09-16"), 3);
+  assert.equal(precedingSkipStreak([postedOn("2026-09-15")], "2026-09-16"), 0);
+  // A day with no entry at all stops the count: that run never finished, so it
+  // went red on its own.
+  assert.equal(precedingSkipStreak([skipOn("2026-09-14")], "2026-09-16"), 0);
+  assert.equal(precedingSkipStreak([], "2026-09-16"), 0);
+});
+
+test("one paused day stays a warning; the second one is an error", () => {
+  assert.equal(SKIP_STREAK_LIMIT, 2);
+  assert.equal(skipStreakProblem([postedOn("2026-09-15")], skip), null);
+
+  const problem = skipStreakProblem([skipOn("2026-09-15")], skip);
+  assert.ok(problem, "a second paused day must be reported");
+  assert.equal(problem.streak, 2);
+  assert.match(problem.command, /^::error title=/);
+  assert.match(problem.command, /2 日連続で休止/);
+  assert.match(problem.command, /fetch-product-hunt\.yml/);
+  assert.match(problem.summary, /投稿ゼロ/);
+});
+
+test("reportSkipStreak writes the annotation and the job summary only when it fails", () => {
+  const lines = [];
+  const appended = [];
+  const env = { GITHUB_STEP_SUMMARY: "/tmp/summary" };
+  const log = (l) => lines.push(l);
+  const append = (_f, body) => appended.push(body);
+
+  assert.equal(reportSkipStreak([postedOn("2026-09-15")], skip, { env, log, append }), false);
+  assert.deepEqual(lines, []);
+  assert.deepEqual(appended, []);
+
+  assert.equal(reportSkipStreak([skipOn("2026-09-15"), skipOn("2026-09-14")], skip, { env, log, append }), true);
+  assert.equal(lines.length, 1);
+  assert.match(lines[0], /3 日連続で休止/);
+  assert.equal(appended.length, 1);
 });
