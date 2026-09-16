@@ -43,15 +43,26 @@ function localDate(now = new Date()) {
  * today's real one) and leave the real day unrecorded.
  *
  * `--date=2026-09-17` or `--date=20260917`, or RECORD_DATE with the same forms.
- * Anything else is a hard error: guessing here corrupts the history.
+ * Anything else — including a date that does not exist, like 2026-13-45 — is a
+ * hard error: guessing here corrupts the history.
  */
 export function resolveRecordDate({ argv = process.argv, env = process.env, now = new Date() } = {}) {
   const arg = argv.find((a) => typeof a === "string" && a.startsWith("--date="));
   const raw = (arg ? arg.slice("--date=".length) : env.RECORD_DATE || "").trim();
   if (!raw) return localDate(now);
-  if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) return raw;
-  if (/^\d{8}$/.test(raw)) return `${raw.slice(0, 4)}-${raw.slice(4, 6)}-${raw.slice(6, 8)}`;
-  throw new Error(`record-upload: --date / RECORD_DATE must be YYYY-MM-DD or YYYYMMDD, got ${JSON.stringify(raw)}`);
+  const iso = /^\d{4}-\d{2}-\d{2}$/.test(raw)
+    ? raw
+    : /^\d{8}$/.test(raw)
+      ? `${raw.slice(0, 4)}-${raw.slice(4, 6)}-${raw.slice(6, 8)}`
+      : null;
+  // 2026-13-45 does not parse at all, 2026-02-30 rolls over into March: parse
+  // it and compare the result back.
+  const parsed = iso ? Date.parse(`${iso}T00:00:00Z`) : NaN;
+  const real = Number.isFinite(parsed) && new Date(parsed).toISOString().slice(0, 10) === iso;
+  if (!real) {
+    throw new Error(`record-upload: --date / RECORD_DATE must be an existing day as YYYY-MM-DD or YYYYMMDD, got ${JSON.stringify(raw)}`);
+  }
+  return iso;
 }
 
 /** History entry for a posted day. Either platform result is enough. */

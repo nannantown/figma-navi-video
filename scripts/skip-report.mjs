@@ -16,6 +16,10 @@ import { isSkipEntry } from "./history.mjs";
 // not Product Hunt — and until now the run stayed green while nothing posted.
 export const SKIP_STREAK_LIMIT = 2;
 
+// An acknowledgement may look at most this far ahead of the paused day. Longer
+// than a fortnight is not "a quiet stretch", it is hiding a stopped fetch.
+export const ACK_MAX_DAYS = 14;
+
 export function escapeWorkflowData(s) {
   return String(s ?? "").replace(/%/g, "%25").replace(/\r/g, "%0D").replace(/\n/g, "%0A");
 }
@@ -84,18 +88,25 @@ export function precedingSkipStreak(videos, date, { maxLookback = 30 } = {}) {
  *
  * `allowUntil` (repo variable ALLOW_SKIP_STREAK_UNTIL, YYYY-MM-DD) acknowledges
  * a stretch where Product Hunt really is quiet — a long holiday — without
- * leaving a red run nobody can clear. It expires on its own.
+ * leaving a red run nobody can clear. It expires on its own, and it is capped
+ * at ACK_MAX_DAYS: a far-future date would otherwise hide a broken fetch
+ * indefinitely, which is exactly what this guard exists to catch.
  */
 export function skipStreakProblem(videos, skip, { allowUntil = "" } = {}) {
   const streak = precedingSkipStreak(videos, skip?.date) + 1; // today included
   if (streak < SKIP_STREAK_LIMIT) return null;
+  let ackTooFar = "";
   if (/^\d{4}-\d{2}-\d{2}$/.test(allowUntil) && String(skip?.date) <= allowUntil) {
-    return { streak, acknowledged: true, allowUntil };
+    if (allowUntil <= addDaysIso(skip.date, ACK_MAX_DAYS)) return { streak, acknowledged: true, allowUntil };
+    ackTooFar = allowUntil;
   }
   const title = escapeWorkflowProperty(`新作AIツール ${streak} 日連続で休止`);
   const message = escapeWorkflowData(
     `${skip.date} まで ${streak} 日続けて投稿がありません。Product Hunt に新作が無い日が続くことは通常ないので、` +
-      `取得（fetch-product-hunt.yml）が止まっていないか、掲載の記録（listing）が壊れていないかを確認してください。今日の理由: ${skip.reason}`
+      `取得（fetch-product-hunt.yml）が止まっていないか、掲載の記録（listing）が壊れていないかを確認してください。今日の理由: ${skip.reason}` +
+      (ackTooFar
+        ? ` / ALLOW_SKIP_STREAK_UNTIL=${ackTooFar} は ${ACK_MAX_DAYS} 日より先なので無視しました（${addDaysIso(skip.date, ACK_MAX_DAYS)} 以内の日付を入れてください）`
+        : "")
   );
   return {
     streak,

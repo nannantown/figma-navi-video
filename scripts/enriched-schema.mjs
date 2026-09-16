@@ -298,17 +298,20 @@ export function hasProductHuntClaims(value) {
 }
 
 // "trending" / "viral" / "popular" / "hot" on their own read as a claim, but
-// the same word in front of another capitalised word is part of a product's
-// name we are quoting: "Popular Science の記事を要約", "Hot Reload に対応",
-// "Viral Loops という名前のツール". Word boundaries keep Hotjar, Populate and
-// Shortcut out of it entirely.
-const ENGLISH_POPULARITY_RE = /\b(?:trending|viral|popular|hot)\b(\s+\S+)?/giu;
+// the same word inside a run of proper nouns is a product's name we are
+// quoting: "Popular Science の記事を要約", "Hot Reload に対応", "Viral Loops と
+// いう名前のツール". Both words have to be capitalised — "popular AIツール" and
+// "hot Tips" are claims with a capitalised word behind them, not names. Word
+// boundaries keep Hotjar, Populate and Shortcut out of it entirely.
+const ENGLISH_POPULARITY_RE = /\b(trending|viral|popular|hot)\b(\s+\S+)?/giu;
 const STARTS_CAPITAL_RE = /^[A-Z]/; // deliberately case sensitive
 
 export function hasEnglishPopularityClaim(text) {
   for (const match of String(text).matchAll(ENGLISH_POPULARITY_RE)) {
-    const next = (match[1] || "").trim();
-    if (next && STARTS_CAPITAL_RE.test(next)) continue; // a product's name
+    const word = match[1] || "";
+    const next = (match[2] || "").trim();
+    // A product's name: capitalised word followed by another capitalised word.
+    if (STARTS_CAPITAL_RE.test(word) && next && STARTS_CAPITAL_RE.test(next)) continue;
     return true;
   }
   return false;

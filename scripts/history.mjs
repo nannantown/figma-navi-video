@@ -84,6 +84,10 @@ const isEmptyValue = (v) =>
  * with that would delete the YouTube id and the stats for good — and fetch-stats
  * only refreshes entries that have a videoId, so the day would silently drop out
  * of the YouTube median too.
+ *
+ * The trade-off is deliberate: merging can never *clear* a field. A re-run that
+ * wants to empty discovery or title has to edit data/performance-history.json,
+ * or call upsertVideo without `merge` (what the daily run does).
  */
 export function mergeVideoEntry(existing, next) {
   if (!existing) return next;

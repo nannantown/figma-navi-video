@@ -268,3 +268,35 @@ test("an acknowledged stretch of paused days warns instead of failing, and expir
   // Junk in the variable must not disable the guard.
   assert.equal(reportSkipStreak(videos, skip, { env: { ALLOW_SKIP_STREAK_UNTIL: "forever" }, log, append: () => {} }), true);
 });
+
+test("an acknowledgement further than a fortnight ahead is ignored", () => {
+  const videos = [skipOn("2026-09-15")];
+  const lines = [];
+  const log = (l) => lines.push(l);
+
+  // 14 days ahead is still accepted.
+  assert.equal(
+    reportSkipStreak(videos, skip, { env: { ALLOW_SKIP_STREAK_UNTIL: "2026-09-30" }, log, append: () => {} }),
+    false
+  );
+  // 15 days is not: a far-future date would hide a stopped fetch for good.
+  assert.equal(
+    reportSkipStreak(videos, skip, { env: { ALLOW_SKIP_STREAK_UNTIL: "2026-10-01" }, log, append: () => {} }),
+    true
+  );
+  assert.match(lines.at(-1), /ALLOW_SKIP_STREAK_UNTIL=2026-10-01 は 14 日より先なので無視/);
+  assert.equal(
+    reportSkipStreak(videos, skip, { env: { ALLOW_SKIP_STREAK_UNTIL: "2099-12-31" }, log, append: () => {} }),
+    true
+  );
+});
+
+test("a date that does not exist is refused", () => {
+  const now = new Date("2026-09-17T09:00:00+09:00");
+  for (const bad of ["2026-13-45", "20261345", "2026-02-30", "20260230"]) {
+    assert.throws(() => resolveRecordDate({ argv: ["node", "x", `--date=${bad}`], env: {}, now }), /existing day/, bad);
+  }
+  // Leap day 2028 exists; 2027 does not have one.
+  assert.equal(resolveRecordDate({ argv: ["node", "x", "--date=2028-02-29"], env: {}, now }), "2028-02-29");
+  assert.throws(() => resolveRecordDate({ argv: ["node", "x", "--date=2027-02-29"], env: {}, now }), /existing day/);
+});

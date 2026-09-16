@@ -331,7 +331,12 @@ test("quoting an English product name is not a popularity claim", () => {
     assert.equal(hasPickupForbiddenWords(text), false, text);
   }
   // A bare word, or one followed by ordinary lowercase text, is still a claim.
-  for (const text of ["trending now", "hot right now", "viral", "a popular choice"]) {
+  for (const text of ["trending now", "hot right now", "viral", "a popular choice", "This tool is popular."]) {
+    assert.equal(hasPickupForbiddenWords(text), true, text);
+  }
+  // A capitalised word AFTER the claim does not make it a name — the claim word
+  // itself has to be capitalised too.
+  for (const text of ["popular AIツール", "trending Figma プラグイン", "hot Tips"]) {
     assert.equal(hasPickupForbiddenWords(text), true, text);
   }
 });
