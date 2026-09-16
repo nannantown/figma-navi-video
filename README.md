@@ -11,7 +11,7 @@
 ## Architecture
 
 ```
-fetch-product-hunt.yml (18:17 JST 前夜 / 03:47 JST 予備。毎時 0・30 分の混雑を避ける)
+fetch-product-hunt.yml (15:00 JST 太平洋日の変わり目の直前 / 18:17 JST 前夜 / 03:47 JST 予備)
   Product Hunt 公式 Atom フィード（PH_SOURCE=feed。main の最新スナップショットから掲載の初出を引き継ぐ。
   掲載の記録が働かないときは保存後にジョブを失敗させて通知）
   → data/product-hunt-daily.json

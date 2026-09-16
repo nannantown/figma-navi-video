@@ -82,7 +82,7 @@ node scripts/pdca-summary.mjs
 
 ### 3. 候補を取得する
 
-**a) スナップショットを読む**: `data/product-hunt-daily.json`（`fetch-product-hunt.yml` が前夜 18:17 と早朝 03:47 JST に公式フィードから更新。GitHub の混雑で 1〜3 時間遅れることがある）。`forVideoDate` が `$TODAY` なら使う。**`fresh: true` の post だけが候補**（`freshSince` がスナップショットに入っている）。このファイルは取得データなので**編集もコミットもしない**。
+**a) スナップショットを読む**: `data/product-hunt-daily.json`（`fetch-product-hunt.yml` が 15:00・18:17 と早朝 03:47 JST に公式フィードから更新。GitHub の混雑で 1〜3 時間遅れることがある）。`forVideoDate` が `$TODAY` なら使う。**`fresh: true` の post だけが候補**（`freshSince` がスナップショットに入っている）。このファイルは取得データなので**編集もコミットもしない**。
 
 - `listingHealth.alerts` か `listingHealth.warnings` に何か入っている日は、掲載の記録（`listedAfter`）がうまく働いていない。候補が少なくなりやすいので、レポートの「気づき」にそのまま一行書く
 
