@@ -8,6 +8,9 @@ on:
         required: false
         default: ""
   push:
+    # main only: this job posts to Instagram for real, and every branch push
+    # would otherwise fire it with the production credentials.
+    branches: [main]
     paths:
       - .retry-ig-trigger
 
@@ -39,23 +42,36 @@ jobs:
         id: date
         env:
           TZ: Asia/Tokyo
+          INPUT_DATE: ${{ inputs.date }}
         run: |
-          DATE="${{ inputs.date }}"
+          DATE="$INPUT_DATE"
           if [ -z "$DATE" ]; then
             DATE=$(date +%Y%m%d)
           fi
-          echo "date=$DATE" >> $GITHUB_OUTPUT
+          case "$DATE" in
+            [0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]) ;;
+            *) echo "::error title=Bad date::date must be YYYYMMDD, got '$DATE'"; exit 1 ;;
+          esac
+          echo "date=$DATE" >> "$GITHUB_OUTPUT"
           echo "Using date: $DATE"
 
       - name: Download video from GitHub Release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DATE: ${{ steps.date.outputs.date }}
         run: |
           mkdir -p output
-          DATE="${{ steps.date.outputs.date }}"
           gh release download "v${DATE}" -p "aitools-${DATE}.mp4" -D output/
           # Cover is optional — older releases may not have it
           gh release download "v${DATE}" -p "aitools-${DATE}-cover.jpg" -D output/ || echo "No cover asset in release"
+
+      # The video comes from a Release, the captions from the working tree. If
+      # they are not the same day, the post would describe tools the video never
+      # shows — stop before anything is uploaded.
+      - name: Guard — captions must belong to the same day as the video
+        env:
+          DATE: ${{ steps.date.outputs.date }}
+        run: node scripts/assert-data-date.mjs "$DATE"
 
       - name: Prepare data + captions
         env:
@@ -70,8 +86,8 @@ jobs:
           INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
           INSTAGRAM_THUMB_OFFSET_MS: "2000"
+          DATE: ${{ steps.date.outputs.date }}
         run: |
-          DATE="${{ steps.date.outputs.date }}"
           # cover_url intentionally omitted: GitHub Release assets are served
           # as Content-Type: application/octet-stream, which IG rejects with
           # code 9004. upload-instagram.mjs falls back to thumb_offset.

@@ -127,7 +127,15 @@ jobs:
         if: steps.fetch.outputs.listing_alert != ''
         env:
           LISTING_ALERT: ${{ steps.fetch.outputs.listing_alert }}
+          # Only the scheduled runs on main have to go red: the listing evidence
+          # is a property of the feed, not of a branch, so failing PR checks for
+          # it would block changes that have nothing to do with the problem.
+          BLOCKING: ${{ github.ref == 'refs/heads/main' && github.event_name != 'pull_request' }}
         run: |
-          echo "::error title=Product Hunt listing::$LISTING_ALERT"
-          echo "New launches can only be dated by their creation time until this is fixed (see docs/strategy.md, 取得モード)."
-          exit 1
+          if [ "$BLOCKING" = "true" ]; then
+            echo "::error title=Product Hunt listing::$LISTING_ALERT"
+            echo "New launches can only be dated by their creation time until this is fixed (see docs/strategy.md, 取得モード)."
+            exit 1
+          fi
+          echo "::warning title=Product Hunt listing::$LISTING_ALERT"
+          echo "Not a scheduled run on main: this is reported but does not fail the check."

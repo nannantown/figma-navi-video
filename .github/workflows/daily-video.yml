@@ -119,5 +119,6 @@ jobs:
             output/aitools-*-cover.jpg
             output/captions.json
             output/trending-data.json
+            output/skip.json
           if-no-files-found: warn
           retention-days: 30

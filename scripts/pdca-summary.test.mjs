@@ -127,3 +127,16 @@ test("renderMarkdown shows IG median + saves and the design-news baseline", () =
   assert.match(md, /\| 2026-09-15 \| ai-tools-top5 \| — \| Resurf \| 120 \| 7 \| 2 \| 3 \|/);
   assert.match(md, /## 直近 30 日に紹介したツール（再掲しない）\n\nResurf/);
 });
+
+test("a late judgment says so in the report, with the day it was due", () => {
+  const videos = [];
+  for (let i = 0; i < 20; i++) {
+    videos.push(video(addDays("2026-09-18", i), { genre: "ai-tools-top5", ig: { views: 30, saved: 0 }, yt: 1 }));
+  }
+  const onTime = renderMarkdown({ videos }, { today: "2026-10-02" });
+  assert.match(onTime, /今日の判定（今日は第 1 期 09-18\.\.10-01 の判定日）/);
+  assert.doesNotMatch(onTime, /本来の判定日/);
+
+  const late = renderMarkdown({ videos }, { today: "2026-10-04" });
+  assert.match(late, /本来の判定日は 2026-10-02 で、その朝のレポートが出ていれば台帳に二重に書かない/);
+});
