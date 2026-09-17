@@ -26,10 +26,10 @@ const historyPath = join(__dirname, "..", "data", "performance-history.json");
 
 export const TRIAL_DAYS = 14;
 // Planned first post of the new format: the branch is merged after the
-// 2026-09-16 daily run (that morning still posted the old format), so the first
-// new video is 2026-09-17. The real start is the first posted ai-tools-top5 day
-// in performance-history.json.
-export const PLANNED_START = "2026-09-17";
+// 2026-09-17 daily run (that morning still posted the old format), so the first
+// new video is 2026-09-18. The real start is the first posted ai-tools-top5 day
+// in performance-history.json; this date only matters until that post exists.
+export const PLANNED_START = "2026-09-18";
 export const MIN_SAMPLES = 7;
 // A judgment that was missed on its day stays due for this many more mornings.
 const JUDGMENT_GRACE_DAYS = 2;
