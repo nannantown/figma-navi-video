@@ -298,17 +298,12 @@ test("popularity claims are blocked even when Product Hunt is not named", () => 
 });
 
 test("a product's own name keeps its popularity words, but never ranking or vote claims", () => {
-  // Names are copied verbatim — we never rewrite them. These read as claims
-  // anywhere else (a Japanese word, or an English one with nothing capitalised
-  // after it), so only the name field may keep them.
-  for (const name of ["話題メーカー", "人気ランチ", "Viral", "Trending"]) {
+  // Names are copied verbatim — we never rewrite them. Outside the name field
+  // the same words are claims: a Japanese one always, an English one unless it
+  // sits inside the tool's own name written whole (next test).
+  for (const name of ["話題メーカー", "人気ランチ", "Viral", "Trending", "Hot Reload AI", "Viral Loops", "Popular Science Bot"]) {
     assert.equal(hasPickupForbiddenWords(name, { isProductName: true }), false, name);
     assert.equal(hasPickupForbiddenWords(name), true, name);
-  }
-  // These read as names wherever they appear, so nothing flags them.
-  for (const name of ["Hot Reload AI", "Viral Loops", "Popular Science Bot"]) {
-    assert.equal(hasPickupForbiddenWords(name, { isProductName: true }), false, name);
-    assert.equal(hasPickupForbiddenWords(name), false, name);
   }
   // Ranking words and vote claims still exclude the tool, name or not.
   for (const name of ["Top10 Planner", "No.1 Writer"]) {
@@ -320,54 +315,72 @@ test("a product's own name keeps its popularity words, but never ranking or vote
   }
 });
 
-test("quoting an English product name is not a popularity claim", () => {
-  // The next word is capitalised, so this is a name, not a claim about it.
-  for (const text of [
-    "Popular Science の記事を要約できます。",
-    "Hot Reload に対応しています。",
-    "Viral Loops という名前のツールと連携します。",
-    "Product Hunt の新着から選んだ",
+test("an English popularity word is allowed only as the tool's own name, written whole", () => {
+  // The text about the tool named "Hot Reload" may say "Hot Reload"; the same
+  // words in any other text are a claim. The shape of the words is not looked
+  // at (review of 2026-09-17: capitalisation rules and stock-phrase lists kept
+  // letting claims through), only whether they are that name.
+  for (const [text, name] of [
+    ["Hot Reload に対応しています。", "Hot Reload"],
+    ["Viral Loops という名前のツールと連携します。", "Viral Loops"],
+    ["Popular Science の記事を要約できます。", "Popular Science"],
+    ["「Hot Reload」を使うと手戻りが減ります。", "Hot Reload"],
+    ["Viral Loopsと連携します。", "Viral Loops"], // glued to a particle
+    ["hot reload に対応", "Hot Reload"], // case does not matter
+    ["Ｈｏｔ Ｒｅｌｏａｄ に対応", "Hot Reload"], // nor width (NFKC)
+    ["Trending Now を使えば見出しが決まります。", "Trending Now"], // a real name, however it reads
   ]) {
+    assert.equal(hasPickupForbiddenWords(text, { names: [name] }), false, `${text} (name: ${name})`);
+    assert.equal(hasPickupForbiddenWords(text), true, `${text} (no name)`);
+  }
+  // Not this tool's own name written whole: a part of it, more than it, another
+  // tool's name, no name, or a name that is nothing but the popularity word.
+  for (const [text, names] of [
+    ["Hot Reload に対応しています。", ["Hot Reload AI"]],
+    ["Hot Reload AI を使えば手戻りが減ります。", ["Hot Reload"]],
+    ["React Hot Reload に対応", ["Hot Reload"]],
+    ["Hot Reload に対応しています。", ["Viral Loops"]],
+    ["Hot Reload に対応しています。", []],
+    ["Viral を使うと拡散の仕組みが作れます。", ["Viral"]],
+    ["Hot! で通知が届きます。", ["Hot!"]],
+    ["Viral Loops は Viral です。", ["Viral Loops"]], // the second one is not the name
+  ]) {
+    assert.equal(hasPickupForbiddenWords(text, { names }), true, `${text} (names: ${names.join(", ")})`);
+  }
+  // The phrasings the reviews listed — capitalised or not, glued to Japanese or
+  // not — are claims whatever tool the text is about.
+  for (const text of [
+    "Popular Figma プラグイン", "Popular Figma Plugins", "Trending Figma Plugin", "Hot Figma Tips",
+    "Popular Design Tools", "Trending Design ツール", "Popular Mac アプリ", "Viral Chrome 拡張",
+    "Hot Notion テンプレ", "Popular Templates", "Hot Templates", "Trending Fonts", "Trending Designs",
+    "Popular Icons", "Trending Tech", "Hot Summer セール",
+    "Popular AIツール", "HOT Tips", "Hot Take", "Trending Now", "VIRAL Growth", "Popular AI tools",
+    "popular AIツール", "trending Figma プラグイン", "hot Tips", "trending now", "hot right now", "viral",
+    "a popular choice", "This tool is popular.", "Hot Trending Tool", "Popular Ai tools",
+  ]) {
+    assert.equal(hasPickupForbiddenWords(text, { names: ["Figma Plugin Finder"] }), true, text);
+    assert.equal(hasPickupForbiddenWords(text), true, text);
+  }
+  // Ordinary Japanese, and words that merely contain the letters, need no name.
+  for (const text of ["Product Hunt の新着から選んだ", "会議の要点を自動でまとめるAIツールです。", "Hotjar と連携できます。", "Shortcut に対応"]) {
     assert.equal(hasPickupForbiddenWords(text), false, text);
   }
-  // A bare word, or one followed by ordinary lowercase text, is still a claim.
-  for (const text of ["trending now", "hot right now", "viral", "a popular choice", "This tool is popular."]) {
-    assert.equal(hasPickupForbiddenWords(text), true, text);
-  }
-  // A capitalised word AFTER the claim does not make it a name — the claim word
-  // itself has to be capitalised too.
-  for (const text of ["popular AIツール", "trending Figma プラグイン", "hot Tips"]) {
-    assert.equal(hasPickupForbiddenWords(text), true, text);
-  }
-  // Two capitals are not enough either (review of 2026-09-16, fourth round):
-  // the claim word has to be Title-case, the next word has to be shaped like a
-  // proper noun (Capital + lowercase — not AI / AIツール), stock phrases stay
-  // claims, and a name run must not turn into lowercase English prose.
-  for (const text of [
-    // the six probes that slipped through
-    "Popular AIツール",
-    "HOT Tips",
-    "Hot Take",
-    "Trending Now",
-    "VIRAL Growth",
-    "Popular AI tools",
-    // and the shapes the same rule closes
-    "Hot Trending Tool",
-    "Popular Ai tools",
-    "Trending Topics",
-    "Hot Right Now",
-    "Viral Growth",
-    "Popular Choice",
-  ]) {
-    assert.equal(hasPickupForbiddenWords(text), true, text);
-  }
-  // A name glued to a Japanese particle, or followed by more capitalised words, is still a name.
-  for (const text of [
-    "Viral Loopsと連携します。",
-    "Hot Reload AI を使えば手戻りが減ります。",
-    "Popular Science Bot の記事を要約",
-    "Popular Science's 記事を要約",
-  ]) {
-    assert.equal(hasPickupForbiddenWords(text), false, text);
-  }
+});
+
+test("validateEnriched lets a tool's own name through, in its own text and in the opening", () => {
+  const data = pickup(3);
+  data.tools[0].name = "Hot Reload";
+  data.tools[0].description = "Hot Reload に対応したエディタ";
+  data.tools[0].narration = "Hot Reload に対応したAIエディタです。保存するたびに画面が更新されます。";
+  data.opening_narration = "Hot Reload など新作AIツールを3つ紹介します。";
+  const errors = errorsOf(data);
+  assert.doesNotMatch(errors, /tools\[0\]\.(description|narration)/);
+  assert.doesNotMatch(errors, /opening_narration/);
+  // The same words about another tool are a claim …
+  data.tools[1].description = "Hot Reload に対応したエディタ";
+  assert.match(errorsOf(data), /tools\[1\]\.description uses ranking words or Product Hunt vote\/award\/popularity claims/);
+  // … and so are they once no tool in the video has that name.
+  data.tools[0].name = "Tool 1";
+  assert.match(errorsOf(data), /tools\[0\]\.description\/narration uses ranking words/);
+  assert.match(errorsOf(data), /opening_narration uses ranking words or vote\/award\/popularity claims/);
 });

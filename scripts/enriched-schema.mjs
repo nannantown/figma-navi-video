@@ -188,9 +188,8 @@ const POPULARITY_RE = new RegExp(
     "\\bgoing\\s+viral\\b",
     "\\bmost\\s+popular\\b",
     "\\bfastest[-\\s]?growing\\b",
-    // Bare English popularity words are handled by hasEnglishPopularityClaim:
-    // the "is the next word capitalised" test has to be case sensitive, and
-    // this expression runs with the i flag.
+    // Bare English popularity words are handled by hasEnglishPopularityClaim,
+    // which also knows the one place they may appear: the tool's own name.
   ].join("|"),
   "iu"
 );
@@ -297,78 +296,60 @@ export function hasProductHuntClaims(value) {
   return typeof value === "string" && PH_CLAIM_RE.test(normalizeForChecks(value));
 }
 
-// "trending" / "viral" / "popular" / "hot" on their own read as a claim, but
-// the same word inside a run of proper nouns is a product's name we are
-// quoting: "Popular Science の記事を要約", "Hot Reload に対応", "Viral Loops と
-// いう名前のツール". The exception is deliberately narrow. "Capitalised on
-// both sides" was not enough (review of 2026-09-16: "Popular AIツール",
-// "HOT Tips", "Hot Take", "Trending Now", "VIRAL Growth", "Popular AI tools"
-// all passed), so a name needs all four of these:
-//   1. the popularity word is written the way a name is: "Popular", not
-//      "popular" ("popular AIツール") and not "HOT" ("HOT Tips");
-//   2. the next word is shaped like a proper noun: an ASCII capital, then
-//      lowercase letters, then anything but an ASCII letter or digit. "Science",
-//      "Reload" and "Loopsと連携" pass; "AI", "AIツール" and "A1" do not;
-//   3. the next word is neither a stock-phrase completion ("Trending Now",
-//      "Hot Take", "Viral Growth", "Popular Choice") nor another popularity
-//      word ("Hot Trending");
-//   4. the run of capitalised words is followed by Japanese text, ASCII
-//      punctuation or the end — not by lowercase English prose. Every field
-//      is our own Japanese, so "Popular Ai tools" is an English claim.
-// Sentence-initial capitals cannot be treated as lowercase: "Popular Science
-// の記事を要約" and "Trending Now" both start the sentence, so the shape of
-// the next word and the stock-phrase list are what tell them apart.
+// "trending" / "viral" / "popular" / "hot" are never ours to write: the feed
+// carries no votes, no ranking and no audience numbers (owner decision of
+// 2026-09-15). Telling a name from a claim by the shape of the words did not
+// hold up in review (2026-09-16/17): "capitalised on both sides", then a
+// stock-phrase list, still let "Popular Figma プラグイン", "Trending Fonts" or
+// "Hot Summer セール" through, so the shape is not looked at any more. The one
+// exception is the name of the tool the text is about, copied as it is:
+// "Hot Reload に対応" is fine in the description of a tool named "Hot Reload"
+// and a claim in any other. The whole name has to be there, on its own —
+// "Hot Reload" for a tool named "Hot Reload AI", "Hot Reload AI" or "React Hot
+// Reload" for a tool named "Hot Reload", or another tool's name, is not the
+// name. A name that is nothing but popularity words ("Viral", "Hot!") cannot
+// be told apart from the claim, so outside the name field it stays a claim.
 // Word boundaries keep Hotjar, Populate and Shortcut out of it entirely.
 const ENGLISH_POPULARITY_RE = /\b(trending|viral|popular|hot)\b/giu;
-const TITLE_CASE_RE = /^[A-Z][a-z]+$/; // deliberately case sensitive
-// Whitespace, a capital, lowercase letters, then anything but an ASCII letter or digit.
-const NEXT_NAME_WORD_RE = /^\s+([A-Z][a-z]+)(?![A-Za-z0-9])/;
-// The capitalised words a name is made of ("Reload AI", "Science Bot"), possessive allowed ("Science's").
-const CAPITALISED_RUN_RE = /^(?:\s+[A-Z][A-Za-z0-9]*(?:[\x27’]s)?)+/;
-// Lowercase English prose right after that run, with ASCII punctuation allowed in between
-// (\x21-\x2f, \x3a-\x40, \x5b-\x60 and \x7b-\x7e are the four ASCII punctuation blocks).
-const LOWERCASE_PROSE_RE = /^[\s\x21-\x2f\x3a-\x40\x5b-\x60\x7b-\x7e]*[a-z]/;
-// Words that complete a claim rather than a name (compared in lowercase).
-const STOCK_PHRASE_WORDS = new Set(
-  `
-  trending viral popular hot popularity virality hotness
-  now today tonight tomorrow yesterday currently recently lately again still already always
-  everywhere worldwide globally online here there ever forever soon fast quickly rapidly
-  suddenly overnight instantly right yet also too so very really super highly widely extremely
-  pretty quite enough most more much increasingly hugely massively wildly
-  a an the and or but nor in on at for with among of to up by from as is are was were be been
-  being this that these those it its all every each some any since because across around over
-  within
-  ai tool tools app apps pick picks choice choices product products item items list lists tip
-  tips take takes topic topics trend trends growth startup startups launch launches release
-  releases news update updates post posts video videos content feature features option options
-  deal deals hit hits alert alerts spot spots stuff search searches hashtag hashtags week weeks
-  month months year years day days daily weekly monthly thing things site sites service services
-  software website websites platform platforms plugin plugins extension extensions
-  new newest latest rising big huge top best hottest favorite favorites favourite favourites
-  sensation sensations buzz hype momentum wave surge boom craze fad star stars demand request
-  requests seller sellers selling download downloads install installs user users community
-  communities market markets category categories section sections page pages feed feeds chart
-  charts ranking rankings rank score scores vote votes upvote upvotes like likes share shares
-  comment comments view views follower followers streak streaks property commodity newcomer
-  newcomers marketing moment success reach spread effect coefficient
-  `.split(/\s+/).filter(Boolean),
-);
+const ASCII_WORD_BEFORE_RE = /[A-Za-z0-9]\s*$/; // an English word right before the name ("React Hot Reload")
+const ASCII_WORD_AFTER_RE = /^\s*[A-Za-z0-9]/; // an English word right after the name ("Hot Reload AI")
+const REGEXP_SYNTAX_RE = /[.*+?^${}()|[\]\\]/g; // what a RegExp pattern needs escaped
+const NOT_A_LETTER_RE = /[\s\p{P}\p{S}\p{N}]/gu; // whitespace, punctuation, symbols, digits
 
-export function hasEnglishPopularityClaim(text) {
-  const value = String(text);
-  for (const match of value.matchAll(ENGLISH_POPULARITY_RE)) {
-    const word = match[1] || "";
-    const rest = value.slice((match.index ?? 0) + word.length);
-    const next = NEXT_NAME_WORD_RE.exec(rest);
-    if (
-      TITLE_CASE_RE.test(word) && // 1. "Popular", not "popular" / "POPULAR"
-      next && // 2. "Science", not "AI" / "AIツール" / nothing
-      !STOCK_PHRASE_WORDS.has(next[1].toLowerCase()) && // 3. not "Now" / "Take" / "Trending"
-      !LOWERCASE_PROSE_RE.test(rest.slice((CAPITALISED_RUN_RE.exec(rest) || [""])[0].length)) // 4. no "… tools"
-    ) {
-      continue; // a product's name, quoted as it is
+/**
+ * Where the names are written whole in the text (NFKC, case-insensitive), as
+ * [start, end) pairs. A name made of nothing but popularity words is skipped.
+ */
+function quotedNameRanges(text, names) {
+  const ranges = [];
+  for (const name of names) {
+    const norm = normalizeForChecks(name).trim();
+    if (!norm.replace(ENGLISH_POPULARITY_RE, "").replace(NOT_A_LETTER_RE, "")) continue;
+    const re = new RegExp(norm.replace(REGEXP_SYNTAX_RE, "\\$&"), "giu");
+    for (const m of text.matchAll(re)) {
+      const start = m.index ?? 0;
+      const end = start + m[0].length;
+      if (ASCII_WORD_BEFORE_RE.test(text.slice(0, start)) || ASCII_WORD_AFTER_RE.test(text.slice(end))) continue;
+      ranges.push([start, end]);
     }
+  }
+  return ranges;
+}
+
+/**
+ * @param {string} text our own text, NFKC-normalised
+ * @param {{ names?: string[] }} [opts] the name(s) of the tool(s) the text is
+ *   about — an English popularity word inside one of them, written whole, is
+ *   the name rather than a claim
+ */
+export function hasEnglishPopularityClaim(text, opts = {}) {
+  const value = String(text);
+  let ranges = null; // computed lazily: most text has no English popularity word at all
+  for (const match of value.matchAll(ENGLISH_POPULARITY_RE)) {
+    const start = match.index ?? 0;
+    const end = start + match[0].length;
+    if (ranges === null) ranges = quotedNameRanges(value, Array.isArray(opts.names) ? opts.names : []);
+    if (ranges.some(([s, e]) => s <= start && end <= e)) continue; // the tool's own name, as it is
     return true;
   }
   return false;
@@ -381,11 +362,14 @@ export function hasEnglishPopularityClaim(text) {
  * The feed carries no votes, no ranking and no audience numbers, so none of
  * this can be said honestly — owner decision of 2026-09-15. A product's own
  * name is the one exception: it is copied as it is and must never be rewritten.
+ *
+ * @param {string} value
+ * @param {{ names?: string[] }} [opts] see hasEnglishPopularityClaim
  */
-export function hasPopularityWords(value) {
+export function hasPopularityWords(value, opts = {}) {
   if (typeof value !== "string") return false;
   const norm = normalizeForChecks(value);
-  return POPULARITY_RE.test(norm) || hasEnglishPopularityClaim(norm);
+  return POPULARITY_RE.test(norm) || hasEnglishPopularityClaim(norm, opts);
 }
 
 /**
@@ -393,12 +377,14 @@ export function hasPopularityWords(value) {
  * vote/award claims, or popularity words.
  *
  * @param {string} value
- * @param {{ isProductName?: boolean }} [opts] a product's name keeps popularity
- *   words (we copy names verbatim), but ranking and vote claims still exclude it
+ * @param {{ isProductName?: boolean, names?: string[] }} [opts] a product's
+ *   name keeps popularity words (we copy names verbatim), but ranking and vote
+ *   claims still exclude it; `names` are the tool(s) the text is about, whose
+ *   whole names may be quoted even when they contain an English popularity word
  */
 export function hasPickupForbiddenWords(value, opts = {}) {
   if (hasRankingWords(value) || hasProductHuntClaims(value)) return true;
-  return opts.isProductName ? false : hasPopularityWords(value);
+  return opts.isProductName ? false : hasPopularityWords(value, { names: opts.names });
 }
 
 /**
@@ -813,8 +799,10 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true, s
   if (data.opening_narration != null) {
     checkLength(errors, warnings, "opening_narration", data.opening_narration, LIMITS.opening_narration);
     checkText(errors, "opening_narration", data.opening_narration);
-    if (mode === "pickup" && hasPickupForbiddenWords(data.opening_narration)) {
-      errors.push("opening_narration uses ranking words or vote/award/popularity claims (TOP/トップ/ランキング/位/上位/ベスト/No./票/Product of the Day/トップに輝く/Product Huntで話題/話題/人気/注目/定番/急成長/急上昇/バズ/殿堂/最も/みんなが/評価が高い/trending/viral/popular/hot) in pickup mode");
+    // The opening is about every tool in the video, so any of their names may be quoted whole.
+    const videoToolNames = Array.isArray(data.tools) ? data.tools.map((t) => t?.name).filter((n) => typeof n === "string") : [];
+    if (mode === "pickup" && hasPickupForbiddenWords(data.opening_narration, { names: videoToolNames })) {
+      errors.push("opening_narration uses ranking words or vote/award/popularity claims (TOP/トップ/ランキング/位/上位/ベスト/No./票/Product of the Day/トップに輝く/Product Huntで話題/話題/人気/注目/定番/急成長/急上昇/バズ/殿堂/最も/みんなが/評価が高い/trending/viral/popular/hot — an English one is allowed only as the whole name of one of the video's tools) in pickup mode");
     }
   }
 
@@ -942,15 +930,17 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true, s
     const sentences = countSentences(t.narration);
     if (sentences !== 2) warnings.push(`${at}.narration has ${sentences} sentences (rule: hook 1 + point 1)`);
 
+    // Outside the name field, an English popularity word may only be this tool's own name, written whole.
+    const ownName = typeof t.name === "string" ? [t.name] : [];
     const rankingWordFields = ["name", "description", "who", "pricing_note", "narration"].filter(
       (f) =>
         typeof t[f] === "string" &&
-        (mode === "pickup" ? hasPickupForbiddenWords(t[f], { isProductName: f === "name" }) : hasRankingWords(t[f]))
+        (mode === "pickup" ? hasPickupForbiddenWords(t[f], { isProductName: f === "name", names: ownName }) : hasRankingWords(t[f]))
     );
     if (rankingWordFields.length > 0) {
       if (mode === "pickup") {
         errors.push(
-          `${at}.${rankingWordFields.join("/")} uses ranking words or Product Hunt vote/award/popularity claims (TOP/トップ/ランキング/位/上位/ベスト/No./票/Product of the Day/トップに輝く/一番人気/Product Huntで話題) in pickup mode${rankingWordFields.includes("name") ? " — a tool whose own name does this is excluded, never renamed" : ""}`
+          `${at}.${rankingWordFields.join("/")} uses ranking words or Product Hunt vote/award/popularity claims (TOP/トップ/ランキング/位/上位/ベスト/No./票/Product of the Day/トップに輝く/一番人気/Product Huntで話題; trending/viral/popular/hot only as this tool's own whole name) in pickup mode${rankingWordFields.includes("name") ? " — a tool whose own name does this is excluded, never renamed" : ""}`
         );
       } else if (rankingWordFields.some((f) => f !== "name")) {
         warnings.push(`${at}.${rankingWordFields.filter((f) => f !== "name").join("/")} mentions a rank — the card already shows it`);
