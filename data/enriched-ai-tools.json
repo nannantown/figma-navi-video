@@ -1,0 +1,98 @@
+{
+  "date": "2026-09-18",
+  "genre": "ai-tools-top5",
+  "trial": 1,
+  "source": {
+    "mode": "pickup",
+    "snapshot_fetched_at": "2026-09-17T21:47:55.157Z"
+  },
+  "discovery": {
+    "method": "non-engineer",
+    "description": "両アカウント配信死亡モード引き継ぎのため性能データで選ばず、直近14日で未使用かつstrategy.md表順で最上位（rank-pureはpickupで使わないので次のnon-engineer）。25本の新作AIから非エンジニアが今日使える5本を選んだ",
+    "sources": [
+      "https://www.producthunt.com/feed?category=artificial-intelligence",
+      "https://askdeck.ai/",
+      "https://zellahq.com/",
+      "https://quiethint.com/",
+      "https://vibeonly.ai/",
+      "https://saliency.dev/s-roll"
+    ],
+    "query": "",
+    "freshness_hours": 24
+  },
+  "tools": [
+    {
+      "rank": 1,
+      "name": "AskDeck",
+      "ph_url": "https://www.producthunt.com/products/askdeck",
+      "ph_published_at": "2026-06-15T09:26:22-07:00",
+      "ph_listed_after": "2026-09-17T01:44:52.298Z",
+      "website": "https://askdeck.ai/",
+      "tagline_en": "Call an AI to get a PowerPoint and a narrated video back",
+      "description": "スライドと解説動画を自動生成",
+      "who": "営業・マーケター・企画",
+      "pricing": "paid",
+      "pricing_note": "$29〜 プレビュー無料",
+      "narration": "資料と読み上げ動画をAIが作るツールです。スライドと解説ナレーション動画を一気に作れます。",
+      "image_url": null
+    },
+    {
+      "rank": 2,
+      "name": "Zella",
+      "ph_url": "https://www.producthunt.com/products/zella",
+      "ph_published_at": "2026-09-16T20:56:55-07:00",
+      "ph_listed_after": "2026-09-17T01:44:52.298Z",
+      "website": "https://zellahq.com/",
+      "tagline_en": "Video recorder that edits itself on Mac and iPhone",
+      "description": "自動編集する画面録画アプリ",
+      "who": "動画クリエイター",
+      "pricing": "freemium",
+      "pricing_note": "$89でPro買切り",
+      "narration": "撮って自動で仕上げるMac向けの録画アプリです。無音カットや字幕付けまで端末内で完結します。",
+      "image_url": null
+    },
+    {
+      "rank": 3,
+      "name": "QuietHint®",
+      "ph_url": "https://www.producthunt.com/products/quiethint",
+      "ph_published_at": "2026-09-15T11:14:58-07:00",
+      "ph_listed_after": "2026-09-17T01:44:52.298Z",
+      "website": "https://quiethint.com/",
+      "tagline_en": "The meeting assistant that stays on your Mac",
+      "description": "Macで会議メモを自動作成",
+      "who": "Macで会議する人",
+      "pricing": "paid",
+      "pricing_note": "$99/年 発売記念",
+      "narration": "Macに常駐するAI議事録アシスタントです。会議中のメモや要約が画面の隅で自動で進みます。",
+      "image_url": null
+    },
+    {
+      "rank": 4,
+      "name": "Amy by Jellyfish",
+      "ph_url": "https://www.producthunt.com/products/amy-by-jellyfish",
+      "ph_published_at": "2026-09-16T22:23:24-07:00",
+      "ph_listed_after": "2026-09-17T01:44:52.298Z",
+      "website": "https://vibeonly.ai/",
+      "tagline_en": "Your AI sourcing employee for recruiting teams",
+      "description": "AIに候補者探しを任せる",
+      "who": "採用担当・人事",
+      "pricing": "unknown",
+      "narration": "候補者探しを任せられるAI採用担当です。要件の受け取りから検索と一次連絡までまとめて動きます。",
+      "image_url": null
+    },
+    {
+      "rank": 5,
+      "name": "S-Roll",
+      "ph_url": "https://www.producthunt.com/products/s-roll",
+      "ph_published_at": "2026-09-16T23:40:23-07:00",
+      "ph_listed_after": "2026-09-17T01:44:52.298Z",
+      "website": "https://saliency.dev/s-roll",
+      "tagline_en": "An agentic harness that turns long videos into clips",
+      "description": "長い動画を短尺クリップに変換",
+      "who": "ショート動画を作る人",
+      "pricing": "free",
+      "narration": "長い動画を短いクリップに切り出すMacアプリです。文字起こしから縦横比の変換まで自動で仕上げます。",
+      "image_url": null
+    }
+  ]
+}
