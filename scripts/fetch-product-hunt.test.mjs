@@ -562,21 +562,26 @@ test("cleanPhUrl only keeps producthunt.com links", () => {
 
 // --- The committed snapshot is a baseline, not a source of candidates --------
 test("one more complete fetch on top of the committed snapshot dates the next cohort", async () => {
+  // The committed snapshot is live data — fetch-product-hunt.yml rewrites it up to
+  // three times a day and it may already carry dated posts — so the baseline for
+  // this test is its registry with every listedAfter cleared.
   const seed = JSON.parse(readFileSync(new URL("../data/product-hunt-daily.json", import.meta.url), "utf-8"));
   const seededKeys = Object.keys(seed.listing.posts);
   assert.ok(seededKeys.length > 0, "the committed snapshot must carry a registry");
-  assert.ok(
-    seededKeys.every((k) => seed.listing.posts[k].listedAfter === null),
-    "the committed snapshot itself dates nothing — it is only the baseline"
-  );
+  for (const key of seededKeys) seed.listing.posts[key].listedAfter = null;
+  const baseline = seed.listing.lastCompleteAt;
+  assert.ok(typeof baseline === "string", "the committed snapshot must record its last complete fetch");
 
-  // The next complete fetch sees a launch above every post the registry knows.
+  // The next complete fetch, an hour later, sees a launch above every post the registry knows.
+  const now = new Date(Date.parse(baseline) + 3600 * 1000);
   const posts = [{ id: "ph-test-brand-new" }, ...seededKeys.slice(0, 3).map((id) => ({ id }))];
   const keys = posts.map((post) => post.id);
   const feeds = [keys, keys];
-  const listing = updateListing(seed, posts, { now: new Date("2026-09-16T09:17:00Z"), complete: true, feeds });
+  const listing = updateListing(seed, posts, { now, complete: true, feeds });
   const dated = Object.values(listing.posts).filter((e) => e.listedAfter !== null);
   assert.equal(dated.length, 1, JSON.stringify(listing.stats));
-  assert.equal(dated[0].listedAfter, seed.listing.lastCompleteAt);
-  assert.equal(isNewLaunch({ publishedAt: null, listedAfter: dated[0].listedAfter }, "2026-09-17"), true);
+  assert.equal(dated[0].listedAfter, baseline);
+  // A video the morning after that fetch counts it as a new launch.
+  const videoDate = new Date(now.getTime() + 24 * 3600 * 1000).toISOString().slice(0, 10);
+  assert.equal(isNewLaunch({ publishedAt: null, listedAfter: dated[0].listedAfter }, videoDate), true);
 });
