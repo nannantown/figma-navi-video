@@ -339,4 +339,35 @@ test("quoting an English product name is not a popularity claim", () => {
   for (const text of ["popular AIツール", "trending Figma プラグイン", "hot Tips"]) {
     assert.equal(hasPickupForbiddenWords(text), true, text);
   }
+  // Two capitals are not enough either (review of 2026-09-16, fourth round):
+  // the claim word has to be Title-case, the next word has to be shaped like a
+  // proper noun (Capital + lowercase — not AI / AIツール), stock phrases stay
+  // claims, and a name run must not turn into lowercase English prose.
+  for (const text of [
+    // the six probes that slipped through
+    "Popular AIツール",
+    "HOT Tips",
+    "Hot Take",
+    "Trending Now",
+    "VIRAL Growth",
+    "Popular AI tools",
+    // and the shapes the same rule closes
+    "Hot Trending Tool",
+    "Popular Ai tools",
+    "Trending Topics",
+    "Hot Right Now",
+    "Viral Growth",
+    "Popular Choice",
+  ]) {
+    assert.equal(hasPickupForbiddenWords(text), true, text);
+  }
+  // A name glued to a Japanese particle, or followed by more capitalised words, is still a name.
+  for (const text of [
+    "Viral Loopsと連携します。",
+    "Hot Reload AI を使えば手戻りが減ります。",
+    "Popular Science Bot の記事を要約",
+    "Popular Science's 記事を要約",
+  ]) {
+    assert.equal(hasPickupForbiddenWords(text), false, text);
+  }
 });

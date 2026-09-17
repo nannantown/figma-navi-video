@@ -163,7 +163,7 @@ Product Hunt のタグラインや公式サイトの文章をコピーすると�
 2. **要点文** — 誰が何をどう楽にできるかを、具体的に 1 つだけ（「〜の時間がほぼゼロになります。」）
 
 - Good（40 字）: 「会議の要点を自動でまとめるAIツールです。議事録づくりの時間がほぼゼロになります。」
-- NG: 順位・票数・受賞・人気（「Product Hunt で話題」のほか、話題 / 人気 / 注目 / 定番 / 急成長 / 急上昇 / バズ / 殿堂 / 最も / みんなが / 評価が高い / 高評価。英語の trending / viral / popular / hot は、**その語自体が大文字で始まり、次の語も大文字で始まる**形（Popular Science / Hot Reload / Viral Loops = 製品名の引用）だけが例外で、それ以外は拒否（「trending now」「viral」「popular AIツール」「hot Tips」はすべてエラー））・「ランキング」「TOP」に触れる（検証エラー）/ 体言止め / 「最強」「神」などの誇大表現 / 確認していない料金や機能の断定 / 英語タグラインの直訳
+- NG: 順位・票数・受賞・人気（「Product Hunt で話題」のほか、話題 / 人気 / 注目 / 定番 / 急成長 / 急上昇 / バズ / 殿堂 / 最も / みんなが / 評価が高い / 高評価。英語の trending / viral / popular / hot は、**製品名をそのまま引用した形**（Popular Science / Hot Reload / Viral Loops のように、その語が Title-case で、次の語も「大文字 1 字 + 小文字」の固有名詞らしい語で、決まり文句でなく、その後ろに英語の小文字の文が続かない）だけが例外で、それ以外は拒否（「trending now」「viral」「popular AIツール」「hot Tips」に加えて「Popular AIツール」「HOT Tips」「Hot Take」「Trending Now」「VIRAL Growth」「Popular AI tools」もすべてエラー））・「ランキング」「TOP」に触れる（検証エラー）/ 体言止め / 「最強」「神」などの誇大表現 / 確認していない料金や機能の断定 / 英語タグラインの直訳
 - 英単語・固有名詞は原文のまま、数字はアラビア数字
 
 ### 7. `data/enriched-ai-tools.json` を書き出す

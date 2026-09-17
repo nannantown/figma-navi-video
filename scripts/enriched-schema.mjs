@@ -300,18 +300,75 @@ export function hasProductHuntClaims(value) {
 // "trending" / "viral" / "popular" / "hot" on their own read as a claim, but
 // the same word inside a run of proper nouns is a product's name we are
 // quoting: "Popular Science の記事を要約", "Hot Reload に対応", "Viral Loops と
-// いう名前のツール". Both words have to be capitalised — "popular AIツール" and
-// "hot Tips" are claims with a capitalised word behind them, not names. Word
-// boundaries keep Hotjar, Populate and Shortcut out of it entirely.
-const ENGLISH_POPULARITY_RE = /\b(trending|viral|popular|hot)\b(\s+\S+)?/giu;
-const STARTS_CAPITAL_RE = /^[A-Z]/; // deliberately case sensitive
+// いう名前のツール". The exception is deliberately narrow. "Capitalised on
+// both sides" was not enough (review of 2026-09-16: "Popular AIツール",
+// "HOT Tips", "Hot Take", "Trending Now", "VIRAL Growth", "Popular AI tools"
+// all passed), so a name needs all four of these:
+//   1. the popularity word is written the way a name is: "Popular", not
+//      "popular" ("popular AIツール") and not "HOT" ("HOT Tips");
+//   2. the next word is shaped like a proper noun: an ASCII capital, then
+//      lowercase letters, then anything but an ASCII letter or digit. "Science",
+//      "Reload" and "Loopsと連携" pass; "AI", "AIツール" and "A1" do not;
+//   3. the next word is neither a stock-phrase completion ("Trending Now",
+//      "Hot Take", "Viral Growth", "Popular Choice") nor another popularity
+//      word ("Hot Trending");
+//   4. the run of capitalised words is followed by Japanese text, ASCII
+//      punctuation or the end — not by lowercase English prose. Every field
+//      is our own Japanese, so "Popular Ai tools" is an English claim.
+// Sentence-initial capitals cannot be treated as lowercase: "Popular Science
+// の記事を要約" and "Trending Now" both start the sentence, so the shape of
+// the next word and the stock-phrase list are what tell them apart.
+// Word boundaries keep Hotjar, Populate and Shortcut out of it entirely.
+const ENGLISH_POPULARITY_RE = /\b(trending|viral|popular|hot)\b/giu;
+const TITLE_CASE_RE = /^[A-Z][a-z]+$/; // deliberately case sensitive
+// Whitespace, a capital, lowercase letters, then anything but an ASCII letter or digit.
+const NEXT_NAME_WORD_RE = /^\s+([A-Z][a-z]+)(?![A-Za-z0-9])/;
+// The capitalised words a name is made of ("Reload AI", "Science Bot"), possessive allowed ("Science's").
+const CAPITALISED_RUN_RE = /^(?:\s+[A-Z][A-Za-z0-9]*(?:[\x27’]s)?)+/;
+// Lowercase English prose right after that run, with ASCII punctuation allowed in between
+// (\x21-\x2f, \x3a-\x40, \x5b-\x60 and \x7b-\x7e are the four ASCII punctuation blocks).
+const LOWERCASE_PROSE_RE = /^[\s\x21-\x2f\x3a-\x40\x5b-\x60\x7b-\x7e]*[a-z]/;
+// Words that complete a claim rather than a name (compared in lowercase).
+const STOCK_PHRASE_WORDS = new Set(
+  `
+  trending viral popular hot popularity virality hotness
+  now today tonight tomorrow yesterday currently recently lately again still already always
+  everywhere worldwide globally online here there ever forever soon fast quickly rapidly
+  suddenly overnight instantly right yet also too so very really super highly widely extremely
+  pretty quite enough most more much increasingly hugely massively wildly
+  a an the and or but nor in on at for with among of to up by from as is are was were be been
+  being this that these those it its all every each some any since because across around over
+  within
+  ai tool tools app apps pick picks choice choices product products item items list lists tip
+  tips take takes topic topics trend trends growth startup startups launch launches release
+  releases news update updates post posts video videos content feature features option options
+  deal deals hit hits alert alerts spot spots stuff search searches hashtag hashtags week weeks
+  month months year years day days daily weekly monthly thing things site sites service services
+  software website websites platform platforms plugin plugins extension extensions
+  new newest latest rising big huge top best hottest favorite favorites favourite favourites
+  sensation sensations buzz hype momentum wave surge boom craze fad star stars demand request
+  requests seller sellers selling download downloads install installs user users community
+  communities market markets category categories section sections page pages feed feeds chart
+  charts ranking rankings rank score scores vote votes upvote upvotes like likes share shares
+  comment comments view views follower followers streak streaks property commodity newcomer
+  newcomers marketing moment success reach spread effect coefficient
+  `.split(/\s+/).filter(Boolean),
+);
 
 export function hasEnglishPopularityClaim(text) {
-  for (const match of String(text).matchAll(ENGLISH_POPULARITY_RE)) {
+  const value = String(text);
+  for (const match of value.matchAll(ENGLISH_POPULARITY_RE)) {
     const word = match[1] || "";
-    const next = (match[2] || "").trim();
-    // A product's name: capitalised word followed by another capitalised word.
-    if (STARTS_CAPITAL_RE.test(word) && next && STARTS_CAPITAL_RE.test(next)) continue;
+    const rest = value.slice((match.index ?? 0) + word.length);
+    const next = NEXT_NAME_WORD_RE.exec(rest);
+    if (
+      TITLE_CASE_RE.test(word) && // 1. "Popular", not "popular" / "POPULAR"
+      next && // 2. "Science", not "AI" / "AIツール" / nothing
+      !STOCK_PHRASE_WORDS.has(next[1].toLowerCase()) && // 3. not "Now" / "Take" / "Trending"
+      !LOWERCASE_PROSE_RE.test(rest.slice((CAPITALISED_RUN_RE.exec(rest) || [""])[0].length)) // 4. no "… tools"
+    ) {
+      continue; // a product's name, quoted as it is
+    }
     return true;
   }
   return false;
