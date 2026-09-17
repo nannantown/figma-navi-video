@@ -3,5 +3,6 @@ output/
 .DS_Store
 *.aiff
 public/audio/
+public/tools/
 youtube-refresh-token.txt
 .claude/

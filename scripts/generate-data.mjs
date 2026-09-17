@@ -1,171 +1,127 @@
 /**
- * Transform enriched design news into narration-ready data.
- * Input:  data/enriched-design-news.json (written by Claude Routine)
+ * Turn the routine's AI tools TOP5 into narration-ready video data.
+ *
+ * Input:  data/enriched-ai-tools.json (written by the Claude Routine, spec: docs/enrichment-schema.md)
  * Output: output/trending-data.json
  *
- * Figma Navi runs news-first, so this script expects Claude-enriched
- * content to exist for today. No scraper fallback.
+ * The routine is the only source of the Japanese copy, so a missing, stale or
+ * invalid file is a hard error (same policy as the design-news pipeline): we
+ * would rather skip a day than post yesterday's tools again.
+ *
+ * Env (verification only):
+ *   ENRICHED_PATH=data/samples/enriched-ai-tools.sample.json   use another file
+ *   ALLOW_STALE_DATE=1                                          skip the "date == today JST" check
+ *     (refused when SNS_POST_ENABLED=true, so a sample can never be posted)
+ *   PH_SNAPSHOT_PATH=data/samples/product-hunt-daily.sample.json  cross-check against another snapshot
  */
 
-import { readFileSync, writeFileSync, existsSync } from "fs";
-import { join, dirname } from "path";
+import { readFileSync, writeFileSync, existsSync, mkdirSync, rmSync } from "fs";
+import { join, dirname, isAbsolute } from "path";
 import { fileURLToPath } from "url";
+import {
+  parseEnrichedText,
+  validateEnriched,
+  toVideoTools,
+  buildMeta,
+  todayJst,
+  defaultOpeningNarration,
+  skipSnapshotCheck,
+  DEFAULT_ENDING_NARRATION,
+} from "./enriched-schema.mjs";
+import { loadSnapshotForRun } from "./snapshot.mjs";
+import { loadHistory } from "./history.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
 const outputDir = join(rootDir, "output");
-const enrichedPath = join(rootDir, "data", "enriched-design-news.json");
 
-function todayJST() {
-  const d = new Date();
-  const jst = new Date(d.getTime() + 9 * 3600 * 1000);
-  return `${jst.getUTCFullYear()}-${String(jst.getUTCMonth() + 1).padStart(2, "0")}-${String(jst.getUTCDate()).padStart(2, "0")}`;
+function resolveEnrichedPath() {
+  const p = process.env.ENRICHED_PATH || "data/enriched-ai-tools.json";
+  return isAbsolute(p) ? p : join(rootDir, p);
 }
 
-function repairJson(text) {
-  let result = "";
-  let inString = false;
-  let i = 0;
-  while (i < text.length) {
-    const ch = text[i];
-    if (ch === "\\" && inString) {
-      result += ch + (text[i + 1] || "");
-      i += 2;
-      continue;
-    }
-    if (ch === '"') {
-      if (!inString) {
-        inString = true;
-        result += ch;
-      } else {
-        const after = text.substring(i + 1).replace(/^\s+/, "");
-        if (
-          after[0] === "," || after[0] === ":" ||
-          after[0] === "}" || after[0] === "]" ||
-          after.length === 0
-        ) {
-          inString = false;
-          result += ch;
-        } else {
-          result += '\\"';
-        }
-      }
-    } else {
-      result += ch;
-    }
-    i++;
+function main() {
+  const enrichedPath = resolveEnrichedPath();
+  const allowStale = process.env.ALLOW_STALE_DATE === "1";
+  if (allowStale && process.env.SNS_POST_ENABLED === "true") {
+    throw new Error("ALLOW_STALE_DATE=1 is for dry runs only and cannot be combined with SNS_POST_ENABLED=true.");
   }
-  return result;
-}
 
-function loadEnrichedData() {
   if (!existsSync(enrichedPath)) {
     throw new Error(
-      `enriched-design-news.json not found at ${enrichedPath}. Claude Routine must produce this file before the pipeline runs.`
+      `${enrichedPath} not found. The Claude Routine must commit data/enriched-ai-tools.json before the pipeline runs (docs/routine-prompt.md).`
     );
   }
-  const raw = readFileSync(enrichedPath, "utf-8");
-  let enriched;
-  try {
-    enriched = JSON.parse(raw);
-  } catch (firstErr) {
-    console.warn(`  JSON parse failed: ${firstErr.message}`);
-    console.warn(`  Attempting auto-repair (unescaped quotes)...`);
-    try {
-      enriched = JSON.parse(repairJson(raw));
-      console.log("  JSON repair succeeded");
-    } catch (secondErr) {
-      throw new Error(
-        `enriched-design-news.json contains invalid JSON that could not be auto-repaired.\n` +
-        `  Original: ${firstErr.message}\n` +
-        `  After repair: ${secondErr.message}\n` +
-        `  The Claude Routine likely committed malformed JSON.`
-      );
-    }
-  }
-  const today = todayJST();
-  if (enriched.date !== today) {
-    throw new Error(
-      `enriched.date (${enriched.date}) does not match today JST (${today}). Routine may have failed or skipped.`
-    );
-  }
-  return enriched;
-}
 
-function generateSections(article) {
-  const ns = article.narration_sections || {};
-  const st = article.section_titles || {};
-  const sd = article.section_descriptions || {};
+  const { data, repaired } = parseEnrichedText(readFileSync(enrichedPath, "utf-8"));
+  if (repaired) console.warn("  JSON needed auto-repair (unescaped quotes) — tell the routine to escape them.");
 
-  const sections = [
-    {
-      key: "hook",
-      name: st.hook || article.title,
-      description: sd.hook || article.description,
-      detail: "",
-      narration: ns.hook || `${article.title}。${article.description}`,
-    },
-    {
-      key: "origin",
-      name: st.origin || "詳しく",
-      description: sd.origin || article.description,
-      detail: article.detail || "",
-      narration: ns.origin || article.detail || "",
-    },
-    {
-      key: "recommend",
-      name: st.recommend || "おすすめ",
-      description: sd.recommend || "今日試してみよう",
-      detail: article.tags ? `キーワード: ${article.tags.join("、")}` : "",
-      narration:
-        ns.recommend ||
-        (article.tags
-          ? `キーワードは、${article.tags.join("、")}。ぜひチェックしてみてください。`
-          : `ぜひチェックしてみてください。`),
-    },
-  ];
-  return sections;
-}
+  // Skip days, ranking ranks and pickup tools are cross-checked against the
+  // Product Hunt snapshot the routine's commit carries (a snapshot fetched after
+  // the routine must not fail its day — see loadSnapshotForRun).
+  const { snapshot, path: snapshotPath, error: snapshotError, notes: snapshotNotes } = loadSnapshotForRun(rootDir);
+  for (const note of snapshotNotes) console.log(`  NOTE ${note}`);
+  if (snapshotError) console.warn(`  WARN ${snapshotError}`);
+  console.log(`  snapshot: ${snapshotPath}${snapshot ? ` (for ${snapshot.forVideoDate}, fetched ${snapshot.fetchedAt})` : " (none)"}`);
 
-async function main() {
-  const enriched = loadEnrichedData();
-  const article = enriched.articles?.[0];
-  if (!article) {
-    throw new Error("enriched-design-news.json has no articles[0]");
+  // History = the 30-day repeat check (today's own entry is ignored, so a re-run is fine).
+  // Ranks stay off unless PH_ALLOW_RANKING=1 (the reference dry run only).
+  const history = loadHistory(rootDir);
+  const { errors, warnings } = validateEnriched(data, {
+    today: todayJst(),
+    checkDate: !allowStale,
+    snapshot,
+    history,
+    allowRanking: process.env.PH_ALLOW_RANKING === "1",
+  });
+  for (const w of warnings) console.warn(`  WARN ${w}`);
+  if (errors.length > 0) {
+    throw new Error(`enriched-ai-tools.json is invalid:\n  - ${errors.join("\n  - ")}`);
   }
 
-  console.log(`  Topic: ${article.title}`);
-  if (enriched.discovery) {
-    console.log(`  Discovery: ${enriched.discovery.method} — ${enriched.discovery.description || ""}`);
+  mkdirSync(outputDir, { recursive: true });
+  const skipPath = join(outputDir, "skip.json");
+  rmSync(skipPath, { force: true });
+  if (data.skip) {
+    // Intentional no-video day (too few new launches). pipeline.mjs stops
+    // cleanly but loudly (Actions warning + job summary + history entry).
+    const excludedUrls = (Array.isArray(data.skip.excluded) ? data.skip.excluded : []).map((x) => x?.ph_url).filter(Boolean);
+    const check = skipSnapshotCheck(snapshot, data.date, { excludedUrls });
+    const record = {
+      date: data.date,
+      reason: data.skip.reason,
+      fresh_candidates: data.skip.fresh_candidates,
+      snapshot_fresh_ai: check.freshAi,
+      excluded: excludedUrls.length,
+      snapshot_check: check.status,
+      snapshot_note: check.reason || null,
+    };
+    writeFileSync(skipPath, JSON.stringify(record, null, 2));
+    console.log(`  SKIP ${data.date}: ${record.reason} (fresh candidates: ${record.fresh_candidates}, snapshot: ${check.status}${check.freshAi != null ? ` ${check.freshAi}` : ""})`);
+    return;
   }
 
-  const sections = generateSections(article);
-  const projects = sections.map((s, i) => ({
-    rank: i + 1,
-    name: s.name,
-    fullName: article.source || "Figma Navi",
-    description: s.description,
-    detail: s.detail,
-    narration: s.narration,
-    category: article.category || "design",
-    url: article.link || article.url || "",
-  }));
+  const tools = toVideoTools(data);
+  const meta = buildMeta(data);
+  console.log(`  ${meta.dateLabel} / ${meta.headline} / ${meta.sourceLabel} / method: ${meta.method}`);
+  for (const t of tools) console.log(`  ${t.badge}. ${t.name} — ${t.description} (${t.who} / ${t.pricingLabel}) [${t.sourceNote}]`);
 
-  const data = {
-    // No openingNarration: brand-intro title calls hurt IG Reels retention.
-    // Video opens straight into the hook.
-    endingNarration:
-      "以上、今日のデザインニュースでした。フォローといいねで、毎日の情報をチェックしましょう。",
-    projects,
-    topicTitle: article.title,
+  const out = {
+    openingNarration: (data.opening_narration && data.opening_narration.trim()) || defaultOpeningNarration(meta.mode, meta.count),
+    endingNarration: DEFAULT_ENDING_NARRATION,
+    meta,
+    tools,
   };
 
+  mkdirSync(outputDir, { recursive: true });
   const outputPath = join(outputDir, "trending-data.json");
-  writeFileSync(outputPath, JSON.stringify(data, null, 2));
-  console.log(`\nGenerated ${projects.length} sections → ${outputPath}`);
+  writeFileSync(outputPath, JSON.stringify(out, null, 2));
+  console.log(`\nGenerated ${tools.length} tool sections → ${outputPath}`);
 }
 
-main().catch((err) => {
-  console.error(err);
+try {
+  main();
+} catch (err) {
+  console.error(err.message || err);
   process.exit(1);
-});
+}

@@ -110,6 +110,11 @@ export const Subtitle: React.FC<Props> = ({ data }) => {
   );
 };
 
+// Edge TTS word boundaries carry no punctuation, but the voice pauses at
+// "。" — a gap this long starts a new line so two sentences never share one.
+// Measured with ja-JP-NanamiNeural at +30%: "。" ≈ 0.67 s, "、" ≈ 0.19-0.25 s.
+const SENTENCE_PAUSE_SEC = 0.4;
+
 function groupIntoLines(
   words: WordBoundary[],
   maxChars: number
@@ -119,7 +124,9 @@ function groupIntoLines(
   let charCount = 0;
 
   for (const word of words) {
-    if (charCount + word.text.length > maxChars && current.length > 0) {
+    const prev = current[current.length - 1];
+    const paused = prev !== undefined && word.offset - (prev.offset + prev.duration) >= SENTENCE_PAUSE_SEC;
+    if ((paused || charCount + word.text.length > maxChars) && current.length > 0) {
       lines.push(current);
       current = [];
       charCount = 0;

@@ -1,10 +1,15 @@
-name: Daily Figma Navi Video
+name: Daily AI Tools TOP5 Video
 
 on:
   schedule:
     # 23:15 UTC = 08:15 JST (between AI Trend Daily 08:00 and Coffee 08:30)
     - cron: "15 23 * * *"
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "検証モード: サンプルデータで動画だけ作る（投稿・コミットしない）"
+        type: boolean
+        default: false
   push:
     paths:
       - '.recovery-trigger'
@@ -15,11 +20,23 @@ permissions:
 jobs:
   generate-video:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
+
+    # Anything that is not the main branch is a verification run: it renders
+    # from the committed sample and never posts or commits, even if someone
+    # forgets to tick dry_run.
+    env:
+      VERIFY_RUN: ${{ (inputs.dry_run == true || github.ref != 'refs/heads/main') && '1' || '' }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # Verification runs never push, so they do not keep a write token.
+          persist-credentials: ${{ env.VERIFY_RUN != '1' }}
+          # generate-data.mjs cross-checks against the Product Hunt snapshot in
+          # the routine's commit, a few commits back; depth 1 would hide it.
+          fetch-depth: 50
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -41,31 +58,71 @@ jobs:
         run: node scripts/pipeline.mjs
         env:
           TZ: Asia/Tokyo
-          SNS_POST_ENABLED: ${{ secrets.SNS_POST_ENABLED }}
+          SNS_POST_ENABLED: ${{ env.VERIFY_RUN != '1' && secrets.SNS_POST_ENABLED || 'false' }}
+          DRY_RUN: ${{ env.VERIFY_RUN }}
+          # Verification renders the pickup sample (the production format since
+          # the owner decision of 2026-09-15) against its feed-shaped snapshot.
+          ENRICHED_PATH: ${{ env.VERIFY_RUN == '1' && 'data/samples/enriched-ai-tools.pickup.sample.json' || '' }}
+          PH_SNAPSHOT_PATH: ${{ env.VERIFY_RUN == '1' && 'data/samples/product-hunt-daily.pickup.sample.json' || '' }}
+          ALLOW_STALE_DATE: ${{ env.VERIFY_RUN }}
+          # Two paused days in a row fail the run. Set the repo variable
+          # ALLOW_SKIP_STREAK_UNTIL to a YYYY-MM-DD date to acknowledge a
+          # genuinely quiet stretch (a long holiday); it expires by itself.
+          ALLOW_SKIP_STREAK_UNTIL: ${{ vars.ALLOW_SKIP_STREAK_UNTIL }}
+          # Platform credentials only reach production runs; a verification
+          # run cannot post even if a branch's pipeline ignored DRY_RUN.
           # YouTube
-          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
-          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
-          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          YOUTUBE_CLIENT_ID: ${{ env.VERIFY_RUN != '1' && secrets.YOUTUBE_CLIENT_ID || '' }}
+          YOUTUBE_CLIENT_SECRET: ${{ env.VERIFY_RUN != '1' && secrets.YOUTUBE_CLIENT_SECRET || '' }}
+          YOUTUBE_REFRESH_TOKEN: ${{ env.VERIFY_RUN != '1' && secrets.YOUTUBE_REFRESH_TOKEN || '' }}
           # Instagram
-          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
-          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
-          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+          INSTAGRAM_ACCESS_TOKEN: ${{ env.VERIFY_RUN != '1' && secrets.INSTAGRAM_ACCESS_TOKEN || '' }}
+          INSTAGRAM_USER_ID: ${{ env.VERIFY_RUN != '1' && secrets.INSTAGRAM_USER_ID || '' }}
+          FACEBOOK_PAGE_ID: ${{ env.VERIFY_RUN != '1' && secrets.FACEBOOK_PAGE_ID || '' }}
+          # Grid thumbnail = the "新作AIツール N選" title card (opening is held
+          # ≥ 3 s) so the profile grid reads as one series.
+          INSTAGRAM_THUMB_OFFSET_MS: "2000"
           # GitHub (auto-provided, used for Release creation)
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ env.VERIFY_RUN != '1' && secrets.GITHUB_TOKEN || '' }}
 
       - name: Commit performance history
+        # always(): a post that went live on one platform is recorded even when
+        # the other platform failed the run.
+        if: always() && env.VERIFY_RUN != '1'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/performance-history.json
-          git diff --staged --quiet || git commit -m "Update performance history [skip ci]"
-          git push || echo "Push failed (non-blocking)"
+          if git diff --staged --quiet; then
+            echo "No history changes"
+            exit 0
+          fi
+          git commit -m "Update performance history [skip ci]"
+          # fetch-product-hunt.yml and the routine also commit to main; rebase
+          # onto them instead of losing today's upload record.
+          for i in 1 2 3; do
+            if git pull --rebase origin main && git push; then
+              exit 0
+            fi
+            # A failed rebase would block every later attempt.
+            git rebase --abort 2>/dev/null || true
+            echo "push attempt $i failed, retrying"
+            sleep $((i * 10))
+          done
+          echo "::warning title=performance history::push failed after 3 attempts — today's upload record is not on main (non-blocking; add it before the next routine, or the 30-day repeat check and the PDCA report miss this day)"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload video artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: design-video-${{ github.run_number }}
-          path: output/design-*.mp4
+          name: aitools-video-${{ github.run_number }}${{ env.VERIFY_RUN == '1' && '-dryrun' || '' }}
+          path: |
+            output/aitools-*.mp4
+            output/aitools-*-cover.jpg
+            output/captions.json
+            output/trending-data.json
+            output/skip.json
+          if-no-files-found: warn
           retention-days: 30

@@ -35,14 +35,14 @@ function getVideoPath() {
     if (existsSync(p)) return p;
   }
 
-  // Auto-detect: find latest design-YYYYMMDD.mp4
+  // Auto-detect: find latest aitools-YYYYMMDD.mp4
   const today = new Date();
   const dateStr = `${today.getFullYear()}${String(today.getMonth() + 1).padStart(2, "0")}${String(today.getDate()).padStart(2, "0")}`;
-  const p = join(outputDir, `design-${dateStr}.mp4`);
+  const p = join(outputDir, `aitools-${dateStr}.mp4`);
   if (existsSync(p)) return p;
 
-  // Fallback: find any design-*.mp4
-  const files = execSync(`ls -t ${outputDir}/design-*.mp4 2>/dev/null || true`, {
+  // Fallback: find any aitools-*.mp4
+  const files = execSync(`ls -t ${outputDir}/aitools-*.mp4 2>/dev/null || true`, {
     encoding: "utf-8",
   }).trim();
   if (files) return files.split("\n")[0];
@@ -62,7 +62,7 @@ async function createGitHubRelease(videoPath, coverPath) {
   const today = new Date();
   const dateStr = `${today.getFullYear()}${String(today.getMonth() + 1).padStart(2, "0")}${String(today.getDate()).padStart(2, "0")}`;
   const tag = `v${dateStr}`;
-  const title = `Design Daily ${dateStr}`;
+  const title = `New AI Tools ${dateStr}`;
   const videoFileName = basename(videoPath);
   const coverFileName = coverPath ? basename(coverPath) : null;
   const coverArg = coverPath && existsSync(coverPath) ? ` "${coverPath}"` : "";
@@ -77,7 +77,7 @@ async function createGitHubRelease(videoPath, coverPath) {
   try {
     // Create release and upload both video + cover image
     run(
-      `gh release create "${tag}" "${videoPath}"${coverArg} --title "${title}" --notes "Auto-generated design news video for ${dateStr}" --latest`,
+      `gh release create "${tag}" "${videoPath}"${coverArg} --title "${title}" --notes "Auto-generated new AI tools video for ${dateStr}" --latest`,
       { env: { ...process.env, GH_TOKEN: token } }
     );
     console.log(`  Video URL:  ${videoUrl}`);

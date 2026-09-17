@@ -7,12 +7,22 @@ on:
         description: "Date tag (YYYYMMDD). Defaults to today JST."
         required: false
         default: ""
+      force:
+        description: "Post again even though the history already records a media id for that day"
+        type: boolean
+        required: false
+        default: false
   push:
+    # main only: this job posts to Instagram for real, and every branch push
+    # would otherwise fire it with the production credentials.
+    branches: [main]
     paths:
       - .retry-ig-trigger
 
 permissions:
-  contents: read
+  # write: the recovery post is written back to data/performance-history.json,
+  # or the media id of this post would never reach the PDCA report.
+  contents: write
 
 jobs:
   post:
@@ -21,6 +31,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # generate-data.mjs cross-checks against the Product Hunt snapshot in
+          # the routine's commit (a few commits back), as daily-video.yml does.
+          fetch-depth: 50
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -35,23 +49,44 @@ jobs:
         id: date
         env:
           TZ: Asia/Tokyo
+          INPUT_DATE: ${{ inputs.date }}
         run: |
-          DATE="${{ inputs.date }}"
+          DATE="$INPUT_DATE"
           if [ -z "$DATE" ]; then
             DATE=$(date +%Y%m%d)
           fi
-          echo "date=$DATE" >> $GITHUB_OUTPUT
+          case "$DATE" in
+            [0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]) ;;
+            *) echo "::error title=Bad date::date must be YYYYMMDD, got '$DATE'"; exit 1 ;;
+          esac
+          echo "date=$DATE" >> "$GITHUB_OUTPUT"
           echo "Using date: $DATE"
 
       - name: Download video from GitHub Release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DATE: ${{ steps.date.outputs.date }}
         run: |
           mkdir -p output
-          DATE="${{ steps.date.outputs.date }}"
-          gh release download "v${DATE}" -p "design-${DATE}.mp4" -D output/
+          gh release download "v${DATE}" -p "aitools-${DATE}.mp4" -D output/
           # Cover is optional — older releases may not have it
-          gh release download "v${DATE}" -p "design-${DATE}-cover.jpg" -D output/ || echo "No cover asset in release (pre-cover_url era)"
+          gh release download "v${DATE}" -p "aitools-${DATE}-cover.jpg" -D output/ || echo "No cover asset in release"
+
+      # The video comes from a Release, the captions from the working tree. If
+      # they are not the same day, the post would describe tools the video never
+      # shows — stop before anything is uploaded.
+      - name: Guard — captions must belong to the same day as the video
+        env:
+          DATE: ${{ steps.date.outputs.date }}
+        run: node scripts/assert-data-date.mjs "$DATE"
+
+      # Instagram has no idempotency key: a second run publishes the same Reel
+      # again. The history is the record of what already went out.
+      - name: Guard — this day is not on Instagram yet
+        if: inputs.force != true
+        env:
+          DATE: ${{ steps.date.outputs.date }}
+        run: node scripts/assert-not-posted.mjs "$DATE"
 
       - name: Prepare data + captions
         env:
@@ -65,9 +100,48 @@ jobs:
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
           INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+          INSTAGRAM_THUMB_OFFSET_MS: "2000"
+          DATE: ${{ steps.date.outputs.date }}
         run: |
-          DATE="${{ steps.date.outputs.date }}"
           # cover_url intentionally omitted: GitHub Release assets are served
           # as Content-Type: application/octet-stream, which IG rejects with
           # code 9004. upload-instagram.mjs falls back to thumb_offset.
-          node scripts/upload-instagram.mjs --file="output/design-${DATE}.mp4"
+          node scripts/upload-instagram.mjs --file="output/aitools-${DATE}.mp4"
+
+      # Without this the recovery post never reaches performance-history.json,
+      # so the day is missing from the IG median and the saved-count that decide
+      # the genre trial.
+      - name: Record the post
+        env:
+          TZ: Asia/Tokyo
+          # The day being recovered, not today: recording an older post as today
+          # would invent an entry for today and leave the real day unrecorded.
+          RECORD_DATE: ${{ steps.date.outputs.date }}
+        run: |
+          set -euo pipefail
+          node scripts/record-upload.mjs
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3; do
+            if ! git fetch --no-tags origin main; then
+              echo "fetch attempt $i failed, retrying"
+              sleep $((i * 10))
+              continue
+            fi
+            cp data/performance-history.json "$RUNNER_TEMP/history.json"
+            git checkout -f -B main FETCH_HEAD
+            cp "$RUNNER_TEMP/history.json" data/performance-history.json
+            git add data/performance-history.json
+            if git diff --staged --quiet; then
+              echo "History unchanged, nothing to commit"
+              exit 0
+            fi
+            git commit -m "Record recovery Instagram post [skip ci]"
+            if git push origin main; then
+              exit 0
+            fi
+            echo "push attempt $i failed, retrying"
+            sleep $((i * 10))
+          done
+          echo "::error title=Recovery post::the post went out but the history could not be pushed — fetch-stats will restore the media id later"
+          exit 1

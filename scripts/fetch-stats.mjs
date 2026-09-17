@@ -18,6 +18,9 @@
 
 import { google } from "googleapis";
 import { readFileSync, writeFileSync, existsSync } from "fs";
+import { GENRE } from "./enriched-schema.mjs";
+import { postedVideos } from "./history.mjs";
+import { YT_BASE_TAGS } from "./generate-caption.mjs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { updateInstagramStats } from "./instagram-insights.mjs";
@@ -203,7 +206,9 @@ async function fetchInstagramStats(history) {
 
   console.log("fetch-stats: fetching Instagram Reels insights...");
   try {
-    const result = await updateInstagramStats(history, process.env);
+    // Skip days (no video) must never be matched to a Reel. Same entry objects,
+    // so the stats written by updateInstagramStats land in `history`.
+    const result = await updateInstagramStats({ ...history, videos: postedVideos(history.videos) }, process.env);
     console.log(
       `  IG: matched ${result.matched}, updated ${result.updated}, failed ${result.failed}, ` +
         `skipped ${result.skipped}, unmatched ${result.unmatched.length}` +
@@ -286,8 +291,13 @@ async function main() {
 
   await fetchInstagramStats(history);
 
+  // Dry runs (npm run dry-run, verification runs) only need the hints file;
+  // they must not rewrite the tracked history.
+  const persistHistory = process.env.DRY_RUN !== "1";
+  if (!persistHistory) console.log("fetch-stats: DRY_RUN=1 — data/performance-history.json is not written.");
+
   // Save updated history
-  writeFileSync(historyPath, JSON.stringify(history, null, 2));
+  if (persistHistory) writeFileSync(historyPath, JSON.stringify(history, null, 2));
 
   // Run optimization analysis
   console.log("fetch-stats: analyzing performance...");
@@ -301,17 +311,21 @@ async function main() {
     reasoning: [],
   };
 
+  // Only learn from the current genre (trial #1: AI tools TOP5). The
+  // design-news videos used different hashtags/titles and would skew hints.
+  // Skip days (no video on purpose) carry zero stats and must not drag averages down.
+  const posted = postedVideos(history.videos);
+  const genreVideos = posted.filter((v) => v.genre === GENRE);
+
   // Hashtag analysis
-  const hashtagResult = analyzeHashtags(history.videos);
+  const hashtagResult = analyzeHashtags(genreVideos);
   if (hashtagResult) {
     hints.droppedHashtags = hashtagResult.dropped;
     hints.reasoning.push(...hashtagResult.reasoning);
 
-    // Build recommended hashtags: base set + boosted - dropped
-    const baseHashtags = [
-      "デザイン", "Figma", "UI", "UX", "デザイナー",
-      "デザイン勉強", "AIデザイン", "Design", "Shorts",
-    ];
+    // Build recommended hashtags: base set + boosted - dropped.
+    // generate-caption.mjs keeps Instagram at its fixed 5 tags regardless.
+    const baseHashtags = YT_BASE_TAGS;
     const recommended = baseHashtags.filter(
       (h) => !hashtagResult.dropped.includes(h)
     );
@@ -322,14 +336,14 @@ async function main() {
   }
 
   // Title template analysis
-  const titleResult = analyzeTitleTemplates(history.videos);
+  const titleResult = analyzeTitleTemplates(genreVideos);
   if (titleResult) {
     hints.recommendedTitleTemplate = titleResult.recommended;
     hints.reasoning.push(...titleResult.reasoning);
   }
 
   // Language analysis
-  const langResult = analyzeLanguages(history.videos);
+  const langResult = analyzeLanguages(posted);
   if (langResult && langResult.length > 0) {
     hints.reasoning.push(
       `Trending languages: ${langResult.map((l) => `${l.language} (${l.ratio.toFixed(1)}x)`).join(", ")}`
@@ -337,7 +351,7 @@ async function main() {
   }
 
   // Day of week insights
-  const dayInsights = generateDayOfWeekInsights(history.videos);
+  const dayInsights = generateDayOfWeekInsights(posted);
   if (dayInsights.length > 0) {
     hints.reasoning.push(
       `Day performance: ${dayInsights.map((d) => `${d.day}=${d.avgViews}`).join(", ")}`
@@ -366,7 +380,7 @@ async function main() {
       history.optimizationLog = history.optimizationLog.slice(-30);
     }
 
-    writeFileSync(historyPath, JSON.stringify(history, null, 2));
+    if (persistHistory) writeFileSync(historyPath, JSON.stringify(history, null, 2));
   }
 }
 

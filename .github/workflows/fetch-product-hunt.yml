@@ -1,0 +1,160 @@
+name: Fetch Product Hunt Snapshot
+
+# Product Hunt launches → data/product-hunt-daily.json for the next morning's
+# Claude Routine (07:30 JST). Runs the evening before and again in the early
+# morning as a second chance. GitHub delays scheduled runs under load, worst at
+# the start of every hour, so both runs avoid :00/:30 and stay hours away from
+# the routine.
+#
+# Source: the official Atom feed only (owner decision 2026-09-15, option B — no
+# ranking, no votes; the routine makes an editorial pickup). No secret is needed
+# and none is passed: registering PRODUCT_HUNT_API_TOKEN changes nothing. Using
+# the API would take an owner decision and a PR that sets PH_SOURCE=api and
+# passes the token here.
+#
+# Each run carries the feed listing registry from main's latest snapshot (read
+# from origin/main, not from the checkout, which can be stale for a queued run
+# or a re-run), commits the new snapshot on top of the latest main, and fails
+# its last step when the listing evidence has stopped working (after the commit,
+# so the morning still gets a snapshot).
+#
+# Verification: pull requests that touch the fetch run it without committing
+# (a workflow_dispatch only works once this file is on the default branch).
+
+on:
+  schedule:
+    # 05:43 UTC = 14:43 JST = 22:43 Pacific (21:43 in winter): the last complete
+    # fetch before the Pacific day rolls over. It is what dates the next day's
+    # 00:01 launches as new — without it their evidence points at the previous
+    # midday and the whole closed day drops out of the freshness window
+    # (LISTING_GRACE_HOURS in scripts/pacific-time.mjs). Deliberately off the
+    # hour: runs scheduled at :00 are the most delayed, and a run that slips
+    # past 00:01 Pacific loses the whole cohort it was meant to date.
+    - cron: "43 5 * * *"
+    # 09:17 UTC = 18:17 JST (evening before; the day's launches went live at 16:01 JST, 17:01 in winter)
+    - cron: "17 9 * * *"
+    # 18:47 UTC = 03:47 JST (second chance, still hours before the 07:30 routine)
+    - cron: "47 18 * * *"
+  pull_request:
+    paths:
+      - ".github/workflows/fetch-product-hunt.yml"
+      - "scripts/fetch-product-hunt.mjs"
+      - "scripts/pacific-time.mjs"
+  workflow_dispatch:
+    inputs:
+      verify:
+        description: "検証モード: 取得して artifact に保存するだけ（コミットしない）"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+# Runs that commit share one queue; verification runs never wait for or replace them.
+concurrency:
+  group: ${{ (github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && inputs.verify != true) && 'fetch-product-hunt-write' || format('fetch-product-hunt-verify-{0}', github.run_id) }}
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      WRITE_RUN: ${{ (github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && inputs.verify != true) && '1' || '' }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Credentials stay for READING main in the next step. Dropping them on
+          # verify runs made `git fetch origin main` fail under `set -euo
+          # pipefail`, so the verify mode could never go green. Nothing is
+          # written without WRITE_RUN: the only push lives in the commit step,
+          # which is guarded by it.
+          persist-credentials: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # The registry must come from main's latest snapshot, whatever commit this run checked out.
+      - name: Read main's latest snapshot
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 origin main
+          if git cat-file -e FETCH_HEAD:data/product-hunt-daily.json 2>/dev/null; then
+            git show FETCH_HEAD:data/product-hunt-daily.json > "$RUNNER_TEMP/previous-snapshot.json"
+            echo "previous snapshot: main $(git rev-parse --short FETCH_HEAD)"
+          else
+            echo "main has no snapshot yet: the listing registry starts with this run"
+          fi
+
+      # No npm ci: the fetch script only uses Node built-ins (fetch, fs).
+      - name: Fetch snapshot
+        id: fetch
+        run: node scripts/fetch-product-hunt.mjs --previous="$RUNNER_TEMP/previous-snapshot.json"
+        env:
+          TZ: Asia/Tokyo
+          PH_SOURCE: feed
+
+      - name: Commit snapshot (main only, not in verify mode or pull requests)
+        if: env.WRITE_RUN == '1'
+        run: |
+          set -euo pipefail
+          cp data/product-hunt-daily.json "$RUNNER_TEMP/snapshot.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3; do
+            # Always commit on top of the latest main (other workflows and the routine push too).
+            # Only the network steps get to retry; anything else failing means a
+            # broken state, and `set -e` stops before it can be pushed.
+            if ! git fetch --no-tags origin main; then
+              echo "fetch attempt $i failed, retrying"
+              sleep $((i * 10))
+              continue
+            fi
+            git checkout -f -B main FETCH_HEAD
+            cp "$RUNNER_TEMP/snapshot.json" data/product-hunt-daily.json
+            git add data/product-hunt-daily.json
+            if git diff --staged --quiet; then
+              echo "Snapshot unchanged, nothing to commit"
+              exit 0
+            fi
+            git commit -m "Product Hunt snapshot $(TZ=Asia/Tokyo date +%Y-%m-%dT%H:%M) [skip ci]"
+            if git push origin main; then
+              exit 0
+            fi
+            echo "push attempt $i failed, retrying"
+            sleep $((i * 10))
+          done
+          echo "::error title=Product Hunt snapshot::push failed after 3 attempts — the snapshot was not committed"
+          exit 1
+
+      - name: Upload snapshot artifact
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: product-hunt-daily-${{ github.run_number }}
+          path: data/product-hunt-daily.json
+          if-no-files-found: ignore
+          retention-days: 14
+
+      # After the commit: the snapshot is saved either way, and a red run notifies the owner.
+      - name: Listing health
+        if: steps.fetch.outputs.listing_alert != ''
+        env:
+          LISTING_ALERT: ${{ steps.fetch.outputs.listing_alert }}
+          # Only the scheduled runs on main have to go red: the listing evidence
+          # is a property of the feed, not of a branch, so failing PR checks for
+          # it would block changes that have nothing to do with the problem.
+          BLOCKING: ${{ github.ref == 'refs/heads/main' && github.event_name != 'pull_request' }}
+        run: |
+          if [ "$BLOCKING" = "true" ]; then
+            echo "::error title=Product Hunt listing::$LISTING_ALERT"
+            echo "New launches can only be dated by their creation time until this is fixed (see docs/strategy.md, 取得モード)."
+            exit 1
+          fi
+          echo "::warning title=Product Hunt listing::$LISTING_ALERT"
+          echo "Not a scheduled run on main: this is reported but does not fail the check."

@@ -1,89 +1,76 @@
 # figma-navi-video
 
-Daily short-form SNS videos for **Figmaナビ** plugin promotion — AI-powered design generation.
+毎朝の縦型ショート動画「**新作AIツール N選**」（2〜5 本、使える新作が 5 本以上ある日は 5選）を作り、YouTube Shorts と Instagram Reels に投稿する。出典は Product Hunt の公式フィードで、扱うのは直近 48 時間以内に公開されたツールだけ。順位・票数は名乗らない（2026-09-15 オーナー決定）。sns-hub の**ジャンル試行 #1: AI ツール TOP5（Product Hunt）**（2026-09-18 開始予定、最初の判定 2026-10-02、以降 14 日ごと）。
 
-Generates 55-58s vertical videos (1080×1920) and posts to YouTube Shorts + Instagram Reels every morning at 08:15 JST.
-
-Forked from `coffee-daily-video` as the 3rd pipeline in the `sns-hub` family.
+- リポ名は旧ジャンル（Figmaナビ販促のデザインニュース, 2026-04〜09）の名残。改名は別途
+- 戦略・ペルソナ・判定ルール: [docs/strategy.md](docs/strategy.md)
+- 朝ルーチンの手順（正本）: [docs/routine-prompt.md](docs/routine-prompt.md)
+- データ仕様: [docs/enrichment-schema.md](docs/enrichment-schema.md)
+- キャプション・プロフィール文言の案: [docs/channel-copy.md](docs/channel-copy.md)
 
 ## Architecture
 
 ```
-Claude Routine (~07:45 JST)         GitHub Actions (08:15 JST)
-────────────────────────           ──────────────────────────
-英語優先で当日のデザインニュース     data/enriched-design-news.json
-をリサーチ → PDCA → discovery       を読んで動画生成 → YT + IG 投稿
-method 決定 → enriched JSON commit
+fetch-product-hunt.yml (14:43 JST 太平洋日の変わり目の直前 / 18:17 JST 前夜 / 03:47 JST 予備)
+  Product Hunt 公式 Atom フィード（PH_SOURCE=feed。main の最新スナップショットから掲載の初出を引き継ぐ。
+  掲載の記録が働かないときは保存後にジョブを失敗させて通知）
+  → data/product-hunt-daily.json
+
+Claude Routine (07:30 JST)                     daily-video.yml (08:15 JST)
+────────────────────────────                  ──────────────────────────────
+PDCA（pdca-summary.mjs）→ 2〜5 本を選ぶ →      generate-data → fetch-tool-images →
+公式サイトで確認 → 日本語原稿 →                 TTS（60 秒未満に自動調整）→ Remotion →
+validate-enriched.mjs → PR merge               YouTube + Instagram → performance-history
+  → data/enriched-ai-tools.json
 ```
 
-コンテンツ戦略・ペルソナ・コンテンツ柱・discovery method・KPI は [docs/strategy.md](docs/strategy.md) に集約されています。ルーチンはこのファイルを毎朝読んで判断します。
+## Secrets
 
-## Setup (User action required)
+`nannantown/figma-navi-video` の Settings → Secrets and variables → Actions:
 
-このリポジトリは sns-hub 配下の**ローカル雛形**。本番運用するには以下が必要:
+```
+SNS_POST_ENABLED          # "true" で本番投稿
+YOUTUBE_CLIENT_ID / YOUTUBE_CLIENT_SECRET / YOUTUBE_REFRESH_TOKEN
+INSTAGRAM_ACCESS_TOKEN / INSTAGRAM_USER_ID / FACEBOOK_PAGE_ID
+GH_PAT                    # 週次の IG token 延長用
+```
 
-### 1. GitHub リポジトリを作成
+値の取得方法は親 `sns-hub/CLAUDE.md` と `sns-hub/docs/shared-patterns.md` を参照。Product Hunt 用の Secret は**不要**: 2026-09-15 のオーナー決定で公式 API は使わず、`fetch-product-hunt.yml` はトークンを渡さない（`PRODUCT_HUNT_API_TOKEN` を登録しても何も変わらない）。API に切り替えるにはオーナーの判断と PR が必要（`docs/strategy.md` の「取得モード」）。
+
+## Verify
 
 ```bash
-cd /Users/kokinaniwa/projects/sns-hub/figma-navi-video
-git init
-git add -A
-git commit -m "Initial fork from coffee-daily-video"
-gh repo create nannantown/figma-navi-video --public --source=. --remote=origin --push
+npm test                      # unit tests (node --test)
+npm run typecheck             # tsc --noEmit
+npm run fetch-ph -- --dry-run # Product Hunt 取得だけ試す（書き込みなし）
+npm run dry-run               # pickup（5選）のサンプルで動画 + キャプションを作る（投稿・記録なし）
+npm run dry-run:skip          # 休止の日のサンプル（動画は作らず、警告と要約だけ）
+npm run dry-run:ranking       # 旧 ranking（TOP5）のサンプル。PH_ALLOW_RANKING=1 を付けて検証を通す参考用（本番では無効）
 ```
 
-### 2. Secrets を設定
+GitHub Actions 上の検証:
 
-`nannantown/figma-navi-video` リポの Settings → Secrets and variables → Actions:
-
+```bash
+gh workflow run daily-video.yml --ref <branch> -f dry_run=true   # main 以外の ref は常に検証扱い（投稿・コミットしない）
+# fetch-product-hunt.yml は、取得まわり（ワークフロー / fetch-product-hunt.mjs / pacific-time.mjs）を変える PR で自動的に検証実行される（コミットしない）。
+# 手動の workflow_dispatch はワークフローが main にあるときだけ使える（GitHub の仕様）:
+gh workflow run fetch-product-hunt.yml -f verify=true            # main で取得して artifact に保存するだけ
 ```
-SNS_POST_ENABLED         # "true" で本番投稿有効化
-
-# YouTube (既存デザイン講座チャンネル)
-YOUTUBE_CLIENT_ID
-YOUTUBE_CLIENT_SECRET
-YOUTUBE_REFRESH_TOKEN    # node scripts/auth-youtube.mjs で取得
-
-# Instagram (既存デザインアカウント)
-INSTAGRAM_ACCESS_TOKEN   # Meta App "Social Media Manager" から取得
-INSTAGRAM_USER_ID        # Figmaナビ用 IG Business アカウントの user_id
-FACEBOOK_PAGE_ID         # 対応 Facebook Page の ID
-
-# 週次 token 延長用
-GH_PAT                   # Fine-grained PAT, Secrets: RW
-```
-
-値の取得方法は親 `sns-hub/CLAUDE.md` と `sns-hub/docs/shared-patterns.md` を参照。
-
-### 3. Claude Routine を作成
-
-sns-hub の他の 2 プロジェクトと同じパターン:
-- cron: `0 22 * * *` (07:00 JST、daily-video.yml より 1 時間前)
-- environment: 自動生成 (初回ルーチン作成時)
-- allow_unrestricted_git_push: true
-- events: 専用プロンプト (策定後ユーザーから依頼)
-- session_context とのセット更新必須 (理由は sns-hub/docs/shared-patterns.md の "RemoteTrigger API 関連" 参照)
-
-### 4. refresh-instagram-token workflow を有効化
-
-60 日で失効する IG Long-lived Token を週次で延長する workflow。coffee-daily-video から継承済み。
 
 ## Files of note
 
 ```
-docs/strategy.md           # ペルソナ/コンテンツ柱/Discovery Methods/KPI
-data/enriched-design-news.json  # Claude Routine が毎朝書き出す当日コンテンツ
-scripts/pipeline.mjs       # メイン: fetch-stats → generate-data → audio → render → post
-scripts/generate-data.mjs  # enriched JSON → trending-data.json に変換
-scripts/record-upload.mjs  # performance-history.json に discovery 含めて記録
-src/compositions/TrendingVideo.tsx  # Remotion composition (id: FigmaNaviVideo)
-src/components/ProjectCard.tsx      # メインカード (text-first、ビジュアル機能は Phase 2)
-.github/workflows/daily-video.yml   # 08:15 JST 起動
+docs/strategy.md                    # 試行 #1 の戦略（旧デザイン戦略は docs/strategy-archive/）
+docs/routine-prompt.md              # 朝ルーチンの正本
+data/enriched-ai-tools.json         # ルーチンが毎朝書く当日データ
+data/product-hunt-daily.json        # fetch-product-hunt.yml のスナップショット
+data/samples/                       # 検証用サンプル
+scripts/fetch-product-hunt.mjs      # 公式 Atom フィードの取得と掲載の初出（API は PH_SOURCE=api のときだけ）
+scripts/enriched-schema.mjs         # データ検証（パイプラインとルーチンで共通）
+scripts/snapshot.mjs                # 照合用スナップショットの読み込み（パイプラインはルーチンのコミット時点の版）
+scripts/fetch-tool-images.mjs       # ロゴ / スクリーンショット取得（失敗しても止めない）
+scripts/generate-caption.mjs        # YT タイトル 100 字・IG ハッシュタグ 5 個の制限を守る
+scripts/pdca-summary.mjs            # IG views 中央値・保存合計・判定日を出す
+src/compositions/AiToolsVideo.tsx   # Remotion composition (id: AiToolsTop5)
+src/components/ToolCard.tsx         # ツール 1 本分のカード
 ```
-
-## Phase 1 → Phase 2
-
-**Phase 1 (現在)**: テキスト中心のニュース動画。ProjectCard は Coffee から継承した text-first レイアウト。
-**Phase 2 (将来)**: ビジュアル重視コンテンツ(Before/After スクリーンショット、タイマー比較、UI 批評)に合わせて ProjectCard を再設計。
-
-移行トリガー: Phase 1 で週次安定運用が 1 ヶ月続いた時点。

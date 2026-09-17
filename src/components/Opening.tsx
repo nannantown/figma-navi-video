@@ -1,169 +1,100 @@
 import React from "react";
-import {
-  AbsoluteFill,
-  interpolate,
-  spring,
-  useCurrentFrame,
-  useVideoConfig,
-} from "remotion";
+import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { VideoMeta } from "../data";
+import { ACCENT_GRADIENT, COLORS, FONT_FAMILY, SAFE_BOTTOM, SAFE_TOP, SAFE_X } from "./theme";
 
 /**
- * Brand opening. Disabled by default (opening duration = 0).
- * If enabled later, shows date → brand title → subtitle sequence.
- * Kept minimal to avoid retention drop observed with long sting intros.
+ * ~3 s hook: date → "新作AIツール" + "TOP5" (ranking) or "3選" (pickup) → source.
+ * Everything is fully visible by frame 30 because pipeline.mjs grabs the
+ * Instagram/YouTube cover still at frame 60.
  */
-export const Opening: React.FC = () => {
+export const Opening: React.FC<{ meta: VideoMeta }> = ({ meta }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  const dateOpacity = interpolate(frame, [0, 15], [0, 1], {
-    extrapolateRight: "clamp",
-  });
-  const dateY = spring({
-    frame,
-    fps,
-    config: { damping: 14, stiffness: 100 },
-    from: 40,
-    to: 0,
-  });
-
-  const titleOpacity = interpolate(frame, [10, 30], [0, 1], {
-    extrapolateRight: "clamp",
-  });
-  const titleY = spring({
-    frame: Math.max(0, frame - 10),
-    fps,
-    config: { damping: 12, stiffness: 100 },
-    from: 60,
-    to: 0,
-  });
-
-  const lineScale = spring({
-    frame: Math.max(0, frame - 20),
-    fps,
-    config: { damping: 15, stiffness: 120 },
-    from: 0,
-    to: 1,
-  });
-
-  const subtitleOpacity = interpolate(frame, [30, 50], [0, 1], {
-    extrapolateRight: "clamp",
-  });
-  const subtitleY = spring({
-    frame: Math.max(0, frame - 30),
-    fps,
-    config: { damping: 12, stiffness: 80 },
-    from: 40,
-    to: 0,
-  });
-
-  const glowOpacity = interpolate(frame, [0, 30, 60], [0, 0.6, 0.3]);
-
-  const today = new Date();
-  const dateStr = `${today.getFullYear()}.${String(today.getMonth() + 1).padStart(2, "0")}.${String(today.getDate()).padStart(2, "0")}`;
+  const dateOpacity = interpolate(frame, [0, 8], [0, 1], { extrapolateRight: "clamp" });
+  const titleOpacity = interpolate(frame, [4, 14], [0, 1], { extrapolateRight: "clamp" });
+  const titleY = spring({ frame: Math.max(0, frame - 4), fps, config: { damping: 13, stiffness: 120 }, from: 50, to: 0 });
+  const topScale = spring({ frame: Math.max(0, frame - 10), fps, config: { damping: 10, stiffness: 150 }, from: 0.6, to: 1 });
+  const topOpacity = interpolate(frame, [10, 18], [0, 1], { extrapolateRight: "clamp" });
+  const sourceOpacity = interpolate(frame, [18, 28], [0, 1], { extrapolateRight: "clamp" });
 
   return (
     <AbsoluteFill
       style={{
-        background: "linear-gradient(180deg, #0a0a1a 0%, #141429 100%)",
+        background: COLORS.background,
+        fontFamily: FONT_FAMILY,
+        padding: `${SAFE_TOP}px ${SAFE_X}px ${SAFE_BOTTOM}px`,
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
         justifyContent: "center",
-        fontFamily:
-          "'Noto Sans JP', 'Noto Sans CJK JP', 'Hiragino Sans', sans-serif",
-        overflow: "hidden",
       }}
     >
       <div
         style={{
           position: "absolute",
-          top: "40%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          width: 700,
-          height: 700,
+          top: 260,
+          right: -220,
+          width: 1000,
+          height: 1000,
           borderRadius: "50%",
-          background:
-            "radial-gradient(circle, rgba(125, 120, 255, 0.25) 0%, transparent 70%)",
-          opacity: glowOpacity,
+          background: `radial-gradient(circle, ${COLORS.accent}66 0%, transparent 60%)`,
+          opacity: 0.35,
         }}
       />
 
-      <div
-        style={{
-          opacity: dateOpacity,
-          transform: `translateY(${dateY}px)`,
-          marginBottom: 48,
-          textAlign: "center",
-        }}
-      >
-        <div
-          style={{
-            fontSize: 68,
-            fontWeight: 900,
-            color: "#ffffff",
-            letterSpacing: "6px",
-          }}
-        >
-          {dateStr}
-        </div>
+      <div style={{ opacity: dateOpacity, fontSize: 40, fontWeight: 600, color: COLORS.textMuted, letterSpacing: "2px" }}>
+        {meta.dateLabel}
       </div>
 
       <div
         style={{
           opacity: titleOpacity,
           transform: `translateY(${titleY}px)`,
-          textAlign: "center",
+          marginTop: 28,
+          fontSize: 112,
+          fontWeight: 900,
+          color: COLORS.text,
+          lineHeight: 1.05,
+          letterSpacing: "-2px",
         }}
       >
-        <div
-          style={{
-            fontSize: 72,
-            fontWeight: 900,
-            color: "#E8E8FF",
-            letterSpacing: "-1px",
-            lineHeight: 1.1,
-          }}
-        >
-          Design
-        </div>
-        <div
-          style={{
-            fontSize: 72,
-            fontWeight: 900,
-            background: "linear-gradient(90deg, #7D78FF, #B8B5FF)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            letterSpacing: "-1px",
-            lineHeight: 1.1,
-          }}
-        >
-          Daily
-        </div>
+        新作AIツール
       </div>
 
       <div
         style={{
-          width: 200 * lineScale,
-          height: 3,
-          background: "linear-gradient(90deg, #7D78FF, #B8B5FF)",
-          borderRadius: 2,
-          margin: "32px 0",
+          opacity: topOpacity,
+          transform: `scale(${topScale})`,
+          transformOrigin: "left center",
+          fontSize: 230,
+          fontWeight: 900,
+          lineHeight: 1,
+          letterSpacing: "-6px",
+          background: ACCENT_GRADIENT,
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          alignSelf: "flex-start",
         }}
-      />
+      >
+        {meta.bigLabel}
+      </div>
 
       <div
         style={{
-          opacity: subtitleOpacity,
-          transform: `translateY(${subtitleY}px)`,
-          fontSize: 42,
+          opacity: sourceOpacity,
+          marginTop: 44,
+          alignSelf: "flex-start",
+          fontSize: 36,
           fontWeight: 700,
-          color: "rgba(232, 232, 255, 0.9)",
-          letterSpacing: "2px",
+          color: COLORS.text,
+          background: "rgba(255,255,255,0.06)",
+          border: `3px solid ${COLORS.accent}`,
+          borderRadius: 999,
+          padding: "10px 32px",
         }}
       >
-        毎朝のデザインニュース
+        {meta.openingSourceLabel}
       </div>
     </AbsoluteFill>
   );

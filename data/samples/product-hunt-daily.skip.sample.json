@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 2,
+  "fetchedAt": "2026-09-14T21:30:00.000Z",
+  "forVideoDate": "2026-09-15",
+  "freshSince": "2026-09-13T07:00:00.000Z",
+  "source": "feed",
+  "mode": "pickup",
+  "note": "【サンプル・検証用】休止の日のドライラン用（data/samples/enriched-ai-tools.skip.sample.json と組）。新作の AI 系は 1 本だけ、残りは古い AI 系と新しい非 AI 系の仮エントリ。本番の data/product-hunt-daily.json ではない。",
+  "days": [
+    {
+      "date": "2026-09-14",
+      "postedAfter": "2026-09-14T07:00:00.000Z",
+      "postedBefore": "2026-09-15T07:00:00.000Z",
+      "status": "feed",
+      "leaderboardUrl": "https://www.producthunt.com/leaderboard/daily/2026/9/14",
+      "source": "feed",
+      "aiCategoryFilter": "ok",
+      "freshCount": 2,
+      "freshAiCount": 1,
+      "posts": [
+        {
+          "id": "skip-sample-1",
+          "name": "Placeholder AI launch (new)",
+          "tagline": "The only new AI launch in this sample",
+          "slug": "placeholder-ai-launch-new",
+          "url": "https://www.producthunt.com/products/placeholder-ai-launch-new",
+          "phUrl": "https://www.producthunt.com/products/placeholder-ai-launch-new",
+          "publishedAt": "2026-09-14T00:01:00-07:00",
+          "order": 1,
+          "inAiCategory": true,
+          "isAI": true,
+          "isDev": false,
+          "fresh": true
+        },
+        {
+          "id": "skip-sample-2",
+          "name": "Placeholder launch (new, not AI)",
+          "tagline": "New but not an AI tool",
+          "slug": "placeholder-launch-new",
+          "url": "https://www.producthunt.com/products/placeholder-launch-new",
+          "phUrl": "https://www.producthunt.com/products/placeholder-launch-new",
+          "publishedAt": "2026-09-13T09:00:00-07:00",
+          "order": 2,
+          "inAiCategory": false,
+          "isAI": false,
+          "isDev": false,
+          "fresh": true
+        },
+        {
+          "id": "skip-sample-3",
+          "name": "Placeholder AI launch (old)",
+          "tagline": "An AI tool launched before the new-launch window",
+          "slug": "placeholder-ai-launch-old",
+          "url": "https://www.producthunt.com/products/placeholder-ai-launch-old",
+          "phUrl": "https://www.producthunt.com/products/placeholder-ai-launch-old",
+          "publishedAt": "2026-09-11T00:01:00-07:00",
+          "order": 3,
+          "inAiCategory": true,
+          "isAI": true,
+          "isDev": false,
+          "fresh": false
+        }
+      ]
+    }
+  ]
+}

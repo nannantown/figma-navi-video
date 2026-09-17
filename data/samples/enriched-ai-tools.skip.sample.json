@@ -1,0 +1,9 @@
+{
+  "date": "2026-09-15",
+  "genre": "ai-tools-top5",
+  "trial": 1,
+  "skip": {
+    "reason": "新作の候補が1本のため休止（検証用サンプル）",
+    "fresh_candidates": 1
+  }
+}

@@ -26,10 +26,10 @@ function getVideoPath() {
     return p.startsWith("/") ? p : join(__dirname, "..", p);
   }
 
-  // Auto-detect: find latest trending-YYYYMMDD.mp4
+  // Auto-detect: today's aitools-YYYYMMDD.mp4
   const today = new Date();
   const dateStr = `${today.getFullYear()}${String(today.getMonth() + 1).padStart(2, "0")}${String(today.getDate()).padStart(2, "0")}`;
-  return join(outputDir, `trending-${dateStr}.mp4`);
+  return join(outputDir, `aitools-${dateStr}.mp4`);
 }
 
 async function main() {
