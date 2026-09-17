@@ -454,19 +454,24 @@ export function namesMatch(dataName, snapshotName) {
   return x !== "" && y !== "" && (x.includes(y) || y.includes(x));
 }
 
+// Every popularity word the text fields reject, Japanese and English, as one
+// global expression so that occurrences can be counted in a name.
+const ANY_POPULARITY_WORD_G = new RegExp(`(?:${POPULARITY_RE.source})|(?:${ENGLISH_POPULARITY_RE.source})`, "giu");
+
 /**
- * English popularity words in the name we wrote that the Product Hunt name
- * does not have (NFKC, lowercase; counted, so a doubled "Hot" shows too).
- * Without a Product Hunt name, every one of them. The name field is exempt
- * from the popularity check and is the text fields' one exception, so a name
- * the routine "improved" to "Hot Canva" would carry the claim onto the slide
- * and let "Hot Canva でデザインを作ります" through — namesMatch alone is
- * satisfied by the shared word "Canva".
+ * Popularity words in the name we wrote that the Product Hunt name does not
+ * have — Japanese (話題 / 人気 / 注目 / 急成長 / 急上昇 / バズ / 定番 …) and
+ * English (trending / viral / popular / hot); NFKC, lowercase; counted, so a
+ * doubled "Hot" shows too. Without a Product Hunt name, every one of them.
+ * The name field is exempt from the popularity check and is the text fields'
+ * one exception, so a name the routine "improved" to "Hot Canva" or
+ * "人気の Canva" would carry the claim onto the slide and into the caption —
+ * namesMatch alone is satisfied by the shared word "Canva".
  */
 export function addedPopularityWords(dataName, phName) {
   const count = (name) => {
     const counts = new Map();
-    for (const word of normalizeForChecks(name).match(ENGLISH_POPULARITY_RE) || []) {
+    for (const word of normalizeForChecks(name).match(ANY_POPULARITY_WORD_G) || []) {
       const key = word.toLowerCase();
       counts.set(key, (counts.get(key) || 0) + 1);
     }
@@ -1013,8 +1018,8 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true, s
         } else if (phName !== null && typeof t.name === "string" && !namesMatch(t.name, phName)) {
           errors.push(`tools[${i}].name "${t.name}" is not the Product Hunt name "${phName}" of ${t.ph_url} — use the original name, or exclude the tool (never rename it)`);
         } else if (typeof t.name === "string") {
-          // namesMatch is satisfied by one shared word, so "Hot Canva" passes for "Canva":
-          // a popularity word the Product Hunt name does not have is a claim in the name.
+          // namesMatch is satisfied by one shared word, so "Hot Canva" and "人気の Canva" pass for
+          // "Canva": a popularity word the Product Hunt name does not have is a claim in the name.
           const added = addedPopularityWords(t.name, phName);
           if (added.length > 0) {
             errors.push(

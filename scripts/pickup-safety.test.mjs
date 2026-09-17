@@ -415,3 +415,32 @@ test("a name may not add an English popularity word that the Product Hunt name d
   assert.match(alone, /tools\[1\]\.name "Hot Reload" contains "hot" and there is no Product Hunt snapshot/);
   assert.doesNotMatch(errorsOf(pickup(3)), /\.name/);
 });
+
+test("a name may not add a Japanese popularity word either", () => {
+  assert.deepEqual(addedPopularityWords("人気の Canva", "Canva"), ["人気"]);
+  assert.deepEqual(addedPopularityWords("Canva 急成長中", "Canva"), ["急成長"]);
+  assert.deepEqual(addedPopularityWords("人気レシピAI", "人気レシピAI"), []);
+  assert.deepEqual(addedPopularityWords("人気レシピAI", null), ["人気"]);
+  assert.deepEqual(addedPopularityWords("話題の Hot Canva", "Canva"), ["話題", "hot"]);
+
+  const posts = [post(1, { name: "Canva" }), post(2, { name: "Notion AI" }), post(3, { name: "人気レシピAI" })];
+  for (const [name, i, word] of [
+    ["人気の Canva", 0, "人気"],
+    ["話題の Notion AI", 1, "話題"],
+    ["Canva 急成長中", 0, "急成長"],
+    ["【話題】Canva", 0, "話題"],
+    ["注目 Notion AI", 1, "注目"],
+  ]) {
+    const data = pickup(3);
+    data.tools[i].name = name;
+    assert.match(errorsOf(data, { snapshot: snapshotFor(posts) }), new RegExp(`tools\\[${i}\\]\\.name "${name}" adds "${word}" to the Product Hunt name`), name);
+  }
+  // A word that is part of the Product Hunt name itself is the name.
+  const own = pickup(3);
+  own.tools[2].name = "人気レシピAI";
+  assert.doesNotMatch(errorsOf(own, { snapshot: snapshotFor(posts) }), /tools\[2\]\.name/);
+  // Without the snapshot the name is refused, as for English.
+  const alone = pickup(3);
+  alone.tools[0].name = "人気の Canva";
+  assert.match(errorsOf(alone), /tools\[0\]\.name "人気の Canva" contains "人気" and there is no Product Hunt snapshot/);
+});
