@@ -455,6 +455,28 @@ export function namesMatch(dataName, snapshotName) {
 }
 
 /**
+ * English popularity words in the name we wrote that the Product Hunt name
+ * does not have (NFKC, lowercase; counted, so a doubled "Hot" shows too).
+ * Without a Product Hunt name, every one of them. The name field is exempt
+ * from the popularity check and is the text fields' one exception, so a name
+ * the routine "improved" to "Hot Canva" would carry the claim onto the slide
+ * and let "Hot Canva でデザインを作ります" through — namesMatch alone is
+ * satisfied by the shared word "Canva".
+ */
+export function addedPopularityWords(dataName, phName) {
+  const count = (name) => {
+    const counts = new Map();
+    for (const word of normalizeForChecks(name).match(ENGLISH_POPULARITY_RE) || []) {
+      const key = word.toLowerCase();
+      counts.set(key, (counts.get(key) || 0) + 1);
+    }
+    return counts;
+  };
+  const original = typeof phName === "string" ? count(phName) : new Map();
+  return [...count(dataName)].filter(([word, n]) => n > (original.get(word) || 0)).map(([word]) => word);
+}
+
+/**
  * Tools featured in history entries in the REPEAT_WINDOW_DAYS before `date`
  * (the same date is ignored so a re-run of today's pipeline is not a repeat).
  * @returns {Map<string, string>} cleaned Product Hunt URL → date featured
@@ -985,11 +1007,21 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true, s
           errors.push(`tools[${i}].ph_url ${t.ph_url} is not in the Product Hunt snapshot for ${data.date}`);
           return;
         }
-        if (typeof post.name === "string" && post.name.trim()) {
-          if (hasPickupForbiddenWords(post.name, { isProductName: true })) {
-            errors.push(`tools[${i}]: the Product Hunt name "${post.name}" uses ranking words or vote/award claims — exclude this tool (do not rename it)`);
-          } else if (typeof t.name === "string" && !namesMatch(t.name, post.name)) {
-            errors.push(`tools[${i}].name "${t.name}" is not the Product Hunt name "${post.name}" of ${t.ph_url} — use the original name, or exclude the tool (never rename it)`);
+        const phName = typeof post.name === "string" && post.name.trim() ? post.name : null;
+        if (phName !== null && hasPickupForbiddenWords(phName, { isProductName: true })) {
+          errors.push(`tools[${i}]: the Product Hunt name "${phName}" uses ranking words or vote/award claims — exclude this tool (do not rename it)`);
+        } else if (phName !== null && typeof t.name === "string" && !namesMatch(t.name, phName)) {
+          errors.push(`tools[${i}].name "${t.name}" is not the Product Hunt name "${phName}" of ${t.ph_url} — use the original name, or exclude the tool (never rename it)`);
+        } else if (typeof t.name === "string") {
+          // namesMatch is satisfied by one shared word, so "Hot Canva" passes for "Canva":
+          // a popularity word the Product Hunt name does not have is a claim in the name.
+          const added = addedPopularityWords(t.name, phName);
+          if (added.length > 0) {
+            errors.push(
+              phName === null
+                ? `tools[${i}].name "${t.name}" contains "${added.join('", "')}" and the snapshot has no Product Hunt name to show it is part of the name — exclude the tool`
+                : `tools[${i}].name "${t.name}" adds "${added.join('", "')}" to the Product Hunt name "${phName}" — use the original name, or exclude the tool (never rename it)`
+            );
           }
         }
         if (!isNewLaunch(post, data.date)) {
@@ -1007,10 +1039,21 @@ export function validateEnriched(data, { today = todayJst(), checkDate = true, s
           }
         }
       });
-    } else if (dateOk) {
-      warnings.push(
-        `pickup tools could not be cross-checked: ${snapshot ? `the snapshot is for ${snapshot.forVideoDate}, not ${data.date}` : "no Product Hunt snapshot"}`
-      );
+    } else {
+      if (dateOk) {
+        warnings.push(
+          `pickup tools could not be cross-checked: ${snapshot ? `the snapshot is for ${snapshot.forVideoDate}, not ${data.date}` : "no Product Hunt snapshot"}`
+        );
+      }
+      // Without the snapshot nothing shows that a popularity word is part of the
+      // Product Hunt name rather than added to it, so such a name is refused.
+      tools.forEach((t, i) => {
+        if (!t || typeof t.name !== "string") return;
+        const added = addedPopularityWords(t.name, null);
+        if (added.length > 0) {
+          errors.push(`tools[${i}].name "${t.name}" contains "${added.join('", "')}" and there is no Product Hunt snapshot for ${data.date} to show it is part of the name — exclude the tool, or validate with the snapshot`);
+        }
+      });
     }
   }
 

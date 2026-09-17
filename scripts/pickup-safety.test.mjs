@@ -13,6 +13,7 @@ import {
   officialWebsiteProblems,
   openingCountMismatches,
   namesMatch,
+  addedPopularityWords,
   recentlyFeatured,
   skipSnapshotCheck,
   toVideoTools,
@@ -383,4 +384,34 @@ test("validateEnriched lets a tool's own name through, in its own text and in th
   data.tools[0].name = "Tool 1";
   assert.match(errorsOf(data), /tools\[0\]\.description\/narration uses ranking words/);
   assert.match(errorsOf(data), /opening_narration uses ranking words or vote\/award\/popularity claims/);
+});
+
+test("a name may not add an English popularity word that the Product Hunt name does not have", () => {
+  assert.deepEqual(addedPopularityWords("Hot Canva", "Canva"), ["hot"]);
+  assert.deepEqual(addedPopularityWords("Hot Reload", "Hot Reload"), []);
+  assert.deepEqual(addedPopularityWords("Trending Notion AI", "Notion AI"), ["trending"]);
+  assert.deepEqual(addedPopularityWords("Hot Hot Reload", "Hot Reload"), ["hot"]); // doubled
+  assert.deepEqual(addedPopularityWords("ＨＯＴ Canva", "Canva"), ["hot"]); // width and case
+  assert.deepEqual(addedPopularityWords("Hot Reload", null), ["hot"]); // nothing to show it is the name
+  assert.deepEqual(addedPopularityWords("Hotjar", null), []);
+  // namesMatch alone is satisfied by the shared word — the loophole this closes.
+  assert.equal(namesMatch("Hot Canva", "Canva"), true);
+
+  const posts = [post(1, { name: "Canva" }), post(2, { name: "Hot Reload" }), post(3, { name: "Notion AI" })];
+  const data = pickup(3);
+  data.tools[0].name = "Hot Canva";
+  data.tools[1].name = "Hot Reload";
+  data.tools[2].name = "Trending Notion AI";
+  const errors = errorsOf(data, { snapshot: snapshotFor(posts) });
+  assert.match(errors, /tools\[0\]\.name "Hot Canva" adds "hot" to the Product Hunt name "Canva"/);
+  assert.doesNotMatch(errors, /tools\[1\]\.name/);
+  assert.match(errors, /tools\[2\]\.name "Trending Notion AI" adds "trending" to the Product Hunt name "Notion AI"/);
+  // A snapshot post without a name cannot show that the word is part of the name either.
+  const unnamed = errorsOf(data, { snapshot: snapshotFor(posts.map((p) => ({ ...p, name: "" }))) });
+  assert.match(unnamed, /tools\[1\]\.name "Hot Reload" contains "hot" and the snapshot has no Product Hunt name/);
+  // Nor can a missing snapshot, so the name is refused rather than merely not cross-checked.
+  const alone = errorsOf(data);
+  assert.match(alone, /tools\[0\]\.name "Hot Canva" contains "hot" and there is no Product Hunt snapshot for 2026-09-15/);
+  assert.match(alone, /tools\[1\]\.name "Hot Reload" contains "hot" and there is no Product Hunt snapshot/);
+  assert.doesNotMatch(errorsOf(pickup(3)), /\.name/);
 });
