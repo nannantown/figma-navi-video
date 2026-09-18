@@ -2,62 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "hZrW5xkBf4E",
-      "videoUrl": "https://youtube.com/shorts/hZrW5xkBf4E",
-      "date": "2026-06-19",
-      "title": "【デザインニュース】Figma の AI デザインエージェントが 6/18 で Web 検索解禁、Lorem Ipsum で埋める時代がついに終わる｜2026/06/19 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 47,
-      "discovery": {
-        "method": "official-src",
-        "description": "Figma 公式 release notes と Figma Help Center を横断し、6/18 公開の『Figma design agent に Web 検索を追加』を確認。複数の英語メディア (releasebot, blog.mean.ceo) で再現性確認、help.figma.com/hc/en-us/articles/39717296726679 の Manage web search in Figma Make ドキュメント存在も確認。method 選定 (Friday weekday news 帯): 直近 14 日 TOP1 official-src を Exploit 採用、06-16 から 3 日空きでガード抵触なし。同 TOP2 news-en は 06-18 で使用済み、TOP3 タイ expert-blog は 2 週連続 WORST で平日凍結中。直近 2 日 (06-18 news-en / 06-17 social-en) と被らず採用条件クリア。柱① が直近 14 日で 40%+ 偏重しているため、トピックを Figma 公式由来素材としつつ切り口を『AI×design 業界トレンド (Lorem Ipsum 時代の終焉)』に振って柱③ に計上、4 連投を断ち切る。Config 2026 (6/23-25) 開幕 4 日前の助走として、6/18 MCP 拡張 → 6/19 design agent Web 検索の 2 連続 AI×Figma で月曜 Config 直前まとめへ橋渡し。NG 回避: (a) AI=補助輪 (AI に実データ収集を任せ、構成と判断は人間)、(b) 駆け出しの『Lorem Ipsum で埋めて時間溶かす』痛点起点、(c) 仕事を奪う NG 非該当、(d) freshness_hours=24 で 168 NG ライン余裕、(e) 出典 5 ソースで multi-source confirm",
-        "sources": [
-          "https://www.figma.com/release-notes/",
-          "https://help.figma.com/hc/en-us/articles/39717296726679-Manage-web-search-in-Figma-Make",
-          "https://help.figma.com/hc/en-us/articles/37998629035799-Work-with-the-Figma-agent-in-design-files",
-          "https://help.figma.com/hc/en-us/articles/23870272542231-Use-AI-tools-in-Figma-Design",
-          "https://releasebot.io/updates/figma",
-          "https://blog.mean.ceo/figma-news-june-2026/"
-        ],
-        "query": "Figma design agent web search live web context placeholders June 18 2026",
-        "freshness_hours": 24
-      },
-      "stats": {
-        "views": 6,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-07-03T00:18:56.240Z"
-      },
-      "instagram": {
-        "mediaId": "18092672480339894",
-        "permalink": "https://www.instagram.com/reel/DZwAhzjASfm/",
-        "views": 43,
-        "reach": 43,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "NFxSt0TpV7k",
       "videoUrl": "https://youtube.com/shorts/NFxSt0TpV7k",
       "date": "2026-06-20",
@@ -3837,7 +3781,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-17T01:25:08.399Z"
+        "updatedAt": "2026-09-18T01:17:32.935Z"
       },
       "instagram": {
         "mediaId": "17980054662088116",
@@ -3848,7 +3792,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-17T01:25:08.400Z"
+        "updatedAt": "2026-09-18T01:17:32.936Z"
       }
     },
     {
@@ -3892,7 +3836,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-17T01:25:08.399Z"
+        "updatedAt": "2026-09-18T01:17:32.935Z"
       },
       "instagram": {
         "mediaId": "17892981939609271",
@@ -3903,7 +3847,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-17T01:25:08.400Z"
+        "updatedAt": "2026-09-18T01:17:32.936Z"
       }
     },
     {
@@ -3946,7 +3890,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-17T01:25:08.399Z"
+        "updatedAt": "2026-09-18T01:17:32.935Z"
       },
       "instagram": {
         "mediaId": "18136023463713752",
@@ -3957,7 +3901,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-17T01:25:08.400Z"
+        "updatedAt": "2026-09-18T01:17:32.936Z"
       }
     },
     {
@@ -4000,7 +3944,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-17T01:25:08.399Z"
+        "updatedAt": "2026-09-18T01:17:32.935Z"
       },
       "instagram": {
         "mediaId": "18125094217885686",
@@ -4011,7 +3955,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-17T01:25:08.400Z"
+        "updatedAt": "2026-09-18T01:17:32.936Z"
       }
     },
     {
@@ -4053,7 +3997,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-17T01:25:08.399Z"
+        "updatedAt": "2026-09-18T01:17:32.935Z"
       },
       "instagram": {
         "mediaId": "18092694224393229",
@@ -4064,7 +4008,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-17T01:25:08.400Z"
+        "updatedAt": "2026-09-18T01:17:32.936Z"
       }
     },
     {
@@ -4107,7 +4051,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-17T01:25:08.399Z"
+        "updatedAt": "2026-09-18T01:17:32.935Z"
       },
       "instagram": {
         "mediaId": "17991240810041045",
@@ -4118,7 +4062,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-17T01:25:08.400Z"
+        "updatedAt": "2026-09-18T01:17:32.936Z"
       }
     },
     {
@@ -4160,7 +4104,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-17T01:25:08.399Z"
+        "updatedAt": "2026-09-18T01:17:32.935Z"
       },
       "instagram": {
         "mediaId": "17875102395563845",
@@ -4171,7 +4115,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-17T01:25:08.400Z"
+        "updatedAt": "2026-09-18T01:17:32.936Z"
       }
     },
     {
@@ -4214,7 +4158,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-17T01:25:08.399Z"
+        "updatedAt": "2026-09-18T01:17:32.935Z"
       },
       "instagram": {
         "mediaId": "18144852367565394",
@@ -4225,7 +4169,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-17T01:25:08.400Z"
+        "updatedAt": "2026-09-18T01:17:32.936Z"
       }
     },
     {
@@ -4270,7 +4214,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-17T01:25:08.399Z"
+        "updatedAt": "2026-09-18T01:17:32.935Z"
       },
       "instagram": {
         "mediaId": "17938898880359023",
@@ -4281,7 +4225,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-17T01:25:08.400Z"
+        "updatedAt": "2026-09-18T01:17:32.936Z"
       }
     },
     {
@@ -4325,7 +4269,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-17T01:25:08.399Z"
+        "updatedAt": "2026-09-18T01:17:32.935Z"
       },
       "instagram": {
         "mediaId": "17999656568806519",
@@ -4336,7 +4280,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-17T01:25:08.400Z"
+        "updatedAt": "2026-09-18T01:17:32.936Z"
       }
     },
     {
@@ -4377,7 +4321,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-17T01:25:08.399Z"
+        "updatedAt": "2026-09-18T01:17:32.935Z"
       },
       "instagram": {
         "mediaId": "18092569211541763",
@@ -4388,7 +4332,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-17T01:25:08.400Z"
+        "updatedAt": "2026-09-18T01:17:32.936Z"
       }
     },
     {
@@ -4429,10 +4373,115 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-09-18T01:17:32.935Z"
       },
       "instagram": {
         "mediaId": "18110327918155854",
+        "permalink": "https://www.instagram.com/reel/DdXrbZejL_K/",
+        "views": 2,
+        "reach": 1,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-09-18T01:17:32.936Z"
+      }
+    },
+    {
+      "videoId": "6w7QNPJgKJc",
+      "videoUrl": "https://youtube.com/shorts/6w7QNPJgKJc",
+      "date": "2026-09-18",
+      "genre": "ai-tools-top5",
+      "trial": 1,
+      "title": "【新作AIツール5選】AskDeck・Zella・QuietHint® ほか｜2026/09/18 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "AIツール",
+        "生成AI",
+        "ProductHunt",
+        "新作AIツール",
+        "AI活用",
+        "便利ツール",
+        "業務効率化",
+        "Shorts",
+        "AskDeck",
+        "Zella",
+        "QuietHint®",
+        "Amy by Jellyfish",
+        "S-Roll"
+      ],
+      "languages": [],
+      "projects": [
+        "AskDeck",
+        "Zella",
+        "QuietHint®",
+        "Amy by Jellyfish",
+        "S-Roll"
+      ],
+      "tools": [
+        {
+          "name": "AskDeck",
+          "slug": "askdeck",
+          "phUrl": "https://www.producthunt.com/products/askdeck",
+          "website": "https://askdeck.ai/",
+          "pricing": "paid"
+        },
+        {
+          "name": "Zella",
+          "slug": "zella",
+          "phUrl": "https://www.producthunt.com/products/zella",
+          "website": "https://zellahq.com/",
+          "pricing": "freemium"
+        },
+        {
+          "name": "QuietHint®",
+          "slug": "quiethint",
+          "phUrl": "https://www.producthunt.com/products/quiethint",
+          "website": "https://quiethint.com/",
+          "pricing": "paid"
+        },
+        {
+          "name": "Amy by Jellyfish",
+          "slug": "amy-by-jellyfish",
+          "phUrl": "https://www.producthunt.com/products/amy-by-jellyfish",
+          "website": "https://vibeonly.ai/",
+          "pricing": "unknown"
+        },
+        {
+          "name": "S-Roll",
+          "slug": "s-roll",
+          "phUrl": "https://www.producthunt.com/products/s-roll",
+          "website": "https://saliency.dev/s-roll",
+          "pricing": "free"
+        }
+      ],
+      "source": {
+        "mode": "pickup",
+        "label": "Product Hunt の直近48時間の新着から厳選"
+      },
+      "durationSeconds": 43,
+      "discovery": {
+        "method": "non-engineer",
+        "description": "両アカウント配信死亡モード引き継ぎのため性能データで選ばず、直近14日で未使用かつstrategy.md表順で最上位（rank-pureはpickupで使わないので次のnon-engineer）。25本の新作AIから非エンジニアが今日使える5本を選んだ",
+        "sources": [
+          "https://www.producthunt.com/feed?category=artificial-intelligence",
+          "https://askdeck.ai/",
+          "https://zellahq.com/",
+          "https://quiethint.com/",
+          "https://vibeonly.ai/",
+          "https://saliency.dev/s-roll"
+        ],
+        "query": "",
+        "freshness_hours": 24
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "18158121448496612",
         "permalink": null,
         "views": null,
         "reach": null,
@@ -4445,14 +4494,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-08-16",
-      "changes": [
-        "standard: 7 avg views (75 videos)",
-        "Day performance: Tue=14, Sun=12, Wed=10, Mon=4, Thu=4, Fri=4, Sat=2"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-08-17",
       "changes": [
@@ -4681,6 +4722,13 @@
       "date": "2026-09-17",
       "changes": [
         "standard: 1 avg views (80 videos)",
+        "Day performance: Mon=2, Fri=1, Sat=1, Sun=1, Tue=1, Thu=1, Wed=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-09-18",
+      "changes": [
         "Day performance: Mon=2, Fri=1, Sat=1, Sun=1, Tue=1, Thu=1, Wed=1"
       ],
       "recommendedTemplate": "standard"
