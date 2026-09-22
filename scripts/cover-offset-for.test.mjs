@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { normalizeDate, recordedOffsetMs } from "./cover-offset-for.mjs";
 import { buildPostEntry } from "./record-upload.mjs";
 import { coverOffsetMs } from "./cover-frame.mjs";
+import { upsertVideo } from "./history.mjs";
 
 test("both date spellings the workflows use resolve to the same day", () => {
   assert.equal(normalizeDate("20260922"), "2026-09-22");
@@ -61,6 +62,42 @@ test("a recorded day round-trips the offset the daily run actually used", () => 
   assert.equal(entry.coverOffsetMs, coverOffsetMs(audioDurations, 2));
   assert.equal(entry.coverOffsetMs, 7033);
   assert.equal(recordedOffsetMs({ videos: [entry] }, "2026-09-22"), 7033);
+});
+
+// The recovery workflow runs record-upload.mjs too, and it has no
+// audio-durations.json (the mp4 came from a Release), so its entry carries
+// coverOffsetMs: null. That must FOLD INTO the day, not replace the real value
+// the daily run recorded — otherwise a second recovery attempt for the same
+// day would be back to guessing. This works because null is an "empty value"
+// to mergeVideoEntry; recording 0 or the fallback constant instead would
+// silently overwrite the truth.
+test("a recovery run cannot erase the offset the daily run recorded", () => {
+  const daily = buildPostEntry({
+    date: "2026-09-22",
+    uploadResult: { videoId: "v1" },
+    igResult: null,
+    trendingData: { tools: [{ name: "A" }] },
+    captions: null,
+    audioDurations: { opening: 4.51, "tool-1": 8.5, ending: 4 },
+    enriched: null,
+  });
+  assert.equal(daily.coverOffsetMs, 7033);
+
+  // The recovery run: no audio durations available.
+  const recovery = buildPostEntry({
+    date: "2026-09-22",
+    uploadResult: null,
+    igResult: { mediaId: "ig123" },
+    trendingData: { tools: [{ name: "A" }] },
+    captions: null,
+    audioDurations: null,
+    enriched: null,
+  });
+  assert.equal(recovery.coverOffsetMs, null);
+
+  const history = upsertVideo({ videos: [daily] }, recovery, { merge: true });
+  assert.equal(recordedOffsetMs(history, "2026-09-22"), 7033);
+  assert.equal(history.videos[0].instagram.mediaId, "ig123");
 });
 
 test("a day with no tools recorded records no offset instead of throwing", () => {
