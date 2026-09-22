@@ -14,6 +14,7 @@
  * Everything explanatory goes to stderr.
  */
 
+import { realpathSync } from "fs";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 import { loadHistory } from "./history.mjs";
@@ -65,4 +66,14 @@ function main() {
   console.log(FALLBACK_OFFSET_MS);
 }
 
-if (process.argv[1] && process.argv[1].endsWith("cover-offset-for.mjs")) main();
+// Same direct-run check as record-upload.mjs: importing this from a test must
+// not run main() (it writes to stdout and can exit non-zero).
+const isDirectRun = (() => {
+  if (!process.argv[1]) return false;
+  try {
+    return realpathSync(process.argv[1]) === realpathSync(fileURLToPath(import.meta.url));
+  } catch {
+    return false;
+  }
+})();
+if (isDirectRun) main();

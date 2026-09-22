@@ -102,6 +102,8 @@ jobs:
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
           DATE: ${{ steps.date.outputs.date }}
         run: |
+          set -euo pipefail
+
           # The Reels cover: this path has no audio durations to derive the
           # offset from (the mp4 comes from a Release), so read back the value
           # the daily run recorded for that day. A constant cannot do the job —
