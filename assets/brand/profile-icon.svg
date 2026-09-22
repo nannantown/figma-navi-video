@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <!--
+    figma-navi-video プロフィールアイコン（新作AIツール pickup アカウント）
+    色は src/components/theme.ts から流用:
+      background #0b0b14 / ACCENT_GRADIENT #8B7CFF -> #C9C2FF
+    IG・YouTube はプロフィール画像を円形に切るため、要素は中央の円内に収めている。
+    「AI」の字はパス化済み（Arial Black 900 / 470px から変換）。フォントが入っていない
+    環境で書き出しても字面が変わらない。文字を打ち直したいときは Arial Black で
+    テキストを組み直してからパス化する。
+  -->
+  <defs>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8B7CFF"/>
+      <stop offset="100%" stop-color="#C9C2FF"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8B7CFF" stop-opacity="0.42"/>
+      <stop offset="60%" stop-color="#8B7CFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1080" height="1080" fill="#0b0b14"/>
+  <circle cx="774" cy="316" r="480" fill="url(#glow)"/>
+
+  <g transform="translate(-26,66)">
+    <!-- 「新作」を表すきらめき。40px でも潰れないよう字と離している -->
+    <path d="M846 168 l22 62 62 22 -62 22 -22 62 -22 -62 -62 -22 62 -22 z" fill="#C9C2FF"/>
+
+    <!-- 「AI」 -->
+    <path d="M 497.18262,572.46289 H 378.76465 L 362.4707,628 H 256.21582 L 382.66602,291.56445 H 496.03516 L 622.48535,628 H 513.70605 Z M 475.38086,499.71387 438.20312,378.77148 401.25488,499.71387 Z M 647.89258,291.56445 H 752.08203 V 628 H 647.89258 Z"
+          fill="url(#accent)"/>
+
+    <rect x="350" y="702" width="380" height="34" rx="17" fill="url(#accent)"/>
+  </g>
+</svg>
