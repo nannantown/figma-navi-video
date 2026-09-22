@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <!--
+    figma-navi-video プロフィールアイコン（新作AIツール pickup アカウント）
+    色は src/components/theme.ts から流用:
+      background #0b0b14 / ACCENT_GRADIENT #8B7CFF -> #C9C2FF
+    IG・YouTube はプロフィール画像を円形に切るため、要素は中央の円内に収めている。
+  -->
+  <defs>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8B7CFF"/>
+      <stop offset="100%" stop-color="#C9C2FF"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8B7CFF" stop-opacity="0.42"/>
+      <stop offset="60%" stop-color="#8B7CFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1080" height="1080" fill="#0b0b14"/>
+  <circle cx="774" cy="316" r="480" fill="url(#glow)"/>
+
+  <g transform="translate(-26,66)">
+    <!-- 「新作」を表すきらめき。40px でも潰れないよう字と離している -->
+    <path d="M846 168 l22 62 62 22 -62 22 -22 62 -22 -62 -62 -22 62 -22 z" fill="#C9C2FF"/>
+
+    <text x="524" y="628" text-anchor="middle"
+          font-family="Arial Black, Arial, Helvetica, sans-serif"
+          font-size="470" font-weight="900" letter-spacing="-12"
+          fill="url(#accent)">AI</text>
+
+    <rect x="350" y="702" width="380" height="34" rx="17" fill="url(#accent)"/>
+  </g>
+</svg>
