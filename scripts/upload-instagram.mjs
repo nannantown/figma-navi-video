@@ -44,8 +44,10 @@ const POLL_MAX_ATTEMPTS = 60;
 // downloaded from a Release); it is derived from the same rule rather than
 // guessed, so a recovered post lands on the same card as the daily run.
 const DEFAULT_THUMB_OFFSET_MS = FALLBACK_OFFSET_MS;
+// `||` not `??`: an empty INSTAGRAM_THUMB_OFFSET_MS (a workflow passing
+// through an unset variable) would otherwise be Number("") = 0 = frame 0.
 const THUMB_OFFSET_MS = Number(
-  process.env.INSTAGRAM_THUMB_OFFSET_MS ?? DEFAULT_THUMB_OFFSET_MS
+  process.env.INSTAGRAM_THUMB_OFFSET_MS || DEFAULT_THUMB_OFFSET_MS
 );
 
 async function graphPost(path, params) {

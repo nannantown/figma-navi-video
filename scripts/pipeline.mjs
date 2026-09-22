@@ -173,7 +173,7 @@ function main() {
 
   // Step 4c: Cover still — the first tool card, so the day's tool name and
   //          logo are what the Instagram grid shows (see cover-frame.mjs).
-  const frame = coverFrame(inputProps.audioDurations);
+  const frame = coverFrame(inputProps.audioDurations, inputProps.tools.length);
   const coverFile = `output/aitools-${dateStr}-cover.jpg`;
   console.log(`\n=== Step 4c: Render Cover Image → ${coverFile} (frame ${frame}) ===`);
   runSafe(`npx remotion still ${COMPOSITION_ID} "${coverFile}" --frame=${frame} --props="${propsPath}"`, "render-cover");
@@ -182,9 +182,18 @@ function main() {
   if (snsEnabled) {
     // Instagram picks the Reels cover from this offset. Derived from the day's
     // real audio durations, so it tracks the first card wherever it starts.
-    const offsetMs = coverOffsetMs(inputProps.audioDurations);
-    process.env.INSTAGRAM_THUMB_OFFSET_MS = String(offsetMs);
-    console.log(`\n=== Step 5: Post to SNS (IG thumb_offset ${offsetMs} ms) ===`);
+    // An offset set in the environment wins, so the workflow keeps a usable
+    // override; `!` rather than `??=` so an empty string does not count as set
+    // (Number("") is 0, i.e. the first frame of the video).
+    const offsetMs = coverOffsetMs(inputProps.audioDurations, inputProps.tools.length);
+    if (!process.env.INSTAGRAM_THUMB_OFFSET_MS) {
+      process.env.INSTAGRAM_THUMB_OFFSET_MS = String(offsetMs);
+    }
+    const usedOffset = process.env.INSTAGRAM_THUMB_OFFSET_MS;
+    console.log(
+      `\n=== Step 5: Post to SNS (IG thumb_offset ${usedOffset} ms` +
+        `${usedOffset === String(offsetMs) ? "" : ` — overridden, computed ${offsetMs}`}) ===`
+    );
     try {
       run(`node scripts/post-sns.mjs --video="${outputFile}"`);
     } finally {

@@ -53,7 +53,16 @@ export function firstToolFrames(durations) {
  * production, but a 1 s narration would do it) falls back to its midpoint so
  * the cover can never spill into the next card.
  */
-export function coverFrame(durations) {
+export function coverFrame(durations, toolCount) {
+  // AiToolsVideo renders one Series.Sequence per entry of `tools`, but the
+  // frame maths is driven by the audio durations. A day with durations but no
+  // tool cards would put the cover on the ending; that day must never render
+  // at all, so say so loudly instead of picking a frame.
+  if (!Number.isInteger(toolCount) || toolCount < 1) {
+    throw new Error(
+      `coverFrame: the video needs at least one tool card, got toolCount=${JSON.stringify(toolCount)}`
+    );
+  }
   const opening = openingFrames(durations);
   const first = firstToolFrames(durations);
   // Clamp rather than halve: on a card shorter than the offset, the last frame
@@ -64,20 +73,34 @@ export function coverFrame(durations) {
 }
 
 /** The same point expressed as Instagram's thumb_offset (milliseconds). */
-export function coverOffsetMs(durations) {
-  return Math.round((coverFrame(durations) / FPS) * 1000);
+export function coverOffsetMs(durations, toolCount) {
+  return Math.round((coverFrame(durations, toolCount) / FPS) * 1000);
 }
 
 /**
- * Offset for callers that have no audio durations — only the recovery path
- * (post-today-instagram.yml re-posts an mp4 downloaded from a Release).
+ * Last-resort offset, for a video whose real offset was never recorded — in
+ * practice only a Release cut before 2026-09-22. Everything since records
+ * `coverOffsetMs` in data/performance-history.json (record-upload.mjs), and
+ * scripts/cover-offset-for.mjs hands that recorded value to the recovery post.
  *
- * Same rule as coverFrame() applied to the shortest opening the composition
- * allows, so it agrees with the daily run whenever the opening sits on its
- * floor and stays inside the first card when the opening is longer. It only
- * misses if a day has NO opening audio at all AND a first narration shorter
- * than this — a combination production has never produced.
+ * THIS CONSTANT IS NOT SAFE FOR EVERY DAY, and cannot be: it is one number
+ * standing in for a value that moves with the narration. Frame 150 is inside
+ * the first tool card only while the opening sits at or below
+ * FALLBACK_SAFE_MAX_OPENING_SEC; a longer opening pushes the first card past
+ * it and the cover silently lands back on the brand-constant title card —
+ * the exact bug this module exists to fix. cover-offset-for.mjs therefore
+ * warns loudly whenever it has to fall back to this.
  */
 export const FALLBACK_OFFSET_MS = Math.round(
   ((MIN_OPENING_FRAMES + COVER_FRAMES_INTO_CARD) / FPS) * 1000
 );
+
+/**
+ * The opening length at which FALLBACK_OFFSET_MS stops being safe.
+ * openingFrames() must stay <= MIN_OPENING_FRAMES + COVER_FRAMES_INTO_CARD,
+ * i.e. ceil(sec * FPS) + PADDING_FRAMES <= 150 → sec <= 4.5.
+ * An `opening_narration` of ~27 characters already exceeds it (enriched-schema
+ * allows up to 30), so this is reachable, not theoretical.
+ */
+export const FALLBACK_SAFE_MAX_OPENING_SEC =
+  (MIN_OPENING_FRAMES + COVER_FRAMES_INTO_CARD - PADDING_FRAMES) / FPS;

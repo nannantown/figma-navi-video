@@ -53,7 +53,7 @@ for (const input of inputs) {
   const tools = toVideoTools(data).map((t) => ({ ...t, image: null }));
   const meta = buildMeta(data);
   const durations = durationsFor(tools.length);
-  const frame = coverFrame(durations);
+  const frame = coverFrame(durations, tools.length);
   const props = { tools, meta, audioDurations: durations, subtitles: {} };
 
   const propsPath = join(outputDir, `cover-preview-${meta.date}.props.json`);

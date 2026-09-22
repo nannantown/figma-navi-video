@@ -100,14 +100,19 @@ jobs:
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
           INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
-          # No offset pinned: this path has no audio durations to derive one
-          # from (the mp4 comes from a Release), so upload-instagram.mjs uses
-          # cover-frame.mjs's FALLBACK_OFFSET_MS (5000 ms = the same rule at the
-          # shortest opening the composition allows). That lands on the first
-          # tool card, like the daily run. "2000" used to be pinned here and
-          # produced the identical grid tile the owner reported on 2026-09-22.
           DATE: ${{ steps.date.outputs.date }}
         run: |
+          # The Reels cover: this path has no audio durations to derive the
+          # offset from (the mp4 comes from a Release), so read back the value
+          # the daily run recorded for that day. A constant cannot do the job —
+          # the first tool card starts later on a day with a long opening
+          # narration, and a stale constant puts the cover back on the
+          # brand-constant title card without failing anything. The script
+          # warns loudly if the day predates the recording (before 2026-09-22).
+          INSTAGRAM_THUMB_OFFSET_MS="$(node scripts/cover-offset-for.mjs "$DATE")"
+          export INSTAGRAM_THUMB_OFFSET_MS
+          echo "Using thumb_offset ${INSTAGRAM_THUMB_OFFSET_MS} ms"
+
           # cover_url intentionally omitted: GitHub Release assets are served
           # as Content-Type: application/octet-stream, which IG rejects with
           # code 9004. upload-instagram.mjs falls back to thumb_offset.

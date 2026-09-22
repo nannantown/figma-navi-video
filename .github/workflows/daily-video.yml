@@ -96,8 +96,11 @@ jobs:
           # every day's grid tile looked identical. pipeline.mjs now derives the
           # offset from the day's audio durations (scripts/cover-frame.mjs) so
           # the cover is the first tool card — same series look, different tool
-          # name and logo each day. Set INSTAGRAM_THUMB_OFFSET_MS here only to
-          # override that.
+          # name and logo each day.
+          # Adding INSTAGRAM_THUMB_OFFSET_MS here does override the computed
+          # value (pipeline.mjs only fills it in when unset), so it stays
+          # available as a kill switch — but a fixed number is what caused the
+          # bug, so prefer changing the rule in cover-frame.mjs.
           # GitHub (auto-provided, used for Release creation)
           GITHUB_TOKEN: ${{ env.VERIFY_RUN != '1' && secrets.GITHUB_TOKEN || '' }}
 

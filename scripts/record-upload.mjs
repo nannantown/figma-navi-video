@@ -12,6 +12,7 @@ import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { GENRE, TRIAL } from "./enriched-schema.mjs";
 import { buildSkipEntry, upsertVideo } from "./history.mjs";
+import { coverOffsetMs } from "./cover-frame.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
@@ -92,6 +93,13 @@ export function buildPostEntry({ date, uploadResult, igResult, trendingData, cap
     tools: tools.map((t) => ({ name: t.name, slug: t.slug, phUrl: t.phUrl, website: t.website, pricing: t.pricing })),
     source: trendingData?.meta ? { mode: trendingData.meta.mode, label: trendingData.meta.sourceLabel } : null,
     durationSeconds: Math.round(durationSeconds),
+    // Where this video's Reels cover was taken from. The recovery post
+    // (post-today-instagram.yml) re-uploads an mp4 from a Release and has no
+    // audio durations to recompute it, so the number has to survive with the
+    // day. Without it the recovery falls back to a constant that only holds
+    // for short openings — see cover-frame.mjs.
+    coverOffsetMs:
+      audioDurations && tools.length > 0 ? coverOffsetMs(audioDurations, tools.length) : null,
     discovery: enriched?.discovery || null,
     stats: { views: 0, likes: 0, comments: 0, updatedAt: null },
     // Metrics are filled by fetch-stats.mjs (IG insights lag up to 48h)
