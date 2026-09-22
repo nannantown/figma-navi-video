@@ -37,9 +37,9 @@ Identical apart from the date.
 
 ## After — the day's tool, same series look
 
-| 2026-09-18 | 2026-09-22 | sample day |
+| 2026-09-18 | 2026-09-22 | sample day, full `npm run dry-run` |
 |---|---|---|
-| ![](after-2026-09-18-AskDeck.jpg) | ![](after-2026-09-22-AppGrowthKit.jpg) | ![](after-sample-Resurf.jpg) |
+| ![](after-2026-09-18-AskDeck.jpg) | ![](after-2026-09-22-AppGrowthKit.jpg) | ![](after-dryrun-full-pipeline-Resurf.jpg) |
 
 `AskDeck / スライドと解説動画を自動生成` vs `AppGrowthKit / アプリストア用の宣伝画像を自動で作成`
 vs `Resurf / メモもリンクもPDFも1か所に保存` — three different strings, while the
@@ -58,5 +58,8 @@ git show <sha>:data/enriched-ai-tools.json > /tmp/day.json
 
 Only two production days exist for this format (trial #1 started 2026-09-18;
 09-19..09-21 were skip days), so the third image is the committed pickup
-sample. The previews are rendered without logos — production also draws each
-tool's logo, one more thing that differs per day.
+sample — rendered by the real pipeline (`npm run dry-run`, cover frame 168 from
+the day's actual TTS durations), which is why it also carries the subtitle.
+
+The two `preview-covers.mjs` images are rendered without logos and without
+subtitles; production draws both, and each differs per day too.
