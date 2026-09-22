@@ -24,6 +24,7 @@
 import { readFileSync, statSync, writeFileSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
+import { FALLBACK_OFFSET_MS } from "./cover-frame.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const outputDir = join(__dirname, "..", "output");
@@ -38,12 +39,11 @@ const POLL_MAX_ATTEMPTS = 60;
 // pipeline.mjs computes the exact offset from the day's audio durations and
 // passes it in INSTAGRAM_THUMB_OFFSET_MS (see cover-frame.mjs) so the cover
 // always lands on the first tool card — the part of the video that differs
-// day to day. This constant is only the fallback for callers that have no
-// durations to hand (the post-today-instagram.yml recovery path, which
-// re-posts an mp4 downloaded from a Release). 7000 ms sits inside the first
-// card for every production run: the opening is floored at 3.0 s and a tool
-// narration has never been shorter than 5 s.
-const DEFAULT_THUMB_OFFSET_MS = 7000;
+// day to day. FALLBACK_OFFSET_MS covers callers that have no durations to
+// hand (the post-today-instagram.yml recovery path, which re-posts an mp4
+// downloaded from a Release); it is derived from the same rule rather than
+// guessed, so a recovered post lands on the same card as the daily run.
+const DEFAULT_THUMB_OFFSET_MS = FALLBACK_OFFSET_MS;
 const THUMB_OFFSET_MS = Number(
   process.env.INSTAGRAM_THUMB_OFFSET_MS ?? DEFAULT_THUMB_OFFSET_MS
 );

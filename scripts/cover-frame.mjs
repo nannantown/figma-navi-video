@@ -56,11 +56,28 @@ export function firstToolFrames(durations) {
 export function coverFrame(durations) {
   const opening = openingFrames(durations);
   const first = firstToolFrames(durations);
-  const into = first > COVER_FRAMES_INTO_CARD ? COVER_FRAMES_INTO_CARD : Math.floor(first / 2);
-  return opening + into;
+  // Clamp rather than halve: on a card shorter than the offset, the last frame
+  // of the card is the most-drawn one available. Halving would land on
+  // localFrame 30 for a 60-frame card — exactly where the last element starts
+  // its fade at opacity 0.
+  return opening + Math.min(COVER_FRAMES_INTO_CARD, first - 1);
 }
 
 /** The same point expressed as Instagram's thumb_offset (milliseconds). */
 export function coverOffsetMs(durations) {
   return Math.round((coverFrame(durations) / FPS) * 1000);
 }
+
+/**
+ * Offset for callers that have no audio durations — only the recovery path
+ * (post-today-instagram.yml re-posts an mp4 downloaded from a Release).
+ *
+ * Same rule as coverFrame() applied to the shortest opening the composition
+ * allows, so it agrees with the daily run whenever the opening sits on its
+ * floor and stays inside the first card when the opening is longer. It only
+ * misses if a day has NO opening audio at all AND a first narration shorter
+ * than this — a combination production has never produced.
+ */
+export const FALLBACK_OFFSET_MS = Math.round(
+  ((MIN_OPENING_FRAMES + COVER_FRAMES_INTO_CARD) / FPS) * 1000
+);

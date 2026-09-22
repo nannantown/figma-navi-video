@@ -27,8 +27,14 @@ const rootDir = join(__dirname, "..");
 const outputDir = join(rootDir, "output");
 const COMPOSITION_ID = "AiToolsTop5";
 
-// Representative production timings (opening 2.8 s, ~8.5 s per tool).
-const DURATIONS = { opening: 2.8, "tool-1": 8.5, "tool-2": 8.5, "tool-3": 8.5, ending: 4.0 };
+// Representative production timings (opening 2.8 s, ~8.5 s per tool). One
+// entry per tool of the day: getToolCount() counts these, so a short list
+// would truncate the composition below the number of cards it renders.
+function durationsFor(toolCount) {
+  const d = { opening: 2.8, ending: 4.0 };
+  for (let i = 1; i <= toolCount; i++) d[`tool-${i}`] = 8.5;
+  return d;
+}
 
 const inputs = process.argv.slice(2);
 if (inputs.length === 0) {
@@ -37,8 +43,6 @@ if (inputs.length === 0) {
 }
 
 mkdirSync(outputDir, { recursive: true });
-const frame = coverFrame(DURATIONS);
-console.log(`Cover frame: ${frame} (${((frame / 30) * 1000).toFixed(0)} ms)\n`);
 
 for (const input of inputs) {
   const { data } = parseEnrichedText(readFileSync(input, "utf-8"));
@@ -48,7 +52,9 @@ for (const input of inputs) {
   }
   const tools = toVideoTools(data).map((t) => ({ ...t, image: null }));
   const meta = buildMeta(data);
-  const props = { tools, meta, audioDurations: DURATIONS, subtitles: {} };
+  const durations = durationsFor(tools.length);
+  const frame = coverFrame(durations);
+  const props = { tools, meta, audioDurations: durations, subtitles: {} };
 
   const propsPath = join(outputDir, `cover-preview-${meta.date}.props.json`);
   writeFileSync(propsPath, JSON.stringify(props));
@@ -59,5 +65,8 @@ for (const input of inputs) {
     ["remotion", "still", COMPOSITION_ID, out, `--frame=${frame}`, `--props=${propsPath}`],
     { cwd: rootDir, stdio: "inherit" }
   );
-  console.log(`${meta.date}: ${tools[0].name} — ${tools[0].description} → ${out}\n`);
+  console.log(
+    `${meta.date}: ${tools[0].name} — ${tools[0].description} ` +
+      `(${tools.length} tools, cover frame ${frame}) → ${out}\n`
+  );
 }
