@@ -34,8 +34,15 @@ const POLL_INTERVAL_MS = 5000;
 const POLL_MAX_ATTEMPTS = 60;
 
 // Thumbnail is taken from this offset (ms) within the video.
-// Default 7000ms lands on the first content card, past the ~4.5s opening —
-// avoids the near-black fade-in at frame 0 that IG picks otherwise.
+//
+// pipeline.mjs computes the exact offset from the day's audio durations and
+// passes it in INSTAGRAM_THUMB_OFFSET_MS (see cover-frame.mjs) so the cover
+// always lands on the first tool card — the part of the video that differs
+// day to day. This constant is only the fallback for callers that have no
+// durations to hand (the post-today-instagram.yml recovery path, which
+// re-posts an mp4 downloaded from a Release). 7000 ms sits inside the first
+// card for every production run: the opening is floored at 3.0 s and a tool
+// narration has never been shorter than 5 s.
 const DEFAULT_THUMB_OFFSET_MS = 7000;
 const THUMB_OFFSET_MS = Number(
   process.env.INSTAGRAM_THUMB_OFFSET_MS ?? DEFAULT_THUMB_OFFSET_MS

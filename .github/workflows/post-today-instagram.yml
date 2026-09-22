@@ -100,7 +100,11 @@ jobs:
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
           INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
-          INSTAGRAM_THUMB_OFFSET_MS: "2000"
+          # No offset pinned: this path has no audio durations to derive one
+          # from (the mp4 comes from a Release), so upload-instagram.mjs uses
+          # its 7000 ms fallback — inside the first tool card, like the daily
+          # run. "2000" used to be pinned here and produced the identical grid
+          # tile the owner reported on 2026-09-22.
           DATE: ${{ steps.date.outputs.date }}
         run: |
           # cover_url intentionally omitted: GitHub Release assets are served

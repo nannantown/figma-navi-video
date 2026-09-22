@@ -5,8 +5,10 @@ import { ACCENT_GRADIENT, COLORS, FONT_FAMILY, SAFE_BOTTOM, SAFE_TOP, SAFE_X } f
 
 /**
  * ~3 s hook: date → "新作AIツール" + "TOP5" (ranking) or "3選" (pickup) → source.
- * Everything is fully visible by frame 30 because pipeline.mjs grabs the
- * Instagram/YouTube cover still at frame 60.
+ * Everything is fully visible by frame 30. This card is deliberately NOT the
+ * cover any more: it is identical every day apart from the small date label,
+ * which made the Instagram grid look like one repeated picture. The cover is
+ * taken from the first tool card instead (scripts/cover-frame.mjs).
  */
 export const Opening: React.FC<{ meta: VideoMeta }> = ({ meta }) => {
   const frame = useCurrentFrame();
