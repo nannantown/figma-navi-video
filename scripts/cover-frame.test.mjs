@@ -46,6 +46,16 @@ test("no opening audio means the first card starts at frame 0", () => {
   assert.equal(coverFrame(d), COVER_FRAMES_INTO_CARD);
 });
 
+test("a missing tool-1 duration uses the same 8 s fallback as the composition", () => {
+  // calculateFrameDurations() floors the tool count at 1 and renders a card of
+  // (8 s + padding); the cover has to stay on that card, not fall back to the
+  // opening title card this whole change exists to get away from.
+  const d = { opening: 2.8, ending: 4 };
+  assert.equal(firstToolFrames(d), Math.ceil(8 * 30) + 15);
+  assertInsideFirstCard(d, "missing tool-1");
+  assert.ok(coverFrame(d) > openingFrames(d));
+});
+
 test("the cover is never the brand-constant opening title card", () => {
   // Regression guard for the 2026-09-22 owner report: frame 60 / 2000 ms used
   // to sit in the opening, so every day's grid tile looked identical.

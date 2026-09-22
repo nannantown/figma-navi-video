@@ -34,10 +34,16 @@ export function openingFrames(durations) {
   return Math.max(Math.ceil(sec * FPS) + PADDING_FRAMES, MIN_OPENING_FRAMES);
 }
 
-/** Frames the first tool card occupies. */
+/**
+ * Frames the first tool card occupies. There is always a first card:
+ * calculateFrameDurations() floors the tool count at 1 and falls back to an
+ * 8 s card when the audio duration is missing — mirrored here, or the cover
+ * would drift off that card in exactly the case the fallback covers.
+ */
+export const MISSING_TOOL_FALLBACK_SEC = 8;
+
 export function firstToolFrames(durations) {
-  const sec = durations["tool-1"] ?? 0;
-  if (!(sec > 0)) return 0;
+  const sec = durations["tool-1"] || MISSING_TOOL_FALLBACK_SEC;
   return Math.ceil(sec * FPS) + PADDING_FRAMES;
 }
 
@@ -50,7 +56,6 @@ export function firstToolFrames(durations) {
 export function coverFrame(durations) {
   const opening = openingFrames(durations);
   const first = firstToolFrames(durations);
-  if (first === 0) return opening; // no tool audio: nothing better than the opening
   const into = first > COVER_FRAMES_INTO_CARD ? COVER_FRAMES_INTO_CARD : Math.floor(first / 2);
   return opening + into;
 }
