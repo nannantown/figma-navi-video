@@ -7,6 +7,7 @@ import {
   COVER_FRAMES_INTO_CARD,
   ENDING_EXTRA_FRAMES,
   FALLBACK_OFFSET_MS,
+  FALLBACK_SAFE_MAX_OPENING_SEC,
   FPS,
   MIN_OPENING_FRAMES,
   PADDING_FRAMES,
@@ -22,7 +23,7 @@ const rootDir = join(dirname(fileURLToPath(import.meta.url)), "..");
 function assertInsideFirstCard(durations, label) {
   const start = openingFrames(durations);
   const end = start + firstToolFrames(durations);
-  const f = coverFrame(durations);
+  const f = coverFrame(durations, 5);
   assert.ok(f >= start, `${label}: cover frame ${f} is before the first card (${start})`);
   assert.ok(f < end, `${label}: cover frame ${f} is past the first card (${end})`);
 }
@@ -42,19 +43,19 @@ test("a very short first card still keeps the cover inside it", () => {
   // 1 s -> 30+15 = 45 frames, shorter than the 60-frame offset: last frame of
   // the card (44), which is still past the 42-frame point where the card's
   // last element finishes fading in.
-  assert.equal(coverFrame(d), openingFrames(d) + 44);
+  assert.equal(coverFrame(d, 5), openingFrames(d) + 44);
 });
 
 test("the opening floor is honoured so a tiny hook cannot pull the cover forward", () => {
   const d = { opening: 0.5, "tool-1": 8.5, ending: 4 };
   assert.equal(openingFrames(d), MIN_OPENING_FRAMES);
-  assert.equal(coverFrame(d), MIN_OPENING_FRAMES + COVER_FRAMES_INTO_CARD);
+  assert.equal(coverFrame(d, 5), MIN_OPENING_FRAMES + COVER_FRAMES_INTO_CARD);
 });
 
 test("no opening audio means the first card starts at frame 0", () => {
   const d = { "tool-1": 8.5, ending: 4 };
   assert.equal(openingFrames(d), 0);
-  assert.equal(coverFrame(d), COVER_FRAMES_INTO_CARD);
+  assert.equal(coverFrame(d, 5), COVER_FRAMES_INTO_CARD);
 });
 
 test("a missing tool-1 duration uses the same 8 s fallback as the composition", () => {
@@ -64,7 +65,7 @@ test("a missing tool-1 duration uses the same 8 s fallback as the composition", 
   const d = { opening: 2.8, ending: 4 };
   assert.equal(firstToolFrames(d), Math.ceil(8 * 30) + 15);
   assertInsideFirstCard(d, "missing tool-1");
-  assert.ok(coverFrame(d) > openingFrames(d));
+  assert.ok(coverFrame(d, 5) > openingFrames(d));
 });
 
 test("the cover is never the brand-constant opening title card", () => {
@@ -74,10 +75,10 @@ test("the cover is never the brand-constant opening title card", () => {
   // openingFrames() — a self-comparison could never fail.
   const d = { opening: 2.8, "tool-1": 8.5, ending: 4 };
   assert.equal(openingFrames(d), 99); // ceil(2.8*30)+15 = 99, above the 90 floor
-  assert.equal(coverFrame(d), 159); // 99 + 60, i.e. 2 s into card 1
-  assert.equal(coverOffsetMs(d), 5300);
-  assert.ok(coverFrame(d) > 60, "the old cover frame was 60 — inside the opening");
-  assert.ok(coverOffsetMs(d) > 2000, "the old thumb_offset was 2000 ms");
+  assert.equal(coverFrame(d, 5), 159); // 99 + 60, i.e. 2 s into card 1
+  assert.equal(coverOffsetMs(d, 5), 5300);
+  assert.ok(coverFrame(d, 5) > 60, "the old cover frame was 60 — inside the opening");
+  assert.ok(coverOffsetMs(d, 5) > 2000, "the old thumb_offset was 2000 ms");
 });
 
 // The frame arithmetic is mirrored, not shared: src/data.ts drives the actual
@@ -105,10 +106,81 @@ test("the recovery fallback lands on the first card, not the title card", () => 
   // Same card as the daily run when the opening sits on its floor.
   const onFloor = { opening: 2.5, "tool-1": 8.5, ending: 4 };
   assert.equal(openingFrames(onFloor), MIN_OPENING_FRAMES);
-  assert.equal(coverOffsetMs(onFloor), FALLBACK_OFFSET_MS);
-  // Still inside card 1 for a longer opening.
-  const longer = { opening: 3.5, "tool-1": 8.5, ending: 4 };
-  const startMs = (openingFrames(longer) / FPS) * 1000;
-  const endMs = ((openingFrames(longer) + firstToolFrames(longer)) / FPS) * 1000;
-  assert.ok(FALLBACK_OFFSET_MS > startMs && FALLBACK_OFFSET_MS < endMs);
+  assert.equal(coverOffsetMs(onFloor, 5), FALLBACK_OFFSET_MS);
+});
+
+// The fallback is one constant standing in for a value that moves with the
+// narration, so it has a hard edge. Pin the edge itself: the point of this
+// test is that the number in FALLBACK_SAFE_MAX_OPENING_SEC is the real one, so
+// that cover-offset-for.mjs's warning and the workflow comment cannot drift
+// away from the behaviour. Beyond the edge the fallback is WRONG by design —
+// that is why the offset is recorded per day instead.
+test("the fallback's safe range ends exactly at FALLBACK_SAFE_MAX_OPENING_SEC", () => {
+  assert.equal(FALLBACK_SAFE_MAX_OPENING_SEC, 4.5);
+  const fallbackFrame = (FALLBACK_OFFSET_MS / 1000) * FPS;
+
+  // At the edge: the fallback is still the first frame of the first card.
+  const atEdge = { opening: 4.5, "tool-1": 8.5, ending: 4 };
+  assert.equal(openingFrames(atEdge), 150);
+  assert.ok(fallbackFrame >= openingFrames(atEdge));
+  assert.ok(fallbackFrame < openingFrames(atEdge) + firstToolFrames(atEdge));
+
+  // One frame of narration past it: the first card starts at 151, so the
+  // fallback frame 150 is back inside the opening title card.
+  const pastEdge = { opening: 4.51, "tool-1": 8.5, ending: 4 };
+  assert.equal(openingFrames(pastEdge), 151);
+  assert.ok(fallbackFrame < openingFrames(pastEdge), "fallback is inside the title card here");
+  // ...and the day's real offset is NOT the fallback, which is the whole
+  // reason record-upload.mjs stores it.
+  assert.equal(coverOffsetMs(pastEdge, 5), 7033);
+  assert.notEqual(coverOffsetMs(pastEdge, 5), FALLBACK_OFFSET_MS);
+});
+
+// Reachability: an opening_narration within the schema's own limit can cross
+// the edge above, so this is a real day, not a hypothetical one.
+test("the schema still allows an opening long enough to break the fallback", () => {
+  const schema = readFileSync(join(rootDir, "scripts/enriched-schema.mjs"), "utf-8");
+  const m = schema.match(/opening_narration:\s*\{\s*hard:\s*\[\s*\d+\s*,\s*(\d+)\s*\]/);
+  assert.ok(m, "could not find the opening_narration limit in enriched-schema.mjs");
+  const maxChars = Number(m[1]);
+  // Measured: 15 chars -> 3.10 s, 53 chars -> 7.63 s (2026-09-22, Edge TTS).
+  const secondsPerChar = (7.63 - 3.1) / (53 - 15);
+  const longestOpeningSec = 3.1 + (maxChars - 15) * secondsPerChar;
+  assert.ok(
+    longestOpeningSec > FALLBACK_SAFE_MAX_OPENING_SEC,
+    `a ${maxChars}-char opening is ~${longestOpeningSec.toFixed(2)} s, which must be treated as able ` +
+      `to exceed ${FALLBACK_SAFE_MAX_OPENING_SEC} s — if the limit was lowered, revisit the fallback docs`
+  );
+});
+
+test("a video with no tool cards is refused rather than covered from the ending", () => {
+  const d = { opening: 2.8, "tool-1": 8.5, ending: 4 };
+  // Durations can describe a first card while `tools` is empty; the
+  // composition renders no tool sequence at all, so frame opening+60 would be
+  // the ending. Refuse instead of silently covering the wrong thing.
+  assert.throws(() => coverFrame(d, 0), /at least one tool card/);
+  assert.throws(() => coverFrame(d, undefined), /at least one tool card/);
+  assert.throws(() => coverOffsetMs(d, 0), /at least one tool card/);
+  assert.equal(coverFrame(d, 1), 159);
+});
+
+// assertInsideFirstCard builds its bounds from this module, so on its own it
+// cannot catch the composition changing shape. Anchor the one premise it rests
+// on — that the first tool card begins where the opening ends — to the file
+// that actually decides it.
+test("AiToolsVideo still puts the tool cards straight after the opening", () => {
+  const src = readFileSync(join(rootDir, "src/compositions/AiToolsVideo.tsx"), "utf-8");
+  const opening = src.indexOf("<Opening");
+  const toolsMap = src.indexOf("tools.map(");
+  const ending = src.indexOf("<Ending");
+  assert.ok(opening > -1 && toolsMap > -1 && ending > -1, "AiToolsVideo lost Opening/tools.map/Ending");
+  assert.ok(
+    opening < toolsMap && toolsMap < ending,
+    "the Series order changed — the cover frame assumes opening, then tool cards, then ending"
+  );
+  // The opening sequence is length-gated on frames.opening, and the tool
+  // sequences are driven by frames.tools[i]; if either stops being true the
+  // arithmetic in this module no longer describes the timeline.
+  assert.match(src, /durationInFrames=\{frames\.opening\}/);
+  assert.match(src, /durationInFrames=\{frames\.tools\[i\]/);
 });

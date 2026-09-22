@@ -61,5 +61,25 @@ Only two production days exist for this format (trial #1 started 2026-09-18;
 sample — rendered by the real pipeline (`npm run dry-run`, cover frame 168 from
 the day's actual TTS durations), which is why it also carries the subtitle.
 
-The two `preview-covers.mjs` images are rendered without logos and without
-subtitles; production draws both, and each differs per day too.
+**All five images here are the text-only card.** `preview-covers.mjs` skips the
+logo fetch, and the dry-run day had no logo either, so none of them show what a
+production cover usually looks like: when a tool's logo or screenshot is
+available, ToolCard puts the image above the name and steps the name down to
+56-78 px, which is a visibly different layout from these. The image is one more
+thing that differs per day — these previews understate the difference rather
+than overstate it. The two `preview-covers.mjs` images also have no subtitle;
+the dry-run one does, as production does.
+
+## The recovery post
+
+`post-today-instagram.yml` re-uploads an mp4 from a Release and has no audio
+durations, so it cannot recompute the offset. `record-upload.mjs` stores the
+day's `coverOffsetMs` in `data/performance-history.json` and
+`scripts/cover-offset-for.mjs` reads it back.
+
+A constant cannot stand in for it: `FALLBACK_OFFSET_MS` (5000 ms) is only
+inside the first tool card while that day's opening narration was ≤ 4.5 s, and
+`opening_narration` may be up to 30 characters (~5.7 s). Past that edge the
+cover silently returns to the title card. `cover-offset-for.mjs` therefore
+prints a loud warning whenever it has to fall back — which should only happen
+for Releases cut before 2026-09-22.
