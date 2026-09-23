@@ -612,7 +612,7 @@ function sourceProblems(ep, previous, at, today, warnings) {
 // the news right now (owner decision 2026-09-23). Nothing here may read as
 // "this channel = Jev" — the closing lines speak for the whole channel.
 export const JEV_FEATURE_LABEL = "いま話題の AI モデル Jev";
-export const JEV_ENDING_NARRATION = "今日は、いま話題の AI モデル Jev の特集でした。AI の新しい動きは毎朝ここで。保存とフォローでチェックしてください。";
+export const JEV_ENDING_NARRATION = `今日は、${JEV_FEATURE_LABEL}の特集でした。AI の新しい動きは毎朝ここで。保存とフォローでチェックしてください。`;
 const WEEKDAYS_JA = ["日", "月", "火", "水", "木", "金", "土"];
 const KIND_LABEL = { intro: "Jev って何？", usecase: "Jev の使い道", news: "Jev 最新ニュース", explainer: "Jev 解説" };
 const KIND_TAG = { intro: "話題のAI特集 Jev入門", usecase: "話題のAI特集 Jev活用例", news: "話題のAI特集 Jev最新", explainer: "話題のAI特集 Jev解説" };

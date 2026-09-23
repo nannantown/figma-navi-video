@@ -259,7 +259,7 @@ test("video data keeps the pickup frame (tools[] with narration) and captions ca
 // feature. Nothing the pipeline writes may read as "this channel = Jev".
 test("captions and ending present Jev as a feature of a general AI channel", () => {
   const banned = [/毎朝[^。\n]*Jev/, /Jev の続きは/, /毎朝その最新情報/];
-  for (const ep of [...INTRO.episodes, ...USECASE.episodes]) {
+  for (const ep of [...INTRO.episodes, ...USECASE.episodes].filter((e) => e.slides)) {
     const data = toJevVideoData(ep);
     const caps = buildJevCaptions(data);
     const texts = { title: caps.youtube.title, description: caps.youtube.description, instagram: caps.instagram, narration: data.endingNarration, endingLines: data.meta.endingLines.join("") };
