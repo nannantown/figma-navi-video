@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { toPost, mergePosts } from "./fetch-jev-x.mjs";
+import { toPost, mergePosts, twitterError } from "./fetch-jev-x.mjs";
 import { isOfficialUrl } from "./jev.mjs";
 
 // X snapshot for the Jev routine (owner decision 2026-09-23, option C).
@@ -41,4 +41,23 @@ test("a community post is attributed by naming its author", async () => {
   const { unattributedClaims } = await import("./jev.mjs");
   assert.deepEqual(unattributedClaims("olearycrewさんの投稿によると、10倍速くなったそうです。"), []);
   assert.equal(unattributedClaims("ある投稿によると、10倍速くなったそうです。").length, 1);
+});
+
+test("a failed query records twitter-cli's JSON error (stdout), not its WARNING line, and never the session values", () => {
+  const env = { TWITTER_AUTH_TOKEN: "a1b2c3d4e5f6a7b8c9d0", TWITTER_CT0: "ffeeddccbbaa99887766" };
+  // --json: the error is JSON on stdout; stderr only has log lines.
+  const ci = {
+    stdout: JSON.stringify({ ok: false, schema_version: "1", error: { code: "api_error", message: "Twitter API error 404: https://x.com/i/api/graphql/abc/SearchTimeline" } }),
+    stderr: "WARNING twitter_cli.client: Failed to init ClientTransaction: 'NoneType' object has no attribute 'group'\n",
+    message: "Command failed: twitter search ...",
+  };
+  assert.equal(twitterError(ci, env), "api_error: Twitter API error 404: https://x.com/i/api/graphql/abc/SearchTimeline");
+  // No JSON: the first stderr line that is not a WARNING.
+  assert.equal(twitterError({ stdout: "", stderr: "WARNING noise\nError: rate limited (429)\n" }, env), "Error: rate limited (429)");
+  // Session values are masked wherever they would appear.
+  const leaky = { stdout: JSON.stringify({ ok: false, error: { message: `bad cookie auth_token=${env.TWITTER_AUTH_TOKEN}; ct0=${env.TWITTER_CT0}` } }) };
+  const msg = twitterError(leaky, env);
+  assert.ok(!msg.includes(env.TWITTER_AUTH_TOKEN) && !msg.includes(env.TWITTER_CT0), msg);
+  assert.ok(!twitterError({ stderr: `Error: ${env.TWITTER_CT0} rejected` }, env).includes(env.TWITTER_CT0));
+  assert.ok(!twitterError({ stderr: "Error: cookie auth_token=zzz999yyy888 rejected" }, {}).includes("zzz999yyy888"));
 });

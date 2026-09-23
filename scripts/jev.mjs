@@ -19,8 +19,9 @@
  *
  * CLI (the routine runs this before committing):
  *   node scripts/jev.mjs validate [--file=path] [--no-date-check]
- *   node scripts/jev.mjs next     # which stage / episode / topic comes next (+ unrecorded / redoSlot)
- *   node scripts/jev.mjs aired-check YYYY-MM-DD   # did that day go out? (reads the posting runs' logs with gh)
+ *   node scripts/jev.mjs next     # which stage / episode / topic comes next (+ unrecorded / redoCandidate)
+ *   node scripts/jev.mjs aired-check   # did the redo candidate go out? (posting runs' logs via gh; prints redoSlot only if not)
+ *   node scripts/jev.mjs aired-check --self-test   # can this environment's gh read the posting runs' logs? (one line)
  *   node scripts/jev.mjs pdca     # numbers for docs/pdca/$TODAY.md
  */
 
@@ -264,21 +265,47 @@ export function nextSlot(previous) {
 // found the day's posting runs and neither upload's success line in their
 // logs. A missing history record alone is not enough: record-upload or the
 // history push can fail after a successful upload, and redoing then would
-// post the same episode twice. The validator additionally refuses a redo of a
-// day that the history does show as posted.
+// post the same episode twice. aired-check always checks the redo candidate
+// (the latest aired entry) and is the only place a redo slot is printed, and
+// `jev.mjs validate` re-runs the check on the `redo_of` date itself — so a
+// not-posted verdict for another day (two unrecorded days in a row) can never
+// unlock a redo of the latest one. The validator additionally refuses a redo
+// of a day that the history does show as posted.
 
 /** Success lines printed by upload-youtube.mjs / upload-instagram.mjs. */
 const POSTED_LOG_RE = /Uploaded! https:\/\/|YouTube upload complete: https:\/\/|Published! Media ID: \S+/;
 
 /**
- * Verdict for one day from the logs of its posting runs (daily-video.yml and
- * post-today-instagram.yml on main). "unknown" (no run found / logs missing)
- * never allows a redo.
+ * Verdict for one day from every attempt of its posting runs (daily-video.yml
+ * and post-today-instagram.yml on main): [{ id, attempt, status, conclusion, log }].
+ * A success line in any attempt → "posted". "not-posted" needs every attempt
+ * to have finished as success / failure with a readable log: a run cut off
+ * (cancelled, timed_out, …) may have uploaded before printing its success
+ * line. Anything else is "unknown" with the reason, and never allows a redo.
  */
-export function classifyPostLogs(logs) {
-  if (!Array.isArray(logs) || logs.length === 0) return "unknown";
-  if (logs.some((l) => POSTED_LOG_RE.test(String(l)))) return "posted";
-  return logs.every((l) => String(l).trim().length > 0) ? "not-posted" : "unknown";
+export function classifyPostLogs(attempts) {
+  if (!Array.isArray(attempts) || attempts.length === 0) return { verdict: "unknown", reason: "no-runs: no posting run on main that day" };
+  const posted = attempts.find((a) => POSTED_LOG_RE.test(String(a.log ?? "")));
+  if (posted) return { verdict: "posted", reason: `success line in run ${posted.id} attempt ${posted.attempt}` };
+  const running = attempts.find((a) => a.status !== "completed");
+  if (running) return { verdict: "unknown", reason: `in-progress: run ${running.id} attempt ${running.attempt} is ${running.status}` };
+  const cut = attempts.find((a) => a.conclusion !== "success" && a.conclusion !== "failure");
+  if (cut) return { verdict: "unknown", reason: `interrupted: run ${cut.id} attempt ${cut.attempt} ended ${cut.conclusion} (it may have uploaded before its success line)` };
+  const empty = attempts.find((a) => String(a.log ?? "").trim().length === 0);
+  if (empty) return { verdict: "unknown", reason: `empty-log: run ${empty.id} attempt ${empty.attempt}` };
+  return { verdict: "not-posted", reason: `no success line in ${attempts.length} attempt(s)` };
+}
+
+/** Why a gh call failed: a short code + gh's first line (gh never prints the token). */
+export function ghFailure(err) {
+  if (err?.code === "ENOENT") return "gh-missing: the gh CLI is not installed";
+  const text = `${err?.stderr ?? ""}\n${err?.message ?? err}`;
+  const line = text.split("\n").map((l) => l.trim()).find(Boolean)?.slice(0, 160) ?? "";
+  if (/HTTP 403|Resource not accessible/i.test(text)) return `forbidden: ${line} (the token cannot read Actions — it needs actions:read)`;
+  if (/HTTP 401|gh auth login|not logged in|authenticat/i.test(text)) return `not-authenticated: ${line}`;
+  if (/HTTP 404/i.test(text)) return `not-found: ${line} (is the repo visible to the token?)`;
+  if (err?.code === "ETIMEDOUT" || err?.signal) return `timeout: ${line}`;
+  return `gh-error: ${line}`;
 }
 
 /** Dates taken out of the chain by a `redo_of` of an entry up to and including `index`. */
@@ -345,7 +372,7 @@ function primaryUrls(ep) {
  * Validate the ledger and fully check one episode (the one to post).
  * @returns {{ errors: string[], warnings: string[], episode: object|null, slot: object|null }}
  */
-export function validateEpisodes(file, { date = todayJst(), today = todayJst(), pickLatest = false, history = null } = {}) {
+export function validateEpisodes(file, { date = todayJst(), today = todayJst(), pickLatest = false, history = null, checkAired = null } = {}) {
   const errors = [];
   const warnings = [];
   if (!file || typeof file !== "object" || !Array.isArray(file.episodes)) {
@@ -384,9 +411,14 @@ export function validateEpisodes(file, { date = todayJst(), today = todayJst(), 
     }
     const postedThatDay = (history?.videos || []).some((v) => v?.genre === JEV_GENRE && !v.skip && v.date === ep.redo_of);
     if (postedThatDay) errors.push(`${at}.redo_of: ${ep.redo_of} is recorded as posted in performance-history.json — redoing it would post it twice`);
+    // The CLI passes the live gh check: the redone day itself must read not-posted.
+    if (checkAired) {
+      const r = checkAired(ep.redo_of);
+      if (r?.verdict !== "not-posted") errors.push(`${at}.redo_of: aired-check ${ep.redo_of} says ${r?.verdict ?? "nothing"}${r?.reason ? ` (${r.reason})` : ""} — only a day whose posting logs say not-posted can be redone`);
+    }
   }
   for (const e of unrecordedEpisodes(eps.slice(0, index), history, ep.date)) {
-    warnings.push(`${e.date} "${e.topic_key}" has no post record — counted as aired; run "node scripts/jev.mjs aired-check ${e.date}" and redo it only if that says not-posted`);
+    warnings.push(`${e.date} "${e.topic_key}" has no post record — counted as aired; run "node scripts/jev.mjs aired-check" and redo only with the redoSlot it prints`);
   }
 
   // Series order. Every aired entry is checked against the ones before it,
@@ -812,20 +844,37 @@ export function jevPdcaReport(history, { today = todayJst() } = {}) {
 // CLI
 // ---------------------------------------------------------------------------
 
-/**
- * Today's slot for the routine, plus what to do if the latest episode did not
- * go out: `unrecorded` lists entries without a post record, and `redoSlot` is
- * the slot to write (with `redo_of`) when aired-check says "not-posted".
- */
-export function seriesState(episodes, history, today) {
+/** The aired chain before `today` (redone entries left out). */
+function chainBefore(episodes, today) {
   const before = episodes.filter((e) => e.date < today);
   const redone = new Set(before.map((e) => e.redo_of).filter(Boolean));
-  const chain = before.filter((e) => !redone.has(e.date));
-  const slot = nextSlot(chain);
+  return { before, chain: before.filter((e) => !redone.has(e.date)) };
+}
+
+/**
+ * Today's slot for the routine, plus what to check if the latest episode did
+ * not go out: `unrecorded` lists entries without a post record, and
+ * `redoCandidate` is the only date that can be redone (the latest aired entry,
+ * when it is unrecorded). The redo slot itself is printed only by aired-check.
+ */
+export function seriesState(episodes, history, today) {
+  const { before, chain } = chainBefore(episodes, today);
   const unrecorded = unrecordedEpisodes(before, history, today).map((e) => ({ date: e.date, topic_key: e.topic_key }));
   const latest = chain.at(-1);
-  const redoable = unrecorded.some((u) => u.date === latest?.date);
-  return { ...slot, unrecorded, redoSlot: redoable ? { ...nextSlot(chain.slice(0, -1)), redo_of: latest.date } : null };
+  const redoCandidate = unrecorded.some((u) => u.date === latest?.date) ? latest.date : null;
+  return { ...nextSlot(chain), unrecorded, redoCandidate };
+}
+
+/**
+ * aired-check as the routine runs it: always on the redo candidate, and the
+ * redo slot (with `redo_of`) comes out only when that day reads not-posted.
+ */
+export function redoCheck(episodes, history, today, { check = airedCheck } = {}) {
+  const { unrecorded, redoCandidate } = seriesState(episodes, history, today);
+  if (!redoCandidate) return { date: null, verdict: null, reason: "no redo candidate (the latest episode has a post record or there is none)", unrecorded, redoSlot: null };
+  const result = check(redoCandidate);
+  const redoSlot = result.verdict === "not-posted" ? { ...nextSlot(chainBefore(episodes, today).chain.slice(0, -1)), redo_of: redoCandidate } : null;
+  return { ...result, unrecorded, redoSlot };
 }
 
 /** JST calendar day of an ISO timestamp. */
@@ -833,26 +882,56 @@ function jstDay(iso) {
   return new Date(Date.parse(iso) + 9 * 3600 * 1000).toISOString().slice(0, 10);
 }
 
+const ghRun = (args) => execFileSync("gh", args, { encoding: "utf-8", timeout: 120000, maxBuffer: 256 * 1024 * 1024, stdio: ["ignore", "pipe", "pipe"] });
+const RUN_FIELDS = "databaseId,attempt,createdAt,event,status,conclusion";
+
 /**
- * Did the given day's episode go out? Reads the logs of that day's posting
- * runs on main (daily-video.yml and the Instagram recovery) with the gh CLI
- * and looks for the upload success lines. Any failure to read → "unknown".
+ * Did the given day's episode go out? Reads the logs of every attempt of that
+ * day's posting runs on main (daily-video.yml and the Instagram recovery; a
+ * re-run keeps its earlier attempts, and `gh run view --log` alone shows only
+ * the last) with the gh CLI and looks for the upload success lines. Any
+ * failure to read → "unknown" with the reason.
  */
-export function airedCheck(date, { run = (args) => execFileSync("gh", args, { encoding: "utf-8", timeout: 120000, maxBuffer: 256 * 1024 * 1024, stdio: ["ignore", "pipe", "pipe"] }) } = {}) {
-  const logs = [];
-  const runs = [];
+export function airedCheck(date, { run = ghRun } = {}) {
+  const attempts = [];
+  const summary = () => attempts.map(({ log, ...a }) => ({ ...a, logChars: String(log ?? "").length }));
   try {
     for (const wf of ["daily-video.yml", "post-today-instagram.yml"]) {
-      const list = JSON.parse(run(["run", "list", "--workflow", wf, "--branch", "main", "--limit", "40", "--json", "databaseId,createdAt,event,status,conclusion"]));
-      for (const r of list.filter((r) => r.status === "completed" && jstDay(r.createdAt) === date)) {
-        runs.push({ workflow: wf, id: r.databaseId, event: r.event, conclusion: r.conclusion });
-        logs.push(run(["run", "view", String(r.databaseId), "--log"]));
+      const list = JSON.parse(run(["run", "list", "--workflow", wf, "--branch", "main", "--limit", "40", "--json", RUN_FIELDS]));
+      for (const r of list.filter((r) => jstDay(r.createdAt) === date)) {
+        const last = Math.max(1, Number(r.attempt) || 1);
+        for (let n = 1; n <= last; n++) {
+          // The list carries the latest attempt's state; earlier ones are asked for.
+          const s = n === last ? r : JSON.parse(run(["run", "view", String(r.databaseId), "--attempt", String(n), "--json", "status,conclusion"]));
+          const a = { workflow: wf, id: r.databaseId, attempt: n, event: r.event, status: s.status, conclusion: s.conclusion, log: "" };
+          attempts.push(a);
+          if (a.status === "completed") a.log = run(["run", "view", String(r.databaseId), "--attempt", String(n), "--log"]);
+        }
       }
     }
   } catch (err) {
-    return { date, verdict: "unknown", runs, note: `could not read the runs: ${String(err.message || err).split("\n")[0].slice(0, 160)}` };
+    return { date, verdict: "unknown", reason: ghFailure(err), runs: summary() };
   }
-  return { date, verdict: classifyPostLogs(logs), runs };
+  return { date, ...classifyPostLogs(attempts), runs: summary() };
+}
+
+/**
+ * Can this environment's gh read the posting runs and their logs? Reads the
+ * latest finished daily-video.yml run on main (normally yesterday's post) and
+ * returns one line for the routine's report.
+ */
+export function airedCheckSelfTest({ run = ghRun } = {}) {
+  const line = (s) => `aired-check self-test: ${s}`;
+  try {
+    const list = JSON.parse(run(["run", "list", "--workflow", "daily-video.yml", "--branch", "main", "--limit", "10", "--json", RUN_FIELDS]));
+    const r = list.find((x) => x.status === "completed");
+    if (!r) return { ok: false, line: line("NG — no-runs: no finished daily-video.yml run on main among the latest 10") };
+    const log = String(run(["run", "view", String(r.databaseId), "--log"]));
+    if (log.trim().length === 0) return { ok: false, line: line(`NG — empty-log: run ${r.databaseId} (${jstDay(r.createdAt)})`) };
+    return { ok: true, line: line(`OK — read run ${r.databaseId} (${jstDay(r.createdAt)}, ${r.conclusion}) and its log (${log.length} chars)`) };
+  } catch (err) {
+    return { ok: false, line: line(`NG — ${ghFailure(err)}`) };
+  }
 }
 
 function cli(argv) {
@@ -874,17 +953,26 @@ function cli(argv) {
     return 0;
   }
   if (cmd === "aired-check") {
-    const date = argv[1];
-    if (!isRealDate(date)) {
-      console.error("usage: node scripts/jev.mjs aired-check YYYY-MM-DD");
+    if (argv.includes("--self-test")) {
+      const { ok, line } = airedCheckSelfTest();
+      console.log(line);
+      return ok ? 0 : 1;
+    }
+    // No date argument: it always checks the redo candidate, so a check of
+    // another day can never unlock a redo of the latest one.
+    if (argv.slice(1).some((a) => !a.startsWith("--"))) {
+      console.error("usage: node scripts/jev.mjs aired-check [--self-test]   (no date: it checks the redo candidate from `next`)");
       return 2;
     }
-    console.log(JSON.stringify(airedCheck(date), null, 2));
+    const history = !fileArg && existsSync(hp) ? JSON.parse(readFileSync(hp, "utf-8")) : null;
+    console.log(JSON.stringify(redoCheck(file.episodes || [], history, todayJst()), null, 2));
     return 0;
   }
   const noDate = argv.includes("--no-date-check");
   const history = !noDate && !fileArg && existsSync(hp) ? JSON.parse(readFileSync(hp, "utf-8")) : null;
-  const { errors, warnings, episode, slot } = validateEpisodes(file, { pickLatest: noDate, history });
+  // Production: a redo_of is re-checked live against that day's posting logs.
+  const checkAired = !noDate && !fileArg ? airedCheck : null;
+  const { errors, warnings, episode, slot } = validateEpisodes(file, { pickLatest: noDate, history, checkAired });
   for (const w of warnings) console.log(`WARN ${w}`);
   for (const e of errors) console.log(`NG ${e}`);
   if (errors.length > 0) return 1;

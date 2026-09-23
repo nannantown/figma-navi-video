@@ -61,6 +61,28 @@ export function mergePosts(previous, fresh, { now = new Date(), keepDays = KEEP_
   return [...byId.values()].filter((p) => Date.parse(p.createdAt) >= cutoff).sort((a, b) => b.createdAt.localeCompare(a.createdAt));
 }
 
+/**
+ * A readable reason for a failed twitter-cli call. With --json it prints the
+ * error as JSON on stdout ({ ok: false, error: { code, message } }) and only
+ * log lines (WARNING …) on stderr, so the JSON message comes first. The X
+ * session values are masked in case any tool ever echoes them.
+ */
+export function twitterError(err, env = process.env) {
+  let msg = "";
+  try {
+    const e = JSON.parse(String(err?.stdout ?? "")).error;
+    if (e?.message) msg = e.code ? `${e.code}: ${e.message}` : e.message;
+  } catch {
+    // stdout was not JSON
+  }
+  if (!msg) {
+    const lines = String(err?.stderr ?? "").split("\n").map((l) => l.trim()).filter(Boolean);
+    msg = lines.find((l) => !/^WARNING\b/.test(l)) || String(err?.message || err || "").split("\n")[0] || lines[0] || "unknown error";
+  }
+  for (const secret of [env.TWITTER_AUTH_TOKEN, env.TWITTER_CT0]) if (secret && secret.length >= 8) msg = msg.split(secret).join("[redacted]");
+  return msg.replace(/\b(auth_token|ct0)=[^;\s"]+/gi, "$1=[redacted]").slice(0, 200);
+}
+
 function runTwitter(args) {
   // execFile, no shell: the query is passed as one argument.
   const out = execFileSync("twitter", [...args, "--json"], { encoding: "utf-8", timeout: 90000, stdio: ["ignore", "pipe", "pipe"] });
@@ -84,8 +106,7 @@ function main() {
       console.log(`  ${label}: ${posts.length} posts`);
       return posts;
     } catch (err) {
-      // stderr of twitter-cli never contains the session values; keep only the first line.
-      const msg = String(err.stderr || err.message || err).split("\n")[0].slice(0, 200);
+      const msg = twitterError(err);
       errors.push(`${label}: ${msg}`);
       console.error(`  ${label}: FAILED (${msg})`);
       return null;

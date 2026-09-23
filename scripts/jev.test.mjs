@@ -427,7 +427,7 @@ test("a missing post record alone does not re-offer the episode (no double post)
   // record-upload failed after a successful upload: no history entry for 9/24.
   const res = check([first, second], { history: { videos: [] } });
   assert.deepEqual(res.errors, []);
-  assert.match(res.warnings.join("\n"), /2026-09-24 "intro-what-is-jev" has no post record — counted as aired; run "node scripts\/jev\.mjs aired-check 2026-09-24"/);
+  assert.match(res.warnings.join("\n"), /2026-09-24 "intro-what-is-jev" has no post record — counted as aired; run "node scripts\/jev\.mjs aired-check" and redo only with the redoSlot it prints/);
   // A redo of a day the history shows as posted is refused.
   const redo = full({ date: "2026-09-25", redo_of: "2026-09-24", headline: "Jevとは何か、もう一度" });
   assert.match(errorsOf([first, redo], { history: historyOf([first]) }), /recorded as posted.*post it twice/);
@@ -438,23 +438,131 @@ test("a missing post record alone does not re-offer the episode (no double post)
   assert.match(errorsOf([first, { ...second, date: "2026-09-25" }, late], { history: historyOf([second]) }), /only the latest episode \(2026-09-25\) can be redone/);
 });
 
+/**
+ * A fake gh: `runsByWf` maps a workflow file to its `run list` rows; `attempts`
+ * maps "id/attempt" to { status, conclusion, log }. Calls are recorded.
+ */
+function fakeGh(runsByWf, attempts = {}) {
+  const calls = [];
+  const run = (args) => {
+    calls.push(args.join(" "));
+    if (args[1] === "list") return JSON.stringify(runsByWf[args[3]] || []);
+    const id = args[2];
+    const n = args.includes("--attempt") ? args[args.indexOf("--attempt") + 1] : "last";
+    const a = attempts[`${id}/${n}`];
+    if (!a) throw Object.assign(new Error(`no fake for ${args.join(" ")}`), { stderr: "" });
+    return args.includes("--log") ? a.log : JSON.stringify({ status: a.status, conclusion: a.conclusion });
+  };
+  return { run, calls };
+}
+const dayRun = (id, conclusion, attempt = 1, createdAt = "2026-09-23T23:20:00Z") => ({ databaseId: id, attempt, createdAt, event: "schedule", status: "completed", conclusion });
+
 test("aired-check reads the day's posting logs: success line → posted, none → not-posted, unreadable → unknown", async () => {
   const { classifyPostLogs, airedCheck, seriesState } = await import("./jev.mjs");
-  assert.equal(classifyPostLogs(["build\n  Uploaded! https://youtube.com/shorts/abc\n"]), "posted");
-  assert.equal(classifyPostLogs(["  Published! Media ID: 1789"]), "posted");
-  assert.equal(classifyPostLogs(["Render failed: out of memory"]), "not-posted");
-  assert.equal(classifyPostLogs([]), "unknown");
-  const runs = [{ databaseId: 7, createdAt: "2026-09-23T23:20:00Z", event: "schedule", status: "completed", conclusion: "failure" }];
-  const fake = (logText) => (args) => (args[1] === "list" ? JSON.stringify(args[3] === "daily-video.yml" ? runs : []) : logText);
-  assert.equal(airedCheck("2026-09-24", { run: fake("Render failed") }).verdict, "not-posted");
-  assert.equal(airedCheck("2026-09-24", { run: fake("Uploaded! https://youtube.com/shorts/x") }).verdict, "posted");
-  assert.equal(airedCheck("2026-09-25", { run: fake("Render failed") }).verdict, "unknown");
+  const att = (log, conclusion = "failure") => ({ id: 7, attempt: 1, status: "completed", conclusion, log });
+  assert.equal(classifyPostLogs([att("build\n  Uploaded! https://youtube.com/shorts/abc\n")]).verdict, "posted");
+  assert.equal(classifyPostLogs([att("  Published! Media ID: 1789")]).verdict, "posted");
+  assert.equal(classifyPostLogs([att("Render failed: out of memory")]).verdict, "not-posted");
+  assert.equal(classifyPostLogs([]).verdict, "unknown");
+  const gh = (log) => fakeGh({ "daily-video.yml": [dayRun(7, "failure")] }, { "7/1": { status: "completed", conclusion: "failure", log } }).run;
+  assert.equal(airedCheck("2026-09-24", { run: gh("Render failed") }).verdict, "not-posted");
+  assert.equal(airedCheck("2026-09-24", { run: gh("Uploaded! https://youtube.com/shorts/x") }).verdict, "posted");
+  assert.match(airedCheck("2026-09-25", { run: gh("Render failed") }).reason, /^no-runs/);
   assert.equal(airedCheck("2026-09-24", { run: () => { throw new Error("gh: not logged in"); } }).verdict, "unknown");
-  // The routine is offered the redo slot only for the latest unrecorded episode.
+  // `next` names only the redo candidate (the latest unrecorded episode); it never prints a slot.
   const state = seriesState([full()], { videos: [] }, "2026-09-25");
   assert.equal(state.topicKey, INTRO_TOPICS[1].key);
-  assert.deepEqual(state.redoSlot && { topicKey: state.redoSlot.topicKey, redo_of: state.redoSlot.redo_of, stageEpisode: state.redoSlot.stageEpisode }, { topicKey: INTRO_TOPICS[0].key, redo_of: "2026-09-24", stageEpisode: 1 });
-  assert.equal(seriesState([full()], historyOf([full()]), "2026-09-25").redoSlot, null);
+  assert.equal(state.redoCandidate, "2026-09-24");
+  assert.equal("redoSlot" in state, false);
+  assert.equal(seriesState([full()], historyOf([full()]), "2026-09-25").redoCandidate, null);
+});
+
+test("two unrecorded days in a row: a not-posted day before the latest can never unlock a redo of the latest (no double post)", async () => {
+  const { redoCheck, airedCheck } = await import("./jev.mjs");
+  const d1 = full(); // 9/24: really not posted
+  const d2 = full({ date: "2026-09-25", topic_key: INTRO_TOPICS[1].key, stage_episode: 2, headline: "答えを型で返すAI" }); // 9/25: posted, history push failed
+  const history = { videos: [] };
+  const gh = fakeGh(
+    { "daily-video.yml": [dayRun(24, "failure", 1, "2026-09-23T23:20:00Z"), dayRun(25, "success", 1, "2026-09-24T23:20:00Z")] },
+    { "24/1": { status: "completed", conclusion: "failure", log: "Render failed" }, "25/1": { status: "completed", conclusion: "success", log: "Uploaded! https://youtube.com/shorts/y" } },
+  );
+  const check = (date) => airedCheck(date, { run: gh.run });
+  assert.equal(check("2026-09-24").verdict, "not-posted");
+  // aired-check always checks the candidate (9/25), which went out → no slot.
+  const r = redoCheck([d1, d2], history, "2026-09-26", { check });
+  assert.deepEqual([r.date, r.verdict, r.redoSlot], ["2026-09-25", "posted", null]);
+  assert.deepEqual(r.unrecorded.map((u) => u.date), ["2026-09-24", "2026-09-25"]);
+  // A redo of 9/25 written anyway fails validation: 9/25's own logs say posted.
+  const redo = full({ date: "2026-09-26", topic_key: INTRO_TOPICS[1].key, stage_episode: 2, redo_of: "2026-09-25", headline: "答えを型で返すAI、もう一度" });
+  assert.match(errorsOf([d1, d2, redo], { history, checkAired: check }), /redo_of: aired-check 2026-09-25 says posted/);
+  // …and a redo of 9/24 is not the latest episode.
+  assert.match(errorsOf([d1, d2, { ...redo, redo_of: "2026-09-24" }], { history, checkAired: check }), /only the latest episode \(2026-09-25\) can be redone/);
+  // When the candidate really did not go out, the slot comes out and validates.
+  const quiet = fakeGh({ "daily-video.yml": [dayRun(25, "failure", 1, "2026-09-24T23:20:00Z")] }, { "25/1": { status: "completed", conclusion: "failure", log: "Render failed" } });
+  const ok = redoCheck([d1, d2], history, "2026-09-26", { check: (d) => airedCheck(d, { run: quiet.run }) });
+  assert.deepEqual(ok.redoSlot && { redo_of: ok.redoSlot.redo_of, topicKey: ok.redoSlot.topicKey, stageEpisode: ok.redoSlot.stageEpisode }, { redo_of: "2026-09-25", topicKey: INTRO_TOPICS[1].key, stageEpisode: 2 });
+  assert.deepEqual(validateEpisodes({ episodes: [d1, d2, redo] }, { date: "2026-09-26", today: "2026-09-26", history, checkAired: (d) => airedCheck(d, { run: quiet.run }) }).errors, []);
+  // An unknown verdict at validation time refuses the redo too.
+  assert.match(errorsOf([d1, d2, redo], { history, checkAired: () => ({ verdict: "unknown", reason: "forbidden: HTTP 403" }) }), /says unknown \(forbidden: HTTP 403\)/);
+});
+
+test("a run cut off (cancelled / timed_out / …) with no success line is unknown, never not-posted", async () => {
+  const { airedCheck } = await import("./jev.mjs");
+  for (const conclusion of ["cancelled", "timed_out", "startup_failure", "action_required", "neutral", "skipped", "stale"]) {
+    const gh = fakeGh({ "daily-video.yml": [dayRun(9, conclusion)] }, { "9/1": { status: "completed", conclusion, log: "Uploading to YouTube…" } });
+    const r = airedCheck("2026-09-24", { run: gh.run });
+    assert.equal(r.verdict, "unknown", conclusion);
+    assert.match(r.reason, new RegExp(`^interrupted: run 9 attempt 1 ended ${conclusion}`));
+  }
+  // A cut-off run beside one that printed the success line: posted.
+  const both = fakeGh(
+    { "daily-video.yml": [dayRun(9, "cancelled")], "post-today-instagram.yml": [dayRun(10, "success")] },
+    { "9/1": { status: "completed", conclusion: "cancelled", log: "x" }, "10/1": { status: "completed", conclusion: "success", log: "Published! Media ID: 5" } },
+  );
+  assert.equal(airedCheck("2026-09-24", { run: both.run }).verdict, "posted");
+  // A run still going is unknown too (its log cannot be read yet).
+  const going = fakeGh({ "daily-video.yml": [{ ...dayRun(9, null), status: "in_progress" }] });
+  assert.match(airedCheck("2026-09-24", { run: going.run }).reason, /^in-progress/);
+});
+
+test("a re-run run: every attempt's log is read, and a success in any attempt means posted", async () => {
+  const { airedCheck } = await import("./jev.mjs");
+  const attempts = {
+    "9/1": { status: "completed", conclusion: "failure", log: "  Uploaded! https://youtube.com/shorts/z\nrecord-upload failed" },
+    "9/2": { status: "completed", conclusion: "failure", log: "Render failed" },
+  };
+  const gh = fakeGh({ "daily-video.yml": [dayRun(9, "failure", 2)] }, attempts);
+  const r = airedCheck("2026-09-24", { run: gh.run });
+  assert.equal(r.verdict, "posted");
+  assert.match(r.reason, /run 9 attempt 1/);
+  assert.ok(gh.calls.includes("run view 9 --attempt 1 --log") && gh.calls.includes("run view 9 --attempt 2 --log"), gh.calls.join("\n"));
+  assert.deepEqual(r.runs.map((x) => [x.attempt, x.conclusion]), [[1, "failure"], [2, "failure"]]);
+  // Both attempts failed without a success line → not-posted; an earlier cancelled attempt → unknown.
+  const none = fakeGh({ "daily-video.yml": [dayRun(9, "failure", 2)] }, { ...attempts, "9/1": { ...attempts["9/1"], log: "Render failed" } });
+  assert.equal(airedCheck("2026-09-24", { run: none.run }).verdict, "not-posted");
+  const cut = fakeGh({ "daily-video.yml": [dayRun(9, "failure", 2)] }, { ...attempts, "9/1": { status: "completed", conclusion: "cancelled", log: "Uploading…" } });
+  assert.match(airedCheck("2026-09-24", { run: cut.run }).reason, /^interrupted: run 9 attempt 1 ended cancelled/);
+});
+
+test("aired-check says why it cannot tell (gh missing / not logged in / 403 / empty log), and the self-test prints one line", async () => {
+  const { airedCheck, airedCheckSelfTest, ghFailure } = await import("./jev.mjs");
+  const fail = (props) => () => { throw Object.assign(new Error(props.message || "Command failed: gh run list"), props); };
+  assert.match(ghFailure({ code: "ENOENT", message: "spawnSync gh ENOENT" }), /^gh-missing/);
+  assert.match(ghFailure({ stderr: "To get started with GitHub CLI, please run:  gh auth login\n", message: "Command failed" }), /^not-authenticated/);
+  assert.match(ghFailure({ stderr: "HTTP 403: Resource not accessible by integration (https://api.github.com/…)\n", message: "Command failed" }), /^forbidden: HTTP 403.*actions:read/);
+  assert.match(ghFailure({ stderr: "HTTP 404: Not Found\n", message: "Command failed" }), /^not-found/);
+  assert.match(airedCheck("2026-09-24", { run: fail({ stderr: "HTTP 403: Resource not accessible by integration" }) }).reason, /^forbidden/);
+  const empty = fakeGh({ "daily-video.yml": [dayRun(9, "failure")] }, { "9/1": { status: "completed", conclusion: "failure", log: "  \n" } });
+  assert.match(airedCheck("2026-09-24", { run: empty.run }).reason, /^empty-log/);
+
+  const ok = fakeGh({ "daily-video.yml": [{ ...dayRun(5, null), status: "in_progress" }, dayRun(4, "success")] }, { "4/last": { log: "Uploaded! https://youtube.com/shorts/q" } });
+  assert.deepEqual(airedCheckSelfTest({ run: ok.run }), { ok: true, line: "aired-check self-test: OK — read run 4 (2026-09-24, success) and its log (38 chars)" });
+  assert.equal(airedCheckSelfTest({ run: fail({ code: "ENOENT" }) }).line, "aired-check self-test: NG — gh-missing: the gh CLI is not installed");
+  assert.match(airedCheckSelfTest({ run: fail({ stderr: "HTTP 403: Resource not accessible by integration" }) }).line, /^aired-check self-test: NG — forbidden: /);
+  assert.match(airedCheckSelfTest({ run: fakeGh({}).run }).line, /NG — no-runs/);
+  const blank = fakeGh({ "daily-video.yml": [dayRun(4, "success")] }, { "4/last": { log: "" } });
+  assert.match(airedCheckSelfTest({ run: blank.run }).line, /NG — empty-log: run 4/);
+  for (const r of [ok, blank]) assert.equal(airedCheckSelfTest({ run: r.run }).line.includes("\n"), false);
 });
 
 test("the opening's 第N回 counts only intros / use cases, not the filler explainers in between", async () => {
