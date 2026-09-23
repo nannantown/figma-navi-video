@@ -31,7 +31,7 @@
           "heading": "速さは会社の主張",
           "body": "LLMより40〜200倍速いとされますが、TypeSafeの発表です。第三者の測定では差はもっと小さめです。",
           "claim_source": "TypeSafe の発表",
-          "narration": "TypeSafeによると、ChatGPTのようなLLMより40から200倍速いそうです。第三者の測定では、1倍台から6倍ほどという結果も出ています。"
+          "narration": "TypeSafeによると、ChatGPTのようなLLMより40から200倍速いそうです。Cherry Creek Newsのまとめでは、実測で1倍台から6倍ほどという結果もあります。"
         }
       ],
       "sources": [

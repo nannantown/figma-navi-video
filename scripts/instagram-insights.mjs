@@ -291,16 +291,6 @@ export async function updateInstagramStats(history, env, opts = {}) {
   }
   const pageToken = page.access_token;
 
-  // 【一次資料】IG User reference (2026-09-23): followers_count is a public
-  // field of the IG User node. Best effort — never blocks the insights.
-  let followersCount = null;
-  try {
-    const me = await graphGet(`/${INSTAGRAM_USER_ID}`, { fields: "followers_count", access_token: pageToken });
-    if (Number.isInteger(me?.followers_count)) followersCount = me.followers_count;
-  } catch (err) {
-    log(`  IG: followers_count failed: ${err.message}`);
-  }
-
   const videos = history.videos ?? [];
   const sinceDate = videos.reduce((min, v) => (v.date < min ? v.date : min), "9999-12-31");
   const reels = await listReels(graphGet, INSTAGRAM_USER_ID, pageToken, sinceDate);
@@ -374,6 +364,17 @@ export async function updateInstagramStats(history, env, opts = {}) {
       transient: `${TRANSIENT_FAILURE_LIMIT} consecutive timeouts/network errors`,
     }[stopReason];
     log(`  IG: stopped early (${why}); ${skipped} entries keep previous values`);
+  }
+
+  // 【一次資料】IG User reference (2026-09-23): followers_count is a public
+  // field of the IG User node. One call after the insights, inside the same time
+  // budget (skipped once it is spent; genre trial #2 reads the change). Best effort.
+  let followersCount = null;
+  try {
+    const me = await graphGet(`/${INSTAGRAM_USER_ID}`, { fields: "followers_count", access_token: pageToken });
+    if (Number.isInteger(me?.followers_count)) followersCount = me.followers_count;
+  } catch (err) {
+    log(`  IG: followers_count failed: ${err.message}`);
   }
 
   return {

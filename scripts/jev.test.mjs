@@ -117,7 +117,9 @@ test("a repeated headline is rejected", () => {
 });
 
 test("normalizeUrl ignores www, query, hash, trailing slash and twitter/x", () => {
-  assert.equal(normalizeUrl("https://www.Example.com/a/b/?q=1#x"), normalizeUrl("https://example.com/a/b"));
+  assert.equal(normalizeUrl("https://www.Example.com/a/b/?utm_source=x&ref=y#x"), normalizeUrl("https://example.com/a/b"));
+  // The query that identifies the page is kept: two HN threads are two sources.
+  assert.notEqual(normalizeUrl("https://news.ycombinator.com/item?id=1"), normalizeUrl("https://news.ycombinator.com/item?id=2"));
   assert.equal(normalizeUrl("https://twitter.com/typesafeai/status/1"), normalizeUrl("https://x.com/typesafeai/status/1"));
 });
 
@@ -288,4 +290,62 @@ test("captions stay within the platform limits on the longest allowed episode", 
   assert.ok(caps.youtube.title.length <= 100);
   // The day's own source keeps its URL as long as it fits.
   assert.ok(caps.youtube.description.includes(ep.sources[0].url));
+});
+
+// --- review follow-ups (2026-09-23) -----------------------------------------
+
+test("claims written without digits or as 'no mistakes' still need a named source", () => {
+  for (const s of ["数十倍速いです。", "十倍速く動きます。", "100分の1の料金です。", "費用は9割安くなります。", "業界最速のモデルです。", "精度は100%で、間違いがありません。", "ハルシネーションを起こしません。"]) {
+    assert.deepEqual(unattributedClaims(s), [s], s);
+  }
+});
+
+test("an attribution has to name who says so", () => {
+  assert.equal(unattributedClaims("他モデルとの比較では10倍速いです。").length, 1);
+  assert.equal(unattributedClaims("テストによると10倍速いです。").length, 1);
+  assert.deepEqual(unattributedClaims("TypeSafeによると10倍速いそうです。"), []);
+  assert.deepEqual(unattributedClaims("LiteLLMの検証では約5.4倍でした。"), []);
+  assert.deepEqual(unattributedClaims("同社は、ハルシネーションが起きないと説明しています。"), []);
+});
+
+test("explaining a term is not a claim", () => {
+  assert.deepEqual(unattributedClaims("ハルシネーションとは、AIがもっともらしい嘘を書くことです。"), []);
+  assert.deepEqual(unattributedClaims("LLMは型エラーを起こすことがあります。"), []);
+});
+
+test("a claim_source label cannot carry the claim itself", () => {
+  const ep = full();
+  ep.slides[3].claim_source = "200倍速い";
+  assert.match(errorsOf([ep]), /claim_source: a label says whose claim/);
+});
+
+test("< and > are rejected in text and stripped from captions (YouTube refuses them)", () => {
+  const ep = full();
+  ep.slides[0].body = "入力 -> 型付きの答え、という流れで答えを返す仕組みです。";
+  assert.match(errorsOf([ep]), /no < or >/);
+  const data = toJevVideoData(full());
+  data.tools[0].body = "a <b> c";
+  assert.ok(!/[<>]/.test(buildJevCaptions(data).youtube.description));
+});
+
+test("news dated the US evening before the previous JST episode still counts as new", () => {
+  const eps = ledger(USECASE_TARGET);
+  const last = eps.at(-1).date;
+  const dayBefore = addDays(last, -1);
+  const ep = newsEpisode(addDays(last, 1), "https://heise.de/us-evening", dayBefore);
+  assert.deepEqual(check([...eps, ep]).errors, []);
+  const old = newsEpisode(addDays(last, 1), "https://heise.de/older", addDays(last, -2));
+  assert.match(errorsOf([...eps, old]), /no news source published on\/after/);
+});
+
+test("the posted history guards the ledger: a posted episode cannot vanish or be reused", () => {
+  const eps = ledger(USECASE_TARGET);
+  const posted = { videos: [{ date: eps[0].date, genre: "jev-news", jev: { kind: "intro", topicKey: eps[0].topic_key, sources: [] } }, { date: eps.at(-1).date, genre: "jev-news", jev: { kind: "usecase", topicKey: eps.at(-1).topic_key, sources: [{ url: "https://example.com/usecase-5", role: "usecase" }] } }] };
+  const today = newsEpisode(addDays(eps.at(-1).date, 1));
+  assert.deepEqual(check([...eps, today], { history: posted }).errors, []);
+  // The routine deleted the first episode from the ledger.
+  assert.match(errorsOf([...eps.slice(1), today], { history: posted }), /was posted but is missing or changed/);
+  // …or re-used a posted use case as today's news.
+  const reuse = newsEpisode(addDays(eps.at(-1).date, 1), "https://example.com/usecase-5?utm_source=x");
+  assert.match(errorsOf([...eps.slice(0, -1), { ...eps.at(-1), sources: [] }, reuse], { history: posted }), /already posted on/);
 });

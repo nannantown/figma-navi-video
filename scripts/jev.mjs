@@ -102,13 +102,39 @@ const SHORTENER_HOSTS = ["bit.ly", "t.co", "tinyurl.com", "goo.gl", "ow.ly", "bu
 // Claims: speed/cost multipliers, "never hallucinates", "no type errors" …
 // ---------------------------------------------------------------------------
 
-const CLAIM_RE = /\d+(?:\.\d+)?\s*(?:[〜~\-–]\s*\d+(?:\.\d+)?\s*)?倍|ハルシネーション|幻覚|型エラー|数学的|間違え(?:ない|ません)|嘘をつか|うそをつか|ミスをしない|ミスしません|誤りが(?:ない|ありません)/u;
-// Who says so, in the same sentence: "TypeSafe によると", "LiteLLM の検証では",
-// "同社は…と説明しています" …
-const ATTRIBUTION_RE = /によると|によれば|の主張|と主張|の検証では|の測定では|の計測では|のテストでは|の比較では|の発表では|と発表|と説明|としています|とうたって|と話して|と述べて/u;
+const NUM = "(?:\\d+(?:\\.\\d+)?|[一二三四五六七八九十百千万数何]+)";
+// "does not happen" after an error-type word: the claim is the negation
+// ("ハルシネーションしない"), not the word ("ハルシネーションとは…" is a definition).
+const NEGATION = "(?:しない|しません|起こさない|起こしません|起きない|起きません|ない|ません|ゼロ|0\\s*%|不可能)";
+const CLAIM_RE = new RegExp(
+  [
+    `${NUM}\\s*(?:[〜~\\-–]\\s*${NUM}\\s*)?倍`, // 40〜200倍 / 数十倍 / 十倍
+    `${NUM}\\s*分の\\s*[1一]`, // 100分の1
+    `${NUM}\\s*割\\s*(?:安|減|速|削減|少な)`, // 9割安く
+    `\\d+(?:\\.\\d+)?\\s*%\\s*(?:安|減|削減|速|高速|少な|の?精度|正確)`, // 96%減
+    "(?:精度|正答率|正解率)\\s*(?:は|が)?\\s*\\d+(?:\\.\\d+)?\\s*%", // 精度は100%
+    "最速|業界(?:最|一)|世界(?:最|一)",
+    "数学的",
+    `(?:ハルシネーション|幻覚|型エラー|間違い|間違え|ミス|誤り|嘘|うそ)[^。！？]{0,12}?${NEGATION}`,
+  ].join("|"),
+  "u"
+);
+// Who says so, named, in the same sentence: "TypeSafe によると",
+// "LiteLLM の検証では", "同社は…と説明しています", "日経新聞によると".
+// A bare "比較では" / "テストによると" names nobody and does not count.
+const SOURCE_NAME = "(?:TypeSafe(?:\\s*AI)?|タイプセーフ|同社|開発元|開発会社|[A-Za-z][A-Za-z0-9.&'\\- ]{1,40}|[\\u4E00-\\u9FFF\\u30A0-\\u30FF]{1,12}(?:社|新聞|誌|紙|通信))";
+const ATTRIBUTION_RE = new RegExp(
+  `${SOURCE_NAME}\\s*(?:の(?:検証|測定|計測|テスト|比較|発表|調査|評価|ベンチマーク|まとめ|記事)(?:では|によると|によれば)|によると|によれば|の主張|は[^。！？]*?(?:と主張|と説明|と発表|としています|とうたって|と話して|と述べて))`,
+  "u"
+);
 
 export function hasClaim(text) {
   return CLAIM_RE.test(normalizeForChecks(text));
+}
+
+/** Whether a sentence names who makes its claim. */
+export function isAttributed(sentence) {
+  return ATTRIBUTION_RE.test(normalizeForChecks(sentence));
 }
 
 /** Sentences that state a claim without saying whose claim it is. */
@@ -124,13 +150,19 @@ export function unattributedClaims(text) {
 // URLs
 // ---------------------------------------------------------------------------
 
-/** Canonical form for "same source" checks: host without www, no query/hash, no trailing slash. */
+// Query parameters that only say where a click came from. Everything else in
+// the query identifies the page (news.ycombinator.com/item?id=…, youtube watch?v=…).
+const TRACKING_PARAM_RE = /^(?:utm_.*|ref|ref_src|ref_url|s|t|source|fbclid|gclid|mc_cid|mc_eid|igshid|si)$/i;
+
+/** Canonical form for "same source" checks: host without www, no tracking query, no hash, no trailing slash. */
 export function normalizeUrl(url) {
   try {
     const u = new URL(url);
     const host = u.hostname.toLowerCase().replace(/^www\./, "").replace(/^mobile\./, "").replace(/^twitter\.com$/, "x.com");
     const path = u.pathname.replace(/\/+$/, "") || "";
-    return `${host}${path}`.toLowerCase();
+    const params = [...u.searchParams].filter(([k]) => !TRACKING_PARAM_RE.test(k)).sort(([a], [b]) => a.localeCompare(b));
+    const query = params.length > 0 ? `?${new URLSearchParams(params).toString()}` : "";
+    return `${host}${path.toLowerCase()}${query}`;
   } catch {
     return String(url ?? "").trim().toLowerCase();
   }
@@ -222,7 +254,10 @@ function lengthProblem(value, [min, max], label) {
 }
 
 function textProblems(value, label) {
-  return textSafetyProblems(value).map((p) => `${label}: ${p}`);
+  const problems = textSafetyProblems(value).map((p) => `${label}: ${p}`);
+  // YouTube rejects a description containing < or > (the upload fails).
+  if (typeof value === "string" && /[<>＜＞]/.test(value)) problems.push(`${label}: no < or > (YouTube rejects them); write → or 「」 instead`);
+  return problems;
 }
 
 /** Minimal shape every ledger entry needs for the order and repeat checks. */
@@ -252,7 +287,7 @@ function primaryUrls(ep) {
  * Validate the ledger and fully check one episode (the one to post).
  * @returns {{ errors: string[], warnings: string[], episode: object|null, slot: object|null }}
  */
-export function validateEpisodes(file, { date = todayJst(), today = todayJst(), pickLatest = false } = {}) {
+export function validateEpisodes(file, { date = todayJst(), today = todayJst(), pickLatest = false, history = null } = {}) {
   const errors = [];
   const warnings = [];
   if (!file || typeof file !== "object" || !Array.isArray(file.episodes)) {
@@ -295,6 +330,22 @@ export function validateEpisodes(file, { date = todayJst(), today = todayJst(), 
   const headlines = new Map(previous.filter((e) => typeof e.headline === "string").map((e) => [normalizeForChecks(e.headline).replace(/\s+/g, ""), e.date]));
   const ownHeadline = normalizeForChecks(ep.headline ?? "").replace(/\s+/g, "");
   if (headlines.has(ownHeadline)) errors.push(`${at}: headline is the same as ${headlines.get(ownHeadline)}`);
+
+  // The ledger is edited by the routine itself; performance-history.json is
+  // written by Actions when a post goes live. A posted episode missing from
+  // the ledger (or re-keyed) would silently re-open its topic and sources.
+  const posted = (history?.videos || []).filter((v) => v?.genre === JEV_GENRE && !v.skip && v.jev && v.date < ep.date);
+  const ownPrimary = new Set(primaryUrls(ep));
+  for (const v of posted) {
+    const kept = eps.find((e) => e.date === v.date);
+    if (!kept || kept.topic_key !== v.jev.topicKey) {
+      errors.push(`ledger: the ${v.date} episode ("${v.jev.topicKey}") was posted but is missing or changed in ${EPISODES_PATH} — restore it (past episodes are never rewritten)`);
+    }
+    if (v.jev.topicKey === ep.topic_key) errors.push(`${at}: topic_key "${ep.topic_key}" was already posted on ${v.date}`);
+    for (const s of v.jev.sources || []) {
+      if (s.role === PRIMARY_ROLE[v.jev.kind] && ownPrimary.has(normalizeUrl(s.url))) errors.push(`${at}: source ${s.url} was already posted on ${v.date}`);
+    }
+  }
 
   // Today's episode: full content check.
   if (!pickLatest && ep.date !== today) errors.push(`${at}: date is not today (${today})`);
@@ -371,6 +422,7 @@ function slideProblems(ep, at) {
       const p = lengthProblem(s.claim_source, LIMITS.claimSource, `${sat}.claim_source`);
       if (p) errors.push(p);
       errors.push(...textProblems(s.claim_source, `${sat}.claim_source`));
+      if (hasClaim(s.claim_source)) errors.push(`${sat}.claim_source: a label says whose claim it is, not the claim itself (e.g. "TypeSafe の発表")`);
     } else if (onScreenClaim) {
       errors.push(`${sat}: the screen text states a claim — set claim_source (e.g. "TypeSafe の発表" / "LiteLLM の検証")`);
     }
@@ -412,7 +464,11 @@ function sourceProblems(ep, previous, at, today, warnings) {
     if (primary.length === 0) errors.push(`${at}.sources: a ${ep.kind} episode needs a source with role "${role}"`);
     if (ep.kind === "news") {
       // New since the last Jev episode (inclusive: a story from later that day counts).
-      const since = previous.length > 0 ? previous[previous.length - 1].date : JEV_LAUNCH_DATE;
+      // One day of slack: outlets date articles in their own (US) time, and the
+      // previous routine ran at 07:30 JST = the evening before in California.
+      // Repeats are still caught by the source / topic checks.
+      const lastDate = previous.length > 0 ? previous[previous.length - 1].date : JEV_LAUNCH_DATE;
+      const since = new Date(Date.parse(`${lastDate}T00:00:00Z`) - 86400000).toISOString().slice(0, 10);
       if (!primary.some((s) => isRealDate(s.published_at) && s.published_at >= since)) {
         errors.push(`${at}.sources: no news source published on/after ${since} (the previous episode) — without new information, make it an explainer`);
       }
@@ -499,7 +555,7 @@ export const CLAIM_NOTE = "※速度・料金・精度の数字や「ハルシ�
 const YT_TITLE_MAX = 100;
 
 function clean(s) {
-  return String(s ?? "").replace(new RegExp(CONTROL_CHARS_RE.source, "gu"), " ").replace(new RegExp(INVISIBLE_CHARS_RE.source, "gu"), "").replace(/\s+/g, " ").trim();
+  return String(s ?? "").replace(new RegExp(CONTROL_CHARS_RE.source, "gu"), " ").replace(new RegExp(INVISIBLE_CHARS_RE.source, "gu"), "").replace(/[<>]/g, "").replace(/\s+/g, " ").trim();
 }
 
 function slideLine(t) {
@@ -673,7 +729,9 @@ function cli(argv) {
     return 0;
   }
   const noDate = argv.includes("--no-date-check");
-  const { errors, warnings, episode, slot } = validateEpisodes(file, { pickLatest: noDate });
+  const hp = join(rootDir, "data", "performance-history.json");
+  const history = !noDate && !fileArg && existsSync(hp) ? JSON.parse(readFileSync(hp, "utf-8")) : null;
+  const { errors, warnings, episode, slot } = validateEpisodes(file, { pickLatest: noDate, history });
   for (const w of warnings) console.log(`WARN ${w}`);
   for (const e of errors) console.log(`NG ${e}`);
   if (errors.length > 0) return 1;

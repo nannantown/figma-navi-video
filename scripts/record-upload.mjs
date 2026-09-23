@@ -67,12 +67,14 @@ export function resolveRecordDate({ argv = process.argv, env = process.env, now 
 
 /** History entry for a posted day. Either platform result is enough. */
 export function buildPostEntry({ date, uploadResult, igResult, trendingData, captions, audioDurations, enriched }) {
-  // Genre trial #2 (Jev): the slides are not tools; the episode summary
-  // (stage, kind, topic, sources) goes to `jev` instead.
+  const tools = trendingData?.tools || [];
+  // Genre trial #2 (Jev): the cards are slides, not tools. `tools` still holds
+  // them (the card count drives the cover frame); the entry records the
+  // episode (stage, kind, topic, sources) under `jev` instead of tools.
   const jev = trendingData?.meta?.mode === "jev" ? trendingData.jev || null : null;
-  const tools = jev ? [] : trendingData?.tools || [];
+  if (jev) enriched = { discovery: { method: jev.kind, description: jev.topic, sources: jev.sources.map((x) => x.url) } };
   const durationSeconds = audioDurations ? Object.values(audioDurations).reduce((sum, d) => sum + (d || 0), 0) : 0;
-  return {
+  const entry = {
     // null when the YouTube upload failed or was skipped that day
     videoId: uploadResult?.videoId ?? null,
     videoUrl: uploadResult?.videoUrl ?? null,
@@ -90,10 +92,7 @@ export function buildPostEntry({ date, uploadResult, igResult, trendingData, cap
     tools: tools.map((t) => ({ name: t.name, slug: t.slug, phUrl: t.phUrl, website: t.website, pricing: t.pricing })),
     source: trendingData?.meta ? { mode: trendingData.meta.mode, label: trendingData.meta.sourceLabel } : null,
     durationSeconds: Math.round(durationSeconds),
-    discovery: jev
-      ? { method: jev.kind, description: jev.topic, sources: jev.sources.map((x) => x.url) }
-      : enriched?.discovery || null,
-    ...(jev ? { jev } : {}),
+    discovery: enriched?.discovery || null,
     stats: { views: 0, likes: 0, comments: 0, updatedAt: null },
     // Metrics are filled by fetch-stats.mjs (IG insights lag up to 48h)
     instagram: igResult?.mediaId
@@ -110,6 +109,7 @@ export function buildPostEntry({ date, uploadResult, igResult, trendingData, cap
         }
       : null,
   };
+  return jev ? { ...entry, tools: [], jev } : entry;
 }
 
 function main() {
