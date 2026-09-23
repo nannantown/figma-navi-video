@@ -110,43 +110,6 @@ jobs:
           "$RUNNER_TEMP/xvenv/bin/python" -m pip check
           echo "$RUNNER_TEMP/xvenv/bin" >> "$GITHUB_PATH"
 
-      # twitter-cli (0.7.0, also 0.8.5 and upstream main) fetches https://x.com
-      # to find the ondemand.s script it needs for the X-Client-Transaction-Id
-      # header. That page no longer links it (x.com/home does), so search
-      # (SearchTimeline) goes out without the header and gets a 404. Owner
-      # decision 2026-09-23 (A): apply the owner's Mac one-line fix. Send-back 2
-      # (owner decision 2026-09-23 ①): from GitHub's runners x.com/home answers
-      # 403 without a session (run 35818722451), so the patched line also sends
-      # the client's own session cookie, built with the same expression
-      # twitter-cli uses for API calls (_build_headers). Only the expression goes
-      # into the code; the values reach the client at runtime from the Fetch X
-      # posts step's env. The target must match exactly once before and the new
-      # line exactly once after, otherwise the run goes red instead of silently
-      # skipping or rewriting another line (docs/jev-format.md "X の取得").
-      # No secrets in this step.
-      - name: Patch twitter-cli (x.com -> x.com/home with the session cookie, one line)
-        if: steps.main.outputs.format == 'jev' || env.WRITE_RUN != '1'
-        run: |
-          set -euo pipefail
-          "$RUNNER_TEMP/xvenv/bin/python" - <<'PY'
-          import pathlib, sys, sysconfig
-          p = pathlib.Path(sysconfig.get_paths()["purelib"]) / "twitter_cli" / "client.py"
-          old = '"https://x.com", headers=ct_headers,'
-          new = '"https://x.com/home", headers=dict(ct_headers, Cookie=self._cookie_string or "auth_token=%s; ct0=%s" % (self._auth_token, self._ct0)),'
-          home = '"https://x.com/home"'
-          src = p.read_text(encoding="utf-8")
-          n_old, n_home = src.count(old), src.count(home)
-          if n_old != 1 or n_home != 0:
-              print(f"::error title=twitter-cli patch::expected the target line once and x.com/home zero times, found {n_old} and {n_home} in {p}. See docs/jev-format.md (X の取得)")
-              sys.exit(1)
-          src = src.replace(old, new)
-          if src.count(old) != 0 or src.count(new) != 1 or src.count(home) != 1:
-              print("::error title=twitter-cli patch::replacement did not leave exactly one x.com/home line")
-              sys.exit(1)
-          p.write_text(src, encoding="utf-8")
-          print(f"patched {p}: x.com -> x.com/home with the client's session cookie (1 line)")
-          PY
-
       - name: Setup Node.js
         if: steps.main.outputs.format == 'jev' || env.WRITE_RUN != '1'
         uses: actions/setup-node@v4
