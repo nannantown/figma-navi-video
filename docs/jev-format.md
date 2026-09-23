@@ -14,6 +14,8 @@
 | 開発は TypeSafe AI（米サンフランシスコ）。2024 年創業（公式ページには創業年の記載なし。heise・Wikipedia・GitHub org の作成日 2024-05-28 と一致） | https://typesafe.ai/ ・ https://www.heise.de/en/news/AI-model-Jev-to-make-machines-decide-faster-11457071.html |
 | CEO Diogo Almeida は InstructGPT 論文（arXiv 2203.02155）の共著者。共同創業者は Erik Gafni（CTO）、Sasha Sheng（COO） | https://arxiv.org/abs/2203.02155 ・ https://typesafe.ai/team |
 | 2026-09-15 にアーリーアクセスで公開。同日に DCVC 主導の 4,000 万ドルのシード調達を発表（Business Wire。本文は 403 で未読、Yahoo Finance の転載で確認） | https://typesafe.ai/blog/introducing-system-one-models-and-jev ・ https://finance.yahoo.com/technology/ai/articles/typesafe-ai-emerges-stealth-40m-190000776.html |
+| 公開後の動き（公式 X）: 9/16〜18 に順番待ちを大量に解除、Vercel AI Gateway・Cloudflare・OpenRouter で利用可能に。**9/20「Jev は誰でも使えるようになった。順番待ちなし」**（最初に $5 分・約 1.2 億トークンの無料枠）。9/21 API に障害。**9/22 需要が集中し新規登録を一時停止**（既存の利用者は継続）。同日 Pydantic AI が対応（日付は米国時間） | https://x.com/typesafeai/status/2101786156572823624 ・ https://x.com/typesafeai/status/2102281508950307159 |
+| CEO の公開投稿では速さを「20〜200 倍」としており、公式ブログの「40〜200 倍」と食い違う | https://x.com/CompleteSkeptic/status/2099925682726002904 |
 | LLM ではない「System One」型。文章を生成せず、型付きの値（Choice / Score など）と確率・確信度を 1 回で返す。使うのはソフトウェア | 公式ブログ・https://docs.typesafe.ai/llms.txt |
 | 用途: 公式は分類・振り分け・抽出、ゲーム（Doom・Wikiracing のデモ）。「ロボット・シミュレーション」は公式には無く、MindStudio（第三者）が運転シミュ・ドローンのデモとして紹介 | 公式ブログ・https://www.mindstudio.ai/blog/jev-system-one-model-launch |
 | **会社の主張**: LLM より 40〜200 倍速い（トップページは「193.6x faster」）、最大 444.6 倍安い（自社評価 evals.typesafe.ai）、「数学的にハルシネーションも型エラーも起こさない」 | 公式ブログ・https://evals.typesafe.ai/ |
@@ -21,7 +23,7 @@
 | **第三者の測定**: LiteLLM（09-20）は振り分けで Haiku 4.5 比 5.43 倍速・費用 96% 減。Cherry Creek News（09-21）のまとめでは実測 1.16〜6 倍、フィッシング判定では Haiku に劣る結果も。The Register（09-16）は「0%」は実測ではなく、型は守っても誤った選択肢は返し得ると指摘 | https://docs.litellm.ai/blog/jev-auto-router-benchmark ・ https://thecherrycreeknews.com/jev-typesafe-benchmark-checked-explainer-wave-cherry_creek/ ・ https://www.theregister.com/ai-and-ml/2026/09/16/typesafe-ai-debuts-model-for-machines-that-plays-doom/5296711 |
 
 **TypeSafe のものではない紛らわしいサイト**（出典にしない。検証でも弾く）: jevtypesafeai.com / jevfast.com / jevbooks.com。
-**毎朝見る公式の場所**: https://typesafe.ai/ ・公式ブログ・ https://docs.typesafe.ai/llms.txt ・ https://docs.typesafe.ai/models.md ・ SDK 変更履歴（https://docs.typesafe.ai/sdk/python/changelog.md 、 https://docs.typesafe.ai/sdk/javascript/changelog.md ）・ https://evals.typesafe.ai/ ・ https://github.com/typesafe-ai ・ X https://x.com/typesafeai （ログインなしで見られる範囲だけ）。
+**毎朝見る公式の場所**: https://typesafe.ai/ ・公式ブログ・ https://docs.typesafe.ai/llms.txt ・ https://docs.typesafe.ai/models.md ・ SDK 変更履歴（https://docs.typesafe.ai/sdk/python/changelog.md 、 https://docs.typesafe.ai/sdk/javascript/changelog.md ）・ https://evals.typesafe.ai/ ・ https://github.com/typesafe-ai ・ X の @typesafeai と CEO の @CompleteSkeptic（`data/jev-x-posts.json`。下の「X の取得」）。
 
 ## 2. シリーズ計画（回の一覧）
 
@@ -39,7 +41,7 @@
 ### 第2段階「こんなふうに使える」— 使用例を 5 回（最低 3 回）
 
 実例 1 つにつき 1 回。**実例の出典（ポスト・ブログ・記事の URL と公開日）を必ず data に残す**（`role: "usecase"`）。同じ実例（同じ URL）は 2 回使えない。
-集め先は**無料で見られる公開情報だけ**: X の公開ポスト（ログインなしで見られるもの・検索エンジン経由）、開発者ブログ、GitHub、Hacker News / Reddit、テック記事。**X の有料 API は使わない**（使わないと集まらない状況になったら、その日は解説回にしてレポートに書き、オーナーに相談する）。
+集め先は**無料で見られる公開情報だけ**: X の投稿（Actions が毎朝取る `data/jev-x-posts.json` の `community`）、開発者ブログ、GitHub、Hacker News / Reddit、テック記事。**X の有料 API は使わない**（使わないと集まらない状況になったら、その日は解説回にしてレポートに書き、オーナーに相談する）。
 
 2026-09-23 時点の候補（ルーチンは当日に一次情報を開いて確かめてから使う）:
 
@@ -107,7 +109,7 @@
 | `hook` | 8〜40 字。冒頭のナレーション |
 | `slides` | 3〜4 枚。`heading` 4〜18 字 / `body` 8〜64 字 / `narration` 30〜95 字（合計 300 字以内 = 60 秒未満） |
 | `claim_source` | 画面の文字に会社の主張（倍率・「間違えない」など）があるスライドに必須。画面に黄色のラベルで出る（例「TypeSafe の発表」「LiteLLM の検証」） |
-| `sources` | 1〜8 件。`role`: その日の新情報 = `news`、その日の使用例 = `usecase`、裏付け = `reference`。**`news` と `usecase` の URL はシリーズ全体で 1 回だけ**（www・`?…`・`#…`・末尾の `/`・twitter.com / x.com の違いは同じ URL とみなす）。`reference` は再掲してよい。`published_at` は `YYYY-MM-DD`（日付の無い参考ページだけ `null` 可）。`official: true` は TypeSafe 自身のサイト（typesafe.ai とそのサブドメイン、github.com/typesafe-ai、x.com/typesafeai、LinkedIn の会社ページ）だけ |
+| `sources` | 1〜8 件。`role`: その日の新情報 = `news`、その日の使用例 = `usecase`、裏付け = `reference`。**`news` と `usecase` の URL はシリーズ全体で 1 回だけ**（www・追跡用のクエリ `utm_…` など・`#…`・末尾の `/`・twitter.com / x.com の違いは同じ URL とみなす。HN の `?id=…` のようにページを決めるクエリは区別する）。`reference` は再掲してよい。`published_at` は `YYYY-MM-DD`（日付の無い参考ページだけ `null` 可）。`official: true` は TypeSafe 自身のサイト（typesafe.ai とそのサブドメイン、github.com/typesafe-ai、x.com/typesafeai、CEO の x.com/CompleteSkeptic、LinkedIn の会社ページ）だけ |
 | `research.checked` | その日に見た URL（1〜30 件） |
 
 **会社の主張のルール**（検証で機械的に確かめる）: ナレーション・冒頭で、倍率（「40〜200倍」「数十倍」「100分の1」「9割安い」「96%減」）、「最速」「精度100%」「数学的」、「ハルシネーション・型エラー・間違い・ミスが起きない（ない・ゼロ）」を含む文は、**同じ文の中に誰の話かを名指しで**入れる（「TypeSafe によると」「同社は〜と説明しています」「LiteLLM の検証では」「Cherry Creek News のまとめでは」）。「第三者の測定では」「テストによると」「比較では」のように**名前が無いものは通らない**。「ハルシネーションとは〜のことです」のような言葉の説明は主張ではないので不要。画面の文字の主張には `claim_source` のラベル（主張そのものではなく「誰の」を書く）。文字のフィールドに `<` `>` は使えない（YouTube が説明文を拒否するため）。キャプションには毎回「※速度・料金・精度の数字や『ハルシネーションしない』は、断りのない限り開発元 TypeSafe AI の発表です」が入り、出典の URL と公開日が並ぶ（長すぎる日は参考の URL から省き、媒体名と日付は残す）。
@@ -125,6 +127,16 @@
 | Product Hunt の取得（`fetch-product-hunt.yml`） | **止めていない**（1 日 3 回の取得と記録は続く）。pickup に戻した日にすぐ「新作」の判定ができるようにするため。止めたいときは `gh workflow disable fetch-product-hunt.yml --repo nannantown/figma-navi-video` |
 
 **切り替え（Jev ⇄ pickup）を main に入れる時間帯**: どちらの向きでも **07:30〜08:30 JST は避ける**。朝ルーチン（07:30）が古い型のデータを書いた後、動画生成（08:15）が新しい型で動くと、その日は投稿されない（Jev への切り替えなら、ルーチンは pickup の原稿を書き、08:15 は空の台帳を読んで止まる）。**08:30 以降〜翌 07:30 まで**に入れれば、翌朝からそのまま新しい型になる。
+
+### X の取得（オーナー決定 2026-09-23、選択肢 C）
+
+朝ルーチンはクラウドで動き X にログインできないため、Actions の `fetch-jev-x.yml`（毎日 06:07 JST、予備 03:23 JST。`content-format` が `jev` の間だけ）が、オーナーの X アカウントのログイン情報で X を読み、公開の投稿だけを `data/jev-x-posts.json` にコミットする。
+
+- ログイン情報: リポジトリの Secrets `TWITTER_AUTH_TOKEN` / `TWITTER_CT0`（オーナーがローカルの調査用に設定しているのと同じアカウント。2026-09-23 登録）。値はログにもファイルにも出さない。OPEN GROUND の調査スキルの既定「cookie は Mac の外に出さない」を、このリポに限りオーナー判断で外したもの
+- 取るもの: `official` = @typesafeai と CEO @CompleteSkeptic の投稿、`community` = 他の人の Jev の投稿（直近 7 日、検索語は `scripts/fetch-jev-x.mjs` の `COMMUNITY_QUERY`）。30 日分を持ち越す
+- 読み取り専用のツール `twitter-cli` 0.7.0（PyPI）で読むだけ。投稿・いいね・フォローはしない
+- **run が赤くなったら**: すべての取得が失敗した = ログイン情報が切れた可能性が高い。ブラウザで X にログインし直し、cookie の `auth_token` と `ct0` を書き出して `gh secret set TWITTER_AUTH_TOKEN --repo nannantown/figma-navi-video` / `gh secret set TWITTER_CT0 …`（値は標準入力で渡す）。赤い間も朝ルーチンは X 以外の情報源で動く
+- 止めるとき: `gh workflow disable fetch-jev-x.yml --repo nannantown/figma-navi-video` と、2 つの Secrets の削除
 
 ## 5. pickup 型（新作AIツール N選）への戻し方
 

@@ -1,0 +1,133 @@
+name: Fetch Jev X Snapshot
+
+# Public X posts about Jev → data/jev-x-posts.json for the 07:30 JST morning
+# routine (genre trial #2). The routine runs in the cloud and cannot log in to
+# X, so this job reads X with the owner's X session.
+#
+# Owner decision 2026-09-23 (option C): the X session of the account already
+# configured for local research is stored as repo secrets TWITTER_AUTH_TOKEN /
+# TWITTER_CT0 and used only here. This overrides, for this repo only, the
+# research skill's default "cookies stay on the machine". The values are never
+# printed or committed; only public post data is.
+#
+# Runs only while data/content-format.json on main says "jev". Every query
+# failing turns the run red: the session has most likely expired → export the
+# cookies again and update both secrets (docs/jev-format.md).
+#
+# Verification: pull requests that touch the fetch, and workflow_dispatch with
+# verify, fetch without committing.
+
+on:
+  schedule:
+    # 21:07 UTC = 06:07 JST, well before the 07:30 routine; off the hour
+    # because runs scheduled at :00 are the most delayed.
+    - cron: "7 21 * * *"
+    # 18:23 UTC = 03:23 JST, second chance.
+    - cron: "23 18 * * *"
+  pull_request:
+    paths:
+      - ".github/workflows/fetch-jev-x.yml"
+      - "scripts/fetch-jev-x.mjs"
+  workflow_dispatch:
+    inputs:
+      verify:
+        description: "検証モード: 取得して artifact に保存するだけ（コミットしない）"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ (github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && inputs.verify != true) && 'fetch-jev-x-write' || format('fetch-jev-x-verify-{0}', github.run_id) }}
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      WRITE_RUN: ${{ (github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && inputs.verify != true) && '1' || '' }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Read main's format and latest snapshot
+        id: main
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 origin main
+          format=$(git show FETCH_HEAD:data/content-format.json 2>/dev/null | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{try{console.log(JSON.parse(s).format||"")}catch{console.log("")}})')
+          echo "format=$format" >> "$GITHUB_OUTPUT"
+          echo "content format on main: ${format:-none}"
+          if git cat-file -e FETCH_HEAD:data/jev-x-posts.json 2>/dev/null; then
+            git show FETCH_HEAD:data/jev-x-posts.json > data/jev-x-posts.json
+          fi
+
+      - name: Setup Python
+        if: steps.main.outputs.format == 'jev' || env.WRITE_RUN != '1'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install twitter-cli
+        if: steps.main.outputs.format == 'jev' || env.WRITE_RUN != '1'
+        # Pinned: the version verified locally on 2026-09-23.
+        run: pipx install twitter-cli==0.7.0
+
+      - name: Setup Node.js
+        if: steps.main.outputs.format == 'jev' || env.WRITE_RUN != '1'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # No npm ci: the fetch script only uses Node built-ins.
+      - name: Fetch X posts
+        if: steps.main.outputs.format == 'jev' || env.WRITE_RUN != '1'
+        run: node scripts/fetch-jev-x.mjs
+        env:
+          TWITTER_AUTH_TOKEN: ${{ secrets.TWITTER_AUTH_TOKEN }}
+          TWITTER_CT0: ${{ secrets.TWITTER_CT0 }}
+
+      - name: Commit snapshot (main only, Jev format only)
+        if: env.WRITE_RUN == '1' && steps.main.outputs.format == 'jev'
+        run: |
+          set -euo pipefail
+          cp data/jev-x-posts.json "$RUNNER_TEMP/snapshot.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3; do
+            if ! git fetch --no-tags origin main; then
+              echo "fetch attempt $i failed, retrying"
+              sleep $((i * 10))
+              continue
+            fi
+            git checkout -f -B main FETCH_HEAD
+            cp "$RUNNER_TEMP/snapshot.json" data/jev-x-posts.json
+            git add data/jev-x-posts.json
+            if git diff --staged --quiet; then
+              echo "Snapshot unchanged, nothing to commit"
+              exit 0
+            fi
+            git commit -m "Jev X snapshot $(TZ=Asia/Tokyo date +%Y-%m-%dT%H:%M) [skip ci]"
+            if git push origin main; then
+              exit 0
+            fi
+            echo "push attempt $i failed, retrying"
+            sleep $((i * 10))
+          done
+          echo "::error title=Jev X snapshot::push failed after 3 attempts — the snapshot was not committed"
+          exit 1
+
+      - name: Upload snapshot artifact
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: jev-x-posts-${{ github.run_number }}
+          path: data/jev-x-posts.json
+          if-no-files-found: ignore
+          retention-days: 14

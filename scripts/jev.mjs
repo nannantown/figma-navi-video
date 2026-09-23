@@ -91,6 +91,9 @@ const OFFICIAL_PATHS = [
   ["github.com", "/typesafe-ai"],
   ["x.com", "/typesafeai"],
   ["twitter.com", "/typesafeai"],
+  // The CEO's own account: his posts are the company speaking (launch thread).
+  ["x.com", "/completeskeptic"],
+  ["twitter.com", "/completeskeptic"],
   ["www.linkedin.com", "/company/typesafe-ai"],
   ["linkedin.com", "/company/typesafe-ai"],
 ];
@@ -124,7 +127,7 @@ const CLAIM_RE = new RegExp(
 // A bare "比較では" / "テストによると" names nobody and does not count.
 const SOURCE_NAME = "(?:TypeSafe(?:\\s*AI)?|タイプセーフ|同社|開発元|開発会社|[A-Za-z][A-Za-z0-9.&'\\- ]{1,40}|[\\u4E00-\\u9FFF\\u30A0-\\u30FF]{1,12}(?:社|新聞|誌|紙|通信))";
 const ATTRIBUTION_RE = new RegExp(
-  `${SOURCE_NAME}\\s*(?:の(?:検証|測定|計測|テスト|比較|発表|調査|評価|ベンチマーク|まとめ|記事)(?:では|によると|によれば)|によると|によれば|の主張|は[^。！？]*?(?:と主張|と説明|と発表|としています|とうたって|と話して|と述べて))`,
+  `${SOURCE_NAME}(?:さん|氏|CEO)?\\s*(?:の(?:検証|測定|計測|テスト|比較|発表|調査|評価|ベンチマーク|まとめ|記事|投稿|ポスト)(?:では|によると|によれば)|によると|によれば|の主張|は[^。！？]*?(?:と主張|と説明|と発表|としています|とうたって|と話して|と述べて))`,
   "u"
 );
 
