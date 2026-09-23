@@ -110,6 +110,36 @@ jobs:
           "$RUNNER_TEMP/xvenv/bin/python" -m pip check
           echo "$RUNNER_TEMP/xvenv/bin" >> "$GITHUB_PATH"
 
+      # twitter-cli (0.7.0, also 0.8.5 and upstream main) fetches https://x.com
+      # to find the ondemand.s script it needs for the X-Client-Transaction-Id
+      # header. That page no longer links it (x.com/home does), so search
+      # (SearchTimeline) goes out without the header and gets a 404. Owner
+      # decision 2026-09-23 (A): apply the same one-line fix as the owner's Mac.
+      # The target must match exactly once before and x.com/home exactly once
+      # after, otherwise the run goes red instead of silently skipping or
+      # rewriting another line (docs/jev-format.md "X の取得"). No secrets here.
+      - name: Patch twitter-cli (x.com -> x.com/home, one line)
+        if: steps.main.outputs.format == 'jev' || env.WRITE_RUN != '1'
+        run: |
+          set -euo pipefail
+          "$RUNNER_TEMP/xvenv/bin/python" - <<'PY'
+          import pathlib, sys, sysconfig
+          p = pathlib.Path(sysconfig.get_paths()["purelib"]) / "twitter_cli" / "client.py"
+          old = '"https://x.com", headers=ct_headers,'
+          new = '"https://x.com/home", headers=ct_headers,'
+          src = p.read_text(encoding="utf-8")
+          n_old, n_new = src.count(old), src.count(new)
+          if n_old != 1 or n_new != 0:
+              print(f"::error title=twitter-cli patch::expected the target line once and x.com/home zero times, found {n_old} and {n_new} in {p}. See docs/jev-format.md (X の取得)")
+              sys.exit(1)
+          src = src.replace(old, new)
+          if src.count(old) != 0 or src.count(new) != 1:
+              print("::error title=twitter-cli patch::replacement did not leave exactly one x.com/home line")
+              sys.exit(1)
+          p.write_text(src, encoding="utf-8")
+          print(f"patched {p}: x.com -> x.com/home (1 line)")
+          PY
+
       - name: Setup Node.js
         if: steps.main.outputs.format == 'jev' || env.WRITE_RUN != '1'
         uses: actions/setup-node@v4
