@@ -82,6 +82,8 @@ export const LIMITS = {
   body: [8, 64],
   claimSource: [4, 16],
   narration: [30, 95],
+  // Slides only. Plus hook (max 40) and JEV_ENDING_NARRATION (max 40), the
+  // worst case is ~380 chars, which has to stay under the 58 s target.
   narrationTotal: 300,
   slides: [3, 4],
   sources: [1, 8],
@@ -612,7 +614,9 @@ function sourceProblems(ep, previous, at, today, warnings) {
 // the news right now (owner decision 2026-09-23). Nothing here may read as
 // "this channel = Jev" — the closing lines speak for the whole channel.
 export const JEV_FEATURE_LABEL = "いま話題の AI モデル Jev";
-export const JEV_ENDING_NARRATION = `今日は、${JEV_FEATURE_LABEL} の特集でした。AI の新しい動きは毎朝ここで。保存とフォローでチェックしてください。`;
+// Keep within 40 chars: the worst case (hook 40 + slides 300 + ending 40)
+// has to fit the 58 s target (see LIMITS.narrationTotal).
+export const JEV_ENDING_NARRATION = `${JEV_FEATURE_LABEL} の特集でした。保存とフォローをお願いします。`;
 const WEEKDAYS_JA = ["日", "月", "火", "水", "木", "金", "土"];
 const KIND_LABEL = { intro: "Jev って何？", usecase: "Jev の使い道", news: "Jev 最新ニュース", explainer: "Jev 解説" };
 const KIND_TAG = { intro: "話題のAI特集 Jev入門", usecase: "話題のAI特集 Jev活用例", news: "話題のAI特集 Jev最新", explainer: "話題のAI特集 Jev解説" };

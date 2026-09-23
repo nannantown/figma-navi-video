@@ -273,6 +273,9 @@ test("captions and ending present Jev as a feature of a general AI channel", () 
     assert.match(data.meta.openingSourceLabel, /^特集｜/);
   }
   assert.equal(JEV_ENDING_NARRATION, toJevVideoData(INTRO.episodes[0]).endingNarration);
+  // Pin the wording once, so a changed constant cannot pass by referencing itself.
+  assert.equal(JEV_FEATURE_LABEL, "いま話題の AI モデル Jev");
+  assert.ok([...JEV_ENDING_NARRATION].length <= 40, `ending is ${[...JEV_ENDING_NARRATION].length} chars`);
 });
 
 test("hashtags lead with general AI tags; #Jev is a topic tag further back", () => {
