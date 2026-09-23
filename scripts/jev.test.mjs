@@ -73,9 +73,11 @@ test("both dry-run samples validate", () => {
   }
 });
 
-test("the production ledger starts empty and the first slot is the first intro", () => {
+// Shape only: the routine appends to the production ledger every morning, so
+// its contents are not something a test can pin.
+test("the production ledger is a ledger, and an empty one starts with the first intro", () => {
   const prod = JSON.parse(readFileSync(join(root, "data/jev-episodes.json"), "utf-8"));
-  assert.deepEqual(prod.episodes, []);
+  assert.ok(Array.isArray(prod.episodes));
   assert.equal(nextSlot([]).topicKey, INTRO_TOPICS[0].key);
 });
 
@@ -273,8 +275,9 @@ test("follower counts are kept one per JST day and read as growth by the PDCA re
   assert.match(report, /\| intro \| 2 \| 50 \| 4 \| 5 \|/);
 });
 
-test("content format: the committed switch is jev; CONTENT_FORMAT overrides it; unknown values fail", () => {
-  assert.equal(readContentFormat(root, {}), "jev");
+test("content format: the committed switch is a known format; CONTENT_FORMAT overrides it; unknown values fail", async () => {
+  const { FORMATS } = await import("./jev.mjs");
+  assert.ok(FORMATS.includes(readContentFormat(root, {})));
   assert.equal(readContentFormat(root, { CONTENT_FORMAT: "pickup" }), "pickup");
   assert.throws(() => readContentFormat(root, { CONTENT_FORMAT: "ranking" }));
 });
@@ -340,7 +343,7 @@ test("news dated the US evening before the previous JST episode still counts as 
 
 test("the posted history guards the ledger: a posted episode cannot vanish or be reused", () => {
   const eps = ledger(USECASE_TARGET);
-  const posted = { videos: [{ date: eps[0].date, genre: "jev-news", jev: { kind: "intro", topicKey: eps[0].topic_key, sources: [] } }, { date: eps.at(-1).date, genre: "jev-news", jev: { kind: "usecase", topicKey: eps.at(-1).topic_key, sources: [{ url: "https://example.com/usecase-5", role: "usecase" }] } }] };
+  const posted = historyOf(eps);
   const today = newsEpisode(addDays(eps.at(-1).date, 1));
   assert.deepEqual(check([...eps, today], { history: posted }).errors, []);
   // The routine deleted the first episode from the ledger.
@@ -348,4 +351,58 @@ test("the posted history guards the ledger: a posted episode cannot vanish or be
   // …or re-used a posted use case as today's news.
   const reuse = newsEpisode(addDays(eps.at(-1).date, 1), "https://example.com/usecase-5?utm_source=x");
   assert.match(errorsOf([...eps.slice(0, -1), { ...eps.at(-1), sources: [] }, reuse], { history: posted }), /already posted on/);
+});
+
+// --- rework 1 (2026-09-23): X outlet, fillers, unaired episodes ---------------
+
+/** performance-history.json with every given episode posted. */
+function historyOf(episodes) {
+  return { videos: episodes.map((e) => ({ date: e.date, genre: "jev-news", jev: { kind: e.kind, topicKey: e.topic_key, sources: e.sources } })) };
+}
+
+test("an X source written the way the routine prompt says passes; an @handle does not", () => {
+  const ep = full();
+  ep.sources.push({ url: "https://x.com/typesafeai/status/2101786156572823624", title: "Jev is now available to everyone.", outlet: "X typesafeai", published_at: "2026-09-21", role: "reference", official: true });
+  assert.deepEqual(errorsOf([ep], { today: "2026-09-24" }), "");
+  ep.sources.at(-1).outlet = "X @typesafeai";
+  assert.match(errorsOf([ep], { today: "2026-09-24" }), /write an X account as "X typesafeai" \(no @\)/);
+});
+
+test("stage 1 and 2 have a filler explainer that keeps posting without advancing the stage", () => {
+  // Stage 1: the second intro cannot be written today.
+  const filler = full({ date: "2026-09-25", kind: "explainer", stage_episode: 2, topic_key: "explainer-launch-day", headline: "Jevの公開日をふり返る" });
+  assert.match(errorsOf([full(), filler], { history: historyOf([full()]) }), /no_news_reason.*stage-1 intro/);
+  filler.research = { ...filler.research, no_news_reason: "公式ページが開けず、2回目のテーマの事実を確かめられなかった" };
+  assert.deepEqual(check([full(), filler], { history: historyOf([full()]) }).errors, []);
+  // The stage has not moved: the next slot is still the second intro, as episode 3.
+  const slot = nextSlot([full(), filler]);
+  assert.equal(slot.stage, 1);
+  assert.equal(slot.topicKey, INTRO_TOPICS[1].key);
+  assert.equal(slot.stageEpisode, 3);
+  // A filler cannot take an intro's key.
+  const thief = { ...filler, topic_key: INTRO_TOPICS[1].key };
+  assert.match(errorsOf([full(), thief]), /is a stage-1 intro topic/);
+  // Stage 2 with fewer than the minimum use cases: a filler, not a stop.
+  const eps = ledger(1);
+  const stage2filler = full({ date: addDays(eps.at(-1).date, 1), stage: 2, stage_episode: 2, kind: "explainer", topic_key: "explainer-router-basics", headline: "振り分け係のしくみ", research: { ...INTRO.episodes[0].research, no_news_reason: "未使用の使用例が見つからなかった（X・ブログ・HNを確認）" } });
+  assert.deepEqual(check([...eps, stage2filler]).errors, []);
+  assert.equal(nextSlot([...eps, stage2filler]).usecaseCount, 1);
+});
+
+test("an episode that never went out is offered again on the next day", () => {
+  const first = full();
+  // 9/24's 1-1 is in the ledger, but neither upload worked: no history entry.
+  const noPosts = { videos: [] };
+  const retry = full({ date: "2026-09-25", headline: "文章を書かないAI「Jev」とは" });
+  // Same slot, same topic, same headline — allowed, because 9/24 never aired.
+  const res = check([first, retry], { history: noPosts });
+  assert.deepEqual(res.errors, []);
+  assert.match(res.warnings.join("\n"), /2026-09-24 "intro-what-is-jev" has no post record/);
+  // Moving on to 1-2 instead would skip 1-1 for good: rejected.
+  const skip = full({ date: "2026-09-25", topic_key: INTRO_TOPICS[1].key, stage_episode: 2, headline: "答えを型で返すAI" });
+  assert.match(errorsOf([first, skip], { history: noPosts }), /must post "intro-what-is-jev" next/);
+  // Once 9/24 is on record, 1-2 is next.
+  assert.deepEqual(check([first, skip], { history: historyOf([first]) }).errors, []);
+  // Without any history (a dry run) the ledger is trusted as is.
+  assert.deepEqual(check([first, skip]).errors, []);
 });

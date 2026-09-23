@@ -67,6 +67,8 @@
 | 第1段階が全部済み、使用例の回が 5 回未満 | 第2段階の次の回 |
 | 使用例の回が 3 回以上 5 回未満で、**その日に未使用の使用例が見つからなかった** | 第3段階へ進んでよい（`research.stage2_exhausted_reason` に理由を書く）。一度第3段階に入ったら戻らない |
 | 使用例の回が 5 回に達した | 第3段階 |
+| 第1・第2段階で、その日の題材（説明回のテーマの確認・未使用の使用例）が用意できない | **その段階のまま解説回（`explainer`）を 1 本出す**（`research.no_news_reason` に理由）。段階の回数（説明回のテーマ・使用例の数）は進まず、翌日に同じ題材を探す。投稿は止まらない |
+| 前の回が投稿されなかった（`performance-history.json` に YouTube・Instagram どちらの記録も無い） | その回は**未放送**として扱い、同じ枠をもう一度出す（`next` の `notAired` に出る。話題・出典も使える状態に戻る。直近 80 日の回が対象） |
 
 この条件は `scripts/jev.mjs` の検証（`validateEpisodes`）が機械的に確かめる。順番を飛ばした回・回数（`stage_episode`）の数え間違い・理由のない早期移行は、朝ルーチンの検証でも 08:15 の動画生成でもエラーになる。予定では 1-1 が 2026-09-24（main 統合がその朝のルーチンに間に合った場合）、第1段階が 6 日、第2段階が 5 日で、第3段階は 10 月上旬から。
 
@@ -103,13 +105,13 @@
 
 | フィールド | ルール |
 |---|---|
-| `stage` / `stage_episode` / `kind` | 段階（1〜3）、その段階の何回目か、種類（第1段階 `intro`、第2段階 `usecase`、第3段階 `news` か `explainer`）。`node scripts/jev.mjs next` の出力どおりに書く |
+| `stage` / `stage_episode` / `kind` | 段階（1〜3）、その段階の何回目か、種類（第1段階 `intro`、第2段階 `usecase`、第3段階 `news`。どの段階でも題材が無い日は `explainer`。`stage_episode` は解説回も含めてその段階で投稿された回の通し番号）。`node scripts/jev.mjs next` の出力どおりに書く |
 | `topic_key` | 英小文字とハイフン。**シリーズ全体で 1 回だけ**。第1段階は上の表の値 |
 | `headline` | 6〜24 字。画面・タイトルに出る。過去回と同じ見出しは不可。**速度・料金の倍率や「ハルシネーションしない」は見出しに入れない** |
 | `hook` | 8〜40 字。冒頭のナレーション |
 | `slides` | 3〜4 枚。`heading` 4〜18 字 / `body` 8〜64 字 / `narration` 30〜95 字（合計 300 字以内 = 60 秒未満） |
 | `claim_source` | 画面の文字に会社の主張（倍率・「間違えない」など）があるスライドに必須。画面に黄色のラベルで出る（例「TypeSafe の発表」「LiteLLM の検証」） |
-| `sources` | 1〜8 件。`role`: その日の新情報 = `news`、その日の使用例 = `usecase`、裏付け = `reference`。**`news` と `usecase` の URL はシリーズ全体で 1 回だけ**（www・追跡用のクエリ `utm_…` など・`#…`・末尾の `/`・twitter.com / x.com の違いは同じ URL とみなす。HN の `?id=…` のようにページを決めるクエリは区別する）。`reference` は再掲してよい。`published_at` は `YYYY-MM-DD`（日付の無い参考ページだけ `null` 可）。`official: true` は TypeSafe 自身のサイト（typesafe.ai とそのサブドメイン、github.com/typesafe-ai、x.com/typesafeai、CEO の x.com/CompleteSkeptic、LinkedIn の会社ページ）だけ |
+| `sources` | 1〜8 件。`outlet` は画面とキャプションの「出典:」に出る媒体名で、X の投稿は `X typesafeai` のように **@ を付けない**（相手に通知が飛ぶため検証で NG）。`role`: その日の新情報 = `news`、その日の使用例 = `usecase`、裏付け = `reference`。**`news` と `usecase` の URL はシリーズ全体で 1 回だけ**（www・追跡用のクエリ `utm_…` など・`#…`・末尾の `/`・twitter.com / x.com の違いは同じ URL とみなす。HN の `?id=…` のようにページを決めるクエリは区別する）。`reference` は再掲してよい。`published_at` は `YYYY-MM-DD`（日付の無い参考ページだけ `null` 可）。`official: true` は TypeSafe 自身のサイト（typesafe.ai とそのサブドメイン、github.com/typesafe-ai、x.com/typesafeai、CEO の x.com/CompleteSkeptic、LinkedIn の会社ページ）だけ |
 | `research.checked` | その日に見た URL（1〜30 件） |
 
 **会社の主張のルール**（検証で機械的に確かめる）: ナレーション・冒頭で、倍率（「40〜200倍」「数十倍」「100分の1」「9割安い」「96%減」）、「最速」「精度100%」「数学的」、「ハルシネーション・型エラー・間違い・ミスが起きない（ない・ゼロ）」を含む文は、**同じ文の中に誰の話かを名指しで**入れる（「TypeSafe によると」「同社は〜と説明しています」「LiteLLM の検証では」「Cherry Creek News のまとめでは」）。「第三者の測定では」「テストによると」「比較では」のように**名前が無いものは通らない**。「ハルシネーションとは〜のことです」のような言葉の説明は主張ではないので不要。画面の文字の主張には `claim_source` のラベル（主張そのものではなく「誰の」を書く）。文字のフィールドに `<` `>` は使えない（YouTube が説明文を拒否するため）。キャプションには毎回「※速度・料金・精度の数字や『ハルシネーションしない』は、断りのない限り開発元 TypeSafe AI の発表です」が入り、出典の URL と公開日が並ぶ（長すぎる日は参考の URL から省き、媒体名と日付は残す）。

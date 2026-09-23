@@ -64,7 +64,9 @@ export const INTRO_TOPICS = [
 export const USECASE_MIN = 3;
 export const USECASE_TARGET = 5;
 
-export const KINDS_BY_STAGE = { 1: ["intro"], 2: ["usecase"], 3: ["news", "explainer"] };
+// "explainer" in stages 1-2 is the filler for a day whose intro / use case cannot
+// be written: it keeps the daily post going without advancing the stage.
+export const KINDS_BY_STAGE = { 1: ["intro", "explainer"], 2: ["usecase", "explainer"], 3: ["news", "explainer"] };
 /** Role of the source that carries the day's content; used once in the whole series. */
 export const PRIMARY_ROLE = { usecase: "usecase", news: "news" };
 export const SOURCE_ROLES = ["news", "usecase", "reference"];
@@ -212,13 +214,16 @@ function isRealDate(s) {
  * Returns { stage, stageEpisode, kinds, topicKey?, theme?, usecaseCount, canAdvanceEarly }.
  */
 export function nextSlot(previous) {
-  const done = new Set(previous.filter((e) => e.stage === 1).map((e) => e.topic_key));
-  const nextIntro = INTRO_TOPICS.find((t) => !done.has(t.key));
-  const usecaseCount = previous.filter((e) => e.stage === 2).length;
+  // stage_episode counts every aired episode of the stage (fillers included);
+  // what moves the series on is the intros / use cases actually aired.
+  const inStage = (stage) => previous.filter((e) => e.stage === stage).length + 1;
+  const doneIntros = new Set(previous.filter((e) => e.kind === "intro").map((e) => e.topic_key));
+  const nextIntro = INTRO_TOPICS.find((t) => !doneIntros.has(t.key));
+  const usecaseCount = previous.filter((e) => e.kind === "usecase").length;
   if (nextIntro) {
     return {
       stage: 1,
-      stageEpisode: INTRO_TOPICS.indexOf(nextIntro) + 1,
+      stageEpisode: inStage(1),
       kinds: KINDS_BY_STAGE[1],
       topicKey: nextIntro.key,
       theme: nextIntro.theme,
@@ -230,7 +235,7 @@ export function nextSlot(previous) {
   if (!reachedStage3 && usecaseCount < USECASE_TARGET) {
     return {
       stage: 2,
-      stageEpisode: usecaseCount + 1,
+      stageEpisode: inStage(2),
       kinds: KINDS_BY_STAGE[2],
       usecaseCount,
       canAdvanceEarly: usecaseCount >= USECASE_MIN,
@@ -238,11 +243,28 @@ export function nextSlot(previous) {
   }
   return {
     stage: 3,
-    stageEpisode: previous.filter((e) => e.stage === 3).length + 1,
+    stageEpisode: inStage(3),
     kinds: KINDS_BY_STAGE[3],
     usecaseCount,
     canAdvanceEarly: false,
   };
+}
+
+/** How far back a ledger entry without a post record counts as "not aired" (history keeps 90 days). */
+export const UNAIRED_LOOKBACK_DAYS = 80;
+
+/**
+ * Ledger entries before `date` that never went out: no posted entry of this
+ * genre in performance-history.json for their day (both uploads failed, or
+ * the 08:15 run stopped). Their slot, topic and sources are open again, so the
+ * series re-offers them instead of silently moving past them. Without a
+ * history (dry runs) nothing is treated as unaired.
+ */
+export function unairedEpisodes(episodes, history, date) {
+  if (!history || !Array.isArray(history.videos)) return new Set();
+  const aired = new Set(history.videos.filter((v) => v?.genre === JEV_GENRE && !v.skip).map((v) => v.date));
+  const since = new Date(Date.parse(`${date}T00:00:00Z`) - UNAIRED_LOOKBACK_DAYS * 86400000).toISOString().slice(0, 10);
+  return new Set(episodes.filter((e) => e.date < date && e.date >= since && !aired.has(e.date)));
 }
 
 // ---------------------------------------------------------------------------
@@ -310,23 +332,27 @@ export function validateEpisodes(file, { date = todayJst(), today = todayJst(), 
     return { errors, warnings, episode: null, slot: null };
   }
   const ep = eps[index];
-  const previous = eps.slice(0, index);
   const at = `episode ${ep.date}`;
 
-  // Series order. Every entry is checked against the ones before it, so a
-  // ledger edited out of order fails too (not just today's entry).
-  for (let i = 0; i <= index; i++) errors.push(...orderProblems(eps[i], eps.slice(0, i), `episodes[${i}] (${eps[i].date})`));
+  // Entries that never went out do not count: their slot is offered again.
+  const unaired = unairedEpisodes(eps.slice(0, index), history, ep.date);
+  for (const e of unaired) warnings.push(`${e.date} "${e.topic_key}" has no post record in performance-history.json — treated as not aired; its slot, topic and sources are open again`);
+  const chain = [...eps.slice(0, index).filter((e) => !unaired.has(e)), ep];
+  const previous = chain.slice(0, -1);
+
+  // Series order. Every aired entry is checked against the ones before it,
+  // so a ledger edited out of order fails too (not just today's entry).
+  chain.forEach((e, i) => errors.push(...orderProblems(e, chain.slice(0, i), `episode ${e.date}`)));
   const slot = nextSlot(previous);
 
   // No repeats: topic_key once, the day's primary source once.
   const seenKeys = new Map();
   const seenPrimary = new Map();
-  for (let i = 0; i <= index; i++) {
-    const e = eps[i];
-    if (seenKeys.has(e.topic_key)) errors.push(`episodes[${i}] (${e.date}): topic_key "${e.topic_key}" was already used on ${seenKeys.get(e.topic_key)}`);
+  for (const e of chain) {
+    if (seenKeys.has(e.topic_key)) errors.push(`episode ${e.date}: topic_key "${e.topic_key}" was already used on ${seenKeys.get(e.topic_key)}`);
     else seenKeys.set(e.topic_key, e.date);
     for (const u of primaryUrls(e)) {
-      if (seenPrimary.has(u)) errors.push(`episodes[${i}] (${e.date}): source ${u} already carried the ${seenPrimary.get(u)} episode — find something not posted yet`);
+      if (seenPrimary.has(u)) errors.push(`episode ${e.date}: source ${u} already carried the ${seenPrimary.get(u)} episode — find something not posted yet`);
       else seenPrimary.set(u, e.date);
     }
   }
@@ -374,7 +400,8 @@ export function validateEpisodes(file, { date = todayJst(), today = todayJst(), 
   }
   if (ep.kind === "explainer") {
     const p = lengthProblem(r?.no_news_reason, LIMITS.reason, `${at}.research.no_news_reason`);
-    if (p) errors.push(`${p} — an explainer day records why there was no new information`);
+    const why = ep.stage === 3 ? "why there was no new information" : `why today's stage-${ep.stage} ${ep.stage === 1 ? "intro" : "use case"} could not be written (the filler does not advance the stage)`;
+    if (p) errors.push(`${p} — an explainer day records ${why}`);
   }
   if (ep.stage === 3 && slot.stage === 2) {
     const p = lengthProblem(r?.stage2_exhausted_reason, LIMITS.reason, `${at}.research.stage2_exhausted_reason`);
@@ -386,9 +413,12 @@ export function validateEpisodes(file, { date = todayJst(), today = todayJst(), 
 
 function orderProblems(ep, previous, at) {
   const slot = nextSlot(previous);
+  // An intro key belongs to its intro episode; a filler cannot take it.
+  if (ep.kind !== "intro" && INTRO_TOPICS.some((t) => t.key === ep.topic_key)) return [`${at}: "${ep.topic_key}" is a stage-1 intro topic; a ${ep.kind} needs its own topic_key`];
   if (slot.stage === 1) {
     if (ep.stage !== 1) return [`${at}: stage ${ep.stage} is not allowed yet — stage 1 continues with "${slot.topicKey}" (${slot.theme})`];
-    if (ep.topic_key !== slot.topicKey) return [`${at}: stage 1 must post "${slot.topicKey}" next, got "${ep.topic_key}"`];
+    // An explainer is the filler for a day the intro cannot be written.
+    if (ep.kind === "intro" && ep.topic_key !== slot.topicKey) return [`${at}: stage 1 must post "${slot.topicKey}" next, got "${ep.topic_key}"`];
   } else if (slot.stage === 2) {
     const early = ep.stage === 3 && slot.canAdvanceEarly;
     if (ep.stage !== 2 && !early) {
@@ -444,7 +474,9 @@ function sourceProblems(ep, previous, at, today, warnings) {
     if (!SOURCE_ROLES.includes(s?.role)) errors.push(`${sat}.role: one of ${SOURCE_ROLES.join(" / ")}`);
     const p = lengthProblem(s?.outlet, LIMITS.outlet, `${sat}.outlet`);
     if (p) errors.push(p);
-    errors.push(...textProblems(s?.outlet, `${sat}.outlet`));
+    // The outlet is shown on screen and in the captions, where "@name" would
+    // tag (notify) that account: X accounts are written "X typesafeai".
+    errors.push(...textProblems(s?.outlet, `${sat}.outlet`).map((m) => (/@mention/.test(m) ? `${m} — write an X account as "X typesafeai" (no @)` : m)));
     if (typeof s?.title !== "string" || !s.title.trim() || charLength(s.title) > 200 || CONTROL_CHARS_RE.test(s.title) || INVISIBLE_CHARS_RE.test(s.title)) {
       errors.push(`${sat}.title: the page title, one line, up to 200 chars`);
     }
@@ -724,15 +756,18 @@ function cli(argv) {
     return 0;
   }
   const file = loadEpisodes(path);
+  const hp = join(rootDir, "data", "performance-history.json");
   if (cmd === "next") {
     const today = todayJst();
-    const previous = (file.episodes || []).filter((e) => e.date < today);
-    const slot = nextSlot(previous);
-    console.log(JSON.stringify({ today, ...slot, usecaseTarget: USECASE_TARGET, usecaseMin: USECASE_MIN }, null, 2));
+    const before = (file.episodes || []).filter((e) => e.date < today);
+    const history = !fileArg && existsSync(hp) ? JSON.parse(readFileSync(hp, "utf-8")) : null;
+    const unaired = unairedEpisodes(before, history, today);
+    const slot = nextSlot(before.filter((e) => !unaired.has(e)));
+    const notAired = [...unaired].map((e) => ({ date: e.date, topic_key: e.topic_key }));
+    console.log(JSON.stringify({ today, ...slot, usecaseTarget: USECASE_TARGET, usecaseMin: USECASE_MIN, notAired }, null, 2));
     return 0;
   }
   const noDate = argv.includes("--no-date-check");
-  const hp = join(rootDir, "data", "performance-history.json");
   const history = !noDate && !fileArg && existsSync(hp) ? JSON.parse(readFileSync(hp, "utf-8")) : null;
   const { errors, warnings, episode, slot } = validateEpisodes(file, { pickLatest: noDate, history });
   for (const w of warnings) console.log(`WARN ${w}`);
