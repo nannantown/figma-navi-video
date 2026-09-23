@@ -129,7 +129,7 @@
 1. `data/content-format.json` の `"format"` を `"pickup"` にする PR を出して main に入れる（**朝 7:30〜8:30 の間は避ける**）。これだけで、翌朝のルーチンは [routine-prompt-pickup.md](routine-prompt-pickup.md) に従い、08:15 の動画生成は `data/enriched-ai-tools.json` を読む。
 2. `fetch-product-hunt.yml` を止めていた場合は `gh workflow enable fetch-product-hunt.yml --repo nannantown/figma-navi-video`（翌朝の分の判定には、前日 14:43 の取得が要る）。
 3. 台帳（[genre-experiment.md](genre-experiment.md) と sns-hub の `docs/strategy/genre-experiment.md`）に、試行 #2 の終了日と次の試行を書く。`data/jev-episodes.json` は消さない（再開したときの重複チェックに使う）。
-4. 確認: `CONTENT_FORMAT=pickup npm run dry-run`、または Actions の `daily-video.yml` を `dry_run: true`・`sample: pickup` で手動実行。
+4. 確認: `npm run dry-run`（pickup のサンプル。`CONTENT_FORMAT=pickup` 付き）、または Actions の `daily-video.yml` を `dry_run: true`・`sample: pickup` で手動実行。
 
 Jev に戻すときは逆（`"format": "jev"`）。台帳は続きから再開する（`node scripts/jev.mjs next`）。
 
