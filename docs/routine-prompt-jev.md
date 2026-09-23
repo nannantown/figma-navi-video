@@ -27,14 +27,23 @@ TODAY=$(TZ=Asia/Tokyo date +%Y-%m-%d)
 node scripts/jev.mjs next
 ```
 
-出力の `stage`（段階）・`stageEpisode`（その段階の何回目か）・`kinds`（書ける種類）・`topicKey`/`theme`（第1段階だけ。そのテーマで書く）を控える。**`unrecorded` に日付が出ていたら**（その回に投稿の記録が無い）、記録だけが抜けた可能性があるので、すぐにはやり直さない。次を実行する:
+出力の `stage`（段階）・`stageEpisode`（その段階の何回目か）・`kinds`（書ける種類）・`topicKey`/`theme`（第1段階だけ。そのテーマで書く）を控える。
+
+**毎朝必ず**（`unrecorded` の有無に関係なく）次を実行し、出た 1 行を最終レポートにそのまま書く。この環境の gh で投稿ワークフローのログが読めるかの確認（読めないとやり直し機能が黙って働かない）:
 
 ```bash
-node scripts/jev.mjs aired-check <unrecorded の日付>
+node scripts/jev.mjs aired-check --self-test
 ```
 
-- `"verdict": "not-posted"`（その日の投稿ワークフローのログに投稿成功の行が無い）で、`redoSlot` が `null` でないとき**だけ**、今日の回は `redoSlot` の枠（`stage`・`stageEpisode`・`topicKey`）で書き、**`"redo_of": "<その日付>"` を付ける**。やり直した元の回は台帳に残したまま（消さない・書き換えない）
-- `"posted"`（投稿は成功していて記録だけが抜けた）・`"unknown"`（ログが読めない）・`redoSlot` が `null`（もう次の回が出ている）のときは、**やり直さずに**普段どおり `next` の枠で書く。レポートの「気づき」に日付と判定を一行書く（二重投稿を防ぐため）
+**`redoCandidate` に日付が出ていたら**（最新の回に投稿の記録が無い）、記録だけが抜けた可能性があるので、すぐにはやり直さない。次を実行する（**日付は渡さない**。いつも `redoCandidate` の日を調べる）:
+
+```bash
+node scripts/jev.mjs aired-check
+```
+
+- 出力の `redoSlot` が `null` でないとき**だけ**（`"verdict": "not-posted"` = その日の投稿ワークフローの全ての試行のログに投稿成功の行が無い）、今日の回は**その `redoSlot` の枠**（`stage`・`stageEpisode`・`topicKey`）で書き、**`redoSlot.redo_of` の日付をそのまま `"redo_of"` に写す**。やり直した元の回は台帳に残したまま（消さない・書き換えない）。`redoSlot` は aired-check だけが出す。自分で作らない
+- `redoSlot` が `null`（`"posted"` = 投稿は成功していて記録だけが抜けた／`"unknown"` = ログが読めない・途中で打ち切られた実行やアップロードを始めてから失敗した実行がある等、理由は `reason`）のときは、**やり直さずに**普段どおり `next` の枠で書く。レポートの「気づき」に日付・判定・`reason` を一行書く（二重投稿を防ぐため）
+- `unrecorded` に `redoCandidate` より前の日付もあるとき（記録の抜けが続いた）も、やり直せるのは `redoCandidate` の日だけ。前の日はレポートの「気づき」に書くだけにする
 
 `canAdvanceEarly: true` の日は、手順 3 の「第2段階」で未使用の使用例が見つからなければ第3段階に進んでよい。
 
@@ -124,7 +133,7 @@ node scripts/jev.mjs validate
 - `no news source published on/after …` → 新情報ではない。解説回（`explainer`）にする
 - `was posted but is missing or changed` → 過去の回を消した・書き換えた。main の `data/jev-episodes.json` から元に戻す（過去の回は触らない）
 - `no < or >` → `<` `>` を「→」や「」に置き換える
-- `recorded as posted … post it twice` / `only the latest episode … can be redone` → やり直しの条件を満たしていない。`redo_of` を外し、`next` の普段の枠で書く
+- `recorded as posted … post it twice` / `only the latest episode … can be redone` / `aired-check … says posted` / `says unknown` → やり直しの条件を満たしていない。`redo_of` を外し、`next` の普段の枠で書く
 
 ### 6. main に反映する（PR 経由）
 
@@ -160,4 +169,4 @@ git log origin/main -10 --format=%s | grep -F "Content: Jev $TODAY" \
 
 ## 最終レポート
 
-今日の段階-回・種類・`topic_key`・見出し、使った出典（媒体と日付）、会社の主張をどう書いたか、見送った候補、着弾確認の結果。お金がかかる手段が必要になった・調べられなかった、などオーナーの判断が要ることがあれば最後に書く。
+今日の段階-回・種類・`topic_key`・見出し、使った出典（媒体と日付）、会社の主張をどう書いたか、見送った候補、着弾確認の結果、手順 0 の `aired-check self-test:` の 1 行（そのまま）。お金がかかる手段が必要になった・調べられなかった、などオーナーの判断が要ることがあれば最後に書く。
