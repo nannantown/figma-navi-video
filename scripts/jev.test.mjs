@@ -16,6 +16,11 @@ import {
   jevPdcaReport,
   readContentFormat,
   CLAIM_NOTE,
+  JEV_FEATURE_LABEL,
+  JEV_ENDING_NARRATION,
+  JEV_IG_HASHTAGS,
+  JEV_YT_HASHTAGS,
+  JEV_YT_TAGS,
 } from "./jev.mjs";
 import { buildCaptions } from "./generate-caption.mjs";
 import { buildPostEntry } from "./record-upload.mjs";
@@ -240,7 +245,7 @@ test("video data keeps the pickup frame (tools[] with narration) and captions ca
   const caps = buildCaptions(data, { recommendedTitleTemplate: "emoji" });
   assert.deepEqual(caps, buildJevCaptions(data));
   assert.ok(caps.youtube.title.length <= 100);
-  assert.match(caps.youtube.title, /^【Jev入門】/);
+  assert.match(caps.youtube.title, /^【話題のAI特集 Jev入門】/);
   for (const s of INTRO.episodes[0].sources) {
     assert.ok(caps.youtube.description.includes(s.url));
     assert.ok(caps.instagram.includes(s.url));
@@ -248,6 +253,39 @@ test("video data keeps the pickup frame (tools[] with narration) and captions ca
   assert.ok(caps.instagram.includes(CLAIM_NOTE));
   assert.match(caps.instagram, /#Jev/);
   assert.match(caps.youtube.description, /（TypeSafe の発表）/);
+});
+
+// Owner decision 2026-09-23: the channel covers AI in general and Jev is a
+// feature. Nothing the pipeline writes may read as "this channel = Jev".
+test("captions and ending present Jev as a feature of a general AI channel", () => {
+  const banned = [/毎朝[^。\n]*Jev/, /Jev の続きは/, /毎朝その最新情報/];
+  for (const ep of [...INTRO.episodes, ...USECASE.episodes]) {
+    const data = toJevVideoData(ep);
+    const caps = buildJevCaptions(data);
+    const texts = { title: caps.youtube.title, description: caps.youtube.description, instagram: caps.instagram, narration: data.endingNarration, endingLines: data.meta.endingLines.join("") };
+    for (const [where, text] of Object.entries(texts)) {
+      for (const re of banned) assert.doesNotMatch(text, re, `${where} of ${ep.date}`);
+    }
+    assert.match(caps.youtube.title, /^【話題のAI特集 Jev/);
+    assert.ok(caps.youtube.description.includes(`${JEV_FEATURE_LABEL}の特集`));
+    assert.ok(caps.instagram.includes(`${JEV_FEATURE_LABEL}の特集`));
+    assert.ok(data.endingNarration.includes(`${JEV_FEATURE_LABEL}の特集`));
+    assert.match(data.meta.openingSourceLabel, /^特集｜/);
+  }
+  assert.equal(JEV_ENDING_NARRATION, toJevVideoData(INTRO.episodes[0]).endingNarration);
+});
+
+test("hashtags lead with general AI tags; #Jev is a topic tag further back", () => {
+  for (const [list, jev] of [[JEV_IG_HASHTAGS, "#Jev"], [JEV_YT_HASHTAGS, "#Jev"], [JEV_YT_TAGS, "Jev"]]) {
+    assert.ok(list.includes(jev));
+    assert.ok(list.indexOf(jev) > 0);
+    assert.match(list[0], /^#?AI/);
+    assert.ok(list.indexOf(list.find((t) => /TypeSafe/.test(t))) > list.indexOf(list[0]));
+  }
+  const caps = buildJevCaptions(toJevVideoData(INTRO.episodes[0]));
+  assert.ok(caps.instagram.trimEnd().endsWith(JEV_IG_HASHTAGS.join(" ")));
+  assert.ok(caps.youtube.description.trimEnd().endsWith(JEV_YT_HASHTAGS.join(" ")));
+  assert.deepEqual(caps.youtube.tags, JEV_YT_TAGS);
 });
 
 test("the history entry records the episode, not tools", () => {
@@ -598,9 +636,9 @@ test("an Instagram recovery run on a later day counts for the day it posted (its
 test("the opening's 第N回 counts only intros / use cases, not the filler explainers in between", async () => {
   const { kindOrdinal } = await import("./jev.mjs");
   const intro2 = full({ date: "2026-09-26", topic_key: INTRO_TOPICS[1].key, stage_episode: 3 });
-  assert.equal(toJevVideoData(intro2).meta.openingSourceLabel, "Jev って何？ 第2回");
+  assert.equal(toJevVideoData(intro2).meta.openingSourceLabel, "特集｜Jev って何？ 第2回");
   const filler = full({ date: "2026-09-25", kind: "explainer", stage_episode: 2, topic_key: "explainer-launch-day" });
-  assert.equal(toJevVideoData(filler).meta.openingSourceLabel, "Jev 解説");
+  assert.equal(toJevVideoData(filler).meta.openingSourceLabel, "特集｜Jev 解説");
   // Use cases: the number validateEpisodes hands over (fillers not counted).
   const eps = ledger(1);
   const stage2filler = full({ date: addDays(eps.at(-1).date, 1), stage: 2, stage_episode: 2, kind: "explainer", topic_key: "explainer-router-basics", headline: "振り分け係のしくみ", research: { ...INTRO.episodes[0].research, no_news_reason: "未使用の使用例が見つからなかった（X・ブログ・HNを確認）" } });
@@ -610,7 +648,7 @@ test("the opening's 第N回 counts only intros / use cases, not the filler expla
   const res = check([...eps, stage2filler, uc]);
   assert.deepEqual(res.errors, []);
   assert.equal(res.usecaseNumber, 2);
-  assert.equal(toJevVideoData(uc, { usecaseNumber: res.usecaseNumber }).meta.openingSourceLabel, "Jev の使い道 第2回");
+  assert.equal(toJevVideoData(uc, { usecaseNumber: res.usecaseNumber }).meta.openingSourceLabel, "特集｜Jev の使い道 第2回");
   assert.equal(kindOrdinal({ kind: "news" }), null);
 });
 
