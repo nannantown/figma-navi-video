@@ -1,3 +1,88 @@
 {
-  "episodes": []
+  "episodes": [
+    {
+      "date": "2026-09-24",
+      "genre": "jev-news",
+      "trial": 2,
+      "stage": 1,
+      "stage_episode": 1,
+      "kind": "intro",
+      "topic_key": "intro-what-is-jev",
+      "topic": "Jev とは何か・誰が作ったか",
+      "headline": "AIモデル『Jev』とは何か",
+      "hook": "ChatGPTとは違う新AI『Jev』、聞いたことありますか？",
+      "slides": [
+        {
+          "heading": "9月15日に登場",
+          "body": "米サンフランシスコの新しい会社 TypeSafe AI が、2026年9月15日に開発者向けに公開しました。",
+          "narration": "Jev は、米国 TypeSafe AI が2026年9月15日に開発者向けに公開した、新しい AI モデルです。"
+        },
+        {
+          "heading": "作った人の経歴",
+          "body": "CEO の Diogo Almeida さんは、ChatGPT のもとになった InstructGPT 論文の共著者です。",
+          "narration": "CEO の Diogo Almeida さんは、ChatGPT のもとになった研究 InstructGPT の共著者の一人で、元 OpenAI のメンバーです。"
+        },
+        {
+          "heading": "文章のかわりに答え",
+          "body": "LLM と違い、文章は書きません。決められた選択肢や数値と、その確信度を一度に返します。",
+          "narration": "Jev は文章を書きません。決められた選択肢や数値と、その確信度を一度に返す、ソフトウェア向けの AI です。"
+        },
+        {
+          "heading": "速さは会社の主張",
+          "body": "TypeSafe によると LLM より40〜200倍速いとされます。第三者の実測では数倍という報告もあります。",
+          "claim_source": "TypeSafe の発表",
+          "narration": "TypeSafe によると、LLM より40から200倍速いとされます。ただし LiteLLM の検証では数倍という結果もあります。"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+          "title": "Introducing System One Models and Jev",
+          "outlet": "TypeSafe AI",
+          "published_at": "2026-09-15",
+          "role": "reference",
+          "official": true
+        },
+        {
+          "url": "https://github.com/typesafe-ai",
+          "title": "TypeSafe AI — GitHub organization",
+          "outlet": "GitHub",
+          "published_at": null,
+          "role": "reference",
+          "official": true
+        },
+        {
+          "url": "https://arxiv.org/abs/2203.02155",
+          "title": "Training language models to follow instructions with human feedback",
+          "outlet": "arXiv",
+          "published_at": "2022-03-04",
+          "role": "reference",
+          "official": false
+        },
+        {
+          "url": "https://finance.yahoo.com/technology/ai/articles/typesafe-ai-emerges-stealth-40m-190000776.html",
+          "title": "TypeSafe AI emerges from stealth with $40M seed",
+          "outlet": "Yahoo Finance",
+          "published_at": "2026-09-15",
+          "role": "reference",
+          "official": false
+        },
+        {
+          "url": "https://docs.litellm.ai/blog/jev-auto-router-benchmark",
+          "title": "Jev auto-router benchmark",
+          "outlet": "LiteLLM",
+          "published_at": "2026-09-20",
+          "role": "reference",
+          "official": false
+        }
+      ],
+      "research": {
+        "checked": [
+          "https://github.com/typesafe-ai",
+          "https://github.com/typesafe-ai/typesafe-sdk-python"
+        ],
+        "note": "typesafe.ai・docs.typesafe.ai・heise・yahoo・techcrunch・latent.space・wikipedia・tomshardware などの一次/主要記事は egress proxy に弾かれ WebFetch できず。GitHub の TypeSafe AI 組織ページと typesafe-sdk-python の README で会社の実在と system_one() メソッドの型付き出力を確認、WebSearch の要約で公開日・CEO・InstructGPT 共著・System One の骨子を突き合わせた上で、docs/jev-format.md の基本情報（オーナーが 2026-09-23 に primary source で確認済み）に沿って書いた。"
+      }
+    }
+  ]
 }
