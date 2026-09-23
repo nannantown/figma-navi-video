@@ -64,7 +64,9 @@ export function mergePosts(previous, fresh, { now = new Date(), keepDays = KEEP_
 /**
  * A readable reason for a failed twitter-cli call. With --json it prints the
  * error as JSON on stdout ({ ok: false, error: { code, message } }) and only
- * log lines (WARNING …) on stderr, so the JSON message comes first. The X
+ * log lines (WARNING …) on stderr, so the JSON message comes first. The
+ * WARNING lines follow it (e.g. "Failed to init ClientTransaction: …", the
+ * reason search 404s), so the cause is readable from errors[] in CI. The X
  * session values are masked in case any tool ever echoes them.
  */
 export function twitterError(err, env = process.env) {
@@ -75,12 +77,12 @@ export function twitterError(err, env = process.env) {
   } catch {
     // stdout was not JSON
   }
-  if (!msg) {
-    const lines = String(err?.stderr ?? "").split("\n").map((l) => l.trim()).filter(Boolean);
-    msg = lines.find((l) => !/^WARNING\b/.test(l)) || String(err?.message || err || "").split("\n")[0] || lines[0] || "unknown error";
-  }
+  const lines = String(err?.stderr ?? "").split("\n").map((l) => l.trim()).filter(Boolean);
+  const warnings = [...new Set(lines.filter((l) => /^WARNING\b/.test(l)).map((l) => l.replace(/^WARNING\s+(\S+:\s+)?/, "")))];
+  if (!msg) msg = lines.find((l) => !/^WARNING\b/.test(l)) || warnings[0] || String(err?.message || err || "").split("\n")[0] || "unknown error";
+  for (const w of warnings) if (!msg.includes(w)) msg += ` [warning: ${w}]`;
   for (const raw of [env.TWITTER_AUTH_TOKEN, env.TWITTER_CT0]) for (const secret of new Set([raw, raw?.trim()])) if (secret && secret.length >= 8) msg = msg.split(secret).join("[redacted]");
-  return msg.replace(/\b(auth_token|ct0)=[^;\s"]+/gi, "$1=[redacted]").slice(0, 200);
+  return msg.replace(/\b(auth_token|ct0)=[^;\s"]+/gi, "$1=[redacted]").slice(0, 400);
 }
 
 function runTwitter(args) {
