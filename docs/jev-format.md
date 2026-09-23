@@ -137,6 +137,8 @@
 - ログイン情報: リポジトリの Secrets `TWITTER_AUTH_TOKEN` / `TWITTER_CT0`（オーナーがローカルの調査用に設定しているのと同じアカウント。2026-09-23 登録）。値はログにもファイルにも出さない。OPEN GROUND の調査スキルの既定「cookie は Mac の外に出さない」を、このリポに限りオーナー判断で外したもの
 - 取るもの: `official` = @typesafeai と CEO @CompleteSkeptic の投稿、`community` = 他の人の Jev の投稿（直近 7 日、検索語は `scripts/fetch-jev-x.mjs` の `COMMUNITY_QUERY`）。30 日分を持ち越す
 - 読み取り専用のツール `twitter-cli` 0.7.0（PyPI）で読むだけ。投稿・いいね・フォローはしない
+- 守りの形: ジョブを 2 つに分けている。**取得ジョブ**は読み取り権限だけで、git の認証情報をディスクに残さず（`persist-credentials: false`）、cookie は「Fetch X posts」ステップの環境変数だけに渡す。**コミットジョブ**だけが書き込み権限を持ち、twitter-cli は動かさず cookie も受け取らない（取得結果は artifact で受け渡す）
+- twitter-cli と依存パッケージはすべて版とハッシュを固定（`scripts/fetch-jev-x.requirements.txt`、`pip install --require-hashes --no-deps`）。版を上げるときは `scripts/fetch-jev-x.requirements.in` を直し、ファイル先頭に書いてある `uv pip compile … --generate-hashes` を実行して PR で入れる
 - **run が赤くなったら**: すべての取得が失敗した = ログイン情報が切れた可能性が高い。ブラウザで X にログインし直し、cookie の `auth_token` と `ct0` を書き出して `gh secret set TWITTER_AUTH_TOKEN --repo nannantown/figma-navi-video` / `gh secret set TWITTER_CT0 …`（値は標準入力で渡す）。赤い間も朝ルーチンは X 以外の情報源で動く
 - 止めるとき: `gh workflow disable fetch-jev-x.yml --repo nannantown/figma-navi-video` と、2 つの Secrets の削除
 
