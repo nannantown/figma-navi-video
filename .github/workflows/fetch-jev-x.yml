@@ -140,6 +140,31 @@ jobs:
           print(f"patched {p}: x.com -> x.com/home (1 line)")
           PY
 
+      # Diagnosis only, never fails the run and gets no secrets: repeats the
+      # patched ClientTransaction init (same curl_cffi session and headers as
+      # twitter-cli, no cookie) and prints only status codes, sizes and whether
+      # ondemand.s was found, so a search 404 can be traced from the log.
+      - name: Diagnose X search header init (no cookie)
+        if: steps.main.outputs.format == 'jev' || env.WRITE_RUN != '1'
+        continue-on-error: true
+        run: |
+          "$RUNNER_TEMP/xvenv/bin/python" - <<'PY'
+          import bs4
+          from twitter_cli.client import _get_cffi_session, _gen_ct_headers, get_ondemand_file_url, ClientTransaction
+          s, h = _get_cffi_session(), _gen_ct_headers()
+          r = s.get("https://x.com/home", headers=h, timeout=10)
+          print(f"x.com/home: HTTP {r.status_code}, {len(r.content)} bytes, final {r.url.split('?')[0]}, 'ondemand.s' in page: {'ondemand.s' in r.text}")
+          try:
+              page = bs4.BeautifulSoup(r.content, "html.parser")
+              u = get_ondemand_file_url(response=page)
+              o = s.get(u, headers=h, timeout=10)
+              print(f"ondemand.s: HTTP {o.status_code}, {len(o.content)} bytes")
+              ClientTransaction(home_page_response=page, ondemand_file_response=o.text)
+              print("ClientTransaction init: ok")
+          except Exception as e:
+              print(f"ClientTransaction init: FAILED ({type(e).__name__}: {e})")
+          PY
+
       - name: Setup Node.js
         if: steps.main.outputs.format == 'jev' || env.WRITE_RUN != '1'
         uses: actions/setup-node@v4
