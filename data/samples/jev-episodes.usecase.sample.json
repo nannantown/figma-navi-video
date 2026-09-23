@@ -1,0 +1,71 @@
+{
+  "episodes": [
+    { "date": "2026-09-24", "stage": 1, "stage_episode": 1, "kind": "intro", "topic_key": "intro-what-is-jev", "headline": "文章を書かないAI「Jev」とは", "sources": [] },
+    { "date": "2026-09-25", "stage": 1, "stage_episode": 2, "kind": "intro", "topic_key": "intro-no-text", "headline": "答えを「型」で返すAI", "sources": [] },
+    { "date": "2026-09-26", "stage": 1, "stage_episode": 3, "kind": "intro", "topic_key": "intro-vs-llm", "headline": "ChatGPTと何が違う？", "sources": [] },
+    { "date": "2026-09-27", "stage": 1, "stage_episode": 4, "kind": "intro", "topic_key": "intro-speed-claim", "headline": "Jevはなぜ速いと言うのか", "sources": [] },
+    { "date": "2026-09-28", "stage": 1, "stage_episode": 5, "kind": "intro", "topic_key": "intro-cost-claim", "headline": "Jevの料金を計算してみる", "sources": [] },
+    { "date": "2026-09-29", "stage": 1, "stage_episode": 6, "kind": "intro", "topic_key": "intro-no-hallucination-claim", "headline": "「間違えないAI」の本当の意味", "sources": [] },
+    {
+      "date": "2026-09-30",
+      "genre": "jev-news",
+      "trial": 2,
+      "stage": 2,
+      "stage_episode": 1,
+      "kind": "usecase",
+      "topic_key": "usecase-litellm-router",
+      "topic": "LiteLLM がAIの振り分け役にJevを試した",
+      "headline": "AIの「振り分け係」に使う",
+      "hook": "Jevは実際どう使われているのか、開発者の例を見てみましょう。",
+      "slides": [
+        {
+          "heading": "質問の振り分け係",
+          "body": "届いた質問を、安いAIに回すか高性能なAIに回すかを決める「ルーター」の役にJevを使う例です。",
+          "narration": "Jevの使い道の一つが、届いた質問をどのAIに回すかを決める、振り分け係です。"
+        },
+        {
+          "heading": "LiteLLMが実際に比較",
+          "body": "AIをつなぐツールを作るLiteLLMのチームが、同じ振り分けをJevとClaude Haiku 4.5で比べました。",
+          "narration": "AIをつなぐツールを作っているLiteLLMのチームが、JevとClaudeの小型モデルで、この振り分けを比べました。"
+        },
+        {
+          "heading": "結果は約5.4倍速い",
+          "body": "LiteLLMの検証では約5.4倍速く、費用は96%減。TypeSafeの言う40〜200倍よりは小さい差です。",
+          "claim_source": "LiteLLM の検証",
+          "narration": "LiteLLMの検証では、Jevは約5.4倍速く、費用は96%少なかったそうです。TypeSafeによると差は40倍以上なので、それより小さめです。"
+        },
+        {
+          "heading": "向いている仕事",
+          "body": "答えが決まった選択肢の中にある判断を大量にこなす仕事向き。文章を書く仕事には向きません。",
+          "narration": "答えが選択肢の中にある判断をたくさんこなす仕事なら、Jevの出番があるかもしれません。"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://docs.litellm.ai/blog/jev-auto-router-benchmark",
+          "title": "Jev auto router benchmark",
+          "outlet": "LiteLLM",
+          "published_at": "2026-09-20",
+          "role": "usecase",
+          "official": false
+        },
+        {
+          "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+          "title": "Introducing System One Models and Jev",
+          "outlet": "TypeSafe AI",
+          "published_at": "2026-09-15",
+          "role": "reference",
+          "official": true
+        }
+      ],
+      "research": {
+        "checked": [
+          "https://docs.litellm.ai/blog/jev-auto-router-benchmark",
+          "https://www.langchain.com/blog/building-a-harness-with-jev",
+          "https://www.mindstudio.ai/blog/jev-system-one-model-launch"
+        ],
+        "note": "Sample for the dry run of a use-case (stage 2) episode."
+      }
+    }
+  ]
+}

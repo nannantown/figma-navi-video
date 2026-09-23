@@ -1,0 +1,2 @@
+# Input for scripts/fetch-jev-x.requirements.txt (hash-locked, see that file).
+twitter-cli==0.7.0

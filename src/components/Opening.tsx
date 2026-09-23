@@ -52,14 +52,15 @@ export const Opening: React.FC<{ meta: VideoMeta }> = ({ meta }) => {
           opacity: titleOpacity,
           transform: `translateY(${titleY}px)`,
           marginTop: 28,
-          fontSize: 112,
+          // A Jev headline (up to 24 chars) steps down to stay within 3 lines.
+          fontSize: Array.from(meta.kicker ?? "").length > 10 ? 84 : 112,
           fontWeight: 900,
           color: COLORS.text,
-          lineHeight: 1.05,
+          lineHeight: Array.from(meta.kicker ?? "").length > 10 ? 1.18 : 1.05,
           letterSpacing: "-2px",
         }}
       >
-        新作AIツール
+        {meta.kicker ?? "新作AIツール"}
       </div>
 
       <div

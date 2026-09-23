@@ -23,7 +23,7 @@ import { postedVideos } from "./history.mjs";
 import { YT_BASE_TAGS } from "./generate-caption.mjs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
-import { updateInstagramStats } from "./instagram-insights.mjs";
+import { updateInstagramStats, recordFollowerCount } from "./instagram-insights.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
@@ -209,6 +209,10 @@ async function fetchInstagramStats(history) {
     // Skip days (no video) must never be matched to a Reel. Same entry objects,
     // so the stats written by updateInstagramStats land in `history`.
     const result = await updateInstagramStats({ ...history, videos: postedVideos(history.videos) }, process.env);
+    if (result.followersCount != null) {
+      recordFollowerCount(history, result.followersCount);
+      console.log(`  IG: followers ${result.followersCount}`);
+    }
     console.log(
       `  IG: matched ${result.matched}, updated ${result.updated}, failed ${result.failed}, ` +
         `skipped ${result.skipped}, unmatched ${result.unmatched.length}` +

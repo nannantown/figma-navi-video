@@ -36,16 +36,44 @@ export interface Tool {
   imageUrl?: string | null;
 }
 
+/**
+ * One slide of a Jev episode (genre trial #2, scripts/jev.mjs toJevVideoData).
+ * Rendered in the same Series slot as a tool card, so the audio keys
+ * (tool-1..N), the frame maths and the cover frame are shared.
+ */
+export interface JevSlide {
+  rank: number;
+  badge: string;
+  /** Same as heading; record-upload / logs read `name` */
+  name: string;
+  heading: string;
+  body: string;
+  /** "TypeSafe の発表" etc. when the screen text states a claim */
+  claimSource: string | null;
+  narration: string;
+  /** "Jev って何？・9/24" */
+  header: string;
+  /** "出典: TechCrunch・TypeSafe" */
+  sourceLine: string;
+  image?: null;
+}
+
+export type VideoCard = Tool | JevSlide;
+
 export interface VideoMeta {
   date: string;
   /** "2026.09.15 (火)" */
   dateLabel: string;
   /** "9/15" */
   shortDate: string;
-  mode: "ranking" | "pickup";
+  mode: "ranking" | "pickup" | "jev";
   count: number;
   /** "新作AIツール TOP5" (ranking) / "新作AIツール 3選" (pickup — never "TOP") */
   headline: string;
+  /** Small line above the big word; "新作AIツール" when unset */
+  kicker?: string;
+  /** Ending copy under "保存しよう"; the tools copy when unset */
+  endingLines?: string[];
   /** Big opening word: "TOP5" / "3選" */
   bigLabel: string;
   /** Caption/description attribution */

@@ -1,0 +1,4 @@
+{
+  "format": "jev",
+  "note": "jev = genre trial #2 (Jev の毎朝ニュース, data/jev-episodes.json). pickup = trial #1 (新作AIツール N選, data/enriched-ai-tools.json). How to switch back: docs/jev-format.md"
+}

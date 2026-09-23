@@ -1,0 +1,23 @@
+{
+  "date": {
+    "full": "2026/09/30",
+    "compact": "20260930"
+  },
+  "youtube": {
+    "title": "【Jev活用例】AIの「振り分け係」に使う｜2026/09/30 #Shorts",
+    "titleTemplate": "jev",
+    "description": "AIの「振り分け係」に使う（9/30）\n\n・質問の振り分け係：届いた質問を、安いAIに回すか高性能なAIに回すかを決める「ルーター」の役にJevを使う例です。\n・LiteLLMが実際に比較：AIをつなぐツールを作るLiteLLMのチームが、同じ振り分けをJevとClaude Haiku 4.5で比べました。\n・結果は約5.4倍速い：LiteLLMの検証では約5.4倍速く、費用は96%減。TypeSafeの言う40〜200倍よりは小さい差です。（LiteLLM の検証）\n・向いている仕事：答えが決まった選択肢の中にある判断を大量にこなす仕事向き。文章を書く仕事には向きません。\n\n※速度・料金・精度の数字や「ハルシネーションしない」は、断りのない限り開発元 TypeSafe AI の発表です（第三者の検証は出典を明記）。\n\n出典:\n・LiteLLM（2026-09-20）https://docs.litellm.ai/blog/jev-auto-router-benchmark\n・TypeSafe AI（2026-09-15）https://typesafe.ai/blog/introducing-system-one-models-and-jev\n\nJev は TypeSafe AI が 2026年9月に公開した、ソフトウェア向けの新しいAIモデルです。毎朝その最新情報をお届けします。\n\n#Jev #TypeSafeAI #AIニュース #Shorts",
+    "tags": [
+      "Jev",
+      "TypeSafe AI",
+      "TypeSafe",
+      "System One",
+      "AIモデル",
+      "AIニュース",
+      "生成AI",
+      "Shorts"
+    ],
+    "categoryId": "28"
+  },
+  "instagram": "AIの「振り分け係」に使う（9/30）\n\n・質問の振り分け係：届いた質問を、安いAIに回すか高性能なAIに回すかを決める「ルーター」の役にJevを使う例です。\n・LiteLLMが実際に比較：AIをつなぐツールを作るLiteLLMのチームが、同じ振り分けをJevとClaude Haiku 4.5で比べました。\n・結果は約5.4倍速い：LiteLLMの検証では約5.4倍速く、費用は96%減。TypeSafeの言う40〜200倍よりは小さい差です。（LiteLLM の検証）\n・向いている仕事：答えが決まった選択肢の中にある判断を大量にこなす仕事向き。文章を書く仕事には向きません。\n\n※速度・料金・精度の数字や「ハルシネーションしない」は、断りのない限り開発元 TypeSafe AI の発表です（第三者の検証は出典を明記）。\n\n出典:\n・LiteLLM（2026-09-20）https://docs.litellm.ai/blog/jev-auto-router-benchmark\n・TypeSafe AI（2026-09-15）https://typesafe.ai/blog/introducing-system-one-models-and-jev\n\n毎朝、AIモデル Jev の最新情報を1分で。保存してあとで見返してください。\n\n#Jev #TypeSafeAI #AIニュース #生成AI #AI最新情報"
+}

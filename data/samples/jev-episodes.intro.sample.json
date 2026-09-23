@@ -1,0 +1,82 @@
+{
+  "episodes": [
+    {
+      "date": "2026-09-24",
+      "genre": "jev-news",
+      "trial": 2,
+      "stage": 1,
+      "stage_episode": 1,
+      "kind": "intro",
+      "topic_key": "intro-what-is-jev",
+      "topic": "Jev とは何か・誰が作ったか",
+      "headline": "文章を書かないAI「Jev」とは",
+      "hook": "ChatGPTとは別物の新しいAI、Jevを知っていますか？",
+      "slides": [
+        {
+          "heading": "9月15日に先行公開",
+          "body": "米サンフランシスコのTypeSafe AIが、新しいAIモデル「Jev」を開発者向けに先行公開しました。",
+          "narration": "Jevは、アメリカのTypeSafe AIという会社が9月15日に先行公開した、新しいAIモデルです。"
+        },
+        {
+          "heading": "作ったのはChatGPTの源流の人",
+          "body": "CEOのディオゴ・アルメイダ氏は、ChatGPTの土台になった研究InstructGPTの論文の共著者です。",
+          "narration": "CEOのディオゴ・アルメイダさんは、ChatGPTのもとになったInstructGPTという研究の論文を書いた一人です。"
+        },
+        {
+          "heading": "答えは「型」で返す",
+          "body": "文章は書かず、決められた選択肢や数値と、その確信度を一度に返します。使うのは人ではなくソフトです。",
+          "narration": "Jevは文章を書きません。決められた選択肢や数値を、どれくらい自信があるかと一緒に返す、ソフト向けのAIです。"
+        },
+        {
+          "heading": "速さは会社の主張",
+          "body": "LLMより40〜200倍速いとされますが、TypeSafeの発表です。第三者の測定では差はもっと小さめです。",
+          "claim_source": "TypeSafe の発表",
+          "narration": "TypeSafeによると、ChatGPTのようなLLMより40から200倍速いそうです。Cherry Creek Newsのまとめでは、実測で1倍台から6倍ほどという結果もあります。"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+          "title": "Introducing System One Models and Jev",
+          "outlet": "TypeSafe AI",
+          "published_at": "2026-09-15",
+          "role": "reference",
+          "official": true
+        },
+        {
+          "url": "https://arxiv.org/abs/2203.02155",
+          "title": "Training language models to follow instructions with human feedback",
+          "outlet": "arXiv",
+          "published_at": "2022-03-04",
+          "role": "reference",
+          "official": false
+        },
+        {
+          "url": "https://techcrunch.com/2026/09/18/a-new-kind-of-ai-model-from-a-chatgpt-inventor-is-thrilling-developers/",
+          "title": "A new kind of AI model from a ChatGPT inventor is thrilling developers",
+          "outlet": "TechCrunch",
+          "published_at": "2026-09-18",
+          "role": "reference",
+          "official": false
+        },
+        {
+          "url": "https://thecherrycreeknews.com/jev-typesafe-benchmark-checked-explainer-wave-cherry_creek/",
+          "title": "Jev TypeSafe benchmark checked",
+          "outlet": "Cherry Creek News",
+          "published_at": "2026-09-21",
+          "role": "reference",
+          "official": false
+        }
+      ],
+      "research": {
+        "checked": [
+          "https://typesafe.ai/",
+          "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+          "https://docs.typesafe.ai/llms.txt",
+          "https://techcrunch.com/2026/09/18/a-new-kind-of-ai-model-from-a-chatgpt-inventor-is-thrilling-developers/"
+        ],
+        "note": "Sample for the dry run of an intro (stage 1) episode."
+      }
+    }
+  ]
+}

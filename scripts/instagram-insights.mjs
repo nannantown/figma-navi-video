@@ -247,6 +247,24 @@ async function fetchInsights(graphGet, mediaId, tokens) {
  * failures are logged and counted; once the budget is spent or failures
  * repeat, the remaining entries keep their previous values.
  */
+export const FOLLOWER_KEEP_DAYS = 400;
+
+/**
+ * Daily IG follower count → history.account.igFollowers [{ date, count }]
+ * (one entry per JST day, the latest reading wins). Genre trial #2 reads the
+ * follower change from it (scripts/jev.mjs jevPdcaReport).
+ */
+export function recordFollowerCount(history, count, now = new Date()) {
+  if (!Number.isInteger(count) || count < 0) return history;
+  const date = new Date(now.getTime() + 9 * 3600 * 1000).toISOString().slice(0, 10);
+  const cutoff = new Date(now.getTime() - FOLLOWER_KEEP_DAYS * 86400000).toISOString().slice(0, 10);
+  const series = (history.account?.igFollowers || []).filter((f) => f.date !== date && f.date >= cutoff);
+  series.push({ date, count });
+  series.sort((a, b) => a.date.localeCompare(b.date));
+  history.account = { ...(history.account || {}), igFollowers: series };
+  return history;
+}
+
 export async function updateInstagramStats(history, env, opts = {}) {
   const {
     fetchImpl = fetch,
@@ -348,6 +366,17 @@ export async function updateInstagramStats(history, env, opts = {}) {
     log(`  IG: stopped early (${why}); ${skipped} entries keep previous values`);
   }
 
+  // 【一次資料】IG User reference (2026-09-23): followers_count is a public
+  // field of the IG User node. One call after the insights, inside the same time
+  // budget (skipped once it is spent; genre trial #2 reads the change). Best effort.
+  let followersCount = null;
+  try {
+    const me = await graphGet(`/${INSTAGRAM_USER_ID}`, { fields: "followers_count", access_token: pageToken });
+    if (Number.isInteger(me?.followers_count)) followersCount = me.followers_count;
+  } catch (err) {
+    log(`  IG: followers_count failed: ${err.message}`);
+  }
+
   return {
     matched: assignments.size,
     updated,
@@ -357,5 +386,6 @@ export async function updateInstagramStats(history, env, opts = {}) {
     permissionDenied: failed > 0 && updated === 0 && permissionFailures === failed,
     missingScopes: missing,
     unmatched,
+    followersCount,
   };
 }
