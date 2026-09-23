@@ -43,7 +43,7 @@ test("a community post is attributed by naming its author", async () => {
   assert.equal(unattributedClaims("ある投稿によると、10倍速くなったそうです。").length, 1);
 });
 
-test("a failed query records twitter-cli's JSON error (stdout), not its WARNING line, and never the session values", () => {
+test("a failed query records twitter-cli's JSON error (stdout) first, then its WARNING lines, and never the session values", () => {
   const env = { TWITTER_AUTH_TOKEN: "a1b2c3d4e5f6a7b8c9d0", TWITTER_CT0: "ffeeddccbbaa99887766" };
   // --json: the error is JSON on stdout; stderr only has log lines.
   const ci = {
@@ -51,9 +51,16 @@ test("a failed query records twitter-cli's JSON error (stdout), not its WARNING 
     stderr: "WARNING twitter_cli.client: Failed to init ClientTransaction: 'NoneType' object has no attribute 'group'\n",
     message: "Command failed: twitter search ...",
   };
-  assert.equal(twitterError(ci, env), "api_error: Twitter API error 404: https://x.com/i/api/graphql/abc/SearchTimeline");
-  // No JSON: the first stderr line that is not a WARNING.
-  assert.equal(twitterError({ stdout: "", stderr: "WARNING noise\nError: rate limited (429)\n" }, env), "Error: rate limited (429)");
+  assert.equal(
+    twitterError(ci, env),
+    "api_error: Twitter API error 404: https://x.com/i/api/graphql/abc/SearchTimeline [warning: Failed to init ClientTransaction: 'NoneType' object has no attribute 'group']",
+  );
+  // No JSON: the first stderr line that is not a WARNING, then the warnings.
+  assert.equal(twitterError({ stdout: "", stderr: "WARNING noise\nError: rate limited (429)\n" }, env), "Error: rate limited (429) [warning: noise]");
+  // Only warnings: the first one is the message, not repeated.
+  assert.equal(twitterError({ stderr: "WARNING x: only this\nWARNING x: only this\n" }, env), "only this");
+  // A session value inside a warning is masked too.
+  assert.ok(!twitterError({ stdout: ci.stdout, stderr: `WARNING x: cookie ${env.TWITTER_AUTH_TOKEN} bad\n` }, env).includes(env.TWITTER_AUTH_TOKEN));
   // Session values are masked wherever they would appear.
   const leaky = { stdout: JSON.stringify({ ok: false, error: { message: `bad cookie auth_token=${env.TWITTER_AUTH_TOKEN}; ct0=${env.TWITTER_CT0}` } }) };
   const msg = twitterError(leaky, env);
