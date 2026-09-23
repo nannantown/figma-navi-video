@@ -555,14 +555,44 @@ test("aired-check says why it cannot tell (gh missing / not logged in / 403 / em
   const empty = fakeGh({ "daily-video.yml": [dayRun(9, "failure")] }, { "9/1": { status: "completed", conclusion: "failure", log: "  \n" } });
   assert.match(airedCheck("2026-09-24", { run: empty.run }).reason, /^empty-log/);
 
-  const ok = fakeGh({ "daily-video.yml": [{ ...dayRun(5, null), status: "in_progress" }, dayRun(4, "success")] }, { "4/last": { log: "Uploaded! https://youtube.com/shorts/q" } });
-  assert.deepEqual(airedCheckSelfTest({ run: ok.run }), { ok: true, line: "aired-check self-test: OK — read run 4 (2026-09-24, success) and its log (38 chars)" });
+  // Self-test: the latest successful scheduled posting run, read the way aired-check reads it, down to its success line.
+  const dry = { ...dayRun(6, "success"), event: "workflow_dispatch" };
+  const ok = fakeGh({ "daily-video.yml": [{ ...dayRun(5, null), status: "in_progress" }, dry, dayRun(4, "success", 2)] }, { "4/2": { log: "Uploaded! https://youtube.com/shorts/q" } });
+  assert.deepEqual(airedCheckSelfTest({ run: ok.run }), { ok: true, line: "aired-check self-test: OK — read run 4 (2026-09-24) and found its upload success line" });
+  assert.ok(ok.calls.includes("run view 4 --attempt 2 --log"));
   assert.equal(airedCheckSelfTest({ run: fail({ code: "ENOENT" }) }).line, "aired-check self-test: NG — gh-missing: the gh CLI is not installed");
   assert.match(airedCheckSelfTest({ run: fail({ stderr: "HTTP 403: Resource not accessible by integration" }) }).line, /^aired-check self-test: NG — forbidden: /);
   assert.match(airedCheckSelfTest({ run: fakeGh({}).run }).line, /NG — no-runs/);
-  const blank = fakeGh({ "daily-video.yml": [dayRun(4, "success")] }, { "4/last": { log: "" } });
-  assert.match(airedCheckSelfTest({ run: blank.run }).line, /NG — empty-log: run 4/);
+  // Logs that read but lack the success line (partial logs, changed wording) → NG.
+  const blank = fakeGh({ "daily-video.yml": [dayRun(4, "success")] }, { "4/1": { log: "Set up job\nRun pipeline" } });
+  assert.match(airedCheckSelfTest({ run: blank.run }).line, /NG — no-success-line: .*\(4\)/);
   for (const r of [ok, blank]) assert.equal(airedCheckSelfTest({ run: r.run }).line.includes("\n"), false);
+});
+
+test("a failed run that had started an upload is unknown (the upload may have gone through)", async () => {
+  const { airedCheck } = await import("./jev.mjs");
+  for (const log of ["YouTube: uploading output/aitools-20260924.mp4\n  Uploading...\nError: socket hang up", "Instagram: uploading Reel via file\n  Publishing...\nError: (#1) An unknown error occurred"]) {
+    const gh = fakeGh({ "daily-video.yml": [dayRun(9, "failure")] }, { "9/1": { status: "completed", conclusion: "failure", log } });
+    assert.match(airedCheck("2026-09-24", { run: gh.run }).reason, /^upload-started: run 9 attempt 1/);
+  }
+  // Credentials missing: the upload never started → still not-posted.
+  const skipped = fakeGh({ "daily-video.yml": [dayRun(9, "failure")] }, { "9/1": { status: "completed", conclusion: "failure", log: "YouTube: credentials not configured, skipping upload.\nRender failed" } });
+  assert.equal(airedCheck("2026-09-24", { run: skipped.run }).verdict, "not-posted");
+});
+
+test("an Instagram recovery run on a later day counts for the day it posted (its 'Using date:')", async () => {
+  const { airedCheck } = await import("./jev.mjs");
+  const failedDay = { "9/1": { status: "completed", conclusion: "failure", log: "Render failed" } };
+  const later = (usedTag) => fakeGh(
+    { "daily-video.yml": [dayRun(9, "failure")], "post-today-instagram.yml": [dayRun(12, "success", 1, "2026-09-24T15:30:00Z")] }, // 2026-09-25 00:30 JST
+    { ...failedDay, "12/1": { status: "completed", conclusion: "success", log: `Using date: ${usedTag}\n  Published! Media ID: 77` } },
+  );
+  assert.equal(airedCheck("2026-09-24", { run: later("20260924").run }).verdict, "posted");
+  // A later recovery of another day does not count for this one.
+  assert.equal(airedCheck("2026-09-24", { run: later("20260925").run }).verdict, "not-posted");
+  // A recovery run from before the day is never read.
+  const before = fakeGh({ "daily-video.yml": [dayRun(9, "failure")], "post-today-instagram.yml": [dayRun(12, "success", 1, "2026-09-22T15:30:00Z")] }, failedDay);
+  assert.equal(airedCheck("2026-09-24", { run: before.run }).verdict, "not-posted");
 });
 
 test("the opening's 第N回 counts only intros / use cases, not the filler explainers in between", async () => {

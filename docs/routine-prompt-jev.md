@@ -42,7 +42,7 @@ node scripts/jev.mjs aired-check
 ```
 
 - 出力の `redoSlot` が `null` でないとき**だけ**（`"verdict": "not-posted"` = その日の投稿ワークフローの全ての試行のログに投稿成功の行が無い）、今日の回は**その `redoSlot` の枠**（`stage`・`stageEpisode`・`topicKey`）で書き、**`redoSlot.redo_of` の日付をそのまま `"redo_of"` に写す**。やり直した元の回は台帳に残したまま（消さない・書き換えない）。`redoSlot` は aired-check だけが出す。自分で作らない
-- `redoSlot` が `null`（`"posted"` = 投稿は成功していて記録だけが抜けた／`"unknown"` = ログが読めない・途中で打ち切られた実行がある等、理由は `reason`）のときは、**やり直さずに**普段どおり `next` の枠で書く。レポートの「気づき」に日付・判定・`reason` を一行書く（二重投稿を防ぐため）
+- `redoSlot` が `null`（`"posted"` = 投稿は成功していて記録だけが抜けた／`"unknown"` = ログが読めない・途中で打ち切られた実行やアップロードを始めてから失敗した実行がある等、理由は `reason`）のときは、**やり直さずに**普段どおり `next` の枠で書く。レポートの「気づき」に日付・判定・`reason` を一行書く（二重投稿を防ぐため）
 - `unrecorded` に `redoCandidate` より前の日付もあるとき（記録の抜けが続いた）も、やり直せるのは `redoCandidate` の日だけ。前の日はレポートの「気づき」に書くだけにする
 
 `canAdvanceEarly: true` の日は、手順 3 の「第2段階」で未使用の使用例が見つからなければ第3段階に進んでよい。

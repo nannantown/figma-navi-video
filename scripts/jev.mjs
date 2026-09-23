@@ -274,6 +274,8 @@ export function nextSlot(previous) {
 
 /** Success lines printed by upload-youtube.mjs / upload-instagram.mjs. */
 const POSTED_LOG_RE = /Uploaded! https:\/\/|YouTube upload complete: https:\/\/|Published! Media ID: \S+/;
+/** First lines of an upload attempt (printed after the credential checks). */
+const UPLOAD_STARTED_RE = /YouTube: uploading |Instagram: uploading Reel/;
 
 /**
  * Verdict for one day from every attempt of its posting runs (daily-video.yml
@@ -293,6 +295,10 @@ export function classifyPostLogs(attempts) {
   if (cut) return { verdict: "unknown", reason: `interrupted: run ${cut.id} attempt ${cut.attempt} ended ${cut.conclusion} (it may have uploaded before its success line)` };
   const empty = attempts.find((a) => String(a.log ?? "").trim().length === 0);
   if (empty) return { verdict: "unknown", reason: `empty-log: run ${empty.id} attempt ${empty.attempt}` };
+  // An upload that started and then failed may still have gone through (a lost
+  // response, a publish that errored after publishing).
+  const started = attempts.find((a) => UPLOAD_STARTED_RE.test(String(a.log)));
+  if (started) return { verdict: "unknown", reason: `upload-started: run ${started.id} attempt ${started.attempt} began an upload but shows no success line` };
   return { verdict: "not-posted", reason: `no success line in ${attempts.length} attempt(s)` };
 }
 
@@ -898,14 +904,20 @@ export function airedCheck(date, { run = ghRun } = {}) {
   try {
     for (const wf of ["daily-video.yml", "post-today-instagram.yml"]) {
       const list = JSON.parse(run(["run", "list", "--workflow", wf, "--branch", "main", "--limit", "40", "--json", RUN_FIELDS]));
-      for (const r of list.filter((r) => jstDay(r.createdAt) === date)) {
+      // The Instagram recovery can post an earlier day (its `date` input), so
+      // its later runs count too when their "Using date:" names this day (or
+      // cannot be read — then they count, on the safe side).
+      const recovery = wf === "post-today-instagram.yml";
+      for (const r of list.filter((r) => (recovery ? jstDay(r.createdAt) >= date : jstDay(r.createdAt) === date))) {
         const last = Math.max(1, Number(r.attempt) || 1);
         for (let n = 1; n <= last; n++) {
           // The list carries the latest attempt's state; earlier ones are asked for.
           const s = n === last ? r : JSON.parse(run(["run", "view", String(r.databaseId), "--attempt", String(n), "--json", "status,conclusion"]));
           const a = { workflow: wf, id: r.databaseId, attempt: n, event: r.event, status: s.status, conclusion: s.conclusion, log: "" };
-          attempts.push(a);
           if (a.status === "completed") a.log = run(["run", "view", String(r.databaseId), "--attempt", String(n), "--log"]);
+          const usedDate = recovery && jstDay(r.createdAt) !== date ? /Using date: (\d{8})/.exec(a.log)?.[1] : null;
+          if (usedDate && usedDate !== date.replaceAll("-", "")) continue;
+          attempts.push(a);
         }
       }
     }
@@ -924,11 +936,15 @@ export function airedCheckSelfTest({ run = ghRun } = {}) {
   const line = (s) => `aired-check self-test: ${s}`;
   try {
     const list = JSON.parse(run(["run", "list", "--workflow", "daily-video.yml", "--branch", "main", "--limit", "10", "--json", RUN_FIELDS]));
-    const r = list.find((x) => x.status === "completed");
-    if (!r) return { ok: false, line: line("NG — no-runs: no finished daily-video.yml run on main among the latest 10") };
-    const log = String(run(["run", "view", String(r.databaseId), "--log"]));
-    if (log.trim().length === 0) return { ok: false, line: line(`NG — empty-log: run ${r.databaseId} (${jstDay(r.createdAt)})`) };
-    return { ok: true, line: line(`OK — read run ${r.databaseId} (${jstDay(r.createdAt)}, ${r.conclusion}) and its log (${log.length} chars)`) };
+    // The same reads aired-check makes (--attempt N --log), down to a success
+    // line: a gh that drops step logs or a changed success line shows up here.
+    const posts = list.filter((x) => x.status === "completed" && x.conclusion === "success" && x.event === "schedule").slice(0, 3);
+    if (posts.length === 0) return { ok: false, line: line("NG — no-runs: no successful scheduled daily-video.yml run on main among the latest 10") };
+    for (const r of posts) {
+      const log = String(run(["run", "view", String(r.databaseId), "--attempt", String(Math.max(1, Number(r.attempt) || 1)), "--log"]));
+      if (POSTED_LOG_RE.test(log)) return { ok: true, line: line(`OK — read run ${r.databaseId} (${jstDay(r.createdAt)}) and found its upload success line`) };
+    }
+    return { ok: false, line: line(`NG — no-success-line: read the latest ${posts.length} successful posting run(s) (${posts.map((r) => r.databaseId).join(", ")}) but none shows an upload success line (partial logs, or the success line changed)`) };
   } catch (err) {
     return { ok: false, line: line(`NG — ${ghFailure(err)}`) };
   }

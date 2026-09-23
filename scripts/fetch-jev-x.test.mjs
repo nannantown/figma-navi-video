@@ -61,3 +61,8 @@ test("a failed query records twitter-cli's JSON error (stdout), not its WARNING 
   assert.ok(!twitterError({ stderr: `Error: ${env.TWITTER_CT0} rejected` }, env).includes(env.TWITTER_CT0));
   assert.ok(!twitterError({ stderr: "Error: cookie auth_token=zzz999yyy888 rejected" }, {}).includes("zzz999yyy888"));
 });
+
+test("a session value with a trailing newline in the secret is still masked", () => {
+  const env = { TWITTER_AUTH_TOKEN: "a1b2c3d4e5f6a7b8c9d0\n", TWITTER_CT0: "" };
+  assert.ok(!twitterError({ stderr: "Error: token a1b2c3d4e5f6a7b8c9d0 rejected" }, env).includes("a1b2c3d4e5f6a7b8c9d0"));
+});

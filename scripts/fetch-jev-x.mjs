@@ -79,7 +79,7 @@ export function twitterError(err, env = process.env) {
     const lines = String(err?.stderr ?? "").split("\n").map((l) => l.trim()).filter(Boolean);
     msg = lines.find((l) => !/^WARNING\b/.test(l)) || String(err?.message || err || "").split("\n")[0] || lines[0] || "unknown error";
   }
-  for (const secret of [env.TWITTER_AUTH_TOKEN, env.TWITTER_CT0]) if (secret && secret.length >= 8) msg = msg.split(secret).join("[redacted]");
+  for (const raw of [env.TWITTER_AUTH_TOKEN, env.TWITTER_CT0]) for (const secret of new Set([raw, raw?.trim()])) if (secret && secret.length >= 8) msg = msg.split(secret).join("[redacted]");
   return msg.replace(/\b(auth_token|ct0)=[^;\s"]+/gi, "$1=[redacted]").slice(0, 200);
 }
 
