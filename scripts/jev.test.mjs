@@ -276,3 +276,16 @@ test("content format: the committed switch is jev; CONTENT_FORMAT overrides it; 
   assert.equal(readContentFormat(root, { CONTENT_FORMAT: "pickup" }), "pickup");
   assert.throws(() => readContentFormat(root, { CONTENT_FORMAT: "ranking" }));
 });
+
+test("captions stay within the platform limits on the longest allowed episode", async () => {
+  const { JEV_IG_CAPTION_MAX, JEV_YT_DESCRIPTION_MAX_BYTES } = await import("./jev.mjs");
+  const ep = full({ headline: "あ".repeat(24) });
+  ep.slides = Array.from({ length: 4 }, (_, i) => ({ heading: "見".repeat(18), body: "本".repeat(64), claim_source: "TypeSafe の発表まで", narration: `${i}`.repeat(95) }));
+  ep.sources = Array.from({ length: 8 }, (_, i) => ({ url: `https://example.com/${"p".repeat(270)}${i}`, title: "t", outlet: "媒".repeat(30), published_at: "2026-09-20", role: i === 0 ? "news" : "reference", official: false }));
+  const caps = buildJevCaptions(toJevVideoData(ep));
+  assert.ok(Array.from(caps.instagram).length <= JEV_IG_CAPTION_MAX, `IG ${Array.from(caps.instagram).length}`);
+  assert.ok(Buffer.byteLength(caps.youtube.description) <= JEV_YT_DESCRIPTION_MAX_BYTES);
+  assert.ok(caps.youtube.title.length <= 100);
+  // The day's own source keeps its URL as long as it fits.
+  assert.ok(caps.youtube.description.includes(ep.sources[0].url));
+});

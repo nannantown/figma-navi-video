@@ -506,8 +506,26 @@ function slideLine(t) {
   return `・${clean(t.heading)}：${clean(t.body)}${t.claimSource ? `（${clean(t.claimSource)}）` : ""}`;
 }
 
-function sourceLines(jev) {
-  return jev.sources.map((s) => `・${clean(s.outlet)}（${s.published_at ?? "日付なし"}）${s.url}`);
+/**
+ * Source list, shortest-last: level 0 = every URL, 1 = URLs of the day's
+ * news / use case only, 2 = outlet and date only.
+ */
+function sourceLines(jev, level = 0) {
+  return jev.sources.map((s) => {
+    const withUrl = level === 0 || (level === 1 && s.role !== "reference");
+    return `・${clean(s.outlet)}（${s.published_at ?? "日付なし"}）${withUrl ? s.url : ""}`;
+  });
+}
+
+export const JEV_YT_DESCRIPTION_MAX_BYTES = 5000;
+export const JEV_IG_CAPTION_MAX = 2200;
+
+/** First level whose text fits; the last level always wins as a floor. */
+function fitting(build, fits) {
+  for (const level of [0, 1, 2]) {
+    const text = build(level);
+    if (fits(text) || level === 2) return text;
+  }
 }
 
 export function buildJevCaptions(data) {
@@ -516,7 +534,7 @@ export function buildJevCaptions(data) {
   let title = `【${meta.titleTag}】${clean(meta.headline).replace(/[<>]/g, "")}｜${dateFull} #Shorts`;
   if (Array.from(title).length > YT_TITLE_MAX || title.length > YT_TITLE_MAX) title = `【${meta.titleTag}】${dateFull} #Shorts`;
   const body = tools.map(slideLine);
-  const description = [
+  const description = fitting((level) => [
     `${clean(meta.headline)}（${meta.shortDate}）`,
     "",
     ...body,
@@ -524,13 +542,13 @@ export function buildJevCaptions(data) {
     CLAIM_NOTE,
     "",
     "出典:",
-    ...sourceLines(jev),
+    ...sourceLines(jev, level),
     "",
     "Jev は TypeSafe AI が 2026年9月に公開した、ソフトウェア向けの新しいAIモデルです。毎朝その最新情報をお届けします。",
     "",
     JEV_YT_HASHTAGS.join(" "),
-  ].join("\n");
-  const instagram = [
+  ].join("\n"), (t) => Buffer.byteLength(t, "utf-8") <= JEV_YT_DESCRIPTION_MAX_BYTES);
+  const instagram = fitting((level) => [
     `${clean(meta.headline)}（${meta.shortDate}）`,
     "",
     ...body,
@@ -538,12 +556,12 @@ export function buildJevCaptions(data) {
     CLAIM_NOTE,
     "",
     "出典:",
-    ...sourceLines(jev),
+    ...sourceLines(jev, level),
     "",
     "毎朝、AIモデル Jev の最新情報を1分で。保存してあとで見返してください。",
     "",
     JEV_IG_HASHTAGS.join(" "),
-  ].join("\n");
+  ].join("\n"), (t) => charLength(t) <= JEV_IG_CAPTION_MAX);
   return {
     date: { full: dateFull, compact: meta.date.replace(/-/g, "") },
     youtube: { title, titleTemplate: "jev", description, tags: JEV_YT_TAGS, categoryId: "28" },
