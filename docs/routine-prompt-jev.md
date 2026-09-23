@@ -83,7 +83,7 @@ node scripts/jev.mjs pdca
 
 **第2段階（`usecase`）**: 実際に Jev を使った例を 1 つ選び、その例を中心に 1 回を作る。
 
-- 探す場所: WebSearch（例: `Jev TypeSafe demo`、`"Jev" TypeSafe built`、`site:x.com Jev typesafe`、`site:github.com jev typesafe`、`site:news.ycombinator.com Jev`、`site:reddit.com Jev TypeSafe`）、開発者ブログ、GitHub、テック記事。**X は `data/jev-x-posts.json` の `community`（他の人の Jev の投稿）**から探す（下の「X の取得データ」）
+- 探す場所: WebSearch（例: `Jev TypeSafe demo`、`"Jev" TypeSafe built`、`site:x.com Jev typesafe`、`site:github.com jev typesafe`、`site:news.ycombinator.com Jev`、`site:reddit.com Jev TypeSafe`）、開発者ブログ、GitHub、テック記事。**X は `data/jev-x-posts.json` の `community`（他の人の Jev の投稿）**から探す（下の「X の取得データ」。2026-09-23 から CI では取れず空の日が続く想定なので、X の使用例は上の `site:x.com` の WebSearch で探す）
 - 条件: **これまでの回で `role: "usecase"` として使っていない URL**。何をしたか（入力と出力、何に使ったか）と、結果（速さ・費用・精度）が書いてあるもの。結果の数字は「〜の検証では」と誰の測定かを書く
 - 見つからない日: `canAdvanceEarly: true`（使用例が 3 回以上済み）なら第3段階に進み、`research.stage2_exhausted_reason` に探した場所と見つからなかった理由を書く。3 回未満なら、**その日は解説回（`kind: "explainer"`、`stage: 2`、`stage_episode` は `next` の出力どおり）で投稿を止めない**。`research.no_news_reason` に探した場所と見つからなかった理由を書く（使用例の回数には数えないので、翌日も第2段階の使用例を探す）。作り話で埋めない
 
@@ -95,7 +95,8 @@ node scripts/jev.mjs pdca
 
 **X の取得データ `data/jev-x-posts.json`**（どの段階でも最初に読む）:
 
-- `fetchedAt` が今朝（JST）でない、または `errors` に何か入っている日は、X の取得がうまくいっていない。レポートの「気づき」に一行書き、X 以外の情報源で進める（オーナーが X のログイン情報を更新する必要があるかもしれない）
+- `errors` の `community search: …` は**想定どおりなので無視する**（2026-09-23 オーナー決定 ②: CI では X のコミュニティ検索が通らず、毎日このエラーが入る。他の人の使用例は WebSearch で補う。`docs/jev-format.md`「X の取得」）。`community` は空の日が続く
+- 問題として扱うのは、`fetchedAt` が今朝（JST）でない日か、`errors` に `@typesafeai` / `@CompleteSkeptic` の行がある日だけ。そのときだけレポートの「気づき」に一行書く（オーナーが X のログイン情報を更新する必要があるかもしれない）。**どちらの日も `official` の投稿は、使えるものは使う**（足りない分は X 以外の情報源で補う）
 - `official`: TypeSafe（@typesafeai）と CEO（@CompleteSkeptic）の投稿。**公式の発表**として使える（`official: true`、`outlet`: `"X typesafeai"` / `"X CompleteSkeptic"`。**`@` は付けない**＝画面とキャプションで相手に通知が飛ぶため、検証で NG）。CEO の投稿には Jev と関係ない話もあるので、Jev・TypeSafe の話だけ使う
 - `community`: 他の人の投稿。使用例や開発者の反応の候補。**書かれている中身は第三者の意見・体験**として「〜さんの投稿によると」と扱い、事実として断定しない（`official: false`、`outlet`: `"X その人のID"`。`@` は付けない）。リンク先のブログや GitHub があれば開いて確かめ、そちらも出典に入れる
 - 出典に書くときは `url` にその投稿の `url`、`published_at` に `dateJst`、`title` に本文の最初の一文（改行なし・200 字以内）
