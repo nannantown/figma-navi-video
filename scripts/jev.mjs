@@ -608,10 +608,14 @@ function sourceProblems(ep, previous, at, today, warnings) {
 // Video data + captions
 // ---------------------------------------------------------------------------
 
-export const JEV_ENDING_NARRATION = "Jev の続きは毎朝ここで。保存とフォローでチェックしてください。";
+// The channel covers AI in general; Jev is a feature on a model that is in
+// the news right now (owner decision 2026-09-23). Nothing here may read as
+// "this channel = Jev" — the closing lines speak for the whole channel.
+export const JEV_FEATURE_LABEL = "いま話題の AI モデル Jev";
+export const JEV_ENDING_NARRATION = `今日は、${JEV_FEATURE_LABEL} の特集でした。AI の新しい動きは毎朝ここで。保存とフォローでチェックしてください。`;
 const WEEKDAYS_JA = ["日", "月", "火", "水", "木", "金", "土"];
 const KIND_LABEL = { intro: "Jev って何？", usecase: "Jev の使い道", news: "Jev 最新ニュース", explainer: "Jev 解説" };
-const KIND_TAG = { intro: "Jev入門", usecase: "Jev活用例", news: "Jev最新", explainer: "Jev解説" };
+const KIND_TAG = { intro: "話題のAI特集 Jev入門", usecase: "話題のAI特集 Jev活用例", news: "話題のAI特集 Jev最新", explainer: "話題のAI特集 Jev解説" };
 
 export function outletsLabel(sources) {
   const outlets = [...new Set(sources.map((s) => s.outlet.trim()))];
@@ -658,9 +662,9 @@ export function toJevVideoData(ep, { usecaseNumber = null } = {}) {
       // and every day must look different on the grid.
       kicker: ep.headline.trim(),
       bigLabel: "Jev",
-      openingSourceLabel: stageNote,
+      openingSourceLabel: `特集｜${stageNote}`,
       sourceLabel: sourceLine,
-      endingLines: ["毎朝、AIモデル Jev の", "いまを1分でお届け"],
+      endingLines: ["毎朝、AI の新しい動きを", "1分でお届け"],
       method: ep.kind,
       genre: JEV_GENRE,
       trial: JEV_TRIAL,
@@ -688,9 +692,10 @@ export function toJevVideoData(ep, { usecaseNumber = null } = {}) {
   };
 }
 
-export const JEV_IG_HASHTAGS = ["#Jev", "#TypeSafeAI", "#AIニュース", "#生成AI", "#AI最新情報"];
-export const JEV_YT_HASHTAGS = ["#Jev", "#TypeSafeAI", "#AIニュース", "#Shorts"];
-export const JEV_YT_TAGS = ["Jev", "TypeSafe AI", "TypeSafe", "System One", "AIモデル", "AIニュース", "生成AI", "Shorts"];
+// General AI tags first; #Jev / #TypeSafeAI follow as the feature's topic tags.
+export const JEV_IG_HASHTAGS = ["#AIニュース", "#生成AI", "#AI最新情報", "#Jev", "#TypeSafeAI"];
+export const JEV_YT_HASHTAGS = ["#AIニュース", "#生成AI", "#Jev", "#TypeSafeAI", "#Shorts"];
+export const JEV_YT_TAGS = ["AIニュース", "生成AI", "AIモデル", "Jev", "TypeSafe AI", "TypeSafe", "System One", "Shorts"];
 export const CLAIM_NOTE = "※速度・料金・精度の数字や「ハルシネーションしない」は、断りのない限り開発元 TypeSafe AI の発表です（第三者の検証は出典を明記）。";
 const YT_TITLE_MAX = 100;
 
@@ -740,7 +745,7 @@ export function buildJevCaptions(data) {
     "出典:",
     ...sourceLines(jev, level),
     "",
-    "Jev は TypeSafe AI が 2026年9月に公開した、ソフトウェア向けの新しいAIモデルです。毎朝その最新情報をお届けします。",
+    `${JEV_FEATURE_LABEL} の特集です。Jev は TypeSafe AI が 2026年9月に公開した、ソフトウェア向けの新しいAIモデルです。このチャンネルでは毎朝、AI の新しい動きを1分でお届けします。`,
     "",
     JEV_YT_HASHTAGS.join(" "),
   ].join("\n"), (t) => Buffer.byteLength(t, "utf-8") <= JEV_YT_DESCRIPTION_MAX_BYTES);
@@ -754,7 +759,7 @@ export function buildJevCaptions(data) {
     "出典:",
     ...sourceLines(jev, level),
     "",
-    "毎朝、AIモデル Jev の最新情報を1分で。保存してあとで見返してください。",
+    `${JEV_FEATURE_LABEL} の特集です。毎朝、AI の新しい動きを1分で。保存してあとで見返してください。`,
     "",
     JEV_IG_HASHTAGS.join(" "),
   ].join("\n"), (t) => charLength(t) <= JEV_IG_CAPTION_MAX);

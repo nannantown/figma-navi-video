@@ -17,6 +17,7 @@
 - TypeSafe を名乗る**別会社のサイト**（jevtypesafeai.com / jevfast.com / jevbooks.com など）は出典にしない。公式は typesafe.ai とそのサブドメイン、github.com/typesafe-ai、x.com/typesafeai と CEO の x.com/CompleteSkeptic だけ
 - 原稿は人の確認なしで自動マージされ、YouTube のタイトル・説明文と Instagram のキャプションにそのまま載る。**文字のフィールドに URL・@メンション・#ハッシュタグ・改行を入れない**（URL は `sources` にだけ書く。検証で NG になる）
 - 台帳の**過去の回は書き換えない**（重複チェックの記録なので）。追記するのは今日の 1 回だけ
+- **このチャンネルは AI 全般のチャンネルで、Jev は「いま話題の AI モデル」の特集**（2026-09-23 オーナー決定）。見出し・`hook`・スライドに「このチャンネル＝Jev」と読める書き方（「毎朝 Jev をお届け」「Jev の続きはここで」「Jev 専門」など）をしない。今日の Jev の中身だけを書く
 
 ## 手順
 
@@ -111,6 +112,7 @@ node scripts/jev.mjs pdca
 - `topic_key`: 第1段階は手順 0 の `topicKey`。それ以外は英小文字とハイフンで、中身が分かる名前（例 `usecase-litellm-router`、`news-sdk-1-14-release`、`explainer-pricing-math`）
 - `headline`（6〜24 字）: 今日の中身が一目で分かる見出し。倍率や「ハルシネーションしない」は入れない
 - `hook`（8〜40 字）: 最初の 1〜2 秒で止まってもらう一言（質問形・意外な事実）
+- `headline` / `hook` は今日の話題の中身を書く。「毎朝 Jev」「Jev の続き」など、チャンネル全体が Jev 専門だと読める言い回しは使わない（チャンネルは AI 全般、Jev は特集）
 - `slides`: 3〜4 枚。1 枚 = 1 つの要点。`heading` 4〜18 字 / `body` 8〜64 字 / `narration` 30〜95 字（です・ます調、2 文まで）。ナレーション合計 300 字以内
 - 画面の文字（`heading` / `body`）に会社の主張や測定の数字があるスライドは `claim_source`（例 `"TypeSafe の発表"`、`"LiteLLM の検証"`）を付ける
 - `sources`: 使った情報すべて。`url` / `title`（ページの題名）/ `outlet`（媒体名。画面の「出典:」に出る）/ `published_at`（`YYYY-MM-DD`。日付の無い参考ページだけ `null`）/ `role` / `official`（TypeSafe 自身のサイトだけ `true`）
