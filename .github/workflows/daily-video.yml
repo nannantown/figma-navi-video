@@ -10,6 +10,14 @@ on:
         description: "検証モード: サンプルデータで動画だけ作る（投稿・コミットしない）"
         type: boolean
         default: false
+      sample:
+        description: "検証モードで使うサンプル（jev-intro = Jev 説明回 / jev-usecase = Jev 使用例回 / pickup = 新作AIツール）"
+        type: choice
+        options:
+          - jev-intro
+          - jev-usecase
+          - pickup
+        default: jev-intro
   push:
     paths:
       - '.recovery-trigger'
@@ -60,8 +68,12 @@ jobs:
           TZ: Asia/Tokyo
           SNS_POST_ENABLED: ${{ env.VERIFY_RUN != '1' && secrets.SNS_POST_ENABLED || 'false' }}
           DRY_RUN: ${{ env.VERIFY_RUN }}
-          # Verification renders the pickup sample (the production format since
-          # the owner decision of 2026-09-15) against its feed-shaped snapshot.
+          # Production follows data/content-format.json ("jev" since the owner
+          # decision of 2026-09-23). Verification renders the chosen sample:
+          # a Jev episode (intro / use case) or the pickup sample against its
+          # feed-shaped snapshot.
+          CONTENT_FORMAT: ${{ env.VERIFY_RUN == '1' && (inputs.sample == 'pickup' && 'pickup' || 'jev') || '' }}
+          JEV_EPISODES_PATH: ${{ env.VERIFY_RUN == '1' && inputs.sample != 'pickup' && format('data/samples/jev-episodes.{0}.sample.json', inputs.sample == 'jev-usecase' && 'usecase' || 'intro') || '' }}
           ENRICHED_PATH: ${{ env.VERIFY_RUN == '1' && 'data/samples/enriched-ai-tools.pickup.sample.json' || '' }}
           PH_SNAPSHOT_PATH: ${{ env.VERIFY_RUN == '1' && 'data/samples/product-hunt-daily.pickup.sample.json' || '' }}
           ALLOW_STALE_DATE: ${{ env.VERIFY_RUN }}

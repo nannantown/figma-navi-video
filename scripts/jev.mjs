@@ -446,7 +446,7 @@ export function toJevVideoData(ep) {
   const kindLabel = KIND_LABEL[ep.kind];
   const sourceLine = `出典: ${outletsLabel(ep.sources)}`;
   const count = ep.slides.length;
-  const stageNote = ep.stage === 3 ? kindLabel : `${kindLabel} ${ep.stage_episode}`;
+  const stageNote = ep.stage === 3 ? kindLabel : `${kindLabel} 第${ep.stage_episode}回`;
   return {
     openingNarration: ep.hook.trim(),
     endingNarration: JEV_ENDING_NARRATION,
@@ -458,7 +458,9 @@ export function toJevVideoData(ep) {
       count,
       headline: ep.headline.trim(),
       titleTag: KIND_TAG[ep.kind],
-      kicker: "TypeSafe の新AIモデル",
+      // The day's headline on the opening: the first 1-2 s decide the swipe,
+      // and every day must look different on the grid.
+      kicker: ep.headline.trim(),
       bigLabel: "Jev",
       openingSourceLabel: stageNote,
       sourceLabel: sourceLine,
