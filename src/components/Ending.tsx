@@ -3,7 +3,7 @@ import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } fr
 import { ACCENT_GRADIENT, COLORS, FONT_FAMILY, SAFE_BOTTOM, SAFE_TOP, SAFE_X } from "./theme";
 
 /** Save-first CTA: IG saves are the trial's judgement metric. */
-export const Ending: React.FC = () => {
+export const Ending: React.FC<{ lines?: string[] }> = ({ lines = ["毎朝、使える新作AIツールを", "1分で紹介しています"] }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -57,9 +57,9 @@ export const Ending: React.FC = () => {
       </div>
 
       <div style={{ opacity: subOpacity, marginTop: 36, fontSize: 38, fontWeight: 600, color: COLORS.textMuted, lineHeight: 1.6 }}>
-        毎朝、使える新作AIツールを
-        <br />
-        1分で紹介しています
+        {lines.map((line, i) => (
+          <div key={i}>{line}</div>
+        ))}
       </div>
 
       <div

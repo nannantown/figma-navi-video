@@ -59,7 +59,7 @@ export const Opening: React.FC<{ meta: VideoMeta }> = ({ meta }) => {
           letterSpacing: "-2px",
         }}
       >
-        新作AIツール
+        {meta.kicker ?? "新作AIツール"}
       </div>
 
       <div

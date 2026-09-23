@@ -29,6 +29,7 @@ import { readFileSync, writeFileSync, existsSync, realpathSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { charLength, CONTROL_CHARS_RE, INVISIBLE_CHARS_RE } from "./enriched-schema.mjs";
+import { buildJevCaptions } from "./jev.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const outputDir = join(__dirname, "..", "output");
@@ -205,6 +206,8 @@ export function buildInstagramCaption(data) {
 }
 
 export function buildCaptions(data, hints) {
+  // Genre trial #2: Jev episodes carry their own title / hashtags / sources.
+  if (data.meta.mode === "jev") return buildJevCaptions(data);
   const template = hints?.recommendedTitleTemplate || "standard";
   const dateFull = data.meta.date.replace(/-/g, "/");
   return {
@@ -239,7 +242,7 @@ function main() {
   writeFileSync(outputPath, JSON.stringify(captions, null, 2));
   console.log(`Captions → ${outputPath}`);
   console.log(`  YouTube title (${charLength(captions.youtube.title)} chars): ${captions.youtube.title}`);
-  console.log(`  Instagram: ${charLength(captions.instagram)} chars, ${IG_HASHTAGS.length} hashtags`);
+  console.log(`  Instagram: ${charLength(captions.instagram)} chars`);
 }
 
 const isDirectRun = (() => {

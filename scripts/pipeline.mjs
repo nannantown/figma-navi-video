@@ -101,10 +101,12 @@ function main() {
     return;
   }
 
-  // Step 1b: Logos / screenshots (best effort, never blocks)
+  // Step 1b: Logos / screenshots (best effort, never blocks). Jev slides are
+  //          text-only (genre trial #2), so there is nothing to fetch.
   console.log("\n=== Step 1b: Tool Images ===");
   // The script keeps its own time budget; the kill is only a backstop (cards stay text-only).
-  runSafe("node scripts/fetch-tool-images.mjs", "fetch-tool-images", { timeout: IMAGE_STEP_KILL_MS, killSignal: "SIGKILL" });
+  if (readJson("trending-data.json").meta?.mode === "jev") console.log("  Jev format — no images");
+  else runSafe("node scripts/fetch-tool-images.mjs", "fetch-tool-images", { timeout: IMAGE_STEP_KILL_MS, killSignal: "SIGKILL" });
 
   // Step 2: TTS + BGM, keeping the video under 60 s
   console.log("\n=== Step 2: Generate Audio ===");

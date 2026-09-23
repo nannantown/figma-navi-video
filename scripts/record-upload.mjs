@@ -67,7 +67,10 @@ export function resolveRecordDate({ argv = process.argv, env = process.env, now 
 
 /** History entry for a posted day. Either platform result is enough. */
 export function buildPostEntry({ date, uploadResult, igResult, trendingData, captions, audioDurations, enriched }) {
-  const tools = trendingData?.tools || [];
+  // Genre trial #2 (Jev): the slides are not tools; the episode summary
+  // (stage, kind, topic, sources) goes to `jev` instead.
+  const jev = trendingData?.meta?.mode === "jev" ? trendingData.jev || null : null;
+  const tools = jev ? [] : trendingData?.tools || [];
   const durationSeconds = audioDurations ? Object.values(audioDurations).reduce((sum, d) => sum + (d || 0), 0) : 0;
   return {
     // null when the YouTube upload failed or was skipped that day
@@ -76,18 +79,21 @@ export function buildPostEntry({ date, uploadResult, igResult, trendingData, cap
     date,
     // Genre trial bookkeeping: pdca-summary.mjs finds the trial start date
     // from the first posted entry carrying this genre.
-    genre: GENRE,
-    trial: TRIAL,
+    genre: trendingData?.meta?.genre || GENRE,
+    trial: trendingData?.meta?.trial || TRIAL,
     title: captions?.youtube?.title || "",
     titleTemplate: captions?.youtube?.titleTemplate || "standard",
     hashtags: captions?.youtube?.tags || [],
     languages: [],
-    projects: tools.map((t) => t.name),
+    projects: jev ? [trendingData.meta.headline] : tools.map((t) => t.name),
     // Used by the routine to avoid featuring the same tool again within 30 days.
     tools: tools.map((t) => ({ name: t.name, slug: t.slug, phUrl: t.phUrl, website: t.website, pricing: t.pricing })),
     source: trendingData?.meta ? { mode: trendingData.meta.mode, label: trendingData.meta.sourceLabel } : null,
     durationSeconds: Math.round(durationSeconds),
-    discovery: enriched?.discovery || null,
+    discovery: jev
+      ? { method: jev.kind, description: jev.topic, sources: jev.sources.map((x) => x.url) }
+      : enriched?.discovery || null,
+    ...(jev ? { jev } : {}),
     stats: { views: 0, likes: 0, comments: 0, updatedAt: null },
     // Metrics are filled by fetch-stats.mjs (IG insights lag up to 48h)
     instagram: igResult?.mediaId

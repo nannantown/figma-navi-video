@@ -3,9 +3,10 @@ import { AbsoluteFill, Audio, Series, staticFile, useCurrentFrame } from "remoti
 import { Opening } from "../components/Opening";
 import { ToolCard } from "../components/ToolCard";
 import { Ending } from "../components/Ending";
+import { JevSlideCard } from "../components/JevSlideCard";
 import { Subtitle, SubtitleData } from "../components/Subtitle";
 import {
-  Tool,
+  VideoCard,
   VideoMeta,
   AudioDurations,
   SubtitleMap,
@@ -15,7 +16,7 @@ import {
 } from "../data";
 
 export interface Props {
-  tools: Tool[];
+  tools: VideoCard[];
   meta?: VideoMeta;
   audioDurations?: AudioDurations;
   subtitles?: SubtitleMap;
@@ -41,14 +42,18 @@ export const AiToolsVideo: React.FC<Props> = ({ tools, meta = defaultMeta, audio
 
         {tools.map((tool, i) => (
           <Series.Sequence key={tool.rank} durationInFrames={frames.tools[i] || frames.tools[0]}>
-            <ToolCardWrapper tool={tool} totalTools={tools.length} headline={meta.headline} />
+            {"heading" in tool ? (
+              <JevSlideCard slide={tool} />
+            ) : (
+              <ToolCardWrapper tool={tool} totalTools={tools.length} headline={meta.headline} />
+            )}
             <Subtitle data={sub(`tool-${i + 1}`)} />
             <Audio src={staticFile(`audio/tool-${i + 1}.mp3`)} volume={1} />
           </Series.Sequence>
         ))}
 
         <Series.Sequence durationInFrames={frames.ending}>
-          <Ending />
+          <Ending lines={meta.endingLines} />
           <Subtitle data={sub("ending")} />
           <Audio src={staticFile("audio/ending.mp3")} volume={1} />
         </Series.Sequence>
@@ -57,7 +62,7 @@ export const AiToolsVideo: React.FC<Props> = ({ tools, meta = defaultMeta, audio
   );
 };
 
-const ToolCardWrapper: React.FC<{ tool: Tool; totalTools: number; headline: string }> = (props) => {
+const ToolCardWrapper: React.FC<{ tool: Exclude<VideoCard, { heading: string }>; totalTools: number; headline: string }> = (props) => {
   const localFrame = useCurrentFrame();
   return <ToolCard {...props} localFrame={localFrame} />;
 };
