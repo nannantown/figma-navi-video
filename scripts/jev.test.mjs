@@ -267,9 +267,9 @@ test("captions and ending present Jev as a feature of a general AI channel", () 
       for (const re of banned) assert.doesNotMatch(text, re, `${where} of ${ep.date}`);
     }
     assert.match(caps.youtube.title, /^【話題のAI特集 Jev/);
-    assert.ok(caps.youtube.description.includes(`${JEV_FEATURE_LABEL}の特集`));
-    assert.ok(caps.instagram.includes(`${JEV_FEATURE_LABEL}の特集`));
-    assert.ok(data.endingNarration.includes(`${JEV_FEATURE_LABEL}の特集`));
+    assert.ok(caps.youtube.description.includes(`${JEV_FEATURE_LABEL} の特集`));
+    assert.ok(caps.instagram.includes(`${JEV_FEATURE_LABEL} の特集`));
+    assert.ok(data.endingNarration.includes(`${JEV_FEATURE_LABEL} の特集`));
     assert.match(data.meta.openingSourceLabel, /^特集｜/);
   }
   assert.equal(JEV_ENDING_NARRATION, toJevVideoData(INTRO.episodes[0]).endingNarration);
