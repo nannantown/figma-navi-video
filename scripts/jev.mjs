@@ -19,11 +19,13 @@
  *
  * CLI (the routine runs this before committing):
  *   node scripts/jev.mjs validate [--file=path] [--no-date-check]
- *   node scripts/jev.mjs next     # which stage / episode / topic comes next
+ *   node scripts/jev.mjs next     # which stage / episode / topic comes next (+ unrecorded / redoSlot)
+ *   node scripts/jev.mjs aired-check YYYY-MM-DD   # did that day go out? (reads the posting runs' logs with gh)
  *   node scripts/jev.mjs pdca     # numbers for docs/pdca/$TODAY.md
  */
 
 import { readFileSync, existsSync, realpathSync } from "fs";
+import { execFileSync } from "child_process";
 import { join, dirname, isAbsolute } from "path";
 import { fileURLToPath } from "url";
 import {
@@ -250,21 +252,51 @@ export function nextSlot(previous) {
   };
 }
 
-/** How far back a ledger entry without a post record counts as "not aired" (history keeps 90 days). */
-export const UNAIRED_LOOKBACK_DAYS = 80;
+// ---------------------------------------------------------------------------
+// Episodes that did not go out: explicit redo, never inferred from time
+// ---------------------------------------------------------------------------
+//
+// A ledger entry counts as aired unless a LATER entry says `redo_of: "<its
+// date>"`. That marker is permanent data, so the chain never changes with the
+// passing of time (no look-back window) and a redone entry never comes back.
+//
+// The routine only writes `redo_of` after `node scripts/jev.mjs aired-check`
+// found the day's posting runs and neither upload's success line in their
+// logs. A missing history record alone is not enough: record-upload or the
+// history push can fail after a successful upload, and redoing then would
+// post the same episode twice. The validator additionally refuses a redo of a
+// day that the history does show as posted.
+
+/** Success lines printed by upload-youtube.mjs / upload-instagram.mjs. */
+const POSTED_LOG_RE = /Uploaded! https:\/\/|YouTube upload complete: https:\/\/|Published! Media ID: \S+/;
 
 /**
- * Ledger entries before `date` that never went out: no posted entry of this
- * genre in performance-history.json for their day (both uploads failed, or
- * the 08:15 run stopped). Their slot, topic and sources are open again, so the
- * series re-offers them instead of silently moving past them. Without a
- * history (dry runs) nothing is treated as unaired.
+ * Verdict for one day from the logs of its posting runs (daily-video.yml and
+ * post-today-instagram.yml on main). "unknown" (no run found / logs missing)
+ * never allows a redo.
  */
-export function unairedEpisodes(episodes, history, date) {
-  if (!history || !Array.isArray(history.videos)) return new Set();
-  const aired = new Set(history.videos.filter((v) => v?.genre === JEV_GENRE && !v.skip).map((v) => v.date));
-  const since = new Date(Date.parse(`${date}T00:00:00Z`) - UNAIRED_LOOKBACK_DAYS * 86400000).toISOString().slice(0, 10);
-  return new Set(episodes.filter((e) => e.date < date && e.date >= since && !aired.has(e.date)));
+export function classifyPostLogs(logs) {
+  if (!Array.isArray(logs) || logs.length === 0) return "unknown";
+  if (logs.some((l) => POSTED_LOG_RE.test(String(l)))) return "posted";
+  return logs.every((l) => String(l).trim().length > 0) ? "not-posted" : "unknown";
+}
+
+/** Dates taken out of the chain by a `redo_of` of an entry up to and including `index`. */
+function redoneDates(eps, index) {
+  return new Set(eps.slice(0, index + 1).map((e) => e.redo_of).filter(Boolean));
+}
+
+/**
+ * Entries before `date` (not redone) that have no post record in the history
+ * and come after the last recorded Jev post — candidates for aired-check.
+ * Informational only: they still count as aired until a redo says otherwise.
+ */
+export function unrecordedEpisodes(episodes, history, date) {
+  if (!history || !Array.isArray(history.videos)) return [];
+  const recorded = history.videos.filter((v) => v?.genre === JEV_GENRE && !v.skip).map((v) => v.date);
+  const last = recorded.sort().at(-1) ?? "";
+  const redone = new Set(episodes.map((e) => e.redo_of).filter(Boolean));
+  return episodes.filter((e) => e.date < date && e.date > last && !redone.has(e.date) && !recorded.includes(e.date));
 }
 
 // ---------------------------------------------------------------------------
@@ -299,6 +331,7 @@ function ledgerProblems(ep, i) {
     errors.push(`${at}.topic_key: lowercase-hyphen slug, up to 60 chars`);
   }
   if (!Array.isArray(ep.sources)) errors.push(`${at}.sources: must be an array`);
+  if (ep.redo_of != null && !isRealDate(ep.redo_of)) errors.push(`${at}.redo_of: the YYYY-MM-DD of the episode this one redoes`);
   return errors;
 }
 
@@ -334,11 +367,27 @@ export function validateEpisodes(file, { date = todayJst(), today = todayJst(), 
   const ep = eps[index];
   const at = `episode ${ep.date}`;
 
-  // Entries that never went out do not count: their slot is offered again.
-  const unaired = unairedEpisodes(eps.slice(0, index), history, ep.date);
-  for (const e of unaired) warnings.push(`${e.date} "${e.topic_key}" has no post record in performance-history.json — treated as not aired; its slot, topic and sources are open again`);
-  const chain = [...eps.slice(0, index).filter((e) => !unaired.has(e)), ep];
+  // Redone entries (a later entry's redo_of) never went out: they leave the
+  // chain for good. Everything else counts as aired.
+  const redone = redoneDates(eps, index);
+  eps.slice(0, index + 1).forEach((e, i) => {
+    if (e.redo_of && !eps.slice(0, i).some((p) => p.date === e.redo_of)) errors.push(`episode ${e.date}.redo_of: no earlier episode dated ${e.redo_of}`);
+  });
+  const chain = eps.slice(0, index + 1).filter((e) => !redone.has(e.date));
   const previous = chain.slice(0, -1);
+  if (ep.redo_of) {
+    // Only the latest entry can be redone: once the series moved past it,
+    // taking it out would reorder what already aired.
+    const beforeRedo = eps.slice(0, index).filter((e) => !redoneDates(eps, index - 1).has(e.date));
+    if (beforeRedo.at(-1)?.date !== ep.redo_of) {
+      errors.push(`${at}.redo_of: only the latest episode (${beforeRedo.at(-1)?.date ?? "none"}) can be redone, not ${ep.redo_of} — the series has moved past it`);
+    }
+    const postedThatDay = (history?.videos || []).some((v) => v?.genre === JEV_GENRE && !v.skip && v.date === ep.redo_of);
+    if (postedThatDay) errors.push(`${at}.redo_of: ${ep.redo_of} is recorded as posted in performance-history.json — redoing it would post it twice`);
+  }
+  for (const e of unrecordedEpisodes(eps.slice(0, index), history, ep.date)) {
+    warnings.push(`${e.date} "${e.topic_key}" has no post record — counted as aired; run "node scripts/jev.mjs aired-check ${e.date}" and redo it only if that says not-posted`);
+  }
 
   // Series order. Every aired entry is checked against the ones before it,
   // so a ledger edited out of order fails too (not just today's entry).
@@ -408,13 +457,15 @@ export function validateEpisodes(file, { date = todayJst(), today = todayJst(), 
     if (p) errors.push(`${p} — stage 3 before ${USECASE_TARGET} use cases needs the reason no unused example was found`);
   }
 
-  return { errors, warnings, episode: ep, slot };
+  // The opening label counts use cases only (fillers in between do not shift it).
+  return { errors, warnings, episode: ep, slot, usecaseNumber: ep.kind === "usecase" ? slot.usecaseCount + 1 : null };
 }
 
 function orderProblems(ep, previous, at) {
   const slot = nextSlot(previous);
   // An intro key belongs to its intro episode; a filler cannot take it.
-  if (ep.kind !== "intro" && INTRO_TOPICS.some((t) => t.key === ep.topic_key)) return [`${at}: "${ep.topic_key}" is a stage-1 intro topic; a ${ep.kind} needs its own topic_key`];
+  // The intro- prefix belongs to the stage-1 intros; a filler or any other kind cannot take it.
+  if (ep.kind !== "intro" && ep.topic_key.startsWith("intro-")) return [`${at}: "${ep.topic_key}" starts with "intro-", which is reserved for the stage-1 intros; a ${ep.kind} needs its own topic_key`];
   if (slot.stage === 1) {
     if (ep.stage !== 1) return [`${at}: stage ${ep.stage} is not allowed yet — stage 1 continues with "${slot.topicKey}" (${slot.theme})`];
     // An explainer is the filler for a day the intro cannot be written.
@@ -530,14 +581,30 @@ export function outletsLabel(sources) {
 }
 
 /** output/trending-data.json for the Jev format (same frame as the pickup video). */
-export function toJevVideoData(ep) {
+/**
+ * The "第N回" of the opening label counts episodes of the same kind only, so a
+ * filler explainer between two intros does not shift the numbers: intros by
+ * their place in INTRO_TOPICS, use cases by `usecaseNumber` (validateEpisodes
+ * returns it). News and explainers carry no number.
+ */
+export function kindOrdinal(ep, { usecaseNumber = null } = {}) {
+  if (ep.kind === "intro") {
+    const i = INTRO_TOPICS.findIndex((t) => t.key === ep.topic_key);
+    return i >= 0 ? i + 1 : null;
+  }
+  if (ep.kind === "usecase") return Number.isInteger(usecaseNumber) ? usecaseNumber : null;
+  return null;
+}
+
+export function toJevVideoData(ep, { usecaseNumber = null } = {}) {
   const [y, m, d] = ep.date.split("-").map(Number);
   const weekday = WEEKDAYS_JA[new Date(Date.UTC(y, m - 1, d)).getUTCDay()];
   const shortDate = `${m}/${d}`;
   const kindLabel = KIND_LABEL[ep.kind];
   const sourceLine = `出典: ${outletsLabel(ep.sources)}`;
   const count = ep.slides.length;
-  const stageNote = ep.stage === 3 ? kindLabel : `${kindLabel} 第${ep.stage_episode}回`;
+  const ordinal = kindOrdinal(ep, { usecaseNumber });
+  const stageNote = ordinal ? `${kindLabel} 第${ordinal}回` : kindLabel;
   return {
     openingNarration: ep.hook.trim(),
     endingNarration: JEV_ENDING_NARRATION,
@@ -745,6 +812,49 @@ export function jevPdcaReport(history, { today = todayJst() } = {}) {
 // CLI
 // ---------------------------------------------------------------------------
 
+/**
+ * Today's slot for the routine, plus what to do if the latest episode did not
+ * go out: `unrecorded` lists entries without a post record, and `redoSlot` is
+ * the slot to write (with `redo_of`) when aired-check says "not-posted".
+ */
+export function seriesState(episodes, history, today) {
+  const before = episodes.filter((e) => e.date < today);
+  const redone = new Set(before.map((e) => e.redo_of).filter(Boolean));
+  const chain = before.filter((e) => !redone.has(e.date));
+  const slot = nextSlot(chain);
+  const unrecorded = unrecordedEpisodes(before, history, today).map((e) => ({ date: e.date, topic_key: e.topic_key }));
+  const latest = chain.at(-1);
+  const redoable = unrecorded.some((u) => u.date === latest?.date);
+  return { ...slot, unrecorded, redoSlot: redoable ? { ...nextSlot(chain.slice(0, -1)), redo_of: latest.date } : null };
+}
+
+/** JST calendar day of an ISO timestamp. */
+function jstDay(iso) {
+  return new Date(Date.parse(iso) + 9 * 3600 * 1000).toISOString().slice(0, 10);
+}
+
+/**
+ * Did the given day's episode go out? Reads the logs of that day's posting
+ * runs on main (daily-video.yml and the Instagram recovery) with the gh CLI
+ * and looks for the upload success lines. Any failure to read → "unknown".
+ */
+export function airedCheck(date, { run = (args) => execFileSync("gh", args, { encoding: "utf-8", timeout: 120000, maxBuffer: 256 * 1024 * 1024, stdio: ["ignore", "pipe", "pipe"] }) } = {}) {
+  const logs = [];
+  const runs = [];
+  try {
+    for (const wf of ["daily-video.yml", "post-today-instagram.yml"]) {
+      const list = JSON.parse(run(["run", "list", "--workflow", wf, "--branch", "main", "--limit", "40", "--json", "databaseId,createdAt,event,status,conclusion"]));
+      for (const r of list.filter((r) => r.status === "completed" && jstDay(r.createdAt) === date)) {
+        runs.push({ workflow: wf, id: r.databaseId, event: r.event, conclusion: r.conclusion });
+        logs.push(run(["run", "view", String(r.databaseId), "--log"]));
+      }
+    }
+  } catch (err) {
+    return { date, verdict: "unknown", runs, note: `could not read the runs: ${String(err.message || err).split("\n")[0].slice(0, 160)}` };
+  }
+  return { date, verdict: classifyPostLogs(logs), runs };
+}
+
 function cli(argv) {
   const cmd = argv[0] || "validate";
   const fileArg = argv.find((a) => a.startsWith("--file="));
@@ -759,12 +869,17 @@ function cli(argv) {
   const hp = join(rootDir, "data", "performance-history.json");
   if (cmd === "next") {
     const today = todayJst();
-    const before = (file.episodes || []).filter((e) => e.date < today);
     const history = !fileArg && existsSync(hp) ? JSON.parse(readFileSync(hp, "utf-8")) : null;
-    const unaired = unairedEpisodes(before, history, today);
-    const slot = nextSlot(before.filter((e) => !unaired.has(e)));
-    const notAired = [...unaired].map((e) => ({ date: e.date, topic_key: e.topic_key }));
-    console.log(JSON.stringify({ today, ...slot, usecaseTarget: USECASE_TARGET, usecaseMin: USECASE_MIN, notAired }, null, 2));
+    console.log(JSON.stringify({ today, ...seriesState(file.episodes || [], history, today), usecaseTarget: USECASE_TARGET, usecaseMin: USECASE_MIN }, null, 2));
+    return 0;
+  }
+  if (cmd === "aired-check") {
+    const date = argv[1];
+    if (!isRealDate(date)) {
+      console.error("usage: node scripts/jev.mjs aired-check YYYY-MM-DD");
+      return 2;
+    }
+    console.log(JSON.stringify(airedCheck(date), null, 2));
     return 0;
   }
   const noDate = argv.includes("--no-date-check");

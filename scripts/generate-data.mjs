@@ -54,10 +54,10 @@ function generateJevData(allowStale) {
   // Production also cross-checks the posted history (a sample ledger in a dry
   // run is not the production series, so it is not).
   const history = allowStale ? null : loadHistory(rootDir);
-  const { errors, warnings, episode } = validateEpisodes(loadEpisodes(path), { date: today, today, pickLatest: allowStale, history });
+  const { errors, warnings, episode, usecaseNumber } = validateEpisodes(loadEpisodes(path), { date: today, today, pickLatest: allowStale, history });
   for (const w of warnings) console.warn(`  WARN ${w}`);
   if (errors.length > 0) throw new Error(`${path} is invalid:\n  - ${errors.join("\n  - ")}`);
-  const out = toJevVideoData(episode);
+  const out = toJevVideoData(episode, { usecaseNumber });
   mkdirSync(outputDir, { recursive: true });
   rmSync(join(outputDir, "skip.json"), { force: true });
   const outputPath = join(outputDir, "trending-data.json");

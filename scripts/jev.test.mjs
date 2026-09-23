@@ -381,7 +381,7 @@ test("stage 1 and 2 have a filler explainer that keeps posting without advancing
   assert.equal(slot.stageEpisode, 3);
   // A filler cannot take an intro's key.
   const thief = { ...filler, topic_key: INTRO_TOPICS[1].key };
-  assert.match(errorsOf([full(), thief]), /is a stage-1 intro topic/);
+  assert.match(errorsOf([full(), thief]), /starts with "intro-", which is reserved/);
   // Stage 2 with fewer than the minimum use cases: a filler, not a stop.
   const eps = ledger(1);
   const stage2filler = full({ date: addDays(eps.at(-1).date, 1), stage: 2, stage_episode: 2, kind: "explainer", topic_key: "explainer-router-basics", headline: "振り分け係のしくみ", research: { ...INTRO.episodes[0].research, no_news_reason: "未使用の使用例が見つからなかった（X・ブログ・HNを確認）" } });
@@ -389,20 +389,94 @@ test("stage 1 and 2 have a filler explainer that keeps posting without advancing
   assert.equal(nextSlot([...eps, stage2filler]).usecaseCount, 1);
 });
 
-test("an episode that never went out is offered again on the next day", () => {
+
+// --- rework 2 (2026-09-23): explicit redo, no time window; labels by kind ----
+
+/**
+ * The reviewer's scenario: 9/24's 1-1 never aired, 9/25 redid it (redo_of),
+ * then one aired episode a day. Returns the ledger up to (not incl.) `until`.
+ */
+function redoneSeries(until) {
+  const eps = [
+    { date: "2026-09-24", stage: 1, stage_episode: 1, kind: "intro", topic_key: INTRO_TOPICS[0].key, sources: [] },
+    { date: "2026-09-25", stage: 1, stage_episode: 1, kind: "intro", topic_key: INTRO_TOPICS[0].key, sources: [], redo_of: "2026-09-24" },
+  ];
+  INTRO_TOPICS.slice(1).forEach((t, i) => eps.push({ date: addDays("2026-09-26", i), stage: 1, stage_episode: i + 2, kind: "intro", topic_key: t.key, sources: [] }));
+  for (let i = 0; i < USECASE_TARGET; i++) eps.push({ date: addDays("2026-10-01", i), stage: 2, stage_episode: i + 1, kind: "usecase", topic_key: `usecase-ex-${i + 1}`, sources: [{ url: `https://example.com/u${i + 1}`, role: "usecase" }] });
+  for (let d = "2026-10-06", n = 1; d < until; d = addDays(d, 1), n++) eps.push({ date: d, stage: 3, stage_episode: n, kind: "news", topic_key: `news-${d}`, sources: [{ url: `https://example.com/n/${d}`, role: "news" }] });
+  return eps;
+}
+
+test("a redone episode stays out of the series for good — 81 and 200 days later still 0 errors", () => {
+  for (const offset of [80, 81, 200]) {
+    const target = addDays("2026-09-24", offset);
+    const eps = redoneSeries(target);
+    const today = newsEpisode(target, `https://example.com/today/${target}`);
+    today.stage_episode = eps.filter((e) => e.stage === 3).length + 1;
+    // Everything aired except 9/24 (its redo is 9/25).
+    const history = historyOf(eps.filter((e) => e.date !== "2026-09-24"));
+    assert.deepEqual(check([...eps, today], { history }).errors, [], `offset ${offset}`);
+    // …and without any history (a dry run) too.
+    assert.deepEqual(check([...eps, today]).errors, [], `offset ${offset}, no history`);
+  }
+});
+
+test("a missing post record alone does not re-offer the episode (no double post)", () => {
   const first = full();
-  // 9/24's 1-1 is in the ledger, but neither upload worked: no history entry.
-  const noPosts = { videos: [] };
-  const retry = full({ date: "2026-09-25", headline: "文章を書かないAI「Jev」とは" });
-  // Same slot, same topic, same headline — allowed, because 9/24 never aired.
-  const res = check([first, retry], { history: noPosts });
+  const second = full({ date: "2026-09-25", topic_key: INTRO_TOPICS[1].key, stage_episode: 2, headline: "答えを型で返すAI" });
+  // record-upload failed after a successful upload: no history entry for 9/24.
+  const res = check([first, second], { history: { videos: [] } });
   assert.deepEqual(res.errors, []);
-  assert.match(res.warnings.join("\n"), /2026-09-24 "intro-what-is-jev" has no post record/);
-  // Moving on to 1-2 instead would skip 1-1 for good: rejected.
-  const skip = full({ date: "2026-09-25", topic_key: INTRO_TOPICS[1].key, stage_episode: 2, headline: "答えを型で返すAI" });
-  assert.match(errorsOf([first, skip], { history: noPosts }), /must post "intro-what-is-jev" next/);
-  // Once 9/24 is on record, 1-2 is next.
-  assert.deepEqual(check([first, skip], { history: historyOf([first]) }).errors, []);
-  // Without any history (a dry run) the ledger is trusted as is.
-  assert.deepEqual(check([first, skip]).errors, []);
+  assert.match(res.warnings.join("\n"), /2026-09-24 "intro-what-is-jev" has no post record — counted as aired; run "node scripts\/jev\.mjs aired-check 2026-09-24"/);
+  // A redo of a day the history shows as posted is refused.
+  const redo = full({ date: "2026-09-25", redo_of: "2026-09-24", headline: "Jevとは何か、もう一度" });
+  assert.match(errorsOf([first, redo], { history: historyOf([first]) }), /recorded as posted.*post it twice/);
+  // With no record, a redo is accepted (the routine only writes one after aired-check said not-posted).
+  assert.deepEqual(check([first, redo], { history: { videos: [] } }).errors, []);
+  // Only the latest episode can be redone.
+  const late = full({ date: "2026-09-26", redo_of: "2026-09-24", headline: "Jevとは何か、三度目" });
+  assert.match(errorsOf([first, { ...second, date: "2026-09-25" }, late], { history: historyOf([second]) }), /only the latest episode \(2026-09-25\) can be redone/);
+});
+
+test("aired-check reads the day's posting logs: success line → posted, none → not-posted, unreadable → unknown", async () => {
+  const { classifyPostLogs, airedCheck, seriesState } = await import("./jev.mjs");
+  assert.equal(classifyPostLogs(["build\n  Uploaded! https://youtube.com/shorts/abc\n"]), "posted");
+  assert.equal(classifyPostLogs(["  Published! Media ID: 1789"]), "posted");
+  assert.equal(classifyPostLogs(["Render failed: out of memory"]), "not-posted");
+  assert.equal(classifyPostLogs([]), "unknown");
+  const runs = [{ databaseId: 7, createdAt: "2026-09-23T23:20:00Z", event: "schedule", status: "completed", conclusion: "failure" }];
+  const fake = (logText) => (args) => (args[1] === "list" ? JSON.stringify(args[3] === "daily-video.yml" ? runs : []) : logText);
+  assert.equal(airedCheck("2026-09-24", { run: fake("Render failed") }).verdict, "not-posted");
+  assert.equal(airedCheck("2026-09-24", { run: fake("Uploaded! https://youtube.com/shorts/x") }).verdict, "posted");
+  assert.equal(airedCheck("2026-09-25", { run: fake("Render failed") }).verdict, "unknown");
+  assert.equal(airedCheck("2026-09-24", { run: () => { throw new Error("gh: not logged in"); } }).verdict, "unknown");
+  // The routine is offered the redo slot only for the latest unrecorded episode.
+  const state = seriesState([full()], { videos: [] }, "2026-09-25");
+  assert.equal(state.topicKey, INTRO_TOPICS[1].key);
+  assert.deepEqual(state.redoSlot && { topicKey: state.redoSlot.topicKey, redo_of: state.redoSlot.redo_of, stageEpisode: state.redoSlot.stageEpisode }, { topicKey: INTRO_TOPICS[0].key, redo_of: "2026-09-24", stageEpisode: 1 });
+  assert.equal(seriesState([full()], historyOf([full()]), "2026-09-25").redoSlot, null);
+});
+
+test("the opening's 第N回 counts only intros / use cases, not the filler explainers in between", async () => {
+  const { kindOrdinal } = await import("./jev.mjs");
+  const intro2 = full({ date: "2026-09-26", topic_key: INTRO_TOPICS[1].key, stage_episode: 3 });
+  assert.equal(toJevVideoData(intro2).meta.openingSourceLabel, "Jev って何？ 第2回");
+  const filler = full({ date: "2026-09-25", kind: "explainer", stage_episode: 2, topic_key: "explainer-launch-day" });
+  assert.equal(toJevVideoData(filler).meta.openingSourceLabel, "Jev 解説");
+  // Use cases: the number validateEpisodes hands over (fillers not counted).
+  const eps = ledger(1);
+  const stage2filler = full({ date: addDays(eps.at(-1).date, 1), stage: 2, stage_episode: 2, kind: "explainer", topic_key: "explainer-router-basics", headline: "振り分け係のしくみ", research: { ...INTRO.episodes[0].research, no_news_reason: "未使用の使用例が見つからなかった（X・ブログ・HNを確認）" } });
+  const uc = clone(USECASE.episodes.at(-1));
+  uc.date = addDays(stage2filler.date, 1);
+  uc.stage_episode = 3;
+  const res = check([...eps, stage2filler, uc]);
+  assert.deepEqual(res.errors, []);
+  assert.equal(res.usecaseNumber, 2);
+  assert.equal(toJevVideoData(uc, { usecaseNumber: res.usecaseNumber }).meta.openingSourceLabel, "Jev の使い道 第2回");
+  assert.equal(kindOrdinal({ kind: "news" }), null);
+});
+
+test("a non-intro episode cannot use an intro- topic_key", () => {
+  const filler = full({ date: "2026-09-25", kind: "explainer", stage_episode: 2, topic_key: "intro-extra-notes", research: { ...INTRO.episodes[0].research, no_news_reason: "公式ページが開けず確認できなかった" } });
+  assert.match(errorsOf([full(), filler]), /starts with "intro-", which is reserved/);
 });

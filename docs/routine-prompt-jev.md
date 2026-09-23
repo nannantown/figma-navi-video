@@ -27,7 +27,14 @@ TODAY=$(TZ=Asia/Tokyo date +%Y-%m-%d)
 node scripts/jev.mjs next
 ```
 
-出力の `stage`（段階）・`stageEpisode`（その段階の何回目か）・`kinds`（書ける種類）・`topicKey`/`theme`（第1段階だけ。そのテーマで書く）を控える。`notAired` に日付が出ていたら、その回は**投稿されなかった**（YouTube・Instagram とも投稿の記録が無い）。その回の枠・話題・出典はもう一度使える状態に戻っているので、`next` の出力どおり同じ枠をもう一度書く（台帳の過去の回は消さずにそのまま残す）。レポートの「気づき」に一行書く。`canAdvanceEarly: true` の日は、手順 3 の「第2段階」で未使用の使用例が見つからなければ第3段階に進んでよい。
+出力の `stage`（段階）・`stageEpisode`（その段階の何回目か）・`kinds`（書ける種類）・`topicKey`/`theme`（第1段階だけ。そのテーマで書く）を控える。**`unrecorded` に日付が出ていたら**（その回に投稿の記録が無い）、記録だけが抜けた可能性があるので、すぐにはやり直さない。次を実行する:
+
+```bash
+node scripts/jev.mjs aired-check <unrecorded の日付>
+```
+
+- `"verdict": "not-posted"`（その日の投稿ワークフローのログに投稿成功の行が無い）で、`redoSlot` が `null` でないとき**だけ**、今日の回は `redoSlot` の枠（`stage`・`stageEpisode`・`topicKey`）で書き、**`"redo_of": "<その日付>"` を付ける**。やり直した元の回は台帳に残したまま（消さない・書き換えない）
+- `"posted"`（投稿は成功していて記録だけが抜けた）・`"unknown"`（ログが読めない）・`redoSlot` が `null`（もう次の回が出ている）のときは、**やり直さずに**普段どおり `next` の枠で書く。レポートの「気づき」に日付と判定を一行書く（二重投稿を防ぐため）`canAdvanceEarly: true` の日は、手順 3 の「第2段階」で未使用の使用例が見つからなければ第3段階に進んでよい。
 
 すでに `data/jev-episodes.json` に今日の日付の回がある（ルーチンの 2 回目の実行など）ときは、その回を直すだけにする（新しく足さない）。
 
@@ -115,6 +122,7 @@ node scripts/jev.mjs validate
 - `no news source published on/after …` → 新情報ではない。解説回（`explainer`）にする
 - `was posted but is missing or changed` → 過去の回を消した・書き換えた。main の `data/jev-episodes.json` から元に戻す（過去の回は触らない）
 - `no < or >` → `<` `>` を「→」や「」に置き換える
+- `recorded as posted … post it twice` / `only the latest episode … can be redone` → やり直しの条件を満たしていない。`redo_of` を外し、`next` の普段の枠で書く
 
 ### 6. main に反映する（PR 経由）
 
