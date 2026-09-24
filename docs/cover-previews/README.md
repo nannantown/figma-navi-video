@@ -83,3 +83,29 @@ inside the first tool card while that day's opening narration was ≤ 4.5 s, and
 cover silently returns to the title card. `cover-offset-for.mjs` therefore
 prints a loud warning whenever it has to fall back — which should only happen
 for Releases cut before 2026-09-22.
+
+## Jev format (genre trial #2, 2026-09-24)
+
+Since 2026-09-24 the daily post is a Jev episode (`scripts/jev.mjs` →
+`toJevVideoData`): opening (big "Jev" + the feature headline) → 3-4 slides →
+ending. The slides sit in the same Series slot as the tool cards (audio
+`tool-1..N`), so the same rule puts the cover on the **first slide**, whose
+heading changes every day. Pinned by the Jev tests in `scripts/cover-frame.test.mjs`.
+
+Made with `npm run dry-run:jev-intro` / `npm run dry-run:jev-usecase`; "before"
+is the same props rendered at the old cover frame 60.
+
+| | intro sample (cover frame 212) | usecase sample (cover frame 211) |
+|---|---|---|
+| before — opening | ![](before-jev-intro-opening.jpg) | ![](before-jev-usecase-opening.jpg) |
+| after — slide 1 | ![](after-jev-intro-slide1.jpg) | ![](after-jev-usecase-slide1.jpg) |
+
+Recovery fallback (both platforms failed that day, so no `coverOffsetMs` was
+recorded): 5000 ms = frame 150. Jev hooks are 8-40 characters; both samples
+read 4.51 s / 4.56 s, i.e. an opening of 151 / 152 frames, so frame 150 is the
+last frame of the opening. On such a day the recovery post's cover is the
+opening — it still carries that day's headline, so the tile is not identical
+to other days, but it is not slide 1. `cover-offset-for.mjs` warns in the
+run log. Left as is: it needs both uploads to fail on the same day, and
+recording an entry for a day that posted nothing would feed the Jev ledger's
+posted-history checks.
