@@ -59,8 +59,8 @@ function main() {
     `cover-offset-for: WARNING — no coverOffsetMs recorded for ${date}.\n` +
       `  Falling back to ${FALLBACK_OFFSET_MS} ms, which only lands on the first tool card\n` +
       `  when that day's opening narration was <= ${FALLBACK_SAFE_MAX_OPENING_SEC} s. If it was longer, this\n` +
-      `  post's Reels cover will be the brand-constant title card and the profile\n` +
-      `  grid tile will look like every other day. Check the grid after posting.\n` +
+      `  post's Reels cover will be the opening card (not the first card / slide) and the\n` +
+      `  grid tile will not show the day's content. Check the grid after posting.\n` +
       `  (Days rendered before 2026-09-22 have no recorded offset by design.)`
   );
   console.log(FALLBACK_OFFSET_MS);

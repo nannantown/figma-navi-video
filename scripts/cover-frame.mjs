@@ -11,6 +11,9 @@
  * tool name (78-96 px) and its logo while keeping the background, accent glow
  * and header band of the series. The video itself is untouched.
  *
+ * Jev days (genre trial #2, 2026-09-24): toJevVideoData puts the slides in the
+ * same `tools` slot, so the same frame is the FIRST SLIDE and its heading.
+ *
  * Frame arithmetic is the same as calculateFrameDurations() in src/data.ts.
  */
 

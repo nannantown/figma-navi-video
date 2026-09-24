@@ -8,7 +8,8 @@ import { ACCENT_GRADIENT, COLORS, FONT_FAMILY, SAFE_BOTTOM, SAFE_TOP, SAFE_X } f
  * Everything is fully visible by frame 30. This card is deliberately NOT the
  * cover any more: it is identical every day apart from the small date label,
  * which made the Instagram grid look like one repeated picture. The cover is
- * taken from the first tool card instead (scripts/cover-frame.mjs).
+ * taken from the first tool card instead (scripts/cover-frame.mjs) — on a Jev
+ * day (big "Jev" + the feature headline) from the first slide, same rule.
  */
 export const Opening: React.FC<{ meta: VideoMeta }> = ({ meta }) => {
   const frame = useCurrentFrame();
