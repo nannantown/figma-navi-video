@@ -83,6 +83,74 @@
         ],
         "note": "typesafe.ai・docs.typesafe.ai・heise・yahoo・techcrunch・latent.space・wikipedia・tomshardware などの一次/主要記事は egress proxy に弾かれ WebFetch できず。GitHub の TypeSafe AI 組織ページと typesafe-sdk-python の README で会社の実在と system_one() メソッドの型付き出力を確認、WebSearch の要約で公開日・CEO・InstructGPT 共著・System One の骨子を突き合わせた上で、docs/jev-format.md の基本情報（オーナーが 2026-09-23 に primary source で確認済み）に沿って書いた。"
       }
+    },
+    {
+      "date": "2026-09-25",
+      "genre": "jev-news",
+      "trial": 2,
+      "stage": 1,
+      "stage_episode": 2,
+      "kind": "intro",
+      "topic_key": "intro-no-text",
+      "topic": "文章を書かないAI ― 選択肢や数値と確信度を返す",
+      "headline": "文章を書かないAIの中身",
+      "hook": "文章を書かないのに答えを返すAI、想像できますか？",
+      "slides": [
+        {
+          "heading": "文章を作りません",
+          "body": "Jevは文章を書きません。プログラムのために『答え』と、その確信度を、一度に返します。",
+          "narration": "Jevは文章を作りません。あらかじめ用意した『答え』と、その確信度を、一度に返すAIです。使うのはソフトウェアです。"
+        },
+        {
+          "heading": "返る型は3つ",
+          "body": "はい／いいえ、選択肢、点数の3種類。どれにも0から1の確信度が付きます。",
+          "narration": "返せる型は3つです。はい／いいえ、選択肢、そして点数。どれにも0から1の確信度が付き、迷い具合が数字で分かります。"
+        },
+        {
+          "heading": "if文にそのまま",
+          "body": "例：問い合わせを『請求』か『技術』かに振り分け、確信度0.94のように返します。",
+          "narration": "たとえば問い合わせを『請求』か『技術』かに振り分けるとき、選ばれた側と0.94のような確信度が返ります。プログラムがそのままif文で使えます。"
+        },
+        {
+          "heading": "自信で分けて使う",
+          "body": "Spring AIの解説では、確信度が0.5以下は『判定保留』として扱う設計。",
+          "claim_source": "Spring AIの解説",
+          "narration": "Spring AIの解説では、確信度が0.5以下の答えは判定保留として扱う設計だと紹介されています。低い自信の答えは人に回せます。"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://spring.io/blog/2026/09/21/spring-ai-typesafe-structured-judgment/",
+          "title": "Spring AI and TypeSafe Jev: Fast, Cheap, Structured Decisions",
+          "outlet": "Spring AI",
+          "published_at": "2026-09-21",
+          "role": "reference",
+          "official": false
+        },
+        {
+          "url": "https://github.com/typesafe-ai/typesafe-sdk-python",
+          "title": "typesafe-sdk-python — TypeSafe AI",
+          "outlet": "GitHub",
+          "published_at": null,
+          "role": "reference",
+          "official": true
+        },
+        {
+          "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+          "title": "Introducing System One Models and Jev",
+          "outlet": "TypeSafe AI",
+          "published_at": "2026-09-15",
+          "role": "reference",
+          "official": true
+        }
+      ],
+      "research": {
+        "checked": [
+          "https://github.com/typesafe-ai/typesafe-sdk-python",
+          "https://spring.io/blog/2026/09/21/spring-ai-typesafe-structured-judgment/"
+        ],
+        "note": "typesafe.ai / docs.typesafe.ai は今日も egress proxy に弾かれ WebFetch できず。spring.io の解説記事（09-21）と typesafe-sdk-python の README を実際に開き、Noul / Choice / Score の3種類と 0〜1 の確信度、if 文で使える戻り値、確信度 0.5 以下を判定保留として扱う設計を確認。WebSearch の要約（MarkTechPost 09-19、Analytics Vidhya、docs.typesafe.ai/primitives/choice、explainx.ai）が同じ骨子を示していることも突き合わせた。"
+      }
     }
   ]
 }
