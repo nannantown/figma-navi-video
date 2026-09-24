@@ -17,16 +17,23 @@ import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { reportSkip, reportSkipStreak } from "./skip-report.mjs";
 import { loadHistory } from "./history.mjs";
+import {
+  ENDING_EXTRA_FRAMES,
+  FPS,
+  MIN_OPENING_FRAMES,
+  PADDING_FRAMES,
+  coverFrame,
+  coverOffsetMs,
+} from "./cover-frame.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
 const outputDir = join(rootDir, "output");
 
 const COMPOSITION_ID = "AiToolsTop5"; // src/Root.tsx
-const FPS = 30; // keep in sync with calculateFrameDurations() in src/data.ts
-const PADDING_FRAMES = 15;
-const ENDING_EXTRA_FRAMES = 30;
-const MIN_OPENING_FRAMES = 90; // cover still (frame 60) + IG thumb_offset 2000 ms must hit the title card
+// Frame arithmetic (FPS / PADDING_FRAMES / ENDING_EXTRA_FRAMES /
+// MIN_OPENING_FRAMES) lives in cover-frame.mjs, next to the cover rule that
+// depends on it. Keep it in sync with calculateFrameDurations() in src/data.ts.
 const TARGET_MAX_SECONDS = 58; // Instagram Reels rejects > 60 s
 const HARD_MAX_SECONDS = 59.5;
 const IMAGE_STEP_KILL_MS = 150000; // fetch-tool-images.mjs budgets itself to STEP_BUDGET_MS (90 s)
@@ -164,14 +171,29 @@ function main() {
   );
   rmSync(join(rootDir, rawFile), { force: true });
 
-  // Step 4c: Cover still (frame 60 = the opening title card)
+  // Step 4c: Cover still — the first tool card, so the day's tool name and
+  //          logo are what the Instagram grid shows (see cover-frame.mjs).
+  const frame = coverFrame(inputProps.audioDurations, inputProps.tools.length);
   const coverFile = `output/aitools-${dateStr}-cover.jpg`;
-  console.log(`\n=== Step 4c: Render Cover Image → ${coverFile} ===`);
-  runSafe(`npx remotion still ${COMPOSITION_ID} "${coverFile}" --frame=60 --props="${propsPath}"`, "render-cover");
+  console.log(`\n=== Step 4c: Render Cover Image → ${coverFile} (frame ${frame}) ===`);
+  runSafe(`npx remotion still ${COMPOSITION_ID} "${coverFile}" --frame=${frame} --props="${propsPath}"`, "render-cover");
 
   // Step 5: Post to SNS
   if (snsEnabled) {
-    console.log(`\n=== Step 5: Post to SNS ===`);
+    // Instagram picks the Reels cover from this offset. Derived from the day's
+    // real audio durations, so it tracks the first card wherever it starts.
+    // An offset set in the environment wins, so the workflow keeps a usable
+    // override; `!` rather than `??=` so an empty string does not count as set
+    // (Number("") is 0, i.e. the first frame of the video).
+    const offsetMs = coverOffsetMs(inputProps.audioDurations, inputProps.tools.length);
+    if (!process.env.INSTAGRAM_THUMB_OFFSET_MS) {
+      process.env.INSTAGRAM_THUMB_OFFSET_MS = String(offsetMs);
+    }
+    const usedOffset = process.env.INSTAGRAM_THUMB_OFFSET_MS;
+    console.log(
+      `\n=== Step 5: Post to SNS (IG thumb_offset ${usedOffset} ms` +
+        `${usedOffset === String(offsetMs) ? "" : ` — overridden, computed ${offsetMs}`}) ===`
+    );
     try {
       run(`node scripts/post-sns.mjs --video="${outputFile}"`);
     } finally {

@@ -212,8 +212,9 @@ export const defaultDurations: AudioDurations = {
 export const FPS = 30;
 const PADDING = 15; // 0.5s padding after each narration
 const ENDING_EXTRA = 30; // 1s extra hold on the ending
-// The cover still (frame 60) and Instagram's thumb_offset (2000 ms) must land
-// on the title card even when a routine tries a very short opening hook.
+// Floor on the opening hook so a routine cannot shrink it to nothing.
+// (It used to also guarantee the cover still landed on the title card; since
+// 2026-09-22 the cover is the first tool card — see scripts/cover-frame.mjs.)
 const MIN_OPENING = 90;
 
 export function getToolCount(d: AudioDurations): number {

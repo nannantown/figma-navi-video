@@ -145,8 +145,9 @@ async function uploadInstagram(videoPath, coverUrl) {
     // cover_url is intentionally NOT passed: GitHub Release assets are
     // served as `Content-Type: application/octet-stream`, which IG's
     // cover fetcher rejects with error code 9004 ("Only photo or video
-    // can be accepted as media type"). Fall back to thumb_offset inside
-    // upload-instagram.mjs (default 7000ms, past the opening fade-in).
+    // can be accepted as media type"). The cover comes from thumb_offset
+    // instead: pipeline.mjs puts the day's computed offset in
+    // INSTAGRAM_THUMB_OFFSET_MS, which upload-instagram.mjs reads.
     void coverUrl;
     run(`node scripts/upload-instagram.mjs --file="${videoPath}"`, {
       stdio: "inherit",

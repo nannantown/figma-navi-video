@@ -91,9 +91,16 @@ jobs:
           INSTAGRAM_ACCESS_TOKEN: ${{ env.VERIFY_RUN != '1' && secrets.INSTAGRAM_ACCESS_TOKEN || '' }}
           INSTAGRAM_USER_ID: ${{ env.VERIFY_RUN != '1' && secrets.INSTAGRAM_USER_ID || '' }}
           FACEBOOK_PAGE_ID: ${{ env.VERIFY_RUN != '1' && secrets.FACEBOOK_PAGE_ID || '' }}
-          # Grid thumbnail = the "新作AIツール N選" title card (opening is held
-          # ≥ 3 s) so the profile grid reads as one series.
-          INSTAGRAM_THUMB_OFFSET_MS: "2000"
+          # Grid thumbnail: NOT pinned here. Until 2026-09-22 this was "2000",
+          # which landed on the brand-constant "新作AIツール N選" title card, so
+          # every day's grid tile looked identical. pipeline.mjs now derives the
+          # offset from the day's audio durations (scripts/cover-frame.mjs) so
+          # the cover is the first tool card — same series look, different tool
+          # name and logo each day.
+          # Adding INSTAGRAM_THUMB_OFFSET_MS here does override the computed
+          # value (pipeline.mjs only fills it in when unset), so it stays
+          # available as a kill switch — but a fixed number is what caused the
+          # bug, so prefer changing the rule in cover-frame.mjs.
           # GitHub (auto-provided, used for Release creation)
           GITHUB_TOKEN: ${{ env.VERIFY_RUN != '1' && secrets.GITHUB_TOKEN || '' }}
 
