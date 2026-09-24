@@ -16,6 +16,7 @@ import {
   firstToolFrames,
   openingFrames,
 } from "./cover-frame.mjs";
+import { toJevVideoData } from "./jev.mjs";
 
 const rootDir = join(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -183,4 +184,47 @@ test("AiToolsVideo still puts the tool cards straight after the opening", () => 
   // arithmetic in this module no longer describes the timeline.
   assert.match(src, /durationInFrames=\{frames\.opening\}/);
   assert.match(src, /durationInFrames=\{frames\.tools\[i\]/);
+});
+
+// Genre trial #2 (Jev, 2026-09-24): the slides ride in the same Series slot as
+// the tool cards (toJevVideoData puts them in `tools`, audio tool-1..N), so the
+// same rule must put the cover on the FIRST SLIDE — its heading is the part
+// that changes day to day — and never on the "Jev" opening.
+
+const jevSample = (kind) =>
+  JSON.parse(readFileSync(join(rootDir, `data/samples/jev-episodes.${kind}.sample.json`), "utf-8")).episodes.at(-1);
+
+test("Jev: the cover is the first slide, not the opening", () => {
+  const headings = [];
+  for (const kind of ["intro", "usecase"]) {
+    const data = toJevVideoData(jevSample(kind));
+    assert.ok("heading" in data.tools[0], `${kind}: first card is not a Jev slide`);
+    headings.push(data.tools[0].heading);
+    // Jev hooks run up to 40 characters, i.e. openings well past the pickup ones.
+    for (const opening of [2.5, 4.0, 6.0, 8.0]) {
+      for (const slide1 of [5.0, 9.0, 14.0]) {
+        const d = { opening, "tool-1": slide1, "tool-2": 9, ending: 5.3 };
+        const start = openingFrames(d);
+        const f = coverFrame(d, data.tools.length);
+        assert.ok(f >= start && f < start + firstToolFrames(d), `${kind} opening=${opening} slide1=${slide1}: frame ${f}`);
+      }
+    }
+  }
+  assert.notEqual(headings[0], headings[1], "two episodes should put different headings on the cover");
+});
+
+test("Jev: every element of the slide has faded in by the cover frame", () => {
+  const src = readFileSync(join(rootDir, "src/components/JevSlideCard.tsx"), "utf-8");
+  const starts = [...src.matchAll(/fadeUp\(frame, (\d+),/g)].map((m) => Number(m[1]));
+  assert.ok(starts.length > 0, "JevSlideCard no longer uses fadeUp(frame, start, fps)");
+  const fade = Number(/\[start, start \+ (\d+)\]/.exec(src)?.[1]);
+  assert.ok(fade > 0, "JevSlideCard fadeUp changed shape");
+  assert.ok(Math.max(...starts) + fade <= COVER_FRAMES_INTO_CARD, `last fade ends at ${Math.max(...starts) + fade}`);
+});
+
+test("AiToolsVideo renders a Jev slide in the tool-card slot", () => {
+  const src = readFileSync(join(rootDir, "src/compositions/AiToolsVideo.tsx"), "utf-8");
+  const map = src.indexOf("tools.map(");
+  const slide = src.indexOf("<JevSlideCard");
+  assert.ok(map > -1 && slide > map && slide < src.indexOf("<Ending"), "JevSlideCard left the tools.map slot");
 });
