@@ -151,6 +151,74 @@
         ],
         "note": "typesafe.ai / docs.typesafe.ai は今日も egress proxy に弾かれ WebFetch できず。spring.io の解説記事（09-21）と typesafe-sdk-python の README を実際に開き、Noul / Choice / Score の3種類と 0〜1 の確信度、if 文で使える戻り値、確信度 0.5 以下を判定保留として扱う設計を確認。WebSearch の要約（MarkTechPost 09-19、Analytics Vidhya、docs.typesafe.ai/primitives/choice、explainx.ai）が同じ骨子を示していることも突き合わせた。"
       }
+    },
+    {
+      "date": "2026-09-26",
+      "genre": "jev-news",
+      "trial": 2,
+      "stage": 1,
+      "stage_episode": 3,
+      "kind": "intro",
+      "topic_key": "intro-vs-llm",
+      "topic": "ChatGPTのようなLLMとJevの違い ― 得意な仕事と苦手な仕事",
+      "headline": "JevとChatGPT、得意の違い",
+      "hook": "ChatGPTとJev、任せるならどっちの仕事？",
+      "slides": [
+        {
+          "heading": "得意は「決める」仕事",
+          "body": "問い合わせの振り分けや分類など、答えの候補が先に決まっている判断が得意です。",
+          "narration": "Jevが得意なのは、問い合わせの振り分けや分類のように、答えの候補があらかじめ決まっている判断です。"
+        },
+        {
+          "heading": "文章づくりはできない",
+          "body": "返信文を書く、要約する、コードを書く、会話する。こうした仕事はできません。",
+          "narration": "反対に、返信文を書く、要約する、コードを書く、会話するといった仕事はできません。文章を作らないAIだからです。"
+        },
+        {
+          "heading": "LLMの出番は人と一緒",
+          "body": "チャットやコーディングの手伝いなど、人とやり取りしながら進める仕事はLLM向きです。",
+          "narration": "TypeSafeは、チャットやコーディングの手伝いのように、人とやり取りしながら進める仕事はLLMの出番だと説明しています。"
+        },
+        {
+          "heading": "組み合わせて使う",
+          "body": "Jevが判断して振り分け、LLMが文章を書き、確信度が低いときは人が引き継ぎます。",
+          "narration": "innFactoryの解説では、Jevが判断して振り分け、LLMが文章を書き、確信度が低いときは人が引き継ぐ使い方が紹介されています。"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+          "title": "Introducing System One Models and Jev",
+          "outlet": "TypeSafe AI",
+          "published_at": "2026-09-15",
+          "role": "reference",
+          "official": true
+        },
+        {
+          "url": "https://innfactory.ai/en/blog/jev-system-one-model-classifier-not-llm/",
+          "title": "Jev: A System One Model, Not an LLM – Explained",
+          "outlet": "innFactory",
+          "published_at": "2026-09-21",
+          "role": "reference",
+          "official": false
+        },
+        {
+          "url": "https://forkast.news/typesafe-ais-jev-is-not-an-llm-and-that-may-be-the-point/",
+          "title": "TypeSafe AI’s Jev Is Not an LLM — And That May Be the Point",
+          "outlet": "Forkast",
+          "published_at": "2026-09-17",
+          "role": "reference",
+          "official": false
+        }
+      ],
+      "research": {
+        "checked": [
+          "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+          "https://innfactory.ai/en/blog/jev-system-one-model-classifier-not-llm/",
+          "https://forkast.news/typesafe-ais-jev-is-not-an-llm-and-that-may-be-the-point/"
+        ],
+        "note": "今日は typesafe.ai の公式ブログを WebFetch で開けた。公式ブログで『string generation を諦め、classify / route / score / extract / branch に最適化』『LLM は chatbots, copilots, coding agents などの human-in-the-loop 向き』を確認。innFactory（09-21）で『返信を書かない・要約しない・コードを書かない』と『速いモデルが判断・振り分け、生成モデルが下書き、確信度不足なら人が引き継ぐ』構成、Forkast（09-17）で『自由文・コード・文書・会話はできない』を確認。速度・料金の倍率は 1-4・1-5 で扱うため今日は入れていない。"
+      }
     }
   ]
 }
