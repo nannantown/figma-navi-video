@@ -151,6 +151,85 @@
         ],
         "note": "typesafe.ai / docs.typesafe.ai は今日も egress proxy に弾かれ WebFetch できず。spring.io の解説記事（09-21）と typesafe-sdk-python の README を実際に開き、Noul / Choice / Score の3種類と 0〜1 の確信度、if 文で使える戻り値、確信度 0.5 以下を判定保留として扱う設計を確認。WebSearch の要約（MarkTechPost 09-19、Analytics Vidhya、docs.typesafe.ai/primitives/choice、explainx.ai）が同じ骨子を示していることも突き合わせた。"
       }
+    },
+    {
+      "date": "2026-09-27",
+      "genre": "jev-news",
+      "trial": 2,
+      "stage": 1,
+      "stage_episode": 3,
+      "kind": "intro",
+      "topic_key": "intro-vs-llm",
+      "topic": "ChatGPT のような LLM と Jev の違い・得意と不得意",
+      "headline": "LLMとJev、得意なことの違い",
+      "hook": "ChatGPTにできてJevにできないこと、分かりますか？",
+      "slides": [
+        {
+          "heading": "LLMは文章を作る",
+          "body": "ChatGPT のような LLM は、会話・文章・コードを作る AI です。",
+          "narration": "ChatGPTのようなLLM、つまり文章を書くAIは、質問に文章で答えたり、コードを書いたりできます。"
+        },
+        {
+          "heading": "Jevは選んで答える",
+          "body": "Jev は文章を作らず、決まった選択肢・点数・はい／いいえを確信度つきで返します。",
+          "narration": "一方Jevは文章を作りません。決められた選択肢や点数を、確信度つきでプログラムに返すAIです。"
+        },
+        {
+          "heading": "得意なのは仕分け",
+          "body": "問い合わせの振り分け、分類、点数づけ、危ない入力のチェックなど。",
+          "narration": "TypeSafeは、問い合わせの振り分けや分類、点数づけ、危ない入力のチェックといった、決まった形の判断に使うよう案内しています。"
+        },
+        {
+          "heading": "苦手なこともある",
+          "body": "文章づくりや会話はできません。計算・数を数える・日付の比較も苦手と公式が説明。",
+          "claim_source": "TypeSafe の説明",
+          "narration": "文章づくりや会話はできません。TypeSafeは、計算や数を数えること、日付の比較も苦手だと自ら説明し、そこはプログラムで行うよう勧めています。"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+          "title": "Introducing System One models and Jev",
+          "outlet": "TypeSafe AI",
+          "published_at": "2026-09-15",
+          "role": "reference",
+          "official": true
+        },
+        {
+          "url": "https://docs.typesafe.ai/introduction/coding-agents",
+          "title": "Jev with coding agents",
+          "outlet": "TypeSafe AI",
+          "published_at": null,
+          "role": "reference",
+          "official": true
+        },
+        {
+          "url": "https://docs.typesafe.ai/model-jaggedness/jev-1.13",
+          "title": "Jev 1.13 jaggedness",
+          "outlet": "TypeSafe AI",
+          "published_at": "2026-09-17",
+          "role": "reference",
+          "official": true
+        },
+        {
+          "url": "https://www.theregister.com/ai-and-ml/2026/09/16/typesafe-ai-debuts-model-for-machines-that-plays-doom/5296711",
+          "title": "TypeSafe AI debuts model for machines that plays Doom",
+          "outlet": "The Register",
+          "published_at": "2026-09-16",
+          "role": "reference",
+          "official": false
+        }
+      ],
+      "research": {
+        "checked": [
+          "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+          "https://docs.typesafe.ai/llms.txt",
+          "https://docs.typesafe.ai/introduction/coding-agents.md",
+          "https://docs.typesafe.ai/model-jaggedness/jev-1.13.md",
+          "https://www.theregister.com/ai-and-ml/2026/09/16/typesafe-ai-debuts-model-for-machines-that-plays-doom/5296711"
+        ],
+        "note": "第1段階 3 回目。公式ブログ・公式ドキュメント（coding-agents、jev-1.13 jaggedness、最終確認 2026-09-17）と The Register で、得意（振り分け・分類・点数づけ・ガードレール）と不得意（文章生成・会話・計算・数え上げ・日付比較）を確認"
+      }
     }
   ]
 }
