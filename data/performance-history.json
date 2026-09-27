@@ -2,119 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "I32ePxM0UTo",
-      "videoUrl": "https://youtube.com/shorts/I32ePxM0UTo",
-      "date": "2026-06-27",
-      "title": "【デザインニュース】Figma Motion、駆け出しが土曜30分で hover アニメを作る3ステップ｜2026/06/27 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 40,
-      "discovery": {
-        "method": "official-src",
-        "description": "Figma Learn 公式 Help Center の Motion 入門 5 本 (Explore / Quickly add preset / Use timeline / Add keyframes / Loading indicator) + Figma Motion 公式ページから、駆け出しが土曜 30 分で hover を 1 個仕上げる最短 3 ステップを抽出",
-        "sources": [
-          "https://help.figma.com/hc/en-us/articles/41274629073303-Explore-Figma-Motion",
-          "https://help.figma.com/hc/en-us/articles/41307886266135-Quickly-add-motion-with-preset-animations",
-          "https://help.figma.com/hc/en-us/articles/41405906446999-Use-the-Figma-Motion-timeline",
-          "https://help.figma.com/hc/en-us/articles/41307938657559-Add-select-and-delete-keyframes",
-          "https://help.figma.com/hc/en-us/articles/41295953430807-Motion-design-fundamentals-Create-motion-in-Figma",
-          "https://help.figma.com/hc/en-us/articles/4406787442711-What-Figma-features-are-in-beta",
-          "https://www.figma.com/motion/",
-          "https://www.figma.com/blog/introducing-figma-motion/"
-        ],
-        "query": "Figma Motion hover button beginner tutorial preset animations auto-keyframe timeline",
-        "freshness_hours": 50
-      },
-      "stats": {
-        "views": 3,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-07-11T00:09:36.859Z"
-      },
-      "instagram": {
-        "mediaId": "17938086693264174",
-        "permalink": "https://www.instagram.com/reel/DaEayVek7Qc/",
-        "views": 2,
-        "reach": 2,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
-      "videoId": "a3Zxo9R0wGE",
-      "videoUrl": "https://youtube.com/shorts/a3Zxo9R0wGE",
-      "date": "2026-06-28",
-      "title": "【デザインニュース】Awwwards SOTD「Ten Years Away」、駆け出しが盗める3つの構造｜2026/06/28 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 46,
-      "discovery": {
-        "method": "product-launches",
-        "description": "Awwwards Sites of the Day 一覧から最新受賞 6/27 「Ten Years Away」 by Studio375 (Vicenza) を抽出、駆け出しがポートフォリオに盗める構造要素 3 点に分解",
-        "sources": [
-          "https://www.awwwards.com/websites/sites_of_the_day/",
-          "https://www.awwwards.com/sites/ten-years-away",
-          "https://www.awwwards.com/Studio375/",
-          "https://ten.375.studio/en",
-          "https://me.muz.li/danny/ten-years-away"
-        ],
-        "query": "Awwwards Site of the Day June 2026 Ten Years Away Studio375 storytelling portfolio",
-        "freshness_hours": 24
-      },
-      "stats": {
-        "views": 3,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-07-12T00:11:07.967Z"
-      },
-      "instagram": {
-        "mediaId": "17996699909993919",
-        "permalink": "https://www.instagram.com/reel/DaG_AOKDcwS/",
-        "views": 34,
-        "reach": 36,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "D6dUrcT1wko",
       "videoUrl": "https://youtube.com/shorts/D6dUrcT1wko",
       "date": "2026-06-29",
@@ -4043,7 +3930,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-27T01:27:38.910Z"
+        "updatedAt": "2026-09-27T01:54:01.275Z"
       },
       "instagram": {
         "mediaId": "17999656568806519",
@@ -4054,7 +3941,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-27T01:27:38.911Z"
+        "updatedAt": "2026-09-27T01:54:01.275Z"
       }
     },
     {
@@ -4095,7 +3982,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-27T01:27:38.910Z"
+        "updatedAt": "2026-09-27T01:54:01.275Z"
       },
       "instagram": {
         "mediaId": "18092569211541763",
@@ -4106,7 +3993,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-27T01:27:38.911Z"
+        "updatedAt": "2026-09-27T01:54:01.275Z"
       }
     },
     {
@@ -4147,7 +4034,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-27T01:27:38.910Z"
+        "updatedAt": "2026-09-27T01:54:01.275Z"
       },
       "instagram": {
         "mediaId": "18110327918155854",
@@ -4158,7 +4045,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-27T01:27:38.911Z"
+        "updatedAt": "2026-09-27T01:54:01.275Z"
       }
     },
     {
@@ -4252,7 +4139,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-27T01:27:38.910Z"
+        "updatedAt": "2026-09-27T01:54:01.275Z"
       },
       "instagram": {
         "mediaId": "18158121448496612",
@@ -4263,7 +4150,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-27T01:27:38.911Z"
+        "updatedAt": "2026-09-27T01:54:01.275Z"
       }
     },
     {
@@ -4356,7 +4243,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-27T01:27:38.910Z"
+        "updatedAt": "2026-09-27T01:54:01.275Z"
       },
       "instagram": {
         "mediaId": "18115515520805015",
@@ -4367,7 +4254,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-27T01:27:38.911Z"
+        "updatedAt": "2026-09-27T01:54:01.275Z"
       }
     },
     {
@@ -4461,7 +4348,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-27T01:27:38.910Z"
+        "updatedAt": "2026-09-27T01:54:01.275Z"
       },
       "instagram": {
         "mediaId": "18129185785785737",
@@ -4472,7 +4359,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-27T01:27:38.911Z"
+        "updatedAt": "2026-09-27T01:54:01.275Z"
       }
     },
     {
@@ -4518,7 +4405,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-27T01:27:38.910Z"
+        "updatedAt": "2026-09-27T01:54:01.275Z"
       },
       "instagram": {
         "mediaId": "18128502364772913",
@@ -4529,7 +4416,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-27T01:27:38.911Z"
+        "updatedAt": "2026-09-27T01:54:01.275Z"
       },
       "jev": {
         "stage": 1,
@@ -4618,7 +4505,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-27T01:27:38.910Z"
+        "updatedAt": "2026-09-27T01:54:01.275Z"
       },
       "instagram": {
         "mediaId": "18433923538178120",
@@ -4629,7 +4516,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-27T01:27:38.911Z"
+        "updatedAt": "2026-09-27T01:54:01.275Z"
       },
       "jev": {
         "stage": 1,
@@ -4661,17 +4548,103 @@
           }
         ]
       }
+    },
+    {
+      "videoId": "VhBUEKeLkSA",
+      "videoUrl": "https://youtube.com/shorts/VhBUEKeLkSA",
+      "date": "2026-09-27",
+      "genre": "jev-news",
+      "trial": 2,
+      "title": "【話題のAI特集 Jev入門】LLMとJev、得意なことの違い｜2026/09/27 #Shorts",
+      "titleTemplate": "jev",
+      "hashtags": [
+        "AIニュース",
+        "生成AI",
+        "AIモデル",
+        "Jev",
+        "TypeSafe AI",
+        "TypeSafe",
+        "System One",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "LLMとJev、得意なことの違い"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": "出典: TypeSafe AI・The Register"
+      },
+      "durationSeconds": 44,
+      "coverOffsetMs": 6400,
+      "discovery": {
+        "method": "intro",
+        "description": "ChatGPT のような LLM と Jev の違い・得意と不得意",
+        "sources": [
+          "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+          "https://docs.typesafe.ai/introduction/coding-agents",
+          "https://docs.typesafe.ai/model-jaggedness/jev-1.13",
+          "https://www.theregister.com/ai-and-ml/2026/09/16/typesafe-ai-debuts-model-for-machines-that-plays-doom/5296711"
+        ]
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "18116926882958766",
+        "permalink": null,
+        "views": null,
+        "reach": null,
+        "likes": null,
+        "comments": null,
+        "shares": null,
+        "saved": null,
+        "updatedAt": null
+      },
+      "jev": {
+        "stage": 1,
+        "stageEpisode": 3,
+        "kind": "intro",
+        "topicKey": "intro-vs-llm",
+        "topic": "ChatGPT のような LLM と Jev の違い・得意と不得意",
+        "sources": [
+          {
+            "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+            "outlet": "TypeSafe AI",
+            "published_at": "2026-09-15",
+            "role": "reference",
+            "official": true
+          },
+          {
+            "url": "https://docs.typesafe.ai/introduction/coding-agents",
+            "outlet": "TypeSafe AI",
+            "published_at": null,
+            "role": "reference",
+            "official": true
+          },
+          {
+            "url": "https://docs.typesafe.ai/model-jaggedness/jev-1.13",
+            "outlet": "TypeSafe AI",
+            "published_at": "2026-09-17",
+            "role": "reference",
+            "official": true
+          },
+          {
+            "url": "https://www.theregister.com/ai-and-ml/2026/09/16/typesafe-ai-debuts-model-for-machines-that-plays-doom/5296711",
+            "outlet": "The Register",
+            "published_at": "2026-09-16",
+            "role": "reference",
+            "official": false
+          }
+        ]
+      }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-08-27",
-      "changes": [
-        "standard: 2 avg views (78 videos)",
-        "Day performance: Tue=7, Fri=2, Sun=2, Mon=2, Wed=1, Thu=1, Sat=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-08-28",
       "changes": [
@@ -4882,6 +4855,13 @@
     },
     {
       "date": "2026-09-26",
+      "changes": [
+        "Day performance: Sat=1, Sun=1, Mon=1, Tue=1, Thu=1, Fri=1, Wed=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-09-27",
       "changes": [
         "Day performance: Sat=1, Sun=1, Mon=1, Tue=1, Thu=1, Fri=1, Wed=1"
       ],
