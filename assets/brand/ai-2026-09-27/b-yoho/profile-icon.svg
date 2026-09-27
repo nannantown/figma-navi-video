@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+<rect width="1024" height="1024" fill="#0F3D2E"/>
+<defs><clipPath id="above"><path fill-rule="evenodd" d="M0 0H1024V1024H0Z M -388 1430 a 900 900 0 1 0 1800 0 a 900 900 0 1 0 -1800 0Z"/></clipPath></defs>
+<g clip-path="url(#above)" fill="#C8F169"><circle cx="246" cy="570.2" r="104"/><circle cx="512" cy="530" r="104"/><circle cx="778" cy="570.2" r="104"/></g>
+<path d="M 128.7 615.7 A 900 900 0 0 1 895.3 615.7" fill="none" stroke="#C8F169" stroke-width="84" stroke-linecap="round"/>
+</svg>
