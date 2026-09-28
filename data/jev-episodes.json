@@ -230,6 +230,98 @@
         ],
         "note": "第1段階 3 回目。公式ブログ・公式ドキュメント（coding-agents、jev-1.13 jaggedness、最終確認 2026-09-17）と The Register で、得意（振り分け・分類・点数づけ・ガードレール）と不得意（文章生成・会話・計算・数え上げ・日付比較）を確認"
       }
+    },
+    {
+      "date": "2026-09-29",
+      "genre": "jev-news",
+      "trial": 2,
+      "stage": 1,
+      "stage_episode": 4,
+      "kind": "intro",
+      "topic_key": "intro-speed-claim",
+      "topic": "Jev が「速い」と言われる理由 — TypeSafe の主張と第三者の測定",
+      "headline": "Jevは本当に速いのか",
+      "hook": "TypeSafeによると200倍速いAI、本当でしょうか？",
+      "slides": [
+        {
+          "heading": "会社の発表は40〜200倍",
+          "body": "TypeSafe は LLM より40〜200倍速く、1回の答えは0.07〜0.5秒と説明しています。",
+          "claim_source": "TypeSafe の発表",
+          "narration": "TypeSafeによると、JevはLLMより40〜200倍速く、1回の答えを0.07秒から0.5秒で返すそうです。"
+        },
+        {
+          "heading": "比べた相手に注意",
+          "body": "比べた相手は最も賢い大型の LLM。同社自身も、実際の差はこれより小さくなりそうと説明。",
+          "claim_source": "TypeSafe の説明",
+          "narration": "ただし比べた相手は最も賢い大型のLLMで、TypeSafe自身も、実際の差はこれより小さくなりそうだと書いています。"
+        },
+        {
+          "heading": "LiteLLMの検証",
+          "body": "振り分けの仕事で Claude Haiku 4.5 より約5.4倍速いという結果。",
+          "claim_source": "LiteLLM の検証",
+          "narration": "LiteLLMの検証では、問い合わせの振り分けで、Claude Haiku 4.5より約5.4倍速いという結果でした。"
+        },
+        {
+          "heading": "別の検証は約3.6倍",
+          "body": "AY Automate の検証では GPT-5.6 Terra より約3.6倍速く、200倍の差は再現されず。",
+          "claim_source": "AY Automate の検証",
+          "narration": "AY Automateの検証では、GPT-5.6 Terraより約3.6倍速い結果で、200倍の差は出ませんでした。どちらの検証でもLLMより速い点は同じです。"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+          "title": "Introducing System One models and Jev",
+          "outlet": "TypeSafe AI",
+          "published_at": "2026-09-15",
+          "role": "reference",
+          "official": true
+        },
+        {
+          "url": "https://typesafe.ai/",
+          "title": "TypeSafe AI",
+          "outlet": "TypeSafe AI",
+          "published_at": null,
+          "role": "reference",
+          "official": true
+        },
+        {
+          "url": "https://docs.litellm.ai/blog/jev-auto-router-benchmark",
+          "title": "JEV Classifier: 5.43x as Fast as Haiku, 96% Lower Cost",
+          "outlet": "LiteLLM",
+          "published_at": "2026-09-20",
+          "role": "reference",
+          "official": false
+        },
+        {
+          "url": "https://www.ayautomate.com/blog/jev-vs-llm-benchmark",
+          "title": "Jev vs GPT and Claude: Independent Benchmark (2026)",
+          "outlet": "AY Automate",
+          "published_at": "2026-09-20",
+          "role": "reference",
+          "official": false
+        },
+        {
+          "url": "https://www.theregister.com/ai-and-ml/2026/09/16/typesafe-ai-debuts-model-for-machines-that-plays-doom/5296711",
+          "title": "TypeSafe AI debuts model for machines that plays Doom",
+          "outlet": "The Register",
+          "published_at": "2026-09-16",
+          "role": "reference",
+          "official": false
+        }
+      ],
+      "research": {
+        "checked": [
+          "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+          "https://typesafe.ai/",
+          "https://typesafe.ai/blog",
+          "https://docs.litellm.ai/blog/jev-auto-router-benchmark",
+          "https://www.ayautomate.com/blog/jev-vs-llm-benchmark",
+          "https://www.theregister.com/ai-and-ml/2026/09/16/typesafe-ai-debuts-model-for-machines-that-plays-doom/5296711",
+          "https://thecherrycreeknews.com/jev-typesafe-benchmark-checked-explainer-wave-cherry_creek/"
+        ],
+        "note": "第1段階 4 回目。公式ブログで「40x-200x faster」「70ms-500ms」、比較相手が最上位モデル（Astra・Fable）の平均で「実際の差はこれより小さい見込み」と同社が書いていることを確認。トップページは 193.6x（0.114s 対 8.566s）。第三者: LiteLLM（09-20、Haiku 4.5 比 5.43 倍、中央値 126.81ms 対 688.40ms）、AY Automate（09-20、GPT-5.6 Terra 比 約3.6 倍、中央値 0.33s 対 1.17s、193.6x は再現できず）。Cherry Creek News は取得不可のため不使用"
+      }
     }
   ]
 }
