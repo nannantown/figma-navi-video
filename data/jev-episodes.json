@@ -230,6 +230,87 @@
         ],
         "note": "第1段階 3 回目。公式ブログ・公式ドキュメント（coding-agents、jev-1.13 jaggedness、最終確認 2026-09-17）と The Register で、得意（振り分け・分類・点数づけ・ガードレール）と不得意（文章生成・会話・計算・数え上げ・日付比較）を確認"
       }
+    },
+    {
+      "date": "2026-09-30",
+      "genre": "jev-news",
+      "trial": 2,
+      "stage": 1,
+      "stage_episode": 4,
+      "kind": "intro",
+      "topic_key": "intro-speed-claim",
+      "topic": "「速い」と言う理由 — TypeSafe の主張と第三者の測定",
+      "headline": "Jevはどれくらい速いのか",
+      "hook": "「速いAI」と話題のJev、実際に測るとどうでしょう？",
+      "slides": [
+        {
+          "heading": "速さのしくみ",
+          "body": "LLMは1語ずつ順に文章を作りますが、Jevは答えを1回の処理でまとめて返します。",
+          "narration": "LLM、つまり文章を書くAIは、1語ずつ順番に文章を作ります。TypeSafe は、Jev は答えを1回の処理でまとめて返すので速いと説明しています。"
+        },
+        {
+          "heading": "会社の主張は40〜200倍",
+          "body": "TypeSafe によると LLM より40〜200倍速く、応答は0.07〜0.5秒とされます。",
+          "claim_source": "TypeSafe の発表",
+          "narration": "TypeSafe によると、Jev は LLM より40から200倍速く、答えは0.07から0.5秒ほどで返るそうです。同社も、この倍率は高めの例だとしています。"
+        },
+        {
+          "heading": "第三者の測定",
+          "body": "LiteLLM の検証では Haiku 4.5 の約5.4倍。中央値は0.13秒と0.69秒でした。",
+          "claim_source": "LiteLLM の検証",
+          "narration": "LiteLLM の検証では、問い合わせの振り分けで Haiku 4.5 の約5.4倍速く、かかった時間は0.13秒と0.69秒でした。"
+        },
+        {
+          "heading": "数字の読み方",
+          "body": "開発者の試用では5〜20倍の声も。速さは用途と比べる相手で変わります。",
+          "claim_source": "TechCrunch の取材",
+          "narration": "TechCrunch によると、開発者の試用では5倍から20倍速かったそうです。速さは用途と比べる相手で変わるので、自分の用途で測るのが確実です。"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+          "title": "Introducing System One Models and Jev",
+          "outlet": "TypeSafe AI",
+          "published_at": "2026-09-15",
+          "role": "reference",
+          "official": true
+        },
+        {
+          "url": "https://typesafe.ai/",
+          "title": "TypeSafe AI",
+          "outlet": "TypeSafe AI",
+          "published_at": null,
+          "role": "reference",
+          "official": true
+        },
+        {
+          "url": "https://docs.litellm.ai/blog/jev-auto-router-benchmark",
+          "title": "JEV auto router benchmark",
+          "outlet": "LiteLLM",
+          "published_at": "2026-09-20",
+          "role": "reference",
+          "official": false
+        },
+        {
+          "url": "https://techcrunch.com/2026/09/18/a-new-kind-of-ai-model-from-a-chatgpt-inventor-is-thrilling-developers/",
+          "title": "A new kind of AI model from a ChatGPT inventor is thrilling developers",
+          "outlet": "TechCrunch",
+          "published_at": "2026-09-18",
+          "role": "reference",
+          "official": false
+        }
+      ],
+      "research": {
+        "checked": [
+          "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+          "https://typesafe.ai/",
+          "https://docs.litellm.ai/blog/jev-auto-router-benchmark",
+          "https://techcrunch.com/2026/09/18/a-new-kind-of-ai-model-from-a-chatgpt-inventor-is-thrilling-developers/",
+          "https://thecherrycreeknews.com/jev-typesafe-benchmark-checked-explainer-wave-cherry_creek/"
+        ],
+        "note": "Cherry Creek News はこの環境から取得できず未使用。公式ブログは応答 70ms〜500ms、倍率は実際の効果の中では高めと自ら記載。LiteLLM は中央値 126.81ms 対 688.40ms（80 ケース）。TechCrunch は Vercel 開発者 5〜18 倍、Bryo AI 10〜20 倍。"
+      }
     }
   ]
 }
