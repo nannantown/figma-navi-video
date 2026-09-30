@@ -1,9 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
-  <!-- AI試報: 試した結果を 1 枚のレポートに。I は入力カーソル（アクセントはこの 1 色だけ） -->
+  <!-- AI試報: 試した結果を 1 枚のレポートカードに。I は入力カーソル（アクセントはこの 1 色だけ） -->
   <rect width="1024" height="1024" fill="#161616"/>
-  <g transform="translate(512 520) scale(1.08) translate(-512 -520)">
-  <path d="M322 250 H630 L724 344 V744 Q724 790 678 790 H346 Q300 790 300 744 V272 Q300 250 322 250 Z" fill="#F2EFE6"/>
-  <path d="M630 250 V322 Q630 344 652 344 H724 Z" fill="#161616"/>
+  <g transform="translate(512 520) scale(1.1) translate(-512 -520)">
+  <rect x="300" y="250" width="424" height="540" rx="46" fill="#F2EFE6"/>
   <path fill-rule="evenodd" d="M398 336 H466 L546 590 H482 L469 546 H395 L382 590 H318 Z M432 412 L409 494 H455 Z" fill="#161616"/>
   <rect x="586" y="336" width="62" height="254" fill="#E8483A"/>
   <rect x="352" y="646" width="296" height="34" fill="#161616"/>

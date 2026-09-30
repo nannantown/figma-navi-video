@@ -1,16 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
-  <!-- AI演習: 練習帳のマス目を埋めて組んだ「AI」。紫の 1 マス＝今日の 1 問（アクセントはこの 1 色だけ） -->
+  <!-- AI演習: 練習帳のマス目を 1 つずつ埋めて組んだ「AI」。紫の 1 マス＝今日の 1 問（アクセントはこの 1 色だけ） -->
   <rect width="1024" height="1024" fill="#F6F5F0"/>
-  <g fill="#E4E0D5">
-    <rect x="208" y="260" width="88" height="88" rx="18"/>
-    <rect x="520" y="260" width="88" height="88" rx="18"/>
-    <rect x="312" y="364" width="88" height="88" rx="18"/>
-    <rect x="416" y="364" width="88" height="88" rx="18"/>
-    <rect x="312" y="572" width="88" height="88" rx="18"/>
-    <rect x="416" y="572" width="88" height="88" rx="18"/>
-    <rect x="312" y="676" width="88" height="88" rx="18"/>
-    <rect x="416" y="676" width="88" height="88" rx="18"/>
-  </g>
   <g fill="#1E1E1E">
     <rect x="312" y="260" width="88" height="88" rx="18"/>
     <rect x="416" y="260" width="88" height="88" rx="18"/>

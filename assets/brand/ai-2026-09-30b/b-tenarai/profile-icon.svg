@@ -2,10 +2,10 @@
   <!-- AIの手習い: 太い一筆で書いたゴシックの「Ai」。i の点＝今日のひとつ（アクセントはこの 1 色だけ） -->
   <rect width="1024" height="1024" fill="#FBF1DC"/>
   <g transform="translate(512 540) scale(0.86) translate(-512 -540)">
-    <g fill="none" stroke="#1C1C1C" stroke-width="112" stroke-linecap="round" stroke-linejoin="round">
+    <g fill="none" stroke="#1C1C1C" stroke-width="126" stroke-linecap="round" stroke-linejoin="round">
       <path d="M300 770 L445 300 L590 770"/>
       <path d="M372 610 H518"/>
-      <path d="M740 520 V770"/>
+      <path d="M740 548 V770"/>
     </g>
     <circle cx="740" cy="340" r="68" fill="#FF6B35"/>
   </g>
