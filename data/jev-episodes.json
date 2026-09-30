@@ -230,6 +230,86 @@
         ],
         "note": "第1段階 3 回目。公式ブログ・公式ドキュメント（coding-agents、jev-1.13 jaggedness、最終確認 2026-09-17）と The Register で、得意（振り分け・分類・点数づけ・ガードレール）と不得意（文章生成・会話・計算・数え上げ・日付比較）を確認"
       }
+    },
+    {
+      "date": "2026-10-01",
+      "genre": "jev-news",
+      "trial": 2,
+      "stage": 1,
+      "stage_episode": 4,
+      "kind": "intro",
+      "topic_key": "intro-speed-claim",
+      "topic": "「速い」と言う理由 — TypeSafe の主張と第三者の測定",
+      "headline": "Jevの「速さ」、数字の読み方",
+      "hook": "その「速さ」の数字、誰が測ったか気にしていますか？",
+      "slides": [
+        {
+          "heading": "会社が出している数字",
+          "body": "TypeSafe によると、LLM より40〜200倍速く、トップページでは193.6倍としています。",
+          "claim_source": "TypeSafe の発表",
+          "narration": "TypeSafeによると、JevはChatGPTのようなAIより40から200倍、トップページの表示では193.6倍速いとされます。"
+        },
+        {
+          "heading": "何を比べた数字か",
+          "body": "同社が用意した課題で、判断1回分の応答時間を比べたもの。0.07〜0.5秒で返すと説明。",
+          "claim_source": "TypeSafe の発表",
+          "narration": "この数字は、同社が用意した課題で、判断1回分の答えが返る時間を比べたものです。同社自身も、実際の効果としては高めの数字だと書いています。"
+        },
+        {
+          "heading": "外部の測定は数倍",
+          "body": "LiteLLM の検証では Haiku 4.5 より5.43倍速い。Cherry Creek News では1.16〜6倍。",
+          "claim_source": "LiteLLM ほかの検証",
+          "narration": "LiteLLMの検証では、小型AIのHaiku 4.5より5.43倍速いという結果でした。Cherry Creek Newsのまとめでは、公開された実測は1.16倍から6倍でした。"
+        },
+        {
+          "heading": "部品が速くても全体は",
+          "body": "仕組みの1か所だけを置き換えても、ほかの処理にかかる時間は残ります。",
+          "narration": "Cherry Creek Newsは、仕組みの1か所だけJevにしても、残りの処理の時間は残ると説明しています。誰が何を測ったかを見るのが大切です。"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+          "title": "Introducing System One Models & Jev",
+          "outlet": "TypeSafe AI",
+          "published_at": "2026-09-15",
+          "role": "reference",
+          "official": true
+        },
+        {
+          "url": "https://typesafe.ai/",
+          "title": "TypeSafe AI",
+          "outlet": "TypeSafe AI",
+          "published_at": null,
+          "role": "reference",
+          "official": true
+        },
+        {
+          "url": "https://docs.litellm.ai/blog/jev-auto-router-benchmark",
+          "title": "JEV Classifier: 5.43x as Fast as Haiku, 96% Lower Cost",
+          "outlet": "LiteLLM",
+          "published_at": "2026-09-20",
+          "role": "reference",
+          "official": false
+        },
+        {
+          "url": "https://thecherrycreeknews.com/jev-typesafe-benchmark-checked-explainer-wave-cherry_creek/",
+          "title": "TypeSafe Claims Its Model Is 193.6x Faster. Its Own Employee Measured 15.9% on a Real Pipeline.",
+          "outlet": "Cherry Creek News",
+          "published_at": "2026-09-21",
+          "role": "reference",
+          "official": false
+        }
+      ],
+      "research": {
+        "checked": [
+          "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+          "https://typesafe.ai/",
+          "https://docs.litellm.ai/blog/jev-auto-router-benchmark",
+          "https://thecherrycreeknews.com/jev-typesafe-benchmark-checked-explainer-wave-cherry_creek/"
+        ],
+        "note": "第1段階 1-4。公式ブログ（70ms〜500ms、40〜200倍、実際の効果としては高めの数字との注記）とトップページ（193.6倍）、LiteLLM（09-20、中央値 126.81ms 対 688.40ms で 5.43 倍）、Cherry Creek News（09-21、公開された実測は 1.16〜6 倍、193.6 倍は判断 1 回同士の比較で、仕組みの 1 か所だけ置き換えても全体は同じ比率では速くならない）をその日に開いて確認。WebSearch で見えた eesel・Hyperstack・自社の jaggedness 表の数字は本文を開いていないため使っていない"
+      }
     }
   ]
 }
