@@ -1,12 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
-  <!-- AIの手習い: 太い一筆で書いたゴシックの「Ai」。i の点＝今日のひとつ（アクセントはこの 1 色だけ） -->
+  <!-- AIの手習い: 太いゴシックの「AI.」。句点のオレンジ＝今日のひとつを習い終えた印（アクセント 1 色） -->
   <rect width="1024" height="1024" fill="#FBF1DC"/>
-  <g transform="translate(512 540) scale(0.86) translate(-512 -540)">
-    <g fill="none" stroke="#1C1C1C" stroke-width="126" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M300 770 L445 300 L590 770"/>
-      <path d="M372 610 H518"/>
-      <path d="M740 548 V770"/>
-    </g>
-    <circle cx="740" cy="340" r="68" fill="#FF6B35"/>
+  <g transform="translate(512 520) scale(1.06) translate(-551 -520)" fill="#1C1C1C" stroke="#1C1C1C" stroke-width="20" stroke-linejoin="round">
+    <path fill-rule="evenodd" d="M380 300 H470 L590 740 H500 L478 660 H372 L350 740 H260 Z M425 460 L394 580 H456 Z"/>
+    <rect x="640" y="300" width="90" height="440"/>
+    <circle cx="800" cy="698" r="42" fill="#FF6B35" stroke="none"/>
   </g>
 </svg>

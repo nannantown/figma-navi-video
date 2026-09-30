@@ -1,11 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
-  <!-- AI試食: ひとくちかじった四角に「AI」。A の中の三角＝ひとくち分（アクセントはこの 1 色だけ） -->
-  <rect width="1024" height="1024" fill="#1F1B1C"/>
-  <rect x="262" y="262" width="500" height="500" rx="124" fill="#FFD93D"/>
-  <circle cx="754" cy="280" r="90" fill="#1F1B1C"/>
-  <g transform="translate(24 0)">
-    <path d="M420 396 L290 680 H550 Z" fill="#1F1B1C" stroke="#1F1B1C" stroke-width="44" stroke-linejoin="round"/>
-    <path d="M420 540 L376 680 H464 Z" fill="#FF4D8D" stroke="#FF4D8D" stroke-width="20" stroke-linejoin="round"/>
-    <rect x="590" y="408" width="76" height="290" rx="38" fill="#1F1B1C"/>
+  <!-- AI試食: 黄色い一枚を右上からひとくち（丸を 2 つ重ねたかじり跡）。丸く切っても縁が欠けて見える -->
+  <rect width="1024" height="1024" fill="#FFD93D"/>
+  <g fill="#1F1B1C">
+    <circle cx="900" cy="250" r="150"/>
+    <circle cx="760" cy="120" r="120"/>
+  </g>
+  <g transform="translate(-24 40)" fill="none" stroke="#1F1B1C" stroke-width="108" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M300 720 L420 330 L540 720"/>
+    <path d="M356 590 H484"/>
+    <path d="M650 330 V720"/>
   </g>
 </svg>
