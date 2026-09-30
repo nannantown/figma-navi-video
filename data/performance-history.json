@@ -3982,7 +3982,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-29T02:35:08.994Z"
+        "updatedAt": "2026-09-30T02:07:37.062Z"
       },
       "instagram": {
         "mediaId": "18092569211541763",
@@ -3993,7 +3993,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-29T02:35:08.995Z"
+        "updatedAt": "2026-09-30T02:07:37.063Z"
       }
     },
     {
@@ -4034,7 +4034,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-29T02:35:08.994Z"
+        "updatedAt": "2026-09-30T02:07:37.062Z"
       },
       "instagram": {
         "mediaId": "18110327918155854",
@@ -4045,7 +4045,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-29T02:35:08.995Z"
+        "updatedAt": "2026-09-30T02:07:37.063Z"
       }
     },
     {
@@ -4139,7 +4139,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-29T02:35:08.994Z"
+        "updatedAt": "2026-09-30T02:07:37.062Z"
       },
       "instagram": {
         "mediaId": "18158121448496612",
@@ -4150,7 +4150,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-29T02:35:08.995Z"
+        "updatedAt": "2026-09-30T02:07:37.063Z"
       }
     },
     {
@@ -4243,7 +4243,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-29T02:35:08.994Z"
+        "updatedAt": "2026-09-30T02:07:37.062Z"
       },
       "instagram": {
         "mediaId": "18115515520805015",
@@ -4254,7 +4254,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-29T02:35:08.995Z"
+        "updatedAt": "2026-09-30T02:07:37.063Z"
       }
     },
     {
@@ -4348,7 +4348,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-29T02:35:08.994Z"
+        "updatedAt": "2026-09-30T02:07:37.062Z"
       },
       "instagram": {
         "mediaId": "18129185785785737",
@@ -4359,7 +4359,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-29T02:35:08.995Z"
+        "updatedAt": "2026-09-30T02:07:37.063Z"
       }
     },
     {
@@ -4405,7 +4405,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-29T02:35:08.994Z"
+        "updatedAt": "2026-09-30T02:07:37.062Z"
       },
       "instagram": {
         "mediaId": "18128502364772913",
@@ -4416,7 +4416,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-29T02:35:08.995Z"
+        "updatedAt": "2026-09-30T02:07:37.063Z"
       },
       "jev": {
         "stage": 1,
@@ -4505,7 +4505,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-29T02:35:08.994Z"
+        "updatedAt": "2026-09-30T02:07:37.062Z"
       },
       "instagram": {
         "mediaId": "18433923538178120",
@@ -4516,7 +4516,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-29T02:35:08.995Z"
+        "updatedAt": "2026-09-30T02:07:37.063Z"
       },
       "jev": {
         "stage": 1,
@@ -4592,7 +4592,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-29T02:35:08.994Z"
+        "updatedAt": "2026-09-30T02:07:37.062Z"
       },
       "instagram": {
         "mediaId": "18116926882958766",
@@ -4603,7 +4603,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-29T02:35:08.995Z"
+        "updatedAt": "2026-09-30T02:07:37.063Z"
       },
       "jev": {
         "stage": 1,
@@ -4645,14 +4645,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-08-30",
-      "changes": [
-        "standard: 2 avg views (77 videos)",
-        "Day performance: Tue=7, Sun=2, Mon=2, Fri=2, Wed=1, Sat=1, Thu=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-09-01",
       "changes": [
@@ -4871,6 +4863,13 @@
         "Day performance: Mon=1, Tue=1, Thu=1, Fri=1, Sat=1, Sun=1, Wed=1"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-09-30",
+      "changes": [
+        "Day performance: Mon=1, Tue=1, Thu=1, Fri=1, Sat=1, Sun=1, Wed=1"
+      ],
+      "recommendedTemplate": "standard"
     }
   ],
   "account": {
@@ -4897,6 +4896,10 @@
       },
       {
         "date": "2026-09-29",
+        "count": 0
+      },
+      {
+        "date": "2026-09-30",
         "count": 0
       }
     ]
