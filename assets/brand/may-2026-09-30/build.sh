@@ -3,11 +3,11 @@
 # (codex-*.png, untouched); this only resizes and crops it:
 #   <opt>/profile-icon.png  codex-profile.png resized to 1024x1024 (upload-ready)
 #   <opt>/preview.png       circle crop at 320px / real 40px / 40px zoomed x5, light over dark
-#   compare-profile.png     avatar faces A/B/C next to the decided "Ai" icon, 160px + 40px, light and dark
+#   compare-profile.png     avatar faces A/B/C next to the decided "Ai" icon, 160px / 120px / 40px, light and dark
 # Needs ImageMagick 7 (magick). Run from anywhere.
 set -euo pipefail
 cd "$(dirname "$0")"
-OPTS=(a-mei b-mikazuki c-naviko)
+OPTS=(a-senpai b-shizuku c-aibou)
 AI_ICON=../final/profile-icon.png
 FONT="/System/Library/Fonts/ヒラギノ角ゴシック W6.ttc"
 tmp=$(mktemp -d); trap 'rm -rf "$tmp"' EXIT
@@ -33,14 +33,15 @@ done
 
 # Side-by-side: which profile picture? (3 avatar faces vs the decided Ai icon)
 NAMES=("A 先輩" "B しずく" "C 相棒" "今の Ai")
-SRCS=(a-mei/profile-icon.png b-mikazuki/profile-icon.png c-naviko/profile-icon.png "$AI_ICON")
+SRCS=(a-senpai/profile-icon.png b-shizuku/profile-icon.png c-aibou/profile-icon.png "$AI_ICON")
+# 160px / 120px (= a 40pt avatar on a 3x phone screen) / 40px raw pixels, one column per option.
 panel() { # bg fg out
-  local args=(-size 1000x330 "xc:$1" -font "$FONT" -pointsize 26 -fill "$2")
+  local args=(-size 1000x480 "xc:$1" -font "$FONT" -pointsize 26 -fill "$2")
   for i in 0 1 2 3; do
     local x=$((40 + i * 240))
-    circle "${SRCS[$i]}" 160 "$tmp/c160-$i.png"; circle "${SRCS[$i]}" 40 "$tmp/c40-$i.png"
-    args+=("$tmp/c160-$i.png" -geometry "+$x+30" -composite "$tmp/c40-$i.png" -geometry "+$((x + 60))+210" -composite
-      -annotate "+$x+300" "${NAMES[$i]}")
+    circle "${SRCS[$i]}" 160 "$tmp/c160-$i.png"; circle "${SRCS[$i]}" 120 "$tmp/c120-$i.png"; circle "${SRCS[$i]}" 40 "$tmp/c40-$i.png"
+    args+=("$tmp/c160-$i.png" -geometry "+$x+30" -composite "$tmp/c120-$i.png" -geometry "+$((x + 20))+210" -composite
+      "$tmp/c40-$i.png" -geometry "+$((x + 60))+350" -composite -annotate "+$x+450" "${NAMES[$i]}")
   done
   magick "${args[@]}" "$3"
 }
