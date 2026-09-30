@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <!-- AI赤ペン: "AI" on lined school paper, graded with a red-pen maru and a tick. Shapes only (no font). -->
+  <rect width="1024" height="1024" fill="#FFE9A8"/>
+  <rect x="200" y="170" width="624" height="684" rx="14" fill="#FFFFFF" stroke="#C9CFD6" stroke-width="10"/>
+  <g stroke="#DCE1E6" stroke-width="6">
+    <line x1="206" y1="260" x2="818" y2="260"/><line x1="206" y1="340" x2="818" y2="340"/>
+    <line x1="206" y1="420" x2="818" y2="420"/><line x1="206" y1="500" x2="818" y2="500"/>
+    <line x1="206" y1="580" x2="818" y2="580"/><line x1="206" y1="660" x2="818" y2="660"/>
+    <line x1="206" y1="740" x2="818" y2="740"/><line x1="206" y1="820" x2="818" y2="820"/>
+  </g>
+  <g fill="#141414">
+    <path fill-rule="evenodd" d="M310 682 L406.2 342 L496.8 342 L593 682 L502.4 682 L484 603.1 L419 603.1 L400.6 682 Z M451.5 433.8 L427.4 529 L475.6 529 Z"/>
+    <rect x="623" y="342" width="91" height="340"/>
+  </g>
+  <g fill="none" stroke="#E5322D" stroke-width="34" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M290 320 C400 236 720 228 800 372 C872 500 820 712 626 772 C440 826 238 752 220 580 C208 462 270 360 420 312"/>
+    <path d="M708 770 L748 826 L834 712"/>
+  </g>
+</svg>
