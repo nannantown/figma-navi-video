@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <!-- AI理科室: Erlenmeyer flask, "AI" floating in the liquid. Shapes only (no font). -->
+  <defs>
+    <clipPath id="inside">
+      <path d="M422 200 L422 360 L212 790 Q190 850 250 850 L774 850 Q834 850 812 790 L602 360 L602 200 Z"/>
+    </clipPath>
+  </defs>
+  <rect width="1024" height="1024" fill="#F4F1E8"/>
+  <g clip-path="url(#inside)">
+    <path d="M150 508 Q250 468 350 508 T550 508 T750 508 T950 508 L950 900 L150 900 Z" fill="#C6F432"/>
+  </g>
+  <path d="M422 200 L422 360 L212 790 Q190 850 250 850 L774 850 Q834 850 812 790 L602 360 L602 200"
+        fill="none" stroke="#151515" stroke-width="46" stroke-linejoin="round"/>
+  <rect x="380" y="150" width="264" height="64" rx="32" fill="#F4F1E8" stroke="#151515" stroke-width="42"/>
+  <circle cx="486" cy="318" r="30" fill="#C6F432" stroke="#151515" stroke-width="16"/>
+  <circle cx="542" cy="250" r="19" fill="#C6F432" stroke="#151515" stroke-width="14"/>
+  <g fill="#151515">
+    <!-- A: L=357.5 T=560 w=215 h=260 / I: x=596.5 w=70 -->
+    <path fill-rule="evenodd" d="M357.5 820 L430.6 560 L499.4 560 L572.5 820 L503.7 820 L489.7 759.7 L440.3 759.7 L426.3 820 Z M465 630.2 L446.7 703 L483.3 703 Z"/>
+    <rect x="596.5" y="560" width="70" height="260"/>
+  </g>
+</svg>

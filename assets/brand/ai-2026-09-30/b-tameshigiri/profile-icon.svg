@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <!-- AIためし斬り: heavy "AI" sliced by one diagonal cut; upper half slid along the cut. Shapes only. -->
+  <defs>
+    <g id="ai">
+      <path fill-rule="evenodd" d="M177 792 L337 232 L487 232 L647 792 L497 792 L466 662 L358 662 L327 792 Z M412 383 L372 540 L452 540 Z"/>
+      <rect x="697" y="232" width="150" height="560"/>
+    </g>
+    <clipPath id="upper"><path d="M0 0 L1024 0 L1024 251 L0 773 Z"/></clipPath>
+    <clipPath id="lower"><path d="M0 773 L1024 251 L1024 1024 L0 1024 Z"/></clipPath>
+  </defs>
+  <rect width="1024" height="1024" fill="#E0402A"/>
+  <g fill="#FFF7EA">
+    <use href="#ai" clip-path="url(#lower)"/>
+    <g transform="translate(-20 10)"><use href="#ai" clip-path="url(#upper)"/></g>
+  </g>
+  <line x1="-40" y1="793" x2="1064" y2="231" stroke="#E0402A" stroke-width="30"/>
+</svg>
