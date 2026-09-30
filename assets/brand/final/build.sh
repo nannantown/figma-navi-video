@@ -23,7 +23,10 @@ for bg in white '#141414'; do
   magick -size 760x380 "xc:$bg" \
     "$tmp/320.png" -geometry +30+30 -composite \
     "$tmp/40.png" -geometry +400+170 -composite \
-    "$tmp/40z.png" -geometry +500+90 -composite "$tmp/p-$([ "$bg" = white ] && echo l || echo d).png"
+    "$tmp/40z.png" -geometry +500+90 -composite \
+    -font "$FONT" -pointsize 16 -fill "$([ "$bg" = white ] && echo '#333' || echo '#ddd')" \
+    -annotate +126+372 "丸く切った見え方" -annotate +388+232 "実寸 40px" -annotate +527+312 "40px を 5 倍に拡大" \
+    "$tmp/p-$([ "$bg" = white ] && echo l || echo d).png"
 done
 magick "$tmp/p-l.png" "$tmp/p-d.png" -append -depth 8 preview.png
 
@@ -42,7 +45,10 @@ panel() { # src label out
 panel "$tmp/ref.png" "Codex の参考画像（元）" "$tmp/c1.png"
 panel "$tmp/new.png" "清書した SVG（正式）" "$tmp/c2.png"
 panel "$tmp/diff.png" "違う画素（赤。縁に細く出るだけ）" "$tmp/c3.png"
-magick "$tmp/c1.png" "$tmp/c2.png" "$tmp/c3.png" +append \
+magick "$tmp/diff.png" -crop 200x200+560+420 +repage -filter point -resize 400x400 "$tmp/zoom.png"
+magick "$tmp/zoom.png" -background white -fill '#222' -font "$FONT" -pointsize 20 \
+  label:"違う画素を 2 倍に拡大（A の脚の先）" -gravity center -append -bordercolor white -border 12 "$tmp/c4.png"
+magick "$tmp/c1.png" "$tmp/c2.png" "$tmp/c3.png" "$tmp/c4.png" +append \
   \( -background white -fill '#444' -font "$FONT" -pointsize 18 \
      label:"違う画素 ${ae} 個 = 黒い字の面積の ${pct}%（字の縁の線だけ。形・位置・色は元のまま）" \) \
   -gravity center -append -bordercolor white -border 8 -depth 8 compare.png
