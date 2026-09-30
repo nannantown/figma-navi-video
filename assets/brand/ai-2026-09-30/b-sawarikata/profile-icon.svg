@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <!-- AIのさわり方: a hand's fingertip taps the big "AI" (hands-on). Shapes only (no font). -->
+  <rect width="1024" height="1024" fill="#FFD447"/>
+  <g fill="#141414">
+    <path fill-rule="evenodd" d="M190 560 L300.5 170 L404.5 170 L515 560 L411 560 L389.9 469.5 L315.1 469.5 L294 560 Z M352.5 275.3 L324.9 384.5 L380.1 384.5 Z"/>
+    <rect x="550" y="170" width="104" height="390"/>
+  </g>
+  <g stroke="#141414" stroke-width="20" stroke-linecap="round">
+    <line x1="540" y1="590" x2="500" y2="578"/><line x1="548" y1="628" x2="516" y2="656"/><line x1="668" y1="576" x2="706" y2="556"/>
+  </g>
+  <g transform="translate(602 582) rotate(-28) scale(0.75)">
+    <g fill="#141414" stroke="#141414" stroke-width="40" stroke-linejoin="round">
+      <rect x="-40" y="0" width="80" height="260" rx="40"/><rect x="40" y="120" width="72" height="140" rx="36"/>
+      <rect x="104" y="140" width="68" height="130" rx="34"/><rect x="164" y="170" width="60" height="110" rx="30"/>
+      <rect x="-40" y="200" width="264" height="190" rx="70"/>
+      <rect x="-130" y="190" width="150" height="78" rx="39" transform="rotate(35 -40 230)"/>
+    </g>
+    <g fill="#FFFFFF">
+      <rect x="-40" y="0" width="80" height="260" rx="40"/><rect x="40" y="120" width="72" height="140" rx="36"/>
+      <rect x="104" y="140" width="68" height="130" rx="34"/><rect x="164" y="170" width="60" height="110" rx="30"/>
+      <rect x="-40" y="200" width="264" height="190" rx="70"/>
+      <rect x="-130" y="190" width="150" height="78" rx="39" transform="rotate(35 -40 230)"/>
+    </g>
+    <g stroke="#141414" stroke-width="14" stroke-linecap="round">
+      <line x1="40" y1="160" x2="40" y2="240"/><line x1="106" y1="178" x2="106" y2="250"/><line x1="166" y1="206" x2="166" y2="262"/>
+    </g>
+  </g>
+</svg>

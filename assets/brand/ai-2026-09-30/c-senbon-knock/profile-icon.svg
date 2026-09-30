@@ -1,15 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
-  <!-- AI千本ノック: a flying baseball with "AI" printed on it. Shapes only (no font). -->
+  <!-- AI千本ノック: a baseball with "AI" printed on it. Shapes only (no font). -->
   <rect width="1024" height="1024" fill="#D9793F"/>
-  <g stroke="#B85F2C" stroke-width="30" stroke-linecap="round">
-    <line x1="92" y1="436" x2="200" y2="436"/><line x1="70" y1="512" x2="200" y2="512"/><line x1="92" y1="588" x2="200" y2="588"/>
-  </g>
-  <g transform="translate(560 512) scale(1.12) translate(-540 -512)">
+  <g transform="translate(512 512) scale(1.14) translate(-540 -512)">
     <circle cx="540" cy="512" r="330" fill="#FFFFFF"/>
     <g fill="none" stroke="#D8322E" stroke-linecap="round">
-      <path d="M380 215 C280 380 280 650 380 810" stroke-width="20"/>
-      <path d="M700 215 C800 380 800 650 700 810" stroke-width="20"/>
-      <g stroke-width="15">
+      <path d="M380 215 C280 380 280 650 380 810" stroke-width="28"/>
+      <path d="M700 215 C800 380 800 650 700 810" stroke-width="28"/>
+      <g stroke-width="20">
         <line x1="316" y1="283" x2="366" y2="306"/><line x1="292" y1="378" x2="342" y2="392"/><line x1="281" y1="478" x2="331" y2="484"/>
         <line x1="283" y1="584" x2="333" y2="576"/><line x1="299" y1="682" x2="349" y2="665"/><line x1="324" y1="760" x2="372" y2="737"/>
         <line x1="764" y1="283" x2="714" y2="306"/><line x1="788" y1="378" x2="738" y2="392"/><line x1="799" y1="478" x2="749" y2="484"/>
