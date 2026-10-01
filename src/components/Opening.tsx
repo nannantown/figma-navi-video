@@ -64,6 +64,7 @@ export const Opening: React.FC<{ meta: VideoMeta; may?: boolean }> = ({ meta, ma
           color: COLORS.text,
           lineHeight: Array.from(meta.kicker ?? "").length > 10 ? 1.18 : 1.05,
           letterSpacing: "-2px",
+          textWrap: may ? "balance" : undefined,
         }}
       >
         {meta.kicker ?? "新作AIツール"}
