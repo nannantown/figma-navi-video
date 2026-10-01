@@ -28,11 +28,12 @@ const s1 = f.opening;
 const s2 = s1 + f.tools[0];
 const endStart = f.total - f.ending;
 const sec = (s) => Math.round(s * FPS);
-// [first, last] frame of each excerpt
+// [first, last] frame of each excerpt, kept inside its own scene on a short episode
+const s2End = s2 + f.tools[1];
 const cuts = [
   [0, f.opening - 1],
-  [s1, s1 + sec(5) - 1],
-  [s2 + sec(4.5), s2 + sec(9.5) - 1],
+  [s1, Math.min(s1 + sec(5), s2) - 1],
+  [Math.min(s2 + sec(4.5), s2End - sec(5)), Math.min(s2 + sec(9.5), s2End) - 1],
   [endStart, f.total - 1],
 ];
 

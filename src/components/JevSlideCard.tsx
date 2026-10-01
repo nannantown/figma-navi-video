@@ -117,7 +117,18 @@ export const JevSlideCard: React.FC<{ slide: JevSlide; may?: boolean }> = ({ sli
         )}
       </div>
 
-      <div style={{ fontSize: 26, fontWeight: 600, color: COLORS.textMuted, ...fadeUp(frame, 28, fps) }}>{slide.sourceLine}</div>
+      <div
+        style={{
+          fontSize: 26,
+          fontWeight: 600,
+          color: COLORS.textMuted,
+          // With May on the slide area is tight: one line only, so it can never be pushed into her hair.
+          ...(may ? { whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" } : {}),
+          ...fadeUp(frame, 28, fps),
+        }}
+      >
+        {slide.sourceLine}
+      </div>
     </AbsoluteFill>
   );
 };

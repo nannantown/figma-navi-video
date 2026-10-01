@@ -23,32 +23,43 @@ const COMMA_END = /[、,]\s*$/;
 // Fallback when the text could not be matched: the voice pauses ~0.67 s at "。".
 const SENTENCE_PAUSE_SEC = 0.4;
 
-/** Each word's display text: the word plus the punctuation around it in the full narration. */
+/** Each word's display text: the word plus the punctuation around it in the full narration.
+ *  All or nothing: if the words do not walk the text exactly (a word missing, or letters between
+ *  two words), every word stays bare — never a doubled or dropped phrase — and pages then split
+ *  on the voice's pauses instead of "。". */
 export function attachPunctuation(text: string, words: Word[]): string[] {
-  const pieces = words.map((w) => w.text);
+  const bare = words.map((w) => w.text);
+  const pieces = [...bare];
   let cursor = 0;
-  let prev = -1;
-  words.forEach((w, i) => {
-    const at = text.indexOf(w.text, cursor);
-    // Not found (or a jump past other words): keep the bare word.
-    if (at < 0 || at - cursor > 6) return;
-    const gap = text.slice(cursor, at);
+  for (let i = 0; i < words.length; i++) {
+    const at = text.indexOf(words[i].text, cursor);
+    const gap = at < 0 ? "" : text.slice(cursor, at);
+    if (at < 0 || !PUNCT_ONLY.test(gap)) return bare;
     const open = gap.replace(new RegExp(`^[^${OPENERS}]*`), "");
-    const close = gap.slice(0, gap.length - open.length);
-    if (prev >= 0 && prev === i - 1) pieces[prev] += close;
-    pieces[i] = open + w.text;
-    cursor = at + w.text.length;
-    prev = i;
-  });
-  if (prev === words.length - 1) pieces[prev] += text.slice(cursor).trimEnd();
+    if (i > 0) pieces[i - 1] += gap.slice(0, gap.length - open.length);
+    pieces[i] = open + words[i].text;
+    cursor = at + words[i].text.length;
+  }
+  const rest = text.slice(cursor);
+  if (!PUNCT_ONLY.test(rest)) return bare;
+  if (pieces.length) pieces[pieces.length - 1] += rest.trimEnd();
   return pieces;
 }
 
-/** Split the narration into bubble pages of at most `maxChars` characters. */
+const PUNCT_ONLY = /^[\s〜~、。，．,.？！?!「」『』（）()【】…・:：;；"'“”]*$/;
+
+/** Display width in full-width characters: Latin letters, digits and spaces count about half. */
+export function textWidth(s: string): number {
+  let w = 0;
+  for (const ch of s.trim()) w += ch.charCodeAt(0) < 0x2000 ? 0.55 : 1;
+  return w;
+}
+
+/** Split the narration into bubble pages of at most `maxChars` full-width characters (textWidth). */
 export function speechPages(text: string, words: Word[], maxChars: number): SpeechPage[] {
   if (!words.length) return [];
   const pieces = attachPunctuation(text, words);
-  const size = (i: number) => pieces[i].trim().length;
+  const size = (i: number) => textWidth(pieces[i]);
 
   // 1. Sentences: end at "。？！" (or, when the text could not be matched, at a long pause).
   const sentences: number[][] = [];

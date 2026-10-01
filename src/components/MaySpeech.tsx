@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { interpolate, useCurrentFrame, useVideoConfig } from "remotion";
 import type { SubtitleData } from "./Subtitle";
-import { pageAt, speechPages } from "./speechPages";
+import { pageAt, speechPages, textWidth } from "./speechPages";
 import { FONT_FAMILY } from "./theme";
 import { MAY_BUBBLE, MayPose, mayMouthTip } from "./May";
 
@@ -15,16 +15,22 @@ import { MAY_BUBBLE, MayPose, mayMouthTip } from "./May";
 export const MaySpeech: React.FC<{ data?: SubtitleData; pose: MayPose }> = ({ data, pose }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const pages = useMemo(() => (data?.words?.length ? speechPages(data.text, data.words, MAY_BUBBLE.maxChars) : []), [data]);
+  const pages = useMemo(
+    () => (data?.words?.length ? speechPages(data.text ?? "", data.words, MAY_BUBBLE.maxChars) : []),
+    [data],
+  );
   const t = frame / fps;
   const i = pageAt(pages, t);
   if (i < 0) return null;
 
   const { left, width, top, fontSize, fill, text, border } = MAY_BUBBLE;
-  // The bubble pops in with its first page; later pages only swap the text inside it.
-  const appear = interpolate(t, [pages[0].start - 0.1, pages[0].start + 0.1], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  // The bubble fades in with its first page; later pages only swap the text inside it. Not before
+  // 0.15 s: May's pose-change pop (May.tsx) has her mouth up to ~40 px lower in the first frames.
+  const from = Math.max(pages[0].start - 0.1, 0.15);
+  const appear = interpolate(t, [from, from + 0.2], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const [tipX, tipY] = mayMouthTip(pose);
-  const tipGap = 14; // keep the point off her chin
+  // Keep the point off her lips: the nod, breathing and talk bob move her mouth down up to ~18 px.
+  const tipGap = 26;
   const baseL = tipX - 78;
   const baseR = tipX - 8;
 
@@ -45,6 +51,8 @@ export const MaySpeech: React.FC<{ data?: SubtitleData; pose: MayPose }> = ({ da
         <div
           style={{
             minWidth: 380,
+            maxWidth: width,
+            boxSizing: "border-box",
             background: fill,
             border: `4px solid ${border}`,
             borderRadius: 40,
@@ -74,13 +82,32 @@ export const MaySpeech: React.FC<{ data?: SubtitleData; pose: MayPose }> = ({ da
   );
 };
 
+/** One unbreakable box per piece; a space after a piece ("Cherry ") goes between the boxes so it
+ *  neither widens a box nor shifts the centring. A piece too long for one line (a URL-like run)
+ *  may wrap inside instead of running out of the bubble. */
 function page(pieces: string[], fontSize: number, color: string) {
-  return pieces.map((p, k) => (
-    <span
-      key={k}
-      style={{ display: "inline-block", fontFamily: FONT_FAMILY, fontSize, fontWeight: 800, lineHeight: 1.36, color, whiteSpace: "pre" }}
-    >
-      {p}
-    </span>
-  ));
+  return pieces.map((p, k) => {
+    const word = p.trimEnd();
+    const long = textWidth(word) > 14;
+    return (
+      <React.Fragment key={k}>
+        <span
+          style={{
+            display: "inline-block",
+            maxWidth: "100%",
+            fontFamily: FONT_FAMILY,
+            fontSize,
+            fontWeight: 800,
+            lineHeight: 1.36,
+            color,
+            whiteSpace: long ? "normal" : "pre",
+            overflowWrap: "anywhere",
+          }}
+        >
+          {word}
+        </span>
+        {word !== p ? " " : null}
+      </React.Fragment>
+    );
+  });
 }

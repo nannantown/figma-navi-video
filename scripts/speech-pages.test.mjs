@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { attachPunctuation, pageAt, speechPages } from "../src/components/speechPages.ts";
+import { attachPunctuation, pageAt, speechPages, textWidth } from "../src/components/speechPages.ts";
 
 const w = (texts, gap = 0.05) => {
   let t = 0;
@@ -18,8 +18,15 @@ test("punctuation and brackets go back onto the words", () => {
     "その", "「速さ」", "の", "数字、", "誰", "が", "測っ", "た", "か？",
   ]);
   assert.deepEqual(attachPunctuation("Cherry Creek Newsは", w(["Cherry", "Creek", "News", "は"])), ["Cherry ", "Creek ", "News", "は"]);
-  // A word the text does not contain stays bare; the rest still lines up.
-  assert.deepEqual(attachPunctuation("AとB。", w(["A", "X", "B"])), ["A", "X", "B。"]);
+  // The words do not walk the text: all bare — never doubled ("ジェブ「Jev」") or dropped text.
+  assert.deepEqual(attachPunctuation("ジェブ「Jev」は速い。", w(["ジェブ", "は", "速い"])), ["ジェブ", "は", "速い"]);
+  assert.deepEqual(attachPunctuation("これはとても長い説明ですがXです。", w(["これ", "は", "X", "です"])), ["これ", "は", "X", "です"]);
+  assert.deepEqual(attachPunctuation("AとB。", w(["A", "X", "B"])), ["A", "X", "B"]);
+});
+
+test("Latin letters count about half a character", () => {
+  assert.ok(Math.abs(textWidth("ChatGPT") - 3.85) < 1e-9);
+  assert.equal(textWidth("数字、"), 3);
 });
 
 test("a page ends at a sentence end and prefers a comma when too long", () => {
@@ -48,7 +55,7 @@ test("real narration (sample): no page longer than the limit, nothing lost", () 
     const pages = speechPages(text, words, 24);
     const joined = pages.map((p) => p.pieces.join("")).join("");
     assert.equal(joined.replace(/\s/g, ""), text.replace(/\s/g, ""));
-    for (const p of pages) assert.ok(p.pieces.join("").trim().length <= 24, p.pieces.join(""));
+    for (const p of pages) assert.ok(textWidth(p.pieces.join("")) <= 24, p.pieces.join(""));
   }
 });
 
