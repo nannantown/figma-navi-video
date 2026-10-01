@@ -50,9 +50,9 @@ export const MaySpeech: React.FC<{ data?: SubtitleData; pose: MayPose }> = ({ da
             borderRadius: 40,
             padding: "20px 36px",
             boxShadow: `0 0 28px rgba(139,124,255,0.45), 0 14px 36px rgba(0,0,0,0.4)`,
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
+            textAlign: "center",
+            // Two lines of about equal length (no lone "でした。" on line 2); pieces never split.
+            textWrap: "balance",
           }}
         >
           {page(pages[i].pieces, fontSize, text)}
@@ -76,7 +76,10 @@ export const MaySpeech: React.FC<{ data?: SubtitleData; pose: MayPose }> = ({ da
 
 function page(pieces: string[], fontSize: number, color: string) {
   return pieces.map((p, k) => (
-    <span key={k} style={{ fontFamily: FONT_FAMILY, fontSize, fontWeight: 800, lineHeight: 1.36, color, whiteSpace: "pre" }}>
+    <span
+      key={k}
+      style={{ display: "inline-block", fontFamily: FONT_FAMILY, fontSize, fontWeight: 800, lineHeight: 1.36, color, whiteSpace: "pre" }}
+    >
       {p}
     </span>
   ));

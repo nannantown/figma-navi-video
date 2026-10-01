@@ -6,7 +6,7 @@
 //   node scripts/generate-bgm.mjs
 //   node scripts/may-preview.mjs
 import { execFileSync } from "node:child_process";
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { calculateFrameDurations, FPS } from "../src/data.ts";
@@ -50,8 +50,13 @@ sh("npx", ["remotion", "ffmpeg", "-y", "-loglevel", "error", ...parts.flatMap((p
   "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "22", "-preset", "fast", "-c:a", "aac", "-movflags", "+faststart", mp4]);
 
 // Board cards take images only: a moving webp of the same cut (540 px wide, 12 fps) and 4 stills.
-sh("npx", ["remotion", "ffmpeg", "-y", "-loglevel", "error", "-i", mp4, "-vf", "fps=12,scale=540:-2",
-  "-c:v", "libwebp", "-loop", "0", "-quality", "70", join(docs, "may-preview.webp")]);
+// Remotion's bundled ffmpeg has no webp encoder: frames out as PNG, ImageMagick assembles the webp.
+const frameDir = join(out, "may-webp-frames");
+rmSync(frameDir, { recursive: true, force: true });
+mkdirSync(frameDir);
+sh("npx", ["remotion", "ffmpeg", "-y", "-loglevel", "error", "-i", mp4, "-vf", "fps=12,scale=540:-2", join(frameDir, "f%04d.png")]);
+const frames = readdirSync(frameDir).sort().map((p) => join(frameDir, p));
+sh("magick", ["-delay", "100x1200", ...frames, "-loop", "0", "-quality", "70", join(docs, "may-preview.webp")]);
 const stills = parts.map((p, i) => {
   const png = join(out, `may-still-${i}.png`);
   const mid = (cuts[i][1] - cuts[i][0]) / 2 / FPS;

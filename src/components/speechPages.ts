@@ -48,37 +48,62 @@ export function attachPunctuation(text: string, words: Word[]): string[] {
 export function speechPages(text: string, words: Word[], maxChars: number): SpeechPage[] {
   if (!words.length) return [];
   const pieces = attachPunctuation(text, words);
-  const groups: number[][] = [];
-  let cur: number[] = [];
-  const len = (g: number[]) => g.reduce((n, i) => n + pieces[i].trim().length, 0);
+  const size = (i: number) => pieces[i].trim().length;
 
+  // 1. Sentences: end at "。？！" (or, when the text could not be matched, at a long pause).
+  const sentences: number[][] = [];
+  let cur: number[] = [];
   words.forEach((w, i) => {
     const prev = cur[cur.length - 1];
-    const paused = prev !== undefined && w.offset - (words[prev].offset + words[prev].duration) >= SENTENCE_PAUSE_SEC;
-    if (cur.length && (paused || len(cur) + pieces[i].trim().length > maxChars)) {
-      // Too long: cut after the last "、" if that leaves a reasonable first page.
-      let comma = -1;
-      if (!paused) for (let k = 0; k < cur.length; k++) if (COMMA_END.test(pieces[cur[k]])) comma = k;
-      if (comma >= 0 && comma < cur.length - 1 && len(cur.slice(0, comma + 1)) >= maxChars * 0.4) {
-        groups.push(cur.slice(0, comma + 1));
-        cur = cur.slice(comma + 1);
-      } else {
-        groups.push(cur);
-        cur = [];
-      }
+    if (prev !== undefined && w.offset - (words[prev].offset + words[prev].duration) >= SENTENCE_PAUSE_SEC) {
+      sentences.push(cur);
+      cur = [];
     }
     cur.push(i);
     if (SENTENCE_END.test(pieces[i])) {
-      groups.push(cur);
+      sentences.push(cur);
       cur = [];
     }
   });
-  if (cur.length) groups.push(cur);
+  if (cur.length) sentences.push(cur);
+
+  // 2. A sentence longer than a page splits into pages of about equal length, cut where a reader
+  //    would pause: after "、", else after a particle, never inside a verb ending ("書い|て").
+  const groups: number[][] = [];
+  for (let s of sentences) {
+    while (s.length > 1) {
+      const total = s.reduce((n, i) => n + size(i), 0);
+      if (total <= maxChars) break;
+      const target = total / Math.ceil(total / maxChars);
+      let best = -1;
+      let bestCost = Infinity;
+      let c = 0;
+      for (let k = 0; k < s.length - 1; k++) {
+        c += size(s[k]);
+        if (c > maxChars) break;
+        const cost = Math.abs(c - target) - cutBonus(pieces[s[k]], pieces[s[k + 1]]);
+        if (cost < bestCost) [best, bestCost] = [k, cost];
+      }
+      if (best < 0) best = 0; // one piece longer than a page: it gets a page of its own
+      groups.push(s.slice(0, best + 1));
+      s = s.slice(best + 1);
+    }
+    groups.push(s);
+  }
 
   return groups.map((g) => {
     const last = words[g[g.length - 1]];
     return { pieces: g.map((i) => pieces[i]), start: words[g[0]].offset, end: last.offset + last.duration };
   });
+}
+
+const PARTICLE_END = /(は|が|を|に|で|と|も|へ|の|から|より|まで|ので|けど|ては|では|として)\s*$/;
+const BOUND_START = /^(て|た|だ|ます|まし|です|でし|い|う|る|ない|ん|ず|ば|れ|られ|せ|させ)[。、？！]*$/
+/** How good a cut between two pieces is (higher = better), in characters of imbalance it is worth. */
+function cutBonus(before: string, after: string): number {
+  if (COMMA_END.test(before)) return 8;
+  if (BOUND_START.test(after.trim())) return -6;
+  return PARTICLE_END.test(before) ? 3 : 0;
 }
 
 /** The page on screen at `t` s. A page stays up through short pauses until the next one starts

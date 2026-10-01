@@ -51,3 +51,11 @@ test("real narration (sample): no page longer than the limit, nothing lost", () 
     for (const p of pages) assert.ok(p.pieces.join("").trim().length <= 24, p.pieces.join(""));
   }
 });
+
+test("real narration: a long sentence splits evenly at a pause point, never inside a verb ending", () => {
+  const subs = JSON.parse(readFileSync(new URL("../data/samples/may-subtitles.sample.json", import.meta.url), "utf-8"));
+  const all = Object.values(subs).flatMap(({ text, words }) => speechPages(text, words, 24).map((p) => p.pieces.join("")));
+  assert.ok(all.includes("同社自身も、実際の効果としては"), all.join(" / "));
+  assert.ok(all.includes("高めの数字だと書いています。"), all.join(" / "));
+  for (const p of all) assert.doesNotMatch(p, /^(て|た|ます|です)/, p);
+});

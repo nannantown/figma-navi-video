@@ -75,6 +75,8 @@ export const JevSlideCard: React.FC<{ slide: JevSlide; may?: boolean }> = ({ sli
             color: COLORS.text,
             lineHeight: 1.18,
             letterSpacing: "-1px",
+            // With May on, no lone "字" on line 2 (the off layout stays as it is).
+            textWrap: may ? "balance" : undefined,
             ...fadeUp(frame, 4, fps),
           }}
         >
