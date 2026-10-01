@@ -10,6 +10,7 @@ import { mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "nod
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { calculateFrameDurations, FPS } from "../src/data.ts";
+import { coverFrame } from "./cover-frame.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const out = join(root, "output");
@@ -64,4 +65,15 @@ const stills = parts.map((p, i) => {
   return png;
 });
 sh("magick", [...stills, "+append", join(docs, "may-preview-stills.png")]);
+
+// The Instagram cover (same frame as the pipeline's Step 4c), May off | on.
+const coverAt = coverFrame(audioDurations, data.tools.length);
+const covers = [false, true].map((may) => {
+  const props = join(out, `may-cover-props-${may}.json`);
+  writeFileSync(props, JSON.stringify({ ...JSON.parse(readFileSync(propsPath, "utf-8")), may }));
+  const png = join(out, `may-cover-${may}.png`);
+  sh("npx", ["remotion", "still", "AiToolsTop5", png, `--props=${props}`, `--frame=${coverAt}`, "--scale=0.5"]);
+  return png;
+});
+sh("magick", [...covers, "+append", join(docs, "may-cover-off-on.png")]);
 console.log(`preview → ${mp4}`);

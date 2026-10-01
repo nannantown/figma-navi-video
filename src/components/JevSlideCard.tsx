@@ -2,7 +2,7 @@ import React from "react";
 import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 import { JevSlide } from "../data";
 import { ACCENT_GRADIENT, COLORS, FONT_FAMILY, SAFE_BOTTOM, SAFE_TOP, SAFE_X } from "./theme";
-import { MAY_CONTENT_BOTTOM, MAY_CONTENT_TOP } from "./May";
+import { MAY_BODY_WRAP, MAY_CONTENT_BOTTOM, MAY_CONTENT_TOP, MAY_HEADLINE_WRAP } from "./May";
 
 /**
  * One point of a Jev episode (genre trial #2): header band → heading → body →
@@ -75,8 +75,7 @@ export const JevSlideCard: React.FC<{ slide: JevSlide; may?: boolean }> = ({ sli
             color: COLORS.text,
             lineHeight: 1.18,
             letterSpacing: "-1px",
-            // With May on, no lone "字" on line 2 (the off layout stays as it is).
-            textWrap: may ? "balance" : undefined,
+            ...(may ? MAY_HEADLINE_WRAP : {}), // the off layout stays as it is
             ...fadeUp(frame, 4, fps),
           }}
         >
@@ -92,6 +91,7 @@ export const JevSlideCard: React.FC<{ slide: JevSlide; may?: boolean }> = ({ sli
             fontWeight: 600,
             color: COLORS.textSub,
             lineHeight: 1.5,
+            ...(may ? MAY_BODY_WRAP : {}),
             ...fadeUp(frame, 14, fps),
           }}
         >

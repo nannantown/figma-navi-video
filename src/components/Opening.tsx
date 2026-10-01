@@ -2,7 +2,7 @@ import React from "react";
 import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 import { VideoMeta } from "../data";
 import { ACCENT_GRADIENT, COLORS, FONT_FAMILY, SAFE_BOTTOM, SAFE_TOP, SAFE_X } from "./theme";
-import { MAY_CONTENT_BOTTOM, MAY_CONTENT_TOP } from "./May";
+import { MAY_CONTENT_BOTTOM, MAY_CONTENT_TOP, MAY_HEADLINE_WRAP } from "./May";
 
 /**
  * ~3 s hook: date → "新作AIツール" + "TOP5" (ranking) or "3選" (pickup) → source.
@@ -64,8 +64,9 @@ export const Opening: React.FC<{ meta: VideoMeta; may?: boolean }> = ({ meta, ma
           color: COLORS.text,
           lineHeight: Array.from(meta.kicker ?? "").length > 10 ? 1.18 : 1.05,
           letterSpacing: "-2px",
-          textWrap: may ? "balance" : undefined,
+          ...(may ? MAY_HEADLINE_WRAP : {}), // the off layout stays as it is
         }}
+        lang={may ? "ja" : undefined}
       >
         {meta.kicker ?? "新作AIツール"}
       </div>

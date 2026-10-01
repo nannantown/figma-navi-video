@@ -49,6 +49,13 @@ export function mayMouthTip(pose: MayPose): [number, number] {
   return [MAY_LEFT + (x / 1024) * MAY_WIDTH, MAY_TOP + (y / 1536) * MAY_HEIGHT];
 }
 
+/** Headlines while she is on (the narrower slide area wraps more): lines of about equal length,
+ *  broken between Japanese phrases (Chrome's auto-phrase; needs lang="ja" on an ancestor) —
+ *  no lone "字" and no "出し|ている". */
+export const MAY_HEADLINE_WRAP = { textWrap: "balance", wordBreak: "auto-phrase" } as unknown as React.CSSProperties;
+/** Body text while she is on: same phrase breaks ("40〜200倍速|く" → "…200倍|速く"). */
+export const MAY_BODY_WRAP = { wordBreak: "auto-phrase" } as unknown as React.CSSProperties;
+
 /** The speech bubble: 48 px bold, at most two lines of ~15 characters, above the caption UI. */
 export const MAY_BUBBLE = {
   left: 120,
