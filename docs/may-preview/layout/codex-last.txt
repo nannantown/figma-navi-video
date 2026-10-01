@@ -1,0 +1,11 @@
+Done. I saved the generated reference here:
+
+[layout-ref.png](/Users/kokinaniwa/.openground/projects/ac85a6fd0198/worktrees/ok-codex-1001-153152-cd80edfe0255/figma-navi-video/docs/may-preview/layout/layout-ref.png)
+
+Approx placement notes:
+- May: `x≈190, y≈820, w≈720, h≈980`; centered, face around `y≈900-1240`, body fading into the lower area.
+- Bubble: `x≈105, y≈1330, w≈850, h≈160`; tail points upward to her mouth around `x≈545, y≈1160`.
+- Bubble style: white fill, near-black bold gothic text, purple border/glow, text roughly `48px`.
+- Slide content range: roughly `y≈180-850`, with the source line around `y≈805`.
+
+Verified `layout-ref.png` is `1080x1920`.
