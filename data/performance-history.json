@@ -2,172 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "D6dUrcT1wko",
-      "videoUrl": "https://youtube.com/shorts/D6dUrcT1wko",
-      "date": "2026-06-29",
-      "title": "【デザインニュース】Smashing が 6/26 紹介、Gabriela De Luca の駆け出し転職 Notion ハブ｜2026/06/29 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 42,
-      "discovery": {
-        "method": "news-en",
-        "description": "Smashing Magazine 最新記事を週次スキャンし、駆け出しデザイナーに直接刺さる career 系の新着を抽出",
-        "sources": [
-          "https://www.smashingmagazine.com/",
-          "https://www.smashingmagazine.com/articles/",
-          "https://www.smashingmagazine.com/category/career/"
-        ],
-        "query": "Smashing Magazine articles published June 22 23 24 25 26 27 2026",
-        "freshness_hours": 72
-      },
-      "stats": {
-        "views": 1,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-07-13T00:10:59.546Z"
-      },
-      "instagram": {
-        "mediaId": "17901947517461702",
-        "permalink": "https://www.instagram.com/reel/DaJkSZwnIAS/",
-        "views": 27,
-        "reach": 27,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
-      "videoId": "ny1-rSWt6jY",
-      "videoUrl": "https://youtube.com/shorts/ny1-rSWt6jY",
-      "date": "2026-06-30",
-      "title": "【デザインニュース】Figma Code Layers明日7/1から段階リリース、駆け出しは今日中にwaitlist登録｜2026/06/30 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 43,
-      "discovery": {
-        "method": "official-src",
-        "description": "Figma Blog の Config 2026 recap と Code on the Figma Canvas、Help Center の What's new from Config 2026 を一次取得し、Code Layers が『明日 7/1 から段階リリース開始』『waitlist は figma.com/config-betas』という 6/30 固有の節目を抽出。直近 14 日で official-src は avg 3.5 (n=4) の TOP1 method、最終使用 6/27 で 3 日空き、直近 2 日 (6/29 news-en, 6/28 product-launches) と method 重複なし、6/22 + 6/27 の 7 日 2 回到達ガードは 6/22 が 8 日前で window 外で OK。Code Layers は Config 主要発表 5 機能の中で唯一『今日のうちに 1 アクション (waitlist 登録) で明日に備える』フックが立つ題材で、6/29 career-news の 0 views (= 自分事化フック弱) の反証としても最適。柱① Figma 公式ニュース、Primary 駆け出し層に『React 書けなくてもクリックで動く UI 試作』というポートフォリオ直結価値で訴求。NG パターン回避: AI=補助輪フレームを維持、『コード書けなくても触れる』を Code Layers の本質として位置づけ、Figmaナビは『今日から触れる選択肢』として並列訴求 (強い CTA は避ける)",
-        "sources": [
-          "https://www.figma.com/blog/config-2026-recap/",
-          "https://www.figma.com/blog/code-on-the-figma-canvas/",
-          "https://help.figma.com/hc/en-us/articles/39582753756695-What-s-new-from-Config-2026",
-          "https://help.figma.com/hc/en-us/articles/4406787442711-What-Figma-features-are-in-beta",
-          "https://techcrunch.com/2026/06/24/figma-adds-code-layers-support-for-animations-more-ai-features-in-new-update/",
-          "https://www.cmswire.com/digital-experience/figma-launches-code-layers-motion-at-config-2026/"
-        ],
-        "query": "Figma Code Layers July 2026 rollout waitlist figma.com/config-betas React GitHub repository",
-        "freshness_hours": 24
-      },
-      "stats": {
-        "views": 2,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-07-14T00:07:32.438Z"
-      },
-      "instagram": {
-        "mediaId": "18369192346229712",
-        "permalink": "https://www.instagram.com/reel/DaMJDndimJS/",
-        "views": 86,
-        "reach": 91,
-        "likes": 1,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
-      "videoId": "x5XNZZ4TJFw",
-      "videoUrl": "https://youtube.com/shorts/x5XNZZ4TJFw",
-      "date": "2026-07-02",
-      "title": "【デザインニュース】Figma 生成プラグイン、駆け出しがコード無しで自分専用ツールを日本語プロンプトで作れる時代｜2026/07/02 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 44,
-      "discovery": {
-        "method": "figma-community",
-        "description": "Figma Community と Config 2026 発表を横断調査し、6/24 から段階配布中の生成プラグイン (Generative Plugins) を抽出。日本語プロンプトでコードなしに自分専用プラグインを Figma 内で自作でき、駆け出しでも毎日の繰り返し作業を自動化できる。Community 公開はまだ未開放だが今後数ヶ月内予定のため『公開前に自分用として仕込む』というタイミング訴求が成立。method 選定: figma-community は 14 日以上ドライ (最終使用 6/16)、TOP method の official-src (直近14日 4/9 = 44% で過剰使用) の偏り解消を狙う Explore。直近 2 日 (7/1 news-en, 6/30 official-src) と重複なし。柱② プラグイン/エコシステム (target 20%) を埋める意図とも整合。昨日 7/1 の Custom Skills (プロンプト再利用) とは切り口を明確に分離し、今日は『プラグイン本体を自作する側』にフォーカス。NG パターン回避: AI=補助輪フレームを維持し、『毎日の面倒作業を自分の言葉で言語化してから AI に作らせる』として学習者の判断力を主役に置く",
-        "sources": [
-          "https://www.figma.com/blog/config-2026-recap/",
-          "https://help.figma.com/hc/en-us/articles/41147702210071-Quick-start-guide-to-generative-plugins-and-shaders",
-          "https://help.figma.com/hc/en-us/articles/41408937853463",
-          "https://help.figma.com/hc/en-us/articles/4406787442711-What-Figma-features-are-in-beta",
-          "https://www.figma.com/community/file/1649113171902698068/config-2026-unlocking-speed-and-visual-expression-with-generative-plugins-and-shader-effects",
-          "https://www.figma.com/@edwche",
-          "https://thenextweb.com/news/figma-config-code-layers-ai-skills-plugins-animations"
-        ],
-        "query": "Figma generative plugins Config 2026 beta rollout HTML dashboard designer Edward Chechique",
-        "freshness_hours": 168
-      },
-      "stats": {
-        "views": 1,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-07-16T00:09:52.224Z"
-      },
-      "instagram": {
-        "mediaId": "18117412684857263",
-        "permalink": "https://www.instagram.com/reel/DaRS4EaDMMV/",
-        "views": 108,
-        "reach": 107,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "xv6T7bGBNCk",
       "videoUrl": "https://youtube.com/shorts/xv6T7bGBNCk",
       "date": "2026-07-03",
@@ -4034,7 +3868,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-30T02:07:37.062Z"
+        "updatedAt": "2026-10-01T02:09:42.858Z"
       },
       "instagram": {
         "mediaId": "18110327918155854",
@@ -4045,7 +3879,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-30T02:07:37.063Z"
+        "updatedAt": "2026-10-01T02:09:42.858Z"
       }
     },
     {
@@ -4139,7 +3973,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-30T02:07:37.062Z"
+        "updatedAt": "2026-10-01T02:09:42.858Z"
       },
       "instagram": {
         "mediaId": "18158121448496612",
@@ -4150,7 +3984,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-30T02:07:37.063Z"
+        "updatedAt": "2026-10-01T02:09:42.858Z"
       }
     },
     {
@@ -4243,7 +4077,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-30T02:07:37.062Z"
+        "updatedAt": "2026-10-01T02:09:42.858Z"
       },
       "instagram": {
         "mediaId": "18115515520805015",
@@ -4254,7 +4088,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-30T02:07:37.063Z"
+        "updatedAt": "2026-10-01T02:09:42.858Z"
       }
     },
     {
@@ -4348,7 +4182,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-30T02:07:37.062Z"
+        "updatedAt": "2026-10-01T02:09:42.858Z"
       },
       "instagram": {
         "mediaId": "18129185785785737",
@@ -4359,7 +4193,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-30T02:07:37.063Z"
+        "updatedAt": "2026-10-01T02:09:42.858Z"
       }
     },
     {
@@ -4405,7 +4239,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-30T02:07:37.062Z"
+        "updatedAt": "2026-10-01T02:09:42.858Z"
       },
       "instagram": {
         "mediaId": "18128502364772913",
@@ -4416,7 +4250,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-30T02:07:37.063Z"
+        "updatedAt": "2026-10-01T02:09:42.858Z"
       },
       "jev": {
         "stage": 1,
@@ -4505,7 +4339,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-30T02:07:37.062Z"
+        "updatedAt": "2026-10-01T02:09:42.858Z"
       },
       "instagram": {
         "mediaId": "18433923538178120",
@@ -4516,7 +4350,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-30T02:07:37.063Z"
+        "updatedAt": "2026-10-01T02:09:42.858Z"
       },
       "jev": {
         "stage": 1,
@@ -4592,7 +4426,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-30T02:07:37.062Z"
+        "updatedAt": "2026-10-01T02:09:42.858Z"
       },
       "instagram": {
         "mediaId": "18116926882958766",
@@ -4603,7 +4437,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-30T02:07:37.063Z"
+        "updatedAt": "2026-10-01T02:09:42.858Z"
       },
       "jev": {
         "stage": 1,
@@ -4642,17 +4476,103 @@
           }
         ]
       }
+    },
+    {
+      "videoId": "VPMkglnC-IE",
+      "videoUrl": "https://youtube.com/shorts/VPMkglnC-IE",
+      "date": "2026-10-01",
+      "genre": "jev-news",
+      "trial": 2,
+      "title": "【話題のAI特集 Jev入門】Jevの「速さ」、数字の読み方｜2026/10/01 #Shorts",
+      "titleTemplate": "jev",
+      "hashtags": [
+        "AIニュース",
+        "生成AI",
+        "AIモデル",
+        "Jev",
+        "TypeSafe AI",
+        "TypeSafe",
+        "System One",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Jevの「速さ」、数字の読み方"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": "出典: TypeSafe AI・LiteLLM ほか"
+      },
+      "durationSeconds": 50,
+      "coverOffsetMs": 6300,
+      "discovery": {
+        "method": "intro",
+        "description": "「速い」と言う理由 — TypeSafe の主張と第三者の測定",
+        "sources": [
+          "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+          "https://typesafe.ai/",
+          "https://docs.litellm.ai/blog/jev-auto-router-benchmark",
+          "https://thecherrycreeknews.com/jev-typesafe-benchmark-checked-explainer-wave-cherry_creek/"
+        ]
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "17979318410914317",
+        "permalink": null,
+        "views": null,
+        "reach": null,
+        "likes": null,
+        "comments": null,
+        "shares": null,
+        "saved": null,
+        "updatedAt": null
+      },
+      "jev": {
+        "stage": 1,
+        "stageEpisode": 4,
+        "kind": "intro",
+        "topicKey": "intro-speed-claim",
+        "topic": "「速い」と言う理由 — TypeSafe の主張と第三者の測定",
+        "sources": [
+          {
+            "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+            "outlet": "TypeSafe AI",
+            "published_at": "2026-09-15",
+            "role": "reference",
+            "official": true
+          },
+          {
+            "url": "https://typesafe.ai/",
+            "outlet": "TypeSafe AI",
+            "published_at": null,
+            "role": "reference",
+            "official": true
+          },
+          {
+            "url": "https://docs.litellm.ai/blog/jev-auto-router-benchmark",
+            "outlet": "LiteLLM",
+            "published_at": "2026-09-20",
+            "role": "reference",
+            "official": false
+          },
+          {
+            "url": "https://thecherrycreeknews.com/jev-typesafe-benchmark-checked-explainer-wave-cherry_creek/",
+            "outlet": "Cherry Creek News",
+            "published_at": "2026-09-21",
+            "role": "reference",
+            "official": false
+          }
+        ]
+      }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-09-01",
-      "changes": [
-        "standard: 2 avg views (77 videos)",
-        "Day performance: Tue=7, Mon=2, Fri=2, Wed=1, Sat=1, Sun=1, Thu=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-09-02",
       "changes": [
@@ -4870,6 +4790,13 @@
         "Day performance: Mon=1, Tue=1, Thu=1, Fri=1, Sat=1, Sun=1, Wed=1"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-10-01",
+      "changes": [
+        "Day performance: Mon=1, Tue=1, Thu=1, Fri=1, Sat=1, Sun=1, Wed=1"
+      ],
+      "recommendedTemplate": "standard"
     }
   ],
   "account": {
@@ -4900,6 +4827,10 @@
       },
       {
         "date": "2026-09-30",
+        "count": 0
+      },
+      {
+        "date": "2026-10-01",
         "count": 0
       }
     ]
