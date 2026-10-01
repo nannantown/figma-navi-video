@@ -66,3 +66,11 @@ test("real narration: a long sentence splits evenly at a pause point, never insi
   assert.ok(all.includes("高めの数字だと書いています。"), all.join(" / "));
   for (const p of all) assert.doesNotMatch(p, /^(て|た|ます|です)/, p);
 });
+
+test("never a page starting with よう / な (\"JevはChatGPTの / ようなAIより\")", () => {
+  const subs = JSON.parse(readFileSync(new URL("../data/samples/may-subtitles.sample.json", import.meta.url), "utf-8"));
+  const { text, words } = subs["tool-1"];
+  const pages = speechPages(text, words, 24).map((p) => p.pieces.join(""));
+  for (const p of pages) assert.doesNotMatch(p, /^(よう|な)/, pages.join(" / "));
+  assert.ok(pages.some((p) => p.includes("のような")), pages.join(" / "));
+});

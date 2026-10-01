@@ -18,6 +18,7 @@ import { fileURLToPath } from "url";
 import { reportSkip, reportSkipStreak } from "./skip-report.mjs";
 import { loadHistory } from "./history.mjs";
 import { mayCharacterOn } from "./jev.mjs";
+import { renderWithFallback } from "./render-fallback.mjs";
 import {
   ENDING_EXTRA_FRAMES,
   FPS,
@@ -153,17 +154,15 @@ function main() {
   const outputFile = `output/aitools-${dateStr}.mp4`;
   console.log(`\n=== Step 4: Render Video → ${rawFile} ===`);
   const renderCmd = `npx remotion render ${COMPOSITION_ID} "${rawFile}" --props="${propsPath}"`;
-  try {
+  // A broken image or 先輩のメイ's layer must not cost the day's post: one retry without them
+  // (render-fallback.mjs). The cover below uses the props that rendered.
+  const rendered = renderWithFallback(inputProps, (props) => {
+    writeFileSync(propsPath, JSON.stringify(props));
+    if (props !== inputProps && inputProps.tools.some((t) => t.image)) {
+      rmSync(join(rootDir, "public", "tools"), { recursive: true, force: true });
+    }
     run(renderCmd);
-  } catch (err) {
-    // A broken image must not cost the day's post: retry with text-only cards.
-    if (!inputProps.tools.some((t) => t.image)) throw err;
-    console.error(`Render failed (${err.message}) — retrying with text-only cards.`);
-    inputProps.tools = inputProps.tools.map((t) => ({ ...t, image: null }));
-    writeFileSync(propsPath, JSON.stringify(inputProps));
-    rmSync(join(rootDir, "public", "tools"), { recursive: true, force: true });
-    run(renderCmd);
-  }
+  });
 
   // Convert the full-range (pc) frames to limited range (tv) explicitly:
   // `-pix_fmt yuv420p` alone keeps color_range=pc on newer ffmpeg (8.x), which
@@ -179,7 +178,15 @@ function main() {
   const frame = coverFrame(inputProps.audioDurations, inputProps.tools.length);
   const coverFile = `output/aitools-${dateStr}-cover.jpg`;
   console.log(`\n=== Step 4c: Render Cover Image → ${coverFile} (frame ${frame}) ===`);
-  runSafe(`npx remotion still ${COMPOSITION_ID} "${coverFile}" --frame=${frame} --props="${propsPath}"`, "render-cover");
+  // Best effort, as before; a failure with 先輩のメイ is retried once without her.
+  try {
+    renderWithFallback(rendered, (props) => {
+      writeFileSync(propsPath, JSON.stringify(props));
+      run(`npx remotion still ${COMPOSITION_ID} "${coverFile}" --frame=${frame} --props="${propsPath}"`);
+    });
+  } catch (err) {
+    console.error(`render-cover failed (non-blocking): ${err.message}`);
+  }
 
   // Step 5: Post to SNS
   if (snsEnabled) {

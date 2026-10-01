@@ -109,7 +109,8 @@ export function speechPages(text: string, words: Word[], maxChars: number): Spee
 }
 
 const PARTICLE_END = /(は|が|を|に|で|と|も|へ|の|から|より|まで|ので|けど|ては|では|として)\s*$/;
-const BOUND_START = /^(て|た|だ|ます|まし|です|でし|い|う|る|ない|ん|ず|ば|れ|られ|せ|させ)[。、？！]*$/
+// Pieces that only continue the word before them ("書い|て", "の|よう|な"): never start a page with one.
+const BOUND_START = /^(て|た|だ|ます|まし|です|でし|い|う|る|ない|ん|ず|ば|れ|られ|せ|させ|な|よう|ような|ように|ようだ|ようです)[。、？！]*$/
 /** How good a cut between two pieces is (higher = better), in characters of imbalance it is worth. */
 function cutBonus(before: string, after: string): number {
   if (COMMA_END.test(before)) return 8;
