@@ -54,7 +54,7 @@ sh("npx", ["remotion", "ffmpeg", "-y", "-loglevel", "error", ...parts.flatMap((p
 const frameDir = join(out, "may-webp-frames");
 rmSync(frameDir, { recursive: true, force: true });
 mkdirSync(frameDir);
-sh("npx", ["remotion", "ffmpeg", "-y", "-loglevel", "error", "-i", mp4, "-vf", "fps=12,scale=540:-2", join(frameDir, "f%04d.png")]);
+sh("npx", ["remotion", "ffmpeg", "-y", "-loglevel", "error", "-i", mp4, "-vf", "scale=540:-2", "-r", "12", join(frameDir, "f%04d.png")]);
 const frames = readdirSync(frameDir).sort().map((p) => join(frameDir, p));
 sh("magick", ["-delay", "100x1200", ...frames, "-loop", "0", "-quality", "70", join(docs, "may-preview.webp")]);
 const stills = parts.map((p, i) => {
