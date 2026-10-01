@@ -1,0 +1,907 @@
+{
+  "opening": {
+    "text": "その「速さ」の数字、誰が測ったか気にしていますか？",
+    "words": [
+      {
+        "offset": 0.107708,
+        "duration": 0.259625,
+        "text": "その"
+      },
+      {
+        "offset": 0.453833,
+        "duration": 0.307708,
+        "text": "速さ"
+      },
+      {
+        "offset": 0.78075,
+        "duration": 0.096166,
+        "text": "の"
+      },
+      {
+        "offset": 0.886541,
+        "duration": 0.375,
+        "text": "数字"
+      },
+      {
+        "offset": 1.511541,
+        "duration": 0.173083,
+        "text": "誰"
+      },
+      {
+        "offset": 1.69425,
+        "duration": 0.086541,
+        "text": "が"
+      },
+      {
+        "offset": 1.790375,
+        "duration": 0.259625,
+        "text": "測っ"
+      },
+      {
+        "offset": 2.059625,
+        "duration": 0.076916,
+        "text": "た"
+      },
+      {
+        "offset": 2.146166,
+        "duration": 0.096166,
+        "text": "か"
+      },
+      {
+        "offset": 2.251916,
+        "duration": 0.125,
+        "text": "気"
+      },
+      {
+        "offset": 2.386541,
+        "duration": 0.096166,
+        "text": "に"
+      },
+      {
+        "offset": 2.492291,
+        "duration": 0.067291,
+        "text": "し"
+      },
+      {
+        "offset": 2.56925,
+        "duration": 0.048083,
+        "text": "て"
+      },
+      {
+        "offset": 2.626916,
+        "duration": 0.076916,
+        "text": "い"
+      },
+      {
+        "offset": 2.713458,
+        "duration": 0.163458,
+        "text": "ます"
+      },
+      {
+        "offset": 2.886541,
+        "duration": 0.211541,
+        "text": "か"
+      }
+    ]
+  },
+  "tool-1": {
+    "text": "TypeSafeによると、JevはChatGPTのようなAIより40から200倍、トップページの表示では193.6倍速いとされます。",
+    "words": [
+      {
+        "offset": 0.146166,
+        "duration": 0.48075,
+        "text": "TypeSafe"
+      },
+      {
+        "offset": 0.636541,
+        "duration": 0.086541,
+        "text": "に"
+      },
+      {
+        "offset": 0.732708,
+        "duration": 0.173083,
+        "text": "よる"
+      },
+      {
+        "offset": 0.915375,
+        "duration": 0.163458,
+        "text": "と"
+      },
+      {
+        "offset": 1.31925,
+        "duration": 0.278833,
+        "text": "Jev"
+      },
+      {
+        "offset": 1.617291,
+        "duration": 0.163458,
+        "text": "は"
+      },
+      {
+        "offset": 1.81925,
+        "duration": 0.798083,
+        "text": "ChatGPT"
+      },
+      {
+        "offset": 2.626916,
+        "duration": 0.067291,
+        "text": "の"
+      },
+      {
+        "offset": 2.703833,
+        "duration": 0.163458,
+        "text": "よう"
+      },
+      {
+        "offset": 2.876916,
+        "duration": 0.086541,
+        "text": "な"
+      },
+      {
+        "offset": 2.992291,
+        "duration": 0.307708,
+        "text": "AI"
+      },
+      {
+        "offset": 3.309625,
+        "duration": 0.173083,
+        "text": "より"
+      },
+      {
+        "offset": 3.492291,
+        "duration": 1.115375,
+        "text": "40から200倍"
+      },
+      {
+        "offset": 4.740375,
+        "duration": 0.288458,
+        "text": "トップ"
+      },
+      {
+        "offset": 5.038458,
+        "duration": 0.26925,
+        "text": "ページ"
+      },
+      {
+        "offset": 5.317291,
+        "duration": 0.067291,
+        "text": "の"
+      },
+      {
+        "offset": 5.39425,
+        "duration": 0.326916,
+        "text": "表示"
+      },
+      {
+        "offset": 5.73075,
+        "duration": 0.076916,
+        "text": "で"
+      },
+      {
+        "offset": 5.817291,
+        "duration": 0.192291,
+        "text": "は"
+      },
+      {
+        "offset": 6.076916,
+        "duration": 1.403833,
+        "text": "193.6倍"
+      },
+      {
+        "offset": 7.490375,
+        "duration": 0.288458,
+        "text": "速い"
+      },
+      {
+        "offset": 7.788458,
+        "duration": 0.067291,
+        "text": "と"
+      },
+      {
+        "offset": 7.865375,
+        "duration": 0.115375,
+        "text": "さ"
+      },
+      {
+        "offset": 7.990375,
+        "duration": 0.067291,
+        "text": "れ"
+      },
+      {
+        "offset": 8.067291,
+        "duration": 0.317291,
+        "text": "ます"
+      }
+    ]
+  },
+  "tool-2": {
+    "text": "この数字は、同社が用意した課題で、判断1回分の答えが返る時間を比べたものです。同社自身も、実際の効果としては高めの数字だと書いています。",
+    "words": [
+      {
+        "offset": 0.146166,
+        "duration": 0.153833,
+        "text": "この"
+      },
+      {
+        "offset": 0.309625,
+        "duration": 0.307708,
+        "text": "数字"
+      },
+      {
+        "offset": 0.626916,
+        "duration": 0.14425,
+        "text": "は"
+      },
+      {
+        "offset": 0.992291,
+        "duration": 0.278833,
+        "text": "同社"
+      },
+      {
+        "offset": 1.28075,
+        "duration": 0.067291,
+        "text": "が"
+      },
+      {
+        "offset": 1.357708,
+        "duration": 0.307708,
+        "text": "用意"
+      },
+      {
+        "offset": 1.675,
+        "duration": 0.086541,
+        "text": "し"
+      },
+      {
+        "offset": 1.771166,
+        "duration": 0.076916,
+        "text": "た"
+      },
+      {
+        "offset": 1.857708,
+        "duration": 0.26925,
+        "text": "課題"
+      },
+      {
+        "offset": 2.136541,
+        "duration": 0.153833,
+        "text": "で"
+      },
+      {
+        "offset": 2.423083,
+        "duration": 0.375,
+        "text": "判断"
+      },
+      {
+        "offset": 2.807708,
+        "duration": 0.3653749,
+        "text": "1回"
+      },
+      {
+        "offset": 3.182708,
+        "duration": 0.14425,
+        "text": "分"
+      },
+      {
+        "offset": 3.336541,
+        "duration": 0.086541,
+        "text": "の"
+      },
+      {
+        "offset": 3.432708,
+        "duration": 0.259625,
+        "text": "答え"
+      },
+      {
+        "offset": 3.701916,
+        "duration": 0.125,
+        "text": "が"
+      },
+      {
+        "offset": 3.836541,
+        "duration": 0.278833,
+        "text": "返る"
+      },
+      {
+        "offset": 4.125,
+        "duration": 0.278833,
+        "text": "時間"
+      },
+      {
+        "offset": 4.413458,
+        "duration": 0.096166,
+        "text": "を"
+      },
+      {
+        "offset": 4.51925,
+        "duration": 0.259625,
+        "text": "比べ"
+      },
+      {
+        "offset": 4.788458,
+        "duration": 0.086541,
+        "text": "た"
+      },
+      {
+        "offset": 4.884625,
+        "duration": 0.182708,
+        "text": "もの"
+      },
+      {
+        "offset": 5.076916,
+        "duration": 0.278833,
+        "text": "です"
+      },
+      {
+        "offset": 6.038458,
+        "duration": 0.298083,
+        "text": "同社"
+      },
+      {
+        "offset": 6.346166,
+        "duration": 0.298083,
+        "text": "自身"
+      },
+      {
+        "offset": 6.653833,
+        "duration": 0.192291,
+        "text": "も"
+      },
+      {
+        "offset": 7.076916,
+        "duration": 0.365375,
+        "text": "実際"
+      },
+      {
+        "offset": 7.451916,
+        "duration": 0.096166,
+        "text": "の"
+      },
+      {
+        "offset": 7.557708,
+        "duration": 0.259625,
+        "text": "効果"
+      },
+      {
+        "offset": 7.826916,
+        "duration": 0.086541,
+        "text": "と"
+      },
+      {
+        "offset": 7.923083,
+        "duration": 0.086541,
+        "text": "し"
+      },
+      {
+        "offset": 8.01925,
+        "duration": 0.076916,
+        "text": "て"
+      },
+      {
+        "offset": 8.10575,
+        "duration": 0.153833,
+        "text": "は"
+      },
+      {
+        "offset": 8.307708,
+        "duration": 0.288458,
+        "text": "高め"
+      },
+      {
+        "offset": 8.60575,
+        "duration": 0.096166,
+        "text": "の"
+      },
+      {
+        "offset": 8.711541,
+        "duration": 0.288458,
+        "text": "数字"
+      },
+      {
+        "offset": 9.009625,
+        "duration": 0.076916,
+        "text": "だ"
+      },
+      {
+        "offset": 9.096166,
+        "duration": 0.10575,
+        "text": "と"
+      },
+      {
+        "offset": 9.211541,
+        "duration": 0.211541,
+        "text": "書い"
+      },
+      {
+        "offset": 9.432708,
+        "duration": 0.048083,
+        "text": "て"
+      },
+      {
+        "offset": 9.490375,
+        "duration": 0.076916,
+        "text": "い"
+      },
+      {
+        "offset": 9.576916,
+        "duration": 0.288458,
+        "text": "ます"
+      }
+    ]
+  },
+  "tool-3": {
+    "text": "LiteLLMの検証では、小型AIのHaiku 4.5より5.43倍速いという結果でした。Cherry Creek Newsのまとめでは、公開された実測は1.16倍から6倍でした。",
+    "words": [
+      {
+        "offset": 0.107708,
+        "duration": 0.759625,
+        "text": "LiteLLM"
+      },
+      {
+        "offset": 0.876916,
+        "duration": 0.096166,
+        "text": "の"
+      },
+      {
+        "offset": 0.982708,
+        "duration": 0.39425,
+        "text": "検証"
+      },
+      {
+        "offset": 1.386541,
+        "duration": 0.076916,
+        "text": "で"
+      },
+      {
+        "offset": 1.473083,
+        "duration": 0.192291,
+        "text": "は"
+      },
+      {
+        "offset": 1.826916,
+        "duration": 0.259625,
+        "text": "小型"
+      },
+      {
+        "offset": 2.096166,
+        "duration": 0.307708,
+        "text": "AI"
+      },
+      {
+        "offset": 2.413458,
+        "duration": 0.076916,
+        "text": "の"
+      },
+      {
+        "offset": 2.5,
+        "duration": 0.798083,
+        "text": "Haiku 4.5"
+      },
+      {
+        "offset": 3.307708,
+        "duration": 0.23075,
+        "text": "より"
+      },
+      {
+        "offset": 3.596166,
+        "duration": 0.9326669,
+        "text": "5.43倍"
+      },
+      {
+        "offset": 4.538458,
+        "duration": 0.298083,
+        "text": "速い"
+      },
+      {
+        "offset": 4.846166,
+        "duration": 0.067291,
+        "text": "と"
+      },
+      {
+        "offset": 4.923083,
+        "duration": 0.182708,
+        "text": "いう"
+      },
+      {
+        "offset": 5.115375,
+        "duration": 0.259625,
+        "text": "結果"
+      },
+      {
+        "offset": 5.384625,
+        "duration": 0.182708,
+        "text": "でし"
+      },
+      {
+        "offset": 5.576916,
+        "duration": 0.182708,
+        "text": "た"
+      },
+      {
+        "offset": 6.442291,
+        "duration": 0.298083,
+        "text": "Cherry"
+      },
+      {
+        "offset": 6.75,
+        "duration": 0.326916,
+        "text": "Creek"
+      },
+      {
+        "offset": 7.086541,
+        "duration": 0.26925,
+        "text": "News"
+      },
+      {
+        "offset": 7.365375,
+        "duration": 0.365375,
+        "text": "のまとめ"
+      },
+      {
+        "offset": 7.740375,
+        "duration": 0.086541,
+        "text": "で"
+      },
+      {
+        "offset": 7.836541,
+        "duration": 0.173083,
+        "text": "は"
+      },
+      {
+        "offset": 8.240375,
+        "duration": 0.346166,
+        "text": "公開"
+      },
+      {
+        "offset": 8.596166,
+        "duration": 0.086541,
+        "text": "さ"
+      },
+      {
+        "offset": 8.692291,
+        "duration": 0.076916,
+        "text": "れ"
+      },
+      {
+        "offset": 8.778833,
+        "duration": 0.096166,
+        "text": "た"
+      },
+      {
+        "offset": 8.884625,
+        "duration": 0.384625,
+        "text": "実測"
+      },
+      {
+        "offset": 9.278833,
+        "duration": 0.192291,
+        "text": "は"
+      },
+      {
+        "offset": 9.586541,
+        "duration": 0.903833,
+        "text": "1.16倍"
+      },
+      {
+        "offset": 10.5,
+        "duration": 0.173083,
+        "text": "から"
+      },
+      {
+        "offset": 10.682708,
+        "duration": 0.3653749,
+        "text": "6倍"
+      },
+      {
+        "offset": 11.057708,
+        "duration": 0.173083,
+        "text": "でし"
+      },
+      {
+        "offset": 11.240375,
+        "duration": 0.182708,
+        "text": "た"
+      }
+    ]
+  },
+  "tool-4": {
+    "text": "Cherry Creek Newsは、仕組みの1か所だけJevにしても、残りの処理の時間は残ると説明しています。誰が何を測ったかを見るのが大切です。",
+    "words": [
+      {
+        "offset": 0.107708,
+        "duration": 0.298083,
+        "text": "Cherry"
+      },
+      {
+        "offset": 0.415375,
+        "duration": 0.336541,
+        "text": "Creek"
+      },
+      {
+        "offset": 0.761541,
+        "duration": 0.288458,
+        "text": "News"
+      },
+      {
+        "offset": 1.059625,
+        "duration": 0.192291,
+        "text": "は"
+      },
+      {
+        "offset": 1.463458,
+        "duration": 0.278833,
+        "text": "仕組み"
+      },
+      {
+        "offset": 1.751916,
+        "duration": 0.086541,
+        "text": "の"
+      },
+      {
+        "offset": 1.848083,
+        "duration": 0.134625,
+        "text": "1"
+      },
+      {
+        "offset": 2.011541,
+        "duration": 0.086541,
+        "text": "か"
+      },
+      {
+        "offset": 2.107708,
+        "duration": 0.115375,
+        "text": "所"
+      },
+      {
+        "offset": 2.232708,
+        "duration": 0.221166,
+        "text": "だけ"
+      },
+      {
+        "offset": 2.463458,
+        "duration": 0.211541,
+        "text": "Jev"
+      },
+      {
+        "offset": 2.684625,
+        "duration": 0.10575,
+        "text": "に"
+      },
+      {
+        "offset": 2.8,
+        "duration": 0.096166,
+        "text": "し"
+      },
+      {
+        "offset": 2.90575,
+        "duration": 0.076916,
+        "text": "て"
+      },
+      {
+        "offset": 2.992291,
+        "duration": 0.182708,
+        "text": "も"
+      },
+      {
+        "offset": 3.307708,
+        "duration": 0.307708,
+        "text": "残り"
+      },
+      {
+        "offset": 3.625,
+        "duration": 0.086541,
+        "text": "の"
+      },
+      {
+        "offset": 3.721166,
+        "duration": 0.192291,
+        "text": "処理"
+      },
+      {
+        "offset": 3.923083,
+        "duration": 0.086541,
+        "text": "の"
+      },
+      {
+        "offset": 4.01925,
+        "duration": 0.26925,
+        "text": "時間"
+      },
+      {
+        "offset": 4.298083,
+        "duration": 0.10575,
+        "text": "は"
+      },
+      {
+        "offset": 4.432708,
+        "duration": 0.288458,
+        "text": "残る"
+      },
+      {
+        "offset": 4.73075,
+        "duration": 0.076916,
+        "text": "と"
+      },
+      {
+        "offset": 4.817291,
+        "duration": 0.39425,
+        "text": "説明"
+      },
+      {
+        "offset": 5.221166,
+        "duration": 0.076916,
+        "text": "し"
+      },
+      {
+        "offset": 5.307708,
+        "duration": 0.048083,
+        "text": "て"
+      },
+      {
+        "offset": 5.365375,
+        "duration": 0.086541,
+        "text": "い"
+      },
+      {
+        "offset": 5.461541,
+        "duration": 0.278833,
+        "text": "ます"
+      },
+      {
+        "offset": 6.423083,
+        "duration": 0.192291,
+        "text": "誰"
+      },
+      {
+        "offset": 6.625,
+        "duration": 0.115375,
+        "text": "が"
+      },
+      {
+        "offset": 6.75,
+        "duration": 0.201916,
+        "text": "何"
+      },
+      {
+        "offset": 6.961541,
+        "duration": 0.076916,
+        "text": "を"
+      },
+      {
+        "offset": 7.048083,
+        "duration": 0.288458,
+        "text": "測っ"
+      },
+      {
+        "offset": 7.346166,
+        "duration": 0.086541,
+        "text": "た"
+      },
+      {
+        "offset": 7.442291,
+        "duration": 0.076916,
+        "text": "か"
+      },
+      {
+        "offset": 7.528833,
+        "duration": 0.096166,
+        "text": "を"
+      },
+      {
+        "offset": 7.634625,
+        "duration": 0.201916,
+        "text": "見る"
+      },
+      {
+        "offset": 7.846166,
+        "duration": 0.067291,
+        "text": "の"
+      },
+      {
+        "offset": 7.923083,
+        "duration": 0.10575,
+        "text": "が"
+      },
+      {
+        "offset": 8.038458,
+        "duration": 0.375,
+        "text": "大切"
+      },
+      {
+        "offset": 8.423083,
+        "duration": 0.26925,
+        "text": "です"
+      }
+    ]
+  },
+  "ending": {
+    "text": "いま話題の AI モデル Jev の特集でした。保存とフォローをお願いします。",
+    "words": [
+      {
+        "offset": 0.107708,
+        "duration": 0.211541,
+        "text": "いま"
+      },
+      {
+        "offset": 0.328833,
+        "duration": 0.259625,
+        "text": "話題"
+      },
+      {
+        "offset": 0.598083,
+        "duration": 0.057708,
+        "text": "の"
+      },
+      {
+        "offset": 0.665375,
+        "duration": 0.346166,
+        "text": "AI"
+      },
+      {
+        "offset": 1.021166,
+        "duration": 0.298083,
+        "text": "モデル"
+      },
+      {
+        "offset": 1.338458,
+        "duration": 0.240375,
+        "text": "Jev"
+      },
+      {
+        "offset": 1.588458,
+        "duration": 0.086541,
+        "text": "の"
+      },
+      {
+        "offset": 1.684625,
+        "duration": 0.365375,
+        "text": "特集"
+      },
+      {
+        "offset": 2.059625,
+        "duration": 0.173083,
+        "text": "でし"
+      },
+      {
+        "offset": 2.242291,
+        "duration": 0.182708,
+        "text": "た"
+      },
+      {
+        "offset": 3.096166,
+        "duration": 0.298083,
+        "text": "保存"
+      },
+      {
+        "offset": 3.403833,
+        "duration": 0.096166,
+        "text": "と"
+      },
+      {
+        "offset": 3.509625,
+        "duration": 0.240375,
+        "text": "フォロー"
+      },
+      {
+        "offset": 3.759625,
+        "duration": 0.086541,
+        "text": "を"
+      },
+      {
+        "offset": 3.85575,
+        "duration": 0.326916,
+        "text": "お願い"
+      },
+      {
+        "offset": 4.192291,
+        "duration": 0.10575,
+        "text": "し"
+      },
+      {
+        "offset": 4.307708,
+        "duration": 0.288458,
+        "text": "ます"
+      }
+    ]
+  }
+}
