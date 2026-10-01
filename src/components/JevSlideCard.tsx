@@ -16,7 +16,7 @@ function fadeUp(frame: number, start: number, fps: number) {
   return { opacity, transform: `translateY(${y}px)` };
 }
 
-export const JevSlideCard: React.FC<{ slide: JevSlide }> = ({ slide }) => {
+export const JevSlideCard: React.FC<{ slide: JevSlide; bottom?: number }> = ({ slide, bottom = SAFE_BOTTOM }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const glow = interpolate(frame % 150, [0, 75, 150], [0.18, 0.3, 0.18]);
@@ -29,7 +29,7 @@ export const JevSlideCard: React.FC<{ slide: JevSlide }> = ({ slide }) => {
       style={{
         background: COLORS.background,
         fontFamily: FONT_FAMILY,
-        padding: `${SAFE_TOP}px ${SAFE_X}px ${SAFE_BOTTOM}px`,
+        padding: `${SAFE_TOP}px ${SAFE_X}px ${bottom}px`,
         display: "flex",
         flexDirection: "column",
       }}

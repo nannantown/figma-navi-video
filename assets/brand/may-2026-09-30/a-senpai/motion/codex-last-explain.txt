@@ -1,0 +1,16 @@
+Done for pose `explain` using the built-in image generation edit flow.
+
+Created/updated:
+- [explain_closed.png](/Users/kokinaniwa/.openground/projects/ac85a6fd0198/worktrees/ok-codex-1001-153152-cd80edfe0255/figma-navi-video/assets/brand/may-2026-09-30/a-senpai/motion/explain_closed.png): exact copy of base
+- [explain_half.png](/Users/kokinaniwa/.openground/projects/ac85a6fd0198/worktrees/ok-codex-1001-153152-cd80edfe0255/figma-navi-video/assets/brand/may-2026-09-30/a-senpai/motion/explain_half.png)
+- [explain_open.png](/Users/kokinaniwa/.openground/projects/ac85a6fd0198/worktrees/ok-codex-1001-153152-cd80edfe0255/figma-navi-video/assets/brand/may-2026-09-30/a-senpai/motion/explain_open.png)
+- [explain_blink.png](/Users/kokinaniwa/.openground/projects/ac85a6fd0198/worktrees/ok-codex-1001-153152-cd80edfe0255/figma-navi-video/assets/brand/may-2026-09-30/a-senpai/motion/explain_blink.png)
+- [explain.parts.json](/Users/kokinaniwa/.openground/projects/ac85a6fd0198/worktrees/ok-codex-1001-153152-cd80edfe0255/figma-navi-video/assets/brand/may-2026-09-30/a-senpai/motion/explain.parts.json): `{"mouth": [390, 340, 320, 220], "eyes": [290, 245, 445, 235]}`
+- [explain-faces.png](/Users/kokinaniwa/.openground/projects/ac85a6fd0198/worktrees/ok-codex-1001-153152-cd80edfe0255/figma-navi-video/assets/brand/may-2026-09-30/a-senpai/motion/explain-faces.png)
+
+Verification:
+- Size check passed: variants are `1024x1536`; face strip is `4480x1220`.
+- `explain_closed.png` compare vs base: `AE 0`.
+- Outside declared rectangles: all direct crop compares returned `0` for `half`, `open`, and `blink`.
+
+I only changed the `explain` outputs; the other modified/untracked pose files were already present in the worktree.

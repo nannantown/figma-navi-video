@@ -1,0 +1,10 @@
+Redid `surprise_blink.png` only from a fresh image-generation edit of `surprise_base.png`.
+
+I changed the eye composite so the eye area is fully replaced in the center, with only the outer edge feathered. The open-eye ghosting should be gone now. Also updated:
+- `surprise.parts.json` eyes box to `[290, 257, 460, 229]`
+- `surprise-faces.png` regenerated
+
+Verification:
+- `surprise_blink.png` is still `1024x1536`
+- blink diff bbox is `460x229+290+257`
+- `surprise_closed.png` remains exact base copy: `AE=0`

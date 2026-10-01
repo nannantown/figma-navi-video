@@ -3,7 +3,10 @@ import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } fr
 import { ACCENT_GRADIENT, COLORS, FONT_FAMILY, SAFE_BOTTOM, SAFE_TOP, SAFE_X } from "./theme";
 
 /** Save-first CTA: IG saves are the trial's judgement metric. */
-export const Ending: React.FC<{ lines?: string[] }> = ({ lines = ["毎朝、使える新作AIツールを", "1分で紹介しています"] }) => {
+export const Ending: React.FC<{ lines?: string[]; bottom?: number }> = ({
+  lines = ["毎朝、使える新作AIツールを", "1分で紹介しています"],
+  bottom = SAFE_BOTTOM,
+}) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -18,7 +21,7 @@ export const Ending: React.FC<{ lines?: string[] }> = ({ lines = ["毎朝、使�
       style={{
         background: COLORS.background,
         fontFamily: FONT_FAMILY,
-        padding: `${SAFE_TOP}px ${SAFE_X}px ${SAFE_BOTTOM}px`,
+        padding: `${SAFE_TOP}px ${SAFE_X}px ${bottom}px`,
         display: "flex",
         flexDirection: "column",
         alignItems: "center",

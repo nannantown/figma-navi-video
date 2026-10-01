@@ -1,0 +1,18 @@
+Done for pose `point` using the built-in image generation edit flow on `point_base.png`.
+
+Created/updated:
+- [point_half.png](/Users/kokinaniwa/.openground/projects/ac85a6fd0198/worktrees/ok-codex-1001-153152-cd80edfe0255/figma-navi-video/assets/brand/may-2026-09-30/a-senpai/motion/point_half.png)
+- [point_open.png](/Users/kokinaniwa/.openground/projects/ac85a6fd0198/worktrees/ok-codex-1001-153152-cd80edfe0255/figma-navi-video/assets/brand/may-2026-09-30/a-senpai/motion/point_open.png)
+- [point_blink.png](/Users/kokinaniwa/.openground/projects/ac85a6fd0198/worktrees/ok-codex-1001-153152-cd80edfe0255/figma-navi-video/assets/brand/may-2026-09-30/a-senpai/motion/point_blink.png)
+- [point_closed.png](/Users/kokinaniwa/.openground/projects/ac85a6fd0198/worktrees/ok-codex-1001-153152-cd80edfe0255/figma-navi-video/assets/brand/may-2026-09-30/a-senpai/motion/point_closed.png) is an exact base copy
+- [point.parts.json](/Users/kokinaniwa/.openground/projects/ac85a6fd0198/worktrees/ok-codex-1001-153152-cd80edfe0255/figma-navi-video/assets/brand/may-2026-09-30/a-senpai/motion/point.parts.json)
+- [point-faces.png](/Users/kokinaniwa/.openground/projects/ac85a6fd0198/worktrees/ok-codex-1001-153152-cd80edfe0255/figma-navi-video/assets/brand/may-2026-09-30/a-senpai/motion/point-faces.png)
+
+Verification passed:
+- all pose variants are `1024x1536`
+- `point_closed.png` vs base: `AE=0`
+- outside declared mouth rect for half/open: `AE=0`
+- outside declared eyes rect for blink: `AE=0`
+- `point.parts.json`: `{ "mouth": [475, 413, 196, 158], "eyes": [351, 271, 335, 168] }`
+
+I left unrelated existing changes like `nod_*`, `surprise_*`, and `public/` untouched.

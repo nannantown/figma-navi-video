@@ -1,0 +1,17 @@
+Done for pose `nod`.
+
+Created/updated:
+- `nod_closed.png` exact copy of `nod_base.png`
+- `nod_half.png`
+- `nod_open.png`
+- `nod_blink.png`
+- `nod.parts.json`
+- `nod-faces.png`
+
+Verification:
+- `nod_closed.png` vs `nod_base.png`: `AE 0`
+- Outside registered mouth rect for half/open: `outside=0`
+- Outside registered eyes rect for blink: `outside=0`
+- All outputs are `1024x1536`; `nod-faces.png` is `4160x1140`
+
+Used the built-in image generation tool to edit `nod_base.png`, then composited only the generated mouth/eye regions back onto the base.

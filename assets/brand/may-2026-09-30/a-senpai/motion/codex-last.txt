@@ -1,0 +1,14 @@
+Done. Saved in the current folder:
+
+- `explain_base.png`, `point_base.png`, `surprise_base.png`, `nod_base.png`
+- 16 final sprites: `<pose>_{closed,half,open,blink}.png`
+- `parts.json`
+- `contact-sheet.png`
+
+Verification:
+- All 16 sprite files are `1024x1536` PNGs with alpha.
+- `parts.json` parses successfully.
+- `magick compare -metric AE` outside each pose’s mouth/eye boxes is `0` for every variant.
+- `contact-sheet.png` was generated on a mid-grey background with labels.
+
+One note: `python` was unavailable in this environment (`bad CPU type`), so I used `node` for JSON validation instead.

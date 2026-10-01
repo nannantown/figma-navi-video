@@ -28,6 +28,7 @@
   "license": "ISC",
   "dependencies": {
     "@remotion/cli": "^4.0.443",
+    "@remotion/media-utils": "^4.0.447",
     "@remotion/renderer": "^4.0.443",
     "cheerio": "^1.2.0",
     "edge-tts-universal": "^1.4.0",

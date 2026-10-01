@@ -12,7 +12,8 @@ import { ACCENT_GRADIENT, COLORS, FONT_FAMILY, SAFE_BOTTOM, SAFE_TOP, SAFE_X } f
  * day this opening shows the big "Jev" + the feature headline, and the cover is
  * the first slide by the same rule.
  */
-export const Opening: React.FC<{ meta: VideoMeta }> = ({ meta }) => {
+/** `bottom`: bottom padding — larger while 先輩のメイ stands in the bottom-left (May.tsx). */
+export const Opening: React.FC<{ meta: VideoMeta; bottom?: number }> = ({ meta, bottom = SAFE_BOTTOM }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -28,7 +29,7 @@ export const Opening: React.FC<{ meta: VideoMeta }> = ({ meta }) => {
       style={{
         background: COLORS.background,
         fontFamily: FONT_FAMILY,
-        padding: `${SAFE_TOP}px ${SAFE_X}px ${SAFE_BOTTOM}px`,
+        padding: `${SAFE_TOP}px ${SAFE_X}px ${bottom}px`,
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
