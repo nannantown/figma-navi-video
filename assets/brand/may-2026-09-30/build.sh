@@ -8,7 +8,7 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 OPTS=(a-senpai b-shizuku c-aibou)
-AI_ICON=../final/profile-icon.png
+AI_ICON=../ai-icon-2026-09-30/profile-icon.png
 FONT="/System/Library/Fonts/ヒラギノ角ゴシック W6.ttc"
 tmp=$(mktemp -d); trap 'rm -rf "$tmp"' EXIT
 
