@@ -310,6 +310,88 @@
         ],
         "note": "第1段階 1-4。公式ブログ（70ms〜500ms、40〜200倍、実際の効果としては高めの数字との注記）とトップページ（193.6倍）、LiteLLM（09-20、中央値 126.81ms 対 688.40ms で 5.43 倍）、Cherry Creek News（09-21、公開された実測は 1.16〜6 倍、193.6 倍は判断 1 回同士の比較で、仕組みの 1 か所だけ置き換えても全体は同じ比率では速くならない）をその日に開いて確認。WebSearch で見えた eesel・Hyperstack・自社の jaggedness 表の数字は本文を開いていないため使っていない"
       }
+    },
+    {
+      "date": "2026-10-02",
+      "genre": "jev-news",
+      "trial": 2,
+      "stage": 1,
+      "stage_episode": 5,
+      "kind": "intro",
+      "topic_key": "intro-cost-claim",
+      "topic": "料金のしくみ — 入力 100 万トークン 0.042 ドルを計算してみる",
+      "headline": "Jevの料金、計算してみる",
+      "hook": "AIに100万回判断させたら、いくらだと思いますか？",
+      "slides": [
+        {
+          "heading": "払うのは入力だけ",
+          "body": "TypeSafe の案内では、入力100万トークンあたり0.042ドル。出力は無料です。",
+          "claim_source": "TypeSafe の発表",
+          "narration": "トークンは、AIが文章を細かく区切って数える単位です。TypeSafeの案内では、Jevは入力100万トークンで0.042ドル、答えの出力は無料です。"
+        },
+        {
+          "heading": "100万回で42ドル",
+          "body": "1回1000トークンの判断を100万回すると、入力は10億トークン。料金表では42ドルです。",
+          "narration": "計算してみます。1回1000トークンの判断を100万回すると10億トークンで、料金表どおりなら42ドルになります。"
+        },
+        {
+          "heading": "外部の検証での実額",
+          "body": "LiteLLM の検証では、振り分け1回が約0.000032ドル。Haiku 4.5 は約0.00083ドル。",
+          "claim_source": "LiteLLM の検証",
+          "narration": "LiteLLMの検証では、振り分け1回あたりJevは約0.000032ドル、小型AIのHaiku 4.5は約0.00083ドルで、費用は96%少ない結果でした。"
+        },
+        {
+          "heading": "安さの読み方",
+          "body": "「最大444.6倍安い」は同社の主張。新規登録の無料枠は9月28日に停止中。",
+          "claim_source": "TypeSafe の発表",
+          "narration": "TypeSafeによると最大444.6倍安いとされますが、同社はこの値段が続くかは長く見ないと分からないとも書いています。新規登録の無料枠は9月28日から止まっています。"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+          "title": "Introducing System One Models & Jev",
+          "outlet": "TypeSafe AI",
+          "published_at": "2026-09-15",
+          "role": "reference",
+          "official": true
+        },
+        {
+          "url": "https://typesafe.ai/",
+          "title": "TypeSafe AI",
+          "outlet": "TypeSafe AI",
+          "published_at": null,
+          "role": "reference",
+          "official": true
+        },
+        {
+          "url": "https://docs.litellm.ai/blog/jev-auto-router-benchmark",
+          "title": "JEV Classifier: 5.43x as Fast as Haiku, 96% Lower Cost",
+          "outlet": "LiteLLM",
+          "published_at": "2026-09-20",
+          "role": "reference",
+          "official": false
+        },
+        {
+          "url": "https://x.com/typesafeai/status/2104337824292220981",
+          "title": "Get started with Jev. Note that new signups no longer get free credits; we hope to bring these back as soon as possible.",
+          "outlet": "X typesafeai",
+          "published_at": "2026-09-28",
+          "role": "reference",
+          "official": true
+        }
+      ],
+      "research": {
+        "checked": [
+          "https://typesafe.ai/",
+          "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+          "https://docs.litellm.ai/blog/jev-auto-router-benchmark",
+          "https://x.com/typesafeai/status/2104337824292220981",
+          "https://x.com/CompleteSkeptic/status/2104338649999626397",
+          "https://x.com/typesafeai/status/2101786280946499671"
+        ],
+        "note": "第1段階 1-5。公式ブログ（入力 $0.042/MTok、出力 FREE、LLM は入力 $0.20〜$10/MTok・出力は約5倍、444.6倍は自社ワークフロー評価で実際の効果としては高めとの注記、補助で安い可能性を否定できず持続性は長期で示す必要があると記載）とトップページ（$42 per billion、444.6x cheaper、Fable 5.1 比 238 倍安い入力価格）をその日に開いて確認。LiteLLM（09-20）は 240 回で Jev $0.0077・Haiku $0.1985、1回あたり $0.0000321 対 $0.000827、96.118% 減。100万回×1000トークン=10億トークン=42ドルは料金表からの計算。公式 X（09-28）で新規登録の無料クレジット停止を確認（09-21 の「$5 分」の案内は既存の話として使わない）。円換算は為替を確かめていないので書いていない"
+      }
     }
   ]
 }
