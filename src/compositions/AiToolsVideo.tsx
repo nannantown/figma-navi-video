@@ -4,7 +4,8 @@ import { Opening } from "../components/Opening";
 import { ToolCard } from "../components/ToolCard";
 import { Ending } from "../components/Ending";
 import { JevSlideCard } from "../components/JevSlideCard";
-import { May, MayPose, MAY_SAFE_BOTTOM, MAY_SUBTITLE_LEFT } from "../components/May";
+import { May, MayPose } from "../components/May";
+import { MaySpeech } from "../components/MaySpeech";
 import { Subtitle, SubtitleData } from "../components/Subtitle";
 import {
   VideoCard,
@@ -37,9 +38,16 @@ export const AiToolsVideo: React.FC<Props> = ({ tools, meta = defaultMeta, audio
   const sub = (key: string): SubtitleData | undefined => subtitles?.[key] as SubtitleData | undefined;
   // Jev videos only: the pickup tool cards have no room reserved for her.
   const may = mayProp && tools.every((t) => "heading" in t);
-  // While May stands bottom-left: content ends above her head, subtitles sit to her right.
-  const bottom = may ? MAY_SAFE_BOTTOM : undefined;
-  const subPos = may ? { left: MAY_SUBTITLE_LEFT, maxChars: 12 } : {};
+  // The narration's words: May + her speech bubble when she is on, else the usual subtitle band.
+  const voice = (key: string, pose: MayPose) =>
+    may ? (
+      <>
+        <May pose={pose} audio={`audio/${key}.mp3`} />
+        <MaySpeech data={sub(key)} pose={pose} />
+      </>
+    ) : (
+      <Subtitle data={sub(key)} />
+    );
 
   return (
     <AbsoluteFill>
@@ -49,9 +57,8 @@ export const AiToolsVideo: React.FC<Props> = ({ tools, meta = defaultMeta, audio
       <Series>
         {frames.opening > 0 && (
           <Series.Sequence durationInFrames={frames.opening}>
-            <Opening meta={meta} bottom={bottom} />
-            {may && <May pose={mayPoseFor("opening")} audio="audio/opening.mp3" />}
-            <Subtitle data={sub("opening")} {...subPos} />
+            <Opening meta={meta} may={may} />
+            {voice("opening", mayPoseFor("opening"))}
             <Audio src={staticFile("audio/opening.mp3")} volume={1} />
           </Series.Sequence>
         )}
@@ -59,20 +66,18 @@ export const AiToolsVideo: React.FC<Props> = ({ tools, meta = defaultMeta, audio
         {tools.map((tool, i) => (
           <Series.Sequence key={tool.rank} durationInFrames={frames.tools[i] || frames.tools[0]}>
             {"heading" in tool ? (
-              <JevSlideCard slide={tool} bottom={bottom} />
+              <JevSlideCard slide={tool} may={may} />
             ) : (
               <ToolCardWrapper tool={tool} totalTools={tools.length} headline={meta.headline} />
             )}
-            {may && <May pose={mayPoseFor(i)} audio={`audio/tool-${i + 1}.mp3`} />}
-            <Subtitle data={sub(`tool-${i + 1}`)} {...subPos} />
+            {voice(`tool-${i + 1}`, mayPoseFor(i))}
             <Audio src={staticFile(`audio/tool-${i + 1}.mp3`)} volume={1} />
           </Series.Sequence>
         ))}
 
         <Series.Sequence durationInFrames={frames.ending}>
-          <Ending lines={meta.endingLines} bottom={bottom} />
-          {may && <May pose={mayPoseFor("ending")} audio="audio/ending.mp3" />}
-          <Subtitle data={sub("ending")} {...subPos} />
+          <Ending lines={meta.endingLines} may={may} />
+          {voice("ending", mayPoseFor("ending"))}
           <Audio src={staticFile("audio/ending.mp3")} volume={1} />
         </Series.Sequence>
       </Series>

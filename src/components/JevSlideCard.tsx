@@ -2,6 +2,7 @@ import React from "react";
 import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 import { JevSlide } from "../data";
 import { ACCENT_GRADIENT, COLORS, FONT_FAMILY, SAFE_BOTTOM, SAFE_TOP, SAFE_X } from "./theme";
+import { MAY_CONTENT_BOTTOM, MAY_CONTENT_TOP } from "./May";
 
 /**
  * One point of a Jev episode (genre trial #2): header band → heading → body →
@@ -16,7 +17,9 @@ function fadeUp(frame: number, start: number, fps: number) {
   return { opacity, transform: `translateY(${y}px)` };
 }
 
-export const JevSlideCard: React.FC<{ slide: JevSlide; bottom?: number }> = ({ slide, bottom = SAFE_BOTTOM }) => {
+/** `may`: 先輩のメイ stands below (May.tsx) — content moves into y 200..850, body 40 px (worst case
+ *  18-char heading + 64-char body still fits). */
+export const JevSlideCard: React.FC<{ slide: JevSlide; may?: boolean }> = ({ slide, may = false }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const glow = interpolate(frame % 150, [0, 75, 150], [0.18, 0.3, 0.18]);
@@ -29,7 +32,7 @@ export const JevSlideCard: React.FC<{ slide: JevSlide; bottom?: number }> = ({ s
       style={{
         background: COLORS.background,
         fontFamily: FONT_FAMILY,
-        padding: `${SAFE_TOP}px ${SAFE_X}px ${bottom}px`,
+        padding: may ? `${MAY_CONTENT_TOP}px ${SAFE_X}px ${MAY_CONTENT_BOTTOM}px` : `${SAFE_TOP}px ${SAFE_X}px ${SAFE_BOTTOM}px`,
         display: "flex",
         flexDirection: "column",
       }}
@@ -80,10 +83,10 @@ export const JevSlideCard: React.FC<{ slide: JevSlide; bottom?: number }> = ({ s
 
         <div
           style={{
-            marginTop: 40,
+            marginTop: may ? 28 : 40,
             paddingLeft: 28,
             borderLeft: `6px solid ${COLORS.accent}`,
-            fontSize: 46,
+            fontSize: may ? 40 : 46,
             fontWeight: 600,
             color: COLORS.textSub,
             lineHeight: 1.5,
@@ -96,7 +99,7 @@ export const JevSlideCard: React.FC<{ slide: JevSlide; bottom?: number }> = ({ s
         {slide.claimSource && (
           <div
             style={{
-              marginTop: 36,
+              marginTop: may ? 24 : 36,
               alignSelf: "flex-start",
               background: "#FBBF24",
               color: "#1a1204",

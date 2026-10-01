@@ -1,11 +1,12 @@
 import React from "react";
 import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 import { ACCENT_GRADIENT, COLORS, FONT_FAMILY, SAFE_BOTTOM, SAFE_TOP, SAFE_X } from "./theme";
+import { MAY_CONTENT_BOTTOM, MAY_CONTENT_TOP } from "./May";
 
 /** Save-first CTA: IG saves are the trial's judgement metric. */
-export const Ending: React.FC<{ lines?: string[]; bottom?: number }> = ({
+export const Ending: React.FC<{ lines?: string[]; may?: boolean }> = ({
   lines = ["毎朝、使える新作AIツールを", "1分で紹介しています"],
-  bottom = SAFE_BOTTOM,
+  may = false,
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -21,7 +22,8 @@ export const Ending: React.FC<{ lines?: string[]; bottom?: number }> = ({
       style={{
         background: COLORS.background,
         fontFamily: FONT_FAMILY,
-        padding: `${SAFE_TOP}px ${SAFE_X}px ${bottom}px`,
+        // `may`: 先輩のメイ stands below (May.tsx) — content moves into y 200..850.
+        padding: may ? `${MAY_CONTENT_TOP}px ${SAFE_X}px ${MAY_CONTENT_BOTTOM}px` : `${SAFE_TOP}px ${SAFE_X}px ${SAFE_BOTTOM}px`,
         display: "flex",
         flexDirection: "column",
         alignItems: "center",

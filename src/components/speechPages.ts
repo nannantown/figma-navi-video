@@ -57,7 +57,8 @@ export function speechPages(text: string, words: Word[], maxChars: number): Spee
     const paused = prev !== undefined && w.offset - (words[prev].offset + words[prev].duration) >= SENTENCE_PAUSE_SEC;
     if (cur.length && (paused || len(cur) + pieces[i].trim().length > maxChars)) {
       // Too long: cut after the last "、" if that leaves a reasonable first page.
-      const comma = paused ? -1 : cur.findLastIndex((j) => COMMA_END.test(pieces[j]));
+      let comma = -1;
+      if (!paused) for (let k = 0; k < cur.length; k++) if (COMMA_END.test(pieces[cur[k]])) comma = k;
       if (comma >= 0 && comma < cur.length - 1 && len(cur.slice(0, comma + 1)) >= maxChars * 0.4) {
         groups.push(cur.slice(0, comma + 1));
         cur = cur.slice(comma + 1);

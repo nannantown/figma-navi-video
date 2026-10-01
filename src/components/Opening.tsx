@@ -2,6 +2,7 @@ import React from "react";
 import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 import { VideoMeta } from "../data";
 import { ACCENT_GRADIENT, COLORS, FONT_FAMILY, SAFE_BOTTOM, SAFE_TOP, SAFE_X } from "./theme";
+import { MAY_CONTENT_BOTTOM, MAY_CONTENT_TOP } from "./May";
 
 /**
  * ~3 s hook: date → "新作AIツール" + "TOP5" (ranking) or "3選" (pickup) → source.
@@ -12,8 +13,8 @@ import { ACCENT_GRADIENT, COLORS, FONT_FAMILY, SAFE_BOTTOM, SAFE_TOP, SAFE_X } f
  * day this opening shows the big "Jev" + the feature headline, and the cover is
  * the first slide by the same rule.
  */
-/** `bottom`: bottom padding — larger while 先輩のメイ stands in the bottom-left (May.tsx). */
-export const Opening: React.FC<{ meta: VideoMeta; bottom?: number }> = ({ meta, bottom = SAFE_BOTTOM }) => {
+/** `may`: 先輩のメイ stands below (May.tsx) — content moves into y 200..850 and steps down in size. */
+export const Opening: React.FC<{ meta: VideoMeta; may?: boolean }> = ({ meta, may = false }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -29,7 +30,7 @@ export const Opening: React.FC<{ meta: VideoMeta; bottom?: number }> = ({ meta, 
       style={{
         background: COLORS.background,
         fontFamily: FONT_FAMILY,
-        padding: `${SAFE_TOP}px ${SAFE_X}px ${bottom}px`,
+        padding: may ? `${MAY_CONTENT_TOP}px ${SAFE_X}px ${MAY_CONTENT_BOTTOM}px` : `${SAFE_TOP}px ${SAFE_X}px ${SAFE_BOTTOM}px`,
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -58,7 +59,7 @@ export const Opening: React.FC<{ meta: VideoMeta; bottom?: number }> = ({ meta, 
           transform: `translateY(${titleY}px)`,
           marginTop: 28,
           // A Jev headline (up to 24 chars) steps down to stay within 3 lines.
-          fontSize: Array.from(meta.kicker ?? "").length > 10 ? 84 : 112,
+          fontSize: Array.from(meta.kicker ?? "").length > 10 ? (may ? 76 : 84) : may ? 100 : 112,
           fontWeight: 900,
           color: COLORS.text,
           lineHeight: Array.from(meta.kicker ?? "").length > 10 ? 1.18 : 1.05,
@@ -73,7 +74,7 @@ export const Opening: React.FC<{ meta: VideoMeta; bottom?: number }> = ({ meta, 
           opacity: topOpacity,
           transform: `scale(${topScale})`,
           transformOrigin: "left center",
-          fontSize: 230,
+          fontSize: may ? 160 : 230,
           fontWeight: 900,
           lineHeight: 1,
           letterSpacing: "-6px",

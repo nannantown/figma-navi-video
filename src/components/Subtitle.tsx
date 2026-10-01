@@ -14,17 +14,13 @@ export interface SubtitleData {
 
 interface Props {
   data?: SubtitleData;
-  /** Left edge of the band. Moves right while 先輩のメイ stands in the bottom-left (May.tsx). */
-  left?: number;
-  /** Characters per subtitle line; fewer when the band is narrower. */
-  maxChars?: number;
 }
 
 /**
  * Animated subtitle overlay synced with TTS word boundaries.
  * Displays text at the bottom with word-by-word highlight animation.
  */
-export const Subtitle: React.FC<Props> = ({ data, left = 120, maxChars = 18 }) => {
+export const Subtitle: React.FC<Props> = ({ data }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -33,7 +29,7 @@ export const Subtitle: React.FC<Props> = ({ data, left = 120, maxChars = 18 }) =
   const currentTime = frame / fps;
 
   // Group words into lines (~15 chars per line for mobile readability)
-  const lines = groupIntoLines(data.words, maxChars);
+  const lines = groupIntoLines(data.words, 18);
 
   // Find which line group is currently active
   const activeLineIdx = lines.findIndex((line) => {
@@ -63,7 +59,7 @@ export const Subtitle: React.FC<Props> = ({ data, left = 120, maxChars = 18 }) =
         bottom: 340,
         // Symmetric horizontal safe area matching ProjectCard padding,
         // clearing YT Shorts action buttons (~140px on the right).
-        left,
+        left: 120,
         right: 140,
         display: "flex",
         justifyContent: "center",
