@@ -794,6 +794,15 @@ export function readContentFormat(root = rootDir, env = process.env) {
   return format;
 }
 
+/**
+ * 先輩のメイ on the video (src/components/May.tsx): only when the repo variable
+ * MAY_CHARACTER is "on" and the video is a Jev episode. Unset / anything else = off,
+ * so a typo can never stop the morning post — it just leaves her out.
+ */
+export function mayCharacterOn(meta, env = process.env) {
+  return String(env.MAY_CHARACTER || "").trim().toLowerCase() === "on" && meta?.mode === "jev";
+}
+
 export function resolveEpisodesPath(root = rootDir, env = process.env) {
   const p = env.JEV_EPISODES_PATH || EPISODES_PATH;
   return isAbsolute(p) ? p : join(root, p);

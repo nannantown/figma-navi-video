@@ -29,3 +29,15 @@ test("blinks are short, regular, the same on every render and differ per scene",
   assert.deepEqual(frames, run("audio/tool-1.mp3"));
   assert.notDeepEqual(frames, run("audio/tool-2.mp3"));
 });
+
+test("the switch: May only when MAY_CHARACTER=on and the video is a Jev episode", async () => {
+  const { mayCharacterOn } = await import("./jev.mjs");
+  const jev = { mode: "jev" };
+  assert.equal(mayCharacterOn(jev, {}), false, "unset = off (the default)");
+  assert.equal(mayCharacterOn(jev, { MAY_CHARACTER: "" }), false);
+  assert.equal(mayCharacterOn(jev, { MAY_CHARACTER: "off" }), false);
+  assert.equal(mayCharacterOn(jev, { MAY_CHARACTER: "yes" }), false, "a typo leaves her out, never fails");
+  assert.equal(mayCharacterOn(jev, { MAY_CHARACTER: " On " }), true);
+  assert.equal(mayCharacterOn({ mode: "pickup" }, { MAY_CHARACTER: "on" }), false, "pickup cards have no room for her");
+  assert.equal(mayCharacterOn(undefined, { MAY_CHARACTER: "on" }), false);
+});

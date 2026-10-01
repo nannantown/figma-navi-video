@@ -81,6 +81,9 @@ jobs:
           # ALLOW_SKIP_STREAK_UNTIL to a YYYY-MM-DD date to acknowledge a
           # genuinely quiet stretch (a long holiday); it expires by itself.
           ALLOW_SKIP_STREAK_UNTIL: ${{ vars.ALLOW_SKIP_STREAK_UNTIL }}
+          # 先輩のメイ on Jev videos: repo variable MAY_CHARACTER = "on".
+          # Unset (default) = off = the video looks as it did before.
+          MAY_CHARACTER: ${{ vars.MAY_CHARACTER }}
           # Platform credentials only reach production runs; a verification
           # run cannot post even if a branch's pipeline ignored DRY_RUN.
           # YouTube

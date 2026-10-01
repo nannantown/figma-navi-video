@@ -17,6 +17,7 @@ import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { reportSkip, reportSkipStreak } from "./skip-report.mjs";
 import { loadHistory } from "./history.mjs";
+import { mayCharacterOn } from "./jev.mjs";
 import {
   ENDING_EXTRA_FRAMES,
   FPS,
@@ -138,7 +139,9 @@ function main() {
     meta: videoData.meta,
     audioDurations: readJson("audio-durations.json"),
     subtitles: readJson("subtitles.json"),
+    may: mayCharacterOn(videoData.meta),
   };
+  console.log(`先輩のメイ: ${inputProps.may ? "on" : "off"} (repo variable MAY_CHARACTER)`);
   const propsPath = join(outputDir, "input-props.json");
   writeFileSync(propsPath, JSON.stringify(inputProps));
   console.log(`Input props → ${propsPath}`);
