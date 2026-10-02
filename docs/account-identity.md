@@ -17,7 +17,7 @@
 |---|---|
 | 名前 | **AI Ground**（読み: エーアイ グラウンド）。オーナー「AIルゼノはさすがによみにくくない？」→ AI Ground の確認結果を見て「はいそれでいいです」 |
 | 表示名（IG と YouTube で同じ） | **`AI Ground｜毎朝1分のAIニュース`**（21 字）。「AI Ground」だけだと既存の同名と見分けにくいので、ひとことを付ける |
-| @（IG・YouTube） | **`ai_ground`**。予備は ② `ai_ground_jp` ③ `ai_ground_daily`。YouTube は今の `@hal-ai-9000` を残す選択もある（手順書 0 章の表） |
+| @（IG・YouTube） | **`ai_ground`** → **最終: IG は `ai_ground_daily`（2026-10-02 設定。`ai_ground` は取れず）**、YouTube は未変更。予備は ② `ai_ground_jp` ③ `ai_ground_daily`。YouTube は今の `@hal-ai-9000` を残す選択もある（手順書 0 章の表） |
 | プロフィール写真 | **先輩のメイの顔**（オーナー「先輩の顔にしましょう」）。`assets/brand/final/profile-icon.png`（1024×1024 の PNG） |
 | 案内役 | **メイ（A 先輩のメイ）**（オーナー「先輩でいこう」）。頼れる先輩編集者の AI 案内役。黒のボブ・オレンジの丸い耳飾り。動画に出すのは別カード |
 

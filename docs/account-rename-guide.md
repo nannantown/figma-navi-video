@@ -1,14 +1,15 @@
 # 名前・@・プロフィール写真を変える手順書（Instagram・YouTube／スマホで操作）
 
-> **【最終版】（2026-10-01）** 名前 **AI Ground**・@ **`ai_ground`**・プロフィール写真 **先輩のメイの顔**（2026-09-30〜10-01 オーナー決定）。
-> 設定を変えるのはオーナー。作業した worker はどちらにもログインしておらず、設定は何も変えていない。
+> **【最終版】（2026-10-01）** 名前 **AI Ground**・@ **`ai_ground`**（→ IG は取れず最終 `ai_ground_daily`、下の設定状況）・プロフィール写真 **先輩のメイの顔**（2026-09-30〜10-01 オーナー決定）。
+> **【設定状況（2026-10-02）】Instagram はオーナーが @ [`ai_ground_daily`](https://www.instagram.com/ai_ground_daily/) で設定済み**（`ai_ground` は他の人が使っていて取れなかった）。表示名・写真・自己紹介も変更済み（[account-identity.md](account-identity.md) の先頭）。**YouTube はまだ変えていない**（`@hal-ai-9000`・「HAL- AI情報カフェ」のまま）。
+> 設定を変えるのはオーナー。作業した worker はどちらにもログインしていない。
 
 **変えるもの**
 
 | 何 | 新しい値 |
 |---|---|
 | 表示名（IG と YouTube で同じ） | **`AI Ground｜毎朝1分のAIニュース`**（21 字）。下の「長くて入らないとき」も参照 |
-| Instagram のユーザーネーム | **`ai_ground`**（取れないときは ② `ai_ground_jp` ③ `ai_ground_daily`） |
+| Instagram のユーザーネーム | **`ai_ground_daily`（2026-10-02 設定済み）**。第 1 候補の `ai_ground` は取れなかった（当初の候補: `ai_ground` → ② `ai_ground_jp` → ③ `ai_ground_daily`） |
 | YouTube のハンドル | **今の `@hal-ai-9000` を残すか、`@ai_ground` に変えるかをオーナーが決める**（0 章の 3） |
 | プロフィール写真 | **先輩のメイの顔**（`assets/brand/final/profile-icon.png`・1024×1024 の PNG） |
 
@@ -80,6 +81,7 @@
 3. **プロフィール写真**: ［プロフィールを編集］の画面で［写真やアバターを編集］→ 写真の取り込み元（写真アプリ）を選び、入れておいた先輩のメイの画像を選ぶ（ここの「アバター」は Instagram にもともとある別の機能なので選ばない。**写真を選ぶ**）→ 丸い枠の中に顔とオレンジの耳飾りが入っていることを確かめる →［完了］。[^ig-photo]
 4. **自己紹介（任意）**: 2026-09-23 に「プロフィール文は変えない」と決めているので、変えるならその例外としてオーナーが決める。変える場合の下書き（`／` は改行。特集の名前「Jev」は入れない = 特集ごとに書き換えないため）:
    - `話題のAIを、毎朝1分で。／案内役はメイ。何ができて、どう使えばいいかを短く紹介。／見返せるように保存しておいてください。`
+   - （2026-10-02 に AI Ground への改名とあわせて変更済み。実際に設定した文は [account-identity.md](account-identity.md) の先頭）
 
 [^ig-edit]: Instagram ヘルプセンター「Instagramのプロフィール情報を変更する方法」 https://www.facebook.com/help/instagram/583107688369069?locale=ja_JP&cms_platform=iphone-app （iPhone アプリの手順。Android は `cms_platform=android-app`。2026-09-30 確認。使える文字や名前の変更回数の制限は、このページには書かれていない）
 [^ig-chars]: Instagram ヘルプセンター https://www.facebook.com/help/instagram/513717858639392?locale=ja_JP （ユーザーネームに「ピリオド、数字、アンダーバー」を足す例。文字数の上限は公式では確認できず。2026-09-30 確認）
