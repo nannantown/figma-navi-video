@@ -2,61 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "xv6T7bGBNCk",
-      "videoUrl": "https://youtube.com/shorts/xv6T7bGBNCk",
-      "date": "2026-07-03",
-      "title": "【デザインニュース】日本のスタジオが Awwwards SOTD 受賞、黒 1 色勝負に駆け出しが学ぶ制約設計｜2026/07/03 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 43,
-      "discovery": {
-        "method": "product-launches",
-        "description": "Awwwards Sites of the Day リストを 6/28-7/2 で横断し、日本の Laugh Mind Co. + Utsubo による『Ivress Spin A Tale』(6/29 受賞) を発見。CSS Design Awards SOTD にも別途受賞、5 月には FWA of the Month 獲得と多面的評価済み。使う色は #000000 の黒 1 色のみ、WebGL・3D 演出・ストーリーテリングで勝負した設計を、JP audience に届く『日本発の国際受賞』ロールモデル題材として product-launches × 柱⑤ ポートフォリオ事例で抽出。method 選定 (Friday weekday news 帯): product-launches は直近 14 日で 1/13 = 7.7% と target 20% に対し著しく不足、TOP1 method 実績 (4/29 Magic Patterns 485 views・4/26 Ashley Brooke 249 views) の再現性を狙う Exploit。6/28 Ten Years Away 以来 5 日空き、直近 2 日 (7/2 figma-community, 7/1 news-en) と重複なし、7 日 2 回到達ガード対象外。official-src (直近 14 日 4/13 = 31% 過剰使用) と news-en 依存の解消も兼ねる。柱⑤ (直近 14 日 1/13 = 7.7%、target 10% 未達) を埋める最大の運用ギャップ補正。NG パターン回避: (a) AI=補助輪フレーム維持 — 制約設計は人間の判断で AI 生成の色数暴発を抑える文脈、(b) 仕事を奪う NG 非該当、(c) freshness_hours=96 で 168 NG ライン余裕、(d) 出典 5 ソースで multi-source confirm、(e) 駆け出しの『多色に頼りたくなる誘惑を絞る勇気』という具体行動指針で着地",
-        "sources": [
-          "https://www.awwwards.com/sites/ivress-spin-a-tale",
-          "https://www.awwwards.com/inspiration/spin-a-tale-ivress-spin-a-tale",
-          "https://www.awwwards.com/LaughMind/",
-          "https://www.cssdesignawards.com/sites/ivress-spin-a-tale/49279/",
-          "https://www.awwwards.com/websites/sites_of_the_day/"
-        ],
-        "query": "Awwwards Site of the Day June 29 2026 Ivress Spin A Tale Laugh Mind Utsubo Japan studio WebGL storytelling",
-        "freshness_hours": 96
-      },
-      "stats": {
-        "views": 1,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-07-16T00:09:52.224Z"
-      },
-      "instagram": {
-        "mediaId": "17997849173972296",
-        "permalink": "https://www.instagram.com/reel/DaT3ZePDI6q/",
-        "views": 5,
-        "reach": 5,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "Ne8lkt6W9Go",
       "videoUrl": "https://youtube.com/shorts/Ne8lkt6W9Go",
       "date": "2026-07-04",
@@ -3973,7 +3918,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-01T02:09:42.858Z"
+        "updatedAt": "2026-10-02T02:16:02.750Z"
       },
       "instagram": {
         "mediaId": "18158121448496612",
@@ -3984,7 +3929,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-01T02:09:42.858Z"
+        "updatedAt": "2026-10-02T02:16:02.751Z"
       }
     },
     {
@@ -4077,7 +4022,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-01T02:09:42.858Z"
+        "updatedAt": "2026-10-02T02:16:02.750Z"
       },
       "instagram": {
         "mediaId": "18115515520805015",
@@ -4088,7 +4033,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-01T02:09:42.858Z"
+        "updatedAt": "2026-10-02T02:16:02.751Z"
       }
     },
     {
@@ -4182,7 +4127,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-01T02:09:42.858Z"
+        "updatedAt": "2026-10-02T02:16:02.750Z"
       },
       "instagram": {
         "mediaId": "18129185785785737",
@@ -4193,7 +4138,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-01T02:09:42.858Z"
+        "updatedAt": "2026-10-02T02:16:02.751Z"
       }
     },
     {
@@ -4239,7 +4184,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-01T02:09:42.858Z"
+        "updatedAt": "2026-10-02T02:16:02.750Z"
       },
       "instagram": {
         "mediaId": "18128502364772913",
@@ -4250,7 +4195,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-01T02:09:42.858Z"
+        "updatedAt": "2026-10-02T02:16:02.751Z"
       },
       "jev": {
         "stage": 1,
@@ -4339,7 +4284,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-01T02:09:42.858Z"
+        "updatedAt": "2026-10-02T02:16:02.750Z"
       },
       "instagram": {
         "mediaId": "18433923538178120",
@@ -4350,7 +4295,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-01T02:09:42.858Z"
+        "updatedAt": "2026-10-02T02:16:02.751Z"
       },
       "jev": {
         "stage": 1,
@@ -4426,7 +4371,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-01T02:09:42.858Z"
+        "updatedAt": "2026-10-02T02:16:02.750Z"
       },
       "instagram": {
         "mediaId": "18116926882958766",
@@ -4437,7 +4382,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-01T02:09:42.858Z"
+        "updatedAt": "2026-10-02T02:16:02.751Z"
       },
       "jev": {
         "stage": 1,
@@ -4520,18 +4465,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-10-02T02:16:02.750Z"
       },
       "instagram": {
         "mediaId": "17979318410914317",
-        "permalink": null,
-        "views": null,
-        "reach": null,
-        "likes": null,
-        "comments": null,
-        "shares": null,
-        "saved": null,
-        "updatedAt": null
+        "permalink": "https://www.instagram.com/reel/Dd7zxuHm98z/",
+        "views": 4,
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-10-02T02:16:02.751Z"
       },
       "jev": {
         "stage": 1,
@@ -4570,17 +4515,93 @@
           }
         ]
       }
+    },
+    {
+      "videoId": "XC4IAXwbBz4",
+      "videoUrl": "https://youtube.com/shorts/XC4IAXwbBz4",
+      "date": "2026-10-02",
+      "genre": "jev-news",
+      "trial": 2,
+      "title": "【話題のAI特集 Jev入門】Jevの料金、計算してみる｜2026/10/02 #Shorts",
+      "titleTemplate": "jev",
+      "hashtags": [
+        "AIニュース",
+        "生成AI",
+        "AIモデル",
+        "Jev",
+        "TypeSafe AI",
+        "TypeSafe",
+        "System One",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Jevの料金、計算してみる"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": "出典: TypeSafe AI・LiteLLM ほか"
+      },
+      "durationSeconds": 53,
+      "coverOffsetMs": 6400,
+      "discovery": {
+        "method": "intro",
+        "description": "料金のしくみ — 入力 100 万トークン 0.042 ドルを計算してみる",
+        "sources": [
+          "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+          "https://typesafe.ai/",
+          "https://docs.litellm.ai/blog/jev-auto-router-benchmark",
+          "https://x.com/typesafeai/status/2104337824292220981"
+        ]
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": null,
+      "jev": {
+        "stage": 1,
+        "stageEpisode": 5,
+        "kind": "intro",
+        "topicKey": "intro-cost-claim",
+        "topic": "料金のしくみ — 入力 100 万トークン 0.042 ドルを計算してみる",
+        "sources": [
+          {
+            "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+            "outlet": "TypeSafe AI",
+            "published_at": "2026-09-15",
+            "role": "reference",
+            "official": true
+          },
+          {
+            "url": "https://typesafe.ai/",
+            "outlet": "TypeSafe AI",
+            "published_at": null,
+            "role": "reference",
+            "official": true
+          },
+          {
+            "url": "https://docs.litellm.ai/blog/jev-auto-router-benchmark",
+            "outlet": "LiteLLM",
+            "published_at": "2026-09-20",
+            "role": "reference",
+            "official": false
+          },
+          {
+            "url": "https://x.com/typesafeai/status/2104337824292220981",
+            "outlet": "X typesafeai",
+            "published_at": "2026-09-28",
+            "role": "reference",
+            "official": true
+          }
+        ]
+      }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-09-02",
-      "changes": [
-        "standard: 2 avg views (76 videos)",
-        "Day performance: Tue=3, Mon=2, Fri=2, Wed=1, Sat=1, Sun=1, Thu=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-09-03",
       "changes": [
@@ -4797,6 +4818,13 @@
         "Day performance: Mon=1, Tue=1, Thu=1, Fri=1, Sat=1, Sun=1, Wed=1"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-10-02",
+      "changes": [
+        "Day performance: Fri=1, Sat=1, Sun=1, Mon=1, Tue=1, Wed=1, Thu=1"
+      ],
+      "recommendedTemplate": "standard"
     }
   ],
   "account": {
@@ -4831,6 +4859,10 @@
       },
       {
         "date": "2026-10-01",
+        "count": 0
+      },
+      {
+        "date": "2026-10-02",
         "count": 0
       }
     ]
