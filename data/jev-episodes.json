@@ -392,6 +392,85 @@
         ],
         "note": "第1段階 1-5。公式ブログ（入力 $0.042/MTok、出力 FREE、LLM は入力 $0.20〜$10/MTok・出力は約5倍、444.6倍は自社ワークフロー評価で実際の効果としては高めとの注記、補助で安い可能性を否定できず持続性は長期で示す必要があると記載）とトップページ（$42 per billion、444.6x cheaper、Fable 5.1 比 238 倍安い入力価格）をその日に開いて確認。LiteLLM（09-20）は 240 回で Jev $0.0077・Haiku $0.1985、1回あたり $0.0000321 対 $0.000827、96.118% 減。100万回×1000トークン=10億トークン=42ドルは料金表からの計算。公式 X（09-28）で新規登録の無料クレジット停止を確認（09-21 の「$5 分」の案内は既存の話として使わない）。円換算は為替を確かめていないので書いていない"
       }
+    },
+    {
+      "date": "2026-10-03",
+      "genre": "jev-news",
+      "trial": 2,
+      "stage": 1,
+      "stage_episode": 6,
+      "kind": "intro",
+      "topic_key": "intro-no-hallucination-claim",
+      "topic": "「ハルシネーションしない」の意味と限界",
+      "headline": "Jevの答えの「正しさ」の読み方",
+      "hook": "形が正しい答えなら、中身も正しいと思いますか？",
+      "slides": [
+        {
+          "heading": "会社の説明",
+          "body": "TypeSafe は、Jev は作り話も型エラーも数学的に起こさないと説明しています。",
+          "claim_source": "TypeSafe の発表",
+          "narration": "ハルシネーションとは、AIがもっともらしい作り話をすることです。TypeSafeは、Jevはハルシネーションも型エラーも起こさないと説明しています。"
+        },
+        {
+          "heading": "守られるのは「形」",
+          "body": "答えは必ず、先に決めた選択肢や点数の形で返ります。文章は作りません。",
+          "narration": "Jevの答えは、必ず先に決めた選択肢や点数の形で返ります。文章を作らないので、用意していない答えが出てこない、という意味です。"
+        },
+        {
+          "heading": "選び間違いはある",
+          "body": "The Register は、形が正しくても誤った選択肢を返し得ると指摘しています。",
+          "narration": "ただしThe Registerは、形が正しくても、間違った選択肢を選ぶことはあり得ると指摘しています。TypeSafe自身も、数を数えることや日付の比較は苦手だと書いています。"
+        },
+        {
+          "heading": "確信度で見分ける",
+          "body": "公式ドキュメントは、確信度が低い答えは人に回すよう勧めています。",
+          "narration": "そこで役立つのが確信度です。TypeSafeのドキュメントは、確信度が低い答えは自動で使わず、人の確認に回すよう勧めています。"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+          "title": "Introducing System One Models & Jev",
+          "outlet": "TypeSafe AI",
+          "published_at": "2026-09-15",
+          "role": "reference",
+          "official": true
+        },
+        {
+          "url": "https://www.theregister.com/ai-and-ml/2026/09/16/typesafe-ai-debuts-model-for-machines-that-plays-doom/5296711",
+          "title": "TypeSafe AI debuts model for machines that plays Doom",
+          "outlet": "The Register",
+          "published_at": "2026-09-16",
+          "role": "reference",
+          "official": false
+        },
+        {
+          "url": "https://docs.typesafe.ai/model-jaggedness/jev-1.13",
+          "title": "Jev 1.13 jaggedness",
+          "outlet": "TypeSafe AI",
+          "published_at": "2026-09-17",
+          "role": "reference",
+          "official": true
+        },
+        {
+          "url": "https://docs.typesafe.ai/confidence",
+          "title": "Confidence",
+          "outlet": "TypeSafe AI",
+          "published_at": null,
+          "role": "reference",
+          "official": true
+        }
+      ],
+      "research": {
+        "checked": [
+          "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+          "https://www.theregister.com/ai-and-ml/2026/09/16/typesafe-ai-debuts-model-for-machines-that-plays-doom/5296711",
+          "https://docs.typesafe.ai/llms.txt",
+          "https://docs.typesafe.ai/confidence.md",
+          "https://docs.typesafe.ai/model-jaggedness/jev-1.13.md"
+        ],
+        "note": "公式ブログは「型エラーは数学的に不可能」「ハルシネーション・型エラーの数値は実測ではない」と明記。The Register は確率つきの構造化出力でも誤りはあり得ると指摘。公式の Confidence ページは低確信度の答えを人に回す運用を推奨。jev-1.13 jaggedness は 2026-10-02 に再確認済み。X は fetchedAt 2026-10-02T22:21Z（今朝）で公式の取得エラーなし"
+      }
     }
   ]
 }
