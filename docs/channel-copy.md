@@ -117,7 +117,9 @@ Product Hunt の新作から、仕事で使えるものを毎朝厳選
 ※ 本チャンネルは Product Hunt の公式チャンネルではありません。紹介の順番は Product Hunt の順位ではありません。
 ```
 
-### アカウント名（2026-09-16 オーナー決定: 変えない）
+### アカウント名（2026-09-16 オーナー決定: 変えない → 2026-10-02 にオーナーが AI Ground へ改名）
+
+> **2026-10-02 更新**: オーナーが IG・YouTube とも「AI Ground」へ改名し、YouTube の説明文も置き換えた（YouTube: [AI Ground | 毎朝1分のAIニュース](https://www.youtube.com/@ai_ground_daily)、旧「HAL- AI情報カフェ」`@hal-ai-9000`）。現在の値は [account-identity.md](account-identity.md) の先頭。下は 2026-09-16 時点の決定の記録。
 
 - **YouTube チャンネル名「HAL- AI情報カフェ」(@hal-ai-9000) はそのまま使う**。Figma 色がなく AI 汎用の名前なので、新ジャンルでも矛盾しないため（2026-09-16 オーナー回答）。
 - **IG のアカウント名も変えない**。差し替えるのは上の「プロフィール・チャンネル説明文の案」の文章だけで、**変更操作はオーナーが YouTube Studio / Instagram アプリで行う**。

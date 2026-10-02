@@ -1,7 +1,7 @@
 # 名前・@・プロフィール写真を変える手順書（Instagram・YouTube／スマホで操作）
 
 > **【最終版】（2026-10-01）** 名前 **AI Ground**・@ **`ai_ground`**（→ IG は取れず最終 `ai_ground_daily`、下の設定状況）・プロフィール写真 **先輩のメイの顔**（2026-09-30〜10-01 オーナー決定）。
-> **【設定状況（2026-10-02）】Instagram はオーナーが @ [`ai_ground_daily`](https://www.instagram.com/ai_ground_daily/) で設定済み**（`ai_ground` は他の人が使っていて取れなかった）。表示名・写真・自己紹介も変更済み（[account-identity.md](account-identity.md) の先頭）。**YouTube はまだ変えていない**（`@hal-ai-9000`・「HAL- AI情報カフェ」のまま）。
+> **【設定状況（2026-10-02）】Instagram はオーナーが @ [`ai_ground_daily`](https://www.instagram.com/ai_ground_daily/) で設定済み**（`ai_ground` は他の人が使っていて取れなかった）。表示名・写真・自己紹介も変更済み（[account-identity.md](account-identity.md) の先頭）。**YouTube も 2026-10-02 にオーナーが変更済み**（@ [`ai_ground_daily`](https://www.youtube.com/@ai_ground_daily)・名前「AI Ground | 毎朝1分のAIニュース」（半角 `|`）・写真・説明文。下の「変えた結果」）。
 > 設定を変えるのはオーナー。作業した worker はどちらにもログインしていない。
 
 **変えるもの**
@@ -10,7 +10,7 @@
 |---|---|
 | 表示名（IG と YouTube で同じ） | **`AI Ground｜毎朝1分のAIニュース`**（21 字）。下の「長くて入らないとき」も参照 |
 | Instagram のユーザーネーム | **`ai_ground_daily`（2026-10-02 設定済み）**。第 1 候補の `ai_ground` は取れなかった（当初の候補: `ai_ground` → ② `ai_ground_jp` → ③ `ai_ground_daily`） |
-| YouTube のハンドル | **今の `@hal-ai-9000` を残すか、`@ai_ground` に変えるかをオーナーが決める**（0 章の 3） |
+| YouTube のハンドル | **`ai_ground_daily`（2026-10-02 設定済み。IG とそろえた）**。当初は「`@hal-ai-9000` を残すか `@ai_ground` に変えるか」をオーナーが決める形だった（0 章の 3） |
 | プロフィール写真 | **先輩のメイの顔**（`assets/brand/final/profile-icon.png`・1024×1024 の PNG） |
 
 - 決めたこと・確認結果・やめた名前: [account-identity.md](account-identity.md) の先頭
@@ -128,17 +128,18 @@ YouTube の @: 残した（@hal-ai-9000） / ai_ground / ai_ground_jp / ai_groun
 写真: 先輩のメイの顔（IG ○/× ・ YouTube ○/×）　　IG の自己紹介: 変えた/変えていない
 ```
 
-### 変えた結果（2026-10-02 記入・Instagram の分だけ）
+### 変えた結果（2026-10-02 記入・Instagram と YouTube）
 
 ```
 名前を変えました（変えた日: 2026-10-02）
 表示名: AI Ground｜毎朝1分のAIニュース
 Instagram の @: ai_ground_daily（ai_ground は他の人が使っていて取れなかった）→ https://www.instagram.com/ai_ground_daily/
-YouTube の @: まだ変えていない（@hal-ai-9000・「HAL- AI情報カフェ」のまま。今後 ai_ground_daily にそろえる方向）
-写真: 先輩のメイの顔（IG ○ ・ YouTube 未変更）　　IG の自己紹介: 変えた（3 行。account-identity.md の先頭）
+YouTube の @: ai_ground_daily（旧 @hal-ai-9000 から変更）→ https://www.youtube.com/@ai_ground_daily
+YouTube の名前: AI Ground | 毎朝1分のAIニュース（区切りは半角 |。全角｜は YouTube がエラーで受け付けなかった。IG は全角｜のまま）
+写真: 先輩のメイの顔（IG ○ ・ YouTube ○）　　IG の自己紹介: 変えた（3 行。account-identity.md の先頭）　　YouTube の説明文: IG と同じ 3 行に置き換えた
 ```
 
-YouTube を変えたら、この欄に YouTube の結果を書き足す（別カード）。
+旧 `@hal-ai-9000` は 2026-10-16 ごろまで自分用に保持される。資料のリンクは 2026-10-02 に新しい @ へ直した（過去の記録は書き換えていない）。
 
 伝えてもらったら、オーナーの指示を受けて司令塔が次を直す（オーナーが自分で直してもよい）:
 

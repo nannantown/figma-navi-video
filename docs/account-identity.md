@@ -2,14 +2,14 @@
 
 **【決定版】名前: AI Ground／@: `ai_ground_daily`／プロフィール写真: 先輩のメイの顔／案内役: メイ（2026-09-30〜10-01 オーナー決定、@ は 2026-10-02 に確定）**
 
-## 設定済み（2026-10-02・オーナーが変更、社長経由で連絡）
+## 設定済み（2026-10-02・オーナーが IG・YouTube とも変更、社長経由で連絡）
 
-| 何 | Instagram（設定済み） | YouTube |
+| 何 | Instagram（設定済み） | YouTube（設定済み） |
 |---|---|---|
-| @ | **[@ai_ground_daily](https://www.instagram.com/ai_ground_daily/)**。第 1 候補の `ai_ground` は他の人が使っていて取れなかったので、予備 ③ の `ai_ground_daily` にした | **まだ変えていない**（`@hal-ai-9000`・「HAL- AI情報カフェ」のまま）。今後 `@ai_ground_daily` にそろえる方向。オーナーが変えたら別カードで資料を直す |
-| 表示名 | **AI Ground｜毎朝1分のAIニュース** | 同上（未変更） |
-| プロフィール写真 | **先輩のメイの顔**（`assets/brand/final/profile-icon.png`） | 同上（未変更） |
-| プロフィール文（3 行） | 「話題のAIを、毎朝1分で。」<br>「AI Groundのメイです。何ができて、どう使えばいいかを短く紹介。」<br>「見返せるように保存しておいてください。」 | — |
+| @ | **[@ai_ground_daily](https://www.instagram.com/ai_ground_daily/)**。第 1 候補の `ai_ground` は他の人が使っていて取れなかったので、予備 ③ の `ai_ground_daily` にした | **[@ai_ground_daily](https://www.youtube.com/@ai_ground_daily)**（IG とそろえた）。旧 `@hal-ai-9000`（旧名「HAL- AI情報カフェ」）は変更から 14 日間（〜2026-10-16）だけ自分用に保持され、その後は他の人が取れる |
+| 表示名 | **AI Ground｜毎朝1分のAIニュース** | **AI Ground \| 毎朝1分のAIニュース**（区切りは**半角 `\|`**。全角｜は YouTube がエラーで受け付けなかった。**IG と表記が違う**） |
+| プロフィール写真 | **先輩のメイの顔**（`assets/brand/final/profile-icon.png`） | **先輩のメイの顔** |
+| プロフィール文（3 行） | 「話題のAIを、毎朝1分で。」<br>「AI Groundのメイです。何ができて、どう使えばいいかを短く紹介。」<br>「見返せるように保存しておいてください。」 | 説明文を IG と同じ 3 行に置き換え（旧説明文は置き換え済み） |
 
 設定を変えるのはオーナー。手順は [account-rename-guide.md](account-rename-guide.md)（最終版）。worker はログインしていない。以下は決めるまでの記録（`ai_ground` を第 1 候補にしていた時点の内容のまま残す）。
 
@@ -17,7 +17,7 @@
 |---|---|
 | 名前 | **AI Ground**（読み: エーアイ グラウンド）。オーナー「AIルゼノはさすがによみにくくない？」→ AI Ground の確認結果を見て「はいそれでいいです」 |
 | 表示名（IG と YouTube で同じ） | **`AI Ground｜毎朝1分のAIニュース`**（21 字）。「AI Ground」だけだと既存の同名と見分けにくいので、ひとことを付ける |
-| @（IG・YouTube） | **`ai_ground`** → **最終: IG は `ai_ground_daily`（2026-10-02 設定。`ai_ground` は取れず）**、YouTube は未変更。予備は ② `ai_ground_jp` ③ `ai_ground_daily`。YouTube は今の `@hal-ai-9000` を残す選択もある（手順書 0 章の表） |
+| @（IG・YouTube） | **`ai_ground`** → **最終: IG は `ai_ground_daily`（2026-10-02 設定。`ai_ground` は取れず）**、**YouTube も `ai_ground_daily`（2026-10-02 設定）**。予備は ② `ai_ground_jp` ③ `ai_ground_daily`。当初は YouTube の `@hal-ai-9000` を残す選択もあった（手順書 0 章の表） |
 | プロフィール写真 | **先輩のメイの顔**（オーナー「先輩の顔にしましょう」）。`assets/brand/final/profile-icon.png`（1024×1024 の PNG） |
 | 案内役 | **メイ（A 先輩のメイ）**（オーナー「先輩でいこう」）。頼れる先輩編集者の AI 案内役。黒のボブ・オレンジの丸い耳飾り。動画に出すのは別カード |
 
