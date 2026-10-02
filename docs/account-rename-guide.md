@@ -126,6 +126,18 @@ YouTube の @: 残した（@hal-ai-9000） / ai_ground / ai_ground_jp / ai_groun
 写真: 先輩のメイの顔（IG ○/× ・ YouTube ○/×）　　IG の自己紹介: 変えた/変えていない
 ```
 
+### 変えた結果（2026-10-02 記入・Instagram の分だけ）
+
+```
+名前を変えました（変えた日: 2026-10-02）
+表示名: AI Ground｜毎朝1分のAIニュース
+Instagram の @: ai_ground_daily（ai_ground は他の人が使っていて取れなかった）→ https://www.instagram.com/ai_ground_daily/
+YouTube の @: まだ変えていない（@hal-ai-9000・「HAL- AI情報カフェ」のまま。今後 ai_ground_daily にそろえる方向）
+写真: 先輩のメイの顔（IG ○ ・ YouTube 未変更）　　IG の自己紹介: 変えた（3 行。account-identity.md の先頭）
+```
+
+YouTube を変えたら、この欄に YouTube の結果を書き足す（別カード）。
+
 伝えてもらったら、オーナーの指示を受けて司令塔が次を直す（オーナーが自分で直してもよい）:
 
 - 親 `sns-hub` の `CLAUDE.md` の収容プロジェクト表・6 アカウントの表にある IG / YouTube の名前（と、変えた場合は @）
