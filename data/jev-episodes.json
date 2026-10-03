@@ -392,6 +392,87 @@
         ],
         "note": "第1段階 1-5。公式ブログ（入力 $0.042/MTok、出力 FREE、LLM は入力 $0.20〜$10/MTok・出力は約5倍、444.6倍は自社ワークフロー評価で実際の効果としては高めとの注記、補助で安い可能性を否定できず持続性は長期で示す必要があると記載）とトップページ（$42 per billion、444.6x cheaper、Fable 5.1 比 238 倍安い入力価格）をその日に開いて確認。LiteLLM（09-20）は 240 回で Jev $0.0077・Haiku $0.1985、1回あたり $0.0000321 対 $0.000827、96.118% 減。100万回×1000トークン=10億トークン=42ドルは料金表からの計算。公式 X（09-28）で新規登録の無料クレジット停止を確認（09-21 の「$5 分」の案内は既存の話として使わない）。円換算は為替を確かめていないので書いていない"
       }
+    },
+    {
+      "date": "2026-10-04",
+      "genre": "jev-news",
+      "trial": 2,
+      "stage": 1,
+      "stage_episode": 6,
+      "kind": "intro",
+      "topic_key": "intro-no-hallucination-claim",
+      "topic": "「ハルシネーションしない」の意味と限界 — 型は守られても選び間違いはある",
+      "headline": "「型を守る」と「正しい」は別",
+      "hook": "答えの形が正しければ、中身も正しいと思いますか？",
+      "slides": [
+        {
+          "heading": "会社の説明",
+          "body": "TypeSafe は、Jev はハルシネーションも型エラーも起こさないと説明しています。",
+          "claim_source": "TypeSafe の発表",
+          "narration": "ハルシネーションとは、AIがもっともらしい嘘を答えることです。TypeSafeによると、Jevはハルシネーションも型エラーも起こさないとされています。"
+        },
+        {
+          "heading": "「型を守る」とは",
+          "body": "答えは、使う側が先に決めた選択肢や数値の中からだけ返ってきます。",
+          "narration": "Jevの答えは、使う側が先に決めた選択肢や数値の中からしか出てきません。リストに無い答えを作り出さない、という意味です。"
+        },
+        {
+          "heading": "選び間違いはある",
+          "body": "The Register は、型を守っても答えが間違う可能性は残ると指摘しています。",
+          "claim_source": "The Register の指摘",
+          "narration": "ただしThe Registerは、型どおりの答えでも、間違った選択肢を選ぶことはあり得ると指摘しています。InfoQも開発者の同じ声を紹介しています。"
+        },
+        {
+          "heading": "確信度で見分ける",
+          "body": "答えには確信度が付きます。低いときは人の確認に回す使い方が案内されています。",
+          "narration": "そこで役立つのが、答えに付く確信度です。TypeSafeの資料では、確信度が低いときは人の確認に回す使い方が紹介されています。"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+          "title": "Introducing System One Models & Jev",
+          "outlet": "TypeSafe AI",
+          "published_at": "2026-09-15",
+          "role": "reference",
+          "official": true
+        },
+        {
+          "url": "https://www.theregister.com/ai-and-ml/2026/09/16/typesafe-ai-debuts-model-for-machines-that-plays-doom/5296711",
+          "title": "TypeSafe AI debuts model for machines that plays Doom",
+          "outlet": "The Register",
+          "published_at": "2026-09-16",
+          "role": "reference",
+          "official": false
+        },
+        {
+          "url": "https://www.infoq.com/news/2026/10/typesafe-ai-jev-released/",
+          "title": "TypeSafe AI Releases Jev: a Decision-Only Model That Returns Typed Probabilities Instead of Text",
+          "outlet": "InfoQ",
+          "published_at": "2026-10-01",
+          "role": "reference",
+          "official": false
+        },
+        {
+          "url": "https://docs.typesafe.ai/llms.txt",
+          "title": "TypeSafe AI documentation index",
+          "outlet": "TypeSafe AI",
+          "published_at": null,
+          "role": "reference",
+          "official": true
+        }
+      ],
+      "research": {
+        "checked": [
+          "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+          "https://www.theregister.com/ai-and-ml/2026/09/16/typesafe-ai-debuts-model-for-machines-that-plays-doom/5296711",
+          "https://www.infoq.com/news/2026/10/typesafe-ai-jev-released/",
+          "https://www.datacamp.com/blog/system-one-models-jev",
+          "https://docs.typesafe.ai/llms.txt",
+          "https://thecherrycreeknews.com/jev-typesafe-benchmark-checked-explainer-wave-cherry_creek/"
+        ],
+        "note": "第1段階 1-6。公式ブログ（it can't hallucinate / never makes type errors / mathematically impossible / Calibrated: higher confidence means higher accuracy。ページの表示日は Sep 28, 2026 に更新されていたが、公開日は台帳の既出どおり 09-15 とした）、The Register（09-16: structured responses with probabilities does not preclude the possibility of being incorrect）、InfoQ（10-01: HN の声 it can still emit a completely wrong valid value、確信度で閾値を決めて下回ったら回す使い方）、公式ドキュメント（Confidence tells you whether to act、uncertain な確率は人の確認へ回す例）をその日に開いて確認。DataCamp（09-16）は 0% 構造化出力エラーは TypeSafe の報告と記載。Cherry Creek News は今日は取得できず使っていない。WebSearch に出た『CEO も confidently wrong はあり得ると認めた』という引用は一次情報で確かめられなかったので書いていない"
+      }
     }
   ]
 }
