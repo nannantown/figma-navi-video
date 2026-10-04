@@ -2,116 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "Ne8lkt6W9Go",
-      "videoUrl": "https://youtube.com/shorts/Ne8lkt6W9Go",
-      "date": "2026-07-04",
-      "title": "【デザインニュース】AI機能=チャットボックス思考停止に、UX業界が今週 鋭い批評｜2026/07/04 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 47,
-      "discovery": {
-        "method": "expert-blog",
-        "description": "Smashing Magazine 7/2 公開の Victor Yocco (ServiceNow UX リサーチャー) 執筆記事『Matching AI Modality To User Intent: Designing The Right Interface』を主軸に、Nielsen Norman Group の ChatGPT/Bard/Bing 425 会話研究、Jakob Nielsen の『Delegative UI』論、Medium 実務家 Stefan Klocek の modality 選択ガイド、St Albans Web Design 二次要約を横断する aggregator 型で英語界隈の議論を束ねる。柱⑥ UI 批評 + 柱④ Tips のクロス枠。method 選定 (Saturday evergreen 帯): expert-blog は最終 5/10 = 55 日超ドライで前 PDCA (7/2) が aggregator 型再挑戦を提案済み、直近 2 日 (7/3 product-launches, 7/2 figma-community) と重複なし、7 日 2 回到達ガード対象外、WORST 2 週連続凍結対象外。直近 14 日で 柱④ Tips = 0/14 = 0% (target 15%)・柱⑥ UI 批評 = 0/14 = 0% (target 10%) と最大の運用ギャップを 1 本で埋める最適枠。NG パターン回避: (a) AI=補助輪フレーム維持 — 『AI にどの形で仕事させるかを決めるのは人間』と学習者主体で位置づけ、(b) 『AI がデザイナーの仕事を奪う』NG 非該当 — 学習者の判断力を強化する題材、(c) 『AI に任せれば考えなくていい』NG 非該当 — むしろ『とりあえずチャット』の思考停止を批評、(d) freshness_hours=48 で 168 NG ライン大幅余裕、(e) 出典 5 ソース (Smashing 主軸 + NN/G + Nielsen Substack + Medium + secondary summary) で multi-source aggregator confirm、(f) 駆け出し向けに Figma で場面を紙に書く具体行動指針で着地させ抽象で終わらせない",
-        "sources": [
-          "https://www.smashingmagazine.com/2026/07/matching-ai-modality-user-intent-designing-right-interface/",
-          "https://www.nngroup.com/articles/ux-ai-adoption/",
-          "https://jakobnielsenphd.substack.com/p/ai-is-first-new-ui-paradigm-in-60",
-          "https://medium.com/design-bootcamp/choosing-the-right-ai-interaction-modality-a-practical-guide-435d789c20d0",
-          "https://www.stalbanswebdesign.com/matching-ai-modality-to-user-intent-designing-the-right-interface/"
-        ],
-        "query": "Smashing Magazine AI modality user intent Victor Yocco July 2 2026 conversational tunnel vision designer aggregator",
-        "freshness_hours": 48
-      },
-      "stats": {
-        "views": 2,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-07-18T00:08:48.785Z"
-      },
-      "instagram": {
-        "mediaId": "18133126279608542",
-        "permalink": "https://www.instagram.com/reel/DaWb-vJAqMM/",
-        "views": 1,
-        "reach": 2,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
-      "videoId": "GaSApVZ0QPY",
-      "videoUrl": "https://youtube.com/shorts/GaSApVZ0QPY",
-      "date": "2026-07-05",
-      "title": "【デザインニュース】Figma Variables のモード切替、駆け出しが日曜 15 分でライト/ダーク実装｜2026/07/05 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 42,
-      "discovery": {
-        "method": "official-src",
-        "description": "日曜 evergreen 帯。Figma Learn Center 公式ドキュメント『Modes for variables』と『Guide to variables』を主軸に、Config 2026 recap の brand new 施策で再注目を集めた Variables のモード機能を、駆け出し向け Tips に翻訳する official-src アプローチ。method 選定: 過去 14 日で official-src は avg views 3.3 (TOP 3)・最終使用 6/30 で直近 2 日連続ガード外・柱④ Tips が 0/14=0% で 15% target と最大ギャップ・NG『AI に任せて考えない』回避 (自分の手で 15 分作る指示)・NG『機能説明メイン』回避 (面接ポートフォリオ実用シーンから入る)・freshness 土日 evergreen 例外適用。英語圏の David Supik『2026 Playbook』(Medium 6 月) と Zeroheight『26 Tips for 2026』が『実務家の 90% が Variables を活用しきれていない』と提起、Sunday Tips でこのギャップを Figma 公式手順に着地させ Primary 駆け出し層に届ける",
-        "sources": [
-          "https://help.figma.com/hc/en-us/articles/15343816063383-Modes-for-variables",
-          "https://help.figma.com/hc/en-us/articles/15339657135383-Guide-to-variables",
-          "https://www.figma.com/blog/config-2026-recap/",
-          "https://zeroheight.com/blog/building-scalable-design-systems-with-figma-26-tips-for-2026/",
-          "https://david-supik.medium.com/mastering-figma-variables-the-complete-2026-playbook-f4651ec85473"
-        ],
-        "query": "Figma variables modes light dark tutorial official Learn Center 2026 beginner practical steps",
-        "freshness_hours": 168
-      },
-      "stats": {
-        "views": 1,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-07-19T00:10:16.478Z"
-      },
-      "instagram": {
-        "mediaId": "17989596476820619",
-        "permalink": "https://www.instagram.com/reel/DaZASVwD0Hx/",
-        "views": 21,
-        "reach": 20,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "wN0iltE3cWk",
       "videoUrl": "https://youtube.com/shorts/wN0iltE3cWk",
       "date": "2026-07-06",
@@ -4022,7 +3912,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-03T01:56:53.348Z"
+        "updatedAt": "2026-10-04T02:38:42.161Z"
       },
       "instagram": {
         "mediaId": "18115515520805015",
@@ -4033,7 +3923,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-03T01:56:53.349Z"
+        "updatedAt": "2026-10-04T02:38:42.161Z"
       }
     },
     {
@@ -4127,18 +4017,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-03T01:56:53.348Z"
+        "updatedAt": "2026-10-04T02:38:42.161Z"
       },
       "instagram": {
         "mediaId": "18129185785785737",
         "permalink": "https://www.instagram.com/reel/DdnI4TqAtnA/",
-        "views": 4,
-        "reach": 4,
+        "views": 5,
+        "reach": 5,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-03T01:56:53.349Z"
+        "updatedAt": "2026-10-04T02:38:42.161Z"
       }
     },
     {
@@ -4184,7 +4074,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-03T01:56:53.348Z"
+        "updatedAt": "2026-10-04T02:38:42.161Z"
       },
       "instagram": {
         "mediaId": "18128502364772913",
@@ -4195,7 +4085,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-03T01:56:53.349Z"
+        "updatedAt": "2026-10-04T02:38:42.161Z"
       },
       "jev": {
         "stage": 1,
@@ -4284,7 +4174,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-03T01:56:53.348Z"
+        "updatedAt": "2026-10-04T02:38:42.161Z"
       },
       "instagram": {
         "mediaId": "18433923538178120",
@@ -4295,7 +4185,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-03T01:56:53.349Z"
+        "updatedAt": "2026-10-04T02:38:42.161Z"
       },
       "jev": {
         "stage": 1,
@@ -4371,7 +4261,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-03T01:56:53.348Z"
+        "updatedAt": "2026-10-04T02:38:42.161Z"
       },
       "instagram": {
         "mediaId": "18116926882958766",
@@ -4382,7 +4272,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-03T01:56:53.349Z"
+        "updatedAt": "2026-10-04T02:38:42.161Z"
       },
       "jev": {
         "stage": 1,
@@ -4465,7 +4355,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-03T01:56:53.348Z"
+        "updatedAt": "2026-10-04T02:38:42.161Z"
       },
       "instagram": {
         "mediaId": "17979318410914317",
@@ -4476,7 +4366,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-03T01:56:53.349Z"
+        "updatedAt": "2026-10-04T02:38:42.161Z"
       },
       "jev": {
         "stage": 1,
@@ -4559,18 +4449,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-03T01:56:53.348Z"
+        "updatedAt": "2026-10-04T02:38:42.161Z"
       },
       "instagram": {
         "mediaId": "18069970178765136",
         "permalink": "https://www.instagram.com/reel/Dd-klM_Abof/",
-        "views": 4,
-        "reach": 3,
+        "views": 106,
+        "reach": 103,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-03T01:56:53.349Z"
+        "updatedAt": "2026-10-04T02:38:42.161Z"
       },
       "jev": {
         "stage": 1,
@@ -4609,17 +4499,93 @@
           }
         ]
       }
+    },
+    {
+      "videoId": "6SLHhQ7GZ9o",
+      "videoUrl": "https://youtube.com/shorts/6SLHhQ7GZ9o",
+      "date": "2026-10-04",
+      "genre": "jev-news",
+      "trial": 2,
+      "title": "【話題のAI特集 Jev入門】「型を守る」と「正しい」は別｜2026/10/04 #Shorts",
+      "titleTemplate": "jev",
+      "hashtags": [
+        "AIニュース",
+        "生成AI",
+        "AIモデル",
+        "Jev",
+        "TypeSafe AI",
+        "TypeSafe",
+        "System One",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "「型を守る」と「正しい」は別"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": "出典: TypeSafe AI・The Register ほか"
+      },
+      "durationSeconds": 46,
+      "coverOffsetMs": 6400,
+      "discovery": {
+        "method": "intro",
+        "description": "「ハルシネーションしない」の意味と限界 — 型は守られても選び間違いはある",
+        "sources": [
+          "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+          "https://www.theregister.com/ai-and-ml/2026/09/16/typesafe-ai-debuts-model-for-machines-that-plays-doom/5296711",
+          "https://www.infoq.com/news/2026/10/typesafe-ai-jev-released/",
+          "https://docs.typesafe.ai/llms.txt"
+        ]
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": null,
+      "jev": {
+        "stage": 1,
+        "stageEpisode": 6,
+        "kind": "intro",
+        "topicKey": "intro-no-hallucination-claim",
+        "topic": "「ハルシネーションしない」の意味と限界 — 型は守られても選び間違いはある",
+        "sources": [
+          {
+            "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+            "outlet": "TypeSafe AI",
+            "published_at": "2026-09-15",
+            "role": "reference",
+            "official": true
+          },
+          {
+            "url": "https://www.theregister.com/ai-and-ml/2026/09/16/typesafe-ai-debuts-model-for-machines-that-plays-doom/5296711",
+            "outlet": "The Register",
+            "published_at": "2026-09-16",
+            "role": "reference",
+            "official": false
+          },
+          {
+            "url": "https://www.infoq.com/news/2026/10/typesafe-ai-jev-released/",
+            "outlet": "InfoQ",
+            "published_at": "2026-10-01",
+            "role": "reference",
+            "official": false
+          },
+          {
+            "url": "https://docs.typesafe.ai/llms.txt",
+            "outlet": "TypeSafe AI",
+            "published_at": null,
+            "role": "reference",
+            "official": true
+          }
+        ]
+      }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-09-04",
-      "changes": [
-        "standard: 2 avg views (77 videos)",
-        "Day performance: Tue=3, Mon=2, Fri=2, Sat=1, Sun=1, Wed=1, Thu=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-09-05",
       "changes": [
@@ -4834,6 +4800,13 @@
         "Day performance: Sat=1, Sun=1, Mon=1, Tue=1, Wed=1, Thu=1, Fri=1"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-10-04",
+      "changes": [
+        "Day performance: Sat=1, Sun=1, Mon=1, Tue=1, Wed=1, Thu=1, Fri=1"
+      ],
+      "recommendedTemplate": "standard"
     }
   ],
   "account": {
@@ -4876,6 +4849,10 @@
       },
       {
         "date": "2026-10-03",
+        "count": 0
+      },
+      {
+        "date": "2026-10-04",
         "count": 0
       }
     ]
