@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "fetchedAt": "2026-10-04T14:48:45.758Z",
+  "fetchedAt": "2026-10-04T21:58:24.508Z",
   "forVideoDate": "2026-10-05",
   "freshSince": "2026-10-03T07:00:00.000Z",
   "source": "feed",
@@ -20,19 +20,19 @@
       "posts": [
         {
           "order": 1,
-          "id": "1248704",
-          "name": "Sorcrr",
-          "tagline": "Ai enabled bounty driven referral platform for hiring & gtm",
+          "id": "1266069",
+          "name": "Clair",
+          "tagline": "Answer Claude Code from your wrist",
           "description": "",
-          "slug": "sorcrr",
-          "url": "https://www.producthunt.com/products/sorcrr",
-          "phUrl": "https://www.producthunt.com/products/sorcrr",
-          "website": "https://www.producthunt.com/r/p/1248704?app_id=339",
+          "slug": "clair-3",
+          "url": "https://www.producthunt.com/products/clair-3",
+          "phUrl": "https://www.producthunt.com/products/clair-3",
+          "website": "https://www.producthunt.com/r/p/1266069?app_id=339",
           "votes": null,
           "comments": null,
-          "createdAt": "2026-09-12T10:05:39-07:00",
+          "createdAt": "2026-09-30T14:29:31-07:00",
           "featuredAt": null,
-          "publishedAt": "2026-09-12T10:05:39-07:00",
+          "publishedAt": "2026-09-30T14:29:31-07:00",
           "dailyRank": null,
           "thumbnail": null,
           "topics": [],
@@ -44,78 +44,30 @@
         },
         {
           "order": 2,
-          "id": "1251848",
-          "name": "Sente",
-          "tagline": "Talk to your coding agent",
+          "id": "1217369",
+          "name": "WikiFix for Confluence",
+          "tagline": "Find and fix issues in your knowledge base",
           "description": "",
-          "slug": "sente-2",
-          "url": "https://www.producthunt.com/products/sente-2",
-          "phUrl": "https://www.producthunt.com/products/sente-2",
-          "website": "https://www.producthunt.com/r/p/1251848?app_id=339",
+          "slug": "wikifix",
+          "url": "https://www.producthunt.com/products/wikifix",
+          "phUrl": "https://www.producthunt.com/products/wikifix",
+          "website": "https://www.producthunt.com/r/p/1217369?app_id=339",
           "votes": null,
           "comments": null,
-          "createdAt": "2026-09-15T17:38:07-07:00",
+          "createdAt": "2026-08-07T06:20:11-07:00",
           "featuredAt": null,
-          "publishedAt": "2026-09-15T17:38:07-07:00",
+          "publishedAt": "2026-08-07T06:20:11-07:00",
           "dailyRank": null,
           "thumbnail": null,
           "topics": [],
           "isAI": true,
-          "isDev": true,
+          "isDev": false,
           "inAiCategory": true,
           "listedAfter": "2026-10-03T21:48:26.491Z",
           "fresh": true
         },
         {
           "order": 3,
-          "id": "1268520",
-          "name": "FlexChords",
-          "tagline": "Turn any YouTube video into accurate, playable guitar chords",
-          "description": "",
-          "slug": "flexchords",
-          "url": "https://www.producthunt.com/products/flexchords",
-          "phUrl": "https://www.producthunt.com/products/flexchords",
-          "website": "https://www.producthunt.com/r/p/1268520?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-10-03T05:22:08-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-10-03T05:22:08-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": true,
-          "isDev": false,
-          "inAiCategory": true,
-          "listedAfter": "2026-10-03T21:48:26.491Z",
-          "fresh": true
-        },
-        {
-          "order": 4,
-          "id": "1262134",
-          "name": "Rival Workshop",
-          "tagline": "A bookshelf app to manage every skill your agents read",
-          "description": "",
-          "slug": "rival-workshop",
-          "url": "https://www.producthunt.com/products/rival-workshop",
-          "phUrl": "https://www.producthunt.com/products/rival-workshop",
-          "website": "https://www.producthunt.com/r/p/1262134?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-09-26T17:15:04-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-09-26T17:15:04-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": true,
-          "isDev": false,
-          "inAiCategory": true,
-          "listedAfter": "2026-10-03T21:48:26.491Z",
-          "fresh": true
-        },
-        {
-          "order": 5,
           "id": "1264913",
           "name": "ChatGPT Space",
           "tagline": "Create, collaborate, and build together with AI in Space",
@@ -139,20 +91,20 @@
           "fresh": true
         },
         {
-          "order": 6,
-          "id": "1268851",
-          "name": "Aperture",
-          "tagline": "An AI code editor that checks its own work",
+          "order": 4,
+          "id": "1268520",
+          "name": "FlexChords",
+          "tagline": "Turn any YouTube video into accurate, playable guitar chords",
           "description": "",
-          "slug": "aperture-7",
-          "url": "https://www.producthunt.com/products/aperture-7",
-          "phUrl": "https://www.producthunt.com/products/aperture-7",
-          "website": "https://www.producthunt.com/r/p/1268851?app_id=339",
+          "slug": "flexchords",
+          "url": "https://www.producthunt.com/products/flexchords",
+          "phUrl": "https://www.producthunt.com/products/flexchords",
+          "website": "https://www.producthunt.com/r/p/1268520?app_id=339",
           "votes": null,
           "comments": null,
-          "createdAt": "2026-10-03T12:44:58-07:00",
+          "createdAt": "2026-10-03T05:22:08-07:00",
           "featuredAt": null,
-          "publishedAt": "2026-10-03T12:44:58-07:00",
+          "publishedAt": "2026-10-03T05:22:08-07:00",
           "dailyRank": null,
           "thumbnail": null,
           "topics": [],
@@ -163,20 +115,68 @@
           "fresh": true
         },
         {
-          "order": 7,
-          "id": "1266069",
-          "name": "Clair",
-          "tagline": "Answer Claude Code from your wrist",
+          "order": 5,
+          "id": "1248704",
+          "name": "Sorcrr",
+          "tagline": "Ai enabled bounty driven referral platform for hiring & gtm",
           "description": "",
-          "slug": "clair-3",
-          "url": "https://www.producthunt.com/products/clair-3",
-          "phUrl": "https://www.producthunt.com/products/clair-3",
-          "website": "https://www.producthunt.com/r/p/1266069?app_id=339",
+          "slug": "sorcrr",
+          "url": "https://www.producthunt.com/products/sorcrr",
+          "phUrl": "https://www.producthunt.com/products/sorcrr",
+          "website": "https://www.producthunt.com/r/p/1248704?app_id=339",
           "votes": null,
           "comments": null,
-          "createdAt": "2026-09-30T14:29:31-07:00",
+          "createdAt": "2026-09-12T10:05:39-07:00",
           "featuredAt": null,
-          "publishedAt": "2026-09-30T14:29:31-07:00",
+          "publishedAt": "2026-09-12T10:05:39-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": true,
+          "isDev": false,
+          "inAiCategory": true,
+          "listedAfter": "2026-10-03T21:48:26.491Z",
+          "fresh": true
+        },
+        {
+          "order": 6,
+          "id": "1251848",
+          "name": "Sente",
+          "tagline": "Talk to your coding agent",
+          "description": "",
+          "slug": "sente-2",
+          "url": "https://www.producthunt.com/products/sente-2",
+          "phUrl": "https://www.producthunt.com/products/sente-2",
+          "website": "https://www.producthunt.com/r/p/1251848?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-09-15T17:38:07-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-09-15T17:38:07-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": true,
+          "isDev": true,
+          "inAiCategory": true,
+          "listedAfter": "2026-10-03T21:48:26.491Z",
+          "fresh": true
+        },
+        {
+          "order": 7,
+          "id": "1262134",
+          "name": "Rival Workshop",
+          "tagline": "A bookshelf app to manage every skill your agents read",
+          "description": "",
+          "slug": "rival-workshop",
+          "url": "https://www.producthunt.com/products/rival-workshop",
+          "phUrl": "https://www.producthunt.com/products/rival-workshop",
+          "website": "https://www.producthunt.com/r/p/1262134?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-09-26T17:15:04-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-09-26T17:15:04-07:00",
           "dailyRank": null,
           "thumbnail": null,
           "topics": [],
@@ -212,6 +212,30 @@
         },
         {
           "order": 9,
+          "id": "1268851",
+          "name": "Aperture",
+          "tagline": "An AI code editor that checks its own work",
+          "description": "",
+          "slug": "aperture-7",
+          "url": "https://www.producthunt.com/products/aperture-7",
+          "phUrl": "https://www.producthunt.com/products/aperture-7",
+          "website": "https://www.producthunt.com/r/p/1268851?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-10-03T12:44:58-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-10-03T12:44:58-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": true,
+          "isDev": false,
+          "inAiCategory": true,
+          "listedAfter": "2026-10-03T21:48:26.491Z",
+          "fresh": true
+        },
+        {
+          "order": 10,
           "id": "1268954",
           "name": "Sellio",
           "tagline": "AI customer support in one shared inbox powered by AI agents",
@@ -225,30 +249,6 @@
           "createdAt": "2026-10-03T16:54:19-07:00",
           "featuredAt": null,
           "publishedAt": "2026-10-03T16:54:19-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": true,
-          "isDev": false,
-          "inAiCategory": true,
-          "listedAfter": "2026-10-03T21:48:26.491Z",
-          "fresh": true
-        },
-        {
-          "order": 10,
-          "id": "1217369",
-          "name": "WikiFix for Confluence",
-          "tagline": "Find and fix issues in your knowledge base",
-          "description": "",
-          "slug": "wikifix",
-          "url": "https://www.producthunt.com/products/wikifix",
-          "phUrl": "https://www.producthunt.com/products/wikifix",
-          "website": "https://www.producthunt.com/r/p/1217369?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-08-07T06:20:11-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-08-07T06:20:11-07:00",
           "dailyRank": null,
           "thumbnail": null,
           "topics": [],
@@ -284,43 +284,43 @@
         },
         {
           "order": 12,
-          "id": "1268072",
-          "name": "Reassign",
-          "tagline": "Your day, shaped into a story. The planner for makers",
+          "id": "1268165",
+          "name": "Sapien",
+          "tagline": "AI market research with synthetic populations",
           "description": "",
-          "slug": "reassign",
-          "url": "https://www.producthunt.com/products/reassign",
-          "phUrl": "https://www.producthunt.com/products/reassign",
-          "website": "https://www.producthunt.com/r/p/1268072?app_id=339",
+          "slug": "sapien-4",
+          "url": "https://www.producthunt.com/products/sapien-4",
+          "phUrl": "https://www.producthunt.com/products/sapien-4",
+          "website": "https://www.producthunt.com/r/p/1268165?app_id=339",
           "votes": null,
           "comments": null,
-          "createdAt": "2026-10-02T15:49:04-07:00",
+          "createdAt": "2026-10-02T19:30:10-07:00",
           "featuredAt": null,
-          "publishedAt": "2026-10-02T15:49:04-07:00",
+          "publishedAt": "2026-10-02T19:30:10-07:00",
           "dailyRank": null,
           "thumbnail": null,
           "topics": [],
           "isAI": true,
           "isDev": false,
           "inAiCategory": true,
-          "listedAfter": null,
+          "listedAfter": "2026-10-02T22:35:31.925Z",
           "fresh": false
         },
         {
           "order": 13,
-          "id": "1254817",
-          "name": "miso.com",
-          "tagline": "Book flights and hotels through iMessage",
+          "id": "1267846",
+          "name": "Yubi",
+          "tagline": "Talk to your Mac and let Yubi do the typing",
           "description": "",
-          "slug": "miso-com",
-          "url": "https://www.producthunt.com/products/miso-com",
-          "phUrl": "https://www.producthunt.com/products/miso-com",
-          "website": "https://www.producthunt.com/r/p/1254817?app_id=339",
+          "slug": "yubi-2",
+          "url": "https://www.producthunt.com/products/yubi-2",
+          "phUrl": "https://www.producthunt.com/products/yubi-2",
+          "website": "https://www.producthunt.com/r/p/1267846?app_id=339",
           "votes": null,
           "comments": null,
-          "createdAt": "2026-09-18T08:06:57-07:00",
+          "createdAt": "2026-10-02T09:37:26-07:00",
           "featuredAt": null,
-          "publishedAt": "2026-09-18T08:06:57-07:00",
+          "publishedAt": "2026-10-02T09:37:26-07:00",
           "dailyRank": null,
           "thumbnail": null,
           "topics": [],
@@ -356,54 +356,6 @@
         },
         {
           "order": 15,
-          "id": "1268160",
-          "name": "Muse Gadgets",
-          "tagline": "Meta's open-source kit for building your own AI gadgets",
-          "description": "",
-          "slug": "muse-22",
-          "url": "https://www.producthunt.com/products/muse-22",
-          "phUrl": "https://www.producthunt.com/products/muse-22",
-          "website": "https://www.producthunt.com/r/p/1268160?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-10-02T19:07:11-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-10-02T19:07:11-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": true,
-          "isDev": true,
-          "inAiCategory": true,
-          "listedAfter": "2026-10-02T22:35:31.925Z",
-          "fresh": false
-        },
-        {
-          "order": 16,
-          "id": "1257580",
-          "name": "SCMD",
-          "tagline": "Manage what Claude Remembers and Keeps as Memory.",
-          "description": "",
-          "slug": "scmd",
-          "url": "https://www.producthunt.com/products/scmd",
-          "phUrl": "https://www.producthunt.com/products/scmd",
-          "website": "https://www.producthunt.com/r/p/1257580?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-09-21T14:15:45-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-09-21T14:15:45-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": true,
-          "isDev": false,
-          "inAiCategory": true,
-          "listedAfter": "2026-10-02T22:35:31.925Z",
-          "fresh": false
-        },
-        {
-          "order": 17,
           "id": "1262057",
           "name": "Notchware",
           "tagline": "Music and AI agent alerts in your MacBook notch",
@@ -427,20 +379,20 @@
           "fresh": false
         },
         {
-          "order": 18,
-          "id": "1266098",
-          "name": "Thanor AI",
-          "tagline": "Make your AI-built sites look expensive and not like slop",
+          "order": 16,
+          "id": "1254817",
+          "name": "miso.com",
+          "tagline": "Book flights and hotels through iMessage",
           "description": "",
-          "slug": "thanor-ai",
-          "url": "https://www.producthunt.com/products/thanor-ai",
-          "phUrl": "https://www.producthunt.com/products/thanor-ai",
-          "website": "https://www.producthunt.com/r/p/1266098?app_id=339",
+          "slug": "miso-com",
+          "url": "https://www.producthunt.com/products/miso-com",
+          "phUrl": "https://www.producthunt.com/products/miso-com",
+          "website": "https://www.producthunt.com/r/p/1254817?app_id=339",
           "votes": null,
           "comments": null,
-          "createdAt": "2026-09-30T15:07:19-07:00",
+          "createdAt": "2026-09-18T08:06:57-07:00",
           "featuredAt": null,
-          "publishedAt": "2026-09-30T15:07:19-07:00",
+          "publishedAt": "2026-09-18T08:06:57-07:00",
           "dailyRank": null,
           "thumbnail": null,
           "topics": [],
@@ -451,103 +403,7 @@
           "fresh": false
         },
         {
-          "order": 19,
-          "id": "1264987",
-          "name": "Cubicle",
-          "tagline": "A live office for your AI agents, read-only by design",
-          "description": "",
-          "slug": "cubicle-2",
-          "url": "https://www.producthunt.com/products/cubicle-2",
-          "phUrl": "https://www.producthunt.com/products/cubicle-2",
-          "website": "https://www.producthunt.com/r/p/1264987?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-09-29T12:41:10-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-09-29T12:41:10-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": true,
-          "isDev": false,
-          "inAiCategory": true,
-          "listedAfter": "2026-10-02T22:35:31.925Z",
-          "fresh": false
-        },
-        {
-          "order": 20,
-          "id": "1259794",
-          "name": "ZooWork",
-          "tagline": "The AI agent delivery platform for FDEs and domain experts",
-          "description": "",
-          "slug": "zoowork",
-          "url": "https://www.producthunt.com/products/zoowork",
-          "phUrl": "https://www.producthunt.com/products/zoowork",
-          "website": "https://www.producthunt.com/r/p/1259794?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-09-23T21:22:40-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-09-23T21:22:40-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": true,
-          "isDev": false,
-          "inAiCategory": true,
-          "listedAfter": "2026-10-02T22:35:31.925Z",
-          "fresh": false
-        },
-        {
-          "order": 21,
-          "id": "1266347",
-          "name": "Crowny!",
-          "tagline": "Claude Code, Codex, music, your day & 20+ apps in your notch",
-          "description": "",
-          "slug": "crowny-2",
-          "url": "https://www.producthunt.com/products/crowny-2",
-          "phUrl": "https://www.producthunt.com/products/crowny-2",
-          "website": "https://www.producthunt.com/r/p/1266347?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-10-01T00:14:59-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-10-01T00:14:59-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": true,
-          "isDev": false,
-          "inAiCategory": true,
-          "listedAfter": "2026-10-02T22:35:31.925Z",
-          "fresh": false
-        },
-        {
-          "order": 22,
-          "id": "1268165",
-          "name": "Sapien",
-          "tagline": "AI market research with synthetic populations",
-          "description": "",
-          "slug": "sapien-4",
-          "url": "https://www.producthunt.com/products/sapien-4",
-          "phUrl": "https://www.producthunt.com/products/sapien-4",
-          "website": "https://www.producthunt.com/r/p/1268165?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-10-02T19:30:10-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-10-02T19:30:10-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": true,
-          "isDev": false,
-          "inAiCategory": true,
-          "listedAfter": "2026-10-02T22:35:31.925Z",
-          "fresh": false
-        },
-        {
-          "order": 23,
+          "order": 17,
           "id": "1265885",
           "name": "Agent Activity",
           "tagline": "See what your AI agents do behind",
@@ -571,20 +427,44 @@
           "fresh": false
         },
         {
-          "order": 24,
-          "id": "1267846",
-          "name": "Yubi",
-          "tagline": "Talk to your Mac and let Yubi do the typing",
+          "order": 18,
+          "id": "1268160",
+          "name": "Muse Gadgets",
+          "tagline": "Meta's open-source kit for building your own AI gadgets",
           "description": "",
-          "slug": "yubi-2",
-          "url": "https://www.producthunt.com/products/yubi-2",
-          "phUrl": "https://www.producthunt.com/products/yubi-2",
-          "website": "https://www.producthunt.com/r/p/1267846?app_id=339",
+          "slug": "muse-22",
+          "url": "https://www.producthunt.com/products/muse-22",
+          "phUrl": "https://www.producthunt.com/products/muse-22",
+          "website": "https://www.producthunt.com/r/p/1268160?app_id=339",
           "votes": null,
           "comments": null,
-          "createdAt": "2026-10-02T09:37:26-07:00",
+          "createdAt": "2026-10-02T19:07:11-07:00",
           "featuredAt": null,
-          "publishedAt": "2026-10-02T09:37:26-07:00",
+          "publishedAt": "2026-10-02T19:07:11-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": true,
+          "isDev": true,
+          "inAiCategory": true,
+          "listedAfter": "2026-10-02T22:35:31.925Z",
+          "fresh": false
+        },
+        {
+          "order": 19,
+          "id": "1266347",
+          "name": "Crowny!",
+          "tagline": "Claude Code, Codex, music, your day & 20+ apps in your notch",
+          "description": "",
+          "slug": "crowny-2",
+          "url": "https://www.producthunt.com/products/crowny-2",
+          "phUrl": "https://www.producthunt.com/products/crowny-2",
+          "website": "https://www.producthunt.com/r/p/1266347?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-10-01T00:14:59-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-10-01T00:14:59-07:00",
           "dailyRank": null,
           "thumbnail": null,
           "topics": [],
@@ -595,7 +475,55 @@
           "fresh": false
         },
         {
-          "order": 25,
+          "order": 20,
+          "id": "1264987",
+          "name": "Cubicle",
+          "tagline": "A live office for your AI agents, read-only by design",
+          "description": "",
+          "slug": "cubicle-2",
+          "url": "https://www.producthunt.com/products/cubicle-2",
+          "phUrl": "https://www.producthunt.com/products/cubicle-2",
+          "website": "https://www.producthunt.com/r/p/1264987?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-09-29T12:41:10-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-09-29T12:41:10-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": true,
+          "isDev": false,
+          "inAiCategory": true,
+          "listedAfter": "2026-10-02T22:35:31.925Z",
+          "fresh": false
+        },
+        {
+          "order": 21,
+          "id": "1257580",
+          "name": "SCMD",
+          "tagline": "Manage what Claude Remembers and Keeps as Memory.",
+          "description": "",
+          "slug": "scmd",
+          "url": "https://www.producthunt.com/products/scmd",
+          "phUrl": "https://www.producthunt.com/products/scmd",
+          "website": "https://www.producthunt.com/r/p/1257580?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-09-21T14:15:45-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-09-21T14:15:45-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": true,
+          "isDev": false,
+          "inAiCategory": true,
+          "listedAfter": "2026-10-02T22:35:31.925Z",
+          "fresh": false
+        },
+        {
+          "order": 22,
           "id": "1257664",
           "name": "Kilo",
           "tagline": "Your agentic fitness coach in iMessage",
@@ -619,7 +547,31 @@
           "fresh": false
         },
         {
-          "order": 26,
+          "order": 23,
+          "id": "1268072",
+          "name": "Reassign",
+          "tagline": "Your day, shaped into a story. The planner for makers",
+          "description": "",
+          "slug": "reassign",
+          "url": "https://www.producthunt.com/products/reassign",
+          "phUrl": "https://www.producthunt.com/products/reassign",
+          "website": "https://www.producthunt.com/r/p/1268072?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-10-02T15:49:04-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-10-02T15:49:04-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": true,
+          "isDev": false,
+          "inAiCategory": true,
+          "listedAfter": null,
+          "fresh": false
+        },
+        {
+          "order": 24,
           "id": "1266692",
           "name": "Singularity",
           "tagline": "Run AI coding agents in parallel, one ticket at a time",
@@ -643,20 +595,68 @@
           "fresh": false
         },
         {
-          "order": 27,
-          "id": "1264587",
-          "name": "Gauth Unlimited Digital Canvas",
-          "tagline": "An AI tutor on an infinite whiteboard, not a chat thread",
+          "order": 25,
+          "id": "1266098",
+          "name": "Thanor AI",
+          "tagline": "Make your AI-built sites look expensive and not like slop",
           "description": "",
-          "slug": "gauth-ai-course",
-          "url": "https://www.producthunt.com/products/gauth-ai-course",
-          "phUrl": "https://www.producthunt.com/products/gauth-ai-course",
-          "website": "https://www.producthunt.com/r/p/1264587?app_id=339",
+          "slug": "thanor-ai",
+          "url": "https://www.producthunt.com/products/thanor-ai",
+          "phUrl": "https://www.producthunt.com/products/thanor-ai",
+          "website": "https://www.producthunt.com/r/p/1266098?app_id=339",
           "votes": null,
           "comments": null,
-          "createdAt": "2026-09-29T05:33:13-07:00",
+          "createdAt": "2026-09-30T15:07:19-07:00",
           "featuredAt": null,
-          "publishedAt": "2026-09-29T05:33:13-07:00",
+          "publishedAt": "2026-09-30T15:07:19-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": true,
+          "isDev": false,
+          "inAiCategory": true,
+          "listedAfter": "2026-10-02T22:35:31.925Z",
+          "fresh": false
+        },
+        {
+          "order": 26,
+          "id": "1259794",
+          "name": "ZooWork",
+          "tagline": "The AI agent delivery platform for FDEs and domain experts",
+          "description": "",
+          "slug": "zoowork",
+          "url": "https://www.producthunt.com/products/zoowork",
+          "phUrl": "https://www.producthunt.com/products/zoowork",
+          "website": "https://www.producthunt.com/r/p/1259794?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-09-23T21:22:40-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-09-23T21:22:40-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": true,
+          "isDev": false,
+          "inAiCategory": true,
+          "listedAfter": "2026-10-02T22:35:31.925Z",
+          "fresh": false
+        },
+        {
+          "order": 27,
+          "id": "1266380",
+          "name": "Communicate",
+          "tagline": "AI support agents grounded in your knowledge, with handoff",
+          "description": "",
+          "slug": "communicate",
+          "url": "https://www.producthunt.com/products/communicate",
+          "phUrl": "https://www.producthunt.com/products/communicate",
+          "website": "https://www.producthunt.com/r/p/1266380?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-10-01T00:51:46-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-10-01T00:51:46-07:00",
           "dailyRank": null,
           "thumbnail": null,
           "topics": [],
@@ -692,19 +692,19 @@
         },
         {
           "order": 29,
-          "id": "1266380",
-          "name": "Communicate",
-          "tagline": "AI support agents grounded in your knowledge, with handoff",
+          "id": "1265272",
+          "name": "JarvisCore",
+          "tagline": "Build agents as peers in a mesh network with zero-trust",
           "description": "",
-          "slug": "communicate",
-          "url": "https://www.producthunt.com/products/communicate",
-          "phUrl": "https://www.producthunt.com/products/communicate",
-          "website": "https://www.producthunt.com/r/p/1266380?app_id=339",
+          "slug": "jarviscore",
+          "url": "https://www.producthunt.com/products/jarviscore",
+          "phUrl": "https://www.producthunt.com/products/jarviscore",
+          "website": "https://www.producthunt.com/r/p/1265272?app_id=339",
           "votes": null,
           "comments": null,
-          "createdAt": "2026-10-01T00:51:46-07:00",
+          "createdAt": "2026-09-29T22:40:59-07:00",
           "featuredAt": null,
-          "publishedAt": "2026-10-01T00:51:46-07:00",
+          "publishedAt": "2026-09-29T22:40:59-07:00",
           "dailyRank": null,
           "thumbnail": null,
           "topics": [],
@@ -716,54 +716,6 @@
         },
         {
           "order": 30,
-          "id": "1267041",
-          "name": "Clef",
-          "tagline": "Open-source decision models from Cloudflare",
-          "description": "",
-          "slug": "cloudflare-clef",
-          "url": "https://www.producthunt.com/products/cloudflare-clef",
-          "phUrl": "https://www.producthunt.com/products/cloudflare-clef",
-          "website": "https://www.producthunt.com/r/p/1267041?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-10-01T13:58:54-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-10-01T13:58:54-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": true,
-          "isDev": true,
-          "inAiCategory": true,
-          "listedAfter": "2026-10-01T22:55:46.652Z",
-          "fresh": false
-        },
-        {
-          "order": 31,
-          "id": "1251693",
-          "name": "Teachoo",
-          "tagline": "AI that helps you learn anything and everything.",
-          "description": "",
-          "slug": "teachoo-2",
-          "url": "https://www.producthunt.com/products/teachoo-2",
-          "phUrl": "https://www.producthunt.com/products/teachoo-2",
-          "website": "https://www.producthunt.com/r/p/1251693?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-09-15T12:39:59-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-09-15T12:39:59-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": true,
-          "isDev": false,
-          "inAiCategory": true,
-          "listedAfter": "2026-10-01T22:55:46.652Z",
-          "fresh": false
-        },
-        {
-          "order": 32,
           "id": "1253670",
           "name": "Veltrix AI for E-commerce",
           "tagline": "Find how your e-commerce business could earn more",
@@ -787,7 +739,31 @@
           "fresh": false
         },
         {
-          "order": 33,
+          "order": 31,
+          "id": "1267264",
+          "name": "Codync",
+          "tagline": "The open-source alternative to Grok Bot, Muse and Dots",
+          "description": "",
+          "slug": "codync",
+          "url": "https://www.producthunt.com/products/codync",
+          "phUrl": "https://www.producthunt.com/products/codync",
+          "website": "https://www.producthunt.com/r/p/1267264?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-10-01T21:45:31-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-10-01T21:45:31-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": true,
+          "isDev": true,
+          "inAiCategory": true,
+          "listedAfter": "2026-10-01T22:55:46.652Z",
+          "fresh": false
+        },
+        {
+          "order": 32,
           "id": "1266067",
           "name": "WeftCut",
           "tagline": "The open-source video editor your AI agent can drive",
@@ -806,6 +782,30 @@
           "topics": [],
           "isAI": true,
           "isDev": true,
+          "inAiCategory": true,
+          "listedAfter": "2026-10-01T22:55:46.652Z",
+          "fresh": false
+        },
+        {
+          "order": 33,
+          "id": "1263860",
+          "name": "Eleven v4 and Eleven v4 Turbo",
+          "tagline": "Elevenlabs' fastest and most emotive voice models yet",
+          "description": "",
+          "slug": "eleven-v4-and-eleven-v4-turbo",
+          "url": "https://www.producthunt.com/products/eleven-v4-and-eleven-v4-turbo",
+          "phUrl": "https://www.producthunt.com/products/eleven-v4-and-eleven-v4-turbo",
+          "website": "https://www.producthunt.com/r/p/1263860?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-09-28T13:49:50-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-09-28T13:49:50-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": true,
+          "isDev": false,
           "inAiCategory": true,
           "listedAfter": "2026-10-01T22:55:46.652Z",
           "fresh": false
@@ -836,6 +836,30 @@
         },
         {
           "order": 35,
+          "id": "1267041",
+          "name": "Clef",
+          "tagline": "Open-source decision models from Cloudflare",
+          "description": "",
+          "slug": "cloudflare-clef",
+          "url": "https://www.producthunt.com/products/cloudflare-clef",
+          "phUrl": "https://www.producthunt.com/products/cloudflare-clef",
+          "website": "https://www.producthunt.com/r/p/1267041?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-10-01T13:58:54-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-10-01T13:58:54-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": true,
+          "isDev": true,
+          "inAiCategory": true,
+          "listedAfter": "2026-10-01T22:55:46.652Z",
+          "fresh": false
+        },
+        {
+          "order": 36,
           "id": "1266544",
           "name": "Never Boring AI",
           "tagline": "The AI agent that writes your LinkedIn posts in your voice",
@@ -859,55 +883,7 @@
           "fresh": false
         },
         {
-          "order": 36,
-          "id": "1265272",
-          "name": "JarvisCore",
-          "tagline": "Build agents as peers in a mesh network with zero-trust",
-          "description": "",
-          "slug": "jarviscore",
-          "url": "https://www.producthunt.com/products/jarviscore",
-          "phUrl": "https://www.producthunt.com/products/jarviscore",
-          "website": "https://www.producthunt.com/r/p/1265272?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-09-29T22:40:59-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-09-29T22:40:59-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": true,
-          "isDev": false,
-          "inAiCategory": true,
-          "listedAfter": "2026-10-01T22:55:46.652Z",
-          "fresh": false
-        },
-        {
           "order": 37,
-          "id": "1267264",
-          "name": "Codync",
-          "tagline": "The open-source alternative to Grok Bot, Muse and Dots",
-          "description": "",
-          "slug": "codync",
-          "url": "https://www.producthunt.com/products/codync",
-          "phUrl": "https://www.producthunt.com/products/codync",
-          "website": "https://www.producthunt.com/r/p/1267264?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-10-01T21:45:31-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-10-01T21:45:31-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": true,
-          "isDev": true,
-          "inAiCategory": true,
-          "listedAfter": "2026-10-01T22:55:46.652Z",
-          "fresh": false
-        },
-        {
-          "order": 38,
           "id": "1263902",
           "name": "Cue by Manus",
           "tagline": "Personal agents with identity, handling life end to end",
@@ -931,20 +907,44 @@
           "fresh": false
         },
         {
-          "order": 39,
-          "id": "1263860",
-          "name": "Eleven v4 and Eleven v4 Turbo",
-          "tagline": "Elevenlabs' fastest and most emotive voice models yet",
+          "order": 38,
+          "id": "1264587",
+          "name": "Gauth Unlimited Digital Canvas",
+          "tagline": "An AI tutor on an infinite whiteboard, not a chat thread",
           "description": "",
-          "slug": "eleven-v4-and-eleven-v4-turbo",
-          "url": "https://www.producthunt.com/products/eleven-v4-and-eleven-v4-turbo",
-          "phUrl": "https://www.producthunt.com/products/eleven-v4-and-eleven-v4-turbo",
-          "website": "https://www.producthunt.com/r/p/1263860?app_id=339",
+          "slug": "gauth-ai-course",
+          "url": "https://www.producthunt.com/products/gauth-ai-course",
+          "phUrl": "https://www.producthunt.com/products/gauth-ai-course",
+          "website": "https://www.producthunt.com/r/p/1264587?app_id=339",
           "votes": null,
           "comments": null,
-          "createdAt": "2026-09-28T13:49:50-07:00",
+          "createdAt": "2026-09-29T05:33:13-07:00",
           "featuredAt": null,
-          "publishedAt": "2026-09-28T13:49:50-07:00",
+          "publishedAt": "2026-09-29T05:33:13-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": true,
+          "isDev": false,
+          "inAiCategory": true,
+          "listedAfter": "2026-10-01T22:55:46.652Z",
+          "fresh": false
+        },
+        {
+          "order": 39,
+          "id": "1251693",
+          "name": "Teachoo",
+          "tagline": "AI that helps you learn anything and everything.",
+          "description": "",
+          "slug": "teachoo-2",
+          "url": "https://www.producthunt.com/products/teachoo-2",
+          "phUrl": "https://www.producthunt.com/products/teachoo-2",
+          "website": "https://www.producthunt.com/r/p/1251693?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-09-15T12:39:59-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-09-15T12:39:59-07:00",
           "dailyRank": null,
           "thumbnail": null,
           "topics": [],
@@ -956,30 +956,6 @@
         },
         {
           "order": 40,
-          "id": "1253097",
-          "name": "Syllaby AI Avatar 2.0",
-          "tagline": "Create Your Own Avatar In Seconds",
-          "description": "",
-          "slug": "syllaby-ai-avatar-2-0",
-          "url": "https://www.producthunt.com/products/syllaby-ai-avatar-2-0",
-          "phUrl": "https://www.producthunt.com/products/syllaby-ai-avatar-2-0",
-          "website": "https://www.producthunt.com/r/p/1253097?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-09-17T00:24:53-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-09-17T00:24:53-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": true,
-          "isDev": false,
-          "inAiCategory": true,
-          "listedAfter": "2026-10-01T22:55:46.652Z",
-          "fresh": false
-        },
-        {
-          "order": 41,
           "id": "1264332",
           "name": "Sayonic",
           "tagline": "A voice assistant in your Mac's notch that does the task",
@@ -1003,31 +979,31 @@
           "fresh": false
         },
         {
-          "order": 42,
-          "id": "1265267",
-          "name": "Chat.sh",
-          "tagline": "The help center I built after Intercom's search broke",
+          "order": 41,
+          "id": "1253097",
+          "name": "Syllaby AI Avatar 2.0",
+          "tagline": "Create Your Own Avatar In Seconds",
           "description": "",
-          "slug": "chat-sh",
-          "url": "https://www.producthunt.com/products/chat-sh",
-          "phUrl": "https://www.producthunt.com/products/chat-sh",
-          "website": "https://www.producthunt.com/r/p/1265267?app_id=339",
+          "slug": "syllaby-ai-avatar-2-0",
+          "url": "https://www.producthunt.com/products/syllaby-ai-avatar-2-0",
+          "phUrl": "https://www.producthunt.com/products/syllaby-ai-avatar-2-0",
+          "website": "https://www.producthunt.com/r/p/1253097?app_id=339",
           "votes": null,
           "comments": null,
-          "createdAt": "2026-09-29T22:27:50-07:00",
+          "createdAt": "2026-09-17T00:24:53-07:00",
           "featuredAt": null,
-          "publishedAt": "2026-09-29T22:27:50-07:00",
+          "publishedAt": "2026-09-17T00:24:53-07:00",
           "dailyRank": null,
           "thumbnail": null,
           "topics": [],
           "isAI": true,
           "isDev": false,
           "inAiCategory": true,
-          "listedAfter": "2026-09-30T22:39:03.549Z",
+          "listedAfter": "2026-10-01T22:55:46.652Z",
           "fresh": false
         },
         {
-          "order": 43,
+          "order": 42,
           "id": "1265983",
           "name": "Vitra.ai",
           "tagline": "Agentic content platform to create and localize content",
@@ -1051,55 +1027,7 @@
           "fresh": false
         },
         {
-          "order": 44,
-          "id": "1258620",
-          "name": "Bracket",
-          "tagline": "The memory layer for your business",
-          "description": "",
-          "slug": "bracket-2027",
-          "url": "https://www.producthunt.com/products/bracket-2027",
-          "phUrl": "https://www.producthunt.com/products/bracket-2027",
-          "website": "https://www.producthunt.com/r/p/1258620?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-09-22T14:39:35-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-09-22T14:39:35-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": true,
-          "isDev": false,
-          "inAiCategory": true,
-          "listedAfter": "2026-09-30T22:39:03.549Z",
-          "fresh": false
-        },
-        {
-          "order": 45,
-          "id": "1264932",
-          "name": "Dots by OpenAI",
-          "tagline": "Always on agents built to handle everything",
-          "description": "",
-          "slug": "dots-by-openai",
-          "url": "https://www.producthunt.com/products/dots-by-openai",
-          "phUrl": "https://www.producthunt.com/products/dots-by-openai",
-          "website": "https://www.producthunt.com/r/p/1264932?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-09-29T11:35:29-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-09-29T11:35:29-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": true,
-          "isDev": false,
-          "inAiCategory": true,
-          "listedAfter": "2026-09-30T22:39:03.549Z",
-          "fresh": false
-        },
-        {
-          "order": 46,
+          "order": 43,
           "id": "1265167",
           "name": "OpenCompanion",
           "tagline": "Start, watch and answer AI coding CLIs from one desktop app",
@@ -1123,20 +1051,44 @@
           "fresh": false
         },
         {
-          "order": 47,
-          "id": "1265102",
-          "name": "ShareCube",
-          "tagline": "Share what your agents make, get feedback on the exact line",
+          "order": 44,
+          "id": "1264688",
+          "name": "Scape",
+          "tagline": "Team document collab with your terminal harness (cc, codex)",
           "description": "",
-          "slug": "sharecube",
-          "url": "https://www.producthunt.com/products/sharecube",
-          "phUrl": "https://www.producthunt.com/products/sharecube",
-          "website": "https://www.producthunt.com/r/p/1265102?app_id=339",
+          "slug": "scape-3",
+          "url": "https://www.producthunt.com/products/scape-3",
+          "phUrl": "https://www.producthunt.com/products/scape-3",
+          "website": "https://www.producthunt.com/r/p/1264688?app_id=339",
           "votes": null,
           "comments": null,
-          "createdAt": "2026-09-29T16:21:44-07:00",
+          "createdAt": "2026-09-29T07:14:41-07:00",
           "featuredAt": null,
-          "publishedAt": "2026-09-29T16:21:44-07:00",
+          "publishedAt": "2026-09-29T07:14:41-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": true,
+          "isDev": true,
+          "inAiCategory": true,
+          "listedAfter": "2026-09-30T22:39:03.549Z",
+          "fresh": false
+        },
+        {
+          "order": 45,
+          "id": "1265042",
+          "name": "Polylane",
+          "tagline": "AI agents that fix production before you wake up",
+          "description": "",
+          "slug": "polylane",
+          "url": "https://www.producthunt.com/products/polylane",
+          "phUrl": "https://www.producthunt.com/products/polylane",
+          "website": "https://www.producthunt.com/r/p/1265042?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-09-29T14:28:58-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-09-29T14:28:58-07:00",
           "dailyRank": null,
           "thumbnail": null,
           "topics": [],
@@ -1147,55 +1099,7 @@
           "fresh": false
         },
         {
-          "order": 48,
-          "id": "1266028",
-          "name": "UTTER IN",
-          "tagline": "Say it once and your AI assistant plans the rest",
-          "description": "",
-          "slug": "utter-in",
-          "url": "https://www.producthunt.com/products/utter-in",
-          "phUrl": "https://www.producthunt.com/products/utter-in",
-          "website": "https://www.producthunt.com/r/p/1266028?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-09-30T13:31:27-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-09-30T13:31:27-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": true,
-          "isDev": false,
-          "inAiCategory": true,
-          "listedAfter": "2026-09-30T22:39:03.549Z",
-          "fresh": false
-        },
-        {
-          "order": 49,
-          "id": "1263606",
-          "name": "Semitexa",
-          "tagline": "The PHP framework your AI agent can actually inspect",
-          "description": "",
-          "slug": "semitexa",
-          "url": "https://www.producthunt.com/products/semitexa",
-          "phUrl": "https://www.producthunt.com/products/semitexa",
-          "website": "https://www.producthunt.com/r/p/1263606?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-09-28T08:35:07-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-09-28T08:35:07-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": true,
-          "isDev": false,
-          "inAiCategory": true,
-          "listedAfter": "2026-09-30T22:39:03.549Z",
-          "fresh": false
-        },
-        {
-          "order": 50,
+          "order": 46,
           "id": "1264962",
           "name": "Basedash chat dashboard preview",
           "tagline": "One prompt. A whole dashboard, live in your chat.",
@@ -1209,6 +1113,102 @@
           "createdAt": "2026-09-29T12:14:03-07:00",
           "featuredAt": null,
           "publishedAt": "2026-09-29T12:14:03-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": true,
+          "isDev": false,
+          "inAiCategory": true,
+          "listedAfter": "2026-09-30T22:39:03.549Z",
+          "fresh": false
+        },
+        {
+          "order": 47,
+          "id": "1265166",
+          "name": "DSH Desktop",
+          "tagline": "Official app for DeepSeek’s open-source agent harness",
+          "description": "",
+          "slug": "deepseek",
+          "url": "https://www.producthunt.com/products/deepseek",
+          "phUrl": "https://www.producthunt.com/products/deepseek",
+          "website": "https://www.producthunt.com/r/p/1265166?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-09-29T19:21:19-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-09-29T19:21:19-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": true,
+          "isDev": true,
+          "inAiCategory": true,
+          "listedAfter": "2026-09-30T22:39:03.549Z",
+          "fresh": false
+        },
+        {
+          "order": 48,
+          "id": "1265267",
+          "name": "Chat.sh",
+          "tagline": "The help center I built after Intercom's search broke",
+          "description": "",
+          "slug": "chat-sh",
+          "url": "https://www.producthunt.com/products/chat-sh",
+          "phUrl": "https://www.producthunt.com/products/chat-sh",
+          "website": "https://www.producthunt.com/r/p/1265267?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-09-29T22:27:50-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-09-29T22:27:50-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": true,
+          "isDev": false,
+          "inAiCategory": true,
+          "listedAfter": "2026-09-30T22:39:03.549Z",
+          "fresh": false
+        },
+        {
+          "order": 49,
+          "id": "1254798",
+          "name": "Yedric.ai",
+          "tagline": "Let users control your SaaS with natural language",
+          "description": "",
+          "slug": "yedric-ai",
+          "url": "https://www.producthunt.com/products/yedric-ai",
+          "phUrl": "https://www.producthunt.com/products/yedric-ai",
+          "website": "https://www.producthunt.com/r/p/1254798?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-09-18T07:46:27-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-09-18T07:46:27-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": true,
+          "isDev": false,
+          "inAiCategory": true,
+          "listedAfter": "2026-09-30T22:39:03.549Z",
+          "fresh": false
+        },
+        {
+          "order": 50,
+          "id": "1258620",
+          "name": "Bracket",
+          "tagline": "The memory layer for your business",
+          "description": "",
+          "slug": "bracket-2027",
+          "url": "https://www.producthunt.com/products/bracket-2027",
+          "phUrl": "https://www.producthunt.com/products/bracket-2027",
+          "website": "https://www.producthunt.com/r/p/1258620?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-09-22T14:39:35-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-09-22T14:39:35-07:00",
           "dailyRank": null,
           "thumbnail": null,
           "topics": [],
@@ -1268,414 +1268,6 @@
         },
         {
           "order": 53,
-          "id": "1257247",
-          "name": "Octri.dev",
-          "tagline": "Generate customizable Docs, SDKs, MCP server, and monitoring",
-          "description": "",
-          "slug": "octri",
-          "url": "https://www.producthunt.com/products/octri",
-          "phUrl": "https://www.producthunt.com/products/octri",
-          "website": "https://www.producthunt.com/r/p/1257247?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-09-21T07:26:18-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-09-21T07:26:18-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": false,
-          "isDev": true,
-          "inAiCategory": false,
-          "listedAfter": "2026-10-03T21:48:26.491Z",
-          "fresh": true
-        },
-        {
-          "order": 54,
-          "id": "1266015",
-          "name": "Gemini 4 Argon",
-          "tagline": "Google's frontier model for careful reasoning & complex work",
-          "description": "",
-          "slug": "gemini-4-argon",
-          "url": "https://www.producthunt.com/products/gemini-4-argon",
-          "phUrl": "https://www.producthunt.com/products/gemini-4-argon",
-          "website": "https://www.producthunt.com/r/p/1266015?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-09-30T13:08:45-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-09-30T13:08:45-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": false,
-          "isDev": false,
-          "inAiCategory": false,
-          "listedAfter": "2026-10-03T21:48:26.491Z",
-          "fresh": true
-        },
-        {
-          "order": 55,
-          "id": "1264536",
-          "name": "Cupola",
-          "tagline": "Apple calendar, reminders & notes, together in one app",
-          "description": "",
-          "slug": "cupola",
-          "url": "https://www.producthunt.com/products/cupola",
-          "phUrl": "https://www.producthunt.com/products/cupola",
-          "website": "https://www.producthunt.com/r/p/1264536?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-09-29T04:45:59-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-09-29T04:45:59-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": false,
-          "isDev": false,
-          "inAiCategory": false,
-          "listedAfter": "2026-10-03T21:48:26.491Z",
-          "fresh": true
-        },
-        {
-          "order": 56,
-          "id": "1268906",
-          "name": "LaunchReel",
-          "tagline": "claude design but for editing professional videos faster.",
-          "description": "",
-          "slug": "launchreel-2",
-          "url": "https://www.producthunt.com/products/launchreel-2",
-          "phUrl": "https://www.producthunt.com/products/launchreel-2",
-          "website": "https://www.producthunt.com/r/p/1268906?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-10-03T14:31:56-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-10-03T14:31:56-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": false,
-          "isDev": false,
-          "inAiCategory": false,
-          "listedAfter": "2026-10-03T21:48:26.491Z",
-          "fresh": true
-        },
-        {
-          "order": 57,
-          "id": "1266122",
-          "name": "opensend.cc",
-          "tagline": "The open source email platform that runs on your server",
-          "description": "",
-          "slug": "opensend-cc",
-          "url": "https://www.producthunt.com/products/opensend-cc",
-          "phUrl": "https://www.producthunt.com/products/opensend-cc",
-          "website": "https://www.producthunt.com/r/p/1266122?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-09-30T16:13:28-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-09-30T16:13:28-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": false,
-          "isDev": true,
-          "inAiCategory": false,
-          "listedAfter": "2026-10-03T21:48:26.491Z",
-          "fresh": true
-        },
-        {
-          "order": 58,
-          "id": "1268362",
-          "name": "Eat Train Feel",
-          "tagline": "A coach for you Workouts, food, and how you feel",
-          "description": "",
-          "slug": "eat-train-feel",
-          "url": "https://www.producthunt.com/products/eat-train-feel",
-          "phUrl": "https://www.producthunt.com/products/eat-train-feel",
-          "website": "https://www.producthunt.com/r/p/1268362?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-10-03T01:47:10-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-10-03T01:47:10-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": false,
-          "isDev": false,
-          "inAiCategory": false,
-          "listedAfter": "2026-10-03T21:48:26.491Z",
-          "fresh": true
-        },
-        {
-          "order": 59,
-          "id": "1263814",
-          "name": "Control My Mac",
-          "tagline": "A shortcut deck for every Mac app, on your iPhone or iPad",
-          "description": "",
-          "slug": "control-my-mac",
-          "url": "https://www.producthunt.com/products/control-my-mac",
-          "phUrl": "https://www.producthunt.com/products/control-my-mac",
-          "website": "https://www.producthunt.com/r/p/1263814?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-09-28T12:52:21-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-09-28T12:52:21-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": false,
-          "isDev": false,
-          "inAiCategory": false,
-          "listedAfter": "2026-10-03T21:48:26.491Z",
-          "fresh": true
-        },
-        {
-          "order": 60,
-          "id": "1267801",
-          "name": "Pixel Soup",
-          "tagline": "Dithered live wallpapers your Mac cooks up itself",
-          "description": "",
-          "slug": "pixel-soup",
-          "url": "https://www.producthunt.com/products/pixel-soup",
-          "phUrl": "https://www.producthunt.com/products/pixel-soup",
-          "website": "https://www.producthunt.com/r/p/1267801?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-10-02T08:44:25-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-10-02T08:44:25-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": false,
-          "isDev": false,
-          "inAiCategory": false,
-          "listedAfter": "2026-10-03T21:48:26.491Z",
-          "fresh": true
-        },
-        {
-          "order": 61,
-          "id": "1267809",
-          "name": "Blenny",
-          "tagline": "Organize your macOS 27 menu bar without moving your pointer",
-          "description": "",
-          "slug": "blenny",
-          "url": "https://www.producthunt.com/products/blenny",
-          "phUrl": "https://www.producthunt.com/products/blenny",
-          "website": "https://www.producthunt.com/r/p/1267809?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-10-02T08:52:03-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-10-02T08:52:03-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": false,
-          "isDev": false,
-          "inAiCategory": false,
-          "listedAfter": "2026-10-03T21:48:26.491Z",
-          "fresh": true
-        },
-        {
-          "order": 62,
-          "id": "1268847",
-          "name": "NotchMate",
-          "tagline": "Makes your Notch more fun, interactive and useful.",
-          "description": "",
-          "slug": "notchmate",
-          "url": "https://www.producthunt.com/products/notchmate",
-          "phUrl": "https://www.producthunt.com/products/notchmate",
-          "website": "https://www.producthunt.com/r/p/1268847?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-10-03T12:41:20-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-10-03T12:41:20-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": false,
-          "isDev": false,
-          "inAiCategory": false,
-          "listedAfter": "2026-10-03T21:48:26.491Z",
-          "fresh": true
-        },
-        {
-          "order": 63,
-          "id": "1269060",
-          "name": "Poddle",
-          "tagline": "Swing your phone, play pickleball on any computer!",
-          "description": "",
-          "slug": "poddle-3",
-          "url": "https://www.producthunt.com/products/poddle-3",
-          "phUrl": "https://www.producthunt.com/products/poddle-3",
-          "website": "https://www.producthunt.com/r/p/1269060?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-10-03T21:39:18-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-10-03T21:39:18-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": false,
-          "isDev": false,
-          "inAiCategory": false,
-          "listedAfter": "2026-10-03T21:48:26.491Z",
-          "fresh": true
-        },
-        {
-          "order": 64,
-          "id": "1262155",
-          "name": "Translate Like Me",
-          "tagline": "Translate selected text on Mac, in your own writing style",
-          "description": "",
-          "slug": "translate-like-me",
-          "url": "https://www.producthunt.com/products/translate-like-me",
-          "phUrl": "https://www.producthunt.com/products/translate-like-me",
-          "website": "https://www.producthunt.com/r/p/1262155?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-09-26T18:06:06-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-09-26T18:06:06-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": false,
-          "isDev": false,
-          "inAiCategory": false,
-          "listedAfter": "2026-10-03T21:48:26.491Z",
-          "fresh": true
-        },
-        {
-          "order": 65,
-          "id": "1268853",
-          "name": "Capybara Court",
-          "tagline": "Tiny disputes, gently settled by a capybara judge",
-          "description": "",
-          "slug": "capybara-court",
-          "url": "https://www.producthunt.com/products/capybara-court",
-          "phUrl": "https://www.producthunt.com/products/capybara-court",
-          "website": "https://www.producthunt.com/r/p/1268853?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-10-03T12:47:47-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-10-03T12:47:47-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": false,
-          "isDev": false,
-          "inAiCategory": false,
-          "listedAfter": "2026-10-03T21:48:26.491Z",
-          "fresh": true
-        },
-        {
-          "order": 66,
-          "id": "1261363",
-          "name": "Blume 2.0",
-          "tagline": "The open-source docs framework for humans and agents",
-          "description": "",
-          "slug": "blume-3",
-          "url": "https://www.producthunt.com/products/blume-3",
-          "phUrl": "https://www.producthunt.com/products/blume-3",
-          "website": "https://www.producthunt.com/r/p/1261363?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-09-25T15:30:43-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-09-25T15:30:43-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": false,
-          "isDev": true,
-          "inAiCategory": false,
-          "listedAfter": "2026-10-03T21:48:26.491Z",
-          "fresh": true
-        },
-        {
-          "order": 67,
-          "id": "1264719",
-          "name": "DocsAlot MCP Connector",
-          "tagline": "Maintain your help-center by asking Claude, Cursor or Codex",
-          "description": "",
-          "slug": "docsalot-2",
-          "url": "https://www.producthunt.com/products/docsalot-2",
-          "phUrl": "https://www.producthunt.com/products/docsalot-2",
-          "website": "https://www.producthunt.com/r/p/1264719?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-09-29T07:43:58-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-09-29T07:43:58-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": false,
-          "isDev": false,
-          "inAiCategory": false,
-          "listedAfter": "2026-10-03T21:48:26.491Z",
-          "fresh": true
-        },
-        {
-          "order": 68,
-          "id": "1268802",
-          "name": "Smooth Recorder",
-          "tagline": "Mac screen recordings that look edited when you hit stop",
-          "description": "",
-          "slug": "smooth-recorder",
-          "url": "https://www.producthunt.com/products/smooth-recorder",
-          "phUrl": "https://www.producthunt.com/products/smooth-recorder",
-          "website": "https://www.producthunt.com/r/p/1268802?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-10-03T11:36:22-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-10-03T11:36:22-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": false,
-          "isDev": false,
-          "inAiCategory": false,
-          "listedAfter": "2026-10-03T21:48:26.491Z",
-          "fresh": true
-        },
-        {
-          "order": 69,
-          "id": "1266517",
-          "name": "Cursor Remote Lite",
-          "tagline": "Use the Cursor on your computer from your phone",
-          "description": "",
-          "slug": "cursor-remote-lite",
-          "url": "https://www.producthunt.com/products/cursor-remote-lite",
-          "phUrl": "https://www.producthunt.com/products/cursor-remote-lite",
-          "website": "https://www.producthunt.com/r/p/1266517?app_id=339",
-          "votes": null,
-          "comments": null,
-          "createdAt": "2026-10-01T03:05:49-07:00",
-          "featuredAt": null,
-          "publishedAt": "2026-10-01T03:05:49-07:00",
-          "dailyRank": null,
-          "thumbnail": null,
-          "topics": [],
-          "isAI": false,
-          "isDev": false,
-          "inAiCategory": false,
-          "listedAfter": "2026-10-03T21:48:26.491Z",
-          "fresh": true
-        },
-        {
-          "order": 70,
           "id": "1264825",
           "name": "Quven",
           "tagline": "The self-hosted media server that puts native playback first",
@@ -1699,20 +1291,20 @@
           "fresh": true
         },
         {
-          "order": 71,
-          "id": "1268204",
-          "name": "Pass Designer",
-          "tagline": "Design Apple Wallet passes and see the real card",
+          "order": 54,
+          "id": "1267809",
+          "name": "Blenny",
+          "tagline": "Organize your macOS 27 menu bar without moving your pointer",
           "description": "",
-          "slug": "apple",
-          "url": "https://www.producthunt.com/products/apple",
-          "phUrl": "https://www.producthunt.com/products/apple",
-          "website": "https://www.producthunt.com/r/p/1268204?app_id=339",
+          "slug": "blenny",
+          "url": "https://www.producthunt.com/products/blenny",
+          "phUrl": "https://www.producthunt.com/products/blenny",
+          "website": "https://www.producthunt.com/r/p/1267809?app_id=339",
           "votes": null,
           "comments": null,
-          "createdAt": "2026-10-02T21:13:21-07:00",
+          "createdAt": "2026-10-02T08:52:03-07:00",
           "featuredAt": null,
-          "publishedAt": "2026-10-02T21:13:21-07:00",
+          "publishedAt": "2026-10-02T08:52:03-07:00",
           "dailyRank": null,
           "thumbnail": null,
           "topics": [],
@@ -1723,20 +1315,20 @@
           "fresh": true
         },
         {
-          "order": 72,
-          "id": "1206370",
-          "name": "Art4",
-          "tagline": "Small Art Museum for your Mac",
+          "order": 55,
+          "id": "1269060",
+          "name": "Poddle",
+          "tagline": "Swing your phone, play pickleball on any computer!",
           "description": "",
-          "slug": "art4",
-          "url": "https://www.producthunt.com/products/art4",
-          "phUrl": "https://www.producthunt.com/products/art4",
-          "website": "https://www.producthunt.com/r/p/1206370?app_id=339",
+          "slug": "poddle-3",
+          "url": "https://www.producthunt.com/products/poddle-3",
+          "phUrl": "https://www.producthunt.com/products/poddle-3",
+          "website": "https://www.producthunt.com/r/p/1269060?app_id=339",
           "votes": null,
           "comments": null,
-          "createdAt": "2026-07-25T08:36:00-07:00",
+          "createdAt": "2026-10-03T21:39:18-07:00",
           "featuredAt": null,
-          "publishedAt": "2026-07-25T08:36:00-07:00",
+          "publishedAt": "2026-10-03T21:39:18-07:00",
           "dailyRank": null,
           "thumbnail": null,
           "topics": [],
@@ -1747,20 +1339,20 @@
           "fresh": true
         },
         {
-          "order": 73,
-          "id": "1264350",
-          "name": "JOGAK",
-          "tagline": "Make everyday vlogs with less editing",
+          "order": 56,
+          "id": "1268362",
+          "name": "Eat Train Feel",
+          "tagline": "A coach for you Workouts, food, and how you feel",
           "description": "",
-          "slug": "jogak",
-          "url": "https://www.producthunt.com/products/jogak",
-          "phUrl": "https://www.producthunt.com/products/jogak",
-          "website": "https://www.producthunt.com/r/p/1264350?app_id=339",
+          "slug": "eat-train-feel",
+          "url": "https://www.producthunt.com/products/eat-train-feel",
+          "phUrl": "https://www.producthunt.com/products/eat-train-feel",
+          "website": "https://www.producthunt.com/r/p/1268362?app_id=339",
           "votes": null,
           "comments": null,
-          "createdAt": "2026-09-29T01:42:25-07:00",
+          "createdAt": "2026-10-03T01:47:10-07:00",
           "featuredAt": null,
-          "publishedAt": "2026-09-29T01:42:25-07:00",
+          "publishedAt": "2026-10-03T01:47:10-07:00",
           "dailyRank": null,
           "thumbnail": null,
           "topics": [],
@@ -1771,7 +1363,7 @@
           "fresh": true
         },
         {
-          "order": 74,
+          "order": 57,
           "id": "1266545",
           "name": "Angebotsmeister",
           "tagline": "Speak the job to send a quote",
@@ -1795,20 +1387,20 @@
           "fresh": true
         },
         {
-          "order": 75,
-          "id": "1266191",
-          "name": "Snapset",
-          "tagline": "Save and restore your entire Mac workspace in an instant",
+          "order": 58,
+          "id": "1262155",
+          "name": "Translate Like Me",
+          "tagline": "Translate selected text on Mac, in your own writing style",
           "description": "",
-          "slug": "snapset",
-          "url": "https://www.producthunt.com/products/snapset",
-          "phUrl": "https://www.producthunt.com/products/snapset",
-          "website": "https://www.producthunt.com/r/p/1266191?app_id=339",
+          "slug": "translate-like-me",
+          "url": "https://www.producthunt.com/products/translate-like-me",
+          "phUrl": "https://www.producthunt.com/products/translate-like-me",
+          "website": "https://www.producthunt.com/r/p/1262155?app_id=339",
           "votes": null,
           "comments": null,
-          "createdAt": "2026-09-30T19:13:29-07:00",
+          "createdAt": "2026-09-26T18:06:06-07:00",
           "featuredAt": null,
-          "publishedAt": "2026-09-30T19:13:29-07:00",
+          "publishedAt": "2026-09-26T18:06:06-07:00",
           "dailyRank": null,
           "thumbnail": null,
           "topics": [],
@@ -1819,7 +1411,199 @@
           "fresh": true
         },
         {
-          "order": 76,
+          "order": 59,
+          "id": "1264719",
+          "name": "DocsAlot MCP Connector",
+          "tagline": "Maintain your help-center by asking Claude, Cursor or Codex",
+          "description": "",
+          "slug": "docsalot-2",
+          "url": "https://www.producthunt.com/products/docsalot-2",
+          "phUrl": "https://www.producthunt.com/products/docsalot-2",
+          "website": "https://www.producthunt.com/r/p/1264719?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-09-29T07:43:58-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-09-29T07:43:58-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": false,
+          "isDev": false,
+          "inAiCategory": false,
+          "listedAfter": "2026-10-03T21:48:26.491Z",
+          "fresh": true
+        },
+        {
+          "order": 60,
+          "id": "1263814",
+          "name": "Control My Mac",
+          "tagline": "A shortcut deck for every Mac app, on your iPhone or iPad",
+          "description": "",
+          "slug": "control-my-mac",
+          "url": "https://www.producthunt.com/products/control-my-mac",
+          "phUrl": "https://www.producthunt.com/products/control-my-mac",
+          "website": "https://www.producthunt.com/r/p/1263814?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-09-28T12:52:21-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-09-28T12:52:21-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": false,
+          "isDev": false,
+          "inAiCategory": false,
+          "listedAfter": "2026-10-03T21:48:26.491Z",
+          "fresh": true
+        },
+        {
+          "order": 61,
+          "id": "1266517",
+          "name": "Cursor Remote Lite",
+          "tagline": "Use the Cursor on your computer from your phone",
+          "description": "",
+          "slug": "cursor-remote-lite",
+          "url": "https://www.producthunt.com/products/cursor-remote-lite",
+          "phUrl": "https://www.producthunt.com/products/cursor-remote-lite",
+          "website": "https://www.producthunt.com/r/p/1266517?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-10-01T03:05:49-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-10-01T03:05:49-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": false,
+          "isDev": false,
+          "inAiCategory": false,
+          "listedAfter": "2026-10-03T21:48:26.491Z",
+          "fresh": true
+        },
+        {
+          "order": 62,
+          "id": "1266122",
+          "name": "opensend.cc",
+          "tagline": "The open source email platform that runs on your server",
+          "description": "",
+          "slug": "opensend-cc",
+          "url": "https://www.producthunt.com/products/opensend-cc",
+          "phUrl": "https://www.producthunt.com/products/opensend-cc",
+          "website": "https://www.producthunt.com/r/p/1266122?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-09-30T16:13:28-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-09-30T16:13:28-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": false,
+          "isDev": true,
+          "inAiCategory": false,
+          "listedAfter": "2026-10-03T21:48:26.491Z",
+          "fresh": true
+        },
+        {
+          "order": 63,
+          "id": "1267801",
+          "name": "Pixel Soup",
+          "tagline": "Dithered live wallpapers your Mac cooks up itself",
+          "description": "",
+          "slug": "pixel-soup",
+          "url": "https://www.producthunt.com/products/pixel-soup",
+          "phUrl": "https://www.producthunt.com/products/pixel-soup",
+          "website": "https://www.producthunt.com/r/p/1267801?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-10-02T08:44:25-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-10-02T08:44:25-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": false,
+          "isDev": false,
+          "inAiCategory": false,
+          "listedAfter": "2026-10-03T21:48:26.491Z",
+          "fresh": true
+        },
+        {
+          "order": 64,
+          "id": "1268847",
+          "name": "NotchMate",
+          "tagline": "Makes your Notch more fun, interactive and useful.",
+          "description": "",
+          "slug": "notchmate",
+          "url": "https://www.producthunt.com/products/notchmate",
+          "phUrl": "https://www.producthunt.com/products/notchmate",
+          "website": "https://www.producthunt.com/r/p/1268847?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-10-03T12:41:20-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-10-03T12:41:20-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": false,
+          "isDev": false,
+          "inAiCategory": false,
+          "listedAfter": "2026-10-03T21:48:26.491Z",
+          "fresh": true
+        },
+        {
+          "order": 65,
+          "id": "1257247",
+          "name": "Octri.dev",
+          "tagline": "Generate customizable Docs, SDKs, MCP server, and monitoring",
+          "description": "",
+          "slug": "octri",
+          "url": "https://www.producthunt.com/products/octri",
+          "phUrl": "https://www.producthunt.com/products/octri",
+          "website": "https://www.producthunt.com/r/p/1257247?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-09-21T07:26:18-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-09-21T07:26:18-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": false,
+          "isDev": true,
+          "inAiCategory": false,
+          "listedAfter": "2026-10-03T21:48:26.491Z",
+          "fresh": true
+        },
+        {
+          "order": 66,
+          "id": "1264350",
+          "name": "JOGAK",
+          "tagline": "Make everyday vlogs with less editing",
+          "description": "",
+          "slug": "jogak",
+          "url": "https://www.producthunt.com/products/jogak",
+          "phUrl": "https://www.producthunt.com/products/jogak",
+          "website": "https://www.producthunt.com/r/p/1264350?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-09-29T01:42:25-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-09-29T01:42:25-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": false,
+          "isDev": false,
+          "inAiCategory": false,
+          "listedAfter": "2026-10-03T21:48:26.491Z",
+          "fresh": true
+        },
+        {
+          "order": 67,
           "id": "1264054",
           "name": "Calnio",
           "tagline": "Two-way sync between Notion and Apple Calendar",
@@ -1843,20 +1627,236 @@
           "fresh": true
         },
         {
-          "order": 77,
-          "id": "1198913",
-          "name": "Deskcord.chat",
-          "tagline": "A widget to chat with customers from your Discord server",
+          "order": 68,
+          "id": "1268906",
+          "name": "LaunchReel",
+          "tagline": "claude design but for editing professional videos faster.",
           "description": "",
-          "slug": "deskcord-chat",
-          "url": "https://www.producthunt.com/products/deskcord-chat",
-          "phUrl": "https://www.producthunt.com/products/deskcord-chat",
-          "website": "https://www.producthunt.com/r/p/1198913?app_id=339",
+          "slug": "launchreel-2",
+          "url": "https://www.producthunt.com/products/launchreel-2",
+          "phUrl": "https://www.producthunt.com/products/launchreel-2",
+          "website": "https://www.producthunt.com/r/p/1268906?app_id=339",
           "votes": null,
           "comments": null,
-          "createdAt": "2026-07-17T02:11:13-07:00",
+          "createdAt": "2026-10-03T14:31:56-07:00",
           "featuredAt": null,
-          "publishedAt": "2026-07-17T02:11:13-07:00",
+          "publishedAt": "2026-10-03T14:31:56-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": false,
+          "isDev": false,
+          "inAiCategory": false,
+          "listedAfter": "2026-10-03T21:48:26.491Z",
+          "fresh": true
+        },
+        {
+          "order": 69,
+          "id": "1266015",
+          "name": "Gemini 4 Argon",
+          "tagline": "Google's frontier model for careful reasoning & complex work",
+          "description": "",
+          "slug": "gemini-4-argon",
+          "url": "https://www.producthunt.com/products/gemini-4-argon",
+          "phUrl": "https://www.producthunt.com/products/gemini-4-argon",
+          "website": "https://www.producthunt.com/r/p/1266015?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-09-30T13:08:45-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-09-30T13:08:45-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": false,
+          "isDev": false,
+          "inAiCategory": false,
+          "listedAfter": "2026-10-03T21:48:26.491Z",
+          "fresh": true
+        },
+        {
+          "order": 70,
+          "id": "1268802",
+          "name": "Smooth Recorder",
+          "tagline": "Mac screen recordings that look edited when you hit stop",
+          "description": "",
+          "slug": "smooth-recorder",
+          "url": "https://www.producthunt.com/products/smooth-recorder",
+          "phUrl": "https://www.producthunt.com/products/smooth-recorder",
+          "website": "https://www.producthunt.com/r/p/1268802?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-10-03T11:36:22-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-10-03T11:36:22-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": false,
+          "isDev": false,
+          "inAiCategory": false,
+          "listedAfter": "2026-10-03T21:48:26.491Z",
+          "fresh": true
+        },
+        {
+          "order": 71,
+          "id": "1261363",
+          "name": "Blume 2.0",
+          "tagline": "The open-source docs framework for humans and agents",
+          "description": "",
+          "slug": "blume-3",
+          "url": "https://www.producthunt.com/products/blume-3",
+          "phUrl": "https://www.producthunt.com/products/blume-3",
+          "website": "https://www.producthunt.com/r/p/1261363?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-09-25T15:30:43-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-09-25T15:30:43-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": false,
+          "isDev": true,
+          "inAiCategory": false,
+          "listedAfter": "2026-10-03T21:48:26.491Z",
+          "fresh": true
+        },
+        {
+          "order": 72,
+          "id": "1268853",
+          "name": "Capybara Court",
+          "tagline": "Tiny disputes, gently settled by a capybara judge",
+          "description": "",
+          "slug": "capybara-court",
+          "url": "https://www.producthunt.com/products/capybara-court",
+          "phUrl": "https://www.producthunt.com/products/capybara-court",
+          "website": "https://www.producthunt.com/r/p/1268853?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-10-03T12:47:47-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-10-03T12:47:47-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": false,
+          "isDev": false,
+          "inAiCategory": false,
+          "listedAfter": "2026-10-03T21:48:26.491Z",
+          "fresh": true
+        },
+        {
+          "order": 73,
+          "id": "1206370",
+          "name": "Art4",
+          "tagline": "Small Art Museum for your Mac",
+          "description": "",
+          "slug": "art4",
+          "url": "https://www.producthunt.com/products/art4",
+          "phUrl": "https://www.producthunt.com/products/art4",
+          "website": "https://www.producthunt.com/r/p/1206370?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-07-25T08:36:00-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-07-25T08:36:00-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": false,
+          "isDev": false,
+          "inAiCategory": false,
+          "listedAfter": "2026-10-03T21:48:26.491Z",
+          "fresh": true
+        },
+        {
+          "order": 74,
+          "id": "1266191",
+          "name": "Snapset",
+          "tagline": "Save and restore your entire Mac workspace in an instant",
+          "description": "",
+          "slug": "snapset",
+          "url": "https://www.producthunt.com/products/snapset",
+          "phUrl": "https://www.producthunt.com/products/snapset",
+          "website": "https://www.producthunt.com/r/p/1266191?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-09-30T19:13:29-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-09-30T19:13:29-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": false,
+          "isDev": false,
+          "inAiCategory": false,
+          "listedAfter": "2026-10-03T21:48:26.491Z",
+          "fresh": true
+        },
+        {
+          "order": 75,
+          "id": "1268204",
+          "name": "Pass Designer",
+          "tagline": "Design Apple Wallet passes and see the real card",
+          "description": "",
+          "slug": "apple",
+          "url": "https://www.producthunt.com/products/apple",
+          "phUrl": "https://www.producthunt.com/products/apple",
+          "website": "https://www.producthunt.com/r/p/1268204?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-10-02T21:13:21-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-10-02T21:13:21-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": false,
+          "isDev": false,
+          "inAiCategory": false,
+          "listedAfter": "2026-10-03T21:48:26.491Z",
+          "fresh": true
+        },
+        {
+          "order": 76,
+          "id": "1264536",
+          "name": "Cupola",
+          "tagline": "Apple calendar, reminders & notes, together in one app",
+          "description": "",
+          "slug": "cupola",
+          "url": "https://www.producthunt.com/products/cupola",
+          "phUrl": "https://www.producthunt.com/products/cupola",
+          "website": "https://www.producthunt.com/r/p/1264536?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-09-29T04:45:59-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-09-29T04:45:59-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": false,
+          "isDev": false,
+          "inAiCategory": false,
+          "listedAfter": "2026-10-03T21:48:26.491Z",
+          "fresh": true
+        },
+        {
+          "order": 77,
+          "id": "1264763",
+          "name": "bawkterm",
+          "tagline": "A desktop client for SSH, SFTP, Docker over SSH",
+          "description": "",
+          "slug": "bawkterm-an-open-source-ssh-sftp-client",
+          "url": "https://www.producthunt.com/products/bawkterm-an-open-source-ssh-sftp-client",
+          "phUrl": "https://www.producthunt.com/products/bawkterm-an-open-source-ssh-sftp-client",
+          "website": "https://www.producthunt.com/r/p/1264763?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-09-29T08:32:10-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-09-29T08:32:10-07:00",
           "dailyRank": null,
           "thumbnail": null,
           "topics": [],
@@ -1868,19 +1868,19 @@
         },
         {
           "order": 78,
-          "id": "1263873",
-          "name": "FeelMyMac",
-          "tagline": "Lets you feel different textures through your Mac’s trackpad",
+          "id": "1264362",
+          "name": "OTPfill",
+          "tagline": "Autofill OTP codes from your email on Mac",
           "description": "",
-          "slug": "feelmymac",
-          "url": "https://www.producthunt.com/products/feelmymac",
-          "phUrl": "https://www.producthunt.com/products/feelmymac",
-          "website": "https://www.producthunt.com/r/p/1263873?app_id=339",
+          "slug": "otpfill",
+          "url": "https://www.producthunt.com/products/otpfill",
+          "phUrl": "https://www.producthunt.com/products/otpfill",
+          "website": "https://www.producthunt.com/r/p/1264362?app_id=339",
           "votes": null,
           "comments": null,
-          "createdAt": "2026-09-28T14:07:30-07:00",
+          "createdAt": "2026-09-29T01:55:04-07:00",
           "featuredAt": null,
-          "publishedAt": "2026-09-28T14:07:30-07:00",
+          "publishedAt": "2026-09-29T01:55:04-07:00",
           "dailyRank": null,
           "thumbnail": null,
           "topics": [],
@@ -1892,19 +1892,19 @@
         },
         {
           "order": 79,
-          "id": "1267818",
-          "name": "Kindle 2026",
-          "tagline": "A smaller, faster Kindle with a flush-front display",
+          "id": "1260944",
+          "name": "MacCam",
+          "tagline": "The camera app Apple never shipped for the Mac",
           "description": "",
-          "slug": "kindle-2026",
-          "url": "https://www.producthunt.com/products/kindle-2026",
-          "phUrl": "https://www.producthunt.com/products/kindle-2026",
-          "website": "https://www.producthunt.com/r/p/1267818?app_id=339",
+          "slug": "maccam",
+          "url": "https://www.producthunt.com/products/maccam",
+          "phUrl": "https://www.producthunt.com/products/maccam",
+          "website": "https://www.producthunt.com/r/p/1260944?app_id=339",
           "votes": null,
           "comments": null,
-          "createdAt": "2026-10-02T09:02:19-07:00",
+          "createdAt": "2026-09-25T04:00:07-07:00",
           "featuredAt": null,
-          "publishedAt": "2026-10-02T09:02:19-07:00",
+          "publishedAt": "2026-09-25T04:00:07-07:00",
           "dailyRank": null,
           "thumbnail": null,
           "topics": [],
@@ -1937,28 +1937,44 @@
           "inAiCategory": false,
           "listedAfter": "2026-10-02T22:35:31.925Z",
           "fresh": false
+        },
+        {
+          "order": 81,
+          "id": "1198913",
+          "name": "Deskcord.chat",
+          "tagline": "A widget to chat with customers from your Discord server",
+          "description": "",
+          "slug": "deskcord-chat",
+          "url": "https://www.producthunt.com/products/deskcord-chat",
+          "phUrl": "https://www.producthunt.com/products/deskcord-chat",
+          "website": "https://www.producthunt.com/r/p/1198913?app_id=339",
+          "votes": null,
+          "comments": null,
+          "createdAt": "2026-07-17T02:11:13-07:00",
+          "featuredAt": null,
+          "publishedAt": "2026-07-17T02:11:13-07:00",
+          "dailyRank": null,
+          "thumbnail": null,
+          "topics": [],
+          "isAI": false,
+          "isDev": false,
+          "inAiCategory": false,
+          "listedAfter": "2026-10-02T22:35:31.925Z",
+          "fresh": false
         }
       ]
     }
   ],
   "listing": {
-    "lastCompleteAt": "2026-10-04T14:48:45.758Z",
+    "lastCompleteAt": "2026-10-04T21:58:24.508Z",
     "posts": {
-      "1146521": {
-        "listedAfter": "2026-09-22T21:40:55.429Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
       "1167665": {
         "listedAfter": "2026-09-29T22:40:17.956Z",
         "lastSeenAt": "2026-10-02T22:35:31.925Z"
       },
-      "1189198": {
-        "listedAfter": "2026-09-21T22:17:36.673Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
       "1198913": {
         "listedAfter": "2026-10-02T22:35:31.925Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1203994": {
         "listedAfter": "2026-09-26T21:36:31.764Z",
@@ -1966,7 +1982,7 @@
       },
       "1206370": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1206657": {
         "listedAfter": "2026-09-30T22:39:03.549Z",
@@ -1978,11 +1994,7 @@
       },
       "1217369": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
-      },
-      "1219603": {
-        "listedAfter": "2026-09-21T22:17:36.673Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1220299": {
         "listedAfter": "2026-09-29T22:40:17.956Z",
@@ -2004,10 +2016,6 @@
         "listedAfter": null,
         "lastSeenAt": "2026-09-29T22:40:17.956Z"
       },
-      "1233043": {
-        "listedAfter": "2026-09-22T21:40:55.429Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
       "1235021": {
         "listedAfter": "2026-09-30T22:39:03.549Z",
         "lastSeenAt": "2026-10-02T22:35:31.925Z"
@@ -2024,17 +2032,9 @@
         "listedAfter": "2026-09-26T21:36:31.764Z",
         "lastSeenAt": "2026-09-29T22:40:17.956Z"
       },
-      "1239946": {
-        "listedAfter": "2026-09-21T22:17:36.673Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
       "1240198": {
         "listedAfter": "2026-09-28T23:32:42.576Z",
         "lastSeenAt": "2026-09-30T15:57:13.514Z"
-      },
-      "1240532": {
-        "listedAfter": "2026-09-21T22:17:36.673Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
       },
       "1240702": {
         "listedAfter": "2026-09-25T21:51:18.125Z",
@@ -2072,10 +2072,6 @@
         "listedAfter": "2026-09-28T23:32:42.576Z",
         "lastSeenAt": "2026-10-01T16:29:47.549Z"
       },
-      "1246175": {
-        "listedAfter": "2026-09-21T22:17:36.673Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
       "1246347": {
         "listedAfter": "2026-09-29T22:40:17.956Z",
         "lastSeenAt": "2026-10-01T11:47:37.214Z"
@@ -2083,10 +2079,6 @@
       "1247025": {
         "listedAfter": null,
         "lastSeenAt": "2026-09-26T21:36:31.764Z"
-      },
-      "1247082": {
-        "listedAfter": "2026-09-20T21:04:49.640Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
       },
       "1247580": {
         "listedAfter": "2026-09-28T23:32:42.576Z",
@@ -2098,7 +2090,7 @@
       },
       "1248704": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1249022": {
         "listedAfter": "2026-09-23T21:48:57.044Z",
@@ -2108,21 +2100,9 @@
         "listedAfter": "2026-09-26T21:36:31.764Z",
         "lastSeenAt": "2026-09-28T23:32:42.576Z"
       },
-      "1250348": {
-        "listedAfter": "2026-09-21T22:17:36.673Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
       "1250819": {
         "listedAfter": "2026-09-24T21:51:02.650Z",
         "lastSeenAt": "2026-09-29T22:40:17.956Z"
-      },
-      "1250879": {
-        "listedAfter": "2026-09-21T22:17:36.673Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
-      "1251133": {
-        "listedAfter": "2026-09-22T21:40:55.429Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
       },
       "1251426": {
         "listedAfter": "2026-09-23T21:48:57.044Z",
@@ -2134,35 +2114,23 @@
       },
       "1251693": {
         "listedAfter": "2026-10-01T22:55:46.652Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1251721": {
         "listedAfter": "2026-09-27T21:39:13.903Z",
         "lastSeenAt": "2026-09-30T22:39:03.549Z"
       },
-      "1251757": {
-        "listedAfter": "2026-09-22T21:40:55.429Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
       "1251848": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1252169": {
         "listedAfter": "2026-09-28T23:32:42.576Z",
         "lastSeenAt": "2026-09-29T22:40:17.956Z"
       },
-      "1252189": {
-        "listedAfter": "2026-09-21T22:17:36.673Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
       "1252358": {
         "listedAfter": "2026-09-28T23:32:42.576Z",
         "lastSeenAt": "2026-09-30T22:39:03.549Z"
-      },
-      "1252379": {
-        "listedAfter": "2026-09-21T22:17:36.673Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
       },
       "1252633": {
         "listedAfter": "2026-09-28T23:32:42.576Z",
@@ -2170,7 +2138,7 @@
       },
       "1253097": {
         "listedAfter": "2026-10-01T22:55:46.652Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1253172": {
         "listedAfter": null,
@@ -2190,11 +2158,7 @@
       },
       "1253670": {
         "listedAfter": "2026-10-01T22:55:46.652Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
-      },
-      "1253740": {
-        "listedAfter": "2026-09-21T22:17:36.673Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1254383": {
         "listedAfter": "2026-09-25T21:51:18.125Z",
@@ -2222,11 +2186,11 @@
       },
       "1254798": {
         "listedAfter": "2026-09-30T22:39:03.549Z",
-        "lastSeenAt": "2026-10-04T11:16:16.717Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1254817": {
         "listedAfter": "2026-10-02T22:35:31.925Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1254835": {
         "listedAfter": null,
@@ -2240,21 +2204,9 @@
         "listedAfter": "2026-09-23T21:48:57.044Z",
         "lastSeenAt": "2026-09-27T21:39:13.903Z"
       },
-      "1255104": {
-        "listedAfter": null,
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
       "1255125": {
         "listedAfter": "2026-09-25T21:51:18.125Z",
         "lastSeenAt": "2026-09-28T23:32:42.576Z"
-      },
-      "1255169": {
-        "listedAfter": "2026-09-21T22:17:36.673Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
-      "1255183": {
-        "listedAfter": "2026-09-21T22:17:36.673Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
       },
       "1255343": {
         "listedAfter": null,
@@ -2264,10 +2216,6 @@
         "listedAfter": null,
         "lastSeenAt": "2026-09-27T21:39:13.903Z"
       },
-      "1255502": {
-        "listedAfter": "2026-09-21T22:17:36.673Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
       "1255507": {
         "listedAfter": "2026-09-26T21:36:31.764Z",
         "lastSeenAt": "2026-09-29T22:40:17.956Z"
@@ -2276,29 +2224,9 @@
         "listedAfter": "2026-09-28T23:32:42.576Z",
         "lastSeenAt": "2026-09-29T22:40:17.956Z"
       },
-      "1255831": {
-        "listedAfter": "2026-09-21T22:17:36.673Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
-      "1255875": {
-        "listedAfter": "2026-09-21T22:17:36.673Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
-      "1255926": {
-        "listedAfter": "2026-09-21T22:17:36.673Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
       "1255956": {
         "listedAfter": "2026-09-28T23:32:42.576Z",
         "lastSeenAt": "2026-09-30T22:39:03.549Z"
-      },
-      "1256103": {
-        "listedAfter": "2026-09-20T21:04:49.640Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
-      "1256114": {
-        "listedAfter": "2026-09-20T21:04:49.640Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
       },
       "1256360": {
         "listedAfter": null,
@@ -2312,10 +2240,6 @@
         "listedAfter": null,
         "lastSeenAt": "2026-09-27T14:43:08.479Z"
       },
-      "1256727": {
-        "listedAfter": "2026-09-21T22:17:36.673Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
       "1256758": {
         "listedAfter": "2026-09-26T21:36:31.764Z",
         "lastSeenAt": "2026-09-28T23:32:42.576Z"
@@ -2323,30 +2247,6 @@
       "1256763": {
         "listedAfter": null,
         "lastSeenAt": "2026-09-27T14:43:08.479Z"
-      },
-      "1256789": {
-        "listedAfter": "2026-09-22T21:40:55.429Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
-      "1256824": {
-        "listedAfter": "2026-09-21T22:17:36.673Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
-      "1256846": {
-        "listedAfter": "2026-09-23T21:48:57.044Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
-      "1257048": {
-        "listedAfter": "2026-09-21T22:17:36.673Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
-      "1257163": {
-        "listedAfter": "2026-09-22T21:40:55.429Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
-      "1257192": {
-        "listedAfter": "2026-09-21T22:17:36.673Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
       },
       "1257198": {
         "listedAfter": "2026-09-28T23:32:42.576Z",
@@ -2358,11 +2258,7 @@
       },
       "1257247": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
-      },
-      "1257313": {
-        "listedAfter": "2026-09-21T22:17:36.673Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1257315": {
         "listedAfter": "2026-09-25T21:51:18.125Z",
@@ -2375,10 +2271,6 @@
       "1257320": {
         "listedAfter": "2026-09-28T23:32:42.576Z",
         "lastSeenAt": "2026-10-01T16:29:47.549Z"
-      },
-      "1257371": {
-        "listedAfter": "2026-09-21T22:17:36.673Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
       },
       "1257374": {
         "listedAfter": null,
@@ -2396,18 +2288,6 @@
         "listedAfter": null,
         "lastSeenAt": "2026-09-29T15:57:00.409Z"
       },
-      "1257448": {
-        "listedAfter": "2026-09-21T22:17:36.673Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
-      "1257464": {
-        "listedAfter": "2026-09-21T22:17:36.673Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
-      "1257466": {
-        "listedAfter": "2026-09-21T22:17:36.673Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
       "1257479": {
         "listedAfter": null,
         "lastSeenAt": "2026-09-26T10:14:55.465Z"
@@ -2416,17 +2296,9 @@
         "listedAfter": null,
         "lastSeenAt": "2026-09-28T23:32:42.576Z"
       },
-      "1257557": {
-        "listedAfter": "2026-09-21T22:17:36.673Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
       "1257580": {
         "listedAfter": "2026-10-02T22:35:31.925Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
-      },
-      "1257594": {
-        "listedAfter": "2026-09-21T22:17:36.673Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1257659": {
         "listedAfter": null,
@@ -2434,27 +2306,11 @@
       },
       "1257664": {
         "listedAfter": "2026-10-02T22:35:31.925Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
-      },
-      "1257670": {
-        "listedAfter": "2026-09-22T21:40:55.429Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1257716": {
         "listedAfter": null,
         "lastSeenAt": "2026-09-27T21:39:13.903Z"
-      },
-      "1257720": {
-        "listedAfter": "2026-09-21T22:17:36.673Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
-      "1257748": {
-        "listedAfter": "2026-09-21T22:17:36.673Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
-      "1257763": {
-        "listedAfter": "2026-09-22T21:40:55.429Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
       },
       "1257764": {
         "listedAfter": null,
@@ -2468,10 +2324,6 @@
         "listedAfter": null,
         "lastSeenAt": "2026-09-27T21:39:13.903Z"
       },
-      "1258060": {
-        "listedAfter": "2026-09-23T21:48:57.044Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
       "1258123": {
         "listedAfter": null,
         "lastSeenAt": "2026-09-27T14:43:08.479Z"
@@ -2484,10 +2336,6 @@
         "listedAfter": "2026-09-22T21:40:55.429Z",
         "lastSeenAt": "2026-09-25T21:51:18.125Z"
       },
-      "1258292": {
-        "listedAfter": "2026-09-22T21:40:55.429Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
       "1258326": {
         "listedAfter": "2026-09-25T21:51:18.125Z",
         "lastSeenAt": "2026-09-29T22:40:17.956Z"
@@ -2495,18 +2343,6 @@
       "1258336": {
         "listedAfter": "2026-09-23T21:48:57.044Z",
         "lastSeenAt": "2026-09-27T10:43:24.778Z"
-      },
-      "1258400": {
-        "listedAfter": "2026-09-22T21:40:55.429Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
-      "1258428": {
-        "listedAfter": "2026-09-22T21:40:55.429Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
-      "1258470": {
-        "listedAfter": "2026-09-22T21:40:55.429Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
       },
       "1258501": {
         "listedAfter": "2026-09-22T21:40:55.429Z",
@@ -2530,7 +2366,7 @@
       },
       "1258620": {
         "listedAfter": "2026-09-30T22:39:03.549Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1258630": {
         "listedAfter": "2026-09-26T21:36:31.764Z",
@@ -2547,14 +2383,6 @@
       "1258791": {
         "listedAfter": null,
         "lastSeenAt": "2026-09-28T23:32:42.576Z"
-      },
-      "1258796": {
-        "listedAfter": "2026-09-23T21:48:57.044Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
-      "1258838": {
-        "listedAfter": "2026-09-23T21:48:57.044Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
       },
       "1258888": {
         "listedAfter": "2026-09-25T21:51:18.125Z",
@@ -2588,21 +2416,9 @@
         "listedAfter": null,
         "lastSeenAt": "2026-09-29T15:57:00.409Z"
       },
-      "1259530": {
-        "listedAfter": "2026-09-23T21:48:57.044Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
       "1259552": {
         "listedAfter": null,
         "lastSeenAt": "2026-09-27T10:43:24.778Z"
-      },
-      "1259576": {
-        "listedAfter": "2026-09-23T21:48:57.044Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
-      },
-      "1259583": {
-        "listedAfter": "2026-09-23T21:48:57.044Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
       },
       "1259609": {
         "listedAfter": "2026-09-23T21:48:57.044Z",
@@ -2622,11 +2438,7 @@
       },
       "1259794": {
         "listedAfter": "2026-10-02T22:35:31.925Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
-      },
-      "1259856": {
-        "listedAfter": "2026-09-23T21:48:57.044Z",
-        "lastSeenAt": "2026-09-24T21:51:02.650Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1259929": {
         "listedAfter": "2026-09-24T21:51:02.650Z",
@@ -2638,7 +2450,7 @@
       },
       "1259946": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1259972": {
         "listedAfter": null,
@@ -2790,7 +2602,7 @@
       },
       "1260944": {
         "listedAfter": "2026-10-02T22:35:31.925Z",
-        "lastSeenAt": "2026-10-03T21:48:26.491Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1260956": {
         "listedAfter": "2026-10-02T22:35:31.925Z",
@@ -2814,7 +2626,7 @@
       },
       "1261363": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1261365": {
         "listedAfter": "2026-09-28T23:32:42.576Z",
@@ -2842,15 +2654,15 @@
       },
       "1262057": {
         "listedAfter": "2026-10-02T22:35:31.925Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1262134": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1262155": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1262216": {
         "listedAfter": "2026-09-27T21:39:13.903Z",
@@ -3002,7 +2814,7 @@
       },
       "1263814": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1263848": {
         "listedAfter": "2026-09-29T22:40:17.956Z",
@@ -3010,7 +2822,7 @@
       },
       "1263860": {
         "listedAfter": "2026-10-01T22:55:46.652Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1263873": {
         "listedAfter": "2026-10-02T22:35:31.925Z",
@@ -3018,7 +2830,7 @@
       },
       "1263902": {
         "listedAfter": "2026-10-01T22:55:46.652Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1263915": {
         "listedAfter": "2026-09-29T22:40:17.956Z",
@@ -3042,7 +2854,7 @@
       },
       "1264054": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1264225": {
         "listedAfter": "2026-09-30T22:39:03.549Z",
@@ -3058,15 +2870,15 @@
       },
       "1264332": {
         "listedAfter": "2026-10-01T22:55:46.652Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1264350": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1264362": {
         "listedAfter": "2026-10-02T22:35:31.925Z",
-        "lastSeenAt": "2026-10-03T21:48:26.491Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1264504": {
         "listedAfter": "2026-09-29T22:40:17.956Z",
@@ -3078,7 +2890,7 @@
       },
       "1264536": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1264547": {
         "listedAfter": "2026-09-30T22:39:03.549Z",
@@ -3086,7 +2898,7 @@
       },
       "1264587": {
         "listedAfter": "2026-10-01T22:55:46.652Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1264611": {
         "listedAfter": "2026-09-30T22:39:03.549Z",
@@ -3102,7 +2914,7 @@
       },
       "1264658": {
         "listedAfter": "2026-10-02T22:35:31.925Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1264672": {
         "listedAfter": "2026-09-29T22:40:17.956Z",
@@ -3110,7 +2922,7 @@
       },
       "1264688": {
         "listedAfter": "2026-09-30T22:39:03.549Z",
-        "lastSeenAt": "2026-10-03T21:48:26.491Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1264691": {
         "listedAfter": "2026-09-29T22:40:17.956Z",
@@ -3118,11 +2930,11 @@
       },
       "1264719": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1264763": {
         "listedAfter": "2026-10-02T22:35:31.925Z",
-        "lastSeenAt": "2026-10-04T11:16:16.717Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1264767": {
         "listedAfter": "2026-09-29T22:40:17.956Z",
@@ -3134,7 +2946,7 @@
       },
       "1264825": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1264836": {
         "listedAfter": "2026-10-01T22:55:46.652Z",
@@ -3142,7 +2954,7 @@
       },
       "1264913": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1264932": {
         "listedAfter": "2026-09-30T22:39:03.549Z",
@@ -3154,11 +2966,11 @@
       },
       "1264962": {
         "listedAfter": "2026-09-30T22:39:03.549Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1264987": {
         "listedAfter": "2026-10-02T22:35:31.925Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1264998": {
         "listedAfter": "2026-09-29T22:40:17.956Z",
@@ -3170,7 +2982,7 @@
       },
       "1265042": {
         "listedAfter": "2026-09-30T22:39:03.549Z",
-        "lastSeenAt": "2026-10-03T21:48:26.491Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1265054": {
         "listedAfter": "2026-09-29T22:40:17.956Z",
@@ -3190,11 +3002,11 @@
       },
       "1265166": {
         "listedAfter": "2026-09-30T22:39:03.549Z",
-        "lastSeenAt": "2026-10-04T11:16:16.717Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1265167": {
         "listedAfter": "2026-09-30T22:39:03.549Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1265183": {
         "listedAfter": "2026-09-29T22:40:17.956Z",
@@ -3218,11 +3030,11 @@
       },
       "1265267": {
         "listedAfter": "2026-09-30T22:39:03.549Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1265272": {
         "listedAfter": "2026-10-01T22:55:46.652Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1265274": {
         "listedAfter": "2026-09-29T22:40:17.956Z",
@@ -3262,7 +3074,7 @@
       },
       "1265797": {
         "listedAfter": "2026-10-01T22:55:46.652Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1265835": {
         "listedAfter": "2026-10-01T22:55:46.652Z",
@@ -3274,11 +3086,11 @@
       },
       "1265885": {
         "listedAfter": "2026-10-02T22:35:31.925Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1265983": {
         "listedAfter": "2026-09-30T22:39:03.549Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1266002": {
         "listedAfter": "2026-09-30T22:39:03.549Z",
@@ -3290,7 +3102,7 @@
       },
       "1266015": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1266028": {
         "listedAfter": "2026-09-30T22:39:03.549Z",
@@ -3298,11 +3110,11 @@
       },
       "1266067": {
         "listedAfter": "2026-10-01T22:55:46.652Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1266069": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1266080": {
         "listedAfter": "2026-09-30T22:39:03.549Z",
@@ -3310,11 +3122,11 @@
       },
       "1266098": {
         "listedAfter": "2026-10-02T22:35:31.925Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1266122": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1266130": {
         "listedAfter": "2026-09-30T22:39:03.549Z",
@@ -3322,7 +3134,7 @@
       },
       "1266191": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1266319": {
         "listedAfter": "2026-10-01T22:55:46.652Z",
@@ -3330,11 +3142,11 @@
       },
       "1266347": {
         "listedAfter": "2026-10-02T22:35:31.925Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1266380": {
         "listedAfter": "2026-10-01T22:55:46.652Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1266483": {
         "listedAfter": "2026-10-02T22:35:31.925Z",
@@ -3342,7 +3154,7 @@
       },
       "1266517": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1266528": {
         "listedAfter": "2026-10-01T22:55:46.652Z",
@@ -3350,11 +3162,11 @@
       },
       "1266544": {
         "listedAfter": "2026-10-01T22:55:46.652Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1266545": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1266609": {
         "listedAfter": "2026-10-02T22:35:31.925Z",
@@ -3366,7 +3178,7 @@
       },
       "1266692": {
         "listedAfter": "2026-10-02T22:35:31.925Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1266705": {
         "listedAfter": "2026-10-01T22:55:46.652Z",
@@ -3398,7 +3210,7 @@
       },
       "1267041": {
         "listedAfter": "2026-10-01T22:55:46.652Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1267063": {
         "listedAfter": "2026-10-01T22:55:46.652Z",
@@ -3406,23 +3218,23 @@
       },
       "1267170": {
         "listedAfter": "2026-10-01T22:55:46.652Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1267264": {
         "listedAfter": "2026-10-01T22:55:46.652Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1267705": {
         "listedAfter": "2026-10-02T22:35:31.925Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1267801": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1267809": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1267818": {
         "listedAfter": "2026-10-02T22:35:31.925Z",
@@ -3430,86 +3242,86 @@
       },
       "1267846": {
         "listedAfter": "2026-10-02T22:35:31.925Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1267919": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1268042": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1268072": {
         "listedAfter": null,
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1268160": {
         "listedAfter": "2026-10-02T22:35:31.925Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1268165": {
         "listedAfter": "2026-10-02T22:35:31.925Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1268204": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1268339": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1268362": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1268520": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1268802": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1268847": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1268851": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1268853": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1268906": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1268954": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       },
       "1269060": {
         "listedAfter": "2026-10-03T21:48:26.491Z",
-        "lastSeenAt": "2026-10-04T14:48:45.758Z"
+        "lastSeenAt": "2026-10-04T21:58:24.508Z"
       }
     }
   },
   "listingHealth": {
     "registry": "carried",
     "thisFetch": "complete",
-    "lastCompleteAt": "2026-10-04T14:48:45.758Z",
+    "lastCompleteAt": "2026-10-04T21:58:24.508Z",
     "hoursSinceComplete": 0,
-    "known": 80,
+    "known": 81,
     "added": 0,
     "dated": 0,
     "belowKnown": 0,
     "noKnownInFeed": 0,
     "feedsWithoutKnown": 0,
-    "registrySize": 388,
+    "registrySize": 335,
     "alerts": [],
     "warnings": []
   }
