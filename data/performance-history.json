@@ -3912,7 +3912,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-04T02:38:42.161Z"
+        "updatedAt": "2026-10-05T02:00:48.738Z"
       },
       "instagram": {
         "mediaId": "18115515520805015",
@@ -3923,7 +3923,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-04T02:38:42.161Z"
+        "updatedAt": "2026-10-05T02:00:48.738Z"
       }
     },
     {
@@ -4017,7 +4017,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-04T02:38:42.161Z"
+        "updatedAt": "2026-10-05T02:00:48.738Z"
       },
       "instagram": {
         "mediaId": "18129185785785737",
@@ -4028,7 +4028,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-04T02:38:42.161Z"
+        "updatedAt": "2026-10-05T02:00:48.738Z"
       }
     },
     {
@@ -4074,7 +4074,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-04T02:38:42.161Z"
+        "updatedAt": "2026-10-05T02:00:48.738Z"
       },
       "instagram": {
         "mediaId": "18128502364772913",
@@ -4085,7 +4085,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-04T02:38:42.161Z"
+        "updatedAt": "2026-10-05T02:00:48.738Z"
       },
       "jev": {
         "stage": 1,
@@ -4174,7 +4174,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-04T02:38:42.161Z"
+        "updatedAt": "2026-10-05T02:00:48.738Z"
       },
       "instagram": {
         "mediaId": "18433923538178120",
@@ -4185,7 +4185,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-04T02:38:42.161Z"
+        "updatedAt": "2026-10-05T02:00:48.738Z"
       },
       "jev": {
         "stage": 1,
@@ -4261,7 +4261,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-04T02:38:42.161Z"
+        "updatedAt": "2026-10-05T02:00:48.738Z"
       },
       "instagram": {
         "mediaId": "18116926882958766",
@@ -4272,7 +4272,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-04T02:38:42.161Z"
+        "updatedAt": "2026-10-05T02:00:48.738Z"
       },
       "jev": {
         "stage": 1,
@@ -4355,7 +4355,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-04T02:38:42.161Z"
+        "updatedAt": "2026-10-05T02:00:48.738Z"
       },
       "instagram": {
         "mediaId": "17979318410914317",
@@ -4366,7 +4366,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-04T02:38:42.161Z"
+        "updatedAt": "2026-10-05T02:00:48.738Z"
       },
       "jev": {
         "stage": 1,
@@ -4449,7 +4449,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-04T02:38:42.161Z"
+        "updatedAt": "2026-10-05T02:00:48.738Z"
       },
       "instagram": {
         "mediaId": "18069970178765136",
@@ -4460,7 +4460,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-04T02:38:42.161Z"
+        "updatedAt": "2026-10-05T02:00:48.738Z"
       },
       "jev": {
         "stage": 1,
@@ -4543,7 +4543,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-10-05T02:00:48.738Z"
       },
       "instagram": null,
       "jev": {
@@ -4586,14 +4586,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-09-05",
-      "changes": [
-        "standard: 2 avg views (78 videos)",
-        "Day performance: Tue=3, Mon=2, Fri=2, Sat=1, Sun=1, Wed=1, Thu=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-09-06",
       "changes": [
@@ -4807,6 +4799,13 @@
         "Day performance: Sat=1, Sun=1, Mon=1, Tue=1, Wed=1, Thu=1, Fri=1"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-10-05",
+      "changes": [
+        "Day performance: Mon=1, Tue=1, Wed=1, Thu=1, Fri=1, Sat=1, Sun=1"
+      ],
+      "recommendedTemplate": "standard"
     }
   ],
   "account": {
@@ -4853,6 +4852,10 @@
       },
       {
         "date": "2026-10-04",
+        "count": 0
+      },
+      {
+        "date": "2026-10-05",
         "count": 0
       }
     ]
