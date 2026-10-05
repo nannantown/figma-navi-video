@@ -473,6 +473,75 @@
         ],
         "note": "第1段階 1-6。公式ブログ（it can't hallucinate / never makes type errors / mathematically impossible / Calibrated: higher confidence means higher accuracy。ページの表示日は Sep 28, 2026 に更新されていたが、公開日は台帳の既出どおり 09-15 とした）、The Register（09-16: structured responses with probabilities does not preclude the possibility of being incorrect）、InfoQ（10-01: HN の声 it can still emit a completely wrong valid value、確信度で閾値を決めて下回ったら回す使い方）、公式ドキュメント（Confidence tells you whether to act、uncertain な確率は人の確認へ回す例）をその日に開いて確認。DataCamp（09-16）は 0% 構造化出力エラーは TypeSafe の報告と記載。Cherry Creek News は今日は取得できず使っていない。WebSearch に出た『CEO も confidently wrong はあり得ると認めた』という引用は一次情報で確かめられなかったので書いていない"
       }
+    },
+    {
+      "date": "2026-10-06",
+      "genre": "jev-news",
+      "trial": 2,
+      "stage": 2,
+      "stage_episode": 1,
+      "kind": "usecase",
+      "topic_key": "usecase-pageindex-long-doc-search",
+      "topic": "PageIndex が公開した、Jev で長い文書から答えのページを探す例",
+      "headline": "300ページから答えを探すJev",
+      "hook": "300ページの報告書、答えのページをすぐ探せますか？",
+      "slides": [
+        {
+          "heading": "長い文書を探す例",
+          "body": "文書検索の PageIndex が、Jev を組み合わせた検索の作り方を無料のコードで公開しました。",
+          "narration": "文書検索ツールのPageIndexが、Jevを組み合わせて長い文書を検索する作り方を、誰でも見られるコードで公開しました。"
+        },
+        {
+          "heading": "目次をたどって選ぶ",
+          "body": "資料を章とページの木に整理。Jev は章、次にページと、少ない候補から選びます。",
+          "narration": "まず資料を、章とページの木の形に整理します。Jevは章を選び、その中のページを選ぶ、と少ない候補から順に選んでいきます。"
+        },
+        {
+          "heading": "318ページで試した",
+          "body": "318ページの年次報告書から、純利益が載ったページを見つけた例が載っています。",
+          "claim_source": "PageIndex の公開例",
+          "narration": "PageIndexの公開例では、318ページある銀行の年次報告書から、純利益が載ったページを見つけられたと紹介しています。"
+        },
+        {
+          "heading": "速さと費用は未公開",
+          "body": "この例には速さや費用の数字はありません。Jev を選ぶ係に使う一例です。",
+          "narration": "ただ、この例では速さや費用の数字はまだ公開されていません。Jevを、文章を書かずに選ぶ係として使う一例です。"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/VectifyAI/jev-doc-search",
+          "title": "VectifyAI/jev-doc-search: Long-document search with Jev and PageIndex",
+          "outlet": "GitHub VectifyAI",
+          "published_at": "2026-09-30",
+          "role": "usecase",
+          "official": false
+        },
+        {
+          "url": "https://x.com/PageIndexAI/status/2105896667446940134",
+          "title": "We show how to build long-document search with Jev + PageIndex.",
+          "outlet": "X PageIndexAI",
+          "published_at": "2026-10-02",
+          "role": "reference",
+          "official": false
+        },
+        {
+          "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+          "title": "Introducing System One Models & Jev",
+          "outlet": "TypeSafe AI",
+          "published_at": "2026-09-15",
+          "role": "reference",
+          "official": true
+        }
+      ],
+      "research": {
+        "checked": [
+          "https://github.com/VectifyAI/jev-doc-search",
+          "https://github.com/VectifyAI/jev-doc-search/commits/main",
+          "https://x.com/PageIndexAI/status/2105896667446940134"
+        ],
+        "note": "第2段階 2-1。data/jev-x-posts.json の community（PageIndexAI 10-02 JST）から候補を見つけ、リンク先の GitHub（Apache 2.0、最初のコミット 2026-09-30、最新 10-02）を開いて確認。README: PageIndex が PDF を章→ページの木にし、Jev の Choice で各段を選ぶ（候補を3つ残すビーム探索）、最後に確認。NVIDIA 10-K（93ページ）と Citigroup 10-K（318ページ）で正しいページを見つけた例。速さ・費用の数字は README に無いので書いていない。見送り: n8n 対応（リンク先が短縮URL経由の動画で、中身を文字で確かめられなかった）、muratcan の通話予測・johncrown の再ランキング・edwardirby のリスクエージェント（X 本文のみ／記事が X 内でログインが要る）、LiteLLM ルーター比較（第1段階で参考として既出、翌日以降の候補）"
+      }
     }
   ]
 }
