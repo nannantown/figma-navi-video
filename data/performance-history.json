@@ -2,115 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "wN0iltE3cWk",
-      "videoUrl": "https://youtube.com/shorts/wN0iltE3cWk",
-      "date": "2026-07-06",
-      "title": "【デザインニュース】Framer が Fable 5 と Sonnet 5 を搭載、駆け出しがコード無しで shader・アニメを実装できる時代｜2026/07/06 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 42,
-      "discovery": {
-        "method": "news-en",
-        "description": "Framer 公式 updates ページと Anthropic Sonnet 5 発表、IT-Connect の解説記事をクロスチェックして、Fable 5・Sonnet 5 の Framer 導入を業界ニュースとして抽出",
-        "sources": [
-          "https://www.framer.com/updates/fable-5",
-          "https://www.framer.com/updates",
-          "https://www.it-connect.tech/claude-fable-5-returns-worldwide-as-anthropic-launches-sonnet-5/",
-          "https://www.anthropic.com/news/claude-sonnet-5"
-        ],
-        "query": "Framer Fable 5 Sonnet 5 July 3 2026 shader animation AI model",
-        "freshness_hours": 72
-      },
-      "stats": {
-        "views": 2,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-07-20T02:12:58.430Z"
-      },
-      "instagram": {
-        "mediaId": "18097036249980323",
-        "permalink": "https://www.instagram.com/reel/Dablf85iHd9/",
-        "views": 0,
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
-      "videoId": "kkdm3kmI-pU",
-      "videoUrl": "https://youtube.com/shorts/kkdm3kmI-pU",
-      "date": "2026-07-07",
-      "title": "【デザインニュース】DESIGN.md が GitHub 5.8 万スター突破、駆け出しが AI に自分のブランドを守らせる時代｜2026/07/07 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 43,
-      "discovery": {
-        "method": "social-en",
-        "description": "X/HN/dev コミュニティで拡散中の DESIGN.md 熱を、gfish.online の 5.8 万スター記事と VoltAgent の集約リポ・superdesign.dev のガイドでクロスチェックして、AI に読ませる 1 枚仕様書として抽出",
-        "sources": [
-          "https://gfish.online/en/blog/design-md-why-viral/",
-          "https://github.com/VoltAgent/awesome-design-md",
-          "https://www.superdesign.dev/blog/what-is-design-md",
-          "https://www.designmd.co/",
-          "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-ai-ui-design/"
-        ],
-        "query": "DESIGN.md viral GitHub stars July 2026 designer AI markdown design system",
-        "freshness_hours": 96
-      },
-      "stats": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-07-21T00:08:56.208Z"
-      },
-      "instagram": {
-        "mediaId": "18594307630052691",
-        "permalink": "https://www.instagram.com/reel/DaeKuaViiqO/",
-        "views": 11,
-        "reach": 9,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "svQLy4FzAs4",
       "videoUrl": "https://youtube.com/shorts/svQLy4FzAs4",
       "date": "2026-07-08",
@@ -3912,7 +3803,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-05T02:00:48.738Z"
+        "updatedAt": "2026-10-06T02:58:44.388Z"
       },
       "instagram": {
         "mediaId": "18115515520805015",
@@ -3923,7 +3814,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-05T02:00:48.738Z"
+        "updatedAt": "2026-10-06T02:58:44.389Z"
       }
     },
     {
@@ -4017,7 +3908,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-05T02:00:48.738Z"
+        "updatedAt": "2026-10-06T02:58:44.388Z"
       },
       "instagram": {
         "mediaId": "18129185785785737",
@@ -4028,7 +3919,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-05T02:00:48.738Z"
+        "updatedAt": "2026-10-06T02:58:44.389Z"
       }
     },
     {
@@ -4074,7 +3965,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-05T02:00:48.738Z"
+        "updatedAt": "2026-10-06T02:58:44.388Z"
       },
       "instagram": {
         "mediaId": "18128502364772913",
@@ -4085,7 +3976,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-05T02:00:48.738Z"
+        "updatedAt": "2026-10-06T02:58:44.389Z"
       },
       "jev": {
         "stage": 1,
@@ -4174,7 +4065,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-05T02:00:48.738Z"
+        "updatedAt": "2026-10-06T02:58:44.388Z"
       },
       "instagram": {
         "mediaId": "18433923538178120",
@@ -4185,7 +4076,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-05T02:00:48.738Z"
+        "updatedAt": "2026-10-06T02:58:44.389Z"
       },
       "jev": {
         "stage": 1,
@@ -4261,7 +4152,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-05T02:00:48.738Z"
+        "updatedAt": "2026-10-06T02:58:44.388Z"
       },
       "instagram": {
         "mediaId": "18116926882958766",
@@ -4272,7 +4163,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-05T02:00:48.738Z"
+        "updatedAt": "2026-10-06T02:58:44.389Z"
       },
       "jev": {
         "stage": 1,
@@ -4355,7 +4246,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-05T02:00:48.738Z"
+        "updatedAt": "2026-10-06T02:58:44.388Z"
       },
       "instagram": {
         "mediaId": "17979318410914317",
@@ -4366,7 +4257,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-05T02:00:48.738Z"
+        "updatedAt": "2026-10-06T02:58:44.389Z"
       },
       "jev": {
         "stage": 1,
@@ -4449,7 +4340,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-05T02:00:48.738Z"
+        "updatedAt": "2026-10-06T02:58:44.388Z"
       },
       "instagram": {
         "mediaId": "18069970178765136",
@@ -4460,7 +4351,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-05T02:00:48.738Z"
+        "updatedAt": "2026-10-06T02:58:44.389Z"
       },
       "jev": {
         "stage": 1,
@@ -4543,7 +4434,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-05T02:00:48.738Z"
+        "updatedAt": "2026-10-06T02:58:44.388Z"
       },
       "instagram": null,
       "jev": {
@@ -4583,17 +4474,95 @@
           }
         ]
       }
+    },
+    {
+      "videoId": "0DpDLObnRmA",
+      "videoUrl": "https://youtube.com/shorts/0DpDLObnRmA",
+      "date": "2026-10-06",
+      "genre": "jev-news",
+      "trial": 2,
+      "title": "【話題のAI特集 Jev活用例】300ページから答えを探すJev｜2026/10/06 #Shorts",
+      "titleTemplate": "jev",
+      "hashtags": [
+        "AIニュース",
+        "生成AI",
+        "AIモデル",
+        "Jev",
+        "TypeSafe AI",
+        "TypeSafe",
+        "System One",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "300ページから答えを探すJev"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": "出典: GitHub VectifyAI・X PageIndexAI ほか"
+      },
+      "durationSeconds": 44,
+      "coverOffsetMs": 6567,
+      "discovery": {
+        "method": "usecase",
+        "description": "PageIndex が公開した、Jev で長い文書から答えのページを探す例",
+        "sources": [
+          "https://github.com/VectifyAI/jev-doc-search",
+          "https://x.com/PageIndexAI/status/2105896667446940134",
+          "https://typesafe.ai/blog/introducing-system-one-models-and-jev"
+        ]
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "18130486570771979",
+        "permalink": null,
+        "views": null,
+        "reach": null,
+        "likes": null,
+        "comments": null,
+        "shares": null,
+        "saved": null,
+        "updatedAt": null
+      },
+      "jev": {
+        "stage": 2,
+        "stageEpisode": 1,
+        "kind": "usecase",
+        "topicKey": "usecase-pageindex-long-doc-search",
+        "topic": "PageIndex が公開した、Jev で長い文書から答えのページを探す例",
+        "sources": [
+          {
+            "url": "https://github.com/VectifyAI/jev-doc-search",
+            "outlet": "GitHub VectifyAI",
+            "published_at": "2026-09-30",
+            "role": "usecase",
+            "official": false
+          },
+          {
+            "url": "https://x.com/PageIndexAI/status/2105896667446940134",
+            "outlet": "X PageIndexAI",
+            "published_at": "2026-10-02",
+            "role": "reference",
+            "official": false
+          },
+          {
+            "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+            "outlet": "TypeSafe AI",
+            "published_at": "2026-09-15",
+            "role": "reference",
+            "official": true
+          }
+        ]
+      }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-09-06",
-      "changes": [
-        "standard: 1 avg views (78 videos)",
-        "Day performance: Tue=3, Mon=2, Fri=2, Sun=1, Wed=1, Thu=1, Sat=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-09-07",
       "changes": [
@@ -4806,6 +4775,13 @@
         "Day performance: Mon=1, Tue=1, Wed=1, Thu=1, Fri=1, Sat=1, Sun=1"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-10-06",
+      "changes": [
+        "Day performance: Mon=1, Tue=1, Wed=1, Thu=1, Fri=1, Sat=1, Sun=1"
+      ],
+      "recommendedTemplate": "standard"
     }
   ],
   "account": {
@@ -4856,6 +4832,10 @@
       },
       {
         "date": "2026-10-05",
+        "count": 0
+      },
+      {
+        "date": "2026-10-06",
         "count": 0
       }
     ]
