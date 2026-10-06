@@ -542,6 +542,76 @@
         ],
         "note": "第2段階 2-1。data/jev-x-posts.json の community（PageIndexAI 10-02 JST）から候補を見つけ、リンク先の GitHub（Apache 2.0、最初のコミット 2026-09-30、最新 10-02）を開いて確認。README: PageIndex が PDF を章→ページの木にし、Jev の Choice で各段を選ぶ（候補を3つ残すビーム探索）、最後に確認。NVIDIA 10-K（93ページ）と Citigroup 10-K（318ページ）で正しいページを見つけた例。速さ・費用の数字は README に無いので書いていない。見送り: n8n 対応（リンク先が短縮URL経由の動画で、中身を文字で確かめられなかった）、muratcan の通話予測・johncrown の再ランキング・edwardirby のリスクエージェント（X 本文のみ／記事が X 内でログインが要る）、LiteLLM ルーター比較（第1段階で参考として既出、翌日以降の候補）"
       }
+    },
+    {
+      "date": "2026-10-07",
+      "genre": "jev-news",
+      "trial": 2,
+      "stage": 2,
+      "stage_episode": 2,
+      "kind": "usecase",
+      "topic_key": "usecase-vercel-python-or-english",
+      "topic": "Vercel のブログが Jev で英語と Python を見分けさせた実験",
+      "headline": "Jevに苦手を試した実験",
+      "hook": "選ぶだけのAIに、プログラムは書けるでしょうか？",
+      "slides": [
+        {
+          "heading": "Vercel の2つの実験",
+          "body": "Vercel のブログが、Python 向けの開発キットで Jev を試した記録を公開しました。",
+          "narration": "Webサービスの会社Vercelのブログが、Python向けの開発キットでJevを試した記録を公開しました。"
+        },
+        {
+          "heading": "英語かPythonか",
+          "body": "打った文字が英語か Python かを Jev に選ばせました。自作の判定より良かったそうです。",
+          "claim_source": "Vercel ブログの実験",
+          "narration": "1つ目は、打った文字が英語かプログラムかをJevに選ばせる実験です。筆者によると、自作の判定よりかなり良かったそうです。"
+        },
+        {
+          "heading": "まだ取りこぼしも",
+          "body": "書きかけの Python を英語と判定する例もあり、まだ穴があると書いています。",
+          "narration": "ただ、書きかけのプログラムを英語と判定する例もあり、筆者はまだ穴があると書いています。"
+        },
+        {
+          "heading": "書かせるのは難しい",
+          "body": "部品を1つずつ選ばせて Python を組み立てると、形は正しくても中身は多くが誤りでした。",
+          "claim_source": "Vercel ブログの実験",
+          "narration": "2つ目は、プログラムの部品を1つずつ選ばせて組み立てる実験です。形は正しくても中身は多くが誤りで、得意な使い方を選ぶのが大事だと分かります。"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vercel.com/blog/jev-for-python-engineers",
+          "title": "Jev for Python engineers",
+          "outlet": "Vercel ブログ",
+          "published_at": "2026-10-02",
+          "role": "usecase",
+          "official": false
+        },
+        {
+          "url": "https://github.com/vercel-labs/ai-python/blob/main/examples/models/gateway/jev_python_ast.py",
+          "title": "vercel-labs/ai-python examples/models/gateway/jev_python_ast.py",
+          "outlet": "GitHub vercel-labs",
+          "published_at": null,
+          "role": "reference",
+          "official": false
+        },
+        {
+          "url": "https://x.com/vercel/status/2106139101422567748",
+          "title": "Jev is now in the AI SDK for Python.",
+          "outlet": "X vercel",
+          "published_at": "2026-10-03",
+          "role": "reference",
+          "official": false
+        }
+      ],
+      "research": {
+        "checked": [
+          "https://vercel.com/blog/jev-for-python-engineers",
+          "https://github.com/vercel-labs/ai-python/blob/main/examples/models/gateway/jev_python_ast.py",
+          "https://x.com/vercel/status/2106139101422567748"
+        ],
+        "note": "第2段階 2-2。data/jev-x-posts.json の official（CompleteSkeptic 10-03 JST が引用した Vercel の投稿）から候補を見つけ、WebSearch で Vercel ブログ『Jev for Python engineers』（Yury Selivanov、2026-10-02）を特定してその日に開いて確認。実験1: evaluate() と ChoiceQuestion で入力が英語か Python かを選ばせ、筆者は『自作の分類器よりかなり良いが、まだ穴がある』と記載（\"what's\" + \" up を英語と判定した例）。実験2: GPT-5.6 で指示を広げ、Jev に AST の部品を順に選ばせて Python を組み立て、『文法的には正しいがほとんど誤り』と記載。速さ・費用・正解率の数字は記事に無いため書いていない。GitHub のサンプルコードの存在も確認。見送り: Agora の semantic VAD（X 本文のみで記事を確認できず）、MadisonJRickert の Claude Code 用分類器（X 本文のみ）、johncrown の再ランキング・edwardirby のリスクエージェント（前日と同じ理由）。"
+      }
     }
   ]
 }
