@@ -115,20 +115,22 @@ const SHORTENER_HOSTS = ["bit.ly", "t.co", "tinyurl.com", "goo.gl", "ow.ly", "bu
 const NUM = "(?:\\d+(?:\\.\\d+)?|[一二三四五六七八九十百千万数何]+)";
 // "does not happen" after an error-type word: the claim is the negation
 // ("ハルシネーションしない"), not the word ("ハルシネーションとは…" is a definition).
-const NEGATION = "(?:しない|しません|起こさない|起こしません|起きない|起きません|ない|ません|ゼロ|0\\s*%|不可能)";
-const CLAIM_RE = new RegExp(
-  [
-    `${NUM}\\s*(?:[〜~\\-–]\\s*${NUM}\\s*)?倍`, // 40〜200倍 / 数十倍 / 十倍
-    `${NUM}\\s*分の\\s*[1一]`, // 100分の1
-    `${NUM}\\s*割\\s*(?:安|減|速|削減|少な)`, // 9割安く
-    `\\d+(?:\\.\\d+)?\\s*%\\s*(?:安|減|削減|速|高速|少な|の?精度|正確)`, // 96%減
-    "(?:精度|正答率|正解率)\\s*(?:は|が)?\\s*\\d+(?:\\.\\d+)?\\s*%", // 精度は100%
-    "最速|業界(?:最|一)|世界(?:最|一)",
-    "数学的",
-    `(?:ハルシネーション|幻覚|型エラー|間違い|間違え|ミス|誤り|嘘|うそ)[^。！？]{0,12}?${NEGATION}`,
-  ].join("|"),
-  "u"
-);
+const NEGATION = "(?:しない|しません|起こさない|起こしません|起きない|起きません|ない|ません|なし|無し|ゼロ|(?<![\\d.])0\\s*(?:%|件|回|個)|不可能)";
+const ERROR_WORD = "(?:ハルシネーション|幻覚|エラー|間違い|間違え|ミス|誤り|誤答|嘘|うそ)";
+const CLAIM_PARTS = [
+  `${NUM}\\s*(?:[〜~\\-–]\\s*${NUM}\\s*)?倍`, // 40〜200倍 / 数十倍 / 十倍
+  `${NUM}\\s*分の\\s*[1一]`, // 100分の1
+  "(?<![\\d.])\\d+(?:\\.\\d+)?[xX×](?![A-Za-z0-9])", // 200x / 5× ("Haiku 4.5 × Jev" is a pairing)
+  "(?<![\\d/])1\\s*[/／]\\s*\\d{2,}\\s*(?:の|に)\\s*(?:料金|価格|コスト|費用|時間)", // 1/100の料金 (not a date)
+  `${NUM}\\s*割\\s*(?:安|減|速|削減|少な)`, // 9割安く
+  `\\d+(?:\\.\\d+)?\\s*%\\s*(?:安|減|削減|速|高速|少な|の?精度|正確|正し)`, // 96%減 / 100%正しい
+  "(?:精度|正答率|正解率)\\s*(?:は|が)?\\s*\\d+(?:\\.\\d+)?\\s*%", // 精度は100%
+  "最速|桁違い|業界(?:最|一)|世界(?:最|一)",
+  "数学的",
+  `${ERROR_WORD}[^。！？]{0,12}?${NEGATION}`, // keep last: CLAIM_NO_ERROR_RE drops it
+];
+const CLAIM_RE = new RegExp(CLAIM_PARTS.join("|"), "u");
+const CLAIM_NO_ERROR_RE = new RegExp(CLAIM_PARTS.slice(0, -1).join("|"), "u");
 // Who says so, named, in the same sentence: "TypeSafe によると",
 // "LiteLLM の検証では", "同社は…と説明しています", "日経新聞によると".
 // A bare "比較では" / "テストによると" names nobody and does not count.
@@ -580,6 +582,22 @@ const DIAGRAM_TOTAL = 40;
 const DIAGRAM_ECHO_MIN = 8;
 const FLOW_LATIN_MAX = 8;
 
+const BOX_NEGATION_RE = new RegExp(`^\\s*(?:Jev\\s*[:：]?\\s*)?${NEGATION}`, "u");
+const ERROR_WORD_RE = new RegExp(ERROR_WORD, "u");
+/** A claim the viewer reads across the heading and the boxes: "40〜200" | "倍", a compare row
+ *  "40〜200" ‖ "倍速い", or an error word answered by a box that opens with the negation
+ *  ("ハルシネーションの数" + "Jev: しない", "型エラー" → "ゼロ"). Unrelated boxes are not glued
+ *  ("型エラーとは" + "型が合わない" is an explainer, not "no type errors"). */
+function splitClaim(heading, items) {
+  const boxes = items.filter((it) => it && typeof it === "object");
+  const text = (v) => (typeof v === "string" ? normalizeForChecks(v) : "");
+  const parts = [text(heading), ...boxes.map((it) => text(it.note) + text(it.label)), ...boxes.map((it) => text(it.label))].filter(Boolean);
+  for (const a of parts) for (const b of parts) if (a !== b && CLAIM_NO_ERROR_RE.test(a + b)) return true;
+  const labels = boxes.map((it) => text(it.label));
+  const before = [text(heading), ...boxes.map((it) => text(it.note) + text(it.label))];
+  return labels.some((l, i) => BOX_NEGATION_RE.test(l) && before.some((p, j) => j !== i + 1 && ERROR_WORD_RE.test(p)));
+}
+
 /** Why `slide.diagram` cannot be drawn ([] = fine, or no diagram at all). */
 export function diagramProblems(slide) {
   const d = slide?.diagram;
@@ -598,7 +616,8 @@ export function diagramProblems(slide) {
     const at = `items[${i}]`;
     if (!it || typeof it !== "object") return problems.push(`${at}: must be an object { label, note }`);
     const fields = [["label", DIAGRAM_LABEL[d.type]]];
-    if (d.type === "compare" || it.note != null) fields.push(["note", DIAGRAM_NOTE[d.type] ?? DIAGRAM_NOTE.compare]);
+    const noteGiven = it.note != null && !(typeof it.note === "string" && !it.note.trim());
+    if (d.type === "compare" || noteGiven) fields.push(["note", DIAGRAM_NOTE[d.type] ?? DIAGRAM_NOTE.compare]);
     for (const [field, limits] of fields) {
       const p = lengthProblem(it[field], limits, `${at}.${field}`);
       if (p) problems.push(d.type === "compare" && field === "note" ? `${p} (the column title, e.g. "前" / "Jev")` : p);
@@ -610,7 +629,7 @@ export function diagramProblems(slide) {
       // Names ("TypeSafe", "Haiku 4.5") may repeat; a Japanese phrase may not.
       if (charLength(flat) >= DIAGRAM_ECHO_MIN && /[\p{sc=Hiragana}\p{sc=Katakana}\p{sc=Han}]/u.test(flat) && narration.includes(flat)) problems.push(`${at}.${field}: the narration says "${it[field].trim()}" word for word — the picture uses short words, the bubble the sentence`);
     }
-    if (d.type === "steps" && it.note != null) problems.push(`${at}.note: steps take a label only`);
+    if (d.type === "steps" && noteGiven) problems.push(`${at}.note: steps take a label only`);
     // A flow box is ~210 px wide: a longer Latin word breaks mid-word ("OpenRou|terAPI").
     const latin = typeof it.label === "string" ? Math.max(0, ...(it.label.match(/[A-Za-z0-9.]+/g) || []).map((w) => w.length)) : 0;
     if (d.type === "flow" && latin > FLOW_LATIN_MAX) problems.push(`${at}.label: a Latin word of ${latin} letters does not fit a flow box (max ${FLOW_LATIN_MAX}) — shorten the name or use steps / compare`);
@@ -623,11 +642,8 @@ export function diagramProblems(slide) {
   });
   // The viewer reads the heading and the boxes together: a claim split over them
   // ("ハルシネーションの数" + "Jev: しない", "型エラー" → "ゼロ") still needs claim_source.
-  if (!slide.claim_source) {
-    const parts = [slide.heading, ...d.items.map((it) => (it && typeof it === "object" ? [it.note, it.label].filter((s) => typeof s === "string").join("") : ""))]
-      .filter((s) => typeof s === "string" && s.trim());
-    const joined = [parts.join(""), ...parts.flatMap((a, i) => parts.filter((_, j) => j !== i).map((b) => a + b))];
-    if (joined.some(hasClaim) && !problems.some((p) => /claim/.test(p))) problems.push(`the heading and the boxes together state a claim — the slide needs claim_source`);
+  if (!slide.claim_source && !problems.some((p) => /claim/.test(p)) && splitClaim(slide.heading, d.items)) {
+    problems.push(`the heading and the boxes together state a claim — the slide needs claim_source`);
   }
   if (total > DIAGRAM_TOTAL) problems.push(`${total} chars in the picture (max ${DIAGRAM_TOTAL} — fewer words)`);
   return problems;
@@ -645,7 +661,7 @@ function diagramWarnings(ep, at) {
 export function videoDiagram(slide) {
   if (slide?.diagram == null || diagramProblems(slide).length > 0) return null;
   const { type, items } = slide.diagram;
-  return { type, items: items.map((it) => ({ label: it.label.trim(), note: typeof it.note === "string" ? it.note.trim() : null })) };
+  return { type, items: items.map((it) => ({ label: it.label.trim(), note: typeof it.note === "string" && it.note.trim() ? it.note.trim() : null })) };
 }
 
 function sourceProblems(ep, previous, at, today, warnings) {

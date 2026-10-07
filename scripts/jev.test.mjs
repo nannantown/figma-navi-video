@@ -11,6 +11,7 @@ import {
   nextSlot,
   normalizeUrl,
   unattributedClaims,
+  hasClaim,
   toJevVideoData,
   buildJevCaptions,
   jevPdcaReport,
@@ -797,4 +798,31 @@ test("diagrams: a flow box takes 8-char labels and 6-char notes (longer ones wra
     ep.slides[2].diagram = { type: "flow", items };
     assert.equal(toJevVideoData(ep).tools[2].diagram, null, why);
   }
+});
+
+test("claims: short-word phrasings count, dates and pairings do not", () => {
+  for (const t of ["200x速い", "5×の速さ", "ハルシネーション無し", "ミスなし", "エラー0件", "誤答ゼロ", "1/100の料金", "100%正しい", "桁違いに速い"]) assert.ok(hasClaim(t), t);
+  for (const t of ["9/15公開", "11/15の料金改定", "Haiku 4.5 × Jev", "型エラー10件", "0x1Fの値", "エラーとは何か"]) assert.equal(hasClaim(t), false, t);
+});
+
+test("diagrams: more split claims fall back; explainers that merely sit next to a 'not' keep the picture", () => {
+  const draw = (heading, diagram) => {
+    const ep = full();
+    ep.slides[2].heading = heading; // slides[2] has no claim_source
+    ep.slides[2].diagram = diagram;
+    return toJevVideoData(ep).tools[2].diagram;
+  };
+  assert.equal(draw("ハルシネーション", { type: "compare", items: [{ note: "ふつう", label: "あり" }, { note: "Jev", label: "なし" }] }), null, "heading + なし");
+  assert.equal(draw("速さの比べ", { type: "compare", items: [{ note: "TypeSafe", label: "40〜200" }, { note: "単位", label: "倍" }] }), null, "a compare row reads across");
+  assert.ok(draw("型エラーとは", { type: "steps", items: [{ label: "型が合わない" }, { label: "処理が止まる" }] }), "definition");
+  assert.ok(draw("よくある間違い", { type: "steps", items: [{ label: "出典を見ない" }, { label: "そのまま使う" }] }), "common mistakes");
+  assert.ok(draw("ミスを防ぐ手順", { type: "steps", items: [{ label: "答えを確認" }, { label: "出典がない時は保留" }] }), "how to avoid mistakes");
+});
+
+test("diagrams: a blank flow note is no note (the picture stays)", () => {
+  const ep = full();
+  ep.slides[2].diagram = { type: "flow", items: [{ label: "質問", note: "" }, { label: "Jev", note: " " }, { label: "答え" }] };
+  const d = toJevVideoData(ep).tools[2].diagram;
+  assert.ok(d);
+  assert.deepEqual(d.items.map((it) => it.note), [null, null, null]);
 });
