@@ -711,7 +711,7 @@ export function toJevVideoData(ep, { usecaseNumber = null } = {}) {
 export const JEV_IG_HASHTAGS = ["#AIニュース", "#生成AI", "#AI最新情報", "#Jev", "#TypeSafeAI"];
 export const JEV_YT_HASHTAGS = ["#AIニュース", "#生成AI", "#Jev", "#TypeSafeAI", "#Shorts"];
 export const JEV_YT_TAGS = ["AIニュース", "生成AI", "AIモデル", "Jev", "TypeSafe AI", "TypeSafe", "System One", "Shorts"];
-export const CLAIM_NOTE = "※速度・料金・精度の数字や「ハルシネーションしない」は、断りのない限り開発元 TypeSafe AI の発表です（第三者の検証は出典を明記）。";
+export const CLAIM_NOTE = "※速度・料金・精度の数字や「ハルシネーションしない」は、断りのない限り開発元 TypeSafe AI の発表です（第三者の検証は出典を明記）。円の金額は概算です。";
 const YT_TITLE_MAX = 100;
 
 function clean(s) {
