@@ -20,7 +20,7 @@ function fadeUp(frame: number, start: number, fps: number) {
 
 /** `may`: 先輩のメイ stands below (May.tsx) — content moves into y 200..850, body 40 px (worst case
  *  18-char heading + 64-char body still fits). */
-export const JevSlideCard: React.FC<{ slide: JevSlide; may?: boolean }> = ({ slide, may = false }) => {
+export const JevSlideCard: React.FC<{ slide: JevSlide; may?: boolean; durationInFrames: number }> = ({ slide, may = false, durationInFrames }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const glow = interpolate(frame % 150, [0, 75, 150], [0.18, 0.3, 0.18]);
@@ -86,7 +86,7 @@ export const JevSlideCard: React.FC<{ slide: JevSlide; may?: boolean }> = ({ sli
 
         {slide.diagram ? (
           <div style={{ marginTop: may ? 32 : 48 }}>
-            <JevDiagram diagram={slide.diagram} />
+            <JevDiagram diagram={slide.diagram} durationInFrames={durationInFrames} />
           </div>
         ) : (
           <div

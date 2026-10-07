@@ -66,7 +66,7 @@ export const AiToolsVideo: React.FC<Props> = ({ tools, meta = defaultMeta, audio
         {tools.map((tool, i) => (
           <Series.Sequence key={tool.rank} durationInFrames={frames.tools[i] || frames.tools[0]}>
             {"heading" in tool ? (
-              <JevSlideCard slide={tool} may={may} />
+              <JevSlideCard slide={tool} may={may} durationInFrames={frames.tools[i] || frames.tools[0]} />
             ) : (
               <ToolCardWrapper tool={tool} totalTools={tools.length} headline={meta.headline} />
             )}
