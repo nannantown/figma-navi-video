@@ -58,7 +58,7 @@ export const INTRO_TOPICS = [
   { key: "intro-no-text", theme: "文章を書かない AI — 答えを「型」と確信度で返す" },
   { key: "intro-vs-llm", theme: "ChatGPT のような LLM と何が違う？ 得意と不得意" },
   { key: "intro-speed-claim", theme: "「速い」と言う理由 — TypeSafe の主張と第三者の測定" },
-  { key: "intro-cost-claim", theme: "料金のしくみ — 入力 100 万トークン約 6 円を円で計算してみる" },
+  { key: "intro-cost-claim", theme: "料金のしくみ — 入力 100 万トークン約 6 円を計算してみる" },
   { key: "intro-no-hallucination-claim", theme: "「ハルシネーションしない」の意味と限界" },
 ];
 
