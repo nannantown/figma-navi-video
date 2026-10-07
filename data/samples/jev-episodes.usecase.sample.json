@@ -116,12 +116,12 @@
             "type": "compare",
             "items": [
               {
-                "label": "約5.4倍速い",
-                "note": "LiteLLM"
-              },
-              {
                 "label": "40倍以上",
                 "note": "TypeSafe"
+              },
+              {
+                "label": "約5.4倍速い",
+                "note": "LiteLLM"
               }
             ]
           }
@@ -134,12 +134,12 @@
             "type": "compare",
             "items": [
               {
-                "label": "選択肢の判断",
-                "note": "向いている"
-              },
-              {
                 "label": "文章を書く",
                 "note": "向かない"
+              },
+              {
+                "label": "選択肢の判断",
+                "note": "向いている"
               }
             ]
           }
