@@ -2,62 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "svQLy4FzAs4",
-      "videoUrl": "https://youtube.com/shorts/svQLy4FzAs4",
-      "date": "2026-07-08",
-      "title": "【デザインニュース】Figma が ISO 42001 認定を業界先陣で取得、AI の使い方を第三者監査で証明した駆け出しへの朗報｜2026/07/08 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 47,
-      "discovery": {
-        "method": "official-src",
-        "description": "Figma 公式ブログ Trust You Can Verify (7/1 公開) と Newsroom / compliance.figma.com を一次取得。Config 2026 で AI 機能を大量投入した Figma が Schellman 監査で ISO 42001 を業界で先陣取得した事実を、駆け出しの AI 不安への解毒剤としてフレーム",
-        "sources": [
-          "https://www.figma.com/blog/figma-is-now-iso-42001-certified/",
-          "https://www.figma.com/newsroom/",
-          "https://compliance.figma.com/",
-          "https://www.schellman.com/blog/iso-certifications/guide-to-iso-42001-certification",
-          "https://www.figma.com/blog/config-2026-recap/",
-          "https://www.figma.com/blog/agent-custom-tools-context-skills/"
-        ],
-        "query": "Figma ISO 42001 responsible AI certification Schellman July 2026 designer",
-        "freshness_hours": 168
-      },
-      "stats": {
-        "views": 3,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-07-22T00:07:23.495Z"
-      },
-      "instagram": {
-        "mediaId": "18082666718198490",
-        "permalink": "https://www.instagram.com/reel/DaguhOwldhi/",
-        "views": 101,
-        "reach": 102,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "QQInGzfutp8",
       "videoUrl": "https://youtube.com/shorts/QQInGzfutp8",
       "date": "2026-07-09",
@@ -3908,7 +3852,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-06T02:58:44.388Z"
+        "updatedAt": "2026-10-07T02:23:19.067Z"
       },
       "instagram": {
         "mediaId": "18129185785785737",
@@ -3919,7 +3863,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-06T02:58:44.389Z"
+        "updatedAt": "2026-10-07T02:23:19.067Z"
       }
     },
     {
@@ -3965,7 +3909,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-06T02:58:44.388Z"
+        "updatedAt": "2026-10-07T02:23:19.067Z"
       },
       "instagram": {
         "mediaId": "18128502364772913",
@@ -3976,7 +3920,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-06T02:58:44.389Z"
+        "updatedAt": "2026-10-07T02:23:19.067Z"
       },
       "jev": {
         "stage": 1,
@@ -4065,7 +4009,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-06T02:58:44.388Z"
+        "updatedAt": "2026-10-07T02:23:19.067Z"
       },
       "instagram": {
         "mediaId": "18433923538178120",
@@ -4076,7 +4020,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-06T02:58:44.389Z"
+        "updatedAt": "2026-10-07T02:23:19.067Z"
       },
       "jev": {
         "stage": 1,
@@ -4152,18 +4096,18 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-06T02:58:44.388Z"
+        "updatedAt": "2026-10-07T02:23:19.067Z"
       },
       "instagram": {
         "mediaId": "18116926882958766",
         "permalink": "https://www.instagram.com/reel/DdxeqK8DrYG/",
-        "views": 22,
-        "reach": 20,
-        "likes": 0,
+        "views": 23,
+        "reach": 21,
+        "likes": 1,
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-06T02:58:44.389Z"
+        "updatedAt": "2026-10-07T02:23:19.067Z"
       },
       "jev": {
         "stage": 1,
@@ -4246,7 +4190,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-06T02:58:44.388Z"
+        "updatedAt": "2026-10-07T02:23:19.067Z"
       },
       "instagram": {
         "mediaId": "17979318410914317",
@@ -4257,7 +4201,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-06T02:58:44.389Z"
+        "updatedAt": "2026-10-07T02:23:19.067Z"
       },
       "jev": {
         "stage": 1,
@@ -4340,7 +4284,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-06T02:58:44.388Z"
+        "updatedAt": "2026-10-07T02:23:19.067Z"
       },
       "instagram": {
         "mediaId": "18069970178765136",
@@ -4351,7 +4295,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-06T02:58:44.389Z"
+        "updatedAt": "2026-10-07T02:23:19.067Z"
       },
       "jev": {
         "stage": 1,
@@ -4434,7 +4378,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-06T02:58:44.388Z"
+        "updatedAt": "2026-10-07T02:23:19.067Z"
       },
       "instagram": null,
       "jev": {
@@ -4517,18 +4461,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-10-07T02:23:19.067Z"
       },
       "instagram": {
         "mediaId": "18130486570771979",
-        "permalink": null,
-        "views": null,
-        "reach": null,
-        "likes": null,
-        "comments": null,
-        "shares": null,
-        "saved": null,
-        "updatedAt": null
+        "permalink": "https://www.instagram.com/reel/DeIxTKzkg-X/",
+        "views": 8,
+        "reach": 5,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-10-07T02:23:19.067Z"
       },
       "jev": {
         "stage": 2,
@@ -4560,17 +4504,95 @@
           }
         ]
       }
+    },
+    {
+      "videoId": "0mXyAmMf09M",
+      "videoUrl": "https://youtube.com/shorts/0mXyAmMf09M",
+      "date": "2026-10-07",
+      "genre": "jev-news",
+      "trial": 2,
+      "title": "【話題のAI特集 Jev活用例】Jevに苦手を試した実験｜2026/10/07 #Shorts",
+      "titleTemplate": "jev",
+      "hashtags": [
+        "AIニュース",
+        "生成AI",
+        "AIモデル",
+        "Jev",
+        "TypeSafe AI",
+        "TypeSafe",
+        "System One",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Jevに苦手を試した実験"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": "出典: Vercel ブログ・GitHub vercel-labs ほか"
+      },
+      "durationSeconds": 40,
+      "coverOffsetMs": 5933,
+      "discovery": {
+        "method": "usecase",
+        "description": "Vercel のブログが Jev で英語と Python を見分けさせた実験",
+        "sources": [
+          "https://vercel.com/blog/jev-for-python-engineers",
+          "https://github.com/vercel-labs/ai-python/blob/main/examples/models/gateway/jev_python_ast.py",
+          "https://x.com/vercel/status/2106139101422567748"
+        ]
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "17931461001407071",
+        "permalink": null,
+        "views": null,
+        "reach": null,
+        "likes": null,
+        "comments": null,
+        "shares": null,
+        "saved": null,
+        "updatedAt": null
+      },
+      "jev": {
+        "stage": 2,
+        "stageEpisode": 2,
+        "kind": "usecase",
+        "topicKey": "usecase-vercel-python-or-english",
+        "topic": "Vercel のブログが Jev で英語と Python を見分けさせた実験",
+        "sources": [
+          {
+            "url": "https://vercel.com/blog/jev-for-python-engineers",
+            "outlet": "Vercel ブログ",
+            "published_at": "2026-10-02",
+            "role": "usecase",
+            "official": false
+          },
+          {
+            "url": "https://github.com/vercel-labs/ai-python/blob/main/examples/models/gateway/jev_python_ast.py",
+            "outlet": "GitHub vercel-labs",
+            "published_at": null,
+            "role": "reference",
+            "official": false
+          },
+          {
+            "url": "https://x.com/vercel/status/2106139101422567748",
+            "outlet": "X vercel",
+            "published_at": "2026-10-03",
+            "role": "reference",
+            "official": false
+          }
+        ]
+      }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-09-07",
-      "changes": [
-        "standard: 1 avg views (78 videos)",
-        "Day performance: Tue=3, Mon=2, Fri=2, Wed=1, Thu=1, Sat=1, Sun=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-09-08",
       "changes": [
@@ -4782,6 +4804,13 @@
         "Day performance: Mon=1, Tue=1, Wed=1, Thu=1, Fri=1, Sat=1, Sun=1"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-10-07",
+      "changes": [
+        "Day performance: Wed=1, Thu=1, Fri=1, Sat=1, Sun=1, Mon=1, Tue=1"
+      ],
+      "recommendedTemplate": "standard"
     }
   ],
   "account": {
@@ -4836,6 +4865,10 @@
       },
       {
         "date": "2026-10-06",
+        "count": 0
+      },
+      {
+        "date": "2026-10-07",
         "count": 0
       }
     ]
