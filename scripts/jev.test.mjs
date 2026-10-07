@@ -785,3 +785,16 @@ test("diagrams: a claim split between the heading and the boxes, or across boxes
     assert.ok(toJevVideoData(ep).tools[2].diagram, `${why} with claim_source`);
   }
 });
+
+test("diagrams: a flow box takes 8-char labels and 6-char notes (longer ones wrap into May)", () => {
+  const ep = full();
+  ep.slides[2].diagram = { type: "flow", items: [{ label: "届いた質問を渡す", note: "最初の入力" }, { label: "Jev", note: "選ぶ" }, { label: "答え", note: "出力" }] };
+  assert.ok(toJevVideoData(ep).tools[2].diagram, "8 / 5 chars fit");
+  for (const [why, items] of [
+    ["9-char label", [{ label: "届いた質問を全部渡す" }, { label: "Jev" }, { label: "答え" }]],
+    ["7-char note", [{ label: "質問", note: "いちばん最初の" }, { label: "Jev" }, { label: "答え" }]],
+  ]) {
+    ep.slides[2].diagram = { type: "flow", items };
+    assert.equal(toJevVideoData(ep).tools[2].diagram, null, why);
+  }
+});

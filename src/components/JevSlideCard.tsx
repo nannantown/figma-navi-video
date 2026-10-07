@@ -18,7 +18,8 @@ function fadeUp(frame: number, start: number, fps: number) {
   return { opacity, transform: `translateY(${y}px)` };
 }
 
-/** With a diagram the worst case (18-char heading on 2 lines + 3 steps of 12 chars + claim_source) still ends
+/** With a diagram the worst cases (18-char heading on 2 lines + claim_source + 3 steps of 12 chars, or a flow of
+ *  3 boxes at 8 chars with 6-char notes and "TypeSafe" unbroken in the lit box) still end
  *  above y 850 — checked with remotion still on 2026-10-07.
  *  `may`: 先輩のメイ stands below (May.tsx) — content moves into y 200..850, body 40 px (worst case
  *  18-char heading + 64-char body still fits). */

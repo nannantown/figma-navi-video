@@ -119,7 +119,7 @@ const FlowBox: React.FC<{ item: Item; i: number; lit: boolean }> = ({ item, i, l
       style={{
         flex: 1,
         minHeight: 180,
-        padding: "18px 14px",
+        padding: "18px 10px",
         borderRadius: 22,
         border: lit ? "3px solid transparent" : OUTLINE,
         background: lit ? LIT : COLORS.panel,
@@ -128,7 +128,7 @@ const FlowBox: React.FC<{ item: Item; i: number; lit: boolean }> = ({ item, i, l
         alignItems: "center",
         justifyContent: "center",
         textAlign: "center",
-        fontSize: lit ? 50 : 42,
+        fontSize: 40,
         color: COLORS.text,
         ...LABEL,
       }}

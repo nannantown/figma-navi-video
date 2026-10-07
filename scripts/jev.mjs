@@ -572,8 +572,9 @@ function slideProblems(ep, at) {
 // diagram is missing or broken keeps the old heading + body card.
 // Item counts per type: steps = 手順 1→2(→3), flow = 入力→処理→出力, compare = 前/後・A/B.
 export const DIAGRAM_TYPES = { steps: [2, 3], flow: [3, 3], compare: [2, 2] };
-const DIAGRAM_LABEL = [1, 12];
-const DIAGRAM_NOTE = [1, 8];
+// Per type: a flow box is ~210 px wide, so its words are shorter (12 chars wrapped to 4 lines and pushed the source line into May).
+const DIAGRAM_LABEL = { steps: [1, 12], flow: [1, 8], compare: [1, 12] };
+const DIAGRAM_NOTE = { flow: [1, 6], compare: [1, 8] };
 const DIAGRAM_TOTAL = 40;
 // A label this long that the narration also says word for word is the bubble twice.
 const DIAGRAM_ECHO_MIN = 8;
@@ -596,8 +597,8 @@ export function diagramProblems(slide) {
   d.items.forEach((it, i) => {
     const at = `items[${i}]`;
     if (!it || typeof it !== "object") return problems.push(`${at}: must be an object { label, note }`);
-    const fields = [["label", DIAGRAM_LABEL]];
-    if (d.type === "compare" || it.note != null) fields.push(["note", DIAGRAM_NOTE]);
+    const fields = [["label", DIAGRAM_LABEL[d.type]]];
+    if (d.type === "compare" || it.note != null) fields.push(["note", DIAGRAM_NOTE[d.type] ?? DIAGRAM_NOTE.compare]);
     for (const [field, limits] of fields) {
       const p = lengthProblem(it[field], limits, `${at}.${field}`);
       if (p) problems.push(d.type === "compare" && field === "note" ? `${p} (the column title, e.g. "前" / "Jev")` : p);
