@@ -204,6 +204,19 @@ test("a speed or hallucination claim without its source is rejected", () => {
   assert.match(errorsOf([ep]), /claim without its source/);
 });
 
+test("money is in yen: dollar amounts in shown text are rejected, sources are not checked", () => {
+  for (const [field, value] of [["narration", "入力100万トークンで0.042ドルです。"], ["body", "料金表では42ドル。"], ["heading", "100万回で$42"], ["claim_source", "TypeSafe の USD 料金"]]) {
+    const ep = full();
+    ep.slides[3][field] = value;
+    assert.match(errorsOf([ep]), /no dollar amounts/, `${field}: ${value}`);
+  }
+  assert.match(errorsOf([full({ hook: "AIの判断1回は$0.000042？" })]), /hook: no dollar amounts/);
+  const ok = full();
+  ok.slides[3].body = "導入のハードルが低く、ミドルウェアのハンドル役。100万回で約6,000円。";
+  ok.sources[0].title = "TypeSafe AI emerges from stealth with $40M seed";
+  assert.doesNotMatch(errorsOf([ok]), /no dollar amounts/);
+});
+
 test("screen text with a claim needs a claim_source label", () => {
   const ep = full();
   delete ep.slides[3].claim_source;

@@ -352,6 +352,17 @@ function textProblems(value, label) {
   return problems;
 }
 
+// Money is written in yen only (owner decision 2026-10-06): a number right
+// before ドル/セント, 米ドル, $ or USD. ハードル / ミドル / ハンドル stay allowed.
+const DOLLAR_RE = /[0-9０-９一二三四五六七八九十百千万億兆数]\s*(?:ドル|セント)|米ドル|[$＄]|(?<![A-Za-z])USD(?![A-Za-z])/i;
+
+/** Text shown in the video, the title or the caption — not sources (their titles quote the page). */
+function shownTextProblems(value, label) {
+  const problems = textProblems(value, label);
+  if (typeof value === "string" && DOLLAR_RE.test(value)) problems.push(`${label}: no dollar amounts — convert to yen at the rough current rate (e.g. 約3,000円)`);
+  return problems;
+}
+
 /** Minimal shape every ledger entry needs for the order and repeat checks. */
 function ledgerProblems(ep, i) {
   const at = `episodes[${i}]`;
@@ -472,7 +483,7 @@ export function validateEpisodes(file, { date = todayJst(), today = todayJst(), 
   for (const [field, limits] of [["topic", LIMITS.topic], ["headline", LIMITS.headline], ["hook", LIMITS.hook]]) {
     const p = lengthProblem(ep[field], limits, `${at}.${field}`);
     if (p) errors.push(p);
-    errors.push(...textProblems(ep[field], `${at}.${field}`));
+    errors.push(...shownTextProblems(ep[field], `${at}.${field}`));
   }
   for (const u of unattributedClaims(ep.hook ?? "")) errors.push(`${at}.hook: claim without its source — "${u}" (write "TypeSafe によると…")`);
   if (hasClaim(ep.headline ?? "")) errors.push(`${at}.headline: no speed/cost/"no hallucination" claim in the headline (put it on a slide with claim_source)`);
@@ -535,7 +546,7 @@ function slideProblems(ep, at) {
     for (const [field, limits] of [["heading", LIMITS.heading], ["body", LIMITS.body], ["narration", LIMITS.narration]]) {
       const p = lengthProblem(s?.[field], limits, `${sat}.${field}`);
       if (p) errors.push(p);
-      errors.push(...textProblems(s?.[field], `${sat}.${field}`));
+      errors.push(...shownTextProblems(s?.[field], `${sat}.${field}`));
     }
     total += charLength(s?.narration ?? "");
     for (const u of unattributedClaims(s?.narration ?? "")) errors.push(`${sat}.narration: claim without its source — "${u}" (write "TypeSafe によると…")`);
@@ -545,7 +556,7 @@ function slideProblems(ep, at) {
     if (s?.claim_source != null) {
       const p = lengthProblem(s.claim_source, LIMITS.claimSource, `${sat}.claim_source`);
       if (p) errors.push(p);
-      errors.push(...textProblems(s.claim_source, `${sat}.claim_source`));
+      errors.push(...shownTextProblems(s.claim_source, `${sat}.claim_source`));
       if (hasClaim(s.claim_source)) errors.push(`${sat}.claim_source: a label says whose claim it is, not the claim itself (e.g. "TypeSafe の発表")`);
     } else if (onScreenClaim) {
       errors.push(`${sat}: the screen text states a claim — set claim_source (e.g. "TypeSafe の発表" / "LiteLLM の検証")`);
