@@ -765,3 +765,23 @@ test("diagrams: no input shape throws — the post never stops on the diagram", 
     }
   }
 });
+
+test("diagrams: a claim split between the heading and the boxes, or across boxes, needs claim_source", () => {
+  const cases = [
+    ["heading + compare", "ハルシネーションの数", { type: "compare", items: [{ note: "ふつうのAI", label: "あり" }, { note: "Jev", label: "しない" }] }],
+    ["across steps", "答えの形", { type: "steps", items: [{ label: "型エラー" }, { label: "ゼロ" }] }],
+    ["heading + flow", "どれだけ速い？", { type: "flow", items: [{ label: "質問" }, { label: "Jev" }, { label: "200倍" }] }],
+  ];
+  for (const [why, heading, diagram] of cases) {
+    const ep = full();
+    ep.slides[2].heading = heading; // slides[2] has no claim_source
+    ep.slides[2].diagram = diagram;
+    const r = check([ep]);
+    assert.deepEqual(r.errors.filter((e) => /slides\[2\]/.test(e)), [], why);
+    assert.match(r.warnings.join("\n"), /slides\[2\]\.diagram: .*claim/, why);
+    assert.equal(toJevVideoData(ep).tools[2].diagram, null, why);
+    // With the label saying whose claim it is, the picture is drawn.
+    ep.slides[2].claim_source = "TypeSafe の発表";
+    assert.ok(toJevVideoData(ep).tools[2].diagram, `${why} with claim_source`);
+  }
+});

@@ -620,6 +620,14 @@ export function diagramProblems(slide) {
       if (DOLLAR_RE.test(both) && !DOLLAR_RE.test(it.label) && !DOLLAR_RE.test(it.note)) problems.push(`${at}: "${it.note}" + "${it.label}" is a dollar amount — convert to yen`);
     }
   });
+  // The viewer reads the heading and the boxes together: a claim split over them
+  // ("ハルシネーションの数" + "Jev: しない", "型エラー" → "ゼロ") still needs claim_source.
+  if (!slide.claim_source) {
+    const parts = [slide.heading, ...d.items.map((it) => (it && typeof it === "object" ? [it.note, it.label].filter((s) => typeof s === "string").join("") : ""))]
+      .filter((s) => typeof s === "string" && s.trim());
+    const joined = [parts.join(""), ...parts.flatMap((a, i) => parts.filter((_, j) => j !== i).map((b) => a + b))];
+    if (joined.some(hasClaim) && !problems.some((p) => /claim/.test(p))) problems.push(`the heading and the boxes together state a claim — the slide needs claim_source`);
+  }
   if (total > DIAGRAM_TOTAL) problems.push(`${total} chars in the picture (max ${DIAGRAM_TOTAL} — fewer words)`);
   return problems;
 }

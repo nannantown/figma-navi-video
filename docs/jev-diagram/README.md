@@ -7,7 +7,6 @@
 |---|---|
 | `CODEX-DIAGRAM-BRIEF.md` | Codex への指示書（`codex exec -m gpt-5.5`、入力は当時の画面 `../may-preview/layout/layout-ref.png`） |
 | `diagram-steps.jpg` / `diagram-flow.jpg` / `diagram-compare.jpg` | Codex が描いた参考画像（手順 / 流れ / 比べる）。1080×1920 |
-| `codex-last.txt` | Codex の寸法メモ |
 
 コードでの再現は `src/components/JevDiagram.tsx`（`JevSlideCard.tsx` が `diagram` のあるスライドで本文の代わりに描く）。
 データは朝ルーチンが書く `slides[].diagram`（`docs/routine-prompt-jev.md` / `docs/jev-format.md`）、検証は `scripts/jev.mjs` の `diagramProblems`。
