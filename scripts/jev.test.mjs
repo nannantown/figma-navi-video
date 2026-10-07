@@ -205,14 +205,14 @@ test("a speed or hallucination claim without its source is rejected", () => {
 });
 
 test("money is in yen: dollar amounts in shown text are rejected, sources are not checked", () => {
-  for (const [field, value] of [["narration", "入力100万トークンで0.042ドルです。"], ["body", "料金表では42ドル。"], ["heading", "100万回で$42"], ["claim_source", "TypeSafe の USD 料金"]]) {
+  for (const [field, value] of [["narration", "入力100万トークンで0.042ドルです。"], ["body", "料金表では42ドル。"], ["heading", "100万回で$42"], ["claim_source", "TypeSafe の USD 料金"], ["body", "料金は40 dollarsです。"], ["narration", "米国ドルで払います。"], ["body", "USドル建てです。"]]) {
     const ep = full();
     ep.slides[3][field] = value;
     assert.match(errorsOf([ep]), /no dollar amounts/, `${field}: ${value}`);
   }
   assert.match(errorsOf([full({ hook: "AIの判断1回は$0.000042？" })]), /hook: no dollar amounts/);
   const ok = full();
-  ok.slides[3].body = "導入のハードルが低く、ミドルウェアのハンドル役。100万回で約6,000円。";
+  ok.slides[3].body = "導入のハードルが低く、ミドルウェアのハンドル役。10 centimeters、50パーセント、100万回で約6,000円。";
   ok.sources[0].title = "TypeSafe AI emerges from stealth with $40M seed";
   assert.doesNotMatch(errorsOf([ok]), /no dollar amounts/);
 });

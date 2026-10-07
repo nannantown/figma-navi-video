@@ -58,7 +58,7 @@ export const INTRO_TOPICS = [
   { key: "intro-no-text", theme: "文章を書かない AI — 答えを「型」と確信度で返す" },
   { key: "intro-vs-llm", theme: "ChatGPT のような LLM と何が違う？ 得意と不得意" },
   { key: "intro-speed-claim", theme: "「速い」と言う理由 — TypeSafe の主張と第三者の測定" },
-  { key: "intro-cost-claim", theme: "料金のしくみ — 入力 100 万トークン $0.042 を計算してみる" },
+  { key: "intro-cost-claim", theme: "料金のしくみ — 入力 100 万トークン約 6 円を円で計算してみる" },
   { key: "intro-no-hallucination-claim", theme: "「ハルシネーションしない」の意味と限界" },
 ];
 
@@ -354,7 +354,7 @@ function textProblems(value, label) {
 
 // Money is written in yen only (owner decision 2026-10-06): a number right
 // before ドル/セント, 米ドル, $ or USD. ハードル / ミドル / ハンドル stay allowed.
-const DOLLAR_RE = /[0-9０-９一二三四五六七八九十百千万億兆数]\s*(?:ドル|セント)|米ドル|[$＄]|(?<![A-Za-z])USD(?![A-Za-z])/i;
+const DOLLAR_RE = /[0-9０-９一二三四五六七八九十百千万億兆数]\s*(?:ドル|セント|dollars?\b|cents?\b)|(?:米国?|US\s*)ドル|[$＄]|(?<![A-Za-z])USD(?![A-Za-z])/i;
 
 /** Text shown in the video, the title or the caption — not sources (their titles quote the page). */
 function shownTextProblems(value, label) {
