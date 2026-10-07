@@ -58,7 +58,7 @@ export const INTRO_TOPICS = [
   { key: "intro-no-text", theme: "文章を書かない AI — 答えを「型」と確信度で返す" },
   { key: "intro-vs-llm", theme: "ChatGPT のような LLM と何が違う？ 得意と不得意" },
   { key: "intro-speed-claim", theme: "「速い」と言う理由 — TypeSafe の主張と第三者の測定" },
-  { key: "intro-cost-claim", theme: "料金のしくみ — 入力 100 万トークン $0.042 を計算してみる" },
+  { key: "intro-cost-claim", theme: "料金のしくみ — 入力 100 万トークン約 6 円を計算してみる" },
   { key: "intro-no-hallucination-claim", theme: "「ハルシネーションしない」の意味と限界" },
 ];
 
@@ -352,6 +352,17 @@ function textProblems(value, label) {
   return problems;
 }
 
+// Money is written in yen only (owner decision 2026-10-06): a number right
+// before ドル/セント, 米ドル, $ or USD. ハードル / ミドル / ハンドル stay allowed.
+const DOLLAR_RE = /[0-9０-９一二三四五六七八九十百千万億兆数]\s*(?:ドル|セント|dollars?\b|cents?\b)|(?:米国?|US\s*)ドル|[$＄]|(?<![A-Za-z])USD(?![A-Za-z])/i;
+
+/** Text shown in the video, the title or the caption — not sources (their titles quote the page). */
+function shownTextProblems(value, label) {
+  const problems = textProblems(value, label);
+  if (typeof value === "string" && DOLLAR_RE.test(value)) problems.push(`${label}: no dollar amounts — convert to yen at the rough current rate (e.g. 約3,000円)`);
+  return problems;
+}
+
 /** Minimal shape every ledger entry needs for the order and repeat checks. */
 function ledgerProblems(ep, i) {
   const at = `episodes[${i}]`;
@@ -472,7 +483,7 @@ export function validateEpisodes(file, { date = todayJst(), today = todayJst(), 
   for (const [field, limits] of [["topic", LIMITS.topic], ["headline", LIMITS.headline], ["hook", LIMITS.hook]]) {
     const p = lengthProblem(ep[field], limits, `${at}.${field}`);
     if (p) errors.push(p);
-    errors.push(...textProblems(ep[field], `${at}.${field}`));
+    errors.push(...shownTextProblems(ep[field], `${at}.${field}`));
   }
   for (const u of unattributedClaims(ep.hook ?? "")) errors.push(`${at}.hook: claim without its source — "${u}" (write "TypeSafe によると…")`);
   if (hasClaim(ep.headline ?? "")) errors.push(`${at}.headline: no speed/cost/"no hallucination" claim in the headline (put it on a slide with claim_source)`);
@@ -535,7 +546,7 @@ function slideProblems(ep, at) {
     for (const [field, limits] of [["heading", LIMITS.heading], ["body", LIMITS.body], ["narration", LIMITS.narration]]) {
       const p = lengthProblem(s?.[field], limits, `${sat}.${field}`);
       if (p) errors.push(p);
-      errors.push(...textProblems(s?.[field], `${sat}.${field}`));
+      errors.push(...shownTextProblems(s?.[field], `${sat}.${field}`));
     }
     total += charLength(s?.narration ?? "");
     for (const u of unattributedClaims(s?.narration ?? "")) errors.push(`${sat}.narration: claim without its source — "${u}" (write "TypeSafe によると…")`);
@@ -545,7 +556,7 @@ function slideProblems(ep, at) {
     if (s?.claim_source != null) {
       const p = lengthProblem(s.claim_source, LIMITS.claimSource, `${sat}.claim_source`);
       if (p) errors.push(p);
-      errors.push(...textProblems(s.claim_source, `${sat}.claim_source`));
+      errors.push(...shownTextProblems(s.claim_source, `${sat}.claim_source`));
       if (hasClaim(s.claim_source)) errors.push(`${sat}.claim_source: a label says whose claim it is, not the claim itself (e.g. "TypeSafe の発表")`);
     } else if (onScreenClaim) {
       errors.push(`${sat}: the screen text states a claim — set claim_source (e.g. "TypeSafe の発表" / "LiteLLM の検証")`);
@@ -700,7 +711,7 @@ export function toJevVideoData(ep, { usecaseNumber = null } = {}) {
 export const JEV_IG_HASHTAGS = ["#AIニュース", "#生成AI", "#AI最新情報", "#Jev", "#TypeSafeAI"];
 export const JEV_YT_HASHTAGS = ["#AIニュース", "#生成AI", "#Jev", "#TypeSafeAI", "#Shorts"];
 export const JEV_YT_TAGS = ["AIニュース", "生成AI", "AIモデル", "Jev", "TypeSafe AI", "TypeSafe", "System One", "Shorts"];
-export const CLAIM_NOTE = "※速度・料金・精度の数字や「ハルシネーションしない」は、断りのない限り開発元 TypeSafe AI の発表です（第三者の検証は出典を明記）。";
+export const CLAIM_NOTE = "※速度・料金・精度の数字や「ハルシネーションしない」は、断りのない限り開発元 TypeSafe AI の発表です（第三者の検証は出典を明記）。円の金額は概算です。";
 const YT_TITLE_MAX = 100;
 
 function clean(s) {
