@@ -577,13 +577,15 @@ const DIAGRAM_NOTE = [1, 8];
 const DIAGRAM_TOTAL = 40;
 // A label this long that the narration also says word for word is the bubble twice.
 const DIAGRAM_ECHO_MIN = 8;
+const FLOW_LATIN_MAX = 8;
 
 /** Why `slide.diagram` cannot be drawn ([] = fine, or no diagram at all). */
 export function diagramProblems(slide) {
   const d = slide?.diagram;
   if (d == null) return [];
   if (typeof d !== "object" || Array.isArray(d)) return ["must be an object { type, items }"];
-  const counts = DIAGRAM_TYPES[d.type];
+  // hasOwn: "constructor" / "toString" would otherwise come back from the prototype.
+  const counts = typeof d.type === "string" && Object.hasOwn(DIAGRAM_TYPES, d.type) ? DIAGRAM_TYPES[d.type] : null;
   if (!counts) return [`type must be ${Object.keys(DIAGRAM_TYPES).join(" / ")}`];
   if (!Array.isArray(d.items) || d.items.length < counts[0] || d.items.length > counts[1]) {
     return [`${d.type} takes ${counts[0] === counts[1] ? counts[0] : counts.join("-")} items`];
@@ -608,6 +610,15 @@ export function diagramProblems(slide) {
       if (charLength(flat) >= DIAGRAM_ECHO_MIN && /[\p{sc=Hiragana}\p{sc=Katakana}\p{sc=Han}]/u.test(flat) && narration.includes(flat)) problems.push(`${at}.${field}: the narration says "${it[field].trim()}" word for word — the picture uses short words, the bubble the sentence`);
     }
     if (d.type === "steps" && it.note != null) problems.push(`${at}.note: steps take a label only`);
+    // A flow box is ~210 px wide: a longer Latin word breaks mid-word ("OpenRou|terAPI").
+    const latin = typeof it.label === "string" ? Math.max(0, ...(it.label.match(/[A-Za-z0-9.]+/g) || []).map((w) => w.length)) : 0;
+    if (d.type === "flow" && latin > FLOW_LATIN_MAX) problems.push(`${at}.label: a Latin word of ${latin} letters does not fit a flow box (max ${FLOW_LATIN_MAX}) — shorten the name or use steps / compare`);
+    // On screen the column title and its value read as one phrase ("精度" + "100%", "料金" + "42ドル").
+    if (typeof it.note === "string" && typeof it.label === "string") {
+      const both = `${it.note}${it.label} ${it.label}${it.note}`;
+      if (hasClaim(both) && !hasClaim(it.label) && !hasClaim(it.note) && !slide.claim_source) problems.push(`${at}: "${it.note}" + "${it.label}" states a claim — the slide needs claim_source`);
+      if (DOLLAR_RE.test(both) && !DOLLAR_RE.test(it.label) && !DOLLAR_RE.test(it.note)) problems.push(`${at}: "${it.note}" + "${it.label}" is a dollar amount — convert to yen`);
+    }
   });
   if (total > DIAGRAM_TOTAL) problems.push(`${total} chars in the picture (max ${DIAGRAM_TOTAL} — fewer words)`);
   return problems;

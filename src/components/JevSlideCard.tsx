@@ -18,7 +18,9 @@ function fadeUp(frame: number, start: number, fps: number) {
   return { opacity, transform: `translateY(${y}px)` };
 }
 
-/** `may`: 先輩のメイ stands below (May.tsx) — content moves into y 200..850, body 40 px (worst case
+/** With a diagram the worst case (18-char heading on 2 lines + 3 steps of 12 chars + claim_source) still ends
+ *  above y 850 — checked with remotion still on 2026-10-07.
+ *  `may`: 先輩のメイ stands below (May.tsx) — content moves into y 200..850, body 40 px (worst case
  *  18-char heading + 64-char body still fits). */
 export const JevSlideCard: React.FC<{ slide: JevSlide; may?: boolean; durationInFrames: number }> = ({ slide, may = false, durationInFrames }) => {
   const frame = useCurrentFrame();
@@ -26,7 +28,7 @@ export const JevSlideCard: React.FC<{ slide: JevSlide; may?: boolean; durationIn
   const glow = interpolate(frame % 150, [0, 75, 150], [0.18, 0.3, 0.18]);
   const headingLength = Array.from(slide.heading).length;
   // With a diagram the heading is only its title (owner: not huge), the picture carries the point.
-  const headingSize = slide.diagram ? 58 : headingLength <= 10 ? 88 : headingLength <= 14 ? 80 : 72;
+  const headingSize = slide.diagram ? 54 : headingLength <= 10 ? 88 : headingLength <= 14 ? 80 : 72;
 
   return (
     <AbsoluteFill
@@ -85,7 +87,7 @@ export const JevSlideCard: React.FC<{ slide: JevSlide; may?: boolean; durationIn
         </div>
 
         {slide.diagram ? (
-          <div style={{ marginTop: may ? 32 : 48 }}>
+          <div style={{ marginTop: may ? 22 : 40 }}>
             <JevDiagram diagram={slide.diagram} durationInFrames={durationInFrames} />
           </div>
         ) : (
@@ -109,7 +111,7 @@ export const JevSlideCard: React.FC<{ slide: JevSlide; may?: boolean; durationIn
         {slide.claimSource && (
           <div
             style={{
-              marginTop: may ? 24 : 36,
+              marginTop: slide.diagram ? 16 : may ? 24 : 36,
               alignSelf: "flex-start",
               background: "#FBBF24",
               color: "#1a1204",

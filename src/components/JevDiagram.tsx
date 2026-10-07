@@ -12,7 +12,7 @@ import { COLORS } from "./theme";
  */
 type Item = Diagram["items"][number];
 
-const LABEL = { fontWeight: 800, lineHeight: 1.25, wordBreak: "auto-phrase", textWrap: "balance" } as unknown as React.CSSProperties;
+const LABEL = { fontWeight: 800, lineHeight: 1.25, wordBreak: "auto-phrase", textWrap: "balance", overflowWrap: "anywhere" } as unknown as React.CSSProperties;
 // White text stays ≥ 3:1 on both ends (large bold text), unlike the light pill gradient.
 const LIT = "linear-gradient(90deg, #5B4BE0, #8B7CFF)";
 const OUTLINE = `3px solid rgba(139,124,255,0.6)`;
@@ -32,7 +32,7 @@ function useReveal(i: number) {
 const Arrow: React.FC<{ dir: "down" | "right"; i: number }> = ({ dir, i }) => (
   <div style={{ display: "flex", justifyContent: "center", alignItems: "center", ...useReveal(i) }}>
     {dir === "down" ? (
-      <svg width={40} height={26} viewBox="0 0 40 26">
+      <svg width={28} height={18} viewBox="0 0 40 26">
         <path d="M14 0 H26 V10 H38 L20 26 L2 10 H14 Z" fill={COLORS.accent} />
       </svg>
     ) : (
@@ -50,7 +50,7 @@ const Steps: React.FC<{ items: Item[]; durationInFrames: number }> = ({ items, d
   const progress = interpolate(frame, [from, Math.max(from + 1, durationInFrames - 15)], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const lit = Math.min(items.length - 1, Math.floor(progress * items.length));
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
       {items.map((it, i) => (
         <React.Fragment key={i}>
           {i > 0 && <Arrow dir="down" i={i} />}
@@ -66,8 +66,8 @@ const Step: React.FC<{ label: string; i: number; lit: boolean }> = ({ label, i, 
     style={{
       display: "flex",
       alignItems: "center",
-      gap: 26,
-      padding: "14px 28px",
+      gap: 22,
+      padding: "8px 24px",
       borderRadius: 22,
       border: lit ? "3px solid transparent" : OUTLINE,
       background: lit ? LIT : COLORS.panel,
@@ -77,8 +77,8 @@ const Step: React.FC<{ label: string; i: number; lit: boolean }> = ({ label, i, 
   >
     <div
       style={{
-        flex: "0 0 62px",
-        height: 62,
+        flex: "0 0 54px",
+        height: 54,
         borderRadius: "50%",
         border: `3px solid ${COLORS.text}`,
         background: lit ? COLORS.background : "transparent",
@@ -86,19 +86,19 @@ const Step: React.FC<{ label: string; i: number; lit: boolean }> = ({ label, i, 
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        fontSize: 36,
+        fontSize: 32,
         fontWeight: 900,
       }}
     >
       {i + 1}
     </div>
-    <div style={{ fontSize: 46, color: COLORS.text, ...LABEL }}>{label}</div>
+    <div style={{ fontSize: 44, color: COLORS.text, ...LABEL }}>{label}</div>
   </div>
 );
 
 /** flow: input → process → output; the middle box (usually Jev) is lit. */
 const Flow: React.FC<{ items: Item[] }> = ({ items }) => (
-  <div style={{ display: "flex", alignItems: "flex-end", gap: 10 }}>
+  <div style={{ display: "flex", alignItems: "stretch", gap: 10 }}>
     {items.map((it, i) => (
       <React.Fragment key={i}>
         {i > 0 && (
@@ -117,6 +117,7 @@ const FlowBox: React.FC<{ item: Item; i: number; lit: boolean }> = ({ item, i, l
     <div style={{ fontSize: 32, fontWeight: 700, color: COLORS.textMuted, textAlign: "center", minHeight: 38 }}>{item.note ?? ""}</div>
     <div
       style={{
+        flex: 1,
         minHeight: 180,
         padding: "18px 14px",
         borderRadius: 22,

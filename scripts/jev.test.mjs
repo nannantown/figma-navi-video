@@ -729,3 +729,39 @@ test("diagrams: names may repeat the narration, and a claim is fine with claim_s
   assert.deepEqual(check([ep]).warnings.filter((w) => /diagram/.test(w)), []);
   assert.equal(toJevVideoData(ep).tools[3].diagram.items[0].note, "TypeSafe");
 });
+
+test("diagrams: prototype names, a title + value claim or dollar, and a long Latin word in a flow box fall back", () => {
+  const cases = [
+    ["prototype type name", { type: "constructor", items: [] }],
+    ["prototype type name with items", { type: "toString", items: [1, 2, 3, 4, 5, 6].map((n) => ({ label: `項目${n}` })) }],
+    ["array type", { type: ["steps"], items: [{ label: "選ぶ" }, { label: "返す" }] }],
+    ["empty items", { type: "steps", items: [] }],
+    ["claim split over title and value", { type: "compare", items: [{ note: "精度", label: "100%" }, { note: "ふつう", label: "90%" }] }],
+    ["no hallucination split over title and value", { type: "compare", items: [{ note: "幻覚", label: "ゼロ" }, { note: "ふつう", label: "あり" }] }],
+    ["dollars split over title and value", { type: "compare", items: [{ note: "ドル", label: "42" }, { note: "円", label: "約6千円" }] }],
+    ["long Latin word in a flow box", { type: "flow", items: [{ label: "OpenRouterAPI" }, { label: "Jev" }, { label: "答え" }] }],
+  ];
+  for (const [why, diagram] of cases) {
+    const ep = full();
+    ep.slides[2].diagram = diagram; // slides[2] has no claim_source
+    const r = check([ep]);
+    assert.deepEqual(r.errors, [], why);
+    assert.match(r.warnings.join("\n"), /slides\[2\]\.diagram: /, why);
+    assert.equal(toJevVideoData(ep).tools[2].diagram, null, why);
+  }
+});
+
+test("diagrams: no input shape throws — the post never stops on the diagram", () => {
+  const shapes = [null, 0, 1, "", "steps", [], [{}], {}, { type: null }, { type: "flow" }, { type: "flow", items: null },
+    { type: "flow", items: [null, null, null] }, { type: "compare", items: [{ label: 1, note: 2 }, { label: " ", note: {} }] },
+    { type: "steps", items: [{ label: [] }, { label: "a", note: [] }] }, { type: "compare", items: [{ label: "a", note: "b", extra: 1 }, { label: "c", note: "d" }] }];
+  for (const diagram of shapes) {
+    for (const narration of [undefined, null, 3, {}]) {
+      const ep = full();
+      ep.slides[2].diagram = diagram;
+      if (narration !== undefined) ep.slides[2].narration = narration;
+      assert.doesNotThrow(() => check([ep]), JSON.stringify(diagram));
+      assert.doesNotThrow(() => toJevVideoData({ ...ep, slides: ep.slides.map((s) => ({ ...s, narration: String(s.narration) })) }), JSON.stringify(diagram));
+    }
+  }
+});

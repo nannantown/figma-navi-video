@@ -16,7 +16,7 @@ import {
   firstToolFrames,
   openingFrames,
 } from "./cover-frame.mjs";
-import { toJevVideoData } from "./jev.mjs";
+import { toJevVideoData, DIAGRAM_TYPES } from "./jev.mjs";
 
 const rootDir = join(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -220,6 +220,18 @@ test("Jev: every element of the slide has faded in by the cover frame", () => {
   const fade = Number(/\[start, start \+ (\d+)\]/.exec(src)?.[1]);
   assert.ok(fade > 0, "JevSlideCard fadeUp changed shape");
   assert.ok(Math.max(...starts) + fade <= COVER_FRAMES_INTO_CARD, `last fade ends at ${Math.max(...starts) + fade}`);
+});
+
+test("Jev: every box of the diagram has appeared by the cover frame", () => {
+  const src = readFileSync(join(rootDir, "src/components/JevDiagram.tsx"), "utf-8");
+  const start = Number(/const REVEAL_START = (\d+);/.exec(src)?.[1]);
+  const step = Number(/const REVEAL_STEP = (\d+);/.exec(src)?.[1]);
+  const fade = Number(/\[start, start \+ (\d+)\]/.exec(src)?.[1]);
+  assert.ok(start > 0 && step > 0 && fade > 0, "JevDiagram reveal changed shape");
+  // The most boxes any diagram type takes (scripts/jev.mjs DIAGRAM_TYPES).
+  const maxItems = Math.max(...Object.values(DIAGRAM_TYPES).map(([, max]) => max));
+  const last = start + (maxItems - 1) * step + fade;
+  assert.ok(last <= COVER_FRAMES_INTO_CARD, `last diagram box ends its fade at ${last}`);
 });
 
 test("AiToolsVideo renders a Jev slide in the tool-card slot", () => {
