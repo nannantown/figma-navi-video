@@ -1,0 +1,28 @@
+Saved the three generated references here:
+
+- [diagram-steps.png](/Users/kokinaniwa/.openground/projects/ac85a6fd0198/worktrees/ai-ground-codex-1007-231253-f41b2af0574c/figma-navi-video/docs/jev-diagram/diagram-steps.png)
+- [diagram-flow.png](/Users/kokinaniwa/.openground/projects/ac85a6fd0198/worktrees/ai-ground-codex-1007-231253-f41b2af0574c/figma-navi-video/docs/jev-diagram/diagram-flow.png)
+- [diagram-compare.png](/Users/kokinaniwa/.openground/projects/ac85a6fd0198/worktrees/ai-ground-codex-1007-231253-f41b2af0574c/figma-navi-video/docs/jev-diagram/diagram-compare.png)
+
+Verified all three are PNG, `1080 x 1920`.
+
+**diagram-steps.png**
+- Heading: `y=295..370`; diagram: `y=400..820`
+- Boxes: `(160,400,760,112)`, `(160,555,760,112)`, `(160,710,760,112)`
+- Fonts: heading `56`, box text `46`, number circles `52`, source `28`
+- Colours: bg `#0b0b14`, accent `#8B7CFF -> #C9C2FF`, text `#FFFFFF`, muted `#A8AAB8`
+- Arrows: vertical down arrows, purple fill, about `48px`
+
+**diagram-flow.png**
+- Heading: `y=315..390`; diagram: `y=500..760`
+- Boxes: `(120,560,230,145)`, `(425,560,230,145)`, `(730,560,230,145)`
+- Fonts: heading `56`, labels `36`, box text `44`, `Jev` `54`
+- Colours: bg `#0b0b14`, middle box `#8B7CFF -> #C9C2FF`, outline `#C9C2FF`, text `#FFFFFF`, labels `#A8AAB8`
+- Arrows: horizontal right arrows, pale purple, about `58px`
+
+**diagram-compare.png**
+- Heading: `y=285..360`; diagram: `y=420..735`
+- Boxes: `(120,430,370,230)`, `(590,430,370,230)`; badge `(120,705,310,64)`
+- Fonts: heading `56`, column titles `38`, big values `60`, badge `30`, source `28`
+- Colours: bg `#0b0b14`, purple `#8B7CFF`, pale purple `#C9C2FF`, yellow badge `#FBBF24`, text `#FFFFFF`
+- Arrows: none; comparison uses two columns with spacing/divider.
