@@ -55,7 +55,15 @@ export interface JevSlide {
   header: string;
   /** "出典: TechCrunch・TypeSafe" */
   sourceLine: string;
+  /** The top half as a picture instead of `body` (scripts/jev.mjs videoDiagram); null = heading + body */
+  diagram?: JevDiagram | null;
   image?: null;
+}
+
+/** steps: 手順 1→2(→3) / flow: 入力→処理→出力 / compare: 2 columns (note = column title). */
+export interface JevDiagram {
+  type: "steps" | "flow" | "compare";
+  items: { label: string; note: string | null }[];
 }
 
 export type VideoCard = Tool | JevSlide;

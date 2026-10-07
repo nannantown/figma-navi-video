@@ -11,6 +11,7 @@ import {
   nextSlot,
   normalizeUrl,
   unattributedClaims,
+  hasClaim,
   toJevVideoData,
   buildJevCaptions,
   jevPdcaReport,
@@ -671,4 +672,167 @@ test("the opening's 第N回 counts only intros / use cases, not the filler expla
 test("a non-intro episode cannot use an intro- topic_key", () => {
   const filler = full({ date: "2026-09-25", kind: "explainer", stage_episode: 2, topic_key: "intro-extra-notes", research: { ...INTRO.episodes[0].research, no_news_reason: "公式ページが開けず確認できなかった" } });
   assert.match(errorsOf([full(), filler]), /starts with "intro-", which is reserved/);
+});
+
+// Owner 2026-10-06: the top half is a picture in order (手順・流れ・比較), the bubble says the words.
+// A missing or broken diagram never stops the post: warning + the old heading/body card.
+test("diagrams: the samples draw one on every slide and pass without diagram warnings", () => {
+  for (const sample of [INTRO, USECASE]) {
+    const ep = sample.episodes.at(-1);
+    const r = validateEpisodes(sample, { pickLatest: true });
+    assert.deepEqual(r.errors, []);
+    assert.deepEqual(r.warnings.filter((w) => /diagram/.test(w)), []);
+    const data = toJevVideoData(ep);
+    assert.ok(data.tools.every((t) => t.diagram && t.diagram.items.length >= 2), ep.date);
+  }
+  assert.deepEqual(toJevVideoData(INTRO.episodes[0]).tools[2].diagram, {
+    type: "compare",
+    items: [{ label: "文章で答える", note: "ふつうのAI" }, { label: "選択肢＋確信度", note: "Jev" }],
+  });
+});
+
+test("diagrams: a missing or broken one is a warning and the slide falls back to heading + body", () => {
+  const none = full();
+  for (const s of none.slides) delete s.diagram;
+  const r0 = check([none]);
+  assert.deepEqual(r0.errors, []);
+  assert.match(r0.warnings.join("\n"), /no slide has a diagram/);
+  assert.ok(toJevVideoData(none).tools.every((t) => t.diagram === null && t.body));
+
+  const broken = [
+    ["not an object", "手順"],
+    ["unknown type", { type: "chart", items: [{ label: "a" }, { label: "b" }] }],
+    ["too many steps", { type: "steps", items: [1, 2, 3, 4].map((n) => ({ label: `手順${n}` })) }],
+    ["flow needs 3", { type: "flow", items: [{ label: "入力" }, { label: "出力" }] }],
+    ["compare needs a column title", { type: "compare", items: [{ label: "前" }, { label: "後", note: "後" }] }],
+    ["label too long", { type: "steps", items: [{ label: "とても長い手順の説明を書いてしまった" }, { label: "次" }] }],
+    ["steps take no note", { type: "steps", items: [{ label: "選ぶ", note: "1回目" }, { label: "返す" }] }],
+    ["dollars", { type: "compare", items: [{ label: "42ドル", note: "料金" }, { label: "約6千円", note: "円で" }] }],
+    ["claim without claim_source", { type: "compare", items: [{ label: "200倍速い", note: "Jev" }, { label: "ふつう", note: "LLM" }] }],
+    ["the narration word for word", { type: "steps", items: [{ label: "決められた選択肢や数値" }, { label: "確信度" }] }],
+  ];
+  for (const [why, diagram] of broken) {
+    const ep = full();
+    ep.slides[2].diagram = diagram;
+    const r = check([ep]);
+    assert.deepEqual(r.errors, [], why);
+    assert.match(r.warnings.join("\n"), /slides\[2\]\.diagram: .* falls back to heading \+ body/, why);
+    const t = toJevVideoData(ep).tools[2];
+    assert.equal(t.diagram, null, why);
+    assert.ok(t.body, why);
+  }
+});
+
+test("diagrams: names may repeat the narration, and a claim is fine with claim_source", () => {
+  const ep = full();
+  // slides[3] carries claim_source "TypeSafe の発表"; its narration names TypeSafe.
+  ep.slides[3].diagram = { type: "compare", items: [{ label: "40〜200倍速い", note: "TypeSafe" }, { label: "1〜6倍ほど", note: "第三者" }] };
+  assert.deepEqual(check([ep]).warnings.filter((w) => /diagram/.test(w)), []);
+  assert.equal(toJevVideoData(ep).tools[3].diagram.items[0].note, "TypeSafe");
+});
+
+test("diagrams: prototype names, a title + value claim or dollar, and a long Latin word in a flow box fall back", () => {
+  const cases = [
+    ["prototype type name", { type: "constructor", items: [] }],
+    ["prototype type name with items", { type: "toString", items: [1, 2, 3, 4, 5, 6].map((n) => ({ label: `項目${n}` })) }],
+    ["array type", { type: ["steps"], items: [{ label: "選ぶ" }, { label: "返す" }] }],
+    ["empty items", { type: "steps", items: [] }],
+    ["claim split over title and value", { type: "compare", items: [{ note: "精度", label: "100%" }, { note: "ふつう", label: "90%" }] }],
+    ["no hallucination split over title and value", { type: "compare", items: [{ note: "幻覚", label: "ゼロ" }, { note: "ふつう", label: "あり" }] }],
+    ["dollars split over title and value", { type: "compare", items: [{ note: "ドル", label: "42" }, { note: "円", label: "約6千円" }] }],
+    ["long Latin word in a flow box", { type: "flow", items: [{ label: "OpenRouterAPI" }, { label: "Jev" }, { label: "答え" }] }],
+  ];
+  for (const [why, diagram] of cases) {
+    const ep = full();
+    ep.slides[2].diagram = diagram; // slides[2] has no claim_source
+    const r = check([ep]);
+    assert.deepEqual(r.errors, [], why);
+    assert.match(r.warnings.join("\n"), /slides\[2\]\.diagram: /, why);
+    assert.equal(toJevVideoData(ep).tools[2].diagram, null, why);
+  }
+});
+
+test("diagrams: no input shape throws — the post never stops on the diagram", () => {
+  const shapes = [null, 0, 1, "", "steps", [], [{}], {}, { type: null }, { type: "flow" }, { type: "flow", items: null },
+    { type: "flow", items: [null, null, null] }, { type: "compare", items: [{ label: 1, note: 2 }, { label: " ", note: {} }] },
+    { type: "steps", items: [{ label: [] }, { label: "a", note: [] }] }, { type: "compare", items: [{ label: "a", note: "b", extra: 1 }, { label: "c", note: "d" }] }];
+  for (const diagram of shapes) {
+    for (const narration of [undefined, null, 3, {}]) {
+      const ep = full();
+      ep.slides[2].diagram = diagram;
+      if (narration !== undefined) ep.slides[2].narration = narration;
+      assert.doesNotThrow(() => check([ep]), JSON.stringify(diagram));
+      assert.doesNotThrow(() => toJevVideoData({ ...ep, slides: ep.slides.map((s) => ({ ...s, narration: String(s.narration) })) }), JSON.stringify(diagram));
+    }
+  }
+});
+
+test("diagrams: a claim split between the heading and the boxes, or across boxes, needs claim_source", () => {
+  const cases = [
+    ["heading + compare", "ハルシネーションの数", { type: "compare", items: [{ note: "ふつうのAI", label: "あり" }, { note: "Jev", label: "しない" }] }],
+    ["across steps", "答えの形", { type: "steps", items: [{ label: "型エラー" }, { label: "ゼロ" }] }],
+    ["heading + flow", "どれだけ速い？", { type: "flow", items: [{ label: "質問" }, { label: "Jev" }, { label: "200倍" }] }],
+  ];
+  for (const [why, heading, diagram] of cases) {
+    const ep = full();
+    ep.slides[2].heading = heading; // slides[2] has no claim_source
+    ep.slides[2].diagram = diagram;
+    const r = check([ep]);
+    assert.deepEqual(r.errors.filter((e) => /slides\[2\]/.test(e)), [], why);
+    assert.match(r.warnings.join("\n"), /slides\[2\]\.diagram: .*claim/, why);
+    assert.equal(toJevVideoData(ep).tools[2].diagram, null, why);
+    // With the label saying whose claim it is, the picture is drawn.
+    ep.slides[2].claim_source = "TypeSafe の発表";
+    assert.ok(toJevVideoData(ep).tools[2].diagram, `${why} with claim_source`);
+  }
+});
+
+test("diagrams: a flow box takes 8-char labels and 6-char notes (longer ones wrap into May)", () => {
+  const ep = full();
+  ep.slides[2].diagram = { type: "flow", items: [{ label: "届いた質問を渡す", note: "最初の入力" }, { label: "Jev", note: "選ぶ" }, { label: "答え", note: "出力" }] };
+  assert.ok(toJevVideoData(ep).tools[2].diagram, "8 / 5 chars fit");
+  for (const [why, items] of [
+    ["9-char label", [{ label: "届いた質問を全部渡す" }, { label: "Jev" }, { label: "答え" }]],
+    ["7-char note", [{ label: "質問", note: "いちばん最初の" }, { label: "Jev" }, { label: "答え" }]],
+  ]) {
+    ep.slides[2].diagram = { type: "flow", items };
+    assert.equal(toJevVideoData(ep).tools[2].diagram, null, why);
+  }
+});
+
+test("claims: short-word phrasings count, dates and pairings do not", () => {
+  for (const t of ["200x速い", "5×の速さ", "1/100の料金", "100%正しい", "桁違いに速い"]) assert.ok(hasClaim(t), t);
+  for (const t of ["9/15公開", "11/15の料金改定", "Haiku 4.5 × Jev", "型エラー10件", "0x1Fの値", "エラーとは何か"]) assert.equal(hasClaim(t), false, t);
+  // Sentences keep the narrow error words: plain advice about errors is not a claim.
+  for (const t of ["エラーが出ても慌てない。", "エラーの原因はわかりません。", "エラー画面が出ない場合は再読み込みします。", "APIキーなしでもエラーにならない。"]) assert.equal(hasClaim(t), false, t);
+});
+
+test("diagrams: more split claims fall back; explainers that merely sit next to a 'not' keep the picture", () => {
+  const draw = (heading, diagram) => {
+    const ep = full();
+    ep.slides[2].heading = heading; // slides[2] has no claim_source
+    ep.slides[2].diagram = diagram;
+    return toJevVideoData(ep).tools[2].diagram;
+  };
+  assert.equal(draw("ハルシネーション", { type: "compare", items: [{ note: "ふつう", label: "あり" }, { note: "Jev", label: "なし" }] }), null, "heading + なし");
+  const vsJev = (label) => ({ type: "compare", items: [{ note: "ふつうのAI", label: "あり" }, { note: "Jev", label }] });
+  for (const label of ["一切しない", "ほぼゼロ", "まったく無い", "Jevは0件", "0", "完全になくなる"]) assert.equal(draw("ハルシネーション", vsJev(label)), null, `ハルシネーション + ${label}`);
+  assert.equal(draw("ハルシネーションの数", vsJev("0")), null, "a bare 0");
+  assert.equal(draw("型エラー", { type: "compare", items: [{ note: "前", label: "よく出る" }, { note: "後", label: "完全になくなる" }] }), null, "後: 完全になくなる");
+  assert.equal(draw("Jev の流れ", { type: "flow", items: [{ label: "間違い" }, { label: "Jev" }, { label: "なくなる" }] }), null, "flow 間違い → なくなる");
+  for (const [note, label] of [["ハルシネーション", "なし"], ["誤答", "ゼロ"], ["", "ハルシネーション無し"], ["", "エラー0件"]]) {
+    assert.equal(draw("答えの比べ", { type: "compare", items: [{ note: "ふつう", label: "あり" }, { note: note || "Jev", label }] }), null, `one box: ${note}${label}`);
+  }
+  assert.equal(draw("速さの比べ", { type: "compare", items: [{ note: "TypeSafe", label: "40〜200" }, { note: "単位", label: "倍" }] }), null, "a compare row reads across");
+  assert.ok(draw("型エラーとは", { type: "steps", items: [{ label: "型が合わない" }, { label: "処理が止まる" }] }), "definition");
+  assert.ok(draw("よくある間違い", { type: "steps", items: [{ label: "出典を見ない" }, { label: "そのまま使う" }] }), "common mistakes");
+  assert.ok(draw("ミスを防ぐ手順", { type: "steps", items: [{ label: "答えを確認" }, { label: "出典がない時は保留" }] }), "how to avoid mistakes");
+});
+
+test("diagrams: a blank flow note is no note (the picture stays)", () => {
+  const ep = full();
+  ep.slides[2].diagram = { type: "flow", items: [{ label: "質問", note: "" }, { label: "Jev", note: " " }, { label: "答え" }] };
+  const d = toJevVideoData(ep).tools[2].diagram;
+  assert.ok(d);
+  assert.deepEqual(d.items.map((it) => it.note), [null, null, null]);
 });
