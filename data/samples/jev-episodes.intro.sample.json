@@ -15,23 +15,80 @@
         {
           "heading": "9月15日に先行公開",
           "body": "米サンフランシスコのTypeSafe AIが、新しいAIモデル「Jev」を開発者向けに先行公開しました。",
-          "narration": "Jevは、アメリカのTypeSafe AIという会社が9月15日に先行公開した、新しいAIモデルです。"
+          "narration": "Jevは、アメリカのTypeSafe AIという会社が9月15日に先行公開した、新しいAIモデルです。",
+          "diagram": {
+            "type": "flow",
+            "items": [
+              {
+                "label": "TypeSafe AI",
+                "note": "米国の会社"
+              },
+              {
+                "label": "Jev",
+                "note": "新しいAI"
+              },
+              {
+                "label": "開発者",
+                "note": "9/15公開"
+              }
+            ]
+          }
         },
         {
           "heading": "作ったのはChatGPTの源流の人",
           "body": "CEOのディオゴ・アルメイダ氏は、ChatGPTの土台になった研究InstructGPTの論文の共著者です。",
-          "narration": "CEOのディオゴ・アルメイダさんは、ChatGPTのもとになったInstructGPTという研究の論文を書いた一人です。"
+          "narration": "CEOのディオゴ・アルメイダさんは、ChatGPTのもとになったInstructGPTという研究の論文を書いた一人です。",
+          "diagram": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "ChatGPTの土台研究"
+              },
+              {
+                "label": "その論文の共著者"
+              },
+              {
+                "label": "Jevの会社のCEO"
+              }
+            ]
+          }
         },
         {
           "heading": "答えは「型」で返す",
           "body": "文章は書かず、決められた選択肢や数値と、その確信度を一度に返します。使うのは人ではなくソフトです。",
-          "narration": "Jevは文章を書きません。決められた選択肢や数値を、どれくらい自信があるかと一緒に返す、ソフト向けのAIです。"
+          "narration": "Jevは文章を書きません。決められた選択肢や数値を、どれくらい自信があるかと一緒に返す、ソフト向けのAIです。",
+          "diagram": {
+            "type": "compare",
+            "items": [
+              {
+                "label": "文章で答える",
+                "note": "ふつうのAI"
+              },
+              {
+                "label": "選択肢＋確信度",
+                "note": "Jev"
+              }
+            ]
+          }
         },
         {
           "heading": "速さは会社の主張",
           "body": "LLMより40〜200倍速いとされますが、TypeSafeの発表です。第三者の測定では差はもっと小さめです。",
           "claim_source": "TypeSafe の発表",
-          "narration": "TypeSafeによると、ChatGPTのようなLLMより40から200倍速いそうです。Cherry Creek Newsのまとめでは、実測で1倍台から6倍ほどという結果もあります。"
+          "narration": "TypeSafeによると、ChatGPTのようなLLMより40から200倍速いそうです。Cherry Creek Newsのまとめでは、実測で1倍台から6倍ほどという結果もあります。",
+          "diagram": {
+            "type": "compare",
+            "items": [
+              {
+                "label": "40〜200倍速い",
+                "note": "TypeSafe"
+              },
+              {
+                "label": "1〜6倍ほど",
+                "note": "第三者の測定"
+              }
+            ]
+          }
         }
       ],
       "sources": [

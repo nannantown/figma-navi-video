@@ -604,7 +604,8 @@ export function diagramProblems(slide) {
       total += charLength(it[field].trim());
       if (hasClaim(it[field]) && !slide.claim_source) problems.push(`${at}.${field}: states a claim — the slide needs claim_source`);
       const flat = normalizeForChecks(it[field]).replace(/\s+/g, "");
-      if (charLength(flat) >= DIAGRAM_ECHO_MIN && narration.includes(flat)) problems.push(`${at}.${field}: the narration says "${it[field].trim()}" word for word — the picture uses short words, the bubble the sentence`);
+      // Names ("TypeSafe", "Haiku 4.5") may repeat; a Japanese phrase may not.
+      if (charLength(flat) >= DIAGRAM_ECHO_MIN && /[\p{sc=Hiragana}\p{sc=Katakana}\p{sc=Han}]/u.test(flat) && narration.includes(flat)) problems.push(`${at}.${field}: the narration says "${it[field].trim()}" word for word — the picture uses short words, the bubble the sentence`);
     }
     if (d.type === "steps" && it.note != null) problems.push(`${at}.note: steps take a label only`);
   });

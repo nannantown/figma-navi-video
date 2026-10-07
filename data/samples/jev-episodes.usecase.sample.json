@@ -1,11 +1,59 @@
 {
   "episodes": [
-    { "date": "2026-09-24", "stage": 1, "stage_episode": 1, "kind": "intro", "topic_key": "intro-what-is-jev", "headline": "文章を書かないAI「Jev」とは", "sources": [] },
-    { "date": "2026-09-25", "stage": 1, "stage_episode": 2, "kind": "intro", "topic_key": "intro-no-text", "headline": "答えを「型」で返すAI", "sources": [] },
-    { "date": "2026-09-26", "stage": 1, "stage_episode": 3, "kind": "intro", "topic_key": "intro-vs-llm", "headline": "ChatGPTと何が違う？", "sources": [] },
-    { "date": "2026-09-27", "stage": 1, "stage_episode": 4, "kind": "intro", "topic_key": "intro-speed-claim", "headline": "Jevはなぜ速いと言うのか", "sources": [] },
-    { "date": "2026-09-28", "stage": 1, "stage_episode": 5, "kind": "intro", "topic_key": "intro-cost-claim", "headline": "Jevの料金を計算してみる", "sources": [] },
-    { "date": "2026-09-29", "stage": 1, "stage_episode": 6, "kind": "intro", "topic_key": "intro-no-hallucination-claim", "headline": "「間違えないAI」の本当の意味", "sources": [] },
+    {
+      "date": "2026-09-24",
+      "stage": 1,
+      "stage_episode": 1,
+      "kind": "intro",
+      "topic_key": "intro-what-is-jev",
+      "headline": "文章を書かないAI「Jev」とは",
+      "sources": []
+    },
+    {
+      "date": "2026-09-25",
+      "stage": 1,
+      "stage_episode": 2,
+      "kind": "intro",
+      "topic_key": "intro-no-text",
+      "headline": "答えを「型」で返すAI",
+      "sources": []
+    },
+    {
+      "date": "2026-09-26",
+      "stage": 1,
+      "stage_episode": 3,
+      "kind": "intro",
+      "topic_key": "intro-vs-llm",
+      "headline": "ChatGPTと何が違う？",
+      "sources": []
+    },
+    {
+      "date": "2026-09-27",
+      "stage": 1,
+      "stage_episode": 4,
+      "kind": "intro",
+      "topic_key": "intro-speed-claim",
+      "headline": "Jevはなぜ速いと言うのか",
+      "sources": []
+    },
+    {
+      "date": "2026-09-28",
+      "stage": 1,
+      "stage_episode": 5,
+      "kind": "intro",
+      "topic_key": "intro-cost-claim",
+      "headline": "Jevの料金を計算してみる",
+      "sources": []
+    },
+    {
+      "date": "2026-09-29",
+      "stage": 1,
+      "stage_episode": 6,
+      "kind": "intro",
+      "topic_key": "intro-no-hallucination-claim",
+      "headline": "「間違えないAI」の本当の意味",
+      "sources": []
+    },
     {
       "date": "2026-09-30",
       "genre": "jev-news",
@@ -21,23 +69,80 @@
         {
           "heading": "質問の振り分け係",
           "body": "届いた質問を、安いAIに回すか高性能なAIに回すかを決める「ルーター」の役にJevを使う例です。",
-          "narration": "Jevの使い道の一つが、届いた質問をどのAIに回すかを決める、振り分け係です。"
+          "narration": "Jevの使い道の一つが、届いた質問をどのAIに回すかを決める、振り分け係です。",
+          "diagram": {
+            "type": "flow",
+            "items": [
+              {
+                "label": "届いた質問",
+                "note": "入力"
+              },
+              {
+                "label": "Jev",
+                "note": "振り分け"
+              },
+              {
+                "label": "安いAI／高性能AI",
+                "note": "回す先"
+              }
+            ]
+          }
         },
         {
           "heading": "LiteLLMが実際に比較",
           "body": "AIをつなぐツールを作るLiteLLMのチームが、同じ振り分けをJevとClaude Haiku 4.5で比べました。",
-          "narration": "AIをつなぐツールを作っているLiteLLMのチームが、JevとClaudeの小型モデルで、この振り分けを比べました。"
+          "narration": "AIをつなぐツールを作っているLiteLLMのチームが、JevとClaudeの小型モデルで、この振り分けを比べました。",
+          "diagram": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "同じ振り分けを用意"
+              },
+              {
+                "label": "2つのAIで同じ仕事"
+              },
+              {
+                "label": "速さと費用を比べる"
+              }
+            ]
+          }
         },
         {
           "heading": "結果は約5.4倍速い",
           "body": "LiteLLMの検証では約5.4倍速く、費用は96%減。TypeSafeの言う40〜200倍よりは小さい差です。",
           "claim_source": "LiteLLM の検証",
-          "narration": "LiteLLMの検証では、Jevは約5.4倍速く、費用は96%少なかったそうです。TypeSafeによると差は40倍以上なので、それより小さめです。"
+          "narration": "LiteLLMの検証では、Jevは約5.4倍速く、費用は96%少なかったそうです。TypeSafeによると差は40倍以上なので、それより小さめです。",
+          "diagram": {
+            "type": "compare",
+            "items": [
+              {
+                "label": "約5.4倍速い",
+                "note": "LiteLLM"
+              },
+              {
+                "label": "40倍以上",
+                "note": "TypeSafe"
+              }
+            ]
+          }
         },
         {
           "heading": "向いている仕事",
           "body": "答えが決まった選択肢の中にある判断を大量にこなす仕事向き。文章を書く仕事には向きません。",
-          "narration": "答えが選択肢の中にある判断をたくさんこなす仕事なら、Jevの出番があるかもしれません。"
+          "narration": "答えが選択肢の中にある判断をたくさんこなす仕事なら、Jevの出番があるかもしれません。",
+          "diagram": {
+            "type": "compare",
+            "items": [
+              {
+                "label": "選択肢の判断",
+                "note": "向いている"
+              },
+              {
+                "label": "文章を書く",
+                "note": "向かない"
+              }
+            ]
+          }
         }
       ],
       "sources": [
