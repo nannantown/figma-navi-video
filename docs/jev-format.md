@@ -91,7 +91,7 @@
       "headline": "文章を書かないAI「Jev」とは",
       "hook": "ChatGPTとは別物の新しいAI、Jevを知っていますか？",
       "slides": [
-        { "heading": "…", "body": "…", "narration": "…" },
+        { "heading": "…", "body": "…", "narration": "…", "diagram": { "type": "flow", "items": [{ "label": "質問", "note": "入力" }, { "label": "Jev", "note": "選ぶ" }, { "label": "選択肢＋確信度", "note": "出力" }] } },
         { "heading": "速さは会社の主張", "body": "…40〜200倍…", "claim_source": "TypeSafe の発表", "narration": "TypeSafeによると、…" }
       ],
       "sources": [
@@ -109,7 +109,8 @@
 | `topic_key` | 英小文字とハイフン。**シリーズ全体で 1 回だけ**。第1段階は上の表の値 |
 | `headline` | 6〜24 字。画面・タイトルに出る。過去回と同じ見出しは不可。**速度・料金の倍率や「ハルシネーションしない」は見出しに入れない** |
 | `hook` | 8〜40 字。冒頭のナレーション |
-| `slides` | 3〜4 枚。`heading` 4〜18 字 / `body` 8〜64 字 / `narration` 30〜95 字（合計 300 字以内 = 60 秒未満） |
+| `slides` | 3〜4 枚。`heading` 4〜18 字 / `body` 8〜64 字 / `narration` 30〜95 字（合計 300 字以内 = 60 秒未満）。スライドの並びも順序立てる（何か → どう動く → 結果 → 注意 など） |
+| `diagram`（図解。2026-10-06 オーナー決定） | 画面の上半分を文字ではなく**順序の分かる図**にする欄。`type` は `steps`（手順 1→2→3、`items` 2〜3 個、`label` だけ）/ `flow`（入力→処理→出力、`items` ちょうど 3 個、`note` は箱の上の小さな見出しで任意。真ん中の箱が強調色）/ `compare`（2 つを並べて比べる、`items` ちょうど 2 個、`note` = 列の見出し（必須）、右の列が強調色）。`label` 1〜12 字 / `note` 1〜8 字 / 図の文字は合計 40 字まで。図があるスライドは `body` を画面に出さず（キャプションには出る）、見出しは小さめになる。**図の文字に主張があれば `claim_source` が要る**。ナレーションの文をそのまま写した 8 字以上の日本語は不可（図は短い言葉、文は吹き出し）。**図が無い・壊れた日も投稿は止まらない**: 検証は警告だけ出し、そのスライドは従来の見出し＋本文で描く |
 | `claim_source` | 画面の文字に会社の主張（倍率・「間違えない」など）があるスライドに必須。画面に黄色のラベルで出る（例「TypeSafe の発表」「LiteLLM の検証」） |
 | `sources` | 1〜8 件。`outlet` は画面とキャプションの「出典:」に出る媒体名で、X の投稿は `X typesafeai` のように **@ を付けない**（相手に通知が飛ぶため検証で NG）。`role`: その日の新情報 = `news`、その日の使用例 = `usecase`、裏付け = `reference`。**`news` と `usecase` の URL はシリーズ全体で 1 回だけ**（www・追跡用のクエリ `utm_…` など・`#…`・末尾の `/`・twitter.com / x.com の違いは同じ URL とみなす。HN の `?id=…` のようにページを決めるクエリは区別する）。`reference` は再掲してよい。`published_at` は `YYYY-MM-DD`（日付の無い参考ページだけ `null` 可）。`official: true` は TypeSafe 自身のサイト（typesafe.ai とそのサブドメイン、github.com/typesafe-ai、x.com/typesafeai、CEO の x.com/CompleteSkeptic、LinkedIn の会社ページ）だけ |
 | `research.checked` | その日に見た URL（1〜30 件） |
