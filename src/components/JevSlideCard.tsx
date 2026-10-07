@@ -3,6 +3,7 @@ import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } fr
 import { JevSlide } from "../data";
 import { ACCENT_GRADIENT, COLORS, FONT_FAMILY, SAFE_BOTTOM, SAFE_TOP, SAFE_X } from "./theme";
 import { MAY_BODY_WRAP, MAY_CONTENT_BOTTOM, MAY_CONTENT_TOP, MAY_HEADLINE_WRAP } from "./May";
+import { JevDiagram } from "./JevDiagram";
 
 /**
  * One point of a Jev episode (genre trial #2): header band → heading → body →
@@ -24,7 +25,8 @@ export const JevSlideCard: React.FC<{ slide: JevSlide; may?: boolean }> = ({ sli
   const { fps } = useVideoConfig();
   const glow = interpolate(frame % 150, [0, 75, 150], [0.18, 0.3, 0.18]);
   const headingLength = Array.from(slide.heading).length;
-  const headingSize = headingLength <= 10 ? 88 : headingLength <= 14 ? 80 : 72;
+  // With a diagram the heading is only its title (owner: not huge), the picture carries the point.
+  const headingSize = slide.diagram ? 58 : headingLength <= 10 ? 88 : headingLength <= 14 ? 80 : 72;
 
   return (
     <AbsoluteFill
@@ -71,7 +73,7 @@ export const JevSlideCard: React.FC<{ slide: JevSlide; may?: boolean }> = ({ sli
         <div
           style={{
             fontSize: headingSize,
-            fontWeight: 900,
+            fontWeight: slide.diagram ? 800 : 900,
             color: COLORS.text,
             lineHeight: 1.18,
             letterSpacing: "-1px",
@@ -82,21 +84,27 @@ export const JevSlideCard: React.FC<{ slide: JevSlide; may?: boolean }> = ({ sli
           {slide.heading}
         </div>
 
-        <div
-          style={{
-            marginTop: may ? 28 : 40,
-            paddingLeft: 28,
-            borderLeft: `6px solid ${COLORS.accent}`,
-            fontSize: may ? 40 : 46,
-            fontWeight: 600,
-            color: COLORS.textSub,
-            lineHeight: 1.5,
-            ...(may ? MAY_BODY_WRAP : {}),
-            ...fadeUp(frame, 14, fps),
-          }}
-        >
-          {slide.body}
-        </div>
+        {slide.diagram ? (
+          <div style={{ marginTop: may ? 32 : 48 }}>
+            <JevDiagram diagram={slide.diagram} />
+          </div>
+        ) : (
+          <div
+            style={{
+              marginTop: may ? 28 : 40,
+              paddingLeft: 28,
+              borderLeft: `6px solid ${COLORS.accent}`,
+              fontSize: may ? 40 : 46,
+              fontWeight: 600,
+              color: COLORS.textSub,
+              lineHeight: 1.5,
+              ...(may ? MAY_BODY_WRAP : {}),
+              ...fadeUp(frame, 14, fps),
+            }}
+          >
+            {slide.body}
+          </div>
+        )}
 
         {slide.claimSource && (
           <div
