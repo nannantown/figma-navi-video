@@ -489,6 +489,7 @@ export function validateEpisodes(file, { date = todayJst(), today = todayJst(), 
   if (hasClaim(ep.headline ?? "")) errors.push(`${at}.headline: no speed/cost/"no hallucination" claim in the headline (put it on a slide with claim_source)`);
 
   errors.push(...slideProblems(ep, at));
+  warnings.push(...diagramWarnings(ep, at));
   errors.push(...sourceProblems(ep, previous, at, today, warnings));
 
   const r = ep.research;
@@ -564,6 +565,66 @@ function slideProblems(ep, at) {
   });
   if (total > LIMITS.narrationTotal) errors.push(`${at}.slides: narration total ${total} chars (max ${LIMITS.narrationTotal}, the video must stay under 60 s)`);
   return errors;
+}
+
+// The top half as a picture (owner 2026-10-06): the diagram shows the order,
+// May's bubble says the words. Optional and never fatal — a slide whose
+// diagram is missing or broken keeps the old heading + body card.
+// Item counts per type: steps = 手順 1→2(→3), flow = 入力→処理→出力, compare = 前/後・A/B.
+export const DIAGRAM_TYPES = { steps: [2, 3], flow: [3, 3], compare: [2, 2] };
+const DIAGRAM_LABEL = [1, 12];
+const DIAGRAM_NOTE = [1, 8];
+const DIAGRAM_TOTAL = 40;
+// A label this long that the narration also says word for word is the bubble twice.
+const DIAGRAM_ECHO_MIN = 8;
+
+/** Why `slide.diagram` cannot be drawn ([] = fine, or no diagram at all). */
+export function diagramProblems(slide) {
+  const d = slide?.diagram;
+  if (d == null) return [];
+  if (typeof d !== "object" || Array.isArray(d)) return ["must be an object { type, items }"];
+  const counts = DIAGRAM_TYPES[d.type];
+  if (!counts) return [`type must be ${Object.keys(DIAGRAM_TYPES).join(" / ")}`];
+  if (!Array.isArray(d.items) || d.items.length < counts[0] || d.items.length > counts[1]) {
+    return [`${d.type} takes ${counts[0] === counts[1] ? counts[0] : counts.join("-")} items`];
+  }
+  const problems = [];
+  const narration = normalizeForChecks(slide.narration ?? "").replace(/\s+/g, "");
+  let total = 0;
+  d.items.forEach((it, i) => {
+    const at = `items[${i}]`;
+    if (!it || typeof it !== "object") return problems.push(`${at}: must be an object { label, note }`);
+    const fields = [["label", DIAGRAM_LABEL]];
+    if (d.type === "compare" || it.note != null) fields.push(["note", DIAGRAM_NOTE]);
+    for (const [field, limits] of fields) {
+      const p = lengthProblem(it[field], limits, `${at}.${field}`);
+      if (p) problems.push(d.type === "compare" && field === "note" ? `${p} (the column title, e.g. "前" / "Jev")` : p);
+      problems.push(...shownTextProblems(it[field], `${at}.${field}`));
+      if (typeof it[field] !== "string") continue;
+      total += charLength(it[field].trim());
+      if (hasClaim(it[field]) && !slide.claim_source) problems.push(`${at}.${field}: states a claim — the slide needs claim_source`);
+      const flat = normalizeForChecks(it[field]).replace(/\s+/g, "");
+      if (charLength(flat) >= DIAGRAM_ECHO_MIN && narration.includes(flat)) problems.push(`${at}.${field}: the narration says "${it[field].trim()}" word for word — the picture uses short words, the bubble the sentence`);
+    }
+    if (d.type === "steps" && it.note != null) problems.push(`${at}.note: steps take a label only`);
+  });
+  if (total > DIAGRAM_TOTAL) problems.push(`${total} chars in the picture (max ${DIAGRAM_TOTAL} — fewer words)`);
+  return problems;
+}
+
+/** Warnings only: the post goes out either way. */
+function diagramWarnings(ep, at) {
+  if (!Array.isArray(ep.slides)) return [];
+  const warnings = ep.slides.flatMap((s, i) => diagramProblems(s).map((p) => `${at}.slides[${i}].diagram: ${p} — this slide falls back to heading + body`));
+  if (!ep.slides.some((s) => s?.diagram != null)) warnings.push(`${at}: no slide has a diagram — the top half stays text (add slides[].diagram, docs/routine-prompt-jev.md)`);
+  return warnings;
+}
+
+/** The diagram as the video draws it, or null (then the card shows heading + body). */
+export function videoDiagram(slide) {
+  if (slide?.diagram == null || diagramProblems(slide).length > 0) return null;
+  const { type, items } = slide.diagram;
+  return { type, items: items.map((it) => ({ label: it.label.trim(), note: typeof it.note === "string" ? it.note.trim() : null })) };
 }
 
 function sourceProblems(ep, previous, at, today, warnings) {
@@ -691,6 +752,7 @@ export function toJevVideoData(ep, { usecaseNumber = null } = {}) {
       heading: s.heading.trim(),
       body: s.body.trim(),
       claimSource: s.claim_source ? s.claim_source.trim() : null,
+      diagram: videoDiagram(s),
       narration: s.narration.trim(),
       header: `${kindLabel}・${shortDate}`,
       sourceLine,
