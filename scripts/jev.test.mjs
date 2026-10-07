@@ -801,8 +801,10 @@ test("diagrams: a flow box takes 8-char labels and 6-char notes (longer ones wra
 });
 
 test("claims: short-word phrasings count, dates and pairings do not", () => {
-  for (const t of ["200x速い", "5×の速さ", "ハルシネーション無し", "ミスなし", "エラー0件", "誤答ゼロ", "1/100の料金", "100%正しい", "桁違いに速い"]) assert.ok(hasClaim(t), t);
+  for (const t of ["200x速い", "5×の速さ", "1/100の料金", "100%正しい", "桁違いに速い"]) assert.ok(hasClaim(t), t);
   for (const t of ["9/15公開", "11/15の料金改定", "Haiku 4.5 × Jev", "型エラー10件", "0x1Fの値", "エラーとは何か"]) assert.equal(hasClaim(t), false, t);
+  // Sentences keep the narrow error words: plain advice about errors is not a claim.
+  for (const t of ["エラーが出ても慌てない。", "エラーの原因はわかりません。", "エラー画面が出ない場合は再読み込みします。", "APIキーなしでもエラーにならない。"]) assert.equal(hasClaim(t), false, t);
 });
 
 test("diagrams: more split claims fall back; explainers that merely sit next to a 'not' keep the picture", () => {
@@ -813,6 +815,14 @@ test("diagrams: more split claims fall back; explainers that merely sit next to 
     return toJevVideoData(ep).tools[2].diagram;
   };
   assert.equal(draw("ハルシネーション", { type: "compare", items: [{ note: "ふつう", label: "あり" }, { note: "Jev", label: "なし" }] }), null, "heading + なし");
+  const vsJev = (label) => ({ type: "compare", items: [{ note: "ふつうのAI", label: "あり" }, { note: "Jev", label }] });
+  for (const label of ["一切しない", "ほぼゼロ", "まったく無い", "Jevは0件", "0", "完全になくなる"]) assert.equal(draw("ハルシネーション", vsJev(label)), null, `ハルシネーション + ${label}`);
+  assert.equal(draw("ハルシネーションの数", vsJev("0")), null, "a bare 0");
+  assert.equal(draw("型エラー", { type: "compare", items: [{ note: "前", label: "よく出る" }, { note: "後", label: "完全になくなる" }] }), null, "後: 完全になくなる");
+  assert.equal(draw("Jev の流れ", { type: "flow", items: [{ label: "間違い" }, { label: "Jev" }, { label: "なくなる" }] }), null, "flow 間違い → なくなる");
+  for (const [note, label] of [["ハルシネーション", "なし"], ["誤答", "ゼロ"], ["", "ハルシネーション無し"], ["", "エラー0件"]]) {
+    assert.equal(draw("答えの比べ", { type: "compare", items: [{ note: "ふつう", label: "あり" }, { note: note || "Jev", label }] }), null, `one box: ${note}${label}`);
+  }
   assert.equal(draw("速さの比べ", { type: "compare", items: [{ note: "TypeSafe", label: "40〜200" }, { note: "単位", label: "倍" }] }), null, "a compare row reads across");
   assert.ok(draw("型エラーとは", { type: "steps", items: [{ label: "型が合わない" }, { label: "処理が止まる" }] }), "definition");
   assert.ok(draw("よくある間違い", { type: "steps", items: [{ label: "出典を見ない" }, { label: "そのまま使う" }] }), "common mistakes");

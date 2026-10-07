@@ -115,8 +115,12 @@ const SHORTENER_HOSTS = ["bit.ly", "t.co", "tinyurl.com", "goo.gl", "ow.ly", "bu
 const NUM = "(?:\\d+(?:\\.\\d+)?|[一二三四五六七八九十百千万数何]+)";
 // "does not happen" after an error-type word: the claim is the negation
 // ("ハルシネーションしない"), not the word ("ハルシネーションとは…" is a definition).
-const NEGATION = "(?:しない|しません|起こさない|起こしません|起きない|起きません|ない|ません|なし|無し|ゼロ|(?<![\\d.])0\\s*(?:%|件|回|個)|不可能)";
-const ERROR_WORD = "(?:ハルシネーション|幻覚|エラー|間違い|間違え|ミス|誤り|誤答|嘘|うそ)";
+const NEGATION = "(?:しない|しません|起こさない|起こしません|起きない|起きません|ない|ません|ゼロ|0\\s*%|不可能)";
+const ERROR_WORD = "(?:ハルシネーション|幻覚|型エラー|間違い|間違え|ミス|誤り|嘘|うそ)";
+// The diagram's split check reads short boxes, so it takes a wider net ("エラー", "誤答", "無し", "0件").
+// Sentences keep the narrow one: "エラーが出ても慌てない。" is advice, not a claim.
+const WIDE_NEGATION = "(?:しない|しません|起こさない|起こしません|起きない|起きません|ない|無い|ません|なし|無し|なくなる|無くなる|ゼロ|0(?:\\.0+)?\\s*(?:%|件|回|個)|不可能)";
+const WIDE_ERROR_WORD = "(?:ハルシネーション|幻覚|エラー|間違い|間違え|ミス|誤り|誤答|嘘|うそ)";
 const CLAIM_PARTS = [
   `${NUM}\\s*(?:[〜~\\-–]\\s*${NUM}\\s*)?倍`, // 40〜200倍 / 数十倍 / 十倍
   `${NUM}\\s*分の\\s*[1一]`, // 100分の1
@@ -582,8 +586,15 @@ const DIAGRAM_TOTAL = 40;
 const DIAGRAM_ECHO_MIN = 8;
 const FLOW_LATIN_MAX = 8;
 
-const BOX_NEGATION_RE = new RegExp(`^\\s*(?:Jev\\s*[:：]?\\s*)?${NEGATION}`, "u");
-const ERROR_WORD_RE = new RegExp(ERROR_WORD, "u");
+// A box that answers an error word: optional "Jev は/なら/では/:", optional adverb, then the negation or a bare 0
+// ("一切しない", "ほぼゼロ", "Jevは0件", "完全になくなる", "0").
+const BOX_NEGATION_RE = new RegExp(
+  `^\\s*(?:Jev\\s*(?:は|なら|では|[:：])?\\s*)?(?:ほぼ|一切|まったく|全く|完全に|絶対に?|原理的に)?\\s*(?:${WIDE_NEGATION}|0(?:\\.0+)?\\s*$)`,
+  "u"
+);
+const ERROR_WORD_RE = new RegExp(WIDE_ERROR_WORD, "u");
+// One box is a few words, so the wide pair is safe there ("ハルシネーション無し", "誤答ゼロ").
+const BOX_CLAIM_RE = new RegExp(`${WIDE_ERROR_WORD}[^。！？]{0,12}?${WIDE_NEGATION}`, "u");
 /** A claim the viewer reads across the heading and the boxes: "40〜200" | "倍", a compare row
  *  "40〜200" ‖ "倍速い", or an error word answered by a box that opens with the negation
  *  ("ハルシネーションの数" + "Jev: しない", "型エラー" → "ゼロ"). Unrelated boxes are not glued
@@ -594,8 +605,10 @@ function splitClaim(heading, items) {
   const parts = [text(heading), ...boxes.map((it) => text(it.note) + text(it.label)), ...boxes.map((it) => text(it.label))].filter(Boolean);
   for (const a of parts) for (const b of parts) if (a !== b && CLAIM_NO_ERROR_RE.test(a + b)) return true;
   const labels = boxes.map((it) => text(it.label));
+  if (boxes.some((it) => BOX_CLAIM_RE.test(text(it.note) + text(it.label)))) return true;
+  // The error word may sit in the heading, another box, or this box's own column title.
   const before = [text(heading), ...boxes.map((it) => text(it.note) + text(it.label))];
-  return labels.some((l, i) => BOX_NEGATION_RE.test(l) && before.some((p, j) => j !== i + 1 && ERROR_WORD_RE.test(p)));
+  return labels.some((l, i) => BOX_NEGATION_RE.test(l) && before.some((p, j) => ERROR_WORD_RE.test(j === i + 1 ? text(boxes[i].note) : p)));
 }
 
 /** Why `slide.diagram` cannot be drawn ([] = fine, or no diagram at all). */
