@@ -2,62 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "QQInGzfutp8",
-      "videoUrl": "https://youtube.com/shorts/QQInGzfutp8",
-      "date": "2026-07-09",
-      "title": "【デザインニュース】Meta が Instagram Stories に画像 AI Muse Image 搭載、駆け出しの発信面が AI 標準時代へ｜2026/07/09 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 41,
-      "discovery": {
-        "method": "news-en",
-        "description": "英語テック媒体 (TechCrunch / CNBC / Axios / about.fb.com) から Meta が 7/7 火曜に発表した Muse Image (Meta Superintelligence Labs 初の画像 AI モデル、Instagram Stories・WhatsApp・Meta AI アプリに搭載) を一次取得。配布面 Instagram に AI 画像生成が標準搭載された事実を、駆け出しデザイナーの反転フレーム材料として抽出",
-        "sources": [
-          "https://about.fb.com/news/2026/07/introducing-muse-image-meta-ai/",
-          "https://techcrunch.com/2026/07/07/meta-rolls-out-muse-a-new-ai-image-generator/",
-          "https://www.cnbc.com/2026/07/07/meta-ai-muse-image.html",
-          "https://www.axios.com/2026/07/07/ai-meta-image-generator",
-          "https://theaiinsider.tech/2026/07/08/meta-launches-muse-image-ai-generator-amid-privacy-concerns-over-photo-tagging-feature/",
-          "https://www.fonearena.com/blog/487008/meta-muse-image-ai-instagram-stories-whatsapp-integration.html"
-        ],
-        "query": "Meta Muse Image Instagram Stories WhatsApp launch designer July 2026",
-        "freshness_hours": 48
-      },
-      "stats": {
-        "views": 1,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-07-23T00:13:16.195Z"
-      },
-      "instagram": {
-        "mediaId": "18072630647358892",
-        "permalink": "https://www.instagram.com/reel/DajUXhcCkbk/",
-        "views": 9,
-        "reach": 9,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "IsSzVlU64RU",
       "videoUrl": "https://youtube.com/shorts/IsSzVlU64RU",
       "date": "2026-07-10",
@@ -3909,7 +3853,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-07T02:23:19.067Z"
+        "updatedAt": "2026-10-08T02:42:34.105Z"
       },
       "instagram": {
         "mediaId": "18128502364772913",
@@ -3920,7 +3864,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-07T02:23:19.067Z"
+        "updatedAt": "2026-10-08T02:42:34.106Z"
       },
       "jev": {
         "stage": 1,
@@ -4009,7 +3953,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-07T02:23:19.067Z"
+        "updatedAt": "2026-10-08T02:42:34.105Z"
       },
       "instagram": {
         "mediaId": "18433923538178120",
@@ -4020,7 +3964,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-07T02:23:19.067Z"
+        "updatedAt": "2026-10-08T02:42:34.106Z"
       },
       "jev": {
         "stage": 1,
@@ -4096,7 +4040,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-07T02:23:19.067Z"
+        "updatedAt": "2026-10-08T02:42:34.105Z"
       },
       "instagram": {
         "mediaId": "18116926882958766",
@@ -4107,7 +4051,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-07T02:23:19.067Z"
+        "updatedAt": "2026-10-08T02:42:34.106Z"
       },
       "jev": {
         "stage": 1,
@@ -4190,7 +4134,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-07T02:23:19.067Z"
+        "updatedAt": "2026-10-08T02:42:34.105Z"
       },
       "instagram": {
         "mediaId": "17979318410914317",
@@ -4201,7 +4145,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-07T02:23:19.067Z"
+        "updatedAt": "2026-10-08T02:42:34.106Z"
       },
       "jev": {
         "stage": 1,
@@ -4284,7 +4228,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-07T02:23:19.067Z"
+        "updatedAt": "2026-10-08T02:42:34.105Z"
       },
       "instagram": {
         "mediaId": "18069970178765136",
@@ -4295,7 +4239,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-07T02:23:19.067Z"
+        "updatedAt": "2026-10-08T02:42:34.106Z"
       },
       "jev": {
         "stage": 1,
@@ -4378,7 +4322,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-07T02:23:19.067Z"
+        "updatedAt": "2026-10-08T02:42:34.105Z"
       },
       "instagram": null,
       "jev": {
@@ -4458,21 +4402,21 @@
         ]
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-07T02:23:19.067Z"
+        "updatedAt": "2026-10-08T02:42:34.105Z"
       },
       "instagram": {
         "mediaId": "18130486570771979",
         "permalink": "https://www.instagram.com/reel/DeIxTKzkg-X/",
-        "views": 8,
-        "reach": 5,
+        "views": 14,
+        "reach": 11,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-07T02:23:19.067Z"
+        "updatedAt": "2026-10-08T02:42:34.106Z"
       },
       "jev": {
         "stage": 2,
@@ -4544,21 +4488,21 @@
         ]
       },
       "stats": {
-        "views": 0,
+        "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-10-08T02:42:34.105Z"
       },
       "instagram": {
         "mediaId": "17931461001407071",
-        "permalink": null,
-        "views": null,
-        "reach": null,
-        "likes": null,
-        "comments": null,
-        "shares": null,
-        "saved": null,
-        "updatedAt": null
+        "permalink": "https://www.instagram.com/reel/DeLSA6pgYWR/",
+        "views": 14,
+        "reach": 13,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-10-08T02:42:34.106Z"
       },
       "jev": {
         "stage": 2,
@@ -4590,17 +4534,87 @@
           }
         ]
       }
+    },
+    {
+      "videoId": "kDoIqNDaHeU",
+      "videoUrl": "https://youtube.com/shorts/kDoIqNDaHeU",
+      "date": "2026-10-08",
+      "genre": "jev-news",
+      "trial": 2,
+      "title": "【話題のAI特集 Jev活用例】AIの答えをJevが採点｜2026/10/08 #Shorts",
+      "titleTemplate": "jev",
+      "hashtags": [
+        "AIニュース",
+        "生成AI",
+        "AIモデル",
+        "Jev",
+        "TypeSafe AI",
+        "TypeSafe",
+        "System One",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "AIの答えをJevが採点"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": "出典: Langfuse ブログ・Good Start Labs"
+      },
+      "durationSeconds": 48,
+      "coverOffsetMs": 6367,
+      "discovery": {
+        "method": "usecase",
+        "description": "Langfuse のブログが Jev を AI の答えの採点係に使う方法を紹介",
+        "sources": [
+          "https://langfuse.com/blog/2026-09-18-using-typesafes-jev-for-evals",
+          "https://goodstartlabs.com/research/verification-is-the-bottleneck"
+        ]
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "18143425864586488",
+        "permalink": null,
+        "views": null,
+        "reach": null,
+        "likes": null,
+        "comments": null,
+        "shares": null,
+        "saved": null,
+        "updatedAt": null
+      },
+      "jev": {
+        "stage": 2,
+        "stageEpisode": 3,
+        "kind": "usecase",
+        "topicKey": "usecase-langfuse-eval-judge",
+        "topic": "Langfuse のブログが Jev を AI の答えの採点係に使う方法を紹介",
+        "sources": [
+          {
+            "url": "https://langfuse.com/blog/2026-09-18-using-typesafes-jev-for-evals",
+            "outlet": "Langfuse ブログ",
+            "published_at": "2026-09-18",
+            "role": "usecase",
+            "official": false
+          },
+          {
+            "url": "https://goodstartlabs.com/research/verification-is-the-bottleneck",
+            "outlet": "Good Start Labs",
+            "published_at": "2026-09-15",
+            "role": "reference",
+            "official": false
+          }
+        ]
+      }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-09-08",
-      "changes": [
-        "standard: 1 avg views (79 videos)",
-        "Day performance: Tue=3, Mon=2, Fri=2, Wed=1, Thu=1, Sat=1, Sun=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-09-09",
       "changes": [
@@ -4811,6 +4825,13 @@
         "Day performance: Wed=1, Thu=1, Fri=1, Sat=1, Sun=1, Mon=1, Tue=1"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-10-08",
+      "changes": [
+        "Day performance: Thu=1, Fri=1, Sat=1, Sun=1, Mon=1, Tue=1, Wed=1"
+      ],
+      "recommendedTemplate": "standard"
     }
   ],
   "account": {
@@ -4869,6 +4890,10 @@
       },
       {
         "date": "2026-10-07",
+        "count": 0
+      },
+      {
+        "date": "2026-10-08",
         "count": 0
       }
     ]
