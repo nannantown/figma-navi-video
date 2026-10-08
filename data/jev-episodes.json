@@ -677,6 +677,120 @@
         ],
         "note": "第2段階 2-3。WebSearch で使用例を探し、Langfuse ブログ『Using TypeSafe's Jev for evals』（Annabell・Hassieb、2026-09-18）をその日に開いて確認。Jev を評価（採点）係に使う例: 状態と Choice/Score/Noul の質問をまとめて送り、確率つきの答えを受け取る。記事中の例は needs_review 0.88 など。数字は記事が紹介した Good Start Labs の測定（2026-09-15、1,203 件の金融リサーチの回答・6,003 件のルーブリック判定で Claude Fable 5.1 と 91.5% 一致、100万件あたり Jev $160 / Fable $33,000）を一次ページで確認。円換算は open.er-api.com の 1ドル=約158円（2026-10-07 更新）で $160→約2万5千円、$33,000→約520万円。限界（棄権できない・理由を返さない・context rot）も記事どおり。見送り: n8n のコミュニティノード（使用結果の数字なし・2 stars の初期段階）、edwardirby のリスクエージェント（X が 402 で本文を開けず記事も見つからない）、Langfuse 記事中の TypeSafe 主張の倍率（今回は第三者測定を優先）。"
       }
+    },
+    {
+      "date": "2026-10-09",
+      "genre": "jev-news",
+      "trial": 2,
+      "stage": 2,
+      "stage_episode": 4,
+      "kind": "usecase",
+      "topic_key": "usecase-elastic-shop-search-rerank",
+      "topic": "Elastic のブログが Jev でネット通販の検索結果を並べ替える検証を公開",
+      "headline": "通販の検索をJevが並べ替え",
+      "hook": "通販の検索結果、AIが並べ直すとどうなる？",
+      "slides": [
+        {
+          "heading": "通販の検索で実験",
+          "body": "検索の仕組みを作るElasticが、通販の検索結果の並べ替えにJevを試しました。",
+          "narration": "検索の仕組みを作る会社、Elasticのブログが、ネット通販の検索結果の並べ替えにJevを使う検証を公開しました。",
+          "diagram": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "検索で候補を集める"
+              },
+              {
+                "label": "Jevが1件ずつ判定"
+              },
+              {
+                "label": "並べ替える"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "4つから選ぶ",
+          "body": "検索語と商品の説明を渡すと「ぴったり」「代わり」「一緒に使う」「無関係」から選びます。",
+          "narration": "検索語と商品の説明を渡すと、Jevはぴったり、代わりになる、一緒に使う、関係ない、の4つから選び、それぞれの確率を返します。",
+          "diagram": {
+            "type": "flow",
+            "items": [
+              {
+                "note": "入力",
+                "label": "検索語と商品"
+              },
+              {
+                "note": "Jev",
+                "label": "4択で判定"
+              },
+              {
+                "note": "出力",
+                "label": "選択肢の確率"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "並び順の点数",
+          "body": "Amazonの買い物検索250件で、並び順の点数が0.935から0.957に上がりました。",
+          "claim_source": "Elasticの検証",
+          "narration": "Elasticの検証では、Amazonの買い物検索250件で、並び順の良さを表す1点満点の点数が0.935から0.957に上がりました。",
+          "diagram": {
+            "type": "compare",
+            "items": [
+              {
+                "note": "従来の検索",
+                "label": "0.935点"
+              },
+              {
+                "note": "Jevで並べ替え",
+                "label": "0.957点"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "試したのは1回",
+          "body": "でたらめに並べても0.86点出るデータで、1種類だけの検証。別の条件でも試す予定です。",
+          "claim_source": "Elasticの検証",
+          "narration": "一方で筆者は、でたらめに並べても0.86点が出るほど点の高いデータで、1種類だけの検証なので、別の条件でも試したいと書いています。",
+          "diagram": {
+            "type": "compare",
+            "items": [
+              {
+                "note": "でたらめ",
+                "label": "0.86点"
+              },
+              {
+                "note": "まだ",
+                "label": "データ1種類"
+              }
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.elastic.co/search-labs/blog/ecommerce-search-reranking-llm-alternative-jev",
+          "title": "Using Jev as a search reranker: benchmarks and how to implement",
+          "outlet": "Elastic Search Labs",
+          "published_at": "2026-09-30",
+          "role": "usecase",
+          "official": false
+        }
+      ],
+      "research": {
+        "checked": [
+          "https://www.elastic.co/search-labs/blog/ecommerce-search-reranking-llm-alternative-jev",
+          "https://hindsight.vectorize.io/blog/2026/09/24/adding-jev-reranker-what-we-learned",
+          "https://www.everydev.ai/tools/jevgrep",
+          "https://hermes-ai.net/news/open-source-jevgrep-cuts-coding-agent-costs-40-by-offloading-code-search/",
+          "https://open.er-api.com/v6/latest/USD",
+          "https://www.x-rates.com/calculator/?from=USD&to=JPY&amount=1"
+        ],
+        "note": "第2段階 2-4。WebSearch で使用例を探し、Elastic Search Labs『Using Jev as a search reranker』（Dustin Coates、2026-09-30）をその日に開いて確認。Elasticsearch が最大40件の候補を集め、jev-1.13.0 が検索語と商品（題名・ブランド・色・説明）の組を Choice（exact / substitute / complement / irrelevant）で判定、アプリ側で並べ替え。Amazon ESCI の 250 検索・約4,750 組で nDCG@10 が 0.9351（従来のハイブリッド検索）→ 0.9565（Jev）。ランダム順でも 0.8595、データは1種類、重みは筆者が軽く調整、と記事が限界を明記。速度（70〜500ms）は TypeSafe の主張で記事は未測定のため今回は使わない。料金は 1-5 で既出のため扱わない（為替は open.er-api.com で 1ドル=約158円を確認したが金額は出していない）。見送り: jevgrep（コーディング用で非エンジニアに伝わりにくく、40%削減は作者の発表のみ）、muratcan の電話 2,029 件の例（X は 402、記事が見つからない）、Hindsight のリランカー記事（数字が少ない）。"
+      }
     }
   ]
 }
