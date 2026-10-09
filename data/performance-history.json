@@ -2,62 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "IsSzVlU64RU",
-      "videoUrl": "https://youtube.com/shorts/IsSzVlU64RU",
-      "date": "2026-07-10",
-      "title": "【デザインニュース】Figma agent が今週 Web 検索と並列画像編集に対応、駆け出しの作業型が変わる｜2026/07/10 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 43,
-      "discovery": {
-        "method": "social-en",
-        "description": "Figma 公式 X アカウントの新機能告知投稿と Muzli / Figma Forum のコミュニティ反応、Mantlr の実践レビューを起点に、今週 Figma Design Agent に追加された web search と parallel AI image edits を『駆け出しの作業型が変わる』角度で抽出。official-src (07-08) と news-en (07-09) が直近2日ルールで除外される中、TOP3 method の social-en は 07-07 以来 3 日空きで最適。柱① Figma 公式ニュースを社会/コミュニティ反応レンズで噛み砕く",
-        "sources": [
-          "https://x.com/figma/status/2069827742800253230",
-          "https://x.com/watilde/status/2071554283309531310",
-          "https://www.figma.com/blog/the-figma-agent-is-here/",
-          "https://muz.li/blog/figma-just-put-an-agent-inside-your-file-heres-what-it-actually-does/",
-          "https://forum.figma.com/product-updates-3/figma-s-ai-agent-is-here-and-it-s-rolling-out-now-54154",
-          "https://mantlr.com/blog/figma-ai-agent-guide-2026"
-        ],
-        "query": "Figma design agent web search parallel AI image edits designer reaction July 2026",
-        "freshness_hours": 72
-      },
-      "stats": {
-        "views": 3,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-07-24T00:10:20.658Z"
-      },
-      "instagram": {
-        "mediaId": "18114006299489447",
-        "permalink": "https://www.instagram.com/reel/Dal4_vxgKqA/",
-        "views": 9,
-        "reach": 9,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "Nm4GDurcb3c",
       "videoUrl": "https://youtube.com/shorts/Nm4GDurcb3c",
       "date": "2026-07-11",
@@ -3953,7 +3897,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-08T02:42:34.105Z"
+        "updatedAt": "2026-10-09T02:56:44.232Z"
       },
       "instagram": {
         "mediaId": "18433923538178120",
@@ -3964,7 +3908,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-08T02:42:34.106Z"
+        "updatedAt": "2026-10-09T02:56:44.233Z"
       },
       "jev": {
         "stage": 1,
@@ -4040,7 +3984,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-08T02:42:34.105Z"
+        "updatedAt": "2026-10-09T02:56:44.232Z"
       },
       "instagram": {
         "mediaId": "18116926882958766",
@@ -4051,7 +3995,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-08T02:42:34.106Z"
+        "updatedAt": "2026-10-09T02:56:44.233Z"
       },
       "jev": {
         "stage": 1,
@@ -4134,7 +4078,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-08T02:42:34.105Z"
+        "updatedAt": "2026-10-09T02:56:44.232Z"
       },
       "instagram": {
         "mediaId": "17979318410914317",
@@ -4145,7 +4089,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-08T02:42:34.106Z"
+        "updatedAt": "2026-10-09T02:56:44.233Z"
       },
       "jev": {
         "stage": 1,
@@ -4228,7 +4172,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-08T02:42:34.105Z"
+        "updatedAt": "2026-10-09T02:56:44.232Z"
       },
       "instagram": {
         "mediaId": "18069970178765136",
@@ -4239,7 +4183,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-08T02:42:34.106Z"
+        "updatedAt": "2026-10-09T02:56:44.233Z"
       },
       "jev": {
         "stage": 1,
@@ -4322,7 +4266,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-08T02:42:34.105Z"
+        "updatedAt": "2026-10-09T02:56:44.232Z"
       },
       "instagram": null,
       "jev": {
@@ -4405,7 +4349,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-08T02:42:34.105Z"
+        "updatedAt": "2026-10-09T02:56:44.232Z"
       },
       "instagram": {
         "mediaId": "18130486570771979",
@@ -4416,7 +4360,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-08T02:42:34.106Z"
+        "updatedAt": "2026-10-09T02:56:44.233Z"
       },
       "jev": {
         "stage": 2,
@@ -4491,7 +4435,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-08T02:42:34.105Z"
+        "updatedAt": "2026-10-09T02:56:44.232Z"
       },
       "instagram": {
         "mediaId": "17931461001407071",
@@ -4502,7 +4446,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-08T02:42:34.106Z"
+        "updatedAt": "2026-10-09T02:56:44.233Z"
       },
       "jev": {
         "stage": 2,
@@ -4576,18 +4520,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-10-09T02:56:44.232Z"
       },
       "instagram": {
         "mediaId": "18143425864586488",
-        "permalink": null,
-        "views": null,
-        "reach": null,
-        "likes": null,
-        "comments": null,
-        "shares": null,
-        "saved": null,
-        "updatedAt": null
+        "permalink": "https://www.instagram.com/reel/DeN5DTSk87w/",
+        "views": 108,
+        "reach": 107,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-10-09T02:56:44.233Z"
       },
       "jev": {
         "stage": 2,
@@ -4612,17 +4556,79 @@
           }
         ]
       }
+    },
+    {
+      "videoId": "2YmTmwcK0Fs",
+      "videoUrl": "https://youtube.com/shorts/2YmTmwcK0Fs",
+      "date": "2026-10-09",
+      "genre": "jev-news",
+      "trial": 2,
+      "title": "【話題のAI特集 Jev活用例】通販の検索をJevが並べ替え｜2026/10/09 #Shorts",
+      "titleTemplate": "jev",
+      "hashtags": [
+        "AIニュース",
+        "生成AI",
+        "AIモデル",
+        "Jev",
+        "TypeSafe AI",
+        "TypeSafe",
+        "System One",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "通販の検索をJevが並べ替え"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": "出典: Elastic Search Labs"
+      },
+      "durationSeconds": 46,
+      "coverOffsetMs": 6233,
+      "discovery": {
+        "method": "usecase",
+        "description": "Elastic のブログが Jev でネット通販の検索結果を並べ替える検証を公開",
+        "sources": [
+          "https://www.elastic.co/search-labs/blog/ecommerce-search-reranking-llm-alternative-jev"
+        ]
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "18028383110875571",
+        "permalink": null,
+        "views": null,
+        "reach": null,
+        "likes": null,
+        "comments": null,
+        "shares": null,
+        "saved": null,
+        "updatedAt": null
+      },
+      "jev": {
+        "stage": 2,
+        "stageEpisode": 4,
+        "kind": "usecase",
+        "topicKey": "usecase-elastic-shop-search-rerank",
+        "topic": "Elastic のブログが Jev でネット通販の検索結果を並べ替える検証を公開",
+        "sources": [
+          {
+            "url": "https://www.elastic.co/search-labs/blog/ecommerce-search-reranking-llm-alternative-jev",
+            "outlet": "Elastic Search Labs",
+            "published_at": "2026-09-30",
+            "role": "usecase",
+            "official": false
+          }
+        ]
+      }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-09-09",
-      "changes": [
-        "standard: 1 avg views (79 videos)",
-        "Day performance: Mon=2, Fri=2, Wed=1, Thu=1, Sat=1, Tue=1, Sun=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-09-10",
       "changes": [
@@ -4832,6 +4838,13 @@
         "Day performance: Thu=1, Fri=1, Sat=1, Sun=1, Mon=1, Tue=1, Wed=1"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-10-09",
+      "changes": [
+        "Day performance: Fri=1, Sat=1, Sun=1, Mon=1, Tue=1, Wed=1, Thu=0"
+      ],
+      "recommendedTemplate": "standard"
     }
   ],
   "account": {
@@ -4894,6 +4907,10 @@
       },
       {
         "date": "2026-10-08",
+        "count": 0
+      },
+      {
+        "date": "2026-10-09",
         "count": 0
       }
     ]
