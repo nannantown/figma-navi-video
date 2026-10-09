@@ -791,6 +791,137 @@
         ],
         "note": "第2段階 2-4。WebSearch で使用例を探し、Elastic Search Labs『Using Jev as a search reranker』（Dustin Coates、2026-09-30）をその日に開いて確認。Elasticsearch が最大40件の候補を集め、jev-1.13.0 が検索語と商品（題名・ブランド・色・説明）の組を Choice（exact / substitute / complement / irrelevant）で判定、アプリ側で並べ替え。Amazon ESCI の 250 検索・約4,750 組で nDCG@10 が 0.9351（従来のハイブリッド検索）→ 0.9565（Jev）。ランダム順でも 0.8595、データは1種類、重みは筆者が軽く調整、と記事が限界を明記。速度（70〜500ms）は TypeSafe の主張で記事は未測定のため今回は使わない。料金は 1-5 で既出のため扱わない（為替は open.er-api.com で 1ドル=約158円を確認したが金額は出していない）。見送り: jevgrep（コーディング用で非エンジニアに伝わりにくく、40%削減は作者の発表のみ）、muratcan の電話 2,029 件の例（X は 402、記事が見つからない）、Hindsight のリランカー記事（数字が少ない）。"
       }
+    },
+    {
+      "date": "2026-10-10",
+      "genre": "jev-news",
+      "trial": 2,
+      "stage": 2,
+      "stage_episode": 5,
+      "kind": "usecase",
+      "topic_key": "usecase-pi-warden-coding-agent-guard",
+      "topic": "pi-warden が AI の作業を実行前に Jev で確かめる",
+      "headline": "AIの作業をJevが見張る",
+      "hook": "AIに任せた作業、勝手にファイルを消されたら？",
+      "slides": [
+        {
+          "heading": "AIの見張り役",
+          "body": "GitHubで公開されたpi-wardenは、プログラムを書くAIの作業をJevに見張らせる道具です。",
+          "narration": "GitHubで公開されている pi-warden は、プログラムを書く AI アシスタントの作業を、Jev に見張らせる道具です。",
+          "diagram": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "AIが操作を準備"
+              },
+              {
+                "label": "Jevが確認"
+              },
+              {
+                "label": "実行か差し戻し"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "実行の直前に質問",
+          "body": "書き換えやコマンドの直前に「元に戻せないか」「計画と違わないか」をJevに聞きます。",
+          "narration": "AI がファイルを書き換えたり命令を動かす直前に、元に戻せない操作か、計画と違わないかを Jev に聞き、確率で答えてもらいます。",
+          "diagram": {
+            "type": "flow",
+            "items": [
+              {
+                "note": "入力",
+                "label": "次の操作"
+              },
+              {
+                "note": "Jev",
+                "label": "危険か判定"
+              },
+              {
+                "note": "出力",
+                "label": "確率"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "決まりを破った回数",
+          "body": "作者の測定では150回の作業で、見張りなしは6回、ありは0回、決まりを破りました。",
+          "claim_source": "pi-warden 作者の測定",
+          "narration": "pi-warden の作者の測定では、AI に150回ずつ作業させて、決まりを破ったのは見張りなしで6回、見張りありで0回でした。",
+          "diagram": {
+            "type": "compare",
+            "items": [
+              {
+                "note": "見張りなし",
+                "label": "150回中6回"
+              },
+              {
+                "note": "見張りあり",
+                "label": "150回中0回"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "注意点もあります",
+          "body": "測定は作者自身のもので、どの決まりかは非公開。Jevが答えられない時は警告して実行します。",
+          "claim_source": "pi-warden 作者の説明",
+          "narration": "ただし測定は作者自身のもので、どの決まりで試したかは書かれていません。Jev が答えられないときは、初期設定では警告して実行されます。",
+          "diagram": {
+            "type": "compare",
+            "items": [
+              {
+                "note": "測定",
+                "label": "作者自身だけ"
+              },
+              {
+                "note": "Jev不調時",
+                "label": "警告して実行"
+              }
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/DevMortimer/pi-warden",
+          "title": "pi-warden: Guardrails for Pi that steer instead of interrupt",
+          "outlet": "GitHub DevMortimer",
+          "published_at": "2026-09-21",
+          "role": "usecase",
+          "official": false
+        },
+        {
+          "url": "https://github.com/DevMortimer/pi-warden/blob/main/docs/guards.md",
+          "title": "pi-warden guards",
+          "outlet": "GitHub DevMortimer",
+          "published_at": null,
+          "role": "reference",
+          "official": false
+        },
+        {
+          "url": "https://viblo.asia/p/dung-jev-lam-guardrail-cho-coding-agent-case-study-pi-warden-voi-17000-luot-phan-doan-that-RlL5eP0GLbB",
+          "title": "Dùng Jev làm guardrail cho coding agent: case study pi-warden với 17.000 lượt phán đoán thật",
+          "outlet": "Viblo",
+          "published_at": "2026-09-26",
+          "role": "reference",
+          "official": false
+        }
+      ],
+      "research": {
+        "checked": [
+          "https://github.com/DevMortimer/pi-warden",
+          "https://github.com/DevMortimer/pi-warden/blob/main/docs/guards.md",
+          "https://cdn.jsdelivr.net/npm/pi-warden@0.28.4/README.md",
+          "https://viblo.asia/p/dung-jev-lam-guardrail-cho-coding-agent-case-study-pi-warden-voi-17000-luot-phan-doan-that-RlL5eP0GLbB",
+          "https://old.reddit.com/r/PiCodingAgent/comments/1wimfhg/piwarden_a_jevpowered_second_pair_of_eyes_for_pi/",
+          "https://blog.gopenai.com/what-developers-actually-built-with-jev-in-the-first-week-0af5a892b3cf",
+          "https://composio.dev/blog/typesafe-jev-guide-and-best-practical-usecases"
+        ],
+        "note": "第2段階 2-5（使用例の最終回）。WebSearch で使用例を探し、GitHub DevMortimer/pi-warden の README と docs/guards.md をその日に開いて確認。Pi（コーディングエージェント）の write/edit/bash の直前に Jev へ irreversible・mutates・visible・intent_mismatch などの型付き質問を出し、irreversible 0.9 以上で保留（既定の steer モードでは AI に差し戻す）。README の作者測定: 150 組の実行で、pi-warden なしは project rule 違反 6/150、ありは 0/150（『project-maintained benchmarks, not universal claims』と明記、どの rule かは非記載）。Jev の判定は約0.25秒（作者の測定 p50 248ms）だが今回は使わない。failOpen: true が既定（Jev が答えられないと警告つきで実行）。published_at は GitHub リポジトリに作成日の表示が無いため README に載る校正レポートの日付 2026-09-21 を使用。Reddit の 17,000 回・42 回保留・約88% は Viblo（二次）経由でしか読めず（old.reddit.com は取得不可）使わない。金額は扱わないため為替は未確認。見送り: Every の抽出テスト（記事が見つからない）、gopenai のまとめ記事（Medium 系で一次情報でない）、composio の用途まとめ（具体的な実例・結果でない）。"
+      }
     }
   ]
 }
