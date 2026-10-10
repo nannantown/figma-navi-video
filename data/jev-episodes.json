@@ -791,6 +791,117 @@
         ],
         "note": "第2段階 2-4。WebSearch で使用例を探し、Elastic Search Labs『Using Jev as a search reranker』（Dustin Coates、2026-09-30）をその日に開いて確認。Elasticsearch が最大40件の候補を集め、jev-1.13.0 が検索語と商品（題名・ブランド・色・説明）の組を Choice（exact / substitute / complement / irrelevant）で判定、アプリ側で並べ替え。Amazon ESCI の 250 検索・約4,750 組で nDCG@10 が 0.9351（従来のハイブリッド検索）→ 0.9565（Jev）。ランダム順でも 0.8595、データは1種類、重みは筆者が軽く調整、と記事が限界を明記。速度（70〜500ms）は TypeSafe の主張で記事は未測定のため今回は使わない。料金は 1-5 で既出のため扱わない（為替は open.er-api.com で 1ドル=約158円を確認したが金額は出していない）。見送り: jevgrep（コーディング用で非エンジニアに伝わりにくく、40%削減は作者の発表のみ）、muratcan の電話 2,029 件の例（X は 402、記事が見つからない）、Hindsight のリランカー記事（数字が少ない）。"
       }
+    },
+    {
+      "date": "2026-10-11",
+      "genre": "jev-news",
+      "trial": 2,
+      "stage": 2,
+      "stage_episode": 5,
+      "kind": "usecase",
+      "topic_key": "usecase-jevathon-agent-command-guard",
+      "topic": "Jev のハッカソンで作られた、AI の危ない操作を止める見張り役",
+      "headline": "AIの危ない操作をJevが見張る",
+      "hook": "AIが写真を消す前に、止められたら？",
+      "slides": [
+        {
+          "heading": "AIの操作を見張る",
+          "body": "AIに作業を任せる道具が危ない操作をする前に止める仕組みを、ハッカソンでJevを使って作りました。",
+          "narration": "9月26日のJevのハッカソンで、2つのチームが同じ見張り役を作りました。AIに作業を任せる道具が、危ない操作をする前に止める仕組みです。",
+          "diagram": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "AIが操作を出す"
+              },
+              {
+                "label": "Jevが危険を判定"
+              },
+              {
+                "label": "実行か停止か"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "実行前に質問する",
+          "body": "AIが出した命令をすぐ実行せず、危なくないかをJevにいくつか質問して答えを見ます。",
+          "narration": "AIが出した命令をすぐには実行せず、まずJevに、危なくないかをいくつか質問します。その答えで、実行するか止めるかを決めます。",
+          "diagram": {
+            "type": "flow",
+            "items": [
+              {
+                "note": "入力",
+                "label": "AIの命令"
+              },
+              {
+                "note": "Jev",
+                "label": "危険を判定"
+              },
+              {
+                "note": "出力",
+                "label": "実行か停止"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "写真の消去を発見",
+          "body": "実際の1日分のAIの操作を流し直すと、写真の保管場所を丸ごと消す命令を見つけました。1回の確認は約0.1秒。",
+          "claim_source": "GMI Cloudのまとめ",
+          "narration": "GMI Cloudのまとめによると、実際の1日分のAIの操作を流し直したところ、写真の保管場所を丸ごと消す命令を見つけました。確認は1回約0.1秒でした。",
+          "diagram": {
+            "type": "compare",
+            "items": [
+              {
+                "note": "1回の確認",
+                "label": "約0.1秒"
+              },
+              {
+                "note": "見つけた命令",
+                "label": "写真の一括消去"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "まだ試作の段階",
+          "body": "3時間で作った試作です。見逃しや止めすぎがどれくらいあるかは、まとめに書かれていません。",
+          "narration": "ただし、これは3時間で作った試作です。どれくらい見逃すか、止めすぎるかは、まだ分かっていません。",
+          "diagram": {
+            "type": "compare",
+            "items": [
+              {
+                "note": "作った時間",
+                "label": "3時間"
+              },
+              {
+                "note": "見逃しの率",
+                "label": "まだ不明"
+              }
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.gmicloud.ai/en/blog/hacking-on-jev-notes-from-jevathon",
+          "title": "Hacking on Jev: notes from JEVATHON",
+          "outlet": "GMI Cloud",
+          "published_at": "2026-10-01",
+          "role": "usecase",
+          "official": false
+        }
+      ],
+      "research": {
+        "checked": [
+          "https://www.gmicloud.ai/en/blog/hacking-on-jev-notes-from-jevathon",
+          "https://luma.com/aic-jev",
+          "https://x.com/Kaarolus/status/2102553833289441474",
+          "https://x.com/thepericulum/status/2108649094205890738"
+        ],
+        "note": "第2段階 2-5（使用例 5 回目、これで第2段階の目標回数に到達）。WebSearch（Jev TypeSafe built case study / Jev hackathon demos）で GMI Cloud の JEVATHON まとめ（Roan Weigert、2026-10-01）を見つけ、その日に開いて確認。2026-09-26 にサンフランシスコ（CodeRabbit のオフィス）で GMI Cloud・TypeSafe AI・The AI Collective が共催、55 チームが 3 時間で作品を提出。JevBag と Flinch の 2 チームが独立に、コーディングエージェントのシェル命令・ツール呼び出しを実行前に Jev へいくつかのリスク質問として投げる仕組みを作った。JevBag は実際の Claude Code の 1 日分の命令を流し直し、写真カタログへの rm -rf を検出、1 回の確認は約 0.1 秒（いずれもまとめの記述）。誤検知・見逃しの率は記事に無いので「まだ分かっていません」とした。金額は扱わないため為替は確認していない。見送り: 優勝作 Jevolution（ウサギとオオカミの進化シミュ。使い道として伝わりにくい）、FirstMinute・KYC Sentinel（数字が無い）、Kaarolus の CRM ドメイン確認（X は 402 で本文が読めない）、GC AI 社内ハッカソンのスレッド（X の 1 投稿のみで中身が確かめられない）、pi-warden（出典ページが見つからない）。"
+      }
     }
   ]
 }
