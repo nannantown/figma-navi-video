@@ -791,6 +791,123 @@
         ],
         "note": "第2段階 2-4。WebSearch で使用例を探し、Elastic Search Labs『Using Jev as a search reranker』（Dustin Coates、2026-09-30）をその日に開いて確認。Elasticsearch が最大40件の候補を集め、jev-1.13.0 が検索語と商品（題名・ブランド・色・説明）の組を Choice（exact / substitute / complement / irrelevant）で判定、アプリ側で並べ替え。Amazon ESCI の 250 検索・約4,750 組で nDCG@10 が 0.9351（従来のハイブリッド検索）→ 0.9565（Jev）。ランダム順でも 0.8595、データは1種類、重みは筆者が軽く調整、と記事が限界を明記。速度（70〜500ms）は TypeSafe の主張で記事は未測定のため今回は使わない。料金は 1-5 で既出のため扱わない（為替は open.er-api.com で 1ドル=約158円を確認したが金額は出していない）。見送り: jevgrep（コーディング用で非エンジニアに伝わりにくく、40%削減は作者の発表のみ）、muratcan の電話 2,029 件の例（X は 402、記事が見つからない）、Hindsight のリランカー記事（数字が少ない）。"
       }
+    },
+    {
+      "date": "2026-10-12",
+      "genre": "jev-news",
+      "trial": 2,
+      "stage": 2,
+      "stage_episode": 5,
+      "kind": "usecase",
+      "topic_key": "usecase-watson-alert-triage-screen",
+      "topic": "Watson Labs がサーバー警報の仕分けに Jev を使った例",
+      "headline": "警報の仕分けにJevを使う",
+      "hook": "鳴りすぎる警報、AIで先にふるい分けたら？",
+      "slides": [
+        {
+          "heading": "全部をAIが調べていた",
+          "body": "サーバーの異常を知らせる警報を、以前はすべてClaudeが丁寧に調べていました。",
+          "narration": "Watson Labsのブログが、サーバーの警報の仕分けにJevを使った例を紹介しています。以前は警報を全部、文章のAIのClaudeが調べていました。",
+          "diagram": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "警報が届く"
+              },
+              {
+                "label": "全部Claudeが調査"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "Jevが先にふるい分け",
+          "body": "警報と直近20件の状況を渡すと、今すぐ対応が要るかをJevが確率で返します。",
+          "narration": "今は先にJevへ警報と直近20件の状況を渡し、すぐ対応が要るかを確率で返します。高いものだけClaudeに回します。",
+          "diagram": {
+            "type": "flow",
+            "items": [
+              {
+                "note": "入力",
+                "label": "警報と状況"
+              },
+              {
+                "note": "Jev",
+                "label": "要対応か判定"
+              },
+              {
+                "note": "出力",
+                "label": "確率"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "同じ費用で何回？",
+          "body": "Claudeで1回調べる費用で、Jevの判定はおよそ1,365回できると筆者は書いています。",
+          "claim_source": "Watson Labs の検証",
+          "narration": "Watson Labsによると、Claude1回分の費用でJevの判定はおよそ1,365回できます。Watson Labsは記事の題名で、費用は91%減、14.8%速くなったとしています。",
+          "diagram": {
+            "type": "compare",
+            "items": [
+              {
+                "note": "Claude",
+                "label": "1回"
+              },
+              {
+                "note": "Jev",
+                "label": "約1,365回"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "安いと正しいは別",
+          "body": "点数と理由を残して後で見直し、途中で失敗したら人を呼ぶ仕組み。見逃しの割合は未公開です。",
+          "narration": "ただし筆者は、安いことと正しいことは別だとして、点数と理由を残し後で見直せるようにしています。見逃しの割合はまだ公開されていません。",
+          "diagram": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "点数と理由を保存"
+              },
+              {
+                "label": "後で見直す"
+              },
+              {
+                "label": "失敗なら人へ"
+              }
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://blog.watson-labs.co.uk/typesafe-ai-alert-fatigue/",
+          "title": "91% Cheaper, 14.8% Faster Alert Triage with TypeSafe AI & Swamp",
+          "outlet": "Watson Labs",
+          "published_at": "2026-09-18",
+          "role": "usecase",
+          "official": false
+        },
+        {
+          "url": "https://x.com/dotpem/status/2109083811447263256",
+          "title": "jev can help significantly to reduce alert fatigue",
+          "outlet": "X dotpem",
+          "published_at": "2026-10-11",
+          "role": "reference",
+          "official": false
+        }
+      ],
+      "research": {
+        "checked": [
+          "https://blog.watson-labs.co.uk/typesafe-ai-alert-fatigue/",
+          "https://x.com/dotpem/status/2109083811447263256",
+          "https://x.com/thepericulum/status/2108649094205890738",
+          "https://x.com/typesafeai/status/2108596156951642589"
+        ],
+        "note": "第2段階 2-5。data/jev-x-posts.json の official（@typesafeai がリポストした Nathan LeClaire の 10-11 の投稿）からリンク先の Watson Labs『91% Cheaper, 14.8% Faster Alert Triage with TypeSafe AI & Swamp』（John Watson、2026-09-18）をその日に開いて確認。Swamp のワークフローが警報・直近20件の状況・質問を jev-1.13.0 に渡し、確率をしきい値と比べて低ければ見送りを記録、通れば Claude が詳しく調べる。本文の数字は『Claude の調査 1 回 ≒ TypeSafe の判定 1,365 回』『判定の費用は約99.9%少ない』。91%・14.8% は題名のみ（グラフの値は本文に無い）。精度・見逃し率・警報の件数は記事に無く、そう明記した。金額は出さないので為替は確認していない。見送り: GC AI のハッカソン（38 件のデモ。X のスレッドで中身が画像・動画中心、本文を開いて確かめられない）、10-10 の a16z シリーズA発表（新情報で第3段階向け、第2段階の使用例ではない）。"
+      }
     }
   ]
 }
