@@ -7,6 +7,8 @@
 > - 試行 #1（新作AIツール N選）は「オーナー決定により 2026-09-23 で終了、判定なし」
 > - 朝ルーチンの手順: [routine-prompt-jev.md](routine-prompt-jev.md)。戦略と台帳: [strategy.md](strategy.md) / [genre-experiment.md](genre-experiment.md)
 
+原稿の供給完了は、当日の検証済み台帳が main に届いた時点。PR 作成だけでは完了にならない。朝ルーチンは REST API で PR を作成し、完全な差分と出典を実際にレビューしてから、レビューした SHA の merge を独立した操作で行う。読み取り専用の `scripts/deliver-jev.mjs` で候補の安全条件と main の実データを照合し、未反映は失敗として報告する。自動判定が merge を拒否した場合は回避せず停止する（指定した当日の原稿 PR だけが対象。過去分や未来日付を届けたり、動画の投稿を起動したりしない）。
+
 ## 1. Jev の基本情報（2026-09-23 に一次情報で確認）
 
 | 事実 | 出典 |
