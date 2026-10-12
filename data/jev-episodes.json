@@ -908,6 +908,131 @@
         ],
         "note": "第2段階 2-5。data/jev-x-posts.json の official（@typesafeai がリポストした Nathan LeClaire の 10-11 の投稿）からリンク先の Watson Labs『91% Cheaper, 14.8% Faster Alert Triage with TypeSafe AI & Swamp』（John Watson、2026-09-18）をその日に開いて確認。Swamp のワークフローが警報・直近20件の状況・質問を jev-1.13.0 に渡し、確率をしきい値と比べて低ければ見送りを記録、通れば Claude が詳しく調べる。本文の数字は『Claude の調査 1 回 ≒ TypeSafe の判定 1,365 回』『判定の費用は約99.9%少ない』。91%・14.8% は題名のみ（グラフの値は本文に無い）。精度・見逃し率・警報の件数は記事に無く、そう明記した。金額は出さないので為替は確認していない。見送り: GC AI のハッカソン（38 件のデモ。X のスレッドで中身が画像・動画中心、本文を開いて確かめられない）、10-10 の a16z シリーズA発表（新情報で第3段階向け、第2段階の使用例ではない）。"
       }
+    },
+    {
+      "date": "2026-10-13",
+      "genre": "jev-news",
+      "trial": 2,
+      "stage": 3,
+      "stage_episode": 1,
+      "kind": "news",
+      "topic_key": "news-jack-jill-hiring-screening-case",
+      "topic": "採用サービス Jack & Jill が1次選考に Jev を使った事例",
+      "headline": "採用の1次選考にJev、費用は",
+      "hook": "候補者の選考をAIに任せたら、費用はどう変わる？",
+      "slides": [
+        {
+          "heading": "採用の1次選考にJev",
+          "body": "人と会社をAIがつなぐ採用サービスJack & Jillが、候補者の最初の点数付けをJevに替えました。",
+          "narration": "TypeSafeが10月12日、採用サービスJack & JillでJevを使った事例を公開しました。求人ごとに毎日約6,000人の候補者に点数を付ける部分です。",
+          "diagram": {
+            "type": "flow",
+            "items": [
+              {
+                "note": "候補者",
+                "label": "約6,000人"
+              },
+              {
+                "note": "Jev",
+                "label": "点数付け"
+              },
+              {
+                "note": "絞り込み",
+                "label": "上位2,000人"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "細かく見るのは後で",
+          "body": "Jevが2,000人に絞った後、より高性能なAIが数百人まで見直し、採用担当者に渡します。",
+          "narration": "Jevが上位2,000人に絞った後、より高性能なAIが数百人まで見直して担当者に渡します。試験から本番まで10日だったそうです。",
+          "diagram": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "Jevで2,000人"
+              },
+              {
+                "label": "上位AIで数百人"
+              },
+              {
+                "label": "担当者へ"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "1,000人あたりの費用",
+          "body": "1,000人を点数付けする費用は、Geminiの約113円からJevで約14円になったと同社は説明しています。",
+          "claim_source": "TypeSafe の事例紹介",
+          "narration": "TypeSafeによると、1,000人分の費用はGeminiの約113円からJevで約14円になり、88%減ったとしています。",
+          "diagram": {
+            "type": "compare",
+            "items": [
+              {
+                "note": "Gemini",
+                "label": "約113円"
+              },
+              {
+                "note": "Jev",
+                "label": "約14円"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "選考の質はほぼ同じ",
+          "body": "残したい候補者を残せた割合はJev94.6%、Gemini93.9%。差ははっきりせず、過去のデータでの試験です。",
+          "claim_source": "TypeSafe の事例紹介",
+          "narration": "選考の質は、TypeSafeの記事でもほぼ同じという扱いで、過去のデータでの試験です。書いたのは開発元のTypeSafe自身なので、その点も覚えておきましょう。",
+          "diagram": {
+            "type": "compare",
+            "items": [
+              {
+                "note": "Gemini",
+                "label": "93.9%"
+              },
+              {
+                "note": "Jev",
+                "label": "94.6%"
+              }
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://typesafe.ai/blog/jack-jill-jev-case-study",
+          "title": "How Jack & Jill Cut Candidate Screening Costs By 88% With Jev",
+          "outlet": "TypeSafe AI",
+          "published_at": "2026-10-12",
+          "role": "news",
+          "official": true
+        },
+        {
+          "url": "https://docs.typesafe.ai/models.md",
+          "title": "Models",
+          "outlet": "TypeSafe AI",
+          "published_at": null,
+          "role": "reference",
+          "official": true
+        }
+      ],
+      "research": {
+        "checked": [
+          "https://typesafe.ai/blog",
+          "https://typesafe.ai/blog/jack-jill-jev-case-study",
+          "https://docs.typesafe.ai/sdk/python/changelog.md",
+          "https://docs.typesafe.ai/sdk/javascript/changelog.md",
+          "https://docs.typesafe.ai/models.md",
+          "https://fortune.com/2026/10/08/jev-an-ai-for-making-quick-decisions-has-been-a-viral-hit-in-silicon-valley-but-openai-is-hot-on-its-heels/",
+          "https://x.com/typesafeai/status/2108596156951642589",
+          "https://www.x-rates.com/calculator/?from=USD&to=JPY&amount=1",
+          "https://www.google.com/finance/quote/USD-JPY"
+        ],
+        "note": "第3段階 3-1（news）。公式ブログ一覧で新しい記事『How Jack & Jill Cut Candidate Screening Costs By 88% With Jev』（2026-10-12 03:01 UTC、TypeSafe AI 公開、著者名なし）を開いて確認。1,000人あたり 0.755ドル→0.092ドル（88%減）、中央値 20.3秒→10.3秒、残したい候補者の割合 Gemini 93.9%・Jev 94.6%（差は統計的に有意でないと本文に明記）、過去データでの試験、150 件の求人で比較、試験から本番まで10日。円換算は為替ページが古い値（x-rates は 2026-01-01 の時刻）か開けなかったため、手順どおり 1 ドル＝約150円で計算（113.25円→約113円、13.8円→約14円）。見送り: a16z 主導のシリーズA（2026-10-10 発表。前回の回の前日 10-11 より前で新情報の条件に入らない）、SDK Python v0.7.3（2026-10-09、同じく条件外で内容も開発者向け）、Fortune 10-08 の OpenAI 追随の記事（条件外）。"
+      }
     }
   ]
 }
