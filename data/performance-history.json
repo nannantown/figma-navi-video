@@ -3911,7 +3911,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-12T02:24:31.718Z"
+        "updatedAt": "2026-10-13T03:34:19.660Z"
       },
       "instagram": {
         "mediaId": "17979318410914317",
@@ -3922,7 +3922,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-12T02:24:31.719Z"
+        "updatedAt": "2026-10-13T03:34:19.661Z"
       },
       "jev": {
         "stage": 1,
@@ -4005,7 +4005,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-12T02:24:31.718Z"
+        "updatedAt": "2026-10-13T03:34:19.660Z"
       },
       "instagram": {
         "mediaId": "18069970178765136",
@@ -4016,7 +4016,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-12T02:24:31.719Z"
+        "updatedAt": "2026-10-13T03:34:19.661Z"
       },
       "jev": {
         "stage": 1,
@@ -4099,7 +4099,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-12T02:24:31.718Z"
+        "updatedAt": "2026-10-13T03:34:19.660Z"
       },
       "instagram": null,
       "jev": {
@@ -4182,7 +4182,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-12T02:24:31.718Z"
+        "updatedAt": "2026-10-13T03:34:19.660Z"
       },
       "instagram": {
         "mediaId": "18130486570771979",
@@ -4193,7 +4193,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-12T02:24:31.719Z"
+        "updatedAt": "2026-10-13T03:34:19.661Z"
       },
       "jev": {
         "stage": 2,
@@ -4265,10 +4265,10 @@
         ]
       },
       "stats": {
-        "views": 2,
+        "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-12T02:24:31.718Z"
+        "updatedAt": "2026-10-13T03:34:19.660Z"
       },
       "instagram": {
         "mediaId": "17931461001407071",
@@ -4279,7 +4279,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-12T02:24:31.719Z"
+        "updatedAt": "2026-10-13T03:34:19.661Z"
       },
       "jev": {
         "stage": 2,
@@ -4353,7 +4353,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-12T02:24:31.718Z"
+        "updatedAt": "2026-10-13T03:34:19.660Z"
       },
       "instagram": {
         "mediaId": "18143425864586488",
@@ -4364,7 +4364,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-12T02:24:31.719Z"
+        "updatedAt": "2026-10-13T03:34:19.661Z"
       },
       "jev": {
         "stage": 2,
@@ -4430,7 +4430,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-12T02:24:31.718Z"
+        "updatedAt": "2026-10-13T03:34:19.660Z"
       },
       "instagram": {
         "mediaId": "18028383110875571",
@@ -4441,7 +4441,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-12T02:24:31.719Z"
+        "updatedAt": "2026-10-13T03:34:19.661Z"
       },
       "jev": {
         "stage": 2,
@@ -4498,21 +4498,21 @@
         ]
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-10-13T03:34:19.660Z"
       },
       "instagram": {
         "mediaId": "18019960112947022",
-        "permalink": null,
-        "views": null,
-        "reach": null,
-        "likes": null,
-        "comments": null,
-        "shares": null,
-        "saved": null,
-        "updatedAt": null
+        "permalink": "https://www.instagram.com/reel/DeYKIuRDdp-/",
+        "views": 10,
+        "reach": 9,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-10-13T03:34:19.661Z"
       },
       "jev": {
         "stage": 2,
@@ -4540,14 +4540,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-09-13",
-      "changes": [
-        "standard: 1 avg views (80 videos)",
-        "Day performance: Mon=2, Tue=1, Fri=1, Sat=1, Sun=1, Thu=1, Wed=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-09-15",
       "changes": [
@@ -4753,6 +4745,13 @@
         "Day performance: Sat=1, Sun=1, Mon=1, Tue=1, Wed=1, Thu=1, Fri=1"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-10-13",
+      "changes": [
+        "Day performance: Tue=1, Wed=1, Thu=1, Sat=1, Sun=1, Mon=1, Fri=1"
+      ],
+      "recommendedTemplate": "standard"
     }
   ],
   "account": {
@@ -4831,6 +4830,10 @@
       },
       {
         "date": "2026-10-12",
+        "count": 0
+      },
+      {
+        "date": "2026-10-13",
         "count": 0
       }
     ]
