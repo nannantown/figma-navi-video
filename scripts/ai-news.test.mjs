@@ -130,7 +130,7 @@ test("news: video data keeps the diagram, falls back to text without one, and sa
   assert.equal(data.meta.mode, "jev"); // the slide card layout
   assert.equal(data.meta.genre, "ai-news");
   assert.equal(data.meta.trial, 3);
-  assert.equal(data.meta.bigLabel, "AI");
+  assert.equal(data.meta.bigLabel, "NEWS");
   assert.equal(data.meta.openingSourceLabel, "今日のAIニュース");
   assert.equal(data.meta.titleTag, "今日のAIニュース");
   assert.deepEqual(data.tools.map((t) => t.diagram?.type ?? null), ["flow", "steps", "compare", null]);

@@ -916,7 +916,7 @@ export const SERIES = {
     kinds: ["news"],
     kindLabel: { news: NEWS_LABEL },
     kindTag: { news: NEWS_LABEL },
-    bigLabel: "AI",
+    bigLabel: "NEWS",
     openingPrefix: "",
     endingNarration: NEWS_ENDING_NARRATION,
     attributionHint: '"OpenAI によると…" / "同社は…と説明しています"',
