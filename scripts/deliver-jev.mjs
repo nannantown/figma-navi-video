@@ -8,7 +8,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { isDeepStrictEqual } from "node:util";
 import { todayJst } from "./enriched-schema.mjs";
-import { EPISODES_PATH, validateEpisodes, airedCheck } from "./jev.mjs";
+import { SERIES, cliSeries, validateEpisodes, airedCheck } from "./jev.mjs";
 
 export const REPO = "nannantown/figma-navi-video";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -18,21 +18,22 @@ function apiJson(run, path) {
   return JSON.parse(run(["api", `repos/${REPO}/${path}`, "--method", "GET"]));
 }
 
-function remoteLedger(run) {
-  const file = apiJson(run, `contents/${EPISODES_PATH}?ref=main`);
+function remoteLedger(run, ledgerPath) {
+  const file = apiJson(run, `contents/${ledgerPath}?ref=main`);
   if (file.encoding !== "base64" || typeof file.content !== "string") throw new Error("Cannot read main ledger: GitHub contents response is not base64 JSON");
   return JSON.parse(Buffer.from(file.content, "base64").toString("utf8"));
 }
 
 /** Inject gh/time in tests. All gh requests here are GET, including --prepare. */
-export function deliverJev({ expected, history = null, pr, head, prepare = false, run = cliRun, now = () => new Date(), log = console.log, checkAired = airedCheck }) {
+export function deliverJev({ expected, history = null, pr, head, prepare = false, run = cliRun, now = () => new Date(), log = console.log, checkAired = airedCheck, series = SERIES.jev }) {
+  const EPISODES_PATH = series.episodesPath;
   if (!Number.isSafeInteger(pr) || pr < 1 || !/^[a-f0-9]{40}$/.test(head || "")) throw new Error("Require --pr=<number> and --head=<full validated commit SHA>");
   const date = todayJst(now());
   const assertToday = () => {
     if (todayJst(now()) !== date) throw new Error(`JST date changed from ${date}; stop, fetch current main and research the new day's episode`);
   };
   if (expected?.episodes?.at(-1)?.date !== date) throw new Error(`Only today's (${date}) latest episode can be delivered; no past or future delivery`);
-  const checked = validateEpisodes(expected, { date, today: date, history, checkAired });
+  const checked = validateEpisodes(expected, { date, today: date, history, checkAired, series });
   if (checked.errors.length) throw new Error(`Today's ledger is invalid:\n${checked.errors.join("\n")}`);
 
   const info = apiJson(run, `pulls/${pr}`);
@@ -45,7 +46,7 @@ export function deliverJev({ expected, history = null, pr, head, prepare = false
   if (!Array.isArray(files) || files.length !== info.changed_files || !files.some((f) => f.filename === EPISODES_PATH) || files.some((f) => !allowed.has(f.filename) || (f.previous_filename && !allowed.has(f.previous_filename)))) {
     throw new Error(`PR #${pr} must change only ${EPISODES_PATH} and today's PDCA report`);
   }
-  const main = remoteLedger(run);
+  const main = remoteLedger(run, EPISODES_PATH);
   assertToday();
   if (info.merged) {
     if (!isDeepStrictEqual(main, expected)) throw new Error(`DELIVERY FAILED: main does not contain the exact validated ${date} ledger (PR #${pr}, head ${head})`);
@@ -60,13 +61,15 @@ export function deliverJev({ expected, history = null, pr, head, prepare = false
 }
 
 function cli(args) {
-  if (args.some((a) => !/^(--prepare|--pr=\d+|--head=[a-f0-9]{40})$/.test(a))) throw new Error("Usage: node scripts/deliver-jev.mjs --pr=<number> --head=<SHA> [--prepare] (read-only; no --merge)");
+  if (args.some((a) => !/^(--prepare|--pr=\d+|--head=[a-f0-9]{40}|--series=(?:jev|news))$/.test(a))) throw new Error("Usage: node scripts/deliver-jev.mjs --pr=<number> --head=<SHA> [--prepare] [--series=jev|news] (read-only; no --merge)");
+  // The ledger of the committed format (news / jev), unless --series says otherwise.
+  const series = cliSeries(args, root);
   const pr = Number(args.find((a) => a.startsWith("--pr="))?.slice(5));
   const head = args.find((a) => a.startsWith("--head="))?.slice(7);
   if (!/^[a-f0-9]{40}$/.test(head || "")) throw new Error("Require --head=<full validated commit SHA>");
-  const expected = JSON.parse(execFileSync("git", ["show", `${head}:${EPISODES_PATH}`], { cwd: root, encoding: "utf8", timeout: 10_000 }));
+  const expected = JSON.parse(execFileSync("git", ["show", `${head}:${series.episodesPath}`], { cwd: root, encoding: "utf8", timeout: 10_000 }));
   const history = JSON.parse(readFileSync(join(root, "data/performance-history.json"), "utf8"));
-  deliverJev({ expected, history, pr, head, prepare: args.includes("--prepare") });
+  deliverJev({ expected, history, pr, head, prepare: args.includes("--prepare"), series });
 }
 
 if (process.argv[1] && realpathSync(process.argv[1]) === realpathSync(fileURLToPath(import.meta.url))) {

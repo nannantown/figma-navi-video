@@ -1,0 +1,48 @@
+{
+  "episodes": [
+    {
+      "date": "2026-10-14",
+      "genre": "ai-news",
+      "trial": 3,
+      "kind": "news",
+      "topic_key": "exampleai-minutes-launch",
+      "topic": "架空の Example AI が議事録 AI を公開（サンプル）",
+      "headline": "会議を自動で議事録にするAI",
+      "hook": "会議の録音から議事録まで、AIが作ってくれるそうです。",
+      "slides": [
+        {
+          "heading": "何が発表された？",
+          "body": "Example AI が、会議の録音から議事録と ToDo を作る AI「Minutes」を公開しました。",
+          "narration": "Example AI が、会議の録音を入れると議事録とやることの一覧を作る AI、Minutes を公開しました。",
+          "diagram": { "type": "flow", "items": [{ "note": "入力", "label": "会議の録音" }, { "note": "AI", "label": "Minutes" }, { "note": "出力", "label": "議事録とToDo" }] }
+        },
+        {
+          "heading": "使い方は3ステップ",
+          "body": "録音ファイルを入れて、残したい要点を選び、チームに共有するだけです。",
+          "claim_source": "Example AI の発表",
+          "narration": "使い方は、録音を入れて、残したい要点を選び、共有するだけ。Example AI によると、手で書くより10倍速いそうです。",
+          "diagram": { "type": "steps", "items": [{ "label": "録音を入れる" }, { "label": "要点を選ぶ" }, { "label": "チームに共有" }] }
+        },
+        {
+          "heading": "料金はいくら？",
+          "body": "月5時間までは無料、それより多く使う人は月額約1,500円の有料プランです。",
+          "narration": "料金は、月に5時間までなら無料です。それより多く使う人向けに、月額およそ1,500円のプランがあります。",
+          "diagram": { "type": "compare", "items": [{ "note": "無料", "label": "月5時間まで" }, { "note": "有料", "label": "月 約1,500円" }] }
+        },
+        {
+          "heading": "気をつけたい点",
+          "body": "日本語でどこまで正しく書けるかは、まだ公表されていません。社外秘の会議は規約を確認してから。",
+          "narration": "日本語でどこまで正しく書けるかは、まだ分かっていません。社外秘の会議に使う前に、規約を確かめましょう。"
+        }
+      ],
+      "sources": [
+        { "url": "https://example.com/blog/introducing-minutes", "title": "Introducing Minutes (sample)", "outlet": "Example AI", "published_at": "2026-10-13", "role": "news", "official": true },
+        { "url": "https://news.example.org/2026/10/13/example-ai-minutes", "title": "Example AI launches Minutes (sample)", "outlet": "Example News", "published_at": "2026-10-13", "role": "reference", "official": false }
+      ],
+      "research": {
+        "checked": ["https://example.com/blog/introducing-minutes", "https://news.example.org/2026/10/13/example-ai-minutes"],
+        "note": "架空のサンプル（dry-run とテスト用）。会社・製品・数字はすべて作り物で、本番の台帳には使わない"
+      }
+    }
+  ]
+}

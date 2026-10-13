@@ -30,7 +30,7 @@ import {
 } from "./enriched-schema.mjs";
 import { loadSnapshotForRun } from "./snapshot.mjs";
 import { loadHistory } from "./history.mjs";
-import { readContentFormat, resolveEpisodesPath, loadEpisodes, validateEpisodes, toJevVideoData } from "./jev.mjs";
+import { readContentFormat, seriesOf, resolveEpisodesPath, loadEpisodes, validateEpisodes, toJevVideoData } from "./jev.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
@@ -42,27 +42,29 @@ function resolveEnrichedPath() {
 }
 
 /**
- * Genre trial #2 (data/content-format.json = "jev"): today's episode from
- * data/jev-episodes.json → the same output/trending-data.json frame. The
- * ledger checks (series order, no repeated topic or source, claims named as
- * claims) are hard errors, like the pickup checks below.
+ * Ledger formats (data/content-format.json = "news" — trial #3, AI ニュース 1 本解説 —
+ * or "jev" — trial #2): today's episode from the series' ledger → the same
+ * output/trending-data.json frame. The ledger checks (series order, no
+ * repeated topic or source, claims named as claims) are hard errors, like the
+ * pickup checks below.
  */
-function generateJevData(allowStale) {
-  const path = resolveEpisodesPath(rootDir);
+function generateJevData(allowStale, series) {
+  const path = resolveEpisodesPath(rootDir, process.env, series);
   const today = todayJst();
   // A dry run renders the file's latest episode, whatever its date.
   // Production also cross-checks the posted history (a sample ledger in a dry
   // run is not the production series, so it is not).
   const history = allowStale ? null : loadHistory(rootDir);
-  const { errors, warnings, episode, usecaseNumber } = validateEpisodes(loadEpisodes(path), { date: today, today, pickLatest: allowStale, history });
+  const { errors, warnings, episode, usecaseNumber } = validateEpisodes(loadEpisodes(path), { date: today, today, pickLatest: allowStale, history, series });
   for (const w of warnings) console.warn(`  WARN ${w}`);
   if (errors.length > 0) throw new Error(`${path} is invalid:\n  - ${errors.join("\n  - ")}`);
-  const out = toJevVideoData(episode, { usecaseNumber });
+  const out = toJevVideoData(episode, { usecaseNumber, series });
   mkdirSync(outputDir, { recursive: true });
   rmSync(join(outputDir, "skip.json"), { force: true });
   const outputPath = join(outputDir, "trending-data.json");
   writeFileSync(outputPath, JSON.stringify(out, null, 2));
-  console.log(`  Jev ${episode.date}: stage ${episode.stage}-${episode.stage_episode} ${episode.kind} "${episode.topic_key}" — ${out.meta.headline}`);
+  const where = series.staged ? `stage ${episode.stage}-${episode.stage_episode} ` : "";
+  console.log(`  ${series.format} ${episode.date}: ${where}${episode.kind} "${episode.topic_key}" — ${out.meta.headline}`);
   console.log(`\nGenerated ${out.tools.length} slides → ${outputPath}`);
 }
 
@@ -72,7 +74,8 @@ function main() {
   if (allowStale && process.env.SNS_POST_ENABLED === "true") {
     throw new Error("ALLOW_STALE_DATE=1 is for dry runs only and cannot be combined with SNS_POST_ENABLED=true.");
   }
-  if (readContentFormat(rootDir) === "jev") return generateJevData(allowStale);
+  const series = seriesOf(readContentFormat(rootDir));
+  if (series) return generateJevData(allowStale, series);
 
   if (!existsSync(enrichedPath)) {
     throw new Error(

@@ -15,9 +15,16 @@
  *   - Company claims stay claims: any sentence with a speed/cost multiplier or
  *     "does not hallucinate" style wording names who says so.
  *
- * Which format the pipeline runs is data/content-format.json ("jev" / "pickup").
+ * Which format the pipeline runs is data/content-format.json ("news" / "jev" / "pickup").
  *
- * CLI (the routine runs this before committing):
+ * The same machinery runs genre trial #3 "AI ニュース 1 本解説" (format
+ * "news", owner 2026-10-13: Jev ended): one AI story a day, explained in
+ * order, from data/ai-news-episodes.json (docs/news-format.md). It has no
+ * stages; the slide card, diagram, yen-only and claim rules are shared.
+ * SERIES below holds what differs; every function defaults to the Jev series.
+ *
+ * CLI (the routine runs this before committing; the series follows
+ * data/content-format.json unless --series=jev|news is given):
  *   node scripts/jev.mjs validate [--file=path] [--no-date-check]
  *   node scripts/jev.mjs next     # which stage / episode / topic comes next (+ unrecorded / redoCandidate)
  *   node scripts/jev.mjs aired-check   # did the redo candidate go out? (posting runs' logs via gh; prints redoSlot only if not)
@@ -46,7 +53,34 @@ export const JEV_TRIAL = 2;
 export const JEV_LAUNCH_DATE = "2026-09-15"; // early access + seed announcement
 export const EPISODES_PATH = "data/jev-episodes.json";
 export const FORMAT_PATH = "data/content-format.json";
-export const FORMATS = ["jev", "pickup"];
+export const FORMATS = ["news", "jev", "pickup"];
+export const NEWS_GENRE = "ai-news";
+export const NEWS_TRIAL = 3;
+export const NEWS_EPISODES_PATH = "data/ai-news-episodes.json";
+// A day's story must be this fresh (JST today minus N days; outlets date in US time, weekends).
+export const NEWS_FRESH_DAYS = 3;
+// AI Trend Daily (the other AI account) posts GitHub's trending repositories:
+// a repository page never carries this channel's story (owner 2026-10-13).
+export const NEWS_BLOCKED_PRIMARY_HOSTS = ["github.com", "github.io", "githubusercontent.com"];
+// Same story told again: topic_key's first two parts (会社-中身) within this many days.
+export const NEWS_SAME_STORY_DAYS = 7;
+
+/** "openai-gpt6-release" → "openai-gpt6" (会社-中身). */
+export function storyKey(topicKey) {
+  return String(topicKey ?? "").split("-").slice(0, 2).join("-");
+}
+
+/** Hosts under a blocked name (gist.github.com, foo.github.io, raw.githubusercontent.com). */
+function isBlockedNewsHost(host) {
+  return NEWS_BLOCKED_PRIMARY_HOSTS.some((h) => host === h || host.endsWith(`.${h}`));
+}
+
+/** The site a host belongs to, for "two different sites": help.openai.com = openai.com, www.itmedia.co.jp = itmedia.co.jp. */
+export function siteOf(host) {
+  const labels = String(host ?? "").toLowerCase().split(".").filter(Boolean);
+  const secondLevel = labels.length >= 3 && labels.at(-1).length === 2 && ["co", "ac", "ne", "or", "go", "ed", "gr", "lg", "com", "net", "org", "gov", "edu"].includes(labels.at(-2));
+  return labels.slice(secondLevel ? -3 : -2).join(".");
+}
 
 // ---------------------------------------------------------------------------
 // Series plan (docs/jev-format.md is the prose version — keep them in sync)
@@ -130,7 +164,13 @@ const CLAIM_PARTS = [
   `\\d+(?:\\.\\d+)?\\s*%\\s*(?:安|減|削減|速|高速|少な|の?精度|正確|正し)`, // 96%減 / 100%正しい
   "(?:精度|正答率|正解率)\\s*(?:は|が)?\\s*\\d+(?:\\.\\d+)?\\s*%", // 精度は100%
   "最速|桁違い|業界(?:最|一)|世界(?:最|一)",
-  "数学的",
+  // General AI news (trial #3): "beats GPT-5", "state of the art", "No.1 on a benchmark".
+  "上回(?:る|り|っ)|(?:性能|精度|スコア|成績)[^。！？]{0,12}?(?:超え|勝っ|勝る)",
+  "最高(?:水準|性能|レベル|峰|クラス)|最も(?:高性能|高い|賢い|速い|優れ)",
+  "首位|トップ(?:クラス|レベル|水準)|[1１一]\\s*位(?:に|を|と|で|の)|No\\.?\\s*1(?![0-9])|ナンバーワン|SOTA",
+  "世界初|業界初|史上最|最大級|最強|人間(?:並み|レベル|を超)|博士(?:号)?レベル|超える性能|より高性能",
+  // Jev's "mathematically guaranteed / correct" — not "数学的な問題" (a topic, not a claim).
+  "数学的(?:な|に)?\\s*(?:正し|保証|証明|間違|正確|厳密)",
   `${ERROR_WORD}[^。！？]{0,12}?${NEGATION}`, // keep last: CLAIM_NO_ERROR_RE drops it
 ];
 const CLAIM_RE = new RegExp(CLAIM_PARTS.join("|"), "u");
@@ -140,7 +180,7 @@ const CLAIM_NO_ERROR_RE = new RegExp(CLAIM_PARTS.slice(0, -1).join("|"), "u");
 // A bare "比較では" / "テストによると" names nobody and does not count.
 const SOURCE_NAME = "(?:TypeSafe(?:\\s*AI)?|タイプセーフ|同社|開発元|開発会社|[A-Za-z][A-Za-z0-9.&'\\- ]{1,40}|[\\u4E00-\\u9FFF\\u30A0-\\u30FF]{1,12}(?:社|新聞|誌|紙|通信))";
 const ATTRIBUTION_RE = new RegExp(
-  `${SOURCE_NAME}(?:さん|氏|CEO)?\\s*(?:の(?:検証|測定|計測|テスト|比較|発表|調査|評価|ベンチマーク|まとめ|記事|投稿|ポスト)(?:では|によると|によれば)|によると|によれば|の主張|は[^。！？]*?(?:と主張|と説明|と発表|としています|とうたって|と話して|と述べて))`,
+  `${SOURCE_NAME}(?:さん|氏|CEO|社)?\\s*(?:の(?:検証|測定|計測|テスト|比較|発表|調査|評価|ベンチマーク|まとめ|記事|投稿|ポスト)(?:では|によると|によれば)|によると|によれば|の主張|は[^。！？]*?(?:と主張|と説明|と発表|としています|とうたって|と話して|と述べて))`,
   "u"
 );
 
@@ -224,7 +264,9 @@ function isRealDate(s) {
  * What the next episode must be, from the episodes posted so far.
  * Returns { stage, stageEpisode, kinds, topicKey?, theme?, usecaseCount, canAdvanceEarly }.
  */
-export function nextSlot(previous) {
+export function nextSlot(previous, series = SERIES.jev) {
+  // The news series has no stages: every day is the next news episode.
+  if (!series.staged) return { episode: previous.length + 1, kinds: series.kinds };
   // stage_episode counts every aired episode of the stage (fillers included);
   // what moves the series on is the intros / use cases actually aired.
   const inStage = (stage) => previous.filter((e) => e.stage === stage).length + 1;
@@ -332,9 +374,9 @@ function redoneDates(eps, index) {
  * and come after the last recorded Jev post — candidates for aired-check.
  * Informational only: they still count as aired until a redo says otherwise.
  */
-export function unrecordedEpisodes(episodes, history, date) {
+export function unrecordedEpisodes(episodes, history, date, genre = JEV_GENRE) {
   if (!history || !Array.isArray(history.videos)) return [];
-  const recorded = history.videos.filter((v) => v?.genre === JEV_GENRE && !v.skip).map((v) => v.date);
+  const recorded = history.videos.filter((v) => v?.genre === genre && !v.skip).map((v) => v.date);
   const last = recorded.sort().at(-1) ?? "";
   const redone = new Set(episodes.map((e) => e.redo_of).filter(Boolean));
   return episodes.filter((e) => e.date < date && e.date > last && !redone.has(e.date) && !recorded.includes(e.date));
@@ -370,13 +412,17 @@ function shownTextProblems(value, label) {
 }
 
 /** Minimal shape every ledger entry needs for the order and repeat checks. */
-function ledgerProblems(ep, i) {
+function ledgerProblems(ep, i, series) {
   const at = `episodes[${i}]`;
   const errors = [];
   if (!ep || typeof ep !== "object") return [`${at}: must be an object`];
   if (!isRealDate(ep.date)) errors.push(`${at}.date: must be YYYY-MM-DD`);
-  if (![1, 2, 3].includes(ep.stage)) errors.push(`${at}.stage: must be 1, 2 or 3`);
-  if (!(KINDS_BY_STAGE[ep.stage] || []).includes(ep.kind)) {
+  if (!series.staged) {
+    if (!series.kinds.includes(ep.kind)) errors.push(`${at}.kind: must be ${series.kinds.map((k) => `"${k}"`).join(" / ")}`);
+    // Yesterday's news posted a day late is stale: this series never redoes a day.
+    if (ep.redo_of != null) errors.push(`${at}.redo_of: the news series does not redo a missed day — write today's news instead`);
+  } else if (![1, 2, 3].includes(ep.stage)) errors.push(`${at}.stage: must be 1, 2 or 3`);
+  else if (!(KINDS_BY_STAGE[ep.stage] || []).includes(ep.kind)) {
     errors.push(`${at}.kind: ${JSON.stringify(ep.kind)} is not a kind of stage ${ep.stage} (${(KINDS_BY_STAGE[ep.stage] || []).join(" / ")})`);
   }
   if (typeof ep.topic_key !== "string" || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(ep.topic_key) || ep.topic_key.length > 60) {
@@ -397,14 +443,14 @@ function primaryUrls(ep) {
  * Validate the ledger and fully check one episode (the one to post).
  * @returns {{ errors: string[], warnings: string[], episode: object|null, slot: object|null }}
  */
-export function validateEpisodes(file, { date = todayJst(), today = todayJst(), pickLatest = false, history = null, checkAired = null } = {}) {
+export function validateEpisodes(file, { date = todayJst(), today = todayJst(), pickLatest = false, history = null, checkAired = null, series = SERIES.jev } = {}) {
   const errors = [];
   const warnings = [];
   if (!file || typeof file !== "object" || !Array.isArray(file.episodes)) {
     return { errors: ['top level must be { "episodes": [...] }'], warnings, episode: null, slot: null };
   }
   const eps = file.episodes;
-  eps.forEach((ep, i) => errors.push(...ledgerProblems(ep, i)));
+  eps.forEach((ep, i) => errors.push(...ledgerProblems(ep, i, series)));
   if (errors.length > 0) return { errors, warnings, episode: null, slot: null };
 
   for (let i = 1; i < eps.length; i++) {
@@ -413,7 +459,7 @@ export function validateEpisodes(file, { date = todayJst(), today = todayJst(), 
 
   const index = pickLatest ? eps.length - 1 : eps.findIndex((e) => e.date === date);
   if (index < 0) {
-    errors.push(`no episode for ${date} (the routine appends today's episode to ${EPISODES_PATH})`);
+    errors.push(`no episode for ${date} (the routine appends today's episode to ${series.episodesPath})`);
     return { errors, warnings, episode: null, slot: null };
   }
   const ep = eps[index];
@@ -434,7 +480,7 @@ export function validateEpisodes(file, { date = todayJst(), today = todayJst(), 
     if (beforeRedo.at(-1)?.date !== ep.redo_of) {
       errors.push(`${at}.redo_of: only the latest episode (${beforeRedo.at(-1)?.date ?? "none"}) can be redone, not ${ep.redo_of} — the series has moved past it`);
     }
-    const postedThatDay = (history?.videos || []).some((v) => v?.genre === JEV_GENRE && !v.skip && v.date === ep.redo_of);
+    const postedThatDay = (history?.videos || []).some((v) => v?.genre === series.genre && !v.skip && v.date === ep.redo_of);
     if (postedThatDay) errors.push(`${at}.redo_of: ${ep.redo_of} is recorded as posted in performance-history.json — redoing it would post it twice`);
     // The CLI passes the live gh check: the redone day itself must read not-posted.
     if (checkAired) {
@@ -442,14 +488,14 @@ export function validateEpisodes(file, { date = todayJst(), today = todayJst(), 
       if (r?.verdict !== "not-posted") errors.push(`${at}.redo_of: aired-check ${ep.redo_of} says ${r?.verdict ?? "nothing"}${r?.reason ? ` (${r.reason})` : ""} — only a day whose posting logs say not-posted can be redone`);
     }
   }
-  for (const e of unrecordedEpisodes(eps.slice(0, index), history, ep.date)) {
-    warnings.push(`${e.date} "${e.topic_key}" has no post record — counted as aired; run "node scripts/jev.mjs aired-check" and redo only with the redoSlot it prints`);
+  for (const e of unrecordedEpisodes(eps.slice(0, index), history, ep.date, series.genre)) {
+    warnings.push(`${e.date} "${e.topic_key}" has no post record — counted as aired; ${series.staged ? `run "node scripts/jev.mjs aired-check" and redo only with the redoSlot it prints` : "news is not redone (its topic and sources stay used)"}`);
   }
 
   // Series order. Every aired entry is checked against the ones before it,
   // so a ledger edited out of order fails too (not just today's entry).
-  chain.forEach((e, i) => errors.push(...orderProblems(e, chain.slice(0, i), `episode ${e.date}`)));
-  const slot = nextSlot(previous);
+  if (series.staged) chain.forEach((e, i) => errors.push(...orderProblems(e, chain.slice(0, i), `episode ${e.date}`)));
+  const slot = nextSlot(previous, series);
 
   // No repeats: topic_key once, the day's primary source once.
   const seenKeys = new Map();
@@ -469,34 +515,36 @@ export function validateEpisodes(file, { date = todayJst(), today = todayJst(), 
   // The ledger is edited by the routine itself; performance-history.json is
   // written by Actions when a post goes live. A posted episode missing from
   // the ledger (or re-keyed) would silently re-open its topic and sources.
-  const posted = (history?.videos || []).filter((v) => v?.genre === JEV_GENRE && !v.skip && v.jev && v.date < ep.date);
+  const posted = (history?.videos || []).filter((v) => v?.genre === series.genre && !v.skip && v.jev && v.date < ep.date);
   const ownPrimary = new Set(primaryUrls(ep));
   for (const v of posted) {
     const kept = eps.find((e) => e.date === v.date);
     if (!kept || kept.topic_key !== v.jev.topicKey) {
-      errors.push(`ledger: the ${v.date} episode ("${v.jev.topicKey}") was posted but is missing or changed in ${EPISODES_PATH} — restore it (past episodes are never rewritten)`);
+      errors.push(`ledger: the ${v.date} episode ("${v.jev.topicKey}") was posted but is missing or changed in ${series.episodesPath} — restore it (past episodes are never rewritten)`);
     }
     if (v.jev.topicKey === ep.topic_key) errors.push(`${at}: topic_key "${ep.topic_key}" was already posted on ${v.date}`);
     for (const s of v.jev.sources || []) {
-      if (s.role === PRIMARY_ROLE[v.jev.kind] && ownPrimary.has(normalizeUrl(s.url))) errors.push(`${at}: source ${s.url} was already posted on ${v.date}`);
+      // News never reuses a page in any role; Jev only guards the carrying source.
+      const own = series.staged ? ownPrimary : new Set((ep.sources || []).map((x) => normalizeUrl(x?.url)));
+      if ((!series.staged || s.role === PRIMARY_ROLE[v.jev.kind]) && own.has(normalizeUrl(s.url))) errors.push(`${at}: source ${s.url} was already posted on ${v.date}`);
     }
   }
 
   // Today's episode: full content check.
   if (!pickLatest && ep.date !== today) errors.push(`${at}: date is not today (${today})`);
-  if (ep.genre !== JEV_GENRE) errors.push(`${at}.genre: must be "${JEV_GENRE}"`);
-  if (ep.trial !== JEV_TRIAL) errors.push(`${at}.trial: must be ${JEV_TRIAL}`);
+  if (ep.genre !== series.genre) errors.push(`${at}.genre: must be "${series.genre}"`);
+  if (ep.trial !== series.trial) errors.push(`${at}.trial: must be ${series.trial}`);
   for (const [field, limits] of [["topic", LIMITS.topic], ["headline", LIMITS.headline], ["hook", LIMITS.hook]]) {
     const p = lengthProblem(ep[field], limits, `${at}.${field}`);
     if (p) errors.push(p);
     errors.push(...shownTextProblems(ep[field], `${at}.${field}`));
   }
-  for (const u of unattributedClaims(ep.hook ?? "")) errors.push(`${at}.hook: claim without its source — "${u}" (write "TypeSafe によると…")`);
+  for (const u of unattributedClaims(ep.hook ?? "")) errors.push(`${at}.hook: claim without its source — "${u}" (write ${series.attributionHint})`);
   if (hasClaim(ep.headline ?? "")) errors.push(`${at}.headline: no speed/cost/"no hallucination" claim in the headline (put it on a slide with claim_source)`);
 
-  errors.push(...slideProblems(ep, at));
-  warnings.push(...diagramWarnings(ep, at));
-  errors.push(...sourceProblems(ep, previous, at, today, warnings));
+  errors.push(...slideProblems(ep, at, series));
+  warnings.push(...diagramWarnings(ep, at, series));
+  errors.push(...sourceProblems(ep, previous, at, today, warnings, series));
 
   const r = ep.research;
   if (!r || typeof r !== "object" || !Array.isArray(r.checked)) {
@@ -541,7 +589,7 @@ function orderProblems(ep, previous, at) {
   return [];
 }
 
-function slideProblems(ep, at) {
+function slideProblems(ep, at, series) {
   const errors = [];
   const slides = ep.slides;
   if (!Array.isArray(slides) || slides.length < LIMITS.slides[0] || slides.length > LIMITS.slides[1]) {
@@ -556,7 +604,7 @@ function slideProblems(ep, at) {
       errors.push(...shownTextProblems(s?.[field], `${sat}.${field}`));
     }
     total += charLength(s?.narration ?? "");
-    for (const u of unattributedClaims(s?.narration ?? "")) errors.push(`${sat}.narration: claim without its source — "${u}" (write "TypeSafe によると…")`);
+    for (const u of unattributedClaims(s?.narration ?? "")) errors.push(`${sat}.narration: claim without its source — "${u}" (write ${series.attributionHint})`);
     // Screen text is too short for "TypeSafe によると", so the card carries a
     // "whose claim" label instead.
     const onScreenClaim = hasClaim(s?.heading ?? "") || hasClaim(s?.body ?? "");
@@ -564,9 +612,9 @@ function slideProblems(ep, at) {
       const p = lengthProblem(s.claim_source, LIMITS.claimSource, `${sat}.claim_source`);
       if (p) errors.push(p);
       errors.push(...shownTextProblems(s.claim_source, `${sat}.claim_source`));
-      if (hasClaim(s.claim_source)) errors.push(`${sat}.claim_source: a label says whose claim it is, not the claim itself (e.g. "TypeSafe の発表")`);
+      if (hasClaim(s.claim_source)) errors.push(`${sat}.claim_source: a label says whose claim it is, not the claim itself (e.g. ${series.claimSourceHint})`);
     } else if (onScreenClaim) {
-      errors.push(`${sat}: the screen text states a claim — set claim_source (e.g. "TypeSafe の発表" / "LiteLLM の検証")`);
+      errors.push(`${sat}: the screen text states a claim — set claim_source (e.g. ${series.claimSourceHint})`);
     }
   });
   if (total > LIMITS.narrationTotal) errors.push(`${at}.slides: narration total ${total} chars (max ${LIMITS.narrationTotal}, the video must stay under 60 s)`);
@@ -633,7 +681,7 @@ export function diagramProblems(slide) {
     if (d.type === "compare" || noteGiven) fields.push(["note", DIAGRAM_NOTE[d.type] ?? DIAGRAM_NOTE.compare]);
     for (const [field, limits] of fields) {
       const p = lengthProblem(it[field], limits, `${at}.${field}`);
-      if (p) problems.push(d.type === "compare" && field === "note" ? `${p} (the column title, e.g. "前" / "Jev")` : p);
+      if (p) problems.push(d.type === "compare" && field === "note" ? `${p} (the column title, e.g. "前" / "後")` : p);
       problems.push(...shownTextProblems(it[field], `${at}.${field}`));
       if (typeof it[field] !== "string") continue;
       total += charLength(it[field].trim());
@@ -663,10 +711,10 @@ export function diagramProblems(slide) {
 }
 
 /** Warnings only: the post goes out either way. */
-function diagramWarnings(ep, at) {
+function diagramWarnings(ep, at, series) {
   if (!Array.isArray(ep.slides)) return [];
   const warnings = ep.slides.flatMap((s, i) => diagramProblems(s).map((p) => `${at}.slides[${i}].diagram: ${p} — this slide falls back to heading + body`));
-  if (!ep.slides.some((s) => s?.diagram != null)) warnings.push(`${at}: no slide has a diagram — the top half stays text (add slides[].diagram, docs/routine-prompt-jev.md)`);
+  if (!ep.slides.some((s) => s?.diagram != null)) warnings.push(`${at}: no slide has a diagram — the top half stays text (add slides[].diagram, ${series.routinePrompt})`);
   return warnings;
 }
 
@@ -677,7 +725,7 @@ export function videoDiagram(slide) {
   return { type, items: items.map((it) => ({ label: it.label.trim(), note: typeof it.note === "string" && it.note.trim() ? it.note.trim() : null })) };
 }
 
-function sourceProblems(ep, previous, at, today, warnings) {
+function sourceProblems(ep, previous, at, today, warnings, series) {
   const errors = [];
   const sources = ep.sources;
   if (sources.length < LIMITS.sources[0] || sources.length > LIMITS.sources[1]) errors.push(`${at}.sources: ${LIMITS.sources.join("-")} sources`);
@@ -689,19 +737,20 @@ function sourceProblems(ep, previous, at, today, warnings) {
     if (p) errors.push(p);
     // The outlet is shown on screen and in the captions, where "@name" would
     // tag (notify) that account: X accounts are written "X typesafeai".
-    errors.push(...textProblems(s?.outlet, `${sat}.outlet`).map((m) => (/@mention/.test(m) ? `${m} — write an X account as "X typesafeai" (no @)` : m)));
+    errors.push(...textProblems(s?.outlet, `${sat}.outlet`).map((m) => (/@mention/.test(m) ? `${m} — write an X account as ${series.staged ? "\"X typesafeai\"" : "\"X accountname\""} (no @)` : m)));
     if (typeof s?.title !== "string" || !s.title.trim() || charLength(s.title) > 200 || CONTROL_CHARS_RE.test(s.title) || INVISIBLE_CHARS_RE.test(s.title)) {
       errors.push(`${sat}.title: the page title, one line, up to 200 chars`);
     }
     if (typeof s?.official !== "boolean") errors.push(`${sat}.official: true / false`);
-    else if (s.official && !isOfficialUrl(s.url)) errors.push(`${sat}.official: ${hostOf(s.url)} is not a TypeSafe property`);
+    // Jev: only TypeSafe's own pages. News: true = the company's own announcement (no host list to check).
+    else if (s.official && series.staged && !isOfficialUrl(s.url)) errors.push(`${sat}.official: ${hostOf(s.url)} is not a TypeSafe property`);
     if (s?.published_at === null) {
       if (s?.role !== "reference") errors.push(`${sat}.published_at: a ${s?.role} source needs its publication date`);
     } else if (!isRealDate(s?.published_at)) {
       errors.push(`${sat}.published_at: YYYY-MM-DD (null only for an undated reference page)`);
     } else if (s.published_at > today) {
       errors.push(`${sat}.published_at: ${s.published_at} is in the future`);
-    } else if (s.published_at < JEV_LAUNCH_DATE && s.role !== "reference") {
+    } else if (series.staged && s.published_at < JEV_LAUNCH_DATE && s.role !== "reference") {
       warnings.push(`${sat}: published before Jev's launch (${JEV_LAUNCH_DATE}) — is it really about Jev?`);
     }
   });
@@ -710,7 +759,48 @@ function sourceProblems(ep, previous, at, today, warnings) {
   if (role) {
     const primary = sources.filter((s) => s?.role === role);
     if (primary.length === 0) errors.push(`${at}.sources: a ${ep.kind} episode needs a source with role "${role}"`);
-    if (ep.kind === "news") {
+    if (ep.kind === "news" && !series.staged) {
+      // The day's biggest story: recent, whatever was posted before (repeats are
+      // caught by the topic / source checks).
+      // From the episode's own date (= today in production; a dry run's sample keeps its own day).
+      const since = new Date(Date.parse(`${ep.date}T00:00:00Z`) - NEWS_FRESH_DAYS * 86400000).toISOString().slice(0, 10);
+      if (!primary.some((s) => isRealDate(s.published_at) && s.published_at >= since)) {
+        errors.push(`${at}.sources: no news source published on/after ${since} (${NEWS_FRESH_DAYS} days before the episode) — pick a story from the last few days`);
+      }
+      for (const s of primary) {
+        const host = hostOf(s?.url).replace(/^www\./, "");
+        if (isBlockedNewsHost(host)) {
+          errors.push(`${at}.sources: ${host} cannot carry the story — AI Trend Daily covers GitHub repositories; use the announcement or an article (the repository may be a "reference")`);
+        }
+      }
+      // Fact check: the story is confirmed on two different sites (a GitHub page does not count as one).
+      const sites = new Set(sources.map((s) => hostOf(s?.url)).filter((h) => h && !isBlockedNewsHost(h.replace(/^www\./, ""))).map(siteOf));
+      if (sites.size < 2) errors.push(`${at}.sources: confirm the story on a second site (2+ different sites, e.g. the announcement and an independent article; subdomains of one site and GitHub do not count)`);
+      if (!sources.some((s) => s?.official === false)) errors.push(`${at}.sources: at least one source must be an independent outlet (official: false), not only the company's own pages`);
+      // Same story in new words (another outlet, another slug, a reworded headline):
+      // the first two parts of topic_key (会社-中身) within NEWS_SAME_STORY_DAYS days.
+      // A real follow-up names the episode it follows and the new fact.
+      if (String(ep.topic_key).split("-").length < 3) errors.push(`${at}.topic_key: 会社-中身-出来事, 3+ parts (e.g. openai-gpt6-release) — the first two parts find the same story`);
+      const weekAgo = new Date(Date.parse(`${ep.date}T00:00:00Z`) - NEWS_SAME_STORY_DAYS * 86400000).toISOString().slice(0, 10);
+      const same = previous.filter((e) => e.date >= weekAgo && storyKey(e.topic_key) === storyKey(ep.topic_key));
+      if (ep.follow_up_of != null) {
+        const followed = previous.find((e) => e.date === ep.follow_up_of);
+        if (!followed) errors.push(`${at}.follow_up_of: no earlier episode dated ${JSON.stringify(ep.follow_up_of)}`);
+        else if (storyKey(followed.topic_key) !== storyKey(ep.topic_key)) errors.push(`${at}.follow_up_of: the ${ep.follow_up_of} episode ("${followed.topic_key}") is another story — a follow-up keeps its first two topic_key parts ("${storyKey(followed.topic_key)}")`);
+        const p = lengthProblem(ep.research?.new_fact, LIMITS.reason, `${at}.research.new_fact`);
+        if (p) errors.push(`${p} — a follow-up states, in one sentence, the new fact the ${ep.follow_up_of} episode did not have`);
+      }
+      if (same.length > 0 && !same.some((e) => e.date === ep.follow_up_of)) {
+        errors.push(`${at}: "${ep.topic_key}" is the same story as ${same.map((e) => `${e.date} ("${e.topic_key}")`).join(", ")} (same "${storyKey(ep.topic_key)}" within ${NEWS_SAME_STORY_DAYS} days) — pick another story, or for real news on it set follow_up_of: "${same.at(-1).date}" and research.new_fact`);
+      }
+      // Same news twice: no page cited by an earlier news episode comes back, whatever its role.
+      const earlier = new Map();
+      for (const e of previous) for (const s of e.sources || []) if (s?.url) earlier.set(normalizeUrl(s.url), e.date);
+      for (const s of sources) {
+        const u = normalizeUrl(s?.url);
+        if (earlier.has(u)) errors.push(`${at}.sources: ${s.url} was already cited on ${earlier.get(u)} — the news series never reuses a page (same story twice); find today's own sources`);
+      }
+    } else if (ep.kind === "news") {
       // New since the last Jev episode (inclusive: a story from later that day counts).
       // One day of slack: outlets date articles in their own (US) time, and the
       // previous routine ran at 07:30 JST = the evening before in California.
@@ -764,36 +854,37 @@ export function kindOrdinal(ep, { usecaseNumber = null } = {}) {
   return null;
 }
 
-export function toJevVideoData(ep, { usecaseNumber = null } = {}) {
+export function toJevVideoData(ep, { usecaseNumber = null, series = SERIES.jev } = {}) {
   const [y, m, d] = ep.date.split("-").map(Number);
   const weekday = WEEKDAYS_JA[new Date(Date.UTC(y, m - 1, d)).getUTCDay()];
   const shortDate = `${m}/${d}`;
-  const kindLabel = KIND_LABEL[ep.kind];
+  const kindLabel = series.kindLabel[ep.kind];
   const sourceLine = `出典: ${outletsLabel(ep.sources)}`;
   const count = ep.slides.length;
   const ordinal = kindOrdinal(ep, { usecaseNumber });
   const stageNote = ordinal ? `${kindLabel} 第${ordinal}回` : kindLabel;
   return {
     openingNarration: ep.hook.trim(),
-    endingNarration: JEV_ENDING_NARRATION,
+    endingNarration: series.endingNarration,
     meta: {
       date: ep.date,
       dateLabel: `${y}.${String(m).padStart(2, "0")}.${String(d).padStart(2, "0")} (${weekday})`,
       shortDate,
+      // "jev" = the one-topic slide card layout (src JevSlideCard), shared by both series.
       mode: "jev",
       count,
       headline: ep.headline.trim(),
-      titleTag: KIND_TAG[ep.kind],
+      titleTag: series.kindTag[ep.kind],
       // The day's headline on the opening: the first 1-2 s decide the swipe,
       // and every day must look different on the grid.
       kicker: ep.headline.trim(),
-      bigLabel: "Jev",
-      openingSourceLabel: `特集｜${stageNote}`,
+      bigLabel: series.bigLabel,
+      openingSourceLabel: `${series.openingPrefix}${stageNote}`,
       sourceLabel: sourceLine,
       endingLines: ["毎朝、AI の新しい動きを", "1分でお届け"],
       method: ep.kind,
-      genre: JEV_GENRE,
-      trial: JEV_TRIAL,
+      genre: series.genre,
+      trial: series.trial,
     },
     tools: ep.slides.map((s, i) => ({
       rank: i + 1,
@@ -825,6 +916,76 @@ export const JEV_YT_HASHTAGS = ["#AIニュース", "#生成AI", "#Jev", "#TypeSa
 export const JEV_YT_TAGS = ["AIニュース", "生成AI", "AIモデル", "Jev", "TypeSafe AI", "TypeSafe", "System One", "Shorts"];
 export const CLAIM_NOTE = "※速度・料金・精度の数字や「ハルシネーションしない」は、断りのない限り開発元 TypeSafe AI の発表です（第三者の検証は出典を明記）。円の金額は概算です。";
 const YT_TITLE_MAX = 100;
+
+// Genre trial #3 (owner 2026-10-13): AI news in general, one story a day.
+// Keep the ending within 40 chars (see LIMITS.narrationTotal).
+export const NEWS_LABEL = "今日のAIニュース";
+export const NEWS_ENDING_NARRATION = "今日の AI ニュースでした。保存とフォローをお願いします。";
+export const NEWS_IG_HASHTAGS = ["#AIニュース", "#生成AI", "#AI最新情報", "#人工知能", "#テクノロジー"];
+export const NEWS_YT_HASHTAGS = ["#AIニュース", "#生成AI", "#AI最新情報", "#Shorts"];
+export const NEWS_YT_TAGS = ["AIニュース", "生成AI", "AI最新情報", "人工知能", "テクノロジー", "Shorts"];
+export const NEWS_CLAIM_NOTE = "※性能・速度・料金などの数字は、断りのない限り各社の発表です（第三者の検証は出典を明記）。円の金額は概算です。";
+
+/**
+ * What differs between the ledger-driven series. Everything else (slide card,
+ * diagram, yen-only rule, claim attribution, repeat checks) is shared.
+ * Keyed by data/content-format.json "format".
+ */
+export const SERIES = {
+  jev: {
+    format: "jev",
+    genre: JEV_GENRE,
+    trial: JEV_TRIAL,
+    name: "Jev の毎朝ニュース",
+    episodesPath: EPISODES_PATH,
+    routinePrompt: "docs/routine-prompt-jev.md",
+    staged: true,
+    kinds: ["intro", "usecase", "news", "explainer"],
+    kindLabel: KIND_LABEL,
+    kindTag: KIND_TAG,
+    bigLabel: "Jev",
+    openingPrefix: "特集｜",
+    endingNarration: JEV_ENDING_NARRATION,
+    attributionHint: '"TypeSafe によると…"',
+    claimSourceHint: '"TypeSafe の発表" / "LiteLLM の検証"',
+    claimNote: CLAIM_NOTE,
+    titleTemplate: "jev",
+    ytFooter: `${JEV_FEATURE_LABEL} の特集です。Jev は TypeSafe AI が 2026年9月に公開した、ソフトウェア向けの新しいAIモデルです。このチャンネルでは毎朝、AI の新しい動きを1分でお届けします。`,
+    igFooter: `${JEV_FEATURE_LABEL} の特集です。毎朝、AI の新しい動きを1分で。保存してあとで見返してください。`,
+    igHashtags: JEV_IG_HASHTAGS,
+    ytHashtags: JEV_YT_HASHTAGS,
+    ytTags: JEV_YT_TAGS,
+  },
+  news: {
+    format: "news",
+    genre: NEWS_GENRE,
+    trial: NEWS_TRIAL,
+    name: "AI ニュース 1 本解説",
+    episodesPath: NEWS_EPISODES_PATH,
+    routinePrompt: "docs/routine-prompt-news.md",
+    staged: false,
+    kinds: ["news"],
+    kindLabel: { news: NEWS_LABEL },
+    kindTag: { news: NEWS_LABEL },
+    bigLabel: "NEWS",
+    openingPrefix: "",
+    endingNarration: NEWS_ENDING_NARRATION,
+    attributionHint: '"OpenAI によると…" / "同社は…と説明しています"',
+    claimSourceHint: '"OpenAI の発表" / "Google の発表"',
+    claimNote: NEWS_CLAIM_NOTE,
+    titleTemplate: "ai-news",
+    ytFooter: "このチャンネルでは毎朝、その日いちばん大きい AI のニュースを 1 本、1分で順を追って説明します。",
+    igFooter: "毎朝、AI のニュースを 1 本、1分で。保存してあとで見返してください。",
+    igHashtags: NEWS_IG_HASHTAGS,
+    ytHashtags: NEWS_YT_HASHTAGS,
+    ytTags: NEWS_YT_TAGS,
+  },
+};
+
+/** The series of a format ("pickup" and unknown → null). */
+export function seriesOf(format) {
+  return typeof format === "string" && Object.hasOwn(SERIES, format) ? SERIES[format] : null;
+}
 
 function clean(s) {
   return String(s ?? "").replace(new RegExp(CONTROL_CHARS_RE.source, "gu"), " ").replace(new RegExp(INVISIBLE_CHARS_RE.source, "gu"), "").replace(/[<>]/g, "").replace(/\s+/g, " ").trim();
@@ -858,6 +1019,7 @@ function fitting(build, fits) {
 
 export function buildJevCaptions(data) {
   const { meta, tools, jev } = data;
+  const series = Object.values(SERIES).find((s) => s.genre === meta.genre) ?? SERIES.jev;
   const dateFull = meta.date.replace(/-/g, "/");
   let title = `【${meta.titleTag}】${clean(meta.headline).replace(/[<>]/g, "")}｜${dateFull} #Shorts`;
   if (Array.from(title).length > YT_TITLE_MAX || title.length > YT_TITLE_MAX) title = `【${meta.titleTag}】${dateFull} #Shorts`;
@@ -867,32 +1029,32 @@ export function buildJevCaptions(data) {
     "",
     ...body,
     "",
-    CLAIM_NOTE,
+    series.claimNote,
     "",
     "出典:",
     ...sourceLines(jev, level),
     "",
-    `${JEV_FEATURE_LABEL} の特集です。Jev は TypeSafe AI が 2026年9月に公開した、ソフトウェア向けの新しいAIモデルです。このチャンネルでは毎朝、AI の新しい動きを1分でお届けします。`,
+    series.ytFooter,
     "",
-    JEV_YT_HASHTAGS.join(" "),
+    series.ytHashtags.join(" "),
   ].join("\n"), (t) => Buffer.byteLength(t, "utf-8") <= JEV_YT_DESCRIPTION_MAX_BYTES);
   const instagram = fitting((level) => [
     `${clean(meta.headline)}（${meta.shortDate}）`,
     "",
     ...body,
     "",
-    CLAIM_NOTE,
+    series.claimNote,
     "",
     "出典:",
     ...sourceLines(jev, level),
     "",
-    `${JEV_FEATURE_LABEL} の特集です。毎朝、AI の新しい動きを1分で。保存してあとで見返してください。`,
+    series.igFooter,
     "",
-    JEV_IG_HASHTAGS.join(" "),
+    series.igHashtags.join(" "),
   ].join("\n"), (t) => charLength(t) <= JEV_IG_CAPTION_MAX);
   return {
     date: { full: dateFull, compact: meta.date.replace(/-/g, "") },
-    youtube: { title, titleTemplate: "jev", description, tags: JEV_YT_TAGS, categoryId: "28" },
+    youtube: { title, titleTemplate: series.titleTemplate, description, tags: series.ytTags, categoryId: "28" },
     instagram,
   };
 }
@@ -903,7 +1065,7 @@ export function buildJevCaptions(data) {
 
 const rootDir = join(dirname(fileURLToPath(import.meta.url)), "..");
 
-/** "jev" or "pickup". CONTENT_FORMAT overrides the file (verification runs). */
+/** "news", "jev" or "pickup". CONTENT_FORMAT overrides the file (verification runs). */
 export function readContentFormat(root = rootDir, env = process.env) {
   const fromEnv = env.CONTENT_FORMAT;
   if (fromEnv) {
@@ -919,20 +1081,21 @@ export function readContentFormat(root = rootDir, env = process.env) {
 
 /**
  * 先輩のメイ on the video (src/components/May.tsx): only when the repo variable
- * MAY_CHARACTER is "on" and the video is a Jev episode. Unset / anything else = off,
+ * MAY_CHARACTER is "on" and the video is a slide-card episode (Jev or news). Unset / anything else = off,
  * so a typo can never stop the morning post — it just leaves her out.
  */
 export function mayCharacterOn(meta, env = process.env) {
   return String(env.MAY_CHARACTER || "").trim().toLowerCase() === "on" && meta?.mode === "jev";
 }
 
-export function resolveEpisodesPath(root = rootDir, env = process.env) {
-  const p = env.JEV_EPISODES_PATH || EPISODES_PATH;
+/** JEV_EPISODES_PATH overrides the series' ledger (samples in dry runs, either series). */
+export function resolveEpisodesPath(root = rootDir, env = process.env, series = SERIES.jev) {
+  const p = env.JEV_EPISODES_PATH || series.episodesPath;
   return isAbsolute(p) ? p : join(root, p);
 }
 
 export function loadEpisodes(path) {
-  if (!existsSync(path)) throw new Error(`${path} not found. The morning routine appends today's episode to ${EPISODES_PATH} (docs/routine-prompt-jev.md).`);
+  if (!existsSync(path)) throw new Error(`${path} not found. The morning routine appends today's episode to the ledger of the current format (docs/routine-prompt.md).`);
   const { data, repaired } = parseEnrichedText(readFileSync(path, "utf-8"));
   if (repaired) console.warn("  JSON needed auto-repair (unescaped quotes) — tell the routine to escape them.");
   return data;
@@ -949,12 +1112,12 @@ function median(values) {
   return v.length % 2 ? v[mid] : (v[mid - 1] + v[mid]) / 2;
 }
 
-export function jevPdcaReport(history, { today = todayJst() } = {}) {
-  const videos = (history?.videos || []).filter((v) => v.genre === JEV_GENRE && !v.skip).sort((a, b) => a.date.localeCompare(b.date));
+export function jevPdcaReport(history, { today = todayJst(), series = SERIES.jev } = {}) {
+  const videos = (history?.videos || []).filter((v) => v.genre === series.genre && !v.skip).sort((a, b) => a.date.localeCompare(b.date));
   const followers = (history?.account?.igFollowers || []).slice().sort((a, b) => a.date.localeCompare(b.date));
   const start = videos[0]?.date ?? null;
   const lines = [];
-  lines.push(`## ジャンル試行 #${JEV_TRIAL}（Jev の毎朝ニュース）の状態 — ${today}`);
+  lines.push(`## ジャンル試行 #${series.trial}（${series.name}）の状態 — ${today}`);
   lines.push("");
   if (!start) {
     lines.push("- まだ投稿がありません（初回投稿の日が開始日になります）。終了条件はオーナーの停止指示で、14 日ごとの判定はありません。");
@@ -973,7 +1136,7 @@ export function jevPdcaReport(history, { today = todayJst() } = {}) {
   lines.push("");
   lines.push("| 種類 | 本数 | IG views 中央値 | IG 保存合計 | YT views 中央値 |");
   lines.push("|---|---|---|---|---|");
-  for (const kind of ["intro", "usecase", "news", "explainer"]) {
+  for (const kind of series.kinds) {
     const vs = videos.filter((v) => v.jev?.kind === kind);
     if (vs.length === 0) continue;
     lines.push(`| ${kind} | ${vs.length} | ${median(vs.filter((v) => v.instagram?.views != null).map((v) => v.instagram.views)) ?? "—"} | ${vs.reduce((s, v) => s + (v.instagram?.saved ?? 0), 0)} | ${median(vs.filter((v) => v.stats?.updatedAt).map((v) => v.stats.views ?? 0)) ?? "—"} |`);
@@ -982,7 +1145,7 @@ export function jevPdcaReport(history, { today = todayJst() } = {}) {
   lines.push("| 日付 | 段階-回 | 種類 | 話題 | IG views | IG 保存 | YT views |");
   lines.push("|---|---|---|---|---|---|---|");
   for (const v of videos.slice(-14)) {
-    lines.push(`| ${v.date} | ${v.jev?.stage ?? "?"}-${v.jev?.stageEpisode ?? "?"} | ${v.jev?.kind ?? "?"} | ${v.jev?.topicKey ?? "—"} | ${v.instagram?.views ?? "未取得"} | ${v.instagram?.saved ?? "—"} | ${v.stats?.updatedAt ? v.stats.views ?? 0 : "未取得"} |`);
+    lines.push(`| ${v.date} | ${series.staged ? `${v.jev?.stage ?? "?"}-${v.jev?.stageEpisode ?? "?"}` : "—"} | ${v.jev?.kind ?? "?"} | ${v.jev?.topicKey ?? "—"} | ${v.instagram?.views ?? "未取得"} | ${v.instagram?.saved ?? "—"} | ${v.stats?.updatedAt ? v.stats.views ?? 0 : "未取得"} |`);
   }
   return lines.join("\n");
 }
@@ -1004,12 +1167,13 @@ function chainBefore(episodes, today) {
  * `redoCandidate` is the only date that can be redone (the latest aired entry,
  * when it is unrecorded). The redo slot itself is printed only by aired-check.
  */
-export function seriesState(episodes, history, today) {
+export function seriesState(episodes, history, today, series = SERIES.jev) {
   const { before, chain } = chainBefore(episodes, today);
-  const unrecorded = unrecordedEpisodes(before, history, today).map((e) => ({ date: e.date, topic_key: e.topic_key }));
+  const unrecorded = unrecordedEpisodes(before, history, today, series.genre).map((e) => ({ date: e.date, topic_key: e.topic_key }));
   const latest = chain.at(-1);
-  const redoCandidate = unrecorded.some((u) => u.date === latest?.date) ? latest.date : null;
-  return { ...nextSlot(chain), unrecorded, redoCandidate };
+  // News is never redone (a day-late story is stale), so it has no redo candidate.
+  const redoCandidate = series.staged && unrecorded.some((u) => u.date === latest?.date) ? latest.date : null;
+  return { ...nextSlot(chain, series), unrecorded, redoCandidate };
 }
 
 /**
@@ -1091,14 +1255,26 @@ export function airedCheckSelfTest({ run = ghRun } = {}) {
   }
 }
 
+/** --series=jev|news, else the committed format's series (Jev when the format is pickup). */
+export function cliSeries(argv, root = rootDir, env = process.env) {
+  const flag = argv.find((a) => a.startsWith("--series="));
+  if (flag) {
+    const s = seriesOf(flag.slice("--series=".length));
+    if (!s) throw new Error(`--series must be ${Object.keys(SERIES).join(" / ")}`);
+    return s;
+  }
+  return seriesOf(readContentFormat(root, env)) ?? SERIES.jev;
+}
+
 function cli(argv) {
   const cmd = argv[0] || "validate";
+  const series = cliSeries(argv);
   const fileArg = argv.find((a) => a.startsWith("--file="));
-  const path = fileArg ? fileArg.slice("--file=".length) : resolveEpisodesPath();
+  const path = fileArg ? fileArg.slice("--file=".length) : resolveEpisodesPath(rootDir, process.env, series);
   if (cmd === "pdca") {
     const hp = join(rootDir, "data", "performance-history.json");
     const history = existsSync(hp) ? JSON.parse(readFileSync(hp, "utf-8")) : { videos: [] };
-    console.log(jevPdcaReport(history));
+    console.log(jevPdcaReport(history, { series }));
     return 0;
   }
   const file = loadEpisodes(path);
@@ -1106,8 +1282,13 @@ function cli(argv) {
   if (cmd === "next") {
     const today = todayJst();
     const history = !fileArg && existsSync(hp) ? JSON.parse(readFileSync(hp, "utf-8")) : null;
-    console.log(JSON.stringify({ today, ...seriesState(file.episodes || [], history, today), usecaseTarget: USECASE_TARGET, usecaseMin: USECASE_MIN }, null, 2));
+    const extra = series.staged ? { usecaseTarget: USECASE_TARGET, usecaseMin: USECASE_MIN } : {};
+    console.log(JSON.stringify({ today, series: series.format, ...seriesState(file.episodes || [], history, today, series), ...extra }, null, 2));
     return 0;
+  }
+  if (cmd === "aired-check" && !series.staged) {
+    console.error("aired-check is for the Jev series only: the news series never redoes a day");
+    return 2;
   }
   if (cmd === "aired-check") {
     if (argv.includes("--self-test")) {
@@ -1129,10 +1310,14 @@ function cli(argv) {
   const history = !noDate && !fileArg && existsSync(hp) ? JSON.parse(readFileSync(hp, "utf-8")) : null;
   // Production: a redo_of is re-checked live against that day's posting logs.
   const checkAired = !noDate && !fileArg ? airedCheck : null;
-  const { errors, warnings, episode, slot } = validateEpisodes(file, { pickLatest: noDate, history, checkAired });
+  const { errors, warnings, episode, slot } = validateEpisodes(file, { pickLatest: noDate, history, checkAired, series });
   for (const w of warnings) console.log(`WARN ${w}`);
   for (const e of errors) console.log(`NG ${e}`);
   if (errors.length > 0) return 1;
+  if (!series.staged) {
+    console.log(`OK ${episode.date}: ${series.format} episode ${slot.episode} "${episode.topic_key}"`);
+    return 0;
+  }
   console.log(`OK ${episode.date}: stage ${episode.stage}-${episode.stage_episode} ${episode.kind} "${episode.topic_key}"${slot ? ` (expected stage ${slot.stage})` : ""}`);
   return 0;
 }

@@ -1,0 +1,288 @@
+/** Genre trial #3 "AI ニュース 1 本解説" (format "news"): the Jev slide machinery
+ * with the news series. The sample is fictional (Example AI); tests never write
+ * the production ledger. */
+import { test } from "node:test";
+import assert from "node:assert/strict";
+import { cpSync, existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+import { spawnSync } from "node:child_process";
+import {
+  SERIES,
+  NEWS_CLAIM_NOTE,
+  NEWS_ENDING_NARRATION,
+  NEWS_IG_HASHTAGS,
+  validateEpisodes,
+  nextSlot,
+  toJevVideoData,
+  buildJevCaptions,
+  jevPdcaReport,
+  readContentFormat,
+  seriesState,
+  mayCharacterOn,
+  cliSeries,
+  siteOf,
+  unattributedClaims,
+  FORMATS,
+} from "./jev.mjs";
+import { buildCaptions } from "./generate-caption.mjs";
+import { buildPostEntry } from "./record-upload.mjs";
+import { deliverJev, REPO } from "./deliver-jev.mjs";
+
+const root = join(dirname(fileURLToPath(import.meta.url)), "..");
+const SAMPLE = JSON.parse(readFileSync(join(root, "data/samples/ai-news-episodes.sample.json"), "utf8"));
+const NEWS = SERIES.news;
+const clone = (x) => structuredClone(x);
+const addDays = (date, n) => new Date(Date.parse(`${date}T00:00:00Z`) + n * 86400000).toISOString().slice(0, 10);
+
+/** The sample re-dated to `date`, its sources published that day, re-keyed by `key`. */
+function episode(date, key = `story${date.replaceAll("-", "")}-item-news`, overrides = {}) {
+  const ep = clone(SAMPLE.episodes[0]);
+  ep.date = date;
+  ep.topic_key = key;
+  ep.headline = `今日のAIの話 ${date.slice(5)}`;
+  ep.sources = ep.sources.map((s) => ({ ...s, url: `${s.url}-${key}`, published_at: date }));
+  return { ...ep, ...overrides };
+}
+const check = (episodes, opts = {}) => validateEpisodes({ episodes }, { date: episodes.at(-1).date, today: episodes.at(-1).date, series: NEWS, ...opts });
+const errorsOf = (episodes, opts) => check(episodes, opts).errors.join("\n");
+
+test("news: the sample validates; the committed switch is news and the ledger starts valid", () => {
+  const r = validateEpisodes(SAMPLE, { pickLatest: true, series: NEWS });
+  assert.deepEqual(r.errors, []);
+  assert.deepEqual(r.warnings, []);
+  // The switch may be flipped back to jev / pickup (docs/news-format.md §4) without breaking this test.
+  assert.ok(FORMATS.includes(readContentFormat(root, {})));
+  assert.equal(readContentFormat(root, { CONTENT_FORMAT: "news" }), "news");
+  const ledger = JSON.parse(readFileSync(join(root, "data/ai-news-episodes.json"), "utf8"));
+  assert.ok(Array.isArray(ledger.episodes));
+  assert.equal(cliSeries([], root, { CONTENT_FORMAT: "news" }), NEWS);
+  assert.equal(cliSeries([], root, { CONTENT_FORMAT: "pickup" }), SERIES.jev);
+  assert.equal(cliSeries(["--series=jev"], root, {}), SERIES.jev);
+  assert.throws(() => cliSeries(["--series=pickup"], root, {}));
+});
+
+test("news: no stages — every day is the next news episode; no redo candidate", () => {
+  assert.deepEqual(nextSlot([], NEWS), { episode: 1, kinds: ["news"] });
+  assert.equal(nextSlot([episode("2026-10-14"), episode("2026-10-15")], NEWS).episode, 3);
+  const state = seriesState([episode("2026-10-14")], { videos: [] }, "2026-10-15", NEWS);
+  assert.equal(state.redoCandidate, null);
+  assert.equal(state.unrecorded.length, 1);
+  assert.match(errorsOf([episode("2026-10-14", "acme-alpha-news", { kind: "explainer" })]), /kind: must be "news"/);
+  assert.match(errorsOf([episode("2026-10-14"), episode("2026-10-15", "acme-beta-news", { redo_of: "2026-10-14" })]), /does not redo/);
+});
+
+test("news: the same story never airs twice (topic_key, the carrying source, the headline)", () => {
+  const first = episode("2026-10-14", "openai-model-launch");
+  assert.match(errorsOf([first, episode("2026-10-15", "openai-model-launch")]), /topic_key "openai-model-launch" was already used/);
+  const sameSource = episode("2026-10-15", "otherco-other-news");
+  sameSource.sources[0].url = `${first.sources[0].url}/?utm_source=x`; // same page, tracking query
+  assert.match(errorsOf([first, sameSource]), /already carried the 2026-10-14 episode/);
+  assert.match(errorsOf([first, episode("2026-10-15", "kco-two-news", { headline: first.headline })]), /headline is the same as 2026-10-14/);
+  // No page comes back in any role: yesterday's announcement as today's "reference" is the same story.
+  const reuseRef = episode("2026-10-15", "kco-three-news");
+  reuseRef.sources[1].url = first.sources[0].url;
+  assert.match(errorsOf([first, reuseRef]), /was already cited on 2026-10-14/);
+  const fromHistory = episode("2026-10-15", "kco-four-news");
+  const history = { videos: [{ date: "2026-10-14", genre: "ai-news", jev: { kind: "news", topicKey: "openai-model-launch", sources: [{ url: fromHistory.sources[1].url, role: "reference" }] } }] };
+  assert.match(errorsOf([first, fromHistory], { history }), /was already posted on 2026-10-14/);
+});
+
+test("news: a posted story missing from the ledger, or posted again, is caught from the history", () => {
+  const ep = episode("2026-10-15", "sameco-same-news");
+  const history = { videos: [{ date: "2026-10-14", genre: "ai-news", jev: { kind: "news", topicKey: "sameco-same-news", sources: [] } }] };
+  const errors = errorsOf([ep], { history });
+  assert.match(errors, /was posted but is missing or changed in data\/ai-news-episodes\.json/);
+  assert.match(errors, /topic_key "sameco-same-news" was already posted on 2026-10-14/);
+});
+
+test("news: fresh (within 3 days), confirmed on two sites, never carried by a GitHub repository", () => {
+  const stale = episode("2026-10-14");
+  stale.sources[0].published_at = "2026-10-10";
+  assert.match(errorsOf([stale]), /no news source published on\/after 2026-10-11/);
+  const edge = episode("2026-10-14");
+  edge.sources[0].published_at = "2026-10-11";
+  assert.equal(errorsOf([edge]), "");
+  const single = episode("2026-10-14");
+  single.sources = [single.sources[0]];
+  single.research.checked = [single.sources[0].url];
+  assert.match(errorsOf([single]), /second site/);
+  const repo = episode("2026-10-14");
+  repo.sources[0].url = "https://github.com/example/minutes";
+  assert.match(errorsOf([repo]), /AI Trend Daily covers GitHub/);
+  for (const url of ["https://example.github.io/minutes/", "https://raw.githubusercontent.com/example/minutes/main/README.md", "https://gist.github.com/example/1"]) {
+    const r = episode("2026-10-14");
+    r.sources[0].url = url;
+    assert.match(errorsOf([r]), /AI Trend Daily covers GitHub/, url);
+  }
+  const repoAsReference = episode("2026-10-14");
+  repoAsReference.sources.push({ ...repoAsReference.sources[1], url: "https://github.com/example/minutes" });
+  assert.equal(errorsOf([repoAsReference]), "");
+  // A GitHub page or a subdomain of the same site is not the second site.
+  const githubSecond = episode("2026-10-14");
+  githubSecond.sources[1].url = "https://github.com/example/minutes";
+  assert.match(errorsOf([githubSecond]), /second site/);
+  const sameSite = episode("2026-10-14");
+  sameSite.sources[1].url = "https://help.example.com/minutes";
+  assert.match(errorsOf([sameSite]), /second site/);
+  assert.equal(siteOf("www.itmedia.co.jp"), "itmedia.co.jp");
+  assert.equal(siteOf("help.openai.com"), "openai.com");
+  const usecaseRole = episode("2026-10-14");
+  usecaseRole.sources[1].role = "usecase";
+  assert.match(errorsOf([usecaseRole]), /role "usecase" belongs to usecase episodes/);
+});
+
+test("news: claims name who says so; money is yen only; Jev's genre is not this series", () => {
+  const bare = episode("2026-10-14");
+  bare.slides[1].narration = "使い方は、録音を入れて要点を選ぶだけ。手で書くより10倍速いそうです。";
+  assert.match(errorsOf([bare]), /claim without its source .*OpenAI によると/);
+  // The usual claims of AI news need a name too; "Meta社によると" names one.
+  for (const claim of ["GPT-6はGPT-5を上回る性能です。", "最高水準の性能を記録しました。", "ベンチマークで1位になりました。", "業界No.1の速さです。"]) {
+    const e = episode("2026-10-14");
+    e.slides[0].narration = `Example AI が新しいモデルを公開しました。${claim}`;
+    assert.match(errorsOf([e]), /claim without its source/, claim);
+  }
+  const named = episode("2026-10-14");
+  named.slides[0].narration = "Example AI が新しいモデルを公開しました。Meta社によると、前のモデルを上回る性能です。";
+  assert.equal(errorsOf([named]), "");
+  assert.equal(unattributedClaims("数学的な問題が得意なモデルです。").length, 0);
+  const dollars = episode("2026-10-14");
+  dollars.slides[2].narration = "料金は、月に5時間までなら無料です。それより多く使う人向けに、月額10ドルのプランがあります。";
+  assert.match(errorsOf([dollars]), /no dollar amounts/);
+  const onScreen = episode("2026-10-14");
+  delete onScreen.slides[1].claim_source;
+  onScreen.slides[1].body = "録音を入れて要点を選ぶだけで、手書きの10倍速く仕上がります。";
+  assert.match(errorsOf([onScreen]), /set claim_source \(e\.g\. "OpenAI の発表"/);
+  assert.match(errorsOf([episode("2026-10-14", "kco-one-news", { genre: "jev-news", trial: 2 })]), /genre: must be "ai-news"[\s\S]*trial: must be 3/);
+});
+
+test("news: video data keeps the diagram, falls back to text without one, and says nothing about Jev", () => {
+  const data = toJevVideoData(SAMPLE.episodes[0], { series: NEWS });
+  assert.equal(data.meta.mode, "jev"); // the slide card layout
+  assert.equal(data.meta.genre, "ai-news");
+  assert.equal(data.meta.trial, 3);
+  assert.equal(data.meta.bigLabel, "NEWS");
+  assert.equal(data.meta.openingSourceLabel, "今日のAIニュース");
+  assert.equal(data.meta.titleTag, "今日のAIニュース");
+  assert.deepEqual(data.tools.map((t) => t.diagram?.type ?? null), ["flow", "steps", "compare", null]);
+  assert.equal(data.tools[3].body, SAMPLE.episodes[0].slides[3].body); // no diagram → heading + body card
+  assert.equal(data.tools[1].claimSource, "Example AI の発表");
+  assert.equal(data.endingNarration, NEWS_ENDING_NARRATION);
+  assert.ok(Array.from(NEWS_ENDING_NARRATION).length <= 40);
+  assert.doesNotMatch(JSON.stringify(data), /Jev|TypeSafe|特集/);
+  assert.equal(mayCharacterOn(data.meta, { MAY_CHARACTER: "on" }), true);
+  // A broken diagram is dropped, never fatal.
+  const broken = clone(SAMPLE.episodes[0]);
+  broken.slides[0].diagram = { type: "flow", items: [{ label: "1つだけ" }] };
+  const r = validateEpisodes({ episodes: [broken] }, { pickLatest: true, series: NEWS });
+  assert.deepEqual(r.errors, []);
+  assert.match(r.warnings.join("\n"), /falls back to heading \+ body/);
+  assert.equal(toJevVideoData(broken, { series: NEWS }).tools[0].diagram, null);
+});
+
+test("news: captions carry the news title tag, the yen note and the sources — no Jev hashtags", () => {
+  const data = toJevVideoData(SAMPLE.episodes[0], { series: NEWS });
+  const c = buildCaptions(data);
+  assert.deepEqual(c, buildJevCaptions(data));
+  assert.match(c.youtube.title, /^【今日のAIニュース】会議を自動で議事録にするAI｜2026\/10\/14 #Shorts$/);
+  assert.equal(c.youtube.titleTemplate, "ai-news");
+  assert.match(NEWS_CLAIM_NOTE, /円の金額は概算です/);
+  for (const text of [c.youtube.description, c.instagram]) {
+    assert.ok(text.includes(NEWS_CLAIM_NOTE));
+    assert.match(text, /Example AI（2026-10-13）https:\/\/example\.com\/blog\/introducing-minutes/);
+    assert.doesNotMatch(text, /Jev|TypeSafe|特集/);
+  }
+  assert.ok(c.instagram.endsWith(NEWS_IG_HASHTAGS.join(" ")));
+  assert.ok(NEWS_IG_HASHTAGS.length <= 5);
+  assert.doesNotMatch(c.youtube.tags.join(" "), /Jev|TypeSafe/);
+});
+
+test("news: the history entry and the PDCA numbers use the news genre", () => {
+  const data = toJevVideoData(SAMPLE.episodes[0], { series: NEWS });
+  const entry = buildPostEntry({ date: "2026-10-14", trendingData: data, captions: buildCaptions(data) });
+  assert.equal(entry.genre, "ai-news");
+  assert.equal(entry.trial, 3);
+  assert.equal(entry.jev.topicKey, SAMPLE.episodes[0].topic_key);
+  assert.equal(entry.titleTemplate, "ai-news");
+  const history = { videos: [{ ...entry, instagram: { views: 30, saved: 2 } }, { date: "2026-10-12", genre: "jev-news", jev: { kind: "usecase" }, instagram: { views: 999, saved: 9 } }] };
+  const report = jevPdcaReport(history, { today: "2026-10-15", series: NEWS });
+  assert.match(report, /ジャンル試行 #3（AI ニュース 1 本解説）/);
+  assert.match(report, /IG views 中央値 30（n=1）\/ IG 保存合計 2/);
+  assert.match(report, /\| news \| 1 \| 30 \| 2 \|/);
+  assert.match(report, /\| 2026-10-14 \| — \| news \|/);
+});
+
+test("news: delivery reads and allows only the news ledger", () => {
+  const head = "b".repeat(40);
+  const date = "2026-10-14";
+  const expected = clone(SAMPLE);
+  const info = { state: "closed", merged: true, mergeable: true, changed_files: 2, head: { sha: head, ref: `routine-content-${date}`, repo: { full_name: REPO } }, base: { ref: "main", repo: { full_name: REPO } } };
+  const run = (files) => (args) => {
+    if (args[1].endsWith("pulls/9")) return JSON.stringify(info);
+    if (args[1].endsWith("/files?per_page=100")) return JSON.stringify(files);
+    if (args[1].endsWith("contents/data/ai-news-episodes.json?ref=main")) return JSON.stringify({ encoding: "base64", content: Buffer.from(JSON.stringify(expected)).toString("base64") });
+    assert.fail(`Unexpected gh request: ${args}`);
+  };
+  const base = { expected, pr: 9, head, now: () => new Date(`${date}T00:00:00Z`), log: () => {}, series: NEWS };
+  const ok = deliverJev({ ...base, run: run([{ filename: "data/ai-news-episodes.json" }, { filename: `docs/pdca/${date}.md` }]) });
+  assert.equal(ok.delivered, true);
+  assert.throws(() => deliverJev({ ...base, run: run([{ filename: "data/jev-episodes.json" }, { filename: `docs/pdca/${date}.md` }]) }), /must change only data\/ai-news-episodes\.json/);
+});
+
+test("news: Step 1 (generate-data) renders today's news episode from the news ledger", () => {
+  const dir = mkdtempSync(join(tmpdir(), "news-step1-"));
+  try {
+    cpSync(join(root, "scripts"), join(dir, "scripts"), { recursive: true, filter: (p) => !p.endsWith(".test.mjs") });
+    mkdirSync(join(dir, "data"));
+    writeFileSync(join(dir, "data/content-format.json"), JSON.stringify({ format: "news" }));
+    const today = "2026-10-14";
+    writeFileSync(join(dir, "data/ai-news-episodes.json"), JSON.stringify({ episodes: [episode(addDays(today, -1), "yco-yesterday-news"), episode(today)] }));
+    writeFileSync(join(dir, "data/performance-history.json"), JSON.stringify({ videos: [] }));
+    const clock = join(dir, "clock.mjs");
+    const instant = `${today}T00:00:00Z`;
+    writeFileSync(clock, `const D = Date; globalThis.Date = class extends D { constructor(...a) { super(...(a.length ? a : [${JSON.stringify(instant)}])); } static now() { return new D(${JSON.stringify(instant)}).getTime(); } };`);
+    const r = spawnSync(process.execPath, ["--import", clock, join(dir, "scripts/generate-data.mjs")], {
+      cwd: dir, encoding: "utf8", timeout: 10_000, env: { PATH: dirname(process.execPath), TZ: "UTC", SNS_POST_ENABLED: "false" },
+    });
+    assert.equal(r.status, 0, r.stderr);
+    const out = join(dir, "output/trending-data.json");
+    assert.ok(existsSync(out));
+    const data = JSON.parse(readFileSync(out, "utf8"));
+    assert.equal(data.meta.date, today);
+    assert.equal(data.meta.genre, "ai-news");
+    assert.match(r.stdout, /news 2026-10-14: news "story20261014-item-news"/);
+  } finally {
+    rmSync(dir, { force: true, recursive: true });
+  }
+});
+
+test("news: the same story in new words (another outlet, slug, headline) within 7 days is caught; a named follow-up passes", () => {
+  const first = episode("2026-10-14", "exampleai-minutes-launch");
+  const reworded = episode("2026-10-16", "exampleai-minutes-japan", { headline: "議事録AIが日本でも話題に" });
+  assert.match(errorsOf([first, reworded]), /same story as 2026-10-14 \("exampleai-minutes-launch"\)/);
+  const followUp = episode("2026-10-16", "exampleai-minutes-price", { follow_up_of: "2026-10-14" });
+  followUp.research.new_fact = "日本語版が公開され、月額の料金が発表されました。";
+  assert.equal(errorsOf([first, followUp]), "");
+  const noFact = episode("2026-10-16", "exampleai-minutes-price", { follow_up_of: "2026-10-14" });
+  assert.match(errorsOf([first, noFact]), /research\.new_fact: required — a follow-up states/);
+  const wrongStory = episode("2026-10-16", "otherco-model-launch", { follow_up_of: "2026-10-14" });
+  wrongStory.research.new_fact = "別の会社の新しいモデルが公開されました。";
+  assert.match(errorsOf([first, wrongStory]), /is another story/);
+  assert.match(errorsOf([first, episode("2026-10-16", "exampleai-minutes-x", { follow_up_of: "2026-10-01" })]), /no earlier episode dated "2026-10-01"/);
+  // After 7 days the same company-product is a new story.
+  assert.equal(errorsOf([first, episode("2026-10-22", "exampleai-minutes-update")]), "");
+  assert.match(errorsOf([episode("2026-10-14", "exampleai-launch")]), /3\+ parts/);
+});
+
+test("news: one source must be independent; the general AI claim words need a name; Jev keeps 数学的な保証 as a claim", () => {
+  const ownOnly = episode("2026-10-14");
+  ownOnly.sources[1].official = true;
+  assert.match(errorsOf([ownOnly]), /independent outlet \(official: false\)/);
+  for (const claim of ["世界初のモデルです。", "人間並みの精度で答えます。", "博士レベルの問題を解けます。", "前のモデルを超える性能です。", "前のモデルより高性能です。", "史上最大の学習量です。"]) {
+    assert.equal(unattributedClaims(claim).length, 1, claim);
+    assert.equal(unattributedClaims(`ロイター通信によると、${claim}`).length, 0, claim);
+  }
+  assert.equal(unattributedClaims("数学的な保証で間違いを防ぎます。").length, 1);
+  assert.equal(unattributedClaims("数学的な問題が得意なモデルです。").length, 0);
+});

@@ -12,7 +12,7 @@
 import { readFileSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
-import { readContentFormat, resolveEpisodesPath } from "./jev.mjs";
+import { readContentFormat, seriesOf, resolveEpisodesPath } from "./jev.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -26,10 +26,11 @@ export function assertDataDate(tag, dataDate) {
 const entry = process.argv[1] && import.meta.url.endsWith(process.argv[1].split("/").pop() ?? "");
 if (entry) {
   let dataDate = null;
-  // Genre trial #2: generate-data.mjs renders the ledger's episode for today,
-  // so the latest episode is what the captions would describe.
-  const jev = readContentFormat(root) === "jev";
-  const dataPath = jev ? resolveEpisodesPath(root) : join(root, "data/enriched-ai-tools.json");
+  // Ledger formats (news / jev): generate-data.mjs renders the ledger's episode
+  // for today, so the latest episode is what the captions would describe.
+  const series = seriesOf(readContentFormat(root));
+  const jev = Boolean(series);
+  const dataPath = jev ? resolveEpisodesPath(root, process.env, series) : join(root, "data/enriched-ai-tools.json");
   try {
     const data = JSON.parse(readFileSync(dataPath, "utf-8"));
     dataDate = jev ? data.episodes?.at(-1)?.date : data.date;

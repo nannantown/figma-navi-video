@@ -11,8 +11,9 @@
     "dry-run": "CONTENT_FORMAT=pickup DRY_RUN=1 ENRICHED_PATH=data/samples/enriched-ai-tools.pickup.sample.json PH_SNAPSHOT_PATH=data/samples/product-hunt-daily.pickup.sample.json ALLOW_STALE_DATE=1 node scripts/pipeline.mjs",
     "dry-run:ranking": "CONTENT_FORMAT=pickup DRY_RUN=1 PH_ALLOW_RANKING=1 ENRICHED_PATH=data/samples/enriched-ai-tools.sample.json PH_SNAPSHOT_PATH=data/samples/product-hunt-daily.sample.json ALLOW_STALE_DATE=1 node scripts/pipeline.mjs",
     "dry-run:skip": "CONTENT_FORMAT=pickup DRY_RUN=1 ENRICHED_PATH=data/samples/enriched-ai-tools.skip.sample.json PH_SNAPSHOT_PATH=data/samples/product-hunt-daily.skip.sample.json ALLOW_STALE_DATE=1 node scripts/pipeline.mjs",
-    "dry-run:jev-intro": "DRY_RUN=1 JEV_EPISODES_PATH=data/samples/jev-episodes.intro.sample.json ALLOW_STALE_DATE=1 node scripts/pipeline.mjs",
-    "dry-run:jev-usecase": "DRY_RUN=1 JEV_EPISODES_PATH=data/samples/jev-episodes.usecase.sample.json ALLOW_STALE_DATE=1 node scripts/pipeline.mjs",
+    "dry-run:news": "CONTENT_FORMAT=news DRY_RUN=1 JEV_EPISODES_PATH=data/samples/ai-news-episodes.sample.json ALLOW_STALE_DATE=1 node scripts/pipeline.mjs",
+    "dry-run:jev-intro": "CONTENT_FORMAT=jev DRY_RUN=1 JEV_EPISODES_PATH=data/samples/jev-episodes.intro.sample.json ALLOW_STALE_DATE=1 node scripts/pipeline.mjs",
+    "dry-run:jev-usecase": "CONTENT_FORMAT=jev DRY_RUN=1 JEV_EPISODES_PATH=data/samples/jev-episodes.usecase.sample.json ALLOW_STALE_DATE=1 node scripts/pipeline.mjs",
     "fetch-ph": "node scripts/fetch-product-hunt.mjs",
     "validate": "node scripts/validate-enriched.mjs",
     "pdca": "node scripts/pdca-summary.mjs",
@@ -21,7 +22,8 @@
     "fetch-stats": "node scripts/fetch-stats.mjs",
     "typecheck": "tsc --noEmit",
     "test": "node --test \"scripts/*.test.mjs\"",
-    "validate:jev": "node scripts/jev.mjs validate"
+    "validate:jev": "node scripts/jev.mjs validate --series=jev",
+    "validate:news": "node scripts/jev.mjs validate --series=news"
   },
   "keywords": [],
   "author": "",
