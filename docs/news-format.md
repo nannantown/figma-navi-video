@@ -33,6 +33,9 @@ Jev 特集の仕組み（`scripts/jev.mjs`）に「シリーズ」を 1 つ足�
 
 - **出どころ**: 主な AI 企業の公式発表（OpenAI、Anthropic、Google / Google DeepMind、Meta、Microsoft、Apple、Amazon、NVIDIA、Mistral AI、xAI、日本の会社）と、無料で読めるテック媒体（Reuters、The Verge、TechCrunch、Ars Technica、Engadget、ITmedia、Impress Watch など）。WebSearch で直近 2 日を見る。有料 API・有料記事・ログインが要るページは使わない
 - **いちばん大きい = 次の順で重い**: ①新しい（主役の出典が 3 日以内。48 時間以内を優先）②影響が大きい（一般の人が使う AI、仕事・暮らしが変わる話、日本で使える話）③複数の大手が報じている ④1 分で順を追って説明できる
+- **AI Trend Daily と重ねない確認**: 毎朝、公開ファイル https://raw.githubusercontent.com/nannantown/github-trending-video/main/data/performance-history.json の直近 7 日の `projects`（紹介した GitHub のリポジトリ）を読み、そのリポジトリが主題の話は選ばない。加えて GitHub のページは主役の出典にできない（検証）
+- **いちばん大きい話が使用済み**なら次に大きい新しい話を選ぶ（小さい話でも投稿しないよりよい。日付の条件は緩めない）
+- **書き方**: 要点は自分の言葉で。記事の文を訳して写さない。引用は短く「」で、誰の言葉かを添える
 - **選ばない**: GitHub のリポジトリ・GitHub トレンドの話題（AI Trend Daily と重なる）、噂・リーク・未発表、株価・投資額だけの話、有料記事でしか読めない話、これまでの回と同じ出来事
 - **事実確認**: 主役の出典（`role: "news"`）は会社の公式発表かそれを最初に報じた記事。もう 1 つ別のサイトで同じ事実を確かめる。数字・日付・料金は出典に書いてあるものだけ。会社の主張（倍率・最速・精度など）は「〇〇によると」と名指しで書く
 
@@ -48,7 +51,7 @@ Jev 特集の仕組み（`scripts/jev.mjs`）に「シリーズ」を 1 つ足�
       "genre": "ai-news",
       "trial": 3,
       "kind": "news",
-      "topic_key": "openai-gpt-6-release",
+      "topic_key": "openai-gpt6-release",
       "topic": "OpenAI が新しいモデルを公開",
       "headline": "6〜24 字の見出し",
       "hook": "8〜40 字の冒頭の一言",
@@ -69,13 +72,14 @@ Jev 特集の仕組み（`scripts/jev.mjs`）に「シリーズ」を 1 つ足�
 | フィールド | ルール（検証 `node scripts/jev.mjs validate` で機械的に確かめる） |
 |---|---|
 | `date` / `genre` / `trial` / `kind` | 今日（JST）/ `"ai-news"` / `3` / `"news"`。`stage`・`stage_episode` は無い。日付は昇順で 1 日 1 回 |
-| `topic_key` | 英小文字とハイフン（`会社-中身-出来事`）。**シリーズ全体で 1 回だけ**（投稿の記録にあるキーも不可） |
+| `topic_key` | 英小文字とハイフン（`会社-中身-出来事` の 3 区切り以上、`会社`・`中身` はハイフンなしの 1 語。例 `openai-gpt6-release`）。**シリーズ全体で 1 回だけ**（投稿の記録にあるキーも不可）。**先頭 2 区切り（`会社-中身`）が直近 7 日の回と同じなら同じ話として NG**（別の媒体・別の slug・言い換えた見出しで同じ話を出さないため） |
+| `follow_up_of`（続報だけ） | 直近 7 日の同じ `会社-中身` の回の日付。`research.new_fact`（前の回に無い新しい事実を 1 文、8〜120 字）とセットで必須。先頭 2 区切りが違う回は指せない |
 | `headline` | 6〜24 字。過去回と同じ見出しは不可。主張（倍率・最速など）は入れない |
 | `hook` | 8〜40 字。冒頭のナレーション。主張があれば名指し |
 | `slides` | 3〜4 枚、順を追って（何が起きた → どう動く → いつ・いくら・誰が → 注意）。`heading` 4〜18 字 / `body` 8〜64 字 / `narration` 30〜95 字（合計 300 字以内 = 60 秒未満） |
 | `diagram` | Jev と同じ（`steps` / `flow` / `compare`、文字数の上限、主張には `claim_source`）。**図が無い・壊れたスライドは従来の見出し＋本文で描く**（警告だけ、投稿は止まらない） |
-| `claim_source` | 画面の文字に主張があるスライドに必須（例「OpenAI の発表」）。主張として数える言い回しは Jev の分（倍率・最速・精度◯%・「間違えない」など）に、一般ニュースでよく出る「〇〇を上回る」「最高水準」「1位」「首位」「No.1」「SOTA」を足したもの。ナレーションでは同じ文に「OpenAI によると」「Meta社によると」と名指しする |
-| `sources` | 1〜8 件・**2 サイト以上**（同じサイトのサブドメインと GitHub は 1 つに数えない）。`role: "news"` が 1 件以上で、その公開日が**今日から 3 日以内**。**出典の URL はどの役割でもシリーズ全体で 1 回だけ**（過去の回の台帳と投稿記録の両方と照合。www・追跡用クエリ・`#`・末尾 `/` の違いは同じ URL）。**GitHub（github.com・github.io・githubusercontent.com）は `news` にできない**（AI Trend Daily と重ねない。`reference` なら可）。`role: "usecase"` は使わない。`official` は true / false（その会社自身の発表なら true） |
+| `claim_source` | 画面の文字に主張があるスライドに必須（例「OpenAI の発表」）。主張として数える言い回しは Jev の分（倍率・最速・精度◯%・「間違えない」など）に、一般ニュースでよく出る「〇〇を上回る」「〜を超える性能」「〜より高性能」「最高水準」「世界初」「業界初」「史上最〜」「最大級」「最強」「人間並み」「博士レベル」「1位」「首位」「No.1」「SOTA」を足したもの（Jev 側の「数学的」は「数学的な保証」「数学的に正しい」などの形だけ）。ナレーションでは同じ文に「OpenAI によると」「Meta社によると」と名指しする |
+| `sources` | 1〜8 件・**2 サイト以上**（同じサイトのサブドメインと GitHub は 1 つに数えない）・**`official: false`（独立した媒体）が 1 件以上**。開けないページ（有料の壁・ログイン）は使わない。`role: "news"` が 1 件以上で、その公開日が**今日から 3 日以内**。**出典の URL はどの役割でもシリーズ全体で 1 回だけ**（過去の回の台帳と投稿記録の両方と照合。www・追跡用クエリ・`#`・末尾 `/` の違いは同じ URL）。**GitHub（github.com・github.io・githubusercontent.com）は `news` にできない**（AI Trend Daily と重ねない。`reference` なら可）。`role: "usecase"` は使わない。`official` は true / false（その会社自身の発表なら true） |
 | `research.checked` | その日に見た URL（1〜30 件。円の換算に使った為替のページも） |
 | `redo_of` | **使えない**（1 日遅れのニュースは古い。前日が出なかった日も今日のニュースを書く） |
 

@@ -37,7 +37,7 @@ const clone = (x) => structuredClone(x);
 const addDays = (date, n) => new Date(Date.parse(`${date}T00:00:00Z`) + n * 86400000).toISOString().slice(0, 10);
 
 /** The sample re-dated to `date`, its sources published that day, re-keyed by `key`. */
-function episode(date, key = `news-story-${date}`, overrides = {}) {
+function episode(date, key = `story${date.replaceAll("-", "")}-item-news`, overrides = {}) {
   const ep = clone(SAMPLE.episodes[0]);
   ep.date = date;
   ep.topic_key = key;
@@ -69,32 +69,32 @@ test("news: no stages — every day is the next news episode; no redo candidate"
   const state = seriesState([episode("2026-10-14")], { videos: [] }, "2026-10-15", NEWS);
   assert.equal(state.redoCandidate, null);
   assert.equal(state.unrecorded.length, 1);
-  assert.match(errorsOf([episode("2026-10-14", "a", { kind: "explainer" })]), /kind: must be "news"/);
-  assert.match(errorsOf([episode("2026-10-14"), episode("2026-10-15", "b", { redo_of: "2026-10-14" })]), /does not redo/);
+  assert.match(errorsOf([episode("2026-10-14", "acme-alpha-news", { kind: "explainer" })]), /kind: must be "news"/);
+  assert.match(errorsOf([episode("2026-10-14"), episode("2026-10-15", "acme-beta-news", { redo_of: "2026-10-14" })]), /does not redo/);
 });
 
 test("news: the same story never airs twice (topic_key, the carrying source, the headline)", () => {
   const first = episode("2026-10-14", "openai-model-launch");
   assert.match(errorsOf([first, episode("2026-10-15", "openai-model-launch")]), /topic_key "openai-model-launch" was already used/);
-  const sameSource = episode("2026-10-15", "other-key");
+  const sameSource = episode("2026-10-15", "otherco-other-news");
   sameSource.sources[0].url = `${first.sources[0].url}/?utm_source=x`; // same page, tracking query
   assert.match(errorsOf([first, sameSource]), /already carried the 2026-10-14 episode/);
-  assert.match(errorsOf([first, episode("2026-10-15", "k2", { headline: first.headline })]), /headline is the same as 2026-10-14/);
+  assert.match(errorsOf([first, episode("2026-10-15", "kco-two-news", { headline: first.headline })]), /headline is the same as 2026-10-14/);
   // No page comes back in any role: yesterday's announcement as today's "reference" is the same story.
-  const reuseRef = episode("2026-10-15", "k3");
+  const reuseRef = episode("2026-10-15", "kco-three-news");
   reuseRef.sources[1].url = first.sources[0].url;
   assert.match(errorsOf([first, reuseRef]), /was already cited on 2026-10-14/);
-  const fromHistory = episode("2026-10-15", "k4");
+  const fromHistory = episode("2026-10-15", "kco-four-news");
   const history = { videos: [{ date: "2026-10-14", genre: "ai-news", jev: { kind: "news", topicKey: "openai-model-launch", sources: [{ url: fromHistory.sources[1].url, role: "reference" }] } }] };
   assert.match(errorsOf([first, fromHistory], { history }), /was already posted on 2026-10-14/);
 });
 
 test("news: a posted story missing from the ledger, or posted again, is caught from the history", () => {
-  const ep = episode("2026-10-15", "same-key");
-  const history = { videos: [{ date: "2026-10-14", genre: "ai-news", jev: { kind: "news", topicKey: "same-key", sources: [] } }] };
+  const ep = episode("2026-10-15", "sameco-same-news");
+  const history = { videos: [{ date: "2026-10-14", genre: "ai-news", jev: { kind: "news", topicKey: "sameco-same-news", sources: [] } }] };
   const errors = errorsOf([ep], { history });
   assert.match(errors, /was posted but is missing or changed in data\/ai-news-episodes\.json/);
-  assert.match(errors, /topic_key "same-key" was already posted on 2026-10-14/);
+  assert.match(errors, /topic_key "sameco-same-news" was already posted on 2026-10-14/);
 });
 
 test("news: fresh (within 3 days), confirmed on two sites, never carried by a GitHub repository", () => {
@@ -154,7 +154,7 @@ test("news: claims name who says so; money is yen only; Jev's genre is not this 
   delete onScreen.slides[1].claim_source;
   onScreen.slides[1].body = "録音を入れて要点を選ぶだけで、手書きの10倍速く仕上がります。";
   assert.match(errorsOf([onScreen]), /set claim_source \(e\.g\. "OpenAI の発表"/);
-  assert.match(errorsOf([episode("2026-10-14", "k", { genre: "jev-news", trial: 2 })]), /genre: must be "ai-news"[\s\S]*trial: must be 3/);
+  assert.match(errorsOf([episode("2026-10-14", "kco-one-news", { genre: "jev-news", trial: 2 })]), /genre: must be "ai-news"[\s\S]*trial: must be 3/);
 });
 
 test("news: video data keeps the diagram, falls back to text without one, and says nothing about Jev", () => {
@@ -237,7 +237,7 @@ test("news: Step 1 (generate-data) renders today's news episode from the news le
     mkdirSync(join(dir, "data"));
     writeFileSync(join(dir, "data/content-format.json"), JSON.stringify({ format: "news" }));
     const today = "2026-10-14";
-    writeFileSync(join(dir, "data/ai-news-episodes.json"), JSON.stringify({ episodes: [episode(addDays(today, -1), "yesterday"), episode(today)] }));
+    writeFileSync(join(dir, "data/ai-news-episodes.json"), JSON.stringify({ episodes: [episode(addDays(today, -1), "yco-yesterday-news"), episode(today)] }));
     writeFileSync(join(dir, "data/performance-history.json"), JSON.stringify({ videos: [] }));
     const clock = join(dir, "clock.mjs");
     const instant = `${today}T00:00:00Z`;
@@ -251,8 +251,38 @@ test("news: Step 1 (generate-data) renders today's news episode from the news le
     const data = JSON.parse(readFileSync(out, "utf8"));
     assert.equal(data.meta.date, today);
     assert.equal(data.meta.genre, "ai-news");
-    assert.match(r.stdout, /news 2026-10-14: news "news-story-2026-10-14"/);
+    assert.match(r.stdout, /news 2026-10-14: news "story20261014-item-news"/);
   } finally {
     rmSync(dir, { force: true, recursive: true });
   }
+});
+
+test("news: the same story in new words (another outlet, slug, headline) within 7 days is caught; a named follow-up passes", () => {
+  const first = episode("2026-10-14", "exampleai-minutes-launch");
+  const reworded = episode("2026-10-16", "exampleai-minutes-japan", { headline: "議事録AIが日本でも話題に" });
+  assert.match(errorsOf([first, reworded]), /same story as 2026-10-14 \("exampleai-minutes-launch"\)/);
+  const followUp = episode("2026-10-16", "exampleai-minutes-price", { follow_up_of: "2026-10-14" });
+  followUp.research.new_fact = "日本語版が公開され、月額の料金が発表されました。";
+  assert.equal(errorsOf([first, followUp]), "");
+  const noFact = episode("2026-10-16", "exampleai-minutes-price", { follow_up_of: "2026-10-14" });
+  assert.match(errorsOf([first, noFact]), /research\.new_fact: required — a follow-up states/);
+  const wrongStory = episode("2026-10-16", "otherco-model-launch", { follow_up_of: "2026-10-14" });
+  wrongStory.research.new_fact = "別の会社の新しいモデルが公開されました。";
+  assert.match(errorsOf([first, wrongStory]), /is another story/);
+  assert.match(errorsOf([first, episode("2026-10-16", "exampleai-minutes-x", { follow_up_of: "2026-10-01" })]), /no earlier episode dated "2026-10-01"/);
+  // After 7 days the same company-product is a new story.
+  assert.equal(errorsOf([first, episode("2026-10-22", "exampleai-minutes-update")]), "");
+  assert.match(errorsOf([episode("2026-10-14", "exampleai-launch")]), /3\+ parts/);
+});
+
+test("news: one source must be independent; the general AI claim words need a name; Jev keeps 数学的な保証 as a claim", () => {
+  const ownOnly = episode("2026-10-14");
+  ownOnly.sources[1].official = true;
+  assert.match(errorsOf([ownOnly]), /independent outlet \(official: false\)/);
+  for (const claim of ["世界初のモデルです。", "人間並みの精度で答えます。", "博士レベルの問題を解けます。", "前のモデルを超える性能です。", "前のモデルより高性能です。", "史上最大の学習量です。"]) {
+    assert.equal(unattributedClaims(claim).length, 1, claim);
+    assert.equal(unattributedClaims(`ロイター通信によると、${claim}`).length, 0, claim);
+  }
+  assert.equal(unattributedClaims("数学的な保証で間違いを防ぎます。").length, 1);
+  assert.equal(unattributedClaims("数学的な問題が得意なモデルです。").length, 0);
 });

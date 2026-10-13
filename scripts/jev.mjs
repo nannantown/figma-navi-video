@@ -62,6 +62,13 @@ export const NEWS_FRESH_DAYS = 3;
 // AI Trend Daily (the other AI account) posts GitHub's trending repositories:
 // a repository page never carries this channel's story (owner 2026-10-13).
 export const NEWS_BLOCKED_PRIMARY_HOSTS = ["github.com", "github.io", "githubusercontent.com"];
+// Same story told again: topic_key's first two parts (会社-中身) within this many days.
+export const NEWS_SAME_STORY_DAYS = 7;
+
+/** "openai-gpt6-release" → "openai-gpt6" (会社-中身). */
+export function storyKey(topicKey) {
+  return String(topicKey ?? "").split("-").slice(0, 2).join("-");
+}
 
 /** Hosts under a blocked name (gist.github.com, foo.github.io, raw.githubusercontent.com). */
 function isBlockedNewsHost(host) {
@@ -161,8 +168,9 @@ const CLAIM_PARTS = [
   "上回(?:る|り|っ)|(?:性能|精度|スコア|成績)[^。！？]{0,12}?(?:超え|勝っ|勝る)",
   "最高(?:水準|性能|レベル|峰|クラス)|最も(?:高性能|高い|賢い|速い|優れ)",
   "首位|トップ(?:クラス|レベル|水準)|[1１一]\\s*位(?:に|を|と|で|の)|No\\.?\\s*1(?![0-9])|ナンバーワン|SOTA",
-  // Jev's "mathematically correct" — not "数学的な問題" (a topic, not a claim).
-  "数学的に(?:正し|保証|証明|間違)",
+  "世界初|業界初|史上最|最大級|最強|人間(?:並み|レベル|を超)|博士(?:号)?レベル|超える性能|より高性能",
+  // Jev's "mathematically guaranteed / correct" — not "数学的な問題" (a topic, not a claim).
+  "数学的(?:な|に)?\\s*(?:正し|保証|証明|間違|正確|厳密)",
   `${ERROR_WORD}[^。！？]{0,12}?${NEGATION}`, // keep last: CLAIM_NO_ERROR_RE drops it
 ];
 const CLAIM_RE = new RegExp(CLAIM_PARTS.join("|"), "u");
@@ -604,7 +612,7 @@ function slideProblems(ep, at, series) {
       const p = lengthProblem(s.claim_source, LIMITS.claimSource, `${sat}.claim_source`);
       if (p) errors.push(p);
       errors.push(...shownTextProblems(s.claim_source, `${sat}.claim_source`));
-      if (hasClaim(s.claim_source)) errors.push(`${sat}.claim_source: a label says whose claim it is, not the claim itself (e.g. "TypeSafe の発表")`);
+      if (hasClaim(s.claim_source)) errors.push(`${sat}.claim_source: a label says whose claim it is, not the claim itself (e.g. ${series.claimSourceHint})`);
     } else if (onScreenClaim) {
       errors.push(`${sat}: the screen text states a claim — set claim_source (e.g. ${series.claimSourceHint})`);
     }
@@ -673,7 +681,7 @@ export function diagramProblems(slide) {
     if (d.type === "compare" || noteGiven) fields.push(["note", DIAGRAM_NOTE[d.type] ?? DIAGRAM_NOTE.compare]);
     for (const [field, limits] of fields) {
       const p = lengthProblem(it[field], limits, `${at}.${field}`);
-      if (p) problems.push(d.type === "compare" && field === "note" ? `${p} (the column title, e.g. "前" / "Jev")` : p);
+      if (p) problems.push(d.type === "compare" && field === "note" ? `${p} (the column title, e.g. "前" / "後")` : p);
       problems.push(...shownTextProblems(it[field], `${at}.${field}`));
       if (typeof it[field] !== "string") continue;
       total += charLength(it[field].trim());
@@ -729,7 +737,7 @@ function sourceProblems(ep, previous, at, today, warnings, series) {
     if (p) errors.push(p);
     // The outlet is shown on screen and in the captions, where "@name" would
     // tag (notify) that account: X accounts are written "X typesafeai".
-    errors.push(...textProblems(s?.outlet, `${sat}.outlet`).map((m) => (/@mention/.test(m) ? `${m} — write an X account as "X typesafeai" (no @)` : m)));
+    errors.push(...textProblems(s?.outlet, `${sat}.outlet`).map((m) => (/@mention/.test(m) ? `${m} — write an X account as ${series.staged ? "\"X typesafeai\"" : "\"X accountname\""} (no @)` : m)));
     if (typeof s?.title !== "string" || !s.title.trim() || charLength(s.title) > 200 || CONTROL_CHARS_RE.test(s.title) || INVISIBLE_CHARS_RE.test(s.title)) {
       errors.push(`${sat}.title: the page title, one line, up to 200 chars`);
     }
@@ -768,6 +776,23 @@ function sourceProblems(ep, previous, at, today, warnings, series) {
       // Fact check: the story is confirmed on two different sites (a GitHub page does not count as one).
       const sites = new Set(sources.map((s) => hostOf(s?.url)).filter((h) => h && !isBlockedNewsHost(h.replace(/^www\./, ""))).map(siteOf));
       if (sites.size < 2) errors.push(`${at}.sources: confirm the story on a second site (2+ different sites, e.g. the announcement and an independent article; subdomains of one site and GitHub do not count)`);
+      if (!sources.some((s) => s?.official === false)) errors.push(`${at}.sources: at least one source must be an independent outlet (official: false), not only the company's own pages`);
+      // Same story in new words (another outlet, another slug, a reworded headline):
+      // the first two parts of topic_key (会社-中身) within NEWS_SAME_STORY_DAYS days.
+      // A real follow-up names the episode it follows and the new fact.
+      if (String(ep.topic_key).split("-").length < 3) errors.push(`${at}.topic_key: 会社-中身-出来事, 3+ parts (e.g. openai-gpt6-release) — the first two parts find the same story`);
+      const weekAgo = new Date(Date.parse(`${ep.date}T00:00:00Z`) - NEWS_SAME_STORY_DAYS * 86400000).toISOString().slice(0, 10);
+      const same = previous.filter((e) => e.date >= weekAgo && storyKey(e.topic_key) === storyKey(ep.topic_key));
+      if (ep.follow_up_of != null) {
+        const followed = previous.find((e) => e.date === ep.follow_up_of);
+        if (!followed) errors.push(`${at}.follow_up_of: no earlier episode dated ${JSON.stringify(ep.follow_up_of)}`);
+        else if (storyKey(followed.topic_key) !== storyKey(ep.topic_key)) errors.push(`${at}.follow_up_of: the ${ep.follow_up_of} episode ("${followed.topic_key}") is another story — a follow-up keeps its first two topic_key parts ("${storyKey(followed.topic_key)}")`);
+        const p = lengthProblem(ep.research?.new_fact, LIMITS.reason, `${at}.research.new_fact`);
+        if (p) errors.push(`${p} — a follow-up states, in one sentence, the new fact the ${ep.follow_up_of} episode did not have`);
+      }
+      if (same.length > 0 && !same.some((e) => e.date === ep.follow_up_of)) {
+        errors.push(`${at}: "${ep.topic_key}" is the same story as ${same.map((e) => `${e.date} ("${e.topic_key}")`).join(", ")} (same "${storyKey(ep.topic_key)}" within ${NEWS_SAME_STORY_DAYS} days) — pick another story, or for real news on it set follow_up_of: "${same.at(-1).date}" and research.new_fact`);
+      }
       // Same news twice: no page cited by an earlier news episode comes back, whatever its role.
       const earlier = new Map();
       for (const e of previous) for (const s of e.sources || []) if (s?.url) earlier.set(normalizeUrl(s.url), e.date);
