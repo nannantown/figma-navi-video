@@ -1,4 +1,4 @@
 {
-  "format": "jev",
-  "note": "jev = genre trial #2 (Jev の毎朝ニュース, data/jev-episodes.json). pickup = trial #1 (新作AIツール N選, data/enriched-ai-tools.json). How to switch back: docs/jev-format.md"
+  "format": "news",
+  "note": "news = genre trial #3 (AI ニュース 1 本解説, data/ai-news-episodes.json, owner decision 2026-10-13). jev = trial #2 (Jev の毎朝ニュース, data/jev-episodes.json, paused 2026-10-13 by the owner's stop). pickup = trial #1 (新作AIツール N選, data/enriched-ai-tools.json). How to switch: docs/news-format.md"
 }
