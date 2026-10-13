@@ -61,7 +61,19 @@ export const NEWS_EPISODES_PATH = "data/ai-news-episodes.json";
 export const NEWS_FRESH_DAYS = 3;
 // AI Trend Daily (the other AI account) posts GitHub's trending repositories:
 // a repository page never carries this channel's story (owner 2026-10-13).
-export const NEWS_BLOCKED_PRIMARY_HOSTS = ["github.com"];
+export const NEWS_BLOCKED_PRIMARY_HOSTS = ["github.com", "github.io", "githubusercontent.com"];
+
+/** Hosts under a blocked name (gist.github.com, foo.github.io, raw.githubusercontent.com). */
+function isBlockedNewsHost(host) {
+  return NEWS_BLOCKED_PRIMARY_HOSTS.some((h) => host === h || host.endsWith(`.${h}`));
+}
+
+/** The site a host belongs to, for "two different sites": help.openai.com = openai.com, www.itmedia.co.jp = itmedia.co.jp. */
+export function siteOf(host) {
+  const labels = String(host ?? "").toLowerCase().split(".").filter(Boolean);
+  const secondLevel = labels.length >= 3 && labels.at(-1).length === 2 && ["co", "ac", "ne", "or", "go", "ed", "gr", "lg", "com", "net", "org", "gov", "edu"].includes(labels.at(-2));
+  return labels.slice(secondLevel ? -3 : -2).join(".");
+}
 
 // ---------------------------------------------------------------------------
 // Series plan (docs/jev-format.md is the prose version — keep them in sync)
@@ -145,7 +157,12 @@ const CLAIM_PARTS = [
   `\\d+(?:\\.\\d+)?\\s*%\\s*(?:安|減|削減|速|高速|少な|の?精度|正確|正し)`, // 96%減 / 100%正しい
   "(?:精度|正答率|正解率)\\s*(?:は|が)?\\s*\\d+(?:\\.\\d+)?\\s*%", // 精度は100%
   "最速|桁違い|業界(?:最|一)|世界(?:最|一)",
-  "数学的",
+  // General AI news (trial #3): "beats GPT-5", "state of the art", "No.1 on a benchmark".
+  "上回(?:る|り|っ)|(?:性能|精度|スコア|成績)[^。！？]{0,12}?(?:超え|勝っ|勝る)",
+  "最高(?:水準|性能|レベル|峰|クラス)|最も(?:高性能|高い|賢い|速い|優れ)",
+  "首位|トップ(?:クラス|レベル|水準)|[1１一]\\s*位(?:に|を|と|で|の)|No\\.?\\s*1(?![0-9])|ナンバーワン|SOTA",
+  // Jev's "mathematically correct" — not "数学的な問題" (a topic, not a claim).
+  "数学的に(?:正し|保証|証明|間違)",
   `${ERROR_WORD}[^。！？]{0,12}?${NEGATION}`, // keep last: CLAIM_NO_ERROR_RE drops it
 ];
 const CLAIM_RE = new RegExp(CLAIM_PARTS.join("|"), "u");
@@ -155,7 +172,7 @@ const CLAIM_NO_ERROR_RE = new RegExp(CLAIM_PARTS.slice(0, -1).join("|"), "u");
 // A bare "比較では" / "テストによると" names nobody and does not count.
 const SOURCE_NAME = "(?:TypeSafe(?:\\s*AI)?|タイプセーフ|同社|開発元|開発会社|[A-Za-z][A-Za-z0-9.&'\\- ]{1,40}|[\\u4E00-\\u9FFF\\u30A0-\\u30FF]{1,12}(?:社|新聞|誌|紙|通信))";
 const ATTRIBUTION_RE = new RegExp(
-  `${SOURCE_NAME}(?:さん|氏|CEO)?\\s*(?:の(?:検証|測定|計測|テスト|比較|発表|調査|評価|ベンチマーク|まとめ|記事|投稿|ポスト)(?:では|によると|によれば)|によると|によれば|の主張|は[^。！？]*?(?:と主張|と説明|と発表|としています|とうたって|と話して|と述べて))`,
+  `${SOURCE_NAME}(?:さん|氏|CEO|社)?\\s*(?:の(?:検証|測定|計測|テスト|比較|発表|調査|評価|ベンチマーク|まとめ|記事|投稿|ポスト)(?:では|によると|によれば)|によると|によれば|の主張|は[^。！？]*?(?:と主張|と説明|と発表|としています|とうたって|と話して|と述べて))`,
   "u"
 );
 
@@ -499,7 +516,9 @@ export function validateEpisodes(file, { date = todayJst(), today = todayJst(), 
     }
     if (v.jev.topicKey === ep.topic_key) errors.push(`${at}: topic_key "${ep.topic_key}" was already posted on ${v.date}`);
     for (const s of v.jev.sources || []) {
-      if (s.role === PRIMARY_ROLE[v.jev.kind] && ownPrimary.has(normalizeUrl(s.url))) errors.push(`${at}: source ${s.url} was already posted on ${v.date}`);
+      // News never reuses a page in any role; Jev only guards the carrying source.
+      const own = series.staged ? ownPrimary : new Set((ep.sources || []).map((x) => normalizeUrl(x?.url)));
+      if ((!series.staged || s.role === PRIMARY_ROLE[v.jev.kind]) && own.has(normalizeUrl(s.url))) errors.push(`${at}: source ${s.url} was already posted on ${v.date}`);
     }
   }
 
@@ -742,13 +761,20 @@ function sourceProblems(ep, previous, at, today, warnings, series) {
       }
       for (const s of primary) {
         const host = hostOf(s?.url).replace(/^www\./, "");
-        if (NEWS_BLOCKED_PRIMARY_HOSTS.some((h) => host === h || host.endsWith(`.${h}`))) {
+        if (isBlockedNewsHost(host)) {
           errors.push(`${at}.sources: ${host} cannot carry the story — AI Trend Daily covers GitHub repositories; use the announcement or an article (the repository may be a "reference")`);
         }
       }
-      // Fact check: the story is confirmed on two different sites.
-      const hosts = new Set(sources.map((s) => hostOf(s?.url).replace(/^www\./, "")).filter(Boolean));
-      if (hosts.size < 2) errors.push(`${at}.sources: confirm the story on a second site (2+ different sites, e.g. the announcement and an independent article)`);
+      // Fact check: the story is confirmed on two different sites (a GitHub page does not count as one).
+      const sites = new Set(sources.map((s) => hostOf(s?.url)).filter((h) => h && !isBlockedNewsHost(h.replace(/^www\./, ""))).map(siteOf));
+      if (sites.size < 2) errors.push(`${at}.sources: confirm the story on a second site (2+ different sites, e.g. the announcement and an independent article; subdomains of one site and GitHub do not count)`);
+      // Same news twice: no page cited by an earlier news episode comes back, whatever its role.
+      const earlier = new Map();
+      for (const e of previous) for (const s of e.sources || []) if (s?.url) earlier.set(normalizeUrl(s.url), e.date);
+      for (const s of sources) {
+        const u = normalizeUrl(s?.url);
+        if (earlier.has(u)) errors.push(`${at}.sources: ${s.url} was already cited on ${earlier.get(u)} — the news series never reuses a page (same story twice); find today's own sources`);
+      }
     } else if (ep.kind === "news") {
       // New since the last Jev episode (inclusive: a story from later that day counts).
       // One day of slack: outlets date articles in their own (US) time, and the

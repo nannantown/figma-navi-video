@@ -22,6 +22,9 @@ import {
   seriesState,
   mayCharacterOn,
   cliSeries,
+  siteOf,
+  unattributedClaims,
+  FORMATS,
 } from "./jev.mjs";
 import { buildCaptions } from "./generate-caption.mjs";
 import { buildPostEntry } from "./record-upload.mjs";
@@ -49,11 +52,13 @@ test("news: the sample validates; the committed switch is news and the ledger st
   const r = validateEpisodes(SAMPLE, { pickLatest: true, series: NEWS });
   assert.deepEqual(r.errors, []);
   assert.deepEqual(r.warnings, []);
-  assert.equal(readContentFormat(root, {}), "news");
+  // The switch may be flipped back to jev / pickup (docs/news-format.md §4) without breaking this test.
+  assert.ok(FORMATS.includes(readContentFormat(root, {})));
   assert.equal(readContentFormat(root, { CONTENT_FORMAT: "news" }), "news");
   const ledger = JSON.parse(readFileSync(join(root, "data/ai-news-episodes.json"), "utf8"));
   assert.ok(Array.isArray(ledger.episodes));
-  assert.equal(cliSeries([], root, {}), NEWS);
+  assert.equal(cliSeries([], root, { CONTENT_FORMAT: "news" }), NEWS);
+  assert.equal(cliSeries([], root, { CONTENT_FORMAT: "pickup" }), SERIES.jev);
   assert.equal(cliSeries(["--series=jev"], root, {}), SERIES.jev);
   assert.throws(() => cliSeries(["--series=pickup"], root, {}));
 });
@@ -75,10 +80,13 @@ test("news: the same story never airs twice (topic_key, the carrying source, the
   sameSource.sources[0].url = `${first.sources[0].url}/?utm_source=x`; // same page, tracking query
   assert.match(errorsOf([first, sameSource]), /already carried the 2026-10-14 episode/);
   assert.match(errorsOf([first, episode("2026-10-15", "k2", { headline: first.headline })]), /headline is the same as 2026-10-14/);
-  // A reference page may be cited again.
+  // No page comes back in any role: yesterday's announcement as today's "reference" is the same story.
   const reuseRef = episode("2026-10-15", "k3");
-  reuseRef.sources[1].url = first.sources[1].url;
-  assert.equal(errorsOf([first, reuseRef]), "");
+  reuseRef.sources[1].url = first.sources[0].url;
+  assert.match(errorsOf([first, reuseRef]), /was already cited on 2026-10-14/);
+  const fromHistory = episode("2026-10-15", "k4");
+  const history = { videos: [{ date: "2026-10-14", genre: "ai-news", jev: { kind: "news", topicKey: "openai-model-launch", sources: [{ url: fromHistory.sources[1].url, role: "reference" }] } }] };
+  assert.match(errorsOf([first, fromHistory], { history }), /was already posted on 2026-10-14/);
 });
 
 test("news: a posted story missing from the ledger, or posted again, is caught from the history", () => {
@@ -103,9 +111,23 @@ test("news: fresh (within 3 days), confirmed on two sites, never carried by a Gi
   const repo = episode("2026-10-14");
   repo.sources[0].url = "https://github.com/example/minutes";
   assert.match(errorsOf([repo]), /AI Trend Daily covers GitHub/);
+  for (const url of ["https://example.github.io/minutes/", "https://raw.githubusercontent.com/example/minutes/main/README.md", "https://gist.github.com/example/1"]) {
+    const r = episode("2026-10-14");
+    r.sources[0].url = url;
+    assert.match(errorsOf([r]), /AI Trend Daily covers GitHub/, url);
+  }
   const repoAsReference = episode("2026-10-14");
-  repoAsReference.sources[1].url = "https://github.com/example/minutes";
+  repoAsReference.sources.push({ ...repoAsReference.sources[1], url: "https://github.com/example/minutes" });
   assert.equal(errorsOf([repoAsReference]), "");
+  // A GitHub page or a subdomain of the same site is not the second site.
+  const githubSecond = episode("2026-10-14");
+  githubSecond.sources[1].url = "https://github.com/example/minutes";
+  assert.match(errorsOf([githubSecond]), /second site/);
+  const sameSite = episode("2026-10-14");
+  sameSite.sources[1].url = "https://help.example.com/minutes";
+  assert.match(errorsOf([sameSite]), /second site/);
+  assert.equal(siteOf("www.itmedia.co.jp"), "itmedia.co.jp");
+  assert.equal(siteOf("help.openai.com"), "openai.com");
   const usecaseRole = episode("2026-10-14");
   usecaseRole.sources[1].role = "usecase";
   assert.match(errorsOf([usecaseRole]), /role "usecase" belongs to usecase episodes/);
@@ -115,6 +137,16 @@ test("news: claims name who says so; money is yen only; Jev's genre is not this 
   const bare = episode("2026-10-14");
   bare.slides[1].narration = "使い方は、録音を入れて要点を選ぶだけ。手で書くより10倍速いそうです。";
   assert.match(errorsOf([bare]), /claim without its source .*OpenAI によると/);
+  // The usual claims of AI news need a name too; "Meta社によると" names one.
+  for (const claim of ["GPT-6はGPT-5を上回る性能です。", "最高水準の性能を記録しました。", "ベンチマークで1位になりました。", "業界No.1の速さです。"]) {
+    const e = episode("2026-10-14");
+    e.slides[0].narration = `Example AI が新しいモデルを公開しました。${claim}`;
+    assert.match(errorsOf([e]), /claim without its source/, claim);
+  }
+  const named = episode("2026-10-14");
+  named.slides[0].narration = "Example AI が新しいモデルを公開しました。Meta社によると、前のモデルを上回る性能です。";
+  assert.equal(errorsOf([named]), "");
+  assert.equal(unattributedClaims("数学的な問題が得意なモデルです。").length, 0);
   const dollars = episode("2026-10-14");
   dollars.slides[2].narration = "料金は、月に5時間までなら無料です。それより多く使う人向けに、月額10ドルのプランがあります。";
   assert.match(errorsOf([dollars]), /no dollar amounts/);

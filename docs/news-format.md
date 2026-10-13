@@ -74,8 +74,8 @@ Jev 特集の仕組み（`scripts/jev.mjs`）に「シリーズ」を 1 つ足�
 | `hook` | 8〜40 字。冒頭のナレーション。主張があれば名指し |
 | `slides` | 3〜4 枚、順を追って（何が起きた → どう動く → いつ・いくら・誰が → 注意）。`heading` 4〜18 字 / `body` 8〜64 字 / `narration` 30〜95 字（合計 300 字以内 = 60 秒未満） |
 | `diagram` | Jev と同じ（`steps` / `flow` / `compare`、文字数の上限、主張には `claim_source`）。**図が無い・壊れたスライドは従来の見出し＋本文で描く**（警告だけ、投稿は止まらない） |
-| `claim_source` | 画面の文字に主張があるスライドに必須（例「OpenAI の発表」） |
-| `sources` | 1〜8 件・**2 サイト以上**。`role: "news"` が 1 件以上で、その公開日が**今日から 3 日以内**。**`news` の URL はシリーズ全体で 1 回だけ**（www・追跡用クエリ・`#`・末尾 `/` の違いは同じ URL）。**`github.com` は `news` にできない**（AI Trend Daily と重ねない。`reference` なら可）。`role: "usecase"` は使わない。`official` は true / false（その会社自身の発表なら true） |
+| `claim_source` | 画面の文字に主張があるスライドに必須（例「OpenAI の発表」）。主張として数える言い回しは Jev の分（倍率・最速・精度◯%・「間違えない」など）に、一般ニュースでよく出る「〇〇を上回る」「最高水準」「1位」「首位」「No.1」「SOTA」を足したもの。ナレーションでは同じ文に「OpenAI によると」「Meta社によると」と名指しする |
+| `sources` | 1〜8 件・**2 サイト以上**（同じサイトのサブドメインと GitHub は 1 つに数えない）。`role: "news"` が 1 件以上で、その公開日が**今日から 3 日以内**。**出典の URL はどの役割でもシリーズ全体で 1 回だけ**（過去の回の台帳と投稿記録の両方と照合。www・追跡用クエリ・`#`・末尾 `/` の違いは同じ URL）。**GitHub（github.com・github.io・githubusercontent.com）は `news` にできない**（AI Trend Daily と重ねない。`reference` なら可）。`role: "usecase"` は使わない。`official` は true / false（その会社自身の発表なら true） |
 | `research.checked` | その日に見た URL（1〜30 件。円の換算に使った為替のページも） |
 | `redo_of` | **使えない**（1 日遅れのニュースは古い。前日が出なかった日も今日のニュースを書く） |
 
