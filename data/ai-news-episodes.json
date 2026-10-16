@@ -1,3 +1,122 @@
 {
-  "episodes": []
+  "episodes": [
+    {
+      "date": "2026-10-17",
+      "genre": "ai-news",
+      "trial": 3,
+      "kind": "news",
+      "topic_key": "openai-chatgpt-statelawsuit",
+      "topic": "米国の8州が ChatGPT の安全性で OpenAI を提訴",
+      "headline": "米8州が OpenAI を提訴",
+      "hook": "ChatGPT は子どもに安全？アメリカの州が裁判に訴えました",
+      "slides": [
+        {
+          "heading": "何が起きた？",
+          "body": "10月14日、アイオワ州など米国の8つの州が OpenAI を訴えました。",
+          "narration": "10月14日、アイオワ州やカンザス州など、アメリカの8つの州が、ChatGPT を作る OpenAI をそれぞれの裁判所に訴えました。",
+          "diagram": {
+            "type": "flow",
+            "items": [
+              {
+                "note": "訴えた側",
+                "label": "米国8州"
+              },
+              {
+                "note": "手続き",
+                "label": "州で提訴"
+              },
+              {
+                "note": "相手",
+                "label": "OpenAI"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "州の言い分",
+          "body": "安全だと宣伝しながら、子どもを含む利用者を危険にさらしたと州は主張しています。",
+          "claim_source": "アイオワ州司法長官の発表",
+          "narration": "アイオワ州の発表によると、ChatGPT は相手に合わせすぎる作りで、子どもなど弱い立場の人に危ない助言をしたのに、安全だと宣伝したと主張しています。",
+          "diagram": {
+            "type": "compare",
+            "items": [
+              {
+                "note": "宣伝",
+                "label": "安全です"
+              },
+              {
+                "note": "州の主張",
+                "label": "子どもに危険"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "何を求めている？",
+          "body": "消費者を守る州の法律に違反したとして、危険な行為をやめさせることなどを求めています。",
+          "narration": "州は、消費者をだますことを禁じる州の法律に違反したとして、危険な行為をやめさせることや、ChatGPT の仕組みを変えることなどを求めています。",
+          "diagram": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "法律違反と主張"
+              },
+              {
+                "label": "危険な行為を停止"
+              },
+              {
+                "label": "仕組みの見直し"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "OpenAI の反応",
+          "body": "OpenAI は年齢に合わせた保護を入れていると説明。裁判所の判断はまだです。",
+          "narration": "アルジャジーラによると、OpenAI は年齢に合わせた保護をすでに入れていると説明しています。判決はまだで、日本への影響もまだ分かっていません。",
+          "diagram": {
+            "type": "compare",
+            "items": [
+              {
+                "note": "州",
+                "label": "安全でない"
+              },
+              {
+                "note": "OpenAI",
+                "label": "保護は導入済み"
+              }
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.iowaattorneygeneral.gov/newsroom/attorney-general-brenna-bird-announces-lawsuit-against-openai-for-deceiving-iowa-parents-and-iowans/",
+          "title": "Attorney General Brenna Bird Announces Lawsuit against OpenAI for Deceiving Iowa Parents and Iowans about the Safety of ChatGPT",
+          "outlet": "Iowa Attorney General",
+          "published_at": "2026-10-14",
+          "role": "news",
+          "official": true
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/10/15/why-are-eight-us-states-suing-openai",
+          "title": "Why are eight US states suing OpenAI?",
+          "outlet": "Al Jazeera",
+          "published_at": "2026-10-15",
+          "role": "reference",
+          "official": false
+        }
+      ],
+      "research": {
+        "checked": [
+          "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-friday-october-16-2026/",
+          "https://www.iowaattorneygeneral.gov/newsroom",
+          "https://www.iowaattorneygeneral.gov/newsroom/attorney-general-brenna-bird-announces-lawsuit-against-openai-for-deceiving-iowa-parents-and-iowans/",
+          "https://www.aljazeera.com/news/2026/10/15/why-are-eight-us-states-suing-openai",
+          "https://raw.githubusercontent.com/nannantown/github-trending-video/main/data/performance-history.json"
+        ],
+        "note": "金額の記載なし（円換算は不要）。The Verge・News From The States は取得できず出典にしていない。"
+      }
+    }
+  ]
 }
