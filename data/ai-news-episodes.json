@@ -1,3 +1,138 @@
 {
-  "episodes": []
+  "episodes": [
+    {
+      "date": "2026-10-15",
+      "genre": "ai-news",
+      "trial": 3,
+      "kind": "news",
+      "topic_key": "google-gemini4argon-apprelease",
+      "topic": "Google が Gemini 4 Argon をアプリで提供開始",
+      "headline": "Gemini 4 Argon がアプリに",
+      "hook": "Gemini アプリに新しいモデルが来ました。使えるのは誰？",
+      "slides": [
+        {
+          "heading": "何が起きた？",
+          "body": "Google が新モデル Gemini 4 Argon を Gemini アプリで使えるようにしました。",
+          "narration": "10月13日、Google は新しい AI モデル Gemini 4 Argon を、Gemini アプリで使えるようにしました。9月の発表時は一部の人だけのモデルでした。",
+          "diagram": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "9/30 発表"
+              },
+              {
+                "label": "一部で先行"
+              },
+              {
+                "label": "10/13 アプリへ"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "何が変わる？",
+          "body": "Google によると、答えがより直接的になり、遠回しな言い方やくり返しが減ります。",
+          "claim_source": "Google の発表",
+          "narration": "Google によると、答えがより直接的になり、遠回しな言い方やくり返しが減ります。長い作業では途中経過をこまめに伝えるそうです。",
+          "diagram": {
+            "type": "compare",
+            "items": [
+              {
+                "note": "これまで",
+                "label": "前置きが長め"
+              },
+              {
+                "note": "Argon",
+                "label": "要点から答える"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "誰が使える？",
+          "body": "有料の Google AI Pro と Ultra の人から。無料プランと AI Plus はまだです。",
+          "narration": "使えるのは有料プランの Google AI Pro と Ultra の人で、検索の AI モードでも使えます。無料プランと AI Plus はまだです。",
+          "diagram": {
+            "type": "compare",
+            "items": [
+              {
+                "note": "まだ",
+                "label": "無料・AI Plus"
+              },
+              {
+                "note": "使える",
+                "label": "AI Pro・Ultra"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "注意したい点",
+          "body": "配信は順番に進行中で、すぐ出ない人もいます。日本での提供時期はまだ書かれていません。",
+          "narration": "配信は順番で、Android Police の記者の画面にはまだ出ていませんでした。日本での提供時期は、まだ分かっていません。",
+          "diagram": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "アプリを更新"
+              },
+              {
+                "label": "モデルを選ぶ"
+              },
+              {
+                "label": "Argon を試す"
+              }
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-argon-availability/",
+          "title": "Gemini 4 Argon is now available in the Gemini app",
+          "outlet": "Google",
+          "published_at": "2026-10-13",
+          "role": "news",
+          "official": true
+        },
+        {
+          "url": "https://9to5google.com/2026/10/13/gemini-app-4-argon/",
+          "title": "Gemini app rolling out Gemini 4 Argon to AI Pro and AI Ultra",
+          "outlet": "9to5Google",
+          "published_at": "2026-10-13",
+          "role": "reference",
+          "official": false
+        },
+        {
+          "url": "https://www.androidpolice.com/gemini-4-argon-available-pro-ultra-subscribers/",
+          "title": "Gemini 4 Argon is here, and Google says it will finally cut down on the AI fluff",
+          "outlet": "Android Police",
+          "published_at": "2026-10-13",
+          "role": "reference",
+          "official": false
+        },
+        {
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+          "title": "Gemini 4 Argon: our next era of frontier intelligence",
+          "outlet": "Google",
+          "published_at": "2026-09-30",
+          "role": "reference",
+          "official": true
+        }
+      ],
+      "research": {
+        "checked": [
+          "https://aiweekly.co/ai-news-today",
+          "https://techcrunch.com/category/artificial-intelligence/",
+          "https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/",
+          "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+          "https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-argon-availability/",
+          "https://9to5google.com/2026/10/13/gemini-app-4-argon/",
+          "https://www.androidpolice.com/gemini-4-argon-available-pro-ultra-subscribers/",
+          "https://raw.githubusercontent.com/nannantown/github-trending-video/main/data/performance-history.json"
+        ],
+        "note": "金額は使っていない（円換算なし）。日本での提供は出典に記載なし。"
+      }
+    }
+  ]
 }
