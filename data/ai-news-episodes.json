@@ -1,3 +1,132 @@
 {
-  "episodes": []
+  "episodes": [
+    {
+      "date": "2026-10-16",
+      "genre": "ai-news",
+      "trial": 3,
+      "kind": "news",
+      "topic_key": "amazon-bee-newdevices",
+      "topic": "Amazon の Bee が会話を要約する新しい AI 端末を発売",
+      "headline": "会話をメモするAI端末が2つ",
+      "hook": "話した内容を、AIがあとでまとめてくれる端末です。",
+      "slides": [
+        {
+          "heading": "何が発表された？",
+          "body": "Amazon 傘下の Bee が、腕に付ける Frontier とスマホに付ける Eclipse を発表しました。",
+          "narration": "Amazon 傘下の Bee が、AI 端末を 2 つ発表しました。腕や服に付ける Bee Frontier と、スマホの背中に付ける Bee Eclipse です。",
+          "diagram": {
+            "type": "compare",
+            "items": [
+              {
+                "note": "Frontier",
+                "label": "腕や服に付ける"
+              },
+              {
+                "note": "Eclipse",
+                "label": "スマホの背に"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "何をしてくれる？",
+          "body": "会話を聞き取り、要約・やることリスト・予定の候補を作ります。Gmail や Outlook ともつながります。",
+          "narration": "会話を聞き取って、要約ややることのリストを作ってくれます。Gmail やカレンダーとつないで、予定の登録にも使えます。",
+          "diagram": {
+            "type": "flow",
+            "items": [
+              {
+                "note": "入力",
+                "label": "会話"
+              },
+              {
+                "note": "AI",
+                "label": "Bee"
+              },
+              {
+                "note": "出力",
+                "label": "要約とToDo"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "いつ・いくら？",
+          "body": "Frontier は約1万2,000円で米国で発売中、Eclipse は約1万6,000円で近日発売です。",
+          "claim_source": "Amazon の発表",
+          "narration": "Frontier は約1万2,000円で、アメリカの Amazon ですでに買えます。Eclipse は約1万6,000円で近日発売、全機能は月約1,900円の有料プランです。",
+          "diagram": {
+            "type": "compare",
+            "items": [
+              {
+                "note": "Frontier",
+                "label": "約1.2万円"
+              },
+              {
+                "note": "Eclipse",
+                "label": "約1.6万円"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "気をつけたい点",
+          "body": "日本での発売は未定です。録音の前に、周りの人の了解をとりましょう。",
+          "narration": "日本で発売されるかは、まだ分かっていません。Amazon は音声は保存せず消すと説明していますが、使う前に周りの人の了解をとりましょう。",
+          "diagram": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "周りに伝える"
+              },
+              {
+                "label": "了解をもらう"
+              },
+              {
+                "label": "電源を入れる"
+              }
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.aboutamazon.com/news/devices/amazon-personal-ai-bee-frontier-bee-eclipse",
+          "title": "Bee Frontier and Bee Eclipse: Introducing new AI wearable and phone attachment",
+          "outlet": "Amazon",
+          "published_at": "2026-10-15",
+          "role": "news",
+          "official": true
+        },
+        {
+          "url": "https://techcrunch.com/2026/10/15/amazons-bee-launches-two-new-personal-ai-devices-starting-at-75/",
+          "title": "Amazon's Bee launches two new personal AI devices, starting at $75",
+          "outlet": "TechCrunch",
+          "published_at": "2026-10-15",
+          "role": "reference",
+          "official": false
+        },
+        {
+          "url": "https://www.engadget.com/2287245/bee-frontier-bee-eclipse-bee-pro-launch/",
+          "title": "Bee unveils two AI note-taking devices, its first new products since being acquired by Amazon",
+          "outlet": "Engadget",
+          "published_at": "2026-10-15",
+          "role": "reference",
+          "official": false
+        }
+      ],
+      "research": {
+        "checked": [
+          "https://www.aboutamazon.com/news/devices/amazon-personal-ai-bee-frontier-bee-eclipse",
+          "https://techcrunch.com/2026/10/15/amazons-bee-launches-two-new-personal-ai-devices-starting-at-75/",
+          "https://www.engadget.com/2287245/bee-frontier-bee-eclipse-bee-pro-launch/",
+          "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-thursday-october-15-2026/",
+          "https://tech-noisy.com/2026/10/16/ai-daily-news-2026-10-15/",
+          "https://raw.githubusercontent.com/nannantown/github-trending-video/main/data/performance-history.json",
+          "https://open.er-api.com/v6/latest/USD"
+        ],
+        "note": "Amazon の発表ページに日付の表記が無いため、公開日は TechCrunch・Engadget の 2026-10-15 に合わせた。価格 74.99 / 99.99 / 月 11.99 ドルを 1 ドル約 158 円（open.er-api.com、2026-10-15 更新）で換算。日本での発売は 3 つの出典とも記載なし"
+      }
+    }
+  ]
 }
