@@ -1,3 +1,56 @@
 {
-  "episodes": []
+  "episodes": [
+    {
+      "date": "2026-10-14",
+      "genre": "ai-news",
+      "trial": 3,
+      "kind": "news",
+      "topic_key": "apple-homeview-launch",
+      "topic": "Apple が Siri AI 入りの画面付きハブを発表",
+      "headline": "Siri AIの家用画面が登場",
+      "hook": "Apple が、話しかけて使う家の画面を出してきました。",
+      "slides": [
+        {
+          "heading": "何が発表された？",
+          "body": "Apple が10月13日、7インチ画面のスマートホーム機器 HomeView を発表しました。",
+          "narration": "Apple が10月13日、家に置く7インチの画面付き機器、HomeView を発表しました。新しい Siri AI に話しかけて使えます。",
+          "diagram": { "type": "flow", "items": [{ "note": "入力", "label": "話しかける" }, { "note": "AI", "label": "Siri AI" }, { "note": "出力", "label": "家電を操作" }] }
+        },
+        {
+          "heading": "何ができる？",
+          "body": "家族を最大6人まで顔で見分け、人ごとのホーム画面を出します。家電の操作やカメラ映像も見られます。",
+          "narration": "家族を最大6人まで顔で見分けて、人ごとに画面を切り替えます。家電の操作や、家のカメラの映像も見られます。",
+          "diagram": { "type": "steps", "items": [{ "label": "顔を見分ける" }, { "label": "自分の画面" }, { "label": "家電を操作" }] }
+        },
+        {
+          "heading": "いつ・いくら？",
+          "body": "置き型と壁掛け型があり、米国では約45,000円から（壁掛けの金具は別売）。11月13日に届き始めます。",
+          "narration": "置き型と壁掛け型の2種類で、米国ではおよそ4万5千円からです。予約はもう始まっていて、11月13日から届きます。",
+          "diagram": { "type": "compare", "items": [{ "note": "置き型", "label": "約4.5万円" }, { "note": "壁掛け型", "label": "約4.5万円〜" }] }
+        },
+        {
+          "heading": "日本ではまだ",
+          "body": "予約できるのは米国・英国など一部の国で、日本は入っていません。EUでも当面売られません。",
+          "narration": "予約できるのは米国や英国など一部の国で、日本は入っていません。日本で使える時期は、まだ分かっていません。",
+          "diagram": { "type": "compare", "items": [{ "note": "予約できる", "label": "米国・英国など" }, { "note": "日本", "label": "時期は未定" }] }
+        }
+      ],
+      "sources": [
+        { "url": "https://9to5mac.com/2026/10/13/apple-homeview-announced-features-price-release-date/", "title": "Apple unveils new HomeView smart display: pre-order today for $299", "outlet": "9to5Mac", "published_at": "2026-10-13", "role": "news", "official": false },
+        { "url": "https://www.theapplepost.com/2026/10/13/73183/apple-homeview-pre-orders-are-now-open-price-colors-and-release-date/", "title": "Apple HomeView pre-orders are now open: Price, colors and release date", "outlet": "The Apple Post", "published_at": "2026-10-13", "role": "reference", "official": false }
+      ],
+      "research": {
+        "checked": [
+          "https://9to5mac.com/2026/10/13/apple-homeview-announced-features-price-release-date/",
+          "https://www.theapplepost.com/2026/10/13/73183/apple-homeview-pre-orders-are-now-open-price-colors-and-release-date/",
+          "https://www.cnbc.com/2026/10/13/apple-homeview-smart-home-siri-ai.html",
+          "https://www.tomsguide.com/news/live/apple-homeview-event-october-13-live-updates",
+          "https://www.apple.com/newsroom/",
+          "https://www.watch.impress.co.jp/docs/news/1598969.html",
+          "https://raw.githubusercontent.com/nannantown/github-trending-video/main/data/performance-history.json"
+        ],
+        "note": "円は1ドル＝約150円で換算（為替ページは未確認）。CNBC は403で開けず出典にしていない。Apple Newsroom は一覧を読めなかった。"
+      }
+    }
+  ]
 }
