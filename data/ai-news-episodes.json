@@ -1,3 +1,131 @@
 {
-  "episodes": []
+  "episodes": [
+    {
+      "date": "2026-10-18",
+      "genre": "ai-news",
+      "trial": 3,
+      "kind": "news",
+      "topic_key": "nippairen-voiceai-guideline",
+      "topic": "日本俳優連合が声の生成AI利用ガイドラインを公表",
+      "headline": "声優の声とAI、新しいルール",
+      "hook": "好きな声優の声、AIで勝手に作っていいの？",
+      "slides": [
+        {
+          "heading": "何が発表された？",
+          "body": "日本俳優連合が10月15日、声を生成AIで使うときのガイドラインを公表しました。",
+          "narration": "声優や俳優でつくる日本俳優連合が、10月15日に声の生成AI利用ガイドラインを公表しました。AIで声を使う事業者に向けたルールです。",
+          "diagram": {
+            "type": "flow",
+            "items": [
+              {
+                "note": "作った",
+                "label": "日俳連"
+              },
+              {
+                "note": "公表",
+                "label": "ガイドライン"
+              },
+              {
+                "note": "守る側",
+                "label": "AI事業者"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "同意は段階ごとに",
+          "body": "学習させる、声を再現する、作品で使う。それぞれで本人の書面の同意が必要です。",
+          "narration": "AIに声を覚えさせる、声のコピーを作る、作品で使う。この3つの段階ごとに、本人から書面で同意をもらうよう求めています。",
+          "diagram": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "学習に同意"
+              },
+              {
+                "label": "声の再現に同意"
+              },
+              {
+                "label": "作品利用に同意"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "まとめて同意はNG",
+          "body": "一括の同意は認めず、期間は原則最長1年。声の利用には出演料と別の対価を求めます。",
+          "narration": "まとめて同意を取る契約は認めず、同意の期間は原則最長1年です。声をAIで使うときは、出演料とは別にお金を払うよう求めています。",
+          "diagram": {
+            "type": "compare",
+            "items": [
+              {
+                "note": "認めない",
+                "label": "一括で同意"
+              },
+              {
+                "note": "求める",
+                "label": "その都度同意"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "故人の声と今後",
+          "body": "故人の声で新作を作ることは認めません。法的な拘束力はなく、法制化を目指します。",
+          "narration": "亡くなった人の声で新しい作品を作ることも認めていません。ただ法的な拘束力はなく、日俳連は今後、法律にすることを目指すそうです。",
+          "diagram": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "業界の指針"
+              },
+              {
+                "label": "使う例を増やす"
+              },
+              {
+                "label": "法制化へ"
+              }
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.nippairen.com/wp-content/uploads/2026/10/4822a6ac69f21b4538064352be62abab.pdf",
+          "title": "音声に関する生成AI利用ガイドライン Ver 1.0",
+          "outlet": "日本俳優連合",
+          "published_at": "2026-10-15",
+          "role": "news",
+          "official": true
+        },
+        {
+          "url": "https://www.itmedia.co.jp/aiplus/article/2610/16/2000002320/",
+          "title": "「今までが簡単すぎた」――声のAI利用に新指針、日俳連 事業者に求める対応は",
+          "outlet": "ITmedia AI+",
+          "published_at": "2026-10-16",
+          "role": "reference",
+          "official": false
+        },
+        {
+          "url": "https://kumanichi.com/articles/2046861",
+          "title": "日俳連、ＡＩでの声利用に指針 故人の声や吹き替え生成やめて",
+          "outlet": "共同通信（熊本日日新聞）",
+          "published_at": "2026-10-15",
+          "role": "reference",
+          "official": false
+        }
+      ],
+      "research": {
+        "checked": [
+          "https://www.nippairen.com/wp-content/uploads/2026/10/4822a6ac69f21b4538064352be62abab.pdf",
+          "https://www.itmedia.co.jp/aiplus/article/2610/16/2000002320/",
+          "https://kumanichi.com/articles/2046861",
+          "https://help.openai.com/en/articles/20001605-creating-and-collaborating-on-slides-in-chatgpt",
+          "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+          "https://raw.githubusercontent.com/nannantown/github-trending-video/main/data/performance-history.json"
+        ],
+        "note": "金額は出てこないため円換算は不要。ChatGPT Slides の展開開始（10/16）も候補だったが、OpenAI の公式ページが 403 で開けず、大手媒体の記事も見つからなかったため見送り。"
+      }
+    }
+  ]
 }
