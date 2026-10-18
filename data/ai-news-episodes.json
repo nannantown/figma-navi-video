@@ -126,6 +126,137 @@
         ],
         "note": "金額は出てこないため円換算は不要。ChatGPT Slides の展開開始（10/16）も候補だったが、OpenAI の公式ページが 403 で開けず、大手媒体の記事も見つからなかったため見送り。"
       }
+    },
+    {
+      "date": "2026-10-19",
+      "genre": "ai-news",
+      "trial": 3,
+      "kind": "news",
+      "topic_key": "deepseek-v41flash-update",
+      "topic": "DeepSeek が V4.1-Flash の改良版を公開",
+      "headline": "DeepSeekのAIが改良版に",
+      "hook": "DeepSeekのAI、週末に中身が新しくなったの知ってますか？",
+      "slides": [
+        {
+          "heading": "何が起きた？",
+          "body": "DeepSeekが10月17日、AIモデル「V4.1-Flash」の改良版を公開しました。",
+          "narration": "中国のAI企業DeepSeekが10月17日、AIモデル「V4.1-Flash」の改良版を公開しました。サイトやアプリ、APIで、もう使えます。",
+          "diagram": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "10月17日公開"
+              },
+              {
+                "label": "サイト・アプリ"
+              },
+              {
+                "label": "開発者向けAPI"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "何が良くなった？",
+          "body": "DeepSeekによると、プログラミングのテストの点が上がり、作業も早く終わるようになりました。",
+          "claim_source": "DeepSeek の発表",
+          "narration": "DeepSeekによると、プログラミングのテストの点が74.2から77.0に上がりました。同社は、作業が早く終わり、出力も短くなったと説明しています。",
+          "diagram": {
+            "type": "compare",
+            "items": [
+              {
+                "note": "前の版",
+                "label": "DeepSWE 74.2"
+              },
+              {
+                "note": "改良版",
+                "label": "DeepSWE 77.0"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "誰でも使える？",
+          "body": "AIの中身にあたる「重み」も公開。MITライセンスで、商用でも自由に使えます。",
+          "narration": "AIの中身にあたる「重み」もHugging Faceで公開されました。MITという、仕事にも自由に使えるライセンスです。",
+          "diagram": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "重みを公開"
+              },
+              {
+                "label": "MITライセンス"
+              },
+              {
+                "label": "商用でもOK"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "注意とこれから",
+          "body": "点数は同社の発表で、第三者の検証はまだです。検索の機能は11月1日から有料になります。",
+          "narration": "テストの点数はDeepSeek自身の発表で、ほかの検証はまだ出ていません。一緒に公開された検索の機能は、日本時間11月1日から1000回で約110円かかります。",
+          "diagram": {
+            "type": "compare",
+            "items": [
+              {
+                "note": "今",
+                "label": "一部無料"
+              },
+              {
+                "note": "11月1日〜",
+                "label": "1000回約110円"
+              }
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://api-docs.deepseek.com/news/news261017/",
+          "title": "DeepSeek-V4.1-Flash-1017: Wish-Driven Programming Made Real",
+          "outlet": "DeepSeek",
+          "published_at": "2026-10-17",
+          "role": "news",
+          "official": true
+        },
+        {
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+          "title": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+          "outlet": "DeepSeek（Hugging Face）",
+          "published_at": null,
+          "role": "reference",
+          "official": true
+        },
+        {
+          "url": "https://tech-insider.org/deepseek-v4-1-flash-1017-deepswe-search-api-2026/",
+          "title": "DeepSeek V4.1-Flash-1017 Hits 77.0, Opens Search API [2026]",
+          "outlet": "Tech Insider",
+          "published_at": "2026-10-17",
+          "role": "reference",
+          "official": false
+        }
+      ],
+      "research": {
+        "checked": [
+          "https://api-docs.deepseek.com/news/news261017/",
+          "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+          "https://tech-insider.org/deepseek-v4-1-flash-1017-deepswe-search-api-2026/",
+          "https://startupfortune.com/deepseek-quietly-pushed-a-new-model-update-straight-into-its-live-api/",
+          "https://tech-noisy.com/2026/10/19/ai-weekly-news-2026-10-12-2026-10-18/",
+          "https://www.itmedia.co.jp/aiplus/archive/2610",
+          "https://www.itmedia.co.jp/aiplus/article/2610/16/2000002328/",
+          "https://help.openai.com/en/articles/20001605-creating-and-collaborating-on-slides-in-chatgpt",
+          "https://chatgpt.com/features/slides/",
+          "https://www.webpronews.com/openai-adds-native-slide-creation-and-collaboration-to-chatgpt",
+          "https://tech.yahoo.com/ai/articles/chatgpt-create-powerpoint-presentation-heres-141700559.html",
+          "https://www.x-rates.com/calculator/?from=USD&to=JPY&amount=1",
+          "https://raw.githubusercontent.com/nannantown/github-trending-video/main/data/performance-history.json"
+        ],
+        "note": "検索APIの料金は1000回あたり0.75ドル（DeepSeek と Tech Insider）。為替ページ（x-rates）の値が2026-01-01付けで古かったため、1ドル＝約150円で換算（約112円→約110円）。課金開始は 2026-10-31 16:00 UTC＝日本時間11月1日1時。点数は Hugging Face のモデルカードの表（DeepSWE v1.1: 74.2→77.0）。ChatGPT Slides（10/16）は影響が大きいが、OpenAI の公式ページが今日も 403 で開けず見送り。Meta Muse Spark Open は公式発表が10/15で3日の条件を外れるため見送り。"
+      }
     }
   ]
 }
