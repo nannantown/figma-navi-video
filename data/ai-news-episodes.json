@@ -126,6 +126,132 @@
         ],
         "note": "金額は出てこないため円換算は不要。ChatGPT Slides の展開開始（10/16）も候補だったが、OpenAI の公式ページが 403 で開けず、大手媒体の記事も見つからなかったため見送り。"
       }
+    },
+    {
+      "date": "2026-10-20",
+      "genre": "ai-news",
+      "trial": 3,
+      "kind": "news",
+      "topic_key": "anthropic-benefitfund-launch",
+      "topic": "Anthropic が株式の5%で公益ファンドを設立",
+      "headline": "Anthropic、株の5%を社会へ",
+      "hook": "AIの会社が、自分の株を社会のために使う？",
+      "slides": [
+        {
+          "heading": "何が発表された？",
+          "body": "Claude を作る Anthropic が10月18日、株式の5%を新しい公益ファンドに充てると発表しました。",
+          "narration": "Claude を作る Anthropic が10月18日、自社の株式の5%を新しい公益ファンドに充てると発表しました。ただし株主の承認が条件です。",
+          "diagram": {
+            "type": "flow",
+            "items": [
+              {
+                "note": "出す",
+                "label": "AI企業"
+              },
+              {
+                "note": "株式5%",
+                "label": "公益ファンド"
+              },
+              {
+                "note": "届け先",
+                "label": "社会"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "何に使うの？",
+          "body": "非営利団体への大口の寄付や、特定の人たちへの直接の支給が例に挙がっています。",
+          "narration": "使い道の例は、非営利団体への大きな寄付や、特定の人たちへの直接の支給です。AIで仕事が変わる人たちへの支援も挙げています。",
+          "diagram": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "非営利へ寄付"
+              },
+              {
+                "label": "直接の支給"
+              },
+              {
+                "label": "仕事の変化に備える"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "会社が育つと増える",
+          "body": "会社の価値が50%上がるごとに、取締役会の判断で2%ずつ足せる仕組みです。",
+          "narration": "会社の価値が50%上がるごとに、取締役会の判断で2%ずつ上乗せできます。同社によると、創業者の寄付の約束などと合わせ、株式の約2割が公益に向かいます。",
+          "claim_source": "Anthropic の発表",
+          "diagram": {
+            "type": "compare",
+            "items": [
+              {
+                "note": "今回",
+                "label": "株式の5%"
+              },
+              {
+                "note": "価値が伸びると",
+                "label": "2%ずつ追加"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "まだ分からないこと",
+          "body": "誰がどう使い道を決めるかは未定。仕組みや運営は今後数か月で公表するとしています。",
+          "narration": "誰がどう使い道を決めるのかは、まだ分かっていません。Anthropic は、仕組みや運営の詳細を今後数か月で公表するとしています。",
+          "diagram": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "株主の承認"
+              },
+              {
+                "label": "数か月で詳細公表"
+              }
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.anthropic.com/news/public-benefit-fund",
+          "title": "Investing in the public benefit",
+          "outlet": "Anthropic",
+          "published_at": "2026-10-18",
+          "role": "news",
+          "official": true
+        },
+        {
+          "url": "https://techcrunch.com/2026/10/18/anthropic-says-its-committing-5-of-its-shares-to-a-public-benefit-fund",
+          "title": "Anthropic says it's committing 5% of its shares to a 'public benefit fund'",
+          "outlet": "TechCrunch",
+          "published_at": "2026-10-18",
+          "role": "reference",
+          "official": false
+        },
+        {
+          "url": "https://www.aljazeera.com/economy/2026/10/19/anthropic-says-it-will-commit-5-of-shares-to-public-benefit-fund",
+          "title": "AI giant Anthropic commits 5% of shares to 'public benefit' fund",
+          "outlet": "Al Jazeera",
+          "published_at": "2026-10-19",
+          "role": "reference",
+          "official": false
+        }
+      ],
+      "research": {
+        "checked": [
+          "https://www.anthropic.com/news/public-benefit-fund",
+          "https://techcrunch.com/2026/10/18/anthropic-says-its-committing-5-of-its-shares-to-a-public-benefit-fund",
+          "https://www.aljazeera.com/economy/2026/10/19/anthropic-says-it-will-commit-5-of-shares-to-public-benefit-fund",
+          "https://www.cnbc.com/2026/10/18/anthropic-ai-public-benefit-fund.html",
+          "https://tech-noisy.com/2026/10/19/ai-weekly-news-2026-10-12-2026-10-18/",
+          "https://news.yahoo.co.jp/articles/274c395d1165b059f3d7338e96433bd04a464bda",
+          "https://raw.githubusercontent.com/nannantown/github-trending-video/main/data/performance-history.json"
+        ],
+        "note": "金額（ドル）は原稿に使っていないため円換算は不要。CNBC は 403 で開けず出典にしていない。OpenAI の自律エージェント事故報告（10/15 公表）は主役の出典が 3 日より古いため見送り。"
+      }
     }
   ]
 }
