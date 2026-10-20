@@ -2,391 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "_SPgHFWsaJM",
-      "videoUrl": "https://youtube.com/shorts/_SPgHFWsaJM",
-      "date": "2026-07-14",
-      "title": "【デザインニュース】GPT-5.6 が Figma Make に参戦、駆け出しのモデル選びが3択に拡張｜2026/07/14 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 46,
-      "discovery": {
-        "method": "news-en",
-        "description": "OpenAI 公式 GPT-5.6 発表ページ、banani.co の Figma Make 内 UI 生成レビュー、testingcatalog + Neowin の 07-09 公開告知、lushbinary の Claude Fable 5 vs GPT-5.5 vs Gemini 3.1 Pro 比較、finance.biggo.com podcast (I Tested GPT-5.6 Sol for a Month) を一次取得。07-09 公開の GPT-5.6 は Sol/Terra/Luna の 3 tier で Terra は前世代 GPT-5.5 の 2 倍安く同等性能、Sol はフロントエンド QA ベンチで 4.4/5 (5.5=4.0/5) を記録。Figma Make 内では既存の Fable 5 (Anthropic) + Gemini 3.1 Pro (Google) と合わせて選択肢が 3 モデルに拡張、駆け出しがプロトタイプを作る際の『どのモデルを使うか』判断が日常化するフェーズに入る。ただし fidelity (指示忠実性) では Fable 5 がまだ優位、GPT-5.6 は自由裁量 UI に強く Reddit で card-stuffed layout が指摘される等の使い分けが必要。method 選定 (Tuesday weekday news 帯): 直近 14 日 method 別 avg views は official-src=1.67 (n=3, TOP1)・news-en=1.50 (n=2, TOP2)・expert-blog=1.00 (n=2, 中)・figma-community=0.50 (n=2, 07-13 計測未確定)・product-launches=0.50 (n=2, 下)・social-en は 2 週連続 WORST で 07-24 まで凍結。直近 2 日ルール (07-13 figma-community / 07-12 product-launches) 除外、7 日 2 回到達ガードで news-en (07-09 のみ 1 回で clear) と official-src (07-08 のみ 1 回で clear) 両者 clear。柱① Figma 公式 (直近 14 日 4/12 = 33.3%、target 25%、overweight 8.3pt) 過剰使用回避のため official-src は今日は非採用、news-en を Exploit として採用。柱③ 業界 (25.0%) を 3 → 4 本目に伸ばして target 20% 微 over 域を維持し、柱① を今日はゼロ加算に固定して overweight を 7.7pt に微緩和。07-02 Generative Plugins (ユーザー自作) / 07-06 Framer Fable 5 (別ツール別モデル) / 07-13 Weave (Figma 内蔵 AI 画像編集) との切り分け: 今日は『Figma Make 内の選択肢が 3 モデルに拡張、駆け出しが同じ画面を 2 モデルで並列生成し出力差を目で確認』角度で、AI モデル選び物語の縦糸 (07-06→07-09→07-13→07-14 の 4 週連続) を初めて具体行動指示 (30 分見比べ) に落とす。NG パターン回避: (a) AI=補助輪フレーム維持 — GPT-5.6 の失敗パターン (card-stuffed layout, fidelity 低下) を駆け出しが『選ぶ責任』の側面として明示、(b) 『AI が仕事を奪う』系 NG 回避で『駆け出しの選択肢が広がる』前向きフレームに固定、(c) freshness_hours=120 (07-09 launch から 5 日、07-12 banani.co ベンチ結果公開から 2 日)、(d) 出典 6 ソースで multi-source confirm (公式 + 3 独立レビュー + 財経 podcast)、(e) 火曜 30 分実験フォーマット (07-13 月曜 30 分の翌日展開) で抽象論で終わらせず具体行動 1 個に絞る、(f) 数字先出しフック 4 日連続 (07-11 3.3%+95% → 07-12 94/98/100/100 → 07-13 20+ → 07-14 3+4.4/4.0) の判定材料投入も兼ねる",
-        "sources": [
-          "https://openai.com/index/gpt-5-6/",
-          "https://openai.com/index/previewing-gpt-5-6-sol/",
-          "https://www.banani.co/blog/gpt-5.6-ui-design-review",
-          "https://www.testingcatalog.com/openai-launches-gpt-5-6-sol-terra-and-luna-on-apps-and-api/",
-          "https://www.neowin.net/news/openai-to-release-gpt-56-sol-terra-and-luna-on-july-9/",
-          "https://lushbinary.com/blog/claude-fable-5-vs-gpt-5-5-vs-gemini-3-1-pro-comparison/"
-        ],
-        "query": "GPT-5.6 Sol Terra Luna Figma Make Fable 5 Gemini 3.1 Pro frontend UI benchmark July 2026",
-        "freshness_hours": 120
-      },
-      "stats": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-07-28T00:12:32.857Z"
-      },
-      "instagram": {
-        "mediaId": "18466322062112845",
-        "permalink": "https://www.instagram.com/reel/DawK0aIiKky/",
-        "views": 39,
-        "reach": 39,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
-      "videoId": "r6IBXzOyBfc",
-      "videoUrl": "https://youtube.com/shorts/r6IBXzOyBfc",
-      "date": "2026-07-15",
-      "title": "【デザインニュース】Smashing 5 日前論考、駆け出しが Figma を開く前にやる 3 手｜2026/07/15 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 45,
-      "discovery": {
-        "method": "expert-blog",
-        "description": "Smashing Magazine 5 日前公開の Anastasia Sycheva (Feely Studio / 技術系スタートアップ向けブランディング代理店 founder+art director) 論考『From Kickoff To First Concept: How To Turn Brand Strategy Into Visual Direction』を一次取得。駆け出しが Figma に飛びつく前の pre-concept phase を、ブランドワークショップ→言葉から画像への相対比較→ステークホルダー参加型マップの 3 段構造で読み解く。Smashing 公式 X アカウント (@smashingmag) が同記事を『The strongest visual concepts don't start in Figma. They start with the right questions.』と紹介したポストで X 側の反応も裏取り。expert-blog method (直近 14 日 avg 1.00, n=2, TOP2 tied; 07-11 = 4 日前で 2-day rule OK、7-day 窓に 07-11 の 1 回のみで到達ガード OK)。柱④ Tips/Figma 実践 (target 15%, 直近 14 日 7.7% で 7.3pt under = 今週最大の運用ギャップ) を weekday news 帯で先制修復する意図。数字先出しフック 4 日連続 (07-11〜07-14) が 0-0-0-0 で確定した直後の反問/対比フック Explore 初日、戦略更新提案 (b) の A/B window (07-15〜07-19) 開始点。ペルソナ Primary 駆け出しデザイナーの『どこから作り始めればいい?』最重要痛点を、著者 = 技術系ブランド代理店ディレクターという発言者権威で担保。NG パターン回避: AI = 補助輪フレーム維持、『AI を使う前に人間の判断』側から入って学習者の味方として位置づけ、07-13 (ツール) → 07-14 (モデル) → 07-15 (人間) の 3 日縦糸で AI 時代の駆け出しの立ち位置を再強化。",
-        "sources": [
-          "https://www.smashingmagazine.com/2026/07/how-turn-brand-strategy-into-visual-direction/",
-          "https://x.com/smashingmag/status/2075591829643227534",
-          "https://daily.dev/posts/from-kickoff-to-first-concept-how-to-turn-brand-strategy-into-visual-direction-smashing-magazine-uc6clmikq",
-          "https://www.smashingmagazine.com/category/branding/",
-          "https://www.smashingmagazine.com/articles/",
-          "https://www.colorpark.io/blog/How%20to%20Translate%20Brand%20Strategy%20Into%20Visual%20Design:%20A%20Practical%20Guide%20for%202026"
-        ],
-        "query": "Smashing Magazine July 10 2026 From Kickoff To First Concept brand strategy visual direction Anastasia Sycheva Feely Studio pre-concept phase",
-        "freshness_hours": 120
-      },
-      "stats": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-07-29T00:08:56.568Z"
-      },
-      "instagram": {
-        "mediaId": "18087786002124584",
-        "permalink": "https://www.instagram.com/reel/DayvZ3tjaqi/",
-        "views": 4,
-        "reach": 4,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
-      "videoId": "V2zVm4bN62Y",
-      "videoUrl": "https://youtube.com/shorts/V2zVm4bN62Y",
-      "date": "2026-07-16",
-      "title": "【デザインニュース】Figma Motion 全プラン開ベータ到達、駆け出しがアニメを Figma だけで完結｜2026/07/16 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 42,
-      "discovery": {
-        "method": "official-src",
-        "description": "Figma 公式 Blog『Introducing Figma Motion: Your Canvas Now Has a Timeline』・Figma Motion 製品ページ (figma.com/motion)・Help Center『Explore Figma Motion』『What Figma features are in beta』『What's new from Config 2026』・release notes を横断調査し、6/24 Config 2026 発表の Figma Motion が『rolling out gradually from June 24』の progressive rollout フェーズを経て、今週 Starter を含む全プランで Open beta 解禁 (Starter は limited export、フル export/agent motion/publish は Full seat 有料) に到達している事実を一次取得。プラグイン (Motion 系)・別ツール (After Effects/Principle/Jitter) が必要だった駆け出しの『動きを実装したいけど道具がない』という壁を Figma 本体だけで越えられるようになったタイミング。method 選定 (Thursday weekday news 帯): TOP3 method 候補のうち expert-blog (07-15 = 昨日利用で 2-day rule 抵触)、news-en (07-14 = 一昨日利用で 2-day rule 抵触)、official-src (07-08 = 8 日前で 2-day rule 余裕、7-day-2-time gate も 07-08 が 8 日前=window 外で clear、直近 14 日 avg 2.00 n=2 で TOP1 method) → official-src を最適な空き日に Exploit 採用。social-en は 2 週連続 WORST 凍結中 (〜07-24)、figma-community (07-13, 3 日前) と product-launches (07-12, 4 日前) は 2-day rule OK だが avg 0.5 で TOP1 に劣後。柱① Figma 公式ニュース (直近 14 日 21.4-23.1% で target 25% の 1.9-3.6pt 微 under) を Motion で厚塗り。柱② プラグイン (7.1%, 12.9pt under) を狙うなら figma-community だが method avg 差 (2.00 vs 0.5) が大きすぎ、今日は method Exploit を優先。数字先出しフック 4 連続 0 の直後 (07-15 反問フック Explore 初日) を継ぎ、今日は 07-15〜07-19 A/B window の 2 日目として『After Effects、まだ買わないで』型の対比/反問フックを継続投入。NG パターン回避: AI=補助輪フレーム維持 (agent が下地キーフレーム→人が微調整)、学習者の味方 (『動きをつけたい』ハードル解消、Starter=無料で試せる)、プラグイン機能説明メインではなく駆け出しの課題 (After Effects 買うべきか) から入る、freshness_hours は Config 発表からの累積ではなく『今週の全プラン Open beta 到達』milestone に anchor して 120h。",
-        "sources": [
-          "https://www.figma.com/blog/introducing-figma-motion/",
-          "https://www.figma.com/motion/",
-          "https://help.figma.com/hc/en-us/articles/41274629073303-Explore-Figma-Motion",
-          "https://help.figma.com/hc/en-us/articles/4406787442711-What-Figma-features-are-in-beta",
-          "https://help.figma.com/hc/en-us/articles/39582753756695-What-s-new-from-Config-2026",
-          "https://www.figma.com/release-notes/",
-          "https://www.figma.com/blog/config-2026-recap/",
-          "https://www.figma.com/community/file/966913921712314277/get-started-with-motion-in-2-minutes"
-        ],
-        "query": "Figma Motion open beta all plans Starter export agent keyframe July 2026 progressive rollout",
-        "freshness_hours": 120
-      },
-      "stats": {
-        "views": 1,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-07-30T00:14:33.401Z"
-      },
-      "instagram": {
-        "mediaId": "18610258957058013",
-        "permalink": "https://www.instagram.com/reel/Da1UsS_Dni-/",
-        "views": 173,
-        "reach": 170,
-        "likes": 1,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
-      "videoId": "oAW1N85mrLM",
-      "videoUrl": "https://youtube.com/shorts/oAW1N85mrLM",
-      "date": "2026-07-18",
-      "title": "【デザインニュース】Smashing 創業者 Vitaly が今週 AI 機能病を名指し批判、駆け出しに響く 3 日前論考｜2026/07/18 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 42,
-      "discovery": {
-        "method": "expert-blog",
-        "description": "Smashing Magazine 7/15 公開の Vitaly Friedman 論考『No, People Don't Want More AI In Their Life』を一次取得。Smashing 創業者本人が、多くの企業が『みんな AI 機能を欲しがっている』と勘違いしていると名指しで批判、実際にユーザーが望むのは自分を AI 側に合わせる AI ではなく、面倒な作業を代わりにやってくれる AI であるという主張を、駆け出しがポートフォリオや作例に AI 機能を条件反射で盛らないための警鐘として抽出。Jakob Nielsen 07-17 公開の Substack UX Roundup (『Usability of AI Skills』: 41,662 skills 調査で 53% は導入後一度も更新されない・エージェントがユーザーをどう扱うかのルールがほぼ触られていない) を multi-source confirm の裏取りに追加、Vitaly の前作 7/3『Users Don't Need More Tools』も同軸の縦糸ソースとして併記。method 選定 (Saturday weekend evergreen 帯): 07-17 PDCA Action #3 予約タスク『07-18 (Sat) 柱⑥ UI 批評 = 微 under 2.3pt を expert-blog method で修復、expert-blog が 2-day rule 上 07-18 で解禁されるためタイミング一致』を実行。直近 14 日 (07-05〜07-17) method 別 avg views は official-src=1.33 (n=3, TOP1) だが 07-16 昨日利用で 2-day rule 抵触、news-en=1.00 (n=3, TOP2) は 07-14 = 4 日前で gate OK だが土曜 evergreen 帯 + 柱⑥ 修復焦点外、social-en は 2 週連続 WORST で 07-24 まで凍結、figma-community は 07-17 昨日利用で 2-day rule 抵触、product-launches (n=1, 07-12=6日前 gate OK) は柱⑤ Before/After (7.7%) 修復向きだが今日の柱⑥ 予約と齟齬、expert-blog (n=2, avg=0.00, 07-11 は 07-18 から 7 日前ちょうどで window 外・07-15=3 日前で 1 hit in window=残 1 枠、07-15 3日空きで 2-day rule OK) を採用。柱⑥ UI 批評 は直近14日 1/13 = 7.7% (target 10%) で 2.3pt under、今日 1 本で 2/14 = 14.3% (target 10%) まで 4.3pt over-shoot する運用、次回 07-19 (Sun) は柱⑤ Before/After (7.7%) or 柱② プラグイン (7.7%) に振って全体平準化予定。Figma 集中期 (07-08→07-10→07-13→07-14→07-16) と Fluido 3rd party (07-17) を経て、今日は Figma 主題から完全に離れ『AI 全般に対する UX 業界の警鐘』角度で topic を切り替え、07-04『AI=チャットボックス思考停止』(modality 批評) の 14 日後・上位互換として『AI そのものを盛りすぎ』批評を投入する縦糸継承。数字先出しフック 5 連続 (07-11〜07-14) 直後、07-15〜07-19 A/B window の 4 日目として反問/対比フックを継投、07-15『Figma を開く前に』→ 07-16『After Effects まだ買わないで』→ 07-17『Blender まだ開かないで』→ 今日 07-18『AI 機能つけとこうって思ってた』と 4 日連続で反問フックを重ね、07-20 (Mon) PDCA でフックタイプ別 method 分業を正式判定する材料を積む。NG パターン回避: (a) AI=補助輪フレーム維持 — Vitaly の『自分を AI 側に合わせる AI vs 面倒を代わりにやる AI』の切り分けを、駆け出しの『目的が先、AI は道具』に翻訳、(b) 『AI がデザイナーの仕事を奪う』系不安を煽らない — Vitaly は AI を消せと言っておらず『目的を先に決めよ』が主張、駆け出しの味方として positioning 維持、(c) freshness_hours=72 (07-15 公開から 3 日) で 168 NG ライン余裕、(d) 出典 6 ソースで multi-source confirm (Smashing Vitaly 07-15 + Smashing Vitaly 07-03 前作 + Nielsen 07-17 Substack + Smashing 記事一覧ページ + Vitaly LinkedIn プロフィール + Vitaly のインタビュー podcast)、(e) 純 UI 批評 に振りすぎず『何のためのAIか』という Primary 学習者が明日から使える判断軸で着地。",
-        "sources": [
-          "https://www.smashingmagazine.com/2026/07/people-dont-want-more-ai/",
-          "https://www.smashingmagazine.com/2026/07/users-dont-need-more-tools-need-seamless-integrations/",
-          "https://jakobnielsenphd.substack.com/p/ux-roundup-20260717",
-          "https://www.smashingmagazine.com/author/vitaly-friedman/",
-          "https://de.linkedin.com/in/vitalyfriedman",
-          "https://podcasts.apple.com/us/podcast/26-vitaly-friedman-on-smashing-magazine-complexity/id1818525189?i=1000754569971"
-        ],
-        "query": "Vitaly Friedman Smashing Magazine No People Dont Want More AI July 15 2026 automation boring stuff seamless integration",
-        "freshness_hours": 72
-      },
-      "stats": {
-        "views": 1,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-08-01T00:11:18.481Z"
-      },
-      "instagram": {
-        "mediaId": "18097915169250554",
-        "permalink": "https://www.instagram.com/reel/Da6eIMjigng/",
-        "views": 42,
-        "reach": 40,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
-      "videoId": "go7nSpLvW70",
-      "videoUrl": "https://youtube.com/shorts/go7nSpLvW70",
-      "date": "2026-07-19",
-      "title": "【デザインニュース】日本人ソロ開発者が今週の Awwwards SOTD、ライブラリ 0 で 7000 粒子の宇宙｜2026/07/19 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 39,
-      "discovery": {
-        "method": "product-launches",
-        "description": "Awwwards SOTD の直近 5 日間 (07-14〜07-19) を crawl し、日本人ソロ開発者 Daiki Odaka の Galaxy of Structures (SOTD 2026-07-14, HTML5 Canvas + vanilla JavaScript で 7000 個の粒子を実装、ライブラリ 0) を Sunday evergreen 帯 + 柱⑤ ポートフォリオ事例 (-2.3pt gap) 修復向けに抽出。07-18 PDCA Action #3 予約タスク『07-19 (Sun) は柱⑤ Before/After (7.7%) 修復に振る、method 候補は product-launches (Awwwards SOTD で柱⑤ 直撃可能、avg 0.00 だが 07-12 = 7 日前で丁度 window 外 clear) or news-en (avg 1.00)』を実行。method 選定: 直近 14 日 (07-06〜07-18) method 別 avg views は official-src=2.00 (n=2, TOP1) だが柱① Figma 公式 が既に 30.8% (over 5.8pt) で Figma 集中期の反動長期化リスク大につき回避、news-en=1.00 (n=3, TOP2 viable) と product-launches=0.00 (n=1) の 2 択のうち、Sunday evergreen 帯 (戦略運用フォーマット『土日 Tips・Before/After・ポートフォリオ事例 OK』) と柱⑤ 修復 (-2.3pt) + Awwwards SOTD 直撃可能性の 3 点合致で product-launches を Explore 枠として採用。social-en は 07-10 = 3 view 伸長で avg 1.50 に急上昇したが 07-18 PDCA での 2 週連続 WORST → 07-24 まで凍結決定を規律優先で継続、expert-blog は 07-15+07-18 で 2 hits in 7-day window で 07-22 まで凍結、figma-community は 07-17 = 2 日前で 2-day rule 抵触、official-src は 07-16 = 3 日前 gate OK だが柱① over 回避で退避。product-launches 前回登場 07-12 Vectr Awwwards SOTD (views=0) の失敗を、07-12 の数字先出しフック (Lighthouse 94/98/100/100) → 今日 07-19 は storytelling 先出しフック (『駆け出しがポートフォリオに悩む日曜。日本人ソロ開発者がライブラリ 0 で獲得』) に切り替えて再挑戦、フックタイプの A/B を method 内で走らせる形。反問/対比フック A/B window は 07-15〜07-19 の 5 日連続で完成 (07-15 『Figma を開く前に』 → 07-16 『After Effects まだ買わないで』 → 07-17 『Blender まだ開かないで』 → 07-18 『AI 機能つけとこうって思ってた』 → 今日 07-19 『駆け出しがポートフォリオに悩む日曜』)、07-20 (Mon) PDCA でフックタイプ別 method 分業を正式判定する。柱バランス緊急度 > method rank ルール N=3 蓄積完了 (07-17+07-18+今日) で 07-25 頃に strategy.md 追記候補『柱の gap が過去 14 日 avg views 上位 method との差より大きい場合、柱修復を優先する』の正式明文化を再検討。日本人デザイナー縦糸を今日から新開始、既存 200 人の日本語 YouTube 講座フォロワー Primary 層に『日本人が世界で戦えている』フレームは Japan-only channel の独自 positioning として強力な candidate、08 月に月 1-2 回リズムで日本発デザイナー/開発者 (Awwwards / Figma Community / Product Hunt / Config talks) を並べる運用フォーマット追記提案。個人開発者ストーリー縦糸の 2 号目消化 (07-17 Fluido Ihor Figma プラグイン開発者 → 今日 07-19 Daiki Odaka Web 作品開発者)、次候補は 07-24 (Fri) の figma-community 枠で 3 号目。NG パターン回避: (a) AI=補助輪フレーム維持 — Daiki Odaka の『ライブラリ 0 で作品完成』は AI 不使用の Craft 側の事例で、Primary の『自分の手で作る』self-efficacy に直撃、(b) 高度すぎるプロ議論ではなく『Figma で構造だけ写経して自分の作品に翻訳する』日曜の実践 tip で着地、(c) freshness_hours=120 (07-14 SOTD 授与から 5 日) で 168 NG ライン内、(d) 出典 3 ソースで multi-source confirm (Awwwards Galaxy of Structures ページ + Awwwards SOTD リスト + Awwwards Portfolio カテゴリ)、(e) 純ポートフォリオ批評に振りすぎず『真似したくなる作品を Figma で写経する』という Primary 学習者が今日から使える actionable な weekend routine で着地。",
-        "sources": [
-          "https://www.awwwards.com/sites/galaxy-of-structures",
-          "https://www.awwwards.com/websites/sites_of_the_day/",
-          "https://www.awwwards.com/websites/portfolio/"
-        ],
-        "query": "Awwwards Site of the Day July 2026 designer portfolio Galaxy of Structures Daiki Odaka HTML5 Canvas vanilla JavaScript 7000 particles",
-        "freshness_hours": 120
-      },
-      "stats": {
-        "views": 1,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-08-02T00:11:45.961Z"
-      },
-      "instagram": {
-        "mediaId": "18106356119026112",
-        "permalink": "https://www.instagram.com/reel/Da9DFZME0V_/",
-        "views": 16,
-        "reach": 16,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
-      "videoId": "LEYlEg9wEvo",
-      "videoUrl": "https://youtube.com/shorts/LEYlEg9wEvo",
-      "date": "2026-07-20",
-      "title": "【デザインニュース】NN Group が 7/17 に AI vs 人間 UX リサーチに結論、観察の場は外注できない｜2026/07/20 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 45,
-      "discovery": {
-        "method": "news-en",
-        "description": "英語 UX 業界の権威 Nielsen Norman Group が 7/17 に公開した論考『Why Human-Led Research Still Matters in the Age of AI』を主軸に、AI が UX リサーチの成果物を出せても、ユーザーを一緒に観察してチームが意味を作る体験は外注できないという industry authority statement を pillar ③ 業界 修復向けに抽出。07-19 PDCA Action #3 予約タスク『07-20 (Mon) は平日ニュース帯復帰、柱② or 柱③ 修復、method 候補は official-src (avg 2.00 TOP1) or news-en (avg 1.00、07-14 = 6 日前 gate OK、柱② or ③ 直撃可能で最有力)』を実行。method 選定: 14 日窓 07-07〜07-19 で news-en は 07-06 Framer Fable 5 (views=2) が今日窓外に抜けて n=3→2、avg 1.00 → 0.50 に低下したが依然 TOP3、official-src TOP1 avg 2.00 は柱① Figma 公式 が 30.8% (over 5.8pt) 継続の反動長期化リスクで回避、figma-community avg 0.00 は柱② プラグイン (under 4.6pt) の修復緊急度が柱③ 12.3pt を下回るため後回し。柱③ 業界 は 07-06 Framer Fable 5 (柱③) 窓外抜けで 07-19 時点 2/13 = 15.4% → 今日 1/13 = 7.7% (under 12.3pt) に急落、14 日窓最大の運用ギャップに浮上、news-en で直撃修復が緊急度最高。product-launches は 07-19 = 昨日で 2-day rule 抵触、expert-blog は 07-18 = 2 日前 2-day rule + 07-15+07-18 = 7-day 2 hits で 07-22 まで凍結、social-en は 07-24 まで凍結継続。NG パターン回避: (a) NN Group の主張『AI がリサーチ結果を出せても、ユーザーを一緒に観察してチームが学び合う体験は外注できない』は我々の戦略『AI は補助輪、判断は人が』と同軸 = NG『AI がデザイナーの仕事を奪う系』の逆張り論考として位置づけ、Primary 駆け出しデザイナー志望者の『観察スキル・ユーザーインタビュー実施経験が面接で語れる資産になる』self-efficacy を厚塗り、権威との一致による安心感を届ける、(b) freshness_hours=72 (07-17 論考公開から 3 日) で 168 NG ライン大幅内、(c) 出典 3 ソースで multi-source confirm (NN Group 論考本体 + NN Group articles list + NN Group AI topic 一覧)、(d) プロ向け高度議論ではなく『駆け出しが次回のユーザーインタビューで、AI 要約と自分のメモを Figma で横並びに残しておく』actionable な weekday routine で着地、(e) NN Group を industry authority reference として今後も柱③/⑥ で選択的引用するリズム候補、07-25 頃に strategy.md『industry authority reference の縦糸化』追記提案。07-18 Vitaly (柱⑥) → 今日 07-20 NN Group (柱③) と 2 日空きで AI hype 逆張り論考 2 連続、視聴者飽きリスク要監視、07-21 (Tue) は必ず AI hype 逆張り以外の topic (Figma 公式 or プラグイン product news) に切り替える運用ルール新規提案。反問/対比フック A/B window は 07-15〜07-19 の 5 日連続で完成、今日 07-20 は月曜ニュース帯で反問/対比型を継続 (『AI でリサーチも全部いける』引用+真反対の権威結論)、weekday news 帯に伝染するかの追加観測日、判定は 07-22 or 07-23 PDCA で正式化。個人開発者ストーリー縦糸は今日は休み、07-24 (Fri) の figma-community 枠で 3 号目再開予約継続。日本人デザイナー縦糸は 07-19 Daiki Odaka で 1 号投入済、次回 08 月中旬候補。柱バランス緊急度 > method rank ルール N=4 蓄積完了 (07-17+07-18+07-19+今日) で 07-25 頃に strategy.md 追記『柱の gap が過去 14 日 avg views 上位 method との差より大きい場合、柱修復を優先する』の正式明文化を再検討、今日は柱③ gap 12.3pt vs official-src と news-en の avg 差 1.5 で 8 倍規模のギャップ緊急度、判定は明白。",
-        "sources": [
-          "https://www.nngroup.com/articles/human-led-research-still-matters/",
-          "https://www.nngroup.com/articles/",
-          "https://www.nngroup.com/topic/ai/"
-        ],
-        "query": "Nielsen Norman Group July 17 2026 human-led research AI UX researcher observe users team learning",
-        "freshness_hours": 72
-      },
-      "stats": {
-        "views": 1,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-08-03T00:12:10.897Z"
-      },
-      "instagram": {
-        "mediaId": "18096911117610181",
-        "permalink": "https://www.instagram.com/reel/Da_1-eWAOUB/",
-        "views": 0,
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
-      "videoId": "9_rW0aF9xCI",
-      "videoUrl": "https://youtube.com/shorts/9_rW0aF9xCI",
-      "date": "2026-07-21",
-      "title": "【デザインニュース】Figma Chrome 拡張が取り込んだサイトを Variables に自動リンク、Config 2026 mid-July rollout｜2026/07/21 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 44,
-      "discovery": {
-        "method": "official-src",
-        "description": "Figma 公式 Config 2026 recap ブログと Help Center 記事『Turn coded screens into editable design layers』から、mid-July rollout の Chrome 拡張 × Make preview × MCP server 経由の web ページ取り込みで色・タイプ・余白が既存 Variables に自動リンクされ frame も Auto Layout 付きで並ぶ workflow feature を pillar ① Figma 公式 修復向けに抽出。07-20 PDCA Action #3 予約タスク『07-21 (Tue) は残る修復として (a) 柱② プラグイン 4.6pt under or (b) 柱③ 業界 残り 5.7pt の継続修復、method 候補は official-src (avg 2.00 TOP1、7-day 窓内 07-16 のみ = 1 hit clear、柱② or ① どちら向いても Figma 公式ニュース枠) or figma-community (avg 0.00、07-17 = 4 日前 gate OK、柱② 修復に直撃)、07-20 → 07-21 の 2 日連続 AI hype 逆張り論考は積極回避』を実行。method 選定: 14 日窓 07-08〜07-20 で official-src は 07-08 + 07-16 で n=2 avg 2.00 継続 TOP1、7-day 窓内 hit は 07-16 のみ = 1 hit clear (07-08 = 13 日前で 7-day 窓外)、figma-community avg 0.00 も採用可能だが直近 168h 以内の fresh community plugin news が調査で確認できず 07-13 Weave + 07-17 Fluido との重複回避も難しく今日は見送り 07-24 (Fri) 予約、product-launches avg 0.00 は 07-19 = 2 日前で 2-day rule 境界クリアだが 2 週連続 WORST リスク+ 07-26 (Sun) Awwwards SOTD 縦糸予約温存で見送り、news-en は 07-20 昨日で 2-day rule 抵触、expert-blog は 07-15+07-18 = 7-day 2 hits で 07-22 まで凍結、social-en は 07-24 まで凍結継続。柱バランス緊急度: 07-07 DESIGN.md (柱④, views=0) が今日 07-21 で 14 日窓を抜けて柱④ = 2/13 = 15.4% → 1/13 = 7.7% (under 7.3pt) に急落、07-20 の柱③ 12.3pt under から柱④ 7.3pt under に緊急度反転、ただし weekday news 帯で Tips 修復は原則不可、07-25 (Sat) or 07-26 (Sun) の evergreen 帯で修復必須。柱① は今日 official-src 採用で 4/13 = 30.8% → 5/14 = 35.7% (over 10.7pt) に上昇、07-22-25 で 07-08 + 07-10 + 07-14 の柱① が順次窓外抜けで自然終息予測、07-24 時点で 3/14 = 21.4% (under 3.6pt) まで戻る、今日の反動許容は 07-25 頃までの一時コスト。柱② プラグイン は今日修復せず 07-22 (Wed) news-en 復帰で継続予約、07-24 (Fri) figma-community で individual-creator-story 縦糸 3 号目投入予定。NG パターン回避: (a) Config 2026 workflow news は AI hype 逆張り論考ではなく workflow 実装 news、07-18 Vitaly + 07-20 NN Group と 2 日空きの AI hype 逆張り 3 連続回避規律 N=1 実行 = 視聴者飽きリスクを workflow news 切り替えで解消、Primary 駆け出しデザイナー志望者への『AI hype 疲れさせない』運用ルールの実データ蓄積、(b) freshness_hours=168 (Config 2026 6/24 発表から 4 週間経過だが mid-July rollout 段階の feature = help center 記事は 7/14 以降の最新 update)、168h NG ライン境界に位置するが Chrome 拡張 × Variables 自動リンク自体が mid-July rollout の feature で fresh news 適合、(c) 出典 3 ソースで multi-source confirm (Figma Config 2026 recap ブログ + Help Center Turn coded screens 記事 + What's new from Config 2026 Help 記事)、(d) プロ向け高度議論ではなく『駆け出しがなぞる練習に疲れる → 憧れの LP を Chrome 拡張で Figma に取り込むと色や余白が自動で Variables に紐づく → design system 練習に直結する → 自分の言葉で書き換える一本を』actionable な weekday routine で着地、(e) Config 2026 mid-July rollout 縦糸として 07-30 頃までの official-src / news-en 系 news 補給源 (3D Transforms preview waitlist / Code Layers 早期アクセス / Chrome 拡張 × Variables / Weave 20+AI tools 深掘り / exportAsync 動画エクスポート / AI usage credit CSV for admins) 月 3-4 本のリズム化候補で今日は 1 号目投入。反問/共感型フック A/B window は 07-15〜07-20 の 6 日連続で反問型継続、今日 07-21 で 7 個目 sample『なぞる練習、途中で疲れていませんか』継続、weekday news 帯適用の 2 個目 sample。柱バランス緊急度 > method rank ルール N=4 蓄積の逆選択 = 例外ケース初出 (今日 07-21 は柱① 反動許容で official-src 採用)、fresh news 適合度 + AI hype 逆張り 3 連続回避規律 + Config 2026 深掘り再訪 (07-16 Motion 以来 5 日ぶり) の 3 目的が柱① 反動コストを上回った判定、07-25 頃に strategy.md 追記時の但し書き候補として蓄積。",
-        "sources": [
-          "https://www.figma.com/blog/config-2026-recap/",
-          "https://help.figma.com/hc/en-us/articles/40826832449303-Turn-coded-screens-into-editable-design-layers",
-          "https://help.figma.com/hc/en-us/articles/39582753756695-What-s-new-from-Config-2026"
-        ],
-        "query": "Figma design import variables binding Config 2026 code screens Chrome extension Make MCP",
-        "freshness_hours": 168
-      },
-      "stats": {
-        "views": 1,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-08-04T00:15:50.198Z"
-      },
-      "instagram": {
-        "mediaId": "17940388191074484",
-        "permalink": "https://www.instagram.com/reel/DbCMk7sjOwI/",
-        "views": 12,
-        "reach": 12,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "b2q5x7B7Vw8",
       "videoUrl": "https://youtube.com/shorts/b2q5x7B7Vw8",
       "date": "2026-07-22",
@@ -4182,7 +3797,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-19T01:16:16.327Z"
+        "updatedAt": "2026-10-20T01:50:13.318Z"
       },
       "instagram": {
         "mediaId": "18130486570771979",
@@ -4268,7 +3883,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-19T01:16:16.327Z"
+        "updatedAt": "2026-10-20T01:50:13.318Z"
       },
       "instagram": {
         "mediaId": "17931461001407071",
@@ -4353,7 +3968,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-19T01:16:16.327Z"
+        "updatedAt": "2026-10-20T01:50:13.318Z"
       },
       "instagram": {
         "mediaId": "18143425864586488",
@@ -4430,7 +4045,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-19T01:16:16.327Z"
+        "updatedAt": "2026-10-20T01:50:13.318Z"
       },
       "instagram": {
         "mediaId": "18028383110875571",
@@ -4501,7 +4116,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-19T01:16:16.327Z"
+        "updatedAt": "2026-10-20T01:50:13.318Z"
       },
       "instagram": {
         "mediaId": "18019960112947022",
@@ -4537,16 +4152,81 @@
           }
         ]
       }
+    },
+    {
+      "videoId": "J6rk7aXlKAk",
+      "videoUrl": "https://youtube.com/shorts/J6rk7aXlKAk",
+      "date": "2026-10-20",
+      "genre": "ai-news",
+      "trial": 3,
+      "title": "【今日のAIニュース】Anthropic、株の5%を社会へ｜2026/10/20 #Shorts",
+      "titleTemplate": "ai-news",
+      "hashtags": [
+        "AIニュース",
+        "生成AI",
+        "AI最新情報",
+        "人工知能",
+        "テクノロジー",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "Anthropic、株の5%を社会へ"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": "出典: Anthropic・TechCrunch ほか"
+      },
+      "durationSeconds": 49,
+      "coverOffsetMs": 6100,
+      "discovery": {
+        "method": "news",
+        "description": "Anthropic が株式の5%で公益ファンドを設立",
+        "sources": [
+          "https://www.anthropic.com/news/public-benefit-fund",
+          "https://techcrunch.com/2026/10/18/anthropic-says-its-committing-5-of-its-shares-to-a-public-benefit-fund",
+          "https://www.aljazeera.com/economy/2026/10/19/anthropic-says-it-will-commit-5-of-shares-to-public-benefit-fund"
+        ]
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": null,
+      "jev": {
+        "kind": "news",
+        "topicKey": "anthropic-benefitfund-launch",
+        "topic": "Anthropic が株式の5%で公益ファンドを設立",
+        "sources": [
+          {
+            "url": "https://www.anthropic.com/news/public-benefit-fund",
+            "outlet": "Anthropic",
+            "published_at": "2026-10-18",
+            "role": "news",
+            "official": true
+          },
+          {
+            "url": "https://techcrunch.com/2026/10/18/anthropic-says-its-committing-5-of-its-shares-to-a-public-benefit-fund",
+            "outlet": "TechCrunch",
+            "published_at": "2026-10-18",
+            "role": "reference",
+            "official": false
+          },
+          {
+            "url": "https://www.aljazeera.com/economy/2026/10/19/anthropic-says-it-will-commit-5-of-shares-to-public-benefit-fund",
+            "outlet": "Al Jazeera",
+            "published_at": "2026-10-19",
+            "role": "reference",
+            "official": false
+          }
+        ]
+      }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-09-21",
-      "changes": [
-        "Day performance: Mon=2, Sat=1, Sun=1, Fri=1, Tue=1, Thu=1, Wed=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-09-22",
       "changes": [
@@ -4745,6 +4425,13 @@
     },
     {
       "date": "2026-10-19",
+      "changes": [
+        "Day performance: Tue=1, Wed=1, Thu=1, Sat=1, Sun=1, Mon=1, Fri=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-10-20",
       "changes": [
         "Day performance: Tue=1, Wed=1, Thu=1, Sat=1, Sun=1, Mon=1, Fri=1"
       ],
