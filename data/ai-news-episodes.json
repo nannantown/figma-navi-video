@@ -252,6 +252,145 @@
         ],
         "note": "金額（ドル）は原稿に使っていないため円換算は不要。CNBC は 403 で開けず出典にしていない。OpenAI の自律エージェント事故報告（10/15 公表）は主役の出典が 3 日より古いため見送り。"
       }
+    },
+    {
+      "date": "2026-10-21",
+      "genre": "ai-news",
+      "trial": 3,
+      "kind": "news",
+      "topic_key": "google-androidauto-geminipersonal",
+      "topic": "Google が車の Gemini を自分向けに強化",
+      "headline": "車の Gemini、予定も把握",
+      "hook": "運転中に「搭乗口どこ？」と聞くだけでいい？",
+      "slides": [
+        {
+          "heading": "何が始まった？",
+          "body": "Google が10月20日、Android Auto の Gemini に、メールや予定をふまえて答える機能を広げました。",
+          "narration": "Google は10月20日、スマホを車の画面につなぐ Android Auto で、Gemini が自分のメールや予定をふまえて答える機能を始めました。",
+          "diagram": {
+            "type": "flow",
+            "items": [
+              {
+                "note": "入力",
+                "label": "メール・予定"
+              },
+              {
+                "note": "AI",
+                "label": "Gemini"
+              },
+              {
+                "note": "出力",
+                "label": "声で答え"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "何ができる？",
+          "body": "搭乗口と遅れをまとめて答えたり、住所なしで予約先へ案内したりできます。",
+          "narration": "例えば「搭乗口はどこ？遅れてる？」と聞くと、まとめて答えます。住所が分からなくても「病院の予約へ」と言えば案内してくれます。",
+          "diagram": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "話しかける"
+              },
+              {
+                "label": "メールを確認"
+              },
+              {
+                "label": "答え・道案内"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "誰が使える？",
+          "body": "18歳以上の個人アカウントが対象。欧州経済領域・英国・スイス・ナイジェリアは対象外です。",
+          "narration": "Google によると、対象は18歳以上の個人アカウントで、欧州経済領域、英国、スイス、ナイジェリアは対象外です。日本語で使えるかは、まだ分かっていません。",
+          "claim_source": "Google の発表",
+          "diagram": {
+            "type": "compare",
+            "items": [
+              {
+                "note": "対象外",
+                "label": "仕事・学校用"
+              },
+              {
+                "note": "対象",
+                "label": "個人・18歳以上"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "使う前に知っておく",
+          "body": "自分でオンにしたときだけ動き、つなぐアプリも選べます。Google 内蔵の車は今後数か月で対応予定。",
+          "narration": "この機能は自分でオンにしたときだけ動き、つなぐアプリも選べます。Google を内蔵した車へは、今後数か月で広げるとしています。",
+          "diagram": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "設定でオン"
+              },
+              {
+                "label": "アプリを選ぶ"
+              },
+              {
+                "label": "いつでもオフ"
+              }
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://blog.google/products-and-platforms/platforms/android/android-auto-cars-with-google-built-in-gemini-personal-intelligence/",
+          "title": "Get hands-free personalized help on the road with Gemini",
+          "outlet": "Google",
+          "published_at": "2026-10-20",
+          "role": "news",
+          "official": true
+        },
+        {
+          "url": "https://www.engadget.com/2292027/google-brings-gemini-personal-intelligence-to-android-auto/",
+          "title": "Google brings Gemini Personal Intelligence to Android Auto",
+          "outlet": "Engadget",
+          "published_at": "2026-10-20",
+          "role": "reference",
+          "official": false
+        },
+        {
+          "url": "https://9to5google.com/2026/10/20/gemini-android-auto-personal-intelligence/",
+          "title": "Google upgrading Gemini for Android Auto with Personal Intelligence",
+          "outlet": "9to5Google",
+          "published_at": "2026-10-20",
+          "role": "reference",
+          "official": false
+        },
+        {
+          "url": "https://techcrunch.com/2026/10/20/google-is-bringing-a-more-personal-version-of-its-gemini-ai-assistant-to-your-car",
+          "title": "Google is bringing a more personal version of its Gemini AI assistant to your car",
+          "outlet": "TechCrunch",
+          "published_at": "2026-10-20",
+          "role": "reference",
+          "official": false
+        }
+      ],
+      "research": {
+        "checked": [
+          "https://blog.google/products-and-platforms/platforms/android/android-auto-cars-with-google-built-in-gemini-personal-intelligence/",
+          "https://www.engadget.com/2292027/google-brings-gemini-personal-intelligence-to-android-auto/",
+          "https://9to5google.com/2026/10/20/gemini-android-auto-personal-intelligence/",
+          "https://techcrunch.com/2026/10/20/google-is-bringing-a-more-personal-version-of-its-gemini-ai-assistant-to-your-car",
+          "https://www.androidcentral.com/apps-software/android-auto/personal-intelligence-hits-the-road-google-gemini-rollout-android-auto",
+          "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-tuesday-october-20-2026/",
+          "https://openai.com/index/low-resource-programming-languages/",
+          "https://www.geekwire.com/2026/microsoft-unveils-tools-to-monitor-and-corral-rogue-ai-agents/",
+          "https://raw.githubusercontent.com/nannantown/github-trending-video/main/data/performance-history.json"
+        ],
+        "note": "金額は原稿に使っていないため円換算は不要。OpenAI 公式・GeekWire は 403、Android Central は本文が読めず出典にしていない。対象地域・年齢は Google 公式の記載。日本語対応は記載なし。"
+      }
     }
   ]
 }
