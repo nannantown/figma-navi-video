@@ -3883,7 +3883,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-20T01:50:13.318Z"
+        "updatedAt": "2026-10-21T01:35:13.941Z"
       },
       "instagram": {
         "mediaId": "17931461001407071",
@@ -3968,7 +3968,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-20T01:50:13.318Z"
+        "updatedAt": "2026-10-21T01:35:13.941Z"
       },
       "instagram": {
         "mediaId": "18143425864586488",
@@ -4045,7 +4045,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-20T01:50:13.318Z"
+        "updatedAt": "2026-10-21T01:35:13.941Z"
       },
       "instagram": {
         "mediaId": "18028383110875571",
@@ -4113,10 +4113,10 @@
         ]
       },
       "stats": {
-        "views": 1,
+        "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-20T01:50:13.318Z"
+        "updatedAt": "2026-10-21T01:35:13.941Z"
       },
       "instagram": {
         "mediaId": "18019960112947022",
@@ -4193,7 +4193,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-10-21T01:35:13.941Z"
       },
       "instagram": {
         "mediaId": "18060946787535736",
@@ -4237,13 +4237,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-09-22",
-      "changes": [
-        "Day performance: Mon=2, Sat=1, Sun=1, Fri=1, Tue=1, Thu=1, Wed=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-09-23",
       "changes": [
@@ -4444,6 +4437,13 @@
       "date": "2026-10-20",
       "changes": [
         "Day performance: Tue=1, Wed=1, Thu=1, Sat=1, Sun=1, Mon=1, Fri=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-10-21",
+      "changes": [
+        "Day performance: Mon=2, Wed=1, Thu=1, Fri=1, Sat=1, Tue=1, Sun=1"
       ],
       "recommendedTemplate": "standard"
     }
