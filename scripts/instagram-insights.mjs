@@ -291,7 +291,16 @@ export async function updateInstagramStats(history, env, opts = {}) {
   }
   const pageToken = page.access_token;
 
-  const videos = history.videos ?? [];
+  // IG account switch (AI Ground rebuilt, 2026-10): INSTAGRAM_USER_ID then points
+  // at a new account whose /media does not list the old Reels, so matching them
+  // would null every old entry. Entries dated before IG_ACCOUNT_SINCE belong to
+  // the old account: leave their `instagram` as recorded. Unset = all entries.
+  const accountSince = env.IG_ACCOUNT_SINCE || "";
+  if (accountSince && !/^\d{4}-\d{2}-\d{2}$/.test(accountSince)) {
+    throw new Error(`IG_ACCOUNT_SINCE must be YYYY-MM-DD, got "${accountSince}"`);
+  }
+  const videos = (history.videos ?? []).filter((v) => v.date >= accountSince);
+  if (accountSince) log(`  IG: entries before ${accountSince} kept as recorded (previous account)`);
   const sinceDate = videos.reduce((min, v) => (v.date < min ? v.date : min), "9999-12-31");
   const reels = await listReels(graphGet, INSTAGRAM_USER_ID, pageToken, sinceDate);
   log(`  IG: ${reels.length} REELS listed since ${sinceDate}`);
