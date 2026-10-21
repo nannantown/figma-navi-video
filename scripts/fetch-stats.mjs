@@ -195,6 +195,17 @@ function generateDayOfWeekInsights(videos) {
  * (fetch-stats.yml verification run) turns "nothing collected" into a
  * non-zero exit so the run is visibly red instead of silently empty.
  */
+/**
+ * First day of the current IG account (YYYY-MM-DD) from data/instagram-account.json
+ * `{ "since": "..." }`. A committed file, not a repo variable, so no workflow
+ * has to pass it. No file / no `since` = "" = every entry is this account's.
+ */
+function readAccountSince() {
+  const path = join(rootDir, "data", "instagram-account.json");
+  if (!existsSync(path)) return "";
+  return JSON.parse(readFileSync(path, "utf-8")).since ?? "";
+}
+
 async function fetchInstagramStats(history) {
   const strict = process.env.FETCH_STATS_STRICT_IG === "1";
   const { INSTAGRAM_ACCESS_TOKEN, INSTAGRAM_USER_ID, FACEBOOK_PAGE_ID } = process.env;
@@ -208,7 +219,10 @@ async function fetchInstagramStats(history) {
   try {
     // Skip days (no video) must never be matched to a Reel. Same entry objects,
     // so the stats written by updateInstagramStats land in `history`.
-    const result = await updateInstagramStats({ ...history, videos: postedVideos(history.videos) }, process.env);
+    const result = await updateInstagramStats(
+      { ...history, videos: postedVideos(history.videos) },
+      { ...process.env, IG_ACCOUNT_SINCE: process.env.IG_ACCOUNT_SINCE || readAccountSince() }
+    );
     if (result.followersCount != null) {
       recordFollowerCount(history, result.followersCount);
       console.log(`  IG: followers ${result.followersCount}`);

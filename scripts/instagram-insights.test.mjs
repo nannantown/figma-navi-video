@@ -151,6 +151,44 @@ test("updateInstagramStats fills instagram metrics and nulls unmatched entries",
   assert.ok(!logs.join("\n").includes("user-token") && !logs.join("\n").includes("page-token"));
 });
 
+test("IG_ACCOUNT_SINCE: entries before the account switch keep their instagram record", async () => {
+  const oldRecord = { mediaId: "old1", permalink: "pold", views: 900, saved: 12, updatedAt: "2026-10-01T00:00:00Z" };
+  const history = {
+    videos: [
+      { date: "2026-10-20", instagram: { ...oldRecord } },
+      { date: "2026-10-25" },
+      { date: "2026-10-26" },
+    ],
+  };
+  const calls = [];
+  const fetchImpl = fakeFetch(
+    {
+      "/me/permissions": PERMS_OK,
+      "/page1": { access_token: "page-token" },
+      // The new account lists only its own Reels; old1 is not here.
+      "/ig1/media": {
+        data: [{ id: "n25", media_product_type: "REELS", timestamp: "2026-10-24T23:30:00+0000", permalink: "p25" }],
+      },
+      "/n25/insights": { data: [{ name: "views", values: [{ value: 3 }] }] },
+    },
+    calls
+  );
+  const now = new Date("2026-10-27T00:00:00Z");
+  const result = await updateInstagramStats(history, { ...ENV, IG_ACCOUNT_SINCE: "2026-10-25" }, { fetchImpl, now, log: () => {} });
+
+  assert.deepEqual(history.videos[0].instagram, oldRecord, "old account's record untouched");
+  assert.equal(history.videos[1].instagram.mediaId, "n25", "new account still matched by date");
+  assert.equal(history.videos[1].instagram.views, 3);
+  assert.equal(history.videos[2].instagram, null, "unmatched entry on/after the switch is nulled as before");
+  assert.equal(result.matched, 1);
+  assert.ok(!calls.some((u) => u.pathname.endsWith("/old1/insights")));
+
+  await assert.rejects(
+    updateInstagramStats({ videos: [] }, { ...ENV, IG_ACCOUNT_SINCE: "2026/10/25" }, { fetchImpl, now, log: () => {} }),
+    /YYYY-MM-DD/
+  );
+});
+
 test("updateInstagramStats reports permissionDenied when every insights call is refused", async () => {
   const history = { videos: [{ date: "2026-09-10" }] };
   const fetchImpl = fakeFetch({
