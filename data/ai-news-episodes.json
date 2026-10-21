@@ -391,6 +391,133 @@
         ],
         "note": "金額は原稿に使っていないため円換算は不要。OpenAI 公式・GeekWire は 403、Android Central は本文が読めず出典にしていない。対象地域・年齢は Google 公式の記載。日本語対応は記載なし。"
       }
+    },
+    {
+      "date": "2026-10-22",
+      "genre": "ai-news",
+      "trial": 3,
+      "kind": "news",
+      "topic_key": "anthropic-claudeduet-preview",
+      "topic": "Anthropic が先回りする AI「Claude Duet」を試験公開",
+      "headline": "頼む前に動く Claude Duet",
+      "hook": "頼まなくても先に動く AI、知っていますか？",
+      "slides": [
+        {
+          "heading": "何が発表された？",
+          "body": "Anthropic が、自分から仕事を見つけて動く AI「Claude Duet」の試験版を公開しました。",
+          "narration": "Anthropic が10月21日、新しい AI「Claude Duet」の試験版を公開しました。頼まれる前に、自分から仕事を見つけて動くのが特長です。",
+          "diagram": {
+            "type": "compare",
+            "items": [
+              {
+                "note": "今まで",
+                "label": "頼むと動く"
+              },
+              {
+                "note": "Duet",
+                "label": "先に声をかける"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "どう動く？",
+          "body": "メールや予定を見て朝にまとめを送り、会議の調整や資料作りも進めます。",
+          "narration": "メールや予定などのアプリとつなぐと、毎朝やることのまとめを送ってくれます。会議の日程調整や資料作りも、クラウド上の専用パソコンで進めます。",
+          "diagram": {
+            "type": "flow",
+            "items": [
+              {
+                "note": "入力",
+                "label": "メール・予定"
+              },
+              {
+                "note": "AI",
+                "label": "Duet"
+              },
+              {
+                "note": "出力",
+                "label": "まとめ・資料"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "誰が使える？",
+          "body": "米国の Pro・Max 会員が順番待ちで利用。追加料金は無く、プランの利用枠を使います。",
+          "narration": "今はアメリカの Pro と Max の会員だけが、順番待ちで使えます。追加料金はありませんが、裏で動く分も利用枠を使います。日本での提供時期はまだ分かっていません。",
+          "diagram": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "米国 Pro・Max"
+              },
+              {
+                "label": "順番待ちに登録"
+              },
+              {
+                "label": "招待されたら利用"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "気をつけること",
+          "body": "送信や支払いの前には確認を求めます。急ぎかどうかを読み違えることもあると同社は説明。",
+          "narration": "メッセージの送信や支払いの前には、必ずあなたに確認します。ただ Anthropic は、急ぎかどうかを読み違えることもあると説明しています。",
+          "diagram": {
+            "type": "compare",
+            "items": [
+              {
+                "note": "Duet",
+                "label": "下書き・調べもの"
+              },
+              {
+                "note": "あなた",
+                "label": "送信・支払い"
+              }
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.macrumors.com/2026/10/21/anthropic-claude-duet/",
+          "title": "Anthropic Launches Claude Duet, a Proactive AI Agent",
+          "outlet": "MacRumors",
+          "published_at": "2026-10-21",
+          "role": "news",
+          "official": false
+        },
+        {
+          "url": "https://claude.com/product/claude-duet",
+          "title": "Claude Duet",
+          "outlet": "Anthropic",
+          "published_at": null,
+          "role": "reference",
+          "official": true
+        },
+        {
+          "url": "https://9to5mac.com/2026/10/21/anthropic-takes-on-chatgpt-dots-and-meta-muse-with-claude-duet/",
+          "title": "Anthropic takes on ChatGPT Dots and Meta Muse with Claude Duet",
+          "outlet": "9to5Mac",
+          "published_at": "2026-10-21",
+          "role": "reference",
+          "official": false
+        }
+      ],
+      "research": {
+        "checked": [
+          "https://aiweekly.co/ai-news-today",
+          "https://techcrunch.com/category/artificial-intelligence/",
+          "https://claude.com/product/claude-duet",
+          "https://www.macrumors.com/2026/10/21/anthropic-claude-duet/",
+          "https://9to5mac.com/2026/10/21/anthropic-takes-on-chatgpt-dots-and-meta-muse-with-claude-duet/",
+          "https://www.anthropic.com/news/claude-duet",
+          "https://raw.githubusercontent.com/nannantown/github-trending-video/main/data/performance-history.json"
+        ],
+        "note": "Android アプリの有無は MacRumors（iOS のみ言及）と公式・9to5Mac（iOS と Android）で食い違うため原稿では触れない。金額の記載なし。"
+      }
     }
   ]
 }
