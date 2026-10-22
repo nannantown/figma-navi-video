@@ -60,6 +60,21 @@ export function deliverJev({ expected, history = null, pr, head, prepare = false
   return { date, pr, head, delivered: false, readyForReview: true };
 }
 
+/** For daily-video: only when the ledger is well formed but has no episode for
+ * today (errors carry "no episode for <date>"). If the routine's branch for
+ * today exists, its PR is likely unmerged (the routine's own merge is refused by
+ * the auto-mode classifier on many mornings — docs/routine-merge-miss.md).
+ * Branches stay after a merge, so a broken ledger must not trigger this.
+ * Returns a GitHub Actions error line, or null. */
+export function unmergedRoutineHint(date, errors, lsRemote = (ref) => execFileSync("git", ["ls-remote", "--heads", "origin", ref], { cwd: root, encoding: "utf8", timeout: 15_000, stdio: ["ignore", "pipe", "pipe"] })) {
+  if (!errors.some((e) => e.startsWith(`no episode for ${date}`))) return null;
+  const branch = `routine-content-${date}`;
+  let out;
+  try { out = lsRemote(`refs/heads/${branch}`); } catch { return null; }
+  if (!String(out).split("\n").some((l) => l.trim().split(/\s+/)[1] === `refs/heads/${branch}`)) return null;
+  return `::error title=原稿 PR が未マージかもしれない::${branch} ブランチがあり、${date} の回が main に無い。PR が未作成・未マージ、またはルーチンがまだ実行中の可能性がある。PR を確かめ、merge したら daily-video.yml を手で実行し直す: https://github.com/${REPO}/pulls?q=is%3Apr+head%3A${branch}`;
+}
+
 function cli(args) {
   if (args.some((a) => !/^(--prepare|--pr=\d+|--head=[a-f0-9]{40}|--series=(?:jev|news))$/.test(a))) throw new Error("Usage: node scripts/deliver-jev.mjs --pr=<number> --head=<SHA> [--prepare] [--series=jev|news] (read-only; no --merge)");
   // The ledger of the committed format (news / jev), unless --series says otherwise.
