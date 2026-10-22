@@ -59,11 +59,11 @@ function generateJevData(allowStale, series) {
   const { errors, warnings, episode, usecaseNumber } = validateEpisodes(loadEpisodes(path), { date: today, today, pickLatest: allowStale, history, series });
   for (const w of warnings) console.warn(`  WARN ${w}`);
   if (errors.length > 0) {
-    // Today missing + the routine's branch exists = written but not merged. Say
-    // so loudly instead of a bare "no episode" (docs/routine-merge-miss.md).
-    const hint = !allowStale && !episode ? unmergedRoutineHint(today) : null;
+    // Today missing + the routine's branch exists = probably written but not
+    // merged. Say so loudly instead of a bare "no episode" (docs/routine-merge-miss.md).
+    const hint = allowStale ? null : unmergedRoutineHint(today, errors);
     if (hint) console.log(hint);
-    const tail = hint ? `\n  - today's script is on routine-content-${today} but its PR is not merged — merge it, then re-run daily-video.yml` : "";
+    const tail = hint ? `\n  - routine-content-${today} exists but today's episode is not on main — check its PR (unmerged, not opened, or the routine still running); after a merge, re-run daily-video.yml` : "";
     throw new Error(`${path} is invalid:\n  - ${errors.join("\n  - ")}${tail}`);
   }
   const out = toJevVideoData(episode, { usecaseNumber, series });

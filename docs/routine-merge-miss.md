@@ -28,18 +28,18 @@ AI Ground の朝ルーチン（Claude Routine 07:30 JST、`trig_015qA2EomJ4EjDPN
 
 オーナー決定（2026-09-27「B: 今のまま。自動取り込みの仕組みは足さない」）に沿って、**ルーチン以外が自動で merge する仕組みは作っていない**。`.github/workflows/**` も変えていない。
 
-1. **08:15 の失敗をはっきりさせた**: `scripts/generate-data.mjs` は今日の回が main に無いとき、`git ls-remote` で `routine-content-<今日>` ブランチを探す。ブランチがあれば、GitHub Actions の注記 `::error title=原稿 PR が未マージ::…`（PR の検索 URL と「merge してから daily-video.yml を手で実行し直す」）を出して止まる。「ルーチンが書かなかった日」と「書いたが入らなかった日」が、エラーで見分けられる（`scripts/deliver-jev.mjs` の `unmergedRoutineHint`。テストは `scripts/deliver-jev.test.mjs`）
-2. **手順書**（[routine-prompt-news.md](routine-prompt-news.md) §6 C・D）: 拒否はどの朝にも起こりうること、レビュー文を書き足しても言い換えても通らないことを書いた。拒否されたら PushNotification（PR 番号・SHA・08:15 の期限・過ぎたときの手での実行）と最終レポートの先頭への記載を必ず行い、そこで止まる。`deliver-jev.mjs` 自体が拒否されたときの、読み取りだけの代わりの確かめ方も書いた
+1. **08:15 の失敗をはっきりさせた**: `scripts/generate-data.mjs` は、台帳が正しい形のまま今日の回だけが無いとき（エラーが `no episode for <今日>`）に限って、`git ls-remote` で `routine-content-<今日>` ブランチを探す。ブランチがあれば、GitHub Actions の注記 `::error title=原稿 PR が未マージかもしれない::…` を出して止まる。注記には「PR が未作成・未マージ、またはルーチンがまだ実行中の可能性」、PR の検索 URL、「merge したら daily-video.yml を手で実行し直す」が入る。「ルーチンが書かなかった日」と「書いたが入らなかった日」が、エラーで見分けられる。ブランチは merge のあとも消えずに残るので、台帳が壊れている日にはこの注記を出さない（`scripts/deliver-jev.mjs` の `unmergedRoutineHint`。テストは `scripts/deliver-jev.test.mjs`）
+2. **手順書**（[routine-prompt-news.md](routine-prompt-news.md) §6 C・D。休止中の型 [routine-prompt-jev.md](routine-prompt-jev.md)・[routine-prompt-pickup.md](routine-prompt-pickup.md) にも同じ止まり方を入れた）: 拒否はどの朝にも起こりうること、レビュー文を書き足しても言い換えても通らないことを書いた。拒否されたら PushNotification（PR 番号・SHA・08:15 の期限・過ぎたときの手での実行）と最終レポートの先頭への記載を必ず行い、そこで止まる。`deliver-jev.mjs` 自体が拒否されたときの、読み取りだけの代わりの確かめ方も書いた
 
 ### 再現（2026-10-22）
 
 時計を 10/19 08:15 JST に合わせて（`node --import` で `Date` を固定）、今の main で `scripts/generate-data.mjs` を動かした。main には 10/19 の回が無く、`routine-content-2026-10-19` ブランチは残っている:
 
 ```
-::error title=原稿 PR が未マージ::2026-10-19 の原稿は routine-content-2026-10-19 ブランチにあるが main に入っていない（ルーチンの merge が止まった）。PR を確かめて squash merge し、daily-video.yml を手で実行し直す: https://github.com/nannantown/figma-navi-video/pulls?q=is%3Apr+head%3Aroutine-content-2026-10-19
+::error title=原稿 PR が未マージかもしれない::routine-content-2026-10-19 ブランチがあり、2026-10-19 の回が main に無い。PR が未作成・未マージ、またはルーチンがまだ実行中の可能性がある。PR を確かめ、merge したら daily-video.yml を手で実行し直す: https://github.com/nannantown/figma-navi-video/pulls?q=is%3Apr+head%3Aroutine-content-2026-10-19
 data/ai-news-episodes.json is invalid:
   - no episode for 2026-10-19 (…)
-  - today's script is on routine-content-2026-10-19 but its PR is not merged — merge it, then re-run daily-video.yml
+  - routine-content-2026-10-19 exists but today's episode is not on main — check its PR (unmerged, not opened, or the routine still running); after a merge, re-run daily-video.yml
 ```
 
 ブランチがまだ無い日（10/23）に合わせると、これまでどおり `no episode for 2026-10-23` だけが出る。

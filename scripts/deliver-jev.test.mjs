@@ -174,19 +174,35 @@ test("CLI explicitly rejects the old --merge mode before any git/gh action", () 
   assert.match(r.stderr, /read-only; no --merge/);
 });
 
+const hintDate = "2026-10-21";
+const missing = [`no episode for ${hintDate} (the routine appends today's episode to data/ai-news-episodes.json)`];
+const branchLine = `d9b83afb\trefs/heads/routine-content-${hintDate}\n`;
+
 test("unmergedRoutineHint: today's routine branch exists but main lacks the episode → loud error line", async () => {
   const { unmergedRoutineHint } = await import("./deliver-jev.mjs");
   const asked = [];
-  const hint = unmergedRoutineHint("2026-10-21", (ref) => { asked.push(ref); return "d9b83afb\trefs/heads/routine-content-2026-10-21\n"; });
-  assert.deepEqual(asked, ["refs/heads/routine-content-2026-10-21"]);
-  assert.match(hint, /^::error title=原稿 PR が未マージ::/);
+  const hint = unmergedRoutineHint(hintDate, missing, (ref) => { asked.push(ref); return branchLine; });
+  assert.deepEqual(asked, [`refs/heads/routine-content-${hintDate}`]);
+  assert.match(hint, /^::error title=原稿 PR が未マージかもしれない::/);
   assert.match(hint, /routine-content-2026-10-21/);
   assert.match(hint, /daily-video\.yml/);
 });
 
 test("unmergedRoutineHint: no branch (the routine wrote nothing) or git failure → null", async () => {
   const { unmergedRoutineHint } = await import("./deliver-jev.mjs");
-  assert.equal(unmergedRoutineHint("2026-10-21", () => ""), null);
-  assert.equal(unmergedRoutineHint("2026-10-21", () => "abc\trefs/heads/routine-content-2026-10-21-old\n"), null);
-  assert.equal(unmergedRoutineHint("2026-10-21", () => { throw new Error("offline"); }), null);
+  assert.equal(unmergedRoutineHint(hintDate, missing, () => ""), null);
+  assert.equal(unmergedRoutineHint(hintDate, missing, () => `abc\trefs/heads/routine-content-${hintDate}-old\n`), null);
+  assert.equal(unmergedRoutineHint(hintDate, missing, () => { throw new Error("offline"); }), null);
+});
+
+test("unmergedRoutineHint: a broken ledger is not called an unmerged PR, even when the branch is left over after a merge", async () => {
+  const { unmergedRoutineHint } = await import("./deliver-jev.mjs");
+  const { validateEpisodes, SERIES } = await import("./jev.mjs");
+  const lsRemote = () => assert.fail("must not look for the branch when the ledger itself is broken");
+  for (const ledger of [{ episodes: "oops" }, { episodes: [{ date: "not-a-date" }] }]) {
+    const { errors, episode } = validateEpisodes(ledger, { date: hintDate, today: hintDate, series: SERIES.news });
+    assert.equal(episode, null);
+    assert.ok(errors.length > 0 && !errors.some((e) => e.startsWith("no episode for")));
+    assert.equal(unmergedRoutineHint(hintDate, errors, lsRemote), null);
+  }
 });
