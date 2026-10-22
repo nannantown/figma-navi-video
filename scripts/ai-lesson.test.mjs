@@ -24,6 +24,7 @@ import {
   lessonPrompt,
   promptSimilarity,
   mayCharacterOn,
+  LESSON_PASTE_RE,
 } from "./jev.mjs";
 import { buildCaptions } from "./generate-caption.mjs";
 import { buildPostEntry } from "./record-upload.mjs";
@@ -115,7 +116,13 @@ test("lesson: no paid plan, no hype, no GitHub; the 4-slide shape with the promp
   bodyOnly.slides[3].body = "貼る前に、社外秘や人の名前は仮名にしましょう。数字と日付は元の文章で確かめます。";
   assert.match(errorsOf([ep(0), bodyOnly]), /pastes work text/);
   // Pasting is found anywhere in the prompt / slide 2, not only at the start of the prompt.
-  for (const text of ["下記の文章を、上司向けに3行で要約してください。", "以下に貼る文章を、やさしい言葉に直してください。", "会議のメモを、決まったこととやることに分けてください。", "「次の文章」を、敬語に直してください。"]) {
+  for (const text of [
+    "下記の文章を、上司向けに3行で要約してください。", "以下に貼る文章を、やさしい言葉に直してください。", "会議のメモを、決まったこととやることに分けてください。", "「次の文章」を、敬語に直してください。",
+    // Round 1 caught every prompt starting with 次の / この / 下の / 以下の / 上の; none may slip through again.
+    "下の文章を、敬語に直してください。", "このデータを表にまとめてください。", "この内容を上司向けに3行にしてください。", "この報告書を短くしてください。",
+    "こちらの文章を要約してください。", "添付のメールを要約して", "上の文章を、やさしい言葉に直してください。", "以下の箇条書きを表にしてください。",
+  ]) {
+    assert.ok(LESSON_PASTE_RE.test(text), text);
     const x = withPrompt(paste, text);
     x.slides[1].narration = "誰が読むかと、何行で欲しいかを決めて頼みます。形を先に決めておくと、答えがそろいます。";
     x.slides[1].body = "読む人と形を決めて頼みます。";
@@ -126,7 +133,7 @@ test("lesson: no paid plan, no hype, no GitHub; the 4-slide shape with the promp
   assert.match(errorsOf([ep(0), ep(1), ep(2), noHelp]), /needs the vendor's official help page/);
   assert.equal(errorsOf([ep(0), ep(1), ep(2), ep(3)]), "");
   // Every stock lesson that pastes text carries the note (validate-stock would fail otherwise).
-  const pasting = STOCK.lessons.filter((l) => /^(?:次の|この|下の|以下の|上の)/.test(lessonPrompt(l)));
+  const pasting = STOCK.lessons.filter((l) => LESSON_PASTE_RE.test(lessonPrompt(l)));
   assert.ok(pasting.length >= 8, String(pasting.length));
   // prompt / answer boxes belong to lessons only.
   const newsSlide = clone(JSON.parse(readFileSync(join(root, "data/samples/ai-news-episodes.sample.json"), "utf8")).episodes[0]);
@@ -270,9 +277,12 @@ test("lesson: a lesson posted from the stock stays in the history past the 90-da
 });
 
 test("lesson: deliver-jev stops when main's post record cannot be read (fail-closed)", () => {
-  assert.throws(() => readMainHistory({ exec: () => { throw new Error("network down"); } }), /could not read main's data\/performance-history\.json \(network down\) — stopped/);
+  assert.throws(() => readMainHistory({ run: () => { throw new Error("network down"); } }), /could not read main's data\/performance-history\.json \(network down\) — stopped/);
+  // Over 1 MB the contents API sends no base64 body: stop, don't guess.
+  assert.throws(() => readMainHistory({ run: () => JSON.stringify({ encoding: "none", content: "" }) }), /— stopped/);
   const calls = [];
-  const h = readMainHistory({ exec: (cmd, args) => { calls.push(args[0]); return args[0] === "show" ? '{"videos":[]}' : ""; } });
+  const body = JSON.stringify({ encoding: "base64", content: Buffer.from('{"videos":[]}').toString("base64") });
+  const h = readMainHistory({ run: (args) => { calls.push(args); return body; } });
   assert.deepEqual(h, { videos: [] });
-  assert.deepEqual(calls, ["fetch", "show"]);
+  assert.deepEqual(calls, [["api", "repos/nannantown/figma-navi-video/contents/data/performance-history.json?ref=main", "--method", "GET"]]);
 });

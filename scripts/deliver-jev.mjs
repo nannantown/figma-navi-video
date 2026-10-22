@@ -20,7 +20,7 @@ function apiJson(run, path) {
 
 function remoteLedger(run, ledgerPath) {
   const file = apiJson(run, `contents/${ledgerPath}?ref=main`);
-  if (file.encoding !== "base64" || typeof file.content !== "string") throw new Error("Cannot read main ledger: GitHub contents response is not base64 JSON");
+  if (file.encoding !== "base64" || typeof file.content !== "string") throw new Error(`Cannot read main ${ledgerPath}: GitHub contents response is not base64 JSON`);
   return JSON.parse(Buffer.from(file.content, "base64").toString("utf8"));
 }
 
@@ -76,14 +76,16 @@ export function unmergedRoutineHint(date, errors, lsRemote = (ref) => execFileSy
 }
 
 /**
- * main's post record (git fetch → origin/main), not the working tree's: a lesson already posted
- * from the stock at 08:15 is only there, and it closes that day to any other lesson.
+ * main's post record, read like the ledger (gh api contents?ref=main), not from the working tree
+ * or origin/main (a single-branch clone never fetches it): a lesson already posted from the stock
+ * at 08:15 is only on main, and it closes that day to any other lesson.
  * Fail-closed: if main cannot be read, this safety check stops instead of guessing.
+ * ponytail: the contents API returns base64 only up to 1 MB (the file is ~0.2 MB on 2026-10-22);
+ * past that it stops here — switch to the raw media type then.
  */
-export function readMainHistory({ exec = execFileSync, cwd = root } = {}) {
+export function readMainHistory({ run = cliRun } = {}) {
   try {
-    exec("git", ["fetch", "-q", "origin", "main"], { cwd, timeout: 60_000, stdio: "ignore" });
-    return JSON.parse(exec("git", ["show", "origin/main:data/performance-history.json"], { cwd, encoding: "utf8", timeout: 10_000, maxBuffer: 64 * 1024 * 1024 }));
+    return remoteLedger(run, "data/performance-history.json");
   } catch (err) {
     throw new Error(`could not read main's data/performance-history.json (${String(err?.message || err).split("\n")[0]}) — stopped: the delivery check needs this morning's post record; retry, and do not merge until it reads`);
   }

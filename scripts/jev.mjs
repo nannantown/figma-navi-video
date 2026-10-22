@@ -772,7 +772,8 @@ const LESSON_HYPE_RE = /(?:誰|だれ)でも(?:簡単|かんたん|すぐ|月|�
 // A prompt that works on pasted text ("次の文章を…", "このスライドの…") puts work text into an AI:
 // slide 2's narration or slide 4 must say to strip / pseudonymise it or check the company's rule.
 // Broad on purpose: a false hit only asks for one more sentence of caution.
-export const LESSON_PASTE_RE = /貼|下記|以下|次の|この(?:文|スライド|メール|資料|表|メモ|返信|名簿)|上の|メモを|議事録/u;
+// 「この〜」 is any noun (このデータ / この内容 / この報告書 …) except the lesson's own words (この一文 = the prompt itself) and mid-word hits (かっこの・どこの).
+export const LESSON_PASTE_RE = /貼|下記|以下|次の|(?<![っこそど])この(?!一文|頼み方|ように|まま|コツ|ひと言|ひとこと)|こちらの|下の|上の|添付|メモを|議事録/u;
 export const LESSON_PRIVACY_RE = /社外秘|個人情報|個人名|人の名前|仮名|会社のルール|会社の決まり/u;
 // AI Trend Daily covers GitHub; this channel never introduces a repository.
 const LESSON_GITHUB_RE = /git\s*hub|ギットハブ|リポジトリ/i;
