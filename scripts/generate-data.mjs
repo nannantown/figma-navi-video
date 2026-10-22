@@ -70,7 +70,7 @@ function generateJevData(allowStale, series) {
     if (fb) {
       const hint = unmergedRoutineHint(today, errors);
       const why = postedFromStock ? "今日はもう予備で出している（同じ回を使う）" : `${today} の回が main に無い・検証に通らない（${errors.slice(0, 3).join(" / ")}）`;
-      console.log(`::warning title=予備のレッスンで投稿::ネタ帳の「${fb.episode.topic_key}」で投稿します。理由: ${why}${hint ? " — 今日の原稿 PR は merge せずに閉じてください（今日はもう予備で出すため）" : ""}`);
+      console.log(`::warning title=予備のレッスンで投稿::ネタ帳の「${fb.episode.topic_key}」で投稿します。理由: ${why}${hint ? " — 今日の原稿 PR は merge せずに閉じてください（今日はもう予備で出すため）" : ""}。この日は daily-video.yml を手で再実行しないでください（YouTube に 2 回上がります。Instagram だけ失敗したときは post-today-instagram.yml）`);
       ({ errors, warnings, episode, usecaseNumber } = fb);
       fallback = true;
     }

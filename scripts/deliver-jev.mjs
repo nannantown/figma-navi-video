@@ -77,13 +77,22 @@ export function unmergedRoutineHint(date, errors, lsRemote = (ref) => execFileSy
 
 function cli(args) {
   if (args.some((a) => !/^(--prepare|--pr=\d+|--head=[a-f0-9]{40}|--series=(?:lesson|jev|news))$/.test(a))) throw new Error("Usage: node scripts/deliver-jev.mjs --pr=<number> --head=<SHA> [--prepare] [--series=lesson|jev|news] (read-only; no --merge)");
-  // The ledger of the committed format (news / jev), unless --series says otherwise.
+  // The ledger of the committed format (lesson / news / jev), unless --series says otherwise.
   const series = cliSeries(args, root);
   const pr = Number(args.find((a) => a.startsWith("--pr="))?.slice(5));
   const head = args.find((a) => a.startsWith("--head="))?.slice(7);
   if (!/^[a-f0-9]{40}$/.test(head || "")) throw new Error("Require --head=<full validated commit SHA>");
   const expected = JSON.parse(execFileSync("git", ["show", `${head}:${series.episodesPath}`], { cwd: root, encoding: "utf8", timeout: 10_000 }));
-  const history = JSON.parse(readFileSync(join(root, "data/performance-history.json"), "utf8"));
+  // main's post record, not the working tree's: a lesson already posted from the stock at
+  // 08:15 is only there, and it closes that day to any other lesson.
+  let history;
+  try {
+    execFileSync("git", ["fetch", "-q", "origin", "main"], { cwd: root, timeout: 60_000, stdio: "ignore" });
+    history = JSON.parse(execFileSync("git", ["show", "origin/main:data/performance-history.json"], { cwd: root, encoding: "utf8", timeout: 10_000, maxBuffer: 64 * 1024 * 1024 }));
+  } catch {
+    console.error("WARN could not read main's data/performance-history.json — checking against the working tree's copy (it may miss this morning's post)");
+    history = JSON.parse(readFileSync(join(root, "data/performance-history.json"), "utf8"));
+  }
   deliverJev({ expected, history, pr, head, prepare: args.includes("--prepare"), series });
 }
 

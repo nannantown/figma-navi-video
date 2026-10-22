@@ -101,6 +101,17 @@ test("lesson: no paid plan, no hype, no GitHub; the 4-slide shape with the promp
   assert.match(errorsOf([noteWord]), /items\[1\]\.note: "有料版" — never recommend a paid plan/);
   const ghSource = { ...ep(0), sources: [{ url: "https://github.com/example/tool", title: "tool", outlet: "GitHub", published_at: null, role: "reference", official: false }] };
   assert.match(errorsOf([ghSource]), /sources\[0\]\.outlet: "GitHub"/);
+  // A lesson that pastes work text must say to strip / pseudonymise it or check the company's rule.
+  const paste = clone(ep(1));
+  assert.match(lessonPrompt(paste), /^次の/);
+  paste.slides[1].narration = "誰が読むかと、何行で欲しいかを決めて頼みます。この文のあとに、要約したい文章を貼ってください。";
+  assert.match(errorsOf([ep(0), paste]), /pastes work text — slide 2's narration or slide 4 must say/);
+  const ruleOnSlide4 = clone(paste);
+  ruleOnSlide4.slides[3].narration = "貼る前に、会社のルールで AI に入れてよいかを確かめましょう。数字と日付は元の文章で確かめます。";
+  assert.doesNotMatch(errorsOf([ep(0), ruleOnSlide4]), /pastes work text/);
+  // Every stock lesson that pastes text carries the note (validate-stock would fail otherwise).
+  const pasting = STOCK.lessons.filter((l) => /^(?:次の|この|下の|以下の|上の)/.test(lessonPrompt(l)));
+  assert.ok(pasting.length >= 8, String(pasting.length));
   // prompt / answer boxes belong to lessons only.
   const newsSlide = clone(JSON.parse(readFileSync(join(root, "data/samples/ai-news-episodes.sample.json"), "utf8")).episodes[0]);
   newsSlide.slides[0].diagram = { type: "prompt", items: [{ label: "次の文章を3行で要約してください。" }] };
