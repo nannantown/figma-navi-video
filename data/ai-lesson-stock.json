@@ -295,7 +295,16 @@
           }
         }
       ],
-      "sources": []
+      "sources": [
+        {
+          "url": "https://support.microsoft.com/ja-jp/office/sumifs-関数-c9e748f5-7ea7-455d-9406-611cebce642b",
+          "title": "SUMIFS 関数 - Microsoft サポート",
+          "outlet": "Microsoft サポート",
+          "published_at": null,
+          "role": "reference",
+          "official": true
+        }
+      ]
     },
     {
       "topic_key": "slides-outline-five",
@@ -706,8 +715,8 @@
         },
         {
           "heading": "返ってくる答えの例",
-          "body": "「お客さまへの説明が変わる点」など、営業の目線の3つが返ってきます。",
-          "narration": "すると、お客さまへの説明が変わるところや、締め切りが早まるところなど、営業の目線で選んだ3つが返ってきます。",
+          "body": "「見積もりの書式が来月から変わる」など、営業の目線で選んだ3つが返ってきます。",
+          "narration": "すると、見積もりの書式、値引きの承認、問い合わせ先のように、営業の目線で選んだ3つが返ってきます。",
           "diagram": {
             "type": "answer",
             "items": [
@@ -1375,13 +1384,13 @@
         },
         {
           "heading": "返ってくる答えの例",
-          "body": "「申請の締め切りが5日前から3日前に」のように、変わった点だけが並びます。",
+          "body": "「申請の締め切りが3日前から5日前に」のように、変わった点だけが並びます。",
           "narration": "すると、申請の締め切りが早まった、対象の人が増えた、のように、変わったところだけが並んで返ってきます。",
           "diagram": {
             "type": "answer",
             "items": [
               {
-                "label": "・申請の締め切り：5日前 → 3日前　・対象：正社員のみ → 全員"
+                "label": "・申請の締め切り：3日前 → 5日前　・対象：正社員のみ → 全員"
               }
             ]
           }
@@ -1450,7 +1459,7 @@
         {
           "heading": "返ってくる答えの例",
           "body": "「ご確認ください」が2回続くところを1つにまとめる、のように直す案と理由が並びます。",
-          "narration": "すると、まちがっていた言葉と直した言葉、そして直した理由が、1つずつ並んで返ってきます。",
+          "narration": "すると、「ご確認ください」が2回続くところを1つにまとめる、のように、直す案と理由が1つずつ並んで返ってきます。",
           "diagram": {
             "type": "answer",
             "items": [
@@ -1525,8 +1534,8 @@
         },
         {
           "heading": "返ってくる答えの例",
-          "body": "「この部分は、空の行を数えないようにしています」のような説明が、部分ごとに返ってきます。",
-          "narration": "すると、この部分は空の行をとばしている、この部分は今月の分だけを選んでいる、のように部分ごとの説明が返ってきます。",
+          "body": "「IF の部分は、空の行なら何も表示しない」のような説明が、部分ごとに返ってきます。",
+          "narration": "すると、IF の部分は空の行なら何も出さない、SUMIFS の部分は今月の分だけ足す、のように部分ごとの説明が返ってきます。",
           "diagram": {
             "type": "answer",
             "items": [
@@ -1556,7 +1565,24 @@
           }
         }
       ],
-      "sources": []
+      "sources": [
+        {
+          "url": "https://support.microsoft.com/ja-jp/office/if-関数-69aed7c9-4e8a-4755-a9bc-aa8bbff73be2",
+          "title": "IF 関数 - Microsoft サポート",
+          "outlet": "Microsoft サポート",
+          "published_at": null,
+          "role": "reference",
+          "official": true
+        },
+        {
+          "url": "https://support.microsoft.com/ja-jp/office/sumifs-関数-c9e748f5-7ea7-455d-9406-611cebce642b",
+          "title": "SUMIFS 関数 - Microsoft サポート",
+          "outlet": "Microsoft サポート",
+          "published_at": null,
+          "role": "reference",
+          "official": true
+        }
+      ]
     }
   ]
 }

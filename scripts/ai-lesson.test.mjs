@@ -28,6 +28,7 @@ import {
 import { buildCaptions } from "./generate-caption.mjs";
 import { buildPostEntry } from "./record-upload.mjs";
 import { upsertVideo } from "./history.mjs";
+import { readMainHistory } from "./deliver-jev.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const STOCK = JSON.parse(readFileSync(join(root, "data/ai-lesson-stock.json"), "utf8"));
@@ -109,6 +110,21 @@ test("lesson: no paid plan, no hype, no GitHub; the 4-slide shape with the promp
   const ruleOnSlide4 = clone(paste);
   ruleOnSlide4.slides[3].narration = "貼る前に、会社のルールで AI に入れてよいかを確かめましょう。数字と日付は元の文章で確かめます。";
   assert.doesNotMatch(errorsOf([ep(0), ruleOnSlide4]), /pastes work text/);
+  // The note counts only where the viewer sees or hears it: slide 4's body under a diagram reaches the caption only.
+  const bodyOnly = clone(paste);
+  bodyOnly.slides[3].body = "貼る前に、社外秘や人の名前は仮名にしましょう。数字と日付は元の文章で確かめます。";
+  assert.match(errorsOf([ep(0), bodyOnly]), /pastes work text/);
+  // Pasting is found anywhere in the prompt / slide 2, not only at the start of the prompt.
+  for (const text of ["下記の文章を、上司向けに3行で要約してください。", "以下に貼る文章を、やさしい言葉に直してください。", "会議のメモを、決まったこととやることに分けてください。", "「次の文章」を、敬語に直してください。"]) {
+    const x = withPrompt(paste, text);
+    x.slides[1].narration = "誰が読むかと、何行で欲しいかを決めて頼みます。形を先に決めておくと、答えがそろいます。";
+    x.slides[1].body = "読む人と形を決めて頼みます。";
+    assert.match(errorsOf([ep(0), x]), /pastes work text/, text);
+  }
+  // A spreadsheet lesson that names a function carries the vendor's help page.
+  const noHelp = { ...ep(3), sources: [] };
+  assert.match(errorsOf([ep(0), ep(1), ep(2), noHelp]), /needs the vendor's official help page/);
+  assert.equal(errorsOf([ep(0), ep(1), ep(2), ep(3)]), "");
   // Every stock lesson that pastes text carries the note (validate-stock would fail otherwise).
   const pasting = STOCK.lessons.filter((l) => /^(?:次の|この|下の|以下の|上の)/.test(lessonPrompt(l)));
   assert.ok(pasting.length >= 8, String(pasting.length));
@@ -251,4 +267,12 @@ test("lesson: a lesson posted from the stock stays in the history past the 90-da
   const old = { videos: [posted("2026-01-01", data), { date: "2026-01-02", genre: "ai-lesson", jev: { topicKey: "x" } }] };
   const h = upsertVideo(old, { date: "2026-10-22", genre: "ai-lesson" }, { now: new Date("2026-10-22T00:00:00Z") });
   assert.deepEqual(h.videos.map((v) => v.date), ["2026-01-01", "2026-10-22"]);
+});
+
+test("lesson: deliver-jev stops when main's post record cannot be read (fail-closed)", () => {
+  assert.throws(() => readMainHistory({ exec: () => { throw new Error("network down"); } }), /could not read main's data\/performance-history\.json \(network down\) — stopped/);
+  const calls = [];
+  const h = readMainHistory({ exec: (cmd, args) => { calls.push(args[0]); return args[0] === "show" ? '{"videos":[]}' : ""; } });
+  assert.deepEqual(h, { videos: [] });
+  assert.deepEqual(calls, ["fetch", "show"]);
 });

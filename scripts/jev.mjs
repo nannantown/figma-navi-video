@@ -771,7 +771,8 @@ const LESSON_PAID_RE = /有料(?:プラン|版|会員)|課金|月額|年額|サ�
 const LESSON_HYPE_RE = /(?:誰|だれ)でも(?:簡単|かんたん|すぐ|月|稼|儲|できる)|月(?:収|に)?\s*[0-9０-９一二三四五六七八九十百千]+\s*万|(?:お金|万円?|円|収入)を?稼|稼げ|儲か|儲け|副業|不労|楽して(?:稼|儲|お金)|放置で|爆速|神(?:ツール|プロンプト|機能|技)|最強|革命|激変|魔法の|一瞬で|必勝|裏技|知らないと損|[0-9０-９]+\s*倍(?:速|早|も速|の効率)/;
 // A prompt that works on pasted text ("次の文章を…", "このスライドの…") puts work text into an AI:
 // slide 2's narration or slide 4 must say to strip / pseudonymise it or check the company's rule.
-export const LESSON_PASTE_RE = /^(?:次の|この|下の|以下の|上の)/u;
+// Broad on purpose: a false hit only asks for one more sentence of caution.
+export const LESSON_PASTE_RE = /貼|下記|以下|次の|この(?:文|スライド|メール|資料|表|メモ|返信|名簿)|上の|メモを|議事録/u;
 export const LESSON_PRIVACY_RE = /社外秘|個人情報|個人名|人の名前|仮名|会社のルール|会社の決まり/u;
 // AI Trend Daily covers GitHub; this channel never introduces a repository.
 const LESSON_GITHUB_RE = /git\s*hub|ギットハブ|リポジトリ/i;
@@ -843,13 +844,20 @@ function lessonProblems(ep, at, previous, posted, history) {
     if (gh) errors.push(`${at}.${field}: "${gh[0]}" — AI Trend Daily covers GitHub; a lesson never introduces a repository`);
   }
   const prompt = lessonPrompt(ep);
-  if (prompt && LESSON_PASTE_RE.test(prompt) && Array.isArray(ep.slides)) {
-    const s1 = ep.slides[1];
+  const s1 = Array.isArray(ep.slides) ? ep.slides[1] : null;
+  const pastes = [prompt, s1?.body, s1?.narration].some((t) => typeof t === "string" && LESSON_PASTE_RE.test(normalizeForChecks(t)));
+  if (pastes) {
     const s3 = ep.slides[3];
-    const said = [s1?.narration, s3?.heading, s3?.body, s3?.narration, ...(s3?.diagram?.items || []).map((it) => it?.label)].filter((t) => typeof t === "string").join(" ");
+    // Only what the viewer sees or hears: a slide with a diagram shows the picture, its body only reaches the caption.
+    const shown = (s) => [s?.heading, s?.narration, ...(s?.diagram ? (s.diagram.items || []).map((it) => it?.label) : [s?.body])];
+    const said = [s1?.narration, ...shown(s3)].filter((t) => typeof t === "string").join(" ");
     if (!LESSON_PRIVACY_RE.test(normalizeForChecks(said))) {
       errors.push(`${at}: the prompt pastes work text — slide 2's narration or slide 4 must say to remove or pseudonymise 社外秘・人の名前・社名 (A社・Bさん) before pasting, or to check 会社のルール first`);
     }
+  }
+  // A spreadsheet lesson that names a function (SUMIFS, IF …) is checked against the vendor's own help page.
+  if (ep.pillar === "sheet" && lessonShownTexts(ep).some(([, v]) => /(?<![A-Za-z])(?!AI(?![A-Za-z]))[A-Z]{2,}[A-Z0-9]*(?![A-Za-z])/.test(v)) && !(ep.sources || []).some((s) => s?.official === true)) {
+    errors.push(`${at}.sources: a spreadsheet lesson that names a function needs the vendor's official help page (official: true), e.g. Microsoft サポートの関数のページ`);
   }
   // The same 文例 twice (word for word, or reworded a little) — ledger and post records.
   if (prompt) {
