@@ -518,6 +518,133 @@
         ],
         "note": "Android アプリの有無は MacRumors（iOS のみ言及）と公式・9to5Mac（iOS と Android）で食い違うため原稿では触れない。金額の記載なし。"
       }
+    },
+    {
+      "date": "2026-10-23",
+      "genre": "ai-news",
+      "trial": 3,
+      "kind": "news",
+      "topic_key": "php-security-aifound",
+      "topic": "AIがPHPの重大な欠陥を発見、世界で修正対応",
+      "headline": "AIが見つけたPHPの古い穴",
+      "hook": "ネットのサイトの土台に、20年以上前の穴？",
+      "slides": [
+        {
+          "heading": "何が起きた？",
+          "body": "ウェブサイトを動かすPHPに重大な欠陥が2つ見つかり、修正版が出ました。",
+          "narration": "ウェブサイトを動かす仕組みのPHPに、重大な欠陥が2つ見つかりました。2004年のPHP 5から、ずっと残っていた古い穴です。",
+          "diagram": {
+            "type": "compare",
+            "items": [
+              {
+                "note": "いつから",
+                "label": "2004年から"
+              },
+              {
+                "note": "いつ公表",
+                "label": "2026年10月"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "AIはどう使われた？",
+          "body": "OpenAI の取り組みに加わった会社と、Google傘下のWizが、AIを使って欠陥を探しました。",
+          "narration": "OpenAIの取り組みに加わった会社と、Google傘下のWizが、AIを使って穴を探し当てました。公開する前に、PHP側と一緒に直し方を用意しています。",
+          "diagram": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "AIで穴を探す"
+              },
+              {
+                "label": "PHPと修正"
+              },
+              {
+                "label": "修正版を公開"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "誰に関係ある？",
+          "body": "W3Techs によるとPHPはサイトの約7割で使われています。米NSAはすぐ更新するよう呼びかけました。",
+          "claim_source": "W3Techs の調査",
+          "narration": "W3Techs によると、PHPはウェブサイトの約7割で使われています。米国のNSAは、すぐ更新できないサイトは一度止めるよう呼びかけました。",
+          "diagram": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "最新版に更新"
+              },
+              {
+                "label": "無理なら停止"
+              },
+              {
+                "label": "ホストに確認"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "まだ分からないこと",
+          "body": "OpenAI によると悪用はまだ報告されていません。更新を終えたサイトの数は不明です。",
+          "claim_source": "OpenAI の説明",
+          "narration": "OpenAI によると、今のところ悪用は報告されていません。ただ、どれだけのサイトが更新を終えたかは、まだ分かっていません。",
+          "diagram": {
+            "type": "compare",
+            "items": [
+              {
+                "note": "分かった",
+                "label": "悪用は未報告"
+              },
+              {
+                "note": "まだ不明",
+                "label": "更新の進み具合"
+              }
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/10/21/php-armageddon-openai-googles-wiz-find-ancient-holes-panicking-the-internet/",
+          "title": "PHP Armageddon: OpenAI, Google's Wiz find ancient holes, panicking the internet",
+          "outlet": "TechCrunch",
+          "published_at": "2026-10-21",
+          "role": "news",
+          "official": false
+        },
+        {
+          "url": "https://www.php.net/archive/2026.php",
+          "title": "PHP: News Archive - 2026",
+          "outlet": "PHP",
+          "published_at": "2026-10-21",
+          "role": "reference",
+          "official": true
+        },
+        {
+          "url": "https://techcrunch.com/2026/10/21/the-internet-is-having-a-very-bad-cybersecurity-day/",
+          "title": "The internet is having a very bad cybersecurity day",
+          "outlet": "TechCrunch",
+          "published_at": "2026-10-21",
+          "role": "reference",
+          "official": false
+        }
+      ],
+      "research": {
+        "checked": [
+          "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-thursday-october-22-2026/",
+          "https://techcrunch.com/category/artificial-intelligence/",
+          "https://techcrunch.com/2026/10/21/php-armageddon-openai-googles-wiz-find-ancient-holes-panicking-the-internet/",
+          "https://techcrunch.com/2026/10/21/the-internet-is-having-a-very-bad-cybersecurity-day/",
+          "https://www.php.net/archive/2026.php",
+          "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/",
+          "https://www.bbc.com/news/articles/cmly0lg3w5x2o",
+          "https://raw.githubusercontent.com/nannantown/github-trending-video/main/data/performance-history.json"
+        ],
+        "note": "OpenAI の発表ページは 403、BBC は取得不可のため出典にしていない。php.net で 2026-10-21 の修正版（8.5.12 / 8.4.27 / 8.3.36 / 8.2.35）と重大度を確認。金額の記載なし（為替不要）。"
+      }
     }
   ]
 }
