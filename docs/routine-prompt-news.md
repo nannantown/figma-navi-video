@@ -196,13 +196,20 @@ gh api --method PUT repos/nannantown/figma-navi-video/pulls/$PR_NUMBER/merge \
 
 自動判定の拒否（`Merge Without Review` を含む）、権限エラー、conflict はそのまま報告して停止。管理者による保護の迂回、認証・許可設定の変更、別コマンドへの包装で続けない。通信エラーや応答紛失でも、同じ書き込みを繰り返す前に D で実際の状態を読む。
 
+**`Merge Without Review` の拒否はどの朝にも起こりうる**（10/10〜10/22 の 13 朝のうち、ルーチン自身が merge できたのは 3 朝だけ。拒否をログで確かめたのは 10/19・10/21。[routine-merge-miss.md](routine-merge-miss.md)）。自動判定は「人が承認していない PR の merge」を最初から止める対象にしていて、判定にはツールの呼び出しとユーザーの発言だけを使う。ルーチンが会話に書いたレビュー文は判定に使われない。レビューを長く書いても、言い換えて再試行しても通らない。拒否されたら、**その場で次の 1 つだけを行って止まる**（merge の代わりになる操作はしない）。
+
+1. `PushNotification` で、PR 番号・URL・検証済み SHA と「08:15 JST までに squash merge してください。過ぎたら merge のあとに daily-video.yml を手で実行してください」を送る。
+2. D の読み取り確認をしてから、最終レポートの先頭に同じことを書く。
+
+08:15 の `daily-video.yml` は、今日の回が main に無くて `routine-content-<今日>` ブランチがあるとき、`原稿 PR が未マージ` という赤い注記を出して止まる（`scripts/generate-data.mjs`）。
+
 #### D. main の着弾確認（必須）
 
 ```bash
 node scripts/deliver-jev.mjs --pr="$PR_NUMBER" --head="$VALIDATED_HEAD"
 ```
 
-`OK: main received the exact validated ...` だけが供給完了。PR 未マージ、main 相違、読み取り不能は **exit 1**。止まったら PR 番号・検証済み SHA・エラー・main への到達状況を最終レポートに書く。JST の日付が変わった PR は届けず、新しい日の調査からやり直す。投稿ワークフローの手動実行、過去分の再実行、SNS 投稿はこの手順から行わない。
+`OK: main received the exact validated ...` だけが供給完了。PR 未マージ、main 相違、読み取り不能は **exit 1**。このコマンド自体が自動判定に拒否されたとき（10/20・10/21 に実例）は、書き込みを含まない次の読み取りで代わりに確かめ、その結果と「deliver-jev は拒否された」をレポートに書く: `gh api --method GET repos/nannantown/figma-navi-video/pulls/$PR_NUMBER --jq '{merged,merge_commit_sha,head:.head.sha}'` と `git fetch origin main -q && git show origin/main:data/ai-news-episodes.json | node -e "let s='';process.stdin.on('data',c=>s+=c).on('end',()=>{const e=JSON.parse(s).episodes.at(-1);console.log(e.date,e.topic_key)})"`。止まったら PR 番号・検証済み SHA・エラー・main への到達状況を最終レポートに書く。JST の日付が変わった PR は届けず、新しい日の調査からやり直す。投稿ワークフローの手動実行、過去分の再実行、SNS 投稿はこの手順から行わない。
 
 ## 最終レポート
 

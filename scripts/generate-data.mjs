@@ -31,6 +31,7 @@ import {
 import { loadSnapshotForRun } from "./snapshot.mjs";
 import { loadHistory } from "./history.mjs";
 import { readContentFormat, seriesOf, resolveEpisodesPath, loadEpisodes, validateEpisodes, toJevVideoData } from "./jev.mjs";
+import { unmergedRoutineHint } from "./deliver-jev.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
@@ -57,7 +58,14 @@ function generateJevData(allowStale, series) {
   const history = allowStale ? null : loadHistory(rootDir);
   const { errors, warnings, episode, usecaseNumber } = validateEpisodes(loadEpisodes(path), { date: today, today, pickLatest: allowStale, history, series });
   for (const w of warnings) console.warn(`  WARN ${w}`);
-  if (errors.length > 0) throw new Error(`${path} is invalid:\n  - ${errors.join("\n  - ")}`);
+  if (errors.length > 0) {
+    // Today missing + the routine's branch exists = written but not merged. Say
+    // so loudly instead of a bare "no episode" (docs/routine-merge-miss.md).
+    const hint = !allowStale && !episode ? unmergedRoutineHint(today) : null;
+    if (hint) console.log(hint);
+    const tail = hint ? `\n  - today's script is on routine-content-${today} but its PR is not merged — merge it, then re-run daily-video.yml` : "";
+    throw new Error(`${path} is invalid:\n  - ${errors.join("\n  - ")}${tail}`);
+  }
   const out = toJevVideoData(episode, { usecaseNumber, series });
   mkdirSync(outputDir, { recursive: true });
   rmSync(join(outputDir, "skip.json"), { force: true });

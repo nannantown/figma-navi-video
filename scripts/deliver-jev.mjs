@@ -60,6 +60,18 @@ export function deliverJev({ expected, history = null, pr, head, prepare = false
   return { date, pr, head, delivered: false, readyForReview: true };
 }
 
+/** For daily-video: today's episode is not on main. If the routine's branch for
+ * today exists, the script was written but its PR was not merged (the routine's
+ * own merge is refused by the auto-mode classifier on many mornings —
+ * docs/routine-merge-miss.md). Returns a GitHub Actions error line, or null. */
+export function unmergedRoutineHint(date, lsRemote = (ref) => execFileSync("git", ["ls-remote", "--heads", "origin", ref], { cwd: root, encoding: "utf8", timeout: 15_000, stdio: ["ignore", "pipe", "pipe"] })) {
+  const branch = `routine-content-${date}`;
+  let out;
+  try { out = lsRemote(`refs/heads/${branch}`); } catch { return null; }
+  if (!String(out).split("\n").some((l) => l.trim().split(/\s+/)[1] === `refs/heads/${branch}`)) return null;
+  return `::error title=原稿 PR が未マージ::${date} の原稿は ${branch} ブランチにあるが main に入っていない（ルーチンの merge が止まった）。PR を確かめて squash merge し、daily-video.yml を手で実行し直す: https://github.com/${REPO}/pulls?q=is%3Apr+head%3A${branch}`;
+}
+
 function cli(args) {
   if (args.some((a) => !/^(--prepare|--pr=\d+|--head=[a-f0-9]{40}|--series=(?:jev|news))$/.test(a))) throw new Error("Usage: node scripts/deliver-jev.mjs --pr=<number> --head=<SHA> [--prepare] [--series=jev|news] (read-only; no --merge)");
   // The ledger of the committed format (news / jev), unless --series says otherwise.

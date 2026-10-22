@@ -173,3 +173,20 @@ test("CLI explicitly rejects the old --merge mode before any git/gh action", () 
   assert.equal(r.status, 1);
   assert.match(r.stderr, /read-only; no --merge/);
 });
+
+test("unmergedRoutineHint: today's routine branch exists but main lacks the episode → loud error line", async () => {
+  const { unmergedRoutineHint } = await import("./deliver-jev.mjs");
+  const asked = [];
+  const hint = unmergedRoutineHint("2026-10-21", (ref) => { asked.push(ref); return "d9b83afb\trefs/heads/routine-content-2026-10-21\n"; });
+  assert.deepEqual(asked, ["refs/heads/routine-content-2026-10-21"]);
+  assert.match(hint, /^::error title=原稿 PR が未マージ::/);
+  assert.match(hint, /routine-content-2026-10-21/);
+  assert.match(hint, /daily-video\.yml/);
+});
+
+test("unmergedRoutineHint: no branch (the routine wrote nothing) or git failure → null", async () => {
+  const { unmergedRoutineHint } = await import("./deliver-jev.mjs");
+  assert.equal(unmergedRoutineHint("2026-10-21", () => ""), null);
+  assert.equal(unmergedRoutineHint("2026-10-21", () => "abc\trefs/heads/routine-content-2026-10-21-old\n"), null);
+  assert.equal(unmergedRoutineHint("2026-10-21", () => { throw new Error("offline"); }), null);
+});
