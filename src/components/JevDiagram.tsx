@@ -248,7 +248,10 @@ const Prompt: React.FC<{ text: string }> = ({ text }) => {
   );
 };
 
-/** answer (lesson): an example of what comes back, as the AI's reply bubble. */
+// One line per list item in an answer: "・a　・b", "1. a　2. b", "① a　② b", "a／b".
+const ANSWER_ITEMS = /[\s　]*／[\s　]*|[\s　]+(?=・|\d+\.|[①-⑳])/u;
+
+/** answer (lesson): an example of what comes back, as the AI's reply bubble (a list breaks per item). */
 const Answer: React.FC<{ text: string }> = ({ text }) => (
   <div>
     <BoxCaption text="AI の答え（例）" />
@@ -265,7 +268,9 @@ const Answer: React.FC<{ text: string }> = ({ text }) => (
         ...useReveal(1),
       }}
     >
-      {text}
+      {text.split(ANSWER_ITEMS).filter(Boolean).map((line, i) => (
+        <div key={i}>{line}</div>
+      ))}
     </div>
   </div>
 );
