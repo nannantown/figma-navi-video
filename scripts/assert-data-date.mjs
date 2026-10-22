@@ -14,6 +14,7 @@ import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { readContentFormat, seriesOf, resolveEpisodesPath, LESSON_GENRE } from "./jev.mjs";
 import { loadHistory } from "./history.mjs";
+import { todayJst } from "./enriched-schema.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -41,7 +42,8 @@ if (entry) {
   }
   // A lesson day posted from the stock (generate-data.mjs falls back the same way again).
   const tagDate = /^\d{8}$/.test(process.argv[2] ?? "") ? `${process.argv[2].slice(0, 4)}-${process.argv[2].slice(4, 6)}-${process.argv[2].slice(6, 8)}` : null;
-  if (series?.format === "lesson" && dataDate !== tagDate && (loadHistory(root)?.videos || []).some((v) => v?.genre === LESSON_GENRE && v.date === tagDate && v.jev?.fallback)) dataDate = tagDate;
+  // Today only: generate-data.mjs always builds today's lesson, never an earlier day's.
+  if (series?.format === "lesson" && tagDate === todayJst() && dataDate !== tagDate && (loadHistory(root)?.videos || []).some((v) => v?.genre === LESSON_GENRE && v.date === tagDate && v.jev?.fallback)) dataDate = tagDate;
   const problem = assertDataDate(process.argv[2], dataDate);
   if (problem) {
     console.error(`::error title=Date mismatch::${problem}`);

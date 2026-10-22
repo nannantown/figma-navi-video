@@ -27,6 +27,7 @@ import {
 } from "./jev.mjs";
 import { buildCaptions } from "./generate-caption.mjs";
 import { buildPostEntry } from "./record-upload.mjs";
+import { upsertVideo } from "./history.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const STOCK = JSON.parse(readFileSync(join(root, "data/ai-lesson-stock.json"), "utf8"));
@@ -72,6 +73,8 @@ test("lesson: the same lesson or the same prompt can never air twice (ledger and
   // …and is not reported as "missing from the ledger" (it never was in it).
   assert.doesNotMatch(errorsOf([ep(1)], { history }), /was posted but is missing/);
   assert.equal(errorsOf([ep(1)], { history }), "");
+  // Kanji numerals count as digits (三行 = 3行).
+  assert.equal(promptSimilarity("次の文章を三行で要約してください。", "次の文章を3行で要約してください。"), 1);
   // Every pair of stock prompts is far apart (the stock itself has no repeats).
   for (let i = 0; i < STOCK.lessons.length; i++) for (let j = 0; j < i; j++) assert.ok(promptSimilarity(lessonPrompt(STOCK.lessons[i]), lessonPrompt(STOCK.lessons[j])) < 0.55, `${STOCK.lessons[i].topic_key} ~ ${STOCK.lessons[j].topic_key}`);
 });
@@ -85,7 +88,23 @@ test("lesson: no paid plan, no hype, no GitHub; the 4-slide shape with the promp
   assert.match(errorsOf([plan]), /"有料プラン" — never recommend a paid plan/);
   const hype = clone(ep(0));
   hype.hook = "誰でも月10万円の時間を浮かせる頼み方です。";
-  assert.match(errorsOf([hype]), /"誰でも" — no hype/);
+  assert.match(errorsOf([hype]), /"誰でも月" — no hype/);
+  // Ordinary words stay allowed; get-rich talk does not.
+  const plain = withPrompt(ep(0), "この案内文を、誰でも分かる言葉に直してください。毎日楽しく読めるように短くしてください。");
+  assert.doesNotMatch(errorsOf([plain]), /no hype/);
+  const income = clone(ep(0));
+  income.slides[0].body = "この頼み方を覚えれば、月収100万円も夢ではありません。";
+  assert.match(errorsOf([income]), /no hype/);
+  // Column titles and sources are on screen too.
+  const noteWord = clone(ep(0));
+  noteWord.slides[0].diagram.items[1].note = "有料版";
+  assert.match(errorsOf([noteWord]), /items\[1\]\.note: "有料版" — never recommend a paid plan/);
+  const ghSource = { ...ep(0), sources: [{ url: "https://github.com/example/tool", title: "tool", outlet: "GitHub", published_at: null, role: "reference", official: false }] };
+  assert.match(errorsOf([ghSource]), /sources\[0\]\.outlet: "GitHub"/);
+  // prompt / answer boxes belong to lessons only.
+  const newsSlide = clone(JSON.parse(readFileSync(join(root, "data/samples/ai-news-episodes.sample.json"), "utf8")).episodes[0]);
+  newsSlide.slides[0].diagram = { type: "prompt", items: [{ label: "次の文章を3行で要約してください。" }] };
+  assert.match(validateEpisodes({ episodes: [newsSlide] }, { pickLatest: true, series: SERIES.news }).errors.join("\n"), /"prompt" is for the lesson format only/);
   const fast = clone(ep(0));
   fast.headline = "仕事が10倍速になる型";
   assert.match(errorsOf([fast]), /no hype/);
@@ -126,6 +145,9 @@ test("lesson: 08:15 posts the next unused stock lesson when today's is missing, 
   const morning = toJevVideoData(fb.episode, { series: LESSON, fallback: true });
   const again = lessonFallback(ledger, STOCK, { videos: [posted(today, morning)] }, today);
   assert.equal(again.episode.topic_key, fb.episode.topic_key);
+  // A stock lesson whose prompt already aired in other words is not offered.
+  const reworded = toJevVideoData(withPrompt(ep(0), lessonPrompt(STOCK.lessons[2]).replace("、", "")), { series: LESSON });
+  assert.ok(!unusedStock(STOCK, [], { videos: [posted(day(0), reworded)] }, today).some((l) => l.topic_key === STOCK.lessons[2].topic_key));
   // Nothing unused → null (generate-data then fails loudly).
   assert.equal(lessonFallback({ episodes: [] }, { lessons: [] }, null, today), null);
 });
@@ -183,12 +205,24 @@ test("lesson: Step 1 (generate-data) falls back to the stock with a warning when
     });
     let r = run();
     assert.equal(r.status, 0, r.stderr);
-    assert.match(r.stdout, /::warning title=予備のレッスンで投稿::2026-10-24 の回が main に無い/);
+    assert.match(r.stdout, /::warning title=予備のレッスンで投稿::ネタ帳の「summary-three-lines」で投稿します。理由: 2026-10-24 の回が main に無い/);
     let data = JSON.parse(readFileSync(join(dir, "output/trending-data.json"), "utf8"));
     assert.equal(data.meta.date, today);
     assert.equal(data.meta.fallback, true);
     assert.equal(data.jev.topicKey, STOCK.lessons[1].topic_key);
-    // Today's lesson on main → it is used, no warning.
+    // 08:15 posted the stock lesson; then the routine's own (other) lesson reaches main.
+    // A re-run that day (the Instagram recovery) must still build the stock lesson.
+    const late = { ...stockEpisode(STOCK.lessons[5], today) };
+    writeFileSync(join(dir, "data/ai-lesson-episodes.json"), JSON.stringify({ episodes: [ep(0), late] }));
+    writeFileSync(join(dir, "data/performance-history.json"), JSON.stringify({ videos: [posted(today, data)] }));
+    r = run();
+    assert.equal(r.status, 0, r.stderr);
+    assert.match(r.stdout, /今日はもう予備で出している/);
+    assert.equal(JSON.parse(readFileSync(join(dir, "output/trending-data.json"), "utf8")).jev.topicKey, STOCK.lessons[1].topic_key);
+    // …and the routine's lesson is refused for that day (deliver-jev will not merge it).
+    assert.match(errorsOf([ep(0), late], { history: { videos: [posted(today, data)] } }), /already went out from the stock \("summary-three-lines"\)/);
+    // Today's lesson on main, nothing posted yet → it is used, no warning.
+    writeFileSync(join(dir, "data/performance-history.json"), JSON.stringify({ videos: [] }));
     writeFileSync(join(dir, "data/ai-lesson-episodes.json"), JSON.stringify({ episodes: [ep(0), ep(1)] }));
     r = run();
     assert.equal(r.status, 0, r.stderr);
@@ -199,4 +233,11 @@ test("lesson: Step 1 (generate-data) falls back to the stock with a warning when
   } finally {
     rmSync(dir, { force: true, recursive: true });
   }
+});
+
+test("lesson: a lesson posted from the stock stays in the history past the 90-day trim (it is not in the ledger)", () => {
+  const data = toJevVideoData(ep(0), { series: LESSON, fallback: true });
+  const old = { videos: [posted("2026-01-01", data), { date: "2026-01-02", genre: "ai-lesson", jev: { topicKey: "x" } }] };
+  const h = upsertVideo(old, { date: "2026-10-22", genre: "ai-lesson" }, { now: new Date("2026-10-22T00:00:00Z") });
+  assert.deepEqual(h.videos.map((v) => v.date), ["2026-01-01", "2026-10-22"]);
 });

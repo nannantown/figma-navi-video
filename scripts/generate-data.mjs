@@ -30,7 +30,7 @@ import {
 } from "./enriched-schema.mjs";
 import { loadSnapshotForRun } from "./snapshot.mjs";
 import { loadHistory } from "./history.mjs";
-import { readContentFormat, seriesOf, resolveEpisodesPath, loadEpisodes, validateEpisodes, toJevVideoData, lessonFallback, loadLessonStock } from "./jev.mjs";
+import { readContentFormat, seriesOf, resolveEpisodesPath, loadEpisodes, validateEpisodes, toJevVideoData, lessonFallback, loadLessonStock, stockPostOn } from "./jev.mjs";
 import { unmergedRoutineHint } from "./deliver-jev.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -60,13 +60,17 @@ function generateJevData(allowStale, series) {
   const file = loadEpisodes(path);
   let { errors, warnings, episode, usecaseNumber } = validateEpisodes(file, { date: today, today, pickLatest: allowStale, history, series });
   let fallback = false;
-  if (errors.length > 0 && series.format === "lesson" && !allowStale) {
+  // Already posted from the stock today (a re-run, the Instagram recovery): the same
+  // lesson again, even if the routine's lesson reached main after 08:15.
+  const postedFromStock = series.format === "lesson" && !allowStale && stockPostOn(history, today);
+  if ((errors.length > 0 || postedFromStock) && series.format === "lesson" && !allowStale) {
     // Lessons are evergreen: rather than a blank day, post the next unused stock
     // lesson (the routine's PR is often left unmerged — docs/routine-merge-miss.md).
     const fb = lessonFallback(file, loadLessonStock(rootDir), history, today);
     if (fb) {
       const hint = unmergedRoutineHint(today, errors);
-      console.log(`::warning title=予備のレッスンで投稿::${today} の回が main に無い・検証に通らないので、ネタ帳の「${fb.episode.topic_key}」で投稿します。理由: ${errors.slice(0, 3).join(" / ")}${hint ? " — 今日の原稿 PR は merge せずに閉じてください（今日はもう予備で出すため）" : ""}`);
+      const why = postedFromStock ? "今日はもう予備で出している（同じ回を使う）" : `${today} の回が main に無い・検証に通らない（${errors.slice(0, 3).join(" / ")}）`;
+      console.log(`::warning title=予備のレッスンで投稿::ネタ帳の「${fb.episode.topic_key}」で投稿します。理由: ${why}${hint ? " — 今日の原稿 PR は merge せずに閉じてください（今日はもう予備で出すため）" : ""}`);
       ({ errors, warnings, episode, usecaseNumber } = fb);
       fallback = true;
     }

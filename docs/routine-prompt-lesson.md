@@ -93,6 +93,7 @@ node scripts/jev.mjs validate
 - `never recommend a paid plan` → 有料プラン・料金の話を消す。どの AI でもできる頼み方にする
 - `no hype` → 「誰でも」「最強」「◯倍速」などを、何が楽になるかの具体的な言い方に
 - `AI Trend Daily covers GitHub` → GitHub・リポジトリの話を外す
+- `already went out from the stock` → 今日はもう 08:15 にネタ帳の回が出ている。今日の回は出せないので、PR は merge せずに閉じ、レポートに書く
 - `the prompt is the same as the … lesson's` → もう出した文例と似ている。別の頼み方・別のネタにする（ネタ帳の次の 1 本でもよい）
 - `topic_key … was already used / was already posted` / `headline is the same` → もう出した回。別の回にする
 - `must be { "type": "prompt"` / `"answer"` → 2 枚目・3 枚目の図の形を直す

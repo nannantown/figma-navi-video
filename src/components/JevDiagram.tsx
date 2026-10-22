@@ -249,7 +249,7 @@ const Prompt: React.FC<{ text: string }> = ({ text }) => {
 };
 
 // One line per list item in an answer: "・a　・b", "1. a　2. b", "① a　② b", "a／b".
-const ANSWER_ITEMS = /[\s　]*／[\s　]*|[\s　]+(?=・|\d+\.|[①-⑳])/u;
+const ANSWER_ITEMS = /[\s　]*／[\s　]*|[\s　]+(?=・|\d+\.(?!\d)|[①-⑳])/u;
 
 /** answer (lesson): an example of what comes back, as the AI's reply bubble (a list breaks per item). */
 const Answer: React.FC<{ text: string }> = ({ text }) => (

@@ -511,7 +511,7 @@ export function validateEpisodes(file, { date = todayJst(), today = todayJst(), 
     }
   }
   for (const e of unrecordedEpisodes(eps.slice(0, index), history, ep.date, series.genre)) {
-    warnings.push(`${e.date} "${e.topic_key}" has no post record — counted as aired; ${series.staged ? `run "node scripts/jev.mjs aired-check" and redo only with the redoSlot it prints` : "news is not redone (its topic and sources stay used)"}`);
+    warnings.push(`${e.date} "${e.topic_key}" has no post record — counted as aired; ${series.staged ? `run "node scripts/jev.mjs aired-check" and redo only with the redoSlot it prints` : `the ${series.format} series does not redo a day (its topic stays used)`}`);
   }
 
   // Series order. Every aired entry is checked against the ones before it,
@@ -570,7 +570,7 @@ export function validateEpisodes(file, { date = todayJst(), today = todayJst(), 
   warnings.push(...diagramWarnings(ep, at, series));
   errors.push(...sourceProblems(ep, previous, at, today, warnings, series));
   if (series.format === "lesson") {
-    const lesson = lessonProblems(ep, at, previous, posted);
+    const lesson = lessonProblems(ep, at, previous, posted, history);
     errors.push(...lesson.errors);
     warnings.push(...lesson.warnings);
   }
@@ -630,6 +630,7 @@ function slideProblems(ep, at, series) {
   let total = 0;
   slides.forEach((s, i) => {
     const sat = `${at}.slides[${i}]`;
+    if (series.format !== "lesson" && DIAGRAM_SENTENCE.has(s?.diagram?.type)) errors.push(`${sat}.diagram: "${s.diagram.type}" is for the lesson format only`);
     for (const [field, limits] of [["heading", LIMITS.heading], ["body", LIMITS.body], ["narration", LIMITS.narration]]) {
       const p = lengthProblem(s?.[field], limits, `${sat}.${field}`);
       if (p) errors.push(p);
@@ -767,7 +768,7 @@ export function videoDiagram(slide) {
 // Never recommend a paid plan (owner 2026-10-22): the viewer is a beginner on whatever AI they have.
 const LESSON_PAID_RE = /有料(?:プラン|版|会員)|課金|月額|年額|サブスク|(?:ChatGPT|Claude|Gemini|Copilot|Perplexity)\s*(?:Plus|Pro|Max|Team|Enterprise|Advanced|Business|Premium)|(?<![A-Za-z])(?:Plus|Pro|Max|Premium|Advanced|Team)\s*(?:プラン|版)/i;
 // No get-rich / magic talk (「誰でも月◯万」 and the like).
-const LESSON_HYPE_RE = /誰でも|だれでも|月\s*[0-9０-９一二三四五六七八九十百千]+\s*万|万円(?:を)?稼|稼げ|稼ぐ|稼い|副業|不労|楽して|放置で|爆速|神(?:ツール|プロンプト|機能|技)|最強|革命|激変|魔法の|一瞬で|必勝|裏技|知らないと損|[0-9０-９]+\s*倍(?:速|早|も速|の効率)/;
+const LESSON_HYPE_RE = /(?:誰|だれ)でも(?:簡単|かんたん|すぐ|月|稼|儲|できる)|月(?:収|に)?\s*[0-9０-９一二三四五六七八九十百千]+\s*万|(?:お金|万円?|円|収入)を?稼|稼げ|儲か|儲け|副業|不労|楽して(?:稼|儲|お金)|放置で|爆速|神(?:ツール|プロンプト|機能|技)|最強|革命|激変|魔法の|一瞬で|必勝|裏技|知らないと損|[0-9０-９]+\s*倍(?:速|早|も速|の効率)/;
 // AI Trend Daily covers GitHub; this channel never introduces a repository.
 const LESSON_GITHUB_RE = /git\s*hub|ギットハブ|リポジトリ/i;
 
@@ -775,8 +776,12 @@ function lessonShownTexts(ep) {
   const out = [["topic", ep.topic], ["headline", ep.headline], ["hook", ep.hook]];
   (Array.isArray(ep.slides) ? ep.slides : []).forEach((s, i) => {
     for (const f of ["heading", "body", "narration", "claim_source"]) out.push([`slides[${i}].${f}`, s?.[f]]);
-    (Array.isArray(s?.diagram?.items) ? s.diagram.items : []).forEach((it, j) => out.push([`slides[${i}].diagram.items[${j}].label`, it?.label]));
+    (Array.isArray(s?.diagram?.items) ? s.diagram.items : []).forEach((it, j) => {
+      out.push([`slides[${i}].diagram.items[${j}].label`, it?.label]);
+      out.push([`slides[${i}].diagram.items[${j}].note`, it?.note]);
+    });
   });
+  (Array.isArray(ep.sources) ? ep.sources : []).forEach((s, i) => out.push([`sources[${i}].outlet`, s?.outlet], [`sources[${i}].url`, s?.url]));
   return out.filter(([, v]) => typeof v === "string");
 }
 
@@ -786,8 +791,9 @@ export function lessonPrompt(ep) {
   return typeof d?.items?.[0]?.label === "string" ? d.items[0].label.trim() : null;
 }
 
+const KANJI_DIGITS = { 一: "1", 二: "2", 三: "3", 四: "4", 五: "5", 六: "6", 七: "7", 八: "8", 九: "9" };
 function flatPrompt(s) {
-  return normalizeForChecks(String(s ?? "")).toLowerCase().replace(/[\s、。，．,.!！?？「」『』（）()［］[\]【】・:：;；"'“”‘’〜~…]/gu, "");
+  return normalizeForChecks(String(s ?? "")).toLowerCase().replace(/[一二三四五六七八九]/gu, (c) => KANJI_DIGITS[c]).replace(/[\s、。，．,.!！?？「」『』（）()［］[\]【】・:：;；"'“”‘’〜~…]/gu, "");
 }
 
 /** Character-bigram Dice coefficient of two prompts (1 = the same words). */
@@ -806,9 +812,11 @@ export function promptSimilarity(a, b) {
   return (2 * common) / (x.n + y.n);
 }
 
-function lessonProblems(ep, at, previous, posted) {
+function lessonProblems(ep, at, previous, posted, history) {
   const errors = [];
   const warnings = [];
+  const sameDay = (history?.videos || []).find((v) => v?.genre === LESSON_GENRE && !v.skip && v.date === ep.date && v.jev?.fallback);
+  if (sameDay && sameDay.jev.topicKey !== ep.topic_key) errors.push(`${at}: ${ep.date} already went out from the stock ("${sameDay.jev.topicKey}") — this lesson cannot air that day; close its PR (the stock lesson is the day's record)`);
   if (!Object.hasOwn(LESSON_PILLARS, ep.pillar ?? "")) errors.push(`${at}.pillar: one of ${Object.keys(LESSON_PILLARS).join(" / ")}`);
   else if (!String(ep.topic_key).startsWith(`${ep.pillar}-`)) errors.push(`${at}.topic_key: starts with the pillar ("${ep.pillar}-…")`);
   if (!Array.isArray(ep.slides) || ep.slides.length !== 4) {
@@ -865,9 +873,15 @@ export function stockEpisode(lesson, date) {
 export function unusedStock(stock, episodes, history, today) {
   const before = (episodes || []).filter((e) => e?.date < today);
   const used = new Set(before.map((e) => e.topic_key));
-  for (const v of history?.videos || []) if (v?.genre === LESSON_GENRE && v.jev && v.date < today) used.add(v.jev.topicKey);
-  const lastPillar = before.at(-1)?.pillar;
-  const left = (stock?.lessons || []).filter((l) => !used.has(l.topic_key));
+  const aired = before.map((e) => ({ date: e.date, prompt: lessonPrompt(e), pillar: e.pillar }));
+  for (const v of history?.videos || []) {
+    if (v?.genre !== LESSON_GENRE || !v.jev || v.skip || v.date >= today) continue;
+    used.add(v.jev.topicKey);
+    aired.push({ date: v.date, prompt: v.jev.prompt, pillar: v.jev.pillar });
+  }
+  const lastPillar = aired.filter((a) => a.pillar).sort((a, b) => a.date.localeCompare(b.date)).at(-1)?.pillar;
+  // A stock lesson whose prompt already aired in other words could never pass the check.
+  const left = (stock?.lessons || []).filter((l) => !used.has(l.topic_key) && !aired.some((a) => typeof a.prompt === "string" && promptSimilarity(lessonPrompt(l), a.prompt) >= LESSON_PROMPT_SIMILARITY_MAX));
   return [...left.filter((l) => l.pillar !== lastPillar), ...left.filter((l) => l.pillar === lastPillar)];
 }
 
@@ -877,9 +891,14 @@ export function unusedStock(stock, episodes, history, today) {
  * day (the Instagram recovery) takes the lesson already posted that day.
  * @returns {{ episode, errors: [], warnings } | null}
  */
+/** The day's stock post, if 08:15 (or a re-run) already put one out. */
+export function stockPostOn(history, date) {
+  return (history?.videos || []).find((v) => v?.genre === LESSON_GENRE && !v.skip && v.date === date && v.jev?.fallback) ?? null;
+}
+
 export function lessonFallback(file, stock, history, today) {
   const before = (file?.episodes || []).filter((e) => e?.date < today);
-  const postedToday = (history?.videos || []).find((v) => v?.genre === LESSON_GENRE && !v.skip && v.date === today && v.jev?.fallback);
+  const postedToday = stockPostOn(history, today);
   const candidates = postedToday
     ? (stock?.lessons || []).filter((l) => l.topic_key === postedToday.jev.topicKey)
     : unusedStock(stock, before, history, today);
