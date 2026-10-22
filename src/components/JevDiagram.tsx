@@ -193,7 +193,86 @@ const CompareCard: React.FC<{ item: Item; i: number; lit: boolean }> = ({ item, 
   </div>
 );
 
+/** Small caption above a lesson box ("AI にこう頼む" / "AI の答え（例）"). */
+const BoxCaption: React.FC<{ text: string }> = ({ text }) => (
+  <div style={{ fontSize: 32, fontWeight: 700, color: COLORS.accentLight, marginBottom: 12, ...useReveal(0) }}>{text}</div>
+);
+
+const SENTENCE = { lineHeight: 1.45, wordBreak: "auto-phrase", overflowWrap: "anywhere" } as unknown as React.CSSProperties;
+
+/** prompt (lesson): the request as typed into a chat box — appears letter by letter, then the send button lights. */
+const Prompt: React.FC<{ text: string }> = ({ text }) => {
+  const frame = useCurrentFrame();
+  const chars = Array.from(text);
+  const typed = Math.round(interpolate(frame, [REVEAL_START + 6, REVEAL_START + 6 + Math.min(60, chars.length)], [0, chars.length], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }));
+  const sent = typed >= chars.length;
+  return (
+    <div>
+      <BoxCaption text="AI にこう頼む（そのまま使えます）" />
+      <div
+        style={{
+          position: "relative",
+          padding: "26px 30px 74px",
+          borderRadius: 26,
+          border: `3px solid ${COLORS.accent}`,
+          background: COLORS.panel,
+          boxShadow: "0 0 32px rgba(139,124,255,0.30)",
+          ...useReveal(0),
+        }}
+      >
+        {/* The full text holds the box at its final size; the typed part is drawn over it. */}
+        <div style={{ fontSize: 40, fontWeight: 700, color: "transparent", ...SENTENCE }}>{text}</div>
+        <div style={{ position: "absolute", left: 30, right: 30, top: 26, fontSize: 40, fontWeight: 700, color: COLORS.text, ...SENTENCE }}>
+          {chars.slice(0, typed).join("")}
+        </div>
+        <div
+          style={{
+            position: "absolute",
+            right: 20,
+            bottom: 16,
+            width: 52,
+            height: 52,
+            borderRadius: "50%",
+            background: sent ? LIT : "rgba(255,255,255,0.12)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <svg width={26} height={26} viewBox="0 0 24 24">
+            <path d="M12 3 L20 11 H14.5 V21 H9.5 V11 H4 Z" fill={COLORS.text} />
+          </svg>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/** answer (lesson): an example of what comes back, as the AI's reply bubble. */
+const Answer: React.FC<{ text: string }> = ({ text }) => (
+  <div>
+    <BoxCaption text="AI の答え（例）" />
+    <div
+      style={{
+        padding: "26px 30px",
+        borderRadius: "26px 26px 26px 6px",
+        border: OUTLINE,
+        background: "rgba(139,124,255,0.12)",
+        fontSize: 38,
+        fontWeight: 600,
+        color: COLORS.textSub,
+        ...SENTENCE,
+        ...useReveal(1),
+      }}
+    >
+      {text}
+    </div>
+  </div>
+);
+
 export const JevDiagram: React.FC<{ diagram: Diagram; durationInFrames: number }> = ({ diagram, durationInFrames }) => {
+  if (diagram.type === "prompt") return <Prompt text={diagram.items[0].label} />;
+  if (diagram.type === "answer") return <Answer text={diagram.items[0].label} />;
   if (diagram.type === "steps") return <Steps items={diagram.items} durationInFrames={durationInFrames} />;
   if (diagram.type === "flow") return <Flow items={diagram.items} />;
   return <Compare items={diagram.items} />;

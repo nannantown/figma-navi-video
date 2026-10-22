@@ -30,7 +30,7 @@ import {
 } from "./enriched-schema.mjs";
 import { loadSnapshotForRun } from "./snapshot.mjs";
 import { loadHistory } from "./history.mjs";
-import { readContentFormat, seriesOf, resolveEpisodesPath, loadEpisodes, validateEpisodes, toJevVideoData } from "./jev.mjs";
+import { readContentFormat, seriesOf, resolveEpisodesPath, loadEpisodes, validateEpisodes, toJevVideoData, lessonFallback, loadLessonStock } from "./jev.mjs";
 import { unmergedRoutineHint } from "./deliver-jev.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -43,7 +43,8 @@ function resolveEnrichedPath() {
 }
 
 /**
- * Ledger formats (data/content-format.json = "news" — trial #3, AI ニュース 1 本解説 —
+ * Ledger formats (data/content-format.json = "lesson" — trial #4, AI 仕事術 (falls back to
+ * data/ai-lesson-stock.json) — "news" — trial #3, AI ニュース 1 本解説 —
  * or "jev" — trial #2): today's episode from the series' ledger → the same
  * output/trending-data.json frame. The ledger checks (series order, no
  * repeated topic or source, claims named as claims) are hard errors, like the
@@ -56,7 +57,20 @@ function generateJevData(allowStale, series) {
   // Production also cross-checks the posted history (a sample ledger in a dry
   // run is not the production series, so it is not).
   const history = allowStale ? null : loadHistory(rootDir);
-  const { errors, warnings, episode, usecaseNumber } = validateEpisodes(loadEpisodes(path), { date: today, today, pickLatest: allowStale, history, series });
+  const file = loadEpisodes(path);
+  let { errors, warnings, episode, usecaseNumber } = validateEpisodes(file, { date: today, today, pickLatest: allowStale, history, series });
+  let fallback = false;
+  if (errors.length > 0 && series.format === "lesson" && !allowStale) {
+    // Lessons are evergreen: rather than a blank day, post the next unused stock
+    // lesson (the routine's PR is often left unmerged — docs/routine-merge-miss.md).
+    const fb = lessonFallback(file, loadLessonStock(rootDir), history, today);
+    if (fb) {
+      const hint = unmergedRoutineHint(today, errors);
+      console.log(`::warning title=予備のレッスンで投稿::${today} の回が main に無い・検証に通らないので、ネタ帳の「${fb.episode.topic_key}」で投稿します。理由: ${errors.slice(0, 3).join(" / ")}${hint ? " — 今日の原稿 PR は merge せずに閉じてください（今日はもう予備で出すため）" : ""}`);
+      ({ errors, warnings, episode, usecaseNumber } = fb);
+      fallback = true;
+    }
+  }
   for (const w of warnings) console.warn(`  WARN ${w}`);
   if (errors.length > 0) {
     // Today missing + the routine's branch exists = probably written but not
@@ -66,7 +80,7 @@ function generateJevData(allowStale, series) {
     const tail = hint ? `\n  - routine-content-${today} exists but today's episode is not on main — check its PR (unmerged, not opened, or the routine still running); after a merge, re-run daily-video.yml` : "";
     throw new Error(`${path} is invalid:\n  - ${errors.join("\n  - ")}${tail}`);
   }
-  const out = toJevVideoData(episode, { usecaseNumber, series });
+  const out = toJevVideoData(episode, { usecaseNumber, series, fallback });
   mkdirSync(outputDir, { recursive: true });
   rmSync(join(outputDir, "skip.json"), { force: true });
   const outputPath = join(outputDir, "trending-data.json");

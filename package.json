@@ -1,7 +1,7 @@
 {
   "name": "figma-navi-video",
   "version": "1.0.0",
-  "description": "Daily vertical video for YouTube Shorts + Instagram Reels: Jev の毎朝ニュース (genre trial #2, data/content-format.json = jev) or 新作AIツール N選 from the Product Hunt feed (trial #1, format = pickup)",
+  "description": "Daily vertical video for YouTube Shorts + Instagram Reels: AI 仕事術 (genre trial #4, data/content-format.json = lesson), AI ニュース (trial #3, news), Jev の毎朝ニュース (trial #2, jev) or 新作AIツール N選 from the Product Hunt feed (trial #1, format = pickup)",
   "main": "index.js",
   "scripts": {
     "start": "npx remotion studio",
@@ -11,6 +11,7 @@
     "dry-run": "CONTENT_FORMAT=pickup DRY_RUN=1 ENRICHED_PATH=data/samples/enriched-ai-tools.pickup.sample.json PH_SNAPSHOT_PATH=data/samples/product-hunt-daily.pickup.sample.json ALLOW_STALE_DATE=1 node scripts/pipeline.mjs",
     "dry-run:ranking": "CONTENT_FORMAT=pickup DRY_RUN=1 PH_ALLOW_RANKING=1 ENRICHED_PATH=data/samples/enriched-ai-tools.sample.json PH_SNAPSHOT_PATH=data/samples/product-hunt-daily.sample.json ALLOW_STALE_DATE=1 node scripts/pipeline.mjs",
     "dry-run:skip": "CONTENT_FORMAT=pickup DRY_RUN=1 ENRICHED_PATH=data/samples/enriched-ai-tools.skip.sample.json PH_SNAPSHOT_PATH=data/samples/product-hunt-daily.skip.sample.json ALLOW_STALE_DATE=1 node scripts/pipeline.mjs",
+    "dry-run:lesson": "CONTENT_FORMAT=lesson DRY_RUN=1 JEV_EPISODES_PATH=data/samples/ai-lesson-episodes.sample.json ALLOW_STALE_DATE=1 node scripts/pipeline.mjs",
     "dry-run:news": "CONTENT_FORMAT=news DRY_RUN=1 JEV_EPISODES_PATH=data/samples/ai-news-episodes.sample.json ALLOW_STALE_DATE=1 node scripts/pipeline.mjs",
     "dry-run:jev-intro": "CONTENT_FORMAT=jev DRY_RUN=1 JEV_EPISODES_PATH=data/samples/jev-episodes.intro.sample.json ALLOW_STALE_DATE=1 node scripts/pipeline.mjs",
     "dry-run:jev-usecase": "CONTENT_FORMAT=jev DRY_RUN=1 JEV_EPISODES_PATH=data/samples/jev-episodes.usecase.sample.json ALLOW_STALE_DATE=1 node scripts/pipeline.mjs",
@@ -23,7 +24,9 @@
     "typecheck": "tsc --noEmit",
     "test": "node --test \"scripts/*.test.mjs\"",
     "validate:jev": "node scripts/jev.mjs validate --series=jev",
-    "validate:news": "node scripts/jev.mjs validate --series=news"
+    "validate:news": "node scripts/jev.mjs validate --series=news",
+    "validate:lesson": "node scripts/jev.mjs validate --series=lesson",
+    "validate:stock": "node scripts/jev.mjs validate-stock"
   },
   "keywords": [],
   "author": "",

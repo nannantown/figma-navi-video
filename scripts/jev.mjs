@@ -24,12 +24,13 @@
  * SERIES below holds what differs; every function defaults to the Jev series.
  *
  * CLI (the routine runs this before committing; the series follows
- * data/content-format.json unless --series=jev|news is given):
+ * data/content-format.json unless --series=lesson|jev|news is given):
  *   node scripts/jev.mjs validate [--file=path] [--no-date-check]
  *   node scripts/jev.mjs next     # which stage / episode / topic comes next (+ unrecorded / redoCandidate)
  *   node scripts/jev.mjs aired-check   # did the redo candidate go out? (posting runs' logs via gh; prints redoSlot only if not)
  *   node scripts/jev.mjs aired-check --self-test   # can this environment's gh read the posting runs' logs? (one line)
  *   node scripts/jev.mjs pdca     # numbers for docs/pdca/$TODAY.md
+ *   node scripts/jev.mjs validate-stock [--file=path]   # lesson: every stock lesson passes, no repeats inside the stock
  */
 
 import { readFileSync, existsSync, realpathSync } from "fs";
@@ -53,7 +54,28 @@ export const JEV_TRIAL = 2;
 export const JEV_LAUNCH_DATE = "2026-09-15"; // early access + seed announcement
 export const EPISODES_PATH = "data/jev-episodes.json";
 export const FORMAT_PATH = "data/content-format.json";
-export const FORMATS = ["news", "jev", "pickup"];
+export const FORMATS = ["lesson", "news", "jev", "pickup"];
+// Genre trial #4 (owner 2026-10-22): one AI tip a day for office workers who
+// just started with ChatGPT and the like — 困りごと → 頼み方 → 答えの例 → 注意.
+export const LESSON_GENRE = "ai-lesson";
+export const LESSON_TRIAL = 4;
+export const LESSON_EPISODES_PATH = "data/ai-lesson-episodes.json";
+// The evergreen stock: the routine starts from it, and 08:15 posts its next unused
+// lesson when today's episode is missing (an unmerged routine PR never leaves a blank day).
+export const LESSON_STOCK_PATH = "data/ai-lesson-stock.json";
+// topic_key starts with the pillar ("mail-polite-decline").
+export const LESSON_PILLARS = {
+  ask: "頼み方の型",
+  summary: "要約",
+  mail: "メール",
+  sheet: "表計算",
+  slides: "資料づくり",
+  research: "調べもの",
+  check: "確かめ方",
+  meeting: "会議・議事録",
+};
+// Two prompts this alike (character-bigram Dice) are the same 文例 told twice.
+export const LESSON_PROMPT_SIMILARITY_MAX = 0.55;
 export const NEWS_GENRE = "ai-news";
 export const NEWS_TRIAL = 3;
 export const NEWS_EPISODES_PATH = "data/ai-news-episodes.json";
@@ -420,7 +442,7 @@ function ledgerProblems(ep, i, series) {
   if (!series.staged) {
     if (!series.kinds.includes(ep.kind)) errors.push(`${at}.kind: must be ${series.kinds.map((k) => `"${k}"`).join(" / ")}`);
     // Yesterday's news posted a day late is stale: this series never redoes a day.
-    if (ep.redo_of != null) errors.push(`${at}.redo_of: the news series does not redo a missed day — write today's news instead`);
+    if (ep.redo_of != null) errors.push(`${at}.redo_of: the ${series.format} series does not redo a missed day — write today's episode instead`);
   } else if (![1, 2, 3].includes(ep.stage)) errors.push(`${at}.stage: must be 1, 2 or 3`);
   else if (!(KINDS_BY_STAGE[ep.stage] || []).includes(ep.kind)) {
     errors.push(`${at}.kind: ${JSON.stringify(ep.kind)} is not a kind of stage ${ep.stage} (${(KINDS_BY_STAGE[ep.stage] || []).join(" / ")})`);
@@ -519,14 +541,16 @@ export function validateEpisodes(file, { date = todayJst(), today = todayJst(), 
   const ownPrimary = new Set(primaryUrls(ep));
   for (const v of posted) {
     const kept = eps.find((e) => e.date === v.date);
-    if (!kept || kept.topic_key !== v.jev.topicKey) {
+    // A stock lesson posted at 08:15 (lessonFallback) never was in the ledger; its key still counts below.
+    if (!v.jev.fallback && (!kept || kept.topic_key !== v.jev.topicKey)) {
       errors.push(`ledger: the ${v.date} episode ("${v.jev.topicKey}") was posted but is missing or changed in ${series.episodesPath} — restore it (past episodes are never rewritten)`);
     }
     if (v.jev.topicKey === ep.topic_key) errors.push(`${at}: topic_key "${ep.topic_key}" was already posted on ${v.date}`);
     for (const s of v.jev.sources || []) {
       // News never reuses a page in any role; Jev only guards the carrying source.
       const own = series.staged ? ownPrimary : new Set((ep.sources || []).map((x) => normalizeUrl(x?.url)));
-      if ((!series.staged || s.role === PRIMARY_ROLE[v.jev.kind]) && own.has(normalizeUrl(s.url))) errors.push(`${at}: source ${s.url} was already posted on ${v.date}`);
+      // A lesson may cite the same help page again (its reference sources are not the content).
+      if (((!series.staged && ep.kind === "news") || s.role === PRIMARY_ROLE[v.jev.kind]) && own.has(normalizeUrl(s.url))) errors.push(`${at}: source ${s.url} was already posted on ${v.date}`);
     }
   }
 
@@ -545,12 +569,20 @@ export function validateEpisodes(file, { date = todayJst(), today = todayJst(), 
   errors.push(...slideProblems(ep, at, series));
   warnings.push(...diagramWarnings(ep, at, series));
   errors.push(...sourceProblems(ep, previous, at, today, warnings, series));
+  if (series.format === "lesson") {
+    const lesson = lessonProblems(ep, at, previous, posted);
+    errors.push(...lesson.errors);
+    warnings.push(...lesson.warnings);
+  }
 
   const r = ep.research;
-  if (!r || typeof r !== "object" || !Array.isArray(r.checked)) {
+  const checkedLimits = series.checkedLimits ?? LIMITS.checked;
+  if (r == null && checkedLimits[0] === 0) {
+    // An evergreen lesson needs no research record.
+  } else if (!r || typeof r !== "object" || !Array.isArray(r.checked)) {
     errors.push(`${at}.research.checked: list the URLs you checked today`);
   } else {
-    if (r.checked.length < LIMITS.checked[0] || r.checked.length > LIMITS.checked[1]) errors.push(`${at}.research.checked: ${r.checked.length} URLs (allowed ${LIMITS.checked.join("-")})`);
+    if (r.checked.length < checkedLimits[0] || r.checked.length > checkedLimits[1]) errors.push(`${at}.research.checked: ${r.checked.length} URLs (allowed ${checkedLimits.join("-")})`);
     r.checked.forEach((u, i) => errors.push(...urlProblems(u, `${at}.research.checked[${i}]`)));
   }
   if (ep.kind === "explainer") {
@@ -625,11 +657,14 @@ function slideProblems(ep, at, series) {
 // May's bubble says the words. Optional and never fatal — a slide whose
 // diagram is missing or broken keeps the old heading + body card.
 // Item counts per type: steps = 手順 1→2(→3), flow = 入力→処理→出力, compare = 前/後・A/B.
-export const DIAGRAM_TYPES = { steps: [2, 3], flow: [3, 3], compare: [2, 2] };
+// prompt / answer (lesson, 2026-10-22): one box with the copy-paste request typed into an AI, and the
+// example of what comes back — the sentence itself is the content there, so it may be long.
+export const DIAGRAM_TYPES = { steps: [2, 3], flow: [3, 3], compare: [2, 2], prompt: [1, 1], answer: [1, 1] };
 // Per type: a flow box is ~210 px wide, so its words are shorter (12 chars wrapped to 4 lines and pushed the source line into May).
-const DIAGRAM_LABEL = { steps: [1, 12], flow: [1, 8], compare: [1, 12] };
+const DIAGRAM_LABEL = { steps: [1, 12], flow: [1, 8], compare: [1, 12], prompt: [12, 70], answer: [8, 60] };
 const DIAGRAM_NOTE = { flow: [1, 6], compare: [1, 8] };
 const DIAGRAM_TOTAL = 40;
+const DIAGRAM_SENTENCE = new Set(["prompt", "answer"]);
 // A label this long that the narration also says word for word is the bubble twice.
 const DIAGRAM_ECHO_MIN = 8;
 const FLOW_LATIN_MAX = 8;
@@ -688,9 +723,9 @@ export function diagramProblems(slide) {
       if (hasClaim(it[field]) && !slide.claim_source) problems.push(`${at}.${field}: states a claim — the slide needs claim_source`);
       const flat = normalizeForChecks(it[field]).replace(/\s+/g, "");
       // Names ("TypeSafe", "Haiku 4.5") may repeat; a Japanese phrase may not.
-      if (charLength(flat) >= DIAGRAM_ECHO_MIN && /[\p{sc=Hiragana}\p{sc=Katakana}\p{sc=Han}]/u.test(flat) && narration.includes(flat)) problems.push(`${at}.${field}: the narration says "${it[field].trim()}" word for word — the picture uses short words, the bubble the sentence`);
+      if (!DIAGRAM_SENTENCE.has(d.type) && charLength(flat) >= DIAGRAM_ECHO_MIN && /[\p{sc=Hiragana}\p{sc=Katakana}\p{sc=Han}]/u.test(flat) && narration.includes(flat)) problems.push(`${at}.${field}: the narration says "${it[field].trim()}" word for word — the picture uses short words, the bubble the sentence`);
     }
-    if (d.type === "steps" && noteGiven) problems.push(`${at}.note: steps take a label only`);
+    if ((d.type === "steps" || DIAGRAM_SENTENCE.has(d.type)) && noteGiven) problems.push(`${at}.note: ${d.type} takes a label only`);
     // A flow box is ~210 px wide: a longer Latin word breaks mid-word ("OpenRou|terAPI").
     const latin = typeof it.label === "string" ? Math.max(0, ...(it.label.match(/[A-Za-z0-9.]+/g) || []).map((w) => w.length)) : 0;
     if (d.type === "flow" && latin > FLOW_LATIN_MAX) problems.push(`${at}.label: a Latin word of ${latin} letters does not fit a flow box (max ${FLOW_LATIN_MAX}) — shorten the name or use steps / compare`);
@@ -706,7 +741,7 @@ export function diagramProblems(slide) {
   if (!slide.claim_source && !problems.some((p) => /claim/.test(p)) && splitClaim(slide.heading, d.items)) {
     problems.push(`the heading and the boxes together state a claim — the slide needs claim_source`);
   }
-  if (total > DIAGRAM_TOTAL) problems.push(`${total} chars in the picture (max ${DIAGRAM_TOTAL} — fewer words)`);
+  if (!DIAGRAM_SENTENCE.has(d.type) && total > DIAGRAM_TOTAL) problems.push(`${total} chars in the picture (max ${DIAGRAM_TOTAL} — fewer words)`);
   return problems;
 }
 
@@ -725,10 +760,155 @@ export function videoDiagram(slide) {
   return { type, items: items.map((it) => ({ label: it.label.trim(), note: typeof it.note === "string" && it.note.trim() ? it.note.trim() : null })) };
 }
 
+// ---------------------------------------------------------------------------
+// Lesson (genre trial #4): 困りごと → 頼み方 (prompt) → 答えの例 (answer) → 注意
+// ---------------------------------------------------------------------------
+
+// Never recommend a paid plan (owner 2026-10-22): the viewer is a beginner on whatever AI they have.
+const LESSON_PAID_RE = /有料(?:プラン|版|会員)|課金|月額|年額|サブスク|(?:ChatGPT|Claude|Gemini|Copilot|Perplexity)\s*(?:Plus|Pro|Max|Team|Enterprise|Advanced|Business|Premium)|(?<![A-Za-z])(?:Plus|Pro|Max|Premium|Advanced|Team)\s*(?:プラン|版)/i;
+// No get-rich / magic talk (「誰でも月◯万」 and the like).
+const LESSON_HYPE_RE = /誰でも|だれでも|月\s*[0-9０-９一二三四五六七八九十百千]+\s*万|万円(?:を)?稼|稼げ|稼ぐ|稼い|副業|不労|楽して|放置で|爆速|神(?:ツール|プロンプト|機能|技)|最強|革命|激変|魔法の|一瞬で|必勝|裏技|知らないと損|[0-9０-９]+\s*倍(?:速|早|も速|の効率)/;
+// AI Trend Daily covers GitHub; this channel never introduces a repository.
+const LESSON_GITHUB_RE = /git\s*hub|ギットハブ|リポジトリ/i;
+
+function lessonShownTexts(ep) {
+  const out = [["topic", ep.topic], ["headline", ep.headline], ["hook", ep.hook]];
+  (Array.isArray(ep.slides) ? ep.slides : []).forEach((s, i) => {
+    for (const f of ["heading", "body", "narration", "claim_source"]) out.push([`slides[${i}].${f}`, s?.[f]]);
+    (Array.isArray(s?.diagram?.items) ? s.diagram.items : []).forEach((it, j) => out.push([`slides[${i}].diagram.items[${j}].label`, it?.label]));
+  });
+  return out.filter(([, v]) => typeof v === "string");
+}
+
+/** The copy-paste request shown on screen (slide 2's prompt box), or null. */
+export function lessonPrompt(ep) {
+  const d = Array.isArray(ep?.slides) ? ep.slides.find((s) => s?.diagram?.type === "prompt")?.diagram : null;
+  return typeof d?.items?.[0]?.label === "string" ? d.items[0].label.trim() : null;
+}
+
+function flatPrompt(s) {
+  return normalizeForChecks(String(s ?? "")).toLowerCase().replace(/[\s、。，．,.!！?？「」『』（）()［］[\]【】・:：;；"'“”‘’〜~…]/gu, "");
+}
+
+/** Character-bigram Dice coefficient of two prompts (1 = the same words). */
+export function promptSimilarity(a, b) {
+  const grams = (s) => {
+    const c = Array.from(flatPrompt(s));
+    const m = new Map();
+    for (let i = 0; i < c.length - 1; i++) m.set(c[i] + c[i + 1], (m.get(c[i] + c[i + 1]) || 0) + 1);
+    return { m, n: Math.max(0, c.length - 1) };
+  };
+  const x = grams(a);
+  const y = grams(b);
+  if (x.n === 0 || y.n === 0) return flatPrompt(a) === flatPrompt(b) ? 1 : 0;
+  let common = 0;
+  for (const [g, k] of x.m) common += Math.min(k, y.m.get(g) || 0);
+  return (2 * common) / (x.n + y.n);
+}
+
+function lessonProblems(ep, at, previous, posted) {
+  const errors = [];
+  const warnings = [];
+  if (!Object.hasOwn(LESSON_PILLARS, ep.pillar ?? "")) errors.push(`${at}.pillar: one of ${Object.keys(LESSON_PILLARS).join(" / ")}`);
+  else if (!String(ep.topic_key).startsWith(`${ep.pillar}-`)) errors.push(`${at}.topic_key: starts with the pillar ("${ep.pillar}-…")`);
+  if (!Array.isArray(ep.slides) || ep.slides.length !== 4) {
+    errors.push(`${at}.slides: a lesson is 4 slides — 困りごと / 頼み方 (diagram prompt) / 答えの例 (diagram answer) / 注意`);
+  } else {
+    for (const [i, type] of [[1, "prompt"], [2, "answer"]]) {
+      const s = ep.slides[i];
+      if (s?.diagram?.type !== type) errors.push(`${at}.slides[${i}].diagram: must be { "type": "${type}", "items": [{ "label": "…" }] }`);
+      else for (const p of diagramProblems(s)) errors.push(`${at}.slides[${i}].diagram: ${p}`);
+    }
+    for (const i of [0, 3]) if (DIAGRAM_SENTENCE.has(ep.slides[i]?.diagram?.type)) errors.push(`${at}.slides[${i}].diagram: prompt / answer belong to slides 2 and 3`);
+  }
+  for (const [field, value] of lessonShownTexts(ep)) {
+    const t = normalizeForChecks(value);
+    const paid = LESSON_PAID_RE.exec(t);
+    if (paid) errors.push(`${at}.${field}: "${paid[0]}" — never recommend a paid plan; the lesson works on any AI the viewer has`);
+    const hype = LESSON_HYPE_RE.exec(t);
+    if (hype) errors.push(`${at}.${field}: "${hype[0]}" — no hype (誰でも・稼げる・最強・◯倍速…); say plainly what the tip does`);
+    const gh = LESSON_GITHUB_RE.exec(t);
+    if (gh) errors.push(`${at}.${field}: "${gh[0]}" — AI Trend Daily covers GitHub; a lesson never introduces a repository`);
+  }
+  // The same 文例 twice (word for word, or reworded a little) — ledger and post records.
+  const prompt = lessonPrompt(ep);
+  if (prompt) {
+    const earlier = [
+      ...previous.map((e) => ({ date: e.date, prompt: lessonPrompt(e) })),
+      ...posted.map((v) => ({ date: v.date, prompt: v.jev?.prompt })),
+    ].filter((e) => typeof e.prompt === "string");
+    for (const e of earlier) {
+      const sim = promptSimilarity(prompt, e.prompt);
+      if (sim >= LESSON_PROMPT_SIMILARITY_MAX) {
+        errors.push(`${at}: the prompt is the same as the ${e.date} lesson's (similarity ${sim.toFixed(2)}) — write another request (or pick another stock lesson)`);
+        break;
+      }
+    }
+  }
+  const last = previous.at(-1);
+  if (last?.pillar && last.pillar === ep.pillar) warnings.push(`${at}.pillar: "${ep.pillar}" again after ${last.date} — rotate the pillars`);
+  return { errors, warnings };
+}
+
+/** data/ai-lesson-stock.json: { lessons: [{ topic_key, pillar, topic, headline, hook, slides, sources }] }. */
+export function loadLessonStock(root = rootDir) {
+  const p = join(root, LESSON_STOCK_PATH);
+  return existsSync(p) ? JSON.parse(readFileSync(p, "utf-8")) : { lessons: [] };
+}
+
+/** A stock lesson as today's episode. */
+export function stockEpisode(lesson, date) {
+  return { ...structuredClone(lesson), date, genre: LESSON_GENRE, trial: LESSON_TRIAL, kind: "lesson" };
+}
+
+/** Stock lessons not aired yet (ledger + post records), the next pillar first. */
+export function unusedStock(stock, episodes, history, today) {
+  const before = (episodes || []).filter((e) => e?.date < today);
+  const used = new Set(before.map((e) => e.topic_key));
+  for (const v of history?.videos || []) if (v?.genre === LESSON_GENRE && v.jev && v.date < today) used.add(v.jev.topicKey);
+  const lastPillar = before.at(-1)?.pillar;
+  const left = (stock?.lessons || []).filter((l) => !used.has(l.topic_key));
+  return [...left.filter((l) => l.pillar !== lastPillar), ...left.filter((l) => l.pillar === lastPillar)];
+}
+
+/**
+ * 08:15 with no valid lesson for today (routine PR unmerged, or rejected):
+ * the next unused stock lesson, checked like any episode. A re-run the same
+ * day (the Instagram recovery) takes the lesson already posted that day.
+ * @returns {{ episode, errors: [], warnings } | null}
+ */
+export function lessonFallback(file, stock, history, today) {
+  const before = (file?.episodes || []).filter((e) => e?.date < today);
+  const postedToday = (history?.videos || []).find((v) => v?.genre === LESSON_GENRE && !v.skip && v.date === today && v.jev?.fallback);
+  const candidates = postedToday
+    ? (stock?.lessons || []).filter((l) => l.topic_key === postedToday.jev.topicKey)
+    : unusedStock(stock, before, history, today);
+  for (const lesson of candidates) {
+    // The history's own entry for today is ignored by the checks (v.date < today).
+    const r = validateEpisodes({ episodes: [...before, stockEpisode(lesson, today)] }, { date: today, today, history, series: SERIES.lesson });
+    if (r.errors.length === 0) return r;
+  }
+  return null;
+}
+
+/** Every stock lesson checked as if aired one a day in file order (so repeats inside the stock fail too). */
+export function stockProblems(stock) {
+  const errors = [];
+  const lessons = Array.isArray(stock?.lessons) ? stock.lessons : [];
+  if (lessons.length === 0) return ["lessons: empty"];
+  const dated = lessons.map((l, i) => stockEpisode(l, new Date(Date.UTC(2000, 0, 1 + i)).toISOString().slice(0, 10)));
+  dated.forEach((ep, i) => {
+    const r = validateEpisodes({ episodes: dated.slice(0, i + 1) }, { date: ep.date, today: ep.date, series: SERIES.lesson });
+    errors.push(...r.errors.map((e) => `stock[${i}] ${lessons[i].topic_key}: ${e}`));
+  });
+  return errors;
+}
+
 function sourceProblems(ep, previous, at, today, warnings, series) {
   const errors = [];
   const sources = ep.sources;
-  if (sources.length < LIMITS.sources[0] || sources.length > LIMITS.sources[1]) errors.push(`${at}.sources: ${LIMITS.sources.join("-")} sources`);
+  const limits = series.sourceLimits ?? LIMITS.sources;
+  if (sources.length < limits[0] || sources.length > limits[1]) errors.push(`${at}.sources: ${limits.join("-")} sources`);
   sources.forEach((s, i) => {
     const sat = `${at}.sources[${i}]`;
     errors.push(...urlProblems(s?.url, `${sat}.url`));
@@ -854,12 +1034,13 @@ export function kindOrdinal(ep, { usecaseNumber = null } = {}) {
   return null;
 }
 
-export function toJevVideoData(ep, { usecaseNumber = null, series = SERIES.jev } = {}) {
+export function toJevVideoData(ep, { usecaseNumber = null, series = SERIES.jev, fallback = false } = {}) {
   const [y, m, d] = ep.date.split("-").map(Number);
   const weekday = WEEKDAYS_JA[new Date(Date.UTC(y, m - 1, d)).getUTCDay()];
   const shortDate = `${m}/${d}`;
   const kindLabel = series.kindLabel[ep.kind];
-  const sourceLine = `出典: ${outletsLabel(ep.sources)}`;
+  // An evergreen lesson may cite nothing (then no source line).
+  const sourceLine = ep.sources.length > 0 ? `出典: ${outletsLabel(ep.sources)}` : "";
   const count = ep.slides.length;
   const ordinal = kindOrdinal(ep, { usecaseNumber });
   const stageNote = ordinal ? `${kindLabel} 第${ordinal}回` : kindLabel;
@@ -881,7 +1062,8 @@ export function toJevVideoData(ep, { usecaseNumber = null, series = SERIES.jev }
       bigLabel: series.bigLabel,
       openingSourceLabel: `${series.openingPrefix}${stageNote}`,
       sourceLabel: sourceLine,
-      endingLines: ["毎朝、AI の新しい動きを", "1分でお届け"],
+      endingLines: series.endingLines ?? ["毎朝、AI の新しい動きを", "1分でお届け"],
+      ...(fallback ? { fallback: true } : {}),
       method: ep.kind,
       genre: series.genre,
       trial: series.trial,
@@ -906,6 +1088,9 @@ export function toJevVideoData(ep, { usecaseNumber = null, series = SERIES.jev }
       topicKey: ep.topic_key,
       topic: ep.topic.trim(),
       sources: ep.sources.map((s) => ({ url: s.url, outlet: s.outlet, published_at: s.published_at, role: s.role, official: s.official })),
+      // Lesson: the prompt goes into the post record (no 文例 twice) and the caption (copy it from there).
+      ...(series.format === "lesson" ? { pillar: ep.pillar, prompt: lessonPrompt(ep) } : {}),
+      ...(fallback ? { fallback: true } : {}),
     },
   };
 }
@@ -926,12 +1111,48 @@ export const NEWS_YT_HASHTAGS = ["#AIニュース", "#生成AI", "#AI最新情�
 export const NEWS_YT_TAGS = ["AIニュース", "生成AI", "AI最新情報", "人工知能", "テクノロジー", "Shorts"];
 export const NEWS_CLAIM_NOTE = "※性能・速度・料金などの数字は、断りのない限り各社の発表です（第三者の検証は出典を明記）。円の金額は概算です。";
 
+// Genre trial #4 (owner 2026-10-22): AI for beginners at work, one tip a day.
+// Keep the ending within 40 chars (see LIMITS.narrationTotal).
+export const LESSON_LABEL = "今日のAI仕事術";
+export const LESSON_ENDING_NARRATION = "今日の AI 仕事術でした。保存とフォローで、毎朝ひとつずつ。";
+export const LESSON_IG_HASHTAGS = ["#AI活用", "#ChatGPT", "#生成AI", "#仕事術", "#業務効率化"];
+export const LESSON_YT_HASHTAGS = ["#AI活用", "#ChatGPT", "#仕事術", "#Shorts"];
+export const LESSON_YT_TAGS = ["AI活用", "ChatGPT", "生成AI", "仕事術", "業務効率化", "AIの使い方", "Shorts"];
+export const LESSON_NOTE = "※AI の答えは一例で、聞くたびに少し変わります。数字・名前・日付は元の資料で確かめてください。会社の決まりで使えない情報は入れないでください。円の金額は概算です。";
+
 /**
  * What differs between the ledger-driven series. Everything else (slide card,
  * diagram, yen-only rule, claim attribution, repeat checks) is shared.
  * Keyed by data/content-format.json "format".
  */
 export const SERIES = {
+  lesson: {
+    format: "lesson",
+    genre: LESSON_GENRE,
+    trial: LESSON_TRIAL,
+    name: "AI 仕事術（初心者向け）",
+    episodesPath: LESSON_EPISODES_PATH,
+    routinePrompt: "docs/routine-prompt-lesson.md",
+    staged: false,
+    kinds: ["lesson"],
+    kindLabel: { lesson: LESSON_LABEL },
+    kindTag: { lesson: "AI仕事術" },
+    bigLabel: "LESSON",
+    openingPrefix: "",
+    endingNarration: LESSON_ENDING_NARRATION,
+    endingLines: ["毎朝ひとつ、仕事で使える", "AI の頼み方"],
+    attributionHint: '"OpenAI によると…" / "Google の説明では…"',
+    claimSourceHint: '"OpenAI の説明" / "Google の説明"',
+    claimNote: LESSON_NOTE,
+    titleTemplate: "ai-lesson",
+    ytFooter: "このチャンネルでは毎朝ひとつ、仕事で AI を使いこなすコツを1分で紹介します。ChatGPT・Gemini・Claude など、ふだん使っている AI にそのまま貼って試せる頼み方です。",
+    igFooter: "毎朝ひとつ、仕事で使える AI の頼み方を1分で。保存して、明日の仕事で試してください。フォローすると毎朝届きます。",
+    igHashtags: LESSON_IG_HASHTAGS,
+    ytHashtags: LESSON_YT_HASHTAGS,
+    ytTags: LESSON_YT_TAGS,
+    sourceLimits: [0, 4],
+    checkedLimits: [0, 30],
+  },
   jev: {
     format: "jev",
     genre: JEV_GENRE,
@@ -1024,16 +1245,18 @@ export function buildJevCaptions(data) {
   let title = `【${meta.titleTag}】${clean(meta.headline).replace(/[<>]/g, "")}｜${dateFull} #Shorts`;
   if (Array.from(title).length > YT_TITLE_MAX || title.length > YT_TITLE_MAX) title = `【${meta.titleTag}】${dateFull} #Shorts`;
   const body = tools.map(slideLine);
+  // Lesson: the request itself, near the top so it shows before 「…続きを読む」 and can be copied.
+  const promptBlock = jev?.prompt ? ["▼ そのまま使える頼み方（コピーして使えます）", clean(jev.prompt), ""] : [];
+  const sourceBlock = (level) => (jev.sources.length > 0 ? ["出典:", ...sourceLines(jev, level), ""] : []);
   const description = fitting((level) => [
     `${clean(meta.headline)}（${meta.shortDate}）`,
     "",
+    ...promptBlock,
     ...body,
     "",
     series.claimNote,
     "",
-    "出典:",
-    ...sourceLines(jev, level),
-    "",
+    ...sourceBlock(level),
     series.ytFooter,
     "",
     series.ytHashtags.join(" "),
@@ -1041,13 +1264,12 @@ export function buildJevCaptions(data) {
   const instagram = fitting((level) => [
     `${clean(meta.headline)}（${meta.shortDate}）`,
     "",
+    ...promptBlock,
     ...body,
     "",
     series.claimNote,
     "",
-    "出典:",
-    ...sourceLines(jev, level),
-    "",
+    ...sourceBlock(level),
     series.igFooter,
     "",
     series.igHashtags.join(" "),
@@ -1255,7 +1477,7 @@ export function airedCheckSelfTest({ run = ghRun } = {}) {
   }
 }
 
-/** --series=jev|news, else the committed format's series (Jev when the format is pickup). */
+/** --series=lesson|jev|news, else the committed format's series (Jev when the format is pickup). */
 export function cliSeries(argv, root = rootDir, env = process.env) {
   const flag = argv.find((a) => a.startsWith("--series="));
   if (flag) {
@@ -1277,17 +1499,30 @@ function cli(argv) {
     console.log(jevPdcaReport(history, { series }));
     return 0;
   }
+  if (cmd === "validate-stock") {
+    const stock = fileArg ? JSON.parse(readFileSync(fileArg.slice("--file=".length), "utf-8")) : loadLessonStock();
+    const errors = stockProblems(stock);
+    for (const e of errors) console.log(`NG ${e}`);
+    if (errors.length === 0) console.log(`OK ${stock.lessons.length} stock lessons`);
+    return errors.length > 0 ? 1 : 0;
+  }
   const file = loadEpisodes(path);
   const hp = join(rootDir, "data", "performance-history.json");
   if (cmd === "next") {
     const today = todayJst();
     const history = !fileArg && existsSync(hp) ? JSON.parse(readFileSync(hp, "utf-8")) : null;
     const extra = series.staged ? { usecaseTarget: USECASE_TARGET, usecaseMin: USECASE_MIN } : {};
+    if (series.format === "lesson") {
+      // The stock lesson 08:15 would post if today's episode never reaches main, and how many are left.
+      const left = unusedStock(loadLessonStock(), file.episodes || [], history, today);
+      extra.stockLeft = left.length;
+      extra.stockNext = left[0] ? { topic_key: left[0].topic_key, pillar: left[0].pillar, headline: left[0].headline } : null;
+    }
     console.log(JSON.stringify({ today, series: series.format, ...seriesState(file.episodes || [], history, today, series), ...extra }, null, 2));
     return 0;
   }
   if (cmd === "aired-check" && !series.staged) {
-    console.error("aired-check is for the Jev series only: the news series never redoes a day");
+    console.error(`aired-check is for the Jev series only: the ${series.format} series never redoes a day`);
     return 2;
   }
   if (cmd === "aired-check") {

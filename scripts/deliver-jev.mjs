@@ -76,7 +76,7 @@ export function unmergedRoutineHint(date, errors, lsRemote = (ref) => execFileSy
 }
 
 function cli(args) {
-  if (args.some((a) => !/^(--prepare|--pr=\d+|--head=[a-f0-9]{40}|--series=(?:jev|news))$/.test(a))) throw new Error("Usage: node scripts/deliver-jev.mjs --pr=<number> --head=<SHA> [--prepare] [--series=jev|news] (read-only; no --merge)");
+  if (args.some((a) => !/^(--prepare|--pr=\d+|--head=[a-f0-9]{40}|--series=(?:lesson|jev|news))$/.test(a))) throw new Error("Usage: node scripts/deliver-jev.mjs --pr=<number> --head=<SHA> [--prepare] [--series=lesson|jev|news] (read-only; no --merge)");
   // The ledger of the committed format (news / jev), unless --series says otherwise.
   const series = cliSeries(args, root);
   const pr = Number(args.find((a) => a.startsWith("--pr="))?.slice(5));

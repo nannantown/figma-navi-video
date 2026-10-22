@@ -60,9 +60,10 @@ export interface JevSlide {
   image?: null;
 }
 
-/** steps: 手順 1→2(→3) / flow: 入力→処理→出力 / compare: 2 columns (note = column title). */
+/** steps: 手順 1→2(→3) / flow: 入力→処理→出力 / compare: 2 columns (note = column title).
+ *  prompt / answer (lesson): one box — the request typed into an AI / an example of what it answers. */
 export interface JevDiagram {
-  type: "steps" | "flow" | "compare";
+  type: "steps" | "flow" | "compare" | "prompt" | "answer";
   items: { label: string; note: string | null }[];
 }
 
