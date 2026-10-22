@@ -12,7 +12,7 @@ import { SERIES, cliSeries, validateEpisodes, airedCheck } from "./jev.mjs";
 
 export const REPO = "nannantown/figma-navi-video";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const cliRun = (args) => execFileSync("gh", args, { cwd: root, encoding: "utf8", timeout: 30_000, stdio: ["ignore", "pipe", "pipe"] });
+const cliRun = (args) => execFileSync("gh", args, { cwd: root, encoding: "utf8", timeout: 30_000, maxBuffer: 16 * 1024 * 1024, stdio: ["ignore", "pipe", "pipe"] });
 
 function apiJson(run, path) {
   return JSON.parse(run(["api", `repos/${REPO}/${path}`, "--method", "GET"]));

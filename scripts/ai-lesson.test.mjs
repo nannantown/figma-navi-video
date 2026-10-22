@@ -121,6 +121,8 @@ test("lesson: no paid plan, no hype, no GitHub; the 4-slide shape with the promp
     // Round 1 caught every prompt starting with 次の / この / 下の / 以下の / 上の; none may slip through again.
     "下の文章を、敬語に直してください。", "このデータを表にまとめてください。", "この内容を上司向けに3行にしてください。", "この報告書を短くしてください。",
     "こちらの文章を要約してください。", "添付のメールを要約して", "上の文章を、やさしい言葉に直してください。", "以下の箇条書きを表にしてください。",
+    "この一文を、やわらかい言い方に直してください。", "このままの文章を英語にしてください。", "上記の文章を要約してください。", "つぎの文章を敬語に直してください。",
+    "これを3行にまとめてください。", "ここの表を見やすくしてください。", "届いたメールに、ていねいな返事を書いてください。",
   ]) {
     assert.ok(LESSON_PASTE_RE.test(text), text);
     const x = withPrompt(paste, text);
@@ -133,8 +135,15 @@ test("lesson: no paid plan, no hype, no GitHub; the 4-slide shape with the promp
   assert.match(errorsOf([ep(0), ep(1), ep(2), noHelp]), /needs the vendor's official help page/);
   assert.equal(errorsOf([ep(0), ep(1), ep(2), ep(3)]), "");
   // Every stock lesson that pastes text carries the note (validate-stock would fail otherwise).
-  const pasting = STOCK.lessons.filter((l) => LESSON_PASTE_RE.test(lessonPrompt(l)));
+  // Independent floor: every prompt the round-1 rule flagged is still flagged.
+  const pasting = STOCK.lessons.filter((l) => /^(?:次の|この|下の|以下の|上の)/.test(lessonPrompt(l)));
   assert.ok(pasting.length >= 8, String(pasting.length));
+  for (const l of pasting) assert.ok(LESSON_PASTE_RE.test(lessonPrompt(l)), lessonPrompt(l));
+  // Slide 2 talking about the prompt itself is not a paste; the prompt itself is never excused.
+  const selfTalk = withPrompt(ep(0), "今の説明の根拠になる公式の資料の名前を挙げてください。");
+  selfTalk.slides[1].body = "答えのあとに聞きます。";
+  selfTalk.slides[1].narration = "答えをもらったあとに、この一文を送ります。分からなければ分からないと書いて、と添えるのがコツです。";
+  assert.doesNotMatch(errorsOf([selfTalk]), /pastes work text/);
   // prompt / answer boxes belong to lessons only.
   const newsSlide = clone(JSON.parse(readFileSync(join(root, "data/samples/ai-news-episodes.sample.json"), "utf8")).episodes[0]);
   newsSlide.slides[0].diagram = { type: "prompt", items: [{ label: "次の文章を3行で要約してください。" }] };

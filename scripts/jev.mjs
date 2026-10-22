@@ -772,9 +772,11 @@ const LESSON_HYPE_RE = /(?:誰|だれ)でも(?:簡単|かんたん|すぐ|月|�
 // A prompt that works on pasted text ("次の文章を…", "このスライドの…") puts work text into an AI:
 // slide 2's narration or slide 4 must say to strip / pseudonymise it or check the company's rule.
 // Broad on purpose: a false hit only asks for one more sentence of caution.
-// 「この〜」 is any noun (このデータ / この内容 / この報告書 …) except the lesson's own words (この一文 = the prompt itself) and mid-word hits (かっこの・どこの).
-export const LESSON_PASTE_RE = /貼|下記|以下|次の|(?<![っこそど])この(?!一文|頼み方|ように|まま|コツ|ひと言|ひとこと)|こちらの|下の|上の|添付|メモを|議事録/u;
-export const LESSON_PRIVACY_RE = /社外秘|個人情報|個人名|人の名前|仮名|会社のルール|会社の決まり/u;
+// 「この〜」 is any noun (このデータ / この内容 / この一文 …), except mid-word hits (かっこの・どこの).
+export const LESSON_PASTE_RE = /貼|下記|上記|以下|次の|つぎの|(?<![っこそど])この|ここの|これを|こちらの|下の|上の|添付|届いた|メモを|議事録/u;
+// Slide 2's body / narration talk about the prompt itself (「この一文を送ります」): not a paste. The prompt is never stripped.
+const LESSON_SELF_RE = /この(?:一文|頼み方|ように|まま|コツ|ひと言|ひとこと)/gu;
+export const LESSON_PRIVACY_RE =/社外秘|個人情報|個人名|人の名前|仮名|会社のルール|会社の決まり/u;
 // AI Trend Daily covers GitHub; this channel never introduces a repository.
 const LESSON_GITHUB_RE = /git\s*hub|ギットハブ|リポジトリ/i;
 
@@ -846,7 +848,8 @@ function lessonProblems(ep, at, previous, posted, history) {
   }
   const prompt = lessonPrompt(ep);
   const s1 = Array.isArray(ep.slides) ? ep.slides[1] : null;
-  const pastes = [prompt, s1?.body, s1?.narration].some((t) => typeof t === "string" && LESSON_PASTE_RE.test(normalizeForChecks(t)));
+  const pastes = (typeof prompt === "string" && LESSON_PASTE_RE.test(normalizeForChecks(prompt)))
+    || [s1?.body, s1?.narration].some((t) => typeof t === "string" && LESSON_PASTE_RE.test(normalizeForChecks(t).replace(LESSON_SELF_RE, "")));
   if (pastes) {
     const s3 = ep.slides[3];
     // Only what the viewer sees or hears: a slide with a diagram shows the picture, its body only reaches the caption.
