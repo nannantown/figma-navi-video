@@ -3,7 +3,7 @@
  * review. This helper never creates a PR, merges, deletes a branch or posts.
  */
 import { execFileSync } from "node:child_process";
-import { readFileSync, realpathSync } from "node:fs";
+import { realpathSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { isDeepStrictEqual } from "node:util";
@@ -12,7 +12,7 @@ import { SERIES, cliSeries, validateEpisodes, airedCheck } from "./jev.mjs";
 
 export const REPO = "nannantown/figma-navi-video";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const cliRun = (args) => execFileSync("gh", args, { cwd: root, encoding: "utf8", timeout: 30_000, stdio: ["ignore", "pipe", "pipe"] });
+const cliRun = (args) => execFileSync("gh", args, { cwd: root, encoding: "utf8", timeout: 30_000, maxBuffer: 16 * 1024 * 1024, stdio: ["ignore", "pipe", "pipe"] });
 
 function apiJson(run, path) {
   return JSON.parse(run(["api", `repos/${REPO}/${path}`, "--method", "GET"]));
@@ -20,7 +20,7 @@ function apiJson(run, path) {
 
 function remoteLedger(run, ledgerPath) {
   const file = apiJson(run, `contents/${ledgerPath}?ref=main`);
-  if (file.encoding !== "base64" || typeof file.content !== "string") throw new Error("Cannot read main ledger: GitHub contents response is not base64 JSON");
+  if (file.encoding !== "base64" || typeof file.content !== "string") throw new Error(`Cannot read main ${ledgerPath}: GitHub contents response is not base64 JSON`);
   return JSON.parse(Buffer.from(file.content, "base64").toString("utf8"));
 }
 
@@ -75,15 +75,31 @@ export function unmergedRoutineHint(date, errors, lsRemote = (ref) => execFileSy
   return `::error title=原稿 PR が未マージかもしれない::${branch} ブランチがあり、${date} の回が main に無い。PR が未作成・未マージ、またはルーチンがまだ実行中の可能性がある。PR を確かめ、merge したら daily-video.yml を手で実行し直す: https://github.com/${REPO}/pulls?q=is%3Apr+head%3A${branch}`;
 }
 
+/**
+ * main's post record, read like the ledger (gh api contents?ref=main), not from the working tree
+ * or origin/main (a single-branch clone never fetches it): a lesson already posted from the stock
+ * at 08:15 is only on main, and it closes that day to any other lesson.
+ * Fail-closed: if main cannot be read, this safety check stops instead of guessing.
+ * ponytail: the contents API returns base64 only up to 1 MB (the file is ~0.2 MB on 2026-10-22);
+ * past that it stops here — switch to the raw media type then.
+ */
+export function readMainHistory({ run = cliRun } = {}) {
+  try {
+    return remoteLedger(run, "data/performance-history.json");
+  } catch (err) {
+    throw new Error(`could not read main's data/performance-history.json (${String(err?.message || err).split("\n")[0]}) — stopped: the delivery check needs this morning's post record; retry, and do not merge until it reads`);
+  }
+}
+
 function cli(args) {
-  if (args.some((a) => !/^(--prepare|--pr=\d+|--head=[a-f0-9]{40}|--series=(?:jev|news))$/.test(a))) throw new Error("Usage: node scripts/deliver-jev.mjs --pr=<number> --head=<SHA> [--prepare] [--series=jev|news] (read-only; no --merge)");
-  // The ledger of the committed format (news / jev), unless --series says otherwise.
+  if (args.some((a) => !/^(--prepare|--pr=\d+|--head=[a-f0-9]{40}|--series=(?:lesson|jev|news))$/.test(a))) throw new Error("Usage: node scripts/deliver-jev.mjs --pr=<number> --head=<SHA> [--prepare] [--series=lesson|jev|news] (read-only; no --merge)");
+  // The ledger of the committed format (lesson / news / jev), unless --series says otherwise.
   const series = cliSeries(args, root);
   const pr = Number(args.find((a) => a.startsWith("--pr="))?.slice(5));
   const head = args.find((a) => a.startsWith("--head="))?.slice(7);
   if (!/^[a-f0-9]{40}$/.test(head || "")) throw new Error("Require --head=<full validated commit SHA>");
   const expected = JSON.parse(execFileSync("git", ["show", `${head}:${series.episodesPath}`], { cwd: root, encoding: "utf8", timeout: 10_000 }));
-  const history = JSON.parse(readFileSync(join(root, "data/performance-history.json"), "utf8"));
+  const history = readMainHistory();
   deliverJev({ expected, history, pr, head, prepare: args.includes("--prepare"), series });
 }
 

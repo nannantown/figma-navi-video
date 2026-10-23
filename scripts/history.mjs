@@ -120,5 +120,7 @@ export function upsertVideo(history, entry, { now = new Date(), keepDays = HISTO
   const existing = merge ? (base.videos || []).find((v) => v && v.date === entry.date) : null;
   const videos = (base.videos || []).filter((v) => v.date !== entry.date);
   videos.push(merge ? mergeVideoEntry(existing, entry) : entry);
-  return { ...base, videos: videos.filter((v) => v.date >= limit) };
+  // A lesson posted from the stock (jev.fallback) is not in the ledger: its record is
+  // the only memory that it aired, so it is never trimmed (no lesson twice).
+  return { ...base, videos: videos.filter((v) => v.date >= limit || v.jev?.fallback === true) };
 }
