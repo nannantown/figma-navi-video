@@ -23,7 +23,8 @@
     "typecheck": "tsc --noEmit",
     "test": "node --test \"scripts/*.test.mjs\"",
     "validate:jev": "node scripts/jev.mjs validate --series=jev",
-    "validate:news": "node scripts/jev.mjs validate --series=news"
+    "validate:news": "node scripts/jev.mjs validate --series=news",
+    "ref-reel:sample": "node scripts/ref-reel-sample.mjs"
   },
   "keywords": [],
   "author": "",
