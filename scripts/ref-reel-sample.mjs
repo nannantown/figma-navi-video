@@ -47,9 +47,14 @@ const propsPath = join(outDir, "props.json");
 writeFileSync(propsPath, JSON.stringify(props, null, 2));
 
 if (!process.argv.includes("--no-render")) {
+  const raw = join(outDir, "ref-reel-sample.raw.mp4");
+  execFileSync("npx", ["remotion", "render", "RefReelSample", raw, `--props=${propsPath}`], { cwd: root, stdio: "inherit" });
+  // pipeline.mjs Step 4b と同じ: Remotion は yuvj420p を出すので、Instagram が受け付ける yuv420p（tv）に直す
   execFileSync(
-    "npx",
-    ["remotion", "render", "RefReelSample", join(outDir, "ref-reel-sample.mp4"), `--props=${propsPath}`],
-    { cwd: root, stdio: "inherit" },
+    "ffmpeg",
+    ["-y", "-v", "error", "-i", raw, "-vf", "scale=out_range=tv,format=yuv420p", "-c:v", "libx264", "-pix_fmt", "yuv420p",
+      "-color_range", "tv", "-profile:v", "high", "-level", "4.0", "-crf", "20", "-preset", "fast", "-c:a", "copy",
+      "-movflags", "+faststart", join(outDir, "ref-reel-sample.mp4")],
+    { stdio: "inherit" },
   );
 }

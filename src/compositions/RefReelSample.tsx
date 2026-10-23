@@ -137,7 +137,7 @@ const chunksOf = (words: Word[]): Chunk[] => {
 
 const Caption: React.FC<{ scene: RefScene; t: number }> = ({ scene, t }) => {
   const chunks = chunksOf(scene.words);
-  const i = chunks.findLastIndex((c) => c.start <= t + 0.03);
+  const i = chunks.filter((c) => c.start <= t + 0.03).length - 1;
   if (i < 0) return null;
   const { text, start } = chunks[i];
   const acc = scene.accents.find((a) => text.includes(a));
@@ -295,9 +295,12 @@ const Window: React.FC<{ app: string; enter: number; opacity?: number; children:
       </div>
       <div style={{ fontSize: 30, fontWeight: 700, color: C.sub }}>{app}</div>
     </div>
-    <div style={{ position: "relative", height: WIN.h - WIN.bar }}>{children}</div>
+    <div style={{ position: "relative", height: WIN.h - WIN.bar, overflow: "hidden" }}>{children}</div>
   </div>
 );
+
+// 頼み方の文は読点で改行する（語の途中で折り返さない）。
+const breakAtComma = (s: string) => s.replace("、", "、\n");
 
 const BODY_H = WIN.h - WIN.bar;
 const INPUT_TOP = BODY_H - 28 - INPUT.h;
@@ -326,8 +329,8 @@ const InputBox: React.FC<{
     }}
   >
     {chips && <div style={{ display: "flex", gap: 12, marginBottom: 12 }}>{chips}</div>}
-    <div style={{ fontSize: 32, lineHeight: 1.45, color: text ? C.ink : C.faint, fontWeight: 500 }}>
-      {text || "メッセージを入力"}
+    <div style={{ fontSize: 32, lineHeight: 1.45, color: text ? C.ink : C.faint, fontWeight: 500, whiteSpace: "pre-wrap" }}>
+      {text ? breakAtComma(text) : "メッセージを入力"}
       {caret && Math.floor(t * 2.2) % 2 === 0 && (
         <span style={{ display: "inline-block", width: 3, height: 36, background: C.accent, marginLeft: 3, verticalAlign: "-6px" }} />
       )}
@@ -393,7 +396,8 @@ const Answer: React.FC<{
   from: number;
   marks?: number;
   hi?: string | null;
-}> = ({ answer, t, from, marks = 0, hi = null }) => {
+  note?: { head: string; text: string; opacity: number };
+}> = ({ answer, t, from, marks = 0, hi = null, note }) => {
   let row = 0;
   return (
     <div style={{ display: "flex", gap: 18 }}>
@@ -417,7 +421,14 @@ const Answer: React.FC<{
                 outline: isHi ? `3px solid ${C.accent}` : "3px solid transparent",
               }}
             >
-              <div style={{ fontSize: 30, fontWeight: 800, color: C.accent, opacity: vis(secRow) }}>■ {sec.head}</div>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", opacity: vis(secRow) }}>
+                <span style={{ fontSize: 30, fontWeight: 800, color: C.accent }}>■ {sec.head}</span>
+                {note?.head === sec.head && note.opacity > 0 && (
+                  <Chip tone="note" style={{ height: 48, fontSize: 30, opacity: note.opacity }}>
+                    {note.text}
+                  </Chip>
+                )}
+              </div>
               {lines.map(({ l, r }) => (
                 <div
                   key={l}
@@ -448,7 +459,7 @@ const UserBubble: React.FC<{ file: string; prompt: string; opacity: number }> = 
   <div style={{ display: "flex", justifyContent: "flex-end", opacity }}>
     <div
       style={{
-        maxWidth: 640,
+        maxWidth: 700,
         background: C.accentSoft,
         borderRadius: 24,
         padding: "18px 24px",
@@ -459,7 +470,9 @@ const UserBubble: React.FC<{ file: string; prompt: string; opacity: number }> = 
       }}
     >
       <FileChip name={file} />
-      <div style={{ fontSize: 30, lineHeight: 1.45, color: C.ink, fontWeight: 500 }}>{prompt}</div>
+      <div style={{ fontSize: 30, lineHeight: 1.45, color: C.ink, fontWeight: 500, whiteSpace: "pre-wrap" }}>
+        {breakAtComma(prompt)}
+      </div>
     </div>
   </div>
 );
@@ -760,14 +773,16 @@ const SceneView: React.FC<{ scene: RefScene; props: RefReelProps }> = ({ scene, 
         <Window app={app} enter={1}>
           <div style={{ position: "absolute", left: 28, right: 28, top: 28 - 150, display: "flex", flexDirection: "column", gap: 28 }}>
             <UserBubble file={file} prompt={prompt} opacity={1} />
-            <Answer answer={answer} t={t + 100} from={0} marks={marks} hi={hi} />
+            <Answer
+              answer={answer}
+              t={t + 100}
+              from={0}
+              marks={marks}
+              hi={hi}
+              note={{ head: "宿題", text: "仮名 → 元の名前に", opacity: ramp(t, kana - 0.1, kana + 0.25) }}
+            />
           </div>
           <InputBox t={t} />
-          {t >= kana - 0.1 && (
-            <div style={{ position: "absolute", right: 40, top: rowY.宿題 - WIN.bar - 92, opacity: ramp(t, kana - 0.1, kana + 0.25) }}>
-              <Chip tone="note">仮名 → 元の名前に</Chip>
-            </div>
-          )}
         </Window>
         <Cursor
           t={t}
