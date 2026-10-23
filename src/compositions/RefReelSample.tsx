@@ -673,7 +673,8 @@ const SceneView: React.FC<{ scene: RefScene; props: RefReelProps }> = ({ scene, 
     const kana = cue(w, "仮名", 2.8);
     const grab = Math.max(kana + 0.6, cue(w, "会議", 4.0) - 0.2);
     const drop = Math.max(grab + 0.7, cue(w, "貼り", 4.6) + 0.1);
-    const from = { x: 330, y: WIN.bar + 300 }; // つかむ点（札の左上から 30,20）
+    // つかむ点（札の左上から 30,20）。札の束（高さ約 122）があいさつ文（〜290）と入力欄（460〜）の間に収まる位置
+    const from = { x: 330, y: WIN.bar + 330 };
     const to = { x: 70, y: WIN.bar + INPUT_TOP + 20 };
     const d = ramp(t, grab + 0.2, drop);
     const landed = t >= drop;
