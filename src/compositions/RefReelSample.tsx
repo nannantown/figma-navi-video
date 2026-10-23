@@ -124,11 +124,15 @@ const Header: React.FC<{ scene: RefScene; t: number; dur: number }> = ({ scene, 
 
 const isKana = (s: string) => /^[ぁ-ゟー]+$/.test(s);
 type Chunk = { text: string; start: number };
-const chunksOf = (words: Word[]): Chunk[] => {
+const chunksOf = (words: Word[], narration: string): Chunk[] => {
   const out: Chunk[] = [];
   for (const w of words) {
     const last = out[out.length - 1];
-    const attach = last && (isKana(w.text) || /^\d+$/.test(w.text)) && last.text.length + w.text.length <= 9;
+    const attach =
+      last &&
+      (isKana(w.text) || /^\d+$/.test(w.text)) &&
+      last.text.length + w.text.length <= 9 &&
+      !narration.includes(`${last.text}、${w.text}`); // 読点の後ろの語はつなげない（「分けて、と」）
     if (attach) last.text += w.text;
     else out.push({ text: w.text, start: w.offset });
   }
@@ -136,7 +140,7 @@ const chunksOf = (words: Word[]): Chunk[] => {
 };
 
 const Caption: React.FC<{ scene: RefScene; t: number }> = ({ scene, t }) => {
-  const chunks = chunksOf(scene.words);
+  const chunks = chunksOf(scene.words, scene.narration);
   const i = chunks.filter((c) => c.start <= t + 0.03).length - 1;
   if (i < 0) return null;
   const { text, start } = chunks[i];
@@ -154,7 +158,7 @@ const Caption: React.FC<{ scene: RefScene; t: number }> = ({ scene, t }) => {
         fontSize: 48,
         fontWeight: 700,
         color: C.ink,
-        opacity: 0.4 + 0.6 * pop,
+        opacity: 0.8 + 0.2 * pop,
         transform: `translateY(${(1 - pop) * 6}px)`,
       }}
     >
@@ -228,7 +232,9 @@ const SendButton: React.FC<{ press: number; active: boolean }> = ({ press, activ
 // 窓の左上を (0,0) とした座標のカーソル。keys の時刻（秒）の間をなめらかに動く。
 type Key = { t: number; x: number; y: number };
 const Cursor: React.FC<{ t: number; keys: Key[]; clicks: number[]; show?: number }> = ({ t, keys, clicks, show = 1 }) => {
-  const ts = keys.map((k) => k.t);
+  // 語が見つからず cue() の既定の秒数が混ざっても、時刻は必ず増える順に（interpolate は逆順で例外）
+  const ts: number[] = [];
+  keys.forEach((k, i) => ts.push(i === 0 ? k.t : Math.max(k.t, ts[i - 1] + 0.01)));
   const x = interpolate(t, ts, keys.map((k) => k.x), { ...clamp, easing: ease });
   const y = interpolate(t, ts, keys.map((k) => k.y), { ...clamp, easing: ease });
   const c = clicks.find((ct) => t >= ct && t < ct + 0.45);
@@ -330,10 +336,19 @@ const InputBox: React.FC<{
   >
     {chips && <div style={{ display: "flex", gap: 12, marginBottom: 12 }}>{chips}</div>}
     <div style={{ fontSize: 32, lineHeight: 1.45, color: text ? C.ink : C.faint, fontWeight: 500, whiteSpace: "pre-wrap" }}>
-      {text ? breakAtComma(text) : "メッセージを入力"}
-      {caret && Math.floor(t * 2.2) % 2 === 0 && (
-        <span style={{ display: "inline-block", width: 3, height: 36, background: C.accent, marginLeft: 3, verticalAlign: "-6px" }} />
-      )}
+      {text ? breakAtComma(text) : null}
+      <span
+        style={{
+          display: "inline-block",
+          width: 3,
+          height: 36,
+          background: C.accent,
+          margin: "0 3px",
+          verticalAlign: "-6px",
+          opacity: caret && Math.floor(t * 2.2) % 2 === 0 ? 1 : 0,
+        }}
+      />
+      {text ? null : "メッセージを入力"}
     </div>
     <div style={{ position: "absolute", right: 20, bottom: 20 }}>
       <SendButton press={press} active={sendActive} />
@@ -421,7 +436,7 @@ const Answer: React.FC<{
                 outline: isHi ? `3px solid ${C.accent}` : "3px solid transparent",
               }}
             >
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", opacity: vis(secRow) }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: 48, opacity: vis(secRow) }}>
                 <span style={{ fontSize: 30, fontWeight: 800, color: C.accent }}>■ {sec.head}</span>
                 {note?.head === sec.head && note.opacity > 0 && (
                   <Chip tone="note" style={{ height: 48, fontSize: 30, opacity: note.opacity }}>
@@ -505,7 +520,7 @@ const SceneView: React.FC<{ scene: RefScene; props: RefReelProps }> = ({ scene, 
             transform: `translateY(${(1 - p) * 20}px)`,
           }}
         >
-          <div style={{ fontSize: 72, fontWeight: 700, color: C.ink, lineHeight: 1.35 }}>
+          <div style={{ fontSize: 64, fontWeight: 700, color: C.ink, lineHeight: 1.4 }}>
             {scene.heading[0]}
             <br />
             <span style={{ color: C.accent, fontWeight: 900 }}>{scene.heading[1]}</span>
@@ -524,14 +539,14 @@ const SceneView: React.FC<{ scene: RefScene; props: RefReelProps }> = ({ scene, 
 
   if (scene.kind === "save") {
     const cs = cue(w, "保存", 3.5);
-    const drop = spring({ frame: frame - Math.round((cs - 0.2) * fps), fps, config: { damping: 12, mass: 0.6 } });
+    const drop = spring({ frame: frame - Math.round((cs - 0.2) * fps), fps, config: { damping: 200 }, durationInFrames: 14 });
     return (
       <>
         <div style={{ position: "absolute", left: 80, right: 80, top: 560, textAlign: "center", opacity: ramp(t, 0, 0.35) }}>
           <div style={{ fontSize: 64, fontWeight: 700, color: C.ink }}>
             <Accented parts={scene.heading} />
           </div>
-          <div style={{ marginTop: 18, fontSize: 34, fontWeight: 500, color: C.sub }}>手順は、動画の中に</div>
+          <div style={{ marginTop: 18, fontSize: 34, fontWeight: 500, color: C.sub }}>手順は、この動画の中に</div>
         </div>
         <svg
           width={150}
@@ -560,7 +575,7 @@ const SceneView: React.FC<{ scene: RefScene; props: RefReelProps }> = ({ scene, 
             opacity: ramp(t, cs + 0.6, cs + 1.0),
           }}
         >
-          保存とフォローで、毎朝ひとつずつ
+          フォローすると、ほかの仕事術も届きます
         </div>
         <Caption scene={scene} t={t} />
       </>
@@ -593,6 +608,8 @@ const SceneView: React.FC<{ scene: RefScene; props: RefReelProps }> = ({ scene, 
           display: "flex",
           flexDirection: "column",
           gap: 38,
+          justifyContent: "center",
+          opacity: ramp(t, 0, 0.25),
         }}
       >
         {props.recap.map((r, i) => {
@@ -629,14 +646,20 @@ const SceneView: React.FC<{ scene: RefScene; props: RefReelProps }> = ({ scene, 
       <>
         <Window app={app} enter={enter}>
           <NewChatPill flash={t >= click && t < click + 0.35 ? 1 : 0} />
-          <Greeting opacity={t < click + 0.35 ? 0.35 + 0.65 * ramp(t, 0.4, 0.9) : ramp(t, click + 0.35, click + 0.75)} />
+          <Greeting
+            opacity={
+              t < click + 0.2
+                ? (0.35 + 0.65 * ramp(t, 0.4, 0.9)) * (1 - ramp(t, click + 0.05, click + 0.2))
+                : ramp(t, click + 0.3, click + 0.7)
+            }
+          />
           <InputBox t={t} />
         </Window>
         <Cursor
           t={t}
           keys={[
-            { t: 0, x: 760, y: 820 },
-            { t: 0.6, x: 760, y: 820 },
+            { t: 0, x: 700, y: 560 },
+            { t: 0.6, x: 700, y: 560 },
             { t: click - 0.1, x: pill.x, y: pill.y },
             { t: dur, x: pill.x + 40, y: pill.y + 160 },
           ]}
@@ -646,28 +669,26 @@ const SceneView: React.FC<{ scene: RefScene; props: RefReelProps }> = ({ scene, 
       </>
     );
   } else if (step === 2) {
-    const grab = cue(w, "会議", 1.5) - 0.2;
-    const drop = cue(w, "貼り", 2.4) + 0.1;
-    const kana = cue(w, "仮名", 5.4);
-    const from = { x: 560, y: WIN.bar + 300 };
+    // 順番: メモの札が出る → 「仮名に」の札が付く（貼る前に仮名にする）→ つかんで入力欄へ落とす
+    const kana = cue(w, "仮名", 2.8);
+    const grab = Math.max(kana + 0.6, cue(w, "会議", 4.0) - 0.2);
+    const drop = Math.max(grab + 0.7, cue(w, "貼り", 4.6) + 0.1);
+    const from = { x: 330, y: WIN.bar + 300 }; // つかむ点（札の左上から 30,20）
     const to = { x: 70, y: WIN.bar + INPUT_TOP + 20 };
     const d = ramp(t, grab + 0.2, drop);
     const landed = t >= drop;
+    const end1 = { x: 28 + 150 + 40, y: WIN.bar + 24 + 28 + 160 }; // 手順 1 の終わりのカーソル
     body = (
       <>
         <Window app={app} enter={1}>
-          <Greeting opacity={1 - 0.6 * ramp(t, grab, drop)} />
+          <Greeting opacity={1 - 0.6 * ramp(t, 0, 0.4)} />
           <InputBox
             t={t}
             chips={
               landed ? (
                 <>
                   <FileChip name={file} />
-                  {t >= kana - 0.1 && (
-                    <Chip tone="note" style={{ opacity: ramp(t, kana - 0.1, kana + 0.2) }}>
-                      名前は仮名に（Aさん・B社）
-                    </Chip>
-                  )}
+                  <Chip tone="note">仮名にしてある</Chip>
                 </>
               ) : undefined
             }
@@ -679,20 +700,27 @@ const SceneView: React.FC<{ scene: RefScene; props: RefReelProps }> = ({ scene, 
                 left: interpolate(d, [0, 1], [from.x, to.x]) - 30,
                 top: interpolate(d, [0, 1], [from.y - WIN.bar, to.y - WIN.bar]) - 20,
                 opacity: ramp(t, 0.3, 0.6),
-                transform: `rotate(${(1 - d) * -4}deg) scale(${t > grab ? 1.04 : 1})`,
-                boxShadow: t > grab ? "0 14px 30px rgba(120,80,50,0.18)" : "none",
-                borderRadius: 14,
+                transform: `scale(${t > grab ? 1.03 : 1})`,
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-start",
+                gap: 10,
               }}
             >
-              <FileChip name={file} />
+              <div style={{ borderRadius: 14, boxShadow: t > grab ? "0 14px 30px rgba(120,80,50,0.18)" : "none" }}>
+                <FileChip name={file} />
+              </div>
+              <Chip tone="note" style={{ opacity: ramp(t, kana - 0.1, kana + 0.2) }}>
+                名前は仮名に（Aさん・B社）
+              </Chip>
             </div>
           )}
         </Window>
         <Cursor
           t={t}
           keys={[
-            { t: 0, x: 220, y: WIN.bar + 300 },
-            { t: grab, x: from.x, y: from.y },
+            { t: 0, x: end1.x, y: end1.y },
+            { t: grab - 0.3, x: from.x, y: from.y },
             { t: grab + 0.2, x: from.x, y: from.y },
             { t: drop, x: to.x, y: to.y },
             { t: dur, x: 520, y: WIN.bar + 360 },
@@ -739,7 +767,7 @@ const SceneView: React.FC<{ scene: RefScene; props: RefReelProps }> = ({ scene, 
             </div>
           )}
           {sent ? (
-            <InputBox t={t} press={press} />
+            <InputBox t={t} press={press} sendActive={press > 0} />
           ) : (
             <InputBox t={t} chips={<FileChip name={file} />} text={prompt} press={press} sendActive />
           )}
@@ -762,7 +790,7 @@ const SceneView: React.FC<{ scene: RefScene; props: RefReelProps }> = ({ scene, 
     const tanto = cue(w, "担当", 2.1);
     const check = cue(w, "確かめ", 4.0);
     const kana = cue(w, "仮名", 5.6);
-    const hi = t >= kana ? "宿題" : t >= tanto ? "宿題" : t >= date ? "期限" : null;
+    const hi = t >= tanto ? "宿題" : t >= date ? "期限" : null;
     const marks = Math.floor(answerRows * ramp(t, check - 0.2, check + 0.9));
     // 答えの並び: 見出し 46px・行 46px・区切り 14px。窓の上から 28 - 150 + 吹き出し(約 196) + 28。
     const top0 = WIN.bar + 28 - 150 + 196 + 28;
@@ -811,10 +839,18 @@ const SceneView: React.FC<{ scene: RefScene; props: RefReelProps }> = ({ scene, 
 
 export const refReelFrames = (scenes: RefScene[]) => scenes.reduce((n, s) => n + Math.round(s.duration * REF_FPS), 0);
 
+// BGM は最後の 1 秒で音を下げて終える（途中でぷつっと切らない）。
+const Bgm: React.FC<{ total: number }> = ({ total }) => (
+  <Audio
+    src={staticFile("audio/bgm.wav")}
+    volume={(f) => interpolate(f, [0, Math.max(1, total - REF_FPS), Math.max(2, total)], [0.08, 0.08, 0], clamp)}
+  />
+);
+
 export const RefReelSample: React.FC<RefReelProps> = (props) => (
   <AbsoluteFill style={{ fontFamily: FONT_FAMILY, color: C.ink }}>
     <Background />
-    <Audio src={staticFile("audio/bgm.wav")} volume={0.08} />
+    <Bgm total={refReelFrames(props.scenes)} />
     <Series>
       {props.scenes.map((s, i) => (
         <Series.Sequence key={i} durationInFrames={Math.round(s.duration * REF_FPS)}>

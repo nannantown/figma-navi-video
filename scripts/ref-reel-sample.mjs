@@ -57,4 +57,9 @@ if (!process.argv.includes("--no-render")) {
       "-movflags", "+faststart", join(outDir, "ref-reel-sample.mp4")],
     { stdio: "inherit" },
   );
+  const sec = Number(
+    execFileSync("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", join(outDir, "ref-reel-sample.mp4")]),
+  );
+  if (!(sec > 0 && sec <= MAX_SEC)) throw new Error(`書き出した mp4 の尺が ${sec} 秒（0〜${MAX_SEC} 秒であるべき）`);
+  console.log(`mp4 ${sec.toFixed(2)}s → ${join(outDir, "ref-reel-sample.mp4")}`);
 }
