@@ -899,7 +899,7 @@ export function reelProblems(ep, at, pastes) {
   answer.forEach((sec, i) => {
     len(sec?.head, "head", `${r}.answer[${i}].head`);
     const lines = Array.isArray(sec?.lines) ? sec.lines : [];
-    if (lines.length < 1 || lines.length > 4) errors.push(`${r}.answer[${i}].lines: 1-4 lines`);
+    if (lines.length < 1) errors.push(`${r}.answer[${i}].lines: at least 1 line`);
     lines.forEach((l, j) => len(l, "line", `${r}.answer[${i}].lines[${j}]`));
     rows += 1 + lines.length;
   });
