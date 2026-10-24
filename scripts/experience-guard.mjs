@@ -25,6 +25,8 @@ const ATTRIBUTED = /と言われ|といわれ|と語られ|で知られ|と知�
 // 「自分」は入れない: 「自分で確かめましょう」「自分たちのいつもの書き方」は見る人の話。
 const ME = "(?:私|わたし|僕|ぼく|俺|おれ|うち|メイ|筆者|当店|店主)(?:たち|達|ら|自身)?";
 const ME_RE = new RegExp(ME, "u");
+// 「〜が」 before the wording names who did it (「ですが、」 is a conjunction, not a subject).
+const OTHER_SUBJECT = /[^\s、。,]\s?が(?![、,])/u;
 
 // Each pattern is a way of saying "I did it and this happened", tested on one sentence.
 // Invitations to the viewer (試してみましょう・やってみてください・試したい人は) and plain facts stay allowed.
@@ -72,6 +74,8 @@ export function experienceClaims(text) {
     if (HISTORY.test(core) && !ME_RE.test(core)) continue;
     for (const p of EXPERIENCE_PATTERNS) {
       const word = p.sentence ? p.sentence(core) : p.exec(core)?.[0];
+      // Somebody else did it: 「LiteLLM がJevを試した」「職人が何度も試した」「兵士が履いた結果」.
+      if (word && !ME_RE.test(core) && OTHER_SUBJECT.test(core.slice(0, core.indexOf(word)))) break;
       if (word) {
         out.push({ word, sentence: shown });
         break;
