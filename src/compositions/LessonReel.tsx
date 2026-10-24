@@ -154,7 +154,16 @@ const chunksOf = (words: Word[], narration: string): Chunk[] => {
     if (attach) last.text += w.text;
     else out.push({ text: w.text, start: w.offset });
   }
-  return out;
+  // 1 字だけのかな（読点の後の「と」など）は、ひとりで出さずに次の語の頭に付ける
+  return out.reduce<Chunk[]>((acc, c, i) => {
+    const prev = acc[acc.length - 1];
+    if (prev && prev.text.length === 1 && isKana(prev.text) && i > 0) {
+      prev.text += c.text;
+      return acc;
+    }
+    acc.push({ ...c });
+    return acc;
+  }, []);
 };
 
 const Caption: React.FC<{ scene: ReelScene; t: number }> = ({ scene, t }) => {
