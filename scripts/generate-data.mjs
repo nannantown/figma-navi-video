@@ -75,6 +75,14 @@ function generateJevData(allowStale, series) {
       fallback = true;
     }
   }
+  // Reel look, nothing usable in the stock, and only today's screen script (episode.reel) is wrong:
+  // the day's lesson still goes out, as the 4 cards, rather than not at all.
+  if (errors.length > 0 && episode && series.format === "lesson" && errors.every((e) => /^episode \S+\.reel[.:[]/.test(e))) {
+    console.log(`::warning title=手順型の台本が検査に通らない::今日の回を 4 枚の見た目で出します（${errors.slice(0, 3).join(" / ")}）`);
+    episode = { ...episode };
+    delete episode.reel;
+    errors = [];
+  }
   for (const w of warnings) console.warn(`  WARN ${w}`);
   if (errors.length > 0) {
     // Today missing + the routine's branch exists = probably written but not

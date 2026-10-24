@@ -813,7 +813,10 @@ const REEL_LIMITS = {
 };
 const REEL_ANSWER_ROWS = 7;
 
-/** "reel" or "cards". LESSON_LOOK overrides the file (verification runs); no field = "cards". */
+/**
+ * "reel" or "cards". LESSON_LOOK overrides the file (verification runs); no field = "cards".
+ * A typo in the file never stops the morning post: it reads as "cards" with a warning.
+ */
 export function readLessonLook(root = rootDir, env = process.env) {
   const fromEnv = env.LESSON_LOOK;
   if (fromEnv) {
@@ -823,7 +826,10 @@ export function readLessonLook(root = rootDir, env = process.env) {
   const p = join(root, FORMAT_PATH);
   const look = existsSync(p) ? JSON.parse(readFileSync(p, "utf-8")).lessonLook : undefined;
   if (look === undefined) return "cards";
-  if (!LESSON_LOOKS.includes(look)) throw new Error(`${FORMAT_PATH}: "lessonLook" must be one of ${LESSON_LOOKS.join(" / ")}, got ${JSON.stringify(look)}`);
+  if (!LESSON_LOOKS.includes(look)) {
+    console.log(`::warning title=lessonLook の書き間違い::${FORMAT_PATH} の "lessonLook" は ${LESSON_LOOKS.join(" / ")} のどれか（${JSON.stringify(look)} だった）。4 枚の見た目（cards）で作ります`);
+    return "cards";
+  }
   return look;
 }
 
@@ -905,10 +911,17 @@ export function reelProblems(ep, at, pastes) {
   });
   if (rows > REEL_ANSWER_ROWS) errors.push(`${r}.answer: ${rows} rows (heads + lines) — up to ${REEL_ANSWER_ROWS} fit in the window`);
   const heads = answer.map((s) => s?.head);
+  if (new Set(heads).size !== heads.length) errors.push(`${r}.answer: each head once (the check step marks a head by its words)`);
   const check = steps.find((s) => s?.action === "check");
   if (check?.focus !== undefined) {
     if (!Array.isArray(check.focus) || check.focus.length < 1 || check.focus.length > 2) errors.push(`${r}.steps[check].focus: 1-2 answer heads`);
     else for (const f of check.focus) if (!heads.includes(f)) errors.push(`${r}.steps[check].focus: "${f}" is not a head of reel.answer`);
+  }
+  // The check note sits on the first focused head's row (770 px at 30 / 28 px): head + note fit together.
+  const checkNote = reelNotes(reel).check;
+  const noteHead = (Array.isArray(check?.focus) && check.focus[0]) || heads[0];
+  if (checkNote && typeof noteHead === "string" && charLength(noteHead) + charLength(checkNote) > 20) {
+    errors.push(`${r}: the check note "${checkNote}" and the head "${noteHead}" are ${charLength(noteHead) + charLength(checkNote)} chars together (up to 20 fit on one row)`);
   }
   const hasPaste = actions.includes("paste");
   if (hasPaste) len(reel.file, "file", `${r}.file`);
@@ -916,7 +929,10 @@ export function reelProblems(ep, at, pastes) {
   if (typeof reel.file === "string" && /[\\/]/.test(reel.file)) errors.push(`${r}.file: a file name, no / or \\`);
   // Pasted work text: the window shows the paste, and the caution is on screen or in the voice.
   if (pastes && !hasPaste) errors.push(`${r}.steps: the prompt works on pasted text — add a "paste" step`);
-  if (pastes || hasPaste) {
+  // The reel's own words count too (a type step that says 「議事録を貼り付けて…」).
+  const ownWords = steps.flatMap((s) => [s?.narration, ...(Array.isArray(s?.heading) ? s.heading : [])]).filter((t) => typeof t === "string");
+  const talksPaste = ownWords.some((t) => LESSON_PASTE_RE.test(normalizeForChecks(t).replace(LESSON_SELF_RE, "")));
+  if (pastes || hasPaste || talksPaste) {
     const notes = reelNotes(reel);
     const said = [notes.paste, notes.done, notes.check, ...steps.map((s) => s?.narration)].filter((t) => typeof t === "string").join(" ");
     if (!LESSON_PRIVACY_RE.test(normalizeForChecks(said))) errors.push(`${r}: pasting work text — the paste note or a step's narration must say to make 社外秘・人の名前・社名 仮名 (A社・Bさん) first, or to check 会社のルール`);
@@ -927,6 +943,12 @@ export function reelProblems(ep, at, pastes) {
   for (const [field, value] of reelTexts(reel)) {
     errors.push(...shownTextProblems(value, `${at}.${field}`));
     if (/[\n\r]/.test(value)) errors.push(`${at}.${field}: no line breaks`);
+    // Claims as on the slides: the voice names who says so; the short screen texts carry none.
+    if (/\.(hook|narration)$/.test(field)) {
+      for (const u of unattributedClaims(value)) errors.push(`${at}.${field}: claim without its source — "${u}"`);
+    } else if (hasClaim(value)) {
+      errors.push(`${at}.${field}: no speed/accuracy/"never wrong" claim on the screen`);
+    }
   }
   return errors;
 }
@@ -1011,7 +1033,7 @@ function lessonProblems(ep, at, previous, posted, history, look) {
     }
   }
   // The reel look shows the steps, not the 4 cards: its own screen and voice carry the same caution.
-  if (look === "reel" || ep.reel !== undefined) {
+  if (look === "reel") {
     errors.push(...reelProblems(ep, at, typeof prompt === "string" && LESSON_PASTE_RE.test(normalizeForChecks(prompt))));
   }
   // A spreadsheet lesson that names a function (SUMIFS, IF …) is checked against the vendor's own help page.

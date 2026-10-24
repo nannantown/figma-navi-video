@@ -62,9 +62,10 @@ export function reelCoverOffsetMs(scenes) {
 }
 
 // Edge TTS drops a request now and then (generate-audio.mjs retries the same way).
-async function withRetry(fn, label, attempts = 4) {
+async function withRetry(fn, label, deadline, attempts = 4) {
   const errors = [];
   for (let a = 1; a <= attempts; a++) {
+    if (Date.now() > deadline) throw new Error(`${label}: out of time for the reel voice — ${errors.join(" / ") || "no attempt left"}`);
     try {
       return await fn();
     } catch (err) {
@@ -77,13 +78,13 @@ async function withRetry(fn, label, attempts = 4) {
 }
 
 /** Voice every scene into public/audio/reel/ (replaced each run). Returns the scenes with audio, duration, words. */
-export async function voiceScenes(scenes, { root, rate, synthesize = synthesizeOnce }) {
+export async function voiceScenes(scenes, { root, rate, synthesize = synthesizeOnce, deadline = Infinity }) {
   const dir = join(root, "public", "audio", "reel");
   rmSync(dir, { recursive: true, force: true });
   mkdirSync(dir, { recursive: true });
   const out = [];
   for (const [i, s] of scenes.entries()) {
-    const { audio, words } = await withRetry(() => synthesize(s.narration, { voice: REEL_VOICE, rate, timeoutMs: 30000 }), `reel scene ${i}`);
+    const { audio, words } = await withRetry(() => synthesize(s.narration, { voice: REEL_VOICE, rate, timeoutMs: 30000 }), `reel scene ${i}`, deadline);
     if (!audio?.length) throw new Error(`reel scene ${i} (${s.kind}): no audio from Edge TTS`);
     const file = `audio/reel/scene-${i}.mp3`;
     writeFileSync(join(root, "public", file), audio);

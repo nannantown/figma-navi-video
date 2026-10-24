@@ -98,7 +98,7 @@ test("reel: the look switch — LESSON_LOOK wins, then the file's lessonLook, no
     assert.equal(readLessonLook(dir, { LESSON_LOOK: "cards" }), "cards");
     assert.throws(() => readLessonLook(dir, { LESSON_LOOK: "reels" }), /LESSON_LOOK must be one of reel \/ cards/);
     writeFileSync(join(dir, "data/content-format.json"), JSON.stringify({ format: "lesson", lessonLook: "card" }));
-    assert.throws(() => readLessonLook(dir, {}), /"lessonLook" must be one of/);
+    assert.equal(readLessonLook(dir, {}), "cards", "a typo in the file never stops the post");
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }
@@ -161,4 +161,30 @@ test("reel: the post record keeps the look, the real length and the reel's cover
   const old = buildPostEntry({ date: DATE, uploadResult: { videoId: "x" }, trendingData: data, audioDurations: null });
   assert.equal(old.look, undefined);
   assert.equal(old.coverOffsetMs, null);
+});
+
+test("reel: the reel's own words get the slide checks — claims, 貼る talk, one row per check note, unique heads", () => {
+  const claim = ep("ask-three-parts", (x) => (x.reel.steps[2].narration = "ステップ3。送信すると、AIは間違えない答えを返します。", x));
+  assert.match(errors(claim), /reel\.steps\[2\]\.narration: claim without its source/);
+  const shown = ep("ask-three-parts", (x) => (x.reel.answer[0].lines[4] = "ミスはゼロ", x));
+  assert.match(errors(shown), /no speed\/accuracy\/"never wrong" claim on the screen/);
+  const talks = ep("ask-three-parts", (x) => {
+    x.reel.steps[1].narration = "ステップ2。会議の議事録を貼り付けて、形を書きます。";
+    x.reel.steps[1].accents = [];
+    x.reel.steps[3].narration = "ステップ4。答えはたたき台です。自分で見直して使います。";
+    x.reel.steps[3].accents = [];
+    return x;
+  });
+  assert.match(errors(talks), /pasting work text/);
+  const wide = ep("meeting-minutes-three", (x) => {
+    x.reel.answer[1].head = "担当と期限の宿題一覧";
+    x.reel.steps[4].focus = ["担当と期限の宿題一覧"];
+    x.reel.steps[4].note = "仮名は元の名前に戻して";
+    return x;
+  });
+  assert.match(errors(wide), /the check note .* chars together \(up to 20 fit on one row\)/);
+  const dup = ep("check-ask-sources", (x) => (x.reel.answer[1].head = x.reel.answer[0].head, x));
+  assert.match(errors(dup), /each head once/);
+  // A broken reel does not matter while the look is cards.
+  assert.equal(errors(dup, "cards"), "");
 });

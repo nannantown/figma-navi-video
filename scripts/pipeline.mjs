@@ -39,7 +39,10 @@ const COMPOSITION_ID = "AiToolsTop5"; // src/Root.tsx
 // depends on it. Keep it in sync with calculateFrameDurations() in src/data.ts.
 const TARGET_MAX_SECONDS = 58; // Instagram Reels rejects > 60 s
 const HARD_MAX_SECONDS = 59.5;
-const IMAGE_STEP_KILL_MS = 150000; // fetch-tool-images.mjs budgets itself to STEP_BUDGET_MS (90 s)
+const REEL_MAX_SECONDS = 59; // the owner's Instagram limit for the reel look
+const REEL_VOICE_BUDGET_MS = 4 * 60 * 1000; // all reel voice clips, every rate tried
+const REEL_RENDER_KILL_MS = 8 * 60 * 1000; // the reel render; the cards still fit in the 20-minute job after it
+const IMAGE_STEP_KILL_MS =150000; // fetch-tool-images.mjs budgets itself to STEP_BUDGET_MS (90 s)
 
 function run(cmd, opts = {}) {
   console.log(`\n>>> ${cmd}\n`);
@@ -195,13 +198,16 @@ async function renderReel(data, dateStr) {
   if (!script.prompt) throw new Error("no prompt on the lesson (slide 2)");
   let scenes = null;
   let seconds = Infinity;
+  // The job has 20 minutes (daily-video.yml): the reel gets a budget, so a slow day still
+  // leaves time to make the cards instead.
+  const voiceDeadline = Date.now() + REEL_VOICE_BUDGET_MS;
   for (const rate of REEL_RATES) {
-    scenes = await voiceScenes(script.scenes, { root: rootDir, rate });
+    scenes = await voiceScenes(script.scenes, { root: rootDir, rate, deadline: voiceDeadline });
     seconds = reelSeconds(scenes);
     console.log(`  Reel length at ${rate}: ${seconds.toFixed(1)} s (${scenes.length} scenes)`);
     if (seconds <= TARGET_MAX_SECONDS) break;
   }
-  if (seconds > HARD_MAX_SECONDS) throw new Error(`reel would be ${seconds.toFixed(1)} s (> ${HARD_MAX_SECONDS} s) even at the fastest rate`);
+  if (seconds > REEL_MAX_SECONDS) throw new Error(`reel would be ${seconds.toFixed(1)} s (> ${REEL_MAX_SECONDS} s) even at the fastest rate`);
   run("node scripts/generate-bgm.mjs");
 
   console.log("\n=== Step 3: Reel Props ===");
@@ -212,10 +218,10 @@ async function renderReel(data, dateStr) {
   const rawFile = `output/aitools-${dateStr}.raw.mp4`;
   const outputFile = `output/aitools-${dateStr}.mp4`;
   console.log(`\n=== Step 4: Render Reel → ${rawFile} ===`);
-  run(`npx remotion render ${REEL_COMPOSITION_ID} "${rawFile}" --props="${propsPath}"`);
+  run(`npx remotion render ${REEL_COMPOSITION_ID} "${rawFile}" --props="${propsPath}"`, { timeout: REEL_RENDER_KILL_MS, killSignal: "SIGKILL" });
   normalizeVideo(rawFile, outputFile);
   const probed = Number(execSync(`ffprobe -v error -show_entries format=duration -of csv=p=0 "${outputFile}"`, { cwd: rootDir }).toString());
-  if (!(probed > 0 && probed <= HARD_MAX_SECONDS)) throw new Error(`rendered reel is ${probed} s (0-${HARD_MAX_SECONDS} s allowed)`);
+  if (!(probed > 0 && probed <= REEL_MAX_SECONDS)) throw new Error(`rendered reel is ${probed} s (0-${REEL_MAX_SECONDS} s allowed)`);
   console.log(`  mp4 ${probed.toFixed(2)} s`);
 
   // Cover: the hook's title with its step bars (the same point Instagram's thumb_offset uses).
@@ -223,7 +229,7 @@ async function renderReel(data, dateStr) {
   const coverFile = `output/aitools-${dateStr}-cover.jpg`;
   const frame = Math.round((coverOffsetMs / 1000) * REEL_FPS);
   console.log(`\n=== Step 4c: Render Cover Image → ${coverFile} (frame ${frame}) ===`);
-  runSafe(`npx remotion still ${REEL_COMPOSITION_ID} "${coverFile}" --frame=${frame} --props="${propsPath}"`, "render-cover");
+  runSafe(`npx remotion still ${REEL_COMPOSITION_ID} "${coverFile}" --frame=${frame} --props="${propsPath}"`, "render-cover", { timeout: 120000, killSignal: "SIGKILL" });
   return { look: "reel", outputFile, seconds: probed, coverOffsetMs };
 }
 

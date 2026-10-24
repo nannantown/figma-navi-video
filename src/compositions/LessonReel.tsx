@@ -346,7 +346,7 @@ const InputBox: React.FC<{ chips?: React.ReactNode; text?: string; caret?: boole
       boxSizing: "border-box",
     }}
   >
-    {chips && <div style={{ display: "flex", gap: 12, marginBottom: 12 }}>{chips}</div>}
+    {chips && <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginBottom: 12 }}>{chips}</div>}
     <div {...JA} style={{ fontSize: 32, lineHeight: 1.45, color: text ? C.ink : C.faint, fontWeight: 500, ...PHRASE }}>
       {text || null}
       <span
