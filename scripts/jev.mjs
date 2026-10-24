@@ -465,7 +465,7 @@ function primaryUrls(ep) {
  * Validate the ledger and fully check one episode (the one to post).
  * @returns {{ errors: string[], warnings: string[], episode: object|null, slot: object|null }}
  */
-export function validateEpisodes(file, { date = todayJst(), today = todayJst(), pickLatest = false, history = null, checkAired = null, series = SERIES.jev } = {}) {
+export function validateEpisodes(file, { date = todayJst(), today = todayJst(), pickLatest = false, history = null, checkAired = null, series = SERIES.jev, look = null } = {}) {
   const errors = [];
   const warnings = [];
   if (!file || typeof file !== "object" || !Array.isArray(file.episodes)) {
@@ -570,7 +570,7 @@ export function validateEpisodes(file, { date = todayJst(), today = todayJst(), 
   warnings.push(...diagramWarnings(ep, at, series));
   errors.push(...sourceProblems(ep, previous, at, today, warnings, series));
   if (series.format === "lesson") {
-    const lesson = lessonProblems(ep, at, previous, posted, history);
+    const lesson = lessonProblems(ep, at, previous, posted, history, look ?? readLessonLook());
     errors.push(...lesson.errors);
     warnings.push(...lesson.warnings);
   }
@@ -780,8 +780,159 @@ export const LESSON_PRIVACY_RE =/社外秘|個人情報|個人名|人の名前|�
 // AI Trend Daily covers GitHub; this channel never introduces a repository.
 const LESSON_GITHUB_RE = /git\s*hub|ギットハブ|リポジトリ/i;
 
+// ---------------------------------------------------------------------------
+// The step-by-step "reel" look (owner 2026-10-23: 「1回あのキャンバスに出してる案でやってみよう」).
+// A lesson then also carries `reel`: the screen script — 3-5 steps, each one
+// thing done in a simplified chat window (open / paste / type / send / check),
+// told as 「ステップN。…」. Rendered by src/compositions/LessonReel.tsx through
+// scripts/reel.mjs. Switch: data/content-format.json "lessonLook" ("reel" /
+// "cards" = the 4-card look). Spec: docs/lesson-format.md §6.
+// ---------------------------------------------------------------------------
+
+export const LESSON_LOOKS = ["reel", "cards"];
+/** Window actions, in the only order they can happen. type and send are always there. */
+export const REEL_ACTIONS = ["open", "paste", "type", "send", "check"];
+export const REEL_RECAP_NARRATION = "これで完了です。";
+export const REEL_SAVE_NARRATION = "手順は、この動画の中にあります。使うときに見返せるよう、保存しておいてください。";
+export const REEL_PASTE_NOTE = "名前は仮名に（Aさん・B社）";
+export const REEL_PASTE_DONE = "仮名にしてある";
+export const REEL_CHECK_NOTE = "仮名 → 元の名前に";
+// Spoken characters, fixed lines included: ~0.2 s a character at +12% (the 見本: 241 → 52 s).
+const REEL_NARRATION_TOTAL = 250;
+const REEL_LIMITS = {
+  title: [2, 11], // hook line 1 at 64px; line 2 is 「Nステップ」
+  hook: [10, 40],
+  heading: [2, 12], // the three parts together, one line at 64px
+  narration: [14, 50],
+  accent: [1, 8],
+  file: [3, 14],
+  note: [4, 16],
+  done: [3, 8],
+  head: [1, 10],
+  line: [2, 20], // one row of the window at 32px, never wraps
+};
+const REEL_ANSWER_ROWS = 7;
+
+/** "reel" or "cards". LESSON_LOOK overrides the file (verification runs); no field = "cards". */
+export function readLessonLook(root = rootDir, env = process.env) {
+  const fromEnv = env.LESSON_LOOK;
+  if (fromEnv) {
+    if (!LESSON_LOOKS.includes(fromEnv)) throw new Error(`LESSON_LOOK must be one of ${LESSON_LOOKS.join(" / ")}, got ${JSON.stringify(fromEnv)}`);
+    return fromEnv;
+  }
+  const p = join(root, FORMAT_PATH);
+  const look = existsSync(p) ? JSON.parse(readFileSync(p, "utf-8")).lessonLook : undefined;
+  if (look === undefined) return "cards";
+  if (!LESSON_LOOKS.includes(look)) throw new Error(`${FORMAT_PATH}: "lessonLook" must be one of ${LESSON_LOOKS.join(" / ")}, got ${JSON.stringify(look)}`);
+  return look;
+}
+
+/** Every reel string the viewer sees or hears, as [field, value]. */
+function reelTexts(reel) {
+  if (!reel || typeof reel !== "object") return [];
+  const out = [["reel.title", reel.title], ["reel.hook", reel.hook], ["reel.file", reel.file]];
+  (Array.isArray(reel.answer) ? reel.answer : []).forEach((s, i) => {
+    out.push([`reel.answer[${i}].head`, s?.head]);
+    (Array.isArray(s?.lines) ? s.lines : []).forEach((l, j) => out.push([`reel.answer[${i}].lines[${j}]`, l]));
+  });
+  (Array.isArray(reel.steps) ? reel.steps : []).forEach((s, i) => {
+    (Array.isArray(s?.heading) ? s.heading : []).forEach((h, j) => out.push([`reel.steps[${i}].heading[${j}]`, h]));
+    for (const f of ["narration", "note", "done"]) out.push([`reel.steps[${i}].${f}`, s?.[f]]);
+  });
+  return out.filter(([, v]) => typeof v === "string");
+}
+
+/** The notes the window shows: on the pasted memo, after it lands, on the checked answer ("" = none). */
+export function reelNotes(reel) {
+  const paste = (reel?.steps || []).find((s) => s?.action === "paste");
+  const check = (reel?.steps || []).find((s) => s?.action === "check");
+  return {
+    paste: paste ? (paste.note ?? REEL_PASTE_NOTE) : "",
+    done: paste ? (paste.done ?? REEL_PASTE_DONE) : "",
+    check: check ? (check.note ?? (paste ? REEL_CHECK_NOTE : "")) : "",
+  };
+}
+
+/** Problems of ep.reel (shape, lengths, order of the actions, the 社外秘 caution on screen or in the voice). */
+export function reelProblems(ep, at, pastes) {
+  const errors = [];
+  const reel = ep.reel;
+  const r = `${at}.reel`;
+  if (!reel || typeof reel !== "object" || Array.isArray(reel)) return [`${r}: required while data/content-format.json "lessonLook" is "reel" — the step-by-step screen script (docs/lesson-format.md §6)`];
+  const len = (v, key, label) => {
+    const p = lengthProblem(v, REEL_LIMITS[key], label);
+    if (p) errors.push(p);
+  };
+  len(reel.title, "title", `${r}.title`);
+  len(reel.hook, "hook", `${r}.hook`);
+  const steps = Array.isArray(reel.steps) ? reel.steps : [];
+  if (steps.length < 3 || steps.length > 5) errors.push(`${r}.steps: 3-5 steps (got ${steps.length})`);
+  const actions = steps.map((s) => s?.action);
+  const order = actions.map((a) => REEL_ACTIONS.indexOf(a));
+  if (order.some((o) => o < 0)) errors.push(`${r}.steps[].action: each one of ${REEL_ACTIONS.join(" / ")}`);
+  else if (order.some((o, i) => i > 0 && o <= order[i - 1])) errors.push(`${r}.steps[].action: each action once, in the order ${REEL_ACTIONS.join(" → ")}`);
+  for (const need of ["type", "send"]) if (!actions.includes(need)) errors.push(`${r}.steps: needs a "${need}" step (the prompt is typed, then sent)`);
+  if (typeof reel.hook === "string" && steps.length && !reel.hook.includes(`${steps.length}つ`)) errors.push(`${r}.hook: say the number of steps as 「${steps.length}つ」 (the bars come in on that word)`);
+  steps.forEach((s, i) => {
+    const sa = `${r}.steps[${i}]`;
+    const h = s?.heading;
+    if (!Array.isArray(h) || h.length !== 3 || h.some((x) => typeof x !== "string") || !h[1]?.trim()) {
+      errors.push(`${sa}.heading: ["before", "orange word", "after"] — the middle one is required`);
+    } else len(h.join(""), "heading", `${sa}.heading`);
+    len(s?.narration, "narration", `${sa}.narration`);
+    if (typeof s?.narration === "string" && !s.narration.startsWith(`ステップ${i + 1}。`)) errors.push(`${sa}.narration: starts with 「ステップ${i + 1}。」`);
+    if (s?.accents !== undefined) {
+      if (!Array.isArray(s.accents) || s.accents.length > 4) errors.push(`${sa}.accents: up to 4 words`);
+      else s.accents.forEach((a, j) => {
+        len(a, "accent", `${sa}.accents[${j}]`);
+        if (typeof a === "string" && typeof s.narration === "string" && !s.narration.includes(a)) errors.push(`${sa}.accents[${j}]: "${a}" is not in the narration (the subtitle colours it orange)`);
+      });
+    }
+    if (s?.note !== undefined && (s.action !== "paste" && s.action !== "check")) errors.push(`${sa}.note: only a paste or check step has a note`);
+    if (s?.note !== undefined && s.note !== "") len(s.note, "note", `${sa}.note`);
+    if (s?.done !== undefined && s.action !== "paste") errors.push(`${sa}.done: only a paste step has done`);
+    if (s?.done !== undefined && s.done !== "") len(s.done, "done", `${sa}.done`);
+  });
+  const answer = Array.isArray(reel.answer) ? reel.answer : [];
+  if (answer.length < 1 || answer.length > 3) errors.push(`${r}.answer: 1-3 parts, each { "head": "…", "lines": ["…"] }`);
+  let rows = 0;
+  answer.forEach((sec, i) => {
+    len(sec?.head, "head", `${r}.answer[${i}].head`);
+    const lines = Array.isArray(sec?.lines) ? sec.lines : [];
+    if (lines.length < 1 || lines.length > 4) errors.push(`${r}.answer[${i}].lines: 1-4 lines`);
+    lines.forEach((l, j) => len(l, "line", `${r}.answer[${i}].lines[${j}]`));
+    rows += 1 + lines.length;
+  });
+  if (rows > REEL_ANSWER_ROWS) errors.push(`${r}.answer: ${rows} rows (heads + lines) — up to ${REEL_ANSWER_ROWS} fit in the window`);
+  const heads = answer.map((s) => s?.head);
+  const check = steps.find((s) => s?.action === "check");
+  if (check?.focus !== undefined) {
+    if (!Array.isArray(check.focus) || check.focus.length < 1 || check.focus.length > 2) errors.push(`${r}.steps[check].focus: 1-2 answer heads`);
+    else for (const f of check.focus) if (!heads.includes(f)) errors.push(`${r}.steps[check].focus: "${f}" is not a head of reel.answer`);
+  }
+  const hasPaste = actions.includes("paste");
+  if (hasPaste) len(reel.file, "file", `${r}.file`);
+  else if (reel.file !== undefined) errors.push(`${r}.file: only with a paste step`);
+  if (typeof reel.file === "string" && /[\\/]/.test(reel.file)) errors.push(`${r}.file: a file name, no / or \\`);
+  // Pasted work text: the window shows the paste, and the caution is on screen or in the voice.
+  if (pastes && !hasPaste) errors.push(`${r}.steps: the prompt works on pasted text — add a "paste" step`);
+  if (pastes || hasPaste) {
+    const notes = reelNotes(reel);
+    const said = [notes.paste, notes.done, notes.check, ...steps.map((s) => s?.narration)].filter((t) => typeof t === "string").join(" ");
+    if (!LESSON_PRIVACY_RE.test(normalizeForChecks(said))) errors.push(`${r}: pasting work text — the paste note or a step's narration must say to make 社外秘・人の名前・社名 仮名 (A社・Bさん) first, or to check 会社のルール`);
+  }
+  const spoken = [reel.hook, ...steps.map((s) => s?.narration), REEL_RECAP_NARRATION, REEL_SAVE_NARRATION].filter((t) => typeof t === "string");
+  const total = spoken.reduce((n, t) => n + charLength(t), 0);
+  if (total > REEL_NARRATION_TOTAL) errors.push(`${r}: ${total} spoken chars with the fixed lines (allowed ${REEL_NARRATION_TOTAL}) — the video must stay under 59 s`);
+  for (const [field, value] of reelTexts(reel)) {
+    errors.push(...shownTextProblems(value, `${at}.${field}`));
+    if (/[\n\r]/.test(value)) errors.push(`${at}.${field}: no line breaks`);
+  }
+  return errors;
+}
+
 function lessonShownTexts(ep) {
-  const out = [["topic", ep.topic], ["headline", ep.headline], ["hook", ep.hook]];
+  const out = [["topic", ep.topic], ["headline", ep.headline], ["hook", ep.hook], ...reelTexts(ep.reel)];
   (Array.isArray(ep.slides) ? ep.slides : []).forEach((s, i) => {
     for (const f of ["heading", "body", "narration", "claim_source"]) out.push([`slides[${i}].${f}`, s?.[f]]);
     (Array.isArray(s?.diagram?.items) ? s.diagram.items : []).forEach((it, j) => {
@@ -820,7 +971,7 @@ export function promptSimilarity(a, b) {
   return (2 * common) / (x.n + y.n);
 }
 
-function lessonProblems(ep, at, previous, posted, history) {
+function lessonProblems(ep, at, previous, posted, history, look) {
   const errors = [];
   const warnings = [];
   const sameDay = (history?.videos || []).find((v) => v?.genre === LESSON_GENRE && !v.skip && v.date === ep.date && v.jev?.fallback);
@@ -858,6 +1009,10 @@ function lessonProblems(ep, at, previous, posted, history) {
     if (!LESSON_PRIVACY_RE.test(normalizeForChecks(said))) {
       errors.push(`${at}: the prompt pastes work text — slide 2's narration or slide 4 must say to remove or pseudonymise 社外秘・人の名前・社名 (A社・Bさん) before pasting, or to check 会社のルール first`);
     }
+  }
+  // The reel look shows the steps, not the 4 cards: its own screen and voice carry the same caution.
+  if (look === "reel" || ep.reel !== undefined) {
+    errors.push(...reelProblems(ep, at, typeof prompt === "string" && LESSON_PASTE_RE.test(normalizeForChecks(prompt))));
   }
   // A spreadsheet lesson that names a function (SUMIFS, IF …) is checked against the vendor's own help page.
   if (ep.pillar === "sheet" && lessonShownTexts(ep).some(([, v]) => /(?<![A-Za-z])(?!AI(?![A-Za-z]))[A-Z]{2,}[A-Z0-9]*(?![A-Za-z])/.test(v)) && !(ep.sources || []).some((s) => s?.official === true)) {
@@ -1135,6 +1290,8 @@ export function toJevVideoData(ep, { usecaseNumber = null, series = SERIES.jev, 
       ...(series.format === "lesson" ? { pillar: ep.pillar, prompt: lessonPrompt(ep) } : {}),
       ...(fallback ? { fallback: true } : {}),
     },
+    // Lesson: the step-by-step screen script (the reel look; pipeline.mjs decides which look renders).
+    ...(series.format === "lesson" && ep.reel ? { reel: structuredClone(ep.reel) } : {}),
   };
 }
 

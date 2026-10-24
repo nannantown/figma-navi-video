@@ -1,7 +1,8 @@
-// 見本（参考リール型）: 進み具合のバー + Step 見出し + アプリの窓（打たれる文字・動くカーソル・ファイルの札）
-// + 今言っている語の字幕 + 保存の誘い。投稿しない。台本は data/ref-reel-sample.json、
-// 書き出しは scripts/ref-reel-sample.mjs。
-// 文字の大きさ（1080×1920）: 見出し 64 / 字幕 48 / 窓の中 32 / Step 32。見出し÷字幕 = 1.33。
+// 参考リール型の教育動画（data/content-format.json "lessonLook": "reel"）。台本は episode.reel、
+// scripts/reel.mjs が場面と声（語ごとの時刻）にして渡す。仕様: docs/lesson-format.md §6。
+// 進み具合のバー + 「Step N」と見出し + 自前の AI の窓（開く / 貼る / 打つ / 送る / 確かめる）
+// + 今言っている語の字幕 + まとめ + 保存の誘い。本物の会社の画面は写さない（窓の名前は「AIチャット」）。
+// 文字の大きさ（1080×1920）: 見出し 64 / 字幕 48 / 窓の中 30〜32 / Step 32。見出し÷字幕 = 1.33。
 // 根拠は coffee-daily-video docs/typography-scale.md（日本語 SNS の表紙はジャンプ率ほぼ 1.0〜1.4、本文は最低 30〜40px）。
 import React from "react";
 import {
@@ -18,26 +19,31 @@ import {
 import { FONT_FAMILY } from "../components/theme";
 
 type Word = { offset: number; duration: number; text: string };
-export type RefScene = {
+export type ReelAction = "open" | "paste" | "type" | "send" | "check";
+export type ReelScene = {
   kind: "hook" | "step" | "recap" | "save";
+  action?: ReelAction;
   step?: number;
   heading: [string, string, string];
   narration: string;
   accents: string[];
+  focus?: string[];
   audio: string;
   duration: number;
   words: Word[];
 };
-export type RefReelProps = {
+export type LessonReelProps = {
   app: string;
   prompt: string;
-  file: string;
+  file: string | null;
   answer: { head: string; lines: string[] }[];
-  scenes: RefScene[];
+  notes: { paste: string; done: string; check: string };
+  steps: number;
+  scenes: ReelScene[];
   recap: string[];
 };
 
-export const REF_FPS = 30;
+export const REEL_FPS = 30; // scripts/reel.mjs REEL_FPS
 const C = {
   bg: "#FBF8F4",
   ink: "#231F1B",
@@ -49,16 +55,36 @@ const C = {
   line: "#ECE4DA",
   field: "#F6F2EC",
 };
-const STEPS = 5;
 const WIN = { x: 100, y: 540, w: 880, h: 760, bar: 72 };
-const INPUT = { x: 28, h: 200 }; // 窓の中の入力欄（下端から 28px）
+const BODY_H = WIN.h - WIN.bar;
+const PAD = 28; // 窓の中の余白
+const INPUT_MIN = 200; // 入力欄（下に固定、文字が増えると上へ伸びる）
+const INPUT_TOP_EMPTY = BODY_H - PAD - INPUT_MIN;
+// 会話（吹き出し + 答え）は入力欄の上に下ぞろえで積む。はみ出た上は窓が隠す（ふつうのチャットと同じ）。
+const CONV_BOTTOM = WIN.bar + INPUT_TOP_EMPTY - PAD; // 窓の座標
+const ROW = { head: 48, line: 46, gap: 14 }; // 答えの行の高さ（固定なので位置を計算できる）
+const JA = { lang: "ja" } as const; // word-break: auto-phrase は lang="ja" が要る（Chrome 119+）
+const PHRASE: React.CSSProperties = { wordBreak: "auto-phrase", lineBreak: "strict" };
+
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 const ease = Easing.bezier(0.33, 0, 0.2, 1);
-const ramp = (t: number, a: number, b: number) => interpolate(t, [a, b], [0, 1], { ...clamp, easing: ease });
+// interpolate は増える順の 2 点が要る。時刻が逆転・同じになっても例外にしない。
+const ramp = (t: number, a: number, b: number) => interpolate(t, [a, Math.max(b, a + 0.01)], [0, 1], { ...clamp, easing: ease });
 
-// 語の時刻（秒）。見つからなければ fallback。
-const cue = (words: Word[], text: string, fallback: number) =>
-  words.find((w) => w.text.includes(text))?.offset ?? fallback;
+// 語の時刻（秒）。どれかを含む最初の語。見つからなければ fallback。
+const cue = (words: Word[], texts: string[], fallback: number) =>
+  words.find((w) => texts.some((x) => w.text.includes(x)))?.offset ?? fallback;
+
+// 「ステップN。」を言い終えた時刻（その次の語の頭）。
+const afterPrefix = (words: Word[], n: number, fallback: number) => {
+  let acc = "";
+  for (let i = 0; i < words.length; i++) {
+    acc += words[i].text;
+    if (acc.includes(`ステップ${n}`) || acc.includes(`ステップ${String.fromCharCode(0xff10 + n)}`)) return words[i + 1]?.offset ?? fallback;
+    if (acc.length > 12) break;
+  }
+  return fallback;
+};
 
 // ---------- 背景・バー・見出し ----------
 
@@ -70,12 +96,12 @@ const Background: React.FC = () => (
   />
 );
 
-const ProgressBar: React.FC<{ filled: number; growFrom: number; t: number }> = ({ filled, growFrom, t }) => {
+const ProgressBar: React.FC<{ steps: number; filled: number; growFrom: number; t: number }> = ({ steps, filled, growFrom, t }) => {
   const gap = 12;
-  const w = (1080 - 160 - gap * (STEPS - 1)) / STEPS;
+  const w = (1080 - 160 - gap * (steps - 1)) / steps;
   return (
     <div style={{ position: "absolute", left: 80, top: 210, display: "flex", gap }}>
-      {Array.from({ length: STEPS }, (_, i) => {
+      {Array.from({ length: steps }, (_, i) => {
         const p = i < growFrom ? 1 : i < filled ? ramp(t, 0.05, 0.45) : 0;
         return (
           <div key={i} style={{ width: w, height: 6, borderRadius: 3, background: C.rail, overflow: "hidden" }}>
@@ -95,25 +121,17 @@ const Accented: React.FC<{ parts: [string, string, string] }> = ({ parts: [a, b,
   </>
 );
 
-const Header: React.FC<{ scene: RefScene; t: number; dur: number }> = ({ scene, t, dur }) => {
+const Header: React.FC<{ scene: ReelScene; t: number; dur: number }> = ({ scene, t, dur }) => {
   const inP = ramp(t, 0, 0.35);
   const out = 1 - ramp(t, dur - 0.2, dur);
   return (
-    <div
-      style={{
-        position: "absolute",
-        left: 80,
-        top: 248,
-        opacity: inP * out,
-        transform: `translateY(${(1 - inP) * 16}px)`,
-      }}
-    >
+    <div style={{ position: "absolute", left: 80, top: 248, opacity: inP * out, transform: `translateY(${(1 - inP) * 16}px)` }}>
       {scene.step ? (
         <div style={{ fontSize: 32, fontWeight: 700, color: C.accent, marginBottom: 6 }}>Step {scene.step}</div>
       ) : (
         <div style={{ height: 50 }} />
       )}
-      <div style={{ fontSize: 64, fontWeight: 700, color: C.ink, letterSpacing: "0.02em" }}>
+      <div style={{ fontSize: 64, fontWeight: 700, color: C.ink, letterSpacing: "0.02em", whiteSpace: "nowrap" }}>
         <Accented parts={scene.heading} />
       </div>
     </div>
@@ -139,7 +157,7 @@ const chunksOf = (words: Word[], narration: string): Chunk[] => {
   return out;
 };
 
-const Caption: React.FC<{ scene: RefScene; t: number }> = ({ scene, t }) => {
+const Caption: React.FC<{ scene: ReelScene; t: number }> = ({ scene, t }) => {
   const chunks = chunksOf(scene.words, scene.narration);
   const i = chunks.filter((c) => c.start <= t + 0.03).length - 1;
   if (i < 0) return null;
@@ -183,11 +201,7 @@ const DocIcon: React.FC<{ size?: number }> = ({ size = 30 }) => (
   </svg>
 );
 
-const Chip: React.FC<{ children: React.ReactNode; tone?: "file" | "note"; style?: React.CSSProperties }> = ({
-  children,
-  tone = "file",
-  style,
-}) => (
+const Chip: React.FC<{ children: React.ReactNode; tone?: "file" | "note"; style?: React.CSSProperties }> = ({ children, tone = "file", style }) => (
   <div
     style={{
       display: "inline-flex",
@@ -202,11 +216,19 @@ const Chip: React.FC<{ children: React.ReactNode; tone?: "file" | "note"; style?
       background: tone === "file" ? "#fff" : C.accentSoft,
       border: `2px solid ${tone === "file" ? C.line : "rgba(210,100,58,0.35)"}`,
       whiteSpace: "nowrap",
+      boxSizing: "border-box",
       ...style,
     }}
   >
     {children}
   </div>
+);
+
+const FileChip: React.FC<{ name: string }> = ({ name }) => (
+  <Chip>
+    <DocIcon size={24} />
+    {name}
+  </Chip>
 );
 
 const SendButton: React.FC<{ press: number; active: boolean }> = ({ press, active }) => (
@@ -230,9 +252,10 @@ const SendButton: React.FC<{ press: number; active: boolean }> = ({ press, activ
 );
 
 // 窓の左上を (0,0) とした座標のカーソル。keys の時刻（秒）の間をなめらかに動く。
-type Key = { t: number; x: number; y: number };
+type Pt = { x: number; y: number };
+type Key = Pt & { t: number };
 const Cursor: React.FC<{ t: number; keys: Key[]; clicks: number[]; show?: number }> = ({ t, keys, clicks, show = 1 }) => {
-  // 語が見つからず cue() の既定の秒数が混ざっても、時刻は必ず増える順に（interpolate は逆順で例外）
+  // 語が見つからず既定の秒数が混ざっても、時刻は必ず増える順に（interpolate は逆順で例外）
   const ts: number[] = [];
   keys.forEach((k, i) => ts.push(i === 0 ? k.t : Math.max(k.t, ts[i - 1] + 0.01)));
   const x = interpolate(t, ts, keys.map((k) => k.x), { ...clamp, easing: ease });
@@ -262,12 +285,7 @@ const Cursor: React.FC<{ t: number; keys: Key[]; clicks: number[]; show?: number
   );
 };
 
-const Window: React.FC<{ app: string; enter: number; opacity?: number; children: React.ReactNode }> = ({
-  app,
-  enter,
-  opacity = 1,
-  children,
-}) => (
+const Window: React.FC<{ app: string; enter: number; children: React.ReactNode }> = ({ app, enter, children }) => (
   <div
     style={{
       position: "absolute",
@@ -280,20 +298,11 @@ const Window: React.FC<{ app: string; enter: number; opacity?: number; children:
       border: `2px solid ${C.line}`,
       boxShadow: "0 30px 80px rgba(120,80,50,0.12)",
       overflow: "hidden",
-      opacity: enter * opacity,
+      opacity: enter,
       transform: `translateY(${(1 - enter) * 40}px) scale(${0.96 + 0.04 * enter})`,
     }}
   >
-    <div
-      style={{
-        height: WIN.bar,
-        borderBottom: `2px solid ${C.line}`,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        position: "relative",
-      }}
-    >
+    <div style={{ height: WIN.bar, borderBottom: `2px solid ${C.line}`, display: "flex", alignItems: "center", justifyContent: "center", position: "relative" }}>
       <div style={{ position: "absolute", left: 28, display: "flex", gap: 12 }}>
         {["#EE8C7E", "#F2C46D", "#8FCB8F"].map((c) => (
           <div key={c} style={{ width: 18, height: 18, borderRadius: 9, background: c }} />
@@ -301,32 +310,26 @@ const Window: React.FC<{ app: string; enter: number; opacity?: number; children:
       </div>
       <div style={{ fontSize: 30, fontWeight: 700, color: C.sub }}>{app}</div>
     </div>
-    <div style={{ position: "relative", height: WIN.h - WIN.bar, overflow: "hidden" }}>{children}</div>
+    <div style={{ position: "relative", height: BODY_H, overflow: "hidden" }}>{children}</div>
   </div>
 );
 
-// 頼み方の文は読点で改行する（語の途中で折り返さない）。
-const breakAtComma = (s: string) => s.replace("、", "、\n");
-
-const BODY_H = WIN.h - WIN.bar;
-const INPUT_TOP = BODY_H - 28 - INPUT.h;
-
-// 入力欄。chips = ファイルの札など、text = 打たれた文字。
-const InputBox: React.FC<{
-  chips?: React.ReactNode;
-  text?: string;
-  caret?: boolean;
-  t: number;
-  press?: number;
-  sendActive?: boolean;
-}> = ({ chips, text, caret, t, press = 0, sendActive = false }) => (
+// 入力欄。下に固定し、打った文字が増えると上へ伸びる。chips = ファイルの札など。
+const InputBox: React.FC<{ chips?: React.ReactNode; text?: string; caret?: boolean; t: number; press?: number; sendActive?: boolean }> = ({
+  chips,
+  text,
+  caret,
+  t,
+  press = 0,
+  sendActive = false,
+}) => (
   <div
     style={{
       position: "absolute",
-      left: INPUT.x,
-      right: INPUT.x,
-      top: INPUT_TOP,
-      height: INPUT.h,
+      left: PAD,
+      right: PAD,
+      bottom: PAD,
+      minHeight: INPUT_MIN,
       borderRadius: 24,
       background: C.field,
       border: `2px solid ${C.line}`,
@@ -335,8 +338,8 @@ const InputBox: React.FC<{
     }}
   >
     {chips && <div style={{ display: "flex", gap: 12, marginBottom: 12 }}>{chips}</div>}
-    <div style={{ fontSize: 32, lineHeight: 1.45, color: text ? C.ink : C.faint, fontWeight: 500, whiteSpace: "pre-wrap" }}>
-      {text ? breakAtComma(text) : null}
+    <div {...JA} style={{ fontSize: 32, lineHeight: 1.45, color: text ? C.ink : C.faint, fontWeight: 500, ...PHRASE }}>
+      {text || null}
       <span
         style={{
           display: "inline-block",
@@ -357,19 +360,7 @@ const InputBox: React.FC<{
 );
 
 const Greeting: React.FC<{ opacity: number }> = ({ opacity }) => (
-  <div
-    style={{
-      position: "absolute",
-      left: 0,
-      right: 0,
-      top: 150,
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      gap: 22,
-      opacity,
-    }}
-  >
+  <div style={{ position: "absolute", left: 0, right: 0, top: 150, display: "flex", flexDirection: "column", alignItems: "center", gap: 22, opacity }}>
     <Spark size={64} />
     <div style={{ fontSize: 36, fontWeight: 700, color: C.ink }}>何をお手伝いしましょう？</div>
   </div>
@@ -397,138 +388,143 @@ const NewChatPill: React.FC<{ flash: number }> = ({ flash }) => (
   </div>
 );
 
-const FileChip: React.FC<{ name: string }> = ({ name }) => (
-  <Chip>
-    <DocIcon size={24} />
-    {name}
-  </Chip>
-);
+// 答えの縦の並び（行の高さは固定なので、見出しの位置を計算でき、カーソルが正しく指せる）。
+const answerLayout = (answer: LessonReelProps["answer"]) => {
+  let y = 0;
+  const heads = answer.map((sec, i) => {
+    if (i > 0) y += ROW.gap;
+    const top = y;
+    y += ROW.head + ROW.line * sec.lines.length;
+    return { head: sec.head, center: top + ROW.head / 2 };
+  });
+  return { heads, height: y };
+};
 
-// 答え（3 つに分かれた議事録）。shown = 出した行数、marks = チェックを付けた行数、hi = 枠で囲む見出し。
+// 答え。vis(r) = r 行目の出方（0〜1、行の高さもそれに合わせて伸びる）、marks = チェックを付けた行数、hi = 囲む見出し。
 const Answer: React.FC<{
-  answer: RefReelProps["answer"];
-  t: number;
-  from: number;
+  answer: LessonReelProps["answer"];
+  vis: (r: number) => number;
   marks?: number;
   hi?: string | null;
   note?: { head: string; text: string; opacity: number };
-}> = ({ answer, t, from, marks = 0, hi = null, note }) => {
+}> = ({ answer, vis, marks = 0, hi = null, note }) => {
   let row = 0;
   return (
-    <div style={{ display: "flex", gap: 18 }}>
-      <div style={{ paddingTop: 4 }}>
+    <div style={{ position: "relative", paddingLeft: 54 }}>
+      <div style={{ position: "absolute", left: 0, top: 6, opacity: vis(0) }}>
         <Spark size={36} />
       </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: 14, flex: 1 }}>
-        {answer.map((sec) => {
-          const secRow = row++;
-          const lines = sec.lines.map((l) => ({ l, r: row++ }));
-          const vis = (r: number) => ramp(t, from + r * 0.22, from + r * 0.22 + 0.25);
-          const isHi = hi === sec.head;
-          return (
-            <div
-              key={sec.head}
-              style={{
-                borderRadius: 16,
-                padding: "6px 14px",
-                margin: "-6px -14px",
-                background: isHi ? C.accentSoft : "transparent",
-                outline: isHi ? `3px solid ${C.accent}` : "3px solid transparent",
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: 48, opacity: vis(secRow) }}>
-                <span style={{ fontSize: 30, fontWeight: 800, color: C.accent }}>■ {sec.head}</span>
-                {note?.head === sec.head && note.opacity > 0 && (
-                  <Chip tone="note" style={{ height: 48, fontSize: 30, opacity: note.opacity }}>
-                    {note.text}
-                  </Chip>
-                )}
-              </div>
-              {lines.map(({ l, r }) => (
+      {answer.map((sec, i) => {
+        const secRow = row++;
+        const lines = sec.lines.map((l) => ({ l, r: row++ }));
+        const isHi = hi === sec.head;
+        const hv = vis(secRow);
+        return (
+          <div
+            key={`${i}-${sec.head}`}
+            style={{
+              borderRadius: 16,
+              padding: "0 14px",
+              margin: `${i > 0 ? ROW.gap * hv : 0}px -14px 0`,
+              background: isHi ? C.accentSoft : "transparent",
+              outline: isHi ? `3px solid ${C.accent}` : "3px solid transparent",
+              outlineOffset: 2,
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: ROW.head * hv, opacity: hv, overflow: "hidden" }}>
+              <span style={{ fontSize: 30, fontWeight: 800, color: C.accent, whiteSpace: "nowrap" }}>■ {sec.head}</span>
+              {note?.head === sec.head && note.opacity > 0 && (
+                <Chip tone="note" style={{ height: 44, fontSize: 28, padding: "0 16px", opacity: note.opacity }}>
+                  {note.text}
+                </Chip>
+              )}
+            </div>
+            {lines.map(({ l, r }) => {
+              const v = vis(r);
+              return (
                 <div
-                  key={l}
+                  key={r}
                   style={{
+                    height: ROW.line * v,
+                    overflow: "hidden",
                     fontSize: 32,
                     fontWeight: 500,
                     color: C.ink,
-                    lineHeight: 1.45,
-                    opacity: vis(r),
+                    lineHeight: `${ROW.line}px`,
+                    opacity: v,
                     display: "flex",
                     justifyContent: "space-between",
-                    transform: `translateY(${(1 - vis(r)) * 8}px)`,
+                    whiteSpace: "nowrap",
                   }}
                 >
-                  <span>{l}</span>
-                  {r < marks && <span style={{ color: C.accent, fontWeight: 900 }}>✓</span>}
+                  <span style={{ overflow: "hidden", textOverflow: "ellipsis" }}>{l}</span>
+                  {r < marks && <span style={{ color: C.accent, fontWeight: 900, marginLeft: 12 }}>✓</span>}
                 </div>
-              ))}
-            </div>
-          );
-        })}
-      </div>
+              );
+            })}
+          </div>
+        );
+      })}
     </div>
   );
 };
 
-const UserBubble: React.FC<{ file: string; prompt: string; opacity: number }> = ({ file, prompt, opacity }) => (
+const UserBubble: React.FC<{ file: string | null; prompt: string; opacity: number }> = ({ file, prompt, opacity }) => (
   <div style={{ display: "flex", justifyContent: "flex-end", opacity }}>
-    <div
-      style={{
-        maxWidth: 700,
-        background: C.accentSoft,
-        borderRadius: 24,
-        padding: "18px 24px",
-        display: "flex",
-        flexDirection: "column",
-        gap: 10,
-        alignItems: "flex-start",
-      }}
-    >
-      <FileChip name={file} />
-      <div style={{ fontSize: 30, lineHeight: 1.45, color: C.ink, fontWeight: 500, whiteSpace: "pre-wrap" }}>
-        {breakAtComma(prompt)}
+    <div style={{ maxWidth: 700, background: C.accentSoft, borderRadius: 24, padding: "18px 24px", display: "flex", flexDirection: "column", gap: 10, alignItems: "flex-start" }}>
+      {file && <FileChip name={file} />}
+      <div {...JA} style={{ fontSize: 30, lineHeight: 1.45, color: C.ink, fontWeight: 500, ...PHRASE }}>
+        {prompt}
       </div>
     </div>
   </div>
 );
 
+// 会話（吹き出し + 考え中の点か答え）。入力欄の上に下ぞろえ。
+const Conversation: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <div style={{ position: "absolute", left: PAD, right: PAD, bottom: BODY_H - (CONV_BOTTOM - WIN.bar), display: "flex", flexDirection: "column", gap: 28 }}>
+    {children}
+  </div>
+);
+
+// ---------- カーソルの通り道（前の手順の終わりから次の手順が始まる） ----------
+
+const PILL: Pt = { x: 28 + 150, y: WIN.bar + 24 + 28 };
+const SEND: Pt = { x: WIN.w - PAD - 20 - 34, y: WIN.bar + BODY_H - PAD - 20 - 34 };
+const START: Pt = { x: 700, y: 560 };
+const END: Record<ReelAction, Pt> = {
+  open: { x: PILL.x + 40, y: PILL.y + 160 },
+  paste: { x: 520, y: WIN.bar + 360 },
+  type: { x: 600, y: WIN.bar + 330 },
+  send: { x: SEND.x - 60, y: SEND.y - 120 },
+  check: { x: 640, y: WIN.bar + 360 },
+};
+
 // ---------- 場面 ----------
 
-const SceneView: React.FC<{ scene: RefScene; props: RefReelProps }> = ({ scene, props }) => {
+const SceneView: React.FC<{ scene: ReelScene; prev: ReelScene[]; props: LessonReelProps }> = ({ scene, prev, props }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = frame / fps;
   const dur = scene.duration;
   const w = scene.words;
-  const { app, file, prompt, answer } = props;
-  const answerRows = answer.reduce((n, s) => n + 1 + s.lines.length, 0);
-  const send = { x: WIN.w - INPUT.x - 20 - 34, y: WIN.bar + INPUT_TOP + INPUT.h - 20 - 34 };
+  const { app, prompt, answer, notes, steps } = props;
 
-  let body: React.ReactNode = null;
   if (scene.kind === "hook") {
     const p = spring({ frame, fps, config: { damping: 200 } });
+    const n = cue(w, [`${steps}つ`], Math.min(3, dur * 0.6));
     return (
       <>
-        <div
-          style={{
-            position: "absolute",
-            left: 80,
-            right: 80,
-            top: 660,
-            textAlign: "center",
-            opacity: p,
-            transform: `translateY(${(1 - p) * 20}px)`,
-          }}
-        >
+        <div style={{ position: "absolute", left: 80, right: 80, top: 660, textAlign: "center", opacity: p, transform: `translateY(${(1 - p) * 20}px)` }}>
           <div style={{ fontSize: 64, fontWeight: 700, color: C.ink, lineHeight: 1.4 }}>
             {scene.heading[0]}
             <br />
             <span style={{ color: C.accent, fontWeight: 900 }}>{scene.heading[1]}</span>
             {scene.heading[2]}
           </div>
-          <div style={{ marginTop: 40, display: "flex", justifyContent: "center", gap: 14, opacity: ramp(t, cue(w, "5つ", 3) - 0.1, cue(w, "5つ", 3) + 0.3) }}>
-            {Array.from({ length: STEPS }, (_, i) => (
-              <div key={i} style={{ width: 64, height: 6, borderRadius: 3, background: C.accent, opacity: ramp(t, cue(w, "5つ", 3) + i * 0.08, cue(w, "5つ", 3) + i * 0.08 + 0.2) }} />
+          <div style={{ marginTop: 40, display: "flex", justifyContent: "center", gap: 14, opacity: ramp(t, n - 0.1, n + 0.3) }}>
+            {Array.from({ length: steps }, (_, i) => (
+              <div key={i} style={{ width: 64, height: 6, borderRadius: 3, background: C.accent, opacity: ramp(t, n + i * 0.08, n + i * 0.08 + 0.2) }} />
             ))}
           </div>
         </div>
@@ -538,7 +534,7 @@ const SceneView: React.FC<{ scene: RefScene; props: RefReelProps }> = ({ scene, 
   }
 
   if (scene.kind === "save") {
-    const cs = cue(w, "保存", 3.5);
+    const cs = cue(w, ["保存"], dur * 0.7);
     const drop = spring({ frame: frame - Math.round((cs - 0.2) * fps), fps, config: { damping: 200 }, durationInFrames: 14 });
     return (
       <>
@@ -552,29 +548,11 @@ const SceneView: React.FC<{ scene: RefScene; props: RefReelProps }> = ({ scene, 
           width={150}
           height={190}
           viewBox="0 0 150 190"
-          style={{
-            position: "absolute",
-            left: 465,
-            top: 830,
-            opacity: Math.min(1, drop * 1.5),
-            transform: `translateY(${(1 - drop) * -60}px)`,
-          }}
+          style={{ position: "absolute", left: 465, top: 830, opacity: Math.min(1, drop * 1.5), transform: `translateY(${(1 - drop) * -60}px)` }}
         >
           <path d="M10 10 H140 V180 L75 135 L10 180 Z" fill={C.accent} />
         </svg>
-        <div
-          style={{
-            position: "absolute",
-            left: 0,
-            right: 0,
-            top: 1110,
-            textAlign: "center",
-            fontSize: 34,
-            fontWeight: 700,
-            color: C.ink,
-            opacity: ramp(t, cs + 0.6, cs + 1.0),
-          }}
-        >
+        <div style={{ position: "absolute", left: 0, right: 0, top: 1110, textAlign: "center", fontSize: 34, fontWeight: 700, color: C.ink, opacity: ramp(t, cs + 0.6, cs + 1.0) }}>
           フォローすると、ほかの仕事術も届きます
         </div>
         <Caption scene={scene} t={t} />
@@ -582,114 +560,119 @@ const SceneView: React.FC<{ scene: RefScene; props: RefReelProps }> = ({ scene, 
     );
   }
 
-  const step = scene.step ?? STEPS;
-  let filled = step;
-  let growFrom = step - 1;
   if (scene.kind === "recap") {
-    filled = STEPS;
-    growFrom = STEPS;
+    return (
+      <>
+        <ProgressBar steps={steps} filled={steps} growFrom={steps} t={t} />
+        <Header scene={scene} t={t} dur={dur} />
+        <div
+          style={{
+            position: "absolute",
+            left: WIN.x,
+            top: WIN.y,
+            width: WIN.w,
+            height: WIN.h,
+            borderRadius: 30,
+            background: "#fff",
+            border: `2px solid ${C.line}`,
+            boxShadow: "0 30px 80px rgba(120,80,50,0.12)",
+            padding: "70px 64px",
+            boxSizing: "border-box",
+            display: "flex",
+            flexDirection: "column",
+            gap: 38,
+            justifyContent: "center",
+            opacity: ramp(t, 0, 0.25),
+          }}
+        >
+          {props.recap.map((r, i) => {
+            const v = ramp(t, 0.1 + i * 0.14, 0.35 + i * 0.14);
+            return (
+              <div key={i} style={{ display: "flex", alignItems: "center", gap: 26, opacity: v, transform: `translateX(${(1 - v) * -16}px)` }}>
+                <div
+                  style={{
+                    flex: "none",
+                    width: 64,
+                    height: 64,
+                    borderRadius: 32,
+                    background: C.accent,
+                    color: "#fff",
+                    fontSize: 32,
+                    fontWeight: 800,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  {i + 1}
+                </div>
+                <div style={{ fontSize: 40, fontWeight: 700, color: C.ink, whiteSpace: "nowrap" }}>{r}</div>
+              </div>
+            );
+          })}
+        </div>
+        <Caption scene={scene} t={t} />
+      </>
+    );
   }
 
-  if (scene.kind === "recap") {
-    body = (
-      <div
-        style={{
-          position: "absolute",
-          left: WIN.x,
-          top: WIN.y,
-          width: WIN.w,
-          height: WIN.h,
-          borderRadius: 30,
-          background: "#fff",
-          border: `2px solid ${C.line}`,
-          boxShadow: "0 30px 80px rgba(120,80,50,0.12)",
-          padding: "70px 64px",
-          boxSizing: "border-box",
-          display: "flex",
-          flexDirection: "column",
-          gap: 38,
-          justifyContent: "center",
-          opacity: ramp(t, 0, 0.25),
-        }}
-      >
-        {props.recap.map((r, i) => {
-          const v = ramp(t, 0.1 + i * 0.14, 0.35 + i * 0.14);
-          return (
-            <div key={r} style={{ display: "flex", alignItems: "center", gap: 26, opacity: v, transform: `translateX(${(1 - v) * -16}px)` }}>
-              <div
-                style={{
-                  width: 64,
-                  height: 64,
-                  borderRadius: 32,
-                  background: C.accent,
-                  color: "#fff",
-                  fontSize: 32,
-                  fontWeight: 800,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                {i + 1}
-              </div>
-              <div style={{ fontSize: 40, fontWeight: 700, color: C.ink }}>{r}</div>
-            </div>
-          );
-        })}
-      </div>
-    );
-  } else if (step === 1) {
-    const enter = spring({ frame, fps, config: { damping: 200 } });
-    const click = cue(w, "新しい", 3.9);
-    const pill = { x: 28 + 150, y: WIN.bar + 24 + 28 };
+  // ---- 手順の場面: 窓の中で 1 つのことをする ----
+  const step = scene.step ?? 1;
+  const before = prev.filter((s) => s.kind === "step").map((s) => s.action);
+  const pasted = before.includes("paste");
+  const file = pasted ? props.file : null;
+  const last = before.at(-1);
+  const from = last ? END[last] : START;
+  const enter = step === 1 ? spring({ frame, fps, config: { damping: 200 } }) : 1;
+  const fileChip = file ? <FileChip name={file} /> : undefined;
+  let body: React.ReactNode = null;
+
+  if (scene.action === "open") {
+    const click = cue(w, ["新しい", "開き", "開く"], dur * 0.5);
     body = (
       <>
         <Window app={app} enter={enter}>
           <NewChatPill flash={t >= click && t < click + 0.35 ? 1 : 0} />
           <Greeting
-            opacity={
-              t < click + 0.2
-                ? (0.35 + 0.65 * ramp(t, 0.4, 0.9)) * (1 - ramp(t, click + 0.05, click + 0.2))
-                : ramp(t, click + 0.3, click + 0.7)
-            }
+            opacity={t < click + 0.2 ? (0.35 + 0.65 * ramp(t, 0.4, 0.9)) * (1 - ramp(t, click + 0.05, click + 0.2)) : ramp(t, click + 0.3, click + 0.7)}
           />
           <InputBox t={t} />
         </Window>
         <Cursor
           t={t}
           keys={[
-            { t: 0, x: 700, y: 560 },
-            { t: 0.6, x: 700, y: 560 },
-            { t: click - 0.1, x: pill.x, y: pill.y },
-            { t: dur, x: pill.x + 40, y: pill.y + 160 },
+            { t: 0, ...from },
+            { t: 0.6, ...from },
+            { t: click - 0.1, ...PILL },
+            { t: dur, ...END.open },
           ]}
           clicks={[click]}
-          show={ramp(t, 0.4, 0.7)}
+          show={step === 1 ? ramp(t, 0.4, 0.7) : 1}
         />
       </>
     );
-  } else if (step === 2) {
-    // 順番: メモの札が出る → 「仮名に」の札が付く（貼る前に仮名にする）→ つかんで入力欄へ落とす
-    const kana = cue(w, "仮名", 2.8);
-    const grab = Math.max(kana + 0.6, cue(w, "会議", 4.0) - 0.2);
-    const drop = Math.max(grab + 0.7, cue(w, "貼り", 4.6) + 0.1);
-    // つかむ点（札の左上から 30,20）。札の束（高さ約 122）があいさつ文（〜290）と入力欄（460〜）の間に収まる位置
-    const from = { x: 330, y: WIN.bar + 330 };
-    const to = { x: 70, y: WIN.bar + INPUT_TOP + 20 };
+  } else if (scene.action === "paste") {
+    // 順番: メモの札が出る → 注意の札が付く（貼る前に仮名にする）→ つかんで入力欄へ落とす
+    const pasteAt = cue(w, ["貼"], dur * 0.7);
+    const kana = cue(w, ["仮名", "社外秘", "名前", "個人"], Math.max(0.6, pasteAt - 1.2));
+    const grab = Math.min(Math.max(kana + 0.6, pasteAt - 0.9), dur - 1.0);
+    const drop = Math.min(Math.max(grab + 0.7, pasteAt + 0.1), dur - 0.2);
+    // つかむ点（札の左上から 30,20）。札の束があいさつ文（〜290）と入力欄（460〜）の間に収まる位置
+    const grabPt = { x: 330, y: WIN.bar + 330 };
+    const to = { x: 70, y: WIN.bar + INPUT_TOP_EMPTY + 20 };
     const d = ramp(t, grab + 0.2, drop);
     const landed = t >= drop;
-    const end1 = { x: 28 + 150 + 40, y: WIN.bar + 24 + 28 + 160 }; // 手順 1 の終わりのカーソル
     body = (
       <>
-        <Window app={app} enter={1}>
+        <Window app={app} enter={enter}>
           <Greeting opacity={1 - 0.6 * ramp(t, 0, 0.4)} />
           <InputBox
             t={t}
             chips={
               landed ? (
                 <>
-                  <FileChip name={file} />
-                  <Chip tone="note">仮名にしてある</Chip>
+                  <FileChip name={props.file ?? ""} />
+                  {notes.done && <Chip tone="note">{notes.done}</Chip>}
                 </>
               ) : undefined
             }
@@ -698,8 +681,8 @@ const SceneView: React.FC<{ scene: RefScene; props: RefReelProps }> = ({ scene, 
             <div
               style={{
                 position: "absolute",
-                left: interpolate(d, [0, 1], [from.x, to.x]) - 30,
-                top: interpolate(d, [0, 1], [from.y - WIN.bar, to.y - WIN.bar]) - 20,
+                left: interpolate(d, [0, 1], [grabPt.x, to.x]) - 30,
+                top: interpolate(d, [0, 1], [grabPt.y - WIN.bar, to.y - WIN.bar]) - 20,
                 opacity: ramp(t, 0.3, 0.6),
                 transform: `scale(${t > grab ? 1.03 : 1})`,
                 display: "flex",
@@ -709,77 +692,76 @@ const SceneView: React.FC<{ scene: RefScene; props: RefReelProps }> = ({ scene, 
               }}
             >
               <div style={{ borderRadius: 14, boxShadow: t > grab ? "0 14px 30px rgba(120,80,50,0.18)" : "none" }}>
-                <FileChip name={file} />
+                <FileChip name={props.file ?? ""} />
               </div>
-              <Chip tone="note" style={{ opacity: ramp(t, kana - 0.1, kana + 0.2) }}>
-                名前は仮名に（Aさん・B社）
-              </Chip>
+              {notes.paste && (
+                <Chip tone="note" style={{ opacity: ramp(t, kana - 0.1, kana + 0.2) }}>
+                  {notes.paste}
+                </Chip>
+              )}
             </div>
           )}
         </Window>
         <Cursor
           t={t}
           keys={[
-            { t: 0, x: end1.x, y: end1.y },
-            { t: grab - 0.3, x: from.x, y: from.y },
-            { t: grab + 0.2, x: from.x, y: from.y },
-            { t: drop, x: to.x, y: to.y },
-            { t: dur, x: 520, y: WIN.bar + 360 },
+            { t: 0, ...from },
+            { t: grab - 0.3, ...grabPt },
+            { t: grab + 0.2, ...grabPt },
+            { t: drop, ...to },
+            { t: dur, ...END.paste },
           ]}
           clicks={[grab, drop]}
+          show={step === 1 ? ramp(t, 0.4, 0.7) : 1}
         />
       </>
     );
-  } else if (step === 3) {
-    const start = cue(w, "決まっ", 1.6) - 0.1;
-    const end = Math.max(start + 1.5, cue(w, "指定", 5.5));
-    const n = Math.floor(prompt.length * ramp(t, start, end));
+  } else if (scene.action === "type") {
+    const start = afterPrefix(w, step, 1.0) - 0.1;
+    const end = Math.max(start + 1.5, dur - 0.9);
+    const chars = Array.from(prompt);
+    const n = Math.floor(chars.length * ramp(t, start, end));
     body = (
       <>
-        <Window app={app} enter={1}>
+        <Window app={app} enter={enter}>
           <Greeting opacity={0.4} />
-          <InputBox t={t} chips={<FileChip name={file} />} text={prompt.slice(0, n)} caret={t > start - 0.3} sendActive={n > 0} />
+          <InputBox t={t} chips={fileChip} text={chars.slice(0, n).join("")} caret={t > start - 0.3} sendActive={n > 0} />
         </Window>
-        <Cursor t={t} keys={[{ t: 0, x: 520, y: WIN.bar + 360 }, { t: dur, x: 600, y: WIN.bar + 330 }]} clicks={[]} show={1 - ramp(t, 0.2, 0.6)} />
+        <Cursor t={t} keys={[{ t: 0, ...from }, { t: dur, ...END.type }]} clicks={[]} show={1 - ramp(t, 0.2, 0.6)} />
       </>
     );
-  } else if (step === 4) {
-    const click = cue(w, "送信", 1.6);
-    const ans = cue(w, "3つ", 2.9) - 0.2;
+  } else if (scene.action === "send") {
+    const click = cue(w, ["送信", "送り", "送っ", "送る", "送"], dur * 0.3);
+    const ans = click + 1.1;
     const sent = t >= click + 0.12;
     const press = t >= click && t < click + 0.3 ? 1 - Math.abs((t - click) / 0.15 - 1) : 0;
-    const scroll = ramp(t, ans - 0.2, ans + 0.3) * -150;
     body = (
       <>
-        <Window app={app} enter={1}>
+        <Window app={app} enter={enter}>
           {!sent && <Greeting opacity={0.4} />}
           {sent && (
-            <div style={{ position: "absolute", left: 28, right: 28, top: 28 + scroll, display: "flex", flexDirection: "column", gap: 28 }}>
+            <Conversation>
               <UserBubble file={file} prompt={prompt} opacity={ramp(t, click + 0.12, click + 0.4)} />
               {t < ans ? (
-                <div style={{ display: "flex", gap: 12, paddingLeft: 6, opacity: ramp(t, click + 0.4, click + 0.6) }}>
+                <div style={{ display: "flex", gap: 12, paddingLeft: 6, height: 36, alignItems: "center", opacity: ramp(t, click + 0.4, click + 0.6) }}>
                   {[0, 1, 2].map((i) => (
                     <div key={i} style={{ width: 14, height: 14, borderRadius: 7, background: C.faint, opacity: 0.35 + 0.65 * ((Math.floor(t * 4) + i) % 3 === 0 ? 1 : 0) }} />
                   ))}
                 </div>
               ) : (
-                <Answer answer={answer} t={t} from={ans} />
+                <Answer answer={answer} vis={(r) => ramp(t, ans + r * 0.22, ans + r * 0.22 + 0.25)} />
               )}
-            </div>
+            </Conversation>
           )}
-          {sent ? (
-            <InputBox t={t} press={press} sendActive={press > 0} />
-          ) : (
-            <InputBox t={t} chips={<FileChip name={file} />} text={prompt} press={press} sendActive />
-          )}
+          {sent ? <InputBox t={t} press={press} sendActive={press > 0} /> : <InputBox t={t} chips={fileChip} text={prompt} press={press} sendActive />}
         </Window>
         <Cursor
           t={t}
           keys={[
-            { t: 0, x: 600, y: WIN.bar + 330 },
-            { t: 0.3, x: 600, y: WIN.bar + 330 },
-            { t: click - 0.1, x: send.x, y: send.y },
-            { t: dur, x: send.x - 60, y: send.y - 120 },
+            { t: 0, ...from },
+            { t: 0.3, ...from },
+            { t: click - 0.1, ...SEND },
+            { t: dur, ...END.send },
           ]}
           clicks={[click]}
           show={ramp(t, 0, 0.3)}
@@ -787,50 +769,51 @@ const SceneView: React.FC<{ scene: RefScene; props: RefReelProps }> = ({ scene, 
       </>
     );
   } else {
-    const date = cue(w, "日付", 1.6);
-    const tanto = cue(w, "担当", 2.1);
-    const check = cue(w, "確かめ", 4.0);
-    const kana = cue(w, "仮名", 5.6);
-    const hi = t >= tanto ? "宿題" : t >= date ? "期限" : null;
-    const marks = Math.floor(answerRows * ramp(t, check - 0.2, check + 0.9));
-    // 答えの並び: 見出し 46px・行 46px・区切り 14px。窓の上から 28 - 150 + 吹き出し(約 196) + 28。
-    const top0 = WIN.bar + 28 - 150 + 196 + 28;
-    const rowY = { 期限: top0 + 46 * 4 + 14 * 2 + 46 + 6, 宿題: top0 + 46 * 2 + 14 + 23 };
-    const target = hi === "期限" ? rowY.期限 : rowY.宿題;
+    // check: 答えの見出しを順に囲み、チェックを付ける（注意の札があれば最初に囲んだ見出しに）
+    const layout = answerLayout(answer);
+    const focus = (scene.focus?.length ? scene.focus : answer.slice(0, 2).map((s) => s.head)).slice(0, 2);
+    const times: number[] = [];
+    focus.forEach((f, i) => {
+      const at = cue(w, [f], dur * (0.25 + 0.2 * i));
+      times.push(i === 0 ? at : Math.max(at, times[i - 1] + 0.6));
+    });
+    const hiIndex = times.filter((x) => t >= x).length - 1;
+    const hi = hiIndex >= 0 ? focus[hiIndex] : null;
+    const checkAt = cue(w, ["確かめ", "確認", "見比べ", "見直"], dur * 0.55);
+    const rows = answer.reduce((n, s) => n + 1 + s.lines.length, 0);
+    const marks = Math.floor(rows * ramp(t, checkAt - 0.2, checkAt + 0.9));
+    const noteAt = cue(w, ["仮名", "元に", "戻"], dur * 0.7);
+    const top = CONV_BOTTOM - layout.height;
+    const yOf = (head: string) => top + (layout.heads.find((h) => h.head === head)?.center ?? 0);
+    const keys: Key[] = [
+      { t: 0, ...from },
+      { t: Math.max(0.3, (times[0] ?? 1) - 0.5), ...from },
+      ...focus.map((f, i) => ({ t: times[i], x: 600, y: yOf(f) })),
+      { t: dur, x: 640, y: yOf(focus.at(-1) ?? answer[0].head) + 40 },
+    ];
     body = (
       <>
-        <Window app={app} enter={1}>
-          <div style={{ position: "absolute", left: 28, right: 28, top: 28 - 150, display: "flex", flexDirection: "column", gap: 28 }}>
+        <Window app={app} enter={enter}>
+          <Conversation>
             <UserBubble file={file} prompt={prompt} opacity={1} />
             <Answer
               answer={answer}
-              t={t + 100}
-              from={0}
+              vis={() => 1}
               marks={marks}
               hi={hi}
-              note={{ head: "宿題", text: "仮名 → 元の名前に", opacity: ramp(t, kana - 0.1, kana + 0.25) }}
+              note={notes.check ? { head: focus[0], text: notes.check, opacity: ramp(t, noteAt - 0.1, noteAt + 0.25) } : undefined}
             />
-          </div>
+          </Conversation>
           <InputBox t={t} />
         </Window>
-        <Cursor
-          t={t}
-          keys={[
-            { t: 0, x: send.x - 60, y: send.y - 120 },
-            { t: Math.max(0.3, date - 0.5), x: send.x - 60, y: send.y - 120 },
-            { t: date, x: 600, y: rowY.期限 },
-            { t: tanto, x: 600, y: rowY.宿題 },
-            { t: dur, x: 640, y: rowY.宿題 + 40 },
-          ]}
-          clicks={[date, tanto]}
-        />
+        <Cursor t={t} keys={keys} clicks={times} />
       </>
     );
   }
 
   return (
     <>
-      <ProgressBar filled={filled} growFrom={growFrom} t={t} />
+      <ProgressBar steps={steps} filled={step} growFrom={step - 1} t={t} />
       <Header scene={scene} t={t} dur={dur} />
       {body}
       <Caption scene={scene} t={t} />
@@ -838,25 +821,22 @@ const SceneView: React.FC<{ scene: RefScene; props: RefReelProps }> = ({ scene, 
   );
 };
 
-export const refReelFrames = (scenes: RefScene[]) => scenes.reduce((n, s) => n + Math.round(s.duration * REF_FPS), 0);
+export const reelFrames = (scenes: ReelScene[]) => scenes.reduce((n, s) => n + Math.round(s.duration * REEL_FPS), 0);
 
 // BGM は最後の 1 秒で音を下げて終える（途中でぷつっと切らない）。
 const Bgm: React.FC<{ total: number }> = ({ total }) => (
-  <Audio
-    src={staticFile("audio/bgm.wav")}
-    volume={(f) => interpolate(f, [0, Math.max(1, total - REF_FPS), Math.max(2, total)], [0.08, 0.08, 0], clamp)}
-  />
+  <Audio src={staticFile("audio/bgm.wav")} volume={(f) => interpolate(f, [0, Math.max(1, total - REEL_FPS), Math.max(2, total)], [0.08, 0.08, 0], clamp)} />
 );
 
-export const RefReelSample: React.FC<RefReelProps> = (props) => (
+export const LessonReel: React.FC<LessonReelProps> = (props) => (
   <AbsoluteFill style={{ fontFamily: FONT_FAMILY, color: C.ink }}>
     <Background />
-    <Bgm total={refReelFrames(props.scenes)} />
+    <Bgm total={reelFrames(props.scenes)} />
     <Series>
       {props.scenes.map((s, i) => (
-        <Series.Sequence key={i} durationInFrames={Math.round(s.duration * REF_FPS)}>
+        <Series.Sequence key={i} durationInFrames={Math.round(s.duration * REEL_FPS)}>
           <Audio src={staticFile(s.audio)} />
-          <SceneView scene={s} props={props} />
+          <SceneView scene={s} prev={props.scenes.slice(0, i)} props={props} />
         </Series.Sequence>
       ))}
     </Series>

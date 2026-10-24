@@ -67,14 +67,15 @@ export function resolveRecordDate({ argv = process.argv, env = process.env, now 
 }
 
 /** History entry for a posted day. Either platform result is enough. */
-export function buildPostEntry({ date, uploadResult, igResult, trendingData, captions, audioDurations, enriched }) {
+export function buildPostEntry({ date, uploadResult, igResult, trendingData, captions, audioDurations, enriched, render = null }) {
   const tools = trendingData?.tools || [];
   // Genre trial #2 (Jev): the cards are slides, not tools. `tools` still holds
   // them (the card count drives the cover frame); the entry records the
   // episode (stage, kind, topic, sources) under `jev` instead of tools.
   const jev = trendingData?.meta?.mode === "jev" ? trendingData.jev || null : null;
   if (jev) enriched = { discovery: { method: jev.kind, description: jev.topic, sources: jev.sources.map((x) => x.url) } };
-  const durationSeconds = audioDurations ? Object.values(audioDurations).reduce((sum, d) => sum + (d || 0), 0) : 0;
+  // render.json (pipeline.mjs): which look went out (lesson "reel" / "cards"), its real length and cover point.
+  const durationSeconds = render?.seconds ?? (audioDurations ? Object.values(audioDurations).reduce((sum, d) => sum + (d || 0), 0) : 0);
   const entry = {
     // null when the YouTube upload failed or was skipped that day
     videoId: uploadResult?.videoId ?? null,
@@ -99,7 +100,8 @@ export function buildPostEntry({ date, uploadResult, igResult, trendingData, cap
     // day. Without it the recovery falls back to a constant that only holds
     // for short openings — see cover-frame.mjs.
     coverOffsetMs:
-      audioDurations && tools.length > 0 ? coverOffsetMs(audioDurations, tools.length) : null,
+      render?.coverOffsetMs ?? (audioDurations && tools.length > 0 ? coverOffsetMs(audioDurations, tools.length) : null),
+    ...(render?.look ? { look: render.look } : {}),
     discovery: enriched?.discovery || null,
     stats: { views: 0, likes: 0, comments: 0, updatedAt: null },
     // Metrics are filled by fetch-stats.mjs (IG insights lag up to 48h)
@@ -152,6 +154,7 @@ function main() {
     trendingData: readOptional("trending-data.json"),
     captions: readOptional("captions.json"),
     audioDurations: readOptional("audio-durations.json"),
+    render: readOptional("render.json"),
     enriched: (() => {
       try {
         return readJSON(enrichedPath);
