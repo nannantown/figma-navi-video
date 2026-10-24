@@ -37,6 +37,7 @@ import { readFileSync, existsSync, realpathSync } from "fs";
 import { execFileSync } from "child_process";
 import { join, dirname, isAbsolute } from "path";
 import { fileURLToPath } from "url";
+import { experienceProblems } from "./experience-guard.mjs";
 import {
   textSafetyProblems,
   normalizeForChecks,
@@ -574,6 +575,8 @@ export function validateEpisodes(file, { date = todayJst(), today = todayJst(), 
     errors.push(...lesson.errors);
     warnings.push(...lesson.warnings);
   }
+  // 実体験の語りは記録があるときだけ (owner 2026-10-24, docs/lesson-format.md「実体験の語り」).
+  errors.push(...experienceProblems(ep, { at: `${at}.` }));
 
   const r = ep.research;
   const checkedLimits = series.checkedLimits ?? LIMITS.checked;
