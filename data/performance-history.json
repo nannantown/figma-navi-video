@@ -4007,7 +4007,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-22T01:31:41.764Z"
+        "updatedAt": "2026-10-24T01:34:52.632Z"
       },
       "instagram": {
         "mediaId": "18019960112947022",
@@ -4084,7 +4084,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-22T01:31:41.764Z"
+        "updatedAt": "2026-10-24T01:34:52.632Z"
       },
       "instagram": {
         "mediaId": "18060946787535736",
@@ -4167,7 +4167,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-22T01:31:41.764Z"
+        "updatedAt": "2026-10-24T01:34:52.632Z"
       },
       "instagram": null,
       "jev": {
@@ -4246,7 +4246,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-10-24T01:34:52.632Z"
       },
       "instagram": null,
       "jev": {
@@ -4280,13 +4280,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-09-25",
-      "changes": [
-        "Day performance: Fri=1, Sat=1, Sun=1, Mon=1, Tue=1, Thu=1, Wed=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-09-26",
       "changes": [
@@ -4489,6 +4482,13 @@
         "Day performance: Mon=2, Thu=1, Fri=1, Sat=1, Tue=1, Wed=1, Sun=1"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-10-24",
+      "changes": [
+        "Day performance: Mon=2, Fri=1, Sat=1, Tue=1, Wed=1, Thu=1, Sun=1"
+      ],
+      "recommendedTemplate": "standard"
     }
   ],
   "account": {
@@ -4579,6 +4579,10 @@
       },
       {
         "date": "2026-10-15",
+        "count": 0
+      },
+      {
+        "date": "2026-10-24",
         "count": 0
       }
     ]
