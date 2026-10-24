@@ -5,4 +5,5 @@ output/
 public/audio/
 public/tools/
 youtube-refresh-token.txt
-.claude/
+.claude/*
+!.claude/settings.json
