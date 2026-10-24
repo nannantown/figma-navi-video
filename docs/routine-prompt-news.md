@@ -189,10 +189,12 @@ gh api --method GET repos/nannantown/figma-navi-video/pulls/$PR_NUMBER \
 問題がないと評価した候補だけ、次のコマンドを**単独のツール呼び出し**で実行する。PR 作成・レビュー・着弾確認・ループ・ブランチ削除を一緒に入れない。
 
 ```bash
-gh api --method PUT repos/nannantown/figma-navi-video/pulls/$PR_NUMBER/merge \
-  -f merge_method=squash -f sha="$VALIDATED_HEAD" \
+gh api --method PUT repos/nannantown/figma-navi-video/pulls/<PR番号>/merge \
+  -f merge_method=squash -f sha="<検証済みSHA>" \
   --jq '{merged,message,sha}'
 ```
+
+**`<PR番号>` と `<検証済みSHA>` には、控えた値（数字と 40 桁の SHA）をそのまま書き込む。`$PR_NUMBER` などの変数、前置きの代入（`PR_NUMBER=… &&`）、`&&` やパイプでのつなぎは使わない。** リポの `.claude/settings.json` に、この形の 1 操作（このリポの PR の merge API）だけを許す許可がある（2026-10-23 オーナー決定 A）。許可は書かれた文字列に当たるので、変数が入ると当たらずに自動判定に回り、止められる（2026-10-24 に手元で再現。[routine-merge-miss.md](routine-merge-miss.md)）。
 
 自動判定の拒否（`Merge Without Review` を含む）、権限エラー、conflict はそのまま報告して停止。管理者による保護の迂回、認証・許可設定の変更、別コマンドへの包装で続けない。通信エラーや応答紛失でも、同じ書き込みを繰り返す前に D で実際の状態を読む。
 

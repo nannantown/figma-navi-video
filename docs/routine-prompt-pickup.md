@@ -276,6 +276,8 @@ fi
 1. `PushNotification` で、PR 番号・URL と「08:15 JST までに squash merge してください。過ぎたら merge のあとに daily-video.yml を手で実行してください」を送る。
 2. 着弾確認（上の `git fetch` と `git show` の読み取りだけ）をしてから、最終レポートの先頭に同じことを書く。
 
+**この型の `gh pr merge … --admin --delete-branch` は、2026-10-23 からリポの `.claude/settings.json` の拒否（deny）で必ず止まる。** この型に戻すときは、merge を [routine-prompt-lesson.md](routine-prompt-lesson.md) の C の形（`gh api --method PUT …/pulls/<PR番号>/merge`、値は書き込み）に書き換えてから戻す（[routine-merge-miss.md](routine-merge-miss.md)）。
+
 （この型の 08:15 の動画生成には、「原稿 PR が未マージかもしれない」の注記は無い。注記は台帳の型 `news` / `jev` だけ。）
 
 ## 文体ルール

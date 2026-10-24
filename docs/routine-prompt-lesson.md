@@ -156,10 +156,12 @@ gh api --method GET repos/nannantown/figma-navi-video/pulls/$PR_NUMBER \
 **08:15 JST を過ぎていたら merge しない**（その日はネタ帳の回がもう出ている。merge しても使われず、検証が `already went out from the stock` で止める）。PR は閉じて、最終レポートにそう書く。
 
 ```bash
-gh api --method PUT repos/nannantown/figma-navi-video/pulls/$PR_NUMBER/merge \
-  -f merge_method=squash -f sha="$VALIDATED_HEAD" \
+gh api --method PUT repos/nannantown/figma-navi-video/pulls/<PR番号>/merge \
+  -f merge_method=squash -f sha="<検証済みSHA>" \
   --jq '{merged,message,sha}'
 ```
+
+**`<PR番号>` と `<検証済みSHA>` には、控えた値（数字と 40 桁の SHA）をそのまま書き込む。`$PR_NUMBER` などの変数、前置きの代入（`PR_NUMBER=… &&`）、`&&` やパイプでのつなぎは使わない。** リポの `.claude/settings.json` に、この形の 1 操作（このリポの PR の merge API）だけを許す許可がある（2026-10-23 オーナー決定 A）。許可は書かれた文字列に当たるので、変数が入ると当たらずに自動判定に回り、止められる（2026-10-24 に手元で再現。[routine-merge-miss.md](routine-merge-miss.md)）。
 
 **単独のツール呼び出し**で実行する。自動判定の拒否（`Merge Without Review` を含む）・権限エラー・conflict はそのまま報告して止まる（merge の代わりになる操作はしない。[routine-merge-miss.md](routine-merge-miss.md)）。拒否されたら、その場で次の 2 つだけを行って止まる。
 
