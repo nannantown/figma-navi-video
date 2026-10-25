@@ -78,17 +78,23 @@ async function withRetry(fn, label, deadline, attempts = 4) {
 }
 
 /** Voice every scene into public/audio/reel/ (replaced each run). Returns the scenes with audio, duration, words. */
-export async function voiceScenes(scenes, { root, rate, synthesize = synthesizeOnce, deadline = Infinity }) {
+export async function voiceScenes(scenes, { root, rate, synthesize = synthesizeOnce, deadline = Infinity, attempts = 4 }) {
   const dir = join(root, "public", "audio", "reel");
   rmSync(dir, { recursive: true, force: true });
   mkdirSync(dir, { recursive: true });
   const out = [];
   for (const [i, s] of scenes.entries()) {
-    const { audio, words } = await withRetry(() => synthesize(s.narration, { voice: REEL_VOICE, rate, timeoutMs: 30000 }), `reel scene ${i}`, deadline);
-    if (!audio?.length) throw new Error(`reel scene ${i} (${s.kind}): no audio from Edge TTS`);
+    // Both are required: the subtitle, the typing and the cursor run on the word timings,
+    // so a clip without them would post with no subtitles (→ retried, then the cards).
+    const { audio, words } = await withRetry(async () => {
+      const r = await synthesize(s.narration, { voice: REEL_VOICE, rate, timeoutMs: 30000 });
+      if (!r?.audio?.length) throw new Error(`reel scene ${i} (${s.kind}): no audio from Edge TTS`);
+      if (!r.words?.length) throw new Error(`reel scene ${i} (${s.kind}): no word timings from Edge TTS (the subtitles need them)`);
+      return r;
+    }, `reel scene ${i}`, deadline, attempts);
     const file = `audio/reel/scene-${i}.mp3`;
     writeFileSync(join(root, "public", file), audio);
-    out.push({ ...s, audio: file, duration: +(mp3Seconds(audio) + REEL_TAIL_PAD).toFixed(3), words: words || [] });
+    out.push({ ...s, audio: file, duration: +(mp3Seconds(audio) + REEL_TAIL_PAD).toFixed(3), words });
   }
   return out;
 }

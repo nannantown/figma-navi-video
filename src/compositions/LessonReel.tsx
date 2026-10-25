@@ -202,11 +202,12 @@ const Spark: React.FC<{ size: number }> = ({ size }) => (
   </svg>
 );
 
-const DocIcon: React.FC<{ size?: number }> = ({ size = 30 }) => (
+// 貼り付け（クリップボード）の印。ファイルの添付には見せない（初心者が「アップロード」と読む）。
+const PasteIcon: React.FC<{ size?: number }> = ({ size = 30 }) => (
   <svg width={size} height={size * 1.2} viewBox="0 0 30 36">
-    <path d="M3 3 h16 l8 8 v22 h-24 z" fill="#fff" stroke={C.accent} strokeWidth={2.5} strokeLinejoin="round" />
-    <path d="M19 3 v8 h8" fill="none" stroke={C.accent} strokeWidth={2.5} strokeLinejoin="round" />
-    <path d="M8 18 h14 M8 24 h14" stroke={C.accent} strokeWidth={2.5} strokeLinecap="round" />
+    <rect x="3" y="5" width="24" height="29" rx="4" fill="#fff" stroke={C.accent} strokeWidth={2.5} />
+    <rect x="9" y="2" width="12" height="7" rx="2.5" fill={C.accent} />
+    <path d="M9 17 h12 M9 23 h12 M9 29 h7" stroke={C.accent} strokeWidth={2.5} strokeLinecap="round" />
   </svg>
 );
 
@@ -233,9 +234,9 @@ const Chip: React.FC<{ children: React.ReactNode; tone?: "file" | "note"; style?
   </div>
 );
 
-const FileChip: React.FC<{ name: string }> = ({ name }) => (
+const PasteChip: React.FC<{ name: string }> = ({ name }) => (
   <Chip>
-    <DocIcon size={24} />
+    <PasteIcon size={24} />
     {name}
   </Chip>
 );
@@ -294,7 +295,8 @@ const Cursor: React.FC<{ t: number; keys: Key[]; clicks: number[]; show?: number
   );
 };
 
-const Window: React.FC<{ app: string; enter: number; children: React.ReactNode }> = ({ app, enter, children }) => (
+// fade = 会話が上にはみ出す場面。題名の帯のすぐ下で文字が切れて見えないよう、上をなじませる。
+const Window: React.FC<{ app: string; enter: number; fade?: boolean; children: React.ReactNode }> = ({ app, enter, fade = false, children }) => (
   <div
     style={{
       position: "absolute",
@@ -319,7 +321,10 @@ const Window: React.FC<{ app: string; enter: number; children: React.ReactNode }
       </div>
       <div style={{ fontSize: 30, fontWeight: 700, color: C.sub }}>{app}</div>
     </div>
-    <div style={{ position: "relative", height: BODY_H, overflow: "hidden" }}>{children}</div>
+    <div style={{ position: "relative", height: BODY_H, overflow: "hidden" }}>
+      {children}
+      {fade && <div style={{ position: "absolute", left: 0, right: 0, top: 0, height: 72, background: "linear-gradient(#fff 20%, rgba(255,255,255,0))" }} />}
+    </div>
   </div>
 );
 
@@ -481,7 +486,7 @@ const Answer: React.FC<{
 const UserBubble: React.FC<{ file: string | null; prompt: string; opacity: number }> = ({ file, prompt, opacity }) => (
   <div style={{ display: "flex", justifyContent: "flex-end", opacity }}>
     <div style={{ maxWidth: 700, background: C.accentSoft, borderRadius: 24, padding: "18px 24px", display: "flex", flexDirection: "column", gap: 10, alignItems: "flex-start" }}>
-      {file && <FileChip name={file} />}
+      {file && <PasteChip name={file} />}
       <div {...JA} style={{ fontSize: 30, lineHeight: 1.45, color: C.ink, fontWeight: 500, ...PHRASE }}>
         {prompt}
       </div>
@@ -633,7 +638,7 @@ const SceneView: React.FC<{ scene: ReelScene; prev: ReelScene[]; props: LessonRe
   const last = before.at(-1);
   const from = last ? END[last] : START;
   const enter = step === 1 ? spring({ frame, fps, config: { damping: 200 } }) : 1;
-  const fileChip = file ? <FileChip name={file} /> : undefined;
+  const fileChip = file ? <PasteChip name={file} /> : undefined;
   let body: React.ReactNode = null;
 
   if (scene.action === "open") {
@@ -680,7 +685,7 @@ const SceneView: React.FC<{ scene: ReelScene; prev: ReelScene[]; props: LessonRe
             chips={
               landed ? (
                 <>
-                  <FileChip name={props.file ?? ""} />
+                  <PasteChip name={props.file ?? ""} />
                   {notes.done && <Chip tone="note">{notes.done}</Chip>}
                 </>
               ) : undefined
@@ -701,7 +706,7 @@ const SceneView: React.FC<{ scene: ReelScene; prev: ReelScene[]; props: LessonRe
               }}
             >
               <div style={{ borderRadius: 14, boxShadow: t > grab ? "0 14px 30px rgba(120,80,50,0.18)" : "none" }}>
-                <FileChip name={props.file ?? ""} />
+                <PasteChip name={props.file ?? ""} />
               </div>
               {notes.paste && (
                 <Chip tone="note" style={{ opacity: ramp(t, kana - 0.1, kana + 0.2) }}>
@@ -746,7 +751,7 @@ const SceneView: React.FC<{ scene: ReelScene; prev: ReelScene[]; props: LessonRe
     const press = t >= click && t < click + 0.3 ? 1 - Math.abs((t - click) / 0.15 - 1) : 0;
     body = (
       <>
-        <Window app={app} enter={enter}>
+        <Window app={app} enter={enter} fade={sent}>
           {!sent && <Greeting opacity={0.4} />}
           {sent && (
             <Conversation>
@@ -802,7 +807,7 @@ const SceneView: React.FC<{ scene: ReelScene; prev: ReelScene[]; props: LessonRe
     ];
     body = (
       <>
-        <Window app={app} enter={enter}>
+        <Window app={app} enter={enter} fade>
           <Conversation>
             <UserBubble file={file} prompt={prompt} opacity={1} />
             <Answer

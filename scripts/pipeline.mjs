@@ -11,8 +11,8 @@
  *   DRY_RUN=1 ENRICHED_PATH=data/samples/enriched-ai-tools.sample.json ALLOW_STALE_DATE=1 node scripts/pipeline.mjs
  */
 
-import { execSync } from "child_process";
-import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync } from "fs";
+import { execSync, spawn } from "child_process";
+import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync, renameSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { reportSkip, reportSkipStreak } from "./skip-report.mjs";
@@ -42,6 +42,7 @@ const HARD_MAX_SECONDS = 59.5;
 const REEL_MAX_SECONDS = 59; // the owner's Instagram limit for the reel look
 const REEL_VOICE_BUDGET_MS = 4 * 60 * 1000; // all reel voice clips, every rate tried
 const REEL_RENDER_KILL_MS = 8 * 60 * 1000; // the reel render; the cards still fit in the 20-minute job after it
+const REEL_STILL_KILL_MS = 2 * 60 * 1000; // the reel cover still (best effort)
 const IMAGE_STEP_KILL_MS =150000; // fetch-tool-images.mjs budgets itself to STEP_BUDGET_MS (90 s)
 
 function run(cmd, opts = {}) {
@@ -215,22 +216,61 @@ async function renderReel(data, dateStr) {
   const propsPath = join(outputDir, "reel-props.json");
   writeFileSync(propsPath, JSON.stringify(props));
 
-  const rawFile = `output/aitools-${dateStr}.raw.mp4`;
-  const outputFile = `output/aitools-${dateStr}.mp4`;
+  // The reel's own file names until it is done: a reel cut off half-way never shares a file
+  // with the cards render that follows. Only a finished reel takes the day's names.
+  const rawFile = `output/reel-${dateStr}.raw.mp4`;
+  const reelFile = `output/reel-${dateStr}.mp4`;
+  const reelCover = `output/reel-${dateStr}-cover.jpg`;
   console.log(`\n=== Step 4: Render Reel → ${rawFile} ===`);
-  run(`npx remotion render ${REEL_COMPOSITION_ID} "${rawFile}" --props="${propsPath}"`, { timeout: REEL_RENDER_KILL_MS, killSignal: "SIGKILL" });
-  normalizeVideo(rawFile, outputFile);
-  const probed = Number(execSync(`ffprobe -v error -show_entries format=duration -of csv=p=0 "${outputFile}"`, { cwd: rootDir }).toString());
+  await runGroup(`npx remotion render ${REEL_COMPOSITION_ID} "${rawFile}" --props="${propsPath}"`, REEL_RENDER_KILL_MS);
+  normalizeVideo(rawFile, reelFile);
+  const probed = Number(execSync(`ffprobe -v error -show_entries format=duration -of csv=p=0 "${reelFile}"`, { cwd: rootDir }).toString());
   if (!(probed > 0 && probed <= REEL_MAX_SECONDS)) throw new Error(`rendered reel is ${probed} s (0-${REEL_MAX_SECONDS} s allowed)`);
   console.log(`  mp4 ${probed.toFixed(2)} s`);
 
   // Cover: the hook's title with its step bars (the same point Instagram's thumb_offset uses).
   const coverOffsetMs = reelCoverOffsetMs(scenes);
-  const coverFile = `output/aitools-${dateStr}-cover.jpg`;
   const frame = Math.round((coverOffsetMs / 1000) * REEL_FPS);
-  console.log(`\n=== Step 4c: Render Cover Image → ${coverFile} (frame ${frame}) ===`);
-  runSafe(`npx remotion still ${REEL_COMPOSITION_ID} "${coverFile}" --frame=${frame} --props="${propsPath}"`, "render-cover", { timeout: 120000, killSignal: "SIGKILL" });
+  console.log(`\n=== Step 4c: Render Cover Image → ${reelCover} (frame ${frame}) ===`);
+  try {
+    await runGroup(`npx remotion still ${REEL_COMPOSITION_ID} "${reelCover}" --frame=${frame} --props="${propsPath}"`, REEL_STILL_KILL_MS);
+  } catch (err) {
+    console.error(`render-cover failed (non-blocking): ${err.message}`);
+  }
+  const outputFile = `output/aitools-${dateStr}.mp4`;
+  renameSync(join(rootDir, reelFile), join(rootDir, outputFile));
+  if (existsSync(join(rootDir, reelCover))) renameSync(join(rootDir, reelCover), join(rootDir, `output/aitools-${dateStr}-cover.jpg`));
   return { look: "reel", outputFile, seconds: probed, coverOffsetMs };
+}
+
+/**
+ * A command in its own process group, killed as a whole on timeout: npx → Remotion → Chrome.
+ * (execSync's timeout only reaches the shell, leaving Remotion and Chrome running.)
+ */
+function runGroup(cmd, timeoutMs) {
+  console.log(`\n>>> ${cmd}\n`);
+  return new Promise((resolve, reject) => {
+    const child = spawn(cmd, { cwd: rootDir, stdio: "inherit", shell: true, detached: true });
+    let timedOut = false;
+    const timer = setTimeout(() => {
+      timedOut = true;
+      try {
+        process.kill(-child.pid, "SIGKILL");
+      } catch (err) {
+        console.error(`  could not stop the process group of ${child.pid}: ${err.message}`);
+      }
+    }, timeoutMs);
+    child.on("error", (err) => {
+      clearTimeout(timer);
+      reject(err);
+    });
+    child.on("exit", (code, signal) => {
+      clearTimeout(timer);
+      if (timedOut) reject(new Error(`timed out after ${Math.round(timeoutMs / 1000)} s (process group stopped): ${cmd}`));
+      else if (code === 0) resolve();
+      else reject(new Error(`exited ${code ?? signal}: ${cmd}`));
+    });
+  });
 }
 
 /** The slide cards (AiToolsTop5): Steps 2-4c as before. */

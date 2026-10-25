@@ -2,7 +2,8 @@
  * docs/lesson-format.md §6): the episode's screen script, its checks, the scenes and the voice. */
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync, mkdirSync } from "node:fs";
+import { cpSync, existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync, mkdirSync } from "node:fs";
+import { spawnSync } from "node:child_process";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -137,7 +138,12 @@ test("reel: voice — one clip per scene with words, length and the cover inside
     assert.equal(reelSeconds(voiced), (voiced.length * Math.round(2.45 * REEL_FPS)) / REEL_FPS);
     const cover = reelCoverOffsetMs(voiced);
     assert.ok(cover > 0 && cover < (sceneFrames(voiced[0]) / REEL_FPS) * 1000, `cover ${cover} ms is inside the hook`);
-    await assert.rejects(voiceScenes(s.scenes, { root: dir, rate: "+12%", synthesize: async () => ({ audio: Buffer.alloc(0), words: [] }) }), /no audio/);
+    await assert.rejects(voiceScenes(s.scenes, { root: dir, rate: "+12%", attempts: 1, synthesize: async () => ({ audio: Buffer.alloc(0), words: [] }) }), /no audio/);
+    // Audio without word timings would post with no subtitles: refused (the pipeline then makes the cards).
+    await assert.rejects(voiceScenes(s.scenes, { root: dir, rate: "+12%", attempts: 1, synthesize: async () => ({ audio: Buffer.alloc(6000), words: [] }) }), /no word timings/);
+    let calls = 0;
+    const flaky = async (text) => (++calls === 1 ? { audio: Buffer.alloc(6000), words: [] } : fake(text));
+    assert.equal((await voiceScenes(s.scenes, { root: dir, rate: "+12%", attempts: 2, synthesize: flaky })).length, s.scenes.length, "a clip without timings is asked again");
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }
@@ -187,4 +193,65 @@ test("reel: the reel's own words get the slide checks — claims, 貼る talk, o
   assert.match(errors(dup), /each head once/);
   // A broken reel does not matter while the look is cards.
   assert.equal(errors(dup, "cards"), "");
+});
+
+test("reel: 08:15 (generate-data) — a bad screen script alone sends the routine's own lesson as the cards; a bad lesson still goes to the stock", () => {
+  const dir = mkdtempSync(join(tmpdir(), "reel-step1-"));
+  try {
+    cpSync(join(root, "scripts"), join(dir, "scripts"), { recursive: true, filter: (p) => !p.endsWith(".test.mjs") });
+    mkdirSync(join(dir, "data"));
+    writeFileSync(join(dir, "data/content-format.json"), JSON.stringify({ format: "lesson", lessonLook: "reel" }));
+    writeFileSync(join(dir, "data/ai-lesson-stock.json"), JSON.stringify(STOCK));
+    writeFileSync(join(dir, "data/performance-history.json"), JSON.stringify({ videos: [] }));
+    const today = "2026-10-26";
+    const clock = join(dir, "clock.mjs");
+    const instant = `${today}T00:00:00Z`;
+    writeFileSync(clock, `const D = Date; globalThis.Date = class extends D { constructor(...a) { super(...(a.length ? a : [${JSON.stringify(instant)}])); } static now() { return new D(${JSON.stringify(instant)}).getTime(); } };`);
+    const run = () => spawnSync(process.execPath, ["--import", clock, join(dir, "scripts/generate-data.mjs")], {
+      cwd: dir, encoding: "utf8", timeout: 10_000, env: { PATH: dirname(process.execPath), TZ: "UTC", SNS_POST_ENABLED: "false" },
+    });
+    const out = () => JSON.parse(readFileSync(join(dir, "output/trending-data.json"), "utf8"));
+    const routine = (edit) => edit(stockEpisode(byKey("mail-polite-decline"), today));
+    const write = (e) => writeFileSync(join(dir, "data/ai-lesson-episodes.json"), JSON.stringify({ episodes: [e] }));
+
+    // No reel at all → the routine's lesson, as the cards.
+    write(routine((x) => (delete x.reel, x)));
+    let r = run();
+    assert.equal(r.status, 0, r.stderr);
+    assert.match(r.stdout, /::warning title=手順型の台本が検査に通らない::今日の回「mail-polite-decline」を 4 枚の見た目で出します/);
+    assert.doesNotMatch(r.stdout, /予備のレッスン/);
+    assert.equal(out().jev.topicKey, "mail-polite-decline");
+    assert.equal(out().reel, undefined);
+    assert.equal(out().meta.fallback, undefined);
+
+    // A broken reel (too long a step) → the same.
+    write(routine((x) => (x.reel.steps[1].narration += "あ".repeat(30), x)));
+    r = run();
+    assert.equal(r.status, 0, r.stderr);
+    assert.equal(out().jev.topicKey, "mail-polite-decline");
+    assert.equal(out().reel, undefined);
+
+    // A good reel → the reel goes through.
+    write(routine((x) => x));
+    r = run();
+    assert.equal(r.status, 0, r.stderr);
+    assert.doesNotMatch(r.stdout, /手順型の台本が検査に通らない/);
+    assert.deepEqual(out().reel, byKey("mail-polite-decline").reel);
+
+    // The lesson itself fails (and its reel too) → the stock, with its reel.
+    write(routine((x) => ((x.slides = x.slides.slice(0, 3)), delete x.reel, x)));
+    r = run();
+    assert.equal(r.status, 0, r.stderr);
+    assert.match(r.stdout, /::warning title=予備のレッスンで投稿::/);
+    assert.notEqual(out().jev.topicKey, "mail-polite-decline");
+    assert.ok(out().reel, "the stock lesson keeps the reel look");
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test("reel: the paste chip names pasted text, never a file to upload (no extension)", () => {
+  assert.ok(STOCK.lessons.every((l) => !l.reel.file || !/\.[A-Za-z0-9]{1,5}$/.test(l.reel.file)));
+  const ext = ep("meeting-minutes-three", (x) => (x.reel.file = "会議メモ.txt", x));
+  assert.match(errors(ext), /reel\.file: the name of the pasted text \(会議のメモ\), no file extension/);
 });

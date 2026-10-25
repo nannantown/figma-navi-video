@@ -926,7 +926,8 @@ export function reelProblems(ep, at, pastes) {
   const hasPaste = actions.includes("paste");
   if (hasPaste) len(reel.file, "file", `${r}.file`);
   else if (reel.file !== undefined) errors.push(`${r}.file: only with a paste step`);
-  if (typeof reel.file === "string" && /[\\/]/.test(reel.file)) errors.push(`${r}.file: a file name, no / or \\`);
+  // The paste chip is pasted text, not an attachment: a beginner reads "会議メモ.txt" as an upload.
+  if (typeof reel.file === "string" && (/[\\/]/.test(reel.file) || /\.[A-Za-z0-9]{1,5}$/.test(reel.file))) errors.push(`${r}.file: the name of the pasted text (会議のメモ), no file extension or / — the chip is pasted text, not an attached file`);
   // Pasted work text: the window shows the paste, and the caution is on screen or in the voice.
   if (pastes && !hasPaste) errors.push(`${r}.steps: the prompt works on pasted text — add a "paste" step`);
   // The reel's own words count too (a type step that says 「議事録を貼り付けて…」).
@@ -951,6 +952,11 @@ export function reelProblems(ep, at, pastes) {
     }
   }
   return errors;
+}
+
+/** Every error is about episode.reel (the lesson itself passed): 08:15 posts it as the cards. */
+export function reelOnlyErrors(errors) {
+  return errors.length > 0 && errors.every((e) => /^episode \S+\.reel[.:[]/.test(e));
 }
 
 function lessonShownTexts(ep) {
