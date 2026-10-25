@@ -1,7 +1,7 @@
 {
   "permissions": {
     "allow": [
-      "Bash(gh api --method PUT repos/nannantown/figma-navi-video/pulls/*/merge * --jq '{merged,message,sha}')"
+      "Bash(gh api --method PUT repos/nannantown/figma-navi-video/pulls/*/merge -f merge_method=squash -f sha=* --jq '{merged,message,sha}')"
     ],
     "deny": [
       "Bash(gh pr merge*)",
@@ -15,12 +15,26 @@
       "Bash(gh api *--hostname*)",
       "Bash(gh api *commit_title*)",
       "Bash(gh api *commit_message*)",
+      "Bash(gh api *merge_method=merge*)",
+      "Bash(gh api *merge_method=rebase*)",
+      "Bash(gh api *merge_method=\"merge*)",
+      "Bash(gh api *merge_method=\"rebase*)",
+      "Bash(gh api *merge_method='merge*)",
+      "Bash(gh api *merge_method='rebase*)",
+      "Bash(gh api *sha=\"\"*)",
+      "Bash(gh api *sha='' *)",
+      "Bash(gh api *sha= *)",
       "Bash(git push --force*)",
       "Bash(git push -f*)",
       "Bash(git push * --force*)",
       "Bash(git push * -f*)",
       "Bash(git push * --delete*)",
-      "Bash(git push *main*)"
+      "Bash(git push * main)",
+      "Bash(git push * main *)",
+      "Bash(git push *:main)",
+      "Bash(git push *:main *)",
+      "Bash(git push *refs/heads/main)",
+      "Bash(git push *refs/heads/main *)"
     ]
   }
 }
