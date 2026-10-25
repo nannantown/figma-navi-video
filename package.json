@@ -12,6 +12,7 @@
     "dry-run:ranking": "CONTENT_FORMAT=pickup DRY_RUN=1 PH_ALLOW_RANKING=1 ENRICHED_PATH=data/samples/enriched-ai-tools.sample.json PH_SNAPSHOT_PATH=data/samples/product-hunt-daily.sample.json ALLOW_STALE_DATE=1 node scripts/pipeline.mjs",
     "dry-run:skip": "CONTENT_FORMAT=pickup DRY_RUN=1 ENRICHED_PATH=data/samples/enriched-ai-tools.skip.sample.json PH_SNAPSHOT_PATH=data/samples/product-hunt-daily.skip.sample.json ALLOW_STALE_DATE=1 node scripts/pipeline.mjs",
     "dry-run:lesson": "CONTENT_FORMAT=lesson DRY_RUN=1 JEV_EPISODES_PATH=data/samples/ai-lesson-episodes.sample.json ALLOW_STALE_DATE=1 node scripts/pipeline.mjs",
+    "dry-run:lesson-cards": "CONTENT_FORMAT=lesson LESSON_LOOK=cards DRY_RUN=1 JEV_EPISODES_PATH=data/samples/ai-lesson-episodes.sample.json ALLOW_STALE_DATE=1 node scripts/pipeline.mjs",
     "dry-run:news": "CONTENT_FORMAT=news DRY_RUN=1 JEV_EPISODES_PATH=data/samples/ai-news-episodes.sample.json ALLOW_STALE_DATE=1 node scripts/pipeline.mjs",
     "dry-run:jev-intro": "CONTENT_FORMAT=jev DRY_RUN=1 JEV_EPISODES_PATH=data/samples/jev-episodes.intro.sample.json ALLOW_STALE_DATE=1 node scripts/pipeline.mjs",
     "dry-run:jev-usecase": "CONTENT_FORMAT=jev DRY_RUN=1 JEV_EPISODES_PATH=data/samples/jev-episodes.usecase.sample.json ALLOW_STALE_DATE=1 node scripts/pipeline.mjs",

@@ -5,6 +5,8 @@
 
 あなたは figma-navi-video のコンテンツ担当です。毎朝、**仕事で AI を使いたい初心者（ChatGPT などを触り始めた会社員）が、見たその日に真似できる使い方のコツを 1 つ**、1 回分の原稿にして `data/ai-lesson-episodes.json` の末尾に追記し、main に反映します（2026-10-22 オーナー決定「なんかAI教育系にしたい、AIを使いこなしたい人への教育どうが」）。1 本は 4 枚: **困りごと → そのまま使える頼み方（画面に文例）→ 答えの例 → ひとこと注意**。CTA は保存とフォロー。
 
+**2026-10-23 から動画は参考リール型の手順動画**（`data/content-format.json` の `"lessonLook": "reel"`。オーナーの言葉「1回あのキャンバスに出してる案でやってみよう。」）: 4 枚の `slides` に加えて、**画面の台本 `reel`（手順 3〜5 個。AI の窓で 開く・貼る・打つ・送る・確かめる を「ステップN。」で 1 つずつ）を必ず書く**。`reel` が無い・検証に通らない回は、08:15 に 4 枚の見た目で出る（この作りで出ない）。書き方は [lesson-format.md](lesson-format.md) の §6。`"lessonLook": "cards"` の間は `reel` を書かなくてよい。
+
 **重要**
 
 - 08:15 JST の `daily-video.yml` が今日の回を読んで動画にする。**今日の回が main に無い・検証に通らないときは、ネタ帳 `data/ai-lesson-stock.json` の未使用の 1 本（`next` の `stockNext`）が自動で出る**。空白日にはならないが、朝ルーチンが書いた回は出ない
@@ -51,7 +53,7 @@ node scripts/jev.mjs pdca
 
 - **読み方**: 主指標は **IG 保存数と IG フォロワー増**（オーナーが 2 週間ごとに見る）。副指標は IG views 中央値。YT は登録者の増加と views を別に見る（IG と YT は合算しない）。IG insights は最大 48 時間遅れる
 - 変えてよいもの: 見出し・冒頭の一言（`hook`）・困りごとの切り口・柱の順番・図の種類・答えの例の見せ方
-- 変えないもの: 1 日 1 本・4 枚の構成・有料プランと誇大表現を出さない・GitHub を扱わない・円表記・CTA（保存とフォロー）。変えたいときは「戦略更新提案」に書く
+- 変えないもの: 1 日 1 本・4 枚の構成と手順型の画面（`reel`）・有料プランと誇大表現を出さない・GitHub を扱わない・円表記・CTA（保存とフォロー）。変えたいときは「戦略更新提案」に書く
 
 ```markdown
 # AI 仕事術 PDCA — $TODAY
@@ -67,7 +69,7 @@ node scripts/jev.mjs pdca
 
 ### 3. 今日の 1 本を決める
 
-- **ふだん**: `stockNext` をそのまま今日の回にする（ネタ帳 `data/ai-lesson-stock.json` から同じ `topic_key` の回を写し、`date` / `genre: "ai-lesson"` / `trial: 4` / `kind: "lesson"` を足す）。PDCA の Action に合わせて見出し・`hook` の言い回しを直すのはよい（`topic_key` と 2 枚目の頼み方の文は変えない。変えると 08:15 の予備と食い違う）
+- **ふだん**: `stockNext` をそのまま今日の回にする（ネタ帳 `data/ai-lesson-stock.json` から同じ `topic_key` の回を写し、`date` / `genre: "ai-lesson"` / `trial: 4` / `kind: "lesson"` を足す）。PDCA の Action に合わせて見出し・`hook` の言い回しを直すのはよい（`topic_key` と 2 枚目の頼み方の文は変えない。変えると 08:15 の予備と食い違う）。**ネタ帳の回には `reel` も入っている。消さずにそのまま写す**（`reel.title` / `reel.hook` の言い回しを直すのはよい。`hook` の「Nつ」は手順の数のまま）
 - **`stockLeft` が 7 以下の日**: ネタ帳から取らずに**新しい回を書く**（予備を 7 本残すため）。柱は前の日と違うもの。2 枚目の頼み方の文は、これまでの回のどれとも似ていないもの（検証が 0.55 以上の似かたを止める）
 - **`stockLeft` が 10 未満**: 最終レポートに「ネタ帳の補充が必要（残り N 本）」と書く（補充は別の PR。朝ルーチンの PR には混ぜない）
 
@@ -84,6 +86,7 @@ node scripts/jev.mjs pdca
   4. **ひとこと注意**: 確かめること・貼ってはいけない情報・自分で最後に判断すること。図は `steps`（やる順 2〜3 個）か `compare`
 - 各スライド: `heading` 4〜18 字 / `body` 8〜64 字（図があるスライドでは画面に出ないが、キャプションに出る）/ `narration` 30〜95 字（です・ます調、2 文まで。合計 300 字以内）
 - 図の文字（`steps` / `flow` / `compare`）は短い言葉だけ（`label` 1〜12 字、`note` 1〜8 字、`flow` は `label` 1〜8 字）。ナレーションの文をそのまま写さない
+- `reel`（`lessonLook` が `reel` の間は必須。[lesson-format.md](lesson-format.md) §6）: 手順 3〜5 個を `open` → `paste` → `type` → `send` → `check` の順で（`type` と `send` は必ず。頼み方の文を貼る形の回は `paste` も必ず）。各手順は `heading`（`["前", "オレンジの語", "後"]`、合わせて 12 字まで）と `narration`（14〜50 字、「ステップN。」で始め、画面で起きることをそのまま言う）。`title`（11 字まで）・`hook`（「Nつ」を含める）・`answer`（答えの例を見出しと 1 行 20 字までの行で、合わせて 7 行まで）。`paste` がある回は `file`（貼る文章の名前。`会議のメモ` など、拡張子は付けない）と、貼る札かナレーションに「仮名にしてから」「社外秘は消してから」のどれか。ネタ帳の回の `reel` が手本
 - `sources`: AI の機能・表計算の関数の説明に使ったページ（0〜4 件、`role: "reference"`、`published_at` は日付か `null`）。確かめるのは提供元の公式のページ（`official: true`）。提供元以外の解説ページも添えたときは `official: false`（それだけを根拠にはしない）。使っていなければ `[]`
 - JSON の文字列の中に ASCII のダブルクォート（`"`）を入れるときは `\"` とエスケープする。日本語のかぎ括弧（「」『』）はそのまま使ってよい
 
@@ -105,6 +108,12 @@ node scripts/jev.mjs validate
 - `topic_key … was already used / was already posted` / `headline is the same` → もう出した回。別の回にする
 - `must be { "type": "prompt"` / `"answer"` → 2 枚目・3 枚目の図の形を直す
 - `a lesson is 4 slides` → 4 枚にする
+- `.reel: required while … "lessonLook" is "reel"` → `reel` を書く（ネタ帳から写した回なら、ネタ帳の `reel` を消していないか）
+- `.reel.steps[].action` / `needs a "type" step` / `add a "paste" step` → 手順の順番・抜けを直す（貼る形の頼み方なら `paste` を入れる）
+- `starts with 「ステップN。」` / `heading: … chars` / `say the number of steps as 「Nつ」` → ナレーションの頭・見出しの長さ・つかみの数を直す
+- `.reel: pasting work text` → 貼る札かナレーションに「人の名前や社名を仮名にしてから」「社外秘は消してから」などを入れる
+- `rows … up to 7 fit` / `lines[…]: … chars (allowed 2-20)` → 答えの例を短く・少なく
+- `spoken chars with the fixed lines` → ナレーションを短く（59 秒に収めるため）
 - `no dollar amounts` → 円に換算する
 - `was posted but is missing or changed` → 過去の回を消した・書き換えた。main の台帳から元に戻す
 

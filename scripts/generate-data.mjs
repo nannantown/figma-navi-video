@@ -30,7 +30,7 @@ import {
 } from "./enriched-schema.mjs";
 import { loadSnapshotForRun } from "./snapshot.mjs";
 import { loadHistory } from "./history.mjs";
-import { readContentFormat, seriesOf, resolveEpisodesPath, loadEpisodes, validateEpisodes, toJevVideoData, lessonFallback, loadLessonStock, stockPostOn } from "./jev.mjs";
+import { readContentFormat, seriesOf, resolveEpisodesPath, loadEpisodes, validateEpisodes, toJevVideoData, lessonFallback, loadLessonStock, stockPostOn, reelOnlyErrors } from "./jev.mjs";
 import { unmergedRoutineHint } from "./deliver-jev.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -63,6 +63,15 @@ function generateJevData(allowStale, series) {
   // Already posted from the stock today (a re-run, the Instagram recovery): the same
   // lesson again, even if the routine's lesson reached main after 08:15.
   const postedFromStock = series.format === "lesson" && !allowStale && stockPostOn(history, today);
+  // Reel look and only today's screen script (episode.reel) is missing or wrong: the routine's
+  // lesson itself passed every check, so it goes out — as the 4 cards. The stock is only for a
+  // lesson that cannot air at all (or a day the stock already went out).
+  if (errors.length > 0 && episode && !postedFromStock && reelOnlyErrors(errors)) {
+    console.log(`::warning title=手順型の台本が検査に通らない::今日の回「${episode.topic_key}」を 4 枚の見た目で出します（${errors.slice(0, 3).join(" / ")}）`);
+    episode = { ...episode };
+    delete episode.reel;
+    errors = [];
+  }
   if ((errors.length > 0 || postedFromStock) && series.format === "lesson" && !allowStale) {
     // Lessons are evergreen: rather than a blank day, post the next unused stock
     // lesson (the routine's PR is often left unmerged — docs/routine-merge-miss.md).

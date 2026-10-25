@@ -1,4 +1,5 @@
 {
   "format": "lesson",
-  "note": "lesson = genre trial #4 (AI 仕事術・初心者向けの教育動画, data/ai-lesson-episodes.json + stock data/ai-lesson-stock.json, owner decision 2026-10-22). news = trial #3 (AI ニュース 1 本解説, data/ai-news-episodes.json, paused 2026-10-22). jev = trial #2 (Jev の毎朝ニュース, data/jev-episodes.json, paused 2026-10-13 by the owner's stop). pickup = trial #1 (新作AIツール N選, data/enriched-ai-tools.json). How to switch: docs/lesson-format.md"
+  "lessonLook": "reel",
+  "note": "lesson = genre trial #4 (AI 仕事術・初心者向けの教育動画, data/ai-lesson-episodes.json + stock data/ai-lesson-stock.json, owner decision 2026-10-22). news = trial #3 (AI ニュース 1 本解説, data/ai-news-episodes.json, paused 2026-10-22). jev = trial #2 (Jev の毎朝ニュース, data/jev-episodes.json, paused 2026-10-13 by the owner's stop). pickup = trial #1 (新作AIツール N選, data/enriched-ai-tools.json). How to switch: docs/lesson-format.md. lessonLook (lesson only): reel = 参考リール型（ステップ + 進み具合のバー + AI の画面の窓、episode.reel, owner decision 2026-10-23）, cards = the 4-card look (困りごと / 頼み方 / 答えの例 / 注意). Switch back: docs/lesson-format.md §6"
 }
