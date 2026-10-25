@@ -36,5 +36,22 @@
       "Bash(git push *refs/heads/main)",
       "Bash(git push *refs/heads/main *)"
     ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": [
+              "${CLAUDE_PROJECT_DIR}/.claude/hooks/merge-guard.mjs"
+            ],
+            "onFailure": "block"
+          }
+        ]
+      }
+    ]
   }
 }
