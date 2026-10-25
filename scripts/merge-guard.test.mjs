@@ -44,3 +44,23 @@ test('unreadable input blocks only when it looks like a merge', () => {
   assert.equal(decide('not json PUT pulls/1/merge').block, true);
   assert.equal(decide('not json').block, false);
 });
+
+const monitor = (command) => JSON.stringify({ tool_name: 'Monitor', tool_input: { command, description: 'x' } });
+
+test('Monitor commands get the same strict check as Bash', () => {
+  const loophole = `gh api --method PUT repos/nannantown/figma-navi-video/pulls/1/merge -f 'x=/merge -f merge_method=squash -f sha=' --jq '{merged,message,sha}'`;
+  assert.equal(decide(monitor(loophole)).block, true);
+  assert.equal(decide(monitor(`gh api --method PUT repos/nannantown/figma-navi-video/pulls/212/merge \\\n  -f merge_method=squash -f sha="${SHA}" \\\n  --jq '{merged,message,sha}'`)).block, false);
+  assert.equal(decide(monitor(`tail -f /tmp/log`)).block, false);
+  assert.equal(decide(JSON.stringify({ tool_name: 'Monitor', tool_input: { ws: { url: 'wss://example.com' } } })).block, false);
+});
+
+test('quote-split spellings of a merge are still checked strictly', () => {
+  const bad = [
+    `gh api --method P''UT repos/nannantown/figma-navi-video/pulls/1/merge -f 'x=y' --jq '{merged,message,sha}'`,
+    `gh api --method PUT repos/nannantown/figma-navi-video/pu"ll"s/1/m'er'ge --jq '{merged,message,sha}'`,
+    `gh api -XPUT repos/nannantown/figma-navi-video/pulls/1/$'merge'`,
+    `gh api --method PUT repos/nannantown/figma-navi-video/pull\\s/1/merge`,
+  ];
+  for (const c of bad) assert.equal(blocked(c), true, c);
+});
