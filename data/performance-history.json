@@ -3898,7 +3898,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-25T02:09:40.633Z"
+        "updatedAt": "2026-10-26T01:09:59.242Z"
       },
       "instagram": {
         "mediaId": "18019960112947022",
@@ -3975,7 +3975,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-25T02:09:40.633Z"
+        "updatedAt": "2026-10-26T01:09:59.242Z"
       },
       "instagram": {
         "mediaId": "18060946787535736",
@@ -4058,7 +4058,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-25T02:09:40.633Z"
+        "updatedAt": "2026-10-26T01:09:59.242Z"
       },
       "instagram": null,
       "jev": {
@@ -4137,7 +4137,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-25T02:09:40.633Z"
+        "updatedAt": "2026-10-26T01:09:59.242Z"
       },
       "instagram": null,
       "jev": {
@@ -4206,10 +4206,71 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-10-26T01:09:59.242Z"
       },
       "instagram": {
         "mediaId": "18014511812978403",
+        "permalink": "https://www.instagram.com/reel/De5mwxhkW0S/",
+        "views": 47,
+        "reach": 47,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-10-26T01:09:59.244Z"
+      },
+      "jev": {
+        "kind": "lesson",
+        "topicKey": "summary-three-lines",
+        "topic": "長い文章を3行にまとめてもらう",
+        "sources": [],
+        "pillar": "summary",
+        "prompt": "次の文章を、忙しい上司が30秒で読めるように、3行で要約してください。",
+        "fallback": true
+      }
+    },
+    {
+      "videoId": "2c4ia-1v4s8",
+      "videoUrl": "https://youtube.com/shorts/2c4ia-1v4s8",
+      "date": "2026-10-26",
+      "genre": "ai-lesson",
+      "trial": 4,
+      "title": "【AI仕事術】断りのメールを丁寧に｜2026/10/26 #Shorts",
+      "titleTemplate": "ai-lesson",
+      "hashtags": [
+        "AI活用",
+        "ChatGPT",
+        "生成AI",
+        "仕事術",
+        "業務効率化",
+        "AIの使い方",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "断りのメールを丁寧に"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": ""
+      },
+      "durationSeconds": 41,
+      "coverOffsetMs": 3900,
+      "look": "reel",
+      "discovery": {
+        "method": "lesson",
+        "description": "丁寧な断りのメールを書いてもらう",
+        "sources": []
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "18115514255520326",
         "permalink": null,
         "views": null,
         "reach": null,
@@ -4221,23 +4282,16 @@
       },
       "jev": {
         "kind": "lesson",
-        "topicKey": "summary-three-lines",
-        "topic": "長い文章を3行にまとめてもらう",
+        "topicKey": "mail-polite-decline",
+        "topic": "丁寧な断りのメールを書いてもらう",
         "sources": [],
-        "pillar": "summary",
-        "prompt": "次の文章を、忙しい上司が30秒で読めるように、3行で要約してください。",
+        "pillar": "mail",
+        "prompt": "取引先からの打ち合わせの依頼を、来週は難しいと丁寧に断るメールを書いてください。代わりの候補日を2つ入れてください。",
         "fallback": true
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-09-27",
-      "changes": [
-        "Day performance: Sat=1, Sun=1, Mon=1, Tue=1, Thu=1, Fri=1, Wed=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-09-28",
       "changes": [
@@ -4440,6 +4494,13 @@
         "Day performance: Mon=2, Fri=1, Sat=1, Tue=1, Wed=1, Thu=1, Sun=1"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-10-26",
+      "changes": [
+        "Day performance: Mon=2, Tue=1, Wed=1, Thu=1, Fri=1, Sun=1, Sat=0"
+      ],
+      "recommendedTemplate": "standard"
     }
   ],
   "account": {
@@ -4538,6 +4599,10 @@
       },
       {
         "date": "2026-10-25",
+        "count": 0
+      },
+      {
+        "date": "2026-10-26",
         "count": 0
       }
     ]
