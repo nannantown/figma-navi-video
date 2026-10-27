@@ -2,60 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "VyS4JhvzS9E",
-      "videoUrl": "https://youtube.com/shorts/VyS4JhvzS9E",
-      "date": "2026-07-28",
-      "title": "【デザインニュース】Obsidian CEO Steph Angoの論考『Design is compromise』がHN昨日トップ、駆け出しの完璧病に効く一言｜2026/07/28 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 44,
-      "discovery": {
-        "method": "social-en",
-        "description": "Hacker News の 2026-07-27 トップ入り記事から Steph Ango (Obsidian CEO) の論考『Design is compromise』(stephango.com/design-is-compromise、HN item #49059367) を検出。原著と HN 話題を横断してデザイン設計思想を一次取得。social-en (HN designer 界隈 = strategy Discovery Methods 表記どおり) を Explore で採用。過去 5 日連続 Exploit method (expert-blog / news-en / product-launches / figma-community / official-src) で Explore が 0 回、07-10 以来 social-en 18 日空きで Explore 予算最大、07-27 PDCA §Method 提案①『火水のどこかで Explore 復活』に完全合致。2-day rule (07-27 official-src, 07-26 figma-community ブロック) / 7-day-2-time (news-en 3 回目 = 違反、social-en 0 回) / WORST 凍結 全ガード clear。柱⑥ UI 批評/学習要素 (design philosophy 論考) を主、柱③ 業界ニュース (HN 話題) をサブで刺しつつ、柱③ を追加せず超過 +11pt の自然圧縮を継続。Primary persona (駆け出しデザイナー) の『完璧を目指して手が止まる』病に『何を捨てたかを一行添える』具体 action で直撃、AI = 補助輪フレーム維持。",
-        "sources": [
-          "https://stephango.com/design-is-compromise",
-          "https://news.ycombinator.com/item?id=49059367",
-          "https://en.wikipedia.org/wiki/Obsidian_(software)",
-          "https://www.linkedin.com/in/stephango"
-        ],
-        "query": "Hacker News top story design July 27 2026 stephango Obsidian CEO Design is compromise tradeoff",
-        "freshness_hours": 28
-      },
-      "stats": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-08-11T23:59:51.095Z"
-      },
-      "instagram": {
-        "mediaId": "17948484870227996",
-        "permalink": "https://www.instagram.com/reel/DbUOjK-jiFI/",
-        "views": 2,
-        "reach": 2,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "IY3EsFPb4xI",
       "videoUrl": "https://youtube.com/shorts/IY3EsFPb4xI",
       "date": "2026-07-29",
@@ -3975,7 +3921,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-26T01:09:59.242Z"
+        "updatedAt": "2026-10-27T02:31:22.841Z"
       },
       "instagram": {
         "mediaId": "18060946787535736",
@@ -4058,7 +4004,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-26T01:09:59.242Z"
+        "updatedAt": "2026-10-27T02:31:22.841Z"
       },
       "instagram": null,
       "jev": {
@@ -4137,7 +4083,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-26T01:09:59.242Z"
+        "updatedAt": "2026-10-27T02:31:22.841Z"
       },
       "instagram": null,
       "jev": {
@@ -4206,18 +4152,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-26T01:09:59.242Z"
+        "updatedAt": "2026-10-27T02:31:22.841Z"
       },
       "instagram": {
         "mediaId": "18014511812978403",
         "permalink": "https://www.instagram.com/reel/De5mwxhkW0S/",
-        "views": 47,
-        "reach": 47,
+        "views": 50,
+        "reach": 50,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-26T01:09:59.244Z"
+        "updatedAt": "2026-10-27T02:31:22.842Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4267,10 +4213,73 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-10-27T02:31:22.841Z"
       },
       "instagram": {
         "mediaId": "18115514255520326",
+        "permalink": "https://www.instagram.com/reel/De8EqtkjyZt/",
+        "views": 15,
+        "reach": 15,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-10-27T02:31:22.842Z"
+      },
+      "jev": {
+        "kind": "lesson",
+        "topicKey": "mail-polite-decline",
+        "topic": "丁寧な断りのメールを書いてもらう",
+        "sources": [],
+        "pillar": "mail",
+        "prompt": "取引先からの打ち合わせの依頼を、来週は難しいと丁寧に断るメールを書いてください。代わりの候補日を2つ入れてください。",
+        "fallback": true
+      }
+    },
+    {
+      "videoId": "_mBZqPUltXc",
+      "videoUrl": "https://youtube.com/shorts/_mBZqPUltXc",
+      "date": "2026-10-27",
+      "genre": "ai-lesson",
+      "trial": 4,
+      "title": "【AI仕事術】エクセルの式は日本語で聞く｜2026/10/27 #Shorts",
+      "titleTemplate": "ai-lesson",
+      "hashtags": [
+        "AI活用",
+        "ChatGPT",
+        "生成AI",
+        "仕事術",
+        "業務効率化",
+        "AIの使い方",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "エクセルの式は日本語で聞く"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": "出典: Microsoft サポート"
+      },
+      "durationSeconds": 42,
+      "coverOffsetMs": 3800,
+      "look": "reel",
+      "discovery": {
+        "method": "lesson",
+        "description": "表計算の式を日本語で聞く",
+        "sources": [
+          "https://support.microsoft.com/ja-jp/office/sumifs-関数-c9e748f5-7ea7-455d-9406-611cebce642b"
+        ]
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "17954212068313509",
         "permalink": null,
         "views": null,
         "reach": null,
@@ -4282,23 +4291,24 @@
       },
       "jev": {
         "kind": "lesson",
-        "topicKey": "mail-polite-decline",
-        "topic": "丁寧な断りのメールを書いてもらう",
-        "sources": [],
-        "pillar": "mail",
-        "prompt": "取引先からの打ち合わせの依頼を、来週は難しいと丁寧に断るメールを書いてください。代わりの候補日を2つ入れてください。",
+        "topicKey": "sheet-sum-this-month",
+        "topic": "表計算の式を日本語で聞く",
+        "sources": [
+          {
+            "url": "https://support.microsoft.com/ja-jp/office/sumifs-関数-c9e748f5-7ea7-455d-9406-611cebce642b",
+            "outlet": "Microsoft サポート",
+            "published_at": null,
+            "role": "reference",
+            "official": true
+          }
+        ],
+        "pillar": "sheet",
+        "prompt": "エクセルで、A列の日付が今月のものだけ、B列の金額を合計する式を教えてください。",
         "fallback": true
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-09-28",
-      "changes": [
-        "Day performance: Mon=1, Tue=1, Thu=1, Fri=1, Sat=1, Sun=1, Wed=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-09-29",
       "changes": [
@@ -4501,6 +4511,13 @@
         "Day performance: Mon=2, Tue=1, Wed=1, Thu=1, Fri=1, Sun=1, Sat=0"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-10-27",
+      "changes": [
+        "Day performance: Tue=1, Wed=1, Thu=1, Fri=1, Sun=1, Mon=1, Sat=0"
+      ],
+      "recommendedTemplate": "standard"
     }
   ],
   "account": {
@@ -4603,6 +4620,10 @@
       },
       {
         "date": "2026-10-26",
+        "count": 0
+      },
+      {
+        "date": "2026-10-27",
         "count": 0
       }
     ]
