@@ -7,6 +7,7 @@
 import { writeFileSync, mkdirSync, rmSync } from "fs";
 import { join } from "path";
 import { synthesizeOnce } from "./edge-tts.mjs";
+import { forSpeech } from "./tts-reading.mjs";
 import { reelNotes, REEL_RECAP_NARRATION, REEL_SAVE_NARRATION } from "./jev.mjs";
 
 export const REEL_COMPOSITION_ID = "LessonReel"; // src/Root.tsx
@@ -86,15 +87,17 @@ export async function voiceScenes(scenes, { root, rate, synthesize = synthesizeO
   for (const [i, s] of scenes.entries()) {
     // Both are required: the subtitle, the typing and the cursor run on the word timings,
     // so a clip without them would post with no subtitles (→ retried, then the cards).
+    // the voice gets kana for the words in data/tts-readings.json; the subtitle words keep the original spelling
+    const speech = forSpeech(s.narration);
     const { audio, words } = await withRetry(async () => {
-      const r = await synthesize(s.narration, { voice: REEL_VOICE, rate, timeoutMs: 30000 });
+      const r = await synthesize(speech.spoken, { voice: REEL_VOICE, rate, timeoutMs: 30000 });
       if (!r?.audio?.length) throw new Error(`reel scene ${i} (${s.kind}): no audio from Edge TTS`);
       if (!r.words?.length) throw new Error(`reel scene ${i} (${s.kind}): no word timings from Edge TTS (the subtitles need them)`);
       return r;
     }, `reel scene ${i}`, deadline, attempts);
     const file = `audio/reel/scene-${i}.mp3`;
     writeFileSync(join(root, "public", file), audio);
-    out.push({ ...s, audio: file, duration: +(mp3Seconds(audio) + REEL_TAIL_PAD).toFixed(3), words });
+    out.push({ ...s, audio: file, duration: +(mp3Seconds(audio) + REEL_TAIL_PAD).toFixed(3), words: speech.restoreWords(words) });
   }
   return out;
 }
