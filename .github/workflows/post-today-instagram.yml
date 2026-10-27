@@ -120,12 +120,13 @@ jobs:
       - name: Fits a Reel, and not on Instagram yet?
         id: check
         if: steps.gate.outputs.go == 'true'
+        continue-on-error: ${{ steps.gate.outputs.final != 'true' }}
         env:
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
           INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
           DATE: ${{ steps.gate.outputs.stamp }}
-        run: node scripts/ig-auto-retry.mjs check --file="output/aitools-${DATE}.mp4" --captions=output/captions.json --stamp="$DATE"
+        run: node scripts/ig-auto-retry.mjs check --file="output/aitools-${DATE}.mp4" --captions=output/captions.json --stamp="$DATE" --post-time=08:15
 
       - name: Upload to Instagram (resumable)
         id: upload
@@ -155,8 +156,8 @@ jobs:
           node scripts/upload-instagram.mjs --file="output/aitools-${DATE}.mp4"
 
       - name: Not yet — the next slot tries again
-        if: steps.upload.outcome == 'failure'
-        run: echo "::warning title=Instagram retry::the upload failed again; a later retry slot tries the same video (the last slot turns red if it still fails)"
+        if: steps.check.outcome == 'failure' || steps.upload.outcome == 'failure'
+        run: echo "::warning title=Instagram retry::not on Instagram yet (see the failed step above); a later retry slot tries the same video (the last slot turns red if it still fails)"
 
       # Without this the recovery post never reaches performance-history.json,
       # so the day is missing from the IG median and the saved-count that decide
@@ -171,7 +172,6 @@ jobs:
           RECORD_DATE: ${{ steps.gate.outputs.stamp }}
         run: |
           set -euo pipefail
-          node scripts/record-upload.mjs
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           for i in 1 2 3; do
@@ -180,9 +180,10 @@ jobs:
               sleep $((i * 10))
               continue
             fi
-            cp data/performance-history.json "$RUNNER_TEMP/history.json"
+            # Record onto the fresh main (output/ is untracked and survives), so a
+            # stats/routine commit made meanwhile is folded in, not overwritten.
             git checkout -f -B main FETCH_HEAD
-            cp "$RUNNER_TEMP/history.json" data/performance-history.json
+            node scripts/record-upload.mjs
             git add data/performance-history.json
             if git diff --staged --quiet; then
               echo "History unchanged, nothing to commit"
