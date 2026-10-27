@@ -111,7 +111,10 @@ test("the retry workflow: scheduled slots, Instagram only, red only on the last 
   const steps = yml.split(/\n\s+- (?=name:|if:|uses:|run:)/);
   const at = (re) => steps.findIndex((s) => re.test(s));
   const check = at(/ig-auto-retry\.mjs check/);
-  const upload = at(/upload-instagram\.mjs --file|retry-instagram\.mjs --date/);
+  const upload = at(/\bid: upload\b/);
+  const posts = /upload-instagram\.mjs --file|retry-instagram\.mjs --date="\$RETRY_DATE" --platform=instagram$/m;
+  assert.match(steps[upload], posts);
+  assert.equal(steps.filter((s) => posts.test(s)).length, 1, "one step posts to Instagram");
   assert.ok(check > 0 && upload > check, "the account and the length are checked before the upload");
   assert.match(steps[upload], /continue-on-error: \$\{\{ steps\.gate\.outputs\.final != 'true' \}\}/);
   assert.match(steps[upload], /steps\.check\.outputs\.posted == 'false'/, "uploads only when the day is not on Instagram");
