@@ -27,6 +27,31 @@ function remoteJson(run, path, ref) {
 const remoteLedger = (run, ledgerPath) => remoteJson(run, ledgerPath, "main");
 const READINGS_PATH = "data/tts-readings.json";
 
+// A reading changes what the voice SAYS while the screen keeps the text, so nobody would notice and it
+// applies to every later video. The unattended merge therefore only takes a few narrow new entries:
+// added (main's entries unchanged), at most 5, each a plain word (letters/digits/kanji, 12 chars max)
+// that appears in today's episode, never a core word of the channel or a series label.
+export const MAX_NEW_READINGS = 5;
+const CORE_WORDS = ["AI", "Jev", "TypeSafe", "無料", "有料", "料金", "円", "保存", "フォロー", "出典", "概算", "発表", "公式"];
+const seriesLabels = () => Object.values(SERIES).flatMap((s) => [...Object.values(s.kindLabel ?? {}), s.bigLabel ?? ""]).filter(Boolean);
+export function readingsChangeProblems({ readings, onMain, episode }) {
+  const problems = [];
+  if (!readings || typeof readings !== "object" || Array.isArray(readings)) return [`${READINGS_PATH} must be a JSON object`];
+  for (const [k, v] of Object.entries(onMain ?? {})) if (readings[k] !== v) problems.push(`「${k}」 is on main and must stay as it is (${JSON.stringify(v)})`);
+  const added = Object.keys(readings).filter((k) => !Object.hasOwn(onMain ?? {}, k));
+  if (added.length > MAX_NEW_READINGS) problems.push(`${added.length} new readings in one PR (at most ${MAX_NEW_READINGS})`);
+  const todayText = JSON.stringify(episode ?? {});
+  const labels = seriesLabels();
+  for (const k of added) {
+    const p = k.startsWith("_") ? `new note key 「${k}」 (notes are changed by humans)` : readingProblem(k, readings[k]);
+    if (p) problems.push(p);
+    else if (!/^[\p{L}\p{N}]{1,12}$/u.test(k)) problems.push(`「${k}」: a new entry must be one plain word (letters, digits, kanji; no spaces or symbols; 12 chars max)`);
+    else if (CORE_WORDS.some((c) => k.includes(c)) || labels.some((l) => l.includes(k))) problems.push(`「${k}」 is a core word or series label of the channel; a human adds its reading`);
+    else if (!todayText.includes(k)) problems.push(`「${k}」 does not appear in today's episode`);
+  }
+  return problems;
+}
+
 /** Inject gh/time in tests. All gh requests here are GET, including --prepare. */
 export function deliverJev({ expected, history = null, pr, head, prepare = false, run = cliRun, now = () => new Date(), log = console.log, checkAired = airedCheck, series = SERIES.jev }) {
   const EPISODES_PATH = series.episodesPath;
@@ -51,12 +76,8 @@ export function deliverJev({ expected, history = null, pr, head, prepare = false
     throw new Error(`PR #${pr} must change only ${EPISODES_PATH}, today's PDCA report and ${READINGS_PATH}`);
   }
   if (files.some((f) => f.filename === READINGS_PATH)) {
-    // The routine only ADDS readings (kana, reading-sized); entries already on main stay as they are.
-    const readings = remoteJson(run, READINGS_PATH, head);
-    const onMain = remoteJson(run, READINGS_PATH, "main");
-    const problems = Object.entries(readings).filter(([k]) => !k.startsWith("_")).map(([k, v]) => readingProblem(k, v)).filter(Boolean);
-    for (const [k, v] of Object.entries(onMain)) if (readings[k] !== v) problems.push(`「${k}」 is on main and must stay as it is (${JSON.stringify(v)})`);
-    if (problems.length) throw new Error(`PR #${pr} ${READINGS_PATH} has bad readings:\n${problems.join("\n")}`);
+    const problems = readingsChangeProblems({ readings: remoteJson(run, READINGS_PATH, head), onMain: remoteJson(run, READINGS_PATH, "main"), episode: expected.episodes.at(-1) });
+    if (problems.length) throw new Error(`PR #${pr} ${READINGS_PATH} has bad readings — do not merge; take the new readings out of the PR or ask a human:\n${problems.join("\n")}`);
   }
   const main = remoteLedger(run, EPISODES_PATH);
   assertToday();

@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
-import { deliverJev, REPO } from "./deliver-jev.mjs";
+import { deliverJev, readingsChangeProblems, REPO } from "./deliver-jev.mjs";
 
 const head = "a".repeat(40);
 const date = "2026-10-12";
@@ -151,10 +151,32 @@ test("new readings for the voice may ride along, but only kana readings at the P
       : inner(args);
     return f;
   };
-  assert.equal(deliverJev({ ...withReadings({ ...onMain, 仮名: "かめい" }).args, prepare: true }).readyForReview, true);
-  assert.throws(() => deliverJev({ ...withReadings({ ...onMain, 仮名: "有料プラン" }).args, prepare: true }), /bad readings/);
-  assert.throws(() => deliverJev({ ...withReadings({ _about: "x", Claude: "くろーだ", 仮名: "かめい" }).args, prepare: true }), /on main and must stay/);
-  assert.throws(() => deliverJev({ ...withReadings({ 仮名: "かめい" }).args, prepare: true }), /on main and must stay/);
+  // 確信度 is in the sample episode: a hard word of today's episode passes
+  assert.equal(deliverJev({ ...withReadings({ ...onMain, 確信度: "かくしんど" }).args, prepare: true }).readyForReview, true);
+  assert.throws(() => deliverJev({ ...withReadings({ ...onMain, 確信度: "有料プラン" }).args, prepare: true }), /bad readings/);
+  assert.throws(() => deliverJev({ ...withReadings({ _about: "x", Claude: "くろーだ", 確信度: "かくしんど" }).args, prepare: true }), /on main and must stay/);
+  assert.throws(() => deliverJev({ ...withReadings({ 確信度: "かくしんど" }).args, prepare: true }), /on main and must stay/);
+  // what a routine fooled by text on the web might add (the voice would say it, the screen would not show it)
+  for (const bad of [{ AI: "ばかやろう" }, { 無料: "ゆうりょう" }, { "TypeSafe によると": "じじつとして" }, { "！": "しね" }]) {
+    assert.throws(() => deliverJev({ ...withReadings({ ...onMain, ...bad }).args, prepare: true }), /bad readings/, JSON.stringify(bad));
+  }
+});
+
+test("new readings: only a few plain words of today's episode, never core words", () => {
+  const episode = { hook: "AIの確信度と、論文の共著者。無料で使える仕事術。", slides: [{ narration: "選択肢を比べ、第三者が測定しました。" }] };
+  const onMain = { _about: "x", Claude: "クロード" };
+  const check = (add) => readingsChangeProblems({ readings: { ...onMain, ...add }, onMain, episode });
+  assert.deepEqual(check({ 確信度: "かくしんど", 共著者: "きょうちょしゃ" }), []);
+  assert.match(check({ 会社: "かいしゃ" }).join(), /does not appear in today's episode/);
+  assert.match(check({ AI: "ばかやろう" }).join(), /core word/);
+  assert.match(check({ 無料: "ゆうりょう" }).join(), /core word/);
+  assert.match(check({ "TypeSafe によると": "じじつとして" }).join(), /one plain word/);
+  assert.match(check({ "！": "しね" }).join(), /one plain word/);
+  assert.match(check({ 仕事術: "しごとじゅつ" }).join(), /core word/);
+  assert.match(check({ _note: "x" }).join(), /note key/);
+  const six = Object.fromEntries(["確信度", "論文", "共著者", "選択肢", "第三者", "測定"].map((k) => [k, "よみ"]));
+  assert.match(check(six).join(), /6 new readings in one PR/);
+  assert.match(readingsChangeProblems({ readings: null, onMain, episode }).join(), /JSON object/);
   const renamed = fixture({ files: [{ filename: "data/jev-episodes.json" }, { filename: "data/tts-readings.json", previous_filename: ".github/workflows/daily-video.yml" }] });
   assert.throws(() => deliverJev({ ...renamed.args, prepare: true }), /must change only/);
 });
