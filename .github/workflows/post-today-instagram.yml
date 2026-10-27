@@ -1,14 +1,35 @@
 name: Post Today to Instagram
 
+# Re-post a day's Reel to Instagram only, from the exact video in Release
+# v<YYYYMMDD>. Nothing is re-rendered and YouTube is never touched.
+#
+# Automatic (owner order 2026-10-27): four slots look again the same day —
+# 12:22 / 14:22 / 17:22 / 20:22 JST. GitHub starts the 08:15 run late
+# (10/19–10/26: 10:08–10:50 JST), so the slots sit after that. A slot posts only
+# when the day's record has YouTube and no Instagram, daily-video.yml finished
+# 45+ min ago (scripts/ig-auto-retry.mjs gate), the caption is the one the
+# daily run used (scripts/day-run-captions.mjs), the video fits a Reel and the
+# account does not show the day yet (… check). An earlier slot's failed upload
+# is a warning (the next slot tries again); the last slot always tries and its
+# failure turns the run red.
+#
+# By hand: gh workflow run post-today-instagram.yml [-f date=YYYYMMDD] [-f force=true]
+# A push of .retry-ig-trigger on main still works (same path).
+
 on:
+  schedule:
+    - cron: "22 3 * * *" # 12:22 JST
+    - cron: "22 5 * * *" # 14:22 JST
+    - cron: "22 8 * * *" # 17:22 JST
+    - cron: "22 11 * * *" # 20:22 JST — the last slot: a failure here is red
   workflow_dispatch:
     inputs:
       date:
-        description: "Date tag (YYYYMMDD). Defaults to today JST."
+        description: "Date tag (YYYYMMDD). Defaults to the latest 08:15 JST post."
         required: false
         default: ""
       force:
-        description: "Post again even though the history already records a media id for that day"
+        description: "Post even though the history already records a media id for that day (the account itself is still checked)"
         type: boolean
         required: false
         default: false
@@ -23,6 +44,12 @@ permissions:
   # write: the recovery post is written back to data/performance-history.json,
   # or the media id of this post would never reach the PDCA report.
   contents: write
+  actions: read # the gate lists daily-video.yml runs; day-run-captions.mjs downloads its artifact
+
+# One retry at a time: two queued retries must not both post the same Reel.
+concurrency:
+  group: figma-retry-instagram
+  cancel-in-progress: false
 
 jobs:
   post:
@@ -42,68 +69,75 @@ jobs:
           node-version: 22
           cache: npm
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Resolve date
-        id: date
-        env:
-          TZ: Asia/Tokyo
-          INPUT_DATE: ${{ inputs.date }}
-        run: |
-          DATE="$INPUT_DATE"
-          if [ -z "$DATE" ]; then
-            DATE=$(date +%Y%m%d)
-          fi
-          case "$DATE" in
-            [0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]) ;;
-            *) echo "::error title=Bad date::date must be YYYYMMDD, got '$DATE'"; exit 1 ;;
-          esac
-          echo "date=$DATE" >> "$GITHUB_OUTPUT"
-          echo "Using date: $DATE"
-
-      - name: Download video from GitHub Release
+      - name: Is this an Instagram-only failure? (record has YouTube, no Instagram)
+        id: gate
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DATE: ${{ steps.date.outputs.date }}
+          EVENT_SCHEDULE: ${{ github.event.schedule }}
+          INPUT_DATE: ${{ inputs.date }}
+          FORCE: ${{ inputs.force }}
+        run: node scripts/ig-auto-retry.mjs gate --records=data/performance-history.json --post-time=08:15 --last-slot="22 11 * * *" --force="$FORCE" ${INPUT_DATE:+"--date=$INPUT_DATE"}
+
+      - name: Install dependencies
+        if: steps.gate.outputs.go == 'true'
+        run: npm ci
+
+      - name: Download video from GitHub Release
+        if: steps.gate.outputs.go == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DATE: ${{ steps.gate.outputs.stamp }}
         run: |
           mkdir -p output
           gh release download "v${DATE}" -p "aitools-${DATE}.mp4" -D output/
           # Cover is optional — older releases may not have it
           gh release download "v${DATE}" -p "aitools-${DATE}-cover.jpg" -D output/ || echo "No cover asset in release"
 
-      # The video comes from a Release, the captions from the working tree. If
-      # they are not the same day, the post would describe tools the video never
-      # shows — stop before anything is uploaded.
-      - name: Guard — captions must belong to the same day as the video
-        env:
-          DATE: ${{ steps.date.outputs.date }}
-        run: node scripts/assert-data-date.mjs "$DATE"
-
-      # Instagram has no idempotency key: a second run publishes the same Reel
-      # again. The history is the record of what already went out.
-      - name: Guard — this day is not on Instagram yet
-        if: inputs.force != true
-        env:
-          DATE: ${{ steps.date.outputs.date }}
-        run: node scripts/assert-not-posted.mjs "$DATE"
-
-      - name: Prepare data + captions
+      # The caption must be the one the video went out with. The daily run's
+      # artifact keeps it; only a hand-run on an older day (artifact expired)
+      # regenerates it — and then only from the same day's data.
+      - name: Captions the video went out with
+        if: steps.gate.outputs.go == 'true'
         env:
           TZ: Asia/Tokyo
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DATE: ${{ steps.gate.outputs.stamp }}
+          EVENT: ${{ github.event_name }}
         run: |
+          set -euo pipefail
+          if node scripts/day-run-captions.mjs --date="$DATE"; then exit 0; fi
+          if [ "$EVENT" = schedule ]; then
+            echo "::error title=Instagram retry stopped::not regenerating a caption on a schedule"
+            exit 1
+          fi
+          # The video comes from a Release, the captions from the working tree. If
+          # they are not the same day, the post would describe tools the video never
+          # shows — stop before anything is uploaded.
+          node scripts/assert-data-date.mjs "$DATE"
           node scripts/generate-data.mjs
           node scripts/generate-caption.mjs
 
-      - name: Upload to Instagram (resumable)
+      - name: Fits a Reel, and not on Instagram yet?
+        id: check
+        if: steps.gate.outputs.go == 'true'
         env:
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
           INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
-          DATE: ${{ steps.date.outputs.date }}
+          DATE: ${{ steps.gate.outputs.stamp }}
+        run: node scripts/ig-auto-retry.mjs check --file="output/aitools-${DATE}.mp4" --captions=output/captions.json --stamp="$DATE"
+
+      - name: Upload to Instagram (resumable)
+        id: upload
+        if: steps.gate.outputs.go == 'true' && steps.check.outputs.posted == 'false'
+        continue-on-error: ${{ steps.gate.outputs.final != 'true' }}
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+          DATE: ${{ steps.gate.outputs.stamp }}
         run: |
           set -euo pipefail
-
           # The Reels cover: this path has no audio durations to derive the
           # offset from (the mp4 comes from a Release), so read back the value
           # the daily run recorded for that day. A constant cannot do the job —
@@ -120,15 +154,21 @@ jobs:
           # code 9004. upload-instagram.mjs falls back to thumb_offset.
           node scripts/upload-instagram.mjs --file="output/aitools-${DATE}.mp4"
 
+      - name: Not yet — the next slot tries again
+        if: steps.upload.outcome == 'failure'
+        run: echo "::warning title=Instagram retry::the upload failed again; a later retry slot tries the same video (the last slot turns red if it still fails)"
+
       # Without this the recovery post never reaches performance-history.json,
       # so the day is missing from the IG median and the saved-count that decide
-      # the genre trial.
+      # the genre trial. Also runs when the check found the day already on
+      # Instagram (a publish whose reply was lost) — its media id is recorded.
       - name: Record the post
+        if: always() && steps.gate.outputs.go == 'true' && hashFiles('output/instagram-result.json') != ''
         env:
           TZ: Asia/Tokyo
           # The day being recovered, not today: recording an older post as today
           # would invent an entry for today and leave the real day unrecorded.
-          RECORD_DATE: ${{ steps.date.outputs.date }}
+          RECORD_DATE: ${{ steps.gate.outputs.stamp }}
         run: |
           set -euo pipefail
           node scripts/record-upload.mjs
