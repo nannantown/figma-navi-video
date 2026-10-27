@@ -51,8 +51,11 @@ export function deliverJev({ expected, history = null, pr, head, prepare = false
     throw new Error(`PR #${pr} must change only ${EPISODES_PATH}, today's PDCA report and ${READINGS_PATH}`);
   }
   if (files.some((f) => f.filename === READINGS_PATH)) {
+    // The routine only ADDS readings (kana, reading-sized); entries already on main stay as they are.
     const readings = remoteJson(run, READINGS_PATH, head);
+    const onMain = remoteJson(run, READINGS_PATH, "main");
     const problems = Object.entries(readings).filter(([k]) => !k.startsWith("_")).map(([k, v]) => readingProblem(k, v)).filter(Boolean);
+    for (const [k, v] of Object.entries(onMain)) if (readings[k] !== v) problems.push(`「${k}」 is on main and must stay as it is (${JSON.stringify(v)})`);
     if (problems.length) throw new Error(`PR #${pr} ${READINGS_PATH} has bad readings:\n${problems.join("\n")}`);
   }
   const main = remoteLedger(run, EPISODES_PATH);

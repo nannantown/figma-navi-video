@@ -140,16 +140,21 @@ test("unexpected PR files fail preparation", () => {
 });
 
 test("new readings for the voice may ride along, but only kana readings at the PR head", () => {
+  const b64 = (o) => JSON.stringify({ encoding: "base64", content: Buffer.from(JSON.stringify(o)).toString("base64") });
+  const onMain = { _about: "x", Claude: "クロード" };
   const withReadings = (readings) => {
     const f = fixture({ files: [{ filename: "data/jev-episodes.json" }, { filename: `docs/pdca/${date}.md` }, { filename: "data/tts-readings.json" }], info: { changed_files: 3 } });
     const inner = f.args.run;
-    f.args.run = (args) => (args[1].endsWith(`contents/data/tts-readings.json?ref=${head}`)
-      ? JSON.stringify({ encoding: "base64", content: Buffer.from(JSON.stringify(readings)).toString("base64") })
-      : inner(args));
+    f.args.run = (args) =>
+      args[1].endsWith(`contents/data/tts-readings.json?ref=${head}`) ? b64(readings)
+      : args[1].endsWith("contents/data/tts-readings.json?ref=main") ? b64(onMain)
+      : inner(args);
     return f;
   };
-  assert.equal(deliverJev({ ...withReadings({ _about: "x", 仮名: "かめい" }).args, prepare: true }).readyForReview, true);
-  assert.throws(() => deliverJev({ ...withReadings({ 仮名: "有料プラン" }).args, prepare: true }), /bad readings/);
+  assert.equal(deliverJev({ ...withReadings({ ...onMain, 仮名: "かめい" }).args, prepare: true }).readyForReview, true);
+  assert.throws(() => deliverJev({ ...withReadings({ ...onMain, 仮名: "有料プラン" }).args, prepare: true }), /bad readings/);
+  assert.throws(() => deliverJev({ ...withReadings({ _about: "x", Claude: "くろーだ", 仮名: "かめい" }).args, prepare: true }), /on main and must stay/);
+  assert.throws(() => deliverJev({ ...withReadings({ 仮名: "かめい" }).args, prepare: true }), /on main and must stay/);
   const renamed = fixture({ files: [{ filename: "data/jev-episodes.json" }, { filename: "data/tts-readings.json", previous_filename: ".github/workflows/daily-video.yml" }] });
   assert.throws(() => deliverJev({ ...renamed.args, prepare: true }), /must change only/);
 });
