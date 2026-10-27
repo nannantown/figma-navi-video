@@ -117,6 +117,19 @@ node scripts/jev.mjs validate
 - `no dollar amounts` → 円に換算する
 - `was posted but is missing or changed` → 過去の回を消した・書き換えた。main の台帳から元に戻す
 
+### 5.5 読みの確認（必須・新しい難読語は読みを決めてから）
+
+声（Edge TTS）は漢字・英字の読みを自分で推し量り、ときどき間違える（2026-10-27 の実測: 「仮名にしてから」の仮名（かめい）→「かな」）。字幕・画面・キャプションは原稿の表記のまま、**声だけ**を `data/tts-readings.json`（`"表記": "よみ"`）で読み替える仕組みがある（`scripts/tts-reading.mjs`。音声を作る直前に効き、字幕の単語・メイの吹き出し・リールの字幕は元の表記に戻る）。
+
+```bash
+node scripts/tts-reading.mjs --data=data/ai-lesson-episodes.json --date=$TODAY
+```
+
+- `*` の行が読み替わる行（`->` が声に渡る文）。最後に「声が自分で読みを決める語」（英字・2 字以上の漢字の語）が出る
+- その一覧のうち、**サービス・会社・機能の名前などの固有名詞、英字の語や略語、専門用語、読みが 2 通りある語（例: 仮名）、数と単位** は、読みを決めて `data/tts-readings.json` に足す（読みはひらがな・カタカナだけ。迷ったら足す — 足しても画面は変わらない）。ふだんの言葉は足さなくてよい
+- 辞書の読みが今日の文脈では違うときは、その語を消さずに、もっと長い表記で足す（長い方が先に当たる）
+- 読みの決まっていない語を残したまま commit しない。足した語はレポートに 1 行。`data/tts-readings.json` は今日の PR に入れてよい（`deliver-jev.mjs` が許す 3 つ目のファイル。読みがかなだけかも確かめる）
+
 ### 6. main に反映する（PR 経由）
 
 この環境では `git push origin main` が失敗しても気づけないことがあるため、当日の branch にコミット → PR 作成 → **完全な差分をレビュー** → 別の操作で squash merge → main の着弾確認、の順に行う。`deliver-jev.mjs` は読み取り専用（名前は Jev 時代のままだが、`data/content-format.json` が `lesson` なら `data/ai-lesson-episodes.json` を見る）。各段階は**別のツール呼び出し**で行う。既存の認証で REST API を使う。
@@ -130,7 +143,7 @@ TODAY=$(TZ=Asia/Tokyo date +%Y-%m-%d)
 BRANCH="routine-content-$TODAY"
 git checkout -b "$BRANCH" 2>/dev/null || git checkout "$BRANCH"
 mkdir -p docs/pdca
-git add data/ai-lesson-episodes.json docs/pdca/$TODAY.md
+git add data/ai-lesson-episodes.json data/tts-readings.json docs/pdca/$TODAY.md
 git commit -m "Content: AI lesson $TODAY [topic_key] [skip ci]"
 VALIDATED_HEAD=$(git rev-parse HEAD)
 git push -u origin "$BRANCH"
@@ -156,7 +169,7 @@ gh api --method GET repos/nannantown/figma-navi-video/pulls/$PR_NUMBER \
 
 - 台帳の過去回は不変、追加は今日 JST の 1 回だけ。
 - 頼み方の文がそのまま貼って使える、初心者に分かる、有料プラン・誇大表現・GitHub が無い、答えの例が作り話の事実を含まない、注意のひとことがある。
-- 変更は `data/ai-lesson-episodes.json` と今日の PDCA のみ。workflow、trigger、credentials、権限設定やネタ帳の変更を含まない。
+- 変更は `data/ai-lesson-episodes.json` と今日の PDCA（と、読みを足した日は `data/tts-readings.json`。読みはかなだけ）のみ。workflow、trigger、credentials、権限設定やネタ帳の変更を含まない。
 
 問題があれば直して手順 5 とレビューを新しい SHA でやり直す。レビュー後、別の読み取り呼び出しで `--prepare` をもう一度実行する。
 

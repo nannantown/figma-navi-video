@@ -9,6 +9,7 @@ import { fileURLToPath } from "node:url";
 import { isDeepStrictEqual } from "node:util";
 import { todayJst } from "./enriched-schema.mjs";
 import { SERIES, cliSeries, validateEpisodes, airedCheck } from "./jev.mjs";
+import { readingProblem } from "./tts-reading.mjs";
 
 export const REPO = "nannantown/figma-navi-video";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -18,11 +19,13 @@ function apiJson(run, path) {
   return JSON.parse(run(["api", `repos/${REPO}/${path}`, "--method", "GET"]));
 }
 
-function remoteLedger(run, ledgerPath) {
-  const file = apiJson(run, `contents/${ledgerPath}?ref=main`);
-  if (file.encoding !== "base64" || typeof file.content !== "string") throw new Error(`Cannot read main ${ledgerPath}: GitHub contents response is not base64 JSON`);
+function remoteJson(run, path, ref) {
+  const file = apiJson(run, `contents/${path}?ref=${ref}`);
+  if (file.encoding !== "base64" || typeof file.content !== "string") throw new Error(`Cannot read ${ref} ${path}: GitHub contents response is not base64 JSON`);
   return JSON.parse(Buffer.from(file.content, "base64").toString("utf8"));
 }
+const remoteLedger = (run, ledgerPath) => remoteJson(run, ledgerPath, "main");
+const READINGS_PATH = "data/tts-readings.json";
 
 /** Inject gh/time in tests. All gh requests here are GET, including --prepare. */
 export function deliverJev({ expected, history = null, pr, head, prepare = false, run = cliRun, now = () => new Date(), log = console.log, checkAired = airedCheck, series = SERIES.jev }) {
@@ -42,9 +45,15 @@ export function deliverJev({ expected, history = null, pr, head, prepare = false
   if (!info.merged && info.state !== "open") throw new Error(`PR #${pr} is closed without a merge`);
   if (!info.merged && info.mergeable === false) throw new Error(`PR #${pr} has conflicts; stop and validate against current main`);
   const files = apiJson(run, `pulls/${pr}/files?per_page=100`);
-  const allowed = new Set([EPISODES_PATH, `docs/pdca/${date}.md`]);
+  // The readings of new words for the voice (data/tts-readings.json, routine step "読みの確認") may ride along.
+  const allowed = new Set([EPISODES_PATH, `docs/pdca/${date}.md`, READINGS_PATH]);
   if (!Array.isArray(files) || files.length !== info.changed_files || !files.some((f) => f.filename === EPISODES_PATH) || files.some((f) => !allowed.has(f.filename) || (f.previous_filename && !allowed.has(f.previous_filename)))) {
-    throw new Error(`PR #${pr} must change only ${EPISODES_PATH} and today's PDCA report`);
+    throw new Error(`PR #${pr} must change only ${EPISODES_PATH}, today's PDCA report and ${READINGS_PATH}`);
+  }
+  if (files.some((f) => f.filename === READINGS_PATH)) {
+    const readings = remoteJson(run, READINGS_PATH, head);
+    const problems = Object.entries(readings).filter(([k]) => !k.startsWith("_")).map(([k, v]) => readingProblem(k, v)).filter(Boolean);
+    if (problems.length) throw new Error(`PR #${pr} ${READINGS_PATH} has bad readings:\n${problems.join("\n")}`);
   }
   const main = remoteLedger(run, EPISODES_PATH);
   assertToday();
