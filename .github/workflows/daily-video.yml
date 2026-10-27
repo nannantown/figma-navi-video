@@ -27,6 +27,17 @@ on:
 permissions:
   contents: write
 
+# The production run (main, not dry_run) shares one queue with
+# post-today-instagram.yml: the daily post and an Instagram retry never post at
+# the same time. queue: max — a waiting run is never cancelled by a third one
+# (GitHub's default would drop the waiting 08:15 run without turning anything
+# red). Verification runs (dry_run, other refs, a branch .recovery-trigger)
+# get a group of their own and never wait for or replace the production run.
+concurrency:
+  group: ${{ (github.ref == 'refs/heads/main' && inputs.dry_run != true) && 'sns-posting' || format('daily-video-verify-{0}', github.run_id) }}
+  queue: max
+  cancel-in-progress: false
+
 jobs:
   generate-video:
     runs-on: ubuntu-latest
