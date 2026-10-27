@@ -5,7 +5,9 @@
  * the video AND output/captions.json. The artifact whose video is byte-for-byte
  * the Release's (SHA-256) holds the caption of that post → output/captions.json
  * (+ output/trending-data.json, the day's data record-upload.mjs reads).
- * No match → exit 1 (a scheduled retry never regenerates a caption).
+ * No match among the day's artifacts → exit 2 (a scheduled retry never
+ * regenerates a caption, and no later slot can find it either); a gh failure,
+ * or an artifact that could not be downloaded → exit 1 (may pass next time).
  */
 import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
@@ -28,12 +30,14 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   const video = `output/aitools-${stamp}.mp4`;
   const want = sha(video);
   const runs = JSON.parse(execFileSync("gh", ["run", "list", "--workflow", "daily-video.yml", "--limit", "30", "--json", "databaseId,number,createdAt"], { encoding: "utf-8" }));
+  let unreadable = 0;
   for (const run of runsOfDay(runs, stamp)) {
     const dir = mkdtempSync(join(tmpdir(), "day-run-"));
     try {
       execFileSync("gh", ["run", "download", String(run.databaseId), "-n", `aitools-video-${run.number}`, "-D", dir], { stdio: "inherit" });
     } catch {
-      continue; // no artifact (cancelled before upload, expired)
+      unreadable++; // no artifact (cancelled before upload, expired) — or a passing gh failure
+      continue;
     }
     const v = join(dir, `aitools-${stamp}.mp4`);
     const c = join(dir, "captions.json");
@@ -47,5 +51,5 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     }
   }
   console.error(`::error title=No captions::no daily-video.yml artifact of ${stamp} holds the Release's video — the caption it went out with is unknown`);
-  process.exit(1);
+  process.exit(unreadable ? 1 : 2);
 }

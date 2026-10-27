@@ -27,6 +27,12 @@ on:
 permissions:
   contents: write
 
+# Shared with post-today-instagram.yml: the daily post and an Instagram retry
+# (or a second daily run) never post at the same time.
+concurrency:
+  group: sns-posting
+  cancel-in-progress: false
+
 jobs:
   generate-video:
     runs-on: ubuntu-latest
