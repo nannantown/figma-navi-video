@@ -2,61 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "IY3EsFPb4xI",
-      "videoUrl": "https://youtube.com/shorts/IY3EsFPb4xI",
-      "date": "2026-07-29",
-      "title": "【デザインニュース】AIデザインスタジオTRIONNがAwwwards昨日1位、駆け出しは4スタックより『音』を1個盗む｜2026/07/29 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 47,
-      "discovery": {
-        "method": "product-launches",
-        "description": "Awwwards Site of the Day 2026-07-28 に AI-powered digital studio TRIONN のポートフォリオサイトが選出されたことを検出。Awwwards TRIONN ページ / CSS Design Awards / Codrops 技術解説 / 創業者 (Sunny Rathod) LinkedIn を横断し、GSAP + Three.js + Lenis + Web Audio の 4 スタック合体を 4 ヶ月構築という技術内訳と『音の使い方』を一次取得。product-launches (Awwwards SOTD = strategy Discovery Methods の Product Hunt / Awwwards / Dribbble Trending 直下) を Exploit で採用。07-28 PDCA §Method 提案①『明日 07-29 (Wed) は product-launches or news-ja が第一候補』に完全合致、4 日空きで 2-day rule (07-27 official-src / 07-28 social-en ブロック) / 7-day-2-time (product-launches 1 回目 → 2 回目 = OK) / WORST 凍結 全ガード clear。news-ja は fresh 日本語ソース未確保のため次サイクル送り。10 日で 3 件目の Awwwards SOTD だが、07-19 (個人開発者の技術見本 7000 粒子) / 07-25 (個人の 2 色制約) と重複しない『AI スタジオ / 4 スタック合体 / 音 (Web Audio)』角度で差別化。柱⑤ (portfolio事例) 主 + 柱④ (Tips / 音を 1 個添える具体 action) 副、柱③ (+9pt 超過) を追加しない選択で自然圧縮継続。Primary persona (駆け出しデザイナー) の『真似できない受賞作を見て手が止まる』病に『4 スタックは真似せず音 1 個だけ盗む』具体 action で直撃、AI = 補助輪フレーム維持 (『選択肢を素早く出す道具、選ぶのはあなた』)。",
-        "sources": [
-          "https://www.awwwards.com/sites/trionn-2",
-          "https://www.awwwards.com/trionn/",
-          "https://www.cssdesignawards.com/sites/trionn/49548/",
-          "https://tympanus.net/codrops/2026/07/15/the-architecture-behind-trionn-coordinating-gsap-three-js-lenis-and-web-audio/",
-          "https://www.linkedin.com/in/sunnyrathod/"
-        ],
-        "query": "Awwwards Site of the Day July 28 2026 TRIONN AI digital studio GSAP Three.js Lenis Web Audio 4 stack portfolio",
-        "freshness_hours": 28
-      },
-      "stats": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-08-12T23:57:40.491Z"
-      },
-      "instagram": {
-        "mediaId": "18024700487847730",
-        "permalink": "https://www.instagram.com/reel/DbWy8oZDnhY/",
-        "views": 117,
-        "reach": 114,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "2m_0aPqhltM",
       "videoUrl": "https://youtube.com/shorts/2m_0aPqhltM",
       "date": "2026-07-30",
@@ -3921,7 +3866,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-27T02:31:22.841Z"
+        "updatedAt": "2026-10-28T02:14:28.787Z"
       },
       "instagram": {
         "mediaId": "18060946787535736",
@@ -4004,7 +3949,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-27T02:31:22.841Z"
+        "updatedAt": "2026-10-28T02:14:28.787Z"
       },
       "instagram": null,
       "jev": {
@@ -4083,7 +4028,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-27T02:31:22.841Z"
+        "updatedAt": "2026-10-28T02:14:28.787Z"
       },
       "instagram": null,
       "jev": {
@@ -4152,7 +4097,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-27T02:31:22.841Z"
+        "updatedAt": "2026-10-28T02:14:28.787Z"
       },
       "instagram": {
         "mediaId": "18014511812978403",
@@ -4163,7 +4108,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-27T02:31:22.842Z"
+        "updatedAt": "2026-10-28T02:14:28.788Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4213,7 +4158,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-27T02:31:22.841Z"
+        "updatedAt": "2026-10-28T02:14:28.787Z"
       },
       "instagram": {
         "mediaId": "18115514255520326",
@@ -4224,7 +4169,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-27T02:31:22.842Z"
+        "updatedAt": "2026-10-28T02:14:28.788Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4276,18 +4221,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-10-28T02:14:28.787Z"
       },
       "instagram": {
         "mediaId": "17954212068313509",
-        "permalink": null,
-        "views": null,
-        "reach": null,
-        "likes": null,
-        "comments": null,
-        "shares": null,
-        "saved": null,
-        "updatedAt": null
+        "permalink": "https://www.instagram.com/reel/De-ywOlilo3/",
+        "views": 2,
+        "reach": 2,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-10-28T02:14:28.788Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4306,16 +4251,70 @@
         "prompt": "エクセルで、A列の日付が今月のものだけ、B列の金額を合計する式を教えてください。",
         "fallback": true
       }
+    },
+    {
+      "videoId": "CDua3GJ20EI",
+      "videoUrl": "https://youtube.com/shorts/CDua3GJ20EI",
+      "date": "2026-10-28",
+      "genre": "ai-lesson",
+      "trial": 4,
+      "title": "【AI仕事術】資料は目次から作る｜2026/10/28 #Shorts",
+      "titleTemplate": "ai-lesson",
+      "hashtags": [
+        "AI活用",
+        "ChatGPT",
+        "生成AI",
+        "仕事術",
+        "業務効率化",
+        "AIの使い方",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "資料は目次から作る"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": ""
+      },
+      "durationSeconds": 41,
+      "coverOffsetMs": 4867,
+      "look": "reel",
+      "discovery": {
+        "method": "lesson",
+        "description": "説明資料の目次を先に作ってもらう",
+        "sources": []
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "17903344620374199",
+        "permalink": null,
+        "views": null,
+        "reach": null,
+        "likes": null,
+        "comments": null,
+        "shares": null,
+        "saved": null,
+        "updatedAt": null
+      },
+      "jev": {
+        "kind": "lesson",
+        "topicKey": "slides-outline-five",
+        "topic": "説明資料の目次を先に作ってもらう",
+        "sources": [],
+        "pillar": "slides",
+        "prompt": "新しい勤怠システムを社内に説明する資料の目次を、スライド5枚分の見出しで作ってください。",
+        "fallback": true
+      }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-09-29",
-      "changes": [
-        "Day performance: Mon=1, Tue=1, Thu=1, Fri=1, Sat=1, Sun=1, Wed=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-09-30",
       "changes": [
@@ -4518,6 +4517,13 @@
         "Day performance: Tue=1, Wed=1, Thu=1, Fri=1, Sun=1, Mon=1, Sat=0"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-10-28",
+      "changes": [
+        "Day performance: Wed=1, Thu=1, Fri=1, Sun=1, Mon=1, Tue=1, Sat=0"
+      ],
+      "recommendedTemplate": "standard"
     }
   ],
   "account": {
@@ -4624,6 +4630,10 @@
       },
       {
         "date": "2026-10-27",
+        "count": 0
+      },
+      {
+        "date": "2026-10-28",
         "count": 0
       }
     ]
