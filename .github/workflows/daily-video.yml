@@ -218,6 +218,7 @@ jobs:
           path: |
             output/aitools-*.mp4
             output/aitools-*-cover.jpg
+            output/youtube-thumbnail.jpg
             output/captions.json
             output/trending-data.json
             output/skip.json

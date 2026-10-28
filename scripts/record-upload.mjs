@@ -13,6 +13,7 @@ import { fileURLToPath } from "url";
 import { GENRE, TRIAL } from "./enriched-schema.mjs";
 import { buildSkipEntry, upsertVideo } from "./history.mjs";
 import { coverOffsetMs } from "./cover-frame.mjs";
+import { summarizeThumbnail } from "./ig-cover.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
@@ -102,6 +103,9 @@ export function buildPostEntry({ date, uploadResult, igResult, trendingData, cap
     coverOffsetMs:
       render?.coverOffsetMs ?? (audioDurations && tools.length > 0 ? coverOffsetMs(audioDurations, tools.length) : null),
     ...(render?.look ? { look: render.look } : {}),
+    // Whether YouTube took the Instagram cover as its thumbnail (ig-cover.mjs):
+    // "set" / "error:forbidden" (channel not allowed yet) / "skipped:…". Absent = not tried.
+    ...(uploadResult?.thumbnail ? { ytThumbnail: summarizeThumbnail(uploadResult.thumbnail) } : {}),
     discovery: enriched?.discovery || null,
     stats: { views: 0, likes: 0, comments: 0, updatedAt: null },
     // Metrics are filled by fetch-stats.mjs (IG insights lag up to 48h)

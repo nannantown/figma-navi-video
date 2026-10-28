@@ -14,6 +14,7 @@ import { google } from "googleapis";
 import { readFileSync, writeFileSync, createReadStream } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
+import { instagramThumbOffsetMs, setThumbnailFromInstagramCover } from "./ig-cover.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const outputDir = join(__dirname, "..", "output");
@@ -93,9 +94,17 @@ async function main() {
   const videoUrl = `https://youtube.com/shorts/${videoId}`;
   console.log(`  Uploaded! ${videoUrl}`);
 
-  // Persist upload result for analytics tracking
+  // Persist upload result first — record-upload.mjs needs it even if the thumbnail step hangs
+  const resultPath = join(outputDir, "upload-result.json");
   const uploadResult = { videoId, videoUrl, uploadedAt: new Date().toISOString() };
-  writeFileSync(join(outputDir, "upload-result.json"), JSON.stringify(uploadResult, null, 2));
+  writeFileSync(resultPath, JSON.stringify(uploadResult, null, 2));
+  // The thumbnail is the Instagram cover: the same frame of the same file (ig-cover.mjs).
+  // Never blocks: a channel that may not set custom thumbnails keeps YouTube's frame.
+  uploadResult.thumbnail = await setThumbnailFromInstagramCover({
+    youtube, videoId, video: videoPath, offsetMs: instagramThumbOffsetMs(),
+    out: join(outputDir, "youtube-thumbnail.jpg"),
+  });
+  writeFileSync(resultPath, JSON.stringify(uploadResult, null, 2));
 
   return { videoId, videoUrl };
 }
