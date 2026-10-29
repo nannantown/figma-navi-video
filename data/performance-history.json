@@ -2,62 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "2m_0aPqhltM",
-      "videoUrl": "https://youtube.com/shorts/2m_0aPqhltM",
-      "date": "2026-07-30",
-      "title": "【デザインニュース】UX Pilotが7/29に1日連続v143更新、10万インストールAIプラグイン｜2026/07/30 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 50,
-      "discovery": {
-        "method": "figma-community",
-        "description": "Figma Community 上位 AI プラグイン群の直近版数更新を横断調査し、UX Pilot (community/plugin/1257688030051249633) が 07-29 に v142 と v143 を 1 日で連続リリースした事実を検出。100K+ インストールを持つ Figma 公式 Community トップ層 AI UI ジェネレーターで、テキスト 1 行から高解像度ワイヤー 15 画面が数分で並ぶ、無料 90 クレジット / Standard 月 15 ドルの beginner-friendly 価格帯。昨日 07-29 PDCA §Method 提案①『明日 07-30 (Thu) は figma-community が第一候補』に完全合致、4 日空きで 2-day rule / 7-day-2-time / WORST 凍結 全ガード clear。柱② プラグイン/エコシステム (-5.7pt) を直撃修復、柱① Figma 公式 Community 上位トレンド (-3.6pt) を副次補強。Primary persona (駆け出しデザイナー志望者) の『白紙のワイヤーで 30 分止まる』pain 直撃、AI = 補助輪フレーム維持で『AI は下書き機、選ぶのは人』に着地。UX Pilot は Figmaナビ の直接競合カテゴリだが、戦略柱② 明文『AI 系ツールの新着、Figmaナビ も自然にここで紹介』に沿い、日本語対応 ¥980 の同ジャンル選択肢として自社を並列位置づけ、強い購買 CTA は避けて選択肢提示に留める。",
-        "sources": [
-          "https://www.figma.com/community/plugin/1257688030051249633/ux-pilot-ai-ui-generator-design-system-wireframe-generator",
-          "https://uxpilot.ai/figma-ai",
-          "https://uxpilot.ai/blogs/best-figma-ai-plugins",
-          "https://dupple.com/reviews/ux-pilot",
-          "https://flowstep.ai/blog/ux-pilot-pricing/",
-          "https://aigearbase.com/tool/ux-pilot"
-        ],
-        "query": "UX Pilot Figma plugin version 143 142 July 29 2026 AI UI generator wireframe 100k installs",
-        "freshness_hours": 30
-      },
-      "stats": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-08-13T23:58:22.653Z"
-      },
-      "instagram": {
-        "mediaId": "18118048486687486",
-        "permalink": "https://www.instagram.com/reel/DbZYYpuilSm/",
-        "views": 109,
-        "reach": 105,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "PeLoYR3qck8",
       "videoUrl": "https://youtube.com/shorts/PeLoYR3qck8",
       "date": "2026-07-31",
@@ -3866,7 +3810,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-28T02:14:28.787Z"
+        "updatedAt": "2026-10-29T02:26:42.027Z"
       },
       "instagram": {
         "mediaId": "18060946787535736",
@@ -3949,7 +3893,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-28T02:14:28.787Z"
+        "updatedAt": "2026-10-29T02:26:42.027Z"
       },
       "instagram": null,
       "jev": {
@@ -4028,7 +3972,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-28T02:14:28.787Z"
+        "updatedAt": "2026-10-29T02:26:42.027Z"
       },
       "instagram": null,
       "jev": {
@@ -4097,7 +4041,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-28T02:14:28.787Z"
+        "updatedAt": "2026-10-29T02:26:42.027Z"
       },
       "instagram": {
         "mediaId": "18014511812978403",
@@ -4108,7 +4052,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-28T02:14:28.788Z"
+        "updatedAt": "2026-10-29T02:26:42.028Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4158,7 +4102,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-28T02:14:28.787Z"
+        "updatedAt": "2026-10-29T02:26:42.027Z"
       },
       "instagram": {
         "mediaId": "18115514255520326",
@@ -4169,7 +4113,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-28T02:14:28.788Z"
+        "updatedAt": "2026-10-29T02:26:42.028Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4221,7 +4165,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-28T02:14:28.787Z"
+        "updatedAt": "2026-10-29T02:26:42.027Z"
       },
       "instagram": {
         "mediaId": "17954212068313509",
@@ -4232,7 +4176,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-28T02:14:28.788Z"
+        "updatedAt": "2026-10-29T02:26:42.028Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4290,10 +4234,72 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-10-29T02:26:42.027Z"
       },
       "instagram": {
         "mediaId": "17903344620374199",
+        "permalink": "https://www.instagram.com/reel/DfBVvCdgpWm/",
+        "views": 28,
+        "reach": 30,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-10-29T02:26:42.028Z"
+      },
+      "jev": {
+        "kind": "lesson",
+        "topicKey": "slides-outline-five",
+        "topic": "説明資料の目次を先に作ってもらう",
+        "sources": [],
+        "pillar": "slides",
+        "prompt": "新しい勤怠システムを社内に説明する資料の目次を、スライド5枚分の見出しで作ってください。",
+        "fallback": true
+      }
+    },
+    {
+      "videoId": "bwqp6v3GpnU",
+      "videoUrl": "https://youtube.com/shorts/bwqp6v3GpnU",
+      "date": "2026-10-29",
+      "genre": "ai-lesson",
+      "trial": 4,
+      "title": "【AI仕事術】知らない言葉は例つきで聞く｜2026/10/29 #Shorts",
+      "titleTemplate": "ai-lesson",
+      "hashtags": [
+        "AI活用",
+        "ChatGPT",
+        "生成AI",
+        "仕事術",
+        "業務効率化",
+        "AIの使い方",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "知らない言葉は例つきで聞く"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": ""
+      },
+      "durationSeconds": 40,
+      "coverOffsetMs": 3833,
+      "look": "reel",
+      "ytThumbnail": "set",
+      "discovery": {
+        "method": "lesson",
+        "description": "知らない言葉をやさしく説明してもらう",
+        "sources": []
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "18098503742111365",
         "permalink": null,
         "views": null,
         "reach": null,
@@ -4305,23 +4311,16 @@
       },
       "jev": {
         "kind": "lesson",
-        "topicKey": "slides-outline-five",
-        "topic": "説明資料の目次を先に作ってもらう",
+        "topicKey": "research-explain-simple",
+        "topic": "知らない言葉をやさしく説明してもらう",
         "sources": [],
-        "pillar": "slides",
-        "prompt": "新しい勤怠システムを社内に説明する資料の目次を、スライド5枚分の見出しで作ってください。",
+        "pillar": "research",
+        "prompt": "「ガントチャート」を、中学生にも分かる言葉で、身近な例を1つ入れて説明してください。",
         "fallback": true
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-09-30",
-      "changes": [
-        "Day performance: Mon=1, Tue=1, Thu=1, Fri=1, Sat=1, Sun=1, Wed=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-10-01",
       "changes": [
@@ -4524,6 +4523,13 @@
         "Day performance: Wed=1, Thu=1, Fri=1, Sun=1, Mon=1, Tue=1, Sat=0"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-10-29",
+      "changes": [
+        "Day performance: Thu=1, Fri=1, Sun=1, Mon=1, Tue=1, Wed=1, Sat=0"
+      ],
+      "recommendedTemplate": "standard"
     }
   ],
   "account": {
@@ -4634,6 +4640,10 @@
       },
       {
         "date": "2026-10-28",
+        "count": 0
+      },
+      {
+        "date": "2026-10-29",
         "count": 0
       }
     ]
