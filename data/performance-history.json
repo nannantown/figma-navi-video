@@ -2,61 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "PeLoYR3qck8",
-      "videoUrl": "https://youtube.com/shorts/PeLoYR3qck8",
-      "date": "2026-07-31",
-      "title": "【デザインニュース】Figma自社ブランドチームがConfig 2026のビジュアルアイデンティティ設計を解説｜2026/07/31 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 47,
-      "discovery": {
-        "method": "official-src",
-        "description": "Figma 公式ブログを直接巡回し、07-27 公開の Matt Alagiah 執筆記事『Digital Tools, Human Expression: The Visual Identity Behind Config 2026』を一次取得。Chelsea White 率いる Figma Brand Studio が Config 2026 conference のビジュアルアイデンティティを設計した過程を解説、テーマ『Digital Tools, Human Expression』を『グリフ (glyphs)』という3段階変化するモチーフ (手書き風→生成風→シャープ)、プロンプト生成テクスチャ、構造化コンポジションで表現し AI 感と人間の手仕事を両立する craft を紹介。method 選定 (Friday weekday): TOP3 候補で図式化: figma-community (07-30昨日で直近2日抵触)、product-launches (07-29 で直近2日抵触)、social-en (07-28 で直近2日抵触)、news-en (07-24=7日前=window ぎりぎり外、昨日 PDCA 第一候補) と official-src (07-27=4日前=直近2日OK、7day-2-time 1回OK) の 2 method が今日利用可能。今朝の実調査 (WebSearch 6 ラウンド) で news-en 候補は Runway Aleph 2.0 × Figma Weave (06-18 発表で 168h NG 超過)、MCP 2026-07-28 spec release (Primary persona 直撃度低)、NN/g 07-24 curated-context (直近14日 NN/g 2 度消化済で重複)、Adobe Illustrator July 2026 (07-24 直近重複)、Prelint (開発者向け) と全候補が却下されたため、代替として official-src の 07-27 Figma Blog 新着記事に切替。official-src を Exploit 採用、柱① Figma公式ニュース (-3.6pt) を直撃修復。Primary persona (aspiring designers) 直撃: 駆け出しが最も学びたい『AI 時代のブランド設計の craft』を Figma 自社の実案件解説から吸収できる希少な公式教材。NG パターン回避: AI = 補助輪 (テーマそのものが人の craft と AI の両立)、プロ向け高度議論回避 (グリフの3段階変化という1コンセプトに絞る)、プラグイン機能説明メイン回避 (Figma 自社の設計事例)、駆け出しの視点で『判断基準を学べる教材』として位置づけ、Figmaナビ への強い購買 CTA は避ける。柱⑤ ポートフォリオ事例 (+11.4pt 超過) を助長しないため pillar 主帰属は柱① にカウント。freshness_hours ≈ 96h (07-27 公開から 07-31 朝配信で 4 日、168h fresh 上限の 57% で余裕)。",
-        "sources": [
-          "https://www.figma.com/blog/the-visual-identity-behind-config-2026/",
-          "https://www.figma.com/blog/config-2026-recap/",
-          "https://config.figma.com/san-francisco/",
-          "https://www.figma.com/blog/how-we-shaped-the-visual-identity-for-config-2025/",
-          "https://analyticsindiamag.com/ai-news/figma-unveils-ai-agents-and-code-native-design-tools-at-config-2026"
-        ],
-        "query": "Digital Tools Human Expression Figma Config 2026 visual identity Matt Alagiah Chelsea White Brand Studio glyphs",
-        "freshness_hours": 96
-      },
-      "stats": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-08-14T23:36:11.827Z"
-      },
-      "instagram": {
-        "mediaId": "18140587726602669",
-        "permalink": "https://www.instagram.com/reel/Dbb9TatiVuj/",
-        "views": 7,
-        "reach": 7,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "2fy9CUFaya4",
       "videoUrl": "https://youtube.com/shorts/2fy9CUFaya4",
       "date": "2026-08-01",
@@ -3810,7 +3755,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-29T02:26:42.027Z"
+        "updatedAt": "2026-10-30T02:36:40.141Z"
       },
       "instagram": {
         "mediaId": "18060946787535736",
@@ -3893,7 +3838,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-29T02:26:42.027Z"
+        "updatedAt": "2026-10-30T02:36:40.141Z"
       },
       "instagram": null,
       "jev": {
@@ -3972,7 +3917,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-29T02:26:42.027Z"
+        "updatedAt": "2026-10-30T02:36:40.141Z"
       },
       "instagram": null,
       "jev": {
@@ -4041,7 +3986,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-29T02:26:42.027Z"
+        "updatedAt": "2026-10-30T02:36:40.141Z"
       },
       "instagram": {
         "mediaId": "18014511812978403",
@@ -4052,7 +3997,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-29T02:26:42.028Z"
+        "updatedAt": "2026-10-30T02:36:40.142Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4102,7 +4047,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-29T02:26:42.027Z"
+        "updatedAt": "2026-10-30T02:36:40.141Z"
       },
       "instagram": {
         "mediaId": "18115514255520326",
@@ -4113,7 +4058,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-29T02:26:42.028Z"
+        "updatedAt": "2026-10-30T02:36:40.142Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4165,7 +4110,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-29T02:26:42.027Z"
+        "updatedAt": "2026-10-30T02:36:40.141Z"
       },
       "instagram": {
         "mediaId": "17954212068313509",
@@ -4176,7 +4121,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-29T02:26:42.028Z"
+        "updatedAt": "2026-10-30T02:36:40.142Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4234,7 +4179,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-29T02:26:42.027Z"
+        "updatedAt": "2026-10-30T02:36:40.141Z"
       },
       "instagram": {
         "mediaId": "17903344620374199",
@@ -4245,7 +4190,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-29T02:26:42.028Z"
+        "updatedAt": "2026-10-30T02:36:40.142Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4296,10 +4241,72 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-10-30T02:36:40.141Z"
       },
       "instagram": {
         "mediaId": "18098503742111365",
+        "permalink": "https://www.instagram.com/reel/DfD72HuDiZ3/",
+        "views": 0,
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-10-30T02:36:40.142Z"
+      },
+      "jev": {
+        "kind": "lesson",
+        "topicKey": "research-explain-simple",
+        "topic": "知らない言葉をやさしく説明してもらう",
+        "sources": [],
+        "pillar": "research",
+        "prompt": "「ガントチャート」を、中学生にも分かる言葉で、身近な例を1つ入れて説明してください。",
+        "fallback": true
+      }
+    },
+    {
+      "videoId": "2A3wMxmDN8o",
+      "videoUrl": "https://youtube.com/shorts/2A3wMxmDN8o",
+      "date": "2026-10-30",
+      "genre": "ai-lesson",
+      "trial": 4,
+      "title": "【AI仕事術】答えの弱いところを聞く｜2026/10/30 #Shorts",
+      "titleTemplate": "ai-lesson",
+      "hashtags": [
+        "AI活用",
+        "ChatGPT",
+        "生成AI",
+        "仕事術",
+        "業務効率化",
+        "AIの使い方",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "答えの弱いところを聞く"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": ""
+      },
+      "durationSeconds": 34,
+      "coverOffsetMs": 4733,
+      "look": "reel",
+      "ytThumbnail": "set",
+      "discovery": {
+        "method": "lesson",
+        "description": "AIに自信のないところを聞き返す",
+        "sources": []
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "18020882360945399",
         "permalink": null,
         "views": null,
         "reach": null,
@@ -4311,23 +4318,16 @@
       },
       "jev": {
         "kind": "lesson",
-        "topicKey": "research-explain-simple",
-        "topic": "知らない言葉をやさしく説明してもらう",
+        "topicKey": "check-ask-uncertain",
+        "topic": "AIに自信のないところを聞き返す",
         "sources": [],
-        "pillar": "research",
-        "prompt": "「ガントチャート」を、中学生にも分かる言葉で、身近な例を1つ入れて説明してください。",
+        "pillar": "check",
+        "prompt": "今の答えの中で、確かでないところや、自分で確かめたほうがいいところを全部挙げてください。",
         "fallback": true
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-10-01",
-      "changes": [
-        "Day performance: Mon=1, Tue=1, Thu=1, Fri=1, Sat=1, Sun=1, Wed=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-10-02",
       "changes": [
@@ -4530,6 +4530,13 @@
         "Day performance: Thu=1, Fri=1, Sun=1, Mon=1, Tue=1, Wed=1, Sat=0"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-10-30",
+      "changes": [
+        "Day performance: Fri=1, Sun=1, Mon=1, Tue=1, Wed=1, Thu=1, Sat=0"
+      ],
+      "recommendedTemplate": "standard"
     }
   ],
   "account": {
@@ -4644,6 +4651,10 @@
       },
       {
         "date": "2026-10-29",
+        "count": 0
+      },
+      {
+        "date": "2026-10-30",
         "count": 0
       }
     ]
