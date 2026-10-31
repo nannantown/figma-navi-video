@@ -2,61 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "2fy9CUFaya4",
-      "videoUrl": "https://youtube.com/shorts/2fy9CUFaya4",
-      "date": "2026-08-01",
-      "title": "【デザインニュース】NN/g 昨日公開の駆け出し必読論考、メンター選び間違えない3原則｜2026/08/01 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 50,
-      "discovery": {
-        "method": "expert-blog",
-        "description": "NN/g 07-31 公開の Rachel Krause『Why You Need Mentorship and How to Get It Right』を一次資料とし、著者プロフィール (NN/g Live Training Director, junior UX pros focus) と関連 NN/g mentorship 動画 3 本で裏取り。07-31 PDCA pre-schedule (expert-blog 第一候補、9日空き) 通り正規採用、24h fresh でトップスピード。柱④ Tips (target 15% で -15pt) を career practice tips サブ角度で修復、柱⑥ UI 批評 の 学習要素 面 (Rachel の junior focus) を副で読める、柱①③⑤ 超過を助長しない構成。土曜 evergreen 帯として運用フォーマット適合、Primary persona 駆け出しデザイナー (既存 YouTube デザイン講座 ~200 人サブスクの延長層) の独学孤立問題への直撃解法。NG パターン全回避: 『AI がデザイナーの仕事を奪う』の逆張り = 『独学 + AI + メンター = 立ち上がりが速い駆け出し』の前向きフレーム、AI = 補助輪フレームを『AI 時代こそ判断軸を人から吸収』の recommend で再強化。NN/g 直近 3 回連続 (07-20 / 07-23 / 08-01) の source-fatigue 懸念は、トピックが全く別 (AI vs 人間 UXリサーチ → グラフィック→UX 転向 → メンター論) で内容重複ゼロ、著者も別 (Kate Moran / Kara Pernice / Rachel Krause)、24h fresh の突出鮮度優位で採用正当化、次回 NN/g は 14日 quarantine で 08-14 以降推奨。",
-        "sources": [
-          "https://www.nngroup.com/articles/mentorship/",
-          "https://www.nngroup.com/people/rachel-krause/",
-          "https://www.nngroup.com/videos/why-ux-mentoring/",
-          "https://www.nngroup.com/videos/finding-ux-mentors/",
-          "https://www.nngroup.com/videos/great-ux-mentorship/"
-        ],
-        "query": "Nielsen Norman Group mentorship how to get it right Rachel Krause junior UX designer July 31 2026",
-        "freshness_hours": 24
-      },
-      "stats": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-08-15T23:34:24.134Z"
-      },
-      "instagram": {
-        "mediaId": "18023927423683226",
-        "permalink": "https://www.instagram.com/reel/DbehnU1kcHK/",
-        "views": 22,
-        "reach": 23,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "PEyqPJv3Am0",
       "videoUrl": "https://youtube.com/shorts/PEyqPJv3Am0",
       "date": "2026-08-02",
@@ -3755,7 +3700,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-30T02:36:40.141Z"
+        "updatedAt": "2026-10-31T02:22:07.131Z"
       },
       "instagram": {
         "mediaId": "18060946787535736",
@@ -3838,7 +3783,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-30T02:36:40.141Z"
+        "updatedAt": "2026-10-31T02:22:07.131Z"
       },
       "instagram": null,
       "jev": {
@@ -3917,7 +3862,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-30T02:36:40.141Z"
+        "updatedAt": "2026-10-31T02:22:07.131Z"
       },
       "instagram": null,
       "jev": {
@@ -3986,7 +3931,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-30T02:36:40.141Z"
+        "updatedAt": "2026-10-31T02:22:07.131Z"
       },
       "instagram": {
         "mediaId": "18014511812978403",
@@ -3997,7 +3942,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-30T02:36:40.142Z"
+        "updatedAt": "2026-10-31T02:22:07.133Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4047,7 +3992,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-30T02:36:40.141Z"
+        "updatedAt": "2026-10-31T02:22:07.131Z"
       },
       "instagram": {
         "mediaId": "18115514255520326",
@@ -4058,7 +4003,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-30T02:36:40.142Z"
+        "updatedAt": "2026-10-31T02:22:07.133Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4110,7 +4055,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-30T02:36:40.141Z"
+        "updatedAt": "2026-10-31T02:22:07.131Z"
       },
       "instagram": {
         "mediaId": "17954212068313509",
@@ -4121,7 +4066,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-30T02:36:40.142Z"
+        "updatedAt": "2026-10-31T02:22:07.133Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4179,7 +4124,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-30T02:36:40.141Z"
+        "updatedAt": "2026-10-31T02:22:07.131Z"
       },
       "instagram": {
         "mediaId": "17903344620374199",
@@ -4190,7 +4135,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-30T02:36:40.142Z"
+        "updatedAt": "2026-10-31T02:22:07.133Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4241,7 +4186,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-30T02:36:40.141Z"
+        "updatedAt": "2026-10-31T02:22:07.131Z"
       },
       "instagram": {
         "mediaId": "18098503742111365",
@@ -4252,7 +4197,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-30T02:36:40.142Z"
+        "updatedAt": "2026-10-31T02:22:07.133Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4303,10 +4248,72 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-10-31T02:22:07.131Z"
       },
       "instagram": {
         "mediaId": "18020882360945399",
+        "permalink": "https://www.instagram.com/reel/DfGhv73AOFq/",
+        "views": 2,
+        "reach": 2,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-10-31T02:22:07.133Z"
+      },
+      "jev": {
+        "kind": "lesson",
+        "topicKey": "check-ask-uncertain",
+        "topic": "AIに自信のないところを聞き返す",
+        "sources": [],
+        "pillar": "check",
+        "prompt": "今の答えの中で、確かでないところや、自分で確かめたほうがいいところを全部挙げてください。",
+        "fallback": true
+      }
+    },
+    {
+      "videoId": "dBwCknK9HVI",
+      "videoUrl": "https://youtube.com/shorts/dBwCknK9HVI",
+      "date": "2026-10-31",
+      "genre": "ai-lesson",
+      "trial": 4,
+      "title": "【AI仕事術】会議メモを3つに分ける｜2026/10/31 #Shorts",
+      "titleTemplate": "ai-lesson",
+      "hashtags": [
+        "AI活用",
+        "ChatGPT",
+        "生成AI",
+        "仕事術",
+        "業務効率化",
+        "AIの使い方",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "会議メモを3つに分ける"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": ""
+      },
+      "durationSeconds": 49,
+      "coverOffsetMs": 5700,
+      "look": "reel",
+      "ytThumbnail": "set",
+      "discovery": {
+        "method": "lesson",
+        "description": "会議のメモを議事録に整理してもらう",
+        "sources": []
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "17977321719138515",
         "permalink": null,
         "views": null,
         "reach": null,
@@ -4318,23 +4325,16 @@
       },
       "jev": {
         "kind": "lesson",
-        "topicKey": "check-ask-uncertain",
-        "topic": "AIに自信のないところを聞き返す",
+        "topicKey": "meeting-minutes-three",
+        "topic": "会議のメモを議事録に整理してもらう",
         "sources": [],
-        "pillar": "check",
-        "prompt": "今の答えの中で、確かでないところや、自分で確かめたほうがいいところを全部挙げてください。",
+        "pillar": "meeting",
+        "prompt": "次の会議のメモを、決まったこと・やること（担当と期限）・保留の3つに分けて整理してください。",
         "fallback": true
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-10-02",
-      "changes": [
-        "Day performance: Fri=1, Sat=1, Sun=1, Mon=1, Tue=1, Wed=1, Thu=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-10-03",
       "changes": [
@@ -4537,6 +4537,13 @@
         "Day performance: Fri=1, Sun=1, Mon=1, Tue=1, Wed=1, Thu=1, Sat=0"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-10-31",
+      "changes": [
+        "Day performance: Sun=1, Mon=1, Tue=1, Wed=1, Thu=1, Fri=1, Sat=0"
+      ],
+      "recommendedTemplate": "standard"
     }
   ],
   "account": {
@@ -4655,6 +4662,10 @@
       },
       {
         "date": "2026-10-30",
+        "count": 0
+      },
+      {
+        "date": "2026-10-31",
         "count": 0
       }
     ]
