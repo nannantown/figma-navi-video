@@ -15,6 +15,7 @@ import { copyFileSync, existsSync, mkdtempSync, readFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
+import { postingRuns } from "./ig-auto-retry.mjs";
 
 const sha = (path) => createHash("sha256").update(readFileSync(path)).digest("hex");
 
@@ -29,9 +30,10 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   if (!/^\d{8}$/.test(stamp ?? "")) throw new Error("--date=YYYYMMDD required");
   const video = `output/aitools-${stamp}.mp4`;
   const want = sha(video);
-  const runs = JSON.parse(execFileSync("gh", ["run", "list", "--workflow", "daily-video.yml", "--limit", "30", "--json", "databaseId,number,createdAt"], { encoding: "utf-8" }));
+  const runs = JSON.parse(execFileSync("gh", ["run", "list", "--workflow", "daily-video.yml", "--limit", "30", "--json", "databaseId,number,createdAt,event,displayTitle"], { encoding: "utf-8" }));
   let unreadable = 0;
-  for (const run of runsOfDay(runs, stamp)) {
+  // postingRuns: the late backup after an on-time run made no video (no artifact) — not "unreadable".
+  for (const run of runsOfDay(postingRuns(runs), stamp)) {
     const dir = mkdtempSync(join(tmpdir(), "day-run-"));
     try {
       execFileSync("gh", ["run", "download", String(run.databaseId), "-n", `aitools-video-${run.number}`, "-D", dir], { stdio: "inherit" });
