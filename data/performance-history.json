@@ -2,61 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "PEyqPJv3Am0",
-      "videoUrl": "https://youtube.com/shorts/PEyqPJv3Am0",
-      "date": "2026-08-02",
-      "title": "【デザインニュース】Wantedly Designers Lounge 07-27 グッドパッチ石井登壇 AI時代のデザイナー役割議論｜2026/08/02 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 49,
-      "discovery": {
-        "method": "news-ja",
-        "description": "Wantedly Designers Lounge 07-27 開催『AIで変化する開発現場と問い直されるデザイナーの役割』(グッドパッチ執行役員 石井克尚 登壇)を一次資料化。connpass event ページ + Goodpatch Tokyo 公式 X 告知の 2 段で開催実績・登壇者・議題を担保、AI in Design Report 2026 (Designer Fund/Foundation Capital、5月20日発表) の 91% 週次AI利用データを議論の背景として引用。08-01 PDCA pre-schedule (Sun evergreen は figma-community or news-ja) から news-ja を選択、7月中 news-ja/social-ja 0 件連続の Explore 予算最大 method を初投入、14+日空きで 2-day rule / 7-day-2-time / WORST 凍結 全ガード clear。柱⑥ UI 批評 (target 10% で -10pt) を industry meta-critique 角度で修復主眼、柱④ Tips (career practice: 判断・言語化) の学習要素面を副で読める、柱①③⑤ 超過を助長しない。日曜 evergreen 帯として運用フォーマット適合、Primary persona 駆け出しデザイナー (既存 YouTube デザイン講座 ~200 人サブスクの延長層) の『AI 時代、自分の役割は?』『何を武器にすれば残れる?』への直撃解法。NG パターン全回避: 『AI がデザイナーの仕事を奪う』の逆張り = 『AI 時代こそデザイナーの判断力が価値の中心』の前向きフレーム、AI = 補助輪フレームを『AI に案は任せて、なぜこの色・この配置かを言語化する癖こそ武器』の recommend で再強化。144h fresh で 168h 上限の 86%、突出鮮度優位で採用正当化、次回 news-ja は 08-14 前後 (2週サイクル) で cocoda / note / X 日本語デザイナー界隈へ切替推奨。",
-        "sources": [
-          "https://wantedly.connpass.com/event/399275/",
-          "https://x.com/GoodpatchTokyo/status/2074341023728492920",
-          "https://goodpatch.com/company/members",
-          "https://stateofaidesign.com/",
-          "https://designerfund.com/blog/ai-in-design-2026"
-        ],
-        "query": "Wantedly Designers Lounge AIで変化する開発現場 問い直されるデザイナーの役割 グッドパッチ 石井克尚 2026-07-27",
-        "freshness_hours": 144
-      },
-      "stats": {
-        "views": 1,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-08-16T23:34:03.701Z"
-      },
-      "instagram": {
-        "mediaId": "18099874145214818",
-        "permalink": "https://www.instagram.com/reel/DbhGc_bCA32/",
-        "views": 105,
-        "reach": 106,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "9aBRuwV9YbA",
       "videoUrl": "https://youtube.com/shorts/9aBRuwV9YbA",
       "date": "2026-08-03",
@@ -3700,7 +3645,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-31T02:22:07.131Z"
+        "updatedAt": "2026-11-01T02:13:20.850Z"
       },
       "instagram": {
         "mediaId": "18060946787535736",
@@ -3783,7 +3728,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-31T02:22:07.131Z"
+        "updatedAt": "2026-11-01T02:13:20.850Z"
       },
       "instagram": null,
       "jev": {
@@ -3862,7 +3807,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-31T02:22:07.131Z"
+        "updatedAt": "2026-11-01T02:13:20.850Z"
       },
       "instagram": null,
       "jev": {
@@ -3931,7 +3876,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-31T02:22:07.131Z"
+        "updatedAt": "2026-11-01T02:13:20.850Z"
       },
       "instagram": {
         "mediaId": "18014511812978403",
@@ -3942,7 +3887,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-31T02:22:07.133Z"
+        "updatedAt": "2026-11-01T02:13:20.851Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3992,7 +3937,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-31T02:22:07.131Z"
+        "updatedAt": "2026-11-01T02:13:20.850Z"
       },
       "instagram": {
         "mediaId": "18115514255520326",
@@ -4003,7 +3948,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-31T02:22:07.133Z"
+        "updatedAt": "2026-11-01T02:13:20.851Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4055,7 +4000,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-31T02:22:07.131Z"
+        "updatedAt": "2026-11-01T02:13:20.850Z"
       },
       "instagram": {
         "mediaId": "17954212068313509",
@@ -4066,7 +4011,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-31T02:22:07.133Z"
+        "updatedAt": "2026-11-01T02:13:20.851Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4124,7 +4069,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-31T02:22:07.131Z"
+        "updatedAt": "2026-11-01T02:13:20.850Z"
       },
       "instagram": {
         "mediaId": "17903344620374199",
@@ -4135,7 +4080,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-31T02:22:07.133Z"
+        "updatedAt": "2026-11-01T02:13:20.851Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4186,7 +4131,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-31T02:22:07.131Z"
+        "updatedAt": "2026-11-01T02:13:20.850Z"
       },
       "instagram": {
         "mediaId": "18098503742111365",
@@ -4197,7 +4142,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-31T02:22:07.133Z"
+        "updatedAt": "2026-11-01T02:13:20.851Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4248,18 +4193,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-31T02:22:07.131Z"
+        "updatedAt": "2026-11-01T02:13:20.850Z"
       },
       "instagram": {
         "mediaId": "18020882360945399",
         "permalink": "https://www.instagram.com/reel/DfGhv73AOFq/",
-        "views": 2,
-        "reach": 2,
+        "views": 5,
+        "reach": 5,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-31T02:22:07.133Z"
+        "updatedAt": "2026-11-01T02:13:20.851Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4310,10 +4255,72 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-11-01T02:13:20.850Z"
       },
       "instagram": {
         "mediaId": "17977321719138515",
+        "permalink": "https://www.instagram.com/reel/DfJE83dDDYO/",
+        "views": 6,
+        "reach": 5,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-11-01T02:13:20.851Z"
+      },
+      "jev": {
+        "kind": "lesson",
+        "topicKey": "meeting-minutes-three",
+        "topic": "会議のメモを議事録に整理してもらう",
+        "sources": [],
+        "pillar": "meeting",
+        "prompt": "次の会議のメモを、決まったこと・やること（担当と期限）・保留の3つに分けて整理してください。",
+        "fallback": true
+      }
+    },
+    {
+      "videoId": "cAHXmEWUAR4",
+      "videoUrl": "https://youtube.com/shorts/cAHXmEWUAR4",
+      "date": "2026-11-01",
+      "genre": "ai-lesson",
+      "trial": 4,
+      "title": "【AI仕事術】先にAIに質問させる｜2026/11/01 #Shorts",
+      "titleTemplate": "ai-lesson",
+      "hashtags": [
+        "AI活用",
+        "ChatGPT",
+        "生成AI",
+        "仕事術",
+        "業務効率化",
+        "AIの使い方",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "先にAIに質問させる"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": ""
+      },
+      "durationSeconds": 42,
+      "coverOffsetMs": 4200,
+      "look": "reel",
+      "ytThumbnail": "set",
+      "discovery": {
+        "method": "lesson",
+        "description": "頼む前にAIから質問してもらう",
+        "sources": []
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "18099069068453599",
         "permalink": null,
         "views": null,
         "reach": null,
@@ -4325,23 +4332,16 @@
       },
       "jev": {
         "kind": "lesson",
-        "topicKey": "meeting-minutes-three",
-        "topic": "会議のメモを議事録に整理してもらう",
+        "topicKey": "ask-questions-first",
+        "topic": "頼む前にAIから質問してもらう",
         "sources": [],
-        "pillar": "meeting",
-        "prompt": "次の会議のメモを、決まったこと・やること（担当と期限）・保留の3つに分けて整理してください。",
+        "pillar": "ask",
+        "prompt": "取引先へのお礼状を書きたいです。よい文にするために必要な質問を、先に3つ私にしてください。",
         "fallback": true
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-10-03",
-      "changes": [
-        "Day performance: Sat=1, Sun=1, Mon=1, Tue=1, Wed=1, Thu=1, Fri=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-10-04",
       "changes": [
@@ -4544,6 +4544,13 @@
         "Day performance: Sun=1, Mon=1, Tue=1, Wed=1, Thu=1, Fri=1, Sat=0"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-11-01",
+      "changes": [
+        "Day performance: Sun=1, Mon=1, Tue=1, Wed=1, Thu=1, Fri=1, Sat=0"
+      ],
+      "recommendedTemplate": "standard"
     }
   ],
   "account": {
@@ -4666,6 +4673,10 @@
       },
       {
         "date": "2026-10-31",
+        "count": 0
+      },
+      {
+        "date": "2026-11-01",
         "count": 0
       }
     ]
