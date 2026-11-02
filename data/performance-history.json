@@ -2,62 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "9aBRuwV9YbA",
-      "videoUrl": "https://youtube.com/shorts/9aBRuwV9YbA",
-      "date": "2026-08-03",
-      "title": "【デザインニュース】Framer 7/28 Opus 5対応、駆け出しのポートフォリオAIが速く安く｜2026/08/03 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 49,
-      "discovery": {
-        "method": "news-en",
-        "description": "TechCrunch / Axios / SiliconANGLE / Anthropic 公式 で Claude Opus 5 リリース (07-24) を裏取り、Framer 公式のアップデートページ (07-28 Opus 5 対応) で駆け出し向け具体数値 (Navigation Benchmark) を発掘、The New Stack で Opus 5 ≒ Fable 5 分析を補強。Framer 対応 07-28 起算で 144h fresh、168h 上限内 (86%)。08-02 PDCA pre-schedule (Mon weekday news-en 第一候補、07-24 =10日前で 2週連続 WORST 凍結明けの再検証タイミング) から news-en を採用、直近 2 日 (08-02 news-ja / 08-01 expert-blog) と重複なし、news-en 7-day window (07-28 to 08-03) 0 回で追加可能、10 日空きで 2-day rule / 7-day-2-time / WORST 凍結 全ガード clear。柱② プラグイン / エコシステム (target 20%、+1.4pt で適正内) を主 (Framer = デザインツールエコシステム重要プレイヤー)、柱③ 業界・デザインニュース (target 20%、+8.6pt で超過) の AI × デザイン角度を副、柱①③⑤ 超過を新規に助長しない構成 (柱②が主、柱③副で ①⑤ には触れない)。Primary persona 駆け出しデザイナー (既存 YouTube デザイン講座 ~200 人サブスクの延長層) が『ポートフォリオを Framer で作るとき、AI コストがどう変わるか』の具体課題に直撃、Framer は 2026 年時点でポートフォリオ制作の第一選択、07-24 Anthropic Opus 5 リリース + 07-28 Framer 実装で『先週デザインツール界隈で何が起きたか』の週次 recap ニュースとして成立。NG パターン全回避: 『AI がデザイナーの仕事を奪う』回避 (『モデル選びも武器の一つ』の前向きフレーム)、『AI に任せれば考えなくていい』回避 (『同じプロンプトでも選択で速度もコストも変わる』で判断力を強調、AI = 補助輪 維持)、『プラグイン機能説明メイン』回避 (Framer のプロダクト紹介ではなく Opus 5 統合ニュース + Primary の判断力育成)、『英語/日本語の中途半端な混在』回避 (固有名詞 Framer / Anthropic / Opus 5 / Fable 5 / Navigation Benchmark 以外は日本語)、『1週間以上前ニュースを新着扱い』回避 (Framer 対応 07-28 = 144h fresh、168h の 86%)、『出典不明』回避 (Framer 公式 update page + TechCrunch + Axios + SiliconANGLE + Anthropic 公式 + The New Stack の 6 段 sourcing)。次回 news-en は 08-13 前後 (2 週サイクル) で UX Collective / Smashing / The Verge 直近論考 or Adobe / Figma 系 major release 候補化推奨。",
-        "sources": [
-          "https://www.framer.com/updates/opus-5",
-          "https://techcrunch.com/2026/07/24/anthropic-launches-opus-5/",
-          "https://www.axios.com/2026/07/24/anthropic-releases-new-model-opus-5",
-          "https://siliconangle.com/2026/07/24/anthropic-launches-claude-opus-5-efficiency-safety-improvements/",
-          "https://www.anthropic.com/news/claude-opus-5",
-          "https://thenewstack.io/anthropics-opus-5-almost-fable-5/"
-        ],
-        "query": "Framer Opus 5 July 28 2026 benchmark Anthropic launch designer portfolio AI cost",
-        "freshness_hours": 144
-      },
-      "stats": {
-        "views": 1,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-08-17T23:35:57.840Z"
-      },
-      "instagram": {
-        "mediaId": "17957636805192921",
-        "permalink": "https://www.instagram.com/reel/DbjrS__Cexs/",
-        "views": 2,
-        "reach": 2,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "AWzFpVqWSvs",
       "videoUrl": "https://youtube.com/shorts/AWzFpVqWSvs",
       "date": "2026-08-04",
@@ -3645,7 +3589,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-01T02:13:20.850Z"
+        "updatedAt": "2026-11-02T02:44:47.904Z"
       },
       "instagram": {
         "mediaId": "18060946787535736",
@@ -3728,7 +3672,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-01T02:13:20.850Z"
+        "updatedAt": "2026-11-02T02:44:47.904Z"
       },
       "instagram": null,
       "jev": {
@@ -3807,7 +3751,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-01T02:13:20.850Z"
+        "updatedAt": "2026-11-02T02:44:47.904Z"
       },
       "instagram": null,
       "jev": {
@@ -3876,7 +3820,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-01T02:13:20.850Z"
+        "updatedAt": "2026-11-02T02:44:47.904Z"
       },
       "instagram": {
         "mediaId": "18014511812978403",
@@ -3887,7 +3831,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-01T02:13:20.851Z"
+        "updatedAt": "2026-11-02T02:44:47.905Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3937,7 +3881,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-01T02:13:20.850Z"
+        "updatedAt": "2026-11-02T02:44:47.904Z"
       },
       "instagram": {
         "mediaId": "18115514255520326",
@@ -3948,7 +3892,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-01T02:13:20.851Z"
+        "updatedAt": "2026-11-02T02:44:47.905Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4000,7 +3944,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-01T02:13:20.850Z"
+        "updatedAt": "2026-11-02T02:44:47.904Z"
       },
       "instagram": {
         "mediaId": "17954212068313509",
@@ -4011,7 +3955,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-01T02:13:20.851Z"
+        "updatedAt": "2026-11-02T02:44:47.905Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4069,7 +4013,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-01T02:13:20.850Z"
+        "updatedAt": "2026-11-02T02:44:47.904Z"
       },
       "instagram": {
         "mediaId": "17903344620374199",
@@ -4080,7 +4024,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-01T02:13:20.851Z"
+        "updatedAt": "2026-11-02T02:44:47.905Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4131,7 +4075,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-01T02:13:20.850Z"
+        "updatedAt": "2026-11-02T02:44:47.904Z"
       },
       "instagram": {
         "mediaId": "18098503742111365",
@@ -4142,7 +4086,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-01T02:13:20.851Z"
+        "updatedAt": "2026-11-02T02:44:47.905Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4193,7 +4137,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-01T02:13:20.850Z"
+        "updatedAt": "2026-11-02T02:44:47.904Z"
       },
       "instagram": {
         "mediaId": "18020882360945399",
@@ -4204,7 +4148,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-01T02:13:20.851Z"
+        "updatedAt": "2026-11-02T02:44:47.905Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4255,18 +4199,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-01T02:13:20.850Z"
+        "updatedAt": "2026-11-02T02:44:47.904Z"
       },
       "instagram": {
         "mediaId": "17977321719138515",
         "permalink": "https://www.instagram.com/reel/DfJE83dDDYO/",
-        "views": 6,
-        "reach": 5,
+        "views": 11,
+        "reach": 11,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-01T02:13:20.851Z"
+        "updatedAt": "2026-11-02T02:44:47.905Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4317,10 +4261,72 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-11-02T02:44:47.904Z"
       },
       "instagram": {
         "mediaId": "18099069068453599",
+        "permalink": "https://www.instagram.com/reel/DfLorvcDlDA/",
+        "views": 5,
+        "reach": 5,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-11-02T02:44:47.905Z"
+      },
+      "jev": {
+        "kind": "lesson",
+        "topicKey": "ask-questions-first",
+        "topic": "頼む前にAIから質問してもらう",
+        "sources": [],
+        "pillar": "ask",
+        "prompt": "取引先へのお礼状を書きたいです。よい文にするために必要な質問を、先に3つ私にしてください。",
+        "fallback": true
+      }
+    },
+    {
+      "videoId": "y9Z0JLuof9s",
+      "videoUrl": "https://youtube.com/shorts/y9Z0JLuof9s",
+      "date": "2026-11-02",
+      "genre": "ai-lesson",
+      "trial": 4,
+      "title": "【AI仕事術】自分に関係ある所だけ要約｜2026/11/02 #Shorts",
+      "titleTemplate": "ai-lesson",
+      "hashtags": [
+        "AI活用",
+        "ChatGPT",
+        "生成AI",
+        "仕事術",
+        "業務効率化",
+        "AIの使い方",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "自分に関係ある所だけ要約"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": ""
+      },
+      "durationSeconds": 49,
+      "coverOffsetMs": 4900,
+      "look": "reel",
+      "ytThumbnail": "set",
+      "discovery": {
+        "method": "lesson",
+        "description": "読む人の立場に合わせて要点を絞ってもらう",
+        "sources": []
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "18434776459148578",
         "permalink": null,
         "views": null,
         "reach": null,
@@ -4332,23 +4338,16 @@
       },
       "jev": {
         "kind": "lesson",
-        "topicKey": "ask-questions-first",
-        "topic": "頼む前にAIから質問してもらう",
+        "topicKey": "summary-for-sales",
+        "topic": "読む人の立場に合わせて要点を絞ってもらう",
         "sources": [],
-        "pillar": "ask",
-        "prompt": "取引先へのお礼状を書きたいです。よい文にするために必要な質問を、先に3つ私にしてください。",
+        "pillar": "summary",
+        "prompt": "次の資料を、営業担当が知っておくべき点だけに絞って、箇条書き3つでまとめてください。",
         "fallback": true
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-10-04",
-      "changes": [
-        "Day performance: Sat=1, Sun=1, Mon=1, Tue=1, Wed=1, Thu=1, Fri=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-10-05",
       "changes": [
@@ -4551,6 +4550,13 @@
         "Day performance: Sun=1, Mon=1, Tue=1, Wed=1, Thu=1, Fri=1, Sat=0"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-11-02",
+      "changes": [
+        "Day performance: Mon=1, Tue=1, Wed=1, Thu=1, Fri=1, Sun=1, Sat=0"
+      ],
+      "recommendedTemplate": "standard"
     }
   ],
   "account": {
@@ -4677,6 +4683,10 @@
       },
       {
         "date": "2026-11-01",
+        "count": 0
+      },
+      {
+        "date": "2026-11-02",
         "count": 0
       }
     ]
