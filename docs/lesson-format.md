@@ -77,7 +77,7 @@
 
 ### 常備ネタ帳 `data/ai-lesson-stock.json`
 
-台帳と同じ形の回（`date`・`genre`・`trial`・`kind` を除く）を並べたもの。2026-10-22 時点で 21 本（3 週間分、8 本の柱を順に回す並び）。
+台帳と同じ形の回（`date`・`genre`・`trial`・`kind` を除く）を並べたもの。2026-10-22 時点で 21 本（3 週間分、8 本の柱を順に回す並び）、2026-11-02 に 4 本と 16 本を足して 41 本（足した分の作り方は [ig-skill-format.md](ig-skill-format.md) §5）。
 
 - 朝ルーチンは、ふだんは `node scripts/jev.mjs next` の `stockNext`（まだ出していない最初の 1 本。前の日と柱が違うものが先）をそのまま今日の回にする
 - **今日の回が main に無い・検証に通らない朝は、08:15 の動画生成（`scripts/generate-data.mjs`）がネタ帳の `stockNext` を自動で出す**（Actions に黄色い注記「予備のレッスンで投稿」）。ルーチンの原稿 PR が merge されないまま止まる日が多いので（[routine-merge-miss.md](routine-merge-miss.md)）、教育の型では空白日を作らない。予備で出した回は投稿の記録（`performance-history.json` の `jev.fallback: true`・`jev.topicKey`・`jev.prompt`・`jev.pillar`）に残り、同じ回・同じ文例は二度と出ない（この記録は台帳に無い唯一の記録なので、投稿の記録の 90 日の刈り込みでも消さない）
