@@ -81,6 +81,18 @@ test("craft: the validator stops a bad craft block (picked hook not on screen, o
   assert.match(bad((e) => (e.craft.captionBody = ["https://example.com を見て直してください。"])), /captionBody\[0\]/);
   assert.match(bad((e) => (e.craft.captionBody = ["私は毎日この頼み方で返信を直しています。"])), /own experience/);
   assert.match(bad((e) => (e.craft.keywords = ["a", "b", "c", "d"])), /keywords/);
+  assert.match(bad((e) => (e.craft.captionLead = "ハルシネーションしない頼み方")), /captionLead: states a claim/);
+  assert.match(bad((e) => (e.craft.captionBody = ["この頼み方なら精度は99%です。安心して使えます。"])), /captionBody\[0\]: states a claim/);
+});
+
+test("craft: a hook changed without re-scoring warns and records no stale scores", () => {
+  const e = structuredClone(ep(crafted[0]));
+  e.reel.hook = e.craft.hooks[1].say;
+  e.reel.title = e.craft.hooks[1].text;
+  const r = validateEpisodes({ episodes: [e] }, { date: e.date, today: e.date, series: SERIES.lesson, look: "reel" });
+  assert.deepEqual(r.errors, []);
+  assert.match(r.warnings.join("\n"), /scored for another hook/);
+  assert.equal(toJevVideoData(e, { series: SERIES.lesson }).jev.craft, undefined);
 });
 
 const hasPython = spawnSync("python3", ["--version"]).status === 0;

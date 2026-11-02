@@ -33,7 +33,7 @@ function py(tool, args, input) {
   try {
     const file = join(dir, "in.txt");
     writeFileSync(file, input);
-    const r = spawnSync("python3", ["-I", join(SKILLS, tool), file, ...args, "--json"], { encoding: "utf-8" });
+    const r = spawnSync("python3", ["-I", "-B", join(SKILLS, tool), file, ...args, "--json"], { encoding: "utf-8" });
     if (r.error || !r.stdout.trim()) throw new Error(`${tool}: ${r.error?.message || r.stderr.trim() || "no output"}`);
     return JSON.parse(r.stdout);
   } finally {
@@ -87,6 +87,10 @@ function main(argv) {
   const i = stockKey ? list.findIndex((l) => l.topic_key === stockKey) : list.findIndex((e) => e.date === arg("date"));
   if (i < 0) throw new Error(`not found: ${stockKey ?? arg("date")} in ${file}`);
   const ep = stockKey ? stockEpisode(list[i], "2026-11-03") : list[i];
+  if (!ep.reel) {
+    console.log("NG no reel — the skill scores the step-by-step screen script (reel.hook / reel.title)");
+    return 1;
+  }
   const shape = ep.craft === undefined ? ["no craft block — write craft.hooks (3) and craft.captionLead first (docs/ig-skill-format.md)"] : craftProblems(ep, ep.topic_key);
   if (shape.length) {
     for (const p of shape) console.log(`NG ${p}`);

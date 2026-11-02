@@ -10,3 +10,4 @@ youtube-refresh-token.txt
 !.claude/hooks/
 !.claude/skills/
 */**/.claude/
+__pycache__/

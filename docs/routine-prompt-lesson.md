@@ -101,7 +101,7 @@ node scripts/jev.mjs pdca
 mkdir -p ~/.claude/instagram && cp docs/ig-voice.md ~/.claude/instagram/voice.md   # スキルが読む話し方の設定
 ```
 
-1. **フック 3 案**（`.claude/skills/ig-reel/SKILL.md` の「進め方」1〜2）: `.claude/skills/ig-reel/hooks.json` の 26 の型から、この回に本当に合う**違う型を 3 つ**選び、それぞれ話す 1 行（`say`。そのまま `reel.hook` になるので「Nつ」を入れて 10〜40 字）と最初の画面の文字（`text`。そのまま `reel.title`、2〜11 字）を書いて `craft.hooks` に入れる。**使えない型**: 実体験の型（損した告白・失敗の記録・中の人の暴露・他人の結果）、作った数字が要る型（実際の数字・統計の数字・置き換え・時間の短縮）。数字はその回の頼み方の中にあるもの（3 行・5 つ・30 分など）だけ。誇大・有料プラン・GitHub の言葉は使わない（点数のために「知らないと損」「裏技」などを入れない。検証で NG）
+1. **フック 3 案**（`.claude/skills/ig-reel/SKILL.md` の「進め方」1〜2）: `.claude/skills/ig-reel/hooks.json` の 26 の型から、この回に本当に合う**違う型を 3 つ**選び（前の日に出た回と同じ型は避ける。投稿の記録の `jev.craft.hookType`）、それぞれ話す 1 行（`say`。そのまま `reel.hook` になるので「Nつ」を入れて 10〜40 字）と最初の画面の文字（`text`。そのまま `reel.title`、2〜11 字）を書いて `craft.hooks` に入れる。**使えない型**: 実体験の型（損した告白・失敗の記録・中の人の暴露・他人の結果）、作った数字が要る型（実際の数字・統計の数字・置き換え・時間の短縮）。数字はその回の頼み方の中にあるもの（3 行・5 つ・30 分など）だけ。誇大・有料プラン・GitHub の言葉は使わない（点数のために「知らないと損」「裏技」などを入れない。検証で NG）
 2. **キャプション**（`.claude/skills/ig-caption/SKILL.md`）: `craft.captionLead`（30 字まで。「…続きを読む」の前に見える 1 行。あいさつ・絵文字・タグで始めない）と `craft.captionBody`（短い段落 2 つほど。何が困るか → どう頼むか・何を確かめるか）、`craft.keywords`（検索されそうな言葉 2 つ。キャプションに入っている言葉）を書く
 3. **AI っぽさ消し**（`.claude/skills/ig-human/SKILL.md`）: 手順のナレーションとキャプションの段落をファイルに書き出して `python3 -I .claude/skills/ig-human/humanize.py <ファイル> --report -o /tmp/clean.txt` を通し、出た決まり文句・文の形の跡を**手で**直す（自動の削除で文が壊れることがある。原稿には自分で直した文を書く）
 4. **採点して記録**: `reel.hook` / `reel.title` を選んだ案（ふつうは 1 位）に合わせてから

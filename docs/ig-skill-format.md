@@ -65,7 +65,7 @@ jq -r '.videos[] | select(.genre=="ai-lesson") | [.date, .jev.topicKey, (.jev.cr
 ## 5. ネタ帳（2026-11-02 に作り直し）
 
 - まだ出していない 11 本（`mail-soften-reply` 〜 `sheet-explain-formula`）のフック・最初の画面の文字・キャプションをこの手順で作り直し、4 本（`slides-speaker-notes` / `research-list-questions` / `meeting-expected-questions` / `summary-mail-timeline`）を足した。**15 本 = 2026-11-03〜11-17 の分**。頼み方の文・スライドの中身・手順は元のまま（新しい 4 本は新しく書いた）
-- 作り直す前の採点（参考）: 今までのつかみ「〇〇は、5つの手順です。」の形は 46 点前後（弱い）。作り直した 15 本の選んだフックは 51.7〜85.2 点
+- 作り直す前の採点（参考）: 今までのつかみ「〇〇は、5つの手順です。」の形は 46 点前後（弱い）。作り直した 15 本の選んだフックは 50.8〜85.2 点（同じ型が 2 日続かないように選んだ。「やめて」命令は 15 本中 5 本）
 - 朝ルーチンの原稿 PR は 10/27 から merge されずに止まっていて（[routine-merge-miss.md](routine-merge-miss.md)）、毎朝ネタ帳の回が出ている。だから**ネタ帳そのものをこの作り方にした**（朝ルーチンが merge できても、ネタ帳の回を写すので同じ中身になる）
 - 11-17 より後の分は、朝ルーチンが新しく書くか（`stockLeft` 7 以下の日）、ネタ帳を足す PR が要る（足す回も `craft` つきで。`npm run validate:stock` と `node --test scripts/ig-craft.test.mjs`）
 
@@ -78,6 +78,6 @@ jq -r '.videos[] | select(.genre=="ai-lesson") | [.date, .jev.topicKey, (.jev.cr
 
 ## 7. 戻し方
 
-- **見せ方だけ前に戻す**: ネタ帳の各回の `craft` を消す PR（`jq '.lessons |= map(del(.craft))' data/ai-lesson-stock.json`）。キャプションは今までの形に戻る。`reel.hook` / `reel.title` を元の言い回しに戻すなら、このカードの前のコミットのネタ帳から写す
+- **見せ方だけ前に戻す**: ネタ帳の各回の `craft` を消す PR（`jq '.lessons |= map(del(.craft))' data/ai-lesson-stock.json > /tmp/stock.json && mv /tmp/stock.json data/ai-lesson-stock.json`）。キャプションは今までの形に戻る。`reel.hook` / `reel.title` を元の言い回しに戻すなら、このカードの前のコミットのネタ帳から写す
 - スキルのフォルダと `scripts/ig-craft.mjs` は残してよい（`craft` の無い回には何もしない）
 - どちらも 07:30〜09:30 JST を避けて main に入れる。sns-hub の台帳と CLAUDE.md の表に終了日を書く
