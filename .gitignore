@@ -8,4 +8,5 @@ youtube-refresh-token.txt
 .claude/*
 !.claude/settings.json
 !.claude/hooks/
+!.claude/skills/
 */**/.claude/

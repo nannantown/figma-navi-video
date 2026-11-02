@@ -963,7 +963,7 @@ export function reelOnlyErrors(errors) {
 }
 
 function lessonShownTexts(ep) {
-  const out = [["topic", ep.topic], ["headline", ep.headline], ["hook", ep.hook], ...reelTexts(ep.reel)];
+  const out = [["topic", ep.topic], ["headline", ep.headline], ["hook", ep.hook], ["craft.captionLead", ep.craft?.captionLead], ...reelTexts(ep.reel)];
   (Array.isArray(ep.slides) ? ep.slides : []).forEach((s, i) => {
     for (const f of ["heading", "body", "narration", "claim_source"]) out.push([`slides[${i}].${f}`, s?.[f]]);
     (Array.isArray(s?.diagram?.items) ? s.diagram.items : []).forEach((it, j) => {
@@ -973,6 +973,35 @@ function lessonShownTexts(ep) {
   });
   (Array.isArray(ep.sources) ? ep.sources : []).forEach((s, i) => out.push([`sources[${i}].outlet`, s?.outlet], [`sources[${i}].url`, s?.url]));
   return out.filter(([, v]) => typeof v === "string");
+}
+
+// ---------------------------------------------------------------------------
+// craft = the lesson was made with instagram-agent-skill-ja (owner trial
+// 2026-11-02, docs/ig-skill-format.md): 3 scored hook candidates of different
+// types (reel.hook / reel.title are the picked one's say / text), the caption's
+// first line, the search words, and the tool scores (scripts/ig-craft.mjs --write).
+// ---------------------------------------------------------------------------
+const CRAFT_LIMITS = { captionLead: [8, 30], type: [1, 20], keyword: [1, 15] };
+
+export function craftProblems(ep, at = "episode") {
+  const c = ep.craft;
+  const a = `${at}.craft`;
+  if (!c || typeof c !== "object" || Array.isArray(c)) return [`${a}: must be an object (docs/ig-skill-format.md)`];
+  const errors = [];
+  const hooks = Array.isArray(c.hooks) ? c.hooks : [];
+  if (hooks.length !== 3) errors.push(`${a}.hooks: 3 candidates of different hook types (hooks.json)`);
+  hooks.forEach((h, i) => {
+    const t = lengthProblem(h?.type, CRAFT_LIMITS.type, `${a}.hooks[${i}].type`);
+    if (t) errors.push(t);
+    for (const f of ["say", "text"]) if (typeof h?.[f] !== "string" || !h[f].trim()) errors.push(`${a}.hooks[${i}].${f}: required`);
+  });
+  if (hooks.length === 3 && new Set(hooks.map((h) => h?.type)).size !== 3) errors.push(`${a}.hooks: 3 different hook types, not one type reworded`);
+  if (ep.reel && hooks.length && !hooks.some((h) => h?.say === ep.reel.hook && h?.text === ep.reel.title)) errors.push(`${a}.hooks: reel.hook and reel.title must be the picked candidate's say and text`);
+  const lead = lengthProblem(c.captionLead, CRAFT_LIMITS.captionLead, `${a}.captionLead`);
+  if (lead) errors.push(lead);
+  errors.push(...shownTextProblems(c.captionLead, `${a}.captionLead`));
+  if (c.keywords !== undefined && (!Array.isArray(c.keywords) || c.keywords.length > 3 || c.keywords.some((k) => lengthProblem(k, CRAFT_LIMITS.keyword, "k")))) errors.push(`${a}.keywords: 0-3 search words of 1-15 chars`);
+  return errors;
 }
 
 /** The copy-paste request shown on screen (slide 2's prompt box), or null. */
@@ -1063,6 +1092,7 @@ function lessonProblems(ep, at, previous, posted, history, look) {
       }
     }
   }
+  if (ep.craft !== undefined) errors.push(...craftProblems(ep, at));
   const last = previous.at(-1);
   if (last?.pillar && last.pillar === ep.pillar) warnings.push(`${at}.pillar: "${ep.pillar}" again after ${last.date} — rotate the pillars`);
   return { errors, warnings };
@@ -1284,6 +1314,8 @@ export function toJevVideoData(ep, { usecaseNumber = null, series = SERIES.jev, 
       mode: "jev",
       count,
       headline: ep.headline.trim(),
+      // The caption's first line (craft, docs/ig-skill-format.md); null = 「見出し（M/D）」.
+      captionLead: ep.craft?.captionLead?.trim() || null,
       titleTag: series.kindTag[ep.kind],
       // The day's headline on the opening: the first 1-2 s decide the swipe,
       // and every day must look different on the grid.
@@ -1320,6 +1352,8 @@ export function toJevVideoData(ep, { usecaseNumber = null, series = SERIES.jev, 
       // Lesson: the prompt goes into the post record (no 文例 twice) and the caption (copy it from there).
       ...(series.format === "lesson" ? { pillar: ep.pillar, prompt: lessonPrompt(ep) } : {}),
       ...(fallback ? { fallback: true } : {}),
+      // The skill's scores ride into the post record (14-day judgment of the 2026-11-02 trial).
+      ...(series.format === "lesson" && ep.craft?.scores ? { craft: craftRecord(ep.craft.scores) } : {}),
     },
     // Lesson: the step-by-step screen script (the reel look; pipeline.mjs decides which look renders).
     ...(series.format === "lesson" && ep.reel ? { reel: structuredClone(ep.reel) } : {}),
@@ -1469,6 +1503,11 @@ function fitting(build, fits) {
   }
 }
 
+/** The few numbers of craft.scores the post record keeps. */
+export function craftRecord(s) {
+  return { tool: s.tool, hookType: s.hook?.type ?? null, hookScore: s.hook?.score ?? null, hookSeconds: s.seconds?.hook ?? null, caption: s.caption?.verdict ?? null, humanScript: s.human?.script ?? null, humanCaption: s.human?.caption ?? null };
+}
+
 export function buildJevCaptions(data) {
   const { meta, tools, jev } = data;
   const series = Object.values(SERIES).find((s) => s.genre === meta.genre) ?? SERIES.jev;
@@ -1480,7 +1519,7 @@ export function buildJevCaptions(data) {
   const promptBlock = jev?.prompt ? ["▼ そのまま使える頼み方（コピーして使えます）", clean(jev.prompt), ""] : [];
   const sourceBlock = (level) => (jev.sources.length > 0 ? ["出典:", ...sourceLines(jev, level), ""] : []);
   const description = fitting((level) => [
-    `${clean(meta.headline)}（${meta.shortDate}）`,
+    meta.captionLead ? clean(meta.captionLead) : `${clean(meta.headline)}（${meta.shortDate}）`,
     "",
     ...promptBlock,
     ...body,
@@ -1493,7 +1532,7 @@ export function buildJevCaptions(data) {
     series.ytHashtags.join(" "),
   ].join("\n"), (t) => Buffer.byteLength(t, "utf-8") <= JEV_YT_DESCRIPTION_MAX_BYTES);
   const instagram = fitting((level) => [
-    `${clean(meta.headline)}（${meta.shortDate}）`,
+    meta.captionLead ? clean(meta.captionLead) : `${clean(meta.headline)}（${meta.shortDate}）`,
     "",
     ...promptBlock,
     ...body,
