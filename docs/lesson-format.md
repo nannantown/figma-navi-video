@@ -10,6 +10,8 @@
 > - 特定の有料プランを勧めない。誇大な言い方（「誰でも月◯万」「最強」「◯倍速」など）をしない
 > - 見せ方は今の型を引き継ぐ: 上半分の図解・下のメイと吹き出し・円の概算（**2026-10-23 から参考リール型の手順動画に切り替え = §6**。4 枚のカードは `"lessonLook": "cards"` で戻せる）
 > - 朝ルーチン: [routine-prompt-lesson.md](routine-prompt-lesson.md)。見本: [lesson-preview/](lesson-preview/README.md)
+>
+> **2026-11-02 から見せ方は instagram-agent-skill-ja の手順（試行 #5・14 日）**: ネタ・柱・決まりはこのファイルのまま、つかみ（`reel.hook` / `reel.title`）・キャプションの 1 行目と段落・AI っぽさ消しを同梱のスキルで作り、点数を回の `craft` に残す。`craft` がある回はキャプションの 1 行目が `craft.captionLead`、箇条書きが `craft.captionBody` に替わる。仕様は [ig-skill-format.md](ig-skill-format.md)
 
 ## 1. 1 本の構成（4 枚・1 分以内）
 
