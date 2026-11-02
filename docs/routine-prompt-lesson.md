@@ -7,6 +7,8 @@
 
 **2026-10-23 から動画は参考リール型の手順動画**（`data/content-format.json` の `"lessonLook": "reel"`。オーナーの言葉「1回あのキャンバスに出してる案でやってみよう。」）: 4 枚の `slides` に加えて、**画面の台本 `reel`（手順 3〜5 個。AI の窓で 開く・貼る・打つ・送る・確かめる を「ステップN。」で 1 つずつ）を必ず書く**。`reel` が無い・検証に通らない回は、08:15 に 4 枚の見た目で出る（この作りで出ない）。書き方は [lesson-format.md](lesson-format.md) の §6。`"lessonLook": "cards"` の間は `reel` を書かなくてよい。
 
+**2026-11-02 から見せ方は instagram-agent-skill-ja の手順（試行 #5。オーナーの言葉「このgithubのskillをつかってこのアカウントだけ実験的に…運用してみる」）**: ネタと柱はそのままで、つかみ（フック 3 案の採点）・最初の画面の文字・キャプションの 1 行目と段落・AI っぽさ消しを、リポに同梱したスキル（`.claude/skills/ig-*`）で作り、点数を回の `craft` に残す（手順 4.5）。仕様・記録・戻し方は [ig-skill-format.md](ig-skill-format.md)（**必読**）。
+
 **重要**
 
 - 08:15 JST の `daily-video.yml` が今日の回を読んで動画にする。**今日の回が main に無い・検証に通らないときは、ネタ帳 `data/ai-lesson-stock.json` の未使用の 1 本（`next` の `stockNext`）が自動で出る**。空白日にはならないが、朝ルーチンが書いた回は出ない
@@ -53,7 +55,7 @@ node scripts/jev.mjs pdca
 出力を `docs/pdca/$TODAY.md` のタイトル直下にそのまま貼り、次の節を書く。
 
 - **読み方**: 主指標は **IG 保存数と IG フォロワー増**（オーナーが 2 週間ごとに見る）。副指標は IG views 中央値。YT は登録者の増加と views を別に見る（IG と YT は合算しない）。IG insights は最大 48 時間遅れる
-- 変えてよいもの: 見出し・冒頭の一言（`hook`）・困りごとの切り口・柱の順番・図の種類・答えの例の見せ方
+- 変えてよいもの: 見出し・冒頭の一言（`hook`。参考リール型では `reel.hook` / `reel.title` = `craft.hooks` の選んだ案）・キャプションの 1 行目と段落（`craft.captionLead` / `captionBody`）・困りごとの切り口・柱の順番・図の種類・答えの例の見せ方
 - 変えないもの: 1 日 1 本・4 枚の構成と手順型の画面（`reel`）・有料プランと誇大表現を出さない・GitHub を扱わない・円表記・CTA（保存とフォロー）。変えたいときは「戦略更新提案」に書く
 
 ```markdown
@@ -70,7 +72,7 @@ node scripts/jev.mjs pdca
 
 ### 3. 今日の 1 本を決める
 
-- **ふだん**: `stockNext` をそのまま今日の回にする（ネタ帳 `data/ai-lesson-stock.json` から同じ `topic_key` の回を写し、`date` / `genre: "ai-lesson"` / `trial: 4` / `kind: "lesson"` を足す）。PDCA の Action に合わせて見出し・`hook` の言い回しを直すのはよい（`topic_key` と 2 枚目の頼み方の文は変えない。変えると 08:15 の予備と食い違う）。**ネタ帳の回には `reel` も入っている。消さずにそのまま写す**（`reel.title` / `reel.hook` の言い回しを直すのはよい。`hook` の「Nつ」は手順の数のまま）
+- **ふだん**: `stockNext` をそのまま今日の回にする（ネタ帳 `data/ai-lesson-stock.json` から同じ `topic_key` の回を写し、`date` / `genre: "ai-lesson"` / `trial: 4` / `kind: "lesson"` を足す）。PDCA の Action に合わせて見出し・`hook` の言い回しを直すのはよい（`topic_key` と 2 枚目の頼み方の文は変えない。変えると 08:15 の予備と食い違う）。**ネタ帳の回には `reel` と `craft`（スキルで作ったフック 3 案・キャプション・点数）も入っている。どちらも消さずにそのまま写す**（`reel.title` / `reel.hook` を直したいときは、手順 4.5 のとおり `craft.hooks` の案を差し替えて採点し直す。`reel.hook` の「Nつ」は手順の数のまま）
 - **`stockLeft` が 7 以下の日**: ネタ帳から取らずに**新しい回を書く**（予備を 7 本残すため）。柱は前の日と違うもの。2 枚目の頼み方の文は、これまでの回のどれとも似ていないもの（検証が 0.55 以上の似かたを止める）
 - **`stockLeft` が 10 未満**: 最終レポートに「ネタ帳の補充が必要（残り N 本）」と書く（補充は別の PR。朝ルーチンの PR には混ぜない）
 
@@ -90,6 +92,25 @@ node scripts/jev.mjs pdca
 - `reel`（`lessonLook` が `reel` の間は必須。[lesson-format.md](lesson-format.md) §6）: 手順 3〜5 個を `open` → `paste` → `type` → `send` → `check` の順で（`type` と `send` は必ず。頼み方の文を貼る形の回は `paste` も必ず）。各手順は `heading`（`["前", "オレンジの語", "後"]`、合わせて 12 字まで）と `narration`（14〜50 字、「ステップN。」で始め、画面で起きることをそのまま言う）。`title`（11 字まで）・`hook`（「Nつ」を含める）・`answer`（答えの例を見出しと 1 行 20 字までの行で、合わせて 7 行まで）。`paste` がある回は `file`（貼る文章の名前。`会議のメモ` など、拡張子は付けない）と、貼る札かナレーションに「仮名にしてから」「社外秘は消してから」のどれか。ネタ帳の回の `reel` が手本
 - `sources`: AI の機能・表計算の関数の説明に使ったページ（0〜4 件、`role: "reference"`、`published_at` は日付か `null`）。確かめるのは提供元の公式のページ（`official: true`）。提供元以外の解説ページも添えたときは `official: false`（それだけを根拠にはしない）。使っていなければ `[]`
 - JSON の文字列の中に ASCII のダブルクォート（`"`）を入れるときは `\"` とエスケープする。日本語のかぎ括弧（「」『』）はそのまま使ってよい
+
+### 4.5 見せ方をスキルの手順で仕上げる（必須。試行 #5、[ig-skill-format.md](ig-skill-format.md)）
+
+ネタ帳から写した回で `craft` に手を入れないなら、`node scripts/ig-craft.mjs --date=$TODAY` で点数を確かめるだけでよい（`craft.scores` は写したまま）。新しく書いた回・フックやキャプションを直した回は、次の順で:
+
+```bash
+mkdir -p ~/.claude/instagram && cp docs/ig-voice.md ~/.claude/instagram/voice.md   # スキルが読む話し方の設定
+```
+
+1. **フック 3 案**（`.claude/skills/ig-reel/SKILL.md` の「進め方」1〜2）: `.claude/skills/ig-reel/hooks.json` の 26 の型から、この回に本当に合う**違う型を 3 つ**選び、それぞれ話す 1 行（`say`。そのまま `reel.hook` になるので「Nつ」を入れて 10〜40 字）と最初の画面の文字（`text`。そのまま `reel.title`、2〜11 字）を書いて `craft.hooks` に入れる。**使えない型**: 実体験の型（損した告白・失敗の記録・中の人の暴露・他人の結果）、作った数字が要る型（実際の数字・統計の数字・置き換え・時間の短縮）。数字はその回の頼み方の中にあるもの（3 行・5 つ・30 分など）だけ。誇大・有料プラン・GitHub の言葉は使わない（点数のために「知らないと損」「裏技」などを入れない。検証で NG）
+2. **キャプション**（`.claude/skills/ig-caption/SKILL.md`）: `craft.captionLead`（30 字まで。「…続きを読む」の前に見える 1 行。あいさつ・絵文字・タグで始めない）と `craft.captionBody`（短い段落 2 つほど。何が困るか → どう頼むか・何を確かめるか）、`craft.keywords`（検索されそうな言葉 2 つ。キャプションに入っている言葉）を書く
+3. **AI っぽさ消し**（`.claude/skills/ig-human/SKILL.md`）: 手順のナレーションとキャプションの段落をファイルに書き出して `python3 -I .claude/skills/ig-human/humanize.py <ファイル> --report -o /tmp/clean.txt` を通し、出た決まり文句・文の形の跡を**手で**直す（自動の削除で文が壊れることがある。原稿には自分で直した文を書く）
+4. **採点して記録**: `reel.hook` / `reel.title` を選んだ案（ふつうは 1 位）に合わせてから
+
+```bash
+node scripts/ig-craft.mjs --date=$TODAY --write
+```
+
+フックの順位・秒割り・キャプションの判定・AI っぽさの点数が出て、`craft.scores` に書かれる。**選んだフックが 50 点未満（`NG the picked hook scores under 50`）なら、別の型で案を書き直す**。キャプションが「直す」（FIX）なら直す。「見直す」（REVIEW）の注意は 1 つずつ読み、直すか残すかを PDCA の「今日の回」に一言書く（「お願いは1つ」は締めの保存とフォロー = オーナーの決まりなので残す）。`craft.scores` は手で書かない。言い回しを直したら `--write` をもう一度。`python3` が無い環境なら `craft.scores` なしで進め、最終レポートの先頭に「python3 が無く採点できなかった」と書く
 
 ### 5. 検証（必須・省略禁止）
 
@@ -116,6 +137,8 @@ node scripts/jev.mjs validate
 - `.reel: pasting work text` → 貼る札かナレーションに「人の名前や社名を仮名にしてから」「社外秘は消してから」などを入れる
 - `rows … up to 7 fit` / `lines[…]: … chars (allowed 2-20)` → 答えの例を短く・少なく
 - `spoken chars with the fixed lines` → ナレーションを短く（59 秒に収めるため）
+- `.craft.hooks: reel.hook and reel.title must be the picked candidate's say and text` → 選んだ案と画面の文がずれている。どちらかに合わせて `ig-craft.mjs --write` をやり直す
+- `.craft.hooks: 3 different hook types` / `3 candidates` / `.craft.captionLead: … chars` → 型を 3 つ違えて 3 案に / 1 行目を 30 字までに
 - `no dollar amounts` → 円に換算する
 - `was posted but is missing or changed` → 過去の回を消した・書き換えた。main の台帳から元に戻す
 
@@ -204,4 +227,4 @@ node scripts/deliver-jev.mjs --pr="$PR_NUMBER" --head="$VALIDATED_HEAD"
 
 ## 最終レポート
 
-今日の `topic_key`・柱・見出し、ネタ帳から取ったか新しく書いたか、ネタ帳の残り（10 本未満なら「補充が必要」）、使った出典（あれば）、着弾確認の結果。お金がかかる手段が必要になった・調べられなかった、などオーナーの判断が要ることがあれば最後に書く。
+今日の `topic_key`・柱・見出し、ネタ帳から取ったか新しく書いたか、**選んだフック（型・点数・`reel.hook` / `reel.title`）とキャプションの 1 行目・判定**、ネタ帳の残り（10 本未満なら「補充が必要」）、使った出典（あれば）、着弾確認の結果。お金がかかる手段が必要になった・調べられなかった、などオーナーの判断が要ることがあれば最後に書く。
