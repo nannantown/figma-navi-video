@@ -963,7 +963,7 @@ export function reelOnlyErrors(errors) {
 }
 
 function lessonShownTexts(ep) {
-  const out = [["topic", ep.topic], ["headline", ep.headline], ["hook", ep.hook], ["craft.captionLead", ep.craft?.captionLead], ...reelTexts(ep.reel)];
+  const out = [["topic", ep.topic], ["headline", ep.headline], ["hook", ep.hook], ["craft.captionLead", ep.craft?.captionLead], ...(Array.isArray(ep.craft?.captionBody) ? ep.craft.captionBody : []).map((t, i) => [`craft.captionBody[${i}]`, t]), ...reelTexts(ep.reel)];
   (Array.isArray(ep.slides) ? ep.slides : []).forEach((s, i) => {
     for (const f of ["heading", "body", "narration", "claim_source"]) out.push([`slides[${i}].${f}`, s?.[f]]);
     (Array.isArray(s?.diagram?.items) ? s.diagram.items : []).forEach((it, j) => {
@@ -981,7 +981,7 @@ function lessonShownTexts(ep) {
 // types (reel.hook / reel.title are the picked one's say / text), the caption's
 // first line, the search words, and the tool scores (scripts/ig-craft.mjs --write).
 // ---------------------------------------------------------------------------
-const CRAFT_LIMITS = { captionLead: [8, 30], type: [1, 20], keyword: [1, 15] };
+const CRAFT_LIMITS = { captionLead: [8, 30], paragraph: [10, 90], type: [1, 20], keyword: [1, 15] };
 
 export function craftProblems(ep, at = "episode") {
   const c = ep.craft;
@@ -1000,6 +1000,14 @@ export function craftProblems(ep, at = "episode") {
   const lead = lengthProblem(c.captionLead, CRAFT_LIMITS.captionLead, `${a}.captionLead`);
   if (lead) errors.push(lead);
   errors.push(...shownTextProblems(c.captionLead, `${a}.captionLead`));
+  if (c.captionBody !== undefined) {
+    if (!Array.isArray(c.captionBody) || c.captionBody.length < 1 || c.captionBody.length > 3) errors.push(`${a}.captionBody: 1-3 short paragraphs`);
+    else c.captionBody.forEach((t, i) => {
+      const l = lengthProblem(t, CRAFT_LIMITS.paragraph, `${a}.captionBody[${i}]`);
+      if (l) errors.push(l);
+      errors.push(...shownTextProblems(t, `${a}.captionBody[${i}]`));
+    });
+  }
   if (c.keywords !== undefined && (!Array.isArray(c.keywords) || c.keywords.length > 3 || c.keywords.some((k) => lengthProblem(k, CRAFT_LIMITS.keyword, "k")))) errors.push(`${a}.keywords: 0-3 search words of 1-15 chars`);
   return errors;
 }
@@ -1316,6 +1324,8 @@ export function toJevVideoData(ep, { usecaseNumber = null, series = SERIES.jev, 
       headline: ep.headline.trim(),
       // The caption's first line (craft, docs/ig-skill-format.md); null = 「見出し（M/D）」.
       captionLead: ep.craft?.captionLead?.trim() || null,
+      // The caption's middle (craft): short paragraphs instead of one 「・見出し：本文」 line a slide.
+      captionBody: Array.isArray(ep.craft?.captionBody) ? ep.craft.captionBody.map((t) => t.trim()) : null,
       titleTag: series.kindTag[ep.kind],
       // The day's headline on the opening: the first 1-2 s decide the swipe,
       // and every day must look different on the grid.
@@ -1514,7 +1524,7 @@ export function buildJevCaptions(data) {
   const dateFull = meta.date.replace(/-/g, "/");
   let title = `【${meta.titleTag}】${clean(meta.headline).replace(/[<>]/g, "")}｜${dateFull} #Shorts`;
   if (Array.from(title).length > YT_TITLE_MAX || title.length > YT_TITLE_MAX) title = `【${meta.titleTag}】${dateFull} #Shorts`;
-  const body = tools.map(slideLine);
+  const body = meta.captionBody ? meta.captionBody.flatMap((t, i) => (i ? ["", clean(t)] : [clean(t)])) : tools.map(slideLine);
   // Lesson: the request itself, near the top so it shows before 「…続きを読む」 and can be copied.
   const promptBlock = jev?.prompt ? ["▼ そのまま使える頼み方（コピーして使えます）", clean(jev.prompt), ""] : [];
   const sourceBlock = (level) => (jev.sources.length > 0 ? ["出典:", ...sourceLines(jev, level), ""] : []);
