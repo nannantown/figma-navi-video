@@ -210,9 +210,9 @@ merge のコマンド（`gh api --method PUT …/merge`・`gh pr merge`）はこ
 gh api --method GET repos/nannantown/figma-navi-video/pulls/$PR_NUMBER --jq '{merged,merge_commit_sha,head:.head.sha}'
 ```
 
-3 分たっても `merged` が `false` なら、ワークフローの結果を読む: `gh api --method GET "repos/nannantown/figma-navi-video/actions/workflows/merge-routine-content.yml/runs?branch=$BRANCH&per_page=3" --jq '.workflow_runs[]|{status,conclusion,html_url}'`。失敗（`failure`）や未実行のときは、merge の代わりになる操作はせず、次の 2 つだけを行って止まる。
+3 分たっても `merged` が `false` なら、ワークフローの結果を読む: `gh api --method GET "repos/nannantown/figma-navi-video/actions/workflows/merge-routine-content.yml/runs?branch=$BRANCH&per_page=3" --jq '.workflow_runs[]|{status,conclusion,html_url}'`。**`merged` が `true` でなければ、run の状態が何でも同じ扱い**（失敗 `failure`・まだ動いている `in_progress` / `queued`・`skipped`・`cancelled`・成功なのに未 merge（08:10 JST 以降は merge しない）・run が無い）。merge の代わりになる操作はせず、次の 2 つだけを行って止まる。
 
-1. `PushNotification` で、PR 番号・URL・SHA・ワークフローの URL と「自動の取り込みが止まりました。08:15 JST までに squash merge してください。間に合わなければ予備のレッスンが自動で出ます（その場合は PR を merge せずに閉じてください）」を送る。
+1. `PushNotification` で、PR 番号・URL・SHA・ワークフローの URL と **run の状態（`status` / `conclusion`。run が無ければ「run なし」）**、「自動の取り込みが止まりました。08:15 JST までに squash merge してください。間に合わなければ予備のレッスンが自動で出ます（その場合は PR を merge せずに閉じてください）」を送る。
 2. D の読み取り確認をしてから、最終レポートの先頭に同じことを書く。
 
 #### D. main の着弾確認（必須）
