@@ -188,7 +188,7 @@ BRANCH="routine-content-$TODAY"
 git checkout -b "$BRANCH" 2>/dev/null || git checkout "$BRANCH"
 mkdir -p docs/pdca
 git add data/ai-lesson-episodes.json data/tts-readings.json docs/pdca/$TODAY.md
-git commit -m "Content: AI lesson $TODAY [topic_key] [skip ci]"
+git commit -m "Content: AI lesson $TODAY [topic_key]"
 VALIDATED_HEAD=$(git rev-parse HEAD)
 git push -u origin "$BRANCH"
 
@@ -199,7 +199,7 @@ gh api --method POST repos/nannantown/figma-navi-video/pulls \
   --jq '{number,html_url,head_sha:.head.sha}'
 ```
 
-返った PR 番号と SHA を控える。再開時は新しく作らず、`gh api --method GET "repos/nannantown/figma-navi-video/pulls?state=open&head=nannantown:$BRANCH&base=main"` で同じ PR を確認する。PR を開いたあとに直しを push しない（もう merge されていることがある）。直しが要ると気づいたら、push せずにレポートの先頭へ書いて止まる。
+返った PR 番号と SHA を控える。再開時は新しく作らず、`gh api --method GET "repos/nannantown/figma-navi-video/pulls?state=open&head=nannantown:$BRANCH&base=main"` で同じ PR を確認する。PR を開いたあとに直しを push しない（もう merge されていることがある）。直しが要ると気づいたら、push せずにレポートの先頭へ書いて止まる。**コミットのメッセージに `[skip ci]` などの「CI を飛ばす」印を入れない**（PR の先頭のコミットにあると、GitHub が merge のワークフローを起動しない）。
 
 #### C. ワークフローの merge を読み取りで待つ
 
