@@ -2,61 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "AWzFpVqWSvs",
-      "videoUrl": "https://youtube.com/shorts/AWzFpVqWSvs",
-      "date": "2026-08-04",
-      "title": "【デザインニュース】Lacoste Ace Breaker が Awwwards SOTD 08-03、Merci Michel の 1動詞×3色設計｜2026/08/04 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 43,
-      "discovery": {
-        "method": "product-launches",
-        "description": "Awwwards Sites of the Day 08-03 発表分から Primary persona 学び直結の高得点 SOTD を抽出、Muzli / Brandon King blog / X 公式アカウントで裏取り、Merci Michel 制作、スコア 7.46/10、Three.js のブランドゲーム、実世界の賞品でリピート設計。Primary persona 駆け出しデザイナーが名門スタジオのブランドサイト設計を学ぶ導線。07-25 Lama Lama / 07-29 TRIONN と同じ product-launches Awwwards SOTD 縦糸を継続、7-day-2-time は 07-29 のみ 1 回で追加可能、2-day rule は 08-03 news-en / 08-02 news-ja でクリア。柱⑤ ポートフォリオ事例 (target 10%、+4.3pt 超過継続だが SOTD 縦糸として週次リズム維持) 主、柱③ 業界・デザインニュース副。",
-        "sources": [
-          "https://www.awwwards.com/sites/lacoste-ace-breaker",
-          "https://x.com/awwwards/status/2084188311380263256",
-          "https://me.muz.li/merci-michel/lacoste-ace-breaker-2",
-          "https://brandoneking.wordpress.com/2026/07/04/lacoste-ace-breaker-merci-michel/",
-          "https://x.com/Lacoste/status/1982853970927464726"
-        ],
-        "query": "Awwwards Site of the Day August 2026 Lacoste Ace Breaker Merci Michel Roland Garros Three.js",
-        "freshness_hours": 24
-      },
-      "stats": {
-        "views": 4,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-08-18T23:35:16.966Z"
-      },
-      "instagram": {
-        "mediaId": "18171462640437987",
-        "permalink": "https://www.instagram.com/reel/DbmQfVSCFTc/",
-        "views": 118,
-        "reach": 114,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "R-_qe2GlMIA",
       "videoUrl": "https://youtube.com/shorts/R-_qe2GlMIA",
       "date": "2026-08-05",
@@ -3589,7 +3534,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-02T23:16:19.838Z"
+        "updatedAt": "2026-11-03T23:16:14.408Z"
       },
       "instagram": {
         "mediaId": "18060946787535736",
@@ -3672,7 +3617,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-02T23:16:19.838Z"
+        "updatedAt": "2026-11-03T23:16:14.408Z"
       },
       "instagram": null,
       "jev": {
@@ -3751,7 +3696,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-02T23:16:19.838Z"
+        "updatedAt": "2026-11-03T23:16:14.408Z"
       },
       "instagram": null,
       "jev": {
@@ -3820,7 +3765,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-02T23:16:19.838Z"
+        "updatedAt": "2026-11-03T23:16:14.408Z"
       },
       "instagram": {
         "mediaId": "18014511812978403",
@@ -3831,7 +3776,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-02T23:16:19.839Z"
+        "updatedAt": "2026-11-03T23:16:14.409Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3881,7 +3826,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-02T23:16:19.838Z"
+        "updatedAt": "2026-11-03T23:16:14.408Z"
       },
       "instagram": {
         "mediaId": "18115514255520326",
@@ -3892,7 +3837,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-02T23:16:19.839Z"
+        "updatedAt": "2026-11-03T23:16:14.409Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3941,10 +3886,10 @@
         ]
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-02T23:16:19.838Z"
+        "updatedAt": "2026-11-03T23:16:14.408Z"
       },
       "instagram": {
         "mediaId": "17954212068313509",
@@ -3955,7 +3900,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-02T23:16:19.839Z"
+        "updatedAt": "2026-11-03T23:16:14.409Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4013,7 +3958,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-02T23:16:19.838Z"
+        "updatedAt": "2026-11-03T23:16:14.408Z"
       },
       "instagram": {
         "mediaId": "17903344620374199",
@@ -4024,7 +3969,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-02T23:16:19.839Z"
+        "updatedAt": "2026-11-03T23:16:14.409Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4075,7 +4020,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-02T23:16:19.838Z"
+        "updatedAt": "2026-11-03T23:16:14.408Z"
       },
       "instagram": {
         "mediaId": "18098503742111365",
@@ -4086,7 +4031,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-02T23:16:19.839Z"
+        "updatedAt": "2026-11-03T23:16:14.409Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4137,7 +4082,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-02T23:16:19.838Z"
+        "updatedAt": "2026-11-03T23:16:14.408Z"
       },
       "instagram": {
         "mediaId": "18020882360945399",
@@ -4148,7 +4093,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-02T23:16:19.839Z"
+        "updatedAt": "2026-11-03T23:16:14.409Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4199,7 +4144,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-02T23:16:19.838Z"
+        "updatedAt": "2026-11-03T23:16:14.408Z"
       },
       "instagram": {
         "mediaId": "17977321719138515",
@@ -4210,7 +4155,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-02T23:16:19.839Z"
+        "updatedAt": "2026-11-03T23:16:14.409Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4261,7 +4206,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-02T23:16:19.838Z"
+        "updatedAt": "2026-11-03T23:16:14.408Z"
       },
       "instagram": {
         "mediaId": "18099069068453599",
@@ -4272,7 +4217,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-02T23:16:19.839Z"
+        "updatedAt": "2026-11-03T23:16:14.409Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4323,7 +4268,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-02T23:16:19.838Z"
+        "updatedAt": "2026-11-03T23:16:14.408Z"
       },
       "instagram": {
         "mediaId": "18434776459148578",
@@ -4334,7 +4279,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-02T23:16:19.839Z"
+        "updatedAt": "2026-11-03T23:16:14.409Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4385,18 +4330,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-11-03T23:16:14.408Z"
       },
       "instagram": {
         "mediaId": "18153184453512939",
-        "permalink": null,
-        "views": null,
-        "reach": null,
-        "likes": null,
-        "comments": null,
-        "shares": null,
-        "saved": null,
-        "updatedAt": null
+        "permalink": "https://www.instagram.com/reel/DfQeMNska8M/",
+        "views": 10,
+        "reach": 10,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-11-03T23:16:14.409Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4416,16 +4361,80 @@
           "humanCaption": 55.2
         }
       }
+    },
+    {
+      "videoId": "SEH3LWnUWIw",
+      "videoUrl": "https://youtube.com/shorts/SEH3LWnUWIw",
+      "date": "2026-11-04",
+      "genre": "ai-lesson",
+      "trial": 4,
+      "title": "【AI仕事術】名簿の表記をそろえる｜2026/11/04 #Shorts",
+      "titleTemplate": "ai-lesson",
+      "hashtags": [
+        "AI活用",
+        "ChatGPT",
+        "生成AI",
+        "仕事術",
+        "業務効率化",
+        "AIの使い方",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "名簿の表記をそろえる"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": ""
+      },
+      "durationSeconds": 49,
+      "coverOffsetMs": 5833,
+      "look": "reel",
+      "ytThumbnail": "set",
+      "discovery": {
+        "method": "lesson",
+        "description": "名簿の表記のばらつきをそろえてもらう",
+        "sources": []
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "18192854989406830",
+        "permalink": null,
+        "views": null,
+        "reach": null,
+        "likes": null,
+        "comments": null,
+        "shares": null,
+        "saved": null,
+        "updatedAt": null
+      },
+      "jev": {
+        "kind": "lesson",
+        "topicKey": "sheet-clean-names",
+        "topic": "名簿の表記のばらつきをそろえてもらう",
+        "sources": [],
+        "pillar": "sheet",
+        "prompt": "次の名簿の会社名の表記（全角と半角、株式会社の位置）をそろえて、表の形で返してください。",
+        "fallback": true,
+        "craft": {
+          "tool": "instagram-agent-skill-ja@0e7ac86",
+          "hookType": "「〜しなくていい」",
+          "hookScore": 67.8,
+          "hookSeconds": 5.8,
+          "caption": "REVIEW",
+          "humanScript": 71.8,
+          "humanCaption": 56.3
+        }
+      }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-10-06",
-      "changes": [
-        "Day performance: Mon=1, Tue=1, Wed=1, Thu=1, Fri=1, Sat=1, Sun=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-10-07",
       "changes": [
@@ -4628,6 +4637,13 @@
         "Day performance: Tue=1, Wed=1, Thu=1, Fri=1, Sun=1, Mon=1, Sat=0"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-11-03",
+      "changes": [
+        "Day performance: Tue=1, Wed=1, Thu=1, Fri=1, Sun=1, Mon=1, Sat=0"
+      ],
+      "recommendedTemplate": "standard"
     }
   ],
   "account": {
@@ -4762,6 +4778,10 @@
       },
       {
         "date": "2026-11-03",
+        "count": 0
+      },
+      {
+        "date": "2026-11-04",
         "count": 0
       }
     ]
