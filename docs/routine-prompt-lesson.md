@@ -166,7 +166,8 @@ node scripts/tts-reading.mjs --data=data/ai-lesson-episodes.json --date=$TODAY
 ```bash
 cd "$(git rev-parse --show-toplevel)"
 git fetch origin main -q
-git diff origin/main -- data/ai-lesson-episodes.json data/tts-readings.json docs/pdca/
+git diff origin/main -- data/ai-lesson-episodes.json data/tts-readings.json
+cat "docs/pdca/$(TZ=Asia/Tokyo date +%Y-%m-%d).md"
 git status --short
 ```
 
