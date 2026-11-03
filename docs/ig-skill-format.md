@@ -67,7 +67,8 @@ jq -r '.videos[] | select(.genre=="ai-lesson") | [.date, .jev.topicKey, (.jev.cr
 - まだ出していない 11 本（`mail-soften-reply` 〜 `sheet-explain-formula`）のフック・最初の画面の文字・キャプションをこの手順で作り直し、4 本（`slides-speaker-notes` / `research-list-questions` / `meeting-expected-questions` / `summary-mail-timeline`）を足した。**15 本 = 2026-11-03〜11-17 の分**。頼み方の文・スライドの中身・手順は元のまま（新しい 4 本は新しく書いた）
 - 作り直す前の採点（参考）: 今までのつかみ「〇〇は、5つの手順です。」の形は 46 点前後（弱い）。作り直した 15 本の選んだフックは 50.8〜85.2 点（同じ型が 2 日続かないように選んだ。「やめて」命令は 15 本中 5 本）
 - 朝ルーチンの原稿 PR は 10/27 から merge されずに止まっていて（[routine-merge-miss.md](routine-merge-miss.md)）、毎朝ネタ帳の回が出ている。だから**ネタ帳そのものをこの作り方にした**（朝ルーチンが merge できても、ネタ帳の回を写すので同じ中身になる）
-- 11-17 より後の分は、朝ルーチンが新しく書くか（`stockLeft` 7 以下の日）、ネタ帳を足す PR が要る（足す回も `craft` つきで。`npm run validate:stock` と `node --test scripts/ig-craft.test.mjs`）
+- 12-03 より後の分は、朝ルーチンが新しく書くか（`stockLeft` 7 以下の日）、ネタ帳を足す PR が要る（足す回も `craft` つきで。`npm run validate:stock` と `node --test scripts/ig-craft.test.mjs`）
+- **2026-11-02 の補充（同じ日の 2 枚目のカード）**: この手順で 16 本を足した（柱 8 本を 2 周: `mail-gentle-reminder` 〜 `summary-to-checklist`）。**ネタ帳は 41 本、まだ出していないのは 31 本 = 2026-11-03〜12-03 の分**（数え方: `node scripts/jev.mjs next --series=lesson` の `stockLeft`、11-02 の時点で今日の回を含めて 32）。選んだフックは 50.6〜82.8 点、同じ型が 2 日続かない並び（前の 15 本の最後の「そのままの質問」からつなげた）。キャプションの判定は全部「見直す」（REVIEW、「直す」= FIX は 0）
 
 ## 6. 分かっている限界
 
