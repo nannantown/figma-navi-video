@@ -2,60 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "R-_qe2GlMIA",
-      "videoUrl": "https://youtube.com/shorts/R-_qe2GlMIA",
-      "date": "2026-08-05",
-      "title": "【デザインニュース】Figma Makeがvisual editing対応、プロンプト頼みからFigma慣れの操作へ｜2026/08/05 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 40,
-      "discovery": {
-        "method": "official-src",
-        "description": "Figma Blog 07-30 の Figma Make properties panel + annotations 追加を主候補として採用。ソースは Figma 公式 Blog + Figma Newsroom + Config 2026 recap の関連セクション。144h fresh、168h 上限の 86%。08-04 PDCA §Method 提案の 08-06 予約を 1 日前倒し (freshness expiry 回避)、08-05 予約 figma-community は本ルーチン内で有効候補確保に失敗のため 08-06 へ振り替え。Primary persona 駆け出しデザイナーの『AI プロンプト打ち直し疲れ』を Figma UI 慣れの局所修正で解消する具体解。柱① Figma公式ニュース (target 25%, -3.6pt) 修復。",
-        "sources": [
-          "https://www.figma.com/blog/properties-panel-and-annotations-now-in-figma-make/",
-          "https://www.figma.com/release-notes/",
-          "https://www.figma.com/blog/config-2026-recap/",
-          "https://help.figma.com/hc/en-us/articles/39582753756695-What-s-new-from-Config-2026"
-        ],
-        "query": "Figma Make properties panel annotations July 30 2026 visual editing launch",
-        "freshness_hours": 144
-      },
-      "stats": {
-        "views": 1,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-08-19T23:35:56.144Z"
-      },
-      "instagram": {
-        "mediaId": "18111443654002094",
-        "permalink": "https://www.instagram.com/reel/Dbo1L91kzsx/",
-        "views": 108,
-        "reach": 105,
-        "likes": 1,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "P8OygDnLY3w",
       "videoUrl": "https://youtube.com/shorts/P8OygDnLY3w",
       "date": "2026-08-06",
@@ -3617,7 +3563,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-03T23:16:14.408Z"
+        "updatedAt": "2026-11-04T23:16:07.402Z"
       },
       "instagram": null,
       "jev": {
@@ -3696,7 +3642,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-03T23:16:14.408Z"
+        "updatedAt": "2026-11-04T23:16:07.402Z"
       },
       "instagram": null,
       "jev": {
@@ -3765,7 +3711,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-03T23:16:14.408Z"
+        "updatedAt": "2026-11-04T23:16:07.402Z"
       },
       "instagram": {
         "mediaId": "18014511812978403",
@@ -3776,7 +3722,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-03T23:16:14.409Z"
+        "updatedAt": "2026-11-04T23:16:07.403Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3826,7 +3772,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-03T23:16:14.408Z"
+        "updatedAt": "2026-11-04T23:16:07.402Z"
       },
       "instagram": {
         "mediaId": "18115514255520326",
@@ -3837,7 +3783,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-03T23:16:14.409Z"
+        "updatedAt": "2026-11-04T23:16:07.403Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3889,7 +3835,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-03T23:16:14.408Z"
+        "updatedAt": "2026-11-04T23:16:07.402Z"
       },
       "instagram": {
         "mediaId": "17954212068313509",
@@ -3900,7 +3846,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-03T23:16:14.409Z"
+        "updatedAt": "2026-11-04T23:16:07.403Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3958,7 +3904,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-03T23:16:14.408Z"
+        "updatedAt": "2026-11-04T23:16:07.402Z"
       },
       "instagram": {
         "mediaId": "17903344620374199",
@@ -3969,7 +3915,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-03T23:16:14.409Z"
+        "updatedAt": "2026-11-04T23:16:07.403Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4020,7 +3966,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-03T23:16:14.408Z"
+        "updatedAt": "2026-11-04T23:16:07.402Z"
       },
       "instagram": {
         "mediaId": "18098503742111365",
@@ -4031,7 +3977,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-03T23:16:14.409Z"
+        "updatedAt": "2026-11-04T23:16:07.403Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4082,7 +4028,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-03T23:16:14.408Z"
+        "updatedAt": "2026-11-04T23:16:07.402Z"
       },
       "instagram": {
         "mediaId": "18020882360945399",
@@ -4093,7 +4039,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-03T23:16:14.409Z"
+        "updatedAt": "2026-11-04T23:16:07.403Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4144,7 +4090,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-03T23:16:14.408Z"
+        "updatedAt": "2026-11-04T23:16:07.402Z"
       },
       "instagram": {
         "mediaId": "17977321719138515",
@@ -4155,7 +4101,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-03T23:16:14.409Z"
+        "updatedAt": "2026-11-04T23:16:07.403Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4206,7 +4152,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-03T23:16:14.408Z"
+        "updatedAt": "2026-11-04T23:16:07.402Z"
       },
       "instagram": {
         "mediaId": "18099069068453599",
@@ -4217,7 +4163,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-03T23:16:14.409Z"
+        "updatedAt": "2026-11-04T23:16:07.403Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4268,7 +4214,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-03T23:16:14.408Z"
+        "updatedAt": "2026-11-04T23:16:07.402Z"
       },
       "instagram": {
         "mediaId": "18434776459148578",
@@ -4279,7 +4225,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-03T23:16:14.409Z"
+        "updatedAt": "2026-11-04T23:16:07.403Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4330,18 +4276,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-03T23:16:14.408Z"
+        "updatedAt": "2026-11-04T23:16:07.402Z"
       },
       "instagram": {
         "mediaId": "18153184453512939",
         "permalink": "https://www.instagram.com/reel/DfQeMNska8M/",
-        "views": 10,
-        "reach": 10,
+        "views": 11,
+        "reach": 11,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-03T23:16:14.409Z"
+        "updatedAt": "2026-11-04T23:16:07.403Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4401,18 +4347,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-11-04T23:16:07.402Z"
       },
       "instagram": {
         "mediaId": "18192854989406830",
-        "permalink": null,
-        "views": null,
-        "reach": null,
-        "likes": null,
-        "comments": null,
-        "shares": null,
-        "saved": null,
-        "updatedAt": null
+        "permalink": "https://www.instagram.com/reel/DfTC1CgkvM9/",
+        "views": 14,
+        "reach": 13,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-11-04T23:16:07.403Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4432,16 +4378,79 @@
           "humanCaption": 56.3
         }
       }
+    },
+    {
+      "videoId": "aJDOHKaXmDw",
+      "videoUrl": "https://youtube.com/shorts/aJDOHKaXmDw",
+      "date": "2026-11-05",
+      "genre": "ai-lesson",
+      "trial": 4,
+      "title": "【AI仕事術】文字だらけのスライドを短く｜2026/11/05 #Shorts",
+      "titleTemplate": "ai-lesson",
+      "hashtags": [
+        "AI活用",
+        "ChatGPT",
+        "生成AI",
+        "仕事術",
+        "業務効率化",
+        "AIの使い方",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "文字だらけのスライドを短く"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": ""
+      },
+      "durationSeconds": 49,
+      "coverOffsetMs": 6267,
+      "look": "reel",
+      "ytThumbnail": "set",
+      "discovery": {
+        "method": "lesson",
+        "description": "文字の多いスライドを短く直してもらう",
+        "sources": []
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "18413974510091486",
+        "permalink": null,
+        "views": null,
+        "reach": null,
+        "likes": null,
+        "comments": null,
+        "shares": null,
+        "saved": null,
+        "updatedAt": null
+      },
+      "jev": {
+        "kind": "lesson",
+        "topicKey": "slides-one-message",
+        "topic": "文字の多いスライドを短く直してもらう",
+        "sources": [],
+        "pillar": "slides",
+        "prompt": "このスライドの文章を、言いたいことが1文で伝わる見出しと、短い箇条書き3つに直してください。",
+        "craft": {
+          "tool": "instagram-agent-skill-ja@0e7ac86",
+          "hookType": "「やめて」命令",
+          "hookScore": 70.4,
+          "hookSeconds": 3.4,
+          "caption": "REVIEW",
+          "humanScript": 70.7,
+          "humanCaption": 59.3
+        }
+      }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-10-07",
-      "changes": [
-        "Day performance: Wed=1, Thu=1, Fri=1, Sat=1, Sun=1, Mon=1, Tue=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-10-08",
       "changes": [
@@ -4644,6 +4653,13 @@
         "Day performance: Tue=1, Wed=1, Thu=1, Fri=1, Sun=1, Mon=1, Sat=0"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-11-04",
+      "changes": [
+        "Day performance: Wed=1, Thu=1, Fri=1, Sun=1, Mon=1, Tue=1, Sat=0"
+      ],
+      "recommendedTemplate": "standard"
     }
   ],
   "account": {
@@ -4782,6 +4798,10 @@
       },
       {
         "date": "2026-11-04",
+        "count": 0
+      },
+      {
+        "date": "2026-11-05",
         "count": 0
       }
     ]
