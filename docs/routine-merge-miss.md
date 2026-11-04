@@ -61,3 +61,30 @@ data/ai-news-episodes.json is invalid:
 - **残るリスク**: hook も PR 番号は「数字」としか見ないので、**このリポの PR なら、どの番号でも squash で merge できる**（中身の確かめは手順書の validate・差分レビュー・`deliver-jev.mjs --prepare` が担い、許可そのものは番号を見ない）。2026-10-25 時点で、古い原稿 PR が open のまま残っている: #173（09-29）#174（09-30）#177（10-03）#185（10-10）#186（10-11）#189（10-13）#192〜#195（10-14〜10-17）#197（10-19）。ルーチンが番号を取り違えても、`-f sha=` の値がその PR の先頭と違えば GitHub が断る（許可は sha の指定を必須にしている）。ただし古い PR の先頭の SHA を読んで渡せば通るので、これらの古い台帳が main に入りうる道は残る。古い PR を閉じるのは司令塔（作業者は閉じない）
 - **差し戻し 2（2026-10-25）の再現**（Claude Code 2.1.310、PR 0）: 抜け道の形（`-f 'x=/merge -f merge_method=squash -f sha='`）は auto mode でも確かめを外すモードでも hook で止まった。sha の引用符の中に `-f merge_method=me''rge` を入れたすり替え、`sha` 無し、`merge_method=merge` / `rebase` も auto mode で hook が止めた。手順書の 3 行の形と 1 行の形は今までどおり通り（404）、`git log` などのほかのコマンドも通った。hook のファイルが見つからないフォルダでは、`onFailure: "block"` によって Bash が止まった
 - **差し戻し 3（2026-10-25）**: Monitor ツール（コマンドを裏で走らせて出力を読む道具）は Bash と同じ許可ルールを使う（[Tools reference — Monitor](https://code.claude.com/docs/en/tools-reference)）。hook が Bash しか見ていなかったので、抜け道の形を Monitor で送ると通った。hook の対象を `Bash|Monitor` にし、Monitor のコマンドも同じ厳密さで調べるようにした。あわせて、merge らしいかの入口の判定を、引用符・`\`・`$` を取り除いてから行うようにした（`P''UT`・`pu"ll"s/`・`$'merge'` のように崩した書き方も厳密照合に回る。`-XPUT` も）。手元（Claude Code 2.1.310、auto mode、PR 0）で、Monitor の抜け道は hook が止め、Monitor の手順書の形は通った（404）
+
+## 2026-11-03: 許可設定はクラウドで効かなかった → merge をワークフローに移した
+
+オーナー回答「A 直す」（2026-11-03。窓口「AI Ground の朝の原稿が本体に入らない詰まりを、A 直す / B 直さない」）。
+
+### 起きたこと
+
+上の許可（`.claude/settings.json` + hook）が main に入った 10/25 11:17 JST のあと、ルーチンが自分で merge できた朝は 1 回もない。原稿 PR は #215（10/27）#219 #221 #222 #223 #224 #228（11/03）が open のまま残り、08:15 は毎朝ネタ帳の回が出た（10/26 と 11/02 は、ルーチンが週の使用上限などで原稿を書かずに終わった日）。
+
+| 証拠（RemoteTrigger `get_run_log`） | 中身 |
+|---|---|
+| 10/27 朝 `cse_0183QKeG7pZFt4hyE5JnuuVa` | hook は動いている（`hook_started` ×18）。手順書どおり値を書き込んだ `gh api --method PUT …/pulls/215/merge -f merge_method=squash -f sha="53c6…" --jq '{merged,message,sha}'` が `permission_denied Bash [classifier]: The server-side auto mode classifier judged this action dangerous`。続く読み取りの `deliver-jev.mjs` も `[Auto-Mode Bypass]` で拒否 |
+| 11/03 朝 `cse_015iQqhtw1eTWdwtoKuqVFFK` | 同じ形の merge（PR #228）が同じ server-side の拒否。`deliver-jev.mjs` も `[Auto-Mode Bypass]` |
+| 10/25 朝 `cse_012iwmehi7P29Lg7hs28z8aQ` | 許可が main に入る前。`[Merge Without Review]` で拒否 |
+| 一次資料: [Permission modes](https://code.claude.com/docs/en/permission-modes)（2026-11-03 取得） | 「人が承認していない PR の merge」は最初から止める対象。許可ルールに合う操作はふつう判定より先に決まるが、例外がある（保護されたパス・コマンドごとの許可ドメインつきのシェルコマンドなど）。クラウドの拒否は server-side の判定で、手元（2.1.310）の再現では通った形でも止まった |
+
+**原因**: クラウドのルーチンでは、ルーチンの Claude 自身が PR を merge する操作が、許可ルールがあっても server-side の自動判定に毎朝止められる。どの例外に当たったのかは公開資料からは確かめられない。ただ「人が承認していない PR の merge」をこの判定が止めるのは設計どおりの動きなので、言い換えや許可の足し方で毎朝確実に通る道は無いと判断した。
+
+### 直したこと
+
+- **merge をリポのワークフロー [`.github/workflows/merge-routine-content.yml`](../.github/workflows/merge-routine-content.yml) に移した**。`routine-content-*` の PR（このリポの branch から main 宛て）が開く・更新されると、**main の**スクリプトで `deliver-jev.mjs --prepare`（今日 JST の日付・台帳の検証・変えてよい 3 ファイルだけ・読みの追加の制限・ネタ帳の回がもう出ていないか・main の台帳が検証の時から変わっていないか）を通し、その SHA だけを squash merge する。そのあと `deliver-jev.mjs` で main に同じ台帳が届いたかまで確かめる。合わなければ merge せずに赤くなる（PR は open のまま、08:15 はネタ帳の回）。GitHub の `GITHUB_TOKEN` で動くので追加料金は無い（公開リポの Actions は無料）
+- **朝の手順書**（[routine-prompt-lesson.md](routine-prompt-lesson.md) §6）: ルーチンは merge しない。レビューを push の前に移し（PR が開いた時点で merge されうるため）、C を「`merged` を読み取りで最大 3 分待つ。だめならワークフローの結果を読んで PushNotification して止まる」にした。休止中の型（news・jev・pickup）の手順書は変えていない。`.claude/settings.json` と hook はそのまま残す（効かないが害も無い。このリポの Claude からの `gh workflow run`・main への push などを止める役も続ける）
+- 原稿のコミットのメッセージから `[skip ci]` を外した。PR の先頭のコミットにこの印があると、`pull_request` のワークフローが起動しない（[Skipping workflow runs](https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-workflow-runs/skipping-workflow-runs)、2026-11-03 取得）。このリポにも `push` で動くワークフローはある（`daily-video.yml` は `.recovery-trigger`、`post-today-instagram.yml` は main の `.retry-ig-trigger` の push だけで動く）。ただ原稿の PR が変えてよいのは台帳・今日の PDCA・読みの 3 ファイルだけで（`deliver-jev.mjs` が確かめる）、この 2 つのファイルには触れない。だから `[skip ci]` を外しても投稿は起きない（merge の push は `GITHUB_TOKEN` なので、そもそも別のワークフローを起動しない）
+- merge のワークフローは `pull_request` ではなく **`pull_request_target`** で動く。`pull_request` だと PR の側のワークフローの定義が使われ、`routine-content-*` の PR がこのファイル自体を書き換えれば確かめを外して merge できてしまう。`pull_request_target` は main の定義で動く。PR のコードは checkout も実行もしない（main の checkout・台帳の JSON を `git show` で読むだけ・確かめた SHA だけを merge）
+- **08:10 JST 以降は merge しない**（PR は open のまま、08:15 はネタ帳の回）。08:15 の投稿のあとに merge されると、台帳の回と実際に出た回（予備）が食い違うため
+- **止め方**: リポの変数 `ROUTINE_AUTO_MERGE=off`（ワークフローが何もしなくなり、前と同じに PR が残る）。**戻し方**: このワークフローを消す PR
+- **古い open の PR**（#215 など）は開き直しても日付の確かめで止まる（今日の分しか merge しない）
