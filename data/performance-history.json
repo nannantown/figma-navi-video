@@ -2,60 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "P8OygDnLY3w",
-      "videoUrl": "https://youtube.com/shorts/P8OygDnLY3w",
-      "date": "2026-08-06",
-      "title": "【デザインニュース】Figma nested folders 08-03ロールアウト、有料10階層と作り方の舞台裏｜2026/08/06 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 41,
-      "discovery": {
-        "method": "news-en",
-        "description": "英語系デザインテックメディア (AlternativeTo 2026-08 記事 + DesignRemoteJobs) がFigma nested folders 08-03ロールアウトを速報カバー、Figma公式ブログの技術舞台裏『Code, Craft, and the Making of Nested Folders』も同日公開でPrimary persona 駆け出しデザイナーのファイル整理課題に直撃。08-05 PDCA §Method 提案の 08-06 予約 figma-community は fresh (<168h) 有効候補確保に失敗 (Buddy 07-10 stale / UX Pilot 07-30 使用済 / Matt DesLauriers 記事は 2019年 stale) のため news-en へ振替、2-day rule (08-05 official-src / 08-04 product-launches) と 7-day-2-time (08-03 news-en 1回のみ、追加で2回でギリ) 共にクリア。official-src は 07-31 + 08-05 で既に 2 回、7-day-2-time 上限で追加不可のため回避。柱① Figma公式ニュース (target 25%, -3.6pt → 08-05 で修復開始) 引続き修復方向、記事は Figma 発だが discovery flow は英語業界メディア経由で news-en 妥当。",
-        "sources": [
-          "https://alternativeto.net/news/2026/8/figma-introduces-nested-folders-for-improved-file-organization-and-team-collaboration/",
-          "https://www.designremotejobs.com/article/how-figma-rethought-teamwork-to-ship-nested-folders-code-craft-and-collaboration",
-          "https://www.figma.com/blog/code-craft-and-the-making-of-nested-folders/",
-          "https://help.figma.com/hc/en-us/articles/41753150926103-Updates-to-Figma-s-file-management"
-        ],
-        "query": "Figma nested folders August 3 2026 rollout 10 levels engineering craft PR first",
-        "freshness_hours": 72
-      },
-      "stats": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-08-20T23:40:25.952Z"
-      },
-      "instagram": {
-        "mediaId": "18103680647334191",
-        "permalink": "https://www.instagram.com/reel/DbrZbqNDoxx/",
-        "views": 8,
-        "reach": 7,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "zGan8OuSSQI",
       "videoUrl": "https://youtube.com/shorts/zGan8OuSSQI",
       "date": "2026-08-07",
@@ -3642,7 +3588,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-04T23:16:07.402Z"
+        "updatedAt": "2026-11-05T23:16:11.050Z"
       },
       "instagram": null,
       "jev": {
@@ -3711,7 +3657,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-04T23:16:07.402Z"
+        "updatedAt": "2026-11-05T23:16:11.050Z"
       },
       "instagram": {
         "mediaId": "18014511812978403",
@@ -3722,7 +3668,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-04T23:16:07.403Z"
+        "updatedAt": "2026-11-05T23:16:11.051Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3772,7 +3718,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-04T23:16:07.402Z"
+        "updatedAt": "2026-11-05T23:16:11.050Z"
       },
       "instagram": {
         "mediaId": "18115514255520326",
@@ -3783,7 +3729,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-04T23:16:07.403Z"
+        "updatedAt": "2026-11-05T23:16:11.051Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3835,7 +3781,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-04T23:16:07.402Z"
+        "updatedAt": "2026-11-05T23:16:11.050Z"
       },
       "instagram": {
         "mediaId": "17954212068313509",
@@ -3846,7 +3792,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-04T23:16:07.403Z"
+        "updatedAt": "2026-11-05T23:16:11.051Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3904,7 +3850,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-04T23:16:07.402Z"
+        "updatedAt": "2026-11-05T23:16:11.050Z"
       },
       "instagram": {
         "mediaId": "17903344620374199",
@@ -3915,7 +3861,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-04T23:16:07.403Z"
+        "updatedAt": "2026-11-05T23:16:11.051Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3966,7 +3912,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-04T23:16:07.402Z"
+        "updatedAt": "2026-11-05T23:16:11.050Z"
       },
       "instagram": {
         "mediaId": "18098503742111365",
@@ -3977,7 +3923,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-04T23:16:07.403Z"
+        "updatedAt": "2026-11-05T23:16:11.051Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4028,7 +3974,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-04T23:16:07.402Z"
+        "updatedAt": "2026-11-05T23:16:11.050Z"
       },
       "instagram": {
         "mediaId": "18020882360945399",
@@ -4039,7 +3985,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-04T23:16:07.403Z"
+        "updatedAt": "2026-11-05T23:16:11.051Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4090,7 +4036,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-04T23:16:07.402Z"
+        "updatedAt": "2026-11-05T23:16:11.050Z"
       },
       "instagram": {
         "mediaId": "17977321719138515",
@@ -4101,7 +4047,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-04T23:16:07.403Z"
+        "updatedAt": "2026-11-05T23:16:11.051Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4152,7 +4098,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-04T23:16:07.402Z"
+        "updatedAt": "2026-11-05T23:16:11.050Z"
       },
       "instagram": {
         "mediaId": "18099069068453599",
@@ -4163,7 +4109,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-04T23:16:07.403Z"
+        "updatedAt": "2026-11-05T23:16:11.051Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4214,7 +4160,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-04T23:16:07.402Z"
+        "updatedAt": "2026-11-05T23:16:11.050Z"
       },
       "instagram": {
         "mediaId": "18434776459148578",
@@ -4225,7 +4171,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-04T23:16:07.403Z"
+        "updatedAt": "2026-11-05T23:16:11.051Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4276,7 +4222,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-04T23:16:07.402Z"
+        "updatedAt": "2026-11-05T23:16:11.050Z"
       },
       "instagram": {
         "mediaId": "18153184453512939",
@@ -4287,7 +4233,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-04T23:16:07.403Z"
+        "updatedAt": "2026-11-05T23:16:11.051Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4347,7 +4293,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-04T23:16:07.402Z"
+        "updatedAt": "2026-11-05T23:16:11.050Z"
       },
       "instagram": {
         "mediaId": "18192854989406830",
@@ -4358,7 +4304,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-04T23:16:07.403Z"
+        "updatedAt": "2026-11-05T23:16:11.051Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4418,18 +4364,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-11-05T23:16:11.050Z"
       },
       "instagram": {
         "mediaId": "18413974510091486",
-        "permalink": null,
-        "views": null,
-        "reach": null,
-        "likes": null,
-        "comments": null,
-        "shares": null,
-        "saved": null,
-        "updatedAt": null
+        "permalink": "https://www.instagram.com/reel/DfVnoqekdJh/",
+        "views": 11,
+        "reach": 10,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-11-05T23:16:11.051Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4448,16 +4394,79 @@
           "humanCaption": 59.3
         }
       }
+    },
+    {
+      "videoId": "h8SlCNo7xDw",
+      "videoUrl": "https://youtube.com/shorts/h8SlCNo7xDw",
+      "date": "2026-11-06",
+      "genre": "ai-lesson",
+      "trial": 4,
+      "title": "【AI仕事術】比べる点を先に表にする｜2026/11/06 #Shorts",
+      "titleTemplate": "ai-lesson",
+      "hashtags": [
+        "AI活用",
+        "ChatGPT",
+        "生成AI",
+        "仕事術",
+        "業務効率化",
+        "AIの使い方",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "比べる点を先に表にする"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": ""
+      },
+      "durationSeconds": 42,
+      "coverOffsetMs": 6100,
+      "look": "reel",
+      "ytThumbnail": "set",
+      "discovery": {
+        "method": "lesson",
+        "description": "選ぶときに比べる点を表にしてもらう",
+        "sources": []
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "17918717994468789",
+        "permalink": null,
+        "views": null,
+        "reach": null,
+        "likes": null,
+        "comments": null,
+        "shares": null,
+        "saved": null,
+        "updatedAt": null
+      },
+      "jev": {
+        "kind": "lesson",
+        "topicKey": "research-compare-points",
+        "topic": "選ぶときに比べる点を表にしてもらう",
+        "sources": [],
+        "pillar": "research",
+        "prompt": "10人の部署で使う社内チャットを選びます。比べるべき点を5つ挙げて、表の形にしてください。",
+        "craft": {
+          "tool": "instagram-agent-skill-ja@0e7ac86",
+          "hookType": "常識の逆",
+          "hookScore": 65.3,
+          "hookSeconds": 3.2,
+          "caption": "REVIEW",
+          "humanScript": 76.7,
+          "humanCaption": 48.1
+        }
+      }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-10-08",
-      "changes": [
-        "Day performance: Thu=1, Fri=1, Sat=1, Sun=1, Mon=1, Tue=1, Wed=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-10-09",
       "changes": [
@@ -4660,6 +4669,13 @@
         "Day performance: Wed=1, Thu=1, Fri=1, Sun=1, Mon=1, Tue=1, Sat=0"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-11-05",
+      "changes": [
+        "Day performance: Fri=1, Sun=1, Mon=1, Tue=1, Wed=1, Thu=0, Sat=0"
+      ],
+      "recommendedTemplate": "standard"
     }
   ],
   "account": {
@@ -4802,6 +4818,10 @@
       },
       {
         "date": "2026-11-05",
+        "count": 0
+      },
+      {
+        "date": "2026-11-06",
         "count": 0
       }
     ]
