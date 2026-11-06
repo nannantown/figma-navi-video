@@ -2,64 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "zGan8OuSSQI",
-      "videoUrl": "https://youtube.com/shorts/zGan8OuSSQI",
-      "date": "2026-08-07",
-      "title": "【デザインニュース】Weave公式テンプレが Figma Community に解禁、20+ AI画像タスクを複製1発で｜2026/08/07 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 46,
-      "discovery": {
-        "method": "figma-community",
-        "description": "Figma release notes + createwith.com + SARVAYA + iTWire の 4 経路で Figma Weave workflows の Figma Community 解禁 (08-03 rollout の bundled announcement) を発見、release notes 内の『Weave workflows are live on the Figma Community today』告知と figma.com/community/ai-workflows での 20+ 公式テンプレ公開開始、および Figma Design 左パネルからの 20+ AI 画像タスク直接実行機能を横断確認。method 選定 (Fri 平日 news 帯): weekday news-preferred 4 タグから news-en (08-03+08-06 で 7-day-2-time 到達 + 08-06 直近 2 日抵触) と official-src (08-05 直近 2 日抵触) は完全 NG、product-launches (08-04=3日前、追加すると 08-04+08-07 で 7-day-2-time ギリ 2 回、可能だが柱⑤ 25% で過剰集中方向 + Awwwards SOTD 08-04 直後で source 差別化負荷大)、残る figma-community (07-30 が 08-07 で window 端 = 8 日前ちょうど、追加すると window 内 1 回のみ、直近 2 日 OK、weekday news-preferred set 内で唯一クリーン) を Exploit 採用。柱② プラグイン/エコシステム (target 20%) は直近12本で 07-30 UX Pilot v143 のみ = 1/12 = 8% で最大の運用ギャップ (-12pt)、Community × 20+ AI workflows テンプレ配布の題材で 2/13 ≒ 15% に押し上げて 8pt 縮小。08-05 Make visual editing (official-src, ①Figma公式) + 08-06 nested folders (news-en, ①Figma公式) から 3 日連続の Figma 系だが angle 差別化: 08-05 = Make の UI 操作、08-06 = ファイル整理 folder、08-07 = Community × AI ワークフロー配布 と各日でユーザー痛点が異なる。08-06 PDCA §5 で棄却された Figma Weave workflows 候補は「特定 user workflow の公開日確定不可」が理由だったが、今日の angle は user workflow ではなく platform-level launch (release notes の 08-03 bundled announcement) を起点にした 20+ 公式テンプレ + 左パネル 20+ AI 画像タスクのリリース事実そのもので freshness 検証可能 (08-03 → 08-07 = 96h)。NG パターン回避: 『プラグイン機能説明メイン』にならないよう Primary 駆け出しの『AI 画像生成の手順が毎回ゼロから』の痛点を Hook 起点、『AI に任せれば考えなくていい』回避策に『まず真似て型を覚え自分用に組み替える』の主体的アクションを Recommend に据え AI=補助輪フレーム維持、Figmaナビは Recommend 末尾 1 行の軽 CTA のみで強い購買誘導は回避。freshness_hours = 96 (08-03 rollout から 08-07 朝 JST で約 4 日、168h 上限を大きく下回り当週 fresh)。",
-        "sources": [
-          "https://www.figma.com/blog/connecting-figma-and-weave/",
-          "https://www.figma.com/blog/five-figma-weave-workflows/",
-          "https://www.figma.com/community/weave",
-          "https://help.figma.com/hc/en-us/articles/39582753756695-What-s-new-from-Config-2026",
-          "https://help.weavy.ai/en/articles/15624624-publish-weave-workflows-to-the-figma-community",
-          "https://www.createwith.com/tool/figma/updates/figma-reintroduces-weave-with-20-new-templates-for-image-video-and-3d-workflows",
-          "https://sarvaya.in/blog/figma-weave-ai-workflows-creative-production-2026",
-          "https://itwire.com/guest-articles/company-news/reintroducing-figma-weave-with-20-new-workflows-for-ai-native-design"
-        ],
-        "query": "Figma Weave workflows Figma Community August 3 2026 rollout 20 AI image tasks templates publish duplicate",
-        "freshness_hours": 96
-      },
-      "stats": {
-        "views": 1,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-08-21T23:37:35.725Z"
-      },
-      "instagram": {
-        "mediaId": "18099795623209766",
-        "permalink": "https://www.instagram.com/reel/DbuI82HFfDa/",
-        "views": 106,
-        "reach": 99,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "W5OMPdr3EsE",
       "videoUrl": "https://youtube.com/shorts/W5OMPdr3EsE",
       "date": "2026-08-08",
@@ -3657,7 +3599,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-05T23:16:11.050Z"
+        "updatedAt": "2026-11-06T23:16:05.227Z"
       },
       "instagram": {
         "mediaId": "18014511812978403",
@@ -3668,7 +3610,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-05T23:16:11.051Z"
+        "updatedAt": "2026-11-06T23:16:05.228Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3718,7 +3660,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-05T23:16:11.050Z"
+        "updatedAt": "2026-11-06T23:16:05.227Z"
       },
       "instagram": {
         "mediaId": "18115514255520326",
@@ -3729,7 +3671,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-05T23:16:11.051Z"
+        "updatedAt": "2026-11-06T23:16:05.228Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3781,7 +3723,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-05T23:16:11.050Z"
+        "updatedAt": "2026-11-06T23:16:05.227Z"
       },
       "instagram": {
         "mediaId": "17954212068313509",
@@ -3792,7 +3734,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-05T23:16:11.051Z"
+        "updatedAt": "2026-11-06T23:16:05.228Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3850,7 +3792,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-05T23:16:11.050Z"
+        "updatedAt": "2026-11-06T23:16:05.227Z"
       },
       "instagram": {
         "mediaId": "17903344620374199",
@@ -3861,7 +3803,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-05T23:16:11.051Z"
+        "updatedAt": "2026-11-06T23:16:05.228Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3912,7 +3854,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-05T23:16:11.050Z"
+        "updatedAt": "2026-11-06T23:16:05.227Z"
       },
       "instagram": {
         "mediaId": "18098503742111365",
@@ -3923,7 +3865,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-05T23:16:11.051Z"
+        "updatedAt": "2026-11-06T23:16:05.228Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3974,7 +3916,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-05T23:16:11.050Z"
+        "updatedAt": "2026-11-06T23:16:05.227Z"
       },
       "instagram": {
         "mediaId": "18020882360945399",
@@ -3985,7 +3927,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-05T23:16:11.051Z"
+        "updatedAt": "2026-11-06T23:16:05.228Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4036,7 +3978,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-05T23:16:11.050Z"
+        "updatedAt": "2026-11-06T23:16:05.227Z"
       },
       "instagram": {
         "mediaId": "17977321719138515",
@@ -4047,7 +3989,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-05T23:16:11.051Z"
+        "updatedAt": "2026-11-06T23:16:05.228Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4098,7 +4040,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-05T23:16:11.050Z"
+        "updatedAt": "2026-11-06T23:16:05.227Z"
       },
       "instagram": {
         "mediaId": "18099069068453599",
@@ -4109,7 +4051,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-05T23:16:11.051Z"
+        "updatedAt": "2026-11-06T23:16:05.228Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4160,7 +4102,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-05T23:16:11.050Z"
+        "updatedAt": "2026-11-06T23:16:05.227Z"
       },
       "instagram": {
         "mediaId": "18434776459148578",
@@ -4171,7 +4113,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-05T23:16:11.051Z"
+        "updatedAt": "2026-11-06T23:16:05.228Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4222,7 +4164,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-05T23:16:11.050Z"
+        "updatedAt": "2026-11-06T23:16:05.227Z"
       },
       "instagram": {
         "mediaId": "18153184453512939",
@@ -4233,7 +4175,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-05T23:16:11.051Z"
+        "updatedAt": "2026-11-06T23:16:05.228Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4293,7 +4235,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-05T23:16:11.050Z"
+        "updatedAt": "2026-11-06T23:16:05.227Z"
       },
       "instagram": {
         "mediaId": "18192854989406830",
@@ -4304,7 +4246,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-05T23:16:11.051Z"
+        "updatedAt": "2026-11-06T23:16:05.228Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4364,18 +4306,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-05T23:16:11.050Z"
+        "updatedAt": "2026-11-06T23:16:05.227Z"
       },
       "instagram": {
         "mediaId": "18413974510091486",
         "permalink": "https://www.instagram.com/reel/DfVnoqekdJh/",
-        "views": 11,
-        "reach": 10,
+        "views": 12,
+        "reach": 11,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-05T23:16:11.051Z"
+        "updatedAt": "2026-11-06T23:16:05.228Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4434,18 +4376,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-11-06T23:16:05.227Z"
       },
       "instagram": {
         "mediaId": "17918717994468789",
-        "permalink": null,
-        "views": null,
-        "reach": null,
-        "likes": null,
-        "comments": null,
-        "shares": null,
-        "saved": null,
-        "updatedAt": null
+        "permalink": "https://www.instagram.com/reel/DfYMa3djL8O/",
+        "views": 7,
+        "reach": 7,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-11-06T23:16:05.228Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4464,16 +4406,79 @@
           "humanCaption": 48.1
         }
       }
+    },
+    {
+      "videoId": "83mpQectpcA",
+      "videoUrl": "https://youtube.com/shorts/83mpQectpcA",
+      "date": "2026-11-07",
+      "genre": "ai-lesson",
+      "trial": 4,
+      "title": "【AI仕事術】根拠の資料名を聞く｜2026/11/07 #Shorts",
+      "titleTemplate": "ai-lesson",
+      "hashtags": [
+        "AI活用",
+        "ChatGPT",
+        "生成AI",
+        "仕事術",
+        "業務効率化",
+        "AIの使い方",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "根拠の資料名を聞く"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": ""
+      },
+      "durationSeconds": 36,
+      "coverOffsetMs": 6067,
+      "look": "reel",
+      "ytThumbnail": "set",
+      "discovery": {
+        "method": "lesson",
+        "description": "答えの根拠になる資料を聞く",
+        "sources": []
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "17993753847060507",
+        "permalink": null,
+        "views": null,
+        "reach": null,
+        "likes": null,
+        "comments": null,
+        "shares": null,
+        "saved": null,
+        "updatedAt": null
+      },
+      "jev": {
+        "kind": "lesson",
+        "topicKey": "check-ask-sources",
+        "topic": "答えの根拠になる資料を聞く",
+        "sources": [],
+        "pillar": "check",
+        "prompt": "今の説明の根拠になる公式の資料やページの名前を挙げてください。分からなければ分からないと書いてください。",
+        "craft": {
+          "tool": "instagram-agent-skill-ja@0e7ac86",
+          "hookType": "「やめて」命令",
+          "hookScore": 72.2,
+          "hookSeconds": 4.6,
+          "caption": "REVIEW",
+          "humanScript": 80.5,
+          "humanCaption": 36.3
+        }
+      }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-10-09",
-      "changes": [
-        "Day performance: Fri=1, Sat=1, Sun=1, Mon=1, Tue=1, Wed=1, Thu=0"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-10-10",
       "changes": [
@@ -4676,6 +4681,13 @@
         "Day performance: Fri=1, Sun=1, Mon=1, Tue=1, Wed=1, Thu=0, Sat=0"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-11-06",
+      "changes": [
+        "Day performance: Fri=1, Sun=1, Mon=1, Tue=1, Wed=1, Thu=1, Sat=0"
+      ],
+      "recommendedTemplate": "standard"
     }
   ],
   "account": {
@@ -4822,6 +4834,10 @@
       },
       {
         "date": "2026-11-06",
+        "count": 0
+      },
+      {
+        "date": "2026-11-07",
         "count": 0
       }
     ]
