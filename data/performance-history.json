@@ -2,63 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "W5OMPdr3EsE",
-      "videoUrl": "https://youtube.com/shorts/W5OMPdr3EsE",
-      "date": "2026-08-08",
-      "title": "【デザインニュース】NN/g 08-07公開 AIツール採用判定フレーム PROVE 5軸で1タスク検証｜2026/08/08 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 48,
-      "discovery": {
-        "method": "expert-blog",
-        "description": "NN/g articles 一覧ページ、NN/g PROVE framework 記事直リンク、複数キーワード WebSearch (Kate Kaplan/Bruce McCarthy/Problem Alignment/Risk/Output Quality/Velocity/Experience)、AI ツール評価比較記事の 4 経路で NN/g が 08-07 に公開した AI ツール採用判定フレーム『PROVE』を発見・照合。PROVE=Problem Alignment(問題との適合)/Risk(リスク)/Output Quality(出力の質)/Velocity(速さ)/Experience(使い心地) の 5 軸で AI ツールを 1 タスクずつ検証し、周りの空気ではなく自分の作業に効くかを言葉で守れる provisional decision に落とす lightweight evaluation framework。method 選定 (Sat 週末 evergreen 帯): 直近 14 日 (07-25〜08-07) で expert-blog は 08-01 単発 (v=0)、08-08 から見て 08-02 起点の 7-day window では in-window 0 回、直近 2 日 (08-07 figma-community/08-06 news-en) 抵触なし、7-day-2-time ガード 0/2 で余裕。TOP method の product-launches (avg=1.33, n=3) は 08-04=4 日前で 2-day rule OK だが Awwwards SOTD 08-04 直後で source 差別化コスト高、また週末は news preferred set 外の evergreen 型が戦略上優先で選定外。柱バランスは直近 12 本で ④Tips/Figma 実践 0/12=0% (target 15%, -15pt = 最大ギャップ)、⑥UI 批評 0/12=0% (-10pt)、②プラグイン/エコシステム 08-07 Weave で 2/13=15% (-5pt) と過小、今日の PROVE は AI ツール評価軸を明文化する Tips-Framework 型で ④Tips に直接ハマり最大ギャップを 1/13=7.7% に埋め戻す方向。ペルソナ Primary 駆け出しの『AI ツール多すぎて何を入れたらいいか分からない/導入したけど使い続けるか判断できない』痛点を Hook 起点、AI=補助輪フレーム維持 (周りの空気で導入せず自分で採点する視点)、Recommend で 5 軸採点を今日実行できる形に落とし、Figmaナビは同じ物差しで無料枠から試せる軽 CTA のみで強い購買誘導は回避。08-01 の NN/g Rachel Krause メンター論とは author (Kate Kaplan/Enterprise 側) と論点 (メンター選び vs ツール評価) が別で連続感なし、07-23 NN/g Rachel Krause グラフィック→UX 転向論 (2 週間半前) からも十分距離あり。freshness_hours = 24 (08-07 公開 → 08-08 朝 JST で約 24h、168h 上限を大きく下回り当日級 fresh)。",
-        "sources": [
-          "https://www.nngroup.com/articles/prove-framework/",
-          "https://www.nngroup.com/articles/",
-          "https://www.nngroup.com/people/kate-kaplan/",
-          "https://www.nngroup.com/articles/dogfooding/",
-          "https://designbuddy.substack.com/p/a-framework-to-use-ai-with-intent",
-          "https://silentmarketer.substack.com/p/choosing-ai-tools-that-work-for-you",
-          "https://www.nngroup.com/topic/ai/"
-        ],
-        "query": "NN/g PROVE framework AI tool evaluation Problem Alignment Risk Output Quality Velocity Experience August 7 2026 how to decide when an AI tool is worth keeping",
-        "freshness_hours": 24
-      },
-      "stats": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-08-22T23:35:02.220Z"
-      },
-      "instagram": {
-        "mediaId": "18339539308265620",
-        "permalink": "https://www.instagram.com/reel/DbwgjrBCK5w/",
-        "views": 4,
-        "reach": 4,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "D_EcIih7Agg",
       "videoUrl": "https://youtube.com/shorts/D_EcIih7Agg",
       "date": "2026-08-09",
@@ -3599,7 +3542,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-06T23:16:05.227Z"
+        "updatedAt": "2026-11-07T23:16:09.539Z"
       },
       "instagram": {
         "mediaId": "18014511812978403",
@@ -3610,7 +3553,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-06T23:16:05.228Z"
+        "updatedAt": "2026-11-07T23:16:09.541Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3660,7 +3603,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-06T23:16:05.227Z"
+        "updatedAt": "2026-11-07T23:16:09.539Z"
       },
       "instagram": {
         "mediaId": "18115514255520326",
@@ -3671,7 +3614,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-06T23:16:05.228Z"
+        "updatedAt": "2026-11-07T23:16:09.541Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3723,7 +3666,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-06T23:16:05.227Z"
+        "updatedAt": "2026-11-07T23:16:09.539Z"
       },
       "instagram": {
         "mediaId": "17954212068313509",
@@ -3734,7 +3677,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-06T23:16:05.228Z"
+        "updatedAt": "2026-11-07T23:16:09.541Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3792,7 +3735,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-06T23:16:05.227Z"
+        "updatedAt": "2026-11-07T23:16:09.539Z"
       },
       "instagram": {
         "mediaId": "17903344620374199",
@@ -3803,7 +3746,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-06T23:16:05.228Z"
+        "updatedAt": "2026-11-07T23:16:09.541Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3854,7 +3797,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-06T23:16:05.227Z"
+        "updatedAt": "2026-11-07T23:16:09.539Z"
       },
       "instagram": {
         "mediaId": "18098503742111365",
@@ -3865,7 +3808,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-06T23:16:05.228Z"
+        "updatedAt": "2026-11-07T23:16:09.541Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3916,7 +3859,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-06T23:16:05.227Z"
+        "updatedAt": "2026-11-07T23:16:09.539Z"
       },
       "instagram": {
         "mediaId": "18020882360945399",
@@ -3927,7 +3870,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-06T23:16:05.228Z"
+        "updatedAt": "2026-11-07T23:16:09.541Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3978,7 +3921,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-06T23:16:05.227Z"
+        "updatedAt": "2026-11-07T23:16:09.539Z"
       },
       "instagram": {
         "mediaId": "17977321719138515",
@@ -3989,7 +3932,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-06T23:16:05.228Z"
+        "updatedAt": "2026-11-07T23:16:09.541Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4040,7 +3983,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-06T23:16:05.227Z"
+        "updatedAt": "2026-11-07T23:16:09.539Z"
       },
       "instagram": {
         "mediaId": "18099069068453599",
@@ -4051,7 +3994,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-06T23:16:05.228Z"
+        "updatedAt": "2026-11-07T23:16:09.541Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4102,7 +4045,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-06T23:16:05.227Z"
+        "updatedAt": "2026-11-07T23:16:09.540Z"
       },
       "instagram": {
         "mediaId": "18434776459148578",
@@ -4113,7 +4056,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-06T23:16:05.228Z"
+        "updatedAt": "2026-11-07T23:16:09.541Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4164,7 +4107,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-06T23:16:05.227Z"
+        "updatedAt": "2026-11-07T23:16:09.540Z"
       },
       "instagram": {
         "mediaId": "18153184453512939",
@@ -4175,7 +4118,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-06T23:16:05.228Z"
+        "updatedAt": "2026-11-07T23:16:09.541Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4235,7 +4178,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-06T23:16:05.227Z"
+        "updatedAt": "2026-11-07T23:16:09.540Z"
       },
       "instagram": {
         "mediaId": "18192854989406830",
@@ -4246,7 +4189,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-06T23:16:05.228Z"
+        "updatedAt": "2026-11-07T23:16:09.541Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4306,7 +4249,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-06T23:16:05.227Z"
+        "updatedAt": "2026-11-07T23:16:09.540Z"
       },
       "instagram": {
         "mediaId": "18413974510091486",
@@ -4317,7 +4260,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-06T23:16:05.228Z"
+        "updatedAt": "2026-11-07T23:16:09.541Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4376,7 +4319,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-06T23:16:05.227Z"
+        "updatedAt": "2026-11-07T23:16:09.540Z"
       },
       "instagram": {
         "mediaId": "17918717994468789",
@@ -4387,7 +4330,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-06T23:16:05.228Z"
+        "updatedAt": "2026-11-07T23:16:09.541Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4446,18 +4389,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-11-07T23:16:09.540Z"
       },
       "instagram": {
         "mediaId": "17993753847060507",
-        "permalink": null,
-        "views": null,
-        "reach": null,
-        "likes": null,
-        "comments": null,
-        "shares": null,
-        "saved": null,
-        "updatedAt": null
+        "permalink": "https://www.instagram.com/reel/DfaxISgk-hZ/",
+        "views": 6,
+        "reach": 5,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-11-07T23:16:09.541Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4476,16 +4419,79 @@
           "humanCaption": 36.3
         }
       }
+    },
+    {
+      "videoId": "8o0oTEFb6n4",
+      "videoUrl": "https://youtube.com/shorts/8o0oTEFb6n4",
+      "date": "2026-11-08",
+      "genre": "ai-lesson",
+      "trial": 4,
+      "title": "【AI仕事術】30分会議の議題を作る｜2026/11/08 #Shorts",
+      "titleTemplate": "ai-lesson",
+      "hashtags": [
+        "AI活用",
+        "ChatGPT",
+        "生成AI",
+        "仕事術",
+        "業務効率化",
+        "AIの使い方",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "30分会議の議題を作る"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": ""
+      },
+      "durationSeconds": 43,
+      "coverOffsetMs": 5333,
+      "look": "reel",
+      "ytThumbnail": "set",
+      "discovery": {
+        "method": "lesson",
+        "description": "会議の議題を前もって作ってもらう",
+        "sources": []
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "18071679206785132",
+        "permalink": null,
+        "views": null,
+        "reach": null,
+        "likes": null,
+        "comments": null,
+        "shares": null,
+        "saved": null,
+        "updatedAt": null
+      },
+      "jev": {
+        "kind": "lesson",
+        "topicKey": "meeting-agenda-thirty",
+        "topic": "会議の議題を前もって作ってもらう",
+        "sources": [],
+        "pillar": "meeting",
+        "prompt": "来月のイベント準備の30分の会議の議題を、目的・話すこと・決めることに分けて作ってください。",
+        "craft": {
+          "tool": "instagram-agent-skill-ja@0e7ac86",
+          "hookType": "「〜なら見て」",
+          "hookScore": 71.1,
+          "hookSeconds": 7.1,
+          "caption": "REVIEW",
+          "humanScript": 68.5,
+          "humanCaption": 59.3
+        }
+      }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-10-10",
-      "changes": [
-        "Day performance: Sat=1, Sun=1, Mon=1, Tue=1, Wed=1, Thu=1, Fri=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-10-11",
       "changes": [
@@ -4688,6 +4694,13 @@
         "Day performance: Fri=1, Sun=1, Mon=1, Tue=1, Wed=1, Thu=1, Sat=0"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-11-07",
+      "changes": [
+        "Day performance: Sun=1, Mon=1, Tue=1, Wed=1, Thu=1, Fri=1, Sat=0"
+      ],
+      "recommendedTemplate": "standard"
     }
   ],
   "account": {
@@ -4838,6 +4851,10 @@
       },
       {
         "date": "2026-11-07",
+        "count": 0
+      },
+      {
+        "date": "2026-11-08",
         "count": 0
       }
     ]
