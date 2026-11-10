@@ -2,60 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "gK6cd-hNeFI",
-      "videoUrl": "https://youtube.com/shorts/gK6cd-hNeFI",
-      "date": "2026-08-11",
-      "title": "【デザインニュース】Figma AI credits 管理機能追加 8/5｜2026/08/11 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 49,
-      "discovery": {
-        "method": "official-src",
-        "description": "Figma 公式リリース (release notes / help center) 経由で AI credits 管理機能追加 (2026-08-05) を発見。実務あるあるペイン起点で再構造化",
-        "sources": [
-          "https://www.figma.com/release-notes/",
-          "https://help.figma.com/hc/en-us/articles/35865276858647-Manage-AI-credits",
-          "https://help.figma.com/hc/en-us/articles/33459875669015-How-AI-credits-work",
-          "https://www.figma.com/blog/updates-to-ai-credits-in-figma/"
-        ],
-        "query": "Figma AI administration controls custom credit limits August 2026",
-        "freshness_hours": 144
-      },
-      "stats": {
-        "views": 2,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-08-25T23:41:03.995Z"
-      },
-      "instagram": {
-        "mediaId": "18088145612537253",
-        "permalink": "https://www.instagram.com/reel/Db4POWlDQOu/",
-        "views": 16,
-        "reach": 13,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "guHMU6ulmKI",
       "videoUrl": "https://youtube.com/shorts/guHMU6ulmKI",
       "date": "2026-08-12",
@@ -3557,7 +3503,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-09T23:16:09.998Z"
+        "updatedAt": "2026-11-10T23:16:21.825Z"
       },
       "instagram": {
         "mediaId": "17954212068313509",
@@ -3568,7 +3514,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-09T23:16:10.000Z"
+        "updatedAt": "2026-11-10T23:16:21.826Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3626,7 +3572,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-09T23:16:09.998Z"
+        "updatedAt": "2026-11-10T23:16:21.825Z"
       },
       "instagram": {
         "mediaId": "17903344620374199",
@@ -3637,7 +3583,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-09T23:16:10.000Z"
+        "updatedAt": "2026-11-10T23:16:21.826Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3688,7 +3634,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-09T23:16:09.998Z"
+        "updatedAt": "2026-11-10T23:16:21.825Z"
       },
       "instagram": {
         "mediaId": "18098503742111365",
@@ -3699,7 +3645,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-09T23:16:10.000Z"
+        "updatedAt": "2026-11-10T23:16:21.826Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3750,7 +3696,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-09T23:16:09.998Z"
+        "updatedAt": "2026-11-10T23:16:21.825Z"
       },
       "instagram": {
         "mediaId": "18020882360945399",
@@ -3761,7 +3707,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-09T23:16:10.000Z"
+        "updatedAt": "2026-11-10T23:16:21.826Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3812,7 +3758,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-09T23:16:09.998Z"
+        "updatedAt": "2026-11-10T23:16:21.825Z"
       },
       "instagram": {
         "mediaId": "17977321719138515",
@@ -3823,7 +3769,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-09T23:16:10.000Z"
+        "updatedAt": "2026-11-10T23:16:21.826Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3874,7 +3820,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-09T23:16:09.998Z"
+        "updatedAt": "2026-11-10T23:16:21.825Z"
       },
       "instagram": {
         "mediaId": "18099069068453599",
@@ -3885,7 +3831,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-09T23:16:10.000Z"
+        "updatedAt": "2026-11-10T23:16:21.826Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3936,7 +3882,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-09T23:16:09.998Z"
+        "updatedAt": "2026-11-10T23:16:21.825Z"
       },
       "instagram": {
         "mediaId": "18434776459148578",
@@ -3947,7 +3893,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-09T23:16:10.000Z"
+        "updatedAt": "2026-11-10T23:16:21.826Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3998,7 +3944,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-09T23:16:09.998Z"
+        "updatedAt": "2026-11-10T23:16:21.825Z"
       },
       "instagram": {
         "mediaId": "18153184453512939",
@@ -4009,7 +3955,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-09T23:16:10.000Z"
+        "updatedAt": "2026-11-10T23:16:21.826Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4069,7 +4015,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-09T23:16:09.998Z"
+        "updatedAt": "2026-11-10T23:16:21.825Z"
       },
       "instagram": {
         "mediaId": "18192854989406830",
@@ -4080,7 +4026,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-09T23:16:10.000Z"
+        "updatedAt": "2026-11-10T23:16:21.826Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4140,7 +4086,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-09T23:16:09.998Z"
+        "updatedAt": "2026-11-10T23:16:21.825Z"
       },
       "instagram": {
         "mediaId": "18413974510091486",
@@ -4151,7 +4097,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-09T23:16:10.000Z"
+        "updatedAt": "2026-11-10T23:16:21.826Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4210,7 +4156,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-09T23:16:09.998Z"
+        "updatedAt": "2026-11-10T23:16:21.825Z"
       },
       "instagram": {
         "mediaId": "17918717994468789",
@@ -4221,7 +4167,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-09T23:16:10.000Z"
+        "updatedAt": "2026-11-10T23:16:21.826Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4280,7 +4226,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-09T23:16:09.998Z"
+        "updatedAt": "2026-11-10T23:16:21.825Z"
       },
       "instagram": {
         "mediaId": "17993753847060507",
@@ -4291,7 +4237,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-09T23:16:10.000Z"
+        "updatedAt": "2026-11-10T23:16:21.826Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4350,7 +4296,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-09T23:16:09.998Z"
+        "updatedAt": "2026-11-10T23:16:21.825Z"
       },
       "instagram": {
         "mediaId": "18071679206785132",
@@ -4361,7 +4307,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-09T23:16:10.000Z"
+        "updatedAt": "2026-11-10T23:16:21.826Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4420,18 +4366,18 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-09T23:16:09.998Z"
+        "updatedAt": "2026-11-10T23:16:21.825Z"
       },
       "instagram": {
         "mediaId": "18101617847648925",
         "permalink": "https://www.instagram.com/reel/Dff6z7XE7YM/",
-        "views": 8,
-        "reach": 1,
+        "views": 16,
+        "reach": 14,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-09T23:16:10.000Z"
+        "updatedAt": "2026-11-10T23:16:21.826Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4490,18 +4436,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-11-10T23:16:21.825Z"
       },
       "instagram": {
         "mediaId": "18017206689004074",
-        "permalink": null,
-        "views": null,
-        "reach": null,
-        "likes": null,
-        "comments": null,
-        "shares": null,
-        "saved": null,
-        "updatedAt": null
+        "permalink": "https://www.instagram.com/reel/Dfifv2ME-Ea/",
+        "views": 11,
+        "reach": 11,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-11-10T23:16:21.826Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4520,16 +4466,79 @@
           "humanCaption": 63.7
         }
       }
+    },
+    {
+      "videoId": "ru8BKF8lCAo",
+      "videoUrl": "https://youtube.com/shorts/ru8BKF8lCAo",
+      "date": "2026-11-11",
+      "genre": "ai-lesson",
+      "trial": 4,
+      "title": "【AI仕事術】新旧の違いだけを出す｜2026/11/11 #Shorts",
+      "titleTemplate": "ai-lesson",
+      "hashtags": [
+        "AI活用",
+        "ChatGPT",
+        "生成AI",
+        "仕事術",
+        "業務効率化",
+        "AIの使い方",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "新旧の違いだけを出す"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": ""
+      },
+      "durationSeconds": 46,
+      "coverOffsetMs": 4500,
+      "look": "reel",
+      "ytThumbnail": "set",
+      "discovery": {
+        "method": "lesson",
+        "description": "2つの文章の違いだけを出してもらう",
+        "sources": []
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "18037706594885297",
+        "permalink": null,
+        "views": null,
+        "reach": null,
+        "likes": null,
+        "comments": null,
+        "shares": null,
+        "saved": null,
+        "updatedAt": null
+      },
+      "jev": {
+        "kind": "lesson",
+        "topicKey": "summary-what-changed",
+        "topic": "2つの文章の違いだけを出してもらう",
+        "sources": [],
+        "pillar": "summary",
+        "prompt": "次の2つの文章（前の版と今の版）を比べて、変わったところだけを箇条書きで教えてください。",
+        "craft": {
+          "tool": "instagram-agent-skill-ja@0e7ac86",
+          "hookType": "「〜なら見て」",
+          "hookScore": 85.2,
+          "hookSeconds": 5.3,
+          "caption": "REVIEW",
+          "humanScript": 72.3,
+          "humanCaption": 51.6
+        }
+      }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-10-13",
-      "changes": [
-        "Day performance: Tue=1, Wed=1, Thu=1, Sat=1, Sun=1, Mon=1, Fri=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-10-14",
       "changes": [
@@ -4732,6 +4741,13 @@
         "Day performance: Mon=1, Tue=1, Wed=1, Thu=1, Fri=1, Sat=1, Sun=1"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-11-10",
+      "changes": [
+        "Day performance: Tue=1, Wed=1, Thu=1, Fri=1, Sat=1, Sun=1, Mon=1"
+      ],
+      "recommendedTemplate": "standard"
     }
   ],
   "account": {
@@ -4894,6 +4910,10 @@
       },
       {
         "date": "2026-11-10",
+        "count": 0
+      },
+      {
+        "date": "2026-11-11",
         "count": 0
       }
     ]
