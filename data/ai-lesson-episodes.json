@@ -1919,6 +1919,266 @@
           }
         }
       }
+    },
+    {
+      "date": "2026-11-13",
+      "genre": "ai-lesson",
+      "trial": 4,
+      "kind": "lesson",
+      "topic_key": "sheet-explain-formula",
+      "pillar": "sheet",
+      "topic": "表計算の式の意味を説明してもらう",
+      "headline": "引きついだ式の意味を聞く",
+      "hook": "前の担当者が作った式、読めますか。",
+      "slides": [
+        {
+          "heading": "式の意味が分からない",
+          "body": "引きついだ表の長い式は、何をしているのか分からず、さわるのがこわいものです。",
+          "narration": "前の担当者から引きついだ表。長い式が何をしているのか分からず、さわるのがこわいことがあります。",
+          "diagram": {
+            "type": "flow",
+            "items": [
+              {
+                "note": "入力",
+                "label": "長い式"
+              },
+              {
+                "note": "AI",
+                "label": "説明"
+              },
+              {
+                "note": "出力",
+                "label": "日本語"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "そのまま使える頼み方",
+          "body": "式をそのまま貼って、部分ごとに説明してもらいます。",
+          "narration": "セルの式だけを貼って、部分ごとに説明してと頼みます。社外秘の数字や名前は貼らず、式だけにしてください。",
+          "diagram": {
+            "type": "prompt",
+            "items": [
+              {
+                "label": "次のエクセルの式が何をしているか、部分ごとに分けて、日本語で説明してください。"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "返ってくる答えの例",
+          "body": "「IF の部分は、空の行なら何も表示しない」のような説明が、部分ごとに返ってきます。",
+          "narration": "すると、IF の部分は空の行なら何も出さない、SUMIFS の部分は今月の分だけ足す、のように部分ごとの説明が返ってきます。",
+          "diagram": {
+            "type": "answer",
+            "items": [
+              {
+                "label": "① IF の部分：空の行なら何も表示しない　② SUMIFS の部分：今月の分だけ金額を足す"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "ひとこと注意",
+          "body": "式を直すときは、元の表を別の名前で保存してから試しましょう。",
+          "narration": "説明をもとに式を直すときは、元の表を別の名前で保存してから試しましょう。うまくいかなくても、すぐ元に戻せます。",
+          "diagram": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "式を貼る"
+              },
+              {
+                "label": "説明を読む"
+              },
+              {
+                "label": "写しで試す"
+              }
+            ]
+          }
+        }
+      ],
+      "reel": {
+        "title": "この式、何してる？",
+        "hook": "「この式、何をしてるの？」とAIに聞く、5つの手順です。",
+        "file": "引きついだ式",
+        "answer": [
+          {
+            "head": "IFの部分",
+            "lines": [
+              "空の行なら何も出さない"
+            ]
+          },
+          {
+            "head": "SUMIFSの部分",
+            "lines": [
+              "今月の分だけ金額を足す"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "action": "open",
+            "heading": [
+              "AIを",
+              "開く",
+              ""
+            ],
+            "narration": "ステップ1。ふだん使っているAIで、新しいチャットを開きます。"
+          },
+          {
+            "action": "paste",
+            "note": "式だけを貼る",
+            "done": "式だけ",
+            "heading": [
+              "式を",
+              "貼る",
+              ""
+            ],
+            "narration": "ステップ2。社外秘の数字は貼らず、式だけをコピーして貼ります。",
+            "accents": [
+              "社外秘",
+              "式だけ"
+            ]
+          },
+          {
+            "action": "type",
+            "heading": [
+              "部分ごとに",
+              "説明",
+              "を頼む"
+            ],
+            "narration": "ステップ3。部分ごとに分けて、日本語で説明して、と書きます。",
+            "accents": [
+              "部分",
+              "日本語"
+            ]
+          },
+          {
+            "action": "send",
+            "heading": [
+              "送って",
+              "待つ",
+              ""
+            ],
+            "narration": "ステップ4。送信すると、式の部分ごとの説明が返ってきます。",
+            "accents": [
+              "送信"
+            ]
+          },
+          {
+            "action": "check",
+            "note": "",
+            "heading": [
+              "小さな表で",
+              "試す",
+              ""
+            ],
+            "narration": "ステップ5。数行の表で試して、説明どおりに動くか確かめます。",
+            "accents": [
+              "試し",
+              "確かめ"
+            ]
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://support.microsoft.com/ja-jp/office/if-関数-69aed7c9-4e8a-4755-a9bc-aa8bbff73be2",
+          "title": "IF 関数 - Microsoft サポート",
+          "outlet": "Microsoft サポート",
+          "published_at": null,
+          "role": "reference",
+          "official": true
+        },
+        {
+          "url": "https://support.microsoft.com/ja-jp/office/sumifs-関数-c9e748f5-7ea7-455d-9406-611cebce642b",
+          "title": "SUMIFS 関数 - Microsoft サポート",
+          "outlet": "Microsoft サポート",
+          "published_at": null,
+          "role": "reference",
+          "official": true
+        }
+      ],
+      "craft": {
+        "hooks": [
+          {
+            "type": "「やめて」命令",
+            "say": "引きついだ式を、読めないまま使うのはやめましょう。5つの手順です。",
+            "text": "読めない式を使わない"
+          },
+          {
+            "type": "そのままの質問",
+            "say": "「この式、何をしてるの？」とAIに聞く、5つの手順です。",
+            "text": "この式、何してる？"
+          },
+          {
+            "type": "呼びかけ",
+            "say": "前の担当者の表を引きついだ人へ。式を読み解く5つの手順です。",
+            "text": "表を引きついだ人へ"
+          }
+        ],
+        "captionLead": "引きついだエクセルの式の意味を、部分ごとにAIに聞く",
+        "keywords": [
+          "エクセル",
+          "式"
+        ],
+        "captionBody": [
+          "前の担当者が作ったエクセルの式、何をしているか分からないまま使っていませんか。",
+          "式を貼って、部分ごとに日本語で説明してもらいましょう。説明が合っているかは、小さな数字を入れて確かめるのが確実です。"
+        ],
+        "scores": {
+          "tool": "instagram-agent-skill-ja@0e7ac86",
+          "hook": {
+            "type": "そのままの質問",
+            "score": 50.8,
+            "verdict": "OK",
+            "say": "「この式、何をしてるの？」とAIに聞く、5つの手順です。"
+          },
+          "hooks": [
+            {
+              "type": "「やめて」命令",
+              "score": 59.7,
+              "verdict": "OK"
+            },
+            {
+              "type": "そのままの質問",
+              "score": 50.8,
+              "verdict": "OK"
+            },
+            {
+              "type": "呼びかけ",
+              "score": 36.4,
+              "verdict": "WEAK"
+            }
+          ],
+          "seconds": {
+            "hook": 5.4,
+            "total": 47.7
+          },
+          "beatFlags": 8,
+          "caption": {
+            "verdict": "REVIEW",
+            "firstLine": 26,
+            "issues": [
+              "長さ: PASS",
+              "1行目: PASS",
+              "具体性: WARN",
+              "ハッシュタグ: PASS",
+              "タグの位置: PASS",
+              "リンク: WARN",
+              "お願いは1つ: WARN",
+              "絵文字: PASS",
+              "検索される言葉: PASS"
+            ]
+          },
+          "human": {
+            "script": 75,
+            "caption": 55
+          }
+        }
+      }
     }
   ]
 }
