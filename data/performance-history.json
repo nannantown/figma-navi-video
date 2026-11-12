@@ -2,60 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "lD6k9l66CtQ",
-      "videoUrl": "https://youtube.com/shorts/lD6k9l66CtQ",
-      "date": "2026-08-13",
-      "title": "【デザインニュース】NOTHIN' PRO 二人組フリーランスが Awwwards SOTD＋Developer Award 二冠 8/10｜2026/08/13 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 40,
-      "discovery": {
-        "method": "product-launches",
-        "description": "Awwwards Sites Of The Day リストで 08-10 SOTD かつ Developer Award の二冠を確認、当該サイト NOTHIN' PRO の詳細ページ (デザイン: Thomas Carré / エンジニア: Pierre Patrault, Webflow 制作, GSAP+WebGL+3D+mouse interaction+microinteractions) を裏取り。08-12 PDCA で残された 4連続0views ストリークからの脱出策として、直近14日 TOP method (product-launches n=2 avg=2.0, 08-04 Lacoste が単日 4 views を記録) を Exploit lane で採用。連続禁止ガード: 08-11 official-src と 08-12 figma-community が直近2日、product-launches は 08-09 /nk.studio で 4日ぶり=クリア。凍結中は expert-blog のみ。柱⑤ Before/After・ポートフォリオ事例 (target 10%、直近14日ではノータッチ) の直接補強と柱③ 業界・デザインニュース (Awwwards 業界評価) の二柱同時タッチ。08-04 ヒット同様、単日 SOTD の具体固有名詞＋設計原則を Hook に置く型を継続、加えて『二人組フリーランス duo が Dev Award と SOTD 二冠』という Primary 駆け出し・Secondary フリーランス両方に接続する構図が今回の差分。NG 回避: 『AI が奪う』系不該当、『プロ向け高度議論』回避策 → Webflow ベース (no-code) で GSAP/WebGL 演出可能という初心者接続点で翻訳、『機能説明メイン』回避 → 学習者痛点『ポートフォリオに動きどこまで入れるか』から入る action-first hook 型 (08-12 PDCA 提案の action-first-hook を継続実装)。freshness_hours=72 (08-10 SOTD → 08-13 08:00 JST 実行時点で 72h、168h ガード内)。",
-        "sources": [
-          "https://www.awwwards.com/sites/nothin",
-          "https://www.awwwards.com/websites/sites_of_the_day/",
-          "https://www.awwwards.com/websites/developer/",
-          "https://www.awwwards.com/websites/gsap/"
-        ],
-        "query": "NOTHIN PRO Awwwards Site of the Day Developer Award August 10 2026 Thomas Carré Pierre Patrault Webflow GSAP WebGL",
-        "freshness_hours": 72
-      },
-      "stats": {
-        "views": 1,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-08-27T04:31:30.117Z"
-      },
-      "instagram": {
-        "mediaId": "17928869226145606",
-        "permalink": "https://www.instagram.com/reel/Db9ZjsTDKhd/",
-        "views": 51,
-        "reach": 53,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "TsLHXa-NFvw",
       "videoUrl": "https://youtube.com/shorts/TsLHXa-NFvw",
       "date": "2026-08-14",
@@ -3580,7 +3526,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-11T23:16:03.599Z"
+        "updatedAt": "2026-11-12T23:16:09.028Z"
       },
       "instagram": {
         "mediaId": "18098503742111365",
@@ -3591,7 +3537,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-11T23:16:03.601Z"
+        "updatedAt": "2026-11-12T23:16:09.030Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3642,7 +3588,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-11T23:16:03.599Z"
+        "updatedAt": "2026-11-12T23:16:09.028Z"
       },
       "instagram": {
         "mediaId": "18020882360945399",
@@ -3653,7 +3599,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-11T23:16:03.601Z"
+        "updatedAt": "2026-11-12T23:16:09.030Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3704,7 +3650,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-11T23:16:03.599Z"
+        "updatedAt": "2026-11-12T23:16:09.028Z"
       },
       "instagram": {
         "mediaId": "17977321719138515",
@@ -3715,7 +3661,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-11T23:16:03.601Z"
+        "updatedAt": "2026-11-12T23:16:09.030Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3766,7 +3712,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-11T23:16:03.599Z"
+        "updatedAt": "2026-11-12T23:16:09.028Z"
       },
       "instagram": {
         "mediaId": "18099069068453599",
@@ -3777,7 +3723,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-11T23:16:03.601Z"
+        "updatedAt": "2026-11-12T23:16:09.030Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3828,7 +3774,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-11T23:16:03.599Z"
+        "updatedAt": "2026-11-12T23:16:09.028Z"
       },
       "instagram": {
         "mediaId": "18434776459148578",
@@ -3839,7 +3785,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-11T23:16:03.601Z"
+        "updatedAt": "2026-11-12T23:16:09.030Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3890,7 +3836,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-11T23:16:03.599Z"
+        "updatedAt": "2026-11-12T23:16:09.028Z"
       },
       "instagram": {
         "mediaId": "18153184453512939",
@@ -3901,7 +3847,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-11T23:16:03.601Z"
+        "updatedAt": "2026-11-12T23:16:09.030Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3961,7 +3907,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-11T23:16:03.599Z"
+        "updatedAt": "2026-11-12T23:16:09.028Z"
       },
       "instagram": {
         "mediaId": "18192854989406830",
@@ -3972,7 +3918,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-11T23:16:03.601Z"
+        "updatedAt": "2026-11-12T23:16:09.030Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4032,7 +3978,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-11T23:16:03.599Z"
+        "updatedAt": "2026-11-12T23:16:09.028Z"
       },
       "instagram": {
         "mediaId": "18413974510091486",
@@ -4043,7 +3989,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-11T23:16:03.601Z"
+        "updatedAt": "2026-11-12T23:16:09.030Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4102,7 +4048,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-11T23:16:03.599Z"
+        "updatedAt": "2026-11-12T23:16:09.028Z"
       },
       "instagram": {
         "mediaId": "17918717994468789",
@@ -4113,7 +4059,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-11T23:16:03.601Z"
+        "updatedAt": "2026-11-12T23:16:09.030Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4172,7 +4118,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-11T23:16:03.599Z"
+        "updatedAt": "2026-11-12T23:16:09.028Z"
       },
       "instagram": {
         "mediaId": "17993753847060507",
@@ -4183,7 +4129,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-11T23:16:03.601Z"
+        "updatedAt": "2026-11-12T23:16:09.030Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4242,7 +4188,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-11T23:16:03.599Z"
+        "updatedAt": "2026-11-12T23:16:09.028Z"
       },
       "instagram": {
         "mediaId": "18071679206785132",
@@ -4253,7 +4199,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-11T23:16:03.601Z"
+        "updatedAt": "2026-11-12T23:16:09.030Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4312,7 +4258,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-11T23:16:03.599Z"
+        "updatedAt": "2026-11-12T23:16:09.028Z"
       },
       "instagram": {
         "mediaId": "18101617847648925",
@@ -4323,7 +4269,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-11T23:16:03.601Z"
+        "updatedAt": "2026-11-12T23:16:09.030Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4382,7 +4328,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-11T23:16:03.599Z"
+        "updatedAt": "2026-11-12T23:16:09.028Z"
       },
       "instagram": {
         "mediaId": "18017206689004074",
@@ -4393,7 +4339,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-11T23:16:03.601Z"
+        "updatedAt": "2026-11-12T23:16:09.030Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4452,18 +4398,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-11T23:16:03.599Z"
+        "updatedAt": "2026-11-12T23:16:09.028Z"
       },
       "instagram": {
         "mediaId": "18037706594885297",
         "permalink": "https://www.instagram.com/reel/DflEi99jcNo/",
-        "views": 21,
-        "reach": 7,
+        "views": 29,
+        "reach": 26,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-11T23:16:03.601Z"
+        "updatedAt": "2026-11-12T23:16:09.030Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4522,18 +4468,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-11-12T23:16:09.028Z"
       },
       "instagram": {
         "mediaId": "18131497201798522",
-        "permalink": null,
-        "views": null,
-        "reach": null,
-        "likes": null,
-        "comments": null,
-        "shares": null,
-        "saved": null,
-        "updatedAt": null
+        "permalink": "https://www.instagram.com/reel/DfnpKi2JV_L/",
+        "views": 3,
+        "reach": 3,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-11-12T23:16:09.030Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4552,16 +4498,87 @@
           "humanCaption": 52.3
         }
       }
+    },
+    {
+      "videoId": "h2EoLD9lk0w",
+      "videoUrl": "https://youtube.com/shorts/h2EoLD9lk0w",
+      "date": "2026-11-13",
+      "genre": "ai-lesson",
+      "trial": 4,
+      "title": "【AI仕事術】引きついだ式の意味を聞く｜2026/11/13 #Shorts",
+      "titleTemplate": "ai-lesson",
+      "hashtags": [
+        "AI活用",
+        "ChatGPT",
+        "生成AI",
+        "仕事術",
+        "業務効率化",
+        "AIの使い方",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "引きついだ式の意味を聞く"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": "出典: Microsoft サポート"
+      },
+      "durationSeconds": 48,
+      "coverOffsetMs": 5333,
+      "look": "reel",
+      "ytThumbnail": "set",
+      "discovery": {
+        "method": "lesson",
+        "description": "表計算の式の意味を説明してもらう",
+        "sources": [
+          "https://support.microsoft.com/ja-jp/office/if-関数-69aed7c9-4e8a-4755-a9bc-aa8bbff73be2",
+          "https://support.microsoft.com/ja-jp/office/sumifs-関数-c9e748f5-7ea7-455d-9406-611cebce642b"
+        ]
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": null,
+      "jev": {
+        "kind": "lesson",
+        "topicKey": "sheet-explain-formula",
+        "topic": "表計算の式の意味を説明してもらう",
+        "sources": [
+          {
+            "url": "https://support.microsoft.com/ja-jp/office/if-関数-69aed7c9-4e8a-4755-a9bc-aa8bbff73be2",
+            "outlet": "Microsoft サポート",
+            "published_at": null,
+            "role": "reference",
+            "official": true
+          },
+          {
+            "url": "https://support.microsoft.com/ja-jp/office/sumifs-関数-c9e748f5-7ea7-455d-9406-611cebce642b",
+            "outlet": "Microsoft サポート",
+            "published_at": null,
+            "role": "reference",
+            "official": true
+          }
+        ],
+        "pillar": "sheet",
+        "prompt": "次のエクセルの式が何をしているか、部分ごとに分けて、日本語で説明してください。",
+        "craft": {
+          "tool": "instagram-agent-skill-ja@0e7ac86",
+          "hookType": "そのままの質問",
+          "hookScore": 50.8,
+          "hookSeconds": 5.4,
+          "caption": "REVIEW",
+          "humanScript": 75,
+          "humanCaption": 55
+        }
+      }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-10-15",
-      "changes": [
-        "Day performance: Tue=1, Wed=1, Thu=1, Sat=1, Sun=1, Mon=1, Fri=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-10-16",
       "changes": [
@@ -4764,6 +4781,13 @@
         "Day performance: Wed=1, Thu=1, Fri=1, Sat=1, Sun=1, Mon=1, Tue=1"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-11-12",
+      "changes": [
+        "Day performance: Fri=1, Sat=1, Sun=1, Mon=1, Tue=1, Wed=1, Thu=0"
+      ],
+      "recommendedTemplate": "standard"
     }
   ],
   "account": {
@@ -4934,6 +4958,10 @@
       },
       {
         "date": "2026-11-12",
+        "count": 0
+      },
+      {
+        "date": "2026-11-13",
         "count": 0
       }
     ]
