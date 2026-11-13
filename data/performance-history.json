@@ -2,60 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "TsLHXa-NFvw",
-      "videoUrl": "https://youtube.com/shorts/TsLHXa-NFvw",
-      "date": "2026-08-14",
-      "title": "【デザインニュース】Smashing 8/11 手触りWebはLottieと距離計算で作れる Isadora『Stress Release』式｜2026/08/14 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 45,
-      "discovery": {
-        "method": "news-en",
-        "description": "Smashing Magazine の Design カテゴリで 08-11 公開の Alexey Kopytin『Building Tactile UX: Honoring Intentional Design With Lottie』を一次資料に、Isadora Agency 公式 Stress Release ページ + Dribbble ケーススタディ + daily.dev の記事シェアで裏取り。物理エンジン (Matter.js / Cannon.js / WebGL) の代わりに Lottie の programmatic API (playSegments)・DOM イベント・Pythagoras 距離計算で 181 フレームの mega squeeze を再現し、アニメーターの意図した動きを崩さないアーキテクチャを提示。method 選定 (Fri 平日 news 帯): 直近2日 (08-13 product-launches / 08-12 figma-community) 抵触なし、weekday news-preferred 4 タグ内でクリーン候補は news-en (08-10=4日前, 7日1回) と official-src (08-11=3日前, 7日1回) の 2 択。official-src は Figma agent skills 08-13 community launch という 24h fresh 候補があるが、直近8本のうち 5本 (08-05/06/11/12 + 07-31) が Figma 中心で『Figma glut 疲労』の可能性が高く、5連続0views 継続 (08-08〜08-12) の diagnostic として『トピック多様性を強く振る』方針で news-en を Exploit、Smashing 08-05 Pawar 記事 (news-en, v=0) からは著者・トピック・角度が全別で連続感なし。柱⑥ UI 批評/学習要素 (target 10%、直近14日 08-08 PROVE のみで 1/14=7% で target 未達) と柱④ Tips/Figma 実践 (target 15%、08-08 PROVE で 1/14=7% で -8pt) の両方に該当する『Web モーションの制御レシピ』題材。Primary persona 駆け出しの『インタラクション凝りたいが物理計算が難しそう』pain 直撃、Kopytin の記事は React/Vue 非依存で 素の DOM + Lottie という Figma 学習者にも手が届く技術セット。08-04 Lacoste ヒット (product-launches, v=4) と同じ『具体固有名詞 (Isadora Stress Release) × 短い原則 (Lottie+距離計算=狙った手触り)』構造で news-en 内での再現性検証を狙う。NG パターン回避: 『AI が奪う』完全非該当 (AI トピックですらない)、『プロ向け高度議論』回避策 → Pythagoras/playSegments/CSS custom properties 等の専門語を『距離計算で採点』『再生範囲操作』の平易日本語に翻訳、『AI に任せれば考えなくていい』回避策 → Recommend は『まず好きな演出を1つ真似』の主体的アクションで締め AI=補助輪フレーム維持、『機能説明メイン』回避策 → 学習者痛点『手触りをどう作るか』hook 起点、Figmaナビ は本回言及なしで完全に題材優先。freshness_hours=72 (08-11 publish → 08-14 08:00 JST で約 72h、168h 上限内で当週 fresh)。",
-        "sources": [
-          "https://www.smashingmagazine.com/2026/08/building-tactile-ux-honoring-intentional-design-lottie/",
-          "https://stressrelease.isadoradigitalagency.com/",
-          "https://dribbble.com/shots/26180213-Stress-Release-Interactive-Game",
-          "https://daily.dev/posts/building-tactile-ux-honoring-intentional-design-with-lottie-smashing-magazine-yvokqrlps"
-        ],
-        "query": "Alexey Kopytin Smashing Magazine Building Tactile UX Lottie Isadora Agency Stress Release playSegments distance math August 11 2026",
-        "freshness_hours": 72
-      },
-      "stats": {
-        "views": 1,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-08-28T06:56:21.604Z"
-      },
-      "instagram": {
-        "mediaId": "18229994806321240",
-        "permalink": "https://www.instagram.com/reel/Db_-cZuErlx/",
-        "views": 1,
-        "reach": 1,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "Rsc5GEJoZQk",
       "videoUrl": "https://youtube.com/shorts/Rsc5GEJoZQk",
       "date": "2026-08-15",
@@ -3588,7 +3534,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-12T23:16:09.028Z"
+        "updatedAt": "2026-11-13T23:16:03.408Z"
       },
       "instagram": {
         "mediaId": "18020882360945399",
@@ -3599,7 +3545,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-12T23:16:09.030Z"
+        "updatedAt": "2026-11-13T23:16:03.409Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3650,7 +3596,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-12T23:16:09.028Z"
+        "updatedAt": "2026-11-13T23:16:03.408Z"
       },
       "instagram": {
         "mediaId": "17977321719138515",
@@ -3661,7 +3607,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-12T23:16:09.030Z"
+        "updatedAt": "2026-11-13T23:16:03.409Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3712,7 +3658,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-12T23:16:09.028Z"
+        "updatedAt": "2026-11-13T23:16:03.408Z"
       },
       "instagram": {
         "mediaId": "18099069068453599",
@@ -3723,7 +3669,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-12T23:16:09.030Z"
+        "updatedAt": "2026-11-13T23:16:03.409Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3774,7 +3720,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-12T23:16:09.028Z"
+        "updatedAt": "2026-11-13T23:16:03.408Z"
       },
       "instagram": {
         "mediaId": "18434776459148578",
@@ -3785,7 +3731,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-12T23:16:09.030Z"
+        "updatedAt": "2026-11-13T23:16:03.409Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3836,7 +3782,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-12T23:16:09.028Z"
+        "updatedAt": "2026-11-13T23:16:03.408Z"
       },
       "instagram": {
         "mediaId": "18153184453512939",
@@ -3847,7 +3793,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-12T23:16:09.030Z"
+        "updatedAt": "2026-11-13T23:16:03.409Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3907,7 +3853,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-12T23:16:09.028Z"
+        "updatedAt": "2026-11-13T23:16:03.408Z"
       },
       "instagram": {
         "mediaId": "18192854989406830",
@@ -3918,7 +3864,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-12T23:16:09.030Z"
+        "updatedAt": "2026-11-13T23:16:03.409Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3978,7 +3924,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-12T23:16:09.028Z"
+        "updatedAt": "2026-11-13T23:16:03.408Z"
       },
       "instagram": {
         "mediaId": "18413974510091486",
@@ -3989,7 +3935,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-12T23:16:09.030Z"
+        "updatedAt": "2026-11-13T23:16:03.409Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4048,7 +3994,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-12T23:16:09.028Z"
+        "updatedAt": "2026-11-13T23:16:03.408Z"
       },
       "instagram": {
         "mediaId": "17918717994468789",
@@ -4059,7 +4005,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-12T23:16:09.030Z"
+        "updatedAt": "2026-11-13T23:16:03.409Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4118,7 +4064,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-12T23:16:09.028Z"
+        "updatedAt": "2026-11-13T23:16:03.408Z"
       },
       "instagram": {
         "mediaId": "17993753847060507",
@@ -4129,7 +4075,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-12T23:16:09.030Z"
+        "updatedAt": "2026-11-13T23:16:03.409Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4188,7 +4134,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-12T23:16:09.028Z"
+        "updatedAt": "2026-11-13T23:16:03.408Z"
       },
       "instagram": {
         "mediaId": "18071679206785132",
@@ -4199,7 +4145,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-12T23:16:09.030Z"
+        "updatedAt": "2026-11-13T23:16:03.409Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4258,7 +4204,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-12T23:16:09.028Z"
+        "updatedAt": "2026-11-13T23:16:03.408Z"
       },
       "instagram": {
         "mediaId": "18101617847648925",
@@ -4269,7 +4215,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-12T23:16:09.030Z"
+        "updatedAt": "2026-11-13T23:16:03.409Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4328,7 +4274,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-12T23:16:09.028Z"
+        "updatedAt": "2026-11-13T23:16:03.408Z"
       },
       "instagram": {
         "mediaId": "18017206689004074",
@@ -4339,7 +4285,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-12T23:16:09.030Z"
+        "updatedAt": "2026-11-13T23:16:03.409Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4398,7 +4344,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-12T23:16:09.028Z"
+        "updatedAt": "2026-11-13T23:16:03.408Z"
       },
       "instagram": {
         "mediaId": "18037706594885297",
@@ -4409,7 +4355,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-12T23:16:09.030Z"
+        "updatedAt": "2026-11-13T23:16:03.409Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4468,7 +4414,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-12T23:16:09.028Z"
+        "updatedAt": "2026-11-13T23:16:03.408Z"
       },
       "instagram": {
         "mediaId": "18131497201798522",
@@ -4479,7 +4425,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-12T23:16:09.030Z"
+        "updatedAt": "2026-11-13T23:16:03.409Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4541,7 +4487,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-11-13T23:16:03.408Z"
       },
       "instagram": null,
       "jev": {
@@ -4576,16 +4522,69 @@
           "humanCaption": 55
         }
       }
+    },
+    {
+      "videoId": "W_0k4yk4rhM",
+      "videoUrl": "https://youtube.com/shorts/W_0k4yk4rhM",
+      "date": "2026-11-14",
+      "genre": "ai-lesson",
+      "trial": 4,
+      "title": "【AI仕事術】発表の原稿はスライドから｜2026/11/14 #Shorts",
+      "titleTemplate": "ai-lesson",
+      "hashtags": [
+        "AI活用",
+        "ChatGPT",
+        "生成AI",
+        "仕事術",
+        "業務効率化",
+        "AIの使い方",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "発表の原稿はスライドから"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": ""
+      },
+      "durationSeconds": 48,
+      "coverOffsetMs": 6000,
+      "look": "reel",
+      "ytThumbnail": "set",
+      "discovery": {
+        "method": "lesson",
+        "description": "スライドから話す原稿を作ってもらう",
+        "sources": []
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": null,
+      "jev": {
+        "kind": "lesson",
+        "topicKey": "slides-speaker-notes",
+        "topic": "スライドから話す原稿を作ってもらう",
+        "sources": [],
+        "pillar": "slides",
+        "prompt": "次のスライドの見出しと箇条書きをもとに、1枚1分で話せる原稿を、です・ます調で書いてください。",
+        "craft": {
+          "tool": "instagram-agent-skill-ja@0e7ac86",
+          "hookType": "「〜しなくていい」",
+          "hookScore": 63.6,
+          "hookSeconds": 5.7,
+          "caption": "REVIEW",
+          "humanScript": 71.5,
+          "humanCaption": 65.4
+        }
+      }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-10-16",
-      "changes": [
-        "Day performance: Tue=1, Wed=1, Thu=1, Sat=1, Sun=1, Mon=1, Fri=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-10-17",
       "changes": [
@@ -4788,6 +4787,13 @@
         "Day performance: Fri=1, Sat=1, Sun=1, Mon=1, Tue=1, Wed=1, Thu=0"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-11-13",
+      "changes": [
+        "Day performance: Fri=1, Sat=1, Sun=1, Mon=1, Tue=1, Wed=1, Thu=0"
+      ],
+      "recommendedTemplate": "standard"
     }
   ],
   "account": {
@@ -4962,6 +4968,10 @@
       },
       {
         "date": "2026-11-13",
+        "count": 0
+      },
+      {
+        "date": "2026-11-14",
         "count": 0
       }
     ]
