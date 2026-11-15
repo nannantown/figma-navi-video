@@ -2,61 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "3oOUQ0QI2Q8",
-      "videoUrl": "https://youtube.com/shorts/3oOUQ0QI2Q8",
-      "date": "2026-08-16",
-      "title": "【デザインニュース】駆け出しポートフォリオを『Designed』止まりから救う Before/After 数値化3型｜2026/08/16 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 48,
-      "discovery": {
-        "method": "news-ja",
-        "description": "日本語ソース群 (ReDesigner Magazine『800人以上と面談したキャリアデザイナー』推薦のポートフォリオ図鑑 + トム・イシカワ note『未経験から転職成功した駆け出しデザイナーのめっちゃいいポートフォリオまとめ10選』+ Cocoda! ポートフォリオ機能) を Primary 論拠に据え、英語 2026 case study 指針 (UI/UX Designing 2026 examples + Design Decade 2026 structure) から具体数値 (task completion 62%→87%、support tickets 40%減) を接続する hybrid 構成。駆け出しデザイナーが週末 30 分で仕込める『ポートフォリオ case study の Before/After 数値化 3 型』を、キャリアデザイナー視点 (採用担当が 3 秒で判断する) + 具体数値ゴール (施策と成果を数字で結ぶ) + 週末 hands-on アクション (1 案件だけ Before/After に数字を 1 本ずつ足す) の 3 層で構造化。method 選定 (Sun evergreen ⑤ 帯): 直近 2 日 (08-15 figma-community / 08-14 news-en) 抵触なし、expert-blog 凍結中 (08-22 まで) 除外、product-launches (TOP1 avg 1.67) は 3 日前使用で 4 日以上のインターバル確保のため今日は温存 (来週 Sat/Sun の選択肢に確保)、official-src は Figma glut 診断中の中心度最大タグで Sat/Sun 非Figma題材 diagnostic 継続のため回避、news-ja (Explore-return TOP2 avg 1.0、14 日前使用 = 選定ウィンドウ内) を選定して Primary persona (駆け出しデザイナー・転職準備中) 到達に最短距離。柱⑤ Before/After / ポートフォリオ事例 (target 10%、直近14日 1/14=7% で -3pt) の未達を Sun 定期枠として着手、yesterday PDCA の strategy 更新提案『曜日固定 (火=②/水=④/木=⑥/金=③/日=⑤)』の第1回実装として運用パターン化を開始。7 連続 0views の 08-14 news-en (Isadora v=1) 暫定脱出後の『微陽性 v=1 圏』を、08-04 Lacoste (v=4) の『1動詞×3色』構造を数値密度型 micro-recipe に一般化した『800人 × 62%→87% × 40%減 × 30分』の 4 数値密度で再現テスト (yesterday『3切替×5分』figma-community × Sat に続く 2 サイクル目)。Primary persona (駆け出しデザイナー・転職準備中) の『Figma は触れるが実案件で詰まる』次段階 pain『作れても伝わらない』を直撃、ReDesigner『800人以上と面談したキャリアデザイナー』視点は Primary の職務目標 (転職成功) にリバースアプローチで刺さる。NG パターン回避: 『プロ向け高度議論』回避策 → 数値化例を『62%→87%』『40%減』の小学校算数レベルに固定、UX 業界用語 (task completion 等) は日本語補足なし原文『タスク完了率』直訳で駆け出しに直帰、『プラグイン機能説明メイン』回避策 → 学習者痛点『Designed X 止まりで見てもらえない』hook 起点で Figmaナビ関連 CTA なし (Sun evergreen は CTA 弱め方針)、『AI が奪う』完全非該当 (人が自分の case study を書き直すレシピ)、『AI に任せれば考えなくていい』回避 → Recommend で『30分で自分で数字を1本足す』主体アクションで締めて AI 依存フレームゼロ、『英語/日本語中途半端な混在』→ 出力は日本語で専門語 (Designed / Before / After) は英語原文表記維持、『出典不明ニュース』→ 日本語 3 URL + 英語 2 URL の 5 URL 明記。freshness_hours=168 (Sun evergreen 上限、strategy 記載『土日 evergreen は freshness 168h 例外』適用、ポートフォリオ数値化テクは時間軸非依存の永続テーマで採用担当の視点も年単位で安定)。",
-        "sources": [
-          "https://magazine.redesigner.jp/post/recomend-portfolio",
-          "https://note.com/tomonoriishikawa/n/nd57b10f8f179",
-          "https://cocoda.design/",
-          "https://uiuxdesigning.com/ux-case-study-examples/",
-          "https://designdecade.org/how-to-write-a-ux-case-study-complete-structure-tips-and-examples-for-2026/"
-        ],
-        "query": "駆け出しデザイナー ポートフォリオ 転職 数値化 Before After case study 2026 キャリアデザイナー 800人 面談 ReDesigner Cocoda note 未経験 UX metric task completion",
-        "freshness_hours": 168
-      },
-      "stats": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-08-30T01:15:42.701Z"
-      },
-      "instagram": {
-        "mediaId": "17880187755620385",
-        "permalink": "https://www.instagram.com/reel/DcFFURfAtuw/",
-        "views": 129,
-        "reach": 118,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "fxFk1wX61KI",
       "videoUrl": "https://youtube.com/shorts/fxFk1wX61KI",
       "date": "2026-08-17",
@@ -3603,7 +3548,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-14T23:16:15.057Z"
+        "updatedAt": "2026-11-15T23:16:01.197Z"
       },
       "instagram": {
         "mediaId": "18099069068453599",
@@ -3614,7 +3559,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-14T23:16:15.059Z"
+        "updatedAt": "2026-11-15T23:16:01.198Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3665,7 +3610,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-14T23:16:15.057Z"
+        "updatedAt": "2026-11-15T23:16:01.197Z"
       },
       "instagram": {
         "mediaId": "18434776459148578",
@@ -3676,7 +3621,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-14T23:16:15.059Z"
+        "updatedAt": "2026-11-15T23:16:01.198Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3727,7 +3672,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-14T23:16:15.057Z"
+        "updatedAt": "2026-11-15T23:16:01.197Z"
       },
       "instagram": {
         "mediaId": "18153184453512939",
@@ -3738,7 +3683,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-14T23:16:15.059Z"
+        "updatedAt": "2026-11-15T23:16:01.198Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3798,7 +3743,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-14T23:16:15.057Z"
+        "updatedAt": "2026-11-15T23:16:01.197Z"
       },
       "instagram": {
         "mediaId": "18192854989406830",
@@ -3809,7 +3754,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-14T23:16:15.059Z"
+        "updatedAt": "2026-11-15T23:16:01.198Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3869,7 +3814,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-14T23:16:15.057Z"
+        "updatedAt": "2026-11-15T23:16:01.197Z"
       },
       "instagram": {
         "mediaId": "18413974510091486",
@@ -3880,7 +3825,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-14T23:16:15.059Z"
+        "updatedAt": "2026-11-15T23:16:01.198Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3939,7 +3884,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-14T23:16:15.057Z"
+        "updatedAt": "2026-11-15T23:16:01.197Z"
       },
       "instagram": {
         "mediaId": "17918717994468789",
@@ -3950,7 +3895,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-14T23:16:15.059Z"
+        "updatedAt": "2026-11-15T23:16:01.198Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4009,7 +3954,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-14T23:16:15.057Z"
+        "updatedAt": "2026-11-15T23:16:01.197Z"
       },
       "instagram": {
         "mediaId": "17993753847060507",
@@ -4020,7 +3965,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-14T23:16:15.059Z"
+        "updatedAt": "2026-11-15T23:16:01.198Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4079,7 +4024,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-14T23:16:15.057Z"
+        "updatedAt": "2026-11-15T23:16:01.197Z"
       },
       "instagram": {
         "mediaId": "18071679206785132",
@@ -4090,7 +4035,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-14T23:16:15.059Z"
+        "updatedAt": "2026-11-15T23:16:01.198Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4149,7 +4094,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-14T23:16:15.057Z"
+        "updatedAt": "2026-11-15T23:16:01.197Z"
       },
       "instagram": {
         "mediaId": "18101617847648925",
@@ -4160,7 +4105,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-14T23:16:15.059Z"
+        "updatedAt": "2026-11-15T23:16:01.198Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4219,7 +4164,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-14T23:16:15.057Z"
+        "updatedAt": "2026-11-15T23:16:01.197Z"
       },
       "instagram": {
         "mediaId": "18017206689004074",
@@ -4230,7 +4175,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-14T23:16:15.059Z"
+        "updatedAt": "2026-11-15T23:16:01.198Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4289,7 +4234,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-14T23:16:15.057Z"
+        "updatedAt": "2026-11-15T23:16:01.197Z"
       },
       "instagram": {
         "mediaId": "18037706594885297",
@@ -4300,7 +4245,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-14T23:16:15.059Z"
+        "updatedAt": "2026-11-15T23:16:01.198Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4359,7 +4304,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-14T23:16:15.057Z"
+        "updatedAt": "2026-11-15T23:16:01.197Z"
       },
       "instagram": {
         "mediaId": "18131497201798522",
@@ -4370,7 +4315,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-14T23:16:15.059Z"
+        "updatedAt": "2026-11-15T23:16:01.198Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4432,7 +4377,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-14T23:16:15.057Z"
+        "updatedAt": "2026-11-15T23:16:01.197Z"
       },
       "instagram": null,
       "jev": {
@@ -4507,7 +4452,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-14T23:16:15.057Z"
+        "updatedAt": "2026-11-15T23:16:01.197Z"
       },
       "instagram": null,
       "jev": {
@@ -4567,18 +4512,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-11-15T23:16:01.197Z"
       },
       "instagram": {
         "mediaId": "18128960837473762",
-        "permalink": null,
-        "views": null,
-        "reach": null,
-        "likes": null,
-        "comments": null,
-        "shares": null,
-        "saved": null,
-        "updatedAt": null
+        "permalink": "https://www.instagram.com/reel/DfvX4qLDaQK/",
+        "views": 15,
+        "reach": 4,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-11-15T23:16:01.198Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4597,16 +4542,79 @@
           "humanCaption": 55.5
         }
       }
+    },
+    {
+      "videoId": "td2BL8-lRX0",
+      "videoUrl": "https://youtube.com/shorts/td2BL8-lRX0",
+      "date": "2026-11-16",
+      "genre": "ai-lesson",
+      "trial": 4,
+      "title": "【AI仕事術】聞かれそうな質問を先に｜2026/11/16 #Shorts",
+      "titleTemplate": "ai-lesson",
+      "hashtags": [
+        "AI活用",
+        "ChatGPT",
+        "生成AI",
+        "仕事術",
+        "業務効率化",
+        "AIの使い方",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "聞かれそうな質問を先に"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": ""
+      },
+      "durationSeconds": 48,
+      "coverOffsetMs": 5333,
+      "look": "reel",
+      "ytThumbnail": "set",
+      "discovery": {
+        "method": "lesson",
+        "description": "会議で聞かれそうな質問を先に予想する",
+        "sources": []
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "18054273434816382",
+        "permalink": null,
+        "views": null,
+        "reach": null,
+        "likes": null,
+        "comments": null,
+        "shares": null,
+        "saved": null,
+        "updatedAt": null
+      },
+      "jev": {
+        "kind": "lesson",
+        "topicKey": "meeting-expected-questions",
+        "topic": "会議で聞かれそうな質問を先に予想する",
+        "sources": [],
+        "pillar": "meeting",
+        "prompt": "次の提案の内容について、会議で出席者から聞かれそうな質問を5つと、それぞれの短い答え方を挙げてください。",
+        "craft": {
+          "tool": "instagram-agent-skill-ja@0e7ac86",
+          "hookType": "「〜なら見て」",
+          "hookScore": 61.7,
+          "hookSeconds": 6.4,
+          "caption": "REVIEW",
+          "humanScript": 67.9,
+          "humanCaption": 62.3
+        }
+      }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-10-18",
-      "changes": [
-        "Day performance: Tue=1, Wed=1, Thu=1, Sat=1, Sun=1, Mon=1, Fri=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-10-19",
       "changes": [
@@ -4809,6 +4817,13 @@
         "Day performance: Sat=1, Sun=1, Mon=1, Tue=1, Wed=1, Thu=0, Fri=0"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-11-15",
+      "changes": [
+        "Day performance: Sun=1, Mon=1, Tue=1, Wed=1, Thu=0, Fri=0, Sat=0"
+      ],
+      "recommendedTemplate": "standard"
     }
   ],
   "account": {
@@ -4991,6 +5006,10 @@
       },
       {
         "date": "2026-11-15",
+        "count": 0
+      },
+      {
+        "date": "2026-11-16",
         "count": 0
       }
     ]
