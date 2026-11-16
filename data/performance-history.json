@@ -2,63 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "fxFk1wX61KI",
-      "videoUrl": "https://youtube.com/shorts/fxFk1wX61KI",
-      "date": "2026-08-17",
-      "title": "【デザインニュース】Figma text wrapに Balance/Pretty追加 8/14、見出しの改行が1クリックでプロっぽく整う｜2026/08/17 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 45,
-      "discovery": {
-        "method": "official-src",
-        "description": "Figma 公式 release notes / Help Center (Explore text properties) / Product Updates forum を一次ソースに、8/14 ロールアウトの text wrap 新機能 (Balance と Pretty の 2 種類) を捕捉。Balance は各行の長さを揃えて見出しやボタンの形を整え、Pretty は長文の最終行に単語1個だけ残る『みなしご行 (orphan)』を防ぐ。text style / 個別 paragraph / text layer の 3 レベルで設定可能で、スタイルに設定すればファイル全体に一気に効く。CSS の text-wrap プロパティ (2023 頃から Chrome/Edge 対応) を Figma の設計面に持ち込んだ形で、駆け出しデザイナーがポートフォリオの見出しや本文で無意識に生じているタイポの粗さを 1 クリックで消せる直接的な hands-on アップデート。method 選定 (Mon weekday news 帯): TOP3 method 候補のうち product-launches (avg 1.67 TOP1、08-13=4日前で 7日ウィンドウ 2回到達済=過剰集中回避で温存)、news-ja (avg 0.5、08-16 前日=直近2日ガード抵触で不可)、figma-community (avg 0.33、08-15 2日前=直近2日ガード抵触で不可)、expert-blog (avg 0.0、凍結中 08-22 まで)、news-en (avg 0.5、08-14 3日前で TOP method 候補だが 4本目 avg=0.5 で official-src と同格)、social-en (07-28 で窓外脱落 Explore return 準備中)、social-ja (未使用 Explore 新規) を全チェック。official-src (avg 0.5、08-11 6日前で 7日ウィンドウ 1回のみ、TOP method 内で最も休養+exploit 余地最大) が weekday news 4 method の中で freshness × 直近ガード × 資源余裕の 3 軸で最適。柱① Figma 公式ニュース (target 25%、直近14日 3/15=20% で -5pt) を 4/15=27% に補正し target 達成、8/14 リリースから 72h fresh で weekday news 帯の理想値。yesterday PDCA Action #3『Mon=① 曜日固定』新提案の第1回実装、feature-launch-visual-density 新角度 (yesterday の数値密度 v=0 空振りから視覚要素密度に切替、Before/After 図解と親和性高い Figma 公式機能ニュース系で n=1 試行、Balance × Pretty × 1クリック × 1分 の 4 視覚要素密度で 08-04 Lacoste 型の伸び再現テスト継続) を組み込み。Primary persona (駆け出しデザイナー・転職準備中) 直撃: ポートフォリオの見出しや本文タイポの粗さは採用担当が『素人感』を最初に感じ取る要素の一つで、1クリック × スタイル一括適用の day-1 で使える具体武器として『H1 を Balance に、本文を Pretty に切替えるだけ、1分でタイポの粗さが消え面接映え』の recommend で締める。NG パターン回避: 『プロ向け高度議論』回避策 → CSS text-wrap の技術背景 (W3C 議論、Chromium 実装史) には触れず『各行の長さを揃える』『最終行に単語1個だけ残る現象を防ぐ』の平易日本語に翻訳、orphan は『みなしご行』の直訳で駆け出しに直帰、『プラグイン機能説明メイン』完全非該当 (Figma 公式機能ニュース)、『AI が奪う』完全非該当 (人の手作業タイポ品質改善レシピ、AI 一切不使用)、『AI に任せれば考えなくていい』回避策 → Recommend で『今日1分で自分で切替』主体アクションで締めて AI 依存フレームゼロ、『英語/日本語中途半端な混在』回避策 → 出力は日本語で text wrap / Balance / Pretty / H1 は Figma UI 表示の固有名詞として英語原文表記維持、『1週間以上前のニュースを新着扱い』回避策 → freshness_hours=72 で 168h NG 上限を大幅に下回る当週 fresh、『出典不明ニュース』回避策 → Figma 公式 release-notes 1 + Help Center 1 + Product Updates forum 1 + 機能要望 forum 2 (Balance/Pretty それぞれ) + CSS 技術記事 2 (dev.to + ishadeed) の計 7 URL multi-source confirm。図解しやすさ: Before/After (改行位置が揃わない → 揃う、みなしご行あり → なし) が視覚的に一目瞭然で Shorts のスライド構成に最適、視覚密度型 micro-recipe の n=1 試行素材として理想。",
-        "sources": [
-          "https://www.figma.com/release-notes/",
-          "https://help.figma.com/hc/en-us/articles/360039956634-Explore-text-properties",
-          "https://forum.figma.com/product-updates-3",
-          "https://forum.figma.com/suggest-a-feature-11/add-text-wrap-balance-38602",
-          "https://forum.figma.com/suggest-a-feature-11/typography-add-text-wrap-pretty-44526",
-          "https://dev.to/nickbenksim/the-property-text-wrap-balance-and-text-wrap-pretty-for-perfect-headings-3061",
-          "https://ishadeed.com/article/balancing-text-css/"
-        ],
-        "query": "Figma text wrap Balance Pretty release August 14 2026 typography orphan headline button style paragraph",
-        "freshness_hours": 72
-      },
-      "stats": {
-        "views": 5,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-08-30T01:15:42.701Z"
-      },
-      "instagram": {
-        "mediaId": "17935964655351336",
-        "permalink": "https://www.instagram.com/reel/DcHqDIRDZse/",
-        "views": 7,
-        "reach": 6,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "oXx1DdtdSFE",
       "videoUrl": "https://youtube.com/shorts/oXx1DdtdSFE",
       "date": "2026-08-18",
@@ -3610,7 +3553,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-15T23:16:01.197Z"
+        "updatedAt": "2026-11-16T23:16:05.875Z"
       },
       "instagram": {
         "mediaId": "18434776459148578",
@@ -3621,7 +3564,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-15T23:16:01.198Z"
+        "updatedAt": "2026-11-16T23:16:05.876Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3672,7 +3615,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-15T23:16:01.197Z"
+        "updatedAt": "2026-11-16T23:16:05.875Z"
       },
       "instagram": {
         "mediaId": "18153184453512939",
@@ -3683,7 +3626,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-15T23:16:01.198Z"
+        "updatedAt": "2026-11-16T23:16:05.876Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3743,7 +3686,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-15T23:16:01.197Z"
+        "updatedAt": "2026-11-16T23:16:05.875Z"
       },
       "instagram": {
         "mediaId": "18192854989406830",
@@ -3754,7 +3697,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-15T23:16:01.198Z"
+        "updatedAt": "2026-11-16T23:16:05.876Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3814,7 +3757,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-15T23:16:01.197Z"
+        "updatedAt": "2026-11-16T23:16:05.875Z"
       },
       "instagram": {
         "mediaId": "18413974510091486",
@@ -3825,7 +3768,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-15T23:16:01.198Z"
+        "updatedAt": "2026-11-16T23:16:05.876Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3884,7 +3827,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-15T23:16:01.197Z"
+        "updatedAt": "2026-11-16T23:16:05.875Z"
       },
       "instagram": {
         "mediaId": "17918717994468789",
@@ -3895,7 +3838,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-15T23:16:01.198Z"
+        "updatedAt": "2026-11-16T23:16:05.876Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3954,7 +3897,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-15T23:16:01.197Z"
+        "updatedAt": "2026-11-16T23:16:05.875Z"
       },
       "instagram": {
         "mediaId": "17993753847060507",
@@ -3965,7 +3908,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-15T23:16:01.198Z"
+        "updatedAt": "2026-11-16T23:16:05.876Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4024,7 +3967,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-15T23:16:01.197Z"
+        "updatedAt": "2026-11-16T23:16:05.875Z"
       },
       "instagram": {
         "mediaId": "18071679206785132",
@@ -4035,7 +3978,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-15T23:16:01.198Z"
+        "updatedAt": "2026-11-16T23:16:05.876Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4094,7 +4037,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-15T23:16:01.197Z"
+        "updatedAt": "2026-11-16T23:16:05.875Z"
       },
       "instagram": {
         "mediaId": "18101617847648925",
@@ -4105,7 +4048,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-15T23:16:01.198Z"
+        "updatedAt": "2026-11-16T23:16:05.876Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4164,7 +4107,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-15T23:16:01.197Z"
+        "updatedAt": "2026-11-16T23:16:05.875Z"
       },
       "instagram": {
         "mediaId": "18017206689004074",
@@ -4175,7 +4118,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-15T23:16:01.198Z"
+        "updatedAt": "2026-11-16T23:16:05.876Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4234,7 +4177,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-15T23:16:01.197Z"
+        "updatedAt": "2026-11-16T23:16:05.875Z"
       },
       "instagram": {
         "mediaId": "18037706594885297",
@@ -4245,7 +4188,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-15T23:16:01.198Z"
+        "updatedAt": "2026-11-16T23:16:05.876Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4304,7 +4247,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-15T23:16:01.197Z"
+        "updatedAt": "2026-11-16T23:16:05.875Z"
       },
       "instagram": {
         "mediaId": "18131497201798522",
@@ -4315,7 +4258,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-15T23:16:01.198Z"
+        "updatedAt": "2026-11-16T23:16:05.876Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4377,7 +4320,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-15T23:16:01.197Z"
+        "updatedAt": "2026-11-16T23:16:05.875Z"
       },
       "instagram": null,
       "jev": {
@@ -4452,7 +4395,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-15T23:16:01.197Z"
+        "updatedAt": "2026-11-16T23:16:05.875Z"
       },
       "instagram": null,
       "jev": {
@@ -4512,18 +4455,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-15T23:16:01.197Z"
+        "updatedAt": "2026-11-16T23:16:05.875Z"
       },
       "instagram": {
         "mediaId": "18128960837473762",
         "permalink": "https://www.instagram.com/reel/DfvX4qLDaQK/",
-        "views": 15,
-        "reach": 4,
+        "views": 31,
+        "reach": 30,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-15T23:16:01.198Z"
+        "updatedAt": "2026-11-16T23:16:05.876Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4582,18 +4525,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-11-16T23:16:05.875Z"
       },
       "instagram": {
         "mediaId": "18054273434816382",
-        "permalink": null,
-        "views": null,
-        "reach": null,
-        "likes": null,
-        "comments": null,
-        "shares": null,
-        "saved": null,
-        "updatedAt": null
+        "permalink": "https://www.instagram.com/reel/Dfx8ekvD-zq/",
+        "views": 5,
+        "reach": 4,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-11-16T23:16:05.876Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4612,16 +4555,69 @@
           "humanCaption": 62.3
         }
       }
+    },
+    {
+      "videoId": "8xrqlDfrlMI",
+      "videoUrl": "https://youtube.com/shorts/8xrqlDfrlMI",
+      "date": "2026-11-17",
+      "genre": "ai-lesson",
+      "trial": 4,
+      "title": "【AI仕事術】長いやり取りを時系列に｜2026/11/17 #Shorts",
+      "titleTemplate": "ai-lesson",
+      "hashtags": [
+        "AI活用",
+        "ChatGPT",
+        "生成AI",
+        "仕事術",
+        "業務効率化",
+        "AIの使い方",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "長いやり取りを時系列に"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": ""
+      },
+      "durationSeconds": 48,
+      "coverOffsetMs": 4833,
+      "look": "reel",
+      "ytThumbnail": "set",
+      "discovery": {
+        "method": "lesson",
+        "description": "長いメールのやり取りを時系列にまとめる",
+        "sources": []
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": null,
+      "jev": {
+        "kind": "lesson",
+        "topicKey": "summary-mail-timeline",
+        "topic": "長いメールのやり取りを時系列にまとめる",
+        "sources": [],
+        "pillar": "summary",
+        "prompt": "次のメールのやり取りを読んで、いつ・誰が・何を決めたかを、日付の順に箇条書きでまとめてください。",
+        "craft": {
+          "tool": "instagram-agent-skill-ja@0e7ac86",
+          "hookType": "そのままの質問",
+          "hookScore": 51.5,
+          "hookSeconds": 5.1,
+          "caption": "REVIEW",
+          "humanScript": 75.3,
+          "humanCaption": 50.4
+        }
+      }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-10-19",
-      "changes": [
-        "Day performance: Tue=1, Wed=1, Thu=1, Sat=1, Sun=1, Mon=1, Fri=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-10-20",
       "changes": [
@@ -4824,6 +4820,13 @@
         "Day performance: Sun=1, Mon=1, Tue=1, Wed=1, Thu=0, Fri=0, Sat=0"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-11-16",
+      "changes": [
+        "Day performance: Mon=1, Tue=1, Wed=1, Sun=1, Thu=0, Fri=0, Sat=0"
+      ],
+      "recommendedTemplate": "standard"
     }
   ],
   "account": {
@@ -5010,6 +5013,10 @@
       },
       {
         "date": "2026-11-16",
+        "count": 0
+      },
+      {
+        "date": "2026-11-17",
         "count": 0
       }
     ]
