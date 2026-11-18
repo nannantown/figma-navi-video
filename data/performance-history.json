@@ -2,60 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "dgnWxtnxRyQ",
-      "videoUrl": "https://youtube.com/shorts/dgnWxtnxRyQ",
-      "date": "2026-08-19",
-      "title": "【デザインニュース】駆け出しUXポートフォリオ2026の正解、Case Study Clubが8/17にトップ20公開｜2026/08/19 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 44,
-      "discovery": {
-        "method": "news-en",
-        "description": "英語のデザイン系メディア (Case Study Club, Awwwards, Smashing Magazine, Product Hunt daily leaderboard) を横断して 48h 以内の fresh ネタを探索。8/17 に Case Study Club が『Top 20 UX Designer Portfolio Websites in 2026』を公開しており、Primary persona (駆け出しデザイナー・転職準備中) が探している『2026 年基準のポートフォリオの答え』が権威ある英語ソースから届いたタイミングとして最適と判断。method 選定: 直近2日 (08-17 official-src / 08-18 figma-community) が連続ガードで自動除外。TOP 3 method (figma-community 0.75 / product-launches 0.50 / news-en=official-src=0.33) のうち、figma-community/official-src はガードで不可、product-launches は 08-13 で 6日空きの Exploit 候補だが Awwwards 直近ソースが 08-18 Michael Gatt Folio (音楽・映像業界ポートフォリオ) で Primary persona 直撃度が弱い。news-en (08-14 が直近で 5日空き、TOP tie) を Exploit で選択。08-16 news-ja の『駆け出しポートフォリオ Before/After 数値化』が v=0 で沈んだが、今日は同テーマを英語ソース (Case Study Club の 20選、Dropbox の Ed Chao / Help Scout の Buzz Usborne / フリーランスの Aleksi Tappura など具体名の並ぶ権威リスト) で角度を変えて再アタック、同テーマ再挑戦の method 変数隔離テスト。柱としては ⑤ Before/After・ポートフォリオ事例 (target 10%) と ③ 業界・デザインニュース (target 20%) の合流点。NG パターン回避: 『プロ向け高度議論』回避策 → シニア向けデザインリサーチ話 (Smashing の Eight Pillars) は避け、共通点 3 つ (タイポ / 物語 / AI 共作の透明性) の平易日本語に絞る。『AI が奪う』完全非該当 → 『AI との共作プロセスもオープンに書く』でむしろ AI を武器として肯定的に扱う。『プラグイン機能説明メイン』回避策 → 学習者の『ポートフォリオ何書けばいいか分からない』課題から入り、Figmaナビは rec の最後で『LP も半日で組めます』の軽い接続 1 文のみ、機能説明ゼロ。『1週間以上前のニュース』回避策 → freshness_hours=48 で 168h 上限内。『出典不明』回避策 → Case Study Club 記事 URL 1 + Awwwards SOTD 一覧 1 + 補完調査 (Aleksi Tappura 個人サイト・pafolios) 2 の計 4 URL multi-source。日本語での再構成にあたって Ed Chao (Dropbox) / Buzz Usborne (Help Scout) / Aleksi Tappura (freelance) の 3 名は英語圏で確認済みの実在デザイナーで、共通点として『crisp typography』『personal storytelling』『AI-transparent process』を英語圏コミュニティで抽出。動画構成: hook で権威+日付+具体数、origin で 3 名の実名+共通点 3 つ (具体的で真似できる粒度) の 2 枚重ね、recommend で『TOP1枚だけ書き直す』の day-1 で完了する minimum viable action + Figmaナビ軽接続で締める。Meta-PDCA 副作用モニタ: news-en 3連続の疲弊リスクは 08-06/08-10/08-14 の週 1 ペースだったため、今日 08-19 で週 1 継続=過剰にはならない。次週は social-en / social-ja の Explore 枠試験を検討 (別 PDCA レポートに記録済)。",
-        "sources": [
-          "https://www.casestudy.club/journal/ux-designer-portfolio",
-          "https://www.awwwards.com/websites/sites_of_the_day/",
-          "https://pafolios.com/aleksi-tappura",
-          "https://aleksitappura.com/"
-        ],
-        "query": "Case Study Club Top 20 UX Designer Portfolio Websites 2026 August 17 Buzz Usborne Ed Chao Aleksi Tappura typography storytelling",
-        "freshness_hours": 48
-      },
-      "stats": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-09-02T01:01:30.912Z"
-      },
-      "instagram": {
-        "mediaId": "18107417033518297",
-        "permalink": "https://www.instagram.com/reel/DcMzxLTjogu/",
-        "views": 109,
-        "reach": 107,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "iokwU1NEcu4",
       "videoUrl": "https://youtube.com/shorts/iokwU1NEcu4",
       "date": "2026-08-20",
@@ -3630,7 +3576,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-17T23:16:05.309Z"
+        "updatedAt": "2026-11-18T23:16:03.102Z"
       },
       "instagram": {
         "mediaId": "18192854989406830",
@@ -3641,7 +3587,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-17T23:16:05.310Z"
+        "updatedAt": "2026-11-18T23:16:03.103Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3701,7 +3647,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-17T23:16:05.309Z"
+        "updatedAt": "2026-11-18T23:16:03.102Z"
       },
       "instagram": {
         "mediaId": "18413974510091486",
@@ -3712,7 +3658,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-17T23:16:05.310Z"
+        "updatedAt": "2026-11-18T23:16:03.103Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3771,7 +3717,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-17T23:16:05.309Z"
+        "updatedAt": "2026-11-18T23:16:03.102Z"
       },
       "instagram": {
         "mediaId": "17918717994468789",
@@ -3782,7 +3728,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-17T23:16:05.310Z"
+        "updatedAt": "2026-11-18T23:16:03.103Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3841,7 +3787,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-17T23:16:05.309Z"
+        "updatedAt": "2026-11-18T23:16:03.102Z"
       },
       "instagram": {
         "mediaId": "17993753847060507",
@@ -3852,7 +3798,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-17T23:16:05.310Z"
+        "updatedAt": "2026-11-18T23:16:03.103Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3911,7 +3857,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-17T23:16:05.309Z"
+        "updatedAt": "2026-11-18T23:16:03.102Z"
       },
       "instagram": {
         "mediaId": "18071679206785132",
@@ -3922,7 +3868,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-17T23:16:05.310Z"
+        "updatedAt": "2026-11-18T23:16:03.103Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3981,7 +3927,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-17T23:16:05.309Z"
+        "updatedAt": "2026-11-18T23:16:03.102Z"
       },
       "instagram": {
         "mediaId": "18101617847648925",
@@ -3992,7 +3938,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-17T23:16:05.310Z"
+        "updatedAt": "2026-11-18T23:16:03.103Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4051,7 +3997,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-17T23:16:05.309Z"
+        "updatedAt": "2026-11-18T23:16:03.102Z"
       },
       "instagram": {
         "mediaId": "18017206689004074",
@@ -4062,7 +4008,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-17T23:16:05.310Z"
+        "updatedAt": "2026-11-18T23:16:03.103Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4121,7 +4067,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-17T23:16:05.309Z"
+        "updatedAt": "2026-11-18T23:16:03.102Z"
       },
       "instagram": {
         "mediaId": "18037706594885297",
@@ -4132,7 +4078,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-17T23:16:05.310Z"
+        "updatedAt": "2026-11-18T23:16:03.103Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4191,7 +4137,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-17T23:16:05.309Z"
+        "updatedAt": "2026-11-18T23:16:03.102Z"
       },
       "instagram": {
         "mediaId": "18131497201798522",
@@ -4202,7 +4148,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-17T23:16:05.310Z"
+        "updatedAt": "2026-11-18T23:16:03.103Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4264,7 +4210,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-17T23:16:05.309Z"
+        "updatedAt": "2026-11-18T23:16:03.102Z"
       },
       "instagram": null,
       "jev": {
@@ -4339,7 +4285,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-17T23:16:05.309Z"
+        "updatedAt": "2026-11-18T23:16:03.102Z"
       },
       "instagram": null,
       "jev": {
@@ -4399,7 +4345,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-17T23:16:05.309Z"
+        "updatedAt": "2026-11-18T23:16:03.102Z"
       },
       "instagram": {
         "mediaId": "18128960837473762",
@@ -4410,7 +4356,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-17T23:16:05.310Z"
+        "updatedAt": "2026-11-18T23:16:03.103Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4469,7 +4415,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-17T23:16:05.309Z"
+        "updatedAt": "2026-11-18T23:16:03.102Z"
       },
       "instagram": {
         "mediaId": "18054273434816382",
@@ -4480,7 +4426,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-17T23:16:05.310Z"
+        "updatedAt": "2026-11-18T23:16:03.103Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4539,18 +4485,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-17T23:16:05.309Z"
+        "updatedAt": "2026-11-18T23:16:03.102Z"
       },
       "instagram": {
         "mediaId": "18381953632233751",
         "permalink": "https://www.instagram.com/reel/Df09Sn9Ev-u/",
-        "views": 1,
-        "reach": 1,
+        "views": 2,
+        "reach": 2,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-17T23:16:05.310Z"
+        "updatedAt": "2026-11-18T23:16:03.103Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4609,18 +4555,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-11-18T23:16:03.102Z"
       },
       "instagram": {
         "mediaId": "18382810213245313",
-        "permalink": null,
-        "views": null,
-        "reach": null,
-        "likes": null,
-        "comments": null,
-        "shares": null,
-        "saved": null,
-        "updatedAt": null
+        "permalink": "https://www.instagram.com/reel/Df3F5YnDX_C/",
+        "views": 4,
+        "reach": 3,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-11-18T23:16:03.103Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4639,16 +4585,79 @@
           "humanCaption": 49.3
         }
       }
+    },
+    {
+      "videoId": "T1NSyI-j3f8",
+      "videoUrl": "https://youtube.com/shorts/T1NSyI-j3f8",
+      "date": "2026-11-19",
+      "genre": "ai-lesson",
+      "trial": 4,
+      "title": "【AI仕事術】メモは表にしてもらう｜2026/11/19 #Shorts",
+      "titleTemplate": "ai-lesson",
+      "hashtags": [
+        "AI活用",
+        "ChatGPT",
+        "生成AI",
+        "仕事術",
+        "業務効率化",
+        "AIの使い方",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "メモは表にしてもらう"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": ""
+      },
+      "durationSeconds": 50,
+      "coverOffsetMs": 6467,
+      "look": "reel",
+      "ytThumbnail": "set",
+      "discovery": {
+        "method": "lesson",
+        "description": "箇条書きのメモを表に整える",
+        "sources": []
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "18109312586577196",
+        "permalink": null,
+        "views": null,
+        "reach": null,
+        "likes": null,
+        "comments": null,
+        "shares": null,
+        "saved": null,
+        "updatedAt": null
+      },
+      "jev": {
+        "kind": "lesson",
+        "topicKey": "sheet-memo-to-table",
+        "topic": "箇条書きのメモを表に整える",
+        "sources": [],
+        "pillar": "sheet",
+        "prompt": "次のメモを、日付・場所・担当・費用の4列の表にしてください。分からない所は空欄にしてください。",
+        "craft": {
+          "tool": "instagram-agent-skill-ja@0e7ac86",
+          "hookType": "「〜しなくていい」",
+          "hookScore": 64,
+          "hookSeconds": 5.1,
+          "caption": "REVIEW",
+          "humanScript": 71.2,
+          "humanCaption": 48.1
+        }
+      }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-10-21",
-      "changes": [
-        "Day performance: Mon=2, Wed=1, Thu=1, Fri=1, Sat=1, Tue=1, Sun=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-10-21",
       "changes": [
@@ -4851,6 +4860,13 @@
         "Day performance: Wed=1, Sun=1, Mon=1, Tue=1, Thu=0, Fri=0, Sat=0"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-11-18",
+      "changes": [
+        "Day performance: Wed=1, Sun=1, Mon=1, Tue=1, Thu=0, Fri=0, Sat=0"
+      ],
+      "recommendedTemplate": "standard"
     }
   ],
   "account": {
@@ -5045,6 +5061,10 @@
       },
       {
         "date": "2026-11-18",
+        "count": 0
+      },
+      {
+        "date": "2026-11-19",
         "count": 0
       }
     ]
