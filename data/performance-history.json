@@ -2,60 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "2nygMUTluLY",
-      "videoUrl": "https://youtube.com/shorts/2nygMUTluLY",
-      "date": "2026-08-21",
-      "title": "【デザインニュース】AIに読めるDS Mabellini 8/15 Blue-500の限界とJSON化80%削減｜2026/08/21 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 41,
-      "discovery": {
-        "method": "social-en",
-        "description": "英語圏デザイナー界隈 (Designer News 08-20 号 + Hacker News 討議 + Into Design Systems ブログ) で急拡散した Andrea Mabellini 氏 8/15 の『Your Design System Isn't Ready for AI』を捕捉。昨日 PDCA が今日の Explore 第一候補として明示。Primary (駆け出し) の学習パスに直結する『最初から意味付き命名で作れば手戻りゼロ』を Indeed の実測データで補強。",
-        "sources": [
-          "https://www.andreamabellini.com/2026/08/15/your-design-system-isnt-ready-for-ai/",
-          "https://www.intodesignsystems.com/blog/design-system-not-ready-for-ai-agents",
-          "https://designernews.co/editions",
-          "https://help.figma.com/hc/en-us/articles/38978644498199-Best-practices-to-help-Figma-AI-understand-your-design-system"
-        ],
-        "query": "design system AI agents ready tokens semantic naming Designer News Aug 20 2026 Mabellini",
-        "freshness_hours": 144
-      },
-      "stats": {
-        "views": 1,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-09-04T00:59:01.738Z"
-      },
-      "instagram": {
-        "mediaId": "18194722117337911",
-        "permalink": "https://www.instagram.com/reel/DcR98v1Abgy/",
-        "views": 102,
-        "reach": 98,
-        "likes": 1,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "3gBBQE6UXyk",
       "videoUrl": "https://youtube.com/shorts/3gBBQE6UXyk",
       "date": "2026-08-22",
@@ -3665,7 +3611,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-19T23:16:03.094Z"
+        "updatedAt": "2026-11-20T23:16:07.012Z"
       },
       "instagram": {
         "mediaId": "17918717994468789",
@@ -3676,7 +3622,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-19T23:16:03.095Z"
+        "updatedAt": "2026-11-20T23:16:07.013Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3735,7 +3681,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-19T23:16:03.094Z"
+        "updatedAt": "2026-11-20T23:16:07.012Z"
       },
       "instagram": {
         "mediaId": "17993753847060507",
@@ -3746,7 +3692,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-19T23:16:03.095Z"
+        "updatedAt": "2026-11-20T23:16:07.013Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3805,7 +3751,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-19T23:16:03.094Z"
+        "updatedAt": "2026-11-20T23:16:07.012Z"
       },
       "instagram": {
         "mediaId": "18071679206785132",
@@ -3816,7 +3762,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-19T23:16:03.095Z"
+        "updatedAt": "2026-11-20T23:16:07.013Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3875,7 +3821,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-19T23:16:03.094Z"
+        "updatedAt": "2026-11-20T23:16:07.012Z"
       },
       "instagram": {
         "mediaId": "18101617847648925",
@@ -3886,7 +3832,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-19T23:16:03.095Z"
+        "updatedAt": "2026-11-20T23:16:07.013Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3945,7 +3891,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-19T23:16:03.094Z"
+        "updatedAt": "2026-11-20T23:16:07.012Z"
       },
       "instagram": {
         "mediaId": "18017206689004074",
@@ -3956,7 +3902,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-19T23:16:03.095Z"
+        "updatedAt": "2026-11-20T23:16:07.013Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4015,7 +3961,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-19T23:16:03.094Z"
+        "updatedAt": "2026-11-20T23:16:07.012Z"
       },
       "instagram": {
         "mediaId": "18037706594885297",
@@ -4026,7 +3972,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-19T23:16:03.095Z"
+        "updatedAt": "2026-11-20T23:16:07.013Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4085,7 +4031,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-19T23:16:03.094Z"
+        "updatedAt": "2026-11-20T23:16:07.012Z"
       },
       "instagram": {
         "mediaId": "18131497201798522",
@@ -4096,7 +4042,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-19T23:16:03.095Z"
+        "updatedAt": "2026-11-20T23:16:07.013Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4158,7 +4104,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-19T23:16:03.094Z"
+        "updatedAt": "2026-11-20T23:16:07.012Z"
       },
       "instagram": null,
       "jev": {
@@ -4233,7 +4179,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-19T23:16:03.094Z"
+        "updatedAt": "2026-11-20T23:16:07.012Z"
       },
       "instagram": null,
       "jev": {
@@ -4293,7 +4239,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-19T23:16:03.094Z"
+        "updatedAt": "2026-11-20T23:16:07.012Z"
       },
       "instagram": {
         "mediaId": "18128960837473762",
@@ -4304,7 +4250,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-19T23:16:03.095Z"
+        "updatedAt": "2026-11-20T23:16:07.013Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4363,7 +4309,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-19T23:16:03.094Z"
+        "updatedAt": "2026-11-20T23:16:07.012Z"
       },
       "instagram": {
         "mediaId": "18054273434816382",
@@ -4374,7 +4320,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-19T23:16:03.095Z"
+        "updatedAt": "2026-11-20T23:16:07.013Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4433,7 +4379,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-19T23:16:03.094Z"
+        "updatedAt": "2026-11-20T23:16:07.012Z"
       },
       "instagram": {
         "mediaId": "18381953632233751",
@@ -4444,7 +4390,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-19T23:16:03.095Z"
+        "updatedAt": "2026-11-20T23:16:07.013Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4503,7 +4449,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-19T23:16:03.094Z"
+        "updatedAt": "2026-11-20T23:16:07.012Z"
       },
       "instagram": {
         "mediaId": "18382810213245313",
@@ -4514,7 +4460,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-19T23:16:03.095Z"
+        "updatedAt": "2026-11-20T23:16:07.013Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4573,18 +4519,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-19T23:16:03.094Z"
+        "updatedAt": "2026-11-20T23:16:07.012Z"
       },
       "instagram": {
         "mediaId": "18109312586577196",
         "permalink": "https://www.instagram.com/reel/Df5qtBRD-Mh/",
-        "views": 4,
-        "reach": 1,
+        "views": 5,
+        "reach": 4,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-19T23:16:03.095Z"
+        "updatedAt": "2026-11-20T23:16:07.013Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4643,18 +4589,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-11-20T23:16:07.012Z"
       },
       "instagram": {
         "mediaId": "18102820223397428",
-        "permalink": null,
-        "views": null,
-        "reach": null,
-        "likes": null,
-        "comments": null,
-        "shares": null,
-        "saved": null,
-        "updatedAt": null
+        "permalink": "https://www.instagram.com/reel/Df8Ph4VDtua/",
+        "views": 18,
+        "reach": 11,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-11-20T23:16:07.013Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4673,16 +4619,79 @@
           "humanCaption": 38.6
         }
       }
+    },
+    {
+      "videoId": "ep6wB1qnVA4",
+      "videoUrl": "https://youtube.com/shorts/ep6wB1qnVA4",
+      "date": "2026-11-21",
+      "genre": "ai-lesson",
+      "trial": 4,
+      "title": "【AI仕事術】良い点と気になる点を並べる｜2026/11/21 #Shorts",
+      "titleTemplate": "ai-lesson",
+      "hashtags": [
+        "AI活用",
+        "ChatGPT",
+        "生成AI",
+        "仕事術",
+        "業務効率化",
+        "AIの使い方",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "良い点と気になる点を並べる"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": ""
+      },
+      "durationSeconds": 42,
+      "coverOffsetMs": 5667,
+      "look": "reel",
+      "ytThumbnail": "set",
+      "discovery": {
+        "method": "lesson",
+        "description": "案の良い点と気になる点を両方聞く",
+        "sources": []
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "17991918399087786",
+        "permalink": null,
+        "views": null,
+        "reach": null,
+        "likes": null,
+        "comments": null,
+        "shares": null,
+        "saved": null,
+        "updatedAt": null
+      },
+      "jev": {
+        "kind": "lesson",
+        "topicKey": "research-pros-cons",
+        "topic": "案の良い点と気になる点を両方聞く",
+        "sources": [],
+        "pillar": "research",
+        "prompt": "定例会議をすべてオンラインにする案について、良い点と気になる点を3つずつ、表の形で挙げてください。",
+        "craft": {
+          "tool": "instagram-agent-skill-ja@0e7ac86",
+          "hookType": "「やめて」命令",
+          "hookScore": 82.8,
+          "hookSeconds": 5.7,
+          "caption": "REVIEW",
+          "humanScript": 82.6,
+          "humanCaption": 54.9
+        }
+      }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-10-22",
-      "changes": [
-        "Day performance: Mon=2, Thu=1, Fri=1, Sat=1, Tue=1, Wed=1, Sun=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-10-24",
       "changes": [
@@ -4883,6 +4892,13 @@
       "date": "2026-11-19",
       "changes": [
         "Day performance: Sun=1, Mon=1, Tue=1, Wed=1, Thu=0, Fri=0, Sat=0"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-11-20",
+      "changes": [
+        "Day performance: Sun=1, Mon=1, Tue=1, Wed=1, Fri=0, Sat=0, Thu=0"
       ],
       "recommendedTemplate": "standard"
     }
@@ -5087,6 +5103,10 @@
       },
       {
         "date": "2026-11-20",
+        "count": 0
+      },
+      {
+        "date": "2026-11-21",
         "count": 0
       }
     ]
