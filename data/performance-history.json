@@ -2,59 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "3XxWJVIV7d8",
-      "videoUrl": "https://youtube.com/shorts/3XxWJVIV7d8",
-      "date": "2026-08-23",
-      "title": "【デザインニュース】Stark で駆け出しの週末 5 分ポートフォリオコントラスト検査｜2026/08/23 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 44,
-      "discovery": {
-        "method": "figma-community",
-        "description": "Figma 公式が 8 月に 3 週連続 Web 標準寄せ (8/3 Nested Folders、8/14 text wrap Balance/Pretty、8/21 Auto Layout Around/Evenly 追加) を出した流れをきっかけに Figma Community アクセシビリティ枠を見直し。駆け出しが次に押さえるべき Web 標準 = WCAG コントラストの週末 5 分導入枠として Stark - Contrast & Accessibility Checker を選出。Muzli 2026 プラグイン特集でも Stark は WCAG 2.2 AA 検査の代表として掲載継続中。全プラン無料で Install → 選択 → Check Contrast の 3 手順で判定と代替色提案まで完結する Sunday evergreen Tips に翻訳。",
-        "sources": [
-          "https://www.figma.com/community/plugin/732603254453395948/stark-contrast-accessibility-checker",
-          "https://muz.li/blog/best-figma-plugins-for-designers-in-2026/",
-          "https://releasebot.io/updates/figma"
-        ],
-        "query": "figma community stark contrast accessibility WCAG 2026 designer plugin weekend beginner",
-        "freshness_hours": 48
-      },
-      "stats": {
-        "views": 1,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-09-06T00:57:43.523Z"
-      },
-      "instagram": {
-        "mediaId": "17964503040152621",
-        "permalink": "https://www.instagram.com/reel/DcXG7jSjK7P/",
-        "views": 15,
-        "reach": 13,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "DRE1wMgrmyo",
       "videoUrl": "https://youtube.com/shorts/DRE1wMgrmyo",
       "date": "2026-08-24",
@@ -3697,7 +3644,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-21T23:16:05.424Z"
+        "updatedAt": "2026-11-22T23:16:02.618Z"
       },
       "instagram": {
         "mediaId": "18071679206785132",
@@ -3708,7 +3655,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-21T23:16:05.425Z"
+        "updatedAt": "2026-11-22T23:16:02.619Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3767,7 +3714,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-21T23:16:05.424Z"
+        "updatedAt": "2026-11-22T23:16:02.618Z"
       },
       "instagram": {
         "mediaId": "18101617847648925",
@@ -3778,7 +3725,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-21T23:16:05.425Z"
+        "updatedAt": "2026-11-22T23:16:02.619Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3837,7 +3784,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-21T23:16:05.424Z"
+        "updatedAt": "2026-11-22T23:16:02.618Z"
       },
       "instagram": {
         "mediaId": "18017206689004074",
@@ -3848,7 +3795,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-21T23:16:05.425Z"
+        "updatedAt": "2026-11-22T23:16:02.619Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3907,7 +3854,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-21T23:16:05.424Z"
+        "updatedAt": "2026-11-22T23:16:02.618Z"
       },
       "instagram": {
         "mediaId": "18037706594885297",
@@ -3918,7 +3865,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-21T23:16:05.425Z"
+        "updatedAt": "2026-11-22T23:16:02.619Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3977,7 +3924,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-21T23:16:05.424Z"
+        "updatedAt": "2026-11-22T23:16:02.618Z"
       },
       "instagram": {
         "mediaId": "18131497201798522",
@@ -3988,7 +3935,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-21T23:16:05.425Z"
+        "updatedAt": "2026-11-22T23:16:02.619Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4050,7 +3997,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-21T23:16:05.424Z"
+        "updatedAt": "2026-11-22T23:16:02.618Z"
       },
       "instagram": null,
       "jev": {
@@ -4125,7 +4072,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-21T23:16:05.424Z"
+        "updatedAt": "2026-11-22T23:16:02.618Z"
       },
       "instagram": null,
       "jev": {
@@ -4185,7 +4132,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-21T23:16:05.424Z"
+        "updatedAt": "2026-11-22T23:16:02.618Z"
       },
       "instagram": {
         "mediaId": "18128960837473762",
@@ -4196,7 +4143,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-21T23:16:05.425Z"
+        "updatedAt": "2026-11-22T23:16:02.619Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4255,7 +4202,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-21T23:16:05.424Z"
+        "updatedAt": "2026-11-22T23:16:02.618Z"
       },
       "instagram": {
         "mediaId": "18054273434816382",
@@ -4266,7 +4213,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-21T23:16:05.425Z"
+        "updatedAt": "2026-11-22T23:16:02.619Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4325,7 +4272,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-21T23:16:05.424Z"
+        "updatedAt": "2026-11-22T23:16:02.618Z"
       },
       "instagram": {
         "mediaId": "18381953632233751",
@@ -4336,7 +4283,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-21T23:16:05.425Z"
+        "updatedAt": "2026-11-22T23:16:02.619Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4395,7 +4342,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-21T23:16:05.424Z"
+        "updatedAt": "2026-11-22T23:16:02.618Z"
       },
       "instagram": {
         "mediaId": "18382810213245313",
@@ -4406,7 +4353,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-21T23:16:05.425Z"
+        "updatedAt": "2026-11-22T23:16:02.619Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4465,7 +4412,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-21T23:16:05.424Z"
+        "updatedAt": "2026-11-22T23:16:02.618Z"
       },
       "instagram": {
         "mediaId": "18109312586577196",
@@ -4476,7 +4423,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-21T23:16:05.425Z"
+        "updatedAt": "2026-11-22T23:16:02.619Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4535,7 +4482,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-21T23:16:05.424Z"
+        "updatedAt": "2026-11-22T23:16:02.618Z"
       },
       "instagram": {
         "mediaId": "18102820223397428",
@@ -4546,7 +4493,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-21T23:16:05.425Z"
+        "updatedAt": "2026-11-22T23:16:02.619Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4605,18 +4552,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-21T23:16:05.424Z"
+        "updatedAt": "2026-11-22T23:16:02.618Z"
       },
       "instagram": {
         "mediaId": "17991918399087786",
         "permalink": "https://www.instagram.com/reel/Df-0SVAAQhm/",
-        "views": 22,
-        "reach": 5,
+        "views": 28,
+        "reach": 27,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-21T23:16:05.425Z"
+        "updatedAt": "2026-11-22T23:16:02.619Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4675,18 +4622,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-11-22T23:16:02.618Z"
       },
       "instagram": {
         "mediaId": "18081956873727827",
-        "permalink": null,
-        "views": null,
-        "reach": null,
-        "likes": null,
-        "comments": null,
-        "shares": null,
-        "saved": null,
-        "updatedAt": null
+        "permalink": "https://www.instagram.com/reel/DgBZJTdEWg3/",
+        "views": 1,
+        "reach": 1,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-11-22T23:16:02.619Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4705,16 +4652,79 @@
           "humanCaption": 52.2
         }
       }
+    },
+    {
+      "videoId": "URKSeO4G4nE",
+      "videoUrl": "https://youtube.com/shorts/URKSeO4G4nE",
+      "date": "2026-11-23",
+      "genre": "ai-lesson",
+      "trial": 4,
+      "title": "【AI仕事術】脱線を戻す一言を用意｜2026/11/23 #Shorts",
+      "titleTemplate": "ai-lesson",
+      "hashtags": [
+        "AI活用",
+        "ChatGPT",
+        "生成AI",
+        "仕事術",
+        "業務効率化",
+        "AIの使い方",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "脱線を戻す一言を用意"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": ""
+      },
+      "durationSeconds": 42,
+      "coverOffsetMs": 6267,
+      "look": "reel",
+      "ytThumbnail": "set",
+      "discovery": {
+        "method": "lesson",
+        "description": "それた話を本題に戻す司会の言い方",
+        "sources": []
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "17978933600942101",
+        "permalink": null,
+        "views": null,
+        "reach": null,
+        "likes": null,
+        "comments": null,
+        "shares": null,
+        "saved": null,
+        "updatedAt": null
+      },
+      "jev": {
+        "kind": "lesson",
+        "topicKey": "meeting-back-on-track",
+        "topic": "それた話を本題に戻す司会の言い方",
+        "sources": [],
+        "pillar": "meeting",
+        "prompt": "30分の定例会議で、話がそれたときに、相手の気分を悪くせずに本題に戻す司会の言い方を3つ考えてください。",
+        "craft": {
+          "tool": "instagram-agent-skill-ja@0e7ac86",
+          "hookType": "呼びかけ",
+          "hookScore": 81.3,
+          "hookSeconds": 5.8,
+          "caption": "REVIEW",
+          "humanScript": 78.4,
+          "humanCaption": 59.6
+        }
+      }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-10-25",
-      "changes": [
-        "Day performance: Mon=2, Fri=1, Sat=1, Tue=1, Wed=1, Thu=1, Sun=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-10-25",
       "changes": [
@@ -4915,6 +4925,13 @@
       "date": "2026-11-21",
       "changes": [
         "Day performance: Sun=1, Mon=1, Tue=1, Wed=1, Sat=0, Thu=0, Fri=0"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-11-22",
+      "changes": [
+        "Day performance: Sun=1, Mon=1, Tue=1, Wed=1, Thu=0, Fri=0, Sat=0"
       ],
       "recommendedTemplate": "standard"
     }
@@ -5127,6 +5144,10 @@
       },
       {
         "date": "2026-11-22",
+        "count": 0
+      },
+      {
+        "date": "2026-11-23",
         "count": 0
       }
     ]
