@@ -2,59 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "DRE1wMgrmyo",
-      "videoUrl": "https://youtube.com/shorts/DRE1wMgrmyo",
-      "date": "2026-08-24",
-      "title": "【デザインニュース】Smashing 2 連発 component contracts で駆け出しの応募語彙が更新｜2026/08/24 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 42,
-      "discovery": {
-        "method": "news-en",
-        "description": "Smashing Magazine で 3 日以内に 2 本の DS 権威記事が同テーマで出た converging news を接続。Rothenberg 8/18 + Curtis 8/20 で 『component contracts』 に収束。",
-        "sources": [
-          "https://nathanacurtis.substack.com/p/component-contracts-and-schemas",
-          "https://mattrothenberg.com/notes/you-dont-have-a-design-system/",
-          "https://www.smashingmagazine.com/category/design-systems/"
-        ],
-        "query": "component contracts Smashing Magazine August 2026 Nathan Curtis Matt Rothenberg",
-        "freshness_hours": 96
-      },
-      "stats": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-09-07T01:01:26.086Z"
-      },
-      "instagram": {
-        "mediaId": "18124689055765841",
-        "permalink": "https://www.instagram.com/reel/DcZrxMlCGj2/",
-        "views": 116,
-        "reach": 114,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "_XuwBiESnXk",
       "videoUrl": "https://youtube.com/shorts/_XuwBiESnXk",
       "date": "2026-08-25",
@@ -3714,7 +3661,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-22T23:16:02.618Z"
+        "updatedAt": "2026-11-23T23:16:09.220Z"
       },
       "instagram": {
         "mediaId": "18101617847648925",
@@ -3725,7 +3672,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-22T23:16:02.619Z"
+        "updatedAt": "2026-11-23T23:16:09.222Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3784,7 +3731,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-22T23:16:02.618Z"
+        "updatedAt": "2026-11-23T23:16:09.220Z"
       },
       "instagram": {
         "mediaId": "18017206689004074",
@@ -3795,7 +3742,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-22T23:16:02.619Z"
+        "updatedAt": "2026-11-23T23:16:09.222Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3854,7 +3801,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-22T23:16:02.618Z"
+        "updatedAt": "2026-11-23T23:16:09.220Z"
       },
       "instagram": {
         "mediaId": "18037706594885297",
@@ -3865,7 +3812,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-22T23:16:02.619Z"
+        "updatedAt": "2026-11-23T23:16:09.222Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3924,7 +3871,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-22T23:16:02.618Z"
+        "updatedAt": "2026-11-23T23:16:09.220Z"
       },
       "instagram": {
         "mediaId": "18131497201798522",
@@ -3935,7 +3882,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-22T23:16:02.619Z"
+        "updatedAt": "2026-11-23T23:16:09.222Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3997,7 +3944,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-22T23:16:02.618Z"
+        "updatedAt": "2026-11-23T23:16:09.220Z"
       },
       "instagram": null,
       "jev": {
@@ -4072,7 +4019,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-22T23:16:02.618Z"
+        "updatedAt": "2026-11-23T23:16:09.220Z"
       },
       "instagram": null,
       "jev": {
@@ -4132,7 +4079,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-22T23:16:02.618Z"
+        "updatedAt": "2026-11-23T23:16:09.220Z"
       },
       "instagram": {
         "mediaId": "18128960837473762",
@@ -4143,7 +4090,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-22T23:16:02.619Z"
+        "updatedAt": "2026-11-23T23:16:09.222Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4202,7 +4149,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-22T23:16:02.618Z"
+        "updatedAt": "2026-11-23T23:16:09.220Z"
       },
       "instagram": {
         "mediaId": "18054273434816382",
@@ -4213,7 +4160,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-22T23:16:02.619Z"
+        "updatedAt": "2026-11-23T23:16:09.222Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4272,7 +4219,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-22T23:16:02.618Z"
+        "updatedAt": "2026-11-23T23:16:09.220Z"
       },
       "instagram": {
         "mediaId": "18381953632233751",
@@ -4283,7 +4230,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-22T23:16:02.619Z"
+        "updatedAt": "2026-11-23T23:16:09.222Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4342,7 +4289,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-22T23:16:02.618Z"
+        "updatedAt": "2026-11-23T23:16:09.220Z"
       },
       "instagram": {
         "mediaId": "18382810213245313",
@@ -4353,7 +4300,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-22T23:16:02.619Z"
+        "updatedAt": "2026-11-23T23:16:09.222Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4412,7 +4359,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-22T23:16:02.618Z"
+        "updatedAt": "2026-11-23T23:16:09.220Z"
       },
       "instagram": {
         "mediaId": "18109312586577196",
@@ -4423,7 +4370,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-22T23:16:02.619Z"
+        "updatedAt": "2026-11-23T23:16:09.222Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4482,7 +4429,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-22T23:16:02.618Z"
+        "updatedAt": "2026-11-23T23:16:09.220Z"
       },
       "instagram": {
         "mediaId": "18102820223397428",
@@ -4493,7 +4440,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-22T23:16:02.619Z"
+        "updatedAt": "2026-11-23T23:16:09.222Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4552,7 +4499,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-22T23:16:02.618Z"
+        "updatedAt": "2026-11-23T23:16:09.220Z"
       },
       "instagram": {
         "mediaId": "17991918399087786",
@@ -4563,7 +4510,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-22T23:16:02.619Z"
+        "updatedAt": "2026-11-23T23:16:09.222Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4622,7 +4569,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-22T23:16:02.618Z"
+        "updatedAt": "2026-11-23T23:16:09.220Z"
       },
       "instagram": {
         "mediaId": "18081956873727827",
@@ -4633,7 +4580,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-22T23:16:02.619Z"
+        "updatedAt": "2026-11-23T23:16:09.222Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4689,21 +4636,21 @@
         "sources": []
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-11-23T23:16:09.220Z"
       },
       "instagram": {
         "mediaId": "17978933600942101",
-        "permalink": null,
-        "views": null,
-        "reach": null,
-        "likes": null,
-        "comments": null,
-        "shares": null,
-        "saved": null,
-        "updatedAt": null
+        "permalink": "https://www.instagram.com/reel/DgD94xODYlq/",
+        "views": 3,
+        "reach": 2,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-11-23T23:16:09.222Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4722,16 +4669,80 @@
           "humanCaption": 59.6
         }
       }
+    },
+    {
+      "videoId": "XtxQ8hZMqLo",
+      "videoUrl": "https://youtube.com/shorts/XtxQ8hZMqLo",
+      "date": "2026-11-24",
+      "genre": "ai-lesson",
+      "trial": 4,
+      "title": "【AI仕事術】先にAIの役割を決める｜2026/11/24 #Shorts",
+      "titleTemplate": "ai-lesson",
+      "hashtags": [
+        "AI活用",
+        "ChatGPT",
+        "生成AI",
+        "仕事術",
+        "業務効率化",
+        "AIの使い方",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "先にAIの役割を決める"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": ""
+      },
+      "durationSeconds": 41,
+      "coverOffsetMs": 4100,
+      "look": "reel",
+      "ytThumbnail": "set",
+      "discovery": {
+        "method": "lesson",
+        "description": "AIの役割を決めてから頼む",
+        "sources": []
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "18118554821029197",
+        "permalink": null,
+        "views": null,
+        "reach": null,
+        "likes": null,
+        "comments": null,
+        "shares": null,
+        "saved": null,
+        "updatedAt": null
+      },
+      "jev": {
+        "kind": "lesson",
+        "topicKey": "ask-give-role",
+        "topic": "AIの役割を決めてから頼む",
+        "sources": [],
+        "pillar": "ask",
+        "prompt": "あなたは新人研修の担当者です。電話の取り次ぎで大事なことを、新人向けに3つのポイントで教えてください。",
+        "fallback": true,
+        "craft": {
+          "tool": "instagram-agent-skill-ja@0e7ac86",
+          "hookType": "「〜なら見て」",
+          "hookScore": 76.6,
+          "hookSeconds": 4.9,
+          "caption": "REVIEW",
+          "humanScript": 75.6,
+          "humanCaption": 54
+        }
+      }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-10-25",
-      "changes": [
-        "Day performance: Mon=2, Fri=1, Sat=1, Tue=1, Wed=1, Thu=1, Sun=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-10-26",
       "changes": [
@@ -4932,6 +4943,13 @@
       "date": "2026-11-22",
       "changes": [
         "Day performance: Sun=1, Mon=1, Tue=1, Wed=1, Thu=0, Fri=0, Sat=0"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-11-23",
+      "changes": [
+        "Day performance: Mon=1, Tue=1, Wed=1, Sun=1, Thu=0, Fri=0, Sat=0"
       ],
       "recommendedTemplate": "standard"
     }
@@ -5148,6 +5166,10 @@
       },
       {
         "date": "2026-11-23",
+        "count": 0
+      },
+      {
+        "date": "2026-11-24",
         "count": 0
       }
     ]
