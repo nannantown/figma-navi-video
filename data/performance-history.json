@@ -2,59 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "_XuwBiESnXk",
-      "videoUrl": "https://youtube.com/shorts/_XuwBiESnXk",
-      "date": "2026-08-25",
-      "title": "【デザインニュース】Figma 8/24 ベクター編集に消しゴム＋塗りバケツ アイコン修正が Figma だけで完結｜2026/08/25 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 44,
-      "discovery": {
-        "method": "official-src",
-        "description": "Figma 公式リリースノートを再スキャンし 8/24 分の新機能『ベクター編集の消しゴム＋塗りバケツ』を特定。3 日空きで official-src 復帰枠に該当し、freshness 24h 以内で最鮮度。",
-        "sources": [
-          "https://www.figma.com/release-notes/",
-          "https://releasebot.io/updates/figma",
-          "https://releases.sh/figma/figma-release-notes"
-        ],
-        "query": "Figma release notes August 24 2026 eraser tool paint bucket vector editing",
-        "freshness_hours": 15
-      },
-      "stats": {
-        "views": 2,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-09-08T01:12:35.065Z"
-      },
-      "instagram": {
-        "mediaId": "18083025122302520",
-        "permalink": "https://www.instagram.com/reel/DccQfDoj_Lw/",
-        "views": 33,
-        "reach": 33,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "SXGlGy2p5bk",
       "videoUrl": "https://youtube.com/shorts/SXGlGy2p5bk",
       "date": "2026-08-26",
@@ -3731,7 +3678,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-23T23:16:09.220Z"
+        "updatedAt": "2026-11-24T23:16:10.146Z"
       },
       "instagram": {
         "mediaId": "18017206689004074",
@@ -3742,7 +3689,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-23T23:16:09.222Z"
+        "updatedAt": "2026-11-24T23:16:10.147Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3801,7 +3748,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-23T23:16:09.220Z"
+        "updatedAt": "2026-11-24T23:16:10.146Z"
       },
       "instagram": {
         "mediaId": "18037706594885297",
@@ -3812,7 +3759,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-23T23:16:09.222Z"
+        "updatedAt": "2026-11-24T23:16:10.147Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3871,7 +3818,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-23T23:16:09.220Z"
+        "updatedAt": "2026-11-24T23:16:10.146Z"
       },
       "instagram": {
         "mediaId": "18131497201798522",
@@ -3882,7 +3829,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-23T23:16:09.222Z"
+        "updatedAt": "2026-11-24T23:16:10.147Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3944,7 +3891,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-23T23:16:09.220Z"
+        "updatedAt": "2026-11-24T23:16:10.146Z"
       },
       "instagram": null,
       "jev": {
@@ -4019,7 +3966,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-23T23:16:09.220Z"
+        "updatedAt": "2026-11-24T23:16:10.146Z"
       },
       "instagram": null,
       "jev": {
@@ -4079,7 +4026,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-23T23:16:09.220Z"
+        "updatedAt": "2026-11-24T23:16:10.146Z"
       },
       "instagram": {
         "mediaId": "18128960837473762",
@@ -4090,7 +4037,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-23T23:16:09.222Z"
+        "updatedAt": "2026-11-24T23:16:10.147Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4149,7 +4096,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-23T23:16:09.220Z"
+        "updatedAt": "2026-11-24T23:16:10.146Z"
       },
       "instagram": {
         "mediaId": "18054273434816382",
@@ -4160,7 +4107,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-23T23:16:09.222Z"
+        "updatedAt": "2026-11-24T23:16:10.147Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4219,7 +4166,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-23T23:16:09.220Z"
+        "updatedAt": "2026-11-24T23:16:10.146Z"
       },
       "instagram": {
         "mediaId": "18381953632233751",
@@ -4230,7 +4177,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-23T23:16:09.222Z"
+        "updatedAt": "2026-11-24T23:16:10.147Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4289,7 +4236,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-23T23:16:09.220Z"
+        "updatedAt": "2026-11-24T23:16:10.146Z"
       },
       "instagram": {
         "mediaId": "18382810213245313",
@@ -4300,7 +4247,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-23T23:16:09.222Z"
+        "updatedAt": "2026-11-24T23:16:10.147Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4359,7 +4306,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-23T23:16:09.220Z"
+        "updatedAt": "2026-11-24T23:16:10.146Z"
       },
       "instagram": {
         "mediaId": "18109312586577196",
@@ -4370,7 +4317,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-23T23:16:09.222Z"
+        "updatedAt": "2026-11-24T23:16:10.147Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4429,7 +4376,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-23T23:16:09.220Z"
+        "updatedAt": "2026-11-24T23:16:10.146Z"
       },
       "instagram": {
         "mediaId": "18102820223397428",
@@ -4440,7 +4387,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-23T23:16:09.222Z"
+        "updatedAt": "2026-11-24T23:16:10.147Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4499,7 +4446,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-23T23:16:09.220Z"
+        "updatedAt": "2026-11-24T23:16:10.146Z"
       },
       "instagram": {
         "mediaId": "17991918399087786",
@@ -4510,7 +4457,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-23T23:16:09.222Z"
+        "updatedAt": "2026-11-24T23:16:10.147Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4569,7 +4516,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-23T23:16:09.220Z"
+        "updatedAt": "2026-11-24T23:16:10.146Z"
       },
       "instagram": {
         "mediaId": "18081956873727827",
@@ -4580,7 +4527,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-23T23:16:09.222Z"
+        "updatedAt": "2026-11-24T23:16:10.147Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4639,7 +4586,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-23T23:16:09.220Z"
+        "updatedAt": "2026-11-24T23:16:10.146Z"
       },
       "instagram": {
         "mediaId": "17978933600942101",
@@ -4650,7 +4597,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-23T23:16:09.222Z"
+        "updatedAt": "2026-11-24T23:16:10.147Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4709,18 +4656,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-11-24T23:16:10.146Z"
       },
       "instagram": {
         "mediaId": "18118554821029197",
-        "permalink": null,
-        "views": null,
-        "reach": null,
-        "likes": null,
-        "comments": null,
-        "shares": null,
-        "saved": null,
-        "updatedAt": null
+        "permalink": "https://www.instagram.com/reel/DgGiwq-mlA2/",
+        "views": 3,
+        "reach": 3,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-11-24T23:16:10.147Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4740,16 +4687,79 @@
           "humanCaption": 54
         }
       }
+    },
+    {
+      "videoId": "ERAxY8EDgYw",
+      "videoUrl": "https://youtube.com/shorts/ERAxY8EDgYw",
+      "date": "2026-11-25",
+      "genre": "ai-lesson",
+      "trial": 4,
+      "title": "【AI仕事術】長い文章に小見出しをつける｜2026/11/25 #Shorts",
+      "titleTemplate": "ai-lesson",
+      "hashtags": [
+        "AI活用",
+        "ChatGPT",
+        "生成AI",
+        "仕事術",
+        "業務効率化",
+        "AIの使い方",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "長い文章に小見出しをつける"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": ""
+      },
+      "durationSeconds": 48,
+      "coverOffsetMs": 5600,
+      "look": "reel",
+      "ytThumbnail": "set",
+      "discovery": {
+        "method": "lesson",
+        "description": "長い文章に小見出しをつけて読みやすくする",
+        "sources": []
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "18030009809704812",
+        "permalink": null,
+        "views": null,
+        "reach": null,
+        "likes": null,
+        "comments": null,
+        "shares": null,
+        "saved": null,
+        "updatedAt": null
+      },
+      "jev": {
+        "kind": "lesson",
+        "topicKey": "summary-add-headings",
+        "topic": "長い文章に小見出しをつけて読みやすくする",
+        "sources": [],
+        "pillar": "summary",
+        "prompt": "次の文章を段落ごとに分けて、それぞれに10文字くらいの小見出しをつけてください。本文は変えないでください。",
+        "craft": {
+          "tool": "instagram-agent-skill-ja@0e7ac86",
+          "hookType": "常識の逆",
+          "hookScore": 65.4,
+          "hookSeconds": 5.5,
+          "caption": "REVIEW",
+          "humanScript": 71.8,
+          "humanCaption": 48.9
+        }
+      }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-10-26",
-      "changes": [
-        "Day performance: Mon=2, Tue=1, Wed=1, Thu=1, Fri=1, Sun=1, Sat=0"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-10-27",
       "changes": [
@@ -4950,6 +4960,13 @@
       "date": "2026-11-23",
       "changes": [
         "Day performance: Mon=1, Tue=1, Wed=1, Sun=1, Thu=0, Fri=0, Sat=0"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-11-24",
+      "changes": [
+        "Day performance: Tue=1, Wed=1, Sun=1, Mon=1, Thu=0, Fri=0, Sat=0"
       ],
       "recommendedTemplate": "standard"
     }
@@ -5170,6 +5187,10 @@
       },
       {
         "date": "2026-11-24",
+        "count": 0
+      },
+      {
+        "date": "2026-11-25",
         "count": 0
       }
     ]
