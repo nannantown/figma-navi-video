@@ -2,60 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "SXGlGy2p5bk",
-      "videoUrl": "https://youtube.com/shorts/SXGlGy2p5bk",
-      "date": "2026-08-26",
-      "title": "【デザインニュース】SHIFTBRAIN PRO の /zeroz が Awwwards SOTD 8/25 緑1色縛りで世界基準｜2026/08/26 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 44,
-      "discovery": {
-        "method": "product-launches",
-        "description": "Awwwards SOTD リストから 8/25 受賞作 /zeroz Brand Site (SHIFTBRAIN PRO・日本チーム・単色 #00AA54 縛り・7.41+Developer Award 併載) を発見。昨日 PDCA の angle shift 指示に沿い、Awwwards SOTD 内でも『日本チーム × 1 色縛り』sub-angle に縮小して疲弊回避を試行。",
-        "sources": [
-          "https://www.awwwards.com/sites/zeroz-brand-site",
-          "https://www.awwwards.com/websites/sites_of_the_day/",
-          "https://www.shiftbrain.com/",
-          "https://zeroz.otsuka.co.jp/"
-        ],
-        "query": "Awwwards SOTD 2026-08-25 zeroz brand site SHIFTBRAIN PRO single color HEX 00AA54 WebGL Three.js Developer Award",
-        "freshness_hours": 30
-      },
-      "stats": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-09-09T01:15:41.513Z"
-      },
-      "instagram": {
-        "mediaId": "18111675154995861",
-        "permalink": "https://www.instagram.com/reel/Dce2ALrj4Ku/",
-        "views": 0,
-        "reach": 1,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "WmW7Uly4sG0",
       "videoUrl": "https://youtube.com/shorts/WmW7Uly4sG0",
       "date": "2026-08-27",
@@ -3748,7 +3694,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-24T23:16:10.146Z"
+        "updatedAt": "2026-11-25T23:16:04.560Z"
       },
       "instagram": {
         "mediaId": "18037706594885297",
@@ -3759,7 +3705,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-24T23:16:10.147Z"
+        "updatedAt": "2026-11-25T23:16:04.561Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3818,7 +3764,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-24T23:16:10.146Z"
+        "updatedAt": "2026-11-25T23:16:04.560Z"
       },
       "instagram": {
         "mediaId": "18131497201798522",
@@ -3829,7 +3775,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-24T23:16:10.147Z"
+        "updatedAt": "2026-11-25T23:16:04.561Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3891,7 +3837,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-24T23:16:10.146Z"
+        "updatedAt": "2026-11-25T23:16:04.560Z"
       },
       "instagram": null,
       "jev": {
@@ -3966,7 +3912,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-24T23:16:10.146Z"
+        "updatedAt": "2026-11-25T23:16:04.560Z"
       },
       "instagram": null,
       "jev": {
@@ -4026,7 +3972,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-24T23:16:10.146Z"
+        "updatedAt": "2026-11-25T23:16:04.560Z"
       },
       "instagram": {
         "mediaId": "18128960837473762",
@@ -4037,7 +3983,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-24T23:16:10.147Z"
+        "updatedAt": "2026-11-25T23:16:04.561Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4096,7 +4042,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-24T23:16:10.146Z"
+        "updatedAt": "2026-11-25T23:16:04.560Z"
       },
       "instagram": {
         "mediaId": "18054273434816382",
@@ -4107,7 +4053,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-24T23:16:10.147Z"
+        "updatedAt": "2026-11-25T23:16:04.561Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4166,7 +4112,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-24T23:16:10.146Z"
+        "updatedAt": "2026-11-25T23:16:04.560Z"
       },
       "instagram": {
         "mediaId": "18381953632233751",
@@ -4177,7 +4123,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-24T23:16:10.147Z"
+        "updatedAt": "2026-11-25T23:16:04.561Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4236,7 +4182,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-24T23:16:10.146Z"
+        "updatedAt": "2026-11-25T23:16:04.560Z"
       },
       "instagram": {
         "mediaId": "18382810213245313",
@@ -4247,7 +4193,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-24T23:16:10.147Z"
+        "updatedAt": "2026-11-25T23:16:04.561Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4306,7 +4252,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-24T23:16:10.146Z"
+        "updatedAt": "2026-11-25T23:16:04.560Z"
       },
       "instagram": {
         "mediaId": "18109312586577196",
@@ -4317,7 +4263,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-24T23:16:10.147Z"
+        "updatedAt": "2026-11-25T23:16:04.561Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4376,7 +4322,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-24T23:16:10.146Z"
+        "updatedAt": "2026-11-25T23:16:04.560Z"
       },
       "instagram": {
         "mediaId": "18102820223397428",
@@ -4387,7 +4333,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-24T23:16:10.147Z"
+        "updatedAt": "2026-11-25T23:16:04.561Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4446,7 +4392,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-24T23:16:10.146Z"
+        "updatedAt": "2026-11-25T23:16:04.560Z"
       },
       "instagram": {
         "mediaId": "17991918399087786",
@@ -4457,7 +4403,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-24T23:16:10.147Z"
+        "updatedAt": "2026-11-25T23:16:04.561Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4516,7 +4462,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-24T23:16:10.146Z"
+        "updatedAt": "2026-11-25T23:16:04.560Z"
       },
       "instagram": {
         "mediaId": "18081956873727827",
@@ -4527,7 +4473,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-24T23:16:10.147Z"
+        "updatedAt": "2026-11-25T23:16:04.561Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4586,7 +4532,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-24T23:16:10.146Z"
+        "updatedAt": "2026-11-25T23:16:04.560Z"
       },
       "instagram": {
         "mediaId": "17978933600942101",
@@ -4597,7 +4543,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-24T23:16:10.147Z"
+        "updatedAt": "2026-11-25T23:16:04.561Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4656,7 +4602,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-24T23:16:10.146Z"
+        "updatedAt": "2026-11-25T23:16:04.560Z"
       },
       "instagram": {
         "mediaId": "18118554821029197",
@@ -4667,7 +4613,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-24T23:16:10.147Z"
+        "updatedAt": "2026-11-25T23:16:04.561Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4727,18 +4673,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-11-25T23:16:04.560Z"
       },
       "instagram": {
         "mediaId": "18030009809704812",
-        "permalink": null,
-        "views": null,
-        "reach": null,
-        "likes": null,
-        "comments": null,
-        "shares": null,
-        "saved": null,
-        "updatedAt": null
+        "permalink": "https://www.instagram.com/reel/DgJHqIUEz5D/",
+        "views": 3,
+        "reach": 4,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-11-25T23:16:04.561Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4757,16 +4703,79 @@
           "humanCaption": 48.9
         }
       }
+    },
+    {
+      "videoId": "VK19DlESEh8",
+      "videoUrl": "https://youtube.com/shorts/VK19DlESEh8",
+      "date": "2026-11-26",
+      "genre": "ai-lesson",
+      "trial": 4,
+      "title": "【AI仕事術】お詫びは言い訳なしで短く｜2026/11/26 #Shorts",
+      "titleTemplate": "ai-lesson",
+      "hashtags": [
+        "AI活用",
+        "ChatGPT",
+        "生成AI",
+        "仕事術",
+        "業務効率化",
+        "AIの使い方",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "お詫びは言い訳なしで短く"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": ""
+      },
+      "durationSeconds": 41,
+      "coverOffsetMs": 4067,
+      "look": "reel",
+      "ytThumbnail": "set",
+      "discovery": {
+        "method": "lesson",
+        "description": "遅れを伝えるお詫びのメール",
+        "sources": []
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "18029062325921919",
+        "permalink": null,
+        "views": null,
+        "reach": null,
+        "likes": null,
+        "comments": null,
+        "shares": null,
+        "saved": null,
+        "updatedAt": null
+      },
+      "jev": {
+        "kind": "lesson",
+        "topicKey": "mail-apology-delay",
+        "topic": "遅れを伝えるお詫びのメール",
+        "sources": [],
+        "pillar": "mail",
+        "prompt": "納品が1日遅れることを取引先に伝える、お詫びのメールを書いてください。言い訳は書かず、新しい納品日を入れてください。",
+        "craft": {
+          "tool": "instagram-agent-skill-ja@0e7ac86",
+          "hookType": "期限",
+          "hookScore": 70,
+          "hookSeconds": 4.8,
+          "caption": "REVIEW",
+          "humanScript": 70.7,
+          "humanCaption": 42.2
+        }
+      }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-10-27",
-      "changes": [
-        "Day performance: Tue=1, Wed=1, Thu=1, Fri=1, Sun=1, Mon=1, Sat=0"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-10-28",
       "changes": [
@@ -4967,6 +4976,13 @@
       "date": "2026-11-24",
       "changes": [
         "Day performance: Tue=1, Wed=1, Sun=1, Mon=1, Thu=0, Fri=0, Sat=0"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-11-25",
+      "changes": [
+        "Day performance: Wed=1, Sun=1, Mon=1, Thu=0, Fri=0, Sat=0, Tue=0"
       ],
       "recommendedTemplate": "standard"
     }
@@ -5191,6 +5207,10 @@
       },
       {
         "date": "2026-11-25",
+        "count": 0
+      },
+      {
+        "date": "2026-11-26",
         "count": 0
       }
     ]
