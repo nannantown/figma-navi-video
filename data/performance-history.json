@@ -2,60 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "J_0mvNkx9n0",
-      "videoUrl": "https://youtube.com/shorts/J_0mvNkx9n0",
-      "date": "2026-08-28",
-      "title": "【デザインニュース】Figma Agent 8/26 別ウィンドウ切り出し 駆け出しの常時先生化｜2026/08/28 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "デザイン",
-        "Figma",
-        "UI",
-        "UX",
-        "デザイナー",
-        "デザイン勉強",
-        "AIデザイン",
-        "Design",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "Figma Navi",
-        "Figma Navi",
-        "Figma Navi"
-      ],
-      "durationSeconds": 45,
-      "discovery": {
-        "method": "official-src",
-        "description": "Figma 公式 release notes を WebSearch 経由で確認、8/26 掲載の Desktop Agent Chat Panel 別ウィンドウ切り出し機能を、Aug 26 の他アップデート (Vector Editing / Enterprise MCP) と共に多重確認して駆け出し向けに要点抽出。TOP 3 method (official-src / figma-community / news-en) から、2 日ガード後に残る official-src / figma-community のうち、48h 圏の fresh 官公新機能を優先。",
-        "sources": [
-          "https://www.figma.com/release-notes/",
-          "https://releasebot.io/updates/figma",
-          "https://help.figma.com/hc/en-us/articles/37998629035799-Work-with-the-Figma-agent-in-design-files",
-          "https://www.figma.com/blog/the-figma-agent-is-here/"
-        ],
-        "query": "Figma agent chat panel window desktop macOS Windows August 26 2026 release notes",
-        "freshness_hours": 48
-      },
-      "stats": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-09-11T01:05:24.634Z"
-      },
-      "instagram": {
-        "mediaId": "18107327848879317",
-        "permalink": "https://www.instagram.com/reel/DckxanKAvoL/",
-        "views": 103,
-        "reach": 99,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T03:28:05.889Z"
-      }
-    },
-    {
       "videoId": "x0SE2O6KaHc",
       "videoUrl": "https://youtube.com/shorts/x0SE2O6KaHc",
       "date": "2026-08-29",
@@ -3783,7 +3729,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-26T23:15:59.181Z"
+        "updatedAt": "2026-11-27T23:16:05.643Z"
       },
       "instagram": null,
       "jev": {
@@ -3858,7 +3804,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-26T23:15:59.181Z"
+        "updatedAt": "2026-11-27T23:16:05.643Z"
       },
       "instagram": null,
       "jev": {
@@ -3918,7 +3864,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-26T23:15:59.181Z"
+        "updatedAt": "2026-11-27T23:16:05.643Z"
       },
       "instagram": {
         "mediaId": "18128960837473762",
@@ -3929,7 +3875,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-26T23:15:59.182Z"
+        "updatedAt": "2026-11-27T23:16:05.644Z"
       },
       "jev": {
         "kind": "lesson",
@@ -3988,7 +3934,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-26T23:15:59.181Z"
+        "updatedAt": "2026-11-27T23:16:05.643Z"
       },
       "instagram": {
         "mediaId": "18054273434816382",
@@ -3999,7 +3945,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-26T23:15:59.182Z"
+        "updatedAt": "2026-11-27T23:16:05.644Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4058,7 +4004,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-26T23:15:59.181Z"
+        "updatedAt": "2026-11-27T23:16:05.643Z"
       },
       "instagram": {
         "mediaId": "18381953632233751",
@@ -4069,7 +4015,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-26T23:15:59.182Z"
+        "updatedAt": "2026-11-27T23:16:05.644Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4128,7 +4074,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-26T23:15:59.181Z"
+        "updatedAt": "2026-11-27T23:16:05.643Z"
       },
       "instagram": {
         "mediaId": "18382810213245313",
@@ -4139,7 +4085,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-26T23:15:59.182Z"
+        "updatedAt": "2026-11-27T23:16:05.644Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4198,7 +4144,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-26T23:15:59.181Z"
+        "updatedAt": "2026-11-27T23:16:05.643Z"
       },
       "instagram": {
         "mediaId": "18109312586577196",
@@ -4209,7 +4155,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-26T23:15:59.182Z"
+        "updatedAt": "2026-11-27T23:16:05.644Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4268,7 +4214,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-26T23:15:59.181Z"
+        "updatedAt": "2026-11-27T23:16:05.643Z"
       },
       "instagram": {
         "mediaId": "18102820223397428",
@@ -4279,7 +4225,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-26T23:15:59.182Z"
+        "updatedAt": "2026-11-27T23:16:05.644Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4338,7 +4284,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-26T23:15:59.181Z"
+        "updatedAt": "2026-11-27T23:16:05.643Z"
       },
       "instagram": {
         "mediaId": "17991918399087786",
@@ -4349,7 +4295,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-26T23:15:59.182Z"
+        "updatedAt": "2026-11-27T23:16:05.644Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4408,7 +4354,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-26T23:15:59.181Z"
+        "updatedAt": "2026-11-27T23:16:05.643Z"
       },
       "instagram": {
         "mediaId": "18081956873727827",
@@ -4419,7 +4365,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-26T23:15:59.182Z"
+        "updatedAt": "2026-11-27T23:16:05.644Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4478,7 +4424,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-26T23:15:59.181Z"
+        "updatedAt": "2026-11-27T23:16:05.643Z"
       },
       "instagram": {
         "mediaId": "17978933600942101",
@@ -4489,7 +4435,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-26T23:15:59.182Z"
+        "updatedAt": "2026-11-27T23:16:05.644Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4548,7 +4494,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-26T23:15:59.181Z"
+        "updatedAt": "2026-11-27T23:16:05.643Z"
       },
       "instagram": {
         "mediaId": "18118554821029197",
@@ -4559,7 +4505,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-26T23:15:59.182Z"
+        "updatedAt": "2026-11-27T23:16:05.644Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4619,7 +4565,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-26T23:15:59.181Z"
+        "updatedAt": "2026-11-27T23:16:05.643Z"
       },
       "instagram": {
         "mediaId": "18030009809704812",
@@ -4630,7 +4576,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-26T23:15:59.182Z"
+        "updatedAt": "2026-11-27T23:16:05.644Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4689,7 +4635,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-26T23:15:59.181Z"
+        "updatedAt": "2026-11-27T23:16:05.643Z"
       },
       "instagram": {
         "mediaId": "18029062325921919",
@@ -4700,7 +4646,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-11-26T23:15:59.182Z"
+        "updatedAt": "2026-11-27T23:16:05.644Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4759,18 +4705,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-11-27T23:16:05.643Z"
       },
       "instagram": {
         "mediaId": "18150119506496765",
-        "permalink": null,
-        "views": null,
-        "reach": null,
-        "likes": null,
-        "comments": null,
-        "shares": null,
-        "saved": null,
-        "updatedAt": null
+        "permalink": "https://www.instagram.com/reel/DgORCylNt8L/",
+        "views": 1,
+        "reach": 1,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-11-27T23:16:05.644Z"
       },
       "jev": {
         "kind": "lesson",
@@ -4789,16 +4735,79 @@
           "humanCaption": 50.9
         }
       }
+    },
+    {
+      "videoId": "7hstHxxJI6I",
+      "videoUrl": "https://youtube.com/shorts/7hstHxxJI6I",
+      "date": "2026-11-28",
+      "genre": "ai-lesson",
+      "trial": 4,
+      "title": "【AI仕事術】お願いはメールの最初に｜2026/11/28 #Shorts",
+      "titleTemplate": "ai-lesson",
+      "hashtags": [
+        "AI活用",
+        "ChatGPT",
+        "生成AI",
+        "仕事術",
+        "業務効率化",
+        "AIの使い方",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "お願いはメールの最初に"
+      ],
+      "tools": [],
+      "source": {
+        "mode": "jev",
+        "label": ""
+      },
+      "durationSeconds": 49,
+      "coverOffsetMs": 5933,
+      "look": "reel",
+      "ytThumbnail": "set",
+      "discovery": {
+        "method": "lesson",
+        "description": "結論が先に分かるメール",
+        "sources": []
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "18132079537877168",
+        "permalink": null,
+        "views": null,
+        "reach": null,
+        "likes": null,
+        "comments": null,
+        "shares": null,
+        "saved": null,
+        "updatedAt": null
+      },
+      "jev": {
+        "kind": "lesson",
+        "topicKey": "mail-conclusion-first",
+        "topic": "結論が先に分かるメール",
+        "sources": [],
+        "pillar": "mail",
+        "prompt": "次のメールを、最初の2行で結論とお願いが分かるように並べかえてください。書いてある中身は変えないでください。",
+        "craft": {
+          "tool": "instagram-agent-skill-ja@0e7ac86",
+          "hookType": "「やめて」命令",
+          "hookScore": 72.2,
+          "hookSeconds": 3.7,
+          "caption": "REVIEW",
+          "humanScript": 68.9,
+          "humanCaption": 51.1
+        }
+      }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-10-29",
-      "changes": [
-        "Day performance: Thu=1, Fri=1, Sun=1, Mon=1, Tue=1, Wed=1, Sat=0"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-10-30",
       "changes": [
@@ -4999,6 +5008,13 @@
       "date": "2026-11-26",
       "changes": [
         "Day performance: Sun=1, Wed=1, Mon=1, Thu=0, Fri=0, Sat=0, Tue=0"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-11-27",
+      "changes": [
+        "Day performance: Sun=1, Wed=1, Mon=1, Fri=0, Sat=0, Tue=0, Thu=0"
       ],
       "recommendedTemplate": "standard"
     }
@@ -5231,6 +5247,10 @@
       },
       {
         "date": "2026-11-27",
+        "count": 0
+      },
+      {
+        "date": "2026-11-28",
         "count": 0
       }
     ]
